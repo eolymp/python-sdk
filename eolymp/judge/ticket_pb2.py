@@ -11,11 +11,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/ticket.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!eolymp/annotations/resource.proto\"\xad\x02\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\n \x01(\t\x12\x0f\n\x07message\x18\x0b \x01(\t\x12\x0f\n\x07is_open\x18\x14 \x01(\x08\x12\x1e\n\x16is_read_by_participant\x18\x15 \x01(\x08\x12\x18\n\x10is_read_by_owner\x18\x16 \x01(\x08\x12.\n\ncreated_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x07is_read\x18\x87N \x01(\x08\x12\x14\n\x0bneeds_reply\x18\x88N \x01(\x08:&\xb2\xe3\n\"\xba\xe3\n\x06ticket\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/ticket.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xad\x02\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\n \x01(\t\x12\x0f\n\x07message\x18\x0b \x01(\t\x12\x0f\n\x07is_open\x18\x14 \x01(\x08\x12\x1e\n\x16is_read_by_participant\x18\x15 \x01(\x08\x12\x18\n\x10is_read_by_owner\x18\x16 \x01(\x08\x12.\n\ncreated_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x07is_read\x18\x87N \x01(\x08\x12\x14\n\x0bneeds_reply\x18\x88N \x01(\x08:&\xb2\xe3\n\"\xba\xe3\n\x06ticket\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.ticket_pb2', globals())

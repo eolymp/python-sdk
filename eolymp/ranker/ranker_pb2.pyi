@@ -2,9 +2,9 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.annotations import service_pb2 as _service_pb2
-from eolymp.wellknown import expression_pb2 as _expression_pb2
 from eolymp.ranker import activity_pb2 as _activity_pb2
 from eolymp.ranker import scoreboard_pb2 as _scoreboard_pb2
+from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

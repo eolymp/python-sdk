@@ -11,13 +11,13 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.atlas import problem_pb2 as eolymp_dot_atlas_dot_problem__pb2
 from eolymp.atlas import permission_pb2 as eolymp_dot_atlas_dot_permission__pb2
-from eolymp.atlas import submission_pb2 as eolymp_dot_atlas_dot_submission__pb2
+from eolymp.atlas import problem_pb2 as eolymp_dot_atlas_dot_problem__pb2
 from eolymp.atlas import score_pb2 as eolymp_dot_atlas_dot_score__pb2
+from eolymp.atlas import submission_pb2 as eolymp_dot_atlas_dot_submission__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/atlas/events.proto\x12\x0c\x65olymp.atlas\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x1d\x65olymp/atlas/permission.proto\x1a\x1d\x65olymp/atlas/submission.proto\x1a\x18\x65olymp/atlas/score.proto\"=\n\x13ProblemUpdatedEvent\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\")\n\x13ProblemDeletedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"[\n\x17PermissionsUpdatedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12,\n\npermission\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Permission\">\n\x17PermissionsDeletedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\"W\n\x17SubmissionCompleteEvent\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Submission\x12\x0e\n\x06update\x18\x02 \x01(\x08\"7\n\x11ScoreUpdatedEvent\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.ScoreB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/atlas/events.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/atlas/permission.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x18\x65olymp/atlas/score.proto\x1a\x1d\x65olymp/atlas/submission.proto\"=\n\x13ProblemUpdatedEvent\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\")\n\x13ProblemDeletedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"[\n\x17PermissionsUpdatedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12,\n\npermission\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Permission\">\n\x17PermissionsDeletedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\"W\n\x17SubmissionCompleteEvent\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Submission\x12\x0e\n\x06update\x18\x02 \x01(\x08\"7\n\x11ScoreUpdatedEvent\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.ScoreB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.events_pb2', globals())

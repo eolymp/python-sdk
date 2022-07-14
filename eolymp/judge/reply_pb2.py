@@ -11,11 +11,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/reply.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!eolymp/annotations/resource.proto\"\x9e\x01\n\x05Reply\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\n \x01(\t\x12.\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp:$\xb2\xe3\n \xba\xe3\n\x05reply\xc2\xe3\n\x13\x65olymp.judge.TicketB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/reply.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\x01\n\x05Reply\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\n \x01(\t\x12.\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp:$\xb2\xe3\n \xba\xe3\n\x05reply\xc2\xe3\n\x13\x65olymp.judge.TicketB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.reply_pb2', globals())

@@ -1,12 +1,12 @@
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.wellknown import expression_pb2 as _expression_pb2
 from eolymp.cognito import access_key_pb2 as _access_key_pb2
 from eolymp.cognito import entitlement_pb2 as _entitlement_pb2
-from eolymp.cognito import user_pb2 as _user_pb2
 from eolymp.cognito import quota_pb2 as _quota_pb2
+from eolymp.cognito import user_pb2 as _user_pb2
+from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -373,18 +373,18 @@ class UpdatePasswordOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdatePictureInput(_message.Message):
-    __slots__ = ["data", "filename", "offsetX", "offsetY", "size"]
+    __slots__ = ["data", "filename", "offset_x", "offset_y", "size"]
     DATA_FIELD_NUMBER: _ClassVar[int]
     FILENAME_FIELD_NUMBER: _ClassVar[int]
-    OFFSETX_FIELD_NUMBER: _ClassVar[int]
-    OFFSETY_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_X_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_Y_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     data: bytes
     filename: str
-    offsetX: int
-    offsetY: int
+    offset_x: int
+    offset_y: int
     size: int
-    def __init__(self, filename: _Optional[str] = ..., data: _Optional[bytes] = ..., offsetX: _Optional[int] = ..., offsetY: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+    def __init__(self, filename: _Optional[str] = ..., data: _Optional[bytes] = ..., offset_x: _Optional[int] = ..., offset_y: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class UpdatePictureOutput(_message.Message):
     __slots__ = []

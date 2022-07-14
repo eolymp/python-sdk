@@ -2,8 +2,6 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.annotations import service_pb2 as _service_pb2
-from eolymp.wellknown import expression_pb2 as _expression_pb2
-from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.judge import activity_pb2 as _activity_pb2
 from eolymp.judge import announcement_pb2 as _announcement_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
@@ -16,6 +14,8 @@ from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import scoreboard_pb2 as _scoreboard_pb2
 from eolymp.judge import submission_pb2 as _submission_pb2
 from eolymp.judge import ticket_pb2 as _ticket_pb2
+from eolymp.wellknown import direction_pb2 as _direction_pb2
+from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

@@ -11,11 +11,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/judge/announcement.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!eolymp/annotations/resource.proto\"\xaa\x01\n\x0c\x41nnouncement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07subject\x18\n \x01(\t\x12\x0f\n\x07message\x18\x0b \x01(\t:(\xb2\xe3\n$\xba\xe3\n\x08\x61\x63tivity\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/judge/announcement.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaa\x01\n\x0c\x41nnouncement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07subject\x18\n \x01(\t\x12\x0f\n\x07message\x18\x0b \x01(\t:(\xb2\xe3\n$\xba\xe3\n\x08\x61\x63tivity\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.announcement_pb2', globals())

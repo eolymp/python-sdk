@@ -1,5 +1,5 @@
-from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.workspace import file_pb2 as _file_pb2
 from eolymp.workspace import project_pb2 as _project_pb2
 from google.protobuf.internal import containers as _containers

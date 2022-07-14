@@ -2,9 +2,6 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.annotations import service_pb2 as _service_pb2
-from eolymp.executor import verifier_pb2 as _verifier_pb2
-from eolymp.executor import interactor_pb2 as _interactor_pb2
-from eolymp.wellknown import expression_pb2 as _expression_pb2
 from eolymp.atlas import attachment_pb2 as _attachment_pb2
 from eolymp.atlas import category_pb2 as _category_pb2
 from eolymp.atlas import change_pb2 as _change_pb2
@@ -17,6 +14,9 @@ from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.atlas import template_pb2 as _template_pb2
 from eolymp.atlas import test_pb2 as _test_pb2
 from eolymp.atlas import testset_pb2 as _testset_pb2
+from eolymp.executor import interactor_pb2 as _interactor_pb2
+from eolymp.executor import verifier_pb2 as _verifier_pb2
+from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
