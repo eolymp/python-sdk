@@ -1,6 +1,7 @@
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from eolymp.annotations import resource_pb2 as _resource_pb2
-from eolymp.judge import feedback_pb2 as _feedback_pb2
+from eolymp.atlas import scoring_pb2 as _scoring_pb2
+from eolymp.atlas import feedback_pb2 as _feedback_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -15,23 +16,18 @@ class Submission(_message.Message):
         __slots__ = []
     class Group(_message.Message):
         __slots__ = ["cost", "cpu_time_usage", "dependencies", "feedback_policy", "index", "memory_usage", "runs", "score", "scoring_mode", "status", "testset_id", "wall_time_usage"]
-        class ScoringMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = []
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ACCEPTED: Submission.Group.Status
-        ALL: Submission.Group.ScoringMode
         BLOCKED: Submission.Group.Status
         COST_FIELD_NUMBER: _ClassVar[int]
         CPU_EXHAUSTED: Submission.Group.Status
         CPU_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
         DEPENDENCIES_FIELD_NUMBER: _ClassVar[int]
-        EACH: Submission.Group.ScoringMode
         FEEDBACK_POLICY_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         MEMORY_OVERFLOW: Submission.Group.Status
         MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
-        NONE: Submission.Group.ScoringMode
         PENDING: Submission.Group.Status
         RUNS_FIELD_NUMBER: _ClassVar[int]
         RUNTIME_ERROR: Submission.Group.Status
@@ -54,11 +50,11 @@ class Submission(_message.Message):
         memory_usage: int
         runs: _containers.RepeatedCompositeFieldContainer[Submission.Run]
         score: float
-        scoring_mode: Submission.Group.ScoringMode
+        scoring_mode: _scoring_pb2.ScoringMode
         status: Submission.Group.Status
         testset_id: str
         wall_time_usage: int
-        def __init__(self, index: _Optional[int] = ..., testset_id: _Optional[str] = ..., status: _Optional[_Union[Submission.Group.Status, str]] = ..., dependencies: _Optional[_Iterable[int]] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., scoring_mode: _Optional[_Union[Submission.Group.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_feedback_pb2.FeedbackPolicy, str]] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., runs: _Optional[_Iterable[_Union[Submission.Run, _Mapping]]] = ...) -> None: ...
+        def __init__(self, index: _Optional[int] = ..., testset_id: _Optional[str] = ..., status: _Optional[_Union[Submission.Group.Status, str]] = ..., dependencies: _Optional[_Iterable[int]] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., scoring_mode: _Optional[_Union[_scoring_pb2.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_feedback_pb2.FeedbackPolicy, str]] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., runs: _Optional[_Iterable[_Union[Submission.Run, _Mapping]]] = ...) -> None: ...
     class Run(_message.Message):
         __slots__ = ["cost", "cpu_time_usage", "id", "index", "memory_usage", "score", "status", "test_id", "wall_time_usage"]
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
