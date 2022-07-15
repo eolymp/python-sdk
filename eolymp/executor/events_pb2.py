@@ -12,9 +12,10 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.executor import status_pb2 as eolymp_dot_executor_dot_status__pb2
+from eolymp.executor import status_v2_pb2 as eolymp_dot_executor_dot_status__v2__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/executor/events.proto\x12\x0f\x65olymp.executor\x1a\x1c\x65olymp/executor/status.proto\"=\n\x12StatusUpdatedEvent\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.eolymp.executor.StatusB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/executor/events.proto\x12\x0f\x65olymp.executor\x1a\x1c\x65olymp/executor/status.proto\x1a\x1f\x65olymp/executor/status_v2.proto\"=\n\x12StatusUpdatedEvent\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.eolymp.executor.Status\"A\n\x14StatusV2UpdatedEvent\x12)\n\x06status\x18\x01 \x01(\x0b\x32\x19.eolymp.executor.StatusV2B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.events_pb2', globals())
@@ -22,6 +23,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
-  _STATUSUPDATEDEVENT._serialized_start=79
-  _STATUSUPDATEDEVENT._serialized_end=140
+  _STATUSUPDATEDEVENT._serialized_start=112
+  _STATUSUPDATEDEVENT._serialized_end=173
+  _STATUSV2UPDATEDEVENT._serialized_start=175
+  _STATUSV2UPDATEDEVENT._serialized_end=240
 # @@protoc_insertion_point(module_scope)
