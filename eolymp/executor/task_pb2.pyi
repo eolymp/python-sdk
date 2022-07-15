@@ -10,18 +10,20 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class Task(_message.Message):
     __slots__ = ["constraints", "interactor", "lang", "origin", "preconditions", "priority", "redirect_stderr_to_stdout", "reference", "runs", "runtime", "source", "use_file_io", "use_workspace_archive", "verifier"]
     class Constraint(_message.Message):
-        __slots__ = ["cpu_time_limit", "file_size_limit", "memory_limit", "selector", "wall_time_limit"]
+        __slots__ = ["actor", "cpu_time_limit", "file_size_limit", "memory_limit", "selector", "wall_time_limit"]
+        ACTOR_FIELD_NUMBER: _ClassVar[int]
         CPU_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
         FILE_SIZE_LIMIT_FIELD_NUMBER: _ClassVar[int]
         MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
         SELECTOR_FIELD_NUMBER: _ClassVar[int]
         WALL_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
+        actor: str
         cpu_time_limit: int
         file_size_limit: int
         memory_limit: int
         selector: _containers.RepeatedScalarFieldContainer[str]
         wall_time_limit: int
-        def __init__(self, selector: _Optional[_Iterable[str]] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
+        def __init__(self, selector: _Optional[_Iterable[str]] = ..., actor: _Optional[str] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
     class Precondition(_message.Message):
         __slots__ = ["depends_on", "max_execution_time", "selector", "stop_on_failure"]
         DEPENDS_ON_FIELD_NUMBER: _ClassVar[int]
