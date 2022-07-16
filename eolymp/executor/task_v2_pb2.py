@@ -16,7 +16,7 @@ from eolymp.executor import task_pb2 as eolymp_dot_executor_dot_task__pb2
 from eolymp.executor import verifier_pb2 as eolymp_dot_executor_dot_verifier__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/executor/task_v2.proto\x12\x0f\x65olymp.executor\x1a eolymp/executor/interactor.proto\x1a\x1a\x65olymp/executor/task.proto\x1a\x1e\x65olymp/executor/verifier.proto\"\xaf\x0c\n\x06TaskV2\x12\x11\n\treference\x18\x01 \x01(\t\x12\x0e\n\x06origin\x18\x02 \x01(\t\x12\x39\n\rpreconditions\x18\n \x03(\x0b\x32\".eolymp.executor.Task.Precondition\x12-\n\x06\x61\x63tors\x18\x14 \x03(\x0b\x32\x1d.eolymp.executor.TaskV2.Actor\x12)\n\x04runs\x18\x1e \x03(\x0b\x32\x1b.eolymp.executor.TaskV2.Run\x1a\xa6\x03\n\x05\x41\x63tor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\t\x12\x12\n\nsource_ern\x18\x0b \x01(\t\x12<\n\x08init_env\x18( \x03(\x0b\x32*.eolymp.executor.TaskV2.Actor.InitEnvEntry\x12\x30\n\ninit_files\x18) \x03(\x0b\x32\x1c.eolymp.executor.TaskV2.File\x12\x0c\n\x04\x61rgs\x18\x14 \x03(\t\x12\x33\n\x03\x65nv\x18\x15 \x03(\x0b\x32&.eolymp.executor.TaskV2.Actor.EnvEntry\x12\r\n\x05stdin\x18\x1e \x01(\t\x12\x0e\n\x06stdout\x18\x1f \x01(\t\x12\x0e\n\x06stderr\x18  \x01(\t\x12,\n\x05mount\x18! \x03(\x0b\x32\x1d.eolymp.executor.TaskV2.Mount\x1a.\n\x0cInitEnvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a*\n\x08\x45nvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\x05Mount\x12\x12\n\nfrom_actor\x18\x01 \x01(\t\x12\x0f\n\x07to_path\x18\x02 \x01(\t\x1a(\n\x04\x46ile\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x12\n\nsource_ern\x18\x02 \x01(\t\x1a\x64\n\x03Run\x12\x11\n\treference\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0e\n\x06labels\x18\n \x03(\t\x12+\n\x05steps\x18\x14 \x03(\x0b\x32\x1c.eolymp.executor.TaskV2.Step\x1a\xd8\x01\n\x04Step\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\x05write\x18\n \x03(\x0b\x32\x1f.eolymp.executor.TaskV2.WriteOp\x12,\n\x04\x63opy\x18\x0b \x03(\x0b\x32\x1e.eolymp.executor.TaskV2.CopyOp\x12\x32\n\x07\x65xecute\x18\x0c \x03(\x0b\x32!.eolymp.executor.TaskV2.ExecuteOp\x12\x30\n\x06upload\x18\r \x03(\x0b\x32 .eolymp.executor.TaskV2.UploadOp\x1aH\n\x07WriteOp\x12\x12\n\nsource_ern\x18\x01 \x01(\t\x12\x14\n\x0ctarget_actor\x18\x02 \x01(\t\x12\x13\n\x0btarget_path\x18\x03 \x01(\t\x1a}\n\x08UploadOp\x12\x14\n\x0csource_actor\x18\x01 \x01(\t\x12\x13\n\x0bsource_path\x18\x02 \x01(\t\x12\x13\n\x0btarget_name\x18\x03 \x01(\t\x12\x12\n\noptionally\x18\x04 \x01(\x08\x12\x0b\n\x03ttl\x18\x05 \x01(\r\x12\x10\n\x08max_size\x18\x06 \x01(\r\x1ar\n\x06\x43opyOp\x12\x14\n\x0csource_actor\x18\x01 \x01(\t\x12\x13\n\x0bsource_path\x18\x02 \x01(\t\x12\x14\n\x0ctarget_actor\x18\x03 \x01(\t\x12\x13\n\x0btarget_path\x18\x04 \x01(\t\x12\x12\n\noptionally\x18\x05 \x01(\x08\x1a\xed\x01\n\tExecuteOp\x12\r\n\x05\x61\x63tor\x18\x01 \x01(\t\x12\x0c\n\x04\x61rgs\x18\x02 \x03(\t\x12\x37\n\x03\x65nv\x18\x03 \x03(\x0b\x32*.eolymp.executor.TaskV2.ExecuteOp.EnvEntry\x12\x17\n\x0fwall_time_limit\x18\n \x01(\r\x12\x16\n\x0e\x63pu_time_limit\x18\x0b \x01(\r\x12\x14\n\x0cmemory_limit\x18\x0c \x01(\x04\x12\x17\n\x0f\x66ile_size_limit\x18\r \x01(\r\x1a*\n\x08\x45nvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/executor/task_v2.proto\x12\x0f\x65olymp.executor\x1a eolymp/executor/interactor.proto\x1a\x1a\x65olymp/executor/task.proto\x1a\x1e\x65olymp/executor/verifier.proto\"\xc3\x0c\n\x06TaskV2\x12\x11\n\treference\x18\x01 \x01(\t\x12\x0e\n\x06origin\x18\x02 \x01(\t\x12\x39\n\rpreconditions\x18\n \x03(\x0b\x32\".eolymp.executor.Task.Precondition\x12-\n\x06\x61\x63tors\x18\x14 \x03(\x0b\x32\x1d.eolymp.executor.TaskV2.Actor\x12)\n\x04runs\x18\x1e \x03(\x0b\x32\x1b.eolymp.executor.TaskV2.Run\x1a\xba\x03\n\x05\x41\x63tor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\t\x12\x12\n\nsource_ern\x18\x0b \x01(\t\x12<\n\x08init_env\x18( \x03(\x0b\x32*.eolymp.executor.TaskV2.Actor.InitEnvEntry\x12\x30\n\ninit_files\x18) \x03(\x0b\x32\x1c.eolymp.executor.TaskV2.File\x12\x0c\n\x04\x61rgs\x18\x14 \x03(\t\x12\x33\n\x03\x65nv\x18\x15 \x03(\x0b\x32&.eolymp.executor.TaskV2.Actor.EnvEntry\x12\r\n\x05stdin\x18\x1e \x01(\t\x12\x0e\n\x06stdout\x18\x1f \x01(\t\x12\x0e\n\x06stderr\x18  \x01(\t\x12\x12\n\nstdin_last\x18! \x01(\x08\x12,\n\x05mount\x18\x32 \x03(\x0b\x32\x1d.eolymp.executor.TaskV2.Mount\x1a.\n\x0cInitEnvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a*\n\x08\x45nvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\x05Mount\x12\x12\n\nfrom_actor\x18\x01 \x01(\t\x12\x0f\n\x07to_path\x18\x02 \x01(\t\x1a(\n\x04\x46ile\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x12\n\nsource_ern\x18\x02 \x01(\t\x1a\x64\n\x03Run\x12\x11\n\treference\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0e\n\x06labels\x18\n \x03(\t\x12+\n\x05steps\x18\x14 \x03(\x0b\x32\x1c.eolymp.executor.TaskV2.Step\x1a\xd8\x01\n\x04Step\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\x05write\x18\n \x03(\x0b\x32\x1f.eolymp.executor.TaskV2.WriteOp\x12,\n\x04\x63opy\x18\x0b \x03(\x0b\x32\x1e.eolymp.executor.TaskV2.CopyOp\x12\x32\n\x07\x65xecute\x18\x0c \x03(\x0b\x32!.eolymp.executor.TaskV2.ExecuteOp\x12\x30\n\x06upload\x18\r \x03(\x0b\x32 .eolymp.executor.TaskV2.UploadOp\x1aH\n\x07WriteOp\x12\x12\n\nsource_ern\x18\x01 \x01(\t\x12\x14\n\x0ctarget_actor\x18\x02 \x01(\t\x12\x13\n\x0btarget_path\x18\x03 \x01(\t\x1a}\n\x08UploadOp\x12\x14\n\x0csource_actor\x18\x01 \x01(\t\x12\x13\n\x0bsource_path\x18\x02 \x01(\t\x12\x13\n\x0btarget_name\x18\x03 \x01(\t\x12\x12\n\noptionally\x18\x04 \x01(\x08\x12\x0b\n\x03ttl\x18\x05 \x01(\r\x12\x10\n\x08max_size\x18\x06 \x01(\r\x1ar\n\x06\x43opyOp\x12\x14\n\x0csource_actor\x18\x01 \x01(\t\x12\x13\n\x0bsource_path\x18\x02 \x01(\t\x12\x14\n\x0ctarget_actor\x18\x03 \x01(\t\x12\x13\n\x0btarget_path\x18\x04 \x01(\t\x12\x12\n\noptionally\x18\x05 \x01(\x08\x1a\xed\x01\n\tExecuteOp\x12\r\n\x05\x61\x63tor\x18\x01 \x01(\t\x12\x0c\n\x04\x61rgs\x18\x02 \x03(\t\x12\x37\n\x03\x65nv\x18\x03 \x03(\x0b\x32*.eolymp.executor.TaskV2.ExecuteOp.EnvEntry\x12\x17\n\x0fwall_time_limit\x18\n \x01(\r\x12\x16\n\x0e\x63pu_time_limit\x18\x0b \x01(\r\x12\x14\n\x0cmemory_limit\x18\x0c \x01(\x04\x12\x17\n\x0f\x66ile_size_limit\x18\r \x01(\r\x1a*\n\x08\x45nvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.task_v2_pb2', globals())
@@ -31,29 +31,29 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TASKV2_EXECUTEOP_ENVENTRY._options = None
   _TASKV2_EXECUTEOP_ENVENTRY._serialized_options = b'8\001'
   _TASKV2._serialized_start=145
-  _TASKV2._serialized_end=1728
+  _TASKV2._serialized_end=1748
   _TASKV2_ACTOR._serialized_start=340
-  _TASKV2_ACTOR._serialized_end=762
-  _TASKV2_ACTOR_INITENVENTRY._serialized_start=672
-  _TASKV2_ACTOR_INITENVENTRY._serialized_end=718
-  _TASKV2_ACTOR_ENVENTRY._serialized_start=720
-  _TASKV2_ACTOR_ENVENTRY._serialized_end=762
-  _TASKV2_MOUNT._serialized_start=764
-  _TASKV2_MOUNT._serialized_end=808
-  _TASKV2_FILE._serialized_start=810
-  _TASKV2_FILE._serialized_end=850
-  _TASKV2_RUN._serialized_start=852
-  _TASKV2_RUN._serialized_end=952
-  _TASKV2_STEP._serialized_start=955
-  _TASKV2_STEP._serialized_end=1171
-  _TASKV2_WRITEOP._serialized_start=1173
-  _TASKV2_WRITEOP._serialized_end=1245
-  _TASKV2_UPLOADOP._serialized_start=1247
-  _TASKV2_UPLOADOP._serialized_end=1372
-  _TASKV2_COPYOP._serialized_start=1374
-  _TASKV2_COPYOP._serialized_end=1488
-  _TASKV2_EXECUTEOP._serialized_start=1491
-  _TASKV2_EXECUTEOP._serialized_end=1728
-  _TASKV2_EXECUTEOP_ENVENTRY._serialized_start=720
-  _TASKV2_EXECUTEOP_ENVENTRY._serialized_end=762
+  _TASKV2_ACTOR._serialized_end=782
+  _TASKV2_ACTOR_INITENVENTRY._serialized_start=692
+  _TASKV2_ACTOR_INITENVENTRY._serialized_end=738
+  _TASKV2_ACTOR_ENVENTRY._serialized_start=740
+  _TASKV2_ACTOR_ENVENTRY._serialized_end=782
+  _TASKV2_MOUNT._serialized_start=784
+  _TASKV2_MOUNT._serialized_end=828
+  _TASKV2_FILE._serialized_start=830
+  _TASKV2_FILE._serialized_end=870
+  _TASKV2_RUN._serialized_start=872
+  _TASKV2_RUN._serialized_end=972
+  _TASKV2_STEP._serialized_start=975
+  _TASKV2_STEP._serialized_end=1191
+  _TASKV2_WRITEOP._serialized_start=1193
+  _TASKV2_WRITEOP._serialized_end=1265
+  _TASKV2_UPLOADOP._serialized_start=1267
+  _TASKV2_UPLOADOP._serialized_end=1392
+  _TASKV2_COPYOP._serialized_start=1394
+  _TASKV2_COPYOP._serialized_end=1508
+  _TASKV2_EXECUTEOP._serialized_start=1511
+  _TASKV2_EXECUTEOP._serialized_end=1748
+  _TASKV2_EXECUTEOP_ENVENTRY._serialized_start=740
+  _TASKV2_EXECUTEOP_ENVENTRY._serialized_end=782
 # @@protoc_insertion_point(module_scope)

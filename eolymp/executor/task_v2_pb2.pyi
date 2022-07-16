@@ -11,7 +11,7 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class TaskV2(_message.Message):
     __slots__ = ["actors", "origin", "preconditions", "reference", "runs"]
     class Actor(_message.Message):
-        __slots__ = ["args", "env", "init_env", "init_files", "mount", "name", "runtime", "source_ern", "stderr", "stdin", "stdout"]
+        __slots__ = ["args", "env", "init_env", "init_files", "mount", "name", "runtime", "source_ern", "stderr", "stdin", "stdin_last", "stdout"]
         class EnvEntry(_message.Message):
             __slots__ = ["key", "value"]
             KEY_FIELD_NUMBER: _ClassVar[int]
@@ -36,6 +36,7 @@ class TaskV2(_message.Message):
         SOURCE_ERN_FIELD_NUMBER: _ClassVar[int]
         STDERR_FIELD_NUMBER: _ClassVar[int]
         STDIN_FIELD_NUMBER: _ClassVar[int]
+        STDIN_LAST_FIELD_NUMBER: _ClassVar[int]
         STDOUT_FIELD_NUMBER: _ClassVar[int]
         args: _containers.RepeatedScalarFieldContainer[str]
         env: _containers.ScalarMap[str, str]
@@ -47,8 +48,9 @@ class TaskV2(_message.Message):
         source_ern: str
         stderr: str
         stdin: str
+        stdin_last: bool
         stdout: str
-        def __init__(self, name: _Optional[str] = ..., runtime: _Optional[str] = ..., source_ern: _Optional[str] = ..., init_env: _Optional[_Mapping[str, str]] = ..., init_files: _Optional[_Iterable[_Union[TaskV2.File, _Mapping]]] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ..., stdin: _Optional[str] = ..., stdout: _Optional[str] = ..., stderr: _Optional[str] = ..., mount: _Optional[_Iterable[_Union[TaskV2.Mount, _Mapping]]] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., runtime: _Optional[str] = ..., source_ern: _Optional[str] = ..., init_env: _Optional[_Mapping[str, str]] = ..., init_files: _Optional[_Iterable[_Union[TaskV2.File, _Mapping]]] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ..., stdin: _Optional[str] = ..., stdout: _Optional[str] = ..., stderr: _Optional[str] = ..., stdin_last: bool = ..., mount: _Optional[_Iterable[_Union[TaskV2.Mount, _Mapping]]] = ...) -> None: ...
     class CopyOp(_message.Message):
         __slots__ = ["optionally", "source_actor", "source_path", "target_actor", "target_path"]
         OPTIONALLY_FIELD_NUMBER: _ClassVar[int]
