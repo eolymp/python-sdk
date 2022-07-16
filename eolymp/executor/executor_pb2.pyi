@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.executor import job_pb2 as _job_pb2
 from eolymp.executor import language_pb2 as _language_pb2
 from eolymp.executor import runtime_pb2 as _runtime_pb2
 from eolymp.executor import task_pb2 as _task_pb2
@@ -13,10 +14,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateTaskInput(_message.Message):
-    __slots__ = ["task"]
+    __slots__ = ["job", "task"]
+    JOB_FIELD_NUMBER: _ClassVar[int]
     TASK_FIELD_NUMBER: _ClassVar[int]
+    job: _job_pb2.Job
     task: _task_pb2.Task
-    def __init__(self, task: _Optional[_Union[_task_pb2.Task, _Mapping]] = ...) -> None: ...
+    def __init__(self, task: _Optional[_Union[_task_pb2.Task, _Mapping]] = ..., job: _Optional[_Union[_job_pb2.Job, _Mapping]] = ...) -> None: ...
 
 class CreateTaskOutput(_message.Message):
     __slots__ = []
