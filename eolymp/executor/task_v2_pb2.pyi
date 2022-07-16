@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TaskV2(_message.Message):
-    __slots__ = ["actors", "constraints", "origin", "preconditions", "reference", "runs"]
+    __slots__ = ["actors", "origin", "preconditions", "reference", "runs"]
     class Actor(_message.Message):
         __slots__ = ["args", "env", "init_env", "init_files", "mount", "name", "runtime", "source_ern", "stderr", "stdin", "stdout"]
         class EnvEntry(_message.Message):
@@ -63,7 +63,7 @@ class TaskV2(_message.Message):
         target_path: str
         def __init__(self, source_actor: _Optional[str] = ..., source_path: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ..., optionally: bool = ...) -> None: ...
     class ExecuteOp(_message.Message):
-        __slots__ = ["actor", "args", "env"]
+        __slots__ = ["actor", "args", "cpu_time_limit", "env", "file_size_limit", "memory_limit", "wall_time_limit"]
         class EnvEntry(_message.Message):
             __slots__ = ["key", "value"]
             KEY_FIELD_NUMBER: _ClassVar[int]
@@ -73,11 +73,19 @@ class TaskV2(_message.Message):
             def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
         ACTOR_FIELD_NUMBER: _ClassVar[int]
         ARGS_FIELD_NUMBER: _ClassVar[int]
+        CPU_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
         ENV_FIELD_NUMBER: _ClassVar[int]
+        FILE_SIZE_LIMIT_FIELD_NUMBER: _ClassVar[int]
+        MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
+        WALL_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
         actor: str
         args: _containers.RepeatedScalarFieldContainer[str]
+        cpu_time_limit: int
         env: _containers.ScalarMap[str, str]
-        def __init__(self, actor: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ...) -> None: ...
+        file_size_limit: int
+        memory_limit: int
+        wall_time_limit: int
+        def __init__(self, actor: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
     class File(_message.Message):
         __slots__ = ["path", "source_ern"]
         PATH_FIELD_NUMBER: _ClassVar[int]
@@ -141,15 +149,13 @@ class TaskV2(_message.Message):
         target_path: str
         def __init__(self, source_ern: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ...) -> None: ...
     ACTORS_FIELD_NUMBER: _ClassVar[int]
-    CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
     actors: _containers.RepeatedCompositeFieldContainer[TaskV2.Actor]
-    constraints: _containers.RepeatedCompositeFieldContainer[_task_pb2.Task.Constraint]
     origin: str
     preconditions: _containers.RepeatedCompositeFieldContainer[_task_pb2.Task.Precondition]
     reference: str
     runs: _containers.RepeatedCompositeFieldContainer[TaskV2.Run]
-    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., preconditions: _Optional[_Iterable[_Union[_task_pb2.Task.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[_task_pb2.Task.Constraint, _Mapping]]] = ..., actors: _Optional[_Iterable[_Union[TaskV2.Actor, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[TaskV2.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., preconditions: _Optional[_Iterable[_Union[_task_pb2.Task.Precondition, _Mapping]]] = ..., actors: _Optional[_Iterable[_Union[TaskV2.Actor, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[TaskV2.Run, _Mapping]]] = ...) -> None: ...
