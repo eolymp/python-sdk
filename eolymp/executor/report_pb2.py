@@ -11,9 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.executor import usage_pb2 as eolymp_dot_executor_dot_usage__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/executor/report.proto\x12\x0f\x65olymp.executor\"\xc6\t\n\x06Report\x12\x11\n\treference\x18\x01 \x01(\t\x12\x0e\n\x06origin\x18\x02 \x01(\t\x12\r\n\x05\x61gent\x18n \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12,\n\x05state\x18\n \x01(\x0e\x32\x1d.eolymp.executor.Report.State\x12-\n\x06\x61\x63tors\x18\x32 \x03(\x0b\x32\x1d.eolymp.executor.Report.Actor\x12)\n\x04runs\x18( \x03(\x0b\x32\x1b.eolymp.executor.Report.Run\x12\r\n\x05\x65rror\x18\x14 \x01(\t\x1a\x37\n\x05\x41\x63tor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tsignature\x18\x03 \x01(\t\x12\r\n\x05\x65rror\x18\x04 \x01(\t\x1as\n\x03Run\x12\x11\n\treference\x18\x01 \x01(\t\x12,\n\x05state\x18\x02 \x01(\x0e\x32\x1d.eolymp.executor.Report.State\x12+\n\x05steps\x18\n \x03(\x0b\x32\x1c.eolymp.executor.Report.Step\x1a\xe3\x05\n\x04Step\x12\x0c\n\x04name\x18\x01 \x01(\t\x12,\n\x05state\x18\x02 \x01(\x0e\x32\x1d.eolymp.executor.Report.State\x12\x37\n\x07\x65xecute\x18\x0c \x01(\x0b\x32$.eolymp.executor.Report.Step.ExecuteH\x00\x12\x35\n\x06upload\x18\r \x01(\x0b\x32#.eolymp.executor.Report.Step.UploadH\x00\x1a\xf1\x03\n\x07\x45xecute\x12\r\n\x05\x61\x63tor\x18\x01 \x01(\t\x12\x37\n\x04\x65xit\x18\x02 \x01(\x0e\x32).eolymp.executor.Report.Step.Execute.Exit\x12\x42\n\x07outputs\x18\x03 \x03(\x0b\x32\x31.eolymp.executor.Report.Step.Execute.OutputsEntry\x12\x17\n\x0fwall_time_usage\x18\x33 \x01(\r\x12\x17\n\x0fwall_time_limit\x18= \x01(\r\x12\x16\n\x0e\x63pu_time_usage\x18\x34 \x01(\r\x12\x16\n\x0e\x63pu_time_limit\x18> \x01(\r\x12\x14\n\x0cmemory_usage\x18\x35 \x01(\x04\x12\x14\n\x0cmemory_limit\x18? \x01(\x04\x12\x11\n\texit_code\x18\x46 \x01(\r\x12\x0e\n\x06signal\x18G \x01(\r\x1a.\n\x0cOutputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x04\x45xit\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x0b\n\x07TIMEOUT\x10\x02\x12\x11\n\rCPU_EXHAUSTED\x10\x03\x12\x13\n\x0fMEMORY_OVERFLOW\x10\x04\x12\x11\n\rRUNTIME_ERROR\x10\x05\x12\x0b\n\x07SKIPPED\x10\x06\x1a\x31\n\x06Upload\x12\x13\n\x0btarget_name\x18\x01 \x01(\t\x12\x12\n\ntarget_ern\x18\x02 \x01(\tB\x08\n\x06output\"N\n\x05State\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tEXECUTING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\n\n\x06\x46\x41ILED\x10\x04\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/executor/report.proto\x12\x0f\x65olymp.executor\x1a\x1b\x65olymp/executor/usage.proto\"\x80\x0c\n\x06Report\x12\x11\n\treference\x18\x01 \x01(\t\x12\x0e\n\x06origin\x18\x02 \x01(\t\x12\x12\n\nagent_name\x18n \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12,\n\x05state\x18\n \x01(\x0e\x32\x1d.eolymp.executor.Report.State\x12-\n\x06\x61\x63tors\x18\x32 \x03(\x0b\x32\x1d.eolymp.executor.Report.Actor\x12)\n\x04runs\x18( \x03(\x0b\x32\x1b.eolymp.executor.Report.Run\x12\r\n\x05\x65rror\x18\x14 \x01(\t\x1a?\n\x05\x41\x63tor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tsignature\x18\x03 \x01(\t\x12\x15\n\rerror_message\x18\x04 \x01(\t\x1a\x8a\x01\n\x03Run\x12\x11\n\treference\x18\x01 \x01(\t\x12,\n\x05state\x18\x02 \x01(\x0e\x32\x1d.eolymp.executor.Report.State\x12\x15\n\rerror_message\x18\x03 \x01(\t\x12+\n\x05steps\x18\n \x03(\x0b\x32\x1c.eolymp.executor.Report.Step\x1a\xd8\x07\n\x04Step\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x35\n\x07outcome\x18\x02 \x01(\x0e\x32$.eolymp.executor.Report.Step.Outcome\x12\x37\n\x07\x65xecute\x18\x0c \x01(\x0b\x32$.eolymp.executor.Report.Step.ExecuteH\x00\x12\x35\n\x06upload\x18\r \x01(\x0b\x32#.eolymp.executor.Report.Step.UploadH\x00\x12\x33\n\x05group\x18\x0e \x01(\x0b\x32\".eolymp.executor.Report.Step.GroupH\x00\x1a\xb0\x04\n\x07\x45xecute\x12\r\n\x05\x61\x63tor\x18\x01 \x01(\t\x12>\n\x0b\x65xit_status\x18\x02 \x01(\x0e\x32).eolymp.executor.Report.Step.Execute.Exit\x12\x42\n\x07outputs\x18\x03 \x03(\x0b\x32\x31.eolymp.executor.Report.Step.Execute.OutputsEntry\x12\x17\n\x0fwall_time_usage\x18\x33 \x01(\r\x12\x17\n\x0fwall_time_limit\x18= \x01(\r\x12\x16\n\x0e\x63pu_time_usage\x18\x34 \x01(\r\x12\x16\n\x0e\x63pu_time_limit\x18> \x01(\r\x12\x14\n\x0cmemory_usage\x18\x35 \x01(\x04\x12\x14\n\x0cmemory_limit\x18? \x01(\x04\x12\x11\n\texit_code\x18\x46 \x01(\r\x12\x0e\n\x06signal\x18G \x01(\r\x12\x36\n\x0eresource_usage\x18P \x01(\x0b\x32\x1e.eolymp.executor.ResourceUsage\x1a.\n\x0cOutputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x04\x45xit\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x0b\n\x07TIMEOUT\x10\x02\x12\x11\n\rCPU_EXHAUSTED\x10\x03\x12\x13\n\x0fMEMORY_OVERFLOW\x10\x04\x12\x11\n\rRUNTIME_ERROR\x10\x05\x12\x0b\n\x07SKIPPED\x10\x06\x1a\x31\n\x06Upload\x12\x13\n\x0btarget_name\x18\x01 \x01(\t\x12\x12\n\ntarget_ern\x18\x02 \x01(\t\x1a@\n\x05Group\x12\x37\n\tprocesses\x18\x01 \x03(\x0b\x32$.eolymp.executor.Report.Step.Execute\"4\n\x07Outcome\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x0c\n\x08\x43OMPLETE\x10\x01\x12\n\n\x06\x46\x41ILED\x10\x02\x42\x08\n\x06output\"n\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tEXECUTING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\n\n\x06\x46\x41ILED\x10\x04\x12\x0b\n\x07\x42LOCKED\x10\x05\x12\x0b\n\x07SKIPPED\x10\x06\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.report_pb2', globals())
@@ -23,22 +24,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
   _REPORT_STEP_EXECUTE_OUTPUTSENTRY._options = None
   _REPORT_STEP_EXECUTE_OUTPUTSENTRY._serialized_options = b'8\001'
-  _REPORT._serialized_start=50
-  _REPORT._serialized_end=1272
-  _REPORT_ACTOR._serialized_start=278
-  _REPORT_ACTOR._serialized_end=333
-  _REPORT_RUN._serialized_start=335
-  _REPORT_RUN._serialized_end=450
-  _REPORT_STEP._serialized_start=453
-  _REPORT_STEP._serialized_end=1192
-  _REPORT_STEP_EXECUTE._serialized_start=634
-  _REPORT_STEP_EXECUTE._serialized_end=1131
-  _REPORT_STEP_EXECUTE_OUTPUTSENTRY._serialized_start=962
-  _REPORT_STEP_EXECUTE_OUTPUTSENTRY._serialized_end=1008
-  _REPORT_STEP_EXECUTE_EXIT._serialized_start=1010
-  _REPORT_STEP_EXECUTE_EXIT._serialized_end=1131
-  _REPORT_STEP_UPLOAD._serialized_start=1133
-  _REPORT_STEP_UPLOAD._serialized_end=1182
-  _REPORT_STATE._serialized_start=1194
-  _REPORT_STATE._serialized_end=1272
+  _REPORT._serialized_start=79
+  _REPORT._serialized_end=1615
+  _REPORT_ACTOR._serialized_start=312
+  _REPORT_ACTOR._serialized_end=375
+  _REPORT_RUN._serialized_start=378
+  _REPORT_RUN._serialized_end=516
+  _REPORT_STEP._serialized_start=519
+  _REPORT_STEP._serialized_end=1503
+  _REPORT_STEP_EXECUTE._serialized_start=762
+  _REPORT_STEP_EXECUTE._serialized_end=1322
+  _REPORT_STEP_EXECUTE_OUTPUTSENTRY._serialized_start=1153
+  _REPORT_STEP_EXECUTE_OUTPUTSENTRY._serialized_end=1199
+  _REPORT_STEP_EXECUTE_EXIT._serialized_start=1201
+  _REPORT_STEP_EXECUTE_EXIT._serialized_end=1322
+  _REPORT_STEP_UPLOAD._serialized_start=1324
+  _REPORT_STEP_UPLOAD._serialized_end=1373
+  _REPORT_STEP_GROUP._serialized_start=1375
+  _REPORT_STEP_GROUP._serialized_end=1439
+  _REPORT_STEP_OUTCOME._serialized_start=1441
+  _REPORT_STEP_OUTCOME._serialized_end=1493
+  _REPORT_STATE._serialized_start=1505
+  _REPORT_STATE._serialized_end=1615
 # @@protoc_insertion_point(module_scope)

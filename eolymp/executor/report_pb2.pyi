@@ -1,3 +1,4 @@
+from eolymp.executor import usage_pb2 as _usage_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -7,31 +8,35 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Report(_message.Message):
-    __slots__ = ["actors", "agent", "error", "origin", "reference", "runs", "state", "version"]
+    __slots__ = ["actors", "agent_name", "error", "origin", "reference", "runs", "state", "version"]
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Actor(_message.Message):
-        __slots__ = ["error", "name", "signature"]
-        ERROR_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ["error_message", "name", "signature"]
+        ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         SIGNATURE_FIELD_NUMBER: _ClassVar[int]
-        error: str
+        error_message: str
         name: str
         signature: str
-        def __init__(self, name: _Optional[str] = ..., signature: _Optional[str] = ..., error: _Optional[str] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., signature: _Optional[str] = ..., error_message: _Optional[str] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ["reference", "state", "steps"]
+        __slots__ = ["error_message", "reference", "state", "steps"]
+        ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
         REFERENCE_FIELD_NUMBER: _ClassVar[int]
         STATE_FIELD_NUMBER: _ClassVar[int]
         STEPS_FIELD_NUMBER: _ClassVar[int]
+        error_message: str
         reference: str
         state: Report.State
         steps: _containers.RepeatedCompositeFieldContainer[Report.Step]
-        def __init__(self, reference: _Optional[str] = ..., state: _Optional[_Union[Report.State, str]] = ..., steps: _Optional[_Iterable[_Union[Report.Step, _Mapping]]] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., state: _Optional[_Union[Report.State, str]] = ..., error_message: _Optional[str] = ..., steps: _Optional[_Iterable[_Union[Report.Step, _Mapping]]] = ...) -> None: ...
     class Step(_message.Message):
-        __slots__ = ["execute", "name", "state", "upload"]
+        __slots__ = ["execute", "group", "name", "outcome", "upload"]
+        class Outcome(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = []
         class Execute(_message.Message):
-            __slots__ = ["actor", "cpu_time_limit", "cpu_time_usage", "exit", "exit_code", "memory_limit", "memory_usage", "outputs", "signal", "wall_time_limit", "wall_time_usage"]
+            __slots__ = ["actor", "cpu_time_limit", "cpu_time_usage", "exit_code", "exit_status", "memory_limit", "memory_usage", "outputs", "resource_usage", "signal", "wall_time_limit", "wall_time_usage"]
             class Exit(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
                 __slots__ = []
             class OutputsEntry(_message.Message):
@@ -46,11 +51,12 @@ class Report(_message.Message):
             CPU_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
             CPU_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
             EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
-            EXIT_FIELD_NUMBER: _ClassVar[int]
+            EXIT_STATUS_FIELD_NUMBER: _ClassVar[int]
             MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
             MEMORY_OVERFLOW: Report.Step.Execute.Exit
             MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
             OUTPUTS_FIELD_NUMBER: _ClassVar[int]
+            RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
             RUNTIME_ERROR: Report.Step.Execute.Exit
             SIGNAL_FIELD_NUMBER: _ClassVar[int]
             SKIPPED: Report.Step.Execute.Exit
@@ -62,15 +68,21 @@ class Report(_message.Message):
             actor: str
             cpu_time_limit: int
             cpu_time_usage: int
-            exit: Report.Step.Execute.Exit
             exit_code: int
+            exit_status: Report.Step.Execute.Exit
             memory_limit: int
             memory_usage: int
             outputs: _containers.ScalarMap[str, str]
+            resource_usage: _usage_pb2.ResourceUsage
             signal: int
             wall_time_limit: int
             wall_time_usage: int
-            def __init__(self, actor: _Optional[str] = ..., exit: _Optional[_Union[Report.Step.Execute.Exit, str]] = ..., outputs: _Optional[_Mapping[str, str]] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ...) -> None: ...
+            def __init__(self, actor: _Optional[str] = ..., exit_status: _Optional[_Union[Report.Step.Execute.Exit, str]] = ..., outputs: _Optional[_Mapping[str, str]] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., resource_usage: _Optional[_Union[_usage_pb2.ResourceUsage, _Mapping]] = ...) -> None: ...
+        class Group(_message.Message):
+            __slots__ = ["processes"]
+            PROCESSES_FIELD_NUMBER: _ClassVar[int]
+            processes: _containers.RepeatedCompositeFieldContainer[Report.Step.Execute]
+            def __init__(self, processes: _Optional[_Iterable[_Union[Report.Step.Execute, _Mapping]]] = ...) -> None: ...
         class Upload(_message.Message):
             __slots__ = ["target_ern", "target_name"]
             TARGET_ERN_FIELD_NUMBER: _ClassVar[int]
@@ -78,17 +90,23 @@ class Report(_message.Message):
             target_ern: str
             target_name: str
             def __init__(self, target_name: _Optional[str] = ..., target_ern: _Optional[str] = ...) -> None: ...
+        COMPLETE: Report.Step.Outcome
         EXECUTE_FIELD_NUMBER: _ClassVar[int]
+        FAILED: Report.Step.Outcome
+        GROUP_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
-        STATE_FIELD_NUMBER: _ClassVar[int]
+        OUTCOME_FIELD_NUMBER: _ClassVar[int]
+        UNSPECIFIED: Report.Step.Outcome
         UPLOAD_FIELD_NUMBER: _ClassVar[int]
         execute: Report.Step.Execute
+        group: Report.Step.Group
         name: str
-        state: Report.State
+        outcome: Report.Step.Outcome
         upload: Report.Step.Upload
-        def __init__(self, name: _Optional[str] = ..., state: _Optional[_Union[Report.State, str]] = ..., execute: _Optional[_Union[Report.Step.Execute, _Mapping]] = ..., upload: _Optional[_Union[Report.Step.Upload, _Mapping]] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., outcome: _Optional[_Union[Report.Step.Outcome, str]] = ..., execute: _Optional[_Union[Report.Step.Execute, _Mapping]] = ..., upload: _Optional[_Union[Report.Step.Upload, _Mapping]] = ..., group: _Optional[_Union[Report.Step.Group, _Mapping]] = ...) -> None: ...
     ACTORS_FIELD_NUMBER: _ClassVar[int]
-    AGENT_FIELD_NUMBER: _ClassVar[int]
+    AGENT_NAME_FIELD_NUMBER: _ClassVar[int]
+    BLOCKED: Report.State
     COMPLETE: Report.State
     ERROR_FIELD_NUMBER: _ClassVar[int]
     EXECUTING: Report.State
@@ -97,15 +115,16 @@ class Report(_message.Message):
     PENDING: Report.State
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
+    SKIPPED: Report.State
     STATE_FIELD_NUMBER: _ClassVar[int]
-    UNSPECIFIED: Report.State
+    STATE_UNSPECIFIED: Report.State
     VERSION_FIELD_NUMBER: _ClassVar[int]
     actors: _containers.RepeatedCompositeFieldContainer[Report.Actor]
-    agent: str
+    agent_name: str
     error: str
     origin: str
     reference: str
     runs: _containers.RepeatedCompositeFieldContainer[Report.Run]
     state: Report.State
     version: int
-    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., agent: _Optional[str] = ..., version: _Optional[int] = ..., state: _Optional[_Union[Report.State, str]] = ..., actors: _Optional[_Iterable[_Union[Report.Actor, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[Report.Run, _Mapping]]] = ..., error: _Optional[str] = ...) -> None: ...
+    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., agent_name: _Optional[str] = ..., version: _Optional[int] = ..., state: _Optional[_Union[Report.State, str]] = ..., actors: _Optional[_Iterable[_Union[Report.Actor, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[Report.Run, _Mapping]]] = ..., error: _Optional[str] = ...) -> None: ...

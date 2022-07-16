@@ -118,10 +118,10 @@ class Job(_message.Message):
             wall_time_limit: int
             def __init__(self, actor: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ..., output_format: _Optional[str] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
         class Grouped(_message.Message):
-            __slots__ = ["group"]
-            GROUP_FIELD_NUMBER: _ClassVar[int]
-            group: _containers.RepeatedCompositeFieldContainer[Job.Step.Execute]
-            def __init__(self, group: _Optional[_Iterable[_Union[Job.Step.Execute, _Mapping]]] = ...) -> None: ...
+            __slots__ = ["processes"]
+            PROCESSES_FIELD_NUMBER: _ClassVar[int]
+            processes: _containers.RepeatedCompositeFieldContainer[Job.Step.Execute]
+            def __init__(self, processes: _Optional[_Iterable[_Union[Job.Step.Execute, _Mapping]]] = ...) -> None: ...
         class Upload(_message.Message):
             __slots__ = ["max_size", "optionally", "source_actor", "source_path", "target_name", "ttl"]
             MAX_SIZE_FIELD_NUMBER: _ClassVar[int]
