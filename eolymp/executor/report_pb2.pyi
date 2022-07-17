@@ -12,14 +12,21 @@ class Report(_message.Message):
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Actor(_message.Message):
-        __slots__ = ["error_message", "name", "signature"]
+        __slots__ = ["error_code", "error_message", "name", "signature"]
+        class Error(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = []
+        ERROR_CODE_FIELD_NUMBER: _ClassVar[int]
         ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        INIT_ERROR: Report.Actor.Error
+        INTERNAL_ERROR: Report.Actor.Error
         NAME_FIELD_NUMBER: _ClassVar[int]
+        NONE: Report.Actor.Error
         SIGNATURE_FIELD_NUMBER: _ClassVar[int]
+        error_code: Report.Actor.Error
         error_message: str
         name: str
         signature: str
-        def __init__(self, name: _Optional[str] = ..., signature: _Optional[str] = ..., error_message: _Optional[str] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., signature: _Optional[str] = ..., error_code: _Optional[_Union[Report.Actor.Error, str]] = ..., error_message: _Optional[str] = ...) -> None: ...
     class Run(_message.Message):
         __slots__ = ["error_message", "reference", "state", "steps"]
         ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
@@ -117,7 +124,7 @@ class Report(_message.Message):
     RUNS_FIELD_NUMBER: _ClassVar[int]
     SKIPPED: Report.State
     STATE_FIELD_NUMBER: _ClassVar[int]
-    STATE_UNSPECIFIED: Report.State
+    UNSPECIFIED: Report.State
     VERSION_FIELD_NUMBER: _ClassVar[int]
     actors: _containers.RepeatedCompositeFieldContainer[Report.Actor]
     agent_name: str

@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Job(_message.Message):
-    __slots__ = ["actors", "origin", "preconditions", "reference", "runs"]
+    __slots__ = ["actors", "origin", "preconditions", "reference", "runs", "scenario"]
     class Actor(_message.Message):
         __slots__ = ["args", "env", "init_env", "init_files", "mount", "name", "runtime", "source_ern", "stderr", "stdin", "stdin_last", "stdout"]
         class EnvEntry(_message.Message):
@@ -164,9 +164,11 @@ class Job(_message.Message):
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
+    SCENARIO_FIELD_NUMBER: _ClassVar[int]
     actors: _containers.RepeatedCompositeFieldContainer[Job.Actor]
     origin: str
     preconditions: _containers.RepeatedCompositeFieldContainer[_task_pb2.Task.Precondition]
     reference: str
     runs: _containers.RepeatedCompositeFieldContainer[Job.Run]
-    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., preconditions: _Optional[_Iterable[_Union[_task_pb2.Task.Precondition, _Mapping]]] = ..., actors: _Optional[_Iterable[_Union[Job.Actor, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[Job.Run, _Mapping]]] = ...) -> None: ...
+    scenario: _containers.RepeatedCompositeFieldContainer[Job.Step]
+    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., preconditions: _Optional[_Iterable[_Union[_task_pb2.Task.Precondition, _Mapping]]] = ..., actors: _Optional[_Iterable[_Union[Job.Actor, _Mapping]]] = ..., scenario: _Optional[_Iterable[_Union[Job.Step, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[Job.Run, _Mapping]]] = ...) -> None: ...
