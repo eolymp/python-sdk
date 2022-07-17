@@ -18,7 +18,7 @@ class Report(_message.Message):
         ERROR_CODE_FIELD_NUMBER: _ClassVar[int]
         ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
         INIT_ERROR: Report.Actor.Error
-        INTERNAL_ERROR: Report.Actor.Error
+        INTERNAL: Report.Actor.Error
         NAME_FIELD_NUMBER: _ClassVar[int]
         NONE: Report.Actor.Error
         SIGNATURE_FIELD_NUMBER: _ClassVar[int]
