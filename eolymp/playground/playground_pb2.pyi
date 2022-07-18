@@ -9,22 +9,26 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateRunInput(_message.Message):
-    __slots__ = ["atlas_problem_id", "input", "input_content", "input_object_id", "judge_problem_id", "lang", "source"]
+    __slots__ = ["atlas_problem_id", "input", "input_content", "input_ern", "input_object_id", "judge_problem_id", "lang", "problem_ern", "source"]
     ATLAS_PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     INPUT_CONTENT_FIELD_NUMBER: _ClassVar[int]
+    INPUT_ERN_FIELD_NUMBER: _ClassVar[int]
     INPUT_FIELD_NUMBER: _ClassVar[int]
     INPUT_OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
     JUDGE_PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ERN_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     atlas_problem_id: str
     input: str
     input_content: bytes
+    input_ern: str
     input_object_id: str
     judge_problem_id: str
     lang: str
+    problem_ern: str
     source: str
-    def __init__(self, lang: _Optional[str] = ..., source: _Optional[str] = ..., input: _Optional[str] = ..., input_content: _Optional[bytes] = ..., input_object_id: _Optional[str] = ..., atlas_problem_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, lang: _Optional[str] = ..., source: _Optional[str] = ..., input_ern: _Optional[str] = ..., problem_ern: _Optional[str] = ..., input: _Optional[str] = ..., input_content: _Optional[bytes] = ..., input_object_id: _Optional[str] = ..., atlas_problem_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ...) -> None: ...
 
 class CreateRunOutput(_message.Message):
     __slots__ = ["run_id"]
