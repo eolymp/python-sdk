@@ -2,6 +2,7 @@ from eolymp.executor import interactor_pb2 as _interactor_pb2
 from eolymp.executor import task_pb2 as _task_pb2
 from eolymp.executor import verifier_pb2 as _verifier_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -93,6 +94,8 @@ class Job(_message.Message):
             def __init__(self, source_actor: _Optional[str] = ..., source_path: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ..., optionally: bool = ...) -> None: ...
         class Execute(_message.Message):
             __slots__ = ["actor", "args", "cpu_time_limit", "env", "file_size_limit", "memory_limit", "output_format", "wall_time_limit"]
+            class OutputFormat(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                __slots__ = []
             class EnvEntry(_message.Message):
                 __slots__ = ["key", "value"]
                 KEY_FIELD_NUMBER: _ClassVar[int]
@@ -104,9 +107,11 @@ class Job(_message.Message):
             ARGS_FIELD_NUMBER: _ClassVar[int]
             CPU_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
             ENV_FIELD_NUMBER: _ClassVar[int]
+            EXIT_CODE: Job.Step.Execute.OutputFormat
             FILE_SIZE_LIMIT_FIELD_NUMBER: _ClassVar[int]
             MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
             OUTPUT_FORMAT_FIELD_NUMBER: _ClassVar[int]
+            TESTLIB_H: Job.Step.Execute.OutputFormat
             WALL_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
             actor: str
             args: _containers.RepeatedScalarFieldContainer[str]
@@ -114,9 +119,9 @@ class Job(_message.Message):
             env: _containers.ScalarMap[str, str]
             file_size_limit: int
             memory_limit: int
-            output_format: str
+            output_format: Job.Step.Execute.OutputFormat
             wall_time_limit: int
-            def __init__(self, actor: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ..., output_format: _Optional[str] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
+            def __init__(self, actor: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ..., output_format: _Optional[_Union[Job.Step.Execute.OutputFormat, str]] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
         class Group(_message.Message):
             __slots__ = ["processes"]
             PROCESSES_FIELD_NUMBER: _ClassVar[int]
