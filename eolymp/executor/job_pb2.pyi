@@ -138,14 +138,16 @@ class Job(_message.Message):
             ttl: int
             def __init__(self, source_actor: _Optional[str] = ..., source_path: _Optional[str] = ..., target_name: _Optional[str] = ..., optionally: bool = ..., ttl: _Optional[int] = ..., max_size: _Optional[int] = ...) -> None: ...
         class Write(_message.Message):
-            __slots__ = ["source_ern", "target_actor", "target_path"]
+            __slots__ = ["fix_crlf", "source_ern", "target_actor", "target_path"]
+            FIX_CRLF_FIELD_NUMBER: _ClassVar[int]
             SOURCE_ERN_FIELD_NUMBER: _ClassVar[int]
             TARGET_ACTOR_FIELD_NUMBER: _ClassVar[int]
             TARGET_PATH_FIELD_NUMBER: _ClassVar[int]
+            fix_crlf: bool
             source_ern: str
             target_actor: str
             target_path: str
-            def __init__(self, source_ern: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ...) -> None: ...
+            def __init__(self, source_ern: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ..., fix_crlf: bool = ...) -> None: ...
         COPY_FIELD_NUMBER: _ClassVar[int]
         EXECUTE_FIELD_NUMBER: _ClassVar[int]
         GROUP_FIELD_NUMBER: _ClassVar[int]
