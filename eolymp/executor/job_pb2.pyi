@@ -117,20 +117,24 @@ class Job(_message.Message):
             processes: _containers.RepeatedCompositeFieldContainer[Job.Step.Execute]
             def __init__(self, processes: _Optional[_Iterable[_Union[Job.Step.Execute, _Mapping]]] = ...) -> None: ...
         class Upload(_message.Message):
-            __slots__ = ["max_size", "optionally", "source_actor", "source_path", "target_name", "ttl"]
+            __slots__ = ["force_upload", "max_data_size", "max_size", "optionally", "source_actor", "source_path", "target_name", "ttl"]
+            FORCE_UPLOAD_FIELD_NUMBER: _ClassVar[int]
+            MAX_DATA_SIZE_FIELD_NUMBER: _ClassVar[int]
             MAX_SIZE_FIELD_NUMBER: _ClassVar[int]
             OPTIONALLY_FIELD_NUMBER: _ClassVar[int]
             SOURCE_ACTOR_FIELD_NUMBER: _ClassVar[int]
             SOURCE_PATH_FIELD_NUMBER: _ClassVar[int]
             TARGET_NAME_FIELD_NUMBER: _ClassVar[int]
             TTL_FIELD_NUMBER: _ClassVar[int]
+            force_upload: bool
+            max_data_size: int
             max_size: int
             optionally: bool
             source_actor: str
             source_path: str
             target_name: str
             ttl: int
-            def __init__(self, source_actor: _Optional[str] = ..., source_path: _Optional[str] = ..., target_name: _Optional[str] = ..., optionally: bool = ..., ttl: _Optional[int] = ..., max_size: _Optional[int] = ...) -> None: ...
+            def __init__(self, source_actor: _Optional[str] = ..., source_path: _Optional[str] = ..., target_name: _Optional[str] = ..., optionally: bool = ..., ttl: _Optional[int] = ..., max_size: _Optional[int] = ..., max_data_size: _Optional[int] = ..., force_upload: bool = ...) -> None: ...
         class Write(_message.Message):
             __slots__ = ["fix_crlf", "source_ern", "target_actor", "target_path"]
             FIX_CRLF_FIELD_NUMBER: _ClassVar[int]

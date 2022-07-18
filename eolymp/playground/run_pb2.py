@@ -11,9 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.executor import usage_pb2 as eolymp_dot_executor_dot_usage__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/playground/run.proto\x12\x11\x65olymp.playground\"\xe3\x03\n\x03Run\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04lang\x18\t \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\t\x12\x0e\n\x06source\x18\x0b \x01(\t\x12\x12\n\nsource_ern\x18\x0c \x01(\t\x12\r\n\x05input\x18\r \x01(\t\x12\x11\n\tinput_ern\x18\x0e \x01(\t\x12-\n\x06status\x18\x14 \x01(\x0e\x32\x1d.eolymp.playground.Run.Status\x12\r\n\x05\x65rror\x18\x15 \x01(\t\x12\x11\n\texit_code\x18\x1e \x01(\r\x12\x0e\n\x06signal\x18\x1f \x01(\r\x12\x17\n\x0fwall_time_usage\x18  \x01(\r\x12\x16\n\x0e\x63pu_time_usage\x18! \x01(\r\x12\x14\n\x0cmemory_usage\x18\" \x01(\x04\x12\x0e\n\x06output\x18( \x01(\t\x12\x12\n\noutput_ern\x18) \x01(\t\x12\x13\n\x0bproblem_ern\x18\x32 \x01(\t\"\x89\x01\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tEXECUTING\x10\x02\x12\x0c\n\x08\x45XECUTED\x10\x03\x12\x0b\n\x07TIMEOUT\x10\x04\x12\x11\n\rCPU_EXHAUSTED\x10\x05\x12\x13\n\x0fMEMORY_OVERFLOW\x10\x06\x12\t\n\x05\x45RROR\x10\x07\x12\x0b\n\x07\x46\x41ILURE\x10\x08\x42\x37Z5github.com/eolymp/go-sdk/eolymp/playground;playgroundb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/playground/run.proto\x12\x11\x65olymp.playground\x1a\x1b\x65olymp/executor/usage.proto\"\x9b\x04\n\x03Run\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04lang\x18\t \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\t\x12\x0e\n\x06source\x18\x0b \x01(\t\x12\x12\n\nsource_ern\x18\x0c \x01(\t\x12\r\n\x05input\x18\r \x01(\t\x12\x11\n\tinput_ern\x18\x0e \x01(\t\x12-\n\x06status\x18\x14 \x01(\x0e\x32\x1d.eolymp.playground.Run.Status\x12\r\n\x05\x65rror\x18\x15 \x01(\t\x12\x11\n\texit_code\x18\x1e \x01(\r\x12\x0e\n\x06signal\x18\x1f \x01(\r\x12\x17\n\x0fwall_time_usage\x18  \x01(\r\x12\x16\n\x0e\x63pu_time_usage\x18! \x01(\r\x12\x14\n\x0cmemory_usage\x18\" \x01(\x04\x12\x36\n\x0eresource_usage\x18# \x01(\x0b\x32\x1e.eolymp.executor.ResourceUsage\x12\x0e\n\x06output\x18( \x01(\t\x12\x12\n\noutput_ern\x18) \x01(\t\x12\x13\n\x0bproblem_ern\x18\x32 \x01(\t\"\x89\x01\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tEXECUTING\x10\x02\x12\x0c\n\x08\x45XECUTED\x10\x03\x12\x0b\n\x07TIMEOUT\x10\x04\x12\x11\n\rCPU_EXHAUSTED\x10\x05\x12\x13\n\x0fMEMORY_OVERFLOW\x10\x06\x12\t\n\x05\x45RROR\x10\x07\x12\x0b\n\x07\x46\x41ILURE\x10\x08\x42\x37Z5github.com/eolymp/go-sdk/eolymp/playground;playgroundb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.playground.run_pb2', globals())
@@ -21,8 +22,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/playground;playground'
-  _RUN._serialized_start=51
-  _RUN._serialized_end=534
-  _RUN_STATUS._serialized_start=397
-  _RUN_STATUS._serialized_end=534
+  _RUN._serialized_start=80
+  _RUN._serialized_end=619
+  _RUN_STATUS._serialized_start=482
+  _RUN_STATUS._serialized_end=619
 # @@protoc_insertion_point(module_scope)
