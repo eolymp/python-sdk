@@ -65,7 +65,7 @@ class Job(_message.Message):
         steps: _containers.RepeatedCompositeFieldContainer[Job.Step]
         def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., steps: _Optional[_Iterable[_Union[Job.Step, _Mapping]]] = ...) -> None: ...
     class Step(_message.Message):
-        __slots__ = ["copy", "execute", "group", "name", "upload", "write"]
+        __slots__ = ["copy", "even_on_failure", "execute", "group", "name", "only_on_failure", "upload", "write"]
         class Copy(_message.Message):
             __slots__ = ["optionally", "source_actor", "source_path", "target_actor", "target_path"]
             OPTIONALLY_FIELD_NUMBER: _ClassVar[int]
@@ -147,18 +147,22 @@ class Job(_message.Message):
             target_path: str
             def __init__(self, source_ern: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ..., fix_crlf: bool = ...) -> None: ...
         COPY_FIELD_NUMBER: _ClassVar[int]
+        EVEN_ON_FAILURE_FIELD_NUMBER: _ClassVar[int]
         EXECUTE_FIELD_NUMBER: _ClassVar[int]
         GROUP_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
+        ONLY_ON_FAILURE_FIELD_NUMBER: _ClassVar[int]
         UPLOAD_FIELD_NUMBER: _ClassVar[int]
         WRITE_FIELD_NUMBER: _ClassVar[int]
         copy: Job.Step.Copy
+        even_on_failure: bool
         execute: Job.Step.Execute
         group: Job.Step.Group
         name: str
+        only_on_failure: bool
         upload: Job.Step.Upload
         write: Job.Step.Write
-        def __init__(self, name: _Optional[str] = ..., write: _Optional[_Union[Job.Step.Write, _Mapping]] = ..., copy: _Optional[_Union[Job.Step.Copy, _Mapping]] = ..., execute: _Optional[_Union[Job.Step.Execute, _Mapping]] = ..., upload: _Optional[_Union[Job.Step.Upload, _Mapping]] = ..., group: _Optional[_Union[Job.Step.Group, _Mapping]] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., even_on_failure: bool = ..., only_on_failure: bool = ..., write: _Optional[_Union[Job.Step.Write, _Mapping]] = ..., copy: _Optional[_Union[Job.Step.Copy, _Mapping]] = ..., execute: _Optional[_Union[Job.Step.Execute, _Mapping]] = ..., upload: _Optional[_Union[Job.Step.Upload, _Mapping]] = ..., group: _Optional[_Union[Job.Step.Group, _Mapping]] = ...) -> None: ...
     ACTORS_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
