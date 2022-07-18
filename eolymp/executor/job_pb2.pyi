@@ -12,7 +12,7 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class Job(_message.Message):
     __slots__ = ["actors", "origin", "preconditions", "reference", "runs", "scenario"]
     class Actor(_message.Message):
-        __slots__ = ["args", "env", "init_env", "init_files", "mount", "name", "output_format", "runtime", "source_ern", "stderr", "stdin", "stdin_last", "stdout"]
+        __slots__ = ["env", "files", "mount", "name", "output_format", "runtime", "source_ern"]
         class OutputFormat(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         class EnvEntry(_message.Message):
@@ -22,42 +22,23 @@ class Job(_message.Message):
             key: str
             value: str
             def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-        class InitEnvEntry(_message.Message):
-            __slots__ = ["key", "value"]
-            KEY_FIELD_NUMBER: _ClassVar[int]
-            VALUE_FIELD_NUMBER: _ClassVar[int]
-            key: str
-            value: str
-            def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-        ARGS_FIELD_NUMBER: _ClassVar[int]
         ENV_FIELD_NUMBER: _ClassVar[int]
         EXIT_CODE: Job.Actor.OutputFormat
-        INIT_ENV_FIELD_NUMBER: _ClassVar[int]
-        INIT_FILES_FIELD_NUMBER: _ClassVar[int]
+        FILES_FIELD_NUMBER: _ClassVar[int]
         MOUNT_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         OUTPUT_FORMAT_FIELD_NUMBER: _ClassVar[int]
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
         SOURCE_ERN_FIELD_NUMBER: _ClassVar[int]
-        STDERR_FIELD_NUMBER: _ClassVar[int]
-        STDIN_FIELD_NUMBER: _ClassVar[int]
-        STDIN_LAST_FIELD_NUMBER: _ClassVar[int]
-        STDOUT_FIELD_NUMBER: _ClassVar[int]
         TESTLIB_OUTPUT: Job.Actor.OutputFormat
-        args: _containers.RepeatedScalarFieldContainer[str]
         env: _containers.ScalarMap[str, str]
-        init_env: _containers.ScalarMap[str, str]
-        init_files: _containers.RepeatedCompositeFieldContainer[Job.File]
+        files: _containers.RepeatedCompositeFieldContainer[Job.File]
         mount: _containers.RepeatedCompositeFieldContainer[Job.Mount]
         name: str
         output_format: Job.Actor.OutputFormat
         runtime: str
         source_ern: str
-        stderr: str
-        stdin: str
-        stdin_last: bool
-        stdout: str
-        def __init__(self, name: _Optional[str] = ..., runtime: _Optional[str] = ..., source_ern: _Optional[str] = ..., init_env: _Optional[_Mapping[str, str]] = ..., init_files: _Optional[_Iterable[_Union[Job.File, _Mapping]]] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ..., stdin: _Optional[str] = ..., stdout: _Optional[str] = ..., stderr: _Optional[str] = ..., stdin_last: bool = ..., output_format: _Optional[_Union[Job.Actor.OutputFormat, str]] = ..., mount: _Optional[_Iterable[_Union[Job.Mount, _Mapping]]] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., runtime: _Optional[str] = ..., source_ern: _Optional[str] = ..., env: _Optional[_Mapping[str, str]] = ..., files: _Optional[_Iterable[_Union[Job.File, _Mapping]]] = ..., output_format: _Optional[_Union[Job.Actor.OutputFormat, str]] = ..., mount: _Optional[_Iterable[_Union[Job.Mount, _Mapping]]] = ...) -> None: ...
     class File(_message.Message):
         __slots__ = ["path", "source_ern"]
         PATH_FIELD_NUMBER: _ClassVar[int]
@@ -99,7 +80,7 @@ class Job(_message.Message):
             target_path: str
             def __init__(self, source_actor: _Optional[str] = ..., source_path: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ..., optionally: bool = ...) -> None: ...
         class Execute(_message.Message):
-            __slots__ = ["actor", "args", "cpu_time_limit", "env", "file_size_limit", "memory_limit", "wall_time_limit"]
+            __slots__ = ["actor", "args", "cpu_time_limit", "env", "file_size_limit", "memory_limit", "stderr", "stdin", "stdin_last", "stdout", "wall_time_limit"]
             class EnvEntry(_message.Message):
                 __slots__ = ["key", "value"]
                 KEY_FIELD_NUMBER: _ClassVar[int]
@@ -113,6 +94,10 @@ class Job(_message.Message):
             ENV_FIELD_NUMBER: _ClassVar[int]
             FILE_SIZE_LIMIT_FIELD_NUMBER: _ClassVar[int]
             MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
+            STDERR_FIELD_NUMBER: _ClassVar[int]
+            STDIN_FIELD_NUMBER: _ClassVar[int]
+            STDIN_LAST_FIELD_NUMBER: _ClassVar[int]
+            STDOUT_FIELD_NUMBER: _ClassVar[int]
             WALL_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
             actor: str
             args: _containers.RepeatedScalarFieldContainer[str]
@@ -120,8 +105,12 @@ class Job(_message.Message):
             env: _containers.ScalarMap[str, str]
             file_size_limit: int
             memory_limit: int
+            stderr: str
+            stdin: str
+            stdin_last: bool
+            stdout: str
             wall_time_limit: int
-            def __init__(self, actor: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
+            def __init__(self, actor: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ..., env: _Optional[_Mapping[str, str]] = ..., stdin: _Optional[str] = ..., stdout: _Optional[str] = ..., stderr: _Optional[str] = ..., stdin_last: bool = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
         class Group(_message.Message):
             __slots__ = ["processes"]
             PROCESSES_FIELD_NUMBER: _ClassVar[int]
