@@ -43,10 +43,10 @@ class Report(_message.Message):
         class Outcome(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         class Execute(_message.Message):
-            __slots__ = ["actor", "cpu_time_limit", "cpu_time_usage", "exit_code", "exit_status", "memory_limit", "memory_usage", "outputs", "resource_usage", "signal", "wall_time_limit", "wall_time_usage"]
+            __slots__ = ["actor", "cpu_time_limit", "cpu_time_usage", "exit_code", "exit_status", "memory_limit", "memory_usage", "resource_usage", "signal", "values", "wall_time_limit", "wall_time_usage"]
             class Exit(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
                 __slots__ = []
-            class OutputsEntry(_message.Message):
+            class ValuesEntry(_message.Message):
                 __slots__ = ["key", "value"]
                 KEY_FIELD_NUMBER: _ClassVar[int]
                 VALUE_FIELD_NUMBER: _ClassVar[int]
@@ -62,7 +62,6 @@ class Report(_message.Message):
             MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
             MEMORY_OVERFLOW: Report.Step.Execute.Exit
             MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
-            OUTPUTS_FIELD_NUMBER: _ClassVar[int]
             RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
             RUNTIME_ERROR: Report.Step.Execute.Exit
             SIGNAL_FIELD_NUMBER: _ClassVar[int]
@@ -70,6 +69,7 @@ class Report(_message.Message):
             SUCCESS: Report.Step.Execute.Exit
             TIMEOUT: Report.Step.Execute.Exit
             UNSPECIFIED: Report.Step.Execute.Exit
+            VALUES_FIELD_NUMBER: _ClassVar[int]
             WALL_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
             WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
             actor: str
@@ -79,12 +79,12 @@ class Report(_message.Message):
             exit_status: Report.Step.Execute.Exit
             memory_limit: int
             memory_usage: int
-            outputs: _containers.ScalarMap[str, str]
             resource_usage: _usage_pb2.ResourceUsage
             signal: int
+            values: _containers.ScalarMap[str, str]
             wall_time_limit: int
             wall_time_usage: int
-            def __init__(self, actor: _Optional[str] = ..., exit_status: _Optional[_Union[Report.Step.Execute.Exit, str]] = ..., outputs: _Optional[_Mapping[str, str]] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., resource_usage: _Optional[_Union[_usage_pb2.ResourceUsage, _Mapping]] = ...) -> None: ...
+            def __init__(self, actor: _Optional[str] = ..., exit_status: _Optional[_Union[Report.Step.Execute.Exit, str]] = ..., values: _Optional[_Mapping[str, str]] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., resource_usage: _Optional[_Union[_usage_pb2.ResourceUsage, _Mapping]] = ...) -> None: ...
         class Group(_message.Message):
             __slots__ = ["processes"]
             PROCESSES_FIELD_NUMBER: _ClassVar[int]
