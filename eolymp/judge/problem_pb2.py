@@ -16,7 +16,7 @@ from eolymp.atlas import feedback_pb2 as eolymp_dot_atlas_dot_feedback__pb2
 from eolymp.typewriter import block_pb2 as eolymp_dot_typewriter_dot_block__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/problem.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1b\x65olymp/atlas/feedback.proto\x1a\x1d\x65olymp/typewriter/block.proto\"\xd2\x05\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05score\x18\x03 \x01(\x02\x12\x0f\n\x07\x62\x61se_id\x18\x04 \x01(\t\x12\x12\n\ncontest_id\x18\x05 \x01(\t\x12\x35\n\x0f\x66\x65\x65\x64\x62\x61\x63k_policy\x18\n \x01(\x0e\x32\x1c.eolymp.atlas.FeedbackPolicy\x12\x13\n\ntime_limit\x18\xc8\x01 \x01(\r\x12\x15\n\x0cmemory_limit\x18\xc9\x01 \x01(\x04\x12\x18\n\x0f\x66ile_size_limit\x18\xca\x01 \x01(\x04\x12\x15\n\x0csubmit_limit\x18\xcb\x01 \x01(\r\x12\x1e\n\x15score_by_best_testset\x18\xd2\x01 \x01(\x08\x1a\xfd\x01\n\tStatement\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x12\x32\n\x0c\x63ontent_rich\x18\x04 \x01(\x0b\x32\x1c.eolymp.typewriter.Container\x12\x36\n\x06\x66ormat\x18\x05 \x01(\x0e\x32&.eolymp.judge.Problem.Statement.Format\x12\x15\n\rdownload_link\x18\x06 \x01(\t\"=\n\x06\x46ormat\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03TEX\x10\x01\x12\x0c\n\x08MARKDOWN\x10\x02\x12\x08\n\x04HTML\x10\x03\x12\x08\n\x04RICH\x10\x04\x1ah\n\x04Test\x12\r\n\x05index\x18\x01 \x01(\r\x12\x0f\n\x07\x65xample\x18\x02 \x01(\x08\x12\x17\n\x0finput_object_id\x18\x03 \x01(\t\x12\x18\n\x10\x61nswer_object_id\x18\x04 \x01(\t\x12\r\n\x05score\x18\x05 \x01(\x02\x1a\x34\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\t:$\xb2\xe3\n \xba\xe3\n\x04task\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/problem.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1b\x65olymp/atlas/feedback.proto\x1a\x1d\x65olymp/typewriter/block.proto\"\xe0\x05\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05score\x18\x03 \x01(\x02\x12\x0f\n\x07\x62\x61se_id\x18\x04 \x01(\t\x12\x12\n\ncontest_id\x18\x05 \x01(\t\x12\x35\n\x0f\x66\x65\x65\x64\x62\x61\x63k_policy\x18\n \x01(\x0e\x32\x1c.eolymp.atlas.FeedbackPolicy\x12\x13\n\ntime_limit\x18\xc8\x01 \x01(\r\x12\x15\n\x0cmemory_limit\x18\xc9\x01 \x01(\x04\x12\x18\n\x0f\x66ile_size_limit\x18\xca\x01 \x01(\x04\x12\x15\n\x0csubmit_limit\x18\xcb\x01 \x01(\r\x12\x1e\n\x15score_by_best_testset\x18\xd2\x01 \x01(\x08\x1a\xfd\x01\n\tStatement\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x12\x32\n\x0c\x63ontent_rich\x18\x04 \x01(\x0b\x32\x1c.eolymp.typewriter.Container\x12\x36\n\x06\x66ormat\x18\x05 \x01(\x0e\x32&.eolymp.judge.Problem.Statement.Format\x12\x15\n\rdownload_link\x18\x06 \x01(\t\"=\n\x06\x46ormat\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03TEX\x10\x01\x12\x0c\n\x08MARKDOWN\x10\x02\x12\x08\n\x04HTML\x10\x03\x12\x08\n\x04RICH\x10\x04\x1ah\n\x04Test\x12\r\n\x05index\x18\x01 \x01(\r\x12\x0f\n\x07\x65xample\x18\x02 \x01(\x08\x12\x17\n\x0finput_object_id\x18\x03 \x01(\t\x12\x18\n\x10\x61nswer_object_id\x18\x04 \x01(\t\x12\r\n\x05score\x18\x05 \x01(\x02\x1a\x34\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\t:$\xb2\xe3\n \xba\xe3\n\x04task\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.problem_pb2', globals())
@@ -27,13 +27,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROBLEM._options = None
   _PROBLEM._serialized_options = b'\262\343\n \272\343\n\004task\302\343\n\024eolymp.judge.Contest'
   _PROBLEM._serialized_start=140
-  _PROBLEM._serialized_end=862
-  _PROBLEM_STATEMENT._serialized_start=411
-  _PROBLEM_STATEMENT._serialized_end=664
-  _PROBLEM_STATEMENT_FORMAT._serialized_start=603
-  _PROBLEM_STATEMENT_FORMAT._serialized_end=664
-  _PROBLEM_TEST._serialized_start=666
-  _PROBLEM_TEST._serialized_end=770
-  _PROBLEM_ATTACHMENT._serialized_start=772
-  _PROBLEM_ATTACHMENT._serialized_end=824
+  _PROBLEM._serialized_end=876
+  _PROBLEM_STATEMENT._serialized_start=425
+  _PROBLEM_STATEMENT._serialized_end=678
+  _PROBLEM_STATEMENT_FORMAT._serialized_start=617
+  _PROBLEM_STATEMENT_FORMAT._serialized_end=678
+  _PROBLEM_TEST._serialized_start=680
+  _PROBLEM_TEST._serialized_end=784
+  _PROBLEM_ATTACHMENT._serialized_start=786
+  _PROBLEM_ATTACHMENT._serialized_end=838
 # @@protoc_insertion_point(module_scope)

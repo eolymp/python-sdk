@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/atlas/template.proto\x12\x0c\x65olymp.atlas\x1a!eolymp/annotations/resource.proto\"\x95\x01\n\x08Template\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\x03 \x01(\t\x12\x0e\n\x06source\x18\n \x01(\t\x12\x0e\n\x06header\x18\x0b \x01(\t\x12\x0e\n\x06\x66ooter\x18\x0c \x01(\t:(\xb2\xe3\n$\xba\xe3\n\x08template\xc2\xe3\n\x14\x65olymp.atlas.ProblemB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/atlas/template.proto\x12\x0c\x65olymp.atlas\x1a!eolymp/annotations/resource.proto\"\xd1\x01\n\x08Template\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\x03 \x01(\t\x12\x0e\n\x06source\x18\n \x01(\t\x12\x12\n\nsource_ern\x18\x14 \x01(\t\x12\x0e\n\x06header\x18\x0b \x01(\t\x12\x12\n\nheader_ern\x18\x15 \x01(\t\x12\x0e\n\x06\x66ooter\x18\x0c \x01(\t\x12\x12\n\nfooter_ern\x18\x16 \x01(\t:(\xb2\xe3\n$\xba\xe3\n\x08template\xc2\xe3\n\x14\x65olymp.atlas.ProblemB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.template_pb2', globals())
@@ -25,5 +25,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TEMPLATE._options = None
   _TEMPLATE._serialized_options = b'\262\343\n$\272\343\n\010template\302\343\n\024eolymp.atlas.Problem'
   _TEMPLATE._serialized_start=81
-  _TEMPLATE._serialized_end=230
+  _TEMPLATE._serialized_end=290
 # @@protoc_insertion_point(module_scope)

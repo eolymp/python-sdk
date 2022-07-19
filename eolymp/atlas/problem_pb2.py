@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\x1a!eolymp/annotations/resource.proto\"q\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0f\n\x07private\x18\x0c \x01(\x08:(\xb2\xe3\n$\xba\xe3\n\x07problem\xc2\xe3\n\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\x1a!eolymp/annotations/resource.proto\"\x7f\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0f\n\x07private\x18\x0c \x01(\x08:(\xb2\xe3\n$\xba\xe3\n\x07problem\xc2\xe3\n\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.problem_pb2', globals())
@@ -25,5 +25,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROBLEM._options = None
   _PROBLEM._serialized_options = b'\262\343\n$\272\343\n\007problem\302\343\n\025eolymp.universe.Space'
   _PROBLEM._serialized_start=79
-  _PROBLEM._serialized_end=192
+  _PROBLEM._serialized_end=206
 # @@protoc_insertion_point(module_scope)

@@ -13,6 +13,7 @@ from eolymp.judge import result_pb2 as _result_pb2
 from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import scoreboard_pb2 as _scoreboard_pb2
 from eolymp.judge import submission_pb2 as _submission_pb2
+from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.judge import ticket_pb2 as _ticket_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -265,18 +266,22 @@ class DescribeAppearanceOutput(_message.Message):
     def __init__(self, appearance: _Optional[_Union[_contest_pb2.Contest.Appearance, _Mapping]] = ...) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ["problem_id", "runtime_id"]
+    __slots__ = ["problem_id", "runtime_id", "template_ern"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_ID_FIELD_NUMBER: _ClassVar[int]
+    TEMPLATE_ERN_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     runtime_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., runtime_id: _Optional[str] = ...) -> None: ...
+    template_ern: str
+    def __init__(self, problem_id: _Optional[str] = ..., runtime_id: _Optional[str] = ..., template_ern: _Optional[str] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
-    __slots__ = ["template"]
+    __slots__ = ["template", "x_template"]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    X_TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     template: str
-    def __init__(self, template: _Optional[str] = ...) -> None: ...
+    x_template: _template_pb2.Template
+    def __init__(self, x_template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ..., template: _Optional[str] = ...) -> None: ...
 
 class DescribeContestInput(_message.Message):
     __slots__ = ["contest_id"]
@@ -329,10 +334,12 @@ class DescribeParticipantOutput(_message.Message):
     def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ["problem_ern", "problem_id"]
+    PROBLEM_ERN_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_ern: str
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., problem_ern: _Optional[str] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ["problem"]
@@ -990,6 +997,22 @@ class ListTicketsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_ticket_pb2.Ticket]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_ticket_pb2.Ticket, _Mapping]]] = ...) -> None: ...
+
+class LookupCodeTemplateInput(_message.Message):
+    __slots__ = ["problem_ern", "runtime"]
+    PROBLEM_ERN_FIELD_NUMBER: _ClassVar[int]
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    problem_ern: str
+    runtime: str
+    def __init__(self, problem_ern: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
+
+class LookupCodeTemplateOutput(_message.Message):
+    __slots__ = ["template", "x_template"]
+    TEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    X_TEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    template: str
+    x_template: _template_pb2.Template
+    def __init__(self, x_template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ..., template: _Optional[str] = ...) -> None: ...
 
 class LookupContestInput(_message.Message):
     __slots__ = ["key"]

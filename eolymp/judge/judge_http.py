@@ -172,6 +172,14 @@ class JudgeClient:
             **kwargs,
         )
 
+    def LookupCodeTemplate(self, request, **kwargs):
+        return self.transport.request(
+            url="eolymp.judge.Judge/LookupCodeTemplate",
+            request=request,
+            response_obj=_sym_db.GetSymbol("eolymp.judge.LookupCodeTemplateOutput"),
+            **kwargs,
+        )
+
     def ListStatements(self, request, **kwargs):
         return self.transport.request(
             url="eolymp.judge.Judge/ListStatements",
