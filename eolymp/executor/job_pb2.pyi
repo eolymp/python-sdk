@@ -10,7 +10,7 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class Job(_message.Message):
     __slots__ = ["actors", "origin", "preconditions", "reference", "runs", "scenario"]
     class Actor(_message.Message):
-        __slots__ = ["env", "files", "mount", "name", "output_format", "runtime", "source_ern"]
+        __slots__ = ["env", "files", "footer_ern", "header_ern", "mount", "name", "output_format", "runtime", "source_ern"]
         class OutputFormat(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         class EnvEntry(_message.Message):
@@ -23,6 +23,8 @@ class Job(_message.Message):
         ENV_FIELD_NUMBER: _ClassVar[int]
         EXIT_CODE: Job.Actor.OutputFormat
         FILES_FIELD_NUMBER: _ClassVar[int]
+        FOOTER_ERN_FIELD_NUMBER: _ClassVar[int]
+        HEADER_ERN_FIELD_NUMBER: _ClassVar[int]
         MOUNT_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         OUTPUT_FORMAT_FIELD_NUMBER: _ClassVar[int]
@@ -31,12 +33,14 @@ class Job(_message.Message):
         TESTLIB_OUTPUT: Job.Actor.OutputFormat
         env: _containers.ScalarMap[str, str]
         files: _containers.RepeatedCompositeFieldContainer[Job.File]
+        footer_ern: str
+        header_ern: str
         mount: _containers.RepeatedCompositeFieldContainer[Job.Mount]
         name: str
         output_format: Job.Actor.OutputFormat
         runtime: str
         source_ern: str
-        def __init__(self, name: _Optional[str] = ..., runtime: _Optional[str] = ..., source_ern: _Optional[str] = ..., env: _Optional[_Mapping[str, str]] = ..., files: _Optional[_Iterable[_Union[Job.File, _Mapping]]] = ..., output_format: _Optional[_Union[Job.Actor.OutputFormat, str]] = ..., mount: _Optional[_Iterable[_Union[Job.Mount, _Mapping]]] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., runtime: _Optional[str] = ..., source_ern: _Optional[str] = ..., header_ern: _Optional[str] = ..., footer_ern: _Optional[str] = ..., env: _Optional[_Mapping[str, str]] = ..., files: _Optional[_Iterable[_Union[Job.File, _Mapping]]] = ..., output_format: _Optional[_Union[Job.Actor.OutputFormat, str]] = ..., mount: _Optional[_Iterable[_Union[Job.Mount, _Mapping]]] = ...) -> None: ...
     class File(_message.Message):
         __slots__ = ["path", "source_ern"]
         PATH_FIELD_NUMBER: _ClassVar[int]
