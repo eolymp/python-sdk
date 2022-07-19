@@ -291,10 +291,12 @@ class DescribeChangeOutput(_message.Message):
     def __init__(self, change: _Optional[_Union[_change_pb2.Change, _Mapping]] = ...) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ["template_id"]
+    __slots__ = ["template_ern", "template_id"]
+    TEMPLATE_ERN_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
+    template_ern: str
     template_id: str
-    def __init__(self, template_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, template_id: _Optional[str] = ..., template_ern: _Optional[str] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
     __slots__ = ["template"]
