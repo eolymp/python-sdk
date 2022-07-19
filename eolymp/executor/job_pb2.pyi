@@ -1,6 +1,4 @@
-from eolymp.executor import interactor_pb2 as _interactor_pb2
 from eolymp.executor import task_pb2 as _task_pb2
-from eolymp.executor import verifier_pb2 as _verifier_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
