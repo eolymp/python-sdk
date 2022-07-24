@@ -266,22 +266,16 @@ class DescribeAppearanceOutput(_message.Message):
     def __init__(self, appearance: _Optional[_Union[_contest_pb2.Contest.Appearance, _Mapping]] = ...) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ["problem_id", "runtime_id", "template_ern"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    RUNTIME_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["template_ern"]
     TEMPLATE_ERN_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    runtime_id: str
     template_ern: str
-    def __init__(self, problem_id: _Optional[str] = ..., runtime_id: _Optional[str] = ..., template_ern: _Optional[str] = ...) -> None: ...
+    def __init__(self, template_ern: _Optional[str] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
-    __slots__ = ["template", "x_template"]
+    __slots__ = ["template"]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
-    X_TEMPLATE_FIELD_NUMBER: _ClassVar[int]
-    template: str
-    x_template: _template_pb2.Template
-    def __init__(self, x_template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ..., template: _Optional[str] = ...) -> None: ...
+    template: _template_pb2.Template
+    def __init__(self, template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class DescribeContestInput(_message.Message):
     __slots__ = ["contest_id"]
@@ -1010,9 +1004,9 @@ class LookupCodeTemplateOutput(_message.Message):
     __slots__ = ["template", "x_template"]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     X_TEMPLATE_FIELD_NUMBER: _ClassVar[int]
-    template: str
+    template: _template_pb2.Template
     x_template: _template_pb2.Template
-    def __init__(self, x_template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ..., template: _Optional[str] = ...) -> None: ...
+    def __init__(self, template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ..., x_template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class LookupContestInput(_message.Message):
     __slots__ = ["key"]
