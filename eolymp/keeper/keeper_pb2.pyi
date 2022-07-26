@@ -13,10 +13,16 @@ class CreateObjectInput(_message.Message):
     def __init__(self, data: _Optional[bytes] = ...) -> None: ...
 
 class CreateObjectOutput(_message.Message):
-    __slots__ = ["key"]
+    __slots__ = ["ern", "hash", "key", "size"]
+    ERN_FIELD_NUMBER: _ClassVar[int]
+    HASH_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    ern: str
+    hash: str
     key: str
-    def __init__(self, key: _Optional[str] = ...) -> None: ...
+    size: int
+    def __init__(self, key: _Optional[str] = ..., ern: _Optional[str] = ..., hash: _Optional[str] = ..., size: _Optional[int] = ...) -> None: ...
 
 class DescribeObjectInput(_message.Message):
     __slots__ = ["key"]
