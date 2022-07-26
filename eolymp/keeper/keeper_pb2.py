@@ -15,7 +15,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/keeper/keeper.proto\x12\reolymp.keeper\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"!\n\x11\x43reateObjectInput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"J\n\x12\x43reateObjectOutput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0b\n\x03\x65rn\x18\x02 \x01(\t\x12\x0c\n\x04hash\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\r\"\"\n\x13\x44\x65scribeObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\"$\n\x14\x44\x65scribeObjectOutput\x12\x0c\n\x04size\x18\x01 \x01(\x05\"@\n\x13\x44ownloadObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"2\n\x14\x44ownloadObjectOutput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04size\x18\x02 \x01(\x05\x32\x9b\x03\n\x06Keeper\x12\x80\x01\n\x0c\x43reateObject\x12 .eolymp.keeper.CreateObjectInput\x1a!.eolymp.keeper.CreateObjectOutput\"+\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\xf4\x03\x12\x85\x01\n\x0e\x44\x65scribeObject\x12\".eolymp.keeper.DescribeObjectInput\x1a#.eolymp.keeper.DescribeObjectOutput\"*\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x12\x85\x01\n\x0e\x44ownloadObject\x12\".eolymp.keeper.DownloadObjectInput\x1a#.eolymp.keeper.DownloadObjectOutput\"*\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/keeper;keeperb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/keeper/keeper.proto\x12\reolymp.keeper\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"!\n\x11\x43reateObjectInput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"F\n\x12\x43reateObjectOutput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08\x62lob_ern\x18\x02 \x01(\t\x12\x11\n\tblob_hash\x18\x03 \x01(\t\"\"\n\x13\x44\x65scribeObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\"$\n\x14\x44\x65scribeObjectOutput\x12\x0c\n\x04size\x18\x01 \x01(\x05\"@\n\x13\x44ownloadObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"2\n\x14\x44ownloadObjectOutput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04size\x18\x02 \x01(\x05\x32\x9b\x03\n\x06Keeper\x12\x80\x01\n\x0c\x43reateObject\x12 .eolymp.keeper.CreateObjectInput\x1a!.eolymp.keeper.CreateObjectOutput\"+\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\xf4\x03\x12\x85\x01\n\x0e\x44\x65scribeObject\x12\".eolymp.keeper.DescribeObjectInput\x1a#.eolymp.keeper.DescribeObjectOutput\"*\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x12\x85\x01\n\x0e\x44ownloadObject\x12\".eolymp.keeper.DownloadObjectInput\x1a#.eolymp.keeper.DownloadObjectOutput\"*\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/keeper;keeperb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.keeper.keeper_pb2', globals())
@@ -32,15 +32,15 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATEOBJECTINPUT._serialized_start=113
   _CREATEOBJECTINPUT._serialized_end=146
   _CREATEOBJECTOUTPUT._serialized_start=148
-  _CREATEOBJECTOUTPUT._serialized_end=222
-  _DESCRIBEOBJECTINPUT._serialized_start=224
-  _DESCRIBEOBJECTINPUT._serialized_end=258
-  _DESCRIBEOBJECTOUTPUT._serialized_start=260
-  _DESCRIBEOBJECTOUTPUT._serialized_end=296
-  _DOWNLOADOBJECTINPUT._serialized_start=298
-  _DOWNLOADOBJECTINPUT._serialized_end=362
-  _DOWNLOADOBJECTOUTPUT._serialized_start=364
-  _DOWNLOADOBJECTOUTPUT._serialized_end=414
-  _KEEPER._serialized_start=417
-  _KEEPER._serialized_end=828
+  _CREATEOBJECTOUTPUT._serialized_end=218
+  _DESCRIBEOBJECTINPUT._serialized_start=220
+  _DESCRIBEOBJECTINPUT._serialized_end=254
+  _DESCRIBEOBJECTOUTPUT._serialized_start=256
+  _DESCRIBEOBJECTOUTPUT._serialized_end=292
+  _DOWNLOADOBJECTINPUT._serialized_start=294
+  _DOWNLOADOBJECTINPUT._serialized_end=358
+  _DOWNLOADOBJECTOUTPUT._serialized_start=360
+  _DOWNLOADOBJECTOUTPUT._serialized_end=410
+  _KEEPER._serialized_start=413
+  _KEEPER._serialized_end=824
 # @@protoc_insertion_point(module_scope)
