@@ -15,7 +15,7 @@ from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resour
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/judge/participant.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdf\x04\n\x0bParticipant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontest_id\x18\x03 \x01(\t\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x30\n\x06status\x18\x14 \x01(\x0e\x32 .eolymp.judge.Participant.Status\x12.\n\nstarted_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nstarted_in\x18\x16 \x01(\r\x12*\n\x06\x65nd_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06\x65nd_in\x18\x18 \x01(\r\x12/\n\x0b\x63omplete_at\x18\x19 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x63omplete_in\x18\x1a \x01(\r\x12\x12\n\nbonus_time\x18\x1b \x01(\r\x12\x10\n\x08passcode\x18\x1e \x01(\t\x12\x31\n\x07submits\x18( \x03(\x0b\x32 .eolymp.judge.Participant.Submit\x1a-\n\x06Submit\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63ounter\x18\x02 \x01(\r\"b\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\t\n\x05READY\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\x0c\n\x08INACTIVE\x10\x04\x12\x10\n\x0cUNREGISTERED\x10\x05\x12\t\n\x05GHOST\x10\x06:+\xb2\xe3\n\'\xba\xe3\n\x0bparticipant\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/judge/participant.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xed\x04\n\x0bParticipant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x12\n\ncontest_id\x18\x03 \x01(\t\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x30\n\x06status\x18\x14 \x01(\x0e\x32 .eolymp.judge.Participant.Status\x12.\n\nstarted_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nstarted_in\x18\x16 \x01(\r\x12*\n\x06\x65nd_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06\x65nd_in\x18\x18 \x01(\r\x12/\n\x0b\x63omplete_at\x18\x19 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x63omplete_in\x18\x1a \x01(\r\x12\x12\n\nbonus_time\x18\x1b \x01(\r\x12\x10\n\x08passcode\x18\x1e \x01(\t\x12\x31\n\x07submits\x18( \x03(\x0b\x32 .eolymp.judge.Participant.Submit\x1a-\n\x06Submit\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63ounter\x18\x02 \x01(\r\"b\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\t\n\x05READY\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\x0c\n\x08INACTIVE\x10\x04\x12\x10\n\x0cUNREGISTERED\x10\x05\x12\t\n\x05GHOST\x10\x06:+\xb2\xe3\n\'\xba\xe3\n\x0bparticipant\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.participant_pb2', globals())
@@ -26,9 +26,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PARTICIPANT._options = None
   _PARTICIPANT._serialized_options = b'\262\343\n\'\272\343\n\013participant\302\343\n\024eolymp.judge.Contest'
   _PARTICIPANT._serialized_start=117
-  _PARTICIPANT._serialized_end=724
-  _PARTICIPANT_SUBMIT._serialized_start=534
-  _PARTICIPANT_SUBMIT._serialized_end=579
-  _PARTICIPANT_STATUS._serialized_start=581
-  _PARTICIPANT_STATUS._serialized_end=679
+  _PARTICIPANT._serialized_end=738
+  _PARTICIPANT_SUBMIT._serialized_start=548
+  _PARTICIPANT_SUBMIT._serialized_end=593
+  _PARTICIPANT_STATUS._serialized_start=595
+  _PARTICIPANT_STATUS._serialized_end=693
 # @@protoc_insertion_point(module_scope)

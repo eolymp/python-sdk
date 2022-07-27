@@ -15,7 +15,7 @@ from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resour
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/ticket.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xad\x02\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\n \x01(\t\x12\x0f\n\x07message\x18\x0b \x01(\t\x12\x0f\n\x07is_open\x18\x14 \x01(\x08\x12\x1e\n\x16is_read_by_participant\x18\x15 \x01(\x08\x12\x18\n\x10is_read_by_owner\x18\x16 \x01(\x08\x12.\n\ncreated_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x07is_read\x18\x87N \x01(\x08\x12\x14\n\x0bneeds_reply\x18\x88N \x01(\x08:&\xb2\xe3\n\"\xba\xe3\n\x06ticket\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/ticket.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xbb\x02\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\n \x01(\t\x12\x0f\n\x07message\x18\x0b \x01(\t\x12\x0f\n\x07is_open\x18\x14 \x01(\x08\x12\x1e\n\x16is_read_by_participant\x18\x15 \x01(\x08\x12\x18\n\x10is_read_by_owner\x18\x16 \x01(\x08\x12.\n\ncreated_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x07is_read\x18\x87N \x01(\x08\x12\x14\n\x0bneeds_reply\x18\x88N \x01(\x08:&\xb2\xe3\n\"\xba\xe3\n\x06ticket\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.ticket_pb2', globals())
@@ -26,5 +26,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TICKET._options = None
   _TICKET._serialized_options = b'\262\343\n\"\272\343\n\006ticket\302\343\n\024eolymp.judge.Contest'
   _TICKET._serialized_start=112
-  _TICKET._serialized_end=413
+  _TICKET._serialized_end=427
 # @@protoc_insertion_point(module_scope)

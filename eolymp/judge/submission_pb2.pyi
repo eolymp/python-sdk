@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ["contest_id", "cost", "error", "groups", "id", "lang", "participant_id", "percentage", "problem_id", "score", "signature", "source", "status", "submitted_at"]
+    __slots__ = ["contest_id", "cost", "ern", "error", "groups", "id", "lang", "participant_id", "percentage", "problem_id", "score", "signature", "source", "status", "submitted_at"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Group(_message.Message):
@@ -93,6 +93,7 @@ class Submission(_message.Message):
     COMPLETE: Submission.Status
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     COST_FIELD_NUMBER: _ClassVar[int]
+    ERN_FIELD_NUMBER: _ClassVar[int]
     ERROR: Submission.Status
     ERROR_FIELD_NUMBER: _ClassVar[int]
     FAILURE: Submission.Status
@@ -113,6 +114,7 @@ class Submission(_message.Message):
     TIMEOUT: Submission.Status
     contest_id: str
     cost: float
+    ern: str
     error: str
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     id: str
@@ -125,4 +127,4 @@ class Submission(_message.Message):
     source: str
     status: Submission.Status
     submitted_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., error: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., error: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ...) -> None: ...
