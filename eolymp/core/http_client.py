@@ -33,7 +33,7 @@ class HttpClient:
 
             if resp.status_code == 200:
                 response = response_obj()
-                json_format.Parse(resp.content, response)
+                json_format.Parse(resp.content, response, ignore_unknown_fields=True)
                 return response
             else:
                 raise Exception("Got non-200 response: {}".format(resp.status_code))
