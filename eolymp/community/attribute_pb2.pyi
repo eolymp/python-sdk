@@ -27,6 +27,8 @@ class Attribute(_message.Message):
     CHECKBOX: Attribute.Type
     CHOICE: Attribute.Type
     CHOICES_FIELD_NUMBER: _ClassVar[int]
+    COUNTRY: Attribute.Type
+    COUNTRY_REGION: Attribute.Type
     DATE: Attribute.Type
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     EMAIL: Attribute.Type
@@ -38,6 +40,7 @@ class Attribute(_message.Message):
     MIN_FIELD_NUMBER: _ClassVar[int]
     NUMBER: Attribute.Type
     REGEXP_FIELD_NUMBER: _ClassVar[int]
+    REGION: Attribute.Type
     REQUIRED_FIELD_NUMBER: _ClassVar[int]
     STRING: Attribute.Type
     TEXT: Attribute.Type
