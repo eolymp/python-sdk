@@ -26,14 +26,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AddParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "member_id", "name"]
+    __slots__ = ["contest_id", "member_id", "name", "out_of_competition"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     member_id: str
     name: str
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    out_of_competition: bool
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ..., out_of_competition: bool = ...) -> None: ...
 
 class AddParticipantOutput(_message.Message):
     __slots__ = ["participant_id"]
@@ -1187,7 +1189,7 @@ class UpdateContestOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateParticipantInput(_message.Message):
-    __slots__ = ["bonus_time", "name", "participant_id", "patch"]
+    __slots__ = ["bonus_time", "name", "out_of_competition", "participant_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateParticipantInput.Patch
@@ -1195,13 +1197,16 @@ class UpdateParticipantInput(_message.Message):
     BONUS_TIME_FIELD_NUMBER: _ClassVar[int]
     NAME: UpdateParticipantInput.Patch
     NAME_FIELD_NUMBER: _ClassVar[int]
+    OUT_OF_COMPETITION: UpdateParticipantInput.Patch
+    OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
     bonus_time: int
     name: str
+    out_of_competition: bool
     participant_id: str
     patch: UpdateParticipantInput.Patch
-    def __init__(self, participant_id: _Optional[str] = ..., patch: _Optional[_Union[UpdateParticipantInput.Patch, str]] = ..., name: _Optional[str] = ..., bonus_time: _Optional[int] = ...) -> None: ...
+    def __init__(self, participant_id: _Optional[str] = ..., patch: _Optional[_Union[UpdateParticipantInput.Patch, str]] = ..., name: _Optional[str] = ..., bonus_time: _Optional[int] = ..., out_of_competition: bool = ...) -> None: ...
 
 class UpdateParticipantOutput(_message.Message):
     __slots__ = []

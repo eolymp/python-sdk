@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Participant(_message.Message):
-    __slots__ = ["bonus_time", "complete_at", "complete_in", "contest_id", "end_at", "end_in", "ern", "id", "member_id", "name", "passcode", "started_at", "started_in", "status", "submits"]
+    __slots__ = ["bonus_time", "complete_at", "complete_in", "contest_id", "end_at", "end_in", "ern", "id", "member_id", "name", "out_of_competition", "passcode", "started_at", "started_in", "status", "submits"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Submit(_message.Message):
@@ -34,6 +34,7 @@ class Participant(_message.Message):
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     NONE: Participant.Status
+    OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     READY: Participant.Status
     STARTED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -51,9 +52,10 @@ class Participant(_message.Message):
     id: str
     member_id: str
     name: str
+    out_of_competition: bool
     passcode: str
     started_at: _timestamp_pb2.Timestamp
     started_in: int
     status: Participant.Status
     submits: _containers.RepeatedCompositeFieldContainer[Participant.Submit]
-    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_in: _Optional[int] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_in: _Optional[int] = ..., complete_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_in: _Optional[int] = ..., bonus_time: _Optional[int] = ..., passcode: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ..., out_of_competition: bool = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_in: _Optional[int] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_in: _Optional[int] = ..., complete_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_in: _Optional[int] = ..., bonus_time: _Optional[int] = ..., passcode: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
