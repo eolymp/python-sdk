@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/geography/region.proto\x12\x10\x65olymp.geography\"A\n\x06Region\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x66lag\x18\x04 \x01(\tB5Z3github.com/eolymp/go-sdk/eolymp/geography;geographyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/geography/region.proto\x12\x10\x65olymp.geography\"D\n\x06Region\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncountry_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x66lag\x18\x04 \x01(\tB5Z3github.com/eolymp/go-sdk/eolymp/geography;geographyb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.geography.region_pb2', globals())
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/geography;geography'
   _REGION._serialized_start=51
-  _REGION._serialized_end=116
+  _REGION._serialized_end=119
 # @@protoc_insertion_point(module_scope)
