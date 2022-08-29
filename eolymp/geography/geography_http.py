@@ -28,3 +28,19 @@ class GeographyClient:
             **kwargs,
         )
 
+    def DescribeRegion(self, request, **kwargs):
+        return self.transport.request(
+            url="eolymp.geography.Geography/DescribeRegion",
+            request=request,
+            response_obj=_sym_db.GetSymbol("eolymp.geography.DescribeRegionOutput"),
+            **kwargs,
+        )
+
+    def ListRegions(self, request, **kwargs):
+        return self.transport.request(
+            url="eolymp.geography.Geography/ListRegions",
+            request=request,
+            response_obj=_sym_db.GetSymbol("eolymp.geography.ListRegionsOutput"),
+            **kwargs,
+        )
+
