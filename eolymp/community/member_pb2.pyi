@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ["disabled", "ern", "ghost", "id", "name", "registered", "staffed", "status", "users", "values"]
+    __slots__ = ["disabled", "ern", "ghost", "id", "name", "out_of_competition", "registered", "staffed", "status", "users", "values"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class User(_message.Message):
@@ -33,6 +33,7 @@ class Member(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     INACTIVE: Member.Status
     NAME_FIELD_NUMBER: _ClassVar[int]
+    OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
     REGISTERED_FIELD_NUMBER: _ClassVar[int]
     STAFFED_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -46,9 +47,10 @@ class Member(_message.Message):
     ghost: bool
     id: str
     name: str
+    out_of_competition: bool
     registered: bool
     staffed: bool
     status: Member.Status
     users: _containers.RepeatedCompositeFieldContainer[Member.User]
     values: _containers.RepeatedCompositeFieldContainer[Member.Value]
-    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., name: _Optional[str] = ..., disabled: bool = ..., registered: bool = ..., staffed: bool = ..., ghost: bool = ..., status: _Optional[_Union[Member.Status, str]] = ..., users: _Optional[_Iterable[_Union[Member.User, _Mapping]]] = ..., values: _Optional[_Iterable[_Union[Member.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., name: _Optional[str] = ..., disabled: bool = ..., registered: bool = ..., staffed: bool = ..., ghost: bool = ..., out_of_competition: bool = ..., status: _Optional[_Union[Member.Status, str]] = ..., users: _Optional[_Iterable[_Union[Member.User, _Mapping]]] = ..., values: _Optional[_Iterable[_Union[Member.Value, _Mapping]]] = ...) -> None: ...

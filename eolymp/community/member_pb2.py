@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a!eolymp/annotations/resource.proto\"\xf7\x03\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nregistered\x18\x04 \x01(\x08\x12\x0f\n\x07staffed\x18\x05 \x01(\x08\x12\r\n\x05ghost\x18\x07 \x01(\x08\x12/\n\x06status\x18\x06 \x01(\x0e\x32\x1f.eolymp.community.Member.Status\x12,\n\x05users\x18\n \x03(\x0b\x32\x1d.eolymp.community.Member.User\x12.\n\x06values\x18\x14 \x03(\x0b\x32\x1e.eolymp.community.Member.Value\x1a\x17\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x1aJ\n\x05Value\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\x14\n\x0cvalue_string\x18\x02 \x01(\t\x12\x14\n\x0cvalue_number\x18\x03 \x01(\x05\"b\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\r\n\tUNSTAFFED\x10\x01\x12\x10\n\x0cUNREGISTERED\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08INACTIVE\x10\x04\x12\t\n\x05GHOST\x10\x05:\'\xb2\xe3\n#\xba\xe3\n\x06member\xc2\xe3\n\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a!eolymp/annotations/resource.proto\"\x93\x04\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nregistered\x18\x04 \x01(\x08\x12\x0f\n\x07staffed\x18\x05 \x01(\x08\x12\r\n\x05ghost\x18\x07 \x01(\x08\x12\x1a\n\x12out_of_competition\x18\x08 \x01(\x08\x12/\n\x06status\x18\x06 \x01(\x0e\x32\x1f.eolymp.community.Member.Status\x12,\n\x05users\x18\n \x03(\x0b\x32\x1d.eolymp.community.Member.User\x12.\n\x06values\x18\x14 \x03(\x0b\x32\x1e.eolymp.community.Member.Value\x1a\x17\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x1aJ\n\x05Value\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\x14\n\x0cvalue_string\x18\x02 \x01(\t\x12\x14\n\x0cvalue_number\x18\x03 \x01(\x05\"b\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\r\n\tUNSTAFFED\x10\x01\x12\x10\n\x0cUNREGISTERED\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08INACTIVE\x10\x04\x12\t\n\x05GHOST\x10\x05:\'\xb2\xe3\n#\xba\xe3\n\x06member\xc2\xe3\n\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.member_pb2', globals())
@@ -25,11 +25,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MEMBER._options = None
   _MEMBER._serialized_options = b'\262\343\n#\272\343\n\006member\302\343\n\025eolymp.universe.Space'
   _MEMBER._serialized_start=87
-  _MEMBER._serialized_end=590
-  _MEMBER_USER._serialized_start=350
-  _MEMBER_USER._serialized_end=373
-  _MEMBER_VALUE._serialized_start=375
-  _MEMBER_VALUE._serialized_end=449
-  _MEMBER_STATUS._serialized_start=451
-  _MEMBER_STATUS._serialized_end=549
+  _MEMBER._serialized_end=618
+  _MEMBER_USER._serialized_start=378
+  _MEMBER_USER._serialized_end=401
+  _MEMBER_VALUE._serialized_start=403
+  _MEMBER_VALUE._serialized_end=477
+  _MEMBER_STATUS._serialized_start=479
+  _MEMBER_STATUS._serialized_end=577
 # @@protoc_insertion_point(module_scope)
