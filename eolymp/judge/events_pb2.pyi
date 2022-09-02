@@ -1,3 +1,4 @@
+from eolymp.judge import participant_pb2 as _participant_pb2
 from eolymp.judge import reply_pb2 as _reply_pb2
 from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import submission_pb2 as _submission_pb2
@@ -7,6 +8,24 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class ParticipantCreatedEvent(_message.Message):
+    __slots__ = ["participant"]
+    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    participant: _participant_pb2.Participant
+    def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+
+class ParticipantDeletedEvent(_message.Message):
+    __slots__ = ["participant"]
+    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    participant: _participant_pb2.Participant
+    def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+
+class ParticipantUpdatedEvent(_message.Message):
+    __slots__ = ["participant"]
+    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    participant: _participant_pb2.Participant
+    def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class RebuildScoreEvent(_message.Message):
     __slots__ = ["activity_id", "contest_id"]

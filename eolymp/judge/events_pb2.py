@@ -11,13 +11,14 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.judge import participant_pb2 as eolymp_dot_judge_dot_participant__pb2
 from eolymp.judge import reply_pb2 as eolymp_dot_judge_dot_reply__pb2
 from eolymp.judge import score_pb2 as eolymp_dot_judge_dot_score__pb2
 from eolymp.judge import submission_pb2 as eolymp_dot_judge_dot_submission__pb2
 from eolymp.judge import ticket_pb2 as eolymp_dot_judge_dot_ticket__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/events.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/judge/reply.proto\x1a\x18\x65olymp/judge/score.proto\x1a\x1d\x65olymp/judge/submission.proto\x1a\x19\x65olymp/judge/ticket.proto\"H\n\x18SubmissionCompletedEvent\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"<\n\x11RebuildScoreEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x02 \x01(\t\"\x7f\n\x11ScoreUpdatedEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12\x1a\n\x12out_of_competition\x18\x04 \x01(\x08\x12\"\n\x05score\x18\x03 \x01(\x0b\x32\x13.eolymp.judge.Score\":\n\x12TicketCreatedEvent\x12$\n\x06ticket\x18\x01 \x01(\x0b\x32\x14.eolymp.judge.Ticket\"^\n\x12TicketUpdatedEvent\x12$\n\x06ticket\x18\x01 \x01(\x0b\x32\x14.eolymp.judge.Ticket\x12\"\n\x05reply\x18\x02 \x01(\x0b\x32\x13.eolymp.judge.ReplyB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/events.proto\x12\x0c\x65olymp.judge\x1a\x1e\x65olymp/judge/participant.proto\x1a\x18\x65olymp/judge/reply.proto\x1a\x18\x65olymp/judge/score.proto\x1a\x1d\x65olymp/judge/submission.proto\x1a\x19\x65olymp/judge/ticket.proto\"H\n\x18SubmissionCompletedEvent\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"<\n\x11RebuildScoreEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x02 \x01(\t\"\x7f\n\x11ScoreUpdatedEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12\x1a\n\x12out_of_competition\x18\x04 \x01(\x08\x12\"\n\x05score\x18\x03 \x01(\x0b\x32\x13.eolymp.judge.Score\":\n\x12TicketCreatedEvent\x12$\n\x06ticket\x18\x01 \x01(\x0b\x32\x14.eolymp.judge.Ticket\"^\n\x12TicketUpdatedEvent\x12$\n\x06ticket\x18\x01 \x01(\x0b\x32\x14.eolymp.judge.Ticket\x12\"\n\x05reply\x18\x02 \x01(\x0b\x32\x13.eolymp.judge.Reply\"I\n\x17ParticipantCreatedEvent\x12.\n\x0bparticipant\x18\x01 \x01(\x0b\x32\x19.eolymp.judge.Participant\"I\n\x17ParticipantUpdatedEvent\x12.\n\x0bparticipant\x18\x01 \x01(\x0b\x32\x19.eolymp.judge.Participant\"I\n\x17ParticipantDeletedEvent\x12.\n\x0bparticipant\x18\x01 \x01(\x0b\x32\x19.eolymp.judge.ParticipantB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.events_pb2', globals())
@@ -25,14 +26,20 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _SUBMISSIONCOMPLETEDEVENT._serialized_start=153
-  _SUBMISSIONCOMPLETEDEVENT._serialized_end=225
-  _REBUILDSCOREEVENT._serialized_start=227
-  _REBUILDSCOREEVENT._serialized_end=287
-  _SCOREUPDATEDEVENT._serialized_start=289
-  _SCOREUPDATEDEVENT._serialized_end=416
-  _TICKETCREATEDEVENT._serialized_start=418
-  _TICKETCREATEDEVENT._serialized_end=476
-  _TICKETUPDATEDEVENT._serialized_start=478
-  _TICKETUPDATEDEVENT._serialized_end=572
+  _SUBMISSIONCOMPLETEDEVENT._serialized_start=185
+  _SUBMISSIONCOMPLETEDEVENT._serialized_end=257
+  _REBUILDSCOREEVENT._serialized_start=259
+  _REBUILDSCOREEVENT._serialized_end=319
+  _SCOREUPDATEDEVENT._serialized_start=321
+  _SCOREUPDATEDEVENT._serialized_end=448
+  _TICKETCREATEDEVENT._serialized_start=450
+  _TICKETCREATEDEVENT._serialized_end=508
+  _TICKETUPDATEDEVENT._serialized_start=510
+  _TICKETUPDATEDEVENT._serialized_end=604
+  _PARTICIPANTCREATEDEVENT._serialized_start=606
+  _PARTICIPANTCREATEDEVENT._serialized_end=679
+  _PARTICIPANTUPDATEDEVENT._serialized_start=681
+  _PARTICIPANTUPDATEDEVENT._serialized_end=754
+  _PARTICIPANTDELETEDEVENT._serialized_start=756
+  _PARTICIPANTDELETEDEVENT._serialized_end=829
 # @@protoc_insertion_point(module_scope)
