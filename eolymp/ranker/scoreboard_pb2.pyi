@@ -46,8 +46,9 @@ class Scoreboard(_message.Message):
     class Row(_message.Message):
         __slots__ = ["ghost", "id", "member_id", "name", "out_of_competition", "penalty", "rank", "rank_lower", "score", "values"]
         class Value(_message.Message):
-            __slots__ = ["attempts", "column_id", "id", "penalty", "percentage", "score", "solved_in", "value_number", "value_string"]
+            __slots__ = ["attempts", "attribute_type", "column_id", "id", "penalty", "percentage", "score", "solved_in", "value_number", "value_string"]
             ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
+            ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
             COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
             ID_FIELD_NUMBER: _ClassVar[int]
             PENALTY_FIELD_NUMBER: _ClassVar[int]
@@ -57,6 +58,7 @@ class Scoreboard(_message.Message):
             VALUE_NUMBER_FIELD_NUMBER: _ClassVar[int]
             VALUE_STRING_FIELD_NUMBER: _ClassVar[int]
             attempts: int
+            attribute_type: str
             column_id: str
             id: str
             penalty: float
@@ -65,7 +67,7 @@ class Scoreboard(_message.Message):
             solved_in: int
             value_number: int
             value_string: str
-            def __init__(self, id: _Optional[str] = ..., column_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_in: _Optional[int] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
+            def __init__(self, id: _Optional[str] = ..., column_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_in: _Optional[int] = ..., attribute_type: _Optional[str] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
         GHOST_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]

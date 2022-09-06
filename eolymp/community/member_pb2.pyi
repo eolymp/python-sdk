@@ -1,4 +1,5 @@
 from eolymp.annotations import resource_pb2 as _resource_pb2
+from eolymp.community import attribute_pb2 as _attribute_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -17,14 +18,16 @@ class Member(_message.Message):
         user_id: str
         def __init__(self, user_id: _Optional[str] = ...) -> None: ...
     class Value(_message.Message):
-        __slots__ = ["attribute_key", "value_number", "value_string"]
+        __slots__ = ["attribute_key", "attribute_type", "value_number", "value_string"]
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
         VALUE_NUMBER_FIELD_NUMBER: _ClassVar[int]
         VALUE_STRING_FIELD_NUMBER: _ClassVar[int]
         attribute_key: str
+        attribute_type: _attribute_pb2.Attribute.Type
         value_number: int
         value_string: str
-        def __init__(self, attribute_key: _Optional[str] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
+        def __init__(self, attribute_key: _Optional[str] = ..., attribute_type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
     ACTIVE: Member.Status
     DISABLED_FIELD_NUMBER: _ClassVar[int]
     ERN_FIELD_NUMBER: _ClassVar[int]
