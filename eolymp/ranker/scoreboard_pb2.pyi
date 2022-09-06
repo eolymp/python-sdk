@@ -10,12 +10,13 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class Scoreboard(_message.Message):
     __slots__ = ["format", "id", "key", "name"]
     class Column(_message.Message):
-        __slots__ = ["columns", "community_attribute_key", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "type", "visible"]
+        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "type", "visible"]
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ATTRIBUTE: Scoreboard.Column.Type
         COLUMNS_FIELD_NUMBER: _ClassVar[int]
         COMMUNITY_ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        COMMUNITY_ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
         CONTEST: Scoreboard.Column.Type
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
@@ -32,6 +33,7 @@ class Scoreboard(_message.Message):
         VISIBLE_FIELD_NUMBER: _ClassVar[int]
         columns: _containers.RepeatedCompositeFieldContainer[Scoreboard.Column]
         community_attribute_key: str
+        community_attribute_type: str
         id: str
         index: int
         judge_contest_id: str
@@ -42,13 +44,12 @@ class Scoreboard(_message.Message):
         short_name: str
         type: Scoreboard.Column.Type
         visible: bool
-        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
     class Row(_message.Message):
         __slots__ = ["ghost", "id", "member_id", "name", "out_of_competition", "penalty", "rank", "rank_lower", "score", "values"]
         class Value(_message.Message):
-            __slots__ = ["attempts", "attribute_type", "column_id", "id", "penalty", "percentage", "score", "solved_in", "value_number", "value_string"]
+            __slots__ = ["attempts", "column_id", "id", "penalty", "percentage", "score", "solved_in", "value_number", "value_string"]
             ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
-            ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
             COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
             ID_FIELD_NUMBER: _ClassVar[int]
             PENALTY_FIELD_NUMBER: _ClassVar[int]
@@ -58,7 +59,6 @@ class Scoreboard(_message.Message):
             VALUE_NUMBER_FIELD_NUMBER: _ClassVar[int]
             VALUE_STRING_FIELD_NUMBER: _ClassVar[int]
             attempts: int
-            attribute_type: str
             column_id: str
             id: str
             penalty: float
@@ -67,7 +67,7 @@ class Scoreboard(_message.Message):
             solved_in: int
             value_number: int
             value_string: str
-            def __init__(self, id: _Optional[str] = ..., column_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_in: _Optional[int] = ..., attribute_type: _Optional[str] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
+            def __init__(self, id: _Optional[str] = ..., column_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_in: _Optional[int] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
         GHOST_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
