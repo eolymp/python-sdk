@@ -540,107 +540,11 @@ class JudgeClient:
             **kwargs,
         )
 
-    def CreateScoreboard(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/CreateScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.CreateScoreboardOutput"),
-            **kwargs,
-        )
-
-    def UpdateScoreboard(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/UpdateScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.UpdateScoreboardOutput"),
-            **kwargs,
-        )
-
     def RebuildScore(self, request, **kwargs):
         return self.transport.request(
             url="eolymp.judge.Judge/RebuildScore",
             request=request,
             response_obj=_sym_db.GetSymbol("eolymp.judge.RebuildScoreOutput"),
-            **kwargs,
-        )
-
-    def DeleteScoreboard(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/DeleteScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DeleteScoreboardOutput"),
-            **kwargs,
-        )
-
-    def DescribeScoreboard(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/DescribeScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeScoreboardOutput"),
-            **kwargs,
-        )
-
-    def DescribeDefaultScoreboard(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/DescribeDefaultScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeDefaultScoreboardOutput"),
-            **kwargs,
-        )
-
-    def ListScoreboards(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/ListScoreboards",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListScoreboardsOutput"),
-            **kwargs,
-        )
-
-    def DescribeScoreboardHeader(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/DescribeScoreboardHeader",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeScoreboardHeaderOutput"),
-            **kwargs,
-        )
-
-    def DescribeScoreboardFooter(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/DescribeScoreboardFooter",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeScoreboardFooterOutput"),
-            **kwargs,
-        )
-
-    def DescribeScoreboardRow(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/DescribeScoreboardRow",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeScoreboardRowOutput"),
-            **kwargs,
-        )
-
-    def DescribeDefaultScoreboardRow(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/DescribeDefaultScoreboardRow",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeDefaultScoreboardRowOutput"),
-            **kwargs,
-        )
-
-    def ListScoreboardRows(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/ListScoreboardRows",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListScoreboardRowsOutput"),
-            **kwargs,
-        )
-
-    def ListDefaultScoreboardRows(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/ListDefaultScoreboardRows",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListDefaultScoreboardRowsOutput"),
             **kwargs,
         )
 

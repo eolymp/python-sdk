@@ -11,7 +11,6 @@ from eolymp.judge import problem_pb2 as _problem_pb2
 from eolymp.judge import reply_pb2 as _reply_pb2
 from eolymp.judge import result_pb2 as _result_pb2
 from eolymp.judge import score_pb2 as _score_pb2
-from eolymp.judge import scoreboard_pb2 as _scoreboard_pb2
 from eolymp.judge import submission_pb2 as _submission_pb2
 from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.judge import ticket_pb2 as _ticket_pb2
@@ -125,20 +124,6 @@ class CreateContestOutput(_message.Message):
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
-class CreateScoreboardInput(_message.Message):
-    __slots__ = ["contest_id", "scoreboard"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    scoreboard: _scoreboard_pb2.Scoreboard
-    def __init__(self, contest_id: _Optional[str] = ..., scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
-
-class CreateScoreboardOutput(_message.Message):
-    __slots__ = ["scoreboard_id"]
-    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ...) -> None: ...
-
 class CreateSubmissionInput(_message.Message):
     __slots__ = ["lang", "problem_id", "source"]
     LANG_FIELD_NUMBER: _ClassVar[int]
@@ -208,16 +193,6 @@ class DeleteReplyInput(_message.Message):
     def __init__(self, reply_id: _Optional[str] = ...) -> None: ...
 
 class DeleteReplyOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class DeleteScoreboardInput(_message.Message):
-    __slots__ = ["scoreboard_id"]
-    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ...) -> None: ...
-
-class DeleteScoreboardOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
@@ -291,32 +266,6 @@ class DescribeContestOutput(_message.Message):
     contest: _contest_pb2.Contest
     def __init__(self, contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
 
-class DescribeDefaultScoreboardInput(_message.Message):
-    __slots__ = ["contest_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
-
-class DescribeDefaultScoreboardOutput(_message.Message):
-    __slots__ = ["scoreboard"]
-    SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
-    scoreboard: _scoreboard_pb2.Scoreboard
-    def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
-
-class DescribeDefaultScoreboardRowInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    participant_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
-
-class DescribeDefaultScoreboardRowOutput(_message.Message):
-    __slots__ = ["row"]
-    ROW_FIELD_NUMBER: _ClassVar[int]
-    row: _scoreboard_pb2.Scoreboard.Row
-    def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ...) -> None: ...
-
 class DescribeParticipantInput(_message.Message):
     __slots__ = ["participant_id"]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -370,72 +319,6 @@ class DescribeScoreOutput(_message.Message):
     SCORE_FIELD_NUMBER: _ClassVar[int]
     score: _score_pb2.Score
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
-
-class DescribeScoreboardFooterInput(_message.Message):
-    __slots__ = ["scoreboard_id"]
-    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ...) -> None: ...
-
-class DescribeScoreboardFooterOutput(_message.Message):
-    __slots__ = ["problems"]
-    class Problem(_message.Message):
-        __slots__ = ["problem_id", "success_attempts", "total_attempts"]
-        PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-        SUCCESS_ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
-        TOTAL_ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
-        problem_id: str
-        success_attempts: int
-        total_attempts: int
-        def __init__(self, problem_id: _Optional[str] = ..., total_attempts: _Optional[int] = ..., success_attempts: _Optional[int] = ...) -> None: ...
-    PROBLEMS_FIELD_NUMBER: _ClassVar[int]
-    problems: _containers.RepeatedCompositeFieldContainer[DescribeScoreboardFooterOutput.Problem]
-    def __init__(self, problems: _Optional[_Iterable[_Union[DescribeScoreboardFooterOutput.Problem, _Mapping]]] = ...) -> None: ...
-
-class DescribeScoreboardHeaderInput(_message.Message):
-    __slots__ = ["scoreboard_id"]
-    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ...) -> None: ...
-
-class DescribeScoreboardHeaderOutput(_message.Message):
-    __slots__ = ["problems"]
-    class Problem(_message.Message):
-        __slots__ = ["problem_id", "short_name"]
-        PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-        SHORT_NAME_FIELD_NUMBER: _ClassVar[int]
-        problem_id: str
-        short_name: str
-        def __init__(self, problem_id: _Optional[str] = ..., short_name: _Optional[str] = ...) -> None: ...
-    PROBLEMS_FIELD_NUMBER: _ClassVar[int]
-    problems: _containers.RepeatedCompositeFieldContainer[DescribeScoreboardHeaderOutput.Problem]
-    def __init__(self, problems: _Optional[_Iterable[_Union[DescribeScoreboardHeaderOutput.Problem, _Mapping]]] = ...) -> None: ...
-
-class DescribeScoreboardInput(_message.Message):
-    __slots__ = ["scoreboard_id"]
-    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ...) -> None: ...
-
-class DescribeScoreboardOutput(_message.Message):
-    __slots__ = ["scoreboard"]
-    SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
-    scoreboard: _scoreboard_pb2.Scoreboard
-    def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
-
-class DescribeScoreboardRowInput(_message.Message):
-    __slots__ = ["participant_id", "scoreboard_id"]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    participant_id: str
-    scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
-
-class DescribeScoreboardRowOutput(_message.Message):
-    __slots__ = ["row"]
-    ROW_FIELD_NUMBER: _ClassVar[int]
-    row: _scoreboard_pb2.Scoreboard.Row
-    def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ...) -> None: ...
 
 class DescribeScoringInput(_message.Message):
     __slots__ = ["contest_id"]
@@ -667,26 +550,6 @@ class ListContestsOutput(_message.Message):
     total: int
     def __init__(self, items: _Optional[_Iterable[_Union[_contest_pb2.Contest, _Mapping]]] = ..., total: _Optional[int] = ...) -> None: ...
 
-class ListDefaultScoreboardRowsInput(_message.Message):
-    __slots__ = ["contest_id", "filters", "offset", "size"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    filters: ListScoreboardRowsInput.Filter
-    offset: int
-    size: int
-    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ...) -> None: ...
-
-class ListDefaultScoreboardRowsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Row]
-    total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ...) -> None: ...
-
 class ListEntitlementsInput(_message.Message):
     __slots__ = ["contest_id", "participant_id", "submission_id", "ticket_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -826,74 +689,6 @@ class ListResultOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_result_pb2.Result]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_result_pb2.Result, _Mapping]]] = ...) -> None: ...
-
-class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ["filters", "offset", "scoreboard_id", "size"]
-    class Filter(_message.Message):
-        __slots__ = ["complete_at", "member_id", "name", "participant_id", "penalty", "score", "started_at", "status"]
-        COMPLETE_AT_FIELD_NUMBER: _ClassVar[int]
-        MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-        NAME_FIELD_NUMBER: _ClassVar[int]
-        PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-        PENALTY_FIELD_NUMBER: _ClassVar[int]
-        SCORE_FIELD_NUMBER: _ClassVar[int]
-        STARTED_AT_FIELD_NUMBER: _ClassVar[int]
-        STATUS_FIELD_NUMBER: _ClassVar[int]
-        complete_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
-        member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        participant_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        penalty: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
-        score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
-        started_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
-        status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., penalty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., started_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., complete_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ...) -> None: ...
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListScoreboardRowsInput.Filter
-    offset: int
-    scoreboard_id: str
-    size: int
-    def __init__(self, scoreboard_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ...) -> None: ...
-
-class ListScoreboardRowsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Row]
-    total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ...) -> None: ...
-
-class ListScoreboardsInput(_message.Message):
-    __slots__ = ["contest_id", "filters", "offset", "size"]
-    class Filter(_message.Message):
-        __slots__ = ["default", "id", "visible"]
-        DEFAULT_FIELD_NUMBER: _ClassVar[int]
-        ID_FIELD_NUMBER: _ClassVar[int]
-        VISIBLE_FIELD_NUMBER: _ClassVar[int]
-        default: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        visible: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., visible: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., default: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    filters: ListScoreboardsInput.Filter
-    offset: int
-    size: int
-    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardsInput.Filter, _Mapping]] = ...) -> None: ...
-
-class ListScoreboardsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard]
-    total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard, _Mapping]]] = ...) -> None: ...
 
 class ListStatementsInput(_message.Message):
     __slots__ = ["problem_id"]
@@ -1237,18 +1032,6 @@ class UpdateReplyInput(_message.Message):
     def __init__(self, reply_id: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
 
 class UpdateReplyOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UpdateScoreboardInput(_message.Message):
-    __slots__ = ["scoreboard", "scoreboard_id"]
-    SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
-    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    scoreboard: _scoreboard_pb2.Scoreboard
-    scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
-
-class UpdateScoreboardOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
