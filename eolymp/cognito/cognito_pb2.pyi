@@ -423,8 +423,10 @@ class UpdateProfileInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProfileInput.Patch, str]]] = ..., username: _Optional[str] = ..., email: _Optional[str] = ..., name: _Optional[str] = ..., company: _Optional[str] = ..., occupation: _Optional[str] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., birthday: _Optional[str] = ...) -> None: ...
 
 class UpdateProfileOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["email_confirmation_hint"]
+    EMAIL_CONFIRMATION_HINT_FIELD_NUMBER: _ClassVar[int]
+    email_confirmation_hint: str
+    def __init__(self, email_confirmation_hint: _Optional[str] = ...) -> None: ...
 
 class UpdateRolesInput(_message.Message):
     __slots__ = ["roles", "user_id"]
