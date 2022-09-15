@@ -204,3 +204,11 @@ class CognitoClient:
             **kwargs,
         )
 
+    def SelfDestruct(self, request, **kwargs):
+        return self.transport.request(
+            url="eolymp.cognito.Cognito/SelfDestruct",
+            request=request,
+            response_obj=_sym_db.GetSymbol("eolymp.cognito.SelfDestructOutput"),
+            **kwargs,
+        )
+

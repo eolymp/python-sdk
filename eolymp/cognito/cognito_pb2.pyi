@@ -322,6 +322,16 @@ class RevokeTokenOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class SelfDestructInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class SelfDestructOutput(_message.Message):
+    __slots__ = ["delete_on"]
+    DELETE_ON_FIELD_NUMBER: _ClassVar[int]
+    delete_on: _timestamp_pb2.Timestamp
+    def __init__(self, delete_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
 class SignoutInput(_message.Message):
     __slots__ = ["everywhere"]
     EVERYWHERE_FIELD_NUMBER: _ClassVar[int]
