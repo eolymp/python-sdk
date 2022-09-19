@@ -500,6 +500,14 @@ class AtlasClient:
             **kwargs,
         )
 
+    def RetestSubmission(self, request, **kwargs):
+        return self.transport.request(
+            url="eolymp.atlas.Atlas/RetestSubmission",
+            request=request,
+            response_obj=_sym_db.GetSymbol("eolymp.atlas.RetestSubmissionOutput"),
+            **kwargs,
+        )
+
     def DescribeScore(self, request, **kwargs):
         return self.transport.request(
             url="eolymp.atlas.Atlas/DescribeScore",

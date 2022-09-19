@@ -712,6 +712,18 @@ class RefuseSolutionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class RetestSubmissionInput(_message.Message):
+    __slots__ = ["debug", "submission_id"]
+    DEBUG_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    debug: bool
+    submission_id: str
+    def __init__(self, submission_id: _Optional[str] = ..., debug: bool = ...) -> None: ...
+
+class RetestSubmissionOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class RevokePermissionInput(_message.Message):
     __slots__ = ["problem_id", "user_id"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
