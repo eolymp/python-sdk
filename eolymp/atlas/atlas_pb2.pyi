@@ -11,6 +11,7 @@ from eolymp.atlas import score_pb2 as _score_pb2
 from eolymp.atlas import solution_pb2 as _solution_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
+from eolymp.atlas import tag_pb2 as _tag_pb2
 from eolymp.atlas import template_pb2 as _template_pb2
 from eolymp.atlas import test_pb2 as _test_pb2
 from eolymp.atlas import testset_pb2 as _testset_pb2
@@ -146,6 +147,18 @@ class CreateSubmissionOutput(_message.Message):
     submission_id: str
     def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
 
+class CreateTagInput(_message.Message):
+    __slots__ = ["tag"]
+    TAG_FIELD_NUMBER: _ClassVar[int]
+    tag: _tag_pb2.Tag
+    def __init__(self, tag: _Optional[_Union[_tag_pb2.Tag, _Mapping]] = ...) -> None: ...
+
+class CreateTagOutput(_message.Message):
+    __slots__ = ["tag_id"]
+    TAG_ID_FIELD_NUMBER: _ClassVar[int]
+    tag_id: str
+    def __init__(self, tag_id: _Optional[str] = ...) -> None: ...
+
 class CreateTestInput(_message.Message):
     __slots__ = ["test", "testset_id"]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -234,6 +247,18 @@ class DeleteStatementOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class DeleteTagInput(_message.Message):
+    __slots__ = ["tag_id"]
+    TAG_ID_FIELD_NUMBER: _ClassVar[int]
+    tag_id: str
+    def __init__(self, tag_id: _Optional[str] = ...) -> None: ...
+
+class DeleteTagOutput(_message.Message):
+    __slots__ = ["tag_id"]
+    TAG_ID_FIELD_NUMBER: _ClassVar[int]
+    tag_id: str
+    def __init__(self, tag_id: _Optional[str] = ...) -> None: ...
+
 class DeleteTestInput(_message.Message):
     __slots__ = ["test_id"]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -289,6 +314,18 @@ class DescribeChangeOutput(_message.Message):
     CHANGE_FIELD_NUMBER: _ClassVar[int]
     change: _change_pb2.Change
     def __init__(self, change: _Optional[_Union[_change_pb2.Change, _Mapping]] = ...) -> None: ...
+
+class DescribeClassificationInput(_message.Message):
+    __slots__ = ["problem_id"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+
+class DescribeClassificationOutput(_message.Message):
+    __slots__ = ["tags"]
+    TAGS_FIELD_NUMBER: _ClassVar[int]
+    tags: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, tags: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
     __slots__ = ["template_ern", "template_id"]
@@ -398,6 +435,18 @@ class DescribeSubmissionOutput(_message.Message):
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+
+class DescribeTagInput(_message.Message):
+    __slots__ = ["tag_id"]
+    TAG_ID_FIELD_NUMBER: _ClassVar[int]
+    tag_id: str
+    def __init__(self, tag_id: _Optional[str] = ...) -> None: ...
+
+class DescribeTagOutput(_message.Message):
+    __slots__ = ["tag"]
+    TAG_FIELD_NUMBER: _ClassVar[int]
+    tag: _tag_pb2.Tag
+    def __init__(self, tag: _Optional[_Union[_tag_pb2.Tag, _Mapping]] = ...) -> None: ...
 
 class DescribeTestInput(_message.Message):
     __slots__ = ["test_id"]
@@ -662,6 +711,31 @@ class ListStatementsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
 
+class ListTagsInput(_message.Message):
+    __slots__ = ["filters", "offset", "size"]
+    class Filter(_message.Message):
+        __slots__ = ["id", "name"]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    filters: ListTagsInput.Filter
+    offset: int
+    size: int
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTagsInput.Filter, _Mapping]] = ...) -> None: ...
+
+class ListTagsOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_tag_pb2.Tag]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_tag_pb2.Tag, _Mapping]]] = ...) -> None: ...
+
 class ListTestsInput(_message.Message):
     __slots__ = ["testset_id"]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -782,6 +856,18 @@ class UpdateCategoryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class UpdateClassificationInput(_message.Message):
+    __slots__ = ["problem_id", "tags"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    TAGS_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    tags: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, problem_id: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class UpdateClassificationOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdateCodeTemplateInput(_message.Message):
     __slots__ = ["template", "template_id"]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
@@ -839,6 +925,18 @@ class UpdateStatementInput(_message.Message):
     def __init__(self, statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class UpdateStatementOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdateTagInput(_message.Message):
+    __slots__ = ["tag", "tag_id"]
+    TAG_FIELD_NUMBER: _ClassVar[int]
+    TAG_ID_FIELD_NUMBER: _ClassVar[int]
+    tag: _tag_pb2.Tag
+    tag_id: str
+    def __init__(self, tag_id: _Optional[str] = ..., tag: _Optional[_Union[_tag_pb2.Tag, _Mapping]] = ...) -> None: ...
+
+class UpdateTagOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
