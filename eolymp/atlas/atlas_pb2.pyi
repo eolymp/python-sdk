@@ -11,7 +11,6 @@ from eolymp.atlas import score_pb2 as _score_pb2
 from eolymp.atlas import solution_pb2 as _solution_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
-from eolymp.atlas import tag_pb2 as _tag_pb2
 from eolymp.atlas import template_pb2 as _template_pb2
 from eolymp.atlas import test_pb2 as _test_pb2
 from eolymp.atlas import testset_pb2 as _testset_pb2
@@ -147,18 +146,6 @@ class CreateSubmissionOutput(_message.Message):
     submission_id: str
     def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
 
-class CreateTagInput(_message.Message):
-    __slots__ = ["tag"]
-    TAG_FIELD_NUMBER: _ClassVar[int]
-    tag: _tag_pb2.Tag
-    def __init__(self, tag: _Optional[_Union[_tag_pb2.Tag, _Mapping]] = ...) -> None: ...
-
-class CreateTagOutput(_message.Message):
-    __slots__ = ["tag_id"]
-    TAG_ID_FIELD_NUMBER: _ClassVar[int]
-    tag_id: str
-    def __init__(self, tag_id: _Optional[str] = ...) -> None: ...
-
 class CreateTestInput(_message.Message):
     __slots__ = ["test", "testset_id"]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -246,18 +233,6 @@ class DeleteStatementInput(_message.Message):
 class DeleteStatementOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class DeleteTagInput(_message.Message):
-    __slots__ = ["tag_id"]
-    TAG_ID_FIELD_NUMBER: _ClassVar[int]
-    tag_id: str
-    def __init__(self, tag_id: _Optional[str] = ...) -> None: ...
-
-class DeleteTagOutput(_message.Message):
-    __slots__ = ["tag_id"]
-    TAG_ID_FIELD_NUMBER: _ClassVar[int]
-    tag_id: str
-    def __init__(self, tag_id: _Optional[str] = ...) -> None: ...
 
 class DeleteTestInput(_message.Message):
     __slots__ = ["test_id"]
@@ -424,46 +399,6 @@ class DescribeSubmissionOutput(_message.Message):
     submission: _submission_pb2.Submission
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
-class DescribeTagInput(_message.Message):
-    __slots__ = ["tag_id"]
-    TAG_ID_FIELD_NUMBER: _ClassVar[int]
-    tag_id: str
-    def __init__(self, tag_id: _Optional[str] = ...) -> None: ...
-
-class DescribeTagOutput(_message.Message):
-    __slots__ = ["tag"]
-    TAG_FIELD_NUMBER: _ClassVar[int]
-    tag: _tag_pb2.Tag
-    def __init__(self, tag: _Optional[_Union[_tag_pb2.Tag, _Mapping]] = ...) -> None: ...
-
-class DescribeTaxonomyInput(_message.Message):
-    __slots__ = ["problem_id"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
-
-class DescribeTaxonomyOutput(_message.Message):
-    __slots__ = ["competition", "country", "difficulty", "number", "region", "round", "stage", "tags", "year"]
-    COMPETITION_FIELD_NUMBER: _ClassVar[int]
-    COUNTRY_FIELD_NUMBER: _ClassVar[int]
-    DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
-    NUMBER_FIELD_NUMBER: _ClassVar[int]
-    REGION_FIELD_NUMBER: _ClassVar[int]
-    ROUND_FIELD_NUMBER: _ClassVar[int]
-    STAGE_FIELD_NUMBER: _ClassVar[int]
-    TAGS_FIELD_NUMBER: _ClassVar[int]
-    YEAR_FIELD_NUMBER: _ClassVar[int]
-    competition: str
-    country: str
-    difficulty: int
-    number: int
-    region: str
-    round: int
-    stage: int
-    tags: _containers.RepeatedScalarFieldContainer[str]
-    year: int
-    def __init__(self, tags: _Optional[_Iterable[str]] = ..., competition: _Optional[str] = ..., year: _Optional[int] = ..., stage: _Optional[int] = ..., round: _Optional[int] = ..., number: _Optional[int] = ..., country: _Optional[str] = ..., region: _Optional[str] = ..., difficulty: _Optional[int] = ...) -> None: ...
-
 class DescribeTestInput(_message.Message):
     __slots__ = ["test_id"]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -542,14 +477,16 @@ class ListAttachmentsOutput(_message.Message):
 class ListCategoriesInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
-        __slots__ = ["id", "is_visible", "parent_id"]
+        __slots__ = ["id", "is_visible", "parent_id", "problem_id"]
         ID_FIELD_NUMBER: _ClassVar[int]
         IS_VISIBLE_FIELD_NUMBER: _ClassVar[int]
         PARENT_ID_FIELD_NUMBER: _ClassVar[int]
+        PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         is_visible: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         parent_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., parent_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_visible: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        problem_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., parent_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_visible: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -726,31 +663,6 @@ class ListStatementsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_statement_pb2.Statement]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
-
-class ListTagsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
-    class Filter(_message.Message):
-        __slots__ = ["id", "name"]
-        ID_FIELD_NUMBER: _ClassVar[int]
-        NAME_FIELD_NUMBER: _ClassVar[int]
-        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListTagsInput.Filter
-    offset: int
-    size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTagsInput.Filter, _Mapping]] = ...) -> None: ...
-
-class ListTagsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_tag_pb2.Tag]
-    total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_tag_pb2.Tag, _Mapping]]] = ...) -> None: ...
 
 class ListTestsInput(_message.Message):
     __slots__ = ["testset_id"]
@@ -929,46 +841,6 @@ class UpdateStatementInput(_message.Message):
     def __init__(self, statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class UpdateStatementOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UpdateTagInput(_message.Message):
-    __slots__ = ["tag", "tag_id"]
-    TAG_FIELD_NUMBER: _ClassVar[int]
-    TAG_ID_FIELD_NUMBER: _ClassVar[int]
-    tag: _tag_pb2.Tag
-    tag_id: str
-    def __init__(self, tag_id: _Optional[str] = ..., tag: _Optional[_Union[_tag_pb2.Tag, _Mapping]] = ...) -> None: ...
-
-class UpdateTagOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UpdateTaxonomyInput(_message.Message):
-    __slots__ = ["competition", "country", "difficulty", "number", "problem_id", "region", "round", "stage", "tags", "year"]
-    COMPETITION_FIELD_NUMBER: _ClassVar[int]
-    COUNTRY_FIELD_NUMBER: _ClassVar[int]
-    DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
-    NUMBER_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    REGION_FIELD_NUMBER: _ClassVar[int]
-    ROUND_FIELD_NUMBER: _ClassVar[int]
-    STAGE_FIELD_NUMBER: _ClassVar[int]
-    TAGS_FIELD_NUMBER: _ClassVar[int]
-    YEAR_FIELD_NUMBER: _ClassVar[int]
-    competition: str
-    country: str
-    difficulty: int
-    number: int
-    problem_id: str
-    region: str
-    round: int
-    stage: int
-    tags: _containers.RepeatedScalarFieldContainer[str]
-    year: int
-    def __init__(self, problem_id: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ..., competition: _Optional[str] = ..., year: _Optional[int] = ..., stage: _Optional[int] = ..., round: _Optional[int] = ..., number: _Optional[int] = ..., country: _Optional[str] = ..., region: _Optional[str] = ..., difficulty: _Optional[int] = ...) -> None: ...
-
-class UpdateTaxonomyOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 

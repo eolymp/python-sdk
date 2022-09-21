@@ -68,22 +68,6 @@ class AtlasClient:
             **kwargs,
         )
 
-    def UpdateTaxonomy(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.atlas.Atlas/UpdateTaxonomy",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.atlas.UpdateTaxonomyOutput"),
-            **kwargs,
-        )
-
-    def DescribeTaxonomy(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.atlas.Atlas/DescribeTaxonomy",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.atlas.DescribeTaxonomyOutput"),
-            **kwargs,
-        )
-
     def UpdateVerifier(self, request, **kwargs):
         return self.transport.request(
             url="eolymp.atlas.Atlas/UpdateVerifier",
@@ -529,46 +513,6 @@ class AtlasClient:
             url="eolymp.atlas.Atlas/DescribeScore",
             request=request,
             response_obj=_sym_db.GetSymbol("eolymp.atlas.DescribeScoreOutput"),
-            **kwargs,
-        )
-
-    def CreateTag(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.atlas.Atlas/CreateTag",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.atlas.CreateTagOutput"),
-            **kwargs,
-        )
-
-    def UpdateTag(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.atlas.Atlas/UpdateTag",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.atlas.UpdateTagOutput"),
-            **kwargs,
-        )
-
-    def DeleteTag(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.atlas.Atlas/DeleteTag",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.atlas.DeleteTagOutput"),
-            **kwargs,
-        )
-
-    def ListTags(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.atlas.Atlas/ListTags",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.atlas.ListTagsOutput"),
-            **kwargs,
-        )
-
-    def DescribeTag(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.atlas.Atlas/DescribeTag",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.atlas.DescribeTagOutput"),
             **kwargs,
         )
 
