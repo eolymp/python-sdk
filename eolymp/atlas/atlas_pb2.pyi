@@ -443,9 +443,11 @@ class DescribeTaxonomyInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class DescribeTaxonomyOutput(_message.Message):
-    __slots__ = ["competition", "country", "region", "round", "stage", "tags", "year"]
+    __slots__ = ["competition", "country", "difficulty", "number", "region", "round", "stage", "tags", "year"]
     COMPETITION_FIELD_NUMBER: _ClassVar[int]
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
+    DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
     REGION_FIELD_NUMBER: _ClassVar[int]
     ROUND_FIELD_NUMBER: _ClassVar[int]
     STAGE_FIELD_NUMBER: _ClassVar[int]
@@ -453,12 +455,14 @@ class DescribeTaxonomyOutput(_message.Message):
     YEAR_FIELD_NUMBER: _ClassVar[int]
     competition: str
     country: str
+    difficulty: int
+    number: int
     region: str
     round: int
     stage: int
     tags: _containers.RepeatedScalarFieldContainer[str]
     year: int
-    def __init__(self, tags: _Optional[_Iterable[str]] = ..., competition: _Optional[str] = ..., year: _Optional[int] = ..., stage: _Optional[int] = ..., round: _Optional[int] = ..., country: _Optional[str] = ..., region: _Optional[str] = ...) -> None: ...
+    def __init__(self, tags: _Optional[_Iterable[str]] = ..., competition: _Optional[str] = ..., year: _Optional[int] = ..., stage: _Optional[int] = ..., round: _Optional[int] = ..., number: _Optional[int] = ..., country: _Optional[str] = ..., region: _Optional[str] = ..., difficulty: _Optional[int] = ...) -> None: ...
 
 class DescribeTestInput(_message.Message):
     __slots__ = ["test_id"]
@@ -941,9 +945,11 @@ class UpdateTagOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateTaxonomyInput(_message.Message):
-    __slots__ = ["competition", "country", "problem_id", "region", "round", "stage", "tags", "year"]
+    __slots__ = ["competition", "country", "difficulty", "number", "problem_id", "region", "round", "stage", "tags", "year"]
     COMPETITION_FIELD_NUMBER: _ClassVar[int]
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
+    DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     REGION_FIELD_NUMBER: _ClassVar[int]
     ROUND_FIELD_NUMBER: _ClassVar[int]
@@ -952,13 +958,15 @@ class UpdateTaxonomyInput(_message.Message):
     YEAR_FIELD_NUMBER: _ClassVar[int]
     competition: str
     country: str
+    difficulty: int
+    number: int
     problem_id: str
     region: str
     round: int
     stage: int
     tags: _containers.RepeatedScalarFieldContainer[str]
     year: int
-    def __init__(self, problem_id: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ..., competition: _Optional[str] = ..., year: _Optional[int] = ..., stage: _Optional[int] = ..., round: _Optional[int] = ..., country: _Optional[str] = ..., region: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ..., competition: _Optional[str] = ..., year: _Optional[int] = ..., stage: _Optional[int] = ..., round: _Optional[int] = ..., number: _Optional[int] = ..., country: _Optional[str] = ..., region: _Optional[str] = ..., difficulty: _Optional[int] = ...) -> None: ...
 
 class UpdateTaxonomyOutput(_message.Message):
     __slots__ = []
