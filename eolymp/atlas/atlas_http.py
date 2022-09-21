@@ -68,19 +68,19 @@ class AtlasClient:
             **kwargs,
         )
 
-    def UpdateClassification(self, request, **kwargs):
+    def UpdateTaxonomy(self, request, **kwargs):
         return self.transport.request(
-            url="eolymp.atlas.Atlas/UpdateClassification",
+            url="eolymp.atlas.Atlas/UpdateTaxonomy",
             request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.atlas.UpdateClassificationOutput"),
+            response_obj=_sym_db.GetSymbol("eolymp.atlas.UpdateTaxonomyOutput"),
             **kwargs,
         )
 
-    def DescribeClassification(self, request, **kwargs):
+    def DescribeTaxonomy(self, request, **kwargs):
         return self.transport.request(
-            url="eolymp.atlas.Atlas/DescribeClassification",
+            url="eolymp.atlas.Atlas/DescribeTaxonomy",
             request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.atlas.DescribeClassificationOutput"),
+            response_obj=_sym_db.GetSymbol("eolymp.atlas.DescribeTaxonomyOutput"),
             **kwargs,
         )
 

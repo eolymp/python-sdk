@@ -315,18 +315,6 @@ class DescribeChangeOutput(_message.Message):
     change: _change_pb2.Change
     def __init__(self, change: _Optional[_Union[_change_pb2.Change, _Mapping]] = ...) -> None: ...
 
-class DescribeClassificationInput(_message.Message):
-    __slots__ = ["problem_id"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
-
-class DescribeClassificationOutput(_message.Message):
-    __slots__ = ["tags"]
-    TAGS_FIELD_NUMBER: _ClassVar[int]
-    tags: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, tags: _Optional[_Iterable[str]] = ...) -> None: ...
-
 class DescribeCodeTemplateInput(_message.Message):
     __slots__ = ["template_ern", "template_id"]
     TEMPLATE_ERN_FIELD_NUMBER: _ClassVar[int]
@@ -447,6 +435,30 @@ class DescribeTagOutput(_message.Message):
     TAG_FIELD_NUMBER: _ClassVar[int]
     tag: _tag_pb2.Tag
     def __init__(self, tag: _Optional[_Union[_tag_pb2.Tag, _Mapping]] = ...) -> None: ...
+
+class DescribeTaxonomyInput(_message.Message):
+    __slots__ = ["problem_id"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+
+class DescribeTaxonomyOutput(_message.Message):
+    __slots__ = ["competition", "country", "region", "round", "stage", "tags", "year"]
+    COMPETITION_FIELD_NUMBER: _ClassVar[int]
+    COUNTRY_FIELD_NUMBER: _ClassVar[int]
+    REGION_FIELD_NUMBER: _ClassVar[int]
+    ROUND_FIELD_NUMBER: _ClassVar[int]
+    STAGE_FIELD_NUMBER: _ClassVar[int]
+    TAGS_FIELD_NUMBER: _ClassVar[int]
+    YEAR_FIELD_NUMBER: _ClassVar[int]
+    competition: str
+    country: str
+    region: str
+    round: int
+    stage: int
+    tags: _containers.RepeatedScalarFieldContainer[str]
+    year: int
+    def __init__(self, tags: _Optional[_Iterable[str]] = ..., competition: _Optional[str] = ..., year: _Optional[int] = ..., stage: _Optional[int] = ..., round: _Optional[int] = ..., country: _Optional[str] = ..., region: _Optional[str] = ...) -> None: ...
 
 class DescribeTestInput(_message.Message):
     __slots__ = ["test_id"]
@@ -856,18 +868,6 @@ class UpdateCategoryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateClassificationInput(_message.Message):
-    __slots__ = ["problem_id", "tags"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    TAGS_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    tags: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, problem_id: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ...) -> None: ...
-
-class UpdateClassificationOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class UpdateCodeTemplateInput(_message.Message):
     __slots__ = ["template", "template_id"]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
@@ -937,6 +937,30 @@ class UpdateTagInput(_message.Message):
     def __init__(self, tag_id: _Optional[str] = ..., tag: _Optional[_Union[_tag_pb2.Tag, _Mapping]] = ...) -> None: ...
 
 class UpdateTagOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdateTaxonomyInput(_message.Message):
+    __slots__ = ["competition", "country", "problem_id", "region", "round", "stage", "tags", "year"]
+    COMPETITION_FIELD_NUMBER: _ClassVar[int]
+    COUNTRY_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    REGION_FIELD_NUMBER: _ClassVar[int]
+    ROUND_FIELD_NUMBER: _ClassVar[int]
+    STAGE_FIELD_NUMBER: _ClassVar[int]
+    TAGS_FIELD_NUMBER: _ClassVar[int]
+    YEAR_FIELD_NUMBER: _ClassVar[int]
+    competition: str
+    country: str
+    problem_id: str
+    region: str
+    round: int
+    stage: int
+    tags: _containers.RepeatedScalarFieldContainer[str]
+    year: int
+    def __init__(self, problem_id: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ..., competition: _Optional[str] = ..., year: _Optional[int] = ..., stage: _Optional[int] = ..., round: _Optional[int] = ..., country: _Optional[str] = ..., region: _Optional[str] = ...) -> None: ...
+
+class UpdateTaxonomyOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
