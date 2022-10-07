@@ -161,10 +161,12 @@ class CreateTicketOutput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAnnouncementInput(_message.Message):
-    __slots__ = ["announcement_id"]
+    __slots__ = ["announcement_id", "contest_id"]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     announcement_id: str
-    def __init__(self, announcement_id: _Optional[str] = ...) -> None: ...
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAnnouncementOutput(_message.Message):
     __slots__ = []
@@ -217,10 +219,12 @@ class DeleteTicketOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAnnouncementInput(_message.Message):
-    __slots__ = ["announcement_id"]
+    __slots__ = ["announcement_id", "contest_id"]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     announcement_id: str
-    def __init__(self, announcement_id: _Optional[str] = ...) -> None: ...
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ...) -> None: ...
 
 class DescribeAnnouncementOutput(_message.Message):
     __slots__ = ["announcement"]
@@ -229,10 +233,12 @@ class DescribeAnnouncementOutput(_message.Message):
     def __init__(self, announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
 
 class DescribeAnnouncementStatusInput(_message.Message):
-    __slots__ = ["announcement_id"]
+    __slots__ = ["announcement_id", "contest_id"]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     announcement_id: str
-    def __init__(self, announcement_id: _Optional[str] = ...) -> None: ...
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ...) -> None: ...
 
 class DescribeAnnouncementStatusOutput(_message.Message):
     __slots__ = ["is_read"]
@@ -882,10 +888,12 @@ class OpenTicketOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ReadAnnouncementInput(_message.Message):
-    __slots__ = ["announcement_id"]
+    __slots__ = ["announcement_id", "contest_id"]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     announcement_id: str
-    def __init__(self, announcement_id: _Optional[str] = ...) -> None: ...
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ...) -> None: ...
 
 class ReadAnnouncementOutput(_message.Message):
     __slots__ = []
@@ -1016,12 +1024,14 @@ class SyncProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateAnnouncementInput(_message.Message):
-    __slots__ = ["announcement", "announcement_id"]
+    __slots__ = ["announcement", "announcement_id", "contest_id"]
     ANNOUNCEMENT_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     announcement: _announcement_pb2.Announcement
     announcement_id: str
-    def __init__(self, announcement_id: _Optional[str] = ..., announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ..., announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
 
 class UpdateAnnouncementOutput(_message.Message):
     __slots__ = []
