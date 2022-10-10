@@ -11,10 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/atlas/file.proto\x12\x0c\x65olymp.atlas\x1a!eolymp/annotations/resource.proto\"(\n\x04\x46ile\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x12\n\nsource_ern\x18\x02 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/atlas/file.proto\x12\x0c\x65olymp.atlas\"(\n\x04\x46ile\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x12\n\nsource_ern\x18\x02 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.file_pb2', globals())
@@ -22,6 +21,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _FILE._serialized_start=76
-  _FILE._serialized_end=116
+  _FILE._serialized_start=41
+  _FILE._serialized_end=81
 # @@protoc_insertion_point(module_scope)
