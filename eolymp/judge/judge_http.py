@@ -12,6 +12,14 @@ class JudgeClient:
     def __init__(self, transport):
         self.transport = transport
 
+    def LookupContest(self, request, **kwargs):
+        return self.transport.request(
+            url="eolymp.judge.Judge/LookupContest",
+            request=request,
+            response_obj=_sym_db.GetSymbol("eolymp.judge.LookupContestOutput"),
+            **kwargs,
+        )
+
     def CreateContest(self, request, **kwargs):
         return self.transport.request(
             url="eolymp.judge.Judge/CreateContest",
@@ -33,14 +41,6 @@ class JudgeClient:
             url="eolymp.judge.Judge/UpdateContest",
             request=request,
             response_obj=_sym_db.GetSymbol("eolymp.judge.UpdateContestOutput"),
-            **kwargs,
-        )
-
-    def LookupContest(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.judge.Judge/LookupContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.LookupContestOutput"),
             **kwargs,
         )
 
