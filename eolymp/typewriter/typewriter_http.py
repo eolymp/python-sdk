@@ -14,3 +14,16 @@ class TypewriterClient:
         self.transport = transport
         self.url = url
 
+    def UploadAsset(self, request, **kwargs):
+        path = "/assets"
+
+        return self.transport.request(
+            name="eolymp.typewriter.Typewriter/UploadAsset",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.typewriter.UploadAssetOutput"),
+            **kwargs,
+        )
+

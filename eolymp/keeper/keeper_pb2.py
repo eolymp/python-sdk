@@ -11,11 +11,12 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/keeper/keeper.proto\x12\reolymp.keeper\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"!\n\x11\x43reateObjectInput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"F\n\x12\x43reateObjectOutput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08\x62lob_ern\x18\x02 \x01(\t\x12\x11\n\tblob_hash\x18\x03 \x01(\t\"\"\n\x13\x44\x65scribeObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\"$\n\x14\x44\x65scribeObjectOutput\x12\x0c\n\x04size\x18\x01 \x01(\x05\"@\n\x13\x44ownloadObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"2\n\x14\x44ownloadObjectOutput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04size\x18\x02 \x01(\x05\x32\x9b\x03\n\x06Keeper\x12\x80\x01\n\x0c\x43reateObject\x12 .eolymp.keeper.CreateObjectInput\x1a!.eolymp.keeper.CreateObjectOutput\"+\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\xf4\x03\x12\x85\x01\n\x0e\x44\x65scribeObject\x12\".eolymp.keeper.DescribeObjectInput\x1a#.eolymp.keeper.DescribeObjectOutput\"*\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x12\x85\x01\n\x0e\x44ownloadObject\x12\".eolymp.keeper.DownloadObjectInput\x1a#.eolymp.keeper.DownloadObjectOutput\"*\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/keeper;keeperb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/keeper/keeper.proto\x12\reolymp.keeper\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"!\n\x11\x43reateObjectInput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"F\n\x12\x43reateObjectOutput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08\x62lob_ern\x18\x02 \x01(\t\x12\x11\n\tblob_hash\x18\x03 \x01(\t\"\"\n\x13\x44\x65scribeObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\"$\n\x14\x44\x65scribeObjectOutput\x12\x0c\n\x04size\x18\x01 \x01(\x05\"@\n\x13\x44ownloadObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"2\n\x14\x44ownloadObjectOutput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04size\x18\x02 \x01(\x05\x32\xdc\x03\n\x06Keeper\x12\x90\x01\n\x0c\x43reateObject\x12 .eolymp.keeper.CreateObjectInput\x1a!.eolymp.keeper.CreateObjectOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\n\"\x08/objects\x12\x9b\x01\n\x0e\x44\x65scribeObject\x12\".eolymp.keeper.DescribeObjectInput\x1a#.eolymp.keeper.DescribeObjectOutput\"@\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x10\x12\x0e/objects/{key}\x12\xa0\x01\n\x0e\x44ownloadObject\x12\".eolymp.keeper.DownloadObjectInput\x1a#.eolymp.keeper.DownloadObjectOutput\"E\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x15\x12\x13/objects/{key}/dataB/Z-github.com/eolymp/go-sdk/eolymp/keeper;keeperb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.keeper.keeper_pb2', globals())
@@ -24,23 +25,23 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/keeper;keeper'
   _KEEPER.methods_by_name['CreateObject']._options = None
-  _KEEPER.methods_by_name['CreateObject']._serialized_options = b'\202\343\n\027\212\343\n\023keeper:object:write\352\342\n\014\365\342\n\000\000\000@\370\342\n\364\003'
+  _KEEPER.methods_by_name['CreateObject']._serialized_options = b'\202\343\n\027\212\343\n\023keeper:object:write\352\342\n\014\365\342\n\000\000\000@\370\342\n\364\003\202\323\344\223\002\n\"\010/objects'
   _KEEPER.methods_by_name['DescribeObject']._options = None
-  _KEEPER.methods_by_name['DescribeObject']._serialized_options = b'\202\343\n\026\212\343\n\022keeper:object:read\352\342\n\014\365\342\n\000\000HB\370\342\n\364\003'
+  _KEEPER.methods_by_name['DescribeObject']._serialized_options = b'\202\343\n\026\212\343\n\022keeper:object:read\352\342\n\014\365\342\n\000\000HB\370\342\n\364\003\202\323\344\223\002\020\022\016/objects/{key}'
   _KEEPER.methods_by_name['DownloadObject']._options = None
-  _KEEPER.methods_by_name['DownloadObject']._serialized_options = b'\202\343\n\026\212\343\n\022keeper:object:read\352\342\n\014\365\342\n\000\000HB\370\342\n\364\003'
-  _CREATEOBJECTINPUT._serialized_start=113
-  _CREATEOBJECTINPUT._serialized_end=146
-  _CREATEOBJECTOUTPUT._serialized_start=148
-  _CREATEOBJECTOUTPUT._serialized_end=218
-  _DESCRIBEOBJECTINPUT._serialized_start=220
-  _DESCRIBEOBJECTINPUT._serialized_end=254
-  _DESCRIBEOBJECTOUTPUT._serialized_start=256
-  _DESCRIBEOBJECTOUTPUT._serialized_end=292
-  _DOWNLOADOBJECTINPUT._serialized_start=294
-  _DOWNLOADOBJECTINPUT._serialized_end=358
-  _DOWNLOADOBJECTOUTPUT._serialized_start=360
-  _DOWNLOADOBJECTOUTPUT._serialized_end=410
-  _KEEPER._serialized_start=413
-  _KEEPER._serialized_end=824
+  _KEEPER.methods_by_name['DownloadObject']._serialized_options = b'\202\343\n\026\212\343\n\022keeper:object:read\352\342\n\014\365\342\n\000\000HB\370\342\n\364\003\202\323\344\223\002\025\022\023/objects/{key}/data'
+  _CREATEOBJECTINPUT._serialized_start=144
+  _CREATEOBJECTINPUT._serialized_end=177
+  _CREATEOBJECTOUTPUT._serialized_start=179
+  _CREATEOBJECTOUTPUT._serialized_end=249
+  _DESCRIBEOBJECTINPUT._serialized_start=251
+  _DESCRIBEOBJECTINPUT._serialized_end=285
+  _DESCRIBEOBJECTOUTPUT._serialized_start=287
+  _DESCRIBEOBJECTOUTPUT._serialized_end=323
+  _DOWNLOADOBJECTINPUT._serialized_start=325
+  _DOWNLOADOBJECTINPUT._serialized_end=389
+  _DOWNLOADOBJECTOUTPUT._serialized_start=391
+  _DOWNLOADOBJECTOUTPUT._serialized_end=441
+  _KEEPER._serialized_start=444
+  _KEEPER._serialized_end=920
 # @@protoc_insertion_point(module_scope)

@@ -11,11 +11,12 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/typewriter/typewriter.proto\x12\x11\x65olymp.typewriter\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"2\n\x10UploadAssetInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"!\n\x11UploadAssetOutput\x12\x0c\n\x04link\x18\x01 \x01(\t2\x96\x01\n\nTypewriter\x12\x87\x01\n\x0bUploadAsset\x12#.eolymp.typewriter.UploadAssetInput\x1a$.eolymp.typewriter.UploadAssetOutput\"-\x82\xe3\n\x1a\x8a\xe3\n\x16typewriter:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\ndB7Z5github.com/eolymp/go-sdk/eolymp/typewriter;typewriterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/typewriter/typewriter.proto\x12\x11\x65olymp.typewriter\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"2\n\x10UploadAssetInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"!\n\x11UploadAssetOutput\x12\x0c\n\x04link\x18\x01 \x01(\t2\xa5\x01\n\nTypewriter\x12\x96\x01\n\x0bUploadAsset\x12#.eolymp.typewriter.UploadAssetInput\x1a$.eolymp.typewriter.UploadAssetOutput\"<\x82\xe3\n\x1a\x8a\xe3\n\x16typewriter:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\t\"\x07/assetsB7Z5github.com/eolymp/go-sdk/eolymp/typewriter;typewriterb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.typewriter.typewriter_pb2', globals())
@@ -24,11 +25,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/typewriter;typewriter'
   _TYPEWRITER.methods_by_name['UploadAsset']._options = None
-  _TYPEWRITER.methods_by_name['UploadAsset']._serialized_options = b'\202\343\n\032\212\343\n\026typewriter:asset:write\352\342\n\013\365\342\n\000\000\000@\370\342\nd'
-  _UPLOADASSETINPUT._serialized_start=125
-  _UPLOADASSETINPUT._serialized_end=175
-  _UPLOADASSETOUTPUT._serialized_start=177
-  _UPLOADASSETOUTPUT._serialized_end=210
-  _TYPEWRITER._serialized_start=213
-  _TYPEWRITER._serialized_end=363
+  _TYPEWRITER.methods_by_name['UploadAsset']._serialized_options = b'\202\343\n\032\212\343\n\026typewriter:asset:write\352\342\n\013\365\342\n\000\000\000@\370\342\nd\202\323\344\223\002\t\"\007/assets'
+  _UPLOADASSETINPUT._serialized_start=156
+  _UPLOADASSETINPUT._serialized_end=206
+  _UPLOADASSETOUTPUT._serialized_start=208
+  _UPLOADASSETOUTPUT._serialized_end=241
+  _TYPEWRITER._serialized_start=244
+  _TYPEWRITER._serialized_end=409
 # @@protoc_insertion_point(module_scope)

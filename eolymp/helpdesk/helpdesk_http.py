@@ -15,7 +15,7 @@ class HelpdeskClient:
         self.url = url
 
     def DescribeDocument(self, request, **kwargs):
-        path = "/helpdesk/document/"+urllib.parse.quote(request.document_id)
+        path = "/helpdesk/documents/"+urllib.parse.quote(request.document_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.document_id = ""
@@ -44,7 +44,7 @@ class HelpdeskClient:
         )
 
     def CreateDocument(self, request, **kwargs):
-        path = "/helpdesk/document"
+        path = "/helpdesk/documents"
 
         return self.transport.request(
             name="eolymp.helpdesk.Helpdesk/CreateDocument",
@@ -57,7 +57,7 @@ class HelpdeskClient:
         )
 
     def UpdateDocument(self, request, **kwargs):
-        path = "/helpdesk/document/"+urllib.parse.quote(request.document_id)
+        path = "/helpdesk/documents/"+urllib.parse.quote(request.document_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.document_id = ""
@@ -73,7 +73,7 @@ class HelpdeskClient:
         )
 
     def DeleteDocument(self, request, **kwargs):
-        path = "/helpdesk/document/"+urllib.parse.quote(request.document_id)
+        path = "/helpdesk/documents/"+urllib.parse.quote(request.document_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.document_id = ""

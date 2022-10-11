@@ -39,10 +39,12 @@ class CreateScoreboardOutput(_message.Message):
     def __init__(self, scoreboard_id: _Optional[str] = ...) -> None: ...
 
 class DeleteScoreboardColumnInput(_message.Message):
-    __slots__ = ["column_id"]
+    __slots__ = ["column_id", "scoreboard_id"]
     COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
     column_id: str
-    def __init__(self, column_id: _Optional[str] = ...) -> None: ...
+    scoreboard_id: str
+    def __init__(self, scoreboard_id: _Optional[str] = ..., column_id: _Optional[str] = ...) -> None: ...
 
 class DeleteScoreboardColumnOutput(_message.Message):
     __slots__ = []
@@ -59,10 +61,12 @@ class DeleteScoreboardOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeScoreboardColumnInput(_message.Message):
-    __slots__ = ["column_id"]
+    __slots__ = ["column_id", "scoreboard_id"]
     COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
     column_id: str
-    def __init__(self, column_id: _Optional[str] = ...) -> None: ...
+    scoreboard_id: str
+    def __init__(self, scoreboard_id: _Optional[str] = ..., column_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreboardColumnOutput(_message.Message):
     __slots__ = ["column"]

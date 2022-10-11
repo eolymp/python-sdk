@@ -15,7 +15,7 @@ class RankerClient:
         self.url = url
 
     def CreateScoreboard(self, request, **kwargs):
-        path = "/ranker/scoreboards"
+        path = "/scoreboards"
 
         return self.transport.request(
             name="eolymp.ranker.Ranker/CreateScoreboard",
@@ -28,7 +28,7 @@ class RankerClient:
         )
 
     def UpdateScoreboard(self, request, **kwargs):
-        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.scoreboard_id = ""
@@ -44,7 +44,7 @@ class RankerClient:
         )
 
     def RebuildScoreboard(self, request, **kwargs):
-        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rebuild"
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rebuild"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.scoreboard_id = ""
@@ -60,7 +60,7 @@ class RankerClient:
         )
 
     def DeleteScoreboard(self, request, **kwargs):
-        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.scoreboard_id = ""
@@ -76,7 +76,7 @@ class RankerClient:
         )
 
     def DescribeScoreboard(self, request, **kwargs):
-        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.scoreboard_id = ""
@@ -92,7 +92,7 @@ class RankerClient:
         )
 
     def ListScoreboards(self, request, **kwargs):
-        path = "/ranker/scoreboards"
+        path = "/scoreboards"
 
         return self.transport.request(
             name="eolymp.ranker.Ranker/ListScoreboards",
@@ -105,7 +105,7 @@ class RankerClient:
         )
 
     def DescribeScoreboardRow(self, request, **kwargs):
-        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rows/"+urllib.parse.quote(request.member_id)
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rows/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.scoreboard_id = ""
@@ -122,7 +122,7 @@ class RankerClient:
         )
 
     def ListScoreboardRows(self, request, **kwargs):
-        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rows"
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rows"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.scoreboard_id = ""
@@ -138,7 +138,7 @@ class RankerClient:
         )
 
     def AddScoreboardColumn(self, request, **kwargs):
-        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns"
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.scoreboard_id = ""
@@ -154,9 +154,10 @@ class RankerClient:
         )
 
     def DeleteScoreboardColumn(self, request, **kwargs):
-        path = "/ranker/columns/"+urllib.parse.quote(request.column_id)
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns/"+urllib.parse.quote(request.column_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
         request.column_id = ""
 
         return self.transport.request(
@@ -170,9 +171,10 @@ class RankerClient:
         )
 
     def DescribeScoreboardColumn(self, request, **kwargs):
-        path = "/ranker/columns/"+urllib.parse.quote(request.column_id)
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns/"+urllib.parse.quote(request.column_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
         request.column_id = ""
 
         return self.transport.request(
@@ -186,7 +188,7 @@ class RankerClient:
         )
 
     def ListScoreboardColumns(self, request, **kwargs):
-        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns"
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.scoreboard_id = ""
@@ -202,7 +204,7 @@ class RankerClient:
         )
 
     def ListActivities(self, request, **kwargs):
-        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/activities"
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/activities"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.scoreboard_id = ""

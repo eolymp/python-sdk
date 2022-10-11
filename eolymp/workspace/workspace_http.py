@@ -14,3 +14,143 @@ class WorkspaceClient:
         self.transport = transport
         self.url = url
 
+    def DescribeProject(self, request, **kwargs):
+        path = "/workspace/projects/"+urllib.parse.quote(request.project_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+
+        return self.transport.request(
+            name="eolymp.workspace.Workspace/DescribeProject",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.workspace.DescribeProjectOutput"),
+            **kwargs,
+        )
+
+    def ListProjects(self, request, **kwargs):
+        path = "/workspace/projects"
+
+        return self.transport.request(
+            name="eolymp.workspace.Workspace/ListProjects",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.workspace.ListProjectsOutput"),
+            **kwargs,
+        )
+
+    def CreateProject(self, request, **kwargs):
+        path = "/workspace/projects"
+
+        return self.transport.request(
+            name="eolymp.workspace.Workspace/CreateProject",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.workspace.CreateProjectOutput"),
+            **kwargs,
+        )
+
+    def UpdateProject(self, request, **kwargs):
+        path = "/workspace/projects/"+urllib.parse.quote(request.project_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+
+        return self.transport.request(
+            name="eolymp.workspace.Workspace/UpdateProject",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.workspace.UpdateProjectOutput"),
+            **kwargs,
+        )
+
+    def DeleteProject(self, request, **kwargs):
+        path = "/workspace/projects/"+urllib.parse.quote(request.project_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+
+        return self.transport.request(
+            name="eolymp.workspace.Workspace/DeleteProject",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.workspace.DeleteProjectOutput"),
+            **kwargs,
+        )
+
+    def ListFiles(self, request, **kwargs):
+        path = "/workspace/projects/"+urllib.parse.quote(request.project_id)+"/files"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+
+        return self.transport.request(
+            name="eolymp.workspace.Workspace/ListFiles",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.workspace.ListFilesOutput"),
+            **kwargs,
+        )
+
+    def DescribeFile(self, request, **kwargs):
+        path = "/workspace/projects/"+urllib.parse.quote(request.project_id)+"/files/"+urllib.parse.quote(request.name)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+        request.name = ""
+
+        return self.transport.request(
+            name="eolymp.workspace.Workspace/DescribeFile",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.workspace.DescribeFileOutput"),
+            **kwargs,
+        )
+
+    def UploadFile(self, request, **kwargs):
+        path = "/workspace/projects/"+urllib.parse.quote(request.project_id)+"/files"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+
+        return self.transport.request(
+            name="eolymp.workspace.Workspace/UploadFile",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.workspace.UploadFileOutput"),
+            **kwargs,
+        )
+
+    def RemoveFile(self, request, **kwargs):
+        path = "/workspace/projects/"+urllib.parse.quote(request.project_id)+"/files/"+urllib.parse.quote(request.name)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+        request.name = ""
+
+        return self.transport.request(
+            name="eolymp.workspace.Workspace/RemoveFile",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.workspace.RemoveFileOutput"),
+            **kwargs,
+        )
+

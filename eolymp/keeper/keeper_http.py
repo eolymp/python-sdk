@@ -14,3 +14,48 @@ class KeeperClient:
         self.transport = transport
         self.url = url
 
+    def CreateObject(self, request, **kwargs):
+        path = "/objects"
+
+        return self.transport.request(
+            name="eolymp.keeper.Keeper/CreateObject",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.keeper.CreateObjectOutput"),
+            **kwargs,
+        )
+
+    def DescribeObject(self, request, **kwargs):
+        path = "/objects/"+urllib.parse.quote(request.key)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.key = ""
+
+        return self.transport.request(
+            name="eolymp.keeper.Keeper/DescribeObject",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.keeper.DescribeObjectOutput"),
+            **kwargs,
+        )
+
+    def DownloadObject(self, request, **kwargs):
+        path = "/objects/"+urllib.parse.quote(request.key)+"/data"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.key = ""
+
+        return self.transport.request(
+            name="eolymp.keeper.Keeper/DownloadObject",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.keeper.DownloadObjectOutput"),
+            **kwargs,
+        )
+
