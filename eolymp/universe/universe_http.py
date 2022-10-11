@@ -12,6 +12,14 @@ class UniverseClient:
     def __init__(self, transport):
         self.transport = transport
 
+    def LookupSpace(self, request, **kwargs):
+        return self.transport.request(
+            url="eolymp.universe.Universe/LookupSpace",
+            request=request,
+            response_obj=_sym_db.GetSymbol("eolymp.universe.LookupSpaceOutput"),
+            **kwargs,
+        )
+
     def CreateSpace(self, request, **kwargs):
         return self.transport.request(
             url="eolymp.universe.Universe/CreateSpace",
@@ -33,14 +41,6 @@ class UniverseClient:
             url="eolymp.universe.Universe/DeleteSpace",
             request=request,
             response_obj=_sym_db.GetSymbol("eolymp.universe.DeleteSpaceOutput"),
-            **kwargs,
-        )
-
-    def LookupSpace(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.universe.Universe/LookupSpace",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.LookupSpaceOutput"),
             **kwargs,
         )
 
