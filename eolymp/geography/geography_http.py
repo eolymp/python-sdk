@@ -3,44 +3,75 @@
 # See https://github.com/eolymp/contracts/tree/main/cmd/protoc-gen-python-esdk for more details.
 """Generated protocol buffer code."""
 
+import urllib.parse
 from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
 
 class GeographyClient:
-    def __init__(self, transport):
+    def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
+        self.url = url
 
     def DescribeCountry(self, request, **kwargs):
+        path = "/geography/countries/"+urllib.parse.quote(request.country_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.country_id = ""
+
         return self.transport.request(
-            url="eolymp.geography.Geography/DescribeCountry",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.geography.DescribeCountryOutput"),
+            name="eolymp.geography.Geography/DescribeCountry",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.geography.DescribeCountryOutput"),
             **kwargs,
         )
 
     def ListCountries(self, request, **kwargs):
+        path = "/geography/countries"
+
         return self.transport.request(
-            url="eolymp.geography.Geography/ListCountries",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.geography.ListCountriesOutput"),
+            name="eolymp.geography.Geography/ListCountries",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.geography.ListCountriesOutput"),
             **kwargs,
         )
 
     def DescribeRegion(self, request, **kwargs):
+        path = "/geography/regions/"+urllib.parse.quote(request.region_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.region_id = ""
+
         return self.transport.request(
-            url="eolymp.geography.Geography/DescribeRegion",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.geography.DescribeRegionOutput"),
+            name="eolymp.geography.Geography/DescribeRegion",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.geography.DescribeRegionOutput"),
             **kwargs,
         )
 
     def ListRegions(self, request, **kwargs):
+        path = "/geography/countries/"+urllib.parse.quote(request.country_id)+"/regions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.country_id = ""
+
         return self.transport.request(
-            url="eolymp.geography.Geography/ListRegions",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.geography.ListRegionsOutput"),
+            name="eolymp.geography.Geography/ListRegions",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.geography.ListRegionsOutput"),
             **kwargs,
         )
 

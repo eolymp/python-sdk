@@ -3,212 +3,292 @@
 # See https://github.com/eolymp/contracts/tree/main/cmd/protoc-gen-python-esdk for more details.
 """Generated protocol buffer code."""
 
+import urllib.parse
 from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
 
 class CognitoClient:
-    def __init__(self, transport):
+    def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
-
-    def CreateToken(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.cognito.Cognito/CreateToken",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.CreateTokenOutput"),
-            **kwargs,
-        )
-
-    def IntrospectToken(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.cognito.Cognito/IntrospectToken",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.IntrospectTokenOutput"),
-            **kwargs,
-        )
-
-    def CreateAuthorization(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.cognito.Cognito/CreateAuthorization",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.CreateAuthorizationOutput"),
-            **kwargs,
-        )
-
-    def RevokeToken(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.cognito.Cognito/RevokeToken",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.RevokeTokenOutput"),
-            **kwargs,
-        )
-
-    def Signout(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.cognito.Cognito/Signout",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.SignoutOutput"),
-            **kwargs,
-        )
+        self.url = url
 
     def CreateAccessKey(self, request, **kwargs):
+        path = "/access-keys"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/CreateAccessKey",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.CreateAccessKeyOutput"),
+            name="eolymp.cognito.Cognito/CreateAccessKey",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.CreateAccessKeyOutput"),
             **kwargs,
         )
 
     def DeleteAccessKey(self, request, **kwargs):
+        path = "/access-keys/"+urllib.parse.quote(request.key_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.key_id = ""
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/DeleteAccessKey",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.DeleteAccessKeyOutput"),
+            name="eolymp.cognito.Cognito/DeleteAccessKey",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.DeleteAccessKeyOutput"),
             **kwargs,
         )
 
     def ListAccessKeys(self, request, **kwargs):
+        path = "/access-keys"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/ListAccessKeys",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.ListAccessKeysOutput"),
+            name="eolymp.cognito.Cognito/ListAccessKeys",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListAccessKeysOutput"),
             **kwargs,
         )
 
     def CreateUser(self, request, **kwargs):
+        path = "/users"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/CreateUser",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.CreateUserOutput"),
+            name="eolymp.cognito.Cognito/CreateUser",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.CreateUserOutput"),
             **kwargs,
         )
 
     def VerifyEmail(self, request, **kwargs):
+        path = "/users/"+urllib.parse.quote(request.user_id)+"/verify"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.user_id = ""
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/VerifyEmail",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.VerifyEmailOutput"),
+            name="eolymp.cognito.Cognito/VerifyEmail",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.VerifyEmailOutput"),
             **kwargs,
         )
 
     def UpdateEmail(self, request, **kwargs):
+        path = "/self/email"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/UpdateEmail",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.UpdateEmailOutput"),
+            name="eolymp.cognito.Cognito/UpdateEmail",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdateEmailOutput"),
             **kwargs,
         )
 
     def UpdateProfile(self, request, **kwargs):
+        path = "/self"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/UpdateProfile",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.UpdateProfileOutput"),
+            name="eolymp.cognito.Cognito/UpdateProfile",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdateProfileOutput"),
             **kwargs,
         )
 
     def UpdatePicture(self, request, **kwargs):
+        path = "/self/picture"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/UpdatePicture",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.UpdatePictureOutput"),
+            name="eolymp.cognito.Cognito/UpdatePicture",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdatePictureOutput"),
             **kwargs,
         )
 
     def UpdatePassword(self, request, **kwargs):
+        path = "/self/password"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/UpdatePassword",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.UpdatePasswordOutput"),
+            name="eolymp.cognito.Cognito/UpdatePassword",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdatePasswordOutput"),
             **kwargs,
         )
 
     def StartRecovery(self, request, **kwargs):
+        path = "/self/recovery"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/StartRecovery",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.StartRecoveryOutput"),
+            name="eolymp.cognito.Cognito/StartRecovery",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.StartRecoveryOutput"),
             **kwargs,
         )
 
     def CompleteRecovery(self, request, **kwargs):
+        path = "/users/"+urllib.parse.quote(request.user_id)+"/recover"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.user_id = ""
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/CompleteRecovery",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.CompleteRecoverOutput"),
+            name="eolymp.cognito.Cognito/CompleteRecovery",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.CompleteRecoverOutput"),
             **kwargs,
         )
 
     def IntrospectUser(self, request, **kwargs):
+        path = "/self"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/IntrospectUser",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.IntrospectUserOutput"),
+            name="eolymp.cognito.Cognito/IntrospectUser",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.IntrospectUserOutput"),
             **kwargs,
         )
 
     def DescribeUser(self, request, **kwargs):
+        path = "/users/"+urllib.parse.quote(request.user_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.user_id = ""
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/DescribeUser",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.DescribeUserOutput"),
+            name="eolymp.cognito.Cognito/DescribeUser",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.DescribeUserOutput"),
             **kwargs,
         )
 
     def ListUsers(self, request, **kwargs):
+        path = "/users"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/ListUsers",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.ListUsersOutput"),
+            name="eolymp.cognito.Cognito/ListUsers",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListUsersOutput"),
             **kwargs,
         )
 
     def IntrospectQuota(self, request, **kwargs):
+        path = "/self/quota"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/IntrospectQuota",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.IntrospectQuotaOutput"),
+            name="eolymp.cognito.Cognito/IntrospectQuota",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.IntrospectQuotaOutput"),
             **kwargs,
         )
 
     def IntrospectRoles(self, request, **kwargs):
+        path = "/self/roles"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/IntrospectRoles",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.IntrospectRolesOutput"),
+            name="eolymp.cognito.Cognito/IntrospectRoles",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.IntrospectRolesOutput"),
             **kwargs,
         )
 
     def ListRoles(self, request, **kwargs):
+        path = "/users/"+urllib.parse.quote(request.user_id)+"/roles"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.user_id = ""
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/ListRoles",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.ListRolesOutput"),
+            name="eolymp.cognito.Cognito/ListRoles",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListRolesOutput"),
             **kwargs,
         )
 
     def UpdateRoles(self, request, **kwargs):
+        path = "/users/"+urllib.parse.quote(request.user_id)+"/roles"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.user_id = ""
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/UpdateRoles",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.UpdateRolesOutput"),
+            name="eolymp.cognito.Cognito/UpdateRoles",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdateRolesOutput"),
             **kwargs,
         )
 
     def ListEntitlements(self, request, **kwargs):
+        path = "/__cognito/entitlements"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/ListEntitlements",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.ListEntitlementsOutput"),
+            name="eolymp.cognito.Cognito/ListEntitlements",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListEntitlementsOutput"),
             **kwargs,
         )
 
     def SelfDestruct(self, request, **kwargs):
+        path = "/self"
+
         return self.transport.request(
-            url="eolymp.cognito.Cognito/SelfDestruct",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.cognito.SelfDestructOutput"),
+            name="eolymp.cognito.Cognito/SelfDestruct",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.SelfDestructOutput"),
             **kwargs,
         )
 

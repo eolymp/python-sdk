@@ -3,52 +3,88 @@
 # See https://github.com/eolymp/contracts/tree/main/cmd/protoc-gen-python-esdk for more details.
 """Generated protocol buffer code."""
 
+import urllib.parse
 from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
 
 class ExecutorClient:
-    def __init__(self, transport):
+    def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
+        self.url = url
 
     def DescribeLanguage(self, request, **kwargs):
+        path = "/executor/languages/"+urllib.parse.quote(request.language_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.language_id = ""
+
         return self.transport.request(
-            url="eolymp.executor.Executor/DescribeLanguage",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.executor.DescribeLanguageOutput"),
+            name="eolymp.executor.Executor/DescribeLanguage",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.executor.DescribeLanguageOutput"),
             **kwargs,
         )
 
     def ListLanguages(self, request, **kwargs):
+        path = "/executor/languages"
+
         return self.transport.request(
-            url="eolymp.executor.Executor/ListLanguages",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.executor.ListLanguagesOutput"),
+            name="eolymp.executor.Executor/ListLanguages",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.executor.ListLanguagesOutput"),
             **kwargs,
         )
 
     def DescribeRuntime(self, request, **kwargs):
+        path = "/executor/runtime/"+urllib.parse.quote(request.runtime_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.runtime_id = ""
+
         return self.transport.request(
-            url="eolymp.executor.Executor/DescribeRuntime",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.executor.DescribeRuntimeOutput"),
+            name="eolymp.executor.Executor/DescribeRuntime",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.executor.DescribeRuntimeOutput"),
             **kwargs,
         )
 
     def ListRuntime(self, request, **kwargs):
+        path = "/executor/runtime"
+
         return self.transport.request(
-            url="eolymp.executor.Executor/ListRuntime",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.executor.ListRuntimeOutput"),
+            name="eolymp.executor.Executor/ListRuntime",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.executor.ListRuntimeOutput"),
             **kwargs,
         )
 
     def DescribeCodeTemplate(self, request, **kwargs):
+        path = "/executor/runtime/"+urllib.parse.quote(request.runtime_id)+"/template"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.runtime_id = ""
+
         return self.transport.request(
-            url="eolymp.executor.Executor/DescribeCodeTemplate",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.executor.DescribeCodeTemplateOutput"),
+            name="eolymp.executor.Executor/DescribeCodeTemplate",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.executor.DescribeCodeTemplateOutput"),
             **kwargs,
         )
 

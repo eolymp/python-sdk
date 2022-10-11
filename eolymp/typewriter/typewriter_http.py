@@ -3,20 +3,14 @@
 # See https://github.com/eolymp/contracts/tree/main/cmd/protoc-gen-python-esdk for more details.
 """Generated protocol buffer code."""
 
+import urllib.parse
 from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
 
 class TypewriterClient:
-    def __init__(self, transport):
+    def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
-
-    def UploadAsset(self, request, **kwargs):
-        return self.transport.request(
-            url="eolymp.typewriter.Typewriter/UploadAsset",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.typewriter.UploadAssetOutput"),
-            **kwargs,
-        )
+        self.url = url
 

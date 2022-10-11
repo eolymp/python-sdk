@@ -3,564 +3,1133 @@
 # See https://github.com/eolymp/contracts/tree/main/cmd/protoc-gen-python-esdk for more details.
 """Generated protocol buffer code."""
 
+import urllib.parse
 from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
 
 class JudgeClient:
-    def __init__(self, transport):
+    def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
+        self.url = url
 
     def LookupContest(self, request, **kwargs):
+        path = "/contests/__lookup"
+
         return self.transport.request(
-            url="eolymp.judge.Judge/LookupContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.LookupContestOutput"),
+            name="eolymp.judge.Judge/LookupContest",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.LookupContestOutput"),
             **kwargs,
         )
 
     def CreateContest(self, request, **kwargs):
+        path = "/contests"
+
         return self.transport.request(
-            url="eolymp.judge.Judge/CreateContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.CreateContestOutput"),
+            name="eolymp.judge.Judge/CreateContest",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.CreateContestOutput"),
             **kwargs,
         )
 
     def DeleteContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DeleteContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DeleteContestOutput"),
+            name="eolymp.judge.Judge/DeleteContest",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteContestOutput"),
             **kwargs,
         )
 
     def UpdateContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/UpdateContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.UpdateContestOutput"),
+            name="eolymp.judge.Judge/UpdateContest",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateContestOutput"),
             **kwargs,
         )
 
     def DescribeContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeContestOutput"),
+            name="eolymp.judge.Judge/DescribeContest",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeContestOutput"),
             **kwargs,
         )
 
     def ListContests(self, request, **kwargs):
+        path = "/contests"
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListContests",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListContestsOutput"),
+            name="eolymp.judge.Judge/ListContests",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListContestsOutput"),
             **kwargs,
         )
 
     def OpenContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/open"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/OpenContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.OpenContestOutput"),
+            name="eolymp.judge.Judge/OpenContest",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.OpenContestOutput"),
             **kwargs,
         )
 
     def CloseContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/close"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/CloseContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.CloseContestOutput"),
+            name="eolymp.judge.Judge/CloseContest",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.CloseContestOutput"),
             **kwargs,
         )
 
     def ConfigureRuntime(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/runtime"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ConfigureRuntime",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ConfigureRuntimeOutput"),
+            name="eolymp.judge.Judge/ConfigureRuntime",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ConfigureRuntimeOutput"),
             **kwargs,
         )
 
     def DescribeRuntime(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/runtime"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeRuntime",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeRuntimeOutput"),
+            name="eolymp.judge.Judge/DescribeRuntime",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeRuntimeOutput"),
             **kwargs,
         )
 
     def ConfigureAppearance(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/appearance"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ConfigureAppearance",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ConfigureAppearanceOutput"),
+            name="eolymp.judge.Judge/ConfigureAppearance",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ConfigureAppearanceOutput"),
             **kwargs,
         )
 
     def DescribeAppearance(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/appearance"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeAppearance",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeAppearanceOutput"),
+            name="eolymp.judge.Judge/DescribeAppearance",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeAppearanceOutput"),
             **kwargs,
         )
 
     def ConfigureScoring(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoring"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ConfigureScoring",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ConfigureScoringOutput"),
+            name="eolymp.judge.Judge/ConfigureScoring",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ConfigureScoringOutput"),
             **kwargs,
         )
 
     def DescribeScoring(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoring"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeScoring",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeScoringOutput"),
+            name="eolymp.judge.Judge/DescribeScoring",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeScoringOutput"),
             **kwargs,
         )
 
     def ImportProblem(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ImportProblem",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ImportProblemOutput"),
+            name="eolymp.judge.Judge/ImportProblem",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ImportProblemOutput"),
             **kwargs,
         )
 
     def SyncProblem(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/sync"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/SyncProblem",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.SyncProblemOutput"),
+            name="eolymp.judge.Judge/SyncProblem",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.SyncProblemOutput"),
             **kwargs,
         )
 
     def UpdateProblem(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/UpdateProblem",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.UpdateProblemOutput"),
+            name="eolymp.judge.Judge/UpdateProblem",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateProblemOutput"),
             **kwargs,
         )
 
     def ListProblems(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListProblems",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListProblemsOutput"),
+            name="eolymp.judge.Judge/ListProblems",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListProblemsOutput"),
             **kwargs,
         )
 
     def DescribeProblem(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeProblem",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeProblemOutput"),
+            name="eolymp.judge.Judge/DescribeProblem",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeProblemOutput"),
             **kwargs,
         )
 
     def DescribeCodeTemplate(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/templates/"+urllib.parse.quote(request.template_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+        request.template_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeCodeTemplate",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeCodeTemplateOutput"),
+            name="eolymp.judge.Judge/DescribeCodeTemplate",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeCodeTemplateOutput"),
             **kwargs,
         )
 
     def LookupCodeTemplate(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/lookup-template"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/LookupCodeTemplate",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.LookupCodeTemplateOutput"),
+            name="eolymp.judge.Judge/LookupCodeTemplate",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.LookupCodeTemplateOutput"),
             **kwargs,
         )
 
     def ListStatements(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/statements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListStatements",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListStatementsOutput"),
+            name="eolymp.judge.Judge/ListStatements",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListStatementsOutput"),
             **kwargs,
         )
 
     def ListAttachments(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/attachments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListAttachments",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListAttachmentsOutput"),
+            name="eolymp.judge.Judge/ListAttachments",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListAttachmentsOutput"),
             **kwargs,
         )
 
     def ListExamples(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/examples"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListExamples",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListExamplesOutput"),
+            name="eolymp.judge.Judge/ListExamples",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListExamplesOutput"),
             **kwargs,
         )
 
     def DeleteProblem(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DeleteProblem",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DeleteProblemOutput"),
+            name="eolymp.judge.Judge/DeleteProblem",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteProblemOutput"),
             **kwargs,
         )
 
     def RetestProblem(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/retest"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/RetestProblem",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.RetestProblemOutput"),
+            name="eolymp.judge.Judge/RetestProblem",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.RetestProblemOutput"),
             **kwargs,
         )
 
     def AddParticipant(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/AddParticipant",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.AddParticipantOutput"),
+            name="eolymp.judge.Judge/AddParticipant",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.AddParticipantOutput"),
             **kwargs,
         )
 
     def EnableParticipant(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/enable"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/EnableParticipant",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.EnableParticipantOutput"),
+            name="eolymp.judge.Judge/EnableParticipant",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.EnableParticipantOutput"),
             **kwargs,
         )
 
     def DisableParticipant(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/disable"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DisableParticipant",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DisableParticipantOutput"),
+            name="eolymp.judge.Judge/DisableParticipant",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DisableParticipantOutput"),
             **kwargs,
         )
 
     def UpdateParticipant(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/UpdateParticipant",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.UpdateParticipantOutput"),
+            name="eolymp.judge.Judge/UpdateParticipant",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateParticipantOutput"),
             **kwargs,
         )
 
     def RemoveParticipant(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/RemoveParticipant",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.RemoveParticipantOutput"),
+            name="eolymp.judge.Judge/RemoveParticipant",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.RemoveParticipantOutput"),
             **kwargs,
         )
 
     def ListParticipants(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListParticipants",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListParticipantsOutput"),
+            name="eolymp.judge.Judge/ListParticipants",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListParticipantsOutput"),
             **kwargs,
         )
 
     def DescribeParticipant(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeParticipant",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeParticipantOutput"),
+            name="eolymp.judge.Judge/DescribeParticipant",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeParticipantOutput"),
             **kwargs,
         )
 
     def IntrospectParticipant(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/introspect"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/IntrospectParticipant",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.IntrospectParticipantOutput"),
+            name="eolymp.judge.Judge/IntrospectParticipant",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.IntrospectParticipantOutput"),
             **kwargs,
         )
 
     def JoinContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/join"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/JoinContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.JoinContestOutput"),
+            name="eolymp.judge.Judge/JoinContest",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.JoinContestOutput"),
             **kwargs,
         )
 
     def StartContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/start"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/StartContest",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.StartContestOutput"),
+            name="eolymp.judge.Judge/StartContest",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.StartContestOutput"),
             **kwargs,
         )
 
     def VerifyPasscode(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/verify-passcode"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/VerifyPasscode",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.VerifyPasscodeOutput"),
+            name="eolymp.judge.Judge/VerifyPasscode",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.VerifyPasscodeOutput"),
             **kwargs,
         )
 
     def EnterPasscode(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/enter-passcode"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/EnterPasscode",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.EnterPasscodeOutput"),
+            name="eolymp.judge.Judge/EnterPasscode",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.EnterPasscodeOutput"),
             **kwargs,
         )
 
     def ResetPasscode(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ResetPasscode",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ResetPasscodeOutput"),
+            name="eolymp.judge.Judge/ResetPasscode",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ResetPasscodeOutput"),
             **kwargs,
         )
 
     def RemovePasscode(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/RemovePasscode",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.RemovePasscodeOutput"),
+            name="eolymp.judge.Judge/RemovePasscode",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.RemovePasscodeOutput"),
             **kwargs,
         )
 
     def CreateSubmission(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/submissions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/CreateSubmission",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.CreateSubmissionOutput"),
+            name="eolymp.judge.Judge/CreateSubmission",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.CreateSubmissionOutput"),
             **kwargs,
         )
 
     def ListSubmissions(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListSubmissions",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListSubmissionsOutput"),
+            name="eolymp.judge.Judge/ListSubmissions",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListSubmissionsOutput"),
             **kwargs,
         )
 
     def DescribeSubmission(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.submission_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeSubmission",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeSubmissionOutput"),
+            name="eolymp.judge.Judge/DescribeSubmission",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeSubmissionOutput"),
             **kwargs,
         )
 
     def RetestSubmission(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)+"/retest"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.submission_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/RetestSubmission",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.RetestSubmissionOutput"),
+            name="eolymp.judge.Judge/RetestSubmission",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.RetestSubmissionOutput"),
             **kwargs,
         )
 
     def CreateTicket(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/tickets"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/CreateTicket",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.CreateTicketOutput"),
+            name="eolymp.judge.Judge/CreateTicket",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.CreateTicketOutput"),
             **kwargs,
         )
 
     def CloseTicket(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/close"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/CloseTicket",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.CloseTicketOutput"),
+            name="eolymp.judge.Judge/CloseTicket",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.CloseTicketOutput"),
             **kwargs,
         )
 
     def OpenTicket(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/open"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/OpenTicket",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.OpenTicketOutput"),
+            name="eolymp.judge.Judge/OpenTicket",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.OpenTicketOutput"),
             **kwargs,
         )
 
     def ReadTicket(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/read"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ReadTicket",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ReadTicketOutput"),
+            name="eolymp.judge.Judge/ReadTicket",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ReadTicketOutput"),
             **kwargs,
         )
 
     def DeleteTicket(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DeleteTicket",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DeleteTicketOutput"),
+            name="eolymp.judge.Judge/DeleteTicket",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteTicketOutput"),
             **kwargs,
         )
 
     def DescribeTicket(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeTicket",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeTicketOutput"),
+            name="eolymp.judge.Judge/DescribeTicket",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeTicketOutput"),
             **kwargs,
         )
 
     def ListTickets(self, request, **kwargs):
+        path = "/tickets"
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListTickets",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListTicketsOutput"),
+            name="eolymp.judge.Judge/ListTickets",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListTicketsOutput"),
             **kwargs,
         )
 
     def ReplyTicket(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/replies"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ReplyTicket",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ReplyTicketOutput"),
+            name="eolymp.judge.Judge/ReplyTicket",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ReplyTicketOutput"),
             **kwargs,
         )
 
     def ListReplies(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/replies"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListReplies",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListRepliesOutput"),
+            name="eolymp.judge.Judge/ListReplies",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListRepliesOutput"),
             **kwargs,
         )
 
     def DeleteReply(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/replies/"+urllib.parse.quote(request.reply_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+        request.reply_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DeleteReply",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DeleteReplyOutput"),
+            name="eolymp.judge.Judge/DeleteReply",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteReplyOutput"),
             **kwargs,
         )
 
     def UpdateReply(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/replies/"+urllib.parse.quote(request.reply_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+        request.reply_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/UpdateReply",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.UpdateReplyOutput"),
+            name="eolymp.judge.Judge/UpdateReply",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateReplyOutput"),
             **kwargs,
         )
 
     def CreateAnnouncement(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/CreateAnnouncement",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.CreateAnnouncementOutput"),
+            name="eolymp.judge.Judge/CreateAnnouncement",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.CreateAnnouncementOutput"),
             **kwargs,
         )
 
     def UpdateAnnouncement(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.announcement_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/UpdateAnnouncement",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.UpdateAnnouncementOutput"),
+            name="eolymp.judge.Judge/UpdateAnnouncement",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateAnnouncementOutput"),
             **kwargs,
         )
 
     def DeleteAnnouncement(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.announcement_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DeleteAnnouncement",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DeleteAnnouncementOutput"),
+            name="eolymp.judge.Judge/DeleteAnnouncement",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteAnnouncementOutput"),
             **kwargs,
         )
 
     def ReadAnnouncement(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)+"/read"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.announcement_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ReadAnnouncement",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ReadAnnouncementOutput"),
+            name="eolymp.judge.Judge/ReadAnnouncement",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ReadAnnouncementOutput"),
             **kwargs,
         )
 
     def DescribeAnnouncement(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.announcement_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeAnnouncement",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeAnnouncementOutput"),
+            name="eolymp.judge.Judge/DescribeAnnouncement",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeAnnouncementOutput"),
             **kwargs,
         )
 
     def DescribeAnnouncementStatus(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)+"/status"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.announcement_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeAnnouncementStatus",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeAnnouncementStatusOutput"),
+            name="eolymp.judge.Judge/DescribeAnnouncementStatus",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeAnnouncementStatusOutput"),
             **kwargs,
         )
 
     def ListAnnouncements(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListAnnouncements",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListAnnouncementsOutput"),
+            name="eolymp.judge.Judge/ListAnnouncements",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListAnnouncementsOutput"),
             **kwargs,
         )
 
     def IntrospectScore(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/introspect/score"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/IntrospectScore",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.IntrospectScoreOutput"),
+            name="eolymp.judge.Judge/IntrospectScore",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.IntrospectScoreOutput"),
             **kwargs,
         )
 
     def DescribeScore(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/score"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/DescribeScore",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.DescribeScoreOutput"),
+            name="eolymp.judge.Judge/DescribeScore",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeScoreOutput"),
             **kwargs,
         )
 
     def ImportScore(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ImportScore",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ImportScoreOutput"),
+            name="eolymp.judge.Judge/ImportScore",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ImportScoreOutput"),
             **kwargs,
         )
 
     def ListResult(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/results"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListResult",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListResultOutput"),
+            name="eolymp.judge.Judge/ListResult",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListResultOutput"),
             **kwargs,
         )
 
     def RebuildScore(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/rebuild"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/RebuildScore",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.RebuildScoreOutput"),
+            name="eolymp.judge.Judge/RebuildScore",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.RebuildScoreOutput"),
             **kwargs,
         )
 
     def ListEntitlements(self, request, **kwargs):
+        path = "/__judge/entitlements"
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListEntitlements",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListEntitlementsOutput"),
+            name="eolymp.judge.Judge/ListEntitlements",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListEntitlementsOutput"),
             **kwargs,
         )
 
     def ListActivities(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/activities"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
         return self.transport.request(
-            url="eolymp.judge.Judge/ListActivities",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.judge.ListActivitiesOutput"),
+            name="eolymp.judge.Judge/ListActivities",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListActivitiesOutput"),
             **kwargs,
         )
 

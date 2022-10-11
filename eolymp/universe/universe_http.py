@@ -3,108 +3,203 @@
 # See https://github.com/eolymp/contracts/tree/main/cmd/protoc-gen-python-esdk for more details.
 """Generated protocol buffer code."""
 
+import urllib.parse
 from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
 
 class UniverseClient:
-    def __init__(self, transport):
+    def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
+        self.url = url
 
     def LookupSpace(self, request, **kwargs):
+        path = "/spaces/__lookup/"+urllib.parse.quote(request.key)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.key = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/LookupSpace",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.LookupSpaceOutput"),
+            name="eolymp.universe.Universe/LookupSpace",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.LookupSpaceOutput"),
             **kwargs,
         )
 
     def CreateSpace(self, request, **kwargs):
+        path = "/spaces"
+
         return self.transport.request(
-            url="eolymp.universe.Universe/CreateSpace",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.CreateSpaceOutput"),
+            name="eolymp.universe.Universe/CreateSpace",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.CreateSpaceOutput"),
             **kwargs,
         )
 
     def UpdateSpace(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/UpdateSpace",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.UpdateSpaceOutput"),
+            name="eolymp.universe.Universe/UpdateSpace",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.UpdateSpaceOutput"),
             **kwargs,
         )
 
     def DeleteSpace(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/DeleteSpace",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.DeleteSpaceOutput"),
+            name="eolymp.universe.Universe/DeleteSpace",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.DeleteSpaceOutput"),
             **kwargs,
         )
 
     def DescribeSpace(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/DescribeSpace",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.DescribeSpaceOutput"),
+            name="eolymp.universe.Universe/DescribeSpace",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeSpaceOutput"),
             **kwargs,
         )
 
     def DescribeQuota(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/quota"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/DescribeQuota",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.DescribeQuotaOutput"),
+            name="eolymp.universe.Universe/DescribeQuota",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeQuotaOutput"),
             **kwargs,
         )
 
     def ListSpaces(self, request, **kwargs):
+        path = "/spaces"
+
         return self.transport.request(
-            url="eolymp.universe.Universe/ListSpaces",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.ListSpacesOutput"),
+            name="eolymp.universe.Universe/ListSpaces",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.ListSpacesOutput"),
             **kwargs,
         )
 
     def GrantPermission(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/permissions/"+urllib.parse.quote(request.user_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+        request.user_id = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/GrantPermission",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.GrantPermissionOutput"),
+            name="eolymp.universe.Universe/GrantPermission",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.GrantPermissionOutput"),
             **kwargs,
         )
 
     def RevokePermission(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/permissions/"+urllib.parse.quote(request.user_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+        request.user_id = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/RevokePermission",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.RevokePermissionOutput"),
+            name="eolymp.universe.Universe/RevokePermission",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.RevokePermissionOutput"),
             **kwargs,
         )
 
     def DescribePermission(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/permissions/"+urllib.parse.quote(request.user_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+        request.user_id = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/DescribePermission",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.DescribePermissionOutput"),
+            name="eolymp.universe.Universe/DescribePermission",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribePermissionOutput"),
             **kwargs,
         )
 
     def IntrospectPermission(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/introspect-permission"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/IntrospectPermission",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.IntrospectPermissionOutput"),
+            name="eolymp.universe.Universe/IntrospectPermission",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.IntrospectPermissionOutput"),
             **kwargs,
         )
 
     def ListPermissions(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/permissions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
         return self.transport.request(
-            url="eolymp.universe.Universe/ListPermissions",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.universe.ListPermissionsOutput"),
+            name="eolymp.universe.Universe/ListPermissions",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.ListPermissionsOutput"),
             **kwargs,
         )
 

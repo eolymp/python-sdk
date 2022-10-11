@@ -3,76 +3,133 @@
 # See https://github.com/eolymp/contracts/tree/main/cmd/protoc-gen-python-esdk for more details.
 """Generated protocol buffer code."""
 
+import urllib.parse
 from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
 
 class HelpdeskClient:
-    def __init__(self, transport):
+    def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
+        self.url = url
 
     def DescribeDocument(self, request, **kwargs):
+        path = "/helpdesk/document/"+urllib.parse.quote(request.document_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.document_id = ""
+
         return self.transport.request(
-            url="eolymp.helpdesk.Helpdesk/DescribeDocument",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.helpdesk.DescribeDocumentOutput"),
+            name="eolymp.helpdesk.Helpdesk/DescribeDocument",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.DescribeDocumentOutput"),
             **kwargs,
         )
 
     def ListDocuments(self, request, **kwargs):
+        path = "/helpdesk/documents"
+
         return self.transport.request(
-            url="eolymp.helpdesk.Helpdesk/ListDocuments",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.helpdesk.ListDocumentsOutput"),
+            name="eolymp.helpdesk.Helpdesk/ListDocuments",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.ListDocumentsOutput"),
             **kwargs,
         )
 
     def CreateDocument(self, request, **kwargs):
+        path = "/helpdesk/document"
+
         return self.transport.request(
-            url="eolymp.helpdesk.Helpdesk/CreateDocument",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.helpdesk.CreateDocumentOutput"),
+            name="eolymp.helpdesk.Helpdesk/CreateDocument",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.CreateDocumentOutput"),
             **kwargs,
         )
 
     def UpdateDocument(self, request, **kwargs):
+        path = "/helpdesk/document/"+urllib.parse.quote(request.document_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.document_id = ""
+
         return self.transport.request(
-            url="eolymp.helpdesk.Helpdesk/UpdateDocument",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.helpdesk.UpdateDocumentOutput"),
+            name="eolymp.helpdesk.Helpdesk/UpdateDocument",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.UpdateDocumentOutput"),
             **kwargs,
         )
 
     def DeleteDocument(self, request, **kwargs):
+        path = "/helpdesk/document/"+urllib.parse.quote(request.document_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.document_id = ""
+
         return self.transport.request(
-            url="eolymp.helpdesk.Helpdesk/DeleteDocument",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.helpdesk.DeleteDocumentOutput"),
+            name="eolymp.helpdesk.Helpdesk/DeleteDocument",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.DeleteDocumentOutput"),
             **kwargs,
         )
 
     def DescribePath(self, request, **kwargs):
+        path = "/helpdesk/paths/"+urllib.parse.quote(request.path)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.path = ""
+
         return self.transport.request(
-            url="eolymp.helpdesk.Helpdesk/DescribePath",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.helpdesk.DescribePathOutput"),
+            name="eolymp.helpdesk.Helpdesk/DescribePath",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.DescribePathOutput"),
             **kwargs,
         )
 
     def ListPaths(self, request, **kwargs):
+        path = "/helpdesk/paths"
+
         return self.transport.request(
-            url="eolymp.helpdesk.Helpdesk/ListPaths",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.helpdesk.ListPathsOutput"),
+            name="eolymp.helpdesk.Helpdesk/ListPaths",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.ListPathsOutput"),
             **kwargs,
         )
 
     def ListParents(self, request, **kwargs):
+        path = "/helpdesk/paths/"+urllib.parse.quote(request.path)+"/parents"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.path = ""
+
         return self.transport.request(
-            url="eolymp.helpdesk.Helpdesk/ListParents",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.helpdesk.ListParentsOutput"),
+            name="eolymp.helpdesk.Helpdesk/ListParents",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.ListParentsOutput"),
             **kwargs,
         )
 

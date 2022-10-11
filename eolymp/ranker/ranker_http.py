@@ -3,116 +3,217 @@
 # See https://github.com/eolymp/contracts/tree/main/cmd/protoc-gen-python-esdk for more details.
 """Generated protocol buffer code."""
 
+import urllib.parse
 from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
 
 class RankerClient:
-    def __init__(self, transport):
+    def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
+        self.url = url
 
     def CreateScoreboard(self, request, **kwargs):
+        path = "/ranker/scoreboards"
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/CreateScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.CreateScoreboardOutput"),
+            name="eolymp.ranker.Ranker/CreateScoreboard",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.CreateScoreboardOutput"),
             **kwargs,
         )
 
     def UpdateScoreboard(self, request, **kwargs):
+        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/UpdateScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.UpdateScoreboardOutput"),
+            name="eolymp.ranker.Ranker/UpdateScoreboard",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.UpdateScoreboardOutput"),
             **kwargs,
         )
 
     def RebuildScoreboard(self, request, **kwargs):
+        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rebuild"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/RebuildScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.RebuildScoreboardOutput"),
+            name="eolymp.ranker.Ranker/RebuildScoreboard",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.RebuildScoreboardOutput"),
             **kwargs,
         )
 
     def DeleteScoreboard(self, request, **kwargs):
+        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/DeleteScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.DeleteScoreboardOutput"),
+            name="eolymp.ranker.Ranker/DeleteScoreboard",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.DeleteScoreboardOutput"),
             **kwargs,
         )
 
     def DescribeScoreboard(self, request, **kwargs):
+        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/DescribeScoreboard",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.DescribeScoreboardOutput"),
+            name="eolymp.ranker.Ranker/DescribeScoreboard",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.DescribeScoreboardOutput"),
             **kwargs,
         )
 
     def ListScoreboards(self, request, **kwargs):
+        path = "/ranker/scoreboards"
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/ListScoreboards",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.ListScoreboardsOutput"),
+            name="eolymp.ranker.Ranker/ListScoreboards",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.ListScoreboardsOutput"),
             **kwargs,
         )
 
     def DescribeScoreboardRow(self, request, **kwargs):
+        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rows/"+urllib.parse.quote(request.member_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+        request.member_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/DescribeScoreboardRow",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.DescribeScoreboardRowOutput"),
+            name="eolymp.ranker.Ranker/DescribeScoreboardRow",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.DescribeScoreboardRowOutput"),
             **kwargs,
         )
 
     def ListScoreboardRows(self, request, **kwargs):
+        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rows"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/ListScoreboardRows",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.ListScoreboardRowsOutput"),
+            name="eolymp.ranker.Ranker/ListScoreboardRows",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.ListScoreboardRowsOutput"),
             **kwargs,
         )
 
     def AddScoreboardColumn(self, request, **kwargs):
+        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/AddScoreboardColumn",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.AddScoreboardColumnOutput"),
+            name="eolymp.ranker.Ranker/AddScoreboardColumn",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.AddScoreboardColumnOutput"),
             **kwargs,
         )
 
     def DeleteScoreboardColumn(self, request, **kwargs):
+        path = "/ranker/columns/"+urllib.parse.quote(request.column_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.column_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/DeleteScoreboardColumn",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.DeleteScoreboardColumnOutput"),
+            name="eolymp.ranker.Ranker/DeleteScoreboardColumn",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.DeleteScoreboardColumnOutput"),
             **kwargs,
         )
 
     def DescribeScoreboardColumn(self, request, **kwargs):
+        path = "/ranker/columns/"+urllib.parse.quote(request.column_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.column_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/DescribeScoreboardColumn",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.DescribeScoreboardColumnOutput"),
+            name="eolymp.ranker.Ranker/DescribeScoreboardColumn",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.DescribeScoreboardColumnOutput"),
             **kwargs,
         )
 
     def ListScoreboardColumns(self, request, **kwargs):
+        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/ListScoreboardColumns",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.ListScoreboardColumnsOutput"),
+            name="eolymp.ranker.Ranker/ListScoreboardColumns",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.ListScoreboardColumnsOutput"),
             **kwargs,
         )
 
     def ListActivities(self, request, **kwargs):
+        path = "/ranker/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/activities"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
         return self.transport.request(
-            url="eolymp.ranker.Ranker/ListActivities",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.ranker.ListActivitiesOutput"),
+            name="eolymp.ranker.Ranker/ListActivities",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.ListActivitiesOutput"),
             **kwargs,
         )
 

@@ -3,124 +3,214 @@
 # See https://github.com/eolymp/contracts/tree/main/cmd/protoc-gen-python-esdk for more details.
 """Generated protocol buffer code."""
 
+import urllib.parse
 from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
 
 class CommunityClient:
-    def __init__(self, transport):
+    def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
+        self.url = url
 
     def JoinSpace(self, request, **kwargs):
+        path = "/members/_self"
+
         return self.transport.request(
-            url="eolymp.community.Community/JoinSpace",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.JoinSpaceOutput"),
+            name="eolymp.community.Community/JoinSpace",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.JoinSpaceOutput"),
             **kwargs,
         )
 
     def LeaveSpace(self, request, **kwargs):
+        path = "/members/_self"
+
         return self.transport.request(
-            url="eolymp.community.Community/LeaveSpace",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.LeaveSpaceOutput"),
+            name="eolymp.community.Community/LeaveSpace",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.LeaveSpaceOutput"),
             **kwargs,
         )
 
     def RegisterMember(self, request, **kwargs):
+        path = "/members/_self/attributes"
+
         return self.transport.request(
-            url="eolymp.community.Community/RegisterMember",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.RegisterMemberOutput"),
+            name="eolymp.community.Community/RegisterMember",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.RegisterMemberOutput"),
             **kwargs,
         )
 
     def IntrospectMember(self, request, **kwargs):
+        path = "/members/_self"
+
         return self.transport.request(
-            url="eolymp.community.Community/IntrospectMember",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.IntrospectMemberOutput"),
+            name="eolymp.community.Community/IntrospectMember",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.IntrospectMemberOutput"),
             **kwargs,
         )
 
     def AddMember(self, request, **kwargs):
+        path = "/members"
+
         return self.transport.request(
-            url="eolymp.community.Community/AddMember",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.AddMemberOutput"),
+            name="eolymp.community.Community/AddMember",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.AddMemberOutput"),
             **kwargs,
         )
 
     def UpdateMember(self, request, **kwargs):
+        path = "/members/"+urllib.parse.quote(request.member_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
         return self.transport.request(
-            url="eolymp.community.Community/UpdateMember",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.UpdateMemberOutput"),
+            name="eolymp.community.Community/UpdateMember",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateMemberOutput"),
             **kwargs,
         )
 
     def RemoveMember(self, request, **kwargs):
+        path = "/members/"+urllib.parse.quote(request.member_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
         return self.transport.request(
-            url="eolymp.community.Community/RemoveMember",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.RemoveMemberOutput"),
+            name="eolymp.community.Community/RemoveMember",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.RemoveMemberOutput"),
             **kwargs,
         )
 
     def DescribeMember(self, request, **kwargs):
+        path = "/members/"+urllib.parse.quote(request.member_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
         return self.transport.request(
-            url="eolymp.community.Community/DescribeMember",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.DescribeMemberOutput"),
+            name="eolymp.community.Community/DescribeMember",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeMemberOutput"),
             **kwargs,
         )
 
     def ListMembers(self, request, **kwargs):
+        path = "/members"
+
         return self.transport.request(
-            url="eolymp.community.Community/ListMembers",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.ListMembersOutput"),
+            name="eolymp.community.Community/ListMembers",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ListMembersOutput"),
             **kwargs,
         )
 
     def AddAttribute(self, request, **kwargs):
+        path = "/attributes"
+
         return self.transport.request(
-            url="eolymp.community.Community/AddAttribute",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.AddAttributeOutput"),
+            name="eolymp.community.Community/AddAttribute",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.AddAttributeOutput"),
             **kwargs,
         )
 
     def UpdateAttribute(self, request, **kwargs):
+        path = "/attributes/"+urllib.parse.quote(request.attribute_key)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.attribute_key = ""
+
         return self.transport.request(
-            url="eolymp.community.Community/UpdateAttribute",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.UpdateAttributeOutput"),
+            name="eolymp.community.Community/UpdateAttribute",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateAttributeOutput"),
             **kwargs,
         )
 
     def RemoveAttribute(self, request, **kwargs):
+        path = "/attributes/"+urllib.parse.quote(request.attribute_key)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.attribute_key = ""
+
         return self.transport.request(
-            url="eolymp.community.Community/RemoveAttribute",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.RemoveAttributeOutput"),
+            name="eolymp.community.Community/RemoveAttribute",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.RemoveAttributeOutput"),
             **kwargs,
         )
 
     def DescribeAttribute(self, request, **kwargs):
+        path = "/attributes/"+urllib.parse.quote(request.attribute_key)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.attribute_key = ""
+
         return self.transport.request(
-            url="eolymp.community.Community/DescribeAttribute",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.DescribeAttributeOutput"),
+            name="eolymp.community.Community/DescribeAttribute",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeAttributeOutput"),
             **kwargs,
         )
 
     def ListAttributes(self, request, **kwargs):
+        path = "/attributes"
+
         return self.transport.request(
-            url="eolymp.community.Community/ListAttributes",
-            request=request,
-            response_obj=_sym_db.GetSymbol("eolymp.community.ListAttributesOutput"),
+            name="eolymp.community.Community/ListAttributes",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ListAttributesOutput"),
             **kwargs,
         )
 
