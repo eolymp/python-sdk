@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
-    __slots__ = ["id", "image", "key", "max_team_size", "membership", "min_team_size", "name", "plan", "type", "visibility"]
+    __slots__ = ["id", "image", "key", "max_team_size", "membership", "min_team_size", "name", "plan", "type", "url", "visibility"]
     class Membership(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -55,6 +55,7 @@ class Space(_message.Message):
     UNKNOWN_MEMBERSHIP: Space.Membership
     UNKNOWN_TYPE: Space.Type
     UNKNOWN_VISIBILITY: Space.Visibility
+    URL_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
     id: str
     image: str
@@ -65,5 +66,6 @@ class Space(_message.Message):
     name: str
     plan: str
     type: Space.Type
+    url: str
     visibility: Space.Visibility
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., type: _Optional[_Union[Space.Type, str]] = ..., plan: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., membership: _Optional[_Union[Space.Membership, str]] = ..., min_team_size: _Optional[int] = ..., max_team_size: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., type: _Optional[_Union[Space.Type, str]] = ..., plan: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., membership: _Optional[_Union[Space.Membership, str]] = ..., min_team_size: _Optional[int] = ..., max_team_size: _Optional[int] = ...) -> None: ...

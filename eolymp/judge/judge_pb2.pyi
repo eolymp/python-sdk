@@ -1,7 +1,6 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.annotations import service_pb2 as _service_pb2
 from eolymp.judge import activity_pb2 as _activity_pb2
 from eolymp.judge import announcement_pb2 as _announcement_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
