@@ -8,9 +8,11 @@ SERVICE_FIELD_NUMBER: _ClassVar[int]
 service: _descriptor.FieldDescriptor
 
 class Service(_message.Message):
-    __slots__ = ["internal", "space"]
+    __slots__ = ["internal", "prefix", "space"]
     INTERNAL_FIELD_NUMBER: _ClassVar[int]
+    PREFIX_FIELD_NUMBER: _ClassVar[int]
     SPACE_FIELD_NUMBER: _ClassVar[int]
     internal: bool
+    prefix: str
     space: bool
-    def __init__(self, space: bool = ..., internal: bool = ...) -> None: ...
+    def __init__(self, space: bool = ..., internal: bool = ..., prefix: _Optional[str] = ...) -> None: ...

@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import descriptor_pb2 as google_dot_protobuf_dot_descriptor__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/annotations/service.proto\x12\neolymp.api\x1a google/protobuf/descriptor.proto\"*\n\x07Service\x12\r\n\x05space\x18\x01 \x01(\x08\x12\x10\n\x08internal\x18\x02 \x01(\x08:G\n\x07service\x12\x1f.google.protobuf.ServiceOptions\x18\xb6\xac\x01 \x01(\x0b\x32\x13.eolymp.api.ServiceB9Z7github.com/eolymp/go-sdk/eolymp/annotations;annotationsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/annotations/service.proto\x12\neolymp.api\x1a google/protobuf/descriptor.proto\":\n\x07Service\x12\r\n\x05space\x18\x01 \x01(\x08\x12\x10\n\x08internal\x18\x02 \x01(\x08\x12\x0e\n\x06prefix\x18\x03 \x01(\t:G\n\x07service\x12\x1f.google.protobuf.ServiceOptions\x18\xb6\xac\x01 \x01(\x0b\x32\x13.eolymp.api.ServiceB9Z7github.com/eolymp/go-sdk/eolymp/annotations;annotationsb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.annotations.service_pb2', globals())
@@ -24,5 +24,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z7github.com/eolymp/go-sdk/eolymp/annotations;annotations'
   _SERVICE._serialized_start=82
-  _SERVICE._serialized_end=124
+  _SERVICE._serialized_end=140
 # @@protoc_insertion_point(module_scope)
