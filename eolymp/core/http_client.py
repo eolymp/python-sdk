@@ -1,4 +1,6 @@
 import time
+import urllib.parse
+
 import requests
 
 from google.protobuf import json_format
@@ -19,7 +21,12 @@ class HttpClient:
 
         wait = 1
         for t in range(0, self._retry):
-            resp = requests.request(url=url, method=method, data=json_format.MessageToJson(request_data), headers=headers, **kwargs)
+            data = json_format.MessageToJson(request_data)
+            if method == "GET":
+                query = ("?q=" + urllib.parse.quote(data)) if data != "{}" else ""
+                resp = requests.request(url=url+query, method=method, headers=headers, **kwargs)
+            else:
+                resp = requests.request(url=url, method=method, data=data, headers=headers, **kwargs)
 
             if resp.status_code == 429:
                 time.sleep(wait)
