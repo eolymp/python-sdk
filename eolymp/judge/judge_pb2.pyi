@@ -423,6 +423,16 @@ class EnterPasscodeOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class FreezeContestInput(_message.Message):
+    __slots__ = ["contest_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class FreezeContestOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class ImportProblemInput(_message.Message):
     __slots__ = ["contest_id", "import_id", "index", "score_by_best_testset", "submit_limit"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -976,6 +986,16 @@ class ResetPasscodeOutput(_message.Message):
     passcode: str
     def __init__(self, passcode: _Optional[str] = ...) -> None: ...
 
+class ResumeContestInput(_message.Message):
+    __slots__ = ["contest_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class ResumeContestOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class RetestProblemInput(_message.Message):
     __slots__ = ["contest_id", "problem_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -1007,6 +1027,16 @@ class StartContestInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class StartContestOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class SuspendContestInput(_message.Message):
+    __slots__ = ["contest_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class SuspendContestOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 

@@ -133,6 +133,54 @@ class JudgeClient:
             **kwargs,
         )
 
+    def SuspendContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/suspend"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
+        return self.transport.request(
+            name="eolymp.judge.Judge/SuspendContest",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.SuspendContestOutput"),
+            **kwargs,
+        )
+
+    def FreezeContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/freeze"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
+        return self.transport.request(
+            name="eolymp.judge.Judge/FreezeContest",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.FreezeContestOutput"),
+            **kwargs,
+        )
+
+    def ResumeContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/resume"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
+        return self.transport.request(
+            name="eolymp.judge.Judge/ResumeContest",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ResumeContestOutput"),
+            **kwargs,
+        )
+
     def ConfigureRuntime(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/runtime"
 

@@ -48,6 +48,7 @@ class Contest(_message.Message):
     ENDS_IN_FIELD_NUMBER: _ClassVar[int]
     ERN_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
+    FROZEN: Contest.Status
     ICPC: Contest.Format
     ID_FIELD_NUMBER: _ClassVar[int]
     IOI: Contest.Format
@@ -66,6 +67,7 @@ class Contest(_message.Message):
     STARTS_AT_FIELD_NUMBER: _ClassVar[int]
     STARTS_IN_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
+    SUSPENDED: Contest.Status
     UNLISTED: Contest.Visibility
     URL_FIELD_NUMBER: _ClassVar[int]
     VIRTUAL: Contest.ParticipationMode
