@@ -13,9 +13,13 @@ _sym_db = _symbol_database.Default()
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
+from eolymp.judge import contest_pb2 as eolymp_dot_judge_dot_contest__pb2
+from eolymp.ranker import scoreboard_pb2 as eolymp_dot_ranker_dot_scoreboard__pb2
+from eolymp.universe import auth_pb2 as eolymp_dot_universe_dot_auth__pb2
+from eolymp.universe import space_pb2 as eolymp_dot_universe_dot_space__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/resolver/resolver.proto\x12\x0f\x65olymp.resolver\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\"\x84\x03\n\x06Record\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08space_id\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12*\n\x04\x61uth\x18\n \x01(\x0b\x32\x1c.eolymp.resolver.Record.Auth\x12.\n\x06target\x18\x14 \x01(\x0b\x32\x1e.eolymp.resolver.Record.Target\x1aj\n\x04\x41uth\x12\x11\n\tclient_id\x18\n \x01(\t\x12\x15\n\rclient_secret\x18\x0b \x01(\t\x12\x0e\n\x06scopes\x18\x0c \x01(\t\x12\x11\n\ttoken_url\x18\x14 \x01(\t\x12\x15\n\rauthorize_url\x18\x1e \x01(\t\x1a\x41\n\x06Target\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.eolymp.resolver.Record.Type\x12\x0b\n\x03url\x18\x02 \x01(\t\"?\n\x04Type\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\t\n\x05SPACE\x10\x01\x12\x0b\n\x07\x43ONTEST\x10\x02\x12\x0e\n\nSCOREBOARD\x10\x03\" \n\x10ResolveNameInput\x12\x0c\n\x04name\x18\x01 \x01(\t\"o\n\x11ResolveNameOutput\x12*\n\x04\x61uth\x18\x01 \x01(\x0b\x32\x1c.eolymp.resolver.Record.Auth\x12.\n\x06target\x18\x02 \x01(\x0b\x32\x1e.eolymp.resolver.Record.Target2\x86\x01\n\x08Resolver\x12z\n\x0bResolveName\x12!.eolymp.resolver.ResolveNameInput\x1a\".eolymp.resolver.ResolveNameOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00HB\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0f\x12\r/names/{name}B3Z1github.com/eolymp/go-sdk/eolymp/resolver;resolverb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/resolver/resolver.proto\x12\x0f\x65olymp.resolver\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1a\x65olymp/judge/contest.proto\x1a\x1e\x65olymp/ranker/scoreboard.proto\x1a\x1a\x65olymp/universe/auth.proto\x1a\x1b\x65olymp/universe/space.proto\"\x9d\x02\n\x06Record\x12.\n\x06target\x18\x14 \x01(\x0b\x32\x1e.eolymp.resolver.Record.Target\x1a_\n\x06OAuth2\x12\x11\n\ttoken_url\x18\r \x01(\t\x12\x15\n\rauthorize_url\x18\x0e \x01(\t\x12\x13\n\x0bsignout_url\x18\x0f \x01(\t\x12\x16\n\x0eintrospect_url\x18\x10 \x01(\t\x1a\x41\n\x06Target\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.eolymp.resolver.Record.Type\x12\x0b\n\x03url\x18\x02 \x01(\t\"?\n\x04Type\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\t\n\x05SPACE\x10\x01\x12\x0b\n\x07\x43ONTEST\x10\x02\x12\x0e\n\nSCOREBOARD\x10\x03\" \n\x10ResolveNameInput\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x94\x02\n\x11ResolveNameOutput\x12.\n\x06target\x18\x01 \x01(\x0b\x32\x1e.eolymp.resolver.Record.Target\x12\'\n\x05space\x18\n \x01(\x0b\x32\x16.eolymp.universe.SpaceH\x00\x12(\n\x07\x63ontest\x18\x0b \x01(\x0b\x32\x15.eolymp.judge.ContestH\x00\x12/\n\nscoreboard\x18\x0c \x01(\x0b\x32\x19.eolymp.ranker.ScoreboardH\x00\x12\x38\n\x06oauth2\x18\x14 \x01(\x0b\x32&.eolymp.universe.Authentication.OAuth2H\x01\x42\t\n\x07targetxB\x06\n\x04\x61uth2\x86\x01\n\x08Resolver\x12z\n\x0bResolveName\x12!.eolymp.resolver.ResolveNameInput\x1a\".eolymp.resolver.ResolveNameOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00HB\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0f\x12\r/names/{name}B3Z1github.com/eolymp/go-sdk/eolymp/resolver;resolverb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.resolver.resolver_pb2', globals())
@@ -25,18 +29,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/resolver;resolver'
   _RESOLVER.methods_by_name['ResolveName']._options = None
   _RESOLVER.methods_by_name['ResolveName']._serialized_options = b'\352\342\n\013\365\342\n\000\000HB\370\342\nd\202\323\344\223\002\017\022\r/names/{name}'
-  _RECORD._serialized_start=119
-  _RECORD._serialized_end=507
-  _RECORD_AUTH._serialized_start=269
-  _RECORD_AUTH._serialized_end=375
-  _RECORD_TARGET._serialized_start=377
-  _RECORD_TARGET._serialized_end=442
-  _RECORD_TYPE._serialized_start=444
-  _RECORD_TYPE._serialized_end=507
-  _RESOLVENAMEINPUT._serialized_start=509
-  _RESOLVENAMEINPUT._serialized_end=541
-  _RESOLVENAMEOUTPUT._serialized_start=543
-  _RESOLVENAMEOUTPUT._serialized_end=654
-  _RESOLVER._serialized_start=657
-  _RESOLVER._serialized_end=791
+  _RECORD._serialized_start=236
+  _RECORD._serialized_end=521
+  _RECORD_OAUTH2._serialized_start=294
+  _RECORD_OAUTH2._serialized_end=389
+  _RECORD_TARGET._serialized_start=391
+  _RECORD_TARGET._serialized_end=456
+  _RECORD_TYPE._serialized_start=458
+  _RECORD_TYPE._serialized_end=521
+  _RESOLVENAMEINPUT._serialized_start=523
+  _RESOLVENAMEINPUT._serialized_end=555
+  _RESOLVENAMEOUTPUT._serialized_start=558
+  _RESOLVENAMEOUTPUT._serialized_end=834
+  _RESOLVER._serialized_start=837
+  _RESOLVER._serialized_end=971
 # @@protoc_insertion_point(module_scope)

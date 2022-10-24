@@ -14,17 +14,6 @@ class Space(_message.Message):
         __slots__ = []
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    class AuthenticationOAuth2(_message.Message):
-        __slots__ = ["authorize_url", "introspect_url", "signout_url", "token_url"]
-        AUTHORIZE_URL_FIELD_NUMBER: _ClassVar[int]
-        INTROSPECT_URL_FIELD_NUMBER: _ClassVar[int]
-        SIGNOUT_URL_FIELD_NUMBER: _ClassVar[int]
-        TOKEN_URL_FIELD_NUMBER: _ClassVar[int]
-        authorize_url: str
-        introspect_url: str
-        signout_url: str
-        token_url: str
-        def __init__(self, authorize_url: _Optional[str] = ..., token_url: _Optional[str] = ..., introspect_url: _Optional[str] = ..., signout_url: _Optional[str] = ...) -> None: ...
     class Quota(_message.Message):
         __slots__ = ["active_contests_per_space", "attributes_per_space", "contests_per_space", "members_per_space", "participants_per_contest", "permissions_per_space", "problems_per_contest", "problems_per_space", "scoreboards_per_space"]
         ACTIVE_CONTESTS_PER_SPACE_FIELD_NUMBER: _ClassVar[int]

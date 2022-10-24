@@ -1,5 +1,9 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.judge import contest_pb2 as _contest_pb2
+from eolymp.ranker import scoreboard_pb2 as _scoreboard_pb2
+from eolymp.universe import auth_pb2 as _auth_pb2
+from eolymp.universe import space_pb2 as _space_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -8,22 +12,20 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Record(_message.Message):
-    __slots__ = ["auth", "key", "space_id", "summary", "target"]
+    __slots__ = ["target"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    class Auth(_message.Message):
-        __slots__ = ["authorize_url", "client_id", "client_secret", "scopes", "token_url"]
+    class OAuth2(_message.Message):
+        __slots__ = ["authorize_url", "introspect_url", "signout_url", "token_url"]
         AUTHORIZE_URL_FIELD_NUMBER: _ClassVar[int]
-        CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
-        CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
-        SCOPES_FIELD_NUMBER: _ClassVar[int]
+        INTROSPECT_URL_FIELD_NUMBER: _ClassVar[int]
+        SIGNOUT_URL_FIELD_NUMBER: _ClassVar[int]
         TOKEN_URL_FIELD_NUMBER: _ClassVar[int]
         authorize_url: str
-        client_id: str
-        client_secret: str
-        scopes: str
+        introspect_url: str
+        signout_url: str
         token_url: str
-        def __init__(self, client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., scopes: _Optional[str] = ..., token_url: _Optional[str] = ..., authorize_url: _Optional[str] = ...) -> None: ...
+        def __init__(self, token_url: _Optional[str] = ..., authorize_url: _Optional[str] = ..., signout_url: _Optional[str] = ..., introspect_url: _Optional[str] = ...) -> None: ...
     class Target(_message.Message):
         __slots__ = ["type", "url"]
         TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -31,21 +33,13 @@ class Record(_message.Message):
         type: Record.Type
         url: str
         def __init__(self, type: _Optional[_Union[Record.Type, str]] = ..., url: _Optional[str] = ...) -> None: ...
-    AUTH_FIELD_NUMBER: _ClassVar[int]
     CONTEST: Record.Type
-    KEY_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD: Record.Type
     SPACE: Record.Type
-    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
-    SUMMARY_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
     UNSPECIFIED: Record.Type
-    auth: Record.Auth
-    key: str
-    space_id: str
-    summary: str
     target: Record.Target
-    def __init__(self, key: _Optional[str] = ..., space_id: _Optional[str] = ..., summary: _Optional[str] = ..., auth: _Optional[_Union[Record.Auth, _Mapping]] = ..., target: _Optional[_Union[Record.Target, _Mapping]] = ...) -> None: ...
+    def __init__(self, target: _Optional[_Union[Record.Target, _Mapping]] = ...) -> None: ...
 
 class ResolveNameInput(_message.Message):
     __slots__ = ["name"]
@@ -54,9 +48,15 @@ class ResolveNameInput(_message.Message):
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ResolveNameOutput(_message.Message):
-    __slots__ = ["auth", "target"]
-    AUTH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["contest", "oauth2", "scoreboard", "space", "target"]
+    CONTEST_FIELD_NUMBER: _ClassVar[int]
+    OAUTH2_FIELD_NUMBER: _ClassVar[int]
+    SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
+    SPACE_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
-    auth: Record.Auth
+    contest: _contest_pb2.Contest
+    oauth2: _auth_pb2.Authentication.OAuth2
+    scoreboard: _scoreboard_pb2.Scoreboard
+    space: _space_pb2.Space
     target: Record.Target
-    def __init__(self, auth: _Optional[_Union[Record.Auth, _Mapping]] = ..., target: _Optional[_Union[Record.Target, _Mapping]] = ...) -> None: ...
+    def __init__(self, target: _Optional[_Union[Record.Target, _Mapping]] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ..., contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ..., scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ..., oauth2: _Optional[_Union[_auth_pb2.Authentication.OAuth2, _Mapping]] = ...) -> None: ...
