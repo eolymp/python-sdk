@@ -120,6 +120,38 @@ class UniverseClient:
             **kwargs,
         )
 
+    def DescribeAuth(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/auth"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
+        return self.transport.request(
+            name="eolymp.universe.Universe/DescribeAuth",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeAuthOutput"),
+            **kwargs,
+        )
+
+    def ConfigureAuth(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/auth"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
+        return self.transport.request(
+            name="eolymp.universe.Universe/ConfigureAuth",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.ConfigureAuthOutput"),
+            **kwargs,
+        )
+
     def GrantPermission(self, request, **kwargs):
         path = "/spaces/"+urllib.parse.quote(request.space_id)+"/permissions/"+urllib.parse.quote(request.user_id)
 

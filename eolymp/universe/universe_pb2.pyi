@@ -11,6 +11,18 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class ConfigureAuthInput(_message.Message):
+    __slots__ = ["oauth2", "space_id"]
+    OAUTH2_FIELD_NUMBER: _ClassVar[int]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    oauth2: _space_pb2.Space.AuthenticationOAuth2
+    space_id: str
+    def __init__(self, space_id: _Optional[str] = ..., oauth2: _Optional[_Union[_space_pb2.Space.AuthenticationOAuth2, _Mapping]] = ...) -> None: ...
+
+class ConfigureAuthOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class CreateSpaceInput(_message.Message):
     __slots__ = ["space"]
     SPACE_FIELD_NUMBER: _ClassVar[int]
@@ -32,6 +44,18 @@ class DeleteSpaceInput(_message.Message):
 class DeleteSpaceOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class DescribeAuthInput(_message.Message):
+    __slots__ = ["space_id"]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    space_id: str
+    def __init__(self, space_id: _Optional[str] = ...) -> None: ...
+
+class DescribeAuthOutput(_message.Message):
+    __slots__ = ["oauth2"]
+    OAUTH2_FIELD_NUMBER: _ClassVar[int]
+    oauth2: _space_pb2.Space.AuthenticationOAuth2
+    def __init__(self, oauth2: _Optional[_Union[_space_pb2.Space.AuthenticationOAuth2, _Mapping]] = ...) -> None: ...
 
 class DescribePermissionInput(_message.Message):
     __slots__ = ["space_id", "user_id"]
