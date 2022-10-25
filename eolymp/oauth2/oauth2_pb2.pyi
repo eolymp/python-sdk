@@ -10,22 +10,46 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CreateTokenInput(_message.Message):
+class AuthorizeInput(_message.Message):
+    __slots__ = ["client_id", "code_challenge", "code_challenge_method", "redirect_uri", "response_type", "scope", "state"]
+    CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CODE_CHALLENGE_FIELD_NUMBER: _ClassVar[int]
+    CODE_CHALLENGE_METHOD_FIELD_NUMBER: _ClassVar[int]
+    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
+    RESPONSE_TYPE_FIELD_NUMBER: _ClassVar[int]
+    SCOPE_FIELD_NUMBER: _ClassVar[int]
+    STATE_FIELD_NUMBER: _ClassVar[int]
+    client_id: str
+    code_challenge: str
+    code_challenge_method: str
+    redirect_uri: str
+    response_type: str
+    scope: str
+    state: str
+    def __init__(self, client_id: _Optional[str] = ..., code_challenge: _Optional[str] = ..., code_challenge_method: _Optional[str] = ..., redirect_uri: _Optional[str] = ..., response_type: _Optional[str] = ..., scope: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
+
+class AuthorizeOutput(_message.Message):
+    __slots__ = ["redirect_uri"]
+    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
+    redirect_uri: str
+    def __init__(self, redirect_uri: _Optional[str] = ...) -> None: ...
+
+class TokenInput(_message.Message):
     __slots__ = ["client_id", "client_secret", "code", "code_verifier", "grant_type", "password", "redirect_uri", "refresh_token", "scope", "username"]
     class GrantType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    AUTHORIZATION_CODE: CreateTokenInput.GrantType
+    AUTHORIZATION_CODE: TokenInput.GrantType
     CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
     CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
     CODE_FIELD_NUMBER: _ClassVar[int]
     CODE_VERIFIER_FIELD_NUMBER: _ClassVar[int]
-    GOOGLE_CODE: CreateTokenInput.GrantType
+    GOOGLE_CODE: TokenInput.GrantType
     GRANT_TYPE_FIELD_NUMBER: _ClassVar[int]
-    NONE: CreateTokenInput.GrantType
-    PASSWORD: CreateTokenInput.GrantType
+    NONE: TokenInput.GrantType
+    PASSWORD: TokenInput.GrantType
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
-    REFRESH_TOKEN: CreateTokenInput.GrantType
+    REFRESH_TOKEN: TokenInput.GrantType
     REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     USERNAME_FIELD_NUMBER: _ClassVar[int]
@@ -33,15 +57,15 @@ class CreateTokenInput(_message.Message):
     client_secret: str
     code: str
     code_verifier: str
-    grant_type: CreateTokenInput.GrantType
+    grant_type: TokenInput.GrantType
     password: str
     redirect_uri: str
     refresh_token: str
     scope: str
     username: str
-    def __init__(self, grant_type: _Optional[_Union[CreateTokenInput.GrantType, str]] = ..., username: _Optional[str] = ..., password: _Optional[str] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., code: _Optional[str] = ..., code_verifier: _Optional[str] = ..., scope: _Optional[str] = ..., refresh_token: _Optional[str] = ..., redirect_uri: _Optional[str] = ...) -> None: ...
+    def __init__(self, grant_type: _Optional[_Union[TokenInput.GrantType, str]] = ..., username: _Optional[str] = ..., password: _Optional[str] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., code: _Optional[str] = ..., code_verifier: _Optional[str] = ..., scope: _Optional[str] = ..., refresh_token: _Optional[str] = ..., redirect_uri: _Optional[str] = ...) -> None: ...
 
-class CreateTokenOutput(_message.Message):
+class TokenOutput(_message.Message):
     __slots__ = ["access_token", "expires_in", "id_token", "refresh_token", "scope", "token_type"]
     ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
     EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
