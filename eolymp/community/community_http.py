@@ -206,7 +206,7 @@ class CommunityClient:
 
         return self.transport.request(
             name="eolymp.community.Community/ListAttributes",
-            method="POST",
+            method="GET",
             url=self.url+path,
             path=path,
             request_data=request,
