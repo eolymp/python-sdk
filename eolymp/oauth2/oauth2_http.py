@@ -14,11 +14,11 @@ class OAuth2Client:
         self.transport = transport
         self.url = url
 
-    def CreateToken(self, request, **kwargs):
+    def Token(self, request, **kwargs):
         path = "/oauth2/token"
 
         return self.transport.request(
-            name="eolymp.oauth2.OAuth2/CreateToken",
+            name="eolymp.oauth2.OAuth2/Token",
             method="POST",
             url=self.url+path,
             path=path,
