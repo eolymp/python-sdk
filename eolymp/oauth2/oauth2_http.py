@@ -40,3 +40,16 @@ class OAuth2Client:
             **kwargs,
         )
 
+    def Callback(self, request, **kwargs):
+        path = "/oauth2/callback"
+
+        return self.transport.request(
+            name="eolymp.oauth2.OAuth2/Callback",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.oauth2.CallbackOutput"),
+            **kwargs,
+        )
+

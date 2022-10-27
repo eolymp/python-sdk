@@ -34,6 +34,20 @@ class AuthorizeOutput(_message.Message):
     redirect_uri: str
     def __init__(self, redirect_uri: _Optional[str] = ...) -> None: ...
 
+class CallbackInput(_message.Message):
+    __slots__ = ["code", "state"]
+    CODE_FIELD_NUMBER: _ClassVar[int]
+    STATE_FIELD_NUMBER: _ClassVar[int]
+    code: str
+    state: str
+    def __init__(self, code: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
+
+class CallbackOutput(_message.Message):
+    __slots__ = ["redirect_uri"]
+    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
+    redirect_uri: str
+    def __init__(self, redirect_uri: _Optional[str] = ...) -> None: ...
+
 class TokenInput(_message.Message):
     __slots__ = ["client_id", "client_secret", "code", "code_verifier", "grant_type", "password", "redirect_uri", "refresh_token", "scope", "username"]
     class GrantType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
