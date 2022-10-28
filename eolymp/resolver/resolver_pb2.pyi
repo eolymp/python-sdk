@@ -2,7 +2,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
 from eolymp.ranker import scoreboard_pb2 as _scoreboard_pb2
-from eolymp.universe import auth_pb2 as _auth_pb2
+from eolymp.universe import identity_pb2 as _identity_pb2
 from eolymp.universe import space_pb2 as _space_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -55,8 +55,8 @@ class ResolveNameOutput(_message.Message):
     SPACE_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
     contest: _contest_pb2.Contest
-    oauth2: _auth_pb2.Authentication.OAuth2
+    oauth2: _identity_pb2.IdentityProvider.OAuth2
     scoreboard: _scoreboard_pb2.Scoreboard
     space: _space_pb2.Space
     target: Record.Target
-    def __init__(self, target: _Optional[_Union[Record.Target, _Mapping]] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ..., contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ..., scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ..., oauth2: _Optional[_Union[_auth_pb2.Authentication.OAuth2, _Mapping]] = ...) -> None: ...
+    def __init__(self, target: _Optional[_Union[Record.Target, _Mapping]] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ..., contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ..., scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ..., oauth2: _Optional[_Union[_identity_pb2.IdentityProvider.OAuth2, _Mapping]] = ...) -> None: ...

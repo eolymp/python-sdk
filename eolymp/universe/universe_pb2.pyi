@@ -1,7 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.universe import auth_pb2 as _auth_pb2
+from eolymp.universe import identity_pb2 as _identity_pb2
 from eolymp.universe import permission_pb2 as _permission_pb2
 from eolymp.universe import space_pb2 as _space_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -16,9 +16,9 @@ class ConfigureAuthInput(_message.Message):
     __slots__ = ["oauth2", "space_id"]
     OAUTH2_FIELD_NUMBER: _ClassVar[int]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
-    oauth2: _auth_pb2.Authentication.OAuth2
+    oauth2: _identity_pb2.IdentityProvider.OAuth2
     space_id: str
-    def __init__(self, space_id: _Optional[str] = ..., oauth2: _Optional[_Union[_auth_pb2.Authentication.OAuth2, _Mapping]] = ...) -> None: ...
+    def __init__(self, space_id: _Optional[str] = ..., oauth2: _Optional[_Union[_identity_pb2.IdentityProvider.OAuth2, _Mapping]] = ...) -> None: ...
 
 class ConfigureAuthOutput(_message.Message):
     __slots__ = []
@@ -55,8 +55,8 @@ class DescribeAuthInput(_message.Message):
 class DescribeAuthOutput(_message.Message):
     __slots__ = ["oauth2"]
     OAUTH2_FIELD_NUMBER: _ClassVar[int]
-    oauth2: _auth_pb2.Authentication.OAuth2
-    def __init__(self, oauth2: _Optional[_Union[_auth_pb2.Authentication.OAuth2, _Mapping]] = ...) -> None: ...
+    oauth2: _identity_pb2.IdentityProvider.OAuth2
+    def __init__(self, oauth2: _Optional[_Union[_identity_pb2.IdentityProvider.OAuth2, _Mapping]] = ...) -> None: ...
 
 class DescribePermissionInput(_message.Message):
     __slots__ = ["space_id", "user_id"]
