@@ -19,7 +19,7 @@ class OAuth2Client:
 
         return self.transport.request(
             name="eolymp.oauth2.OAuth2/Token",
-            method="POST",
+            method="GET",
             url=self.url+path,
             path=path,
             request_data=request,
@@ -32,7 +32,7 @@ class OAuth2Client:
 
         return self.transport.request(
             name="eolymp.oauth2.OAuth2/Authorize",
-            method="POST",
+            method="GET",
             url=self.url+path,
             path=path,
             request_data=request,
@@ -45,7 +45,7 @@ class OAuth2Client:
 
         return self.transport.request(
             name="eolymp.oauth2.OAuth2/Callback",
-            method="POST",
+            method="GET",
             url=self.url+path,
             path=path,
             request_data=request,
