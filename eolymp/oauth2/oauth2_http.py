@@ -19,7 +19,7 @@ class OAuth2Client:
 
         return self.transport.request(
             name="eolymp.oauth2.OAuth2/Token",
-            method="GET",
+            method="POST",
             url=self.url+path,
             path=path,
             request_data=request,
