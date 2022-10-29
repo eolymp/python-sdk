@@ -120,35 +120,35 @@ class UniverseClient:
             **kwargs,
         )
 
-    def DescribeAuth(self, request, **kwargs):
-        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/auth"
+    def DescribeIdentityProvider(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/idp"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.space_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/DescribeAuth",
+            name="eolymp.universe.Universe/DescribeIdentityProvider",
             method="GET",
             url=self.url+path,
             path=path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeAuthOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeIdentityProviderOutput"),
             **kwargs,
         )
 
-    def ConfigureAuth(self, request, **kwargs):
-        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/auth"
+    def ConfigureIdentityProvider(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/idp"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.space_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/ConfigureAuth",
+            name="eolymp.universe.Universe/ConfigureIdentityProvider",
             method="PUT",
             url=self.url+path,
             path=path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.ConfigureAuthOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.ConfigureIdentityProviderOutput"),
             **kwargs,
         )
 

@@ -7,21 +7,17 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class IdentityProvider(_message.Message):
     __slots__ = []
-    class OAuth2(_message.Message):
-        __slots__ = ["authorize_endpoint", "client_id", "client_secret", "introspect_endpoint", "keys_endpoint", "scopes", "token_endpoint"]
+    class OIDC(_message.Message):
+        __slots__ = ["authorize_endpoint", "client_id", "client_secret", "keys_endpoint", "token_endpoint"]
         AUTHORIZE_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
         CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
         CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
-        INTROSPECT_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
         KEYS_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
-        SCOPES_FIELD_NUMBER: _ClassVar[int]
         TOKEN_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
         authorize_endpoint: str
         client_id: str
         client_secret: str
-        introspect_endpoint: str
         keys_endpoint: str
-        scopes: str
         token_endpoint: str
-        def __init__(self, client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., scopes: _Optional[str] = ..., authorize_endpoint: _Optional[str] = ..., token_endpoint: _Optional[str] = ..., introspect_endpoint: _Optional[str] = ..., keys_endpoint: _Optional[str] = ...) -> None: ...
+        def __init__(self, client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., authorize_endpoint: _Optional[str] = ..., token_endpoint: _Optional[str] = ..., keys_endpoint: _Optional[str] = ...) -> None: ...
     def __init__(self) -> None: ...
