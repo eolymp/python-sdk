@@ -94,3 +94,31 @@ class TokenOutput(_message.Message):
     scope: str
     token_type: str
     def __init__(self, access_token: _Optional[str] = ..., token_type: _Optional[str] = ..., expires_in: _Optional[int] = ..., refresh_token: _Optional[str] = ..., scope: _Optional[str] = ..., id_token: _Optional[str] = ...) -> None: ...
+
+class UserInfoInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UserInfoOutput(_message.Message):
+    __slots__ = ["email", "email_verified", "family_name", "given_name", "locale", "middle_name", "name", "nickname", "picture", "subject"]
+    EMAIL_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
+    FAMILY_NAME_FIELD_NUMBER: _ClassVar[int]
+    GIVEN_NAME_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    MIDDLE_NAME_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    NICKNAME_FIELD_NUMBER: _ClassVar[int]
+    PICTURE_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_FIELD_NUMBER: _ClassVar[int]
+    email: str
+    email_verified: str
+    family_name: str
+    given_name: str
+    locale: str
+    middle_name: str
+    name: str
+    nickname: str
+    picture: str
+    subject: str
+    def __init__(self, subject: _Optional[str] = ..., name: _Optional[str] = ..., given_name: _Optional[str] = ..., family_name: _Optional[str] = ..., middle_name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...

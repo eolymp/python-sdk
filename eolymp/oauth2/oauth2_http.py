@@ -53,3 +53,16 @@ class OAuth2Client:
             **kwargs,
         )
 
+    def UserInfo(self, request, **kwargs):
+        path = "/oauth2/userinfo"
+
+        return self.transport.request(
+            name="eolymp.oauth2.OAuth2/UserInfo",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.oauth2.UserInfoOutput"),
+            **kwargs,
+        )
+
