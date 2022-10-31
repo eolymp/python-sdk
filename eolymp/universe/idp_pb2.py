@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/universe/idp.proto\x12\x0f\x65olymp.universe\x1a!eolymp/annotations/resource.proto\"\x8f\x01\n\x10IdentityProvider\x1a{\n\x04OIDC\x12\x11\n\tclient_id\x18\n \x01(\t\x12\x15\n\rclient_secret\x18\x0b \x01(\t\x12\x1a\n\x12\x61uthorize_endpoint\x18\x14 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x15 \x01(\t\x12\x15\n\rkeys_endpoint\x18\x16 \x01(\tB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/universe/idp.proto\x12\x0f\x65olymp.universe\x1a!eolymp/annotations/resource.proto\"\xab\x01\n\x10IdentityProvider\x1a\x96\x01\n\x04OIDC\x12\x11\n\tclient_id\x18\n \x01(\t\x12\x15\n\rclient_secret\x18\x0b \x01(\t\x12\x1a\n\x12\x61uthorize_endpoint\x18\x14 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x15 \x01(\t\x12\x15\n\rkeys_endpoint\x18\x16 \x01(\t\x12\x19\n\x11userinfo_endpoint\x18\x17 \x01(\tB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.idp_pb2', globals())
@@ -23,7 +23,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/universe;universe'
   _IDENTITYPROVIDER._serialized_start=82
-  _IDENTITYPROVIDER._serialized_end=225
-  _IDENTITYPROVIDER_OIDC._serialized_start=102
-  _IDENTITYPROVIDER_OIDC._serialized_end=225
+  _IDENTITYPROVIDER._serialized_end=253
+  _IDENTITYPROVIDER_OIDC._serialized_start=103
+  _IDENTITYPROVIDER_OIDC._serialized_end=253
 # @@protoc_insertion_point(module_scope)

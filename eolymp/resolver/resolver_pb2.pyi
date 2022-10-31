@@ -14,16 +14,18 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class Authorization(_message.Message):
     __slots__ = []
     class OAuth2(_message.Message):
-        __slots__ = ["authorize_endpoint", "client_id", "signout_endpoint", "token_endpoint"]
+        __slots__ = ["authorize_endpoint", "client_id", "signout_endpoint", "token_endpoint", "userinfo_endpoint"]
         AUTHORIZE_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
         CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
         SIGNOUT_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
         TOKEN_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
+        USERINFO_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
         authorize_endpoint: str
         client_id: str
         signout_endpoint: str
         token_endpoint: str
-        def __init__(self, client_id: _Optional[str] = ..., token_endpoint: _Optional[str] = ..., authorize_endpoint: _Optional[str] = ..., signout_endpoint: _Optional[str] = ...) -> None: ...
+        userinfo_endpoint: str
+        def __init__(self, client_id: _Optional[str] = ..., token_endpoint: _Optional[str] = ..., authorize_endpoint: _Optional[str] = ..., userinfo_endpoint: _Optional[str] = ..., signout_endpoint: _Optional[str] = ...) -> None: ...
     def __init__(self) -> None: ...
 
 class Record(_message.Message):
