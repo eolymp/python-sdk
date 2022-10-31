@@ -112,7 +112,7 @@ class UserInfoOutput(_message.Message):
     PICTURE_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     email: str
-    email_verified: str
+    email_verified: bool
     family_name: str
     given_name: str
     locale: str
@@ -121,4 +121,4 @@ class UserInfoOutput(_message.Message):
     nickname: str
     picture: str
     subject: str
-    def __init__(self, subject: _Optional[str] = ..., name: _Optional[str] = ..., given_name: _Optional[str] = ..., family_name: _Optional[str] = ..., middle_name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, subject: _Optional[str] = ..., name: _Optional[str] = ..., given_name: _Optional[str] = ..., family_name: _Optional[str] = ..., middle_name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., locale: _Optional[str] = ...) -> None: ...
