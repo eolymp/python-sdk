@@ -100,7 +100,7 @@ class UserInfoInput(_message.Message):
     def __init__(self) -> None: ...
 
 class UserInfoOutput(_message.Message):
-    __slots__ = ["email", "email_verified", "family_name", "given_name", "locale", "middle_name", "name", "nickname", "picture", "subject"]
+    __slots__ = ["email", "email_verified", "family_name", "given_name", "locale", "middle_name", "name", "nickname", "picture", "profile", "subject"]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
     FAMILY_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -110,6 +110,7 @@ class UserInfoOutput(_message.Message):
     NAME_FIELD_NUMBER: _ClassVar[int]
     NICKNAME_FIELD_NUMBER: _ClassVar[int]
     PICTURE_FIELD_NUMBER: _ClassVar[int]
+    PROFILE_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     email: str
     email_verified: bool
@@ -120,5 +121,6 @@ class UserInfoOutput(_message.Message):
     name: str
     nickname: str
     picture: str
+    profile: str
     subject: str
-    def __init__(self, subject: _Optional[str] = ..., name: _Optional[str] = ..., given_name: _Optional[str] = ..., family_name: _Optional[str] = ..., middle_name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, subject: _Optional[str] = ..., name: _Optional[str] = ..., given_name: _Optional[str] = ..., family_name: _Optional[str] = ..., middle_name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., locale: _Optional[str] = ..., profile: _Optional[str] = ...) -> None: ...
