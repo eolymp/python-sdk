@@ -13,10 +13,34 @@ class Member(_message.Message):
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class User(_message.Message):
-        __slots__ = ["user_id"]
+        __slots__ = ["email", "email_verified", "family_name", "given_name", "issuer", "locale", "middle_name", "name", "nickname", "picture", "profile", "subject", "user_id"]
+        EMAIL_FIELD_NUMBER: _ClassVar[int]
+        EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
+        FAMILY_NAME_FIELD_NUMBER: _ClassVar[int]
+        GIVEN_NAME_FIELD_NUMBER: _ClassVar[int]
+        ISSUER_FIELD_NUMBER: _ClassVar[int]
+        LOCALE_FIELD_NUMBER: _ClassVar[int]
+        MIDDLE_NAME_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        NICKNAME_FIELD_NUMBER: _ClassVar[int]
+        PICTURE_FIELD_NUMBER: _ClassVar[int]
+        PROFILE_FIELD_NUMBER: _ClassVar[int]
+        SUBJECT_FIELD_NUMBER: _ClassVar[int]
         USER_ID_FIELD_NUMBER: _ClassVar[int]
+        email: str
+        email_verified: bool
+        family_name: str
+        given_name: str
+        issuer: str
+        locale: str
+        middle_name: str
+        name: str
+        nickname: str
+        picture: str
+        profile: str
+        subject: str
         user_id: str
-        def __init__(self, user_id: _Optional[str] = ...) -> None: ...
+        def __init__(self, user_id: _Optional[str] = ..., issuer: _Optional[str] = ..., subject: _Optional[str] = ..., name: _Optional[str] = ..., given_name: _Optional[str] = ..., family_name: _Optional[str] = ..., middle_name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., profile: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
     class Value(_message.Message):
         __slots__ = ["attribute_key", "attribute_type", "value_number", "value_string"]
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]

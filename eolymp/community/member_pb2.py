@@ -15,7 +15,7 @@ from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resour
 from eolymp.community import attribute_pb2 as eolymp_dot_community_dot_attribute__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a!eolymp/annotations/resource.proto\x1a eolymp/community/attribute.proto\"\xce\x04\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nregistered\x18\x04 \x01(\x08\x12\x0f\n\x07staffed\x18\x05 \x01(\x08\x12\r\n\x05ghost\x18\x07 \x01(\x08\x12\x1a\n\x12out_of_competition\x18\x08 \x01(\x08\x12/\n\x06status\x18\x06 \x01(\x0e\x32\x1f.eolymp.community.Member.Status\x12,\n\x05users\x18\n \x03(\x0b\x32\x1d.eolymp.community.Member.User\x12.\n\x06values\x18\x14 \x03(\x0b\x32\x1e.eolymp.community.Member.Value\x1a\x17\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x1a\x84\x01\n\x05Value\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\x38\n\x0e\x61ttribute_type\x18\x02 \x01(\x0e\x32 .eolymp.community.Attribute.Type\x12\x14\n\x0cvalue_string\x18\n \x01(\t\x12\x14\n\x0cvalue_number\x18\x0b \x01(\x05\"b\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\r\n\tUNSTAFFED\x10\x01\x12\x10\n\x0cUNREGISTERED\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08INACTIVE\x10\x04\x12\t\n\x05GHOST\x10\x05:\'\xb2\xe3\n#\xba\xe3\n\x06member\xc2\xe3\n\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a!eolymp/annotations/resource.proto\x1a eolymp/community/attribute.proto\"\xa8\x06\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nregistered\x18\x04 \x01(\x08\x12\x0f\n\x07staffed\x18\x05 \x01(\x08\x12\r\n\x05ghost\x18\x07 \x01(\x08\x12\x1a\n\x12out_of_competition\x18\x08 \x01(\x08\x12/\n\x06status\x18\x06 \x01(\x0e\x32\x1f.eolymp.community.Member.Status\x12,\n\x05users\x18\n \x03(\x0b\x32\x1d.eolymp.community.Member.User\x12.\n\x06values\x18\x14 \x03(\x0b\x32\x1e.eolymp.community.Member.Value\x1a\xf0\x01\n\x04User\x12\x10\n\x07user_id\x18\x8fN \x01(\t\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\ngiven_name\x18\x04 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x05 \x01(\t\x12\x13\n\x0bmiddle_name\x18\x06 \x01(\t\x12\x10\n\x08nickname\x18\x07 \x01(\t\x12\x0f\n\x07picture\x18\x08 \x01(\t\x12\r\n\x05\x65mail\x18\t \x01(\t\x12\x16\n\x0e\x65mail_verified\x18\n \x01(\x08\x12\x0f\n\x07profile\x18\x0b \x01(\t\x12\x0e\n\x06locale\x18\x0c \x01(\t\x1a\x84\x01\n\x05Value\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\x38\n\x0e\x61ttribute_type\x18\x02 \x01(\x0e\x32 .eolymp.community.Attribute.Type\x12\x14\n\x0cvalue_string\x18\n \x01(\t\x12\x14\n\x0cvalue_number\x18\x0b \x01(\x05\"b\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\r\n\tUNSTAFFED\x10\x01\x12\x10\n\x0cUNREGISTERED\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08INACTIVE\x10\x04\x12\t\n\x05GHOST\x10\x05:\'\xb2\xe3\n#\xba\xe3\n\x06member\xc2\xe3\n\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.member_pb2', globals())
@@ -26,11 +26,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MEMBER._options = None
   _MEMBER._serialized_options = b'\262\343\n#\272\343\n\006member\302\343\n\025eolymp.universe.Space'
   _MEMBER._serialized_start=121
-  _MEMBER._serialized_end=711
-  _MEMBER_USER._serialized_start=412
-  _MEMBER_USER._serialized_end=435
-  _MEMBER_VALUE._serialized_start=438
-  _MEMBER_VALUE._serialized_end=570
-  _MEMBER_STATUS._serialized_start=572
-  _MEMBER_STATUS._serialized_end=670
+  _MEMBER._serialized_end=929
+  _MEMBER_USER._serialized_start=413
+  _MEMBER_USER._serialized_end=653
+  _MEMBER_VALUE._serialized_start=656
+  _MEMBER_VALUE._serialized_end=788
+  _MEMBER_STATUS._serialized_start=790
+  _MEMBER_STATUS._serialized_end=888
 # @@protoc_insertion_point(module_scope)
