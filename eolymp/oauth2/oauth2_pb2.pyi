@@ -3,10 +3,11 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -47,6 +48,30 @@ class CallbackOutput(_message.Message):
     REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
     redirect_uri: str
     def __init__(self, redirect_uri: _Optional[str] = ...) -> None: ...
+
+class IntrospectInput(_message.Message):
+    __slots__ = ["token"]
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    token: str
+    def __init__(self, token: _Optional[str] = ...) -> None: ...
+
+class IntrospectOutput(_message.Message):
+    __slots__ = ["active", "expires_at", "scopes", "token", "type", "user_id", "username"]
+    ACTIVE_FIELD_NUMBER: _ClassVar[int]
+    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
+    SCOPES_FIELD_NUMBER: _ClassVar[int]
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    USERNAME_FIELD_NUMBER: _ClassVar[int]
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    active: bool
+    expires_at: _timestamp_pb2.Timestamp
+    scopes: _containers.RepeatedScalarFieldContainer[str]
+    token: str
+    type: str
+    user_id: str
+    username: str
+    def __init__(self, active: bool = ..., token: _Optional[str] = ..., type: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., scopes: _Optional[_Iterable[str]] = ..., user_id: _Optional[str] = ..., username: _Optional[str] = ...) -> None: ...
 
 class RevokeInput(_message.Message):
     __slots__ = ["token"]

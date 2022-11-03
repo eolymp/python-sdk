@@ -66,6 +66,19 @@ class OAuth2Client:
             **kwargs,
         )
 
+    def Introspect(self, request, **kwargs):
+        path = "/oauth2/introspect"
+
+        return self.transport.request(
+            name="eolymp.oauth2.OAuth2/Introspect",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.oauth2.IntrospectOutput"),
+            **kwargs,
+        )
+
     def Revoke(self, request, **kwargs):
         path = "/oauth2/revoke"
 
