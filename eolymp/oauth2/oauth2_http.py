@@ -66,3 +66,16 @@ class OAuth2Client:
             **kwargs,
         )
 
+    def Revoke(self, request, **kwargs):
+        path = "/oauth2/revoke"
+
+        return self.transport.request(
+            name="eolymp.oauth2.OAuth2/Revoke",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.oauth2.RevokeOutput"),
+            **kwargs,
+        )
+
