@@ -2,7 +2,6 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
 from eolymp.ranker import scoreboard_pb2 as _scoreboard_pb2
-from eolymp.universe import idp_pb2 as _idp_pb2
 from eolymp.universe import space_pb2 as _space_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

@@ -13,12 +13,10 @@ _sym_db = _symbol_database.Default()
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
-from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
-from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/oauth2/oauth2.proto\x12\reolymp.oauth2\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd5\x02\n\nTokenInput\x12\x37\n\ngrant_type\x18\x01 \x01(\x0e\x32#.eolymp.oauth2.TokenInput.GrantType\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x11\n\tclient_id\x18\x04 \x01(\t\x12\x15\n\rclient_secret\x18\x05 \x01(\t\x12\x0c\n\x04\x63ode\x18\x06 \x01(\t\x12\x15\n\rcode_verifier\x18\x07 \x01(\t\x12\r\n\x05scope\x18\x08 \x01(\t\x12\x15\n\rrefresh_token\x18\t \x01(\t\x12\x14\n\x0credirect_uri\x18\n \x01(\t\"_\n\tGrantType\x12\x08\n\x04NONE\x10\x00\x12\x0c\n\x08PASSWORD\x10\x01\x12\x16\n\x12\x41UTHORIZATION_CODE\x10\x02\x12\x11\n\rREFRESH_TOKEN\x10\x03\x12\x0f\n\x0bGOOGLE_CODE\x10\x04\"\x83\x01\n\x0bTokenOutput\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x12\n\ntoken_type\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\r\x12\x15\n\rrefresh_token\x18\x04 \x01(\t\x12\r\n\x05scope\x18\x05 \x01(\t\x12\x10\n\x08id_token\x18\x64 \x01(\t\"\xa5\x01\n\x0e\x41uthorizeInput\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ode_challenge\x18\x02 \x01(\t\x12\x1d\n\x15\x63ode_challenge_method\x18\x03 \x01(\t\x12\x14\n\x0credirect_uri\x18\x04 \x01(\t\x12\x15\n\rresponse_type\x18\x05 \x01(\t\x12\r\n\x05scope\x18\x06 \x01(\t\x12\r\n\x05state\x18\x07 \x01(\t\"\'\n\x0f\x41uthorizeOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\",\n\rCallbackInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"&\n\x0e\x43\x61llbackOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\"\x0f\n\rUserInfoInput\"\xe8\x01\n\x0eUserInfoOutput\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\ngiven_name\x18\x04 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x05 \x01(\t\x12\x13\n\x0bmiddle_name\x18\x06 \x01(\t\x12\x10\n\x08nickname\x18\x07 \x01(\t\x12\x0f\n\x07picture\x18\x08 \x01(\t\x12\r\n\x05\x65mail\x18\t \x01(\t\x12\x16\n\x0e\x65mail_verified\x18\n \x01(\x08\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\x0f\n\x07profile\x18\x0c \x01(\t\" \n\x0fIntrospectInput\x12\r\n\x05token\x18\x01 \x01(\t\"\xa2\x01\n\x10IntrospectOutput\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\r\n\x05token\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12.\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06scopes\x18\x05 \x03(\t\x12\x0f\n\x07user_id\x18\x64 \x01(\t\x12\x10\n\x08username\x18\x65 \x01(\t\"\x1c\n\x0bRevokeInput\x12\r\n\x05token\x18\x01 \x01(\t\"\x0e\n\x0cRevokeOutput2\xb1\x05\n\x06OAuth2\x12\x65\n\x05Token\x12\x19.eolymp.oauth2.TokenInput\x1a\x1a.eolymp.oauth2.TokenOutput\"%\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x0f\"\r/oauth2/token\x12u\n\tAuthorize\x12\x1d.eolymp.oauth2.AuthorizeInput\x1a\x1e.eolymp.oauth2.AuthorizeOutput\")\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x13\x12\x11/oauth2/authorize\x12q\n\x08\x43\x61llback\x12\x1c.eolymp.oauth2.CallbackInput\x1a\x1d.eolymp.oauth2.CallbackOutput\"(\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x12\x12\x10/oauth2/callback\x12q\n\x08UserInfo\x12\x1c.eolymp.oauth2.UserInfoInput\x1a\x1d.eolymp.oauth2.UserInfoOutput\"(\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x12\x12\x10/oauth2/userinfo\x12x\n\nIntrospect\x12\x1e.eolymp.oauth2.IntrospectInput\x1a\x1f.eolymp.oauth2.IntrospectOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\x12\x12/oauth2/introspect\x12i\n\x06Revoke\x12\x1a.eolymp.oauth2.RevokeInput\x1a\x1b.eolymp.oauth2.RevokeOutput\"&\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x10\x12\x0e/oauth2/revokeB/Z-github.com/eolymp/go-sdk/eolymp/oauth2;oauth2b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/oauth2/oauth2.proto\x12\reolymp.oauth2\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd5\x02\n\nTokenInput\x12\x37\n\ngrant_type\x18\x01 \x01(\x0e\x32#.eolymp.oauth2.TokenInput.GrantType\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x11\n\tclient_id\x18\x04 \x01(\t\x12\x15\n\rclient_secret\x18\x05 \x01(\t\x12\x0c\n\x04\x63ode\x18\x06 \x01(\t\x12\x15\n\rcode_verifier\x18\x07 \x01(\t\x12\r\n\x05scope\x18\x08 \x01(\t\x12\x15\n\rrefresh_token\x18\t \x01(\t\x12\x14\n\x0credirect_uri\x18\n \x01(\t\"_\n\tGrantType\x12\x08\n\x04NONE\x10\x00\x12\x0c\n\x08PASSWORD\x10\x01\x12\x16\n\x12\x41UTHORIZATION_CODE\x10\x02\x12\x11\n\rREFRESH_TOKEN\x10\x03\x12\x0f\n\x0bGOOGLE_CODE\x10\x04\"\x83\x01\n\x0bTokenOutput\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x12\n\ntoken_type\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\r\x12\x15\n\rrefresh_token\x18\x04 \x01(\t\x12\r\n\x05scope\x18\x05 \x01(\t\x12\x10\n\x08id_token\x18\x64 \x01(\t\"\xa5\x01\n\x0e\x41uthorizeInput\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ode_challenge\x18\x02 \x01(\t\x12\x1d\n\x15\x63ode_challenge_method\x18\x03 \x01(\t\x12\x14\n\x0credirect_uri\x18\x04 \x01(\t\x12\x15\n\rresponse_type\x18\x05 \x01(\t\x12\r\n\x05scope\x18\x06 \x01(\t\x12\r\n\x05state\x18\x07 \x01(\t\"\'\n\x0f\x41uthorizeOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\",\n\rCallbackInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"&\n\x0e\x43\x61llbackOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\"\x0f\n\rUserInfoInput\"\xe8\x01\n\x0eUserInfoOutput\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\ngiven_name\x18\x04 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x05 \x01(\t\x12\x13\n\x0bmiddle_name\x18\x06 \x01(\t\x12\x10\n\x08nickname\x18\x07 \x01(\t\x12\x0f\n\x07picture\x18\x08 \x01(\t\x12\r\n\x05\x65mail\x18\t \x01(\t\x12\x16\n\x0e\x65mail_verified\x18\n \x01(\x08\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\x0f\n\x07profile\x18\x0c \x01(\t\" \n\x0fIntrospectInput\x12\r\n\x05token\x18\x01 \x01(\t\"\xa2\x01\n\x10IntrospectOutput\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\r\n\x05token\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12.\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06scopes\x18\x05 \x03(\t\x12\x0f\n\x07user_id\x18\x64 \x01(\t\x12\x10\n\x08username\x18\x65 \x01(\t\"\x1c\n\x0bRevokeInput\x12\r\n\x05token\x18\x01 \x01(\t\"\x0e\n\x0cRevokeOutput2\xb1\x05\n\x06OAuth2\x12\x65\n\x05Token\x12\x19.eolymp.oauth2.TokenInput\x1a\x1a.eolymp.oauth2.TokenOutput\"%\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x0f\"\r/oauth2/token\x12u\n\tAuthorize\x12\x1d.eolymp.oauth2.AuthorizeInput\x1a\x1e.eolymp.oauth2.AuthorizeOutput\")\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x13\x12\x11/oauth2/authorize\x12q\n\x08\x43\x61llback\x12\x1c.eolymp.oauth2.CallbackInput\x1a\x1d.eolymp.oauth2.CallbackOutput\"(\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x12\x12\x10/oauth2/callback\x12q\n\x08UserInfo\x12\x1c.eolymp.oauth2.UserInfoInput\x1a\x1d.eolymp.oauth2.UserInfoOutput\"(\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x12\x12\x10/oauth2/userinfo\x12x\n\nIntrospect\x12\x1e.eolymp.oauth2.IntrospectInput\x1a\x1f.eolymp.oauth2.IntrospectOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\x12\x12/oauth2/introspect\x12i\n\x06Revoke\x12\x1a.eolymp.oauth2.RevokeInput\x1a\x1b.eolymp.oauth2.RevokeOutput\"&\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x82\xd3\xe4\x93\x02\x10\x12\x0e/oauth2/revokeB/Z-github.com/eolymp/go-sdk/eolymp/oauth2;oauth2b\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.oauth2.oauth2_pb2', globals())
@@ -38,32 +36,32 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _OAUTH2.methods_by_name['Introspect']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\024\022\022/oauth2/introspect'
   _OAUTH2.methods_by_name['Revoke']._options = None
   _OAUTH2.methods_by_name['Revoke']._serialized_options = b'\352\342\n\014\365\342\n\000\000\360A\370\342\n\254\002\202\323\344\223\002\020\022\016/oauth2/revoke'
-  _TOKENINPUT._serialized_start=213
-  _TOKENINPUT._serialized_end=554
-  _TOKENINPUT_GRANTTYPE._serialized_start=459
-  _TOKENINPUT_GRANTTYPE._serialized_end=554
-  _TOKENOUTPUT._serialized_start=557
-  _TOKENOUTPUT._serialized_end=688
-  _AUTHORIZEINPUT._serialized_start=691
-  _AUTHORIZEINPUT._serialized_end=856
-  _AUTHORIZEOUTPUT._serialized_start=858
-  _AUTHORIZEOUTPUT._serialized_end=897
-  _CALLBACKINPUT._serialized_start=899
-  _CALLBACKINPUT._serialized_end=943
-  _CALLBACKOUTPUT._serialized_start=945
-  _CALLBACKOUTPUT._serialized_end=983
-  _USERINFOINPUT._serialized_start=985
-  _USERINFOINPUT._serialized_end=1000
-  _USERINFOOUTPUT._serialized_start=1003
-  _USERINFOOUTPUT._serialized_end=1235
-  _INTROSPECTINPUT._serialized_start=1237
-  _INTROSPECTINPUT._serialized_end=1269
-  _INTROSPECTOUTPUT._serialized_start=1272
-  _INTROSPECTOUTPUT._serialized_end=1434
-  _REVOKEINPUT._serialized_start=1436
-  _REVOKEINPUT._serialized_end=1464
-  _REVOKEOUTPUT._serialized_start=1466
-  _REVOKEOUTPUT._serialized_end=1480
-  _OAUTH2._serialized_start=1483
-  _OAUTH2._serialized_end=2172
+  _TOKENINPUT._serialized_start=146
+  _TOKENINPUT._serialized_end=487
+  _TOKENINPUT_GRANTTYPE._serialized_start=392
+  _TOKENINPUT_GRANTTYPE._serialized_end=487
+  _TOKENOUTPUT._serialized_start=490
+  _TOKENOUTPUT._serialized_end=621
+  _AUTHORIZEINPUT._serialized_start=624
+  _AUTHORIZEINPUT._serialized_end=789
+  _AUTHORIZEOUTPUT._serialized_start=791
+  _AUTHORIZEOUTPUT._serialized_end=830
+  _CALLBACKINPUT._serialized_start=832
+  _CALLBACKINPUT._serialized_end=876
+  _CALLBACKOUTPUT._serialized_start=878
+  _CALLBACKOUTPUT._serialized_end=916
+  _USERINFOINPUT._serialized_start=918
+  _USERINFOINPUT._serialized_end=933
+  _USERINFOOUTPUT._serialized_start=936
+  _USERINFOOUTPUT._serialized_end=1168
+  _INTROSPECTINPUT._serialized_start=1170
+  _INTROSPECTINPUT._serialized_end=1202
+  _INTROSPECTOUTPUT._serialized_start=1205
+  _INTROSPECTOUTPUT._serialized_end=1367
+  _REVOKEINPUT._serialized_start=1369
+  _REVOKEINPUT._serialized_end=1397
+  _REVOKEOUTPUT._serialized_start=1399
+  _REVOKEOUTPUT._serialized_end=1413
+  _OAUTH2._serialized_start=1416
+  _OAUTH2._serialized_end=2105
 # @@protoc_insertion_point(module_scope)
