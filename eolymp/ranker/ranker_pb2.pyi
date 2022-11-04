@@ -207,6 +207,20 @@ class RebuildScoreboardOutput(_message.Message):
     activity_id: str
     def __init__(self, activity_id: _Optional[str] = ...) -> None: ...
 
+class UpdateScoreboardColumnInput(_message.Message):
+    __slots__ = ["column", "column_id", "scoreboard_id"]
+    COLUMN_FIELD_NUMBER: _ClassVar[int]
+    COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    column: _scoreboard_pb2.Scoreboard.Column
+    column_id: str
+    scoreboard_id: str
+    def __init__(self, scoreboard_id: _Optional[str] = ..., column_id: _Optional[str] = ..., column: _Optional[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]] = ...) -> None: ...
+
+class UpdateScoreboardColumnOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdateScoreboardInput(_message.Message):
     __slots__ = ["scoreboard", "scoreboard_id"]
     SCOREBOARD_FIELD_NUMBER: _ClassVar[int]

@@ -153,6 +153,23 @@ class RankerClient:
             **kwargs,
         )
 
+    def UpdateScoreboardColumn(self, request, **kwargs):
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns/"+urllib.parse.quote(request.column_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+        request.column_id = ""
+
+        return self.transport.request(
+            name="eolymp.ranker.Ranker/UpdateScoreboardColumn",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.UpdateScoreboardColumnOutput"),
+            **kwargs,
+        )
+
     def DeleteScoreboardColumn(self, request, **kwargs):
         path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/columns/"+urllib.parse.quote(request.column_id)
 
