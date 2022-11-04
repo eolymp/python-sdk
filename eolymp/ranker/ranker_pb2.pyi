@@ -137,14 +137,16 @@ class ListScoreboardColumnsOutput(_message.Message):
 class ListScoreboardRowsInput(_message.Message):
     __slots__ = ["filters", "offset", "scoreboard_id", "size"]
     class ExpressionColumn(_message.Message):
-        __slots__ = ["key", "number", "string"]
+        __slots__ = ["enum", "key", "number", "string"]
+        ENUM_FIELD_NUMBER: _ClassVar[int]
         KEY_FIELD_NUMBER: _ClassVar[int]
         NUMBER_FIELD_NUMBER: _ClassVar[int]
         STRING_FIELD_NUMBER: _ClassVar[int]
+        enum: _expression_pb2.ExpressionEnum
         key: str
         number: _expression_pb2.ExpressionInt
         string: _expression_pb2.ExpressionString
-        def __init__(self, key: _Optional[str] = ..., string: _Optional[_Union[_expression_pb2.ExpressionString, _Mapping]] = ..., number: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ...) -> None: ...
+        def __init__(self, key: _Optional[str] = ..., string: _Optional[_Union[_expression_pb2.ExpressionString, _Mapping]] = ..., number: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ..., enum: _Optional[_Union[_expression_pb2.ExpressionEnum, _Mapping]] = ...) -> None: ...
     class Filter(_message.Message):
         __slots__ = ["column", "member_id"]
         COLUMN_FIELD_NUMBER: _ClassVar[int]
