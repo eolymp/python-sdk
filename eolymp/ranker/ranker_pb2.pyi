@@ -136,7 +136,7 @@ class ListScoreboardColumnsOutput(_message.Message):
 
 class ListScoreboardRowsInput(_message.Message):
     __slots__ = ["filters", "offset", "scoreboard_id", "size"]
-    class ColumnFilter(_message.Message):
+    class ExpressionColumn(_message.Message):
         __slots__ = ["key", "number", "string"]
         KEY_FIELD_NUMBER: _ClassVar[int]
         NUMBER_FIELD_NUMBER: _ClassVar[int]
@@ -149,9 +149,9 @@ class ListScoreboardRowsInput(_message.Message):
         __slots__ = ["column", "member_id"]
         COLUMN_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-        column: _containers.RepeatedCompositeFieldContainer[ListScoreboardRowsInput.ColumnFilter]
+        column: _containers.RepeatedCompositeFieldContainer[ListScoreboardRowsInput.ExpressionColumn]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., column: _Optional[_Iterable[_Union[ListScoreboardRowsInput.ColumnFilter, _Mapping]]] = ...) -> None: ...
+        def __init__(self, member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., column: _Optional[_Iterable[_Union[ListScoreboardRowsInput.ExpressionColumn, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
