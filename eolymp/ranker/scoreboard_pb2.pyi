@@ -10,7 +10,7 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class Scoreboard(_message.Message):
     __slots__ = ["format", "id", "key", "name"]
     class Column(_message.Message):
-        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "type", "visible"]
+        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "type", "visible"]
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ATTRIBUTE: Scoreboard.Column.Type
@@ -18,6 +18,7 @@ class Scoreboard(_message.Message):
         COMMUNITY_ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
         COMMUNITY_ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
         CONTEST: Scoreboard.Column.Type
+        FILTERABLE_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         JUDGE_CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -34,6 +35,7 @@ class Scoreboard(_message.Message):
         columns: _containers.RepeatedCompositeFieldContainer[Scoreboard.Column]
         community_attribute_key: str
         community_attribute_type: str
+        filterable: bool
         id: str
         index: int
         judge_contest_id: str
@@ -44,7 +46,7 @@ class Scoreboard(_message.Message):
         short_name: str
         type: Scoreboard.Column.Type
         visible: bool
-        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
     class Row(_message.Message):
         __slots__ = ["ghost", "id", "member_id", "name", "out_of_competition", "penalty", "rank", "rank_lower", "score", "values"]
         class Value(_message.Message):
