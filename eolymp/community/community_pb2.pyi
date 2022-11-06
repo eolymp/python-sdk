@@ -41,12 +41,10 @@ class AddMemberOutput(_message.Message):
     def __init__(self, ern: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class ConfigureIdentityProviderInput(_message.Message):
-    __slots__ = ["oidc", "space_id"]
+    __slots__ = ["oidc"]
     OIDC_FIELD_NUMBER: _ClassVar[int]
-    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     oidc: _idp_pb2.IdentityProvider.OIDC
-    space_id: str
-    def __init__(self, space_id: _Optional[str] = ..., oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
+    def __init__(self, oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
 
 class ConfigureIdentityProviderOutput(_message.Message):
     __slots__ = []
@@ -65,10 +63,8 @@ class DescribeAttributeOutput(_message.Message):
     def __init__(self, attribute: _Optional[_Union[_attribute_pb2.Attribute, _Mapping]] = ...) -> None: ...
 
 class DescribeIdentityProviderInput(_message.Message):
-    __slots__ = ["space_id"]
-    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
-    space_id: str
-    def __init__(self, space_id: _Optional[str] = ...) -> None: ...
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class DescribeIdentityProviderOutput(_message.Message):
     __slots__ = ["oidc"]
