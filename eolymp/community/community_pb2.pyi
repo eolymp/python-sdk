@@ -2,6 +2,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import attribute_pb2 as _attribute_pb2
+from eolymp.community import idp_pb2 as _idp_pb2
 from eolymp.community import member_pb2 as _member_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
@@ -39,6 +40,18 @@ class AddMemberOutput(_message.Message):
     member_id: str
     def __init__(self, ern: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
+class ConfigureIdentityProviderInput(_message.Message):
+    __slots__ = ["oidc", "space_id"]
+    OIDC_FIELD_NUMBER: _ClassVar[int]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    oidc: _idp_pb2.IdentityProvider.OIDC
+    space_id: str
+    def __init__(self, space_id: _Optional[str] = ..., oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
+
+class ConfigureIdentityProviderOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DescribeAttributeInput(_message.Message):
     __slots__ = ["attribute_key"]
     ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -50,6 +63,18 @@ class DescribeAttributeOutput(_message.Message):
     ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
     attribute: _attribute_pb2.Attribute
     def __init__(self, attribute: _Optional[_Union[_attribute_pb2.Attribute, _Mapping]] = ...) -> None: ...
+
+class DescribeIdentityProviderInput(_message.Message):
+    __slots__ = ["space_id"]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    space_id: str
+    def __init__(self, space_id: _Optional[str] = ...) -> None: ...
+
+class DescribeIdentityProviderOutput(_message.Message):
+    __slots__ = ["oidc"]
+    OIDC_FIELD_NUMBER: _ClassVar[int]
+    oidc: _idp_pb2.IdentityProvider.OIDC
+    def __init__(self, oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
 
 class DescribeMemberInput(_message.Message):
     __slots__ = ["member_id"]

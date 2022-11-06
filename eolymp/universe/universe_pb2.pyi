@@ -1,7 +1,6 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.universe import idp_pb2 as _idp_pb2
 from eolymp.universe import permission_pb2 as _permission_pb2
 from eolymp.universe import space_pb2 as _space_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -11,18 +10,6 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
-
-class ConfigureIdentityProviderInput(_message.Message):
-    __slots__ = ["oidc", "space_id"]
-    OIDC_FIELD_NUMBER: _ClassVar[int]
-    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
-    oidc: _idp_pb2.IdentityProvider.OIDC
-    space_id: str
-    def __init__(self, space_id: _Optional[str] = ..., oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
-
-class ConfigureIdentityProviderOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class CreateSpaceInput(_message.Message):
     __slots__ = ["space"]
@@ -45,18 +32,6 @@ class DeleteSpaceInput(_message.Message):
 class DeleteSpaceOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class DescribeIdentityProviderInput(_message.Message):
-    __slots__ = ["space_id"]
-    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
-    space_id: str
-    def __init__(self, space_id: _Optional[str] = ...) -> None: ...
-
-class DescribeIdentityProviderOutput(_message.Message):
-    __slots__ = ["oidc"]
-    OIDC_FIELD_NUMBER: _ClassVar[int]
-    oidc: _idp_pb2.IdentityProvider.OIDC
-    def __init__(self, oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
 
 class DescribePermissionInput(_message.Message):
     __slots__ = ["space_id", "user_id"]

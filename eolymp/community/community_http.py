@@ -214,3 +214,29 @@ class CommunityClient:
             **kwargs,
         )
 
+    def DescribeIdentityProvider(self, request, **kwargs):
+        path = "/idp"
+
+        return self.transport.request(
+            name="eolymp.community.Community/DescribeIdentityProvider",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeIdentityProviderOutput"),
+            **kwargs,
+        )
+
+    def ConfigureIdentityProvider(self, request, **kwargs):
+        path = "/idp"
+
+        return self.transport.request(
+            name="eolymp.community.Community/ConfigureIdentityProvider",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ConfigureIdentityProviderOutput"),
+            **kwargs,
+        )
+
