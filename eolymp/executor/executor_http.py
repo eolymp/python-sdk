@@ -15,7 +15,7 @@ class ExecutorClient:
         self.url = url
 
     def DescribeLanguage(self, request, **kwargs):
-        path = "/languages/"+urllib.parse.quote(request.language_id)
+        path = "/exec/languages/"+urllib.parse.quote(request.language_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.language_id = ""
@@ -31,7 +31,7 @@ class ExecutorClient:
         )
 
     def ListLanguages(self, request, **kwargs):
-        path = "/languages"
+        path = "/exec/languages"
 
         return self.transport.request(
             name="eolymp.executor.Executor/ListLanguages",
@@ -44,7 +44,7 @@ class ExecutorClient:
         )
 
     def DescribeRuntime(self, request, **kwargs):
-        path = "/runtime/"+urllib.parse.quote(request.runtime_id)
+        path = "/exec/runtime/"+urllib.parse.quote(request.runtime_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.runtime_id = ""
@@ -60,7 +60,7 @@ class ExecutorClient:
         )
 
     def ListRuntime(self, request, **kwargs):
-        path = "/runtime"
+        path = "/exec/runtime"
 
         return self.transport.request(
             name="eolymp.executor.Executor/ListRuntime",
@@ -73,7 +73,7 @@ class ExecutorClient:
         )
 
     def DescribeCodeTemplate(self, request, **kwargs):
-        path = "/runtime/"+urllib.parse.quote(request.runtime_id)+"/template"
+        path = "/exec/runtime/"+urllib.parse.quote(request.runtime_id)+"/template"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.runtime_id = ""
