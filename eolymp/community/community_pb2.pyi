@@ -41,10 +41,12 @@ class AddMemberOutput(_message.Message):
     def __init__(self, ern: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class ConfigureIdentityProviderInput(_message.Message):
-    __slots__ = ["oidc"]
+    __slots__ = ["local", "oidc"]
+    LOCAL_FIELD_NUMBER: _ClassVar[int]
     OIDC_FIELD_NUMBER: _ClassVar[int]
+    local: bool
     oidc: _idp_pb2.IdentityProvider.OIDC
-    def __init__(self, oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
+    def __init__(self, local: bool = ..., oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
 
 class ConfigureIdentityProviderOutput(_message.Message):
     __slots__ = []
@@ -67,10 +69,12 @@ class DescribeIdentityProviderInput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeIdentityProviderOutput(_message.Message):
-    __slots__ = ["oidc"]
+    __slots__ = ["local", "oidc"]
+    LOCAL_FIELD_NUMBER: _ClassVar[int]
     OIDC_FIELD_NUMBER: _ClassVar[int]
+    local: bool
     oidc: _idp_pb2.IdentityProvider.OIDC
-    def __init__(self, oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
+    def __init__(self, local: bool = ..., oidc: _Optional[_Union[_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
 
 class DescribeMemberInput(_message.Message):
     __slots__ = ["member_id"]
