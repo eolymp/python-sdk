@@ -140,6 +140,56 @@ class CommunityClient:
             **kwargs,
         )
 
+    def AddMemberIdentity(self, request, **kwargs):
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/identities"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            name="eolymp.community.Community/AddMemberIdentity",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.AddMemberIdentityOutput"),
+            **kwargs,
+        )
+
+    def UpdateMemberIdentity(self, request, **kwargs):
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/identities/"+urllib.parse.quote(request.identity_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+        request.identity_id = ""
+
+        return self.transport.request(
+            name="eolymp.community.Community/UpdateMemberIdentity",
+            method="PUT",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateMemberIdentityOutput"),
+            **kwargs,
+        )
+
+    def RemoveMemberIdentity(self, request, **kwargs):
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/identities/"+urllib.parse.quote(request.identity_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+        request.identity_id = ""
+
+        return self.transport.request(
+            name="eolymp.community.Community/RemoveMemberIdentity",
+            method="DELETE",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.RemoveMemberIdentityOutput"),
+            **kwargs,
+        )
+
     def AddAttribute(self, request, **kwargs):
         path = "/attributes"
 

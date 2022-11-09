@@ -9,13 +9,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ["disabled", "ern", "ghost", "id", "name", "out_of_competition", "registered", "staffed", "status", "users", "values"]
+    __slots__ = ["disabled", "ern", "ghost", "id", "identities", "name", "out_of_competition", "registered", "staffed", "status", "values"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    class User(_message.Message):
-        __slots__ = ["email", "email_verified", "issuer", "name", "nickname", "password", "picture", "profile", "subject"]
+    class Identity(_message.Message):
+        __slots__ = ["email", "email_verified", "id", "issuer", "name", "nickname", "password", "picture", "profile", "subject"]
         EMAIL_FIELD_NUMBER: _ClassVar[int]
         EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
+        ID_FIELD_NUMBER: _ClassVar[int]
         ISSUER_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         NICKNAME_FIELD_NUMBER: _ClassVar[int]
@@ -25,6 +26,7 @@ class Member(_message.Message):
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
         email: str
         email_verified: bool
+        id: str
         issuer: str
         name: str
         nickname: str
@@ -32,7 +34,7 @@ class Member(_message.Message):
         picture: str
         profile: str
         subject: str
-        def __init__(self, issuer: _Optional[str] = ..., subject: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., profile: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., issuer: _Optional[str] = ..., subject: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., profile: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
     class Value(_message.Message):
         __slots__ = ["attribute_key", "attribute_type", "value_number", "value_string"]
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -49,6 +51,7 @@ class Member(_message.Message):
     ERN_FIELD_NUMBER: _ClassVar[int]
     GHOST: Member.Status
     GHOST_FIELD_NUMBER: _ClassVar[int]
+    IDENTITIES_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     INACTIVE: Member.Status
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -59,17 +62,16 @@ class Member(_message.Message):
     UNKNOWN_STATUS: Member.Status
     UNREGISTERED: Member.Status
     UNSTAFFED: Member.Status
-    USERS_FIELD_NUMBER: _ClassVar[int]
     VALUES_FIELD_NUMBER: _ClassVar[int]
     disabled: bool
     ern: str
     ghost: bool
     id: str
+    identities: _containers.RepeatedCompositeFieldContainer[Member.Identity]
     name: str
     out_of_competition: bool
     registered: bool
     staffed: bool
     status: Member.Status
-    users: _containers.RepeatedCompositeFieldContainer[Member.User]
     values: _containers.RepeatedCompositeFieldContainer[Member.Value]
-    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., name: _Optional[str] = ..., disabled: bool = ..., registered: bool = ..., staffed: bool = ..., ghost: bool = ..., out_of_competition: bool = ..., status: _Optional[_Union[Member.Status, str]] = ..., users: _Optional[_Iterable[_Union[Member.User, _Mapping]]] = ..., values: _Optional[_Iterable[_Union[Member.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., name: _Optional[str] = ..., disabled: bool = ..., registered: bool = ..., staffed: bool = ..., ghost: bool = ..., out_of_competition: bool = ..., status: _Optional[_Union[Member.Status, str]] = ..., identities: _Optional[_Iterable[_Union[Member.Identity, _Mapping]]] = ..., values: _Optional[_Iterable[_Union[Member.Value, _Mapping]]] = ...) -> None: ...

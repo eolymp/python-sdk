@@ -6,6 +6,7 @@ from eolymp.community import idp_pb2 as _idp_pb2
 from eolymp.community import member_pb2 as _member_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -25,6 +26,20 @@ class AddAttributeOutput(_message.Message):
     ERN_FIELD_NUMBER: _ClassVar[int]
     ern: str
     def __init__(self, ern: _Optional[str] = ...) -> None: ...
+
+class AddMemberIdentityInput(_message.Message):
+    __slots__ = ["identity", "member_id"]
+    IDENTITY_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    identity: _member_pb2.Member.Identity
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ..., identity: _Optional[_Union[_member_pb2.Member.Identity, _Mapping]] = ...) -> None: ...
+
+class AddMemberIdentityOutput(_message.Message):
+    __slots__ = ["identity_id"]
+    IDENTITY_ID_FIELD_NUMBER: _ClassVar[int]
+    identity_id: str
+    def __init__(self, identity_id: _Optional[str] = ...) -> None: ...
 
 class AddMemberInput(_message.Message):
     __slots__ = ["member"]
@@ -156,16 +171,22 @@ class ListAttributesOutput(_message.Message):
 class ListMembersInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
-        __slots__ = ["disabled", "id", "name", "user_id"]
+        __slots__ = ["disabled", "id", "identity_email", "identity_name", "identity_nickname", "name", "user_id"]
         DISABLED_FIELD_NUMBER: _ClassVar[int]
+        IDENTITY_EMAIL_FIELD_NUMBER: _ClassVar[int]
+        IDENTITY_NAME_FIELD_NUMBER: _ClassVar[int]
+        IDENTITY_NICKNAME_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         USER_ID_FIELD_NUMBER: _ClassVar[int]
         disabled: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        identity_email: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        identity_name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        identity_nickname: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., disabled: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., disabled: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., identity_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., identity_nickname: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., identity_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -202,6 +223,18 @@ class RemoveAttributeOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class RemoveMemberIdentityInput(_message.Message):
+    __slots__ = ["identity_id", "member_id"]
+    IDENTITY_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    identity_id: str
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ..., identity_id: _Optional[str] = ...) -> None: ...
+
+class RemoveMemberIdentityOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class RemoveMemberInput(_message.Message):
     __slots__ = ["member_id"]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -224,13 +257,38 @@ class UpdateAttributeOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class UpdateMemberIdentityInput(_message.Message):
+    __slots__ = ["identity", "identity_id", "member_id"]
+    IDENTITY_FIELD_NUMBER: _ClassVar[int]
+    IDENTITY_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    identity: _member_pb2.Member.Identity
+    identity_id: str
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ..., identity_id: _Optional[str] = ..., identity: _Optional[_Union[_member_pb2.Member.Identity, _Mapping]] = ...) -> None: ...
+
+class UpdateMemberIdentityOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdateMemberInput(_message.Message):
-    __slots__ = ["member", "member_id"]
+    __slots__ = ["member", "member_id", "patch"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    DISABLED: UpdateMemberInput.Patch
+    GHOST: UpdateMemberInput.Patch
+    IDENTITIES: UpdateMemberInput.Patch
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME: UpdateMemberInput.Patch
+    OUT_OF_COMPETITION: UpdateMemberInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    REGISTERED: UpdateMemberInput.Patch
+    VALUES: UpdateMemberInput.Patch
     member: _member_pb2.Member
     member_id: str
-    def __init__(self, member_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
+    patch: _containers.RepeatedScalarFieldContainer[UpdateMemberInput.Patch]
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMemberInput.Patch, str]]] = ..., member_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class UpdateMemberOutput(_message.Message):
     __slots__ = []
