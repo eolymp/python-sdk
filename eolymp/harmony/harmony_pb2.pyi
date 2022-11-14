@@ -12,6 +12,18 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class FollowShortcutInput(_message.Message):
+    __slots__ = ["shortcut_id", "status"]
+    SHORTCUT_ID_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    shortcut_id: str
+    status: _consent_pb2.Consent.Status
+    def __init__(self, shortcut_id: _Optional[str] = ..., status: _Optional[_Union[_consent_pb2.Consent.Status, str]] = ...) -> None: ...
+
+class FollowShortcutOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class GetConsentInput(_message.Message):
     __slots__ = ["agreement_id"]
     AGREEMENT_ID_FIELD_NUMBER: _ClassVar[int]

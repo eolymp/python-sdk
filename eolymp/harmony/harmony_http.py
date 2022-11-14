@@ -59,3 +59,19 @@ class HarmonyClient:
             **kwargs,
         )
 
+    def FollowShortcut(self, request, **kwargs):
+        path = "/harmony/shortcuts/"+urllib.parse.quote(request.shortcut_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.shortcut_id = ""
+
+        return self.transport.request(
+            name="eolymp.harmony.Harmony/FollowShortcut",
+            method="POST",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.harmony.FollowShortcutOutput"),
+            **kwargs,
+        )
+
