@@ -121,20 +121,24 @@ class CreateTokenOutput(_message.Message):
     def __init__(self, token: _Optional[str] = ..., type: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., scopes: _Optional[_Iterable[str]] = ..., refresh_token: _Optional[str] = ..., user_id: _Optional[str] = ..., username: _Optional[str] = ...) -> None: ...
 
 class CreateUserInput(_message.Message):
-    __slots__ = ["captcha", "email", "full_name", "locale", "password", "username"]
+    __slots__ = ["birthday", "captcha", "country", "email", "full_name", "locale", "password", "username"]
+    BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
     CAPTCHA_FIELD_NUMBER: _ClassVar[int]
+    COUNTRY_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     FULL_NAME_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     USERNAME_FIELD_NUMBER: _ClassVar[int]
+    birthday: str
     captcha: str
+    country: str
     email: str
     full_name: str
     locale: str
     password: str
     username: str
-    def __init__(self, username: _Optional[str] = ..., full_name: _Optional[str] = ..., email: _Optional[str] = ..., password: _Optional[str] = ..., captcha: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, username: _Optional[str] = ..., full_name: _Optional[str] = ..., email: _Optional[str] = ..., password: _Optional[str] = ..., country: _Optional[str] = ..., birthday: _Optional[str] = ..., captcha: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class CreateUserOutput(_message.Message):
     __slots__ = ["email_confirmation_hint", "user_id"]
