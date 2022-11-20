@@ -89,12 +89,16 @@ class DescribeScoreboardOutput(_message.Message):
     def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
 
 class DescribeScoreboardRowInput(_message.Message):
-    __slots__ = ["member_id", "scoreboard_id"]
+    __slots__ = ["member_id", "mode", "scoreboard_id", "timeline_offset"]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMELINE_OFFSET_FIELD_NUMBER: _ClassVar[int]
     member_id: str
+    mode: _scoreboard_pb2.Scoreboard.FetchingMode
     scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    timeline_offset: int
+    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., timeline_offset: _Optional[int] = ..., scoreboard_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreboardRowOutput(_message.Message):
     __slots__ = ["row"]
@@ -135,7 +139,7 @@ class ListScoreboardColumnsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]]] = ...) -> None: ...
 
 class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ["filters", "offset", "scoreboard_id", "size"]
+    __slots__ = ["filters", "mode", "offset", "scoreboard_id", "size", "timeline_offset"]
     class ExpressionColumn(_message.Message):
         __slots__ = ["enum", "key", "number", "string"]
         ENUM_FIELD_NUMBER: _ClassVar[int]
@@ -155,14 +159,18 @@ class ListScoreboardRowsInput(_message.Message):
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         def __init__(self, member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., column: _Optional[_Iterable[_Union[ListScoreboardRowsInput.ExpressionColumn, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    TIMELINE_OFFSET_FIELD_NUMBER: _ClassVar[int]
     filters: ListScoreboardRowsInput.Filter
+    mode: _scoreboard_pb2.Scoreboard.FetchingMode
     offset: int
     scoreboard_id: str
     size: int
-    def __init__(self, scoreboard_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ...) -> None: ...
+    timeline_offset: int
+    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., timeline_offset: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
     __slots__ = ["items", "total"]
