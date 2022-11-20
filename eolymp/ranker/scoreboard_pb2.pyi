@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ["format", "frozen", "id", "key", "name", "timeline_position", "timeline_segments"]
+    __slots__ = ["format", "frozen", "id", "key", "name", "timeline_duration", "timeline_position", "timeline_segments"]
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Column(_message.Message):
@@ -126,6 +126,7 @@ class Scoreboard(_message.Message):
     LATEST: Scoreboard.FetchingMode
     NAME_FIELD_NUMBER: _ClassVar[int]
     PUNCTUAL: Scoreboard.FetchingMode
+    TIMELINE_DURATION_FIELD_NUMBER: _ClassVar[int]
     TIMELINE_POSITION_FIELD_NUMBER: _ClassVar[int]
     TIMELINE_SEGMENTS_FIELD_NUMBER: _ClassVar[int]
     format: _format_pb2.Format
@@ -133,6 +134,7 @@ class Scoreboard(_message.Message):
     id: str
     key: str
     name: str
+    timeline_duration: int
     timeline_position: int
     timeline_segments: _containers.RepeatedCompositeFieldContainer[Scoreboard.TimelineSegment]
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., frozen: bool = ..., timeline_position: _Optional[int] = ..., timeline_segments: _Optional[_Iterable[_Union[Scoreboard.TimelineSegment, _Mapping]]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., frozen: bool = ..., timeline_position: _Optional[int] = ..., timeline_duration: _Optional[int] = ..., timeline_segments: _Optional[_Iterable[_Union[Scoreboard.TimelineSegment, _Mapping]]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ...) -> None: ...
