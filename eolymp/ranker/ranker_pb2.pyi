@@ -4,6 +4,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.annotations import service_pb2 as _service_pb2
 from eolymp.ranker import activity_pb2 as _activity_pb2
 from eolymp.ranker import scoreboard_pb2 as _scoreboard_pb2
+from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -139,7 +140,7 @@ class ListScoreboardColumnsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]]] = ...) -> None: ...
 
 class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ["filters", "mode", "offset", "scoreboard_id", "size", "timeline_offset"]
+    __slots__ = ["filters", "mode", "offset", "order", "scoreboard_id", "size", "sort", "timeline_offset"]
     class ExpressionColumn(_message.Message):
         __slots__ = ["enum", "key", "number", "string"]
         ENUM_FIELD_NUMBER: _ClassVar[int]
@@ -161,16 +162,20 @@ class ListScoreboardRowsInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    ORDER_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SORT_FIELD_NUMBER: _ClassVar[int]
     TIMELINE_OFFSET_FIELD_NUMBER: _ClassVar[int]
     filters: ListScoreboardRowsInput.Filter
     mode: _scoreboard_pb2.Scoreboard.FetchingMode
     offset: int
+    order: _direction_pb2.Direction
     scoreboard_id: str
     size: int
+    sort: str
     timeline_offset: int
-    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., timeline_offset: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., timeline_offset: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
     __slots__ = ["items", "total"]

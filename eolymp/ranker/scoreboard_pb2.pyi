@@ -1,4 +1,5 @@
 from eolymp.ranker import format_pb2 as _format_pb2
+from eolymp.wellknown import direction_pb2 as _direction_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -13,7 +14,7 @@ class Scoreboard(_message.Message):
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Column(_message.Message):
-        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "default_order_asc", "default_sorting", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "sortable", "timeline", "type", "visible"]
+        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "default_order", "default_sorting", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "sortable", "timeline", "type", "visible"]
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ATTRIBUTE: Scoreboard.Column.Type
@@ -21,7 +22,7 @@ class Scoreboard(_message.Message):
         COMMUNITY_ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
         COMMUNITY_ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
         CONTEST: Scoreboard.Column.Type
-        DEFAULT_ORDER_ASC_FIELD_NUMBER: _ClassVar[int]
+        DEFAULT_ORDER_FIELD_NUMBER: _ClassVar[int]
         DEFAULT_SORTING_FIELD_NUMBER: _ClassVar[int]
         FILTERABLE_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -43,7 +44,7 @@ class Scoreboard(_message.Message):
         columns: _containers.RepeatedCompositeFieldContainer[Scoreboard.Column]
         community_attribute_key: str
         community_attribute_type: str
-        default_order_asc: bool
+        default_order: _direction_pb2.Direction
         default_sorting: bool
         filterable: bool
         id: str
@@ -58,7 +59,7 @@ class Scoreboard(_message.Message):
         timeline: Scoreboard.Timeline
         type: Scoreboard.Column.Type
         visible: bool
-        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., default_sorting: bool = ..., default_order_asc: bool = ..., timeline: _Optional[_Union[Scoreboard.Timeline, _Mapping]] = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., default_sorting: bool = ..., default_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., timeline: _Optional[_Union[Scoreboard.Timeline, _Mapping]] = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
     class Row(_message.Message):
         __slots__ = ["ghost", "id", "member_id", "name", "out_of_competition", "penalty", "rank", "rank_lower", "score", "values"]
         class Value(_message.Message):
