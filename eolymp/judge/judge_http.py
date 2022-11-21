@@ -1120,6 +1120,23 @@ class JudgeClient:
             **kwargs,
         )
 
+    def ExportScore(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
+        return self.transport.request(
+            name="eolymp.judge.Judge/ExportScore",
+            method="GET",
+            url=self.url+path,
+            path=path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ExportScoreOutput"),
+            **kwargs,
+        )
+
     def ListResult(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/results"
 

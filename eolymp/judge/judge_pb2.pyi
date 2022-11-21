@@ -423,6 +423,20 @@ class EnterPasscodeOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class ExportScoreInput(_message.Message):
+    __slots__ = ["contest_id", "participant_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    participant_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
+
+class ExportScoreOutput(_message.Message):
+    __slots__ = ["scores"]
+    SCORES_FIELD_NUMBER: _ClassVar[int]
+    scores: _containers.RepeatedCompositeFieldContainer[_score_pb2.Score]
+    def __init__(self, scores: _Optional[_Iterable[_Union[_score_pb2.Score, _Mapping]]] = ...) -> None: ...
+
 class FreezeContestInput(_message.Message):
     __slots__ = ["contest_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
