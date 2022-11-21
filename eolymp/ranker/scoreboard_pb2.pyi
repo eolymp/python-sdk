@@ -10,11 +10,11 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ["format", "frozen", "id", "key", "name", "timeline_duration", "timeline_position"]
+    __slots__ = ["default_sort_column", "default_sort_order", "format", "frozen", "id", "key", "name", "timeline_duration", "timeline_position"]
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Column(_message.Message):
-        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "default_order", "default_sorting", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "sortable", "timeline", "type", "visible"]
+        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "sortable", "timeline", "type", "visible"]
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ATTRIBUTE: Scoreboard.Column.Type
@@ -22,8 +22,6 @@ class Scoreboard(_message.Message):
         COMMUNITY_ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
         COMMUNITY_ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
         CONTEST: Scoreboard.Column.Type
-        DEFAULT_ORDER_FIELD_NUMBER: _ClassVar[int]
-        DEFAULT_SORTING_FIELD_NUMBER: _ClassVar[int]
         FILTERABLE_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
@@ -44,8 +42,6 @@ class Scoreboard(_message.Message):
         columns: _containers.RepeatedCompositeFieldContainer[Scoreboard.Column]
         community_attribute_key: str
         community_attribute_type: str
-        default_order: _direction_pb2.Direction
-        default_sorting: bool
         filterable: bool
         id: str
         index: int
@@ -59,7 +55,7 @@ class Scoreboard(_message.Message):
         timeline: Scoreboard.Timeline
         type: Scoreboard.Column.Type
         visible: bool
-        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., default_sorting: bool = ..., default_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., timeline: _Optional[_Union[Scoreboard.Timeline, _Mapping]] = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., timeline: _Optional[_Union[Scoreboard.Timeline, _Mapping]] = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
     class Row(_message.Message):
         __slots__ = ["ghost", "id", "member_id", "name", "out_of_competition", "penalty", "rank", "rank_lower", "score", "values"]
         class Value(_message.Message):
@@ -124,6 +120,8 @@ class Scoreboard(_message.Message):
         starts_at: _timestamp_pb2.Timestamp
         def __init__(self, starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., start_offset: _Optional[int] = ..., end_offset: _Optional[int] = ..., freeze_time: _Optional[int] = ...) -> None: ...
     ACTUAL: Scoreboard.FetchingMode
+    DEFAULT_SORT_COLUMN_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_SORT_ORDER_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     FROZEN: Scoreboard.FetchingMode
     FROZEN_FIELD_NUMBER: _ClassVar[int]
@@ -134,6 +132,8 @@ class Scoreboard(_message.Message):
     PUNCTUAL: Scoreboard.FetchingMode
     TIMELINE_DURATION_FIELD_NUMBER: _ClassVar[int]
     TIMELINE_POSITION_FIELD_NUMBER: _ClassVar[int]
+    default_sort_column: str
+    default_sort_order: _direction_pb2.Direction
     format: _format_pb2.Format
     frozen: bool
     id: str
@@ -141,4 +141,4 @@ class Scoreboard(_message.Message):
     name: str
     timeline_duration: int
     timeline_position: int
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., frozen: bool = ..., timeline_position: _Optional[int] = ..., timeline_duration: _Optional[int] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., frozen: bool = ..., timeline_position: _Optional[int] = ..., timeline_duration: _Optional[int] = ..., default_sort_column: _Optional[str] = ..., default_sort_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ...) -> None: ...
