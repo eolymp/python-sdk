@@ -13,7 +13,7 @@ class Scoreboard(_message.Message):
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Column(_message.Message):
-        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "timeline", "type", "visible"]
+        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "default_order_asc", "default_sorting", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "sortable", "timeline", "type", "visible"]
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ATTRIBUTE: Scoreboard.Column.Type
@@ -21,6 +21,8 @@ class Scoreboard(_message.Message):
         COMMUNITY_ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
         COMMUNITY_ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
         CONTEST: Scoreboard.Column.Type
+        DEFAULT_ORDER_ASC_FIELD_NUMBER: _ClassVar[int]
+        DEFAULT_SORTING_FIELD_NUMBER: _ClassVar[int]
         FILTERABLE_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
@@ -33,6 +35,7 @@ class Scoreboard(_message.Message):
         PARENT_ID_FIELD_NUMBER: _ClassVar[int]
         PROBLEM: Scoreboard.Column.Type
         SHORT_NAME_FIELD_NUMBER: _ClassVar[int]
+        SORTABLE_FIELD_NUMBER: _ClassVar[int]
         TIMELINE_FIELD_NUMBER: _ClassVar[int]
         TOTAL: Scoreboard.Column.Type
         TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -40,6 +43,8 @@ class Scoreboard(_message.Message):
         columns: _containers.RepeatedCompositeFieldContainer[Scoreboard.Column]
         community_attribute_key: str
         community_attribute_type: str
+        default_order_asc: bool
+        default_sorting: bool
         filterable: bool
         id: str
         index: int
@@ -49,10 +54,11 @@ class Scoreboard(_message.Message):
         name: str
         parent_id: str
         short_name: str
+        sortable: bool
         timeline: Scoreboard.Timeline
         type: Scoreboard.Column.Type
         visible: bool
-        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., timeline: _Optional[_Union[Scoreboard.Timeline, _Mapping]] = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., default_sorting: bool = ..., default_order_asc: bool = ..., timeline: _Optional[_Union[Scoreboard.Timeline, _Mapping]] = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
     class Row(_message.Message):
         __slots__ = ["ghost", "id", "member_id", "name", "out_of_competition", "penalty", "rank", "rank_lower", "score", "values"]
         class Value(_message.Message):
