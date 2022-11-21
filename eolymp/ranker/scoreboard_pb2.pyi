@@ -34,6 +34,7 @@ class Scoreboard(_message.Message):
         PROBLEM: Scoreboard.Column.Type
         SHORT_NAME_FIELD_NUMBER: _ClassVar[int]
         TIMELINE_FIELD_NUMBER: _ClassVar[int]
+        TOTAL: Scoreboard.Column.Type
         TYPE_FIELD_NUMBER: _ClassVar[int]
         VISIBLE_FIELD_NUMBER: _ClassVar[int]
         columns: _containers.RepeatedCompositeFieldContainer[Scoreboard.Column]
