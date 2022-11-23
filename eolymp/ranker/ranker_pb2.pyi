@@ -256,7 +256,6 @@ class UpdateScoreboardInput(_message.Message):
         __slots__ = []
     ALL: UpdateScoreboardInput.Patch
     DEFAULT_SORT: UpdateScoreboardInput.Patch
-    FORMAT: UpdateScoreboardInput.Patch
     KEY: UpdateScoreboardInput.Patch
     NAME: UpdateScoreboardInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
