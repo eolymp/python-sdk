@@ -14,12 +14,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AddScoreboardColumnInput(_message.Message):
-    __slots__ = ["column", "scoreboard_id"]
+    __slots__ = ["auto_correct_columns", "column", "scoreboard_id"]
+    AUTO_CORRECT_COLUMNS_FIELD_NUMBER: _ClassVar[int]
     COLUMN_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    auto_correct_columns: bool
     column: _scoreboard_pb2.Scoreboard.Column
     scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., column: _Optional[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]] = ...) -> None: ...
+    def __init__(self, scoreboard_id: _Optional[str] = ..., column: _Optional[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]] = ..., auto_correct_columns: bool = ...) -> None: ...
 
 class AddScoreboardColumnOutput(_message.Message):
     __slots__ = ["column_id"]
@@ -28,10 +30,12 @@ class AddScoreboardColumnOutput(_message.Message):
     def __init__(self, column_id: _Optional[str] = ...) -> None: ...
 
 class CreateScoreboardInput(_message.Message):
-    __slots__ = ["scoreboard"]
+    __slots__ = ["add_default_columns", "scoreboard"]
+    ADD_DEFAULT_COLUMNS_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
+    add_default_columns: bool
     scoreboard: _scoreboard_pb2.Scoreboard
-    def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
+    def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ..., add_default_columns: bool = ...) -> None: ...
 
 class CreateScoreboardOutput(_message.Message):
     __slots__ = ["scoreboard_id"]
@@ -40,12 +44,14 @@ class CreateScoreboardOutput(_message.Message):
     def __init__(self, scoreboard_id: _Optional[str] = ...) -> None: ...
 
 class DeleteScoreboardColumnInput(_message.Message):
-    __slots__ = ["column_id", "scoreboard_id"]
+    __slots__ = ["auto_correct_columns", "column_id", "scoreboard_id"]
+    AUTO_CORRECT_COLUMNS_FIELD_NUMBER: _ClassVar[int]
     COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    auto_correct_columns: bool
     column_id: str
     scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., column_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, scoreboard_id: _Optional[str] = ..., column_id: _Optional[str] = ..., auto_correct_columns: bool = ...) -> None: ...
 
 class DeleteScoreboardColumnOutput(_message.Message):
     __slots__ = []
