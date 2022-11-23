@@ -7,6 +7,7 @@ from eolymp.ranker import scoreboard_pb2 as _scoreboard_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -223,26 +224,48 @@ class RebuildScoreboardOutput(_message.Message):
     def __init__(self, activity_id: _Optional[str] = ...) -> None: ...
 
 class UpdateScoreboardColumnInput(_message.Message):
-    __slots__ = ["column", "column_id", "scoreboard_id"]
+    __slots__ = ["column", "column_id", "patch", "scoreboard_id"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateScoreboardColumnInput.Patch
     COLUMN_FIELD_NUMBER: _ClassVar[int]
     COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
+    FILTERABLE: UpdateScoreboardColumnInput.Patch
+    INDEX: UpdateScoreboardColumnInput.Patch
+    KEY: UpdateScoreboardColumnInput.Patch
+    NAME: UpdateScoreboardColumnInput.Patch
+    PARENT_ID: UpdateScoreboardColumnInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    SHORT_NAME: UpdateScoreboardColumnInput.Patch
+    SORTABLE: UpdateScoreboardColumnInput.Patch
+    VISIBLE: UpdateScoreboardColumnInput.Patch
     column: _scoreboard_pb2.Scoreboard.Column
     column_id: str
+    patch: _containers.RepeatedScalarFieldContainer[UpdateScoreboardColumnInput.Patch]
     scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., column_id: _Optional[str] = ..., column: _Optional[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateScoreboardColumnInput.Patch, str]]] = ..., scoreboard_id: _Optional[str] = ..., column_id: _Optional[str] = ..., column: _Optional[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]] = ...) -> None: ...
 
 class UpdateScoreboardColumnOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class UpdateScoreboardInput(_message.Message):
-    __slots__ = ["scoreboard", "scoreboard_id"]
+    __slots__ = ["patch", "scoreboard", "scoreboard_id"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateScoreboardInput.Patch
+    DEFAULT_SORT: UpdateScoreboardInput.Patch
+    FORMAT: UpdateScoreboardInput.Patch
+    KEY: UpdateScoreboardInput.Patch
+    NAME: UpdateScoreboardInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    patch: _containers.RepeatedScalarFieldContainer[UpdateScoreboardInput.Patch]
     scoreboard: _scoreboard_pb2.Scoreboard
     scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateScoreboardInput.Patch, str]]] = ..., scoreboard_id: _Optional[str] = ..., scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
 
 class UpdateScoreboardOutput(_message.Message):
     __slots__ = []
