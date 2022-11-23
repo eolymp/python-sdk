@@ -14,14 +14,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AddScoreboardColumnInput(_message.Message):
-    __slots__ = ["auto_correct_columns", "column", "scoreboard_id"]
-    AUTO_CORRECT_COLUMNS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["column", "scoreboard_id"]
     COLUMN_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    auto_correct_columns: bool
     column: _scoreboard_pb2.Scoreboard.Column
     scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., column: _Optional[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]] = ..., auto_correct_columns: bool = ...) -> None: ...
+    def __init__(self, scoreboard_id: _Optional[str] = ..., column: _Optional[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]] = ...) -> None: ...
 
 class AddScoreboardColumnOutput(_message.Message):
     __slots__ = ["column_id"]
@@ -44,14 +42,12 @@ class CreateScoreboardOutput(_message.Message):
     def __init__(self, scoreboard_id: _Optional[str] = ...) -> None: ...
 
 class DeleteScoreboardColumnInput(_message.Message):
-    __slots__ = ["auto_correct_columns", "column_id", "scoreboard_id"]
-    AUTO_CORRECT_COLUMNS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["column_id", "scoreboard_id"]
     COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    auto_correct_columns: bool
     column_id: str
     scoreboard_id: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., column_id: _Optional[str] = ..., auto_correct_columns: bool = ...) -> None: ...
+    def __init__(self, scoreboard_id: _Optional[str] = ..., column_id: _Optional[str] = ...) -> None: ...
 
 class DeleteScoreboardColumnOutput(_message.Message):
     __slots__ = []
