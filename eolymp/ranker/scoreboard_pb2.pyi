@@ -10,15 +10,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ["default_sort_column", "default_sort_order", "format", "frozen", "historical", "id", "key", "name", "timeline_duration", "timeline_position"]
+    __slots__ = ["default_sort_column", "default_sort_order", "format", "historical", "id", "key", "name", "timeline"]
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Column(_message.Message):
-        __slots__ = ["columns", "community_attribute_key", "community_attribute_type", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "sortable", "timeline", "type", "visible"]
+        __slots__ = ["community_attribute_key", "community_attribute_type", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "sortable", "type", "visible"]
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ATTRIBUTE: Scoreboard.Column.Type
-        COLUMNS_FIELD_NUMBER: _ClassVar[int]
         COMMUNITY_ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
         COMMUNITY_ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
         CONTEST: Scoreboard.Column.Type
@@ -35,11 +34,9 @@ class Scoreboard(_message.Message):
         PROBLEM: Scoreboard.Column.Type
         SHORT_NAME_FIELD_NUMBER: _ClassVar[int]
         SORTABLE_FIELD_NUMBER: _ClassVar[int]
-        TIMELINE_FIELD_NUMBER: _ClassVar[int]
         TOTAL: Scoreboard.Column.Type
         TYPE_FIELD_NUMBER: _ClassVar[int]
         VISIBLE_FIELD_NUMBER: _ClassVar[int]
-        columns: _containers.RepeatedCompositeFieldContainer[Scoreboard.Column]
         community_attribute_key: str
         community_attribute_type: str
         filterable: bool
@@ -52,14 +49,13 @@ class Scoreboard(_message.Message):
         parent_id: str
         short_name: str
         sortable: bool
-        timeline: Scoreboard.Timeline
         type: Scoreboard.Column.Type
         visible: bool
-        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., timeline: _Optional[_Union[Scoreboard.Timeline, _Mapping]] = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ...) -> None: ...
     class Row(_message.Message):
         __slots__ = ["ghost", "id", "member_id", "name", "out_of_competition", "penalty", "rank", "rank_lower", "score", "values"]
         class Value(_message.Message):
-            __slots__ = ["attempts", "column_id", "id", "penalty", "percentage", "score", "solved_in", "timeline_end_offset", "timeline_latest", "timeline_set", "timeline_start_offset", "value_number", "value_string"]
+            __slots__ = ["attempts", "column_id", "id", "penalty", "percentage", "score", "solved_in", "timeline_end_offset", "timeline_start_offset", "value_number", "value_string"]
             ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
             COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
             ID_FIELD_NUMBER: _ClassVar[int]
@@ -68,8 +64,6 @@ class Scoreboard(_message.Message):
             SCORE_FIELD_NUMBER: _ClassVar[int]
             SOLVED_IN_FIELD_NUMBER: _ClassVar[int]
             TIMELINE_END_OFFSET_FIELD_NUMBER: _ClassVar[int]
-            TIMELINE_LATEST_FIELD_NUMBER: _ClassVar[int]
-            TIMELINE_SET_FIELD_NUMBER: _ClassVar[int]
             TIMELINE_START_OFFSET_FIELD_NUMBER: _ClassVar[int]
             VALUE_NUMBER_FIELD_NUMBER: _ClassVar[int]
             VALUE_STRING_FIELD_NUMBER: _ClassVar[int]
@@ -81,12 +75,10 @@ class Scoreboard(_message.Message):
             score: float
             solved_in: int
             timeline_end_offset: int
-            timeline_latest: bool
-            timeline_set: bool
             timeline_start_offset: int
             value_number: int
             value_string: str
-            def __init__(self, id: _Optional[str] = ..., column_id: _Optional[str] = ..., timeline_set: bool = ..., timeline_latest: bool = ..., timeline_start_offset: _Optional[int] = ..., timeline_end_offset: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_in: _Optional[int] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
+            def __init__(self, id: _Optional[str] = ..., column_id: _Optional[str] = ..., timeline_start_offset: _Optional[int] = ..., timeline_end_offset: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_in: _Optional[int] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
         GHOST_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -108,7 +100,7 @@ class Scoreboard(_message.Message):
         score: float
         values: _containers.RepeatedCompositeFieldContainer[Scoreboard.Row.Value]
         def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., member_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., ghost: bool = ..., out_of_competition: bool = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
-    class Timeline(_message.Message):
+    class Segment(_message.Message):
         __slots__ = ["end_offset", "freeze_time", "start_offset", "starts_at"]
         END_OFFSET_FIELD_NUMBER: _ClassVar[int]
         FREEZE_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -119,28 +111,39 @@ class Scoreboard(_message.Message):
         start_offset: int
         starts_at: _timestamp_pb2.Timestamp
         def __init__(self, starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., start_offset: _Optional[int] = ..., end_offset: _Optional[int] = ..., freeze_time: _Optional[int] = ...) -> None: ...
+    class Timeline(_message.Message):
+        __slots__ = ["duration", "freeze_in", "frozen", "position", "segments", "unfreeze_in"]
+        DURATION_FIELD_NUMBER: _ClassVar[int]
+        FREEZE_IN_FIELD_NUMBER: _ClassVar[int]
+        FROZEN_FIELD_NUMBER: _ClassVar[int]
+        POSITION_FIELD_NUMBER: _ClassVar[int]
+        SEGMENTS_FIELD_NUMBER: _ClassVar[int]
+        UNFREEZE_IN_FIELD_NUMBER: _ClassVar[int]
+        duration: int
+        freeze_in: int
+        frozen: bool
+        position: int
+        segments: _containers.RepeatedCompositeFieldContainer[Scoreboard.Segment]
+        unfreeze_in: int
+        def __init__(self, position: _Optional[int] = ..., duration: _Optional[int] = ..., frozen: bool = ..., freeze_in: _Optional[int] = ..., unfreeze_in: _Optional[int] = ..., segments: _Optional[_Iterable[_Union[Scoreboard.Segment, _Mapping]]] = ...) -> None: ...
     ACTUAL: Scoreboard.FetchingMode
     DEFAULT_SORT_COLUMN_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_SORT_ORDER_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     FROZEN: Scoreboard.FetchingMode
-    FROZEN_FIELD_NUMBER: _ClassVar[int]
     HISTORICAL_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     LATEST: Scoreboard.FetchingMode
     NAME_FIELD_NUMBER: _ClassVar[int]
     PUNCTUAL: Scoreboard.FetchingMode
-    TIMELINE_DURATION_FIELD_NUMBER: _ClassVar[int]
-    TIMELINE_POSITION_FIELD_NUMBER: _ClassVar[int]
+    TIMELINE_FIELD_NUMBER: _ClassVar[int]
     default_sort_column: str
     default_sort_order: _direction_pb2.Direction
     format: _format_pb2.Format
-    frozen: bool
     historical: bool
     id: str
     key: str
     name: str
-    timeline_duration: int
-    timeline_position: int
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., frozen: bool = ..., historical: bool = ..., timeline_position: _Optional[int] = ..., timeline_duration: _Optional[int] = ..., default_sort_column: _Optional[str] = ..., default_sort_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ...) -> None: ...
+    timeline: Scoreboard.Timeline
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., historical: bool = ..., timeline: _Optional[_Union[Scoreboard.Timeline, _Mapping]] = ..., default_sort_column: _Optional[str] = ..., default_sort_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ...) -> None: ...
