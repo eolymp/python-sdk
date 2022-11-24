@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ["default_sort_column", "default_sort_order", "format", "frozen", "id", "key", "name", "timeline_duration", "timeline_position"]
+    __slots__ = ["default_sort_column", "default_sort_order", "format", "frozen", "historical", "id", "key", "name", "timeline_duration", "timeline_position"]
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Column(_message.Message):
@@ -125,6 +125,7 @@ class Scoreboard(_message.Message):
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     FROZEN: Scoreboard.FetchingMode
     FROZEN_FIELD_NUMBER: _ClassVar[int]
+    HISTORICAL_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     LATEST: Scoreboard.FetchingMode
@@ -136,9 +137,10 @@ class Scoreboard(_message.Message):
     default_sort_order: _direction_pb2.Direction
     format: _format_pb2.Format
     frozen: bool
+    historical: bool
     id: str
     key: str
     name: str
     timeline_duration: int
     timeline_position: int
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., frozen: bool = ..., timeline_position: _Optional[int] = ..., timeline_duration: _Optional[int] = ..., default_sort_column: _Optional[str] = ..., default_sort_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., frozen: bool = ..., historical: bool = ..., timeline_position: _Optional[int] = ..., timeline_duration: _Optional[int] = ..., default_sort_column: _Optional[str] = ..., default_sort_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ...) -> None: ...
