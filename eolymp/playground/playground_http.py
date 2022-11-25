@@ -18,10 +18,8 @@ class PlaygroundClient:
         path = "/playground/runs"
 
         return self.transport.request(
-            name="eolymp.playground.Playground/CreateRun",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.playground.CreateRunOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class PlaygroundClient:
         request.run_id = ""
 
         return self.transport.request(
-            name="eolymp.playground.Playground/DescribeRun",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.playground.DescribeRunOutput"),
             **kwargs,

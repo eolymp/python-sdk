@@ -18,10 +18,8 @@ class KeeperClient:
         path = "/objects"
 
         return self.transport.request(
-            name="eolymp.keeper.Keeper/CreateObject",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.keeper.CreateObjectOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class KeeperClient:
         request.key = ""
 
         return self.transport.request(
-            name="eolymp.keeper.Keeper/DescribeObject",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.keeper.DescribeObjectOutput"),
             **kwargs,
@@ -50,10 +46,8 @@ class KeeperClient:
         request.key = ""
 
         return self.transport.request(
-            name="eolymp.keeper.Keeper/DownloadObject",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.keeper.DownloadObjectOutput"),
             **kwargs,

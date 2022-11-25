@@ -18,10 +18,8 @@ class JudgeClient:
         path = "/contests/__lookup"
 
         return self.transport.request(
-            name="eolymp.judge.Judge/LookupContest",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.LookupContestOutput"),
             **kwargs,
@@ -31,10 +29,8 @@ class JudgeClient:
         path = "/contests"
 
         return self.transport.request(
-            name="eolymp.judge.Judge/CreateContest",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.CreateContestOutput"),
             **kwargs,
@@ -47,10 +43,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DeleteContest",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteContestOutput"),
             **kwargs,
@@ -63,10 +57,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/UpdateContest",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateContestOutput"),
             **kwargs,
@@ -79,10 +71,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeContest",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeContestOutput"),
             **kwargs,
@@ -92,10 +82,8 @@ class JudgeClient:
         path = "/contests"
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListContests",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListContestsOutput"),
             **kwargs,
@@ -108,10 +96,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/OpenContest",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.OpenContestOutput"),
             **kwargs,
@@ -124,10 +110,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/CloseContest",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.CloseContestOutput"),
             **kwargs,
@@ -140,10 +124,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/SuspendContest",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.SuspendContestOutput"),
             **kwargs,
@@ -156,10 +138,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/FreezeContest",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.FreezeContestOutput"),
             **kwargs,
@@ -172,10 +152,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ResumeContest",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ResumeContestOutput"),
             **kwargs,
@@ -188,10 +166,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ConfigureRuntime",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ConfigureRuntimeOutput"),
             **kwargs,
@@ -204,10 +180,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeRuntime",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeRuntimeOutput"),
             **kwargs,
@@ -220,10 +194,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ConfigureAppearance",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ConfigureAppearanceOutput"),
             **kwargs,
@@ -236,10 +208,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeAppearance",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeAppearanceOutput"),
             **kwargs,
@@ -252,10 +222,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ConfigureScoring",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ConfigureScoringOutput"),
             **kwargs,
@@ -268,10 +236,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeScoring",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeScoringOutput"),
             **kwargs,
@@ -284,10 +250,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ImportProblem",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ImportProblemOutput"),
             **kwargs,
@@ -301,10 +265,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/SyncProblem",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.SyncProblemOutput"),
             **kwargs,
@@ -318,10 +280,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/UpdateProblem",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateProblemOutput"),
             **kwargs,
@@ -334,10 +294,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListProblems",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListProblemsOutput"),
             **kwargs,
@@ -351,10 +309,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeProblem",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeProblemOutput"),
             **kwargs,
@@ -369,10 +325,8 @@ class JudgeClient:
         request.template_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeCodeTemplate",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeCodeTemplateOutput"),
             **kwargs,
@@ -386,10 +340,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/LookupCodeTemplate",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.LookupCodeTemplateOutput"),
             **kwargs,
@@ -403,10 +355,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListStatements",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListStatementsOutput"),
             **kwargs,
@@ -420,10 +370,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListAttachments",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListAttachmentsOutput"),
             **kwargs,
@@ -437,10 +385,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListExamples",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListExamplesOutput"),
             **kwargs,
@@ -454,10 +400,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DeleteProblem",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteProblemOutput"),
             **kwargs,
@@ -471,10 +415,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/RetestProblem",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.RetestProblemOutput"),
             **kwargs,
@@ -487,10 +429,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/AddParticipant",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.AddParticipantOutput"),
             **kwargs,
@@ -504,10 +444,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/EnableParticipant",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.EnableParticipantOutput"),
             **kwargs,
@@ -521,10 +459,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DisableParticipant",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DisableParticipantOutput"),
             **kwargs,
@@ -538,10 +474,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/UpdateParticipant",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateParticipantOutput"),
             **kwargs,
@@ -555,10 +489,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/RemoveParticipant",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.RemoveParticipantOutput"),
             **kwargs,
@@ -571,10 +503,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListParticipants",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListParticipantsOutput"),
             **kwargs,
@@ -588,10 +518,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeParticipant",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeParticipantOutput"),
             **kwargs,
@@ -604,10 +532,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/IntrospectParticipant",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.IntrospectParticipantOutput"),
             **kwargs,
@@ -620,10 +546,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/JoinContest",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.JoinContestOutput"),
             **kwargs,
@@ -636,10 +560,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/StartContest",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.StartContestOutput"),
             **kwargs,
@@ -652,10 +574,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/VerifyPasscode",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.VerifyPasscodeOutput"),
             **kwargs,
@@ -668,10 +588,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/EnterPasscode",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.EnterPasscodeOutput"),
             **kwargs,
@@ -685,10 +603,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ResetPasscode",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ResetPasscodeOutput"),
             **kwargs,
@@ -702,10 +618,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/RemovePasscode",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.RemovePasscodeOutput"),
             **kwargs,
@@ -719,10 +633,8 @@ class JudgeClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/CreateSubmission",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.CreateSubmissionOutput"),
             **kwargs,
@@ -735,10 +647,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListSubmissions",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListSubmissionsOutput"),
             **kwargs,
@@ -752,10 +662,8 @@ class JudgeClient:
         request.submission_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeSubmission",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeSubmissionOutput"),
             **kwargs,
@@ -769,10 +677,8 @@ class JudgeClient:
         request.submission_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/RetestSubmission",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.RetestSubmissionOutput"),
             **kwargs,
@@ -785,10 +691,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/CreateTicket",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.CreateTicketOutput"),
             **kwargs,
@@ -801,10 +705,8 @@ class JudgeClient:
         request.ticket_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/CloseTicket",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.CloseTicketOutput"),
             **kwargs,
@@ -817,10 +719,8 @@ class JudgeClient:
         request.ticket_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/OpenTicket",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.OpenTicketOutput"),
             **kwargs,
@@ -833,10 +733,8 @@ class JudgeClient:
         request.ticket_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ReadTicket",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ReadTicketOutput"),
             **kwargs,
@@ -849,10 +747,8 @@ class JudgeClient:
         request.ticket_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DeleteTicket",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteTicketOutput"),
             **kwargs,
@@ -865,10 +761,8 @@ class JudgeClient:
         request.ticket_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeTicket",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeTicketOutput"),
             **kwargs,
@@ -878,10 +772,8 @@ class JudgeClient:
         path = "/tickets"
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListTickets",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListTicketsOutput"),
             **kwargs,
@@ -894,10 +786,8 @@ class JudgeClient:
         request.ticket_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ReplyTicket",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ReplyTicketOutput"),
             **kwargs,
@@ -910,10 +800,8 @@ class JudgeClient:
         request.ticket_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListReplies",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListRepliesOutput"),
             **kwargs,
@@ -927,10 +815,8 @@ class JudgeClient:
         request.reply_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DeleteReply",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteReplyOutput"),
             **kwargs,
@@ -944,10 +830,8 @@ class JudgeClient:
         request.reply_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/UpdateReply",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateReplyOutput"),
             **kwargs,
@@ -960,10 +844,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/CreateAnnouncement",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.CreateAnnouncementOutput"),
             **kwargs,
@@ -977,10 +859,8 @@ class JudgeClient:
         request.announcement_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/UpdateAnnouncement",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateAnnouncementOutput"),
             **kwargs,
@@ -994,10 +874,8 @@ class JudgeClient:
         request.announcement_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DeleteAnnouncement",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteAnnouncementOutput"),
             **kwargs,
@@ -1011,10 +889,8 @@ class JudgeClient:
         request.announcement_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ReadAnnouncement",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ReadAnnouncementOutput"),
             **kwargs,
@@ -1028,10 +904,8 @@ class JudgeClient:
         request.announcement_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeAnnouncement",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeAnnouncementOutput"),
             **kwargs,
@@ -1045,10 +919,8 @@ class JudgeClient:
         request.announcement_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeAnnouncementStatus",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeAnnouncementStatusOutput"),
             **kwargs,
@@ -1061,10 +933,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListAnnouncements",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListAnnouncementsOutput"),
             **kwargs,
@@ -1077,10 +947,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/IntrospectScore",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.IntrospectScoreOutput"),
             **kwargs,
@@ -1094,10 +962,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/DescribeScore",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeScoreOutput"),
             **kwargs,
@@ -1111,10 +977,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ImportScore",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ImportScoreOutput"),
             **kwargs,
@@ -1128,10 +992,8 @@ class JudgeClient:
         request.participant_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ExportScore",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ExportScoreOutput"),
             **kwargs,
@@ -1144,10 +1006,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListResult",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListResultOutput"),
             **kwargs,
@@ -1160,10 +1020,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/RebuildScore",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.RebuildScoreOutput"),
             **kwargs,
@@ -1173,10 +1031,8 @@ class JudgeClient:
         path = "/__judge/entitlements"
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListEntitlements",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListEntitlementsOutput"),
             **kwargs,
@@ -1189,10 +1045,8 @@ class JudgeClient:
         request.contest_id = ""
 
         return self.transport.request(
-            name="eolymp.judge.Judge/ListActivities",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListActivitiesOutput"),
             **kwargs,

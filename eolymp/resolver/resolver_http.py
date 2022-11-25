@@ -21,10 +21,8 @@ class ResolverClient:
         request.name = ""
 
         return self.transport.request(
-            name="eolymp.resolver.Resolver/ResolveName",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.resolver.ResolveNameOutput"),
             **kwargs,

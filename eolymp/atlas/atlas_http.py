@@ -18,10 +18,8 @@ class AtlasClient:
         path = "/problems"
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/CreateProblem",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateProblemOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DeleteProblem",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteProblemOutput"),
             **kwargs,
@@ -47,10 +43,8 @@ class AtlasClient:
         path = "/problems"
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListProblems",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListProblemsOutput"),
             **kwargs,
@@ -63,10 +57,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeProblem",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeProblemOutput"),
             **kwargs,
@@ -79,10 +71,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateVisibility",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateVisibilityOutput"),
             **kwargs,
@@ -95,10 +85,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdatePrivacy",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdatePrivacyOutput"),
             **kwargs,
@@ -111,10 +99,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListExamples",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListExamplesOutput"),
             **kwargs,
@@ -127,10 +113,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateVerifier",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateVerifierOutput"),
             **kwargs,
@@ -143,10 +127,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeVerifier",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeVerifierOutput"),
             **kwargs,
@@ -159,10 +141,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateInteractor",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateInteractorOutput"),
             **kwargs,
@@ -175,10 +155,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeInteractor",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeInteractorOutput"),
             **kwargs,
@@ -191,10 +169,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/CreateStatement",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateStatementOutput"),
             **kwargs,
@@ -208,10 +184,8 @@ class AtlasClient:
         request.statement_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateStatement",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateStatementOutput"),
             **kwargs,
@@ -225,10 +199,8 @@ class AtlasClient:
         request.statement_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DeleteStatement",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteStatementOutput"),
             **kwargs,
@@ -241,10 +213,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListStatements",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListStatementsOutput"),
             **kwargs,
@@ -258,10 +228,8 @@ class AtlasClient:
         request.statement_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeStatement",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeStatementOutput"),
             **kwargs,
@@ -274,10 +242,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/CreateTestset",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateTestsetOutput"),
             **kwargs,
@@ -291,10 +257,8 @@ class AtlasClient:
         request.testset_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateTestset",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateTestsetOutput"),
             **kwargs,
@@ -308,10 +272,8 @@ class AtlasClient:
         request.testset_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DeleteTestset",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteTestsetOutput"),
             **kwargs,
@@ -324,10 +286,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListTestsets",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListTestsetsOutput"),
             **kwargs,
@@ -341,10 +301,8 @@ class AtlasClient:
         request.testset_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeTestset",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeTestsetOutput"),
             **kwargs,
@@ -358,10 +316,8 @@ class AtlasClient:
         request.testset_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/CreateTest",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateTestOutput"),
             **kwargs,
@@ -376,10 +332,8 @@ class AtlasClient:
         request.test_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateTest",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateTestOutput"),
             **kwargs,
@@ -394,10 +348,8 @@ class AtlasClient:
         request.test_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DeleteTest",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteTestOutput"),
             **kwargs,
@@ -411,10 +363,8 @@ class AtlasClient:
         request.testset_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListTests",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListTestsOutput"),
             **kwargs,
@@ -429,10 +379,8 @@ class AtlasClient:
         request.test_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeTest",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeTestOutput"),
             **kwargs,
@@ -445,10 +393,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/GrantPermission",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.GrantPermissionOutput"),
             **kwargs,
@@ -462,10 +408,8 @@ class AtlasClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/RevokePermission",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.RevokePermissionOutput"),
             **kwargs,
@@ -478,10 +422,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListPermissions",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListPermissionsOutput"),
             **kwargs,
@@ -494,10 +436,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/CreateCodeTemplate",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateCodeTemplateOutput"),
             **kwargs,
@@ -511,10 +451,8 @@ class AtlasClient:
         request.template_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateCodeTemplate",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateCodeTemplateOutput"),
             **kwargs,
@@ -528,10 +466,8 @@ class AtlasClient:
         request.template_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DeleteCodeTemplate",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteCodeTemplateOutput"),
             **kwargs,
@@ -544,10 +480,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListCodeTemplates",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListCodeTemplatesOutput"),
             **kwargs,
@@ -561,10 +495,8 @@ class AtlasClient:
         request.template_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeCodeTemplate",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeCodeTemplateOutput"),
             **kwargs,
@@ -577,10 +509,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/CreateAttachment",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateAttachmentOutput"),
             **kwargs,
@@ -594,10 +524,8 @@ class AtlasClient:
         request.attachment_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateAttachment",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateAttachmentOutput"),
             **kwargs,
@@ -611,10 +539,8 @@ class AtlasClient:
         request.attachment_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DeleteAttachment",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteAttachmentOutput"),
             **kwargs,
@@ -627,10 +553,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListAttachments",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListAttachmentsOutput"),
             **kwargs,
@@ -644,10 +568,8 @@ class AtlasClient:
         request.attachment_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeAttachment",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeAttachmentOutput"),
             **kwargs,
@@ -661,10 +583,8 @@ class AtlasClient:
         request.change_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeChange",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeChangeOutput"),
             **kwargs,
@@ -677,10 +597,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListChanges",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListChangesOutput"),
             **kwargs,
@@ -693,10 +611,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListProblemTop",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListProblemTopOutput"),
             **kwargs,
@@ -709,10 +625,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeProblemGrading",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeProblemGradingOutput"),
             **kwargs,
@@ -725,10 +639,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/CreateSolution",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateSolutionOutput"),
             **kwargs,
@@ -742,10 +654,8 @@ class AtlasClient:
         request.solution_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateSolution",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateSolutionOutput"),
             **kwargs,
@@ -759,10 +669,8 @@ class AtlasClient:
         request.solution_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DeleteSolution",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteSolutionOutput"),
             **kwargs,
@@ -775,10 +683,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListSolutions",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListSolutionsOutput"),
             **kwargs,
@@ -792,10 +698,8 @@ class AtlasClient:
         request.solution_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeSolution",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeSolutionOutput"),
             **kwargs,
@@ -809,10 +713,8 @@ class AtlasClient:
         request.solution_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/PublishSolution",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.PublishSolutionOutput"),
             **kwargs,
@@ -826,10 +728,8 @@ class AtlasClient:
         request.solution_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UnpublishSolution",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UnpublishSolutionOutput"),
             **kwargs,
@@ -843,10 +743,8 @@ class AtlasClient:
         request.solution_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ApproveSolution",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ApproveSolutionOutput"),
             **kwargs,
@@ -860,10 +758,8 @@ class AtlasClient:
         request.solution_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/RefuseSolution",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.RefuseSolutionOutput"),
             **kwargs,
@@ -873,10 +769,8 @@ class AtlasClient:
         path = "/categories"
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/CreateCategory",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateCategoryOutput"),
             **kwargs,
@@ -889,10 +783,8 @@ class AtlasClient:
         request.category_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UpdateCategory",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateCategoryOutput"),
             **kwargs,
@@ -905,10 +797,8 @@ class AtlasClient:
         request.category_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DeleteCategory",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteCategoryOutput"),
             **kwargs,
@@ -918,10 +808,8 @@ class AtlasClient:
         path = "/categories"
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/ListCategories",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListCategoriesOutput"),
             **kwargs,
@@ -934,10 +822,8 @@ class AtlasClient:
         request.category_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeCategory",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeCategoryOutput"),
             **kwargs,
@@ -951,10 +837,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/AssignCategory",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.AssignCategoryOutput"),
             **kwargs,
@@ -968,10 +852,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/UnassignCategory",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UnassignCategoryOutput"),
             **kwargs,
@@ -984,10 +866,8 @@ class AtlasClient:
         request.problem_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/CreateSubmission",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateSubmissionOutput"),
             **kwargs,
@@ -1001,10 +881,8 @@ class AtlasClient:
         request.submission_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeSubmission",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeSubmissionOutput"),
             **kwargs,
@@ -1018,10 +896,8 @@ class AtlasClient:
         request.submission_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/RetestSubmission",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.RetestSubmissionOutput"),
             **kwargs,
@@ -1035,10 +911,8 @@ class AtlasClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.atlas.Atlas/DescribeScore",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeScoreOutput"),
             **kwargs,

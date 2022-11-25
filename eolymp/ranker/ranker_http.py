@@ -18,10 +18,8 @@ class RankerClient:
         path = "/scoreboards"
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/CreateScoreboard",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.CreateScoreboardOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class RankerClient:
         request.scoreboard_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/UpdateScoreboard",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.UpdateScoreboardOutput"),
             **kwargs,
@@ -50,10 +46,8 @@ class RankerClient:
         request.scoreboard_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/RebuildScoreboard",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.RebuildScoreboardOutput"),
             **kwargs,
@@ -66,10 +60,8 @@ class RankerClient:
         request.scoreboard_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/DeleteScoreboard",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.DeleteScoreboardOutput"),
             **kwargs,
@@ -82,10 +74,8 @@ class RankerClient:
         request.scoreboard_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/DescribeScoreboard",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.DescribeScoreboardOutput"),
             **kwargs,
@@ -95,10 +85,8 @@ class RankerClient:
         path = "/scoreboards"
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/ListScoreboards",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.ListScoreboardsOutput"),
             **kwargs,
@@ -112,10 +100,8 @@ class RankerClient:
         request.member_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/DescribeScoreboardRow",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.DescribeScoreboardRowOutput"),
             **kwargs,
@@ -128,10 +114,8 @@ class RankerClient:
         request.scoreboard_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/ListScoreboardRows",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.ListScoreboardRowsOutput"),
             **kwargs,
@@ -144,10 +128,8 @@ class RankerClient:
         request.scoreboard_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/AddScoreboardColumn",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.AddScoreboardColumnOutput"),
             **kwargs,
@@ -161,10 +143,8 @@ class RankerClient:
         request.column_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/UpdateScoreboardColumn",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.UpdateScoreboardColumnOutput"),
             **kwargs,
@@ -178,10 +158,8 @@ class RankerClient:
         request.column_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/DeleteScoreboardColumn",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.DeleteScoreboardColumnOutput"),
             **kwargs,
@@ -195,10 +173,8 @@ class RankerClient:
         request.column_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/DescribeScoreboardColumn",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.DescribeScoreboardColumnOutput"),
             **kwargs,
@@ -211,10 +187,8 @@ class RankerClient:
         request.scoreboard_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/ListScoreboardColumns",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.ListScoreboardColumnsOutput"),
             **kwargs,
@@ -227,10 +201,8 @@ class RankerClient:
         request.scoreboard_id = ""
 
         return self.transport.request(
-            name="eolymp.ranker.Ranker/ListActivities",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.ranker.ListActivitiesOutput"),
             **kwargs,

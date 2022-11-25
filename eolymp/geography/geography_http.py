@@ -21,10 +21,8 @@ class GeographyClient:
         request.country_id = ""
 
         return self.transport.request(
-            name="eolymp.geography.Geography/DescribeCountry",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.geography.DescribeCountryOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class GeographyClient:
         path = "/geography/countries"
 
         return self.transport.request(
-            name="eolymp.geography.Geography/ListCountries",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.geography.ListCountriesOutput"),
             **kwargs,
@@ -50,10 +46,8 @@ class GeographyClient:
         request.region_id = ""
 
         return self.transport.request(
-            name="eolymp.geography.Geography/DescribeRegion",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.geography.DescribeRegionOutput"),
             **kwargs,
@@ -66,10 +60,8 @@ class GeographyClient:
         request.country_id = ""
 
         return self.transport.request(
-            name="eolymp.geography.Geography/ListRegions",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.geography.ListRegionsOutput"),
             **kwargs,

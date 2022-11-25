@@ -21,10 +21,8 @@ class ExecutorClient:
         request.language_id = ""
 
         return self.transport.request(
-            name="eolymp.executor.Executor/DescribeLanguage",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.executor.DescribeLanguageOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class ExecutorClient:
         path = "/exec/languages"
 
         return self.transport.request(
-            name="eolymp.executor.Executor/ListLanguages",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.executor.ListLanguagesOutput"),
             **kwargs,
@@ -50,10 +46,8 @@ class ExecutorClient:
         request.runtime_id = ""
 
         return self.transport.request(
-            name="eolymp.executor.Executor/DescribeRuntime",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.executor.DescribeRuntimeOutput"),
             **kwargs,
@@ -63,10 +57,8 @@ class ExecutorClient:
         path = "/exec/runtime"
 
         return self.transport.request(
-            name="eolymp.executor.Executor/ListRuntime",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.executor.ListRuntimeOutput"),
             **kwargs,
@@ -79,10 +71,8 @@ class ExecutorClient:
         request.runtime_id = ""
 
         return self.transport.request(
-            name="eolymp.executor.Executor/DescribeCodeTemplate",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.executor.DescribeCodeTemplateOutput"),
             **kwargs,

@@ -21,10 +21,8 @@ class HelpdeskClient:
         request.document_id = ""
 
         return self.transport.request(
-            name="eolymp.helpdesk.Helpdesk/DescribeDocument",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.DescribeDocumentOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class HelpdeskClient:
         path = "/helpdesk/documents"
 
         return self.transport.request(
-            name="eolymp.helpdesk.Helpdesk/ListDocuments",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.ListDocumentsOutput"),
             **kwargs,
@@ -47,10 +43,8 @@ class HelpdeskClient:
         path = "/helpdesk/documents"
 
         return self.transport.request(
-            name="eolymp.helpdesk.Helpdesk/CreateDocument",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.CreateDocumentOutput"),
             **kwargs,
@@ -63,10 +57,8 @@ class HelpdeskClient:
         request.document_id = ""
 
         return self.transport.request(
-            name="eolymp.helpdesk.Helpdesk/UpdateDocument",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.UpdateDocumentOutput"),
             **kwargs,
@@ -79,10 +71,8 @@ class HelpdeskClient:
         request.document_id = ""
 
         return self.transport.request(
-            name="eolymp.helpdesk.Helpdesk/DeleteDocument",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.DeleteDocumentOutput"),
             **kwargs,
@@ -95,10 +85,8 @@ class HelpdeskClient:
         request.path = ""
 
         return self.transport.request(
-            name="eolymp.helpdesk.Helpdesk/DescribePath",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.DescribePathOutput"),
             **kwargs,
@@ -108,10 +96,8 @@ class HelpdeskClient:
         path = "/helpdesk/paths"
 
         return self.transport.request(
-            name="eolymp.helpdesk.Helpdesk/ListPaths",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.ListPathsOutput"),
             **kwargs,
@@ -124,10 +110,8 @@ class HelpdeskClient:
         request.path = ""
 
         return self.transport.request(
-            name="eolymp.helpdesk.Helpdesk/ListParents",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.ListParentsOutput"),
             **kwargs,

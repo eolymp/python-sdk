@@ -21,10 +21,8 @@ class UniverseClient:
         request.key = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/LookupSpace",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.LookupSpaceOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class UniverseClient:
         path = "/spaces"
 
         return self.transport.request(
-            name="eolymp.universe.Universe/CreateSpace",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.CreateSpaceOutput"),
             **kwargs,
@@ -50,10 +46,8 @@ class UniverseClient:
         request.space_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/UpdateSpace",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.UpdateSpaceOutput"),
             **kwargs,
@@ -66,10 +60,8 @@ class UniverseClient:
         request.space_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/DeleteSpace",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.DeleteSpaceOutput"),
             **kwargs,
@@ -82,10 +74,8 @@ class UniverseClient:
         request.space_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/DescribeSpace",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeSpaceOutput"),
             **kwargs,
@@ -98,10 +88,8 @@ class UniverseClient:
         request.space_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/DescribeQuota",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeQuotaOutput"),
             **kwargs,
@@ -111,10 +99,8 @@ class UniverseClient:
         path = "/spaces"
 
         return self.transport.request(
-            name="eolymp.universe.Universe/ListSpaces",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.ListSpacesOutput"),
             **kwargs,
@@ -128,10 +114,8 @@ class UniverseClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/GrantPermission",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.GrantPermissionOutput"),
             **kwargs,
@@ -145,10 +129,8 @@ class UniverseClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/RevokePermission",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.RevokePermissionOutput"),
             **kwargs,
@@ -162,10 +144,8 @@ class UniverseClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/DescribePermission",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribePermissionOutput"),
             **kwargs,
@@ -178,10 +158,8 @@ class UniverseClient:
         request.space_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/IntrospectPermission",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.IntrospectPermissionOutput"),
             **kwargs,
@@ -194,10 +172,8 @@ class UniverseClient:
         request.space_id = ""
 
         return self.transport.request(
-            name="eolymp.universe.Universe/ListPermissions",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.ListPermissionsOutput"),
             **kwargs,

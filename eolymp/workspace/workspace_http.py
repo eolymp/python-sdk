@@ -21,10 +21,8 @@ class WorkspaceClient:
         request.project_id = ""
 
         return self.transport.request(
-            name="eolymp.workspace.Workspace/DescribeProject",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.workspace.DescribeProjectOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class WorkspaceClient:
         path = "/workspace/projects"
 
         return self.transport.request(
-            name="eolymp.workspace.Workspace/ListProjects",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.workspace.ListProjectsOutput"),
             **kwargs,
@@ -47,10 +43,8 @@ class WorkspaceClient:
         path = "/workspace/projects"
 
         return self.transport.request(
-            name="eolymp.workspace.Workspace/CreateProject",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.workspace.CreateProjectOutput"),
             **kwargs,
@@ -63,10 +57,8 @@ class WorkspaceClient:
         request.project_id = ""
 
         return self.transport.request(
-            name="eolymp.workspace.Workspace/UpdateProject",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.workspace.UpdateProjectOutput"),
             **kwargs,
@@ -79,10 +71,8 @@ class WorkspaceClient:
         request.project_id = ""
 
         return self.transport.request(
-            name="eolymp.workspace.Workspace/DeleteProject",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.workspace.DeleteProjectOutput"),
             **kwargs,
@@ -95,10 +85,8 @@ class WorkspaceClient:
         request.project_id = ""
 
         return self.transport.request(
-            name="eolymp.workspace.Workspace/ListFiles",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.workspace.ListFilesOutput"),
             **kwargs,
@@ -112,10 +100,8 @@ class WorkspaceClient:
         request.name = ""
 
         return self.transport.request(
-            name="eolymp.workspace.Workspace/DescribeFile",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.workspace.DescribeFileOutput"),
             **kwargs,
@@ -128,10 +114,8 @@ class WorkspaceClient:
         request.project_id = ""
 
         return self.transport.request(
-            name="eolymp.workspace.Workspace/UploadFile",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.workspace.UploadFileOutput"),
             **kwargs,
@@ -145,10 +129,8 @@ class WorkspaceClient:
         request.name = ""
 
         return self.transport.request(
-            name="eolymp.workspace.Workspace/RemoveFile",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.workspace.RemoveFileOutput"),
             **kwargs,

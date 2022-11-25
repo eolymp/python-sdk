@@ -18,10 +18,8 @@ class CommunityClient:
         path = "/members/_self"
 
         return self.transport.request(
-            name="eolymp.community.Community/JoinSpace",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.JoinSpaceOutput"),
             **kwargs,
@@ -31,10 +29,8 @@ class CommunityClient:
         path = "/members/_self"
 
         return self.transport.request(
-            name="eolymp.community.Community/LeaveSpace",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.LeaveSpaceOutput"),
             **kwargs,
@@ -44,10 +40,8 @@ class CommunityClient:
         path = "/members/_self/attributes"
 
         return self.transport.request(
-            name="eolymp.community.Community/RegisterMember",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.RegisterMemberOutput"),
             **kwargs,
@@ -57,10 +51,8 @@ class CommunityClient:
         path = "/members/_self"
 
         return self.transport.request(
-            name="eolymp.community.Community/IntrospectMember",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.IntrospectMemberOutput"),
             **kwargs,
@@ -70,10 +62,8 @@ class CommunityClient:
         path = "/members"
 
         return self.transport.request(
-            name="eolymp.community.Community/AddMember",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.AddMemberOutput"),
             **kwargs,
@@ -86,10 +76,8 @@ class CommunityClient:
         request.member_id = ""
 
         return self.transport.request(
-            name="eolymp.community.Community/UpdateMember",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateMemberOutput"),
             **kwargs,
@@ -102,10 +90,8 @@ class CommunityClient:
         request.member_id = ""
 
         return self.transport.request(
-            name="eolymp.community.Community/RemoveMember",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.RemoveMemberOutput"),
             **kwargs,
@@ -118,10 +104,8 @@ class CommunityClient:
         request.member_id = ""
 
         return self.transport.request(
-            name="eolymp.community.Community/DescribeMember",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeMemberOutput"),
             **kwargs,
@@ -131,10 +115,8 @@ class CommunityClient:
         path = "/members"
 
         return self.transport.request(
-            name="eolymp.community.Community/ListMembers",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.ListMembersOutput"),
             **kwargs,
@@ -147,10 +129,8 @@ class CommunityClient:
         request.member_id = ""
 
         return self.transport.request(
-            name="eolymp.community.Community/AddMemberIdentity",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.AddMemberIdentityOutput"),
             **kwargs,
@@ -164,10 +144,8 @@ class CommunityClient:
         request.identity_id = ""
 
         return self.transport.request(
-            name="eolymp.community.Community/UpdateMemberIdentity",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateMemberIdentityOutput"),
             **kwargs,
@@ -181,10 +159,8 @@ class CommunityClient:
         request.identity_id = ""
 
         return self.transport.request(
-            name="eolymp.community.Community/RemoveMemberIdentity",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.RemoveMemberIdentityOutput"),
             **kwargs,
@@ -194,10 +170,8 @@ class CommunityClient:
         path = "/attributes"
 
         return self.transport.request(
-            name="eolymp.community.Community/AddAttribute",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.AddAttributeOutput"),
             **kwargs,
@@ -210,10 +184,8 @@ class CommunityClient:
         request.attribute_key = ""
 
         return self.transport.request(
-            name="eolymp.community.Community/UpdateAttribute",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateAttributeOutput"),
             **kwargs,
@@ -226,10 +198,8 @@ class CommunityClient:
         request.attribute_key = ""
 
         return self.transport.request(
-            name="eolymp.community.Community/RemoveAttribute",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.RemoveAttributeOutput"),
             **kwargs,
@@ -242,10 +212,8 @@ class CommunityClient:
         request.attribute_key = ""
 
         return self.transport.request(
-            name="eolymp.community.Community/DescribeAttribute",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeAttributeOutput"),
             **kwargs,
@@ -255,10 +223,8 @@ class CommunityClient:
         path = "/attributes"
 
         return self.transport.request(
-            name="eolymp.community.Community/ListAttributes",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.ListAttributesOutput"),
             **kwargs,
@@ -268,10 +234,8 @@ class CommunityClient:
         path = "/idp"
 
         return self.transport.request(
-            name="eolymp.community.Community/DescribeIdentityProvider",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeIdentityProviderOutput"),
             **kwargs,
@@ -281,10 +245,8 @@ class CommunityClient:
         path = "/idp"
 
         return self.transport.request(
-            name="eolymp.community.Community/ConfigureIdentityProvider",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.ConfigureIdentityProviderOutput"),
             **kwargs,

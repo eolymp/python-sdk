@@ -18,10 +18,8 @@ class CognitoClient:
         path = "/self/authorize"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/CreateAuthorization",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.CreateAuthorizationOutput"),
             **kwargs,
@@ -31,10 +29,8 @@ class CognitoClient:
         path = "/self/signout"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/Signout",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.SignoutOutput"),
             **kwargs,
@@ -44,10 +40,8 @@ class CognitoClient:
         path = "/access-keys"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/CreateAccessKey",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.CreateAccessKeyOutput"),
             **kwargs,
@@ -60,10 +54,8 @@ class CognitoClient:
         request.key_id = ""
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/DeleteAccessKey",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.DeleteAccessKeyOutput"),
             **kwargs,
@@ -73,10 +65,8 @@ class CognitoClient:
         path = "/access-keys"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/ListAccessKeys",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListAccessKeysOutput"),
             **kwargs,
@@ -86,10 +76,8 @@ class CognitoClient:
         path = "/users"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/CreateUser",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.CreateUserOutput"),
             **kwargs,
@@ -102,10 +90,8 @@ class CognitoClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/VerifyEmail",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.VerifyEmailOutput"),
             **kwargs,
@@ -115,10 +101,8 @@ class CognitoClient:
         path = "/self/email"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/UpdateEmail",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdateEmailOutput"),
             **kwargs,
@@ -128,10 +112,8 @@ class CognitoClient:
         path = "/self"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/UpdateProfile",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdateProfileOutput"),
             **kwargs,
@@ -141,10 +123,8 @@ class CognitoClient:
         path = "/self/picture"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/UpdatePicture",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdatePictureOutput"),
             **kwargs,
@@ -154,10 +134,8 @@ class CognitoClient:
         path = "/self/password"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/UpdatePassword",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdatePasswordOutput"),
             **kwargs,
@@ -167,10 +145,8 @@ class CognitoClient:
         path = "/self/recovery"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/StartRecovery",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.StartRecoveryOutput"),
             **kwargs,
@@ -183,10 +159,8 @@ class CognitoClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/CompleteRecovery",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.CompleteRecoverOutput"),
             **kwargs,
@@ -196,10 +170,8 @@ class CognitoClient:
         path = "/self"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/IntrospectUser",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.IntrospectUserOutput"),
             **kwargs,
@@ -212,10 +184,8 @@ class CognitoClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/DescribeUser",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.DescribeUserOutput"),
             **kwargs,
@@ -225,10 +195,8 @@ class CognitoClient:
         path = "/users"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/ListUsers",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListUsersOutput"),
             **kwargs,
@@ -238,10 +206,8 @@ class CognitoClient:
         path = "/self/quota"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/IntrospectQuota",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.IntrospectQuotaOutput"),
             **kwargs,
@@ -251,10 +217,8 @@ class CognitoClient:
         path = "/self/roles"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/IntrospectRoles",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.IntrospectRolesOutput"),
             **kwargs,
@@ -267,10 +231,8 @@ class CognitoClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/ListRoles",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListRolesOutput"),
             **kwargs,
@@ -283,10 +245,8 @@ class CognitoClient:
         request.user_id = ""
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/UpdateRoles",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdateRolesOutput"),
             **kwargs,
@@ -296,10 +256,8 @@ class CognitoClient:
         path = "/__cognito/entitlements"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/ListEntitlements",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListEntitlementsOutput"),
             **kwargs,
@@ -309,10 +267,8 @@ class CognitoClient:
         path = "/self"
 
         return self.transport.request(
-            name="eolymp.cognito.Cognito/SelfDestruct",
             method="DELETE",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.SelfDestructOutput"),
             **kwargs,

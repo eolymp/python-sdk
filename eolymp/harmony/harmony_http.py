@@ -18,10 +18,8 @@ class HarmonyClient:
         path = "/harmony/agreements"
 
         return self.transport.request(
-            name="eolymp.harmony.Harmony/ListAgreements",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.harmony.ListAgreementsOutput"),
             **kwargs,
@@ -34,10 +32,8 @@ class HarmonyClient:
         request.agreement_id = ""
 
         return self.transport.request(
-            name="eolymp.harmony.Harmony/GetConsent",
             method="GET",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.harmony.GetConsentOutput"),
             **kwargs,
@@ -50,10 +46,8 @@ class HarmonyClient:
         request.agreement_id = ""
 
         return self.transport.request(
-            name="eolymp.harmony.Harmony/SetConsent",
             method="PUT",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.harmony.SetConsentOutput"),
             **kwargs,
@@ -66,10 +60,8 @@ class HarmonyClient:
         request.shortcut_id = ""
 
         return self.transport.request(
-            name="eolymp.harmony.Harmony/FollowShortcut",
             method="POST",
             url=self.url+path,
-            path=path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.harmony.FollowShortcutOutput"),
             **kwargs,
