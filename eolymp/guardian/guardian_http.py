@@ -26,10 +26,10 @@ class GuardianClient:
         )
 
     def DescribePolicy(self, request, **kwargs):
-        path = "/policies/"+urllib.parse.quote(request.name)
+        path = "/policies/"+urllib.parse.quote(request.id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.name = ""
+        request.id = ""
 
         return self.transport.request(
             method="GET",
@@ -40,10 +40,10 @@ class GuardianClient:
         )
 
     def DefinePolicy(self, request, **kwargs):
-        path = "/policies/"+urllib.parse.quote(request.name)
+        path = "/policies/"+urllib.parse.quote(request.id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.name = ""
+        request.id = ""
 
         return self.transport.request(
             method="PUT",
@@ -54,10 +54,10 @@ class GuardianClient:
         )
 
     def RemovePolicy(self, request, **kwargs):
-        path = "/policies/"+urllib.parse.quote(request.name)
+        path = "/policies/"+urllib.parse.quote(request.id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.name = ""
+        request.id = ""
 
         return self.transport.request(
             method="DELETE",

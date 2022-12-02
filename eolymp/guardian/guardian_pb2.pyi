@@ -9,22 +9,22 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DefinePolicyInput(_message.Message):
-    __slots__ = ["name", "policy"]
-    NAME_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["id", "policy"]
+    ID_FIELD_NUMBER: _ClassVar[int]
     POLICY_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    id: str
     policy: _policy_pb2.Policy
-    def __init__(self, name: _Optional[str] = ..., policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
 
 class DefinePolicyOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class DescribePolicyInput(_message.Message):
-    __slots__ = ["name"]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    def __init__(self, name: _Optional[str] = ...) -> None: ...
+    __slots__ = ["id"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    def __init__(self, id: _Optional[str] = ...) -> None: ...
 
 class DescribePolicyOutput(_message.Message):
     __slots__ = ["policy"]
@@ -45,10 +45,10 @@ class ListPoliciesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_policy_pb2.Policy, _Mapping]]] = ...) -> None: ...
 
 class RemovePolicyInput(_message.Message):
-    __slots__ = ["name"]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    def __init__(self, name: _Optional[str] = ...) -> None: ...
+    __slots__ = ["id"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    def __init__(self, id: _Optional[str] = ...) -> None: ...
 
 class RemovePolicyOutput(_message.Message):
     __slots__ = []
