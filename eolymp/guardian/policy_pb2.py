@@ -13,14 +13,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/guardian/policy.proto\x12\x0f\x65olymp.universe\"F\n\x06Policy\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\nstatements\x18\x02 \x03(\x0b\x32\x1a.eolymp.universe.Statement\"\xa8\x01\n\tStatement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\x06\x65\x66\x66\x65\x63t\x18\x02 \x01(\x0e\x32!.eolymp.universe.Statement.Effect\x12\x11\n\tprincipal\x18\x03 \x01(\t\x12\x10\n\x08resource\x18\n \x01(\t\x12\x0e\n\x06\x61\x63tion\x18\x14 \x01(\t\"\'\n\x06\x45\x66\x66\x65\x63t\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04\x44\x45NY\x10\x01\x12\t\n\x05\x41LLOW\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/guardian/policy.proto\x12\x0f\x65olymp.guardian\"F\n\x06Policy\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\nstatements\x18\x02 \x03(\x0b\x32\x1a.eolymp.guardian.Statement\"\xa8\x01\n\tStatement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\x06\x65\x66\x66\x65\x63t\x18\x02 \x01(\x0e\x32!.eolymp.guardian.Statement.Effect\x12\x11\n\tprincipal\x18\x03 \x01(\t\x12\x10\n\x08resource\x18\n \x01(\t\x12\x0e\n\x06\x61\x63tion\x18\x14 \x01(\t\"\'\n\x06\x45\x66\x66\x65\x63t\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04\x44\x45NY\x10\x01\x12\t\n\x05\x41LLOW\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/guardian;guardianb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.guardian.policy_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/universe;universe'
+  DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/guardian;guardian'
   _POLICY._serialized_start=49
   _POLICY._serialized_end=119
   _STATEMENT._serialized_start=122

@@ -21,7 +21,7 @@ class GuardianClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.ListPoliciesOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.guardian.ListPoliciesOutput"),
             **kwargs,
         )
 
@@ -35,7 +35,7 @@ class GuardianClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribePolicyOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.guardian.DescribePolicyOutput"),
             **kwargs,
         )
 
@@ -49,7 +49,7 @@ class GuardianClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.DefinePolicyOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.guardian.DefinePolicyOutput"),
             **kwargs,
         )
 
@@ -63,7 +63,7 @@ class GuardianClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.RemovePolicyOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.guardian.RemovePolicyOutput"),
             **kwargs,
         )
 
