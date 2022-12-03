@@ -54,8 +54,12 @@ class EvaluateOutput(_message.Message):
     def __init__(self, actions: _Optional[_Mapping[str, _policy_pb2.Statement.Effect]] = ...) -> None: ...
 
 class ListPoliciesInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["offset", "size"]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    offset: int
+    size: int
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class ListPoliciesOutput(_message.Message):
     __slots__ = ["items", "total"]
