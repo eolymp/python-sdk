@@ -10,7 +10,9 @@ class Permission(_message.Message):
     class Role(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ADMIN: Permission.Role
+    CUSTOM: Permission.Role
     ID_FIELD_NUMBER: _ClassVar[int]
+    NONE: Permission.Role
     OWNER: Permission.Role
     ROLE_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
