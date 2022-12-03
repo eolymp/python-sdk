@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.guardian import policy_pb2 as eolymp_dot_guardian_dot_policy__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/guardian/guardian.proto\x12\x0f\x65olymp.guardian\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1c\x65olymp/guardian/policy.proto\"1\n\x11ListPoliciesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"K\n\x12ListPoliciesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.guardian.Policy\"!\n\x13\x44\x65scribePolicyInput\x12\n\n\x02id\x18\x01 \x01(\t\"?\n\x14\x44\x65scribePolicyOutput\x12\'\n\x06policy\x18\x01 \x01(\x0b\x32\x17.eolymp.guardian.Policy\"<\n\x11\x43reatePolicyInput\x12\'\n\x06policy\x18\x01 \x01(\x0b\x32\x17.eolymp.guardian.Policy\"\'\n\x12\x43reatePolicyOutput\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\"H\n\x11UpdatePolicyInput\x12\n\n\x02id\x18\x01 \x01(\t\x12\'\n\x06policy\x18\x02 \x01(\x0b\x32\x17.eolymp.guardian.Policy\"\x14\n\x12UpdatePolicyOutput\"\x1f\n\x11\x44\x65letePolicyInput\x12\n\n\x02id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65letePolicyOutput\"/\n\rEvaluateInput\x12\x10\n\x08resource\x18\x01 \x01(\t\x12\x0c\n\x04\x61rgs\x18\x02 \x03(\t\"\xa2\x01\n\x0e\x45valuateOutput\x12=\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32,.eolymp.guardian.EvaluateOutput.ActionsEntry\x1aQ\n\x0c\x41\x63tionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x30\n\x05value\x18\x02 \x01(\x0e\x32!.eolymp.guardian.Statement.Effect:\x02\x38\x01\x32\xf6\x05\n\x08Guardian\x12y\n\x0cListPolicies\x12\".eolymp.guardian.ListPoliciesInput\x1a#.eolymp.guardian.ListPoliciesOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/policies\x12\x84\x01\n\x0e\x44\x65scribePolicy\x12$.eolymp.guardian.DescribePolicyInput\x1a%.eolymp.guardian.DescribePolicyOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\x12\x0e/policies/{id}\x12y\n\x0c\x43reatePolicy\x12\".eolymp.guardian.CreatePolicyInput\x1a#.eolymp.guardian.CreatePolicyOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\"\t/policies\x12~\n\x0cUpdatePolicy\x12\".eolymp.guardian.UpdatePolicyInput\x1a#.eolymp.guardian.UpdatePolicyOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\x1a\x0e/policies/{id}\x12~\n\x0c\x44\x65letePolicy\x12\".eolymp.guardian.DeletePolicyInput\x1a#.eolymp.guardian.DeletePolicyOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10*\x0e/policies/{id}\x12m\n\x08\x45valuate\x12\x1e.eolymp.guardian.EvaluateInput\x1a\x1f.eolymp.guardian.EvaluateOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b*\t/evaluateB3Z1github.com/eolymp/go-sdk/eolymp/guardian;guardianb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/guardian/guardian.proto\x12\x0f\x65olymp.guardian\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1c\x65olymp/guardian/policy.proto\"1\n\x11ListPoliciesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"K\n\x12ListPoliciesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.guardian.Policy\"!\n\x13\x44\x65scribePolicyInput\x12\n\n\x02id\x18\x01 \x01(\t\"?\n\x14\x44\x65scribePolicyOutput\x12\'\n\x06policy\x18\x01 \x01(\x0b\x32\x17.eolymp.guardian.Policy\"<\n\x11\x43reatePolicyInput\x12\'\n\x06policy\x18\x01 \x01(\x0b\x32\x17.eolymp.guardian.Policy\"\'\n\x12\x43reatePolicyOutput\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\"H\n\x11UpdatePolicyInput\x12\n\n\x02id\x18\x01 \x01(\t\x12\'\n\x06policy\x18\x02 \x01(\x0b\x32\x17.eolymp.guardian.Policy\"\x14\n\x12UpdatePolicyOutput\"\x1f\n\x11\x44\x65letePolicyInput\x12\n\n\x02id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65letePolicyOutput\"!\n\rEvaluateInput\x12\x10\n\x08resource\x18\x01 \x01(\t\"@\n\x0e\x45valuateOutput\x12.\n\nstatements\x18\x01 \x03(\x0b\x32\x1a.eolymp.guardian.Statement2\xf6\x05\n\x08Guardian\x12y\n\x0cListPolicies\x12\".eolymp.guardian.ListPoliciesInput\x1a#.eolymp.guardian.ListPoliciesOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/policies\x12\x84\x01\n\x0e\x44\x65scribePolicy\x12$.eolymp.guardian.DescribePolicyInput\x1a%.eolymp.guardian.DescribePolicyOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\x12\x0e/policies/{id}\x12y\n\x0c\x43reatePolicy\x12\".eolymp.guardian.CreatePolicyInput\x1a#.eolymp.guardian.CreatePolicyOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\"\t/policies\x12~\n\x0cUpdatePolicy\x12\".eolymp.guardian.UpdatePolicyInput\x1a#.eolymp.guardian.UpdatePolicyOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\x1a\x0e/policies/{id}\x12~\n\x0c\x44\x65letePolicy\x12\".eolymp.guardian.DeletePolicyInput\x1a#.eolymp.guardian.DeletePolicyOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10*\x0e/policies/{id}\x12m\n\x08\x45valuate\x12\x1e.eolymp.guardian.EvaluateInput\x1a\x1f.eolymp.guardian.EvaluateOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b*\t/evaluateB3Z1github.com/eolymp/go-sdk/eolymp/guardian;guardianb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.guardian.guardian_pb2', globals())
@@ -24,8 +24,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/guardian;guardian'
-  _EVALUATEOUTPUT_ACTIONSENTRY._options = None
-  _EVALUATEOUTPUT_ACTIONSENTRY._serialized_options = b'8\001'
   _GUARDIAN.methods_by_name['ListPolicies']._options = None
   _GUARDIAN.methods_by_name['ListPolicies']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\013\022\t/policies'
   _GUARDIAN.methods_by_name['DescribePolicy']._options = None
@@ -59,11 +57,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DELETEPOLICYOUTPUT._serialized_start=608
   _DELETEPOLICYOUTPUT._serialized_end=628
   _EVALUATEINPUT._serialized_start=630
-  _EVALUATEINPUT._serialized_end=677
-  _EVALUATEOUTPUT._serialized_start=680
-  _EVALUATEOUTPUT._serialized_end=842
-  _EVALUATEOUTPUT_ACTIONSENTRY._serialized_start=761
-  _EVALUATEOUTPUT_ACTIONSENTRY._serialized_end=842
-  _GUARDIAN._serialized_start=845
-  _GUARDIAN._serialized_end=1603
+  _EVALUATEINPUT._serialized_end=663
+  _EVALUATEOUTPUT._serialized_start=665
+  _EVALUATEOUTPUT._serialized_end=729
+  _GUARDIAN._serialized_start=732
+  _GUARDIAN._serialized_end=1490
 # @@protoc_insertion_point(module_scope)

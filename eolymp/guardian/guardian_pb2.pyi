@@ -43,25 +43,16 @@ class DescribePolicyOutput(_message.Message):
     def __init__(self, policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
 
 class EvaluateInput(_message.Message):
-    __slots__ = ["args", "resource"]
-    ARGS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["resource"]
     RESOURCE_FIELD_NUMBER: _ClassVar[int]
-    args: _containers.RepeatedScalarFieldContainer[str]
     resource: str
-    def __init__(self, resource: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, resource: _Optional[str] = ...) -> None: ...
 
 class EvaluateOutput(_message.Message):
-    __slots__ = ["actions"]
-    class ActionsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: _policy_pb2.Statement.Effect
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[_policy_pb2.Statement.Effect, str]] = ...) -> None: ...
-    ACTIONS_FIELD_NUMBER: _ClassVar[int]
-    actions: _containers.ScalarMap[str, _policy_pb2.Statement.Effect]
-    def __init__(self, actions: _Optional[_Mapping[str, _policy_pb2.Statement.Effect]] = ...) -> None: ...
+    __slots__ = ["statements"]
+    STATEMENTS_FIELD_NUMBER: _ClassVar[int]
+    statements: _containers.RepeatedCompositeFieldContainer[_policy_pb2.Statement]
+    def __init__(self, statements: _Optional[_Iterable[_Union[_policy_pb2.Statement, _Mapping]]] = ...) -> None: ...
 
 class ListPoliciesInput(_message.Message):
     __slots__ = ["offset", "size"]
