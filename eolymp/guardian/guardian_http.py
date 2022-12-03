@@ -53,7 +53,7 @@ class GuardianClient:
             **kwargs,
         )
 
-    def RemovePolicy(self, request, **kwargs):
+    def DeletePolicy(self, request, **kwargs):
         path = "/policies/"+urllib.parse.quote(request.id)
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -63,7 +63,7 @@ class GuardianClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.guardian.RemovePolicyOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.guardian.DeletePolicyOutput"),
             **kwargs,
         )
 

@@ -20,6 +20,16 @@ class DefinePolicyOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class DeletePolicyInput(_message.Message):
+    __slots__ = ["id"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    def __init__(self, id: _Optional[str] = ...) -> None: ...
+
+class DeletePolicyOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DescribePolicyInput(_message.Message):
     __slots__ = ["id"]
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -68,13 +78,3 @@ class ListPoliciesOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_policy_pb2.Policy]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_policy_pb2.Policy, _Mapping]]] = ...) -> None: ...
-
-class RemovePolicyInput(_message.Message):
-    __slots__ = ["id"]
-    ID_FIELD_NUMBER: _ClassVar[int]
-    id: str
-    def __init__(self, id: _Optional[str] = ...) -> None: ...
-
-class RemovePolicyOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
