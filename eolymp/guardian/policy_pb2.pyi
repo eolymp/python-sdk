@@ -7,30 +7,41 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Policy(_message.Message):
-    __slots__ = ["id", "name", "principal", "statements"]
+    __slots__ = ["id", "name", "principal", "scope", "statements"]
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
+    SCOPE_FIELD_NUMBER: _ClassVar[int]
     STATEMENTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     principal: str
+    scope: str
     statements: _containers.RepeatedCompositeFieldContainer[Statement]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., principal: _Optional[str] = ..., statements: _Optional[_Iterable[_Union[Statement, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., principal: _Optional[str] = ..., scope: _Optional[str] = ..., statements: _Optional[_Iterable[_Union[Statement, _Mapping]]] = ...) -> None: ...
 
 class Statement(_message.Message):
-    __slots__ = ["actions", "effect", "id", "resource"]
+    __slots__ = ["actions", "attributes", "effect", "id", "resource"]
     class Effect(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    class AttributesEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ACTIONS_FIELD_NUMBER: _ClassVar[int]
     ALLOW: Statement.Effect
+    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     DENY: Statement.Effect
     EFFECT_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     NONE: Statement.Effect
     RESOURCE_FIELD_NUMBER: _ClassVar[int]
     actions: _containers.RepeatedScalarFieldContainer[str]
+    attributes: _containers.ScalarMap[str, str]
     effect: Statement.Effect
     id: str
     resource: str
-    def __init__(self, id: _Optional[str] = ..., effect: _Optional[_Union[Statement.Effect, str]] = ..., resource: _Optional[str] = ..., actions: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., effect: _Optional[_Union[Statement.Effect, str]] = ..., resource: _Optional[str] = ..., actions: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Mapping[str, str]] = ...) -> None: ...
