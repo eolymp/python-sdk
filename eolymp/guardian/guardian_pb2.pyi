@@ -41,8 +41,17 @@ class EvaluateInput(_message.Message):
     def __init__(self, resource: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class EvaluateOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["actions"]
+    class ActionsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: _policy_pb2.Statement.Effect
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[_policy_pb2.Statement.Effect, str]] = ...) -> None: ...
+    ACTIONS_FIELD_NUMBER: _ClassVar[int]
+    actions: _containers.ScalarMap[str, _policy_pb2.Statement.Effect]
+    def __init__(self, actions: _Optional[_Mapping[str, _policy_pb2.Statement.Effect]] = ...) -> None: ...
 
 class ListPoliciesInput(_message.Message):
     __slots__ = []
