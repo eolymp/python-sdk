@@ -39,7 +39,18 @@ class GuardianClient:
             **kwargs,
         )
 
-    def DefinePolicy(self, request, **kwargs):
+    def CreatePolicy(self, request, **kwargs):
+        path = "/policies"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.guardian.CreatePolicyOutput"),
+            **kwargs,
+        )
+
+    def UpdatePolicy(self, request, **kwargs):
         path = "/policies/"+urllib.parse.quote(request.id)
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -49,7 +60,7 @@ class GuardianClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.guardian.DefinePolicyOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.guardian.UpdatePolicyOutput"),
             **kwargs,
         )
 

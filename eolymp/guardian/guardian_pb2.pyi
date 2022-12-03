@@ -8,17 +8,17 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class DefinePolicyInput(_message.Message):
-    __slots__ = ["id", "policy"]
-    ID_FIELD_NUMBER: _ClassVar[int]
+class CreatePolicyInput(_message.Message):
+    __slots__ = ["policy"]
     POLICY_FIELD_NUMBER: _ClassVar[int]
-    id: str
     policy: _policy_pb2.Policy
-    def __init__(self, id: _Optional[str] = ..., policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
+    def __init__(self, policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
 
-class DefinePolicyOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+class CreatePolicyOutput(_message.Message):
+    __slots__ = ["policy_id"]
+    POLICY_ID_FIELD_NUMBER: _ClassVar[int]
+    policy_id: str
+    def __init__(self, policy_id: _Optional[str] = ...) -> None: ...
 
 class DeletePolicyInput(_message.Message):
     __slots__ = ["id"]
@@ -78,3 +78,15 @@ class ListPoliciesOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_policy_pb2.Policy]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_policy_pb2.Policy, _Mapping]]] = ...) -> None: ...
+
+class UpdatePolicyInput(_message.Message):
+    __slots__ = ["id", "policy"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    POLICY_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    policy: _policy_pb2.Policy
+    def __init__(self, id: _Optional[str] = ..., policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
+
+class UpdatePolicyOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...

@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.guardian import policy_pb2 as eolymp_dot_guardian_dot_policy__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/guardian/events.proto\x12\x0f\x65olymp.guardian\x1a\x1c\x65olymp/guardian/policy.proto\"=\n\x12PolicyDefinedEvent\x12\'\n\x06policy\x18\x01 \x01(\x0b\x32\x17.eolymp.guardian.Policy\"=\n\x12PolicyDeletedEvent\x12\'\n\x06policy\x18\x01 \x01(\x0b\x32\x17.eolymp.guardian.PolicyB3Z1github.com/eolymp/go-sdk/eolymp/guardian;guardianb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/guardian/events.proto\x12\x0f\x65olymp.guardian\x1a\x1c\x65olymp/guardian/policy.proto\"=\n\x12PolicyCreatedEvent\x12\'\n\x06policy\x18\x01 \x01(\x0b\x32\x17.eolymp.guardian.Policy\"=\n\x12PolicyUpdatedEvent\x12\'\n\x06policy\x18\x01 \x01(\x0b\x32\x17.eolymp.guardian.Policy\"=\n\x12PolicyDeletedEvent\x12\'\n\x06policy\x18\x01 \x01(\x0b\x32\x17.eolymp.guardian.PolicyB3Z1github.com/eolymp/go-sdk/eolymp/guardian;guardianb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.guardian.events_pb2', globals())
@@ -22,8 +22,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/guardian;guardian'
-  _POLICYDEFINEDEVENT._serialized_start=79
-  _POLICYDEFINEDEVENT._serialized_end=140
-  _POLICYDELETEDEVENT._serialized_start=142
-  _POLICYDELETEDEVENT._serialized_end=203
+  _POLICYCREATEDEVENT._serialized_start=79
+  _POLICYCREATEDEVENT._serialized_end=140
+  _POLICYUPDATEDEVENT._serialized_start=142
+  _POLICYUPDATEDEVENT._serialized_end=203
+  _POLICYDELETEDEVENT._serialized_start=205
+  _POLICYDELETEDEVENT._serialized_end=266
 # @@protoc_insertion_point(module_scope)

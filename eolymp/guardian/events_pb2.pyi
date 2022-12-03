@@ -5,13 +5,19 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class PolicyDefinedEvent(_message.Message):
+class PolicyCreatedEvent(_message.Message):
     __slots__ = ["policy"]
     POLICY_FIELD_NUMBER: _ClassVar[int]
     policy: _policy_pb2.Policy
     def __init__(self, policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
 
 class PolicyDeletedEvent(_message.Message):
+    __slots__ = ["policy"]
+    POLICY_FIELD_NUMBER: _ClassVar[int]
+    policy: _policy_pb2.Policy
+    def __init__(self, policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
+
+class PolicyUpdatedEvent(_message.Message):
     __slots__ = ["policy"]
     POLICY_FIELD_NUMBER: _ClassVar[int]
     policy: _policy_pb2.Policy
