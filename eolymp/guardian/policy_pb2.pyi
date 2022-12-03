@@ -7,14 +7,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Policy(_message.Message):
-    __slots__ = ["name", "principal", "statements"]
+    __slots__ = ["id", "name", "principal", "statements"]
+    ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
     STATEMENTS_FIELD_NUMBER: _ClassVar[int]
+    id: str
     name: str
     principal: str
     statements: _containers.RepeatedCompositeFieldContainer[Statement]
-    def __init__(self, name: _Optional[str] = ..., principal: _Optional[str] = ..., statements: _Optional[_Iterable[_Union[Statement, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., principal: _Optional[str] = ..., statements: _Optional[_Iterable[_Union[Statement, _Mapping]]] = ...) -> None: ...
 
 class Statement(_message.Message):
     __slots__ = ["actions", "effect", "id", "resource"]

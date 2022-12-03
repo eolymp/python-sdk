@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/guardian/policy.proto\x12\x0f\x65olymp.guardian\"Y\n\x06Policy\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tprincipal\x18\x02 \x01(\t\x12.\n\nstatements\x18\x03 \x03(\x0b\x32\x1a.eolymp.guardian.Statement\"\x96\x01\n\tStatement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\x06\x65\x66\x66\x65\x63t\x18\x02 \x01(\x0e\x32!.eolymp.guardian.Statement.Effect\x12\x10\n\x08resource\x18\n \x01(\t\x12\x0f\n\x07\x61\x63tions\x18\x14 \x03(\t\"\'\n\x06\x45\x66\x66\x65\x63t\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04\x44\x45NY\x10\x01\x12\t\n\x05\x41LLOW\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/guardian;guardianb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/guardian/policy.proto\x12\x0f\x65olymp.guardian\"e\n\x06Policy\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tprincipal\x18\x03 \x01(\t\x12.\n\nstatements\x18\n \x03(\x0b\x32\x1a.eolymp.guardian.Statement\"\x96\x01\n\tStatement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\x06\x65\x66\x66\x65\x63t\x18\x02 \x01(\x0e\x32!.eolymp.guardian.Statement.Effect\x12\x10\n\x08resource\x18\n \x01(\t\x12\x0f\n\x07\x61\x63tions\x18\x14 \x03(\t\"\'\n\x06\x45\x66\x66\x65\x63t\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04\x44\x45NY\x10\x01\x12\t\n\x05\x41LLOW\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/guardian;guardianb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.guardian.policy_pb2', globals())
@@ -22,9 +22,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/guardian;guardian'
   _POLICY._serialized_start=49
-  _POLICY._serialized_end=138
-  _STATEMENT._serialized_start=141
-  _STATEMENT._serialized_end=291
-  _STATEMENT_EFFECT._serialized_start=252
-  _STATEMENT_EFFECT._serialized_end=291
+  _POLICY._serialized_end=150
+  _STATEMENT._serialized_start=153
+  _STATEMENT._serialized_end=303
+  _STATEMENT_EFFECT._serialized_start=264
+  _STATEMENT_EFFECT._serialized_end=303
 # @@protoc_insertion_point(module_scope)
