@@ -32,6 +32,18 @@ class DescribePolicyOutput(_message.Message):
     policy: _policy_pb2.Policy
     def __init__(self, policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
 
+class EvaluateInput(_message.Message):
+    __slots__ = ["args", "resource"]
+    ARGS_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_FIELD_NUMBER: _ClassVar[int]
+    args: _containers.RepeatedScalarFieldContainer[str]
+    resource: str
+    def __init__(self, resource: _Optional[str] = ..., args: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class EvaluateOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class ListPoliciesInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

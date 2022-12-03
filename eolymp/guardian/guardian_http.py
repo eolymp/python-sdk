@@ -67,3 +67,14 @@ class GuardianClient:
             **kwargs,
         )
 
+    def Evaluate(self, request, **kwargs):
+        path = "/evaluate"
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.guardian.EvaluateOutput"),
+            **kwargs,
+        )
+
