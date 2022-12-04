@@ -1,0 +1,77 @@
+from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.judge import activity_pb2 as _activity_pb2
+from eolymp.judge import announcement_pb2 as _announcement_pb2
+from eolymp.judge import contest_pb2 as _contest_pb2
+from eolymp.judge import entitlement_pb2 as _entitlement_pb2
+from eolymp.judge import participant_pb2 as _participant_pb2
+from eolymp.judge import problem_pb2 as _problem_pb2
+from eolymp.judge import reply_pb2 as _reply_pb2
+from eolymp.judge import result_pb2 as _result_pb2
+from eolymp.judge import score_pb2 as _score_pb2
+from eolymp.judge import submission_pb2 as _submission_pb2
+from eolymp.judge import template_pb2 as _template_pb2
+from eolymp.judge import ticket_pb2 as _ticket_pb2
+from eolymp.wellknown import direction_pb2 as _direction_pb2
+from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf.internal import containers as _containers
+from google.protobuf import descriptor as _descriptor
+from google.protobuf import message as _message
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+
+DESCRIPTOR: _descriptor.FileDescriptor
+
+class DescribePermissionInput(_message.Message):
+    __slots__ = ["user_id"]
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    user_id: str
+    def __init__(self, user_id: _Optional[str] = ...) -> None: ...
+
+class DescribePermissionOutput(_message.Message):
+    __slots__ = ["role"]
+    ROLE_FIELD_NUMBER: _ClassVar[int]
+    role: str
+    def __init__(self, role: _Optional[str] = ...) -> None: ...
+
+class GrantPermissionInput(_message.Message):
+    __slots__ = ["role", "user_id"]
+    ROLE_FIELD_NUMBER: _ClassVar[int]
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    role: str
+    user_id: str
+    def __init__(self, user_id: _Optional[str] = ..., role: _Optional[str] = ...) -> None: ...
+
+class GrantPermissionOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ListPermissionsInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ListPermissionsOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[Permission]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[Permission, _Mapping]]] = ...) -> None: ...
+
+class Permission(_message.Message):
+    __slots__ = ["role", "user_id"]
+    ROLE_FIELD_NUMBER: _ClassVar[int]
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    role: str
+    user_id: str
+    def __init__(self, user_id: _Optional[str] = ..., role: _Optional[str] = ...) -> None: ...
+
+class RevokePermissionInput(_message.Message):
+    __slots__ = ["user_id"]
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    user_id: str
+    def __init__(self, user_id: _Optional[str] = ...) -> None: ...
+
+class RevokePermissionOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
