@@ -30,7 +30,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x65olymp/judge/acl.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/judge/activity.proto\x1a\x1f\x65olymp/judge/announcement.proto\x1a\x1a\x65olymp/judge/contest.proto\x1a\x1e\x65olymp/judge/entitlement.proto\x1a\x1e\x65olymp/judge/participant.proto\x1a\x1a\x65olymp/judge/problem.proto\x1a\x18\x65olymp/judge/reply.proto\x1a\x19\x65olymp/judge/result.proto\x1a\x18\x65olymp/judge/score.proto\x1a\x1d\x65olymp/judge/submission.proto\x1a\x1b\x65olymp/judge/template.proto\x1a\x19\x65olymp/judge/ticket.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"+\n\nPermission\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"5\n\x14GrantPermissionInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"\x17\n\x15GrantPermissionOutput\"(\n\x15RevokePermissionInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x18\n\x16RevokePermissionOutput\"*\n\x17\x44\x65scribePermissionInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"(\n\x18\x44\x65scribePermissionOutput\x12\x0c\n\x04role\x18\x01 \x01(\t\"\x16\n\x14ListPermissionsInput\"O\n\x15ListPermissionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.judge.Permission2\xb6\x04\n\x03\x41\x63l\x12\x89\x01\n\x0fGrantPermission\x12\".eolymp.judge.GrantPermissionInput\x1a#.eolymp.judge.GrantPermissionOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x18\x1a\x16/permissions/{user_id}\x12\x8c\x01\n\x10RevokePermission\x12#.eolymp.judge.RevokePermissionInput\x1a$.eolymp.judge.RevokePermissionOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x18*\x16/permissions/{user_id}\x12\x92\x01\n\x12\x44\x65scribePermission\x12%.eolymp.judge.DescribePermissionInput\x1a&.eolymp.judge.DescribePermissionOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x18\x12\x16/permissions/{user_id}\x12\x7f\n\x0fListPermissions\x12\".eolymp.judge.ListPermissionsInput\x1a#.eolymp.judge.ListPermissionsOutput\"#\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/permissionsB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x65olymp/judge/acl.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/judge/activity.proto\x1a\x1f\x65olymp/judge/announcement.proto\x1a\x1a\x65olymp/judge/contest.proto\x1a\x1e\x65olymp/judge/entitlement.proto\x1a\x1e\x65olymp/judge/participant.proto\x1a\x1a\x65olymp/judge/problem.proto\x1a\x18\x65olymp/judge/reply.proto\x1a\x19\x65olymp/judge/result.proto\x1a\x18\x65olymp/judge/score.proto\x1a\x1d\x65olymp/judge/submission.proto\x1a\x1b\x65olymp/judge/template.proto\x1a\x19\x65olymp/judge/ticket.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\x7f\n\nPermission\x12\n\n\x02id\x18\x01 \x01(\t\x12+\n\x04role\x18\x02 \x01(\x0e\x32\x1d.eolymp.judge.Permission.Role\x12\x0f\n\x07user_id\x18\x03 \x01(\t\"\'\n\x04Role\x12\x08\n\x04NONE\x10\x00\x12\t\n\x05\x41\x44MIN\x10\x01\x12\n\n\x06VIEWER\x10\x02\"5\n\x14GrantPermissionInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"\x17\n\x15GrantPermissionOutput\"(\n\x15RevokePermissionInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x18\n\x16RevokePermissionOutput\"*\n\x17\x44\x65scribePermissionInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"H\n\x18\x44\x65scribePermissionOutput\x12,\n\npermission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Permission\"\x9a\x02\n\x14ListPermissionsInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.judge.ListPermissionsInput.Filter\x1a\x95\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04role\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"O\n\x15ListPermissionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.judge.Permission2\xb6\x04\n\x03\x41\x63l\x12\x89\x01\n\x0fGrantPermission\x12\".eolymp.judge.GrantPermissionInput\x1a#.eolymp.judge.GrantPermissionOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x18\x1a\x16/permissions/{user_id}\x12\x8c\x01\n\x10RevokePermission\x12#.eolymp.judge.RevokePermissionInput\x1a$.eolymp.judge.RevokePermissionOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x18*\x16/permissions/{user_id}\x12\x92\x01\n\x12\x44\x65scribePermission\x12%.eolymp.judge.DescribePermissionInput\x1a&.eolymp.judge.DescribePermissionOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x18\x12\x16/permissions/{user_id}\x12\x7f\n\x0fListPermissions\x12\".eolymp.judge.ListPermissionsInput\x1a#.eolymp.judge.ListPermissionsOutput\"#\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/permissionsB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.acl_pb2', globals())
@@ -47,23 +47,27 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACL.methods_by_name['ListPermissions']._options = None
   _ACL.methods_by_name['ListPermissions']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\323\344\223\002\016\022\014/permissions'
   _PERMISSION._serialized_start=556
-  _PERMISSION._serialized_end=599
-  _GRANTPERMISSIONINPUT._serialized_start=601
-  _GRANTPERMISSIONINPUT._serialized_end=654
-  _GRANTPERMISSIONOUTPUT._serialized_start=656
-  _GRANTPERMISSIONOUTPUT._serialized_end=679
-  _REVOKEPERMISSIONINPUT._serialized_start=681
-  _REVOKEPERMISSIONINPUT._serialized_end=721
-  _REVOKEPERMISSIONOUTPUT._serialized_start=723
-  _REVOKEPERMISSIONOUTPUT._serialized_end=747
-  _DESCRIBEPERMISSIONINPUT._serialized_start=749
-  _DESCRIBEPERMISSIONINPUT._serialized_end=791
-  _DESCRIBEPERMISSIONOUTPUT._serialized_start=793
-  _DESCRIBEPERMISSIONOUTPUT._serialized_end=833
-  _LISTPERMISSIONSINPUT._serialized_start=835
-  _LISTPERMISSIONSINPUT._serialized_end=857
-  _LISTPERMISSIONSOUTPUT._serialized_start=859
-  _LISTPERMISSIONSOUTPUT._serialized_end=938
-  _ACL._serialized_start=941
-  _ACL._serialized_end=1507
+  _PERMISSION._serialized_end=683
+  _PERMISSION_ROLE._serialized_start=644
+  _PERMISSION_ROLE._serialized_end=683
+  _GRANTPERMISSIONINPUT._serialized_start=685
+  _GRANTPERMISSIONINPUT._serialized_end=738
+  _GRANTPERMISSIONOUTPUT._serialized_start=740
+  _GRANTPERMISSIONOUTPUT._serialized_end=763
+  _REVOKEPERMISSIONINPUT._serialized_start=765
+  _REVOKEPERMISSIONINPUT._serialized_end=805
+  _REVOKEPERMISSIONOUTPUT._serialized_start=807
+  _REVOKEPERMISSIONOUTPUT._serialized_end=831
+  _DESCRIBEPERMISSIONINPUT._serialized_start=833
+  _DESCRIBEPERMISSIONINPUT._serialized_end=875
+  _DESCRIBEPERMISSIONOUTPUT._serialized_start=877
+  _DESCRIBEPERMISSIONOUTPUT._serialized_end=949
+  _LISTPERMISSIONSINPUT._serialized_start=952
+  _LISTPERMISSIONSINPUT._serialized_end=1234
+  _LISTPERMISSIONSINPUT_FILTER._serialized_start=1085
+  _LISTPERMISSIONSINPUT_FILTER._serialized_end=1234
+  _LISTPERMISSIONSOUTPUT._serialized_start=1236
+  _LISTPERMISSIONSOUTPUT._serialized_end=1315
+  _ACL._serialized_start=1318
+  _ACL._serialized_end=1884
 # @@protoc_insertion_point(module_scope)
