@@ -275,6 +275,7 @@ class UpdateMemberInput(_message.Message):
     __slots__ = ["member", "member_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    ALL: UpdateMemberInput.Patch
     DISABLED: UpdateMemberInput.Patch
     GHOST: UpdateMemberInput.Patch
     IDENTITIES: UpdateMemberInput.Patch
