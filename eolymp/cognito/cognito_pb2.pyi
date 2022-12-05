@@ -219,7 +219,7 @@ class IntrospectTokenOutput(_message.Message):
     active: bool
     aud: str
     email: str
-    email_verified: str
+    email_verified: bool
     exp: _timestamp_pb2.Timestamp
     iss: str
     locale: str
@@ -228,7 +228,7 @@ class IntrospectTokenOutput(_message.Message):
     picture: str
     scope: str
     sub: str
-    def __init__(self, active: bool = ..., scope: _Optional[str] = ..., exp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., sub: _Optional[str] = ..., aud: _Optional[str] = ..., iss: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, active: bool = ..., scope: _Optional[str] = ..., exp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., sub: _Optional[str] = ..., aud: _Optional[str] = ..., iss: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., locale: _Optional[str] = ...) -> None: ...
 
 class IntrospectUserInput(_message.Message):
     __slots__ = []
