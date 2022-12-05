@@ -203,22 +203,32 @@ class IntrospectTokenInput(_message.Message):
     def __init__(self, token: _Optional[str] = ...) -> None: ...
 
 class IntrospectTokenOutput(_message.Message):
-    __slots__ = ["active", "expires_at", "scopes", "token", "type", "user_id", "username"]
+    __slots__ = ["active", "aud", "email", "email_verified", "exp", "iss", "locale", "name", "nickname", "picture", "scope", "sub"]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
-    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
-    SCOPES_FIELD_NUMBER: _ClassVar[int]
-    TOKEN_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
-    USERNAME_FIELD_NUMBER: _ClassVar[int]
-    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    AUD_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
+    EXP_FIELD_NUMBER: _ClassVar[int]
+    ISS_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    NICKNAME_FIELD_NUMBER: _ClassVar[int]
+    PICTURE_FIELD_NUMBER: _ClassVar[int]
+    SCOPE_FIELD_NUMBER: _ClassVar[int]
+    SUB_FIELD_NUMBER: _ClassVar[int]
     active: bool
-    expires_at: _timestamp_pb2.Timestamp
-    scopes: _containers.RepeatedScalarFieldContainer[str]
-    token: str
-    type: str
-    user_id: str
-    username: str
-    def __init__(self, active: bool = ..., token: _Optional[str] = ..., type: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., scopes: _Optional[_Iterable[str]] = ..., user_id: _Optional[str] = ..., username: _Optional[str] = ...) -> None: ...
+    aud: str
+    email: str
+    email_verified: str
+    exp: _timestamp_pb2.Timestamp
+    iss: str
+    locale: str
+    name: str
+    nickname: str
+    picture: str
+    scope: str
+    sub: str
+    def __init__(self, active: bool = ..., scope: _Optional[str] = ..., exp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., sub: _Optional[str] = ..., aud: _Optional[str] = ..., iss: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class IntrospectUserInput(_message.Message):
     __slots__ = []
