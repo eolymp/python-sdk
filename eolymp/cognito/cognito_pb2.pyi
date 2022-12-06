@@ -203,32 +203,32 @@ class IntrospectTokenInput(_message.Message):
     def __init__(self, token: _Optional[str] = ...) -> None: ...
 
 class IntrospectTokenOutput(_message.Message):
-    __slots__ = ["active", "aud", "email", "email_verified", "exp", "iss", "locale", "name", "nickname", "picture", "scope", "sub"]
+    __slots__ = ["active", "audience", "email", "email_verified", "exp", "issuer", "locale", "name", "nickname", "picture", "scope", "subject"]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
-    AUD_FIELD_NUMBER: _ClassVar[int]
+    AUDIENCE_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
     EXP_FIELD_NUMBER: _ClassVar[int]
-    ISS_FIELD_NUMBER: _ClassVar[int]
+    ISSUER_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     NICKNAME_FIELD_NUMBER: _ClassVar[int]
     PICTURE_FIELD_NUMBER: _ClassVar[int]
     SCOPE_FIELD_NUMBER: _ClassVar[int]
-    SUB_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_FIELD_NUMBER: _ClassVar[int]
     active: bool
-    aud: str
+    audience: str
     email: str
     email_verified: bool
     exp: _timestamp_pb2.Timestamp
-    iss: str
+    issuer: str
     locale: str
     name: str
     nickname: str
     picture: str
     scope: str
-    sub: str
-    def __init__(self, active: bool = ..., scope: _Optional[str] = ..., exp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., sub: _Optional[str] = ..., aud: _Optional[str] = ..., iss: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., locale: _Optional[str] = ...) -> None: ...
+    subject: str
+    def __init__(self, active: bool = ..., scope: _Optional[str] = ..., exp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., subject: _Optional[str] = ..., audience: _Optional[str] = ..., issuer: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., locale: _Optional[str] = ...) -> None: ...
 
 class IntrospectUserInput(_message.Message):
     __slots__ = []
