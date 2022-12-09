@@ -105,10 +105,14 @@ class DescribeScoreboardRowInput(_message.Message):
     def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., timeline_offset: _Optional[int] = ..., scoreboard_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreboardRowOutput(_message.Message):
-    __slots__ = ["row"]
+    __slots__ = ["frozen", "row", "timeline_offset"]
+    FROZEN_FIELD_NUMBER: _ClassVar[int]
     ROW_FIELD_NUMBER: _ClassVar[int]
+    TIMELINE_OFFSET_FIELD_NUMBER: _ClassVar[int]
+    frozen: bool
     row: _scoreboard_pb2.Scoreboard.Row
-    def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ...) -> None: ...
+    timeline_offset: int
+    def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ..., frozen: bool = ..., timeline_offset: _Optional[int] = ...) -> None: ...
 
 class ListActivitiesInput(_message.Message):
     __slots__ = ["offset", "scoreboard_id", "size"]
@@ -181,12 +185,16 @@ class ListScoreboardRowsInput(_message.Message):
     def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., timeline_offset: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
-    __slots__ = ["items", "total"]
+    __slots__ = ["frozen", "items", "timeline_offset", "total"]
+    FROZEN_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TIMELINE_OFFSET_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
+    frozen: bool
     items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Row]
+    timeline_offset: int
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ..., frozen: bool = ..., timeline_offset: _Optional[int] = ...) -> None: ...
 
 class ListScoreboardsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]

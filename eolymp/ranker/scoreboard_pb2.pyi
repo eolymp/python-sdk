@@ -101,31 +101,21 @@ class Scoreboard(_message.Message):
         values: _containers.RepeatedCompositeFieldContainer[Scoreboard.Row.Value]
         def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., member_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., ghost: bool = ..., out_of_competition: bool = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
     class Segment(_message.Message):
-        __slots__ = ["end_offset", "freeze_time", "start_offset", "starts_at"]
+        __slots__ = ["end_offset", "start_offset", "starts_at"]
         END_OFFSET_FIELD_NUMBER: _ClassVar[int]
-        FREEZE_TIME_FIELD_NUMBER: _ClassVar[int]
         STARTS_AT_FIELD_NUMBER: _ClassVar[int]
         START_OFFSET_FIELD_NUMBER: _ClassVar[int]
         end_offset: int
-        freeze_time: int
         start_offset: int
         starts_at: _timestamp_pb2.Timestamp
-        def __init__(self, starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., start_offset: _Optional[int] = ..., end_offset: _Optional[int] = ..., freeze_time: _Optional[int] = ...) -> None: ...
+        def __init__(self, starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., start_offset: _Optional[int] = ..., end_offset: _Optional[int] = ...) -> None: ...
     class Timeline(_message.Message):
-        __slots__ = ["duration", "freeze_in", "frozen", "position", "segments", "unfreeze_in"]
+        __slots__ = ["duration", "segments"]
         DURATION_FIELD_NUMBER: _ClassVar[int]
-        FREEZE_IN_FIELD_NUMBER: _ClassVar[int]
-        FROZEN_FIELD_NUMBER: _ClassVar[int]
-        POSITION_FIELD_NUMBER: _ClassVar[int]
         SEGMENTS_FIELD_NUMBER: _ClassVar[int]
-        UNFREEZE_IN_FIELD_NUMBER: _ClassVar[int]
         duration: int
-        freeze_in: int
-        frozen: bool
-        position: int
         segments: _containers.RepeatedCompositeFieldContainer[Scoreboard.Segment]
-        unfreeze_in: int
-        def __init__(self, position: _Optional[int] = ..., duration: _Optional[int] = ..., frozen: bool = ..., freeze_in: _Optional[int] = ..., unfreeze_in: _Optional[int] = ..., segments: _Optional[_Iterable[_Union[Scoreboard.Segment, _Mapping]]] = ...) -> None: ...
+        def __init__(self, duration: _Optional[int] = ..., segments: _Optional[_Iterable[_Union[Scoreboard.Segment, _Mapping]]] = ...) -> None: ...
     ACTUAL: Scoreboard.FetchingMode
     DEFAULT_SORT_COLUMN_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_SORT_ORDER_FIELD_NUMBER: _ClassVar[int]
