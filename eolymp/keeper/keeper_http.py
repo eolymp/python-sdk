@@ -53,3 +53,42 @@ class KeeperClient:
             **kwargs,
         )
 
+    def StartMultipartUpload(self, request, **kwargs):
+        path = "/uploads"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.keeper.StartMultipartUploadOutput"),
+            **kwargs,
+        )
+
+    def UploadPart(self, request, **kwargs):
+        path = "/objects/"+urllib.parse.quote(request.object_id)+"/parts"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.object_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.keeper.UploadPartOutput"),
+            **kwargs,
+        )
+
+    def CompleteMultipartUpload(self, request, **kwargs):
+        path = "/objects/"+urllib.parse.quote(request.object_id)+"/complete"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.object_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.keeper.CompleteMultipartUploadOutput"),
+            **kwargs,
+        )
+
