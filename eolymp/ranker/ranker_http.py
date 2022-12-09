@@ -208,3 +208,46 @@ class RankerClient:
             **kwargs,
         )
 
+    def ScheduleAction(self, request, **kwargs):
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/schedule"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.ScheduleActionOutput"),
+            **kwargs,
+        )
+
+    def UnscheduleAction(self, request, **kwargs):
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/schedule/"+urllib.parse.quote(request.action_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+        request.action_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.UnscheduleActionOutput"),
+            **kwargs,
+        )
+
+    def ListScheduledActions(self, request, **kwargs):
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/schedule"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.ranker.ListScheduledActionsOutput"),
+            **kwargs,
+        )
+

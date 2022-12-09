@@ -13,6 +13,20 @@ class Scoreboard(_message.Message):
     __slots__ = ["default_sort_column", "default_sort_order", "format", "historical", "id", "key", "name", "timeline"]
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    class Action(_message.Message):
+        __slots__ = ["execute_at", "id", "type"]
+        class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = []
+        EXECUTE_AT_FIELD_NUMBER: _ClassVar[int]
+        FREEZE: Scoreboard.Action.Type
+        ID_FIELD_NUMBER: _ClassVar[int]
+        NONE: Scoreboard.Action.Type
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        UNFREEZE: Scoreboard.Action.Type
+        execute_at: _timestamp_pb2.Timestamp
+        id: str
+        type: Scoreboard.Action.Type
+        def __init__(self, id: _Optional[str] = ..., execute_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., type: _Optional[_Union[Scoreboard.Action.Type, str]] = ...) -> None: ...
     class Column(_message.Message):
         __slots__ = ["community_attribute_key", "community_attribute_type", "filterable", "id", "index", "judge_contest_id", "judge_problem_id", "key", "name", "parent_id", "short_name", "sortable", "type", "visible"]
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
