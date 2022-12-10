@@ -93,26 +93,24 @@ class DescribeScoreboardOutput(_message.Message):
     def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
 
 class DescribeScoreboardRowInput(_message.Message):
-    __slots__ = ["member_id", "mode", "scoreboard_id", "timeline_offset"]
+    __slots__ = ["member_id", "mode", "punctual_time", "scoreboard_id"]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
+    PUNCTUAL_TIME_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
-    TIMELINE_OFFSET_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     mode: _scoreboard_pb2.Scoreboard.FetchingMode
+    punctual_time: int
     scoreboard_id: str
-    timeline_offset: int
-    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., timeline_offset: _Optional[int] = ..., scoreboard_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., punctual_time: _Optional[int] = ..., scoreboard_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreboardRowOutput(_message.Message):
-    __slots__ = ["frozen", "row", "timeline_offset"]
+    __slots__ = ["frozen", "row"]
     FROZEN_FIELD_NUMBER: _ClassVar[int]
     ROW_FIELD_NUMBER: _ClassVar[int]
-    TIMELINE_OFFSET_FIELD_NUMBER: _ClassVar[int]
     frozen: bool
     row: _scoreboard_pb2.Scoreboard.Row
-    timeline_offset: int
-    def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ..., frozen: bool = ..., timeline_offset: _Optional[int] = ...) -> None: ...
+    def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ..., frozen: bool = ...) -> None: ...
 
 class ListActivitiesInput(_message.Message):
     __slots__ = ["offset", "scoreboard_id", "size"]
@@ -161,7 +159,7 @@ class ListScoreboardColumnsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Column, _Mapping]]] = ...) -> None: ...
 
 class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ["filters", "mode", "offset", "order", "scoreboard_id", "size", "sort", "timeline_offset"]
+    __slots__ = ["filters", "mode", "offset", "order", "punctual_time", "scoreboard_id", "size", "sort"]
     class ExpressionColumn(_message.Message):
         __slots__ = ["enum", "key", "number", "string"]
         ENUM_FIELD_NUMBER: _ClassVar[int]
@@ -184,31 +182,29 @@ class ListScoreboardRowsInput(_message.Message):
     MODE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    PUNCTUAL_TIME_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
-    TIMELINE_OFFSET_FIELD_NUMBER: _ClassVar[int]
     filters: ListScoreboardRowsInput.Filter
     mode: _scoreboard_pb2.Scoreboard.FetchingMode
     offset: int
     order: _direction_pb2.Direction
+    punctual_time: int
     scoreboard_id: str
     size: int
     sort: str
-    timeline_offset: int
-    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., timeline_offset: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.FetchingMode, str]] = ..., punctual_time: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
-    __slots__ = ["frozen", "items", "timeline_offset", "total"]
+    __slots__ = ["frozen", "items", "total"]
     FROZEN_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TIMELINE_OFFSET_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     frozen: bool
     items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Row]
-    timeline_offset: int
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ..., frozen: bool = ..., timeline_offset: _Optional[int] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ..., frozen: bool = ...) -> None: ...
 
 class ListScoreboardsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
