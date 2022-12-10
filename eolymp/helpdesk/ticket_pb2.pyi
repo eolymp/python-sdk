@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Ticket(_message.Message):
-    __slots__ = ["author_id", "message", "metadata", "status", "subject", "type"]
+    __slots__ = ["message", "metadata", "status", "subject", "type", "user_email", "user_id"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -20,7 +20,6 @@ class Ticket(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     APPROVED: Ticket.Status
-    AUTHOR_ID_FIELD_NUMBER: _ClassVar[int]
     AWAITING: Ticket.Status
     CLOSED: Ticket.Status
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
@@ -34,10 +33,13 @@ class Ticket(_message.Message):
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN: Ticket.Status
-    author_id: str
+    USER_EMAIL_FIELD_NUMBER: _ClassVar[int]
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
     message: str
     metadata: _containers.ScalarMap[str, str]
     status: Ticket.Status
     subject: str
     type: Ticket.Type
-    def __init__(self, type: _Optional[_Union[Ticket.Type, str]] = ..., author_id: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., subject: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
+    user_email: str
+    user_id: str
+    def __init__(self, type: _Optional[_Union[Ticket.Type, str]] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., subject: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
