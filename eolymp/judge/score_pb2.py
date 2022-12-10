@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/score.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa5\x04\n\x05Score\x12\x13\n\x0bvalid_after\x18\x01 \x01(\r\x12\x13\n\x0bvalid_until\x18\x02 \x01(\r\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05score\x18\n \x01(\x02\x12\x0f\n\x07penalty\x18\x0b \x01(\x02\x12.\n\tbreakdown\x18\x14 \x03(\x0b\x32\x1b.eolymp.judge.Score.Problem\x1a\xe5\x01\n\x07Problem\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x0e\n\x06solved\x18\x04 \x01(\x08\x12\x12\n\npercentage\x18\x05 \x01(\x02\x12\x10\n\x08\x61ttempts\x18\x07 \x01(\r\x12-\n\tsolved_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tsolved_in\x18\t \x01(\r\x12.\n\tbreakdown\x18\x14 \x03(\x0b\x32\x1b.eolymp.judge.Score.Testset\x1aI\n\x07Testset\x12\x12\n\ntestset_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0c\n\x04\x63ost\x18\n \x01(\x02\x12\r\n\x05score\x18\x0b \x01(\x02\"@\n\x0c\x46\x65tchingMode\x12\n\n\x06\x41\x43TUAL\x10\x00\x12\x0c\n\x08PUNCTUAL\x10\x01\x12\n\n\x06LATEST\x10\x02\x12\n\n\x06\x46ROZEN\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/score.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb6\x04\n\x05Score\x12\x13\n\x0bvalid_after\x18\x01 \x01(\r\x12\x13\n\x0bvalid_until\x18\x02 \x01(\r\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05score\x18\n \x01(\x02\x12\x0f\n\x07penalty\x18\x0b \x01(\x02\x12.\n\tbreakdown\x18\x14 \x03(\x0b\x32\x1b.eolymp.judge.Score.Problem\x1a\xf6\x01\n\x07Problem\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x0e\n\x06solved\x18\x04 \x01(\x08\x12\x12\n\npercentage\x18\x05 \x01(\x02\x12\x10\n\x08\x61ttempts\x18\x07 \x01(\r\x12-\n\tsolved_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tsolved_in\x18\t \x01(\r\x12\x0f\n\x07\x63hanged\x18\n \x01(\x08\x12.\n\tbreakdown\x18\x14 \x03(\x0b\x32\x1b.eolymp.judge.Score.Testset\x1aI\n\x07Testset\x12\x12\n\ntestset_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0c\n\x04\x63ost\x18\n \x01(\x02\x12\r\n\x05score\x18\x0b \x01(\x02\"@\n\x0c\x46\x65tchingMode\x12\n\n\x06\x41\x43TUAL\x10\x00\x12\x0c\n\x08PUNCTUAL\x10\x01\x12\n\n\x06LATEST\x10\x02\x12\n\n\x06\x46ROZEN\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.score_pb2', globals())
@@ -23,11 +23,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
   _SCORE._serialized_start=76
-  _SCORE._serialized_end=625
+  _SCORE._serialized_end=642
   _SCORE_PROBLEM._serialized_start=255
-  _SCORE_PROBLEM._serialized_end=484
-  _SCORE_TESTSET._serialized_start=486
-  _SCORE_TESTSET._serialized_end=559
-  _SCORE_FETCHINGMODE._serialized_start=561
-  _SCORE_FETCHINGMODE._serialized_end=625
+  _SCORE_PROBLEM._serialized_end=501
+  _SCORE_TESTSET._serialized_start=503
+  _SCORE_TESTSET._serialized_end=576
+  _SCORE_FETCHINGMODE._serialized_start=578
+  _SCORE_FETCHINGMODE._serialized_end=642
 # @@protoc_insertion_point(module_scope)

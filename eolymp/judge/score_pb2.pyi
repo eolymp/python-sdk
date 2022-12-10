@@ -12,9 +12,10 @@ class Score(_message.Message):
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Problem(_message.Message):
-        __slots__ = ["attempts", "breakdown", "penalty", "percentage", "problem_id", "score", "solved", "solved_at", "solved_in"]
+        __slots__ = ["attempts", "breakdown", "changed", "penalty", "percentage", "problem_id", "score", "solved", "solved_at", "solved_in"]
         ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
         BREAKDOWN_FIELD_NUMBER: _ClassVar[int]
+        CHANGED_FIELD_NUMBER: _ClassVar[int]
         PENALTY_FIELD_NUMBER: _ClassVar[int]
         PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -24,6 +25,7 @@ class Score(_message.Message):
         SOLVED_IN_FIELD_NUMBER: _ClassVar[int]
         attempts: int
         breakdown: _containers.RepeatedCompositeFieldContainer[Score.Testset]
+        changed: bool
         penalty: float
         percentage: float
         problem_id: str
@@ -31,7 +33,7 @@ class Score(_message.Message):
         solved: bool
         solved_at: _timestamp_pb2.Timestamp
         solved_in: int
-        def __init__(self, problem_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., solved: bool = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., solved_in: _Optional[int] = ..., breakdown: _Optional[_Iterable[_Union[Score.Testset, _Mapping]]] = ...) -> None: ...
+        def __init__(self, problem_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., solved: bool = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., solved_in: _Optional[int] = ..., changed: bool = ..., breakdown: _Optional[_Iterable[_Union[Score.Testset, _Mapping]]] = ...) -> None: ...
     class Testset(_message.Message):
         __slots__ = ["cost", "index", "score", "testset_id"]
         COST_FIELD_NUMBER: _ClassVar[int]
