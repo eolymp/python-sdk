@@ -31,16 +31,18 @@ class Contest(_message.Message):
         title: str
         def __init__(self, title: _Optional[str] = ..., tagline: _Optional[str] = ..., logo_image: _Optional[str] = ..., primary_color: _Optional[str] = ..., secondary_color: _Optional[str] = ...) -> None: ...
     class Scoring(_message.Message):
-        __slots__ = ["allow_upsolving", "attempt_penalty", "freezing_time", "show_scoreboard"]
+        __slots__ = ["allow_upsolving", "attempt_penalty", "freezing_time", "show_scoreboard", "unfreeze_delay"]
         ALLOW_UPSOLVING_FIELD_NUMBER: _ClassVar[int]
         ATTEMPT_PENALTY_FIELD_NUMBER: _ClassVar[int]
         FREEZING_TIME_FIELD_NUMBER: _ClassVar[int]
         SHOW_SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
+        UNFREEZE_DELAY_FIELD_NUMBER: _ClassVar[int]
         allow_upsolving: bool
         attempt_penalty: int
         freezing_time: int
         show_scoreboard: bool
-        def __init__(self, show_scoreboard: bool = ..., attempt_penalty: _Optional[int] = ..., freezing_time: _Optional[int] = ..., allow_upsolving: bool = ...) -> None: ...
+        unfreeze_delay: int
+        def __init__(self, show_scoreboard: bool = ..., attempt_penalty: _Optional[int] = ..., freezing_time: _Optional[int] = ..., unfreeze_delay: _Optional[int] = ..., allow_upsolving: bool = ...) -> None: ...
     COMPLETE: Contest.Status
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
     DURATION_FIELD_NUMBER: _ClassVar[int]
