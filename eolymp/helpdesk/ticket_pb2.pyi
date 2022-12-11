@@ -1,3 +1,4 @@
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -7,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Ticket(_message.Message):
-    __slots__ = ["message", "metadata", "status", "subject", "type", "user_email", "user_id"]
+    __slots__ = ["created_at", "id", "message", "metadata", "status", "subject", "type", "updated_at", "user_email", "user_id"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -22,6 +23,8 @@ class Ticket(_message.Message):
     APPROVED: Ticket.Status
     AWAITING: Ticket.Status
     CLOSED: Ticket.Status
+    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+    ID_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     METADATA_FIELD_NUMBER: _ClassVar[int]
     NONE: Ticket.Type
@@ -33,13 +36,17 @@ class Ticket(_message.Message):
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN: Ticket.Status
+    UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
     USER_EMAIL_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
+    created_at: _timestamp_pb2.Timestamp
+    id: str
     message: str
     metadata: _containers.ScalarMap[str, str]
     status: Ticket.Status
     subject: str
     type: Ticket.Type
+    updated_at: _timestamp_pb2.Timestamp
     user_email: str
     user_id: str
-    def __init__(self, type: _Optional[_Union[Ticket.Type, str]] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., subject: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Ticket.Type, str]] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., subject: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
