@@ -79,10 +79,7 @@ class HelpdeskClient:
         )
 
     def DescribePath(self, request, **kwargs):
-        path = "/helpdesk/paths/"+urllib.parse.quote(request.path)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.path = ""
+        path = "/helpdesk/lookup/path"
 
         return self.transport.request(
             method="GET",
@@ -93,7 +90,7 @@ class HelpdeskClient:
         )
 
     def ListPaths(self, request, **kwargs):
-        path = "/helpdesk/paths"
+        path = "/helpdesk/lookup/paths"
 
         return self.transport.request(
             method="GET",
@@ -104,10 +101,7 @@ class HelpdeskClient:
         )
 
     def ListParents(self, request, **kwargs):
-        path = "/helpdesk/paths/"+urllib.parse.quote(request.path)+"/parents"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.path = ""
+        path = "/helpdesk/lookup/parents"
 
         return self.transport.request(
             method="GET",
