@@ -35,10 +35,12 @@ class CloseTicketOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class CreateTicketInput(_message.Message):
-    __slots__ = ["ticket"]
+    __slots__ = ["captcha", "ticket"]
+    CAPTCHA_FIELD_NUMBER: _ClassVar[int]
     TICKET_FIELD_NUMBER: _ClassVar[int]
+    captcha: str
     ticket: _ticket_pb2.Ticket
-    def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
+    def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., captcha: _Optional[str] = ...) -> None: ...
 
 class CreateTicketOutput(_message.Message):
     __slots__ = ["ticket_id"]
