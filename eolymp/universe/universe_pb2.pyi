@@ -183,6 +183,18 @@ class RevokePermissionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class UpdateQuotaInput(_message.Message):
+    __slots__ = ["quota", "space_id"]
+    QUOTA_FIELD_NUMBER: _ClassVar[int]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    quota: _space_pb2.Space.Quota
+    space_id: str
+    def __init__(self, space_id: _Optional[str] = ..., quota: _Optional[_Union[_space_pb2.Space.Quota, _Mapping]] = ...) -> None: ...
+
+class UpdateQuotaOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdateSpaceInput(_message.Message):
     __slots__ = ["space", "space_id"]
     SPACE_FIELD_NUMBER: _ClassVar[int]
