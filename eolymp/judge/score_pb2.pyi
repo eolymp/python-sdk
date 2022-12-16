@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Score(_message.Message):
-    __slots__ = ["breakdown", "penalty", "score", "timestamp", "valid_after", "valid_until"]
+    __slots__ = ["breakdown", "penalty", "score", "timestamp", "upsolve", "valid_after", "valid_until"]
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Problem(_message.Message):
@@ -53,12 +53,15 @@ class Score(_message.Message):
     PUNCTUAL: Score.FetchingMode
     SCORE_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    UPSOLVE: Score.FetchingMode
+    UPSOLVE_FIELD_NUMBER: _ClassVar[int]
     VALID_AFTER_FIELD_NUMBER: _ClassVar[int]
     VALID_UNTIL_FIELD_NUMBER: _ClassVar[int]
     breakdown: _containers.RepeatedCompositeFieldContainer[Score.Problem]
     penalty: float
     score: float
     timestamp: _timestamp_pb2.Timestamp
+    upsolve: bool
     valid_after: int
     valid_until: int
-    def __init__(self, valid_after: _Optional[int] = ..., valid_until: _Optional[int] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., breakdown: _Optional[_Iterable[_Union[Score.Problem, _Mapping]]] = ...) -> None: ...
+    def __init__(self, valid_after: _Optional[int] = ..., valid_until: _Optional[int] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., upsolve: bool = ..., breakdown: _Optional[_Iterable[_Union[Score.Problem, _Mapping]]] = ...) -> None: ...
