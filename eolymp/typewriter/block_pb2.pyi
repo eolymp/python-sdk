@@ -38,48 +38,50 @@ class Block(_message.Message):
         level: int
         def __init__(self, level: _Optional[int] = ..., children: _Optional[_Iterable[_Union[_inline_pb2.Inline, _Mapping]]] = ...) -> None: ...
     class Image(_message.Message):
-        __slots__ = ["alt", "height", "src", "title", "width", "zoomable"]
+        __slots__ = ["alt", "caption", "height", "src", "width", "zoomable"]
         ALT_FIELD_NUMBER: _ClassVar[int]
+        CAPTION_FIELD_NUMBER: _ClassVar[int]
         HEIGHT_FIELD_NUMBER: _ClassVar[int]
         SRC_FIELD_NUMBER: _ClassVar[int]
-        TITLE_FIELD_NUMBER: _ClassVar[int]
         WIDTH_FIELD_NUMBER: _ClassVar[int]
         ZOOMABLE_FIELD_NUMBER: _ClassVar[int]
         alt: str
+        caption: str
         height: int
         src: str
-        title: str
         width: int
         zoomable: bool
-        def __init__(self, src: _Optional[str] = ..., alt: _Optional[str] = ..., title: _Optional[str] = ..., width: _Optional[int] = ..., height: _Optional[int] = ..., zoomable: bool = ...) -> None: ...
+        def __init__(self, src: _Optional[str] = ..., alt: _Optional[str] = ..., caption: _Optional[str] = ..., width: _Optional[int] = ..., height: _Optional[int] = ..., zoomable: bool = ...) -> None: ...
     class Layout(_message.Message):
-        __slots__ = ["align_content", "align_items", "children", "direction", "gap", "justify_content", "justify_items", "padding"]
-        class Alignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = []
+        __slots__ = ["align_content", "align_items", "children", "direction", "gap", "justify_content", "justify_items", "padding", "width"]
         class Direction(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = []
+        class FlexAlignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ALIGN_CONTENT_FIELD_NUMBER: _ClassVar[int]
         ALIGN_ITEMS_FIELD_NUMBER: _ClassVar[int]
-        CENTER: Block.Layout.Alignment
+        CENTER: Block.Layout.FlexAlignment
         CHILDREN_FIELD_NUMBER: _ClassVar[int]
         COLUMN: Block.Layout.Direction
         DIRECTION_FIELD_NUMBER: _ClassVar[int]
-        END: Block.Layout.Alignment
+        END: Block.Layout.FlexAlignment
         GAP_FIELD_NUMBER: _ClassVar[int]
         JUSTIFY_CONTENT_FIELD_NUMBER: _ClassVar[int]
         JUSTIFY_ITEMS_FIELD_NUMBER: _ClassVar[int]
         PADDING_FIELD_NUMBER: _ClassVar[int]
         ROW: Block.Layout.Direction
-        START: Block.Layout.Alignment
-        align_content: Block.Layout.Alignment
-        align_items: Block.Layout.Alignment
+        START: Block.Layout.FlexAlignment
+        WIDTH_FIELD_NUMBER: _ClassVar[int]
+        align_content: Block.Layout.FlexAlignment
+        align_items: Block.Layout.FlexAlignment
         children: _containers.RepeatedCompositeFieldContainer[Container]
         direction: Block.Layout.Direction
         gap: int
-        justify_content: Block.Layout.Alignment
-        justify_items: Block.Layout.Alignment
+        justify_content: Block.Layout.FlexAlignment
+        justify_items: Block.Layout.FlexAlignment
         padding: _containers.RepeatedScalarFieldContainer[int]
-        def __init__(self, direction: _Optional[_Union[Block.Layout.Direction, str]] = ..., align_items: _Optional[_Union[Block.Layout.Alignment, str]] = ..., align_content: _Optional[_Union[Block.Layout.Alignment, str]] = ..., justify_items: _Optional[_Union[Block.Layout.Alignment, str]] = ..., justify_content: _Optional[_Union[Block.Layout.Alignment, str]] = ..., gap: _Optional[int] = ..., padding: _Optional[_Iterable[int]] = ..., children: _Optional[_Iterable[_Union[Container, _Mapping]]] = ...) -> None: ...
+        width: int
+        def __init__(self, direction: _Optional[_Union[Block.Layout.Direction, str]] = ..., align_items: _Optional[_Union[Block.Layout.FlexAlignment, str]] = ..., align_content: _Optional[_Union[Block.Layout.FlexAlignment, str]] = ..., justify_items: _Optional[_Union[Block.Layout.FlexAlignment, str]] = ..., justify_content: _Optional[_Union[Block.Layout.FlexAlignment, str]] = ..., gap: _Optional[int] = ..., width: _Optional[int] = ..., padding: _Optional[_Iterable[int]] = ..., children: _Optional[_Iterable[_Union[Container, _Mapping]]] = ...) -> None: ...
     class List(_message.Message):
         __slots__ = ["children", "style"]
         class Style(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -89,10 +91,10 @@ class Block(_message.Message):
             CHILDREN_FIELD_NUMBER: _ClassVar[int]
             children: _containers.RepeatedCompositeFieldContainer[Block]
             def __init__(self, children: _Optional[_Iterable[_Union[Block, _Mapping]]] = ...) -> None: ...
+        BULLETED: Block.List.Style
         CHILDREN_FIELD_NUMBER: _ClassVar[int]
-        ORDERED: Block.List.Style
+        NUMBERED: Block.List.Style
         STYLE_FIELD_NUMBER: _ClassVar[int]
-        UNORDERED: Block.List.Style
         children: _containers.RepeatedCompositeFieldContainer[Block.List.Item]
         style: Block.List.Style
         def __init__(self, style: _Optional[_Union[Block.List.Style, str]] = ..., children: _Optional[_Iterable[_Union[Block.List.Item, _Mapping]]] = ...) -> None: ...
@@ -107,26 +109,51 @@ class Block(_message.Message):
         children: _containers.RepeatedCompositeFieldContainer[_inline_pb2.Inline]
         def __init__(self, children: _Optional[_Iterable[_Union[_inline_pb2.Inline, _Mapping]]] = ...) -> None: ...
     class Table(_message.Message):
-        __slots__ = ["children", "header"]
+        __slots__ = ["border", "children", "columns", "header"]
         class Header(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = []
+        class HorizontalAlignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = []
+        class VerticalAlignment(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         class Cell(_message.Message):
             __slots__ = ["children"]
             CHILDREN_FIELD_NUMBER: _ClassVar[int]
             children: _containers.RepeatedCompositeFieldContainer[Block]
             def __init__(self, children: _Optional[_Iterable[_Union[Block, _Mapping]]] = ...) -> None: ...
+        class Column(_message.Message):
+            __slots__ = ["h_align", "v_align", "width"]
+            H_ALIGN_FIELD_NUMBER: _ClassVar[int]
+            V_ALIGN_FIELD_NUMBER: _ClassVar[int]
+            WIDTH_FIELD_NUMBER: _ClassVar[int]
+            h_align: Block.Table.HorizontalAlignment
+            v_align: Block.Table.VerticalAlignment
+            width: int
+            def __init__(self, h_align: _Optional[_Union[Block.Table.HorizontalAlignment, str]] = ..., v_align: _Optional[_Union[Block.Table.VerticalAlignment, str]] = ..., width: _Optional[int] = ...) -> None: ...
         class Row(_message.Message):
             __slots__ = ["children"]
             CHILDREN_FIELD_NUMBER: _ClassVar[int]
             children: _containers.RepeatedCompositeFieldContainer[Block.Table.Cell]
             def __init__(self, children: _Optional[_Iterable[_Union[Block.Table.Cell, _Mapping]]] = ...) -> None: ...
+        BORDER_FIELD_NUMBER: _ClassVar[int]
+        BOTTOM: Block.Table.VerticalAlignment
+        CENTER: Block.Table.HorizontalAlignment
         CHILDREN_FIELD_NUMBER: _ClassVar[int]
+        COLUMNS_FIELD_NUMBER: _ClassVar[int]
         HEADER_FIELD_NUMBER: _ClassVar[int]
         HORIZONTAL: Block.Table.Header
+        JUSTIFY: Block.Table.HorizontalAlignment
+        LEFT: Block.Table.HorizontalAlignment
+        MIDDLE: Block.Table.VerticalAlignment
+        NONE: Block.Table.Header
+        RIGHT: Block.Table.HorizontalAlignment
+        TOP: Block.Table.VerticalAlignment
         VERTICAL: Block.Table.Header
+        border: bool
         children: _containers.RepeatedCompositeFieldContainer[Block.Table.Row]
+        columns: _containers.RepeatedCompositeFieldContainer[Block.Table.Column]
         header: Block.Table.Header
-        def __init__(self, header: _Optional[_Union[Block.Table.Header, str]] = ..., children: _Optional[_Iterable[_Union[Block.Table.Row, _Mapping]]] = ...) -> None: ...
+        def __init__(self, header: _Optional[_Union[Block.Table.Header, str]] = ..., border: bool = ..., columns: _Optional[_Iterable[_Union[Block.Table.Column, _Mapping]]] = ..., children: _Optional[_Iterable[_Union[Block.Table.Row, _Mapping]]] = ...) -> None: ...
     class Widget(_message.Message):
         __slots__ = ["attributes", "children", "name"]
         class AttributesEntry(_message.Message):
