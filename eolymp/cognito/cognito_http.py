@@ -142,7 +142,7 @@ class CognitoClient:
         )
 
     def ResendEmailVerification(self, request, **kwargs):
-        path = "/self/password"
+        path = "/self/email/resend-verification"
 
         return self.transport.request(
             method="POST",
