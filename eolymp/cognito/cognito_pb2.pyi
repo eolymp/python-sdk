@@ -326,6 +326,16 @@ class NotifyUserOutput(_message.Message):
     notification_id: str
     def __init__(self, notification_id: _Optional[str] = ...) -> None: ...
 
+class ResendEmailVerificationInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ResendEmailVerificationOutput(_message.Message):
+    __slots__ = ["email_confirmation_hint"]
+    EMAIL_CONFIRMATION_HINT_FIELD_NUMBER: _ClassVar[int]
+    email_confirmation_hint: str
+    def __init__(self, email_confirmation_hint: _Optional[str] = ...) -> None: ...
+
 class RevokeTokenInput(_message.Message):
     __slots__ = ["token"]
     TOKEN_FIELD_NUMBER: _ClassVar[int]

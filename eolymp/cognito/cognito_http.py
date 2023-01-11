@@ -141,6 +141,17 @@ class CognitoClient:
             **kwargs,
         )
 
+    def ResendEmailVerification(self, request, **kwargs):
+        path = "/self/password"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ResendEmailVerificationOutput"),
+            **kwargs,
+        )
+
     def StartRecovery(self, request, **kwargs):
         path = "/self/recovery"
 
