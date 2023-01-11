@@ -425,7 +425,7 @@ class UpdatePictureOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateProfileInput(_message.Message):
-    __slots__ = ["birthday", "city", "company", "country", "email", "name", "occupation", "patch", "username"]
+    __slots__ = ["birthday", "city", "company", "country", "email", "locale", "name", "occupation", "patch", "username"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     BIRTHDAY: UpdateProfileInput.Patch
@@ -438,6 +438,8 @@ class UpdateProfileInput(_message.Message):
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
     EMAIL: UpdateProfileInput.Patch
     EMAIL_FIELD_NUMBER: _ClassVar[int]
+    LOCALE: UpdateProfileInput.Patch
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     NAME: UpdateProfileInput.Patch
     NAME_FIELD_NUMBER: _ClassVar[int]
     OCCUPATION: UpdateProfileInput.Patch
@@ -450,11 +452,12 @@ class UpdateProfileInput(_message.Message):
     company: str
     country: str
     email: str
+    locale: str
     name: str
     occupation: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateProfileInput.Patch]
     username: str
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProfileInput.Patch, str]]] = ..., username: _Optional[str] = ..., email: _Optional[str] = ..., name: _Optional[str] = ..., company: _Optional[str] = ..., occupation: _Optional[str] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., birthday: _Optional[str] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProfileInput.Patch, str]]] = ..., username: _Optional[str] = ..., email: _Optional[str] = ..., name: _Optional[str] = ..., company: _Optional[str] = ..., occupation: _Optional[str] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., birthday: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class UpdateProfileOutput(_message.Message):
     __slots__ = ["email_confirmation_hint"]
