@@ -86,6 +86,17 @@ class CognitoClient:
             **kwargs,
         )
 
+    def ResendEmailVerification(self, request, **kwargs):
+        path = "/self/email/resend-verification"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ResendEmailVerificationOutput"),
+            **kwargs,
+        )
+
     def UpdateEmail(self, request, **kwargs):
         path = "/self/email"
 
@@ -127,42 +138,6 @@ class CognitoClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdatePasswordOutput"),
-            **kwargs,
-        )
-
-    def ResendEmailVerification(self, request, **kwargs):
-        path = "/self/email/resend-verification"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ResendEmailVerificationOutput"),
-            **kwargs,
-        )
-
-    def StartRecovery(self, request, **kwargs):
-        path = "/self/recovery"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.StartRecoveryOutput"),
-            **kwargs,
-        )
-
-    def CompleteRecovery(self, request, **kwargs):
-        path = "/users/"+urllib.parse.quote(request.user_id)+"/recover"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.user_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.CompleteRecoverOutput"),
             **kwargs,
         )
 
@@ -249,6 +224,31 @@ class CognitoClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdateRolesOutput"),
+            **kwargs,
+        )
+
+    def StartRecovery(self, request, **kwargs):
+        path = "/self/recovery"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.StartRecoveryOutput"),
+            **kwargs,
+        )
+
+    def CompleteRecovery(self, request, **kwargs):
+        path = "/users/"+urllib.parse.quote(request.user_id)+"/recover"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.user_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.cognito.CompleteRecoverOutput"),
             **kwargs,
         )
 

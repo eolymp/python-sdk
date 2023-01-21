@@ -356,6 +356,20 @@ class SelfDestructOutput(_message.Message):
     delete_on: _timestamp_pb2.Timestamp
     def __init__(self, delete_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
+class SigninInput(_message.Message):
+    __slots__ = ["password", "username"]
+    PASSWORD_FIELD_NUMBER: _ClassVar[int]
+    USERNAME_FIELD_NUMBER: _ClassVar[int]
+    password: str
+    username: str
+    def __init__(self, username: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
+
+class SigninOutput(_message.Message):
+    __slots__ = ["user"]
+    USER_FIELD_NUMBER: _ClassVar[int]
+    user: _user_pb2.User
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+
 class SignoutInput(_message.Message):
     __slots__ = ["everywhere"]
     EVERYWHERE_FIELD_NUMBER: _ClassVar[int]
@@ -365,20 +379,6 @@ class SignoutInput(_message.Message):
 class SignoutOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class SinginInput(_message.Message):
-    __slots__ = ["password", "username"]
-    PASSWORD_FIELD_NUMBER: _ClassVar[int]
-    USERNAME_FIELD_NUMBER: _ClassVar[int]
-    password: str
-    username: str
-    def __init__(self, username: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
-
-class SinginOutput(_message.Message):
-    __slots__ = ["user"]
-    USER_FIELD_NUMBER: _ClassVar[int]
-    user: _user_pb2.User
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
 
 class StartRecoveryInput(_message.Message):
     __slots__ = ["captcha", "email", "locale"]
