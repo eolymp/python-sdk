@@ -14,17 +14,6 @@ class CognitoClient:
         self.transport = transport
         self.url = url
 
-    def CreateAuthorization(self, request, **kwargs):
-        path = "/self/authorize"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.CreateAuthorizationOutput"),
-            **kwargs,
-        )
-
     def Signout(self, request, **kwargs):
         path = "/self/signout"
 
