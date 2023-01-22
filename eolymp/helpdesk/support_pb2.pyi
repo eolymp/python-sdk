@@ -10,6 +10,20 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class AddCommentInput(_message.Message):
+    __slots__ = ["comment", "ticket_id"]
+    COMMENT_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    comment: _ticket_pb2.Ticket.Comment
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., comment: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ...) -> None: ...
+
+class AddCommentOutput(_message.Message):
+    __slots__ = ["comment_id"]
+    COMMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    comment_id: str
+    def __init__(self, comment_id: _Optional[str] = ...) -> None: ...
+
 class ApproveTicketInput(_message.Message):
     __slots__ = ["comment", "ticket_id"]
     COMMENT_FIELD_NUMBER: _ClassVar[int]
@@ -48,6 +62,18 @@ class CreateTicketOutput(_message.Message):
     ticket_id: str
     def __init__(self, ticket_id: _Optional[str] = ...) -> None: ...
 
+class DeleteCommentInput(_message.Message):
+    __slots__ = ["comment_id", "ticket_id"]
+    COMMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    comment_id: str
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., comment_id: _Optional[str] = ...) -> None: ...
+
+class DeleteCommentOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DeleteTicketInput(_message.Message):
     __slots__ = ["ticket_id"]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -57,6 +83,20 @@ class DeleteTicketInput(_message.Message):
 class DeleteTicketOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class DescribeCommentInput(_message.Message):
+    __slots__ = ["comment_id", "ticket_id"]
+    COMMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    comment_id: str
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., comment_id: _Optional[str] = ...) -> None: ...
+
+class DescribeCommentOutput(_message.Message):
+    __slots__ = ["comment"]
+    COMMENT_FIELD_NUMBER: _ClassVar[int]
+    comment: _ticket_pb2.Ticket.Comment
+    def __init__(self, comment: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ...) -> None: ...
 
 class DescribeTicketInput(_message.Message):
     __slots__ = ["ticket_id"]
@@ -69,6 +109,24 @@ class DescribeTicketOutput(_message.Message):
     TICKET_FIELD_NUMBER: _ClassVar[int]
     ticket: _ticket_pb2.Ticket
     def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
+
+class ListCommentsInput(_message.Message):
+    __slots__ = ["offset", "size", "ticket_id"]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    offset: int
+    size: int
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+
+class ListCommentsOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_ticket_pb2.Ticket.Comment]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Comment, _Mapping]]] = ...) -> None: ...
 
 class ListTicketsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
@@ -118,6 +176,20 @@ class RejectTicketInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., comment: _Optional[str] = ...) -> None: ...
 
 class RejectTicketOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdateCommentInput(_message.Message):
+    __slots__ = ["comment", "comment_id", "ticket_id"]
+    COMMENT_FIELD_NUMBER: _ClassVar[int]
+    COMMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    comment: _ticket_pb2.Ticket.Comment
+    comment_id: str
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., comment_id: _Optional[str] = ..., comment: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ...) -> None: ...
+
+class UpdateCommentOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 

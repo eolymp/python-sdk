@@ -13,6 +13,30 @@ class Ticket(_message.Message):
         __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    class Comment(_message.Message):
+        __slots__ = ["created_at", "id", "message", "metadata", "updated_at", "user_email", "user_id"]
+        class MetadataEntry(_message.Message):
+            __slots__ = ["key", "value"]
+            KEY_FIELD_NUMBER: _ClassVar[int]
+            VALUE_FIELD_NUMBER: _ClassVar[int]
+            key: str
+            value: str
+            def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+        CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        METADATA_FIELD_NUMBER: _ClassVar[int]
+        UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
+        USER_EMAIL_FIELD_NUMBER: _ClassVar[int]
+        USER_ID_FIELD_NUMBER: _ClassVar[int]
+        created_at: _timestamp_pb2.Timestamp
+        id: str
+        message: str
+        metadata: _containers.ScalarMap[str, str]
+        updated_at: _timestamp_pb2.Timestamp
+        user_email: str
+        user_id: str
+        def __init__(self, id: _Optional[str] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[str] = ...) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]

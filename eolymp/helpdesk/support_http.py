@@ -120,3 +120,76 @@ class SupportClient:
             **kwargs,
         )
 
+    def AddComment(self, request, **kwargs):
+        path = "/helpdesk/tickets/"+urllib.parse.quote(request.ticket_id)+"/comments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.AddCommentOutput"),
+            **kwargs,
+        )
+
+    def UpdateComment(self, request, **kwargs):
+        path = "/helpdesk/tickets/"+urllib.parse.quote(request.ticket_id)+"/comments/"+urllib.parse.quote(request.comment_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+        request.comment_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.UpdateCommentOutput"),
+            **kwargs,
+        )
+
+    def DeleteComment(self, request, **kwargs):
+        path = "/helpdesk/tickets/"+urllib.parse.quote(request.ticket_id)+"/comments/"+urllib.parse.quote(request.comment_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+        request.comment_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.DeleteCommentOutput"),
+            **kwargs,
+        )
+
+    def ListComments(self, request, **kwargs):
+        path = "/helpdesk/tickets/"+urllib.parse.quote(request.ticket_id)+"/comments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.ListCommentsOutput"),
+            **kwargs,
+        )
+
+    def DescribeComment(self, request, **kwargs):
+        path = "/helpdesk/tickets/"+urllib.parse.quote(request.ticket_id)+"/comments/"+urllib.parse.quote(request.comment_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+        request.comment_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.helpdesk.DescribeCommentOutput"),
+            **kwargs,
+        )
+
