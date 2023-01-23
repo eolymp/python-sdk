@@ -232,7 +232,7 @@ class SupportClient:
             **kwargs,
         )
 
-    def ListAutoReplys(self, request, **kwargs):
+    def ListAutoReplies(self, request, **kwargs):
         path = "/helpdesk/autoreplies"
 
         return self.transport.request(
