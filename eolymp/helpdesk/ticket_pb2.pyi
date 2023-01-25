@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Ticket(_message.Message):
-    __slots__ = ["created_at", "id", "locale", "message", "metadata", "status", "subject", "type", "updated_at", "user_email", "user_id"]
+    __slots__ = ["created_at", "id", "locale", "message", "metadata", "secret", "status", "subject", "type", "updated_at", "user_email", "user_id"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -57,6 +57,7 @@ class Ticket(_message.Message):
     QUESTION: Ticket.Type
     QUOTA_INCREASE: Ticket.Type
     REJECTED: Ticket.Status
+    SECRET_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -69,10 +70,11 @@ class Ticket(_message.Message):
     locale: str
     message: str
     metadata: _containers.ScalarMap[str, str]
+    secret: str
     status: Ticket.Status
     subject: str
     type: Ticket.Type
     updated_at: _timestamp_pb2.Timestamp
     user_email: str
     user_id: str
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Ticket.Type, str]] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., locale: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., subject: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Ticket.Type, str]] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., locale: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., secret: _Optional[str] = ..., subject: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
