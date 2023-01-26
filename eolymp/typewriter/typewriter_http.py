@@ -14,6 +14,103 @@ class TypewriterClient:
         self.transport = transport
         self.url = url
 
+    def DescribeFragment(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.fragment_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.typewriter.DescribeFragmentOutput"),
+            **kwargs,
+        )
+
+    def ListFragments(self, request, **kwargs):
+        path = "/content/fragments"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.typewriter.ListFragmentsOutput"),
+            **kwargs,
+        )
+
+    def CreateFragment(self, request, **kwargs):
+        path = "/content/fragments"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.typewriter.CreateFragmentOutput"),
+            **kwargs,
+        )
+
+    def UpdateFragment(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.fragment_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.typewriter.UpdateFragmentOutput"),
+            **kwargs,
+        )
+
+    def DeleteFragment(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.fragment_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.typewriter.DeleteFragmentOutput"),
+            **kwargs,
+        )
+
+    def DescribePath(self, request, **kwargs):
+        path = "/content/path"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.typewriter.DescribePathOutput"),
+            **kwargs,
+        )
+
+    def ListPaths(self, request, **kwargs):
+        path = "/content/paths"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.typewriter.ListPathsOutput"),
+            **kwargs,
+        )
+
+    def ListParents(self, request, **kwargs):
+        path = "/content/parents"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.typewriter.ListParentsOutput"),
+            **kwargs,
+        )
+
     def UploadAsset(self, request, **kwargs):
         path = "/assets"
 

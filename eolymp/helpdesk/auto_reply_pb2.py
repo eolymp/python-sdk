@@ -11,10 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/helpdesk/auto_reply.proto\x12\x0f\x65olymp.helpdesk\x1a\x1fgoogle/protobuf/timestamp.proto\"V\n\tAutoReply\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x14 \x01(\t\x12\x0f\n\x07message\x18\x15 \x01(\t\x12\x0e\n\x06labels\x18\x16 \x03(\tB3Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdeskb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/helpdesk/auto_reply.proto\x12\x0f\x65olymp.helpdesk\"V\n\tAutoReply\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x14 \x01(\t\x12\x0f\n\x07message\x18\x15 \x01(\t\x12\x0e\n\x06labels\x18\x16 \x03(\tB3Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdeskb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.helpdesk.auto_reply_pb2', globals())
@@ -22,6 +21,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdesk'
-  _AUTOREPLY._serialized_start=86
-  _AUTOREPLY._serialized_end=172
+  _AUTOREPLY._serialized_start=53
+  _AUTOREPLY._serialized_end=139
 # @@protoc_insertion_point(module_scope)
