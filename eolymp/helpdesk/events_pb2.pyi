@@ -7,12 +7,14 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CommentChangedEvent(_message.Message):
-    __slots__ = ["after", "before"]
+    __slots__ = ["after", "before", "ticket_id"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     after: _ticket_pb2.Ticket.Comment
     before: _ticket_pb2.Ticket.Comment
-    def __init__(self, before: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ..., after: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ...) -> None: ...
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., before: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ..., after: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ...) -> None: ...
 
 class DocumentCreatedEvent(_message.Message):
     __slots__ = ["document"]
