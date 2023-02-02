@@ -1,3 +1,4 @@
+from eolymp.ecm import node_pb2 as _node_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -31,12 +32,12 @@ class Ticket(_message.Message):
         USER_ID_FIELD_NUMBER: _ClassVar[int]
         created_at: _timestamp_pb2.Timestamp
         id: str
-        message: str
+        message: _node_pb2.Node
         metadata: _containers.ScalarMap[str, str]
         updated_at: _timestamp_pb2.Timestamp
         user_email: str
         user_id: str
-        def __init__(self, id: _Optional[str] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[str] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -68,7 +69,7 @@ class Ticket(_message.Message):
     created_at: _timestamp_pb2.Timestamp
     id: str
     locale: str
-    message: str
+    message: _node_pb2.Node
     metadata: _containers.ScalarMap[str, str]
     secret: str
     status: Ticket.Status
@@ -77,4 +78,4 @@ class Ticket(_message.Message):
     updated_at: _timestamp_pb2.Timestamp
     user_email: str
     user_id: str
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Ticket.Type, str]] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., locale: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., secret: _Optional[str] = ..., subject: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Ticket.Type, str]] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., locale: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., secret: _Optional[str] = ..., subject: _Optional[str] = ..., message: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
