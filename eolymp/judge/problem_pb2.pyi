@@ -1,6 +1,6 @@
 from eolymp.annotations import resource_pb2 as _resource_pb2
 from eolymp.atlas import feedback_pb2 as _feedback_pb2
-from eolymp.typewriter import block_pb2 as _block_pb2
+from eolymp.ecm import node_pb2 as _node_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -35,12 +35,12 @@ class Problem(_message.Message):
         TEX: Problem.Statement.Format
         TITLE_FIELD_NUMBER: _ClassVar[int]
         content: str
-        content_rich: _block_pb2.Container
+        content_rich: _node_pb2.Node
         download_link: str
         format: Problem.Statement.Format
         locale: str
         title: str
-        def __init__(self, locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[str] = ..., content_rich: _Optional[_Union[_block_pb2.Container, _Mapping]] = ..., format: _Optional[_Union[Problem.Statement.Format, str]] = ..., download_link: _Optional[str] = ...) -> None: ...
+        def __init__(self, locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[str] = ..., content_rich: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., format: _Optional[_Union[Problem.Statement.Format, str]] = ..., download_link: _Optional[str] = ...) -> None: ...
     class Test(_message.Message):
         __slots__ = ["answer_object_id", "example", "index", "input_object_id", "score"]
         ANSWER_OBJECT_ID_FIELD_NUMBER: _ClassVar[int]

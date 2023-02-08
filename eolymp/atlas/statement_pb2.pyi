@@ -1,5 +1,5 @@
 from eolymp.annotations import resource_pb2 as _resource_pb2
-from eolymp.typewriter import block_pb2 as _block_pb2
+from eolymp.ecm import node_pb2 as _node_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -28,7 +28,7 @@ class Statement(_message.Message):
     TITLE_FIELD_NUMBER: _ClassVar[int]
     author: str
     content: str
-    content_rich: _block_pb2.Container
+    content_rich: _node_pb2.Node
     download_link: str
     format: Statement.Format
     id: str
@@ -36,4 +36,4 @@ class Statement(_message.Message):
     problem_id: str
     source: str
     title: str
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[str] = ..., content_rich: _Optional[_Union[_block_pb2.Container, _Mapping]] = ..., download_link: _Optional[str] = ..., format: _Optional[_Union[Statement.Format, str]] = ..., author: _Optional[str] = ..., source: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[str] = ..., content_rich: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., download_link: _Optional[str] = ..., format: _Optional[_Union[Statement.Format, str]] = ..., author: _Optional[str] = ..., source: _Optional[str] = ...) -> None: ...
