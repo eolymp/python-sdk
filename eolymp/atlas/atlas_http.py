@@ -575,23 +575,8 @@ class AtlasClient:
             **kwargs,
         )
 
-    def DescribeChange(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/changes/"+urllib.parse.quote(request.change_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.change_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeChangeOutput"),
-            **kwargs,
-        )
-
-    def ListChanges(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/changes"
+    def ListVersions(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/versions"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.problem_id = ""
@@ -600,7 +585,7 @@ class AtlasClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListChangesOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListVersionsOutput"),
             **kwargs,
         )
 

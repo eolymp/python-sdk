@@ -4,7 +4,6 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.annotations import service_pb2 as _service_pb2
 from eolymp.atlas import attachment_pb2 as _attachment_pb2
 from eolymp.atlas import category_pb2 as _category_pb2
-from eolymp.atlas import change_pb2 as _change_pb2
 from eolymp.atlas import permission_pb2 as _permission_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import score_pb2 as _score_pb2
@@ -14,6 +13,7 @@ from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.atlas import template_pb2 as _template_pb2
 from eolymp.atlas import test_pb2 as _test_pb2
 from eolymp.atlas import testset_pb2 as _testset_pb2
+from eolymp.atlas import version_pb2 as _version_pb2
 from eolymp.executor import interactor_pb2 as _interactor_pb2
 from eolymp.executor import verifier_pb2 as _verifier_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -273,12 +273,14 @@ class DeleteTestsetOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAttachmentInput(_message.Message):
-    __slots__ = ["attachment_id", "problem_id"]
+    __slots__ = ["attachment_id", "problem_id", "version"]
     ATTACHMENT_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     attachment_id: str
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., attachment_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., attachment_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeAttachmentOutput(_message.Message):
     __slots__ = ["attachment"]
@@ -298,29 +300,17 @@ class DescribeCategoryOutput(_message.Message):
     category: _category_pb2.Category
     def __init__(self, category: _Optional[_Union[_category_pb2.Category, _Mapping]] = ...) -> None: ...
 
-class DescribeChangeInput(_message.Message):
-    __slots__ = ["change_id", "problem_id"]
-    CHANGE_ID_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    change_id: str
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., change_id: _Optional[str] = ...) -> None: ...
-
-class DescribeChangeOutput(_message.Message):
-    __slots__ = ["change"]
-    CHANGE_FIELD_NUMBER: _ClassVar[int]
-    change: _change_pb2.Change
-    def __init__(self, change: _Optional[_Union[_change_pb2.Change, _Mapping]] = ...) -> None: ...
-
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ["problem_id", "template_ern", "template_id"]
+    __slots__ = ["problem_id", "template_ern", "template_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ERN_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     template_ern: str
     template_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., template_ern: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., template_ern: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
     __slots__ = ["template"]
@@ -329,10 +319,12 @@ class DescribeCodeTemplateOutput(_message.Message):
     def __init__(self, template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class DescribeInteractorInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ["problem_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeInteractorOutput(_message.Message):
     __slots__ = ["interactor"]
@@ -402,12 +394,14 @@ class DescribeSolutionOutput(_message.Message):
     def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class DescribeStatementInput(_message.Message):
-    __slots__ = ["problem_id", "statement_id"]
+    __slots__ = ["problem_id", "statement_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     statement_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeStatementOutput(_message.Message):
     __slots__ = ["statement"]
@@ -430,14 +424,16 @@ class DescribeSubmissionOutput(_message.Message):
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class DescribeTestInput(_message.Message):
-    __slots__ = ["problem_id", "test_id", "testset_id"]
+    __slots__ = ["problem_id", "test_id", "testset_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     test_id: str
     testset_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeTestOutput(_message.Message):
     __slots__ = ["test"]
@@ -446,12 +442,14 @@ class DescribeTestOutput(_message.Message):
     def __init__(self, test: _Optional[_Union[_test_pb2.Test, _Mapping]] = ...) -> None: ...
 
 class DescribeTestsetInput(_message.Message):
-    __slots__ = ["problem_id", "testset_id"]
+    __slots__ = ["problem_id", "testset_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     testset_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeTestsetOutput(_message.Message):
     __slots__ = ["testset"]
@@ -460,10 +458,12 @@ class DescribeTestsetOutput(_message.Message):
     def __init__(self, testset: _Optional[_Union[_testset_pb2.Testset, _Mapping]] = ...) -> None: ...
 
 class DescribeVerifierInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ["problem_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeVerifierOutput(_message.Message):
     __slots__ = ["verifier"]
@@ -484,7 +484,7 @@ class GrantPermissionOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListAttachmentsInput(_message.Message):
-    __slots__ = ["filters", "offset", "problem_id", "size"]
+    __slots__ = ["filters", "offset", "problem_id", "size", "version"]
     class Filter(_message.Message):
         __slots__ = ["id", "name"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -496,11 +496,13 @@ class ListAttachmentsInput(_message.Message):
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     filters: ListAttachmentsInput.Filter
     offset: int
     problem_id: str
     size: int
-    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAttachmentsInput.Filter, _Mapping]] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAttachmentsInput.Filter, _Mapping]] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListAttachmentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -539,44 +541,13 @@ class ListCategoriesOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_category_pb2.Category, _Mapping]]] = ...) -> None: ...
 
-class ListChangesInput(_message.Message):
-    __slots__ = ["filters", "offset", "problem_id", "size"]
-    class Filter(_message.Message):
-        __slots__ = ["id", "ip_address", "timestamp", "type", "user_id"]
-        ID_FIELD_NUMBER: _ClassVar[int]
-        IP_ADDRESS_FIELD_NUMBER: _ClassVar[int]
-        TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-        TYPE_FIELD_NUMBER: _ClassVar[int]
-        USER_ID_FIELD_NUMBER: _ClassVar[int]
-        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        ip_address: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        timestamp: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
-        type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., ip_address: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., timestamp: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListChangesInput.Filter
-    offset: int
-    problem_id: str
-    size: int
-    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListChangesInput.Filter, _Mapping]] = ...) -> None: ...
-
-class ListChangesOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_change_pb2.Change]
-    total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_change_pb2.Change, _Mapping]]] = ...) -> None: ...
-
 class ListCodeTemplatesInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ["problem_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListCodeTemplatesOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -587,10 +558,12 @@ class ListCodeTemplatesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_template_pb2.Template, _Mapping]]] = ...) -> None: ...
 
 class ListExamplesInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ["problem_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListExamplesOutput(_message.Message):
     __slots__ = ["examples"]
@@ -689,10 +662,12 @@ class ListSolutionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ...) -> None: ...
 
 class ListStatementsInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ["problem_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListStatementsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -703,12 +678,14 @@ class ListStatementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
 
 class ListTestsInput(_message.Message):
-    __slots__ = ["problem_id", "testset_id"]
+    __slots__ = ["problem_id", "testset_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     testset_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListTestsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -719,10 +696,12 @@ class ListTestsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_test_pb2.Test, _Mapping]]] = ...) -> None: ...
 
 class ListTestsetsInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ["problem_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListTestsetsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -731,6 +710,39 @@ class ListTestsetsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_testset_pb2.Testset]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_testset_pb2.Testset, _Mapping]]] = ...) -> None: ...
+
+class ListVersionsInput(_message.Message):
+    __slots__ = ["filters", "offset", "problem_id", "size"]
+    class Filter(_message.Message):
+        __slots__ = ["change_op", "change_path", "created_at", "created_by", "number"]
+        CHANGE_OP_FIELD_NUMBER: _ClassVar[int]
+        CHANGE_PATH_FIELD_NUMBER: _ClassVar[int]
+        CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+        CREATED_BY_FIELD_NUMBER: _ClassVar[int]
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        change_op: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        change_path: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        created_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        created_by: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        number: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        def __init__(self, number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., created_by: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., change_op: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., change_path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    filters: ListVersionsInput.Filter
+    offset: int
+    problem_id: str
+    size: int
+    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListVersionsInput.Filter, _Mapping]] = ...) -> None: ...
+
+class ListVersionsOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_version_pb2.Version]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ...) -> None: ...
 
 class PublishSolutionInput(_message.Message):
     __slots__ = ["problem_id", "solution_id"]
