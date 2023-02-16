@@ -610,6 +610,21 @@ class JudgeClient:
             **kwargs,
         )
 
+    def SetPasscode(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.SetPasscodeOutput"),
+            **kwargs,
+        )
+
     def RemovePasscode(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
 

@@ -1034,6 +1034,20 @@ class RetestSubmissionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class SetPasscodeInput(_message.Message):
+    __slots__ = ["contest_id", "participant_id", "passcode"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    PASSCODE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    participant_id: str
+    passcode: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., passcode: _Optional[str] = ...) -> None: ...
+
+class SetPasscodeOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class StartContestInput(_message.Message):
     __slots__ = ["contest_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
