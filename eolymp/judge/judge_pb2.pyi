@@ -205,6 +205,18 @@ class DeleteReplyOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class DeleteSubmissionInput(_message.Message):
+    __slots__ = ["contest_id", "submission_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    submission_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
+
+class DeleteSubmissionOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DeleteTicketInput(_message.Message):
     __slots__ = ["contest_id", "ticket_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
