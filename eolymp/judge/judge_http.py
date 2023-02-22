@@ -692,10 +692,40 @@ class JudgeClient:
         request.submission_id = ""
 
         return self.transport.request(
-            method="GET",
+            method="POST",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.RetestSubmissionOutput"),
+            **kwargs,
+        )
+
+    def DeleteSubmission(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.submission_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteSubmissionOutput"),
+            **kwargs,
+        )
+
+    def RestoreSubmission(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)+"/restore"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.submission_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.RestoreSubmissionOutput"),
             **kwargs,
         )
 
