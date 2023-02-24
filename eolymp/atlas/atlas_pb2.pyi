@@ -745,10 +745,12 @@ class ListVersionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ...) -> None: ...
 
 class PreviewStatementInput(_message.Message):
-    __slots__ = ["statement"]
+    __slots__ = ["problem_id", "statement"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     statement: _statement_pb2.Statement
-    def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class PreviewStatementOutput(_message.Message):
     __slots__ = ["statement"]
