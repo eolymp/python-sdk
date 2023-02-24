@@ -744,6 +744,18 @@ class ListVersionsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ...) -> None: ...
 
+class PreviewStatementInput(_message.Message):
+    __slots__ = ["statement"]
+    STATEMENT_FIELD_NUMBER: _ClassVar[int]
+    statement: _statement_pb2.Statement
+    def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+
+class PreviewStatementOutput(_message.Message):
+    __slots__ = ["statement"]
+    STATEMENT_FIELD_NUMBER: _ClassVar[int]
+    statement: _statement_pb2.Statement
+    def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+
 class PublishSolutionInput(_message.Message):
     __slots__ = ["problem_id", "solution_id"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -769,6 +781,22 @@ class RefuseSolutionInput(_message.Message):
 class RefuseSolutionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class RenderStatementInput(_message.Message):
+    __slots__ = ["problem_id", "statement_id", "version"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    statement_id: str
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+
+class RenderStatementOutput(_message.Message):
+    __slots__ = ["statement"]
+    STATEMENT_FIELD_NUMBER: _ClassVar[int]
+    statement: _statement_pb2.Statement
+    def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class RetestSubmissionInput(_message.Message):
     __slots__ = ["debug", "problem_id", "submission_id"]
