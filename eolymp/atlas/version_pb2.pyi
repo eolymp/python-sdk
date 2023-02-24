@@ -1,13 +1,3 @@
-from eolymp.annotations import resource_pb2 as _resource_pb2
-from eolymp.atlas import attachment_pb2 as _attachment_pb2
-from eolymp.atlas import permission_pb2 as _permission_pb2
-from eolymp.atlas import problem_pb2 as _problem_pb2
-from eolymp.atlas import statement_pb2 as _statement_pb2
-from eolymp.atlas import template_pb2 as _template_pb2
-from eolymp.atlas import test_pb2 as _test_pb2
-from eolymp.atlas import testset_pb2 as _testset_pb2
-from eolymp.executor import interactor_pb2 as _interactor_pb2
-from eolymp.executor import verifier_pb2 as _verifier_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

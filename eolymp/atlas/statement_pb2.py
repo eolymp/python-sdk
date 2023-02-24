@@ -11,11 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
 from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/atlas/statement.proto\x12\x0c\x65olymp.atlas\x1a!eolymp/annotations/resource.proto\x1a\x15\x65olymp/ecm/node.proto\"\xae\x03\n\tStatement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0e\n\x06locale\x18\x03 \x01(\t\x12\r\n\x05title\x18\x04 \x01(\t\x12\x16\n\x0c\x63ontent_html\x18\x32 \x01(\tH\x00\x12\x17\n\rcontent_latex\x18\x33 \x01(\tH\x00\x12\x1a\n\x10\x63ontent_markdown\x18\x34 \x01(\tH\x00\x12\'\n\x0b\x63ontent_ecm\x18\x35 \x01(\x0b\x32\x10.eolymp.ecm.NodeH\x00\x12\x13\n\x0b\x63ontent_raw\x18\x05 \x01(\t\x12&\n\x0c\x63ontent_rich\x18\x08 \x01(\x0b\x32\x10.eolymp.ecm.Node\x12\x15\n\rdownload_link\x18\x07 \x01(\t\x12.\n\x06\x66ormat\x18\x06 \x01(\x0e\x32\x1e.eolymp.atlas.Statement.Format\x12\x0e\n\x06\x61uthor\x18\x65 \x01(\t\x12\x0e\n\x06source\x18\x66 \x01(\t\"=\n\x06\x46ormat\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03TEX\x10\x01\x12\x0c\n\x08MARKDOWN\x10\x02\x12\x08\n\x04HTML\x10\x03\x12\x08\n\x04RICH\x10\x04\x42\t\n\x07\x63ontentB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/atlas/statement.proto\x12\x0c\x65olymp.atlas\x1a\x15\x65olymp/ecm/node.proto\"\xae\x03\n\tStatement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0e\n\x06locale\x18\x03 \x01(\t\x12\r\n\x05title\x18\x04 \x01(\t\x12\x16\n\x0c\x63ontent_html\x18\x32 \x01(\tH\x00\x12\x17\n\rcontent_latex\x18\x33 \x01(\tH\x00\x12\x1a\n\x10\x63ontent_markdown\x18\x34 \x01(\tH\x00\x12\'\n\x0b\x63ontent_ecm\x18\x35 \x01(\x0b\x32\x10.eolymp.ecm.NodeH\x00\x12\x13\n\x0b\x63ontent_raw\x18\x05 \x01(\t\x12&\n\x0c\x63ontent_rich\x18\x08 \x01(\x0b\x32\x10.eolymp.ecm.Node\x12\x15\n\rdownload_link\x18\x07 \x01(\t\x12.\n\x06\x66ormat\x18\x06 \x01(\x0e\x32\x1e.eolymp.atlas.Statement.Format\x12\x0e\n\x06\x61uthor\x18\x65 \x01(\t\x12\x0e\n\x06source\x18\x66 \x01(\t\"=\n\x06\x46ormat\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03TEX\x10\x01\x12\x0c\n\x08MARKDOWN\x10\x02\x12\x08\n\x04HTML\x10\x03\x12\x08\n\x04RICH\x10\x04\x42\t\n\x07\x63ontentB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.statement_pb2', globals())
@@ -23,8 +22,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _STATEMENT._serialized_start=105
-  _STATEMENT._serialized_end=535
-  _STATEMENT_FORMAT._serialized_start=463
-  _STATEMENT_FORMAT._serialized_end=524
+  _STATEMENT._serialized_start=70
+  _STATEMENT._serialized_end=500
+  _STATEMENT_FORMAT._serialized_start=428
+  _STATEMENT_FORMAT._serialized_end=489
 # @@protoc_insertion_point(module_scope)
