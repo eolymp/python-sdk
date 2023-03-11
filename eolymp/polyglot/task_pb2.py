@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/polyglot/task.proto\x12\x0f\x65olymp.polyglot\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd2\x04\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x31\n\x06inputs\x18\x04 \x03(\x0b\x32!.eolymp.polyglot.Task.InputsEntry\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bprogress_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x63omplete_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08progress\x18\x14 \x01(\r\x12\r\n\x05total\x18\x15 \x01(\r\x12,\n\x06status\x18\x1e \x01(\x0e\x32\x1c.eolymp.polyglot.Task.Status\x12\x33\n\x07outputs\x18\x1f \x03(\x0b\x32\".eolymp.polyglot.Task.OutputsEntry\x12\x0c\n\x04logs\x18\x64 \x01(\t\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a.\n\x0cOutputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\x06Status\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tEXECUTING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x42\x33Z1github.com/eolymp/go-sdk/eolymp/polyglot;polyglotb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/polyglot/task.proto\x12\x0f\x65olymp.polyglot\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd0\x04\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x31\n\x06inputs\x18\x04 \x03(\x0b\x32!.eolymp.polyglot.Task.InputsEntry\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bprogress_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x63omplete_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08progress\x18\x14 \x01(\r\x12\r\n\x05total\x18\x15 \x01(\r\x12,\n\x06status\x18\x1e \x01(\x0e\x32\x1c.eolymp.polyglot.Task.Status\x12\x33\n\x07outputs\x18\x1f \x03(\x0b\x32\".eolymp.polyglot.Task.OutputsEntry\x12\x0c\n\x04logs\x18\x64 \x01(\t\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a.\n\x0cOutputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07STARTED\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x42\x33Z1github.com/eolymp/go-sdk/eolymp/polyglot;polyglotb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.polyglot.task_pb2', globals())
@@ -27,11 +27,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TASK_OUTPUTSENTRY._options = None
   _TASK_OUTPUTSENTRY._serialized_options = b'8\001'
   _TASK._serialized_start=81
-  _TASK._serialized_end=675
+  _TASK._serialized_end=673
   _TASK_INPUTSENTRY._serialized_start=506
   _TASK_INPUTSENTRY._serialized_end=551
   _TASK_OUTPUTSENTRY._serialized_start=553
   _TASK_OUTPUTSENTRY._serialized_end=599
   _TASK_STATUS._serialized_start=601
-  _TASK_STATUS._serialized_end=675
+  _TASK_STATUS._serialized_end=673
 # @@protoc_insertion_point(module_scope)

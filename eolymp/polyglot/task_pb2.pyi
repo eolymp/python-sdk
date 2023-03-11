@@ -27,16 +27,16 @@ class Task(_message.Message):
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     COMPLETE: Task.Status
     COMPLETE_AT_FIELD_NUMBER: _ClassVar[int]
+    CREATED: Task.Status
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     ERROR: Task.Status
-    EXECUTING: Task.Status
     ID_FIELD_NUMBER: _ClassVar[int]
     INPUTS_FIELD_NUMBER: _ClassVar[int]
     LOGS_FIELD_NUMBER: _ClassVar[int]
     OUTPUTS_FIELD_NUMBER: _ClassVar[int]
-    PENDING: Task.Status
     PROGRESS_AT_FIELD_NUMBER: _ClassVar[int]
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
+    STARTED: Task.Status
     STARTED_AT_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
