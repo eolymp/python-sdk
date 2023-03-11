@@ -1,8 +1,8 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.polyglot import task_pb2 as _task_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.worker import job_pb2 as _job_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CreateTaskInput(_message.Message):
+class CreateJobInput(_message.Message):
     __slots__ = ["inputs", "type"]
     class InputsEntry(_message.Message):
         __slots__ = ["key", "value"]
@@ -25,25 +25,25 @@ class CreateTaskInput(_message.Message):
     type: str
     def __init__(self, type: _Optional[str] = ..., inputs: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
-class CreateTaskOutput(_message.Message):
-    __slots__ = ["task_id"]
-    TASK_ID_FIELD_NUMBER: _ClassVar[int]
-    task_id: str
-    def __init__(self, task_id: _Optional[str] = ...) -> None: ...
+class CreateJobOutput(_message.Message):
+    __slots__ = ["job_id"]
+    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    job_id: str
+    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
 
-class DescribeTaskInput(_message.Message):
-    __slots__ = ["task_id"]
-    TASK_ID_FIELD_NUMBER: _ClassVar[int]
-    task_id: str
-    def __init__(self, task_id: _Optional[str] = ...) -> None: ...
+class DescribeJobInput(_message.Message):
+    __slots__ = ["job_id"]
+    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    job_id: str
+    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
 
-class DescribeTaskOutput(_message.Message):
-    __slots__ = ["task"]
-    TASK_FIELD_NUMBER: _ClassVar[int]
-    task: _task_pb2.Task
-    def __init__(self, task: _Optional[_Union[_task_pb2.Task, _Mapping]] = ...) -> None: ...
+class DescribeJobOutput(_message.Message):
+    __slots__ = ["job"]
+    JOB_FIELD_NUMBER: _ClassVar[int]
+    job: _job_pb2.Job
+    def __init__(self, job: _Optional[_Union[_job_pb2.Job, _Mapping]] = ...) -> None: ...
 
-class ListTasksInput(_message.Message):
+class ListJobsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "status", "type"]
@@ -57,15 +57,15 @@ class ListTasksInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListTasksInput.Filter
+    filters: ListJobsInput.Filter
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTasksInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListJobsInput.Filter, _Mapping]] = ...) -> None: ...
 
-class ListTasksOutput(_message.Message):
+class ListJobsOutput(_message.Message):
     __slots__ = ["items", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_task_pb2.Task]
+    items: _containers.RepeatedCompositeFieldContainer[_job_pb2.Job]
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_task_pb2.Task, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_job_pb2.Job, _Mapping]]] = ...) -> None: ...
