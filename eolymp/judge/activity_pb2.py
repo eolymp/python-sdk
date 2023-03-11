@@ -11,11 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/judge/activity.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe1\x04\n\x08\x41\x63tivity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12)\n\x04type\x18\x02 \x01(\x0e\x32\x1b.eolymp.judge.Activity.Type\x12-\n\x06status\x18\x03 \x01(\x0e\x32\x1d.eolymp.judge.Activity.Status\x12\x12\n\ncontest_id\x18\x05 \x01(\t\x12\x15\n\rscoreboard_id\x18\x64 \x01(\t\x12\x12\n\nproblem_id\x18\x65 \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bprogress_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x63omplete_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08progress\x18\x14 \x01(\r\x12\r\n\x05total\x18\x15 \x01(\r\x12\r\n\x05\x65rror\x18\x1e \x01(\t\"<\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\x12\n\x0ePROBLEM_RETEST\x10\x01\x12\x16\n\x12SCOREBOARD_REBUILD\x10\x02\"H\n\x06Status\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07STARTED\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\t\n\x05\x45RROR\x10\x04:(\xb2\xe3\n$\xba\xe3\n\x08\x61\x63tivity\xc2\xe3\n\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/judge/activity.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb7\x04\n\x08\x41\x63tivity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12)\n\x04type\x18\x02 \x01(\x0e\x32\x1b.eolymp.judge.Activity.Type\x12-\n\x06status\x18\x03 \x01(\x0e\x32\x1d.eolymp.judge.Activity.Status\x12\x12\n\ncontest_id\x18\x05 \x01(\t\x12\x15\n\rscoreboard_id\x18\x64 \x01(\t\x12\x12\n\nproblem_id\x18\x65 \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bprogress_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x63omplete_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08progress\x18\x14 \x01(\r\x12\r\n\x05total\x18\x15 \x01(\r\x12\r\n\x05\x65rror\x18\x1e \x01(\t\"<\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\x12\n\x0ePROBLEM_RETEST\x10\x01\x12\x16\n\x12SCOREBOARD_REBUILD\x10\x02\"H\n\x06Status\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07STARTED\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.activity_pb2', globals())
@@ -23,12 +22,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _ACTIVITY._options = None
-  _ACTIVITY._serialized_options = b'\262\343\n$\272\343\n\010activity\302\343\n\024eolymp.judge.Contest'
-  _ACTIVITY._serialized_start=114
-  _ACTIVITY._serialized_end=723
-  _ACTIVITY_TYPE._serialized_start=547
-  _ACTIVITY_TYPE._serialized_end=607
-  _ACTIVITY_STATUS._serialized_start=609
-  _ACTIVITY_STATUS._serialized_end=681
+  _ACTIVITY._serialized_start=79
+  _ACTIVITY._serialized_end=646
+  _ACTIVITY_TYPE._serialized_start=512
+  _ACTIVITY_TYPE._serialized_end=572
+  _ACTIVITY_STATUS._serialized_start=574
+  _ACTIVITY_STATUS._serialized_end=646
 # @@protoc_insertion_point(module_scope)
