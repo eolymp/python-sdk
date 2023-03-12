@@ -1,4 +1,3 @@
-from eolymp.annotations import resource_pb2 as _resource_pb2
 from eolymp.atlas import feedback_pb2 as _feedback_pb2
 from eolymp.ecm import node_pb2 as _node_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper

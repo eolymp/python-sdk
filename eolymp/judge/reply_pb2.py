@@ -11,11 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.annotations import resource_pb2 as eolymp_dot_annotations_dot_resource__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/reply.proto\x12\x0c\x65olymp.judge\x1a!eolymp/annotations/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcd\x01\n\x05Reply\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\x12\x11\n\x07user_id\x18\x03 \x01(\tH\x00\x12\x13\n\tmember_id\x18\x04 \x01(\tH\x00\x12\x0f\n\x07message\x18\n \x01(\t\x12.\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp:$\xb2\xe3\n \xba\xe3\n\x05reply\xc2\xe3\n\x13\x65olymp.judge.TicketB\x08\n\x06\x61uthorB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/reply.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa7\x01\n\x05Reply\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\x12\x11\n\x07user_id\x18\x03 \x01(\tH\x00\x12\x13\n\tmember_id\x18\x04 \x01(\tH\x00\x12\x0f\n\x07message\x18\n \x01(\t\x12.\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\n\x06\x61uthorB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.reply_pb2', globals())
@@ -23,8 +22,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _REPLY._options = None
-  _REPLY._serialized_options = b'\262\343\n \272\343\n\005reply\302\343\n\023eolymp.judge.Ticket'
-  _REPLY._serialized_start=111
-  _REPLY._serialized_end=316
+  _REPLY._serialized_start=76
+  _REPLY._serialized_end=243
 # @@protoc_insertion_point(module_scope)

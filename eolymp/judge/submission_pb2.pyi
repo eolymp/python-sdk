@@ -1,4 +1,3 @@
-from eolymp.annotations import resource_pb2 as _resource_pb2
 from eolymp.atlas import feedback_pb2 as _feedback_pb2
 from eolymp.atlas import scoring_pb2 as _scoring_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
