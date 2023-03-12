@@ -483,6 +483,18 @@ class GrantPermissionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class IntrospectPermissionInput(_message.Message):
+    __slots__ = ["problem_id"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+
+class IntrospectPermissionOutput(_message.Message):
+    __slots__ = ["permission"]
+    PERMISSION_FIELD_NUMBER: _ClassVar[int]
+    permission: _permission_pb2.Permission
+    def __init__(self, permission: _Optional[_Union[_permission_pb2.Permission, _Mapping]] = ...) -> None: ...
+
 class ListAttachmentsInput(_message.Message):
     __slots__ = ["filters", "offset", "problem_id", "size", "version"]
     class Filter(_message.Message):
