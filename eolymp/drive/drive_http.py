@@ -15,7 +15,7 @@ class DriveClient:
         self.url = url
 
     def DescribeFile(self, request, **kwargs):
-        path = "/drive/files/"+urllib.parse.quote(request.file_id)
+        path = "/files/"+urllib.parse.quote(request.file_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.file_id = ""
@@ -29,7 +29,7 @@ class DriveClient:
         )
 
     def ListFiles(self, request, **kwargs):
-        path = "/drive/files"
+        path = "/files"
 
         return self.transport.request(
             method="GET",
@@ -40,7 +40,7 @@ class DriveClient:
         )
 
     def CreateFile(self, request, **kwargs):
-        path = "/drive/files"
+        path = "/files"
 
         return self.transport.request(
             method="POST",
@@ -51,7 +51,7 @@ class DriveClient:
         )
 
     def UpdateFile(self, request, **kwargs):
-        path = "/drive/files/"+urllib.parse.quote(request.file_id)
+        path = "/files/"+urllib.parse.quote(request.file_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.file_id = ""
@@ -65,7 +65,7 @@ class DriveClient:
         )
 
     def DeleteFile(self, request, **kwargs):
-        path = "/drive/files/"+urllib.parse.quote(request.file_id)
+        path = "/files/"+urllib.parse.quote(request.file_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.file_id = ""
@@ -79,7 +79,7 @@ class DriveClient:
         )
 
     def StartMultipartUpload(self, request, **kwargs):
-        path = "/drive/uploads"
+        path = "/uploads"
 
         return self.transport.request(
             method="POST",
@@ -90,7 +90,7 @@ class DriveClient:
         )
 
     def UploadPart(self, request, **kwargs):
-        path = "/drive/uploads/"+urllib.parse.quote(request.upload_id)+"/parts"
+        path = "/uploads/"+urllib.parse.quote(request.upload_id)+"/parts"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.upload_id = ""
@@ -104,7 +104,7 @@ class DriveClient:
         )
 
     def CompleteMultipartUpload(self, request, **kwargs):
-        path = "/drive/uploads/"+urllib.parse.quote(request.upload_id)+"/complete"
+        path = "/uploads/"+urllib.parse.quote(request.upload_id)+"/complete"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.upload_id = ""
