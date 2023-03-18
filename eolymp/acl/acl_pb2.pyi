@@ -44,7 +44,7 @@ class IntrospectPermissionOutput(_message.Message):
     permission: Permission
     def __init__(self, permission: _Optional[_Union[Permission, _Mapping]] = ...) -> None: ...
 
-class ListPermissionInput(_message.Message):
+class ListPermissionsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "role", "user_id"]
@@ -58,12 +58,12 @@ class ListPermissionInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListPermissionInput.Filter
+    filters: ListPermissionsInput.Filter
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPermissionInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPermissionsInput.Filter, _Mapping]] = ...) -> None: ...
 
-class ListPermissionOutput(_message.Message):
+class ListPermissionsOutput(_message.Message):
     __slots__ = ["items", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]

@@ -56,14 +56,14 @@ class AclClient:
             **kwargs,
         )
 
-    def ListPermission(self, request, **kwargs):
+    def ListPermissions(self, request, **kwargs):
         path = "/acl"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.acl.ListPermissionOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.acl.ListPermissionsOutput"),
             **kwargs,
         )
 
