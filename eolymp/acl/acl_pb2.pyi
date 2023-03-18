@@ -39,10 +39,10 @@ class IntrospectPermissionInput(_message.Message):
     def __init__(self) -> None: ...
 
 class IntrospectPermissionOutput(_message.Message):
-    __slots__ = ["grant"]
-    GRANT_FIELD_NUMBER: _ClassVar[int]
-    grant: Permission
-    def __init__(self, grant: _Optional[_Union[Permission, _Mapping]] = ...) -> None: ...
+    __slots__ = ["permission"]
+    PERMISSION_FIELD_NUMBER: _ClassVar[int]
+    permission: Permission
+    def __init__(self, permission: _Optional[_Union[Permission, _Mapping]] = ...) -> None: ...
 
 class ListPermissionInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
