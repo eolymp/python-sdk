@@ -14,7 +14,7 @@ class AclClient:
         self.transport = transport
         self.url = url
 
-    def Grant(self, request, **kwargs):
+    def GrantPermission(self, request, **kwargs):
         path = "/acl/"+urllib.parse.quote(request.user_id)
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -24,11 +24,11 @@ class AclClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.acl.GrantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.acl.GrantPermissionOutput"),
             **kwargs,
         )
 
-    def Revoke(self, request, **kwargs):
+    def RevokePermission(self, request, **kwargs):
         path = "/acl/"+urllib.parse.quote(request.user_id)
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -38,11 +38,11 @@ class AclClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.acl.RevokeOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.acl.RevokePermissionOutput"),
             **kwargs,
         )
 
-    def Describe(self, request, **kwargs):
+    def DescribePermission(self, request, **kwargs):
         path = "/acl/"+urllib.parse.quote(request.user_id)
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -52,29 +52,29 @@ class AclClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.acl.DescribeOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.acl.DescribePermissionOutput"),
             **kwargs,
         )
 
-    def List(self, request, **kwargs):
+    def ListPermission(self, request, **kwargs):
         path = "/acl"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.acl.ListOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.acl.ListPermissionOutput"),
             **kwargs,
         )
 
-    def Introspect(self, request, **kwargs):
+    def IntrospectPermission(self, request, **kwargs):
         path = "/whoami"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.acl.IntrospectOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.acl.IntrospectPermissionOutput"),
             **kwargs,
         )
 

@@ -8,31 +8,19 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class DescribeInput(_message.Message):
+class DescribePermissionInput(_message.Message):
     __slots__ = ["user_id"]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
     user_id: str
     def __init__(self, user_id: _Optional[str] = ...) -> None: ...
 
-class DescribeOutput(_message.Message):
+class DescribePermissionOutput(_message.Message):
     __slots__ = ["grant"]
     GRANT_FIELD_NUMBER: _ClassVar[int]
-    grant: Grant
-    def __init__(self, grant: _Optional[_Union[Grant, _Mapping]] = ...) -> None: ...
+    grant: Permission
+    def __init__(self, grant: _Optional[_Union[Permission, _Mapping]] = ...) -> None: ...
 
-class Grant(_message.Message):
-    __slots__ = ["entitlements", "id", "role", "user_id"]
-    ENTITLEMENTS_FIELD_NUMBER: _ClassVar[int]
-    ID_FIELD_NUMBER: _ClassVar[int]
-    ROLE_FIELD_NUMBER: _ClassVar[int]
-    USER_ID_FIELD_NUMBER: _ClassVar[int]
-    entitlements: _containers.RepeatedScalarFieldContainer[str]
-    id: str
-    role: str
-    user_id: str
-    def __init__(self, id: _Optional[str] = ..., role: _Optional[str] = ..., user_id: _Optional[str] = ..., entitlements: _Optional[_Iterable[str]] = ...) -> None: ...
-
-class GrantInput(_message.Message):
+class GrantPermissionInput(_message.Message):
     __slots__ = ["entitlements", "role", "user_id"]
     ENTITLEMENTS_FIELD_NUMBER: _ClassVar[int]
     ROLE_FIELD_NUMBER: _ClassVar[int]
@@ -42,21 +30,21 @@ class GrantInput(_message.Message):
     user_id: str
     def __init__(self, user_id: _Optional[str] = ..., role: _Optional[str] = ..., entitlements: _Optional[_Iterable[str]] = ...) -> None: ...
 
-class GrantOutput(_message.Message):
+class GrantPermissionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class IntrospectInput(_message.Message):
+class IntrospectPermissionInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class IntrospectOutput(_message.Message):
+class IntrospectPermissionOutput(_message.Message):
     __slots__ = ["grant"]
     GRANT_FIELD_NUMBER: _ClassVar[int]
-    grant: Grant
-    def __init__(self, grant: _Optional[_Union[Grant, _Mapping]] = ...) -> None: ...
+    grant: Permission
+    def __init__(self, grant: _Optional[_Union[Permission, _Mapping]] = ...) -> None: ...
 
-class ListInput(_message.Message):
+class ListPermissionInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "role", "user_id"]
@@ -70,25 +58,37 @@ class ListInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListInput.Filter
+    filters: ListPermissionInput.Filter
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPermissionInput.Filter, _Mapping]] = ...) -> None: ...
 
-class ListOutput(_message.Message):
+class ListPermissionOutput(_message.Message):
     __slots__ = ["items", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[Grant]
+    items: _containers.RepeatedCompositeFieldContainer[Permission]
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[Grant, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[Permission, _Mapping]]] = ...) -> None: ...
 
-class RevokeInput(_message.Message):
+class Permission(_message.Message):
+    __slots__ = ["entitlements", "id", "role", "user_id"]
+    ENTITLEMENTS_FIELD_NUMBER: _ClassVar[int]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    ROLE_FIELD_NUMBER: _ClassVar[int]
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    entitlements: _containers.RepeatedScalarFieldContainer[str]
+    id: str
+    role: str
+    user_id: str
+    def __init__(self, id: _Optional[str] = ..., role: _Optional[str] = ..., user_id: _Optional[str] = ..., entitlements: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class RevokePermissionInput(_message.Message):
     __slots__ = ["user_id"]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
     user_id: str
     def __init__(self, user_id: _Optional[str] = ...) -> None: ...
 
-class RevokeOutput(_message.Message):
+class RevokePermissionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

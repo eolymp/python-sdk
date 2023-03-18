@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x65olymp/acl/acl.proto\x12\neolymp.acl\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a!eolymp/wellknown/expression.proto\"H\n\x05Grant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\x12\x14\n\x0c\x65ntitlements\x18\x04 \x03(\t\"A\n\nGrantInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x14\n\x0c\x65ntitlements\x18\x03 \x03(\t\"\r\n\x0bGrantOutput\"\x1e\n\x0bRevokeInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x0e\n\x0cRevokeOutput\" \n\rDescribeInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"2\n\x0e\x44\x65scribeOutput\x12 \n\x05grant\x18\x01 \x01(\x0b\x32\x11.eolymp.acl.Grant\"\xf0\x01\n\tListInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12-\n\x07\x66ilters\x18( \x01(\x0b\x32\x1c.eolymp.acl.ListInput.Filter\x1a\x95\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04role\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"=\n\nListOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12 \n\x05items\x18\x02 \x03(\x0b\x32\x11.eolymp.acl.Grant\"\x11\n\x0fIntrospectInput\"4\n\x10IntrospectOutput\x12 \n\x05grant\x18\x01 \x01(\x0b\x32\x11.eolymp.acl.Grant2\xf1\x03\n\x03\x41\x63l\x12_\n\x05Grant\x12\x16.eolymp.acl.GrantInput\x1a\x17.eolymp.acl.GrantOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x10\x1a\x0e/acl/{user_id}\x12\x62\n\x06Revoke\x12\x17.eolymp.acl.RevokeInput\x1a\x18.eolymp.acl.RevokeOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x10*\x0e/acl/{user_id}\x12h\n\x08\x44\x65scribe\x12\x19.eolymp.acl.DescribeInput\x1a\x1a.eolymp.acl.DescribeOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x10\x12\x0e/acl/{user_id}\x12R\n\x04List\x12\x15.eolymp.acl.ListInput\x1a\x16.eolymp.acl.ListOutput\"\x1b\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x06\x12\x04/acl\x12g\n\nIntrospect\x12\x1b.eolymp.acl.IntrospectInput\x1a\x1c.eolymp.acl.IntrospectOutput\"\x1e\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\t\x12\x07/whoamiB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x65olymp/acl/acl.proto\x12\neolymp.acl\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a!eolymp/wellknown/expression.proto\"M\n\nPermission\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\x12\x14\n\x0c\x65ntitlements\x18\x04 \x03(\t\"K\n\x14GrantPermissionInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x14\n\x0c\x65ntitlements\x18\x03 \x03(\t\"\x17\n\x15GrantPermissionOutput\"(\n\x15RevokePermissionInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x18\n\x16RevokePermissionOutput\"*\n\x17\x44\x65scribePermissionInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"A\n\x18\x44\x65scribePermissionOutput\x12%\n\x05grant\x18\x01 \x01(\x0b\x32\x16.eolymp.acl.Permission\"\x84\x02\n\x13ListPermissionInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.acl.ListPermissionInput.Filter\x1a\x95\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04role\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"L\n\x14ListPermissionOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.acl.Permission\"\x1b\n\x19IntrospectPermissionInput\"C\n\x1aIntrospectPermissionOutput\x12%\n\x05grant\x18\x01 \x01(\x0b\x32\x16.eolymp.acl.Permission2\x8a\x05\n\x03\x41\x63l\x12}\n\x0fGrantPermission\x12 .eolymp.acl.GrantPermissionInput\x1a!.eolymp.acl.GrantPermissionOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x10\x1a\x0e/acl/{user_id}\x12\x80\x01\n\x10RevokePermission\x12!.eolymp.acl.RevokePermissionInput\x1a\".eolymp.acl.RevokePermissionOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x10*\x0e/acl/{user_id}\x12\x86\x01\n\x12\x44\x65scribePermission\x12#.eolymp.acl.DescribePermissionInput\x1a$.eolymp.acl.DescribePermissionOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x10\x12\x0e/acl/{user_id}\x12p\n\x0eListPermission\x12\x1f.eolymp.acl.ListPermissionInput\x1a .eolymp.acl.ListPermissionOutput\"\x1b\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x06\x12\x04/acl\x12\x85\x01\n\x14IntrospectPermission\x12%.eolymp.acl.IntrospectPermissionInput\x1a&.eolymp.acl.IntrospectPermissionOutput\"\x1e\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\t\x12\x07/whoamiB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.acl.acl_pb2', globals())
@@ -24,40 +24,40 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z\'github.com/eolymp/go-sdk/eolymp/acl;acl'
-  _ACL.methods_by_name['Grant']._options = None
-  _ACL.methods_by_name['Grant']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\020\032\016/acl/{user_id}'
-  _ACL.methods_by_name['Revoke']._options = None
-  _ACL.methods_by_name['Revoke']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\020*\016/acl/{user_id}'
-  _ACL.methods_by_name['Describe']._options = None
-  _ACL.methods_by_name['Describe']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\323\344\223\002\020\022\016/acl/{user_id}'
-  _ACL.methods_by_name['List']._options = None
-  _ACL.methods_by_name['List']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\323\344\223\002\006\022\004/acl'
-  _ACL.methods_by_name['Introspect']._options = None
-  _ACL.methods_by_name['Introspect']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\323\344\223\002\t\022\007/whoami'
-  _GRANT._serialized_start=138
-  _GRANT._serialized_end=210
-  _GRANTINPUT._serialized_start=212
-  _GRANTINPUT._serialized_end=277
-  _GRANTOUTPUT._serialized_start=279
-  _GRANTOUTPUT._serialized_end=292
-  _REVOKEINPUT._serialized_start=294
-  _REVOKEINPUT._serialized_end=324
-  _REVOKEOUTPUT._serialized_start=326
-  _REVOKEOUTPUT._serialized_end=340
-  _DESCRIBEINPUT._serialized_start=342
-  _DESCRIBEINPUT._serialized_end=374
-  _DESCRIBEOUTPUT._serialized_start=376
-  _DESCRIBEOUTPUT._serialized_end=426
-  _LISTINPUT._serialized_start=429
-  _LISTINPUT._serialized_end=669
-  _LISTINPUT_FILTER._serialized_start=520
-  _LISTINPUT_FILTER._serialized_end=669
-  _LISTOUTPUT._serialized_start=671
-  _LISTOUTPUT._serialized_end=732
-  _INTROSPECTINPUT._serialized_start=734
-  _INTROSPECTINPUT._serialized_end=751
-  _INTROSPECTOUTPUT._serialized_start=753
-  _INTROSPECTOUTPUT._serialized_end=805
-  _ACL._serialized_start=808
-  _ACL._serialized_end=1305
+  _ACL.methods_by_name['GrantPermission']._options = None
+  _ACL.methods_by_name['GrantPermission']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\020\032\016/acl/{user_id}'
+  _ACL.methods_by_name['RevokePermission']._options = None
+  _ACL.methods_by_name['RevokePermission']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\020*\016/acl/{user_id}'
+  _ACL.methods_by_name['DescribePermission']._options = None
+  _ACL.methods_by_name['DescribePermission']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\323\344\223\002\020\022\016/acl/{user_id}'
+  _ACL.methods_by_name['ListPermission']._options = None
+  _ACL.methods_by_name['ListPermission']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\323\344\223\002\006\022\004/acl'
+  _ACL.methods_by_name['IntrospectPermission']._options = None
+  _ACL.methods_by_name['IntrospectPermission']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\323\344\223\002\t\022\007/whoami'
+  _PERMISSION._serialized_start=138
+  _PERMISSION._serialized_end=215
+  _GRANTPERMISSIONINPUT._serialized_start=217
+  _GRANTPERMISSIONINPUT._serialized_end=292
+  _GRANTPERMISSIONOUTPUT._serialized_start=294
+  _GRANTPERMISSIONOUTPUT._serialized_end=317
+  _REVOKEPERMISSIONINPUT._serialized_start=319
+  _REVOKEPERMISSIONINPUT._serialized_end=359
+  _REVOKEPERMISSIONOUTPUT._serialized_start=361
+  _REVOKEPERMISSIONOUTPUT._serialized_end=385
+  _DESCRIBEPERMISSIONINPUT._serialized_start=387
+  _DESCRIBEPERMISSIONINPUT._serialized_end=429
+  _DESCRIBEPERMISSIONOUTPUT._serialized_start=431
+  _DESCRIBEPERMISSIONOUTPUT._serialized_end=496
+  _LISTPERMISSIONINPUT._serialized_start=499
+  _LISTPERMISSIONINPUT._serialized_end=759
+  _LISTPERMISSIONINPUT_FILTER._serialized_start=610
+  _LISTPERMISSIONINPUT_FILTER._serialized_end=759
+  _LISTPERMISSIONOUTPUT._serialized_start=761
+  _LISTPERMISSIONOUTPUT._serialized_end=837
+  _INTROSPECTPERMISSIONINPUT._serialized_start=839
+  _INTROSPECTPERMISSIONINPUT._serialized_end=866
+  _INTROSPECTPERMISSIONOUTPUT._serialized_start=868
+  _INTROSPECTPERMISSIONOUTPUT._serialized_end=935
+  _ACL._serialized_start=938
+  _ACL._serialized_end=1588
 # @@protoc_insertion_point(module_scope)
