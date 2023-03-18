@@ -28,33 +28,14 @@ class CompleteMultipartUploadInput(_message.Message):
     def __init__(self, upload_id: _Optional[str] = ..., parts: _Optional[_Iterable[_Union[CompleteMultipartUploadInput.Part, _Mapping]]] = ...) -> None: ...
 
 class CompleteMultipartUploadOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class CreateFileInput(_message.Message):
-    __slots__ = ["attributes", "data", "path", "type"]
-    class AttributesEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
-    DATA_FIELD_NUMBER: _ClassVar[int]
-    PATH_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
-    attributes: _containers.ScalarMap[str, str]
-    data: bytes
-    path: str
-    type: str
-    def __init__(self, path: _Optional[str] = ..., type: _Optional[str] = ..., attributes: _Optional[_Mapping[str, str]] = ..., data: _Optional[bytes] = ...) -> None: ...
-
-class CreateFileOutput(_message.Message):
-    __slots__ = ["file_id"]
+    __slots__ = ["file_hash", "file_id", "file_url"]
+    FILE_HASH_FIELD_NUMBER: _ClassVar[int]
     FILE_ID_FIELD_NUMBER: _ClassVar[int]
+    FILE_URL_FIELD_NUMBER: _ClassVar[int]
+    file_hash: str
     file_id: str
-    def __init__(self, file_id: _Optional[str] = ...) -> None: ...
+    file_url: str
+    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_hash: _Optional[str] = ...) -> None: ...
 
 class DeleteFileInput(_message.Message):
     __slots__ = ["file_id"]
@@ -114,7 +95,7 @@ class ListFilesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ...) -> None: ...
 
 class StartMultipartUploadInput(_message.Message):
-    __slots__ = ["attributes", "path", "type"]
+    __slots__ = ["acl", "attributes", "path", "type"]
     class AttributesEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -122,13 +103,15 @@ class StartMultipartUploadInput(_message.Message):
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    ACL_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    acl: _file_pb2.File.Acl
     attributes: _containers.ScalarMap[str, str]
     path: str
     type: str
-    def __init__(self, path: _Optional[str] = ..., type: _Optional[str] = ..., attributes: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, path: _Optional[str] = ..., type: _Optional[str] = ..., acl: _Optional[_Union[_file_pb2.File.Acl, str]] = ..., attributes: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class StartMultipartUploadOutput(_message.Message):
     __slots__ = ["upload_id"]
@@ -147,6 +130,37 @@ class UpdateFileInput(_message.Message):
 class UpdateFileOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class UploadFileInput(_message.Message):
+    __slots__ = ["acl", "attributes", "data", "path", "type"]
+    class AttributesEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    ACL_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
+    DATA_FIELD_NUMBER: _ClassVar[int]
+    PATH_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    acl: _file_pb2.File.Acl
+    attributes: _containers.ScalarMap[str, str]
+    data: bytes
+    path: str
+    type: str
+    def __init__(self, path: _Optional[str] = ..., type: _Optional[str] = ..., acl: _Optional[_Union[_file_pb2.File.Acl, str]] = ..., attributes: _Optional[_Mapping[str, str]] = ..., data: _Optional[bytes] = ...) -> None: ...
+
+class UploadFileOutput(_message.Message):
+    __slots__ = ["file_hash", "file_id", "file_url"]
+    FILE_HASH_FIELD_NUMBER: _ClassVar[int]
+    FILE_ID_FIELD_NUMBER: _ClassVar[int]
+    FILE_URL_FIELD_NUMBER: _ClassVar[int]
+    file_hash: str
+    file_id: str
+    file_url: str
+    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_hash: _Optional[str] = ...) -> None: ...
 
 class UploadPartInput(_message.Message):
     __slots__ = ["data", "part_number", "upload_id"]

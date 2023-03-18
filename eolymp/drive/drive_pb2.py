@@ -18,7 +18,7 @@ from eolymp.drive import file_pb2 as eolymp_dot_drive_dot_file__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/drive/drive.proto\x12\x0c\x65olymp.drive\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x17\x65olymp/drive/file.proto\x1a!eolymp/wellknown/expression.proto\"$\n\x11\x44\x65scribeFileInput\x12\x0f\n\x07\x66ile_id\x18\x01 \x01(\t\"6\n\x12\x44\x65scribeFileOutput\x12 \n\x04\x66ile\x18\x01 \x01(\x0b\x32\x12.eolymp.drive.File\"\xd2\x03\n\x0eListFilesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x34\n\x07\x66ilters\x18( \x01(\x0b\x32#.eolymp.drive.ListFilesInput.Filter\x1a\xeb\x02\n\x06\x46ilter\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04path\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12.\n\x04hash\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12-\n\x04size\x18\x05 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12.\n\x04type\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x39\n\ncreated_at\x18\x07 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x39\n\nupdated_at\x18\x08 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"C\n\x0fListFilesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.drive.File\"\xb1\x01\n\x0f\x43reateFileInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x41\n\nattributes\x18\n \x03(\x0b\x32-.eolymp.drive.CreateFileInput.AttributesEntry\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"#\n\x10\x43reateFileOutput\x12\x0f\n\x07\x66ile_id\x18\x01 \x01(\t\"D\n\x0fUpdateFileInput\x12\x0f\n\x07\x66ile_id\x18\x01 \x01(\t\x12 \n\x04\x66ile\x18\x02 \x01(\x0b\x32\x12.eolymp.drive.File\"\x12\n\x10UpdateFileOutput\"\"\n\x0f\x44\x65leteFileInput\x12\x0f\n\x07\x66ile_id\x18\x01 \x01(\t\"\x12\n\x10\x44\x65leteFileOutput\"\xb7\x01\n\x19StartMultipartUploadInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12K\n\nattributes\x18\n \x03(\x0b\x32\x37.eolymp.drive.StartMultipartUploadInput.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x1aStartMultipartUploadOutput\x12\x11\n\tupload_id\x18\x01 \x01(\t\"G\n\x0fUploadPartInput\x12\x11\n\tupload_id\x18\x01 \x01(\t\x12\x13\n\x0bpart_number\x18\x02 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\n \x01(\x0c\" \n\x10UploadPartOutput\x12\x0c\n\x04\x65tag\x18\x01 \x01(\t\"\xae\x01\n\x1c\x43ompleteMultipartUploadInput\x12\x11\n\tupload_id\x18\x01 \x01(\t\x12>\n\x05parts\x18\n \x03(\x0b\x32/.eolymp.drive.CompleteMultipartUploadInput.Part\x1a;\n\x04Part\x12\x0e\n\x06number\x18\x01 \x01(\r\x12\x0c\n\x04\x65tag\x18\x02 \x01(\t\x12\x15\n\rchecksum_sha1\x18\n \x01(\t\"\x1f\n\x1d\x43ompleteMultipartUploadOutput2\xc0\t\n\x05\x44rive\x12\x92\x01\n\x0c\x44\x65scribeFile\x12\x1f.eolymp.drive.DescribeFileInput\x1a .eolymp.drive.DescribeFileOutput\"?\x82\xe3\n\x13\x8a\xe3\n\x0f\x64rive:file:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/files/{file_id}\x12~\n\tListFiles\x12\x1c.eolymp.drive.ListFilesInput\x1a\x1d.eolymp.drive.ListFilesOutput\"4\x82\xe3\n\x13\x8a\xe3\n\x0f\x64rive:file:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/files\x12\x82\x01\n\nCreateFile\x12\x1d.eolymp.drive.CreateFileInput\x1a\x1e.eolymp.drive.CreateFileOutput\"5\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x08\"\x06/files\x12\x8c\x01\n\nUpdateFile\x12\x1d.eolymp.drive.UpdateFileInput\x1a\x1e.eolymp.drive.UpdateFileOutput\"?\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12\x1a\x10/files/{file_id}\x12\x8c\x01\n\nDeleteFile\x12\x1d.eolymp.drive.DeleteFileInput\x1a\x1e.eolymp.drive.DeleteFileOutput\"?\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12*\x10/files/{file_id}\x12\xa2\x01\n\x14StartMultipartUpload\x12\'.eolymp.drive.StartMultipartUploadInput\x1a(.eolymp.drive.StartMultipartUploadOutput\"7\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\"\x08/uploads\x12\x96\x01\n\nUploadPart\x12\x1d.eolymp.drive.UploadPartInput\x1a\x1e.eolymp.drive.UploadPartOutput\"I\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1c\"\x1a/uploads/{upload_id}/parts\x12\xc0\x01\n\x17\x43ompleteMultipartUpload\x12*.eolymp.drive.CompleteMultipartUploadInput\x1a+.eolymp.drive.CompleteMultipartUploadOutput\"L\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1f\"\x1d/uploads/{upload_id}/completeB-Z+github.com/eolymp/go-sdk/eolymp/drive;driveb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/drive/drive.proto\x12\x0c\x65olymp.drive\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x17\x65olymp/drive/file.proto\x1a!eolymp/wellknown/expression.proto\"$\n\x11\x44\x65scribeFileInput\x12\x0f\n\x07\x66ile_id\x18\x01 \x01(\t\"6\n\x12\x44\x65scribeFileOutput\x12 \n\x04\x66ile\x18\x01 \x01(\x0b\x32\x12.eolymp.drive.File\"\xd2\x03\n\x0eListFilesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x34\n\x07\x66ilters\x18( \x01(\x0b\x32#.eolymp.drive.ListFilesInput.Filter\x1a\xeb\x02\n\x06\x46ilter\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04path\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12.\n\x04hash\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12-\n\x04size\x18\x05 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12.\n\x04type\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x39\n\ncreated_at\x18\x07 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x39\n\nupdated_at\x18\x08 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"C\n\x0fListFilesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.drive.File\"\xd6\x01\n\x0fUploadFileInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12#\n\x03\x61\x63l\x18\x03 \x01(\x0e\x32\x16.eolymp.drive.File.Acl\x12\x41\n\nattributes\x18\n \x03(\x0b\x32-.eolymp.drive.UploadFileInput.AttributesEntry\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x10UploadFileOutput\x12\x0f\n\x07\x66ile_id\x18\x01 \x01(\t\x12\x10\n\x08\x66ile_url\x18\x02 \x01(\t\x12\x11\n\tfile_hash\x18\x03 \x01(\t\"D\n\x0fUpdateFileInput\x12\x0f\n\x07\x66ile_id\x18\x01 \x01(\t\x12 \n\x04\x66ile\x18\x02 \x01(\x0b\x32\x12.eolymp.drive.File\"\x12\n\x10UpdateFileOutput\"\"\n\x0f\x44\x65leteFileInput\x12\x0f\n\x07\x66ile_id\x18\x01 \x01(\t\"\x12\n\x10\x44\x65leteFileOutput\"\xdc\x01\n\x19StartMultipartUploadInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12#\n\x03\x61\x63l\x18\x03 \x01(\x0e\x32\x16.eolymp.drive.File.Acl\x12K\n\nattributes\x18\n \x03(\x0b\x32\x37.eolymp.drive.StartMultipartUploadInput.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x1aStartMultipartUploadOutput\x12\x11\n\tupload_id\x18\x01 \x01(\t\"G\n\x0fUploadPartInput\x12\x11\n\tupload_id\x18\x01 \x01(\t\x12\x13\n\x0bpart_number\x18\x02 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\n \x01(\x0c\" \n\x10UploadPartOutput\x12\x0c\n\x04\x65tag\x18\x01 \x01(\t\"\xae\x01\n\x1c\x43ompleteMultipartUploadInput\x12\x11\n\tupload_id\x18\x01 \x01(\t\x12>\n\x05parts\x18\n \x03(\x0b\x32/.eolymp.drive.CompleteMultipartUploadInput.Part\x1a;\n\x04Part\x12\x0e\n\x06number\x18\x01 \x01(\r\x12\x0c\n\x04\x65tag\x18\x02 \x01(\t\x12\x15\n\rchecksum_sha1\x18\n \x01(\t\"U\n\x1d\x43ompleteMultipartUploadOutput\x12\x0f\n\x07\x66ile_id\x18\x01 \x01(\t\x12\x10\n\x08\x66ile_url\x18\x02 \x01(\t\x12\x11\n\tfile_hash\x18\x03 \x01(\t2\xb1\t\n\x05\x44rive\x12\x82\x01\n\nUploadFile\x12\x1d.eolymp.drive.UploadFileInput\x1a\x1e.eolymp.drive.UploadFileOutput\"5\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x08\"\x06/files\x12\x92\x01\n\x0c\x44\x65scribeFile\x12\x1f.eolymp.drive.DescribeFileInput\x1a .eolymp.drive.DescribeFileOutput\"?\x82\xe3\n\x13\x8a\xe3\n\x0f\x64rive:file:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/files/{file_id}\x12~\n\tListFiles\x12\x1c.eolymp.drive.ListFilesInput\x1a\x1d.eolymp.drive.ListFilesOutput\"4\x82\xe3\n\x13\x8a\xe3\n\x0f\x64rive:file:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/files\x12\x8c\x01\n\nUpdateFile\x12\x1d.eolymp.drive.UpdateFileInput\x1a\x1e.eolymp.drive.UpdateFileOutput\"?\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12\x1a\x10/files/{file_id}\x12\x8c\x01\n\nDeleteFile\x12\x1d.eolymp.drive.DeleteFileInput\x1a\x1e.eolymp.drive.DeleteFileOutput\"?\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12*\x10/files/{file_id}\x12\xa2\x01\n\x14StartMultipartUpload\x12\'.eolymp.drive.StartMultipartUploadInput\x1a(.eolymp.drive.StartMultipartUploadOutput\"7\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\"\x08/uploads\x12\x90\x01\n\nUploadPart\x12\x1d.eolymp.drive.UploadPartInput\x1a\x1e.eolymp.drive.UploadPartOutput\"C\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\"\x14/uploads/{upload_id}\x12\xb7\x01\n\x17\x43ompleteMultipartUpload\x12*.eolymp.drive.CompleteMultipartUploadInput\x1a+.eolymp.drive.CompleteMultipartUploadOutput\"C\x82\xe3\n\x14\x8a\xe3\n\x10\x64rive:file:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x1a\x14/uploads/{upload_id}B-Z+github.com/eolymp/go-sdk/eolymp/drive;driveb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.drive.drive_pb2', globals())
@@ -26,16 +26,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/drive;drive'
-  _CREATEFILEINPUT_ATTRIBUTESENTRY._options = None
-  _CREATEFILEINPUT_ATTRIBUTESENTRY._serialized_options = b'8\001'
+  _UPLOADFILEINPUT_ATTRIBUTESENTRY._options = None
+  _UPLOADFILEINPUT_ATTRIBUTESENTRY._serialized_options = b'8\001'
   _STARTMULTIPARTUPLOADINPUT_ATTRIBUTESENTRY._options = None
   _STARTMULTIPARTUPLOADINPUT_ATTRIBUTESENTRY._serialized_options = b'8\001'
+  _DRIVE.methods_by_name['UploadFile']._options = None
+  _DRIVE.methods_by_name['UploadFile']._serialized_options = b'\202\343\n\024\212\343\n\020drive:file:write\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\010\"\006/files'
   _DRIVE.methods_by_name['DescribeFile']._options = None
   _DRIVE.methods_by_name['DescribeFile']._serialized_options = b'\202\343\n\023\212\343\n\017drive:file:read\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\323\344\223\002\022\022\020/files/{file_id}'
   _DRIVE.methods_by_name['ListFiles']._options = None
   _DRIVE.methods_by_name['ListFiles']._serialized_options = b'\202\343\n\023\212\343\n\017drive:file:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\010\022\006/files'
-  _DRIVE.methods_by_name['CreateFile']._options = None
-  _DRIVE.methods_by_name['CreateFile']._serialized_options = b'\202\343\n\024\212\343\n\020drive:file:write\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\010\"\006/files'
   _DRIVE.methods_by_name['UpdateFile']._options = None
   _DRIVE.methods_by_name['UpdateFile']._serialized_options = b'\202\343\n\024\212\343\n\020drive:file:write\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\022\032\020/files/{file_id}'
   _DRIVE.methods_by_name['DeleteFile']._options = None
@@ -43,9 +43,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DRIVE.methods_by_name['StartMultipartUpload']._options = None
   _DRIVE.methods_by_name['StartMultipartUpload']._serialized_options = b'\202\343\n\024\212\343\n\020drive:file:write\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\n\"\010/uploads'
   _DRIVE.methods_by_name['UploadPart']._options = None
-  _DRIVE.methods_by_name['UploadPart']._serialized_options = b'\202\343\n\024\212\343\n\020drive:file:write\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\034\"\032/uploads/{upload_id}/parts'
+  _DRIVE.methods_by_name['UploadPart']._serialized_options = b'\202\343\n\024\212\343\n\020drive:file:write\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\026\"\024/uploads/{upload_id}'
   _DRIVE.methods_by_name['CompleteMultipartUpload']._options = None
-  _DRIVE.methods_by_name['CompleteMultipartUpload']._serialized_options = b'\202\343\n\024\212\343\n\020drive:file:write\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\037\"\035/uploads/{upload_id}/complete'
+  _DRIVE.methods_by_name['CompleteMultipartUpload']._serialized_options = b'\202\343\n\024\212\343\n\020drive:file:write\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\026\032\024/uploads/{upload_id}'
   _DESCRIBEFILEINPUT._serialized_start=201
   _DESCRIBEFILEINPUT._serialized_end=237
   _DESCRIBEFILEOUTPUT._serialized_start=239
@@ -56,36 +56,36 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _LISTFILESINPUT_FILTER._serialized_end=762
   _LISTFILESOUTPUT._serialized_start=764
   _LISTFILESOUTPUT._serialized_end=831
-  _CREATEFILEINPUT._serialized_start=834
-  _CREATEFILEINPUT._serialized_end=1011
-  _CREATEFILEINPUT_ATTRIBUTESENTRY._serialized_start=962
-  _CREATEFILEINPUT_ATTRIBUTESENTRY._serialized_end=1011
-  _CREATEFILEOUTPUT._serialized_start=1013
-  _CREATEFILEOUTPUT._serialized_end=1048
-  _UPDATEFILEINPUT._serialized_start=1050
-  _UPDATEFILEINPUT._serialized_end=1118
-  _UPDATEFILEOUTPUT._serialized_start=1120
-  _UPDATEFILEOUTPUT._serialized_end=1138
-  _DELETEFILEINPUT._serialized_start=1140
-  _DELETEFILEINPUT._serialized_end=1174
-  _DELETEFILEOUTPUT._serialized_start=1176
-  _DELETEFILEOUTPUT._serialized_end=1194
-  _STARTMULTIPARTUPLOADINPUT._serialized_start=1197
-  _STARTMULTIPARTUPLOADINPUT._serialized_end=1380
-  _STARTMULTIPARTUPLOADINPUT_ATTRIBUTESENTRY._serialized_start=962
-  _STARTMULTIPARTUPLOADINPUT_ATTRIBUTESENTRY._serialized_end=1011
-  _STARTMULTIPARTUPLOADOUTPUT._serialized_start=1382
-  _STARTMULTIPARTUPLOADOUTPUT._serialized_end=1429
-  _UPLOADPARTINPUT._serialized_start=1431
-  _UPLOADPARTINPUT._serialized_end=1502
-  _UPLOADPARTOUTPUT._serialized_start=1504
-  _UPLOADPARTOUTPUT._serialized_end=1536
-  _COMPLETEMULTIPARTUPLOADINPUT._serialized_start=1539
-  _COMPLETEMULTIPARTUPLOADINPUT._serialized_end=1713
-  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_start=1654
-  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_end=1713
-  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_start=1715
-  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_end=1746
-  _DRIVE._serialized_start=1749
-  _DRIVE._serialized_end=2965
+  _UPLOADFILEINPUT._serialized_start=834
+  _UPLOADFILEINPUT._serialized_end=1048
+  _UPLOADFILEINPUT_ATTRIBUTESENTRY._serialized_start=999
+  _UPLOADFILEINPUT_ATTRIBUTESENTRY._serialized_end=1048
+  _UPLOADFILEOUTPUT._serialized_start=1050
+  _UPLOADFILEOUTPUT._serialized_end=1122
+  _UPDATEFILEINPUT._serialized_start=1124
+  _UPDATEFILEINPUT._serialized_end=1192
+  _UPDATEFILEOUTPUT._serialized_start=1194
+  _UPDATEFILEOUTPUT._serialized_end=1212
+  _DELETEFILEINPUT._serialized_start=1214
+  _DELETEFILEINPUT._serialized_end=1248
+  _DELETEFILEOUTPUT._serialized_start=1250
+  _DELETEFILEOUTPUT._serialized_end=1268
+  _STARTMULTIPARTUPLOADINPUT._serialized_start=1271
+  _STARTMULTIPARTUPLOADINPUT._serialized_end=1491
+  _STARTMULTIPARTUPLOADINPUT_ATTRIBUTESENTRY._serialized_start=999
+  _STARTMULTIPARTUPLOADINPUT_ATTRIBUTESENTRY._serialized_end=1048
+  _STARTMULTIPARTUPLOADOUTPUT._serialized_start=1493
+  _STARTMULTIPARTUPLOADOUTPUT._serialized_end=1540
+  _UPLOADPARTINPUT._serialized_start=1542
+  _UPLOADPARTINPUT._serialized_end=1613
+  _UPLOADPARTOUTPUT._serialized_start=1615
+  _UPLOADPARTOUTPUT._serialized_end=1647
+  _COMPLETEMULTIPARTUPLOADINPUT._serialized_start=1650
+  _COMPLETEMULTIPARTUPLOADINPUT._serialized_end=1824
+  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_start=1765
+  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_end=1824
+  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_start=1826
+  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_end=1911
+  _DRIVE._serialized_start=1914
+  _DRIVE._serialized_end=3115
 # @@protoc_insertion_point(module_scope)

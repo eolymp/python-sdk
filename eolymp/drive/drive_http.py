@@ -14,6 +14,17 @@ class DriveClient:
         self.transport = transport
         self.url = url
 
+    def UploadFile(self, request, **kwargs):
+        path = "/files"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.drive.UploadFileOutput"),
+            **kwargs,
+        )
+
     def DescribeFile(self, request, **kwargs):
         path = "/files/"+urllib.parse.quote(request.file_id)
 
@@ -36,17 +47,6 @@ class DriveClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.drive.ListFilesOutput"),
-            **kwargs,
-        )
-
-    def CreateFile(self, request, **kwargs):
-        path = "/files"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.drive.CreateFileOutput"),
             **kwargs,
         )
 
@@ -90,7 +90,7 @@ class DriveClient:
         )
 
     def UploadPart(self, request, **kwargs):
-        path = "/uploads/"+urllib.parse.quote(request.upload_id)+"/parts"
+        path = "/uploads/"+urllib.parse.quote(request.upload_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.upload_id = ""
@@ -104,13 +104,13 @@ class DriveClient:
         )
 
     def CompleteMultipartUpload(self, request, **kwargs):
-        path = "/uploads/"+urllib.parse.quote(request.upload_id)+"/complete"
+        path = "/uploads/"+urllib.parse.quote(request.upload_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.upload_id = ""
 
         return self.transport.request(
-            method="POST",
+            method="PUT",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.drive.CompleteMultipartUploadOutput"),
