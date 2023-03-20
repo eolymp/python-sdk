@@ -13,14 +13,14 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class CompleteMultipartUploadInput(_message.Message):
     __slots__ = ["parts", "upload_id"]
     class Part(_message.Message):
-        __slots__ = ["checksum_sha1", "etag", "number"]
-        CHECKSUM_SHA1_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ["checksum_sha256", "etag", "number"]
+        CHECKSUM_SHA256_FIELD_NUMBER: _ClassVar[int]
         ETAG_FIELD_NUMBER: _ClassVar[int]
         NUMBER_FIELD_NUMBER: _ClassVar[int]
-        checksum_sha1: str
+        checksum_sha256: str
         etag: str
         number: int
-        def __init__(self, number: _Optional[int] = ..., etag: _Optional[str] = ..., checksum_sha1: _Optional[str] = ...) -> None: ...
+        def __init__(self, number: _Optional[int] = ..., etag: _Optional[str] = ..., checksum_sha256: _Optional[str] = ...) -> None: ...
     PARTS_FIELD_NUMBER: _ClassVar[int]
     UPLOAD_ID_FIELD_NUMBER: _ClassVar[int]
     parts: _containers.RepeatedCompositeFieldContainer[CompleteMultipartUploadInput.Part]
@@ -28,14 +28,14 @@ class CompleteMultipartUploadInput(_message.Message):
     def __init__(self, upload_id: _Optional[str] = ..., parts: _Optional[_Iterable[_Union[CompleteMultipartUploadInput.Part, _Mapping]]] = ...) -> None: ...
 
 class CompleteMultipartUploadOutput(_message.Message):
-    __slots__ = ["file_checksum", "file_id", "file_url"]
-    FILE_CHECKSUM_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["file_checksum_sha256", "file_id", "file_url"]
+    FILE_CHECKSUM_SHA256_FIELD_NUMBER: _ClassVar[int]
     FILE_ID_FIELD_NUMBER: _ClassVar[int]
     FILE_URL_FIELD_NUMBER: _ClassVar[int]
-    file_checksum: str
+    file_checksum_sha256: str
     file_id: str
     file_url: str
-    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_checksum: _Optional[str] = ...) -> None: ...
+    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_checksum_sha256: _Optional[str] = ...) -> None: ...
 
 class DeleteFileInput(_message.Message):
     __slots__ = ["file_id"]
@@ -62,7 +62,8 @@ class DescribeFileOutput(_message.Message):
 class ListFilesInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
-        __slots__ = ["created_at", "etag", "id", "path", "size", "type", "updated_at"]
+        __slots__ = ["checksum_sha256", "created_at", "etag", "id", "path", "size", "type", "updated_at"]
+        CHECKSUM_SHA256_FIELD_NUMBER: _ClassVar[int]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
         ETAG_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -70,6 +71,7 @@ class ListFilesInput(_message.Message):
         SIZE_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
+        checksum_sha256: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         created_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         etag: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -77,7 +79,7 @@ class ListFilesInput(_message.Message):
         size: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         updated_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., etag: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., size: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., updated_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., etag: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., checksum_sha256: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., size: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., updated_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -153,14 +155,14 @@ class UploadFileInput(_message.Message):
     def __init__(self, path: _Optional[str] = ..., type: _Optional[str] = ..., acl: _Optional[_Union[_file_pb2.File.Acl, str]] = ..., attributes: _Optional[_Mapping[str, str]] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadFileOutput(_message.Message):
-    __slots__ = ["file_checksum", "file_id", "file_url"]
-    FILE_CHECKSUM_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["file_checksum_sha256", "file_id", "file_url"]
+    FILE_CHECKSUM_SHA256_FIELD_NUMBER: _ClassVar[int]
     FILE_ID_FIELD_NUMBER: _ClassVar[int]
     FILE_URL_FIELD_NUMBER: _ClassVar[int]
-    file_checksum: str
+    file_checksum_sha256: str
     file_id: str
     file_url: str
-    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_checksum: _Optional[str] = ...) -> None: ...
+    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_checksum_sha256: _Optional[str] = ...) -> None: ...
 
 class UploadPartInput(_message.Message):
     __slots__ = ["data", "part_number", "upload_id"]

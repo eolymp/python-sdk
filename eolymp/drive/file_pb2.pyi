@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class File(_message.Message):
-    __slots__ = ["acl", "attributes", "checksum", "created_at", "created_by", "etag", "id", "incomplete", "path", "size", "type", "updated_at", "url"]
+    __slots__ = ["acl", "attributes", "checksum_sha256", "created_at", "created_by", "etag", "id", "incomplete", "path", "size", "type", "updated_at", "url"]
     class Acl(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class AttributesEntry(_message.Message):
@@ -20,7 +20,7 @@ class File(_message.Message):
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ACL_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
-    CHECKSUM_FIELD_NUMBER: _ClassVar[int]
+    CHECKSUM_SHA256_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     CREATED_BY_FIELD_NUMBER: _ClassVar[int]
     ETAG_FIELD_NUMBER: _ClassVar[int]
@@ -37,7 +37,7 @@ class File(_message.Message):
     URL_FIELD_NUMBER: _ClassVar[int]
     acl: File.Acl
     attributes: _containers.ScalarMap[str, str]
-    checksum: str
+    checksum_sha256: str
     created_at: _timestamp_pb2.Timestamp
     created_by: str
     etag: str
@@ -48,4 +48,4 @@ class File(_message.Message):
     type: str
     updated_at: _timestamp_pb2.Timestamp
     url: str
-    def __init__(self, id: _Optional[str] = ..., path: _Optional[str] = ..., etag: _Optional[str] = ..., checksum: _Optional[str] = ..., size: _Optional[int] = ..., type: _Optional[str] = ..., incomplete: bool = ..., acl: _Optional[_Union[File.Acl, str]] = ..., created_by: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., attributes: _Optional[_Mapping[str, str]] = ..., url: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., path: _Optional[str] = ..., etag: _Optional[str] = ..., checksum_sha256: _Optional[str] = ..., size: _Optional[int] = ..., type: _Optional[str] = ..., incomplete: bool = ..., acl: _Optional[_Union[File.Acl, str]] = ..., created_by: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., attributes: _Optional[_Mapping[str, str]] = ..., url: _Optional[str] = ...) -> None: ...
