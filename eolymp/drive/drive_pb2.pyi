@@ -134,7 +134,7 @@ class UpdateFileOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UploadFileInput(_message.Message):
-    __slots__ = ["acl", "attributes", "data", "path", "type"]
+    __slots__ = ["acl", "attributes", "checksum_sha256", "data", "path", "type"]
     class AttributesEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -144,15 +144,17 @@ class UploadFileInput(_message.Message):
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ACL_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
+    CHECKSUM_SHA256_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     acl: _file_pb2.File.Acl
     attributes: _containers.ScalarMap[str, str]
+    checksum_sha256: str
     data: bytes
     path: str
     type: str
-    def __init__(self, path: _Optional[str] = ..., type: _Optional[str] = ..., acl: _Optional[_Union[_file_pb2.File.Acl, str]] = ..., attributes: _Optional[_Mapping[str, str]] = ..., data: _Optional[bytes] = ...) -> None: ...
+    def __init__(self, path: _Optional[str] = ..., type: _Optional[str] = ..., acl: _Optional[_Union[_file_pb2.File.Acl, str]] = ..., checksum_sha256: _Optional[str] = ..., attributes: _Optional[_Mapping[str, str]] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadFileOutput(_message.Message):
     __slots__ = ["file_checksum_sha256", "file_id", "file_url"]
