@@ -28,14 +28,14 @@ class CompleteMultipartUploadInput(_message.Message):
     def __init__(self, upload_id: _Optional[str] = ..., parts: _Optional[_Iterable[_Union[CompleteMultipartUploadInput.Part, _Mapping]]] = ...) -> None: ...
 
 class CompleteMultipartUploadOutput(_message.Message):
-    __slots__ = ["file_etag", "file_id", "file_url"]
-    FILE_ETAG_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["file_checksum", "file_id", "file_url"]
+    FILE_CHECKSUM_FIELD_NUMBER: _ClassVar[int]
     FILE_ID_FIELD_NUMBER: _ClassVar[int]
     FILE_URL_FIELD_NUMBER: _ClassVar[int]
-    file_etag: str
+    file_checksum: str
     file_id: str
     file_url: str
-    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_etag: _Optional[str] = ...) -> None: ...
+    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_checksum: _Optional[str] = ...) -> None: ...
 
 class DeleteFileInput(_message.Message):
     __slots__ = ["file_id"]
@@ -153,14 +153,14 @@ class UploadFileInput(_message.Message):
     def __init__(self, path: _Optional[str] = ..., type: _Optional[str] = ..., acl: _Optional[_Union[_file_pb2.File.Acl, str]] = ..., attributes: _Optional[_Mapping[str, str]] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadFileOutput(_message.Message):
-    __slots__ = ["file_etag", "file_id", "file_url"]
-    FILE_ETAG_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["file_checksum", "file_id", "file_url"]
+    FILE_CHECKSUM_FIELD_NUMBER: _ClassVar[int]
     FILE_ID_FIELD_NUMBER: _ClassVar[int]
     FILE_URL_FIELD_NUMBER: _ClassVar[int]
-    file_etag: str
+    file_checksum: str
     file_id: str
     file_url: str
-    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_etag: _Optional[str] = ...) -> None: ...
+    def __init__(self, file_id: _Optional[str] = ..., file_url: _Optional[str] = ..., file_checksum: _Optional[str] = ...) -> None: ...
 
 class UploadPartInput(_message.Message):
     __slots__ = ["data", "part_number", "upload_id"]
