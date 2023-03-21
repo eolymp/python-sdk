@@ -9,26 +9,16 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateRunInput(_message.Message):
-    __slots__ = ["input", "input_content", "input_ern", "input_object_id", "lang", "problem_ern", "runtime", "source", "source_ern"]
-    INPUT_CONTENT_FIELD_NUMBER: _ClassVar[int]
-    INPUT_ERN_FIELD_NUMBER: _ClassVar[int]
-    INPUT_FIELD_NUMBER: _ClassVar[int]
-    INPUT_OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
-    LANG_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ERN_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["input_url", "problem_url", "runtime", "source"]
+    INPUT_URL_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_URL_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_ERN_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
-    input: str
-    input_content: bytes
-    input_ern: str
-    input_object_id: str
-    lang: str
-    problem_ern: str
+    input_url: str
+    problem_url: str
     runtime: str
     source: str
-    source_ern: str
-    def __init__(self, lang: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., source_ern: _Optional[str] = ..., input_ern: _Optional[str] = ..., problem_ern: _Optional[str] = ..., input: _Optional[str] = ..., input_content: _Optional[bytes] = ..., input_object_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_url: _Optional[str] = ..., problem_url: _Optional[str] = ...) -> None: ...
 
 class CreateRunOutput(_message.Message):
     __slots__ = ["run_id"]
