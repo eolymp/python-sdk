@@ -11,12 +11,14 @@ class Interactor(_message.Message):
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class File(_message.Message):
-        __slots__ = ["path", "source_ern"]
+        __slots__ = ["path", "source_ern", "source_url"]
         PATH_FIELD_NUMBER: _ClassVar[int]
         SOURCE_ERN_FIELD_NUMBER: _ClassVar[int]
+        SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
         path: str
         source_ern: str
-        def __init__(self, path: _Optional[str] = ..., source_ern: _Optional[str] = ...) -> None: ...
+        source_url: str
+        def __init__(self, path: _Optional[str] = ..., source_ern: _Optional[str] = ..., source_url: _Optional[str] = ...) -> None: ...
     FILES_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
     NONE: Interactor.Type
