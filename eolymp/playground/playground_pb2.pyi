@@ -9,16 +9,16 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateRunInput(_message.Message):
-    __slots__ = ["input_url", "problem_url", "runtime", "source"]
+    __slots__ = ["input_url", "problem_url", "runtime", "source_url"]
     INPUT_URL_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_URL_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
     input_url: str
     problem_url: str
     runtime: str
-    source: str
-    def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_url: _Optional[str] = ..., problem_url: _Optional[str] = ...) -> None: ...
+    source_url: str
+    def __init__(self, runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., input_url: _Optional[str] = ..., problem_url: _Optional[str] = ...) -> None: ...
 
 class CreateRunOutput(_message.Message):
     __slots__ = ["run_id"]

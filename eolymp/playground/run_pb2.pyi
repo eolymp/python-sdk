@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Run(_message.Message):
-    __slots__ = ["cpu_time_usage", "error", "exit_code", "id", "input_url", "memory_usage", "output_url", "resource_usage", "runtime", "signal", "source", "status", "wall_time_usage"]
+    __slots__ = ["cpu_time_usage", "error", "exit_code", "id", "input_url", "memory_usage", "output_url", "resource_usage", "runtime", "signal", "source_url", "status", "wall_time_usage"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     CPU_EXHAUSTED: Run.Status
@@ -28,7 +28,7 @@ class Run(_message.Message):
     RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SIGNAL_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     TIMEOUT: Run.Status
     WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
@@ -42,7 +42,7 @@ class Run(_message.Message):
     resource_usage: _usage_pb2.ResourceUsage
     runtime: str
     signal: int
-    source: str
+    source_url: str
     status: Run.Status
     wall_time_usage: int
-    def __init__(self, id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_url: _Optional[str] = ..., status: _Optional[_Union[Run.Status, str]] = ..., error: _Optional[str] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[_Union[_usage_pb2.ResourceUsage, _Mapping]] = ..., output_url: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., input_url: _Optional[str] = ..., status: _Optional[_Union[Run.Status, str]] = ..., error: _Optional[str] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[_Union[_usage_pb2.ResourceUsage, _Mapping]] = ..., output_url: _Optional[str] = ...) -> None: ...

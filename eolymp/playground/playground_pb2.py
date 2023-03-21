@@ -17,7 +17,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.playground import run_pb2 as eolymp_dot_playground_dot_run__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/playground/playground.proto\x12\x11\x65olymp.playground\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/playground/run.proto\"Y\n\x0e\x43reateRunInput\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x64 \x01(\t\x12\x11\n\tinput_url\x18\x65 \x01(\t\x12\x13\n\x0bproblem_url\x18\x66 \x01(\t\"!\n\x0f\x43reateRunOutput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\"\n\x10\x44\x65scribeRunInput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"8\n\x11\x44\x65scribeRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run2\xce\x02\n\nPlayground\x12\x97\x01\n\tCreateRun\x12!.eolymp.playground.CreateRunInput\x1a\".eolymp.playground.CreateRunOutput\"C\x82\xe3\n\x18\x8a\xe3\n\x14playground:run:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12\"\x10/playground/runs\x12\xa5\x01\n\x0b\x44\x65scribeRun\x12#.eolymp.playground.DescribeRunInput\x1a$.eolymp.playground.DescribeRunOutput\"K\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x1b\x12\x19/playground/runs/{run_id}B7Z5github.com/eolymp/go-sdk/eolymp/playground;playgroundb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/playground/playground.proto\x12\x11\x65olymp.playground\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/playground/run.proto\"]\n\x0e\x43reateRunInput\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x12\n\nsource_url\x18\x64 \x01(\t\x12\x11\n\tinput_url\x18\x65 \x01(\t\x12\x13\n\x0bproblem_url\x18\x66 \x01(\t\"!\n\x0f\x43reateRunOutput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\"\n\x10\x44\x65scribeRunInput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"8\n\x11\x44\x65scribeRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run2\xce\x02\n\nPlayground\x12\x97\x01\n\tCreateRun\x12!.eolymp.playground.CreateRunInput\x1a\".eolymp.playground.CreateRunOutput\"C\x82\xe3\n\x18\x8a\xe3\n\x14playground:run:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12\"\x10/playground/runs\x12\xa5\x01\n\x0b\x44\x65scribeRun\x12#.eolymp.playground.DescribeRunInput\x1a$.eolymp.playground.DescribeRunOutput\"K\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x1b\x12\x19/playground/runs/{run_id}B7Z5github.com/eolymp/go-sdk/eolymp/playground;playgroundb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.playground.playground_pb2', globals())
@@ -30,13 +30,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PLAYGROUND.methods_by_name['DescribeRun']._options = None
   _PLAYGROUND.methods_by_name['DescribeRun']._serialized_options = b'\202\343\n\027\212\343\n\023playground:run:read\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\323\344\223\002\033\022\031/playground/runs/{run_id}'
   _CREATERUNINPUT._serialized_start=185
-  _CREATERUNINPUT._serialized_end=274
-  _CREATERUNOUTPUT._serialized_start=276
-  _CREATERUNOUTPUT._serialized_end=309
-  _DESCRIBERUNINPUT._serialized_start=311
-  _DESCRIBERUNINPUT._serialized_end=345
-  _DESCRIBERUNOUTPUT._serialized_start=347
-  _DESCRIBERUNOUTPUT._serialized_end=403
-  _PLAYGROUND._serialized_start=406
-  _PLAYGROUND._serialized_end=740
+  _CREATERUNINPUT._serialized_end=278
+  _CREATERUNOUTPUT._serialized_start=280
+  _CREATERUNOUTPUT._serialized_end=313
+  _DESCRIBERUNINPUT._serialized_start=315
+  _DESCRIBERUNINPUT._serialized_end=349
+  _DESCRIBERUNOUTPUT._serialized_start=351
+  _DESCRIBERUNOUTPUT._serialized_end=407
+  _PLAYGROUND._serialized_start=410
+  _PLAYGROUND._serialized_end=744
 # @@protoc_insertion_point(module_scope)
