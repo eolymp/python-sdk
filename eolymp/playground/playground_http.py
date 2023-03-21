@@ -15,7 +15,7 @@ class PlaygroundClient:
         self.url = url
 
     def CreateRun(self, request, **kwargs):
-        path = "/playground/runs"
+        path = "/runs"
 
         return self.transport.request(
             method="POST",
@@ -26,7 +26,7 @@ class PlaygroundClient:
         )
 
     def DescribeRun(self, request, **kwargs):
-        path = "/playground/runs/"+urllib.parse.quote(request.run_id)
+        path = "/runs/"+urllib.parse.quote(request.run_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.run_id = ""
