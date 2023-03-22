@@ -14,11 +14,11 @@ class CreateRunInput(_message.Message):
     INPUT_REF_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
-    input_data: str
+    input_data: bytes
     input_ref: str
     runtime: str
     source: str
-    def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_data: _Optional[str] = ..., input_ref: _Optional[str] = ...) -> None: ...
+    def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_data: _Optional[bytes] = ..., input_ref: _Optional[str] = ...) -> None: ...
 
 class CreateRunOutput(_message.Message):
     __slots__ = ["run_id"]
