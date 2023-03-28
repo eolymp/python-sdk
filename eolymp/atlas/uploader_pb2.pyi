@@ -30,10 +30,10 @@ class CompleteMultipartUploadInput(_message.Message):
     def __init__(self, upload_id: _Optional[str] = ..., parts: _Optional[_Iterable[_Union[CompleteMultipartUploadInput.Part, _Mapping]]] = ...) -> None: ...
 
 class CompleteMultipartUploadOutput(_message.Message):
-    __slots__ = ["paste_url"]
-    PASTE_URL_FIELD_NUMBER: _ClassVar[int]
-    paste_url: str
-    def __init__(self, paste_url: _Optional[str] = ...) -> None: ...
+    __slots__ = ["file_id"]
+    FILE_ID_FIELD_NUMBER: _ClassVar[int]
+    file_id: str
+    def __init__(self, file_id: _Optional[str] = ...) -> None: ...
 
 class StartMultipartUploadInput(_message.Message):
     __slots__ = ["name", "type"]
@@ -66,10 +66,10 @@ class UploadFileInput(_message.Message):
     def __init__(self, type: _Optional[str] = ..., name: _Optional[str] = ..., checksum_md5: _Optional[str] = ..., checksum_sha1: _Optional[str] = ..., checksum_sha256: _Optional[str] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadFileOutput(_message.Message):
-    __slots__ = ["paste_url"]
-    PASTE_URL_FIELD_NUMBER: _ClassVar[int]
-    paste_url: str
-    def __init__(self, paste_url: _Optional[str] = ...) -> None: ...
+    __slots__ = ["file_id"]
+    FILE_ID_FIELD_NUMBER: _ClassVar[int]
+    file_id: str
+    def __init__(self, file_id: _Optional[str] = ...) -> None: ...
 
 class UploadPartInput(_message.Message):
     __slots__ = ["data", "part_number", "upload_id"]

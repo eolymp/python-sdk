@@ -9,35 +9,35 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class PastebinClient:
+class UploaderClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
     def UploadFile(self, request, **kwargs):
-        path = "/pastebin"
+        path = "/data/files"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.pastebin.UploadFileOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UploadFileOutput"),
             **kwargs,
         )
 
     def StartMultipartUpload(self, request, **kwargs):
-        path = "/uploads"
+        path = "/data/uploads"
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.pastebin.StartMultipartUploadOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.StartMultipartUploadOutput"),
             **kwargs,
         )
 
     def UploadPart(self, request, **kwargs):
-        path = "/uploads/"+urllib.parse.quote(request.upload_id)
+        path = "/data/uploads/"+urllib.parse.quote(request.upload_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.upload_id = ""
@@ -46,12 +46,12 @@ class PastebinClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.pastebin.UploadPartOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UploadPartOutput"),
             **kwargs,
         )
 
     def CompleteMultipartUpload(self, request, **kwargs):
-        path = "/uploads/"+urllib.parse.quote(request.upload_id)
+        path = "/data/uploads/"+urllib.parse.quote(request.upload_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.upload_id = ""
@@ -60,7 +60,7 @@ class PastebinClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.pastebin.CompleteMultipartUploadOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CompleteMultipartUploadOutput"),
             **kwargs,
         )
 
