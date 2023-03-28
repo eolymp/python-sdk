@@ -10,18 +10,18 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class UploadImageInput(_message.Message):
-    __slots__ = ["crop", "data", "name", "sizes", "type"]
+    __slots__ = ["crop", "data", "name", "size", "type", "variants"]
     class Crop(_message.Message):
-        __slots__ = ["height", "left", "top", "width"]
-        HEIGHT_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ["bottom", "left", "right", "top"]
+        BOTTOM_FIELD_NUMBER: _ClassVar[int]
         LEFT_FIELD_NUMBER: _ClassVar[int]
+        RIGHT_FIELD_NUMBER: _ClassVar[int]
         TOP_FIELD_NUMBER: _ClassVar[int]
-        WIDTH_FIELD_NUMBER: _ClassVar[int]
-        height: int
+        bottom: int
         left: int
+        right: int
         top: int
-        width: int
-        def __init__(self, top: _Optional[int] = ..., left: _Optional[int] = ..., width: _Optional[int] = ..., height: _Optional[int] = ...) -> None: ...
+        def __init__(self, top: _Optional[int] = ..., right: _Optional[int] = ..., bottom: _Optional[int] = ..., left: _Optional[int] = ...) -> None: ...
     class Size(_message.Message):
         __slots__ = ["height", "width"]
         HEIGHT_FIELD_NUMBER: _ClassVar[int]
@@ -32,14 +32,16 @@ class UploadImageInput(_message.Message):
     CROP_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    SIZES_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    VARIANTS_FIELD_NUMBER: _ClassVar[int]
     crop: UploadImageInput.Crop
     data: bytes
     name: str
-    sizes: _containers.RepeatedCompositeFieldContainer[UploadImageInput.Size]
+    size: UploadImageInput.Size
     type: str
-    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., crop: _Optional[_Union[UploadImageInput.Crop, _Mapping]] = ..., sizes: _Optional[_Iterable[_Union[UploadImageInput.Size, _Mapping]]] = ..., data: _Optional[bytes] = ...) -> None: ...
+    variants: _containers.RepeatedCompositeFieldContainer[UploadImageInput.Size]
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., crop: _Optional[_Union[UploadImageInput.Crop, _Mapping]] = ..., size: _Optional[_Union[UploadImageInput.Size, _Mapping]] = ..., variants: _Optional[_Iterable[_Union[UploadImageInput.Size, _Mapping]]] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadImageOutput(_message.Message):
     __slots__ = ["image_url"]
