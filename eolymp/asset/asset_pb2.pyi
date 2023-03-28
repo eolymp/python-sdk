@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class UploadImageInput(_message.Message):
-    __slots__ = ["crop", "data", "mime", "name", "sizes"]
+    __slots__ = ["crop", "data", "name", "sizes", "type"]
     class Crop(_message.Message):
         __slots__ = ["height", "left", "top", "width"]
         HEIGHT_FIELD_NUMBER: _ClassVar[int]
@@ -31,15 +31,15 @@ class UploadImageInput(_message.Message):
         def __init__(self, width: _Optional[int] = ..., height: _Optional[int] = ...) -> None: ...
     CROP_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
-    MIME_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SIZES_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
     crop: UploadImageInput.Crop
     data: bytes
-    mime: str
     name: str
     sizes: _containers.RepeatedCompositeFieldContainer[UploadImageInput.Size]
-    def __init__(self, name: _Optional[str] = ..., mime: _Optional[str] = ..., crop: _Optional[_Union[UploadImageInput.Crop, _Mapping]] = ..., sizes: _Optional[_Iterable[_Union[UploadImageInput.Size, _Mapping]]] = ..., data: _Optional[bytes] = ...) -> None: ...
+    type: str
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., crop: _Optional[_Union[UploadImageInput.Crop, _Mapping]] = ..., sizes: _Optional[_Iterable[_Union[UploadImageInput.Size, _Mapping]]] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadImageOutput(_message.Message):
     __slots__ = ["image_url"]
