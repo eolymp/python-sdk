@@ -394,14 +394,16 @@ class DescribeSolutionOutput(_message.Message):
     def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class DescribeStatementInput(_message.Message):
-    __slots__ = ["problem_id", "statement_id", "version"]
+    __slots__ = ["problem_id", "rendered", "statement_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    RENDERED_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
+    rendered: bool
     statement_id: str
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., rendered: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeStatementOutput(_message.Message):
     __slots__ = ["statement"]
@@ -755,6 +757,24 @@ class ListVersionsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_version_pb2.Version]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ...) -> None: ...
+
+class LookupStatementInput(_message.Message):
+    __slots__ = ["preferred_locale", "problem_id", "rendered", "version"]
+    PREFERRED_LOCALE_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    RENDERED_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    preferred_locale: _containers.RepeatedScalarFieldContainer[str]
+    problem_id: str
+    rendered: bool
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., preferred_locale: _Optional[_Iterable[str]] = ..., rendered: bool = ..., version: _Optional[int] = ...) -> None: ...
+
+class LookupStatementOutput(_message.Message):
+    __slots__ = ["statement"]
+    STATEMENT_FIELD_NUMBER: _ClassVar[int]
+    statement: _statement_pb2.Statement
+    def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class PreviewStatementInput(_message.Message):
     __slots__ = ["problem_id", "statement"]

@@ -19,11 +19,11 @@ class Problem(_message.Message):
         name: str
         def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., link: _Optional[str] = ...) -> None: ...
     class Statement(_message.Message):
-        __slots__ = ["content", "content_rich", "download_link", "format", "locale", "title"]
+        __slots__ = ["content", "content_raw", "download_link", "format", "locale", "title"]
         class Format(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         CONTENT_FIELD_NUMBER: _ClassVar[int]
-        CONTENT_RICH_FIELD_NUMBER: _ClassVar[int]
+        CONTENT_RAW_FIELD_NUMBER: _ClassVar[int]
         DOWNLOAD_LINK_FIELD_NUMBER: _ClassVar[int]
         FORMAT_FIELD_NUMBER: _ClassVar[int]
         HTML: Problem.Statement.Format
@@ -33,13 +33,13 @@ class Problem(_message.Message):
         RICH: Problem.Statement.Format
         TEX: Problem.Statement.Format
         TITLE_FIELD_NUMBER: _ClassVar[int]
-        content: str
-        content_rich: _node_pb2.Node
+        content: _node_pb2.Node
+        content_raw: str
         download_link: str
         format: Problem.Statement.Format
         locale: str
         title: str
-        def __init__(self, locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[str] = ..., content_rich: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., format: _Optional[_Union[Problem.Statement.Format, str]] = ..., download_link: _Optional[str] = ...) -> None: ...
+        def __init__(self, locale: _Optional[str] = ..., title: _Optional[str] = ..., content_raw: _Optional[str] = ..., content: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., format: _Optional[_Union[Problem.Statement.Format, str]] = ..., download_link: _Optional[str] = ...) -> None: ...
     class Test(_message.Message):
         __slots__ = ["answer_object_id", "example", "index", "input_object_id", "score"]
         ANSWER_OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
