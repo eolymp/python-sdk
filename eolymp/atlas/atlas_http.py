@@ -235,21 +235,6 @@ class AtlasClient:
             **kwargs,
         )
 
-    def RenderStatement(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements/"+urllib.parse.quote(request.statement_id)+"/render"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.statement_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.RenderStatementOutput"),
-            **kwargs,
-        )
-
     def LookupStatement(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/translate"
 

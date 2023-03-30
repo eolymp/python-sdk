@@ -816,22 +816,6 @@ class RefuseSolutionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class RenderStatementInput(_message.Message):
-    __slots__ = ["problem_id", "statement_id", "version"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    statement_id: str
-    version: int
-    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
-
-class RenderStatementOutput(_message.Message):
-    __slots__ = ["statement"]
-    STATEMENT_FIELD_NUMBER: _ClassVar[int]
-    statement: _statement_pb2.Statement
-    def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
-
 class RetestSubmissionInput(_message.Message):
     __slots__ = ["debug", "problem_id", "submission_id"]
     DEBUG_FIELD_NUMBER: _ClassVar[int]
