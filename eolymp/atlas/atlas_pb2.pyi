@@ -394,16 +394,16 @@ class DescribeSolutionOutput(_message.Message):
     def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class DescribeStatementInput(_message.Message):
-    __slots__ = ["problem_id", "rendered", "statement_id", "version"]
+    __slots__ = ["problem_id", "render", "statement_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    RENDERED_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    rendered: bool
+    render: bool
     statement_id: str
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., rendered: bool = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeStatementOutput(_message.Message):
     __slots__ = ["statement"]
@@ -676,12 +676,14 @@ class ListSolutionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ...) -> None: ...
 
 class ListStatementsInput(_message.Message):
-    __slots__ = ["problem_id", "version"]
+    __slots__ = ["problem_id", "render", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
+    render: bool
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListStatementsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -759,16 +761,16 @@ class ListVersionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ...) -> None: ...
 
 class LookupStatementInput(_message.Message):
-    __slots__ = ["preferred_locale", "problem_id", "rendered", "version"]
+    __slots__ = ["preferred_locale", "problem_id", "render", "version"]
     PREFERRED_LOCALE_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    RENDERED_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     preferred_locale: _containers.RepeatedScalarFieldContainer[str]
     problem_id: str
-    rendered: bool
+    render: bool
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., preferred_locale: _Optional[_Iterable[str]] = ..., rendered: bool = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., preferred_locale: _Optional[_Iterable[str]] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class LookupStatementOutput(_message.Message):
     __slots__ = ["statement"]
