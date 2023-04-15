@@ -53,17 +53,6 @@ class StatementServiceClient:
             **kwargs,
         )
 
-    def ListStatements(self, request, **kwargs):
-        path = "/statements"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListStatementsOutput"),
-            **kwargs,
-        )
-
     def DescribeStatement(self, request, **kwargs):
         path = "/statements/"+urllib.parse.quote(request.statement_id)
 
@@ -111,6 +100,17 @@ class StatementServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.PreviewStatementOutput"),
+            **kwargs,
+        )
+
+    def ListStatements(self, request, **kwargs):
+        path = "/statements"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListStatementsOutput"),
             **kwargs,
         )
 

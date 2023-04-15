@@ -28,17 +28,6 @@ class ScoringServiceClient:
             **kwargs,
         )
 
-    def ListProblemTop(self, request, **kwargs):
-        path = "/top"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListProblemTopOutput"),
-            **kwargs,
-        )
-
     def DescribeProblemGrading(self, request, **kwargs):
         path = "/grading"
 
@@ -47,6 +36,17 @@ class ScoringServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeProblemGradingOutput"),
+            **kwargs,
+        )
+
+    def ListProblemTop(self, request, **kwargs):
+        path = "/top"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListProblemTopOutput"),
             **kwargs,
         )
 

@@ -25,20 +25,6 @@ class SubmissionServiceClient:
             **kwargs,
         )
 
-    def DescribeSubmission(self, request, **kwargs):
-        path = "/submissions/"+urllib.parse.quote(request.submission_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.submission_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeSubmissionOutput"),
-            **kwargs,
-        )
-
     def RetestSubmission(self, request, **kwargs):
         path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/retest"
 
@@ -50,6 +36,20 @@ class SubmissionServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.RetestSubmissionOutput"),
+            **kwargs,
+        )
+
+    def DescribeSubmission(self, request, **kwargs):
+        path = "/submissions/"+urllib.parse.quote(request.submission_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.submission_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeSubmissionOutput"),
             **kwargs,
         )
 

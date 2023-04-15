@@ -39,17 +39,6 @@ class ProblemServiceClient:
             **kwargs,
         )
 
-    def ListProblems(self, request, **kwargs):
-        path = "/problems"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListProblemsOutput"),
-            **kwargs,
-        )
-
     def DescribeProblem(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)
 
@@ -89,6 +78,17 @@ class ProblemServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdatePrivacyOutput"),
+            **kwargs,
+        )
+
+    def ListProblems(self, request, **kwargs):
+        path = "/problems"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListProblemsOutput"),
             **kwargs,
         )
 

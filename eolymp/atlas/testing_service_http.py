@@ -97,17 +97,6 @@ class TestingServiceClient:
             **kwargs,
         )
 
-    def ListTestsets(self, request, **kwargs):
-        path = "/testsets"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListTestsetsOutput"),
-            **kwargs,
-        )
-
     def DescribeTestset(self, request, **kwargs):
         path = "/testsets/"+urllib.parse.quote(request.testset_id)
 
@@ -119,6 +108,17 @@ class TestingServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeTestsetOutput"),
+            **kwargs,
+        )
+
+    def ListTestsets(self, request, **kwargs):
+        path = "/testsets"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListTestsetsOutput"),
             **kwargs,
         )
 
@@ -166,6 +166,21 @@ class TestingServiceClient:
             **kwargs,
         )
 
+    def DescribeTest(self, request, **kwargs):
+        path = "/testsets/"+urllib.parse.quote(request.testset_id)+"/tests/"+urllib.parse.quote(request.test_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.testset_id = ""
+        request.test_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeTestOutput"),
+            **kwargs,
+        )
+
     def ListTests(self, request, **kwargs):
         path = "/testsets/"+urllib.parse.quote(request.testset_id)+"/tests"
 
@@ -188,21 +203,6 @@ class TestingServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListExamplesOutput"),
-            **kwargs,
-        )
-
-    def DescribeTest(self, request, **kwargs):
-        path = "/testsets/"+urllib.parse.quote(request.testset_id)+"/tests/"+urllib.parse.quote(request.test_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.testset_id = ""
-        request.test_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeTestOutput"),
             **kwargs,
         )
 

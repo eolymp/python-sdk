@@ -16,7 +16,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.atlas import atlas_pb2 as eolymp_dot_atlas_dot_atlas__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/scoring_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/atlas/atlas.proto2\xbe\x03\n\x0eScoringService\x12\x8c\x01\n\rDescribeScore\x12 .eolymp.atlas.DescribeScoreInput\x1a!.eolymp.atlas.DescribeScoreOutput\"6\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\x13\x12\x11/scores/{user_id}\x12\x7f\n\x0eListProblemTop\x12!.eolymp.atlas.ListProblemTopInput\x1a\".eolymp.atlas.ListProblemTopOutput\"&\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x06\x12\x04/top\x12\x9b\x01\n\x16\x44\x65scribeProblemGrading\x12).eolymp.atlas.DescribeProblemGradingInput\x1a*.eolymp.atlas.DescribeProblemGradingOutput\"*\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\n\x12\x08/gradingB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/scoring_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/atlas/atlas.proto2\xbe\x03\n\x0eScoringService\x12\x8c\x01\n\rDescribeScore\x12 .eolymp.atlas.DescribeScoreInput\x1a!.eolymp.atlas.DescribeScoreOutput\"6\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\x13\x12\x11/scores/{user_id}\x12\x9b\x01\n\x16\x44\x65scribeProblemGrading\x12).eolymp.atlas.DescribeProblemGradingInput\x1a*.eolymp.atlas.DescribeProblemGradingOutput\"*\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\n\x12\x08/grading\x12\x7f\n\x0eListProblemTop\x12!.eolymp.atlas.ListProblemTopInput\x1a\".eolymp.atlas.ListProblemTopOutput\"&\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x06\x12\x04/topB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.scoring_service_pb2', globals())
@@ -26,10 +26,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _SCORINGSERVICE.methods_by_name['DescribeScore']._options = None
   _SCORINGSERVICE.methods_by_name['DescribeScore']._serialized_options = b'\202\343\n\031\212\343\n\025atlas:submission:read\202\323\344\223\002\023\022\021/scores/{user_id}'
-  _SCORINGSERVICE.methods_by_name['ListProblemTop']._options = None
-  _SCORINGSERVICE.methods_by_name['ListProblemTop']._serialized_options = b'\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002\006\022\004/top'
   _SCORINGSERVICE.methods_by_name['DescribeProblemGrading']._options = None
   _SCORINGSERVICE.methods_by_name['DescribeProblemGrading']._serialized_options = b'\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002\n\022\010/grading'
+  _SCORINGSERVICE.methods_by_name['ListProblemTop']._options = None
+  _SCORINGSERVICE.methods_by_name['ListProblemTop']._serialized_options = b'\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002\006\022\004/top'
   _SCORINGSERVICE._serialized_start=142
   _SCORINGSERVICE._serialized_end=588
 # @@protoc_insertion_point(module_scope)
