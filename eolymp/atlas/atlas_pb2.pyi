@@ -1,16 +1,15 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.annotations import service_pb2 as _service_pb2
 from eolymp.atlas import attachment_pb2 as _attachment_pb2
 from eolymp.atlas import category_pb2 as _category_pb2
+from eolymp.atlas import code_template_pb2 as _code_template_pb2
 from eolymp.atlas import permission_pb2 as _permission_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import score_pb2 as _score_pb2
 from eolymp.atlas import solution_pb2 as _solution_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
-from eolymp.atlas import template_pb2 as _template_pb2
 from eolymp.atlas import test_pb2 as _test_pb2
 from eolymp.atlas import testset_pb2 as _testset_pb2
 from eolymp.atlas import version_pb2 as _version_pb2
@@ -81,8 +80,8 @@ class CreateCodeTemplateInput(_message.Message):
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    template: _template_pb2.Template
-    def __init__(self, problem_id: _Optional[str] = ..., template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
+    template: _code_template_pb2.Template
+    def __init__(self, problem_id: _Optional[str] = ..., template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class CreateCodeTemplateOutput(_message.Message):
     __slots__ = ["template_id"]
@@ -315,8 +314,8 @@ class DescribeCodeTemplateInput(_message.Message):
 class DescribeCodeTemplateOutput(_message.Message):
     __slots__ = ["template"]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
-    template: _template_pb2.Template
-    def __init__(self, template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
+    template: _code_template_pb2.Template
+    def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class DescribeInteractorInput(_message.Message):
     __slots__ = ["problem_id", "version"]
@@ -565,9 +564,9 @@ class ListCodeTemplatesOutput(_message.Message):
     __slots__ = ["items", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_template_pb2.Template]
+    items: _containers.RepeatedCompositeFieldContainer[_code_template_pb2.Template]
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_template_pb2.Template, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ...) -> None: ...
 
 class ListExamplesInput(_message.Message):
     __slots__ = ["problem_id", "version"]
@@ -910,9 +909,9 @@ class UpdateCodeTemplateInput(_message.Message):
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    template: _template_pb2.Template
+    template: _code_template_pb2.Template
     template_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class UpdateCodeTemplateOutput(_message.Message):
     __slots__ = []

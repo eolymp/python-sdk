@@ -14,10 +14,9 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
-from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/asset/asset.proto\x12\x0c\x65olymp.asset\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/wellknown/expression.proto\"\xc2\x02\n\x10UploadImageInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x31\n\x04\x63rop\x18\n \x01(\x0b\x32#.eolymp.asset.UploadImageInput.Crop\x12\x31\n\x04size\x18\x0b \x01(\x0b\x32#.eolymp.asset.UploadImageInput.Size\x12\x35\n\x08variants\x18\x14 \x03(\x0b\x32#.eolymp.asset.UploadImageInput.Size\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\x1a%\n\x04Size\x12\r\n\x05width\x18\x01 \x01(\r\x12\x0e\n\x06height\x18\x02 \x01(\r\x1a@\n\x04\x43rop\x12\x0b\n\x03top\x18\x01 \x01(\r\x12\r\n\x05right\x18\x02 \x01(\r\x12\x0e\n\x06\x62ottom\x18\x03 \x01(\r\x12\x0c\n\x04left\x18\x04 \x01(\r\"&\n\x11UploadImageOutput\x12\x11\n\timage_url\x18\x01 \x01(\t2\x98\x01\n\x05\x41sset\x12\x8e\x01\n\x0bUploadImage\x12\x1e.eolymp.asset.UploadImageInput\x1a\x1f.eolymp.asset.UploadImageOutput\">\x82\xe3\n\x15\x8a\xe3\n\x11\x61sset:image:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\"\x0e/assets/imagesB-Z+github.com/eolymp/go-sdk/eolymp/asset;assetb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/asset/asset.proto\x12\x0c\x65olymp.asset\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\xc2\x02\n\x10UploadImageInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x31\n\x04\x63rop\x18\n \x01(\x0b\x32#.eolymp.asset.UploadImageInput.Crop\x12\x31\n\x04size\x18\x0b \x01(\x0b\x32#.eolymp.asset.UploadImageInput.Size\x12\x35\n\x08variants\x18\x14 \x03(\x0b\x32#.eolymp.asset.UploadImageInput.Size\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\x1a%\n\x04Size\x12\r\n\x05width\x18\x01 \x01(\r\x12\x0e\n\x06height\x18\x02 \x01(\r\x1a@\n\x04\x43rop\x12\x0b\n\x03top\x18\x01 \x01(\r\x12\r\n\x05right\x18\x02 \x01(\r\x12\x0e\n\x06\x62ottom\x18\x03 \x01(\r\x12\x0c\n\x04left\x18\x04 \x01(\r\"&\n\x11UploadImageOutput\x12\x11\n\timage_url\x18\x01 \x01(\t2\x98\x01\n\x05\x41sset\x12\x8e\x01\n\x0bUploadImage\x12\x1e.eolymp.asset.UploadImageInput\x1a\x1f.eolymp.asset.UploadImageOutput\">\x82\xe3\n\x15\x8a\xe3\n\x11\x61sset:image:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\"\x0e/assets/imagesB-Z+github.com/eolymp/go-sdk/eolymp/asset;assetb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.asset.asset_pb2', globals())
@@ -27,14 +26,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/asset;asset'
   _ASSET.methods_by_name['UploadImage']._options = None
   _ASSET.methods_by_name['UploadImage']._serialized_options = b'\202\343\n\025\212\343\n\021asset:image:write\352\342\n\013\365\342\n\000\000\000@\370\342\nd\202\323\344\223\002\020\"\016/assets/images'
-  _UPLOADIMAGEINPUT._serialized_start=177
-  _UPLOADIMAGEINPUT._serialized_end=499
-  _UPLOADIMAGEINPUT_SIZE._serialized_start=396
-  _UPLOADIMAGEINPUT_SIZE._serialized_end=433
-  _UPLOADIMAGEINPUT_CROP._serialized_start=435
-  _UPLOADIMAGEINPUT_CROP._serialized_end=499
-  _UPLOADIMAGEOUTPUT._serialized_start=501
-  _UPLOADIMAGEOUTPUT._serialized_end=539
-  _ASSET._serialized_start=542
-  _ASSET._serialized_end=694
+  _UPLOADIMAGEINPUT._serialized_start=142
+  _UPLOADIMAGEINPUT._serialized_end=464
+  _UPLOADIMAGEINPUT_SIZE._serialized_start=361
+  _UPLOADIMAGEINPUT_SIZE._serialized_end=398
+  _UPLOADIMAGEINPUT_CROP._serialized_start=400
+  _UPLOADIMAGEINPUT_CROP._serialized_end=464
+  _UPLOADIMAGEOUTPUT._serialized_start=466
+  _UPLOADIMAGEOUTPUT._serialized_end=504
+  _ASSET._serialized_start=507
+  _ASSET._serialized_end=659
 # @@protoc_insertion_point(module_scope)
