@@ -132,9 +132,10 @@ class UpdateTopicInput(_message.Message):
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateTopicInput.Patch
-    APPEND_DESCRIPTORS: UpdateTopicInput.Patch
-    EXCLUDE_DESCRIPTORS: UpdateTopicInput.Patch
+    KEYWORDS: UpdateTopicInput.Patch
+    NAME: UpdateTopicInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    SUMMARY: UpdateTopicInput.Patch
     TOPIC_FIELD_NUMBER: _ClassVar[int]
     TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
     patch: _containers.RepeatedScalarFieldContainer[UpdateTopicInput.Patch]

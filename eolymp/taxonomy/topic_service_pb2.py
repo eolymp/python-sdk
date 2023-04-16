@@ -18,7 +18,7 @@ from eolymp.taxonomy import topic_pb2 as eolymp_dot_taxonomy_dot_topic__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/taxonomy/topic_service.proto\x12\x0f\x65olymp.taxonomy\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/taxonomy/topic.proto\x1a!eolymp/wellknown/expression.proto\"9\n\x10\x43reateTopicInput\x12%\n\x05topic\x18\x01 \x01(\x0b\x32\x16.eolymp.taxonomy.Topic\"%\n\x11\x43reateTopicOutput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\"$\n\x10\x44\x65leteTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\"\x13\n\x11\x44\x65leteTopicOutput\"\xc6\x01\n\x10UpdateTopicInput\x12\x36\n\x05patch\x18\x01 \x03(\x0e\x32\'.eolymp.taxonomy.UpdateTopicInput.Patch\x12\x10\n\x08topic_id\x18\x02 \x01(\t\x12%\n\x05topic\x18\x03 \x01(\x0b\x32\x16.eolymp.taxonomy.Topic\"A\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x16\n\x12\x41PPEND_DESCRIPTORS\x10\x01\x12\x17\n\x13\x45XCLUDE_DESCRIPTORS\x10\x02\"\x13\n\x11UpdateTopicOutput\"6\n\x12\x44\x65scribeTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x64 \x01(\t\"<\n\x13\x44\x65scribeTopicOutput\x12%\n\x05topic\x18\x01 \x01(\x0b\x32\x16.eolymp.taxonomy.Topic\"\xf0\x01\n\x0fListTopicsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.taxonomy.ListTopicsInput.Filter\x12\x0e\n\x06locale\x18\x64 \x01(\t\x1au\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"H\n\x10ListTopicsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.taxonomy.Topic\"p\n\x13TranslateTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x37\n\x0btranslation\x18\x03 \x01(\x0b\x32\".eolymp.taxonomy.Topic.Translation\"\x16\n\x14TranslateTopicOutput\":\n\x16\x44\x65leteTranslationInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\"\x19\n\x17\x44\x65leteTranslationOutput\"\xc3\x01\n\x15ListTranslationsInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12>\n\x07\x66ilters\x18( \x01(\x0b\x32-.eolymp.taxonomy.ListTranslationsInput.Filter\x1a:\n\x06\x46ilter\x12\x30\n\x06locale\x18\x01 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"Z\n\x16ListTranslationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x31\n\x05items\x18\x02 \x03(\x0b\x32\".eolymp.taxonomy.Topic.Translation2\xcb\n\n\x0cTopicService\x12\x90\x01\n\x0b\x43reateTopic\x12!.eolymp.taxonomy.CreateTopicInput\x1a\".eolymp.taxonomy.CreateTopicOutput\":\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\"\x07/topics\x12\x9b\x01\n\x0b\x44\x65leteTopic\x12!.eolymp.taxonomy.DeleteTopicInput\x1a\".eolymp.taxonomy.DeleteTopicOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x14*\x12/topics/{topic_id}\x12\x9b\x01\n\x0bUpdateTopic\x12!.eolymp.taxonomy.UpdateTopicInput\x1a\".eolymp.taxonomy.UpdateTopicOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x14\x1a\x12/topics/{topic_id}\x12\xa0\x01\n\rDescribeTopic\x12#.eolymp.taxonomy.DescribeTopicInput\x1a$.eolymp.taxonomy.DescribeTopicOutput\"D\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/topics/{topic_id}\x12\x8c\x01\n\nListTopics\x12 .eolymp.taxonomy.ListTopicsInput\x1a!.eolymp.taxonomy.ListTopicsOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\t\x12\x07/topics\x12\xba\x01\n\x0eTranslateTopic\x12$.eolymp.taxonomy.TranslateTopicInput\x1a%.eolymp.taxonomy.TranslateTopicOutput\"[\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02*\x1a(/topics/{topic_id}/translations/{locale}\x12\xc3\x01\n\x11\x44\x65leteTranslation\x12\'.eolymp.taxonomy.DeleteTranslationInput\x1a(.eolymp.taxonomy.DeleteTranslationOutput\"[\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02**(/topics/{topic_id}/translations/{locale}\x12\xb6\x01\n\x10ListTranslations\x12&.eolymp.taxonomy.ListTranslationsInput\x1a\'.eolymp.taxonomy.ListTranslationsOutput\"Q\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:read\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02!*\x1f/topics/{topic_id}/translationsB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/taxonomy/topic_service.proto\x12\x0f\x65olymp.taxonomy\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/taxonomy/topic.proto\x1a!eolymp/wellknown/expression.proto\"9\n\x10\x43reateTopicInput\x12%\n\x05topic\x18\x01 \x01(\x0b\x32\x16.eolymp.taxonomy.Topic\"%\n\x11\x43reateTopicOutput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\"$\n\x10\x44\x65leteTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\"\x13\n\x11\x44\x65leteTopicOutput\"\xba\x01\n\x10UpdateTopicInput\x12\x36\n\x05patch\x18\x01 \x03(\x0e\x32\'.eolymp.taxonomy.UpdateTopicInput.Patch\x12\x10\n\x08topic_id\x18\x02 \x01(\t\x12%\n\x05topic\x18\x03 \x01(\x0b\x32\x16.eolymp.taxonomy.Topic\"5\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0b\n\x07SUMMARY\x10\x02\x12\x0c\n\x08KEYWORDS\x10\x03\"\x13\n\x11UpdateTopicOutput\"6\n\x12\x44\x65scribeTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x64 \x01(\t\"<\n\x13\x44\x65scribeTopicOutput\x12%\n\x05topic\x18\x01 \x01(\x0b\x32\x16.eolymp.taxonomy.Topic\"\xf0\x01\n\x0fListTopicsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.taxonomy.ListTopicsInput.Filter\x12\x0e\n\x06locale\x18\x64 \x01(\t\x1au\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"H\n\x10ListTopicsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.taxonomy.Topic\"p\n\x13TranslateTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x37\n\x0btranslation\x18\x03 \x01(\x0b\x32\".eolymp.taxonomy.Topic.Translation\"\x16\n\x14TranslateTopicOutput\":\n\x16\x44\x65leteTranslationInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\"\x19\n\x17\x44\x65leteTranslationOutput\"\xc3\x01\n\x15ListTranslationsInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12>\n\x07\x66ilters\x18( \x01(\x0b\x32-.eolymp.taxonomy.ListTranslationsInput.Filter\x1a:\n\x06\x46ilter\x12\x30\n\x06locale\x18\x01 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"Z\n\x16ListTranslationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x31\n\x05items\x18\x02 \x03(\x0b\x32\".eolymp.taxonomy.Topic.Translation2\xcb\n\n\x0cTopicService\x12\x90\x01\n\x0b\x43reateTopic\x12!.eolymp.taxonomy.CreateTopicInput\x1a\".eolymp.taxonomy.CreateTopicOutput\":\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\"\x07/topics\x12\x9b\x01\n\x0b\x44\x65leteTopic\x12!.eolymp.taxonomy.DeleteTopicInput\x1a\".eolymp.taxonomy.DeleteTopicOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x14*\x12/topics/{topic_id}\x12\x9b\x01\n\x0bUpdateTopic\x12!.eolymp.taxonomy.UpdateTopicInput\x1a\".eolymp.taxonomy.UpdateTopicOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x14\x1a\x12/topics/{topic_id}\x12\xa0\x01\n\rDescribeTopic\x12#.eolymp.taxonomy.DescribeTopicInput\x1a$.eolymp.taxonomy.DescribeTopicOutput\"D\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/topics/{topic_id}\x12\x8c\x01\n\nListTopics\x12 .eolymp.taxonomy.ListTopicsInput\x1a!.eolymp.taxonomy.ListTopicsOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\t\x12\x07/topics\x12\xba\x01\n\x0eTranslateTopic\x12$.eolymp.taxonomy.TranslateTopicInput\x1a%.eolymp.taxonomy.TranslateTopicOutput\"[\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02*\x1a(/topics/{topic_id}/translations/{locale}\x12\xc3\x01\n\x11\x44\x65leteTranslation\x12\'.eolymp.taxonomy.DeleteTranslationInput\x1a(.eolymp.taxonomy.DeleteTranslationOutput\"[\x82\xe3\n\x18\x8a\xe3\n\x14taxonomy:topic:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02**(/topics/{topic_id}/translations/{locale}\x12\xb6\x01\n\x10ListTranslations\x12&.eolymp.taxonomy.ListTranslationsInput\x1a\'.eolymp.taxonomy.ListTranslationsOutput\"Q\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:read\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02!*\x1f/topics/{topic_id}/translationsB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.taxonomy.topic_service_pb2', globals())
@@ -51,35 +51,35 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DELETETOPICOUTPUT._serialized_start=355
   _DELETETOPICOUTPUT._serialized_end=374
   _UPDATETOPICINPUT._serialized_start=377
-  _UPDATETOPICINPUT._serialized_end=575
+  _UPDATETOPICINPUT._serialized_end=563
   _UPDATETOPICINPUT_PATCH._serialized_start=510
-  _UPDATETOPICINPUT_PATCH._serialized_end=575
-  _UPDATETOPICOUTPUT._serialized_start=577
-  _UPDATETOPICOUTPUT._serialized_end=596
-  _DESCRIBETOPICINPUT._serialized_start=598
-  _DESCRIBETOPICINPUT._serialized_end=652
-  _DESCRIBETOPICOUTPUT._serialized_start=654
-  _DESCRIBETOPICOUTPUT._serialized_end=714
-  _LISTTOPICSINPUT._serialized_start=717
-  _LISTTOPICSINPUT._serialized_end=957
-  _LISTTOPICSINPUT_FILTER._serialized_start=840
-  _LISTTOPICSINPUT_FILTER._serialized_end=957
-  _LISTTOPICSOUTPUT._serialized_start=959
-  _LISTTOPICSOUTPUT._serialized_end=1031
-  _TRANSLATETOPICINPUT._serialized_start=1033
-  _TRANSLATETOPICINPUT._serialized_end=1145
-  _TRANSLATETOPICOUTPUT._serialized_start=1147
-  _TRANSLATETOPICOUTPUT._serialized_end=1169
-  _DELETETRANSLATIONINPUT._serialized_start=1171
-  _DELETETRANSLATIONINPUT._serialized_end=1229
-  _DELETETRANSLATIONOUTPUT._serialized_start=1231
-  _DELETETRANSLATIONOUTPUT._serialized_end=1256
-  _LISTTRANSLATIONSINPUT._serialized_start=1259
-  _LISTTRANSLATIONSINPUT._serialized_end=1454
-  _LISTTRANSLATIONSINPUT_FILTER._serialized_start=1396
-  _LISTTRANSLATIONSINPUT_FILTER._serialized_end=1454
-  _LISTTRANSLATIONSOUTPUT._serialized_start=1456
-  _LISTTRANSLATIONSOUTPUT._serialized_end=1546
-  _TOPICSERVICE._serialized_start=1549
-  _TOPICSERVICE._serialized_end=2904
+  _UPDATETOPICINPUT_PATCH._serialized_end=563
+  _UPDATETOPICOUTPUT._serialized_start=565
+  _UPDATETOPICOUTPUT._serialized_end=584
+  _DESCRIBETOPICINPUT._serialized_start=586
+  _DESCRIBETOPICINPUT._serialized_end=640
+  _DESCRIBETOPICOUTPUT._serialized_start=642
+  _DESCRIBETOPICOUTPUT._serialized_end=702
+  _LISTTOPICSINPUT._serialized_start=705
+  _LISTTOPICSINPUT._serialized_end=945
+  _LISTTOPICSINPUT_FILTER._serialized_start=828
+  _LISTTOPICSINPUT_FILTER._serialized_end=945
+  _LISTTOPICSOUTPUT._serialized_start=947
+  _LISTTOPICSOUTPUT._serialized_end=1019
+  _TRANSLATETOPICINPUT._serialized_start=1021
+  _TRANSLATETOPICINPUT._serialized_end=1133
+  _TRANSLATETOPICOUTPUT._serialized_start=1135
+  _TRANSLATETOPICOUTPUT._serialized_end=1157
+  _DELETETRANSLATIONINPUT._serialized_start=1159
+  _DELETETRANSLATIONINPUT._serialized_end=1217
+  _DELETETRANSLATIONOUTPUT._serialized_start=1219
+  _DELETETRANSLATIONOUTPUT._serialized_end=1244
+  _LISTTRANSLATIONSINPUT._serialized_start=1247
+  _LISTTRANSLATIONSINPUT._serialized_end=1442
+  _LISTTRANSLATIONSINPUT_FILTER._serialized_start=1384
+  _LISTTRANSLATIONSINPUT_FILTER._serialized_end=1442
+  _LISTTRANSLATIONSOUTPUT._serialized_start=1444
+  _LISTTRANSLATIONSOUTPUT._serialized_end=1534
+  _TOPICSERVICE._serialized_start=1537
+  _TOPICSERVICE._serialized_end=2892
 # @@protoc_insertion_point(module_scope)
