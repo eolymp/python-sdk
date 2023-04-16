@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/taxonomy/topic.proto\x12\x0f\x65olymp.taxonomy\"\x9a\x01\n\x05Topic\x12\n\n\x02id\x18\x01 \x01(\t\x12\x36\n\x0b\x64\x65scriptors\x18\x02 \x03(\x0b\x32!.eolymp.taxonomy.Topic.Descriptor\x1aM\n\nDescriptor\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\tB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/taxonomy/topic.proto\x12\x0f\x65olymp.taxonomy\"\x94\x01\n\x05Topic\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\t\x1aN\n\x0bTranslation\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\tB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.taxonomy.topic_pb2', globals())
@@ -22,7 +22,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomy'
   _TOPIC._serialized_start=49
-  _TOPIC._serialized_end=203
-  _TOPIC_DESCRIPTOR._serialized_start=126
-  _TOPIC_DESCRIPTOR._serialized_end=203
+  _TOPIC._serialized_end=197
+  _TOPIC_TRANSLATION._serialized_start=119
+  _TOPIC_TRANSLATION._serialized_end=197
 # @@protoc_insertion_point(module_scope)

@@ -78,3 +78,47 @@ class TopicServiceClient:
             **kwargs,
         )
 
+    def TranslateTopic(self, request, **kwargs):
+        path = "/topics/"+urllib.parse.quote(request.topic_id)+"/translations/"+urllib.parse.quote(request.locale)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.topic_id = ""
+        request.locale = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.TranslateTopicOutput"),
+            **kwargs,
+        )
+
+    def DeleteTranslation(self, request, **kwargs):
+        path = "/topics/"+urllib.parse.quote(request.topic_id)+"/translations/"+urllib.parse.quote(request.locale)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.topic_id = ""
+        request.locale = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DeleteTranslationOutput"),
+            **kwargs,
+        )
+
+    def ListTranslations(self, request, **kwargs):
+        path = "/topics/"+urllib.parse.quote(request.topic_id)+"/translations"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.topic_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.ListTranslationsOutput"),
+            **kwargs,
+        )
+

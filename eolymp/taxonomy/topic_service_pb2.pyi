@@ -33,6 +33,18 @@ class DeleteTopicOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class DeleteTranslationInput(_message.Message):
+    __slots__ = ["locale", "topic_id"]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
+    locale: str
+    topic_id: str
+    def __init__(self, topic_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+
+class DeleteTranslationOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DescribeTopicInput(_message.Message):
     __slots__ = ["topic_id"]
     TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
@@ -71,6 +83,45 @@ class ListTopicsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_topic_pb2.Topic]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_topic_pb2.Topic, _Mapping]]] = ...) -> None: ...
+
+class ListTranslationsInput(_message.Message):
+    __slots__ = ["filters", "offset", "size", "topic_id"]
+    class Filter(_message.Message):
+        __slots__ = ["locale"]
+        LOCALE_FIELD_NUMBER: _ClassVar[int]
+        locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
+    filters: ListTranslationsInput.Filter
+    offset: int
+    size: int
+    topic_id: str
+    def __init__(self, topic_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTranslationsInput.Filter, _Mapping]] = ...) -> None: ...
+
+class ListTranslationsOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_topic_pb2.Topic.Translation]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_topic_pb2.Topic.Translation, _Mapping]]] = ...) -> None: ...
+
+class TranslateTopicInput(_message.Message):
+    __slots__ = ["locale", "topic_id", "translation"]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
+    locale: str
+    topic_id: str
+    translation: _topic_pb2.Topic.Translation
+    def __init__(self, topic_id: _Optional[str] = ..., locale: _Optional[str] = ..., translation: _Optional[_Union[_topic_pb2.Topic.Translation, _Mapping]] = ...) -> None: ...
+
+class TranslateTopicOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class UpdateTopicInput(_message.Message):
     __slots__ = ["patch", "topic", "topic_id"]
