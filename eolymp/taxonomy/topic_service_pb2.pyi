@@ -46,10 +46,12 @@ class DeleteTranslationOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeTopicInput(_message.Message):
-    __slots__ = ["topic_id"]
+    __slots__ = ["locale", "topic_id"]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
+    locale: str
     topic_id: str
-    def __init__(self, topic_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, topic_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class DescribeTopicOutput(_message.Message):
     __slots__ = ["topic"]
@@ -58,7 +60,7 @@ class DescribeTopicOutput(_message.Message):
     def __init__(self, topic: _Optional[_Union[_topic_pb2.Topic, _Mapping]] = ...) -> None: ...
 
 class ListTopicsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["filters", "locale", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "name", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -69,12 +71,14 @@ class ListTopicsInput(_message.Message):
         query: str
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     filters: ListTopicsInput.Filter
+    locale: str
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTopicsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTopicsInput.Filter, _Mapping]] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class ListTopicsOutput(_message.Message):
     __slots__ = ["items", "total"]
