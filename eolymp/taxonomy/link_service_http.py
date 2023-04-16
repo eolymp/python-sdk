@@ -14,25 +14,25 @@ class LinkServiceClient:
         self.transport = transport
         self.url = url
 
-    def SetTopicLinks(self, request, **kwargs):
+    def SetLinkedTopics(self, request, **kwargs):
         path = "/topics"
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.SetTopicLinksOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.SetLinkedTopicsOutput"),
             **kwargs,
         )
 
-    def GetTopicLinks(self, request, **kwargs):
+    def GetLinkedTopics(self, request, **kwargs):
         path = "/topics"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.GetTopicLinksOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.GetLinkedTopicsOutput"),
             **kwargs,
         )
 

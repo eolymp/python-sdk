@@ -8,22 +8,22 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class GetTopicLinksInput(_message.Message):
+class GetLinkedTopicsInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class GetTopicLinksOutput(_message.Message):
+class GetLinkedTopicsOutput(_message.Message):
     __slots__ = ["topics"]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
     topics: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, topics: _Optional[_Iterable[str]] = ...) -> None: ...
 
-class SetTopicLinksInput(_message.Message):
+class SetLinkedTopicsInput(_message.Message):
     __slots__ = ["topics"]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
     topics: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, topics: _Optional[_Iterable[str]] = ...) -> None: ...
 
-class SetTopicLinksOutput(_message.Message):
+class SetLinkedTopicsOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/taxonomy/link_service.proto\x12\x0f\x65olymp.taxonomy\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"$\n\x12SetTopicLinksInput\x12\x0e\n\x06topics\x18\x01 \x03(\t\"\x15\n\x13SetTopicLinksOutput\"\x14\n\x12GetTopicLinksInput\"%\n\x13GetTopicLinksOutput\x12\x0e\n\x06topics\x18\x01 \x03(\t2\xbd\x02\n\x0bLinkService\x12\x95\x01\n\rSetTopicLinks\x12#.eolymp.taxonomy.SetTopicLinksInput\x1a$.eolymp.taxonomy.SetTopicLinksOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:link\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\x1a\x07/topics\x12\x95\x01\n\rGetTopicLinks\x12#.eolymp.taxonomy.GetTopicLinksInput\x1a$.eolymp.taxonomy.GetTopicLinksOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:read\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\x12\x07/topicsB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/taxonomy/link_service.proto\x12\x0f\x65olymp.taxonomy\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"&\n\x14SetLinkedTopicsInput\x12\x0e\n\x06topics\x18\x01 \x03(\t\"\x17\n\x15SetLinkedTopicsOutput\"\x16\n\x14GetLinkedTopicsInput\"\'\n\x15GetLinkedTopicsOutput\x12\x0e\n\x06topics\x18\x01 \x03(\t2\xc9\x02\n\x0bLinkService\x12\x9b\x01\n\x0fSetLinkedTopics\x12%.eolymp.taxonomy.SetLinkedTopicsInput\x1a&.eolymp.taxonomy.SetLinkedTopicsOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:link\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\x1a\x07/topics\x12\x9b\x01\n\x0fGetLinkedTopics\x12%.eolymp.taxonomy.GetLinkedTopicsInput\x1a&.eolymp.taxonomy.GetLinkedTopicsOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13taxonomy:topic:read\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\x12\x07/topicsB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.taxonomy.link_service_pb2', globals())
@@ -24,18 +24,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomy'
-  _LINKSERVICE.methods_by_name['SetTopicLinks']._options = None
-  _LINKSERVICE.methods_by_name['SetTopicLinks']._serialized_options = b'\202\343\n\027\212\343\n\023taxonomy:topic:link\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002\t\032\007/topics'
-  _LINKSERVICE.methods_by_name['GetTopicLinks']._options = None
-  _LINKSERVICE.methods_by_name['GetTopicLinks']._serialized_options = b'\202\343\n\027\212\343\n\023taxonomy:topic:read\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002\t\022\007/topics'
-  _SETTOPICLINKSINPUT._serialized_start=154
-  _SETTOPICLINKSINPUT._serialized_end=190
-  _SETTOPICLINKSOUTPUT._serialized_start=192
-  _SETTOPICLINKSOUTPUT._serialized_end=213
-  _GETTOPICLINKSINPUT._serialized_start=215
-  _GETTOPICLINKSINPUT._serialized_end=235
-  _GETTOPICLINKSOUTPUT._serialized_start=237
-  _GETTOPICLINKSOUTPUT._serialized_end=274
-  _LINKSERVICE._serialized_start=277
-  _LINKSERVICE._serialized_end=594
+  _LINKSERVICE.methods_by_name['SetLinkedTopics']._options = None
+  _LINKSERVICE.methods_by_name['SetLinkedTopics']._serialized_options = b'\202\343\n\027\212\343\n\023taxonomy:topic:link\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002\t\032\007/topics'
+  _LINKSERVICE.methods_by_name['GetLinkedTopics']._options = None
+  _LINKSERVICE.methods_by_name['GetLinkedTopics']._serialized_options = b'\202\343\n\027\212\343\n\023taxonomy:topic:read\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002\t\022\007/topics'
+  _SETLINKEDTOPICSINPUT._serialized_start=154
+  _SETLINKEDTOPICSINPUT._serialized_end=192
+  _SETLINKEDTOPICSOUTPUT._serialized_start=194
+  _SETLINKEDTOPICSOUTPUT._serialized_end=217
+  _GETLINKEDTOPICSINPUT._serialized_start=219
+  _GETLINKEDTOPICSINPUT._serialized_end=241
+  _GETLINKEDTOPICSOUTPUT._serialized_start=243
+  _GETLINKEDTOPICSOUTPUT._serialized_end=282
+  _LINKSERVICE._serialized_start=285
+  _LINKSERVICE._serialized_end=614
 # @@protoc_insertion_point(module_scope)
