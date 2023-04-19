@@ -532,18 +532,20 @@ class ListProblemTopOutput(_message.Message):
 class ListProblemsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
-        __slots__ = ["id", "is_private", "is_visible", "number", "topic_id"]
+        __slots__ = ["difficulty", "id", "is_private", "is_visible", "number", "topic_id"]
+        DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         IS_PRIVATE_FIELD_NUMBER: _ClassVar[int]
         IS_VISIBLE_FIELD_NUMBER: _ClassVar[int]
         NUMBER_FIELD_NUMBER: _ClassVar[int]
         TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
+        difficulty: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         is_private: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         is_visible: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         number: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         topic_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., topic_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_visible: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_private: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., topic_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_visible: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_private: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., difficulty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
