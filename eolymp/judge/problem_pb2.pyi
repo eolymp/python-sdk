@@ -1,4 +1,4 @@
-from eolymp.atlas import feedback_pb2 as _feedback_pb2
+from eolymp.atlas import testing_feedback_pb2 as _testing_feedback_pb2
 from eolymp.ecm import node_pb2 as _node_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -70,7 +70,7 @@ class Problem(_message.Message):
     contest_id: str
     cpu_limit: int
     ern: str
-    feedback_policy: _feedback_pb2.FeedbackPolicy
+    feedback_policy: _testing_feedback_pb2.FeedbackPolicy
     file_size_limit: int
     id: str
     index: int
@@ -79,4 +79,4 @@ class Problem(_message.Message):
     score_by_best_testset: bool
     submit_limit: int
     time_limit: int
-    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., index: _Optional[int] = ..., score: _Optional[float] = ..., base_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_feedback_pb2.FeedbackPolicy, str]] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: bool = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., index: _Optional[int] = ..., score: _Optional[float] = ..., base_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: bool = ...) -> None: ...

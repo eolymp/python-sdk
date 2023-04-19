@@ -1,5 +1,5 @@
-from eolymp.atlas import feedback_pb2 as _feedback_pb2
-from eolymp.atlas import scoring_pb2 as _scoring_pb2
+from eolymp.atlas import testing_feedback_pb2 as _testing_feedback_pb2
+from eolymp.atlas import testing_scoring_pb2 as _testing_scoring_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -21,12 +21,12 @@ class Testset(_message.Message):
     TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
     cpu_limit: int
     dependencies: _containers.RepeatedScalarFieldContainer[int]
-    feedback_policy: _feedback_pb2.FeedbackPolicy
+    feedback_policy: _testing_feedback_pb2.FeedbackPolicy
     file_size_limit: int
     id: str
     index: int
     memory_limit: int
     problem_id: str
-    scoring_mode: _scoring_pb2.ScoringMode
+    scoring_mode: _testing_scoring_pb2.ScoringMode
     time_limit: int
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., index: _Optional[int] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., dependencies: _Optional[_Iterable[int]] = ..., scoring_mode: _Optional[_Union[_scoring_pb2.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_feedback_pb2.FeedbackPolicy, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., index: _Optional[int] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., dependencies: _Optional[_Iterable[int]] = ..., scoring_mode: _Optional[_Union[_testing_scoring_pb2.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ...) -> None: ...

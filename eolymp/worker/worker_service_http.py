@@ -50,3 +50,44 @@ class WorkerClient:
             **kwargs,
         )
 
+class WorkerServiceClient:
+    def __init__(self, transport, url="https://api.eolymp.com"):
+        self.transport = transport
+        self.url = url
+
+    def CreateJob(self, request, **kwargs):
+        path = "/jobs"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.worker.CreateJobOutput"),
+            **kwargs,
+        )
+
+    def DescribeJob(self, request, **kwargs):
+        path = "/jobs/"+urllib.parse.quote(request.job_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.job_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.worker.DescribeJobOutput"),
+            **kwargs,
+        )
+
+    def ListJobs(self, request, **kwargs):
+        path = "/jobs"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.worker.ListJobsOutput"),
+            **kwargs,
+        )
+

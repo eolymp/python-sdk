@@ -9,58 +9,58 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class UploaderClient:
+class LibraryServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
-    def UploadFile(self, request, **kwargs):
-        path = "/data/files"
+    def CreateProblem(self, request, **kwargs):
+        path = "/problems"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UploadFileOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateProblemOutput"),
             **kwargs,
         )
 
-    def StartMultipartUpload(self, request, **kwargs):
-        path = "/data/uploads"
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.StartMultipartUploadOutput"),
-            **kwargs,
-        )
-
-    def UploadPart(self, request, **kwargs):
-        path = "/data/uploads/"+urllib.parse.quote(request.upload_id)
+    def DeleteProblem(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.upload_id = ""
+        request.problem_id = ""
 
         return self.transport.request(
-            method="POST",
+            method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UploadPartOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteProblemOutput"),
             **kwargs,
         )
 
-    def CompleteMultipartUpload(self, request, **kwargs):
-        path = "/data/uploads/"+urllib.parse.quote(request.upload_id)
+    def DescribeProblem(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.upload_id = ""
+        request.problem_id = ""
 
         return self.transport.request(
-            method="PUT",
+            method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CompleteMultipartUploadOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeProblemOutput"),
+            **kwargs,
+        )
+
+    def ListProblems(self, request, **kwargs):
+        path = "/problems"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListProblemsOutput"),
             **kwargs,
         )
 

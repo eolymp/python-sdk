@@ -11,9 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import endpoint_pb2 as eolymp_dot_annotations_dot_endpoint__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\"b\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0f\n\x07private\x18\x0c \x01(\x08\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\x1a!eolymp/annotations/endpoint.proto\"\xa5\x03\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0f\n\x07private\x18\x0c \x01(\x08:\xc0\x02\xda\xe3\n\xbb\x02\x12\x17\n\x15\x65olymp.acl.AclService\x12\x1b\n\x19\x65olymp.atlas.AssetService\x12 \n\x1e\x65olymp.atlas.AttachmentService\x12\"\n eolymp.atlas.CodeTemplateService\x12\x1d\n\x1b\x65olymp.atlas.ProblemService\x12\x1d\n\x1b\x65olymp.atlas.ScoringService\x12\x1f\n\x1d\x65olymp.atlas.StatementService\x12 \n\x1e\x65olymp.atlas.SubmissionService\x12\x1d\n\x1b\x65olymp.atlas.TestingService\x12\x1d\n\x1b\x65olymp.worker.WorkerServiceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.problem_pb2', globals())
@@ -21,6 +22,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _PROBLEM._serialized_start=44
-  _PROBLEM._serialized_end=142
+  _PROBLEM._options = None
+  _PROBLEM._serialized_options = b'\332\343\n\273\002\022\027\n\025eolymp.acl.AclService\022\033\n\031eolymp.atlas.AssetService\022 \n\036eolymp.atlas.AttachmentService\022\"\n eolymp.atlas.CodeTemplateService\022\035\n\033eolymp.atlas.ProblemService\022\035\n\033eolymp.atlas.ScoringService\022\037\n\035eolymp.atlas.StatementService\022 \n\036eolymp.atlas.SubmissionService\022\035\n\033eolymp.atlas.TestingService\022\035\n\033eolymp.worker.WorkerService'
+  _PROBLEM._serialized_start=80
+  _PROBLEM._serialized_end=501
 # @@protoc_insertion_point(module_scope)

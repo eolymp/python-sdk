@@ -14,22 +14,8 @@ class ProblemServiceClient:
         self.transport = transport
         self.url = url
 
-    def CreateProblem(self, request, **kwargs):
-        path = "/problems"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateProblemOutput"),
-            **kwargs,
-        )
-
     def DeleteProblem(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
+        path = "/"
 
         return self.transport.request(
             method="DELETE",
@@ -40,10 +26,7 @@ class ProblemServiceClient:
         )
 
     def DescribeProblem(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
+        path = "/"
 
         return self.transport.request(
             method="GET",
@@ -54,10 +37,7 @@ class ProblemServiceClient:
         )
 
     def UpdateVisibility(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/visibility"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
+        path = "/visibility"
 
         return self.transport.request(
             method="POST",
@@ -68,10 +48,7 @@ class ProblemServiceClient:
         )
 
     def UpdatePrivacy(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/privacy"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
+        path = "/privacy"
 
         return self.transport.request(
             method="POST",
@@ -81,22 +58,8 @@ class ProblemServiceClient:
             **kwargs,
         )
 
-    def ListProblems(self, request, **kwargs):
-        path = "/problems"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListProblemsOutput"),
-            **kwargs,
-        )
-
     def ListVersions(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/versions"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
+        path = "/versions"
 
         return self.transport.request(
             method="GET",
