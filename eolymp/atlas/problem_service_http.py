@@ -25,6 +25,17 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def UpdateProblem(self, request, **kwargs):
+        path = "/"
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateProblemOutput"),
+            **kwargs,
+        )
+
     def DescribeProblem(self, request, **kwargs):
         path = "/"
 

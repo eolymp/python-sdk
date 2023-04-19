@@ -16,6 +16,7 @@ from eolymp.executor import interactor_pb2 as _interactor_pb2
 from eolymp.executor import verifier_pb2 as _verifier_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -836,6 +837,27 @@ class UpdatePrivacyInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., private: bool = ...) -> None: ...
 
 class UpdatePrivacyOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdateProblemInput(_message.Message):
+    __slots__ = ["patch", "problem", "problem_id"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateProblemInput.Patch
+    DIFFICULTY: UpdateProblemInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    PRIVATE: UpdateProblemInput.Patch
+    PROBLEM_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    TOPICS: UpdateProblemInput.Patch
+    VISIBLE: UpdateProblemInput.Patch
+    patch: _containers.RepeatedScalarFieldContainer[UpdateProblemInput.Patch]
+    problem: _problem_pb2.Problem
+    problem_id: str
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProblemInput.Patch, str]]] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
+
+class UpdateProblemOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
