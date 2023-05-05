@@ -37,3 +37,15 @@ class DescribeRunOutput(_message.Message):
     RUN_FIELD_NUMBER: _ClassVar[int]
     run: _run_pb2.Run
     def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ...) -> None: ...
+
+class WatchRunInput(_message.Message):
+    __slots__ = ["run_id"]
+    RUN_ID_FIELD_NUMBER: _ClassVar[int]
+    run_id: str
+    def __init__(self, run_id: _Optional[str] = ...) -> None: ...
+
+class WatchRunOutput(_message.Message):
+    __slots__ = ["run"]
+    RUN_FIELD_NUMBER: _ClassVar[int]
+    run: _run_pb2.Run
+    def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ...) -> None: ...

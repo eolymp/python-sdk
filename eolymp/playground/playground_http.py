@@ -39,3 +39,17 @@ class PlaygroundClient:
             **kwargs,
         )
 
+    def WatchRun(self, request, **kwargs):
+        path = "/runs/"+urllib.parse.quote(request.run_id)+"/watch"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.run_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.playground.WatchRunOutput"),
+            **kwargs,
+        )
+
