@@ -53,3 +53,14 @@ class SubmissionServiceClient:
             **kwargs,
         )
 
+    def ListSubmissions(self, request, **kwargs):
+        path = "/submissions"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListSubmissionsOutput"),
+            **kwargs,
+        )
+

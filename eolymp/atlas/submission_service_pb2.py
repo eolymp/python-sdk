@@ -13,10 +13,11 @@ _sym_db = _symbol_database.Default()
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
-from eolymp.atlas import atlas_pb2 as eolymp_dot_atlas_dot_atlas__pb2
+from eolymp.atlas import submission_pb2 as eolymp_dot_atlas_dot_submission__pb2
+from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/submission_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/atlas/atlas.proto2\xfb\x03\n\x11SubmissionService\x12\x91\x01\n\x10\x43reateSubmission\x12#.eolymp.atlas.CreateSubmissionInput\x1a$.eolymp.atlas.CreateSubmissionOutput\"2\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\x82\xd3\xe4\x93\x02\x0e\"\x0c/submissions\x12\xa8\x01\n\x10RetestSubmission\x12#.eolymp.atlas.RetestSubmissionInput\x1a$.eolymp.atlas.RetestSubmissionOutput\"I\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\x82\xd3\xe4\x93\x02%\"#/submissions/{submission_id}/retest\x12\xa6\x01\n\x12\x44\x65scribeSubmission\x12%.eolymp.atlas.DescribeSubmissionInput\x1a&.eolymp.atlas.DescribeSubmissionOutput\"A\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/submissions/{submission_id}B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/submission_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/atlas/submission.proto\x1a!eolymp/wellknown/expression.proto\"I\n\x15\x43reateSubmissionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0c\n\x04lang\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\"/\n\x16\x43reateSubmissionOutput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"D\n\x17\x44\x65scribeSubmissionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\"H\n\x18\x44\x65scribeSubmissionOutput\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Submission\"Q\n\x15RetestSubmissionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\x12\r\n\x05\x64\x65\x62ug\x18\x03 \x01(\x08\"\x18\n\x16RetestSubmissionOutput\"\xab\x04\n\x14ListSubmissionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.atlas.ListSubmissionsInput.Filter\x1a\xa4\x03\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\nproblem_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12;\n\x0csubmitted_at\x18\x04 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x31\n\x07runtime\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06status\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x05score\x18\x07 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\x12\x35\n\npercentage\x18\x08 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\"O\n\x15ListSubmissionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.atlas.Submission2\x8b\x05\n\x11SubmissionService\x12\x91\x01\n\x10\x43reateSubmission\x12#.eolymp.atlas.CreateSubmissionInput\x1a$.eolymp.atlas.CreateSubmissionOutput\"2\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\x82\xd3\xe4\x93\x02\x0e\"\x0c/submissions\x12\xa8\x01\n\x10RetestSubmission\x12#.eolymp.atlas.RetestSubmissionInput\x1a$.eolymp.atlas.RetestSubmissionOutput\"I\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\x82\xd3\xe4\x93\x02%\"#/submissions/{submission_id}/retest\x12\xa6\x01\n\x12\x44\x65scribeSubmission\x12%.eolymp.atlas.DescribeSubmissionInput\x1a&.eolymp.atlas.DescribeSubmissionOutput\"A\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/submissions/{submission_id}\x12\x8d\x01\n\x0fListSubmissions\x12\".eolymp.atlas.ListSubmissionsInput\x1a#.eolymp.atlas.ListSubmissionsOutput\"1\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\x0e\x12\x0c/submissionsB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.submission_service_pb2', globals())
@@ -30,6 +31,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SUBMISSIONSERVICE.methods_by_name['RetestSubmission']._serialized_options = b'\202\343\n\032\212\343\n\026atlas:submission:write\202\323\344\223\002%\"#/submissions/{submission_id}/retest'
   _SUBMISSIONSERVICE.methods_by_name['DescribeSubmission']._options = None
   _SUBMISSIONSERVICE.methods_by_name['DescribeSubmission']._serialized_options = b'\202\343\n\031\212\343\n\025atlas:submission:read\202\323\344\223\002\036\022\034/submissions/{submission_id}'
-  _SUBMISSIONSERVICE._serialized_start=145
-  _SUBMISSIONSERVICE._serialized_end=652
+  _SUBMISSIONSERVICE.methods_by_name['ListSubmissions']._options = None
+  _SUBMISSIONSERVICE.methods_by_name['ListSubmissions']._serialized_options = b'\202\343\n\031\212\343\n\025atlas:submission:read\202\323\344\223\002\016\022\014/submissions'
+  _CREATESUBMISSIONINPUT._serialized_start=184
+  _CREATESUBMISSIONINPUT._serialized_end=257
+  _CREATESUBMISSIONOUTPUT._serialized_start=259
+  _CREATESUBMISSIONOUTPUT._serialized_end=306
+  _DESCRIBESUBMISSIONINPUT._serialized_start=308
+  _DESCRIBESUBMISSIONINPUT._serialized_end=376
+  _DESCRIBESUBMISSIONOUTPUT._serialized_start=378
+  _DESCRIBESUBMISSIONOUTPUT._serialized_end=450
+  _RETESTSUBMISSIONINPUT._serialized_start=452
+  _RETESTSUBMISSIONINPUT._serialized_end=533
+  _RETESTSUBMISSIONOUTPUT._serialized_start=535
+  _RETESTSUBMISSIONOUTPUT._serialized_end=559
+  _LISTSUBMISSIONSINPUT._serialized_start=562
+  _LISTSUBMISSIONSINPUT._serialized_end=1117
+  _LISTSUBMISSIONSINPUT_FILTER._serialized_start=697
+  _LISTSUBMISSIONSINPUT_FILTER._serialized_end=1117
+  _LISTSUBMISSIONSOUTPUT._serialized_start=1119
+  _LISTSUBMISSIONSOUTPUT._serialized_end=1198
+  _SUBMISSIONSERVICE._serialized_start=1201
+  _SUBMISSIONSERVICE._serialized_end=1852
 # @@protoc_insertion_point(module_scope)

@@ -64,34 +64,6 @@ class AtlasClient:
             **kwargs,
         )
 
-    def UpdateVisibility(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/visibility"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateVisibilityOutput"),
-            **kwargs,
-        )
-
-    def UpdatePrivacy(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/privacy"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdatePrivacyOutput"),
-            **kwargs,
-        )
-
     def UpdateProblem(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)
 
@@ -103,6 +75,20 @@ class AtlasClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateProblemOutput"),
+            **kwargs,
+        )
+
+    def SetBookmark(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/bookmark"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.SetBookmarkOutput"),
             **kwargs,
         )
 
@@ -443,63 +429,6 @@ class AtlasClient:
             **kwargs,
         )
 
-    def GrantPermission(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/permissions"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.GrantPermissionOutput"),
-            **kwargs,
-        )
-
-    def RevokePermission(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/permissions/"+urllib.parse.quote(request.user_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.user_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.RevokePermissionOutput"),
-            **kwargs,
-        )
-
-    def ListPermissions(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/permissions"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListPermissionsOutput"),
-            **kwargs,
-        )
-
-    def IntrospectPermission(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/introspect-permission"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.IntrospectPermissionOutput"),
-            **kwargs,
-        )
-
     def CreateCodeTemplate(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates"
 
@@ -685,139 +614,6 @@ class AtlasClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeProblemGradingOutput"),
-            **kwargs,
-        )
-
-    def CreateSolution(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateSolutionOutput"),
-            **kwargs,
-        )
-
-    def UpdateSolution(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.solution_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateSolutionOutput"),
-            **kwargs,
-        )
-
-    def DeleteSolution(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.solution_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteSolutionOutput"),
-            **kwargs,
-        )
-
-    def ListSolutions(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListSolutionsOutput"),
-            **kwargs,
-        )
-
-    def DescribeSolution(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.solution_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeSolutionOutput"),
-            **kwargs,
-        )
-
-    def PublishSolution(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)+"/publish"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.solution_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.PublishSolutionOutput"),
-            **kwargs,
-        )
-
-    def UnpublishSolution(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)+"/unpublish"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.solution_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UnpublishSolutionOutput"),
-            **kwargs,
-        )
-
-    def ApproveSolution(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)+"/approve"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.solution_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ApproveSolutionOutput"),
-            **kwargs,
-        )
-
-    def RefuseSolution(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)+"/refuse"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-        request.solution_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.RefuseSolutionOutput"),
             **kwargs,
         )
 
