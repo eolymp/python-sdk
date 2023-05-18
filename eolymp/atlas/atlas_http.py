@@ -661,6 +661,17 @@ class AtlasClient:
             **kwargs,
         )
 
+    def ListSubmissions(self, request, **kwargs):
+        path = "/submissions"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListSubmissionsOutput"),
+            **kwargs,
+        )
+
     def DescribeScore(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scores/"+urllib.parse.quote(request.user_id)
 
