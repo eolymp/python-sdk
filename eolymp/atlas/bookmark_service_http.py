@@ -14,6 +14,17 @@ class BookmarkServiceClient:
         self.transport = transport
         self.url = url
 
+    def GetBookmark(self, request, **kwargs):
+        path = "/bookmark"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.GetBookmarkOutput"),
+            **kwargs,
+        )
+
     def SetBookmark(self, request, **kwargs):
         path = "/bookmark"
 

@@ -92,6 +92,20 @@ class AtlasClient:
             **kwargs,
         )
 
+    def GetBookmark(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/bookmark"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.GetBookmarkOutput"),
+            **kwargs,
+        )
+
     def ListExamples(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/examples"
 

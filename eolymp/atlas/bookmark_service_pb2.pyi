@@ -6,6 +6,18 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class GetBookmarkInput(_message.Message):
+    __slots__ = ["problem_id"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+
+class GetBookmarkOutput(_message.Message):
+    __slots__ = ["bookmark"]
+    BOOKMARK_FIELD_NUMBER: _ClassVar[int]
+    bookmark: bool
+    def __init__(self, bookmark: bool = ...) -> None: ...
+
 class SetBookmarkInput(_message.Message):
     __slots__ = ["bookmark", "problem_id"]
     BOOKMARK_FIELD_NUMBER: _ClassVar[int]

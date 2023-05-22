@@ -3,6 +3,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
+from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -51,7 +52,9 @@ class DescribeProblemOutput(_message.Message):
     def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
 
 class ListProblemsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["filters", "offset", "order", "size", "sort"]
+    class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
     class Filter(_message.Message):
         __slots__ = ["difficulty", "id", "is_bookmarked", "is_private", "is_visible", "number", "query", "score", "status", "topic_id"]
         DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
@@ -75,13 +78,20 @@ class ListProblemsInput(_message.Message):
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         topic_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., topic_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_visible: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_private: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., difficulty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., is_bookmarked: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+    DEFAULT: ListProblemsInput.Sortable
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    ORDER_FIELD_NUMBER: _ClassVar[int]
+    POPULAR: ListProblemsInput.Sortable
+    RECENT: ListProblemsInput.Sortable
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SORT_FIELD_NUMBER: _ClassVar[int]
     filters: ListProblemsInput.Filter
     offset: int
+    order: _direction_pb2.Direction
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ...) -> None: ...
+    sort: ListProblemsInput.Sortable
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListProblemsOutput(_message.Message):
     __slots__ = ["items", "total"]
