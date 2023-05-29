@@ -78,20 +78,6 @@ class EditorialServiceClient:
             **kwargs,
         )
 
-    def RenderEditorial(self, request, **kwargs):
-        path = "/editorials/"+urllib.parse.quote(request.editorial_id)+"/render"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.editorial_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.RenderEditorialOutput"),
-            **kwargs,
-        )
-
     def PreviewEditorial(self, request, **kwargs):
         path = "/editorial/preview"
 

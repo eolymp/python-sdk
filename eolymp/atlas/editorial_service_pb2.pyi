@@ -32,12 +32,14 @@ class DeleteEditorialOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeEditorialInput(_message.Message):
-    __slots__ = ["editorial_id", "version"]
+    __slots__ = ["editorial_id", "render", "version"]
     EDITORIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     editorial_id: str
+    render: bool
     version: int
-    def __init__(self, editorial_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, editorial_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeEditorialOutput(_message.Message):
     __slots__ = ["editorial"]
@@ -46,10 +48,12 @@ class DescribeEditorialOutput(_message.Message):
     def __init__(self, editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
 
 class ListEditorialsInput(_message.Message):
-    __slots__ = ["version"]
+    __slots__ = ["render", "version"]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    render: bool
     version: int
-    def __init__(self, version: _Optional[int] = ...) -> None: ...
+    def __init__(self, render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListEditorialsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -60,12 +64,14 @@ class ListEditorialsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_editorial_pb2.Editorial, _Mapping]]] = ...) -> None: ...
 
 class LookupEditorialInput(_message.Message):
-    __slots__ = ["locale", "version"]
+    __slots__ = ["locale", "render", "version"]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     locale: str
+    render: bool
     version: int
-    def __init__(self, locale: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class LookupEditorialOutput(_message.Message):
     __slots__ = ["editorial"]
@@ -80,20 +86,6 @@ class PreviewEditorialInput(_message.Message):
     def __init__(self, editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
 
 class PreviewEditorialOutput(_message.Message):
-    __slots__ = ["editorial"]
-    EDITORIAL_FIELD_NUMBER: _ClassVar[int]
-    editorial: _editorial_pb2.Editorial
-    def __init__(self, editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
-
-class RenderEditorialInput(_message.Message):
-    __slots__ = ["editorial_id", "version"]
-    EDITORIAL_ID_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    editorial_id: str
-    version: int
-    def __init__(self, editorial_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
-
-class RenderEditorialOutput(_message.Message):
     __slots__ = ["editorial"]
     EDITORIAL_FIELD_NUMBER: _ClassVar[int]
     editorial: _editorial_pb2.Editorial

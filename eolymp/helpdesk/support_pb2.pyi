@@ -134,10 +134,12 @@ class DescribeCommentOutput(_message.Message):
     def __init__(self, comment: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ...) -> None: ...
 
 class DescribeTicketInput(_message.Message):
-    __slots__ = ["ticket_id"]
+    __slots__ = ["render", "ticket_id"]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    render: bool
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class DescribeTicketOutput(_message.Message):
     __slots__ = ["ticket"]
@@ -173,14 +175,16 @@ class ListAutoRepliesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_auto_reply_pb2.AutoReply, _Mapping]]] = ...) -> None: ...
 
 class ListCommentsInput(_message.Message):
-    __slots__ = ["offset", "size", "ticket_id"]
+    __slots__ = ["offset", "render", "size", "ticket_id"]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     offset: int
+    render: bool
     size: int
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class ListCommentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -191,7 +195,7 @@ class ListCommentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Comment, _Mapping]]] = ...) -> None: ...
 
 class ListTicketsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["filters", "offset", "render", "size"]
     class Filter(_message.Message):
         __slots__ = ["created_at", "id", "locale", "query", "status", "type", "updated_at", "user_email", "user_id"]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -215,11 +219,13 @@ class ListTicketsInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., updated_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     filters: ListTicketsInput.Filter
     offset: int
+    render: bool
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTicketsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTicketsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListTicketsOutput(_message.Message):
     __slots__ = ["items", "total"]
