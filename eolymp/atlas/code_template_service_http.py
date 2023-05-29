@@ -78,3 +78,14 @@ class CodeTemplateServiceClient:
             **kwargs,
         )
 
+    def LookupCodeTemplate(self, request, **kwargs):
+        path = "/template"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.LookupCodeTemplateOutput"),
+            **kwargs,
+        )
+

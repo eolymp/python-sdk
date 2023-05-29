@@ -69,6 +69,20 @@ class ListCodeTemplatesOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ...) -> None: ...
 
+class LookupCodeTemplateInput(_message.Message):
+    __slots__ = ["problem_id", "runtime"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    runtime: str
+    def __init__(self, problem_id: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
+
+class LookupCodeTemplateOutput(_message.Message):
+    __slots__ = ["template"]
+    TEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    template: _code_template_pb2.Template
+    def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
+
 class UpdateCodeTemplateInput(_message.Message):
     __slots__ = ["problem_id", "template", "template_id"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
