@@ -9,13 +9,13 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Ticket(_message.Message):
-    __slots__ = ["created_at", "id", "locale", "message", "metadata", "secret", "status", "subject", "type", "updated_at", "user_email", "user_id"]
+    __slots__ = ["created_at", "id", "locale", "message_ecm", "message_html", "message_latex", "message_markdown", "metadata", "secret", "status", "subject", "type", "updated_at", "user_email", "user_id"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Comment(_message.Message):
-        __slots__ = ["created_at", "id", "message", "metadata", "updated_at", "user_email", "user_id"]
+        __slots__ = ["created_at", "id", "message_ecm", "message_html", "message_latex", "message_markdown", "metadata", "updated_at", "user_email", "user_id"]
         class MetadataEntry(_message.Message):
             __slots__ = ["key", "value"]
             KEY_FIELD_NUMBER: _ClassVar[int]
@@ -25,19 +25,25 @@ class Ticket(_message.Message):
             def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
-        MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        MESSAGE_ECM_FIELD_NUMBER: _ClassVar[int]
+        MESSAGE_HTML_FIELD_NUMBER: _ClassVar[int]
+        MESSAGE_LATEX_FIELD_NUMBER: _ClassVar[int]
+        MESSAGE_MARKDOWN_FIELD_NUMBER: _ClassVar[int]
         METADATA_FIELD_NUMBER: _ClassVar[int]
         UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
         USER_EMAIL_FIELD_NUMBER: _ClassVar[int]
         USER_ID_FIELD_NUMBER: _ClassVar[int]
         created_at: _timestamp_pb2.Timestamp
         id: str
-        message: _node_pb2.Node
+        message_ecm: _node_pb2.Node
+        message_html: str
+        message_latex: str
+        message_markdown: str
         metadata: _containers.ScalarMap[str, str]
         updated_at: _timestamp_pb2.Timestamp
         user_email: str
         user_id: str
-        def __init__(self, id: _Optional[str] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message_html: _Optional[str] = ..., message_latex: _Optional[str] = ..., message_markdown: _Optional[str] = ..., message_ecm: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -52,7 +58,10 @@ class Ticket(_message.Message):
     FEEDBACK: Ticket.Type
     ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_ECM_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_HTML_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_LATEX_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_MARKDOWN_FIELD_NUMBER: _ClassVar[int]
     METADATA_FIELD_NUMBER: _ClassVar[int]
     NONE: Ticket.Type
     PENDING: Ticket.Status
@@ -70,7 +79,10 @@ class Ticket(_message.Message):
     created_at: _timestamp_pb2.Timestamp
     id: str
     locale: str
-    message: _node_pb2.Node
+    message_ecm: _node_pb2.Node
+    message_html: str
+    message_latex: str
+    message_markdown: str
     metadata: _containers.ScalarMap[str, str]
     secret: str
     status: Ticket.Status
@@ -79,4 +91,4 @@ class Ticket(_message.Message):
     updated_at: _timestamp_pb2.Timestamp
     user_email: str
     user_id: str
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Ticket.Type, str]] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., locale: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., secret: _Optional[str] = ..., subject: _Optional[str] = ..., message: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Ticket.Type, str]] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., locale: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., secret: _Optional[str] = ..., subject: _Optional[str] = ..., message_html: _Optional[str] = ..., message_latex: _Optional[str] = ..., message_markdown: _Optional[str] = ..., message_ecm: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
