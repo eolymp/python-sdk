@@ -49,6 +49,7 @@ class Ticket(_message.Message):
     AWAITING: Ticket.Status
     CLOSED: Ticket.Status
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+    FEEDBACK: Ticket.Type
     ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
