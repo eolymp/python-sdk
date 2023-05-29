@@ -120,12 +120,14 @@ class DescribeAutoReplyOutput(_message.Message):
     def __init__(self, reply: _Optional[_Union[_auto_reply_pb2.AutoReply, _Mapping]] = ...) -> None: ...
 
 class DescribeCommentInput(_message.Message):
-    __slots__ = ["comment_id", "ticket_id"]
+    __slots__ = ["comment_id", "render", "ticket_id"]
     COMMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     comment_id: str
+    render: bool
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ..., comment_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., comment_id: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class DescribeCommentOutput(_message.Message):
     __slots__ = ["comment"]
