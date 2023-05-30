@@ -21,7 +21,7 @@ class LocalizationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.CreateTermOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.CreateTermOutput"),
             **kwargs,
         )
 
@@ -32,7 +32,7 @@ class LocalizationServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.ListTermsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ListTermsOutput"),
             **kwargs,
         )
 
@@ -46,7 +46,7 @@ class LocalizationServiceClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.UpdateTermOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.UpdateTermOutput"),
             **kwargs,
         )
 
@@ -60,7 +60,7 @@ class LocalizationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.ApproveTermOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ApproveTermOutput"),
             **kwargs,
         )
 
@@ -74,7 +74,7 @@ class LocalizationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.DeprecateTermOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.DeprecateTermOutput"),
             **kwargs,
         )
 
@@ -88,7 +88,7 @@ class LocalizationServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.DeleteTermOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.DeleteTermOutput"),
             **kwargs,
         )
 
@@ -102,7 +102,7 @@ class LocalizationServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.DescribeTermOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.DescribeTermOutput"),
             **kwargs,
         )
 
@@ -113,7 +113,7 @@ class LocalizationServiceClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.ImportTermsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ImportTermsOutput"),
             **kwargs,
         )
 
@@ -127,7 +127,7 @@ class LocalizationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.TranslateTermOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.TranslateTermOutput"),
             **kwargs,
         )
 
@@ -141,7 +141,7 @@ class LocalizationServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.ListTranslationsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ListTranslationsOutput"),
             **kwargs,
         )
 
@@ -156,7 +156,7 @@ class LocalizationServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.DeleteTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.DeleteTranslationOutput"),
             **kwargs,
         )
 
@@ -171,7 +171,7 @@ class LocalizationServiceClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.UpdateTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.UpdateTranslationOutput"),
             **kwargs,
         )
 
@@ -186,7 +186,7 @@ class LocalizationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.ApproveTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ApproveTranslationOutput"),
             **kwargs,
         )
 
@@ -201,7 +201,7 @@ class LocalizationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.RejectTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.RejectTranslationOutput"),
             **kwargs,
         )
 
@@ -212,7 +212,7 @@ class LocalizationServiceClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.ImportTranslationsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ImportTranslationsOutput"),
             **kwargs,
         )
 
@@ -223,7 +223,7 @@ class LocalizationServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.ImportTranslationsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ExportTranslationsOutput"),
             **kwargs,
         )
 

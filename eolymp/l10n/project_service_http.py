@@ -21,7 +21,7 @@ class ProjectServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.ListProjectsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ListProjectsOutput"),
             **kwargs,
         )
 
@@ -35,7 +35,7 @@ class ProjectServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.localization.DescribeProjectOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.DescribeProjectOutput"),
             **kwargs,
         )
 
