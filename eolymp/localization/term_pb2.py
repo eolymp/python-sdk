@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/localization/term.proto\x12\x13\x65olymp.localization\"\x86\x01\n\x04Term\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0e\n\x06status\x18\x04 \x01(\t\"<\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\x0e\n\nDEPRECATED\x10\x02\x12\x0c\n\x08OUTDATED\x10\x03\x42;Z9github.com/eolymp/go-sdk/eolymp/localization;localizationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/localization/term.proto\x12\x13\x65olymp.localization\"\xa8\x01\n\x04Term\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x30\n\x06status\x18\x04 \x01(\x0e\x32 .eolymp.localization.Term.Status\"<\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\x0e\n\nDEPRECATED\x10\x02\x12\x0c\n\x08OUTDATED\x10\x03\x42;Z9github.com/eolymp/go-sdk/eolymp/localization;localizationb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.localization.term_pb2', globals())
@@ -22,7 +22,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z9github.com/eolymp/go-sdk/eolymp/localization;localization'
   _TERM._serialized_start=56
-  _TERM._serialized_end=190
-  _TERM_STATUS._serialized_start=130
-  _TERM_STATUS._serialized_end=190
+  _TERM._serialized_end=224
+  _TERM_STATUS._serialized_start=164
+  _TERM_STATUS._serialized_end=224
 # @@protoc_insertion_point(module_scope)

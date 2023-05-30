@@ -1,7 +1,7 @@
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Optional as _Optional
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -20,5 +20,5 @@ class Term(_message.Message):
     description: str
     id: str
     message: str
-    status: str
-    def __init__(self, id: _Optional[str] = ..., message: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[str] = ...) -> None: ...
+    status: Term.Status
+    def __init__(self, id: _Optional[str] = ..., message: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[_Union[Term.Status, str]] = ...) -> None: ...
