@@ -293,10 +293,10 @@ class SuggestTranslationInput(_message.Message):
     def __init__(self, term_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class SuggestTranslationOutput(_message.Message):
-    __slots__ = ["message"]
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    message: str
-    def __init__(self, message: _Optional[str] = ...) -> None: ...
+    __slots__ = ["messages"]
+    MESSAGES_FIELD_NUMBER: _ClassVar[int]
+    messages: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, messages: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TranslateTermInput(_message.Message):
     __slots__ = ["term_id", "translation"]
