@@ -102,10 +102,12 @@ class DescribeTranslationOutput(_message.Message):
     def __init__(self, term: _Optional[_Union[_term_pb2.Term, _Mapping]] = ...) -> None: ...
 
 class ExportTranslationsInput(_message.Message):
-    __slots__ = ["locale"]
+    __slots__ = ["locale", "term_id"]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
+    TERM_ID_FIELD_NUMBER: _ClassVar[int]
     locale: str
-    def __init__(self, locale: _Optional[str] = ...) -> None: ...
+    term_id: str
+    def __init__(self, term_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class ExportTranslationsOutput(_message.Message):
     __slots__ = ["translations"]
@@ -121,25 +123,23 @@ class ExportTranslationsOutput(_message.Message):
     def __init__(self, translations: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ImportTermsInput(_message.Message):
-    __slots__ = ["set_deprecation", "set_outdated", "terms"]
-    SET_DEPRECATION_FIELD_NUMBER: _ClassVar[int]
-    SET_OUTDATED_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["terms"]
     TERMS_FIELD_NUMBER: _ClassVar[int]
-    set_deprecation: bool
-    set_outdated: bool
     terms: _containers.RepeatedCompositeFieldContainer[_term_pb2.Term]
-    def __init__(self, terms: _Optional[_Iterable[_Union[_term_pb2.Term, _Mapping]]] = ..., set_deprecation: bool = ..., set_outdated: bool = ...) -> None: ...
+    def __init__(self, terms: _Optional[_Iterable[_Union[_term_pb2.Term, _Mapping]]] = ...) -> None: ...
 
 class ImportTermsOutput(_message.Message):
-    __slots__ = ["deprecated_count", "imported_count"]
+    __slots__ = ["created_count", "deprecated_count", "updated_count"]
+    CREATED_COUNT_FIELD_NUMBER: _ClassVar[int]
     DEPRECATED_COUNT_FIELD_NUMBER: _ClassVar[int]
-    IMPORTED_COUNT_FIELD_NUMBER: _ClassVar[int]
+    UPDATED_COUNT_FIELD_NUMBER: _ClassVar[int]
+    created_count: int
     deprecated_count: int
-    imported_count: int
-    def __init__(self, imported_count: _Optional[int] = ..., deprecated_count: _Optional[int] = ...) -> None: ...
+    updated_count: int
+    def __init__(self, created_count: _Optional[int] = ..., updated_count: _Optional[int] = ..., deprecated_count: _Optional[int] = ...) -> None: ...
 
 class ImportTranslationsInput(_message.Message):
-    __slots__ = ["locale", "translations"]
+    __slots__ = ["locale", "term_id", "translations"]
     class TranslationsEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -148,18 +148,20 @@ class ImportTranslationsInput(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     LOCALE_FIELD_NUMBER: _ClassVar[int]
+    TERM_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATIONS_FIELD_NUMBER: _ClassVar[int]
     locale: str
+    term_id: str
     translations: _containers.ScalarMap[str, str]
-    def __init__(self, locale: _Optional[str] = ..., translations: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, term_id: _Optional[str] = ..., locale: _Optional[str] = ..., translations: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ImportTranslationsOutput(_message.Message):
-    __slots__ = ["deprecated_count", "imported_count"]
-    DEPRECATED_COUNT_FIELD_NUMBER: _ClassVar[int]
-    IMPORTED_COUNT_FIELD_NUMBER: _ClassVar[int]
-    deprecated_count: int
-    imported_count: int
-    def __init__(self, imported_count: _Optional[int] = ..., deprecated_count: _Optional[int] = ...) -> None: ...
+    __slots__ = ["created_count", "updated_count"]
+    CREATED_COUNT_FIELD_NUMBER: _ClassVar[int]
+    UPDATED_COUNT_FIELD_NUMBER: _ClassVar[int]
+    created_count: int
+    updated_count: int
+    def __init__(self, created_count: _Optional[int] = ..., updated_count: _Optional[int] = ...) -> None: ...
 
 class ListTermsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
