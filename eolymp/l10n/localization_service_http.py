@@ -156,7 +156,7 @@ class LocalizationServiceClient:
             **kwargs,
         )
 
-    def TranslateTerm(self, request, **kwargs):
+    def AddTranslation(self, request, **kwargs):
         path = "/terms/"+urllib.parse.quote(request.term_id)+"/translations"
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -166,7 +166,7 @@ class LocalizationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.l10n.TranslateTermOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.AddTranslationOutput"),
             **kwargs,
         )
 
