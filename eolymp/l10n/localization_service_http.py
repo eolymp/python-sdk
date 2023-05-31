@@ -206,7 +206,10 @@ class LocalizationServiceClient:
         )
 
     def ImportTranslations(self, request, **kwargs):
-        path = "/translations"
+        path = "/translations/"+urllib.parse.quote(request.locale)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.locale = ""
 
         return self.transport.request(
             method="PUT",
@@ -217,7 +220,10 @@ class LocalizationServiceClient:
         )
 
     def ExportTranslations(self, request, **kwargs):
-        path = "/translations"
+        path = "/translations/"+urllib.parse.quote(request.locale)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.locale = ""
 
         return self.transport.request(
             method="GET",

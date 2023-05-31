@@ -159,17 +159,24 @@ class ImportTranslationsOutput(_message.Message):
 
 class ListTermsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
+    class ExpressionTranslation(_message.Message):
+        __slots__ = ["locale", "status"]
+        LOCALE_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        locale: str
+        status: _expression_pb2.ExpressionEnum
+        def __init__(self, locale: _Optional[str] = ..., status: _Optional[_Union[_expression_pb2.ExpressionEnum, _Mapping]] = ...) -> None: ...
     class Filter(_message.Message):
-        __slots__ = ["id", "message", "requires_review", "status"]
+        __slots__ = ["id", "message", "status", "translation"]
         ID_FIELD_NUMBER: _ClassVar[int]
         MESSAGE_FIELD_NUMBER: _ClassVar[int]
-        REQUIRES_REVIEW_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
+        TRANSLATION_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         message: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        requires_review: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., requires_review: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        translation: _containers.RepeatedCompositeFieldContainer[ListTermsInput.ExpressionTranslation]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., translation: _Optional[_Iterable[_Union[ListTermsInput.ExpressionTranslation, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
