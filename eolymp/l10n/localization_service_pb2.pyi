@@ -102,12 +102,10 @@ class DescribeTranslationOutput(_message.Message):
     def __init__(self, term: _Optional[_Union[_term_pb2.Term, _Mapping]] = ...) -> None: ...
 
 class ExportTranslationsInput(_message.Message):
-    __slots__ = ["locale", "term_id"]
+    __slots__ = ["locale"]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
-    TERM_ID_FIELD_NUMBER: _ClassVar[int]
     locale: str
-    term_id: str
-    def __init__(self, term_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ...) -> None: ...
 
 class ExportTranslationsOutput(_message.Message):
     __slots__ = ["translations"]
@@ -139,7 +137,7 @@ class ImportTermsOutput(_message.Message):
     def __init__(self, created_count: _Optional[int] = ..., updated_count: _Optional[int] = ..., deprecated_count: _Optional[int] = ...) -> None: ...
 
 class ImportTranslationsInput(_message.Message):
-    __slots__ = ["locale", "term_id", "translations"]
+    __slots__ = ["locale", "translations"]
     class TranslationsEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -148,34 +146,30 @@ class ImportTranslationsInput(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     LOCALE_FIELD_NUMBER: _ClassVar[int]
-    TERM_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATIONS_FIELD_NUMBER: _ClassVar[int]
     locale: str
-    term_id: str
     translations: _containers.ScalarMap[str, str]
-    def __init__(self, term_id: _Optional[str] = ..., locale: _Optional[str] = ..., translations: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ..., translations: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ImportTranslationsOutput(_message.Message):
-    __slots__ = ["created_count", "updated_count"]
+    __slots__ = ["created_count"]
     CREATED_COUNT_FIELD_NUMBER: _ClassVar[int]
-    UPDATED_COUNT_FIELD_NUMBER: _ClassVar[int]
     created_count: int
-    updated_count: int
-    def __init__(self, created_count: _Optional[int] = ..., updated_count: _Optional[int] = ...) -> None: ...
+    def __init__(self, created_count: _Optional[int] = ...) -> None: ...
 
 class ListTermsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
-        __slots__ = ["has_suggestions", "id", "message", "status"]
-        HAS_SUGGESTIONS_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ["id", "message", "requires_review", "status"]
         ID_FIELD_NUMBER: _ClassVar[int]
         MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        REQUIRES_REVIEW_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
-        has_suggestions: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         message: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        requires_review: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., has_suggestions: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., requires_review: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
