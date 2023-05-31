@@ -1,7 +1,6 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.l10n import locale_pb2 as _locale_pb2
 from eolymp.l10n import term_pb2 as _term_pb2
 from eolymp.l10n import translation_pb2 as _translation_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -199,11 +198,20 @@ class ListLocalesInput(_message.Message):
 
 class ListLocalesOutput(_message.Message):
     __slots__ = ["items", "total"]
+    class Locale(_message.Message):
+        __slots__ = ["code", "missing_terms", "translated_terms"]
+        CODE_FIELD_NUMBER: _ClassVar[int]
+        MISSING_TERMS_FIELD_NUMBER: _ClassVar[int]
+        TRANSLATED_TERMS_FIELD_NUMBER: _ClassVar[int]
+        code: str
+        missing_terms: int
+        translated_terms: int
+        def __init__(self, code: _Optional[str] = ..., translated_terms: _Optional[int] = ..., missing_terms: _Optional[int] = ...) -> None: ...
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_locale_pb2.Locale]
+    items: _containers.RepeatedCompositeFieldContainer[ListLocalesOutput.Locale]
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_locale_pb2.Locale, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[ListLocalesOutput.Locale, _Mapping]]] = ...) -> None: ...
 
 class ListTermsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
