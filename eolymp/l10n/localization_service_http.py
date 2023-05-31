@@ -117,6 +117,45 @@ class LocalizationServiceClient:
             **kwargs,
         )
 
+    def AddLocale(self, request, **kwargs):
+        path = "/locales/"+urllib.parse.quote(request.locale_code)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.locale_code = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.AddLocaleOutput"),
+            **kwargs,
+        )
+
+    def RemoveLocale(self, request, **kwargs):
+        path = "/locales/"+urllib.parse.quote(request.locale_code)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.locale_code = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.RemoveLocaleOutput"),
+            **kwargs,
+        )
+
+    def ListLocales(self, request, **kwargs):
+        path = "/locales"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ListLocalesOutput"),
+            **kwargs,
+        )
+
     def TranslateTerm(self, request, **kwargs):
         path = "/terms/"+urllib.parse.quote(request.term_id)+"/translations"
 
@@ -157,6 +196,21 @@ class LocalizationServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.l10n.DeleteTranslationOutput"),
+            **kwargs,
+        )
+
+    def SuggestTranslation(self, request, **kwargs):
+        path = "/terms/"+urllib.parse.quote(request.term_id)+"/suggestions/"+urllib.parse.quote(request.locale)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.term_id = ""
+        request.locale = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.SuggestTranslationOutput"),
             **kwargs,
         )
 

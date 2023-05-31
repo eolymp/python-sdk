@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.l10n import locale_pb2 as _locale_pb2
 from eolymp.l10n import term_pb2 as _term_pb2
 from eolymp.l10n import translation_pb2 as _translation_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -10,6 +11,16 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class AddLocaleInput(_message.Message):
+    __slots__ = ["locale_code"]
+    LOCALE_CODE_FIELD_NUMBER: _ClassVar[int]
+    locale_code: str
+    def __init__(self, locale_code: _Optional[str] = ...) -> None: ...
+
+class AddLocaleOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class ApproveTermInput(_message.Message):
     __slots__ = ["term_id"]
@@ -157,6 +168,29 @@ class ImportTranslationsOutput(_message.Message):
     created_count: int
     def __init__(self, created_count: _Optional[int] = ...) -> None: ...
 
+class ListLocalesInput(_message.Message):
+    __slots__ = ["filters", "offset", "size"]
+    class Filter(_message.Message):
+        __slots__ = ["code"]
+        CODE_FIELD_NUMBER: _ClassVar[int]
+        code: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        def __init__(self, code: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    filters: ListLocalesInput.Filter
+    offset: int
+    size: int
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListLocalesInput.Filter, _Mapping]] = ...) -> None: ...
+
+class ListLocalesOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_locale_pb2.Locale]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_locale_pb2.Locale, _Mapping]]] = ...) -> None: ...
+
 class ListTermsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class ExpressionTranslation(_message.Message):
@@ -239,6 +273,30 @@ class RejectTranslationInput(_message.Message):
 class RejectTranslationOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class RemoveLocaleInput(_message.Message):
+    __slots__ = ["locale_code"]
+    LOCALE_CODE_FIELD_NUMBER: _ClassVar[int]
+    locale_code: str
+    def __init__(self, locale_code: _Optional[str] = ...) -> None: ...
+
+class RemoveLocaleOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class SuggestTranslationInput(_message.Message):
+    __slots__ = ["locale", "term_id"]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    TERM_ID_FIELD_NUMBER: _ClassVar[int]
+    locale: str
+    term_id: str
+    def __init__(self, term_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+
+class SuggestTranslationOutput(_message.Message):
+    __slots__ = ["message"]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    message: str
+    def __init__(self, message: _Optional[str] = ...) -> None: ...
 
 class TranslateTermInput(_message.Message):
     __slots__ = ["term_id", "translation"]
