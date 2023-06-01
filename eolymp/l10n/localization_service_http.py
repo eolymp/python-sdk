@@ -207,7 +207,7 @@ class LocalizationServiceClient:
         request.locale = ""
 
         return self.transport.request(
-            method="PUT",
+            method="GET",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.l10n.SuggestTranslationOutput"),
