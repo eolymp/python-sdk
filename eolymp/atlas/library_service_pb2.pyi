@@ -38,12 +38,10 @@ class DeleteProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ["problem_ern", "problem_id"]
-    PROBLEM_ERN_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["problem_id"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_ern: str
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., problem_ern: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ["problem"]

@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/keeper/keeper.proto\x12\reolymp.keeper\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"!\n\x11\x43reateObjectInput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"F\n\x12\x43reateObjectOutput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08\x62lob_ern\x18\x02 \x01(\t\x12\x11\n\tblob_hash\x18\x03 \x01(\t\"\"\n\x13\x44\x65scribeObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\"$\n\x14\x44\x65scribeObjectOutput\x12\x0c\n\x04size\x18\x01 \x01(\x05\"@\n\x13\x44ownloadObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"2\n\x14\x44ownloadObjectOutput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04size\x18\x02 \x01(\x05\"\x1b\n\x19StartMultipartUploadInput\"B\n\x1aStartMultipartUploadOutput\x12\x11\n\tobject_id\x18\x01 \x01(\t\x12\x11\n\tupload_id\x18\x02 \x01(\t\"Z\n\x0fUploadPartInput\x12\x11\n\tobject_id\x18\x01 \x01(\t\x12\x11\n\tupload_id\x18\x02 \x01(\t\x12\x13\n\x0bpart_number\x18\x03 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\n \x01(\x0c\" \n\x10UploadPartOutput\x12\x0c\n\x04\x65tag\x18\x01 \x01(\t\"\xc2\x01\n\x1c\x43ompleteMultipartUploadInput\x12\x11\n\tobject_id\x18\x01 \x01(\t\x12\x11\n\tupload_id\x18\x02 \x01(\t\x12?\n\x05parts\x18\n \x03(\x0b\x32\x30.eolymp.keeper.CompleteMultipartUploadInput.Part\x1a;\n\x04Part\x12\x0e\n\x06number\x18\x01 \x01(\r\x12\x0c\n\x04\x65tag\x18\x02 \x01(\t\x12\x15\n\rchecksum_sha1\x18\n \x01(\t\"\x1f\n\x1d\x43ompleteMultipartUploadOutput2\xec\x07\n\x06Keeper\x12\x90\x01\n\x0c\x43reateObject\x12 .eolymp.keeper.CreateObjectInput\x1a!.eolymp.keeper.CreateObjectOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\n\"\x08/objects\x12\x9b\x01\n\x0e\x44\x65scribeObject\x12\".eolymp.keeper.DescribeObjectInput\x1a#.eolymp.keeper.DescribeObjectOutput\"@\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x10\x12\x0e/objects/{key}\x12\xa0\x01\n\x0e\x44ownloadObject\x12\".eolymp.keeper.DownloadObjectInput\x1a#.eolymp.keeper.DownloadObjectOutput\"E\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x15\x12\x13/objects/{key}/data\x12\xa7\x01\n\x14StartMultipartUpload\x12(.eolymp.keeper.StartMultipartUploadInput\x1a).eolymp.keeper.StartMultipartUploadOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\"\x08/uploads\x12\x9b\x01\n\nUploadPart\x12\x1e.eolymp.keeper.UploadPartInput\x1a\x1f.eolymp.keeper.UploadPartOutput\"L\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1c\"\x1a/objects/{object_id}/parts\x12\xc5\x01\n\x17\x43ompleteMultipartUpload\x12+.eolymp.keeper.CompleteMultipartUploadInput\x1a,.eolymp.keeper.CompleteMultipartUploadOutput\"O\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1f\"\x1d/objects/{object_id}/completeB/Z-github.com/eolymp/go-sdk/eolymp/keeper;keeperb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/keeper/keeper.proto\x12\reolymp.keeper\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"!\n\x11\x43reateObjectInput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"S\n\x12\x43reateObjectOutput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08\x62lob_ern\x18\x02 \x01(\t\x12\x11\n\tblob_hash\x18\x03 \x01(\t\x12\x0b\n\x03url\x18\x04 \x01(\t\"\"\n\x13\x44\x65scribeObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\"$\n\x14\x44\x65scribeObjectOutput\x12\x0c\n\x04size\x18\x01 \x01(\x05\"@\n\x13\x44ownloadObjectInput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"2\n\x14\x44ownloadObjectOutput\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04size\x18\x02 \x01(\x05\"\x1b\n\x19StartMultipartUploadInput\"B\n\x1aStartMultipartUploadOutput\x12\x11\n\tobject_id\x18\x01 \x01(\t\x12\x11\n\tupload_id\x18\x02 \x01(\t\"Z\n\x0fUploadPartInput\x12\x11\n\tobject_id\x18\x01 \x01(\t\x12\x11\n\tupload_id\x18\x02 \x01(\t\x12\x13\n\x0bpart_number\x18\x03 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\n \x01(\x0c\" \n\x10UploadPartOutput\x12\x0c\n\x04\x65tag\x18\x01 \x01(\t\"\xc2\x01\n\x1c\x43ompleteMultipartUploadInput\x12\x11\n\tobject_id\x18\x01 \x01(\t\x12\x11\n\tupload_id\x18\x02 \x01(\t\x12?\n\x05parts\x18\n \x03(\x0b\x32\x30.eolymp.keeper.CompleteMultipartUploadInput.Part\x1a;\n\x04Part\x12\x0e\n\x06number\x18\x01 \x01(\r\x12\x0c\n\x04\x65tag\x18\x02 \x01(\t\x12\x15\n\rchecksum_sha1\x18\n \x01(\t\"\x1f\n\x1d\x43ompleteMultipartUploadOutput2\xec\x07\n\x06Keeper\x12\x90\x01\n\x0c\x43reateObject\x12 .eolymp.keeper.CreateObjectInput\x1a!.eolymp.keeper.CreateObjectOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\n\"\x08/objects\x12\x9b\x01\n\x0e\x44\x65scribeObject\x12\".eolymp.keeper.DescribeObjectInput\x1a#.eolymp.keeper.DescribeObjectOutput\"@\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x10\x12\x0e/objects/{key}\x12\xa0\x01\n\x0e\x44ownloadObject\x12\".eolymp.keeper.DownloadObjectInput\x1a#.eolymp.keeper.DownloadObjectOutput\"E\x82\xe3\n\x16\x8a\xe3\n\x12keeper:object:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x15\x12\x13/objects/{key}/data\x12\xa7\x01\n\x14StartMultipartUpload\x12(.eolymp.keeper.StartMultipartUploadInput\x1a).eolymp.keeper.StartMultipartUploadOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\"\x08/uploads\x12\x9b\x01\n\nUploadPart\x12\x1e.eolymp.keeper.UploadPartInput\x1a\x1f.eolymp.keeper.UploadPartOutput\"L\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1c\"\x1a/objects/{object_id}/parts\x12\xc5\x01\n\x17\x43ompleteMultipartUpload\x12+.eolymp.keeper.CompleteMultipartUploadInput\x1a,.eolymp.keeper.CompleteMultipartUploadOutput\"O\x82\xe3\n\x17\x8a\xe3\n\x13keeper:object:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1f\"\x1d/objects/{object_id}/completeB/Z-github.com/eolymp/go-sdk/eolymp/keeper;keeperb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.keeper.keeper_pb2', globals())
@@ -39,29 +39,29 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATEOBJECTINPUT._serialized_start=144
   _CREATEOBJECTINPUT._serialized_end=177
   _CREATEOBJECTOUTPUT._serialized_start=179
-  _CREATEOBJECTOUTPUT._serialized_end=249
-  _DESCRIBEOBJECTINPUT._serialized_start=251
-  _DESCRIBEOBJECTINPUT._serialized_end=285
-  _DESCRIBEOBJECTOUTPUT._serialized_start=287
-  _DESCRIBEOBJECTOUTPUT._serialized_end=323
-  _DOWNLOADOBJECTINPUT._serialized_start=325
-  _DOWNLOADOBJECTINPUT._serialized_end=389
-  _DOWNLOADOBJECTOUTPUT._serialized_start=391
-  _DOWNLOADOBJECTOUTPUT._serialized_end=441
-  _STARTMULTIPARTUPLOADINPUT._serialized_start=443
-  _STARTMULTIPARTUPLOADINPUT._serialized_end=470
-  _STARTMULTIPARTUPLOADOUTPUT._serialized_start=472
-  _STARTMULTIPARTUPLOADOUTPUT._serialized_end=538
-  _UPLOADPARTINPUT._serialized_start=540
-  _UPLOADPARTINPUT._serialized_end=630
-  _UPLOADPARTOUTPUT._serialized_start=632
-  _UPLOADPARTOUTPUT._serialized_end=664
-  _COMPLETEMULTIPARTUPLOADINPUT._serialized_start=667
-  _COMPLETEMULTIPARTUPLOADINPUT._serialized_end=861
-  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_start=802
-  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_end=861
-  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_start=863
-  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_end=894
-  _KEEPER._serialized_start=897
-  _KEEPER._serialized_end=1901
+  _CREATEOBJECTOUTPUT._serialized_end=262
+  _DESCRIBEOBJECTINPUT._serialized_start=264
+  _DESCRIBEOBJECTINPUT._serialized_end=298
+  _DESCRIBEOBJECTOUTPUT._serialized_start=300
+  _DESCRIBEOBJECTOUTPUT._serialized_end=336
+  _DOWNLOADOBJECTINPUT._serialized_start=338
+  _DOWNLOADOBJECTINPUT._serialized_end=402
+  _DOWNLOADOBJECTOUTPUT._serialized_start=404
+  _DOWNLOADOBJECTOUTPUT._serialized_end=454
+  _STARTMULTIPARTUPLOADINPUT._serialized_start=456
+  _STARTMULTIPARTUPLOADINPUT._serialized_end=483
+  _STARTMULTIPARTUPLOADOUTPUT._serialized_start=485
+  _STARTMULTIPARTUPLOADOUTPUT._serialized_end=551
+  _UPLOADPARTINPUT._serialized_start=553
+  _UPLOADPARTINPUT._serialized_end=643
+  _UPLOADPARTOUTPUT._serialized_start=645
+  _UPLOADPARTOUTPUT._serialized_end=677
+  _COMPLETEMULTIPARTUPLOADINPUT._serialized_start=680
+  _COMPLETEMULTIPARTUPLOADINPUT._serialized_end=874
+  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_start=815
+  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_end=874
+  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_start=876
+  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_end=907
+  _KEEPER._serialized_start=910
+  _KEEPER._serialized_end=1914
 # @@protoc_insertion_point(module_scope)

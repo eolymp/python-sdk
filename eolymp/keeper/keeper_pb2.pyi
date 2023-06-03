@@ -38,14 +38,16 @@ class CreateObjectInput(_message.Message):
     def __init__(self, data: _Optional[bytes] = ...) -> None: ...
 
 class CreateObjectOutput(_message.Message):
-    __slots__ = ["blob_ern", "blob_hash", "key"]
+    __slots__ = ["blob_ern", "blob_hash", "key", "url"]
     BLOB_ERN_FIELD_NUMBER: _ClassVar[int]
     BLOB_HASH_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
+    URL_FIELD_NUMBER: _ClassVar[int]
     blob_ern: str
     blob_hash: str
     key: str
-    def __init__(self, key: _Optional[str] = ..., blob_ern: _Optional[str] = ..., blob_hash: _Optional[str] = ...) -> None: ...
+    url: str
+    def __init__(self, key: _Optional[str] = ..., blob_ern: _Optional[str] = ..., blob_hash: _Optional[str] = ..., url: _Optional[str] = ...) -> None: ...
 
 class DescribeObjectInput(_message.Message):
     __slots__ = ["key"]
