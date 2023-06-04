@@ -16,7 +16,6 @@ class Term(_message.Message):
     KEY_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     NONE: Term.Status
-    OUTDATED: Term.Status
     STATUS_FIELD_NUMBER: _ClassVar[int]
     description: str
     id: str

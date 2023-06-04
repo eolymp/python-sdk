@@ -50,8 +50,8 @@ class LocalizationServiceClient:
             **kwargs,
         )
 
-    def ApproveTerm(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/approve"
+    def RestoreTerm(self, request, **kwargs):
+        path = "/terms/"+urllib.parse.quote(request.term_id)+"/restore"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.term_id = ""
@@ -60,7 +60,7 @@ class LocalizationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ApproveTermOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.RestoreTermOutput"),
             **kwargs,
         )
 
@@ -156,7 +156,7 @@ class LocalizationServiceClient:
             **kwargs,
         )
 
-    def AddTranslation(self, request, **kwargs):
+    def TranslateTerm(self, request, **kwargs):
         path = "/terms/"+urllib.parse.quote(request.term_id)+"/translations"
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -166,7 +166,7 @@ class LocalizationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.l10n.AddTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.TranslateTermOutput"),
             **kwargs,
         )
 
