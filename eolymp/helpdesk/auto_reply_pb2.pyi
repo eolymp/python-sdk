@@ -1,4 +1,4 @@
-from eolymp.ecm import node_pb2 as _node_pb2
+from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -16,6 +16,6 @@ class AutoReply(_message.Message):
     id: str
     labels: _containers.RepeatedScalarFieldContainer[str]
     locale: str
-    message: _node_pb2.Node
+    message: _content_pb2.Content
     name: str
-    def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., message: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ...) -> None: ...

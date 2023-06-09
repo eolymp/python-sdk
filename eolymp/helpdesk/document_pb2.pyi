@@ -1,4 +1,4 @@
-from eolymp.ecm import node_pb2 as _node_pb2
+from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -14,10 +14,10 @@ class Document(_message.Message):
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
-    content: _node_pb2.Node
+    content: _content_pb2.Content
     id: str
     labels: _containers.RepeatedScalarFieldContainer[str]
     locale: str
     path: str
     title: str
-    def __init__(self, id: _Optional[str] = ..., path: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., path: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ...) -> None: ...

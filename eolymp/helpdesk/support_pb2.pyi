@@ -108,10 +108,12 @@ class DeleteTicketOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAutoReplyInput(_message.Message):
-    __slots__ = ["reply_id"]
+    __slots__ = ["render", "reply_id"]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     REPLY_ID_FIELD_NUMBER: _ClassVar[int]
+    render: bool
     reply_id: str
-    def __init__(self, reply_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, reply_id: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class DescribeAutoReplyOutput(_message.Message):
     __slots__ = ["reply"]
@@ -150,7 +152,7 @@ class DescribeTicketOutput(_message.Message):
     def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
 class ListAutoRepliesInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["filters", "offset", "render", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "locale", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -162,11 +164,13 @@ class ListAutoRepliesInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     filters: ListAutoRepliesInput.Filter
     offset: int
+    render: bool
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAutoRepliesInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAutoRepliesInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListAutoRepliesOutput(_message.Message):
     __slots__ = ["items", "total"]
