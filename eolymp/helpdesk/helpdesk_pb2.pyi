@@ -94,12 +94,14 @@ class ListDocumentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_document_pb2.Document, _Mapping]]] = ...) -> None: ...
 
 class ListParentsInput(_message.Message):
-    __slots__ = ["locale", "path"]
+    __slots__ = ["locale", "path", "render"]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
-    locale: _containers.RepeatedScalarFieldContainer[str]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
+    locale: str
     path: str
-    def __init__(self, path: _Optional[str] = ..., locale: _Optional[_Iterable[str]] = ...) -> None: ...
+    render: bool
+    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class ListParentsOutput(_message.Message):
     __slots__ = ["items", "total"]
