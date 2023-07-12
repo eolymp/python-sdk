@@ -1,6 +1,6 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
-from eolymp.community import member_pb2 as _member_pb2
+from eolymp.community import account_pb2 as _account_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -32,28 +32,18 @@ class CompleteVerificationOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class CreateAccountInput(_message.Message):
-    __slots__ = ["attributes", "captcha", "email", "locale", "nickname", "password"]
-    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["account", "captcha"]
+    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     CAPTCHA_FIELD_NUMBER: _ClassVar[int]
-    EMAIL_FIELD_NUMBER: _ClassVar[int]
-    LOCALE_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME_FIELD_NUMBER: _ClassVar[int]
-    PASSWORD_FIELD_NUMBER: _ClassVar[int]
-    attributes: _containers.RepeatedCompositeFieldContainer[_member_pb2.Member.Value]
+    account: _account_pb2.Account
     captcha: str
-    email: str
-    locale: str
-    nickname: str
-    password: str
-    def __init__(self, nickname: _Optional[str] = ..., email: _Optional[str] = ..., password: _Optional[str] = ..., locale: _Optional[str] = ..., attributes: _Optional[_Iterable[_Union[_member_pb2.Member.Value, _Mapping]]] = ..., captcha: _Optional[str] = ...) -> None: ...
+    def __init__(self, account: _Optional[_Union[_account_pb2.Account, _Mapping]] = ..., captcha: _Optional[str] = ...) -> None: ...
 
 class CreateAccountOutput(_message.Message):
-    __slots__ = ["hint", "member_id"]
+    __slots__ = ["hint"]
     HINT_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     hint: str
-    member_id: str
-    def __init__(self, member_id: _Optional[str] = ..., hint: _Optional[str] = ...) -> None: ...
+    def __init__(self, hint: _Optional[str] = ...) -> None: ...
 
 class DeleteAccountInput(_message.Message):
     __slots__ = []
@@ -68,20 +58,10 @@ class DescribeAccountInput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAccountOutput(_message.Message):
-    __slots__ = ["email", "email_verified", "locale", "nickname", "nickname_change_timeout", "password_age"]
-    EMAIL_FIELD_NUMBER: _ClassVar[int]
-    EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
-    LOCALE_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME_CHANGE_TIMEOUT_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME_FIELD_NUMBER: _ClassVar[int]
-    PASSWORD_AGE_FIELD_NUMBER: _ClassVar[int]
-    email: str
-    email_verified: bool
-    locale: str
-    nickname: str
-    nickname_change_timeout: int
-    password_age: int
-    def __init__(self, nickname: _Optional[str] = ..., nickname_change_timeout: _Optional[int] = ..., email: _Optional[str] = ..., email_verified: bool = ..., password_age: _Optional[int] = ..., locale: _Optional[str] = ...) -> None: ...
+    __slots__ = ["account"]
+    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
+    account: _account_pb2.Account
+    def __init__(self, account: _Optional[_Union[_account_pb2.Account, _Mapping]] = ...) -> None: ...
 
 class ResendVerificationInput(_message.Message):
     __slots__ = []
@@ -108,30 +88,25 @@ class StartRecoveryOutput(_message.Message):
     def __init__(self, hint: _Optional[str] = ...) -> None: ...
 
 class UpdateAccountInput(_message.Message):
-    __slots__ = ["attributes", "current_password", "email", "locale", "nickname", "password", "patch"]
+    __slots__ = ["account", "current_password", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     ALL: UpdateAccountInput.Patch
-    ATTRIBUTES: UpdateAccountInput.Patch
-    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
+    BIRTHDAY: UpdateAccountInput.Patch
+    COUNTRY: UpdateAccountInput.Patch
     CURRENT_PASSWORD_FIELD_NUMBER: _ClassVar[int]
     EMAIL: UpdateAccountInput.Patch
-    EMAIL_FIELD_NUMBER: _ClassVar[int]
     LOCALE: UpdateAccountInput.Patch
-    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    NAME: UpdateAccountInput.Patch
     NICKNAME: UpdateAccountInput.Patch
-    NICKNAME_FIELD_NUMBER: _ClassVar[int]
     PASSWORD: UpdateAccountInput.Patch
-    PASSWORD_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    attributes: _containers.RepeatedCompositeFieldContainer[_member_pb2.Member.Value]
+    PICTURE: UpdateAccountInput.Patch
+    account: _account_pb2.Account
     current_password: str
-    email: str
-    locale: str
-    nickname: str
-    password: str
-    patch: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, patch: _Optional[_Iterable[str]] = ..., current_password: _Optional[str] = ..., nickname: _Optional[str] = ..., email: _Optional[str] = ..., password: _Optional[str] = ..., locale: _Optional[str] = ..., attributes: _Optional[_Iterable[_Union[_member_pb2.Member.Value, _Mapping]]] = ...) -> None: ...
+    patch: _containers.RepeatedScalarFieldContainer[UpdateAccountInput.Patch]
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateAccountInput.Patch, str]]] = ..., current_password: _Optional[str] = ..., account: _Optional[_Union[_account_pb2.Account, _Mapping]] = ...) -> None: ...
 
 class UpdateAccountOutput(_message.Message):
     __slots__ = ["hint"]
