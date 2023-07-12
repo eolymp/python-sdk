@@ -31,8 +31,8 @@ class Account(_message.Message):
     locale: str
     name: str
     nickname: str
-    nickname_change_timeout: bool
+    nickname_change_timeout: int
     password: str
     password_age: int
     picture: str
-    def __init__(self, id: _Optional[str] = ..., created_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., active: bool = ..., email: _Optional[str] = ..., email_verified: bool = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., nickname_change_timeout: bool = ..., picture: _Optional[str] = ..., locale: _Optional[str] = ..., birthday: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., created_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., active: bool = ..., email: _Optional[str] = ..., email_verified: bool = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., nickname_change_timeout: _Optional[int] = ..., picture: _Optional[str] = ..., locale: _Optional[str] = ..., birthday: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ...) -> None: ...
