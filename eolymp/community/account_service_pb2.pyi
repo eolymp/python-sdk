@@ -10,22 +10,26 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CompleteRecoverInput(_message.Message):
-    __slots__ = ["code", "password"]
+    __slots__ = ["code", "password", "subject"]
     CODE_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_FIELD_NUMBER: _ClassVar[int]
     code: str
     password: str
-    def __init__(self, code: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
+    subject: str
+    def __init__(self, code: _Optional[str] = ..., password: _Optional[str] = ..., subject: _Optional[str] = ...) -> None: ...
 
 class CompleteRecoverOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class CompleteVerificationInput(_message.Message):
-    __slots__ = ["code"]
+    __slots__ = ["code", "subject"]
     CODE_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_FIELD_NUMBER: _ClassVar[int]
     code: str
-    def __init__(self, code: _Optional[str] = ...) -> None: ...
+    subject: str
+    def __init__(self, code: _Optional[str] = ..., subject: _Optional[str] = ...) -> None: ...
 
 class CompleteVerificationOutput(_message.Message):
     __slots__ = []
