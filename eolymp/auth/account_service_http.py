@@ -21,7 +21,7 @@ class AccountServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.CreateAccountOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.CreateAccountOutput"),
             **kwargs,
         )
 
@@ -32,7 +32,7 @@ class AccountServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeAccountOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.DescribeAccountOutput"),
             **kwargs,
         )
 
@@ -43,7 +43,7 @@ class AccountServiceClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateAccountOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.UpdateAccountOutput"),
             **kwargs,
         )
 
@@ -54,7 +54,7 @@ class AccountServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DeleteAccountOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.DeleteAccountOutput"),
             **kwargs,
         )
 
@@ -65,7 +65,7 @@ class AccountServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ResendVerificationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.ResendVerificationOutput"),
             **kwargs,
         )
 
@@ -76,7 +76,7 @@ class AccountServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.CompleteVerificationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.CompleteVerificationOutput"),
             **kwargs,
         )
 
@@ -87,7 +87,7 @@ class AccountServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.StartRecoveryOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.StartRecoveryOutput"),
             **kwargs,
         )
 
@@ -98,7 +98,7 @@ class AccountServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.CompleteRecoverOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.CompleteRecoverOutput"),
             **kwargs,
         )
 
