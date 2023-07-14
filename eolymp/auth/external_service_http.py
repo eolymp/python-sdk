@@ -29,7 +29,7 @@ class ExternalServiceClient:
         path = "/callback"
 
         return self.transport.request(
-            method="GET",
+            method="POST",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.auth.AuthorizeCallbackOutput"),
