@@ -9,30 +9,30 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class ExternalServiceClient:
+class OIDCServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
-    def AuthorizeRequest(self, request, **kwargs):
-        path = "/authorize"
+    def InitiateLogin(self, request, **kwargs):
+        path = "/oidc/initiate"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.auth.AuthorizeRequestOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.InitiateLoginOutput"),
             **kwargs,
         )
 
-    def AuthorizeCallback(self, request, **kwargs):
-        path = "/callback"
+    def CompleteLogin(self, request, **kwargs):
+        path = "/oidc/callback"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.auth.AuthorizeCallbackOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.CompleteLoginOutput"),
             **kwargs,
         )
 
