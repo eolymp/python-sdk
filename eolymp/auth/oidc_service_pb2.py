@@ -15,7 +15,7 @@ from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/auth/oidc_service.proto\x12\x0b\x65olymp.auth\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\"2\n\x12InitiateLoginInput\x12\r\n\x05scope\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"(\n\x13InitiateLoginOutput\x12\x11\n\tlogin_url\x18\x01 \x01(\t\"1\n\x12\x43ompleteLoginInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"\x8b\x01\n\x13\x43ompleteLoginOutput\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x12\n\ntoken_type\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\r\x12\x15\n\rrefresh_token\x18\x04 \x01(\t\x12\r\n\x05scope\x18\x05 \x01(\t\x12\x10\n\x08id_token\x18\x64 \x01(\t2\x83\x02\n\x0bOIDCService\x12y\n\rInitiateLogin\x12\x1f.eolymp.auth.InitiateLoginInput\x1a .eolymp.auth.InitiateLoginOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x10\"\x0e/oidc/initiate\x12y\n\rCompleteLogin\x12\x1f.eolymp.auth.CompleteLoginInput\x1a .eolymp.auth.CompleteLoginOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x10\"\x0e/oidc/callbackB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/auth/oidc_service.proto\x12\x0b\x65olymp.auth\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\"\xac\x01\n\x15\x41uthorizeRequestInput\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ode_challenge\x18\x02 \x01(\t\x12\x1d\n\x15\x63ode_challenge_method\x18\x03 \x01(\t\x12\x14\n\x0credirect_uri\x18\x04 \x01(\t\x12\x15\n\rresponse_type\x18\x05 \x01(\t\x12\r\n\x05scope\x18\x06 \x01(\t\x12\r\n\x05state\x18\x07 \x01(\t\".\n\x16\x41uthorizeRequestOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\"5\n\x16\x41uthorizeCallbackInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"/\n\x17\x41uthorizeCallbackOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t2\xec\x01\n\x0bOIDCService\x12l\n\x10\x41uthorizeRequest\x12\".eolymp.auth.AuthorizeRequestInput\x1a#.eolymp.auth.AuthorizeRequestOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x12o\n\x11\x41uthorizeCallback\x12#.eolymp.auth.AuthorizeCallbackInput\x1a$.eolymp.auth.AuthorizeCallbackOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2B+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.auth.oidc_service_pb2', globals())
@@ -23,18 +23,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z)github.com/eolymp/go-sdk/eolymp/auth;auth'
-  _OIDCSERVICE.methods_by_name['InitiateLogin']._options = None
-  _OIDCSERVICE.methods_by_name['InitiateLogin']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\020\"\016/oidc/initiate'
-  _OIDCSERVICE.methods_by_name['CompleteLogin']._options = None
-  _OIDCSERVICE.methods_by_name['CompleteLogin']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\020\"\016/oidc/callback'
-  _INITIATELOGININPUT._serialized_start=114
-  _INITIATELOGININPUT._serialized_end=164
-  _INITIATELOGINOUTPUT._serialized_start=166
-  _INITIATELOGINOUTPUT._serialized_end=206
-  _COMPLETELOGININPUT._serialized_start=208
-  _COMPLETELOGININPUT._serialized_end=257
-  _COMPLETELOGINOUTPUT._serialized_start=260
-  _COMPLETELOGINOUTPUT._serialized_end=399
-  _OIDCSERVICE._serialized_start=402
-  _OIDCSERVICE._serialized_end=661
+  _OIDCSERVICE.methods_by_name['AuthorizeRequest']._options = None
+  _OIDCSERVICE.methods_by_name['AuthorizeRequest']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2'
+  _OIDCSERVICE.methods_by_name['AuthorizeCallback']._options = None
+  _OIDCSERVICE.methods_by_name['AuthorizeCallback']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2'
+  _AUTHORIZEREQUESTINPUT._serialized_start=115
+  _AUTHORIZEREQUESTINPUT._serialized_end=287
+  _AUTHORIZEREQUESTOUTPUT._serialized_start=289
+  _AUTHORIZEREQUESTOUTPUT._serialized_end=335
+  _AUTHORIZECALLBACKINPUT._serialized_start=337
+  _AUTHORIZECALLBACKINPUT._serialized_end=390
+  _AUTHORIZECALLBACKOUTPUT._serialized_start=392
+  _AUTHORIZECALLBACKOUTPUT._serialized_end=439
+  _OIDCSERVICE._serialized_start=442
+  _OIDCSERVICE._serialized_end=678
 # @@protoc_insertion_point(module_scope)

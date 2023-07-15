@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CompleteLoginInput(_message.Message):
+class AuthorizeCallbackInput(_message.Message):
     __slots__ = ["code", "state"]
     CODE_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
@@ -14,32 +14,32 @@ class CompleteLoginInput(_message.Message):
     state: str
     def __init__(self, code: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
 
-class CompleteLoginOutput(_message.Message):
-    __slots__ = ["access_token", "expires_in", "id_token", "refresh_token", "scope", "token_type"]
-    ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
-    ID_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    SCOPE_FIELD_NUMBER: _ClassVar[int]
-    TOKEN_TYPE_FIELD_NUMBER: _ClassVar[int]
-    access_token: str
-    expires_in: int
-    id_token: str
-    refresh_token: str
-    scope: str
-    token_type: str
-    def __init__(self, access_token: _Optional[str] = ..., token_type: _Optional[str] = ..., expires_in: _Optional[int] = ..., refresh_token: _Optional[str] = ..., scope: _Optional[str] = ..., id_token: _Optional[str] = ...) -> None: ...
+class AuthorizeCallbackOutput(_message.Message):
+    __slots__ = ["redirect_uri"]
+    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
+    redirect_uri: str
+    def __init__(self, redirect_uri: _Optional[str] = ...) -> None: ...
 
-class InitiateLoginInput(_message.Message):
-    __slots__ = ["scope", "state"]
+class AuthorizeRequestInput(_message.Message):
+    __slots__ = ["client_id", "code_challenge", "code_challenge_method", "redirect_uri", "response_type", "scope", "state"]
+    CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CODE_CHALLENGE_FIELD_NUMBER: _ClassVar[int]
+    CODE_CHALLENGE_METHOD_FIELD_NUMBER: _ClassVar[int]
+    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
+    RESPONSE_TYPE_FIELD_NUMBER: _ClassVar[int]
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
+    client_id: str
+    code_challenge: str
+    code_challenge_method: str
+    redirect_uri: str
+    response_type: str
     scope: str
     state: str
-    def __init__(self, scope: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
+    def __init__(self, client_id: _Optional[str] = ..., code_challenge: _Optional[str] = ..., code_challenge_method: _Optional[str] = ..., redirect_uri: _Optional[str] = ..., response_type: _Optional[str] = ..., scope: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
 
-class InitiateLoginOutput(_message.Message):
-    __slots__ = ["login_url"]
-    LOGIN_URL_FIELD_NUMBER: _ClassVar[int]
-    login_url: str
-    def __init__(self, login_url: _Optional[str] = ...) -> None: ...
+class AuthorizeRequestOutput(_message.Message):
+    __slots__ = ["redirect_uri"]
+    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
+    redirect_uri: str
+    def __init__(self, redirect_uri: _Optional[str] = ...) -> None: ...

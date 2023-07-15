@@ -14,25 +14,3 @@ class OIDCServiceClient:
         self.transport = transport
         self.url = url
 
-    def InitiateLogin(self, request, **kwargs):
-        path = "/oidc/initiate"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.auth.InitiateLoginOutput"),
-            **kwargs,
-        )
-
-    def CompleteLogin(self, request, **kwargs):
-        path = "/oidc/callback"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.auth.CompleteLoginOutput"),
-            **kwargs,
-        )
-
