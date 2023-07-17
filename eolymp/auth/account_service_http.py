@@ -47,6 +47,17 @@ class AccountServiceClient:
             **kwargs,
         )
 
+    def UploadPicture(self, request, **kwargs):
+        path = "/account/picture"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.UploadPictureOutput"),
+            **kwargs,
+        )
+
     def DeleteAccount(self, request, **kwargs):
         path = "/account"
 

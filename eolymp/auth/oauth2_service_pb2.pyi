@@ -108,3 +108,13 @@ class RevokeTokenInput(_message.Message):
 class RevokeTokenOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class UserInfoInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UserInfoOutput(_message.Message):
+    __slots__ = ["claims"]
+    CLAIMS_FIELD_NUMBER: _ClassVar[int]
+    claims: _claims_pb2.Claims
+    def __init__(self, claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ...) -> None: ...

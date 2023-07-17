@@ -98,6 +98,9 @@ class UpdateAccountInput(_message.Message):
     ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     ALL: UpdateAccountInput.Patch
     BIRTHDAY: UpdateAccountInput.Patch
+    BUSINESS_TITLE: UpdateAccountInput.Patch
+    CITY: UpdateAccountInput.Patch
+    COMPANY: UpdateAccountInput.Patch
     COUNTRY: UpdateAccountInput.Patch
     CURRENT_PASSWORD_FIELD_NUMBER: _ClassVar[int]
     EMAIL: UpdateAccountInput.Patch
@@ -117,3 +120,21 @@ class UpdateAccountOutput(_message.Message):
     HINT_FIELD_NUMBER: _ClassVar[int]
     hint: str
     def __init__(self, hint: _Optional[str] = ...) -> None: ...
+
+class UploadPictureInput(_message.Message):
+    __slots__ = ["data", "filename", "offset_x", "offset_y", "size"]
+    DATA_FIELD_NUMBER: _ClassVar[int]
+    FILENAME_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_X_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_Y_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    data: bytes
+    filename: str
+    offset_x: int
+    offset_y: int
+    size: int
+    def __init__(self, filename: _Optional[str] = ..., data: _Optional[bytes] = ..., offset_x: _Optional[int] = ..., offset_y: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+
+class UploadPictureOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
