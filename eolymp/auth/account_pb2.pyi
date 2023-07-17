@@ -22,7 +22,7 @@ class Account(_message.Message):
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     PICTURE_FIELD_NUMBER: _ClassVar[int]
     active: bool
-    birthday: _timestamp_pb2.Timestamp
+    birthday: str
     country: str
     created_on: _timestamp_pb2.Timestamp
     email: str
@@ -35,4 +35,4 @@ class Account(_message.Message):
     password: str
     password_age: int
     picture: str
-    def __init__(self, id: _Optional[str] = ..., created_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., active: bool = ..., email: _Optional[str] = ..., email_verified: bool = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., nickname_change_timeout: _Optional[int] = ..., picture: _Optional[str] = ..., locale: _Optional[str] = ..., birthday: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., created_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., active: bool = ..., email: _Optional[str] = ..., email_verified: bool = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., nickname_change_timeout: _Optional[int] = ..., picture: _Optional[str] = ..., locale: _Optional[str] = ..., birthday: _Optional[str] = ..., country: _Optional[str] = ...) -> None: ...
