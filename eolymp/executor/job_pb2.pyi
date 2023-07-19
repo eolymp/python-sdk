@@ -77,18 +77,20 @@ class Job(_message.Message):
     class Step(_message.Message):
         __slots__ = ["copy", "even_on_failure", "execute", "group", "name", "only_on_failure", "upload", "write"]
         class Copy(_message.Message):
-            __slots__ = ["optionally", "source_actor", "source_path", "target_actor", "target_path"]
+            __slots__ = ["optionally", "remove_source", "source_actor", "source_path", "target_actor", "target_path"]
             OPTIONALLY_FIELD_NUMBER: _ClassVar[int]
+            REMOVE_SOURCE_FIELD_NUMBER: _ClassVar[int]
             SOURCE_ACTOR_FIELD_NUMBER: _ClassVar[int]
             SOURCE_PATH_FIELD_NUMBER: _ClassVar[int]
             TARGET_ACTOR_FIELD_NUMBER: _ClassVar[int]
             TARGET_PATH_FIELD_NUMBER: _ClassVar[int]
             optionally: bool
+            remove_source: bool
             source_actor: str
             source_path: str
             target_actor: str
             target_path: str
-            def __init__(self, source_actor: _Optional[str] = ..., source_path: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ..., optionally: bool = ...) -> None: ...
+            def __init__(self, source_actor: _Optional[str] = ..., source_path: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ..., optionally: bool = ..., remove_source: bool = ...) -> None: ...
         class Execute(_message.Message):
             __slots__ = ["actor", "args", "cpu_time_limit", "env", "file_size_limit", "memory_limit", "stderr", "stdin", "stdin_last", "stdout", "wall_time_limit"]
             class EnvEntry(_message.Message):
