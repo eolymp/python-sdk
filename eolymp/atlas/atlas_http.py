@@ -120,6 +120,34 @@ class AtlasClient:
             **kwargs,
         )
 
+    def UpdateTestingConfig(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/testing"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateTestingConfigOutput"),
+            **kwargs,
+        )
+
+    def DescribeTestingConfig(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/testing"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeTestingConfigOutput"),
+            **kwargs,
+        )
+
     def UpdateVerifier(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/verifier"
 

@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.atlas import testing_config_pb2 as _testing_config_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.atlas import testing_testset_pb2 as _testing_testset_pb2
 from eolymp.executor import interactor_pb2 as _interactor_pb2
@@ -99,6 +100,20 @@ class DescribeTestOutput(_message.Message):
     TEST_FIELD_NUMBER: _ClassVar[int]
     test: _testing_test_pb2.Test
     def __init__(self, test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
+
+class DescribeTestingConfigInput(_message.Message):
+    __slots__ = ["problem_id", "version"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+
+class DescribeTestingConfigOutput(_message.Message):
+    __slots__ = ["config"]
+    CONFIG_FIELD_NUMBER: _ClassVar[int]
+    config: _testing_config_pb2.TestingConfig
+    def __init__(self, config: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ...) -> None: ...
 
 class DescribeTestsetInput(_message.Message):
     __slots__ = ["problem_id", "testset_id", "version"]
@@ -203,6 +218,18 @@ class UpdateTestInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
 
 class UpdateTestOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdateTestingConfigInput(_message.Message):
+    __slots__ = ["config", "problem_id"]
+    CONFIG_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    config: _testing_config_pb2.TestingConfig
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ..., config: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ...) -> None: ...
+
+class UpdateTestingConfigOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 

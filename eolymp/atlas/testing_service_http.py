@@ -14,6 +14,28 @@ class TestingServiceClient:
         self.transport = transport
         self.url = url
 
+    def UpdateTestingConfig(self, request, **kwargs):
+        path = "/testing"
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateTestingConfigOutput"),
+            **kwargs,
+        )
+
+    def DescribeTestingConfig(self, request, **kwargs):
+        path = "/testing"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeTestingConfigOutput"),
+            **kwargs,
+        )
+
     def UpdateChecker(self, request, **kwargs):
         path = "/verifier"
 
