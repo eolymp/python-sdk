@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.auth import account_pb2 as eolymp_dot_auth_dot_account__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/auth/account_service.proto\x12\x0b\x65olymp.auth\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x19\x65olymp/auth/account.proto\"L\n\x12\x43reateAccountInput\x12%\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x14.eolymp.auth.Account\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"#\n\x13\x43reateAccountOutput\x12\x0c\n\x04hint\x18\x64 \x01(\t\"\x16\n\x14\x44\x65scribeAccountInput\">\n\x15\x44\x65scribeAccountOutput\x12%\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x14.eolymp.auth.Account\"\xae\x02\n\x12UpdateAccountInput\x12\x34\n\x05patch\x18\x01 \x03(\x0e\x32%.eolymp.auth.UpdateAccountInput.Patch\x12\x18\n\x10\x63urrent_password\x18\x02 \x01(\t\x12%\n\x07\x61\x63\x63ount\x18\n \x01(\x0b\x32\x14.eolymp.auth.Account\"\xa0\x01\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0c\n\x08NICKNAME\x10\x02\x12\x0c\n\x08PASSWORD\x10\x03\x12\x08\n\x04NAME\x10\x04\x12\x0b\n\x07PICTURE\x10\x05\x12\n\n\x06LOCALE\x10\x06\x12\x0c\n\x08\x42IRTHDAY\x10\x07\x12\x0b\n\x07\x43OUNTRY\x10\x08\x12\x08\n\x04\x43ITY\x10\t\x12\x0b\n\x07\x43OMPANY\x10\n\x12\x12\n\x0e\x42USINESS_TITLE\x10\x0b\"#\n\x13UpdateAccountOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"f\n\x12UploadPictureInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08offset_x\x18\n \x01(\r\x12\x10\n\x08offset_y\x18\x0b \x01(\r\x12\x0c\n\x04size\x18\x0c \x01(\r\"\x15\n\x13UploadPictureOutput\"\x14\n\x12\x44\x65leteAccountInput\"\x15\n\x13\x44\x65leteAccountOutput\"\x19\n\x17ResendVerificationInput\"\x1a\n\x18ResendVerificationOutput\":\n\x19\x43ompleteVerificationInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\"\x1c\n\x1a\x43ompleteVerificationOutput\"D\n\x12StartRecoveryInput\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"#\n\x13StartRecoveryOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"G\n\x14\x43ompleteRecoverInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07subject\x18\x03 \x01(\t\"\x17\n\x15\x43ompleteRecoverOutput2\xac\t\n\x0e\x41\x63\x63ountService\x12s\n\rCreateAccount\x12\x1f.eolymp.auth.CreateAccountInput\x1a .eolymp.auth.CreateAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\n\"\x08/account\x12y\n\x0f\x44\x65scribeAccount\x12!.eolymp.auth.DescribeAccountInput\x1a\".eolymp.auth.DescribeAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\n\x12\x08/account\x12s\n\rUpdateAccount\x12\x1f.eolymp.auth.UpdateAccountInput\x1a .eolymp.auth.UpdateAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\x1a\x08/account\x12{\n\rUploadPicture\x12\x1f.eolymp.auth.UploadPictureInput\x1a .eolymp.auth.UploadPictureOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12\"\x10/account/picture\x12s\n\rDeleteAccount\x12\x1f.eolymp.auth.DeleteAccountInput\x1a .eolymp.auth.DeleteAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\n*\x08/account\x12\x96\x01\n\x12ResendVerification\x12$.eolymp.auth.ResendVerificationInput\x1a%.eolymp.auth.ResendVerificationOutput\"3\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e\"\x1c/account/verification/resend\x12\x9e\x01\n\x14\x43ompleteVerification\x12&.eolymp.auth.CompleteVerificationInput\x1a\'.eolymp.auth.CompleteVerificationOutput\"5\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x01\x82\xd3\xe4\x93\x02 \"\x1e/account/verification/complete\x12{\n\rStartRecovery\x12\x1f.eolymp.auth.StartRecoveryInput\x1a .eolymp.auth.StartRecoveryOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12\"\x10/account/recover\x12\x8b\x01\n\x10\x43ompleteRecovery\x12!.eolymp.auth.CompleteRecoverInput\x1a\".eolymp.auth.CompleteRecoverOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1b\"\x19/account/recover/completeB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/auth/account_service.proto\x12\x0b\x65olymp.auth\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x19\x65olymp/auth/account.proto\"L\n\x12\x43reateAccountInput\x12%\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x14.eolymp.auth.Account\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"#\n\x13\x43reateAccountOutput\x12\x0c\n\x04hint\x18\x64 \x01(\t\"\x16\n\x14\x44\x65scribeAccountInput\">\n\x15\x44\x65scribeAccountOutput\x12%\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x14.eolymp.auth.Account\"\xd3\x02\n\x12UpdateAccountInput\x12\x34\n\x05patch\x18\x01 \x03(\x0e\x32%.eolymp.auth.UpdateAccountInput.Patch\x12\x18\n\x10\x63urrent_password\x18\x02 \x01(\t\x12%\n\x07\x61\x63\x63ount\x18\n \x01(\x0b\x32\x14.eolymp.auth.Account\"\xc5\x01\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0c\n\x08NICKNAME\x10\x02\x12\x0c\n\x08PASSWORD\x10\x03\x12\x08\n\x04NAME\x10\x04\x12\x0b\n\x07PICTURE\x10\x05\x12\n\n\x06LOCALE\x10\x06\x12\x0c\n\x08TIMEZONE\x10\x0c\x12\x0c\n\x08\x42IRTHDAY\x10\x07\x12\x0b\n\x07\x43OUNTRY\x10\x08\x12\x08\n\x04\x43ITY\x10\t\x12\x0b\n\x07\x43OMPANY\x10\n\x12\x12\n\x0e\x42USINESS_TITLE\x10\x0b\x12\x15\n\x11PREFERRED_RUNTIME\x10\r\"#\n\x13UpdateAccountOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"f\n\x12UploadPictureInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08offset_x\x18\n \x01(\r\x12\x10\n\x08offset_y\x18\x0b \x01(\r\x12\x0c\n\x04size\x18\x0c \x01(\r\"\x15\n\x13UploadPictureOutput\"\x14\n\x12\x44\x65leteAccountInput\"\x15\n\x13\x44\x65leteAccountOutput\"\x19\n\x17ResendVerificationInput\"\x1a\n\x18ResendVerificationOutput\":\n\x19\x43ompleteVerificationInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\"\x1c\n\x1a\x43ompleteVerificationOutput\"D\n\x12StartRecoveryInput\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"#\n\x13StartRecoveryOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"G\n\x14\x43ompleteRecoverInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07subject\x18\x03 \x01(\t\"\x17\n\x15\x43ompleteRecoverOutput2\xac\t\n\x0e\x41\x63\x63ountService\x12s\n\rCreateAccount\x12\x1f.eolymp.auth.CreateAccountInput\x1a .eolymp.auth.CreateAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\n\"\x08/account\x12y\n\x0f\x44\x65scribeAccount\x12!.eolymp.auth.DescribeAccountInput\x1a\".eolymp.auth.DescribeAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\n\x12\x08/account\x12s\n\rUpdateAccount\x12\x1f.eolymp.auth.UpdateAccountInput\x1a .eolymp.auth.UpdateAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\x1a\x08/account\x12{\n\rUploadPicture\x12\x1f.eolymp.auth.UploadPictureInput\x1a .eolymp.auth.UploadPictureOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12\"\x10/account/picture\x12s\n\rDeleteAccount\x12\x1f.eolymp.auth.DeleteAccountInput\x1a .eolymp.auth.DeleteAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\n*\x08/account\x12\x96\x01\n\x12ResendVerification\x12$.eolymp.auth.ResendVerificationInput\x1a%.eolymp.auth.ResendVerificationOutput\"3\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e\"\x1c/account/verification/resend\x12\x9e\x01\n\x14\x43ompleteVerification\x12&.eolymp.auth.CompleteVerificationInput\x1a\'.eolymp.auth.CompleteVerificationOutput\"5\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x01\x82\xd3\xe4\x93\x02 \"\x1e/account/verification/complete\x12{\n\rStartRecovery\x12\x1f.eolymp.auth.StartRecoveryInput\x1a .eolymp.auth.StartRecoveryOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12\"\x10/account/recover\x12\x8b\x01\n\x10\x43ompleteRecovery\x12!.eolymp.auth.CompleteRecoverInput\x1a\".eolymp.auth.CompleteRecoverOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1b\"\x19/account/recover/completeB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.auth.account_service_pb2', globals())
@@ -51,35 +51,35 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DESCRIBEACCOUNTOUTPUT._serialized_start=283
   _DESCRIBEACCOUNTOUTPUT._serialized_end=345
   _UPDATEACCOUNTINPUT._serialized_start=348
-  _UPDATEACCOUNTINPUT._serialized_end=650
+  _UPDATEACCOUNTINPUT._serialized_end=687
   _UPDATEACCOUNTINPUT_PATCH._serialized_start=490
-  _UPDATEACCOUNTINPUT_PATCH._serialized_end=650
-  _UPDATEACCOUNTOUTPUT._serialized_start=652
-  _UPDATEACCOUNTOUTPUT._serialized_end=687
-  _UPLOADPICTUREINPUT._serialized_start=689
-  _UPLOADPICTUREINPUT._serialized_end=791
-  _UPLOADPICTUREOUTPUT._serialized_start=793
-  _UPLOADPICTUREOUTPUT._serialized_end=814
-  _DELETEACCOUNTINPUT._serialized_start=816
-  _DELETEACCOUNTINPUT._serialized_end=836
-  _DELETEACCOUNTOUTPUT._serialized_start=838
-  _DELETEACCOUNTOUTPUT._serialized_end=859
-  _RESENDVERIFICATIONINPUT._serialized_start=861
-  _RESENDVERIFICATIONINPUT._serialized_end=886
-  _RESENDVERIFICATIONOUTPUT._serialized_start=888
-  _RESENDVERIFICATIONOUTPUT._serialized_end=914
-  _COMPLETEVERIFICATIONINPUT._serialized_start=916
-  _COMPLETEVERIFICATIONINPUT._serialized_end=974
-  _COMPLETEVERIFICATIONOUTPUT._serialized_start=976
-  _COMPLETEVERIFICATIONOUTPUT._serialized_end=1004
-  _STARTRECOVERYINPUT._serialized_start=1006
-  _STARTRECOVERYINPUT._serialized_end=1074
-  _STARTRECOVERYOUTPUT._serialized_start=1076
-  _STARTRECOVERYOUTPUT._serialized_end=1111
-  _COMPLETERECOVERINPUT._serialized_start=1113
-  _COMPLETERECOVERINPUT._serialized_end=1184
-  _COMPLETERECOVEROUTPUT._serialized_start=1186
-  _COMPLETERECOVEROUTPUT._serialized_end=1209
-  _ACCOUNTSERVICE._serialized_start=1212
-  _ACCOUNTSERVICE._serialized_end=2408
+  _UPDATEACCOUNTINPUT_PATCH._serialized_end=687
+  _UPDATEACCOUNTOUTPUT._serialized_start=689
+  _UPDATEACCOUNTOUTPUT._serialized_end=724
+  _UPLOADPICTUREINPUT._serialized_start=726
+  _UPLOADPICTUREINPUT._serialized_end=828
+  _UPLOADPICTUREOUTPUT._serialized_start=830
+  _UPLOADPICTUREOUTPUT._serialized_end=851
+  _DELETEACCOUNTINPUT._serialized_start=853
+  _DELETEACCOUNTINPUT._serialized_end=873
+  _DELETEACCOUNTOUTPUT._serialized_start=875
+  _DELETEACCOUNTOUTPUT._serialized_end=896
+  _RESENDVERIFICATIONINPUT._serialized_start=898
+  _RESENDVERIFICATIONINPUT._serialized_end=923
+  _RESENDVERIFICATIONOUTPUT._serialized_start=925
+  _RESENDVERIFICATIONOUTPUT._serialized_end=951
+  _COMPLETEVERIFICATIONINPUT._serialized_start=953
+  _COMPLETEVERIFICATIONINPUT._serialized_end=1011
+  _COMPLETEVERIFICATIONOUTPUT._serialized_start=1013
+  _COMPLETEVERIFICATIONOUTPUT._serialized_end=1041
+  _STARTRECOVERYINPUT._serialized_start=1043
+  _STARTRECOVERYINPUT._serialized_end=1111
+  _STARTRECOVERYOUTPUT._serialized_start=1113
+  _STARTRECOVERYOUTPUT._serialized_end=1148
+  _COMPLETERECOVERINPUT._serialized_start=1150
+  _COMPLETERECOVERINPUT._serialized_end=1221
+  _COMPLETERECOVEROUTPUT._serialized_start=1223
+  _COMPLETERECOVEROUTPUT._serialized_end=1246
+  _ACCOUNTSERVICE._serialized_start=1249
+  _ACCOUNTSERVICE._serialized_end=2445
 # @@protoc_insertion_point(module_scope)

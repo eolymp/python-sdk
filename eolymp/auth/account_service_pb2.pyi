@@ -110,6 +110,8 @@ class UpdateAccountInput(_message.Message):
     PASSWORD: UpdateAccountInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     PICTURE: UpdateAccountInput.Patch
+    PREFERRED_RUNTIME: UpdateAccountInput.Patch
+    TIMEZONE: UpdateAccountInput.Patch
     account: _account_pb2.Account
     current_password: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateAccountInput.Patch]
