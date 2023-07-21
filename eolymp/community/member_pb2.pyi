@@ -1,4 +1,5 @@
 from eolymp.community import attribute_pb2 as _attribute_pb2
+from eolymp.community import identity_pb2 as _identity_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -11,29 +12,6 @@ class Member(_message.Message):
     __slots__ = ["disabled", "ern", "ghost", "id", "identities", "name", "out_of_competition", "registered", "staffed", "status", "values"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    class Identity(_message.Message):
-        __slots__ = ["email", "email_verified", "id", "issuer", "name", "nickname", "password", "picture", "profile", "subject"]
-        EMAIL_FIELD_NUMBER: _ClassVar[int]
-        EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
-        ID_FIELD_NUMBER: _ClassVar[int]
-        ISSUER_FIELD_NUMBER: _ClassVar[int]
-        NAME_FIELD_NUMBER: _ClassVar[int]
-        NICKNAME_FIELD_NUMBER: _ClassVar[int]
-        PASSWORD_FIELD_NUMBER: _ClassVar[int]
-        PICTURE_FIELD_NUMBER: _ClassVar[int]
-        PROFILE_FIELD_NUMBER: _ClassVar[int]
-        SUBJECT_FIELD_NUMBER: _ClassVar[int]
-        email: str
-        email_verified: bool
-        id: str
-        issuer: str
-        name: str
-        nickname: str
-        password: str
-        picture: str
-        profile: str
-        subject: str
-        def __init__(self, id: _Optional[str] = ..., issuer: _Optional[str] = ..., subject: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., profile: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
     class Value(_message.Message):
         __slots__ = ["attribute_key", "attribute_type", "value_number", "value_string"]
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -66,11 +44,11 @@ class Member(_message.Message):
     ern: str
     ghost: bool
     id: str
-    identities: _containers.RepeatedCompositeFieldContainer[Member.Identity]
+    identities: _containers.RepeatedCompositeFieldContainer[_identity_pb2.Identity]
     name: str
     out_of_competition: bool
     registered: bool
     staffed: bool
     status: Member.Status
     values: _containers.RepeatedCompositeFieldContainer[Member.Value]
-    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., name: _Optional[str] = ..., disabled: bool = ..., registered: bool = ..., staffed: bool = ..., ghost: bool = ..., out_of_competition: bool = ..., status: _Optional[_Union[Member.Status, str]] = ..., identities: _Optional[_Iterable[_Union[Member.Identity, _Mapping]]] = ..., values: _Optional[_Iterable[_Union[Member.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., name: _Optional[str] = ..., disabled: bool = ..., registered: bool = ..., staffed: bool = ..., ghost: bool = ..., out_of_competition: bool = ..., status: _Optional[_Union[Member.Status, str]] = ..., identities: _Optional[_Iterable[_Union[_identity_pb2.Identity, _Mapping]]] = ..., values: _Optional[_Iterable[_Union[Member.Value, _Mapping]]] = ...) -> None: ...

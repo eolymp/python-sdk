@@ -2,6 +2,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import attribute_pb2 as _attribute_pb2
+from eolymp.community import identity_pb2 as _identity_pb2
 from eolymp.community import idp_pb2 as _idp_pb2
 from eolymp.community import member_pb2 as _member_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -31,9 +32,9 @@ class AddMemberIdentityInput(_message.Message):
     __slots__ = ["identity", "member_id"]
     IDENTITY_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    identity: _member_pb2.Member.Identity
+    identity: _identity_pb2.Identity
     member_id: str
-    def __init__(self, member_id: _Optional[str] = ..., identity: _Optional[_Union[_member_pb2.Member.Identity, _Mapping]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., identity: _Optional[_Union[_identity_pb2.Identity, _Mapping]] = ...) -> None: ...
 
 class AddMemberIdentityOutput(_message.Message):
     __slots__ = ["identity_id"]
@@ -262,10 +263,10 @@ class UpdateMemberIdentityInput(_message.Message):
     IDENTITY_FIELD_NUMBER: _ClassVar[int]
     IDENTITY_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    identity: _member_pb2.Member.Identity
+    identity: _identity_pb2.Identity
     identity_id: str
     member_id: str
-    def __init__(self, member_id: _Optional[str] = ..., identity_id: _Optional[str] = ..., identity: _Optional[_Union[_member_pb2.Member.Identity, _Mapping]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., identity_id: _Optional[str] = ..., identity: _Optional[_Union[_identity_pb2.Identity, _Mapping]] = ...) -> None: ...
 
 class UpdateMemberIdentityOutput(_message.Message):
     __slots__ = []
