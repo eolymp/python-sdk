@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ["disabled", "ghost", "id", "identities", "name", "out_of_competition", "picture", "registered", "staffed", "status", "values"]
+    __slots__ = ["disabled", "email", "email_verified", "ghost", "id", "identities", "locale", "name", "out_of_competition", "picture", "registered", "staffed", "status", "values"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Value(_message.Message):
@@ -25,11 +25,14 @@ class Member(_message.Message):
         def __init__(self, attribute_key: _Optional[str] = ..., attribute_type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
     ACTIVE: Member.Status
     DISABLED_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
     GHOST: Member.Status
     GHOST_FIELD_NUMBER: _ClassVar[int]
     IDENTITIES_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     INACTIVE: Member.Status
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
     PICTURE_FIELD_NUMBER: _ClassVar[int]
@@ -41,9 +44,12 @@ class Member(_message.Message):
     UNSTAFFED: Member.Status
     VALUES_FIELD_NUMBER: _ClassVar[int]
     disabled: bool
+    email: str
+    email_verified: bool
     ghost: bool
     id: str
     identities: _containers.RepeatedCompositeFieldContainer[_identity_pb2.Identity]
+    locale: str
     name: str
     out_of_competition: bool
     picture: str
@@ -51,4 +57,4 @@ class Member(_message.Message):
     staffed: bool
     status: Member.Status
     values: _containers.RepeatedCompositeFieldContainer[Member.Value]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., disabled: bool = ..., registered: bool = ..., staffed: bool = ..., ghost: bool = ..., out_of_competition: bool = ..., status: _Optional[_Union[Member.Status, str]] = ..., identities: _Optional[_Iterable[_Union[_identity_pb2.Identity, _Mapping]]] = ..., values: _Optional[_Iterable[_Union[Member.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., disabled: bool = ..., registered: bool = ..., staffed: bool = ..., ghost: bool = ..., out_of_competition: bool = ..., status: _Optional[_Union[Member.Status, str]] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., locale: _Optional[str] = ..., values: _Optional[_Iterable[_Union[Member.Value, _Mapping]]] = ..., identities: _Optional[_Iterable[_Union[_identity_pb2.Identity, _Mapping]]] = ...) -> None: ...
