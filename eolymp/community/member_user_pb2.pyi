@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ["birthday", "city", "country", "created_at", "deleted_at", "email", "email_verified", "issuer", "name", "password", "password_age", "picture", "subject"]
+    __slots__ = ["birthday", "city", "country", "email", "email_verified", "issuer", "name", "password", "password_age", "picture", "preferences", "subject"]
     class Preferences(_message.Message):
         __slots__ = ["locale", "runtime", "timezone"]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -20,8 +20,6 @@ class User(_message.Message):
     BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
     CITY_FIELD_NUMBER: _ClassVar[int]
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
-    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
-    DELETED_AT_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
     ISSUER_FIELD_NUMBER: _ClassVar[int]
@@ -29,12 +27,11 @@ class User(_message.Message):
     PASSWORD_AGE_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     PICTURE_FIELD_NUMBER: _ClassVar[int]
+    PREFERENCES_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     birthday: _timestamp_pb2.Timestamp
     city: str
     country: str
-    created_at: _timestamp_pb2.Timestamp
-    deleted_at: _timestamp_pb2.Timestamp
     email: str
     email_verified: bool
     issuer: str
@@ -42,5 +39,6 @@ class User(_message.Message):
     password: str
     password_age: int
     picture: str
+    preferences: User.Preferences
     subject: str
-    def __init__(self, issuer: _Optional[str] = ..., subject: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., deleted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., email: _Optional[str] = ..., email_verified: bool = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., birthday: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ..., city: _Optional[str] = ...) -> None: ...
+    def __init__(self, issuer: _Optional[str] = ..., subject: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., birthday: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., preferences: _Optional[_Union[User.Preferences, _Mapping]] = ...) -> None: ...

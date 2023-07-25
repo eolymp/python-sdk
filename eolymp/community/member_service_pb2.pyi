@@ -38,6 +38,18 @@ class CreateMemberOutput(_message.Message):
     member_id: str
     def __init__(self, member_id: _Optional[str] = ...) -> None: ...
 
+class DeleteMemberInput(_message.Message):
+    __slots__ = ["force_delete", "member_id"]
+    FORCE_DELETE_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    force_delete: bool
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ..., force_delete: bool = ...) -> None: ...
+
+class DeleteMemberOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DescribeMemberInput(_message.Message):
     __slots__ = ["member_id"]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -103,18 +115,6 @@ class ListMembersOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_member_pb2.Member, _Mapping]]] = ...) -> None: ...
 
-class RemoveMemberInput(_message.Message):
-    __slots__ = ["force_delete", "member_id"]
-    FORCE_DELETE_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    force_delete: bool
-    member_id: str
-    def __init__(self, member_id: _Optional[str] = ..., force_delete: bool = ...) -> None: ...
-
-class RemoveMemberOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class RestoreMemberInput(_message.Message):
     __slots__ = ["member_id"]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -138,7 +138,7 @@ class UnassignMemberOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateMemberInput(_message.Message):
-    __slots__ = ["member", "member_id", "patch", "patch_account_props", "patch_attribute_keys"]
+    __slots__ = ["member", "member_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ACCOUNT: UpdateMemberInput.Patch
@@ -148,16 +148,23 @@ class UpdateMemberInput(_message.Message):
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     NICKNAME: UpdateMemberInput.Patch
-    PATCH_ACCOUNT_PROPS_FIELD_NUMBER: _ClassVar[int]
-    PATCH_ATTRIBUTE_KEYS_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL: UpdateMemberInput.Patch
+    USER_BIRTHDAY: UpdateMemberInput.Patch
+    USER_CITY: UpdateMemberInput.Patch
+    USER_COUNTRY: UpdateMemberInput.Patch
+    USER_EMAIL: UpdateMemberInput.Patch
+    USER_NAME: UpdateMemberInput.Patch
+    USER_PASSWORD: UpdateMemberInput.Patch
+    USER_PICTURE: UpdateMemberInput.Patch
+    USER_PREFERENCES: UpdateMemberInput.Patch
+    USER_PREFERENCES_LOCALE: UpdateMemberInput.Patch
+    USER_PREFERENCES_RUNTIME: UpdateMemberInput.Patch
+    USER_PREFERENCES_TIMEZONE: UpdateMemberInput.Patch
     member: _member_pb2.Member
     member_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateMemberInput.Patch]
-    patch_account_props: _containers.RepeatedScalarFieldContainer[str]
-    patch_attribute_keys: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMemberInput.Patch, str]]] = ..., patch_account_props: _Optional[_Iterable[str]] = ..., patch_attribute_keys: _Optional[_Iterable[str]] = ..., member_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMemberInput.Patch, str]]] = ..., member_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class UpdateMemberOutput(_message.Message):
     __slots__ = []

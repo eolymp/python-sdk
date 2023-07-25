@@ -108,21 +108,22 @@ class UpdateAccountInput(_message.Message):
     ALL: UpdateAccountInput.Patch
     ATTRIBUTES: UpdateAccountInput.Patch
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
-    BIRTHDAY: UpdateAccountInput.Patch
-    CITY: UpdateAccountInput.Patch
-    COUNTRY: UpdateAccountInput.Patch
     CURRENT_PASSWORD_FIELD_NUMBER: _ClassVar[int]
-    EMAIL: UpdateAccountInput.Patch
-    NAME: UpdateAccountInput.Patch
     NICKNAME: UpdateAccountInput.Patch
     NICKNAME_FIELD_NUMBER: _ClassVar[int]
-    PASSWORD: UpdateAccountInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    PICTURE: UpdateAccountInput.Patch
-    PREFERRED_LOCALE: UpdateAccountInput.Patch
-    PREFERRED_RUNTIME: UpdateAccountInput.Patch
-    PREFERRED_TIMEZONE: UpdateAccountInput.Patch
+    USER_BIRTHDAY: UpdateAccountInput.Patch
+    USER_CITY: UpdateAccountInput.Patch
+    USER_COUNTRY: UpdateAccountInput.Patch
+    USER_EMAIL: UpdateAccountInput.Patch
     USER_FIELD_NUMBER: _ClassVar[int]
+    USER_NAME: UpdateAccountInput.Patch
+    USER_PASSWORD: UpdateAccountInput.Patch
+    USER_PICTURE: UpdateAccountInput.Patch
+    USER_PREFERENCES: UpdateAccountInput.Patch
+    USER_PREFERENCES_LOCALE: UpdateAccountInput.Patch
+    USER_PREFERENCES_RUNTIME: UpdateAccountInput.Patch
+    USER_PREFERENCES_TIMEZONE: UpdateAccountInput.Patch
     attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
     current_password: str
     nickname: str

@@ -39,7 +39,7 @@ class MemberServiceClient:
             **kwargs,
         )
 
-    def RemoveMember(self, request, **kwargs):
+    def DeleteMember(self, request, **kwargs):
         path = "/members/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -49,7 +49,7 @@ class MemberServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.RemoveMemberOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DeleteMemberOutput"),
             **kwargs,
         )
 
