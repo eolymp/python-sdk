@@ -1,7 +1,8 @@
 from eolymp.community import attribute_pb2 as _attribute_pb2
-from eolymp.community import identity_pb2 as _identity_pb2
+from eolymp.community import member_ghost_pb2 as _member_ghost_pb2
+from eolymp.community import member_team_pb2 as _member_team_pb2
+from eolymp.community import member_user_pb2 as _member_user_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -9,52 +10,27 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ["disabled", "email", "email_verified", "ghost", "id", "identities", "locale", "name", "out_of_competition", "picture", "registered", "staffed", "status", "values"]
-    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    class Value(_message.Message):
-        __slots__ = ["attribute_key", "attribute_type", "value_number", "value_string"]
-        ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
-        ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
-        VALUE_NUMBER_FIELD_NUMBER: _ClassVar[int]
-        VALUE_STRING_FIELD_NUMBER: _ClassVar[int]
-        attribute_key: str
-        attribute_type: _attribute_pb2.Attribute.Type
-        value_number: int
-        value_string: str
-        def __init__(self, attribute_key: _Optional[str] = ..., attribute_type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
-    ACTIVE: Member.Status
-    DISABLED_FIELD_NUMBER: _ClassVar[int]
-    EMAIL_FIELD_NUMBER: _ClassVar[int]
-    EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
-    GHOST: Member.Status
+    __slots__ = ["active", "attributes", "ghost", "id", "incomplete", "nickname", "nickname_change_timeout", "secret", "team", "unofficial", "user"]
+    ACTIVE_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     GHOST_FIELD_NUMBER: _ClassVar[int]
-    IDENTITIES_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
-    INACTIVE: Member.Status
-    LOCALE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
-    PICTURE_FIELD_NUMBER: _ClassVar[int]
-    REGISTERED_FIELD_NUMBER: _ClassVar[int]
-    STAFFED_FIELD_NUMBER: _ClassVar[int]
-    STATUS_FIELD_NUMBER: _ClassVar[int]
-    UNKNOWN_STATUS: Member.Status
-    UNREGISTERED: Member.Status
-    UNSTAFFED: Member.Status
-    VALUES_FIELD_NUMBER: _ClassVar[int]
-    disabled: bool
-    email: str
-    email_verified: bool
-    ghost: bool
+    INCOMPLETE_FIELD_NUMBER: _ClassVar[int]
+    NICKNAME_CHANGE_TIMEOUT_FIELD_NUMBER: _ClassVar[int]
+    NICKNAME_FIELD_NUMBER: _ClassVar[int]
+    SECRET_FIELD_NUMBER: _ClassVar[int]
+    TEAM_FIELD_NUMBER: _ClassVar[int]
+    UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
+    USER_FIELD_NUMBER: _ClassVar[int]
+    active: bool
+    attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
+    ghost: _member_ghost_pb2.Ghost
     id: str
-    identities: _containers.RepeatedCompositeFieldContainer[_identity_pb2.Identity]
-    locale: str
-    name: str
-    out_of_competition: bool
-    picture: str
-    registered: bool
-    staffed: bool
-    status: Member.Status
-    values: _containers.RepeatedCompositeFieldContainer[Member.Value]
-    def __init__(self, id: _Optional[str] = ..., disabled: bool = ..., registered: bool = ..., staffed: bool = ..., ghost: bool = ..., out_of_competition: bool = ..., status: _Optional[_Union[Member.Status, str]] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., locale: _Optional[str] = ..., values: _Optional[_Iterable[_Union[Member.Value, _Mapping]]] = ..., identities: _Optional[_Iterable[_Union[_identity_pb2.Identity, _Mapping]]] = ...) -> None: ...
+    incomplete: bool
+    nickname: str
+    nickname_change_timeout: int
+    secret: bool
+    team: _member_team_pb2.Team
+    unofficial: bool
+    user: _member_user_pb2.User
+    def __init__(self, id: _Optional[str] = ..., nickname: _Optional[str] = ..., nickname_change_timeout: _Optional[int] = ..., active: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...

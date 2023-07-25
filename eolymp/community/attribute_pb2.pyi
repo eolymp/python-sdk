@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Attribute(_message.Message):
-    __slots__ = ["choices", "country", "description", "ern", "hidden", "index", "key", "max", "min", "regexp", "required", "type"]
+    __slots__ = ["choices", "country", "description", "hidden", "index", "key", "max", "min", "regexp", "required", "type"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Description(_message.Message):
@@ -23,6 +23,17 @@ class Attribute(_message.Message):
         label: str
         locale: str
         def __init__(self, default: bool = ..., locale: _Optional[str] = ..., label: _Optional[str] = ..., help: _Optional[str] = ..., choices: _Optional[_Iterable[str]] = ...) -> None: ...
+    class Value(_message.Message):
+        __slots__ = ["attribute_key", "attribute_type", "number", "string"]
+        ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        STRING_FIELD_NUMBER: _ClassVar[int]
+        attribute_key: str
+        attribute_type: Attribute.Type
+        number: int
+        string: str
+        def __init__(self, attribute_key: _Optional[str] = ..., attribute_type: _Optional[_Union[Attribute.Type, str]] = ..., string: _Optional[str] = ..., number: _Optional[int] = ...) -> None: ...
     CHECKBOX: Attribute.Type
     CHOICE: Attribute.Type
     CHOICES_FIELD_NUMBER: _ClassVar[int]
@@ -31,7 +42,6 @@ class Attribute(_message.Message):
     DATE: Attribute.Type
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     EMAIL: Attribute.Type
-    ERN_FIELD_NUMBER: _ClassVar[int]
     HIDDEN_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
@@ -48,7 +58,6 @@ class Attribute(_message.Message):
     choices: _containers.RepeatedScalarFieldContainer[str]
     country: str
     description: _containers.RepeatedCompositeFieldContainer[Attribute.Description]
-    ern: str
     hidden: bool
     index: int
     key: str
@@ -57,4 +66,4 @@ class Attribute(_message.Message):
     regexp: str
     required: bool
     type: Attribute.Type
-    def __init__(self, key: _Optional[str] = ..., ern: _Optional[str] = ..., description: _Optional[_Iterable[_Union[Attribute.Description, _Mapping]]] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: bool = ..., hidden: bool = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., country: _Optional[str] = ...) -> None: ...
+    def __init__(self, key: _Optional[str] = ..., description: _Optional[_Iterable[_Union[Attribute.Description, _Mapping]]] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: bool = ..., hidden: bool = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., country: _Optional[str] = ...) -> None: ...

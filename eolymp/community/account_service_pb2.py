@@ -13,10 +13,12 @@ _sym_db = _symbol_database.Default()
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
-from eolymp.community import identity_pb2 as eolymp_dot_community_dot_identity__pb2
+from eolymp.community import attribute_pb2 as eolymp_dot_community_dot_attribute__pb2
+from eolymp.community import member_pb2 as eolymp_dot_community_dot_member__pb2
+from eolymp.community import member_user_pb2 as eolymp_dot_community_dot_member__user__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/community/account_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1f\x65olymp/community/identity.proto\"R\n\x12\x43reateAccountInput\x12+\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x1a.eolymp.community.Identity\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"#\n\x13\x43reateAccountOutput\x12\x0c\n\x04hint\x18\x64 \x01(\t\"\x16\n\x14\x44\x65scribeAccountInput\"D\n\x15\x44\x65scribeAccountOutput\x12+\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x1a.eolymp.community.Identity\"\xde\x02\n\x12UpdateAccountInput\x12\x39\n\x05patch\x18\x01 \x03(\x0e\x32*.eolymp.community.UpdateAccountInput.Patch\x12\x18\n\x10\x63urrent_password\x18\x02 \x01(\t\x12+\n\x07\x61\x63\x63ount\x18\n \x01(\x0b\x32\x1a.eolymp.community.Identity\"\xc5\x01\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0c\n\x08NICKNAME\x10\x02\x12\x0c\n\x08PASSWORD\x10\x03\x12\x08\n\x04NAME\x10\x04\x12\x0b\n\x07PICTURE\x10\x05\x12\n\n\x06LOCALE\x10\x06\x12\x0c\n\x08TIMEZONE\x10\x0c\x12\x0c\n\x08\x42IRTHDAY\x10\x07\x12\x0b\n\x07\x43OUNTRY\x10\x08\x12\x08\n\x04\x43ITY\x10\t\x12\x0b\n\x07\x43OMPANY\x10\n\x12\x12\n\x0e\x42USINESS_TITLE\x10\x0b\x12\x15\n\x11PREFERRED_RUNTIME\x10\r\"#\n\x13UpdateAccountOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"f\n\x12UploadPictureInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08offset_x\x18\n \x01(\r\x12\x10\n\x08offset_y\x18\x0b \x01(\r\x12\x0c\n\x04size\x18\x0c \x01(\r\"\x15\n\x13UploadPictureOutput\"\x14\n\x12\x44\x65leteAccountInput\"\x15\n\x13\x44\x65leteAccountOutput\"\x19\n\x17ResendVerificationInput\"\x1a\n\x18ResendVerificationOutput\":\n\x19\x43ompleteVerificationInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\"\x1c\n\x1a\x43ompleteVerificationOutput\"D\n\x12StartRecoveryInput\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"#\n\x13StartRecoveryOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"G\n\x14\x43ompleteRecoverInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07subject\x18\x03 \x01(\t\"\x17\n\x15\x43ompleteRecoverOutput2\x91\n\n\x0e\x41\x63\x63ountService\x12}\n\rCreateAccount\x12$.eolymp.community.CreateAccountInput\x1a%.eolymp.community.CreateAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\n\"\x08/account\x12\x83\x01\n\x0f\x44\x65scribeAccount\x12&.eolymp.community.DescribeAccountInput\x1a\'.eolymp.community.DescribeAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\n\x12\x08/account\x12}\n\rUpdateAccount\x12$.eolymp.community.UpdateAccountInput\x1a%.eolymp.community.UpdateAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\x1a\x08/account\x12\x85\x01\n\rUploadPicture\x12$.eolymp.community.UploadPictureInput\x1a%.eolymp.community.UploadPictureOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12\"\x10/account/picture\x12}\n\rDeleteAccount\x12$.eolymp.community.DeleteAccountInput\x1a%.eolymp.community.DeleteAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\n*\x08/account\x12\xa0\x01\n\x12ResendVerification\x12).eolymp.community.ResendVerificationInput\x1a*.eolymp.community.ResendVerificationOutput\"3\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e\"\x1c/account/verification/resend\x12\xa8\x01\n\x14\x43ompleteVerification\x12+.eolymp.community.CompleteVerificationInput\x1a,.eolymp.community.CompleteVerificationOutput\"5\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x01\x82\xd3\xe4\x93\x02 \"\x1e/account/verification/complete\x12\x8c\x01\n\rStartRecovery\x12$.eolymp.community.StartRecoveryInput\x1a%.eolymp.community.StartRecoveryOutput\".\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x19\"\x17/account/recovery/start\x12\x96\x01\n\x10\x43ompleteRecovery\x12&.eolymp.community.CompleteRecoverInput\x1a\'.eolymp.community.CompleteRecoverOutput\"1\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1c\"\x1a/account/recovery/completeB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/community/account_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a eolymp/community/attribute.proto\x1a\x1d\x65olymp/community/member.proto\x1a\"eolymp/community/member_user.proto\"\x94\x01\n\x12\x43reateAccountInput\x12\x10\n\x08nickname\x18\x01 \x01(\t\x12$\n\x04user\x18\x02 \x01(\x0b\x32\x16.eolymp.community.User\x12\x35\n\nattributes\x18\x03 \x03(\x0b\x32!.eolymp.community.Attribute.Value\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"#\n\x13\x43reateAccountOutput\x12\x0c\n\x04hint\x18\x64 \x01(\t\"\x16\n\x14\x44\x65scribeAccountInput\"\x86\x01\n\x15\x44\x65scribeAccountOutput\x12\x10\n\x08nickname\x18\x01 \x01(\t\x12$\n\x04user\x18\x02 \x01(\x0b\x32\x16.eolymp.community.User\x12\x35\n\nattributes\x18\x03 \x03(\x0b\x32!.eolymp.community.Attribute.Value\"\xa4\x03\n\x12UpdateAccountInput\x12\x39\n\x05patch\x18\x01 \x03(\x0e\x32*.eolymp.community.UpdateAccountInput.Patch\x12\x18\n\x10\x63urrent_password\x18\x02 \x01(\t\x12\x10\n\x08nickname\x18\n \x01(\t\x12$\n\x04user\x18\x0b \x01(\x0b\x32\x16.eolymp.community.User\x12\x35\n\nattributes\x18\x0c \x03(\x0b\x32!.eolymp.community.Attribute.Value\"\xc9\x01\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0c\n\x08NICKNAME\x10\x02\x12\x0c\n\x08PASSWORD\x10\x03\x12\x08\n\x04NAME\x10\x04\x12\x0b\n\x07PICTURE\x10\x05\x12\x0c\n\x08\x42IRTHDAY\x10\x06\x12\x0b\n\x07\x43OUNTRY\x10\x07\x12\x08\n\x04\x43ITY\x10\x08\x12\x14\n\x10PREFERRED_LOCALE\x10\x65\x12\x16\n\x12PREFERRED_TIMEZONE\x10\x66\x12\x15\n\x11PREFERRED_RUNTIME\x10g\x12\x0f\n\nATTRIBUTES\x10\x84\x07\"#\n\x13UpdateAccountOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"f\n\x12UploadPictureInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08offset_x\x18\n \x01(\r\x12\x10\n\x08offset_y\x18\x0b \x01(\r\x12\x0c\n\x04size\x18\x0c \x01(\r\"\x15\n\x13UploadPictureOutput\"\x14\n\x12\x44\x65leteAccountInput\"\x15\n\x13\x44\x65leteAccountOutput\"\x19\n\x17ResendVerificationInput\"\x1a\n\x18ResendVerificationOutput\":\n\x19\x43ompleteVerificationInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\"\x1c\n\x1a\x43ompleteVerificationOutput\"D\n\x12StartRecoveryInput\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"#\n\x13StartRecoveryOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"G\n\x14\x43ompleteRecoverInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07subject\x18\x03 \x01(\t\"\x17\n\x15\x43ompleteRecoverOutput2\x91\n\n\x0e\x41\x63\x63ountService\x12}\n\rCreateAccount\x12$.eolymp.community.CreateAccountInput\x1a%.eolymp.community.CreateAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\n\"\x08/account\x12\x83\x01\n\x0f\x44\x65scribeAccount\x12&.eolymp.community.DescribeAccountInput\x1a\'.eolymp.community.DescribeAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\n\x12\x08/account\x12}\n\rUpdateAccount\x12$.eolymp.community.UpdateAccountInput\x1a%.eolymp.community.UpdateAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\x1a\x08/account\x12\x85\x01\n\rUploadPicture\x12$.eolymp.community.UploadPictureInput\x1a%.eolymp.community.UploadPictureOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12\"\x10/account/picture\x12}\n\rDeleteAccount\x12$.eolymp.community.DeleteAccountInput\x1a%.eolymp.community.DeleteAccountOutput\"\x1f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\n*\x08/account\x12\xa0\x01\n\x12ResendVerification\x12).eolymp.community.ResendVerificationInput\x1a*.eolymp.community.ResendVerificationOutput\"3\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e\"\x1c/account/verification/resend\x12\xa8\x01\n\x14\x43ompleteVerification\x12+.eolymp.community.CompleteVerificationInput\x1a,.eolymp.community.CompleteVerificationOutput\"5\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x01\x82\xd3\xe4\x93\x02 \"\x1e/account/verification/complete\x12\x8c\x01\n\rStartRecovery\x12$.eolymp.community.StartRecoveryInput\x1a%.eolymp.community.StartRecoveryOutput\".\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x19\"\x17/account/recovery/start\x12\x96\x01\n\x10\x43ompleteRecovery\x12&.eolymp.community.CompleteRecoverInput\x1a\'.eolymp.community.CompleteRecoverOutput\"1\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1c\"\x1a/account/recovery/completeB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.account_service_pb2', globals())
@@ -42,44 +44,44 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACCOUNTSERVICE.methods_by_name['StartRecovery']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\031\"\027/account/recovery/start'
   _ACCOUNTSERVICE.methods_by_name['CompleteRecovery']._options = None
   _ACCOUNTSERVICE.methods_by_name['CompleteRecovery']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\034\"\032/account/recovery/complete'
-  _CREATEACCOUNTINPUT._serialized_start=160
-  _CREATEACCOUNTINPUT._serialized_end=242
-  _CREATEACCOUNTOUTPUT._serialized_start=244
-  _CREATEACCOUNTOUTPUT._serialized_end=279
-  _DESCRIBEACCOUNTINPUT._serialized_start=281
-  _DESCRIBEACCOUNTINPUT._serialized_end=303
-  _DESCRIBEACCOUNTOUTPUT._serialized_start=305
-  _DESCRIBEACCOUNTOUTPUT._serialized_end=373
-  _UPDATEACCOUNTINPUT._serialized_start=376
-  _UPDATEACCOUNTINPUT._serialized_end=726
-  _UPDATEACCOUNTINPUT_PATCH._serialized_start=529
-  _UPDATEACCOUNTINPUT_PATCH._serialized_end=726
-  _UPDATEACCOUNTOUTPUT._serialized_start=728
-  _UPDATEACCOUNTOUTPUT._serialized_end=763
-  _UPLOADPICTUREINPUT._serialized_start=765
-  _UPLOADPICTUREINPUT._serialized_end=867
-  _UPLOADPICTUREOUTPUT._serialized_start=869
-  _UPLOADPICTUREOUTPUT._serialized_end=890
-  _DELETEACCOUNTINPUT._serialized_start=892
-  _DELETEACCOUNTINPUT._serialized_end=912
-  _DELETEACCOUNTOUTPUT._serialized_start=914
-  _DELETEACCOUNTOUTPUT._serialized_end=935
-  _RESENDVERIFICATIONINPUT._serialized_start=937
-  _RESENDVERIFICATIONINPUT._serialized_end=962
-  _RESENDVERIFICATIONOUTPUT._serialized_start=964
-  _RESENDVERIFICATIONOUTPUT._serialized_end=990
-  _COMPLETEVERIFICATIONINPUT._serialized_start=992
-  _COMPLETEVERIFICATIONINPUT._serialized_end=1050
-  _COMPLETEVERIFICATIONOUTPUT._serialized_start=1052
-  _COMPLETEVERIFICATIONOUTPUT._serialized_end=1080
-  _STARTRECOVERYINPUT._serialized_start=1082
-  _STARTRECOVERYINPUT._serialized_end=1150
-  _STARTRECOVERYOUTPUT._serialized_start=1152
-  _STARTRECOVERYOUTPUT._serialized_end=1187
-  _COMPLETERECOVERINPUT._serialized_start=1189
-  _COMPLETERECOVERINPUT._serialized_end=1260
-  _COMPLETERECOVEROUTPUT._serialized_start=1262
-  _COMPLETERECOVEROUTPUT._serialized_end=1285
-  _ACCOUNTSERVICE._serialized_start=1288
-  _ACCOUNTSERVICE._serialized_end=2585
+  _CREATEACCOUNTINPUT._serialized_start=229
+  _CREATEACCOUNTINPUT._serialized_end=377
+  _CREATEACCOUNTOUTPUT._serialized_start=379
+  _CREATEACCOUNTOUTPUT._serialized_end=414
+  _DESCRIBEACCOUNTINPUT._serialized_start=416
+  _DESCRIBEACCOUNTINPUT._serialized_end=438
+  _DESCRIBEACCOUNTOUTPUT._serialized_start=441
+  _DESCRIBEACCOUNTOUTPUT._serialized_end=575
+  _UPDATEACCOUNTINPUT._serialized_start=578
+  _UPDATEACCOUNTINPUT._serialized_end=998
+  _UPDATEACCOUNTINPUT_PATCH._serialized_start=797
+  _UPDATEACCOUNTINPUT_PATCH._serialized_end=998
+  _UPDATEACCOUNTOUTPUT._serialized_start=1000
+  _UPDATEACCOUNTOUTPUT._serialized_end=1035
+  _UPLOADPICTUREINPUT._serialized_start=1037
+  _UPLOADPICTUREINPUT._serialized_end=1139
+  _UPLOADPICTUREOUTPUT._serialized_start=1141
+  _UPLOADPICTUREOUTPUT._serialized_end=1162
+  _DELETEACCOUNTINPUT._serialized_start=1164
+  _DELETEACCOUNTINPUT._serialized_end=1184
+  _DELETEACCOUNTOUTPUT._serialized_start=1186
+  _DELETEACCOUNTOUTPUT._serialized_end=1207
+  _RESENDVERIFICATIONINPUT._serialized_start=1209
+  _RESENDVERIFICATIONINPUT._serialized_end=1234
+  _RESENDVERIFICATIONOUTPUT._serialized_start=1236
+  _RESENDVERIFICATIONOUTPUT._serialized_end=1262
+  _COMPLETEVERIFICATIONINPUT._serialized_start=1264
+  _COMPLETEVERIFICATIONINPUT._serialized_end=1322
+  _COMPLETEVERIFICATIONOUTPUT._serialized_start=1324
+  _COMPLETEVERIFICATIONOUTPUT._serialized_end=1352
+  _STARTRECOVERYINPUT._serialized_start=1354
+  _STARTRECOVERYINPUT._serialized_end=1422
+  _STARTRECOVERYOUTPUT._serialized_start=1424
+  _STARTRECOVERYOUTPUT._serialized_end=1459
+  _COMPLETERECOVERINPUT._serialized_start=1461
+  _COMPLETERECOVERINPUT._serialized_end=1532
+  _COMPLETERECOVEROUTPUT._serialized_start=1534
+  _COMPLETERECOVEROUTPUT._serialized_end=1557
+  _ACCOUNTSERVICE._serialized_start=1560
+  _ACCOUNTSERVICE._serialized_end=2857
 # @@protoc_insertion_point(module_scope)
