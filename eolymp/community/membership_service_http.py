@@ -14,17 +14,6 @@ class MembershipServiceClient:
         self.transport = transport
         self.url = url
 
-    def JoinSpace(self, request, **kwargs):
-        path = "/members/_self"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.JoinSpaceOutput"),
-            **kwargs,
-        )
-
     def DescribeMembership(self, request, **kwargs):
         path = "/members/_self"
 

@@ -23,18 +23,6 @@ class DescribeMembershipOutput(_message.Message):
     member: _member_pb2.Member
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
-class JoinSpaceInput(_message.Message):
-    __slots__ = ["attributes", "nickname"]
-    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME_FIELD_NUMBER: _ClassVar[int]
-    attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
-    nickname: str
-    def __init__(self, nickname: _Optional[str] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
-
-class JoinSpaceOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class UpdateMembershipInput(_message.Message):
     __slots__ = ["attributes"]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
