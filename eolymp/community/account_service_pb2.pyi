@@ -38,16 +38,14 @@ class CompleteVerificationOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class CreateAccountInput(_message.Message):
-    __slots__ = ["attributes", "captcha", "nickname", "user"]
+    __slots__ = ["account", "attributes", "captcha"]
+    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     CAPTCHA_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME_FIELD_NUMBER: _ClassVar[int]
-    USER_FIELD_NUMBER: _ClassVar[int]
+    account: _member_user_pb2.User
     attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
     captcha: str
-    nickname: str
-    user: _member_user_pb2.User
-    def __init__(self, nickname: _Optional[str] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ..., captcha: _Optional[str] = ...) -> None: ...
+    def __init__(self, account: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ..., captcha: _Optional[str] = ...) -> None: ...
 
 class CreateAccountOutput(_message.Message):
     __slots__ = ["hint"]
@@ -68,14 +66,12 @@ class DescribeAccountInput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAccountOutput(_message.Message):
-    __slots__ = ["attributes", "nickname", "user"]
+    __slots__ = ["account", "attributes"]
+    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME_FIELD_NUMBER: _ClassVar[int]
-    USER_FIELD_NUMBER: _ClassVar[int]
+    account: _member_user_pb2.User
     attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
-    nickname: str
-    user: _member_user_pb2.User
-    def __init__(self, nickname: _Optional[str] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, account: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
 
 class ResendVerificationInput(_message.Message):
     __slots__ = []
@@ -102,34 +98,32 @@ class StartRecoveryOutput(_message.Message):
     def __init__(self, hint: _Optional[str] = ...) -> None: ...
 
 class UpdateAccountInput(_message.Message):
-    __slots__ = ["attributes", "current_password", "nickname", "patch", "user"]
+    __slots__ = ["account", "attributes", "current_password", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     ALL: UpdateAccountInput.Patch
     ATTRIBUTES: UpdateAccountInput.Patch
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     CURRENT_PASSWORD_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME: UpdateAccountInput.Patch
-    NICKNAME_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
     USER_BIRTHDAY: UpdateAccountInput.Patch
     USER_CITY: UpdateAccountInput.Patch
     USER_COUNTRY: UpdateAccountInput.Patch
     USER_EMAIL: UpdateAccountInput.Patch
-    USER_FIELD_NUMBER: _ClassVar[int]
     USER_NAME: UpdateAccountInput.Patch
+    USER_NICKNAME: UpdateAccountInput.Patch
     USER_PASSWORD: UpdateAccountInput.Patch
     USER_PICTURE: UpdateAccountInput.Patch
     USER_PREFERENCES: UpdateAccountInput.Patch
     USER_PREFERENCES_LOCALE: UpdateAccountInput.Patch
     USER_PREFERENCES_RUNTIME: UpdateAccountInput.Patch
     USER_PREFERENCES_TIMEZONE: UpdateAccountInput.Patch
+    account: _member_user_pb2.User
     attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
     current_password: str
-    nickname: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateAccountInput.Patch]
-    user: _member_user_pb2.User
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateAccountInput.Patch, str]]] = ..., current_password: _Optional[str] = ..., nickname: _Optional[str] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateAccountInput.Patch, str]]] = ..., current_password: _Optional[str] = ..., account: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
 
 class UpdateAccountOutput(_message.Message):
     __slots__ = ["hint"]

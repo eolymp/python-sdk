@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/community/member_ghost.proto\x12\x10\x65olymp.community\"\x07\n\x05GhostB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/community/member_ghost.proto\x12\x10\x65olymp.community\"\x15\n\x05Ghost\x12\x0c\n\x04name\x18\x01 \x01(\tB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.member_ghost_pb2', globals())
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _GHOST._serialized_start=57
-  _GHOST._serialized_end=64
+  _GHOST._serialized_end=78
 # @@protoc_insertion_point(module_scope)

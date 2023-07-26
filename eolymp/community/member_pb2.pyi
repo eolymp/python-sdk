@@ -10,14 +10,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ["active", "attributes", "ghost", "id", "incomplete", "nickname", "nickname_change_timeout", "secret", "team", "unofficial", "user"]
+    __slots__ = ["active", "attributes", "ghost", "id", "incomplete", "name", "secret", "team", "unofficial", "user"]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     GHOST_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     INCOMPLETE_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME_CHANGE_TIMEOUT_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     TEAM_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
@@ -27,10 +26,9 @@ class Member(_message.Message):
     ghost: _member_ghost_pb2.Ghost
     id: str
     incomplete: bool
-    nickname: str
-    nickname_change_timeout: int
+    name: str
     secret: bool
     team: _member_team_pb2.Team
     unofficial: bool
     user: _member_user_pb2.User
-    def __init__(self, id: _Optional[str] = ..., nickname: _Optional[str] = ..., nickname_change_timeout: _Optional[int] = ..., active: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., active: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...

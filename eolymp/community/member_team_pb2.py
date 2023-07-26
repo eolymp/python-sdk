@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.community import member_user_pb2 as eolymp_dot_community_dot_member__user__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/member_team.proto\x12\x10\x65olymp.community\x1a\"eolymp/community/member_user.proto\">\n\x04Team\x12\x0f\n\x07staffed\x18\x02 \x01(\x08\x12%\n\x05users\x18\x64 \x03(\x0b\x32\x16.eolymp.community.UserB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/member_team.proto\x12\x10\x65olymp.community\x1a\"eolymp/community/member_user.proto\"%\n\x04Team\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07staffed\x18\x02 \x01(\x08\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.member_team_pb2', globals())
@@ -23,5 +23,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _TEAM._serialized_start=92
-  _TEAM._serialized_end=154
+  _TEAM._serialized_end=129
 # @@protoc_insertion_point(module_scope)

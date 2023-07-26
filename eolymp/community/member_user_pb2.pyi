@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ["birthday", "city", "country", "email", "email_verified", "issuer", "name", "password", "password_age", "picture", "preferences", "subject"]
+    __slots__ = ["birthday", "city", "country", "email", "email_verified", "issuer", "name", "nickname", "nickname_change_timeout", "password", "password_age", "picture", "preferences", "subject"]
     class Preferences(_message.Message):
         __slots__ = ["locale", "runtime", "timezone"]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -24,6 +24,8 @@ class User(_message.Message):
     EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
     ISSUER_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    NICKNAME_CHANGE_TIMEOUT_FIELD_NUMBER: _ClassVar[int]
+    NICKNAME_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_AGE_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     PICTURE_FIELD_NUMBER: _ClassVar[int]
@@ -36,9 +38,11 @@ class User(_message.Message):
     email_verified: bool
     issuer: str
     name: str
+    nickname: str
+    nickname_change_timeout: int
     password: str
     password_age: int
     picture: str
     preferences: User.Preferences
     subject: str
-    def __init__(self, issuer: _Optional[str] = ..., subject: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., birthday: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., preferences: _Optional[_Union[User.Preferences, _Mapping]] = ...) -> None: ...
+    def __init__(self, issuer: _Optional[str] = ..., subject: _Optional[str] = ..., nickname: _Optional[str] = ..., nickname_change_timeout: _Optional[int] = ..., email: _Optional[str] = ..., email_verified: bool = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., birthday: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., preferences: _Optional[_Union[User.Preferences, _Mapping]] = ...) -> None: ...

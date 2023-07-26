@@ -145,16 +145,18 @@ class UpdateMemberInput(_message.Message):
     ACTIVE: UpdateMemberInput.Patch
     ALL: UpdateMemberInput.Patch
     ATTRIBUTES: UpdateMemberInput.Patch
+    GHOST_NAME: UpdateMemberInput.Patch
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME: UpdateMemberInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    TEAM_NAME: UpdateMemberInput.Patch
     UNOFFICIAL: UpdateMemberInput.Patch
     USER_BIRTHDAY: UpdateMemberInput.Patch
     USER_CITY: UpdateMemberInput.Patch
     USER_COUNTRY: UpdateMemberInput.Patch
     USER_EMAIL: UpdateMemberInput.Patch
     USER_NAME: UpdateMemberInput.Patch
+    USER_NICKNAME: UpdateMemberInput.Patch
     USER_PASSWORD: UpdateMemberInput.Patch
     USER_PICTURE: UpdateMemberInput.Patch
     USER_PREFERENCES: UpdateMemberInput.Patch
