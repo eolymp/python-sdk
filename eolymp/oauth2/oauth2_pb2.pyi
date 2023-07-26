@@ -147,20 +147,34 @@ class TokenInput(_message.Message):
     def __init__(self, grant_type: _Optional[_Union[TokenInput.GrantType, str]] = ..., username: _Optional[str] = ..., password: _Optional[str] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., code: _Optional[str] = ..., code_verifier: _Optional[str] = ..., scope: _Optional[str] = ..., refresh_token: _Optional[str] = ..., redirect_uri: _Optional[str] = ...) -> None: ...
 
 class TokenOutput(_message.Message):
-    __slots__ = ["access_token", "expires_in", "id_token", "refresh_token", "scope", "token_type"]
+    __slots__ = ["access_token", "email", "email_verified", "expires_in", "id_token", "issuer", "name", "nickname", "picture", "refresh_token", "scope", "subject", "token_type"]
     ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
     EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
     ID_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    ISSUER_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    NICKNAME_FIELD_NUMBER: _ClassVar[int]
+    PICTURE_FIELD_NUMBER: _ClassVar[int]
     REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
     SCOPE_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_FIELD_NUMBER: _ClassVar[int]
     TOKEN_TYPE_FIELD_NUMBER: _ClassVar[int]
     access_token: str
+    email: str
+    email_verified: bool
     expires_in: int
     id_token: str
+    issuer: str
+    name: str
+    nickname: str
+    picture: str
     refresh_token: str
     scope: str
+    subject: str
     token_type: str
-    def __init__(self, access_token: _Optional[str] = ..., token_type: _Optional[str] = ..., expires_in: _Optional[int] = ..., refresh_token: _Optional[str] = ..., scope: _Optional[str] = ..., id_token: _Optional[str] = ...) -> None: ...
+    def __init__(self, access_token: _Optional[str] = ..., token_type: _Optional[str] = ..., expires_in: _Optional[int] = ..., refresh_token: _Optional[str] = ..., scope: _Optional[str] = ..., id_token: _Optional[str] = ..., subject: _Optional[str] = ..., issuer: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ...) -> None: ...
 
 class UserInfoInput(_message.Message):
     __slots__ = []
