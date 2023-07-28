@@ -15,7 +15,7 @@ from eolymp.community import attribute_pb2 as eolymp_dot_community_dot_attribute
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/member_user.proto\x12\x10\x65olymp.community\x1a eolymp/community/attribute.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x03\n\x04User\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x10\n\x08nickname\x18\n \x01(\t\x12\x1f\n\x17nickname_change_timeout\x18\x0b \x01(\r\x12\r\n\x05\x65mail\x18\x14 \x01(\t\x12\x16\n\x0e\x65mail_verified\x18\x15 \x01(\x08\x12\x10\n\x08password\x18\x1e \x01(\t\x12\x14\n\x0cpassword_age\x18\x1f \x01(\r\x12\x0c\n\x04name\x18( \x01(\t\x12\x0f\n\x07picture\x18\x32 \x01(\t\x12,\n\x08\x62irthday\x18< \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07\x63ountry\x18\x46 \x01(\t\x12\x0c\n\x04\x63ity\x18I \x01(\t\x12\x38\n\x0bpreferences\x18\xa0\x06 \x01(\x0b\x32\".eolymp.community.User.Preferences\x1a@\n\x0bPreferences\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x10\n\x08timezone\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\tB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/member_user.proto\x12\x10\x65olymp.community\x1a eolymp/community/attribute.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa2\x03\n\x04User\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x10\n\x08nickname\x18\n \x01(\t\x12\x1f\n\x17nickname_change_timeout\x18\x0b \x01(\r\x12\r\n\x05\x65mail\x18\x14 \x01(\t\x12\x16\n\x0e\x65mail_verified\x18\x15 \x01(\x08\x12\x10\n\x08password\x18\x1e \x01(\t\x12\x14\n\x0cpassword_age\x18\x1f \x01(\r\x12\x0c\n\x04name\x18( \x01(\t\x12\x0f\n\x07picture\x18\x32 \x01(\t\x12,\n\x08\x62irthday\x18< \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07\x63ountry\x18\x46 \x01(\t\x12\x0c\n\x04\x63ity\x18I \x01(\t\x12\x0f\n\x07team_id\x18\x64 \x01(\t\x12\x38\n\x0bpreferences\x18\xa0\x06 \x01(\x0b\x32\".eolymp.community.User.Preferences\x1a@\n\x0bPreferences\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x10\n\x08timezone\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\tB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.member_user_pb2', globals())
@@ -24,7 +24,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _USER._serialized_start=124
-  _USER._serialized_end=525
-  _USER_PREFERENCES._serialized_start=461
-  _USER_PREFERENCES._serialized_end=525
+  _USER._serialized_end=542
+  _USER_PREFERENCES._serialized_start=478
+  _USER_PREFERENCES._serialized_end=542
 # @@protoc_insertion_point(module_scope)
