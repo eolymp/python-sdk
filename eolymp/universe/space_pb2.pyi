@@ -1,12 +1,13 @@
+from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
-    __slots__ = ["id", "image", "key", "max_team_size", "membership", "min_team_size", "name", "plan", "type", "url", "visibility"]
+    __slots__ = ["id", "image", "key", "max_team_size", "membership", "min_team_size", "name", "permissions", "plan", "type", "url", "visibility"]
     class Membership(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -45,6 +46,7 @@ class Space(_message.Message):
     MIN_TEAM_SIZE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     OTHER: Space.Type
+    PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
     PLAN_FIELD_NUMBER: _ClassVar[int]
     PRIVATE: Space.Visibility
     PUBLIC: Space.Visibility
@@ -63,8 +65,9 @@ class Space(_message.Message):
     membership: Space.Membership
     min_team_size: int
     name: str
+    permissions: _containers.RepeatedScalarFieldContainer[str]
     plan: str
     type: Space.Type
     url: str
     visibility: Space.Visibility
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., type: _Optional[_Union[Space.Type, str]] = ..., plan: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., membership: _Optional[_Union[Space.Membership, str]] = ..., min_team_size: _Optional[int] = ..., max_team_size: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., type: _Optional[_Union[Space.Type, str]] = ..., plan: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., membership: _Optional[_Union[Space.Membership, str]] = ..., min_team_size: _Optional[int] = ..., max_team_size: _Optional[int] = ..., permissions: _Optional[_Iterable[str]] = ...) -> None: ...
