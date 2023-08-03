@@ -252,17 +252,6 @@ class CognitoClient:
             **kwargs,
         )
 
-    def ListEntitlements(self, request, **kwargs):
-        path = "/__cognito/entitlements"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListEntitlementsOutput"),
-            **kwargs,
-        )
-
     def SelfDestruct(self, request, **kwargs):
         path = "/self"
 

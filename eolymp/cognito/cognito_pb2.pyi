@@ -2,7 +2,6 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.cognito import access_key_pb2 as _access_key_pb2
-from eolymp.cognito import entitlement_pb2 as _entitlement_pb2
 from eolymp.cognito import quota_pb2 as _quota_pb2
 from eolymp.cognito import user_pb2 as _user_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -255,16 +254,6 @@ class ListAccessKeysOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_access_key_pb2.AccessKey]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_access_key_pb2.AccessKey, _Mapping]]] = ...) -> None: ...
-
-class ListEntitlementsInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class ListEntitlementsOutput(_message.Message):
-    __slots__ = ["entitlements"]
-    ENTITLEMENTS_FIELD_NUMBER: _ClassVar[int]
-    entitlements: _containers.RepeatedScalarFieldContainer[_entitlement_pb2.Entitlement]
-    def __init__(self, entitlements: _Optional[_Iterable[_Union[_entitlement_pb2.Entitlement, str]]] = ...) -> None: ...
 
 class ListRolesInput(_message.Message):
     __slots__ = ["user_id"]

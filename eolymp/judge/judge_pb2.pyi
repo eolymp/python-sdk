@@ -4,7 +4,6 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.judge import activity_pb2 as _activity_pb2
 from eolymp.judge import announcement_pb2 as _announcement_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
-from eolymp.judge import entitlement_pb2 as _entitlement_pb2
 from eolymp.judge import participant_pb2 as _participant_pb2
 from eolymp.judge import problem_pb2 as _problem_pb2
 from eolymp.judge import reply_pb2 as _reply_pb2
@@ -624,24 +623,6 @@ class ListContestsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_contest_pb2.Contest]
     total: int
     def __init__(self, items: _Optional[_Iterable[_Union[_contest_pb2.Contest, _Mapping]]] = ..., total: _Optional[int] = ...) -> None: ...
-
-class ListEntitlementsInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id", "submission_id", "ticket_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
-    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    participant_id: str
-    submission_id: str
-    ticket_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., ticket_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
-
-class ListEntitlementsOutput(_message.Message):
-    __slots__ = ["entitlements"]
-    ENTITLEMENTS_FIELD_NUMBER: _ClassVar[int]
-    entitlements: _containers.RepeatedScalarFieldContainer[_entitlement_pb2.Entitlement]
-    def __init__(self, entitlements: _Optional[_Iterable[_Union[_entitlement_pb2.Entitlement, str]]] = ...) -> None: ...
 
 class ListExamplesInput(_message.Message):
     __slots__ = ["contest_id", "problem_id"]

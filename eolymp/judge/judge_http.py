@@ -1072,17 +1072,6 @@ class JudgeClient:
             **kwargs,
         )
 
-    def ListEntitlements(self, request, **kwargs):
-        path = "/__judge/entitlements"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListEntitlementsOutput"),
-            **kwargs,
-        )
-
     def ListActivities(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/activities"
 
