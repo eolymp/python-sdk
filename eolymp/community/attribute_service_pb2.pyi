@@ -2,8 +2,6 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import attribute_pb2 as _attribute_pb2
-from eolymp.community import configuration_idp_pb2 as _configuration_idp_pb2
-from eolymp.community import member_pb2 as _member_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor

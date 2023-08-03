@@ -1,8 +1,6 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.community import attribute_pb2 as _attribute_pb2
-from eolymp.community import configuration_idp_pb2 as _configuration_idp_pb2
 from eolymp.community import member_pb2 as _member_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -67,10 +65,10 @@ class ListMembersInput(_message.Message):
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["active", "id", "nickname", "registered", "team_id", "type", "unofficial", "user_email", "user_issuer", "user_name", "user_subject"]
+        __slots__ = ["active", "id", "name", "registered", "team_id", "type", "unofficial", "user_email", "user_issuer", "user_name", "user_subject"]
         ACTIVE_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
-        NICKNAME_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
         REGISTERED_FIELD_NUMBER: _ClassVar[int]
         TEAM_ID_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -81,7 +79,7 @@ class ListMembersInput(_message.Message):
         USER_SUBJECT_FIELD_NUMBER: _ClassVar[int]
         active: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        nickname: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         registered: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         team_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
@@ -90,11 +88,11 @@ class ListMembersInput(_message.Message):
         user_issuer: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_subject: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., nickname: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., active: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., registered: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., active: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., registered: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     CREATED_AT: ListMembersInput.Sortable
     DEFAULT: ListMembersInput.Sortable
     FILTERS_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME: ListMembersInput.Sortable
+    NAME: ListMembersInput.Sortable
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
