@@ -11,10 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
+from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/content/fragment.proto\x12\x0e\x65olymp.content\x1a\x15\x65olymp/ecm/node.proto\"v\n\x08\x46ragment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\n \x01(\t\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\r\n\x05title\x18\x0c \x01(\t\x12!\n\x07\x63ontent\x18\x33 \x01(\x0b\x32\x10.eolymp.ecm.Node\x12\x0e\n\x06labels\x18\x64 \x03(\tB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/content/fragment.proto\x12\x0e\x65olymp.content\x1a\x18\x65olymp/ecm/content.proto\"y\n\x08\x46ragment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\n \x01(\t\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\r\n\x05title\x18\x0c \x01(\t\x12$\n\x07\x63ontent\x18\x33 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06labels\x18\x64 \x03(\tB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.content.fragment_pb2', globals())
@@ -22,6 +22,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
-  _FRAGMENT._serialized_start=72
-  _FRAGMENT._serialized_end=190
+  _FRAGMENT._serialized_start=75
+  _FRAGMENT._serialized_end=196
 # @@protoc_insertion_point(module_scope)

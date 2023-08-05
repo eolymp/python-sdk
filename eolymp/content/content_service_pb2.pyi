@@ -33,10 +33,12 @@ class DeleteFragmentOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeFragmentInput(_message.Message):
-    __slots__ = ["fragment_id"]
+    __slots__ = ["fragment_id", "render"]
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     fragment_id: str
-    def __init__(self, fragment_id: _Optional[str] = ...) -> None: ...
+    render: bool
+    def __init__(self, fragment_id: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class DescribeFragmentOutput(_message.Message):
     __slots__ = ["fragment"]
@@ -45,12 +47,14 @@ class DescribeFragmentOutput(_message.Message):
     def __init__(self, fragment: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
 
 class DescribePathInput(_message.Message):
-    __slots__ = ["locale", "path"]
+    __slots__ = ["locale", "path", "render"]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     locale: str
     path: str
-    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+    render: bool
+    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class DescribePathOutput(_message.Message):
     __slots__ = ["fragment"]
@@ -59,7 +63,7 @@ class DescribePathOutput(_message.Message):
     def __init__(self, fragment: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
 
 class ListFragmentsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["filters", "offset", "render", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "label", "locale", "path", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -75,11 +79,13 @@ class ListFragmentsInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     filters: ListFragmentsInput.Filter
     offset: int
+    render: bool
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListFragmentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -90,12 +96,14 @@ class ListFragmentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_fragment_pb2.Fragment, _Mapping]]] = ...) -> None: ...
 
 class ListParentsInput(_message.Message):
-    __slots__ = ["locale", "path"]
+    __slots__ = ["locale", "path", "render"]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     locale: str
     path: str
-    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+    render: bool
+    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class ListParentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -106,7 +114,7 @@ class ListParentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_fragment_pb2.Fragment, _Mapping]]] = ...) -> None: ...
 
 class ListPathsInput(_message.Message):
-    __slots__ = ["filters", "locale", "offset", "size"]
+    __slots__ = ["filters", "locale", "offset", "render", "size"]
     class Filter(_message.Message):
         __slots__ = ["label", "path", "query"]
         LABEL_FIELD_NUMBER: _ClassVar[int]
@@ -119,12 +127,14 @@ class ListPathsInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     filters: ListPathsInput.Filter
     locale: str
     offset: int
+    render: bool
     size: int
-    def __init__(self, locale: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPathsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ..., render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPathsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListPathsOutput(_message.Message):
     __slots__ = ["items", "total"]
