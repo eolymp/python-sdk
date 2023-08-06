@@ -127,6 +127,7 @@ class UpdateProblemInput(_message.Message):
         __slots__ = []
     ALL: UpdateProblemInput.Patch
     DIFFICULTY: UpdateProblemInput.Patch
+    ORIGIN: UpdateProblemInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     PRIVATE: UpdateProblemInput.Patch
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
