@@ -36,6 +36,17 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def SyncProblem(self, request, **kwargs):
+        path = "/sync"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.SyncProblemOutput"),
+            **kwargs,
+        )
+
     def DescribeProblem(self, request, **kwargs):
         path = "/"
 

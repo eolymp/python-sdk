@@ -99,6 +99,16 @@ class ListProblemsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem, _Mapping]]] = ...) -> None: ...
 
+class SyncProblemInput(_message.Message):
+    __slots__ = ["problem_id"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+
+class SyncProblemOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdatePrivacyInput(_message.Message):
     __slots__ = ["private", "problem_id"]
     PRIVATE_FIELD_NUMBER: _ClassVar[int]

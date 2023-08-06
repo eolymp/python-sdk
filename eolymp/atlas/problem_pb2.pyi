@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ["difficulty", "id", "links", "number", "private", "topics", "url", "visible"]
+    __slots__ = ["difficulty", "id", "links", "number", "origin", "private", "topics", "url", "visible"]
     class LinksEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -19,6 +19,7 @@ class Problem(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     LINKS_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
+    ORIGIN_FIELD_NUMBER: _ClassVar[int]
     PRIVATE_FIELD_NUMBER: _ClassVar[int]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
@@ -27,8 +28,9 @@ class Problem(_message.Message):
     id: str
     links: _containers.ScalarMap[str, str]
     number: int
+    origin: str
     private: bool
     topics: _containers.RepeatedScalarFieldContainer[str]
     url: str
     visible: bool
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., topics: _Optional[_Iterable[str]] = ..., difficulty: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., difficulty: _Optional[int] = ...) -> None: ...

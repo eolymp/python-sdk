@@ -78,6 +78,20 @@ class AtlasClient:
             **kwargs,
         )
 
+    def SyncProblem(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/sync"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.SyncProblemOutput"),
+            **kwargs,
+        )
+
     def SetBookmark(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/bookmark"
 
