@@ -26,9 +26,9 @@ class Snapshot(_message.Message):
     attachments: _containers.RepeatedCompositeFieldContainer[_attachment_pb2.Attachment]
     checker: _verifier_pb2.Verifier
     interactor: _interactor_pb2.Interactor
-    problem: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem]
+    problem: _problem_pb2.Problem
     statements: _containers.RepeatedCompositeFieldContainer[_statement_pb2.Statement]
     templates: _containers.RepeatedCompositeFieldContainer[_code_template_pb2.Template]
     tests: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
     testsets: _containers.RepeatedCompositeFieldContainer[_testing_testset_pb2.Testset]
-    def __init__(self, problem: _Optional[_Iterable[_Union[_problem_pb2.Problem, _Mapping]]] = ..., checker: _Optional[_Union[_verifier_pb2.Verifier, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., statements: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ..., templates: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ..., attachments: _Optional[_Iterable[_Union[_attachment_pb2.Attachment, _Mapping]]] = ..., testsets: _Optional[_Iterable[_Union[_testing_testset_pb2.Testset, _Mapping]]] = ..., tests: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
+    def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., checker: _Optional[_Union[_verifier_pb2.Verifier, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., statements: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ..., templates: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ..., attachments: _Optional[_Iterable[_Union[_attachment_pb2.Attachment, _Mapping]]] = ..., testsets: _Optional[_Iterable[_Union[_testing_testset_pb2.Testset, _Mapping]]] = ..., tests: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
