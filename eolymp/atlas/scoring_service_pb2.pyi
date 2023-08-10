@@ -29,12 +29,12 @@ class DescribeProblemGradingOutput(_message.Message):
     def __init__(self, ranges: _Optional[_Iterable[_Union[DescribeProblemGradingOutput.Range, _Mapping]]] = ...) -> None: ...
 
 class DescribeScoreInput(_message.Message):
-    __slots__ = ["problem_id", "user_id"]
+    __slots__ = ["member_id", "problem_id"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
     problem_id: str
-    user_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., user_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreOutput(_message.Message):
     __slots__ = ["score"]
