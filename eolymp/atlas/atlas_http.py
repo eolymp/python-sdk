@@ -728,11 +728,11 @@ class AtlasClient:
         )
 
     def DescribeScore(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scores/"+urllib.parse.quote(request.user_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scores/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.problem_id = ""
-        request.user_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="GET",
