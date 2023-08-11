@@ -101,6 +101,20 @@ class ListEntriesOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_entry_pb2.Entry, _Mapping]]] = ...) -> None: ...
 
+class MoveEntryInput(_message.Message):
+    __slots__ = ["entry_id", "index", "parent_id"]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    INDEX_FIELD_NUMBER: _ClassVar[int]
+    PARENT_ID_FIELD_NUMBER: _ClassVar[int]
+    entry_id: str
+    index: int
+    parent_id: str
+    def __init__(self, entry_id: _Optional[str] = ..., parent_id: _Optional[str] = ..., index: _Optional[int] = ...) -> None: ...
+
+class MoveEntryOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class RenameEntryInput(_message.Message):
     __slots__ = ["entry_id", "title"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]

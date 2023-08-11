@@ -78,6 +78,20 @@ class EntryServiceClient:
             **kwargs,
         )
 
+    def MoveEntry(self, request, **kwargs):
+        path = "/entries/"+urllib.parse.quote(request.entry_id)+"/position"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.MoveEntryOutput"),
+            **kwargs,
+        )
+
     def DeleteEntry(self, request, **kwargs):
         path = "/entries/"+urllib.parse.quote(request.entry_id)
 

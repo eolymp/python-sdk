@@ -8,11 +8,12 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Entry(_message.Message):
-    __slots__ = ["depth", "document", "duration_estimate", "id", "parent_id", "section", "title", "video"]
+    __slots__ = ["depth", "document", "duration_estimate", "id", "index", "parent_id", "section", "title", "video"]
     DEPTH_FIELD_NUMBER: _ClassVar[int]
     DOCUMENT_FIELD_NUMBER: _ClassVar[int]
     DURATION_ESTIMATE_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
+    INDEX_FIELD_NUMBER: _ClassVar[int]
     PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     SECTION_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
@@ -21,8 +22,9 @@ class Entry(_message.Message):
     document: _content_pb2.Content
     duration_estimate: int
     id: str
+    index: int
     parent_id: str
     section: _entry_section_pb2.Section
     title: str
     video: _entry_video_pb2.Video
-    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., parent_id: _Optional[str] = ..., depth: _Optional[int] = ..., duration_estimate: _Optional[int] = ..., section: _Optional[_Union[_entry_section_pb2.Section, _Mapping]] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., video: _Optional[_Union[_entry_video_pb2.Video, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., parent_id: _Optional[str] = ..., index: _Optional[int] = ..., depth: _Optional[int] = ..., duration_estimate: _Optional[int] = ..., section: _Optional[_Union[_entry_section_pb2.Section, _Mapping]] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., video: _Optional[_Union[_entry_video_pb2.Video, _Mapping]] = ...) -> None: ...
