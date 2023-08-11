@@ -20,7 +20,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/course/entry_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/course/entry.proto\x1a\x18\x65olymp/ecm/content.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"`\n\x12\x43reateSectionInput\x12\x11\n\tparent_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\n \x01(\t\x12(\n\x0b\x64\x65scription\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"\'\n\x13\x43reateSectionOutput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\"r\n\x12UpdateSectionInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\x12\x11\n\tparent_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\n \x01(\t\x12(\n\x0b\x64\x65scription\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x15\n\x13UpdateSectionOutput\"^\n\x13\x43reateDocumentInput\x12\x11\n\tparent_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\n \x01(\t\x12%\n\x08\x64ocument\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"(\n\x14\x43reateDocumentOutput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\"p\n\x13UpdateDocumentInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\x12\x11\n\tparent_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\n \x01(\t\x12%\n\x08\x64ocument\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x16\n\x14UpdateDocumentOutput\"3\n\x10RenameEntryInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\"\x13\n\x11RenameEntryOutput\"D\n\x0eMoveEntryInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\x12\x11\n\tparent_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\r\"\x11\n\x0fMoveEntryOutput\"$\n\x10\x44\x65leteEntryInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\"\x13\n\x11\x44\x65leteEntryOutput\"&\n\x12\x44\x65scribeEntryInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\":\n\x13\x44\x65scribeEntryOutput\x12#\n\x05\x65ntry\x18\x01 \x01(\x0b\x32\x14.eolymp.course.Entry\"\xde\x02\n\x10ListEntriesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.course.ListEntriesInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.course.ListEntriesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1av\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tparent_id\x18\x0b \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"G\n\x11ListEntriesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.course.Entry2\x88\x0b\n\x0c\x45ntryService\x12\x93\x01\n\rCreateSection\x12!.eolymp.course.CreateSectionInput\x1a\".eolymp.course.CreateSectionOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0b\"\t/sections\x12\x9e\x01\n\rUpdateSection\x12!.eolymp.course.UpdateSectionInput\x1a\".eolymp.course.UpdateSectionOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16\x1a\x14/sections/{entry_id}\x12\x97\x01\n\x0e\x43reateDocument\x12\".eolymp.course.CreateDocumentInput\x1a#.eolymp.course.CreateDocumentOutput\"<\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0c\"\n/documents\x12\xa2\x01\n\x0eUpdateDocument\x12\".eolymp.course.UpdateDocumentInput\x1a#.eolymp.course.UpdateDocumentOutput\"G\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x17\x1a\x15/documents/{entry_id}\x12\x9d\x01\n\x0bRenameEntry\x12\x1f.eolymp.course.RenameEntryInput\x1a .eolymp.course.RenameEntryOutput\"K\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x1b\x1a\x19/entries/{entry_id}/title\x12\x9a\x01\n\tMoveEntry\x12\x1d.eolymp.course.MoveEntryInput\x1a\x1e.eolymp.course.MoveEntryOutput\"N\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x1e\x1a\x1c/entries/{entry_id}/position\x12\x97\x01\n\x0b\x44\x65leteEntry\x12\x1f.eolymp.course.DeleteEntryInput\x1a .eolymp.course.DeleteEntryOutput\"E\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x15*\x13/entries/{entry_id}\x12\x9c\x01\n\rDescribeEntry\x12!.eolymp.course.DescribeEntryInput\x1a\".eolymp.course.DescribeEntryOutput\"D\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x15\x12\x13/entries/{entry_id}\x12\x8b\x01\n\x0bListEntries\x12\x1f.eolymp.course.ListEntriesInput\x1a .eolymp.course.ListEntriesOutput\"9\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\x12\x08/entriesB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/course/entry_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/course/entry.proto\x1a\x18\x65olymp/ecm/content.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"~\n\x12\x43reateSectionInput\x12\x11\n\tparent_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05title\x18\n \x01(\t\x12\r\n\x05image\x18\x0c \x01(\t\x12(\n\x0b\x64\x65scription\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"\'\n\x13\x43reateSectionOutput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\"n\n\x12UpdateSectionInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\n \x01(\t\x12\r\n\x05image\x18\x0c \x01(\t\x12(\n\x0b\x64\x65scription\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x15\n\x13UpdateSectionOutput\"m\n\x13\x43reateDocumentInput\x12\x11\n\tparent_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05title\x18\n \x01(\t\x12%\n\x08\x64ocument\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"(\n\x14\x43reateDocumentOutput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\"]\n\x13UpdateDocumentInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\n \x01(\t\x12%\n\x08\x64ocument\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x16\n\x14UpdateDocumentOutput\"3\n\x10RenameEntryInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\"\x13\n\x11RenameEntryOutput\"D\n\x0eMoveEntryInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\x12\x11\n\tparent_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\r\"\x11\n\x0fMoveEntryOutput\"$\n\x10\x44\x65leteEntryInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\"\x13\n\x11\x44\x65leteEntryOutput\"&\n\x12\x44\x65scribeEntryInput\x12\x10\n\x08\x65ntry_id\x18\x01 \x01(\t\":\n\x13\x44\x65scribeEntryOutput\x12#\n\x05\x65ntry\x18\x01 \x01(\x0b\x32\x14.eolymp.course.Entry\"\xde\x02\n\x10ListEntriesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.course.ListEntriesInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.course.ListEntriesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1av\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tparent_id\x18\x0b \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"G\n\x11ListEntriesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.course.Entry2\x88\x0b\n\x0c\x45ntryService\x12\x93\x01\n\rCreateSection\x12!.eolymp.course.CreateSectionInput\x1a\".eolymp.course.CreateSectionOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0b\"\t/sections\x12\x9e\x01\n\rUpdateSection\x12!.eolymp.course.UpdateSectionInput\x1a\".eolymp.course.UpdateSectionOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16\x1a\x14/sections/{entry_id}\x12\x97\x01\n\x0e\x43reateDocument\x12\".eolymp.course.CreateDocumentInput\x1a#.eolymp.course.CreateDocumentOutput\"<\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0c\"\n/documents\x12\xa2\x01\n\x0eUpdateDocument\x12\".eolymp.course.UpdateDocumentInput\x1a#.eolymp.course.UpdateDocumentOutput\"G\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x17\x1a\x15/documents/{entry_id}\x12\x9d\x01\n\x0bRenameEntry\x12\x1f.eolymp.course.RenameEntryInput\x1a .eolymp.course.RenameEntryOutput\"K\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x1b\x1a\x19/entries/{entry_id}/title\x12\x9a\x01\n\tMoveEntry\x12\x1d.eolymp.course.MoveEntryInput\x1a\x1e.eolymp.course.MoveEntryOutput\"N\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x1e\x1a\x1c/entries/{entry_id}/position\x12\x97\x01\n\x0b\x44\x65leteEntry\x12\x1f.eolymp.course.DeleteEntryInput\x1a .eolymp.course.DeleteEntryOutput\"E\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x15*\x13/entries/{entry_id}\x12\x9c\x01\n\rDescribeEntry\x12!.eolymp.course.DescribeEntryInput\x1a\".eolymp.course.DescribeEntryOutput\"D\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x15\x12\x13/entries/{entry_id}\x12\x8b\x01\n\x0bListEntries\x12\x1f.eolymp.course.ListEntriesInput\x1a .eolymp.course.ListEntriesOutput\"9\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\x12\x08/entriesB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.entry_service_pb2', globals())
@@ -47,45 +47,45 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ENTRYSERVICE.methods_by_name['ListEntries']._options = None
   _ENTRYSERVICE.methods_by_name['ListEntries']._serialized_options = b'\202\343\n\026\212\343\n\022course:course:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\n\022\010/entries'
   _CREATESECTIONINPUT._serialized_start=273
-  _CREATESECTIONINPUT._serialized_end=369
-  _CREATESECTIONOUTPUT._serialized_start=371
-  _CREATESECTIONOUTPUT._serialized_end=410
-  _UPDATESECTIONINPUT._serialized_start=412
-  _UPDATESECTIONINPUT._serialized_end=526
-  _UPDATESECTIONOUTPUT._serialized_start=528
-  _UPDATESECTIONOUTPUT._serialized_end=549
-  _CREATEDOCUMENTINPUT._serialized_start=551
-  _CREATEDOCUMENTINPUT._serialized_end=645
-  _CREATEDOCUMENTOUTPUT._serialized_start=647
-  _CREATEDOCUMENTOUTPUT._serialized_end=687
-  _UPDATEDOCUMENTINPUT._serialized_start=689
-  _UPDATEDOCUMENTINPUT._serialized_end=801
-  _UPDATEDOCUMENTOUTPUT._serialized_start=803
-  _UPDATEDOCUMENTOUTPUT._serialized_end=825
-  _RENAMEENTRYINPUT._serialized_start=827
-  _RENAMEENTRYINPUT._serialized_end=878
-  _RENAMEENTRYOUTPUT._serialized_start=880
-  _RENAMEENTRYOUTPUT._serialized_end=899
-  _MOVEENTRYINPUT._serialized_start=901
-  _MOVEENTRYINPUT._serialized_end=969
-  _MOVEENTRYOUTPUT._serialized_start=971
-  _MOVEENTRYOUTPUT._serialized_end=988
-  _DELETEENTRYINPUT._serialized_start=990
-  _DELETEENTRYINPUT._serialized_end=1026
-  _DELETEENTRYOUTPUT._serialized_start=1028
-  _DELETEENTRYOUTPUT._serialized_end=1047
-  _DESCRIBEENTRYINPUT._serialized_start=1049
-  _DESCRIBEENTRYINPUT._serialized_end=1087
-  _DESCRIBEENTRYOUTPUT._serialized_start=1089
-  _DESCRIBEENTRYOUTPUT._serialized_end=1147
-  _LISTENTRIESINPUT._serialized_start=1150
-  _LISTENTRIESINPUT._serialized_end=1500
-  _LISTENTRIESINPUT_FILTER._serialized_start=1357
-  _LISTENTRIESINPUT_FILTER._serialized_end=1475
-  _LISTENTRIESINPUT_SORTABLE._serialized_start=1477
-  _LISTENTRIESINPUT_SORTABLE._serialized_end=1500
-  _LISTENTRIESOUTPUT._serialized_start=1502
-  _LISTENTRIESOUTPUT._serialized_end=1573
-  _ENTRYSERVICE._serialized_start=1576
-  _ENTRYSERVICE._serialized_end=2992
+  _CREATESECTIONINPUT._serialized_end=399
+  _CREATESECTIONOUTPUT._serialized_start=401
+  _CREATESECTIONOUTPUT._serialized_end=440
+  _UPDATESECTIONINPUT._serialized_start=442
+  _UPDATESECTIONINPUT._serialized_end=552
+  _UPDATESECTIONOUTPUT._serialized_start=554
+  _UPDATESECTIONOUTPUT._serialized_end=575
+  _CREATEDOCUMENTINPUT._serialized_start=577
+  _CREATEDOCUMENTINPUT._serialized_end=686
+  _CREATEDOCUMENTOUTPUT._serialized_start=688
+  _CREATEDOCUMENTOUTPUT._serialized_end=728
+  _UPDATEDOCUMENTINPUT._serialized_start=730
+  _UPDATEDOCUMENTINPUT._serialized_end=823
+  _UPDATEDOCUMENTOUTPUT._serialized_start=825
+  _UPDATEDOCUMENTOUTPUT._serialized_end=847
+  _RENAMEENTRYINPUT._serialized_start=849
+  _RENAMEENTRYINPUT._serialized_end=900
+  _RENAMEENTRYOUTPUT._serialized_start=902
+  _RENAMEENTRYOUTPUT._serialized_end=921
+  _MOVEENTRYINPUT._serialized_start=923
+  _MOVEENTRYINPUT._serialized_end=991
+  _MOVEENTRYOUTPUT._serialized_start=993
+  _MOVEENTRYOUTPUT._serialized_end=1010
+  _DELETEENTRYINPUT._serialized_start=1012
+  _DELETEENTRYINPUT._serialized_end=1048
+  _DELETEENTRYOUTPUT._serialized_start=1050
+  _DELETEENTRYOUTPUT._serialized_end=1069
+  _DESCRIBEENTRYINPUT._serialized_start=1071
+  _DESCRIBEENTRYINPUT._serialized_end=1109
+  _DESCRIBEENTRYOUTPUT._serialized_start=1111
+  _DESCRIBEENTRYOUTPUT._serialized_end=1169
+  _LISTENTRIESINPUT._serialized_start=1172
+  _LISTENTRIESINPUT._serialized_end=1522
+  _LISTENTRIESINPUT_FILTER._serialized_start=1379
+  _LISTENTRIESINPUT_FILTER._serialized_end=1497
+  _LISTENTRIESINPUT_SORTABLE._serialized_start=1499
+  _LISTENTRIESINPUT_SORTABLE._serialized_end=1522
+  _LISTENTRIESOUTPUT._serialized_start=1524
+  _LISTENTRIESOUTPUT._serialized_end=1595
+  _ENTRYSERVICE._serialized_start=1598
+  _ENTRYSERVICE._serialized_end=3014
 # @@protoc_insertion_point(module_scope)

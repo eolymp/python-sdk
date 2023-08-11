@@ -14,14 +14,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateDocumentInput(_message.Message):
-    __slots__ = ["document", "parent_id", "title"]
+    __slots__ = ["document", "index", "parent_id", "title"]
     DOCUMENT_FIELD_NUMBER: _ClassVar[int]
+    INDEX_FIELD_NUMBER: _ClassVar[int]
     PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     document: _content_pb2.Content
+    index: int
     parent_id: str
     title: str
-    def __init__(self, parent_id: _Optional[str] = ..., title: _Optional[str] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, parent_id: _Optional[str] = ..., index: _Optional[int] = ..., title: _Optional[str] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class CreateDocumentOutput(_message.Message):
     __slots__ = ["entry_id"]
@@ -30,14 +32,18 @@ class CreateDocumentOutput(_message.Message):
     def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
 
 class CreateSectionInput(_message.Message):
-    __slots__ = ["description", "parent_id", "title"]
+    __slots__ = ["description", "image", "index", "parent_id", "title"]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
+    INDEX_FIELD_NUMBER: _ClassVar[int]
     PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     description: _content_pb2.Content
+    image: str
+    index: int
     parent_id: str
     title: str
-    def __init__(self, parent_id: _Optional[str] = ..., title: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, parent_id: _Optional[str] = ..., index: _Optional[int] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class CreateSectionOutput(_message.Message):
     __slots__ = ["entry_id"]
@@ -128,32 +134,30 @@ class RenameEntryOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateDocumentInput(_message.Message):
-    __slots__ = ["document", "entry_id", "parent_id", "title"]
+    __slots__ = ["document", "entry_id", "title"]
     DOCUMENT_FIELD_NUMBER: _ClassVar[int]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     document: _content_pb2.Content
     entry_id: str
-    parent_id: str
     title: str
-    def __init__(self, entry_id: _Optional[str] = ..., parent_id: _Optional[str] = ..., title: _Optional[str] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, entry_id: _Optional[str] = ..., title: _Optional[str] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class UpdateDocumentOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class UpdateSectionInput(_message.Message):
-    __slots__ = ["description", "entry_id", "parent_id", "title"]
+    __slots__ = ["description", "entry_id", "image", "title"]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    PARENT_ID_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     description: _content_pb2.Content
     entry_id: str
-    parent_id: str
+    image: str
     title: str
-    def __init__(self, entry_id: _Optional[str] = ..., parent_id: _Optional[str] = ..., title: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, entry_id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class UpdateSectionOutput(_message.Message):
     __slots__ = []
