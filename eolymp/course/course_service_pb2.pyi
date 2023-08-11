@@ -86,10 +86,11 @@ class UpdateCourseInput(_message.Message):
     COURSE_FIELD_NUMBER: _ClassVar[int]
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION: UpdateCourseInput.Patch
+    IMAGE: UpdateCourseInput.Patch
     LOCALE: UpdateCourseInput.Patch
     NAME: UpdateCourseInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    PICTURE: UpdateCourseInput.Patch
+    VISIBILITY: UpdateCourseInput.Patch
     course: _course_pb2.Course
     course_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateCourseInput.Patch]
