@@ -5,11 +5,11 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Video(_message.Message):
-    __slots__ = ["duration", "preview_url", "video_url"]
+    __slots__ = ["duration", "image_url", "video_url"]
     DURATION_FIELD_NUMBER: _ClassVar[int]
-    PREVIEW_URL_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
     VIDEO_URL_FIELD_NUMBER: _ClassVar[int]
     duration: int
-    preview_url: str
+    image_url: str
     video_url: str
-    def __init__(self, preview_url: _Optional[str] = ..., video_url: _Optional[str] = ..., duration: _Optional[int] = ...) -> None: ...
+    def __init__(self, image_url: _Optional[str] = ..., video_url: _Optional[str] = ..., duration: _Optional[int] = ...) -> None: ...

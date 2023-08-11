@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/course/entry_video.proto\x12\reolymp.course\"A\n\x05Video\x12\x13\n\x0bpreview_url\x18\x01 \x01(\t\x12\x11\n\tvideo_url\x18\x02 \x01(\t\x12\x10\n\x08\x64uration\x18\x03 \x01(\rB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/course/entry_video.proto\x12\reolymp.course\"?\n\x05Video\x12\x11\n\timage_url\x18\x01 \x01(\t\x12\x11\n\tvideo_url\x18\x02 \x01(\t\x12\x10\n\x08\x64uration\x18\x03 \x01(\rB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.entry_video_pb2', globals())
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _VIDEO._serialized_start=50
-  _VIDEO._serialized_end=115
+  _VIDEO._serialized_end=113
 # @@protoc_insertion_point(module_scope)

@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/course/course.proto\x12\reolymp.course\x1a\x18\x65olymp/ecm/content.proto\"\x88\x01\n\x06\x43ourse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x0c\n\x04name\x18\x0b \x01(\t\x12(\n\x0b\x64\x65scription\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0f\n\x07picture\x18\r \x01(\t\x12\x19\n\x11\x64uration_estimate\x18\x14 \x01(\rB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/course/course.proto\x12\reolymp.course\x1a\x18\x65olymp/ecm/content.proto\"\xfb\x01\n\x06\x43ourse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x0c\n\x04name\x18\x0b \x01(\t\x12(\n\x0b\x64\x65scription\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\r\n\x05image\x18\r \x01(\t\x12\x34\n\nvisibility\x18\x0e \x01(\x0e\x32 .eolymp.course.Course.Visibility\x12\x19\n\x11\x64uration_estimate\x18\x14 \x01(\r\"=\n\nVisibility\x12\x08\n\x04NONE\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0c\n\x08UNLISTED\x10\x02\x12\x0b\n\x07PRIVATE\x10\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.course_pb2', globals())
@@ -23,5 +23,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _COURSE._serialized_start=72
-  _COURSE._serialized_end=208
+  _COURSE._serialized_end=323
+  _COURSE_VISIBILITY._serialized_start=262
+  _COURSE_VISIBILITY._serialized_end=323
 # @@protoc_insertion_point(module_scope)
