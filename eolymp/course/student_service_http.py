@@ -89,3 +89,14 @@ class StudentServiceClient:
             **kwargs,
         )
 
+    def DescribeViewer(self, request, **kwargs):
+        path = "/viewer"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeViewerOutput"),
+            **kwargs,
+        )
+

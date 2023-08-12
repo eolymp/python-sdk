@@ -16,7 +16,7 @@ from eolymp.course import entry_video_pb2 as eolymp_dot_course_dot_entry__video_
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/course/entry.proto\x12\reolymp.course\x1a!eolymp/course/entry_section.proto\x1a\x1f\x65olymp/course/entry_video.proto\x1a\x18\x65olymp/ecm/content.proto\"\xf4\x01\n\x05\x45ntry\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x11\n\tparent_id\x18\n \x01(\t\x12\r\n\x05index\x18\x0b \x01(\r\x12\r\n\x05\x64\x65pth\x18\x14 \x01(\r\x12\x19\n\x11\x64uration_estimate\x18\x15 \x01(\r\x12)\n\x07section\x18\x64 \x01(\x0b\x32\x16.eolymp.course.SectionH\x00\x12\'\n\x08\x64ocument\x18\x65 \x01(\x0b\x32\x13.eolymp.ecm.ContentH\x00\x12%\n\x05video\x18\x66 \x01(\x0b\x32\x14.eolymp.course.VideoH\x00\x42\t\n\x07\x63ontentB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/course/entry.proto\x12\reolymp.course\x1a!eolymp/course/entry_section.proto\x1a\x1f\x65olymp/course/entry_video.proto\x1a\x18\x65olymp/ecm/content.proto\"\xdc\x01\n\x05\x45ntry\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x11\n\tparent_id\x18\n \x01(\t\x12\r\n\x05index\x18\x0b \x01(\r\x12\x10\n\x08\x65stimate\x18\x15 \x01(\r\x12)\n\x07section\x18\x64 \x01(\x0b\x32\x16.eolymp.course.SectionH\x00\x12\'\n\x08\x64ocument\x18\x65 \x01(\x0b\x32\x13.eolymp.ecm.ContentH\x00\x12%\n\x05video\x18\x66 \x01(\x0b\x32\x14.eolymp.course.VideoH\x00\x42\t\n\x07\x63ontentB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.entry_pb2', globals())
@@ -25,5 +25,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _ENTRY._serialized_start=139
-  _ENTRY._serialized_end=383
+  _ENTRY._serialized_end=359
 # @@protoc_insertion_point(module_scope)

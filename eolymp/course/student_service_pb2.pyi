@@ -46,6 +46,16 @@ class DescribeStudentOutput(_message.Message):
     student: _student_pb2.Student
     def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
+class DescribeViewerInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DescribeViewerOutput(_message.Message):
+    __slots__ = ["student"]
+    STUDENT_FIELD_NUMBER: _ClassVar[int]
+    student: _student_pb2.Student
+    def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
+
 class ListStudentsInput(_message.Message):
     __slots__ = ["filters", "offset", "order", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
