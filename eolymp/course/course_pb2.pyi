@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Course(_message.Message):
-    __slots__ = ["description", "duration", "estimate", "id", "image", "locale", "name", "visibility"]
+    __slots__ = ["description", "duration", "estimate", "id", "image", "locale", "name", "url", "visibility"]
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -21,6 +21,7 @@ class Course(_message.Message):
     PRIVATE: Course.Visibility
     PUBLIC: Course.Visibility
     UNLISTED: Course.Visibility
+    URL_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
     description: _content_pb2.Content
     duration: int
@@ -29,5 +30,6 @@ class Course(_message.Message):
     image: str
     locale: str
     name: str
+    url: str
     visibility: Course.Visibility
-    def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., estimate: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., estimate: _Optional[int] = ...) -> None: ...
