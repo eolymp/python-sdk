@@ -62,10 +62,12 @@ class DeleteEntryOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeEntryInput(_message.Message):
-    __slots__ = ["entry_id"]
+    __slots__ = ["entry_id", "render"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     entry_id: str
-    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
+    render: bool
+    def __init__(self, entry_id: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class DescribeEntryOutput(_message.Message):
     __slots__ = ["entry"]
@@ -74,7 +76,7 @@ class DescribeEntryOutput(_message.Message):
     def __init__(self, entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
 
 class ListEntriesInput(_message.Message):
-    __slots__ = ["filters", "offset", "order", "size", "sort"]
+    __slots__ = ["filters", "offset", "order", "render", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -90,14 +92,16 @@ class ListEntriesInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     filters: ListEntriesInput.Filter
     offset: int
     order: _direction_pb2.Direction
+    render: bool
     size: int
     sort: ListEntriesInput.Sortable
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListEntriesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListEntriesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListEntriesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListEntriesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListEntriesOutput(_message.Message):
     __slots__ = ["items", "total"]

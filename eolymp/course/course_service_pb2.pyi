@@ -35,10 +35,12 @@ class DeleteCourseOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeCourseInput(_message.Message):
-    __slots__ = ["course_id"]
+    __slots__ = ["course_id", "render"]
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     course_id: str
-    def __init__(self, course_id: _Optional[str] = ...) -> None: ...
+    render: bool
+    def __init__(self, course_id: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class DescribeCourseOutput(_message.Message):
     __slots__ = ["course"]
@@ -47,7 +49,7 @@ class DescribeCourseOutput(_message.Message):
     def __init__(self, course: _Optional[_Union[_course_pb2.Course, _Mapping]] = ...) -> None: ...
 
 class ListCoursesInput(_message.Message):
-    __slots__ = ["filters", "offset", "order", "size", "sort"]
+    __slots__ = ["filters", "offset", "order", "render", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -61,14 +63,16 @@ class ListCoursesInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     filters: ListCoursesInput.Filter
     offset: int
     order: _direction_pb2.Direction
+    render: bool
     size: int
     sort: ListCoursesInput.Sortable
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCoursesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListCoursesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCoursesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListCoursesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListCoursesOutput(_message.Message):
     __slots__ = ["items", "total"]
