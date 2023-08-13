@@ -2,7 +2,6 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.course import entry_pb2 as _entry_pb2
-from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
@@ -13,39 +12,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CreateDocumentInput(_message.Message):
-    __slots__ = ["document", "index", "parent_id", "title"]
-    DOCUMENT_FIELD_NUMBER: _ClassVar[int]
-    INDEX_FIELD_NUMBER: _ClassVar[int]
-    PARENT_ID_FIELD_NUMBER: _ClassVar[int]
-    TITLE_FIELD_NUMBER: _ClassVar[int]
-    document: _content_pb2.Content
-    index: int
-    parent_id: str
-    title: str
-    def __init__(self, parent_id: _Optional[str] = ..., index: _Optional[int] = ..., title: _Optional[str] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+class CreateEntryInput(_message.Message):
+    __slots__ = ["entry"]
+    ENTRY_FIELD_NUMBER: _ClassVar[int]
+    entry: _entry_pb2.Entry
+    def __init__(self, entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
 
-class CreateDocumentOutput(_message.Message):
-    __slots__ = ["entry_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
-
-class CreateSectionInput(_message.Message):
-    __slots__ = ["description", "image", "index", "parent_id", "title"]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    IMAGE_FIELD_NUMBER: _ClassVar[int]
-    INDEX_FIELD_NUMBER: _ClassVar[int]
-    PARENT_ID_FIELD_NUMBER: _ClassVar[int]
-    TITLE_FIELD_NUMBER: _ClassVar[int]
-    description: _content_pb2.Content
-    image: str
-    index: int
-    parent_id: str
-    title: str
-    def __init__(self, parent_id: _Optional[str] = ..., index: _Optional[int] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
-
-class CreateSectionOutput(_message.Message):
+class CreateEntryOutput(_message.Message):
     __slots__ = ["entry_id"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
     entry_id: str
@@ -75,19 +48,33 @@ class DescribeEntryOutput(_message.Message):
     entry: _entry_pb2.Entry
     def __init__(self, entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
 
+class DescribeTOCInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DescribeTOCOutput(_message.Message):
+    __slots__ = ["items"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_entry_pb2.Entry]
+    def __init__(self, items: _Optional[_Iterable[_Union[_entry_pb2.Entry, _Mapping]]] = ...) -> None: ...
+
 class ListEntriesInput(_message.Message):
     __slots__ = ["filters", "offset", "order", "render", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["id", "parent_id", "query"]
+        __slots__ = ["draft", "id", "parent_id", "query", "title"]
+        DRAFT_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         PARENT_ID_FIELD_NUMBER: _ClassVar[int]
         QUERY_FIELD_NUMBER: _ClassVar[int]
+        TITLE_FIELD_NUMBER: _ClassVar[int]
+        draft: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         parent_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         query: str
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., parent_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        title: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., parent_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., title: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     DEFAULT: ListEntriesInput.Sortable
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
@@ -137,32 +124,26 @@ class RenameEntryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateDocumentInput(_message.Message):
-    __slots__ = ["document", "entry_id", "title"]
-    DOCUMENT_FIELD_NUMBER: _ClassVar[int]
+class UpdateEntryInput(_message.Message):
+    __slots__ = ["entry", "entry_id", "patch"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateEntryInput.Patch
+    CONTENT_ALL: UpdateEntryInput.Patch
+    DRAFT: UpdateEntryInput.Patch
+    ENTRY_FIELD_NUMBER: _ClassVar[int]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    TITLE_FIELD_NUMBER: _ClassVar[int]
-    document: _content_pb2.Content
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    SECTION_DESCRIPTION: UpdateEntryInput.Patch
+    SECTION_IMAGE: UpdateEntryInput.Patch
+    TITLE: UpdateEntryInput.Patch
+    VIDEO_IMAGE_URL: UpdateEntryInput.Patch
+    VIDEO_VIDEO_URL: UpdateEntryInput.Patch
+    entry: _entry_pb2.Entry
     entry_id: str
-    title: str
-    def __init__(self, entry_id: _Optional[str] = ..., title: _Optional[str] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    patch: _containers.RepeatedScalarFieldContainer[UpdateEntryInput.Patch]
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateEntryInput.Patch, str]]] = ..., entry_id: _Optional[str] = ..., entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
 
-class UpdateDocumentOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UpdateSectionInput(_message.Message):
-    __slots__ = ["description", "entry_id", "image", "title"]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    IMAGE_FIELD_NUMBER: _ClassVar[int]
-    TITLE_FIELD_NUMBER: _ClassVar[int]
-    description: _content_pb2.Content
-    entry_id: str
-    image: str
-    title: str
-    def __init__(self, entry_id: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
-
-class UpdateSectionOutput(_message.Message):
+class UpdateEntryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

@@ -14,19 +14,19 @@ class EntryServiceClient:
         self.transport = transport
         self.url = url
 
-    def CreateSection(self, request, **kwargs):
-        path = "/sections"
+    def CreateEntry(self, request, **kwargs):
+        path = "/entries"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateSectionOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateEntryOutput"),
             **kwargs,
         )
 
-    def UpdateSection(self, request, **kwargs):
-        path = "/sections/"+urllib.parse.quote(request.entry_id)
+    def UpdateEntry(self, request, **kwargs):
+        path = "/entries/"+urllib.parse.quote(request.entry_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.entry_id = ""
@@ -35,32 +35,7 @@ class EntryServiceClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateSectionOutput"),
-            **kwargs,
-        )
-
-    def CreateDocument(self, request, **kwargs):
-        path = "/documents"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateDocumentOutput"),
-            **kwargs,
-        )
-
-    def UpdateDocument(self, request, **kwargs):
-        path = "/documents/"+urllib.parse.quote(request.entry_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.entry_id = ""
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateDocumentOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateEntryOutput"),
             **kwargs,
         )
 
@@ -128,6 +103,17 @@ class EntryServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.course.ListEntriesOutput"),
+            **kwargs,
+        )
+
+    def DescribeTOC(self, request, **kwargs):
+        path = "/toc"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeTOCOutput"),
             **kwargs,
         )
 
