@@ -104,6 +104,18 @@ class ListEntriesOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_entry_pb2.Entry, _Mapping]]] = ...) -> None: ...
 
+class ListParentsInput(_message.Message):
+    __slots__ = ["entry_id"]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    entry_id: str
+    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
+
+class ListParentsOutput(_message.Message):
+    __slots__ = ["items"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_entry_pb2.Entry]
+    def __init__(self, items: _Optional[_Iterable[_Union[_entry_pb2.Entry, _Mapping]]] = ...) -> None: ...
+
 class MoveEntryInput(_message.Message):
     __slots__ = ["entry_id", "index", "parent_id"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
