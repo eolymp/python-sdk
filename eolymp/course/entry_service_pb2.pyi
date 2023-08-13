@@ -49,12 +49,14 @@ class DescribeEntryOutput(_message.Message):
     def __init__(self, entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
 
 class DescribeTOCInput(_message.Message):
-    __slots__ = ["depth", "root_id"]
+    __slots__ = ["depth", "draft", "root_id"]
     DEPTH_FIELD_NUMBER: _ClassVar[int]
+    DRAFT_FIELD_NUMBER: _ClassVar[int]
     ROOT_ID_FIELD_NUMBER: _ClassVar[int]
     depth: int
+    draft: bool
     root_id: str
-    def __init__(self, root_id: _Optional[str] = ..., depth: _Optional[int] = ...) -> None: ...
+    def __init__(self, root_id: _Optional[str] = ..., depth: _Optional[int] = ..., draft: bool = ...) -> None: ...
 
 class DescribeTOCOutput(_message.Message):
     __slots__ = ["items"]
