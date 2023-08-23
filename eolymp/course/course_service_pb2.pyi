@@ -95,6 +95,7 @@ class UpdateCourseInput(_message.Message):
     LOCALE: UpdateCourseInput.Patch
     NAME: UpdateCourseInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    TOPICS: UpdateCourseInput.Patch
     VISIBILITY: UpdateCourseInput.Patch
     course: _course_pb2.Course
     course_id: str

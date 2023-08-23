@@ -131,3 +131,31 @@ class EntryServiceClient:
             **kwargs,
         )
 
+    def DescribeProgress(self, request, **kwargs):
+        path = "/entries/"+urllib.parse.quote(request.entry_id)+"/progress"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeProgressOutput"),
+            **kwargs,
+        )
+
+    def ReportProgress(self, request, **kwargs):
+        path = "/entries/"+urllib.parse.quote(request.entry_id)+"/progress"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ReportProgressOutput"),
+            **kwargs,
+        )
+

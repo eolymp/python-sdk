@@ -48,6 +48,18 @@ class DescribeEntryOutput(_message.Message):
     entry: _entry_pb2.Entry
     def __init__(self, entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
 
+class DescribeProgressInput(_message.Message):
+    __slots__ = ["entry_id"]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    entry_id: str
+    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
+
+class DescribeProgressOutput(_message.Message):
+    __slots__ = ["progress"]
+    PROGRESS_FIELD_NUMBER: _ClassVar[int]
+    progress: float
+    def __init__(self, progress: _Optional[float] = ...) -> None: ...
+
 class DescribeTOCInput(_message.Message):
     __slots__ = ["depth", "draft", "root_id"]
     DEPTH_FIELD_NUMBER: _ClassVar[int]
@@ -139,6 +151,18 @@ class RenameEntryInput(_message.Message):
     def __init__(self, entry_id: _Optional[str] = ..., title: _Optional[str] = ...) -> None: ...
 
 class RenameEntryOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ReportProgressInput(_message.Message):
+    __slots__ = ["entry_id", "progress"]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    PROGRESS_FIELD_NUMBER: _ClassVar[int]
+    entry_id: str
+    progress: float
+    def __init__(self, entry_id: _Optional[str] = ..., progress: _Optional[float] = ...) -> None: ...
+
+class ReportProgressOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
