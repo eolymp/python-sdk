@@ -53,12 +53,16 @@ class ListCoursesInput(_message.Message):
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["id", "query"]
+        __slots__ = ["id", "locale", "query", "topic_id"]
         ID_FIELD_NUMBER: _ClassVar[int]
+        LOCALE_FIELD_NUMBER: _ClassVar[int]
         QUERY_FIELD_NUMBER: _ClassVar[int]
+        TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         query: str
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        topic_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., topic_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     DEFAULT: ListCoursesInput.Sortable
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
