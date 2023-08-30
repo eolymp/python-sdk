@@ -2,6 +2,8 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import solution_pb2 as _solution_pb2
+from eolymp.wellknown import direction_pb2 as _direction_pb2
+from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -53,12 +55,39 @@ class DescribeSolutionOutput(_message.Message):
     def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class ListSolutionsInput(_message.Message):
-    __slots__ = ["problem_id", "version"]
+    __slots__ = ["filters", "offset", "order", "problem_id", "size", "sort", "version"]
+    class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    class Filter(_message.Message):
+        __slots__ = ["id", "name", "query", "runtime", "type"]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        QUERY_FIELD_NUMBER: _ClassVar[int]
+        RUNTIME_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        query: str
+        runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    NAME: ListSolutionsInput.Sortable
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    ORDER_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    SORT_FIELD_NUMBER: _ClassVar[int]
+    TYPE: ListSolutionsInput.Sortable
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    filters: ListSolutionsInput.Filter
+    offset: int
+    order: _direction_pb2.Direction
     problem_id: str
+    size: int
+    sort: ListSolutionsInput.Sortable
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSolutionsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListSolutionsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListSolutionsOutput(_message.Message):
     __slots__ = ["items", "total"]
