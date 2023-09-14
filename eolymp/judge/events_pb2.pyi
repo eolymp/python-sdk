@@ -35,6 +35,16 @@ class RebuildScoreEvent(_message.Message):
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ..., activity_id: _Optional[str] = ...) -> None: ...
 
+class RetestProblemEvent(_message.Message):
+    __slots__ = ["activity_id", "contest_id", "problem_id"]
+    ACTIVITY_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    activity_id: str
+    contest_id: str
+    problem_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., activity_id: _Optional[str] = ...) -> None: ...
+
 class ScoreUpdatedEvent(_message.Message):
     __slots__ = ["contest_id", "out_of_competition", "participant_id", "score"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
