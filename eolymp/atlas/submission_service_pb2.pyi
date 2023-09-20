@@ -93,3 +93,17 @@ class RetestSubmissionInput(_message.Message):
 class RetestSubmissionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class WatchSubmissionInput(_message.Message):
+    __slots__ = ["problem_id", "submission_id"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    submission_id: str
+    def __init__(self, problem_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
+
+class WatchSubmissionOutput(_message.Message):
+    __slots__ = ["submission"]
+    SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+    submission: _submission_pb2.Submission
+    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
