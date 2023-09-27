@@ -176,6 +176,7 @@ class UpdateEntryInput(_message.Message):
     ENTRY_FIELD_NUMBER: _ClassVar[int]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_URL: UpdateEntryInput.Patch
     SECTION_DESCRIPTION: UpdateEntryInput.Patch
     SECTION_IMAGE: UpdateEntryInput.Patch
     TITLE: UpdateEntryInput.Patch
