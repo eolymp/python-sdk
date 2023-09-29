@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
-    __slots__ = ["domain", "duration", "ends_at", "ends_in", "ern", "format", "id", "name", "participation_mode", "space_id", "starts_at", "starts_in", "status", "url", "visibility"]
+    __slots__ = ["domain", "duration", "ends_at", "ends_in", "format", "id", "name", "participation_mode", "space_id", "starts_at", "starts_in", "status", "url", "visibility"]
     class Format(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class ParticipationMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -30,24 +30,25 @@ class Contest(_message.Message):
         title: str
         def __init__(self, title: _Optional[str] = ..., tagline: _Optional[str] = ..., logo_image: _Optional[str] = ..., primary_color: _Optional[str] = ..., secondary_color: _Optional[str] = ...) -> None: ...
     class Scoring(_message.Message):
-        __slots__ = ["allow_upsolving", "attempt_penalty", "freezing_time", "show_scoreboard", "unfreeze_delay"]
+        __slots__ = ["allow_upsolving", "attempt_penalty", "freezing_time", "show_scoreboard", "unfreeze_delay", "use_name_in_scoreboard"]
         ALLOW_UPSOLVING_FIELD_NUMBER: _ClassVar[int]
         ATTEMPT_PENALTY_FIELD_NUMBER: _ClassVar[int]
         FREEZING_TIME_FIELD_NUMBER: _ClassVar[int]
         SHOW_SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
         UNFREEZE_DELAY_FIELD_NUMBER: _ClassVar[int]
+        USE_NAME_IN_SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
         allow_upsolving: bool
         attempt_penalty: int
         freezing_time: int
         show_scoreboard: bool
         unfreeze_delay: int
-        def __init__(self, show_scoreboard: bool = ..., attempt_penalty: _Optional[int] = ..., freezing_time: _Optional[int] = ..., unfreeze_delay: _Optional[int] = ..., allow_upsolving: bool = ...) -> None: ...
+        use_name_in_scoreboard: bool
+        def __init__(self, show_scoreboard: bool = ..., attempt_penalty: _Optional[int] = ..., freezing_time: _Optional[int] = ..., unfreeze_delay: _Optional[int] = ..., allow_upsolving: bool = ..., use_name_in_scoreboard: bool = ...) -> None: ...
     COMPLETE: Contest.Status
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
     DURATION_FIELD_NUMBER: _ClassVar[int]
     ENDS_AT_FIELD_NUMBER: _ClassVar[int]
     ENDS_IN_FIELD_NUMBER: _ClassVar[int]
-    ERN_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     FROZEN: Contest.Status
     ICPC: Contest.Format
@@ -77,7 +78,6 @@ class Contest(_message.Message):
     duration: int
     ends_at: _timestamp_pb2.Timestamp
     ends_in: int
-    ern: str
     format: Contest.Format
     id: str
     name: str
@@ -88,4 +88,4 @@ class Contest(_message.Message):
     status: Contest.Status
     url: str
     visibility: Contest.Visibility
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., ern: _Optional[str] = ..., name: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., domain: _Optional[str] = ..., space_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., domain: _Optional[str] = ..., space_id: _Optional[str] = ...) -> None: ...
