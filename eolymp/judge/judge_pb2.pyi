@@ -1184,3 +1184,17 @@ class VerifyPasscodeOutput(_message.Message):
     required: bool
     valid: bool
     def __init__(self, required: bool = ..., valid: bool = ...) -> None: ...
+
+class WatchSubmissionInput(_message.Message):
+    __slots__ = ["contest_id", "submission_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    submission_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
+
+class WatchSubmissionOutput(_message.Message):
+    __slots__ = ["submission"]
+    SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+    submission: _submission_pb2.Submission
+    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
