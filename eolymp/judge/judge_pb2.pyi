@@ -810,12 +810,13 @@ class ListTicketsInput(_message.Message):
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["contest_id", "id", "is_open", "is_read_by_owner", "is_read_by_participant", "own", "participant_id"]
+        __slots__ = ["contest_id", "id", "is_open", "is_read_by_owner", "is_read_by_participant", "member_id", "own", "participant_id"]
         CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         IS_OPEN_FIELD_NUMBER: _ClassVar[int]
         IS_READ_BY_OWNER_FIELD_NUMBER: _ClassVar[int]
         IS_READ_BY_PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+        MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         OWN_FIELD_NUMBER: _ClassVar[int]
         PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
         contest_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -823,9 +824,10 @@ class ListTicketsInput(_message.Message):
         is_open: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         is_read_by_owner: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         is_read_by_participant: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         own: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         participant_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., contest_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_read_by_participant: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_read_by_owner: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_open: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., own: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., contest_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_read_by_participant: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_read_by_owner: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_open: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., own: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     CREATED_AT: ListTicketsInput.Sortable
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
