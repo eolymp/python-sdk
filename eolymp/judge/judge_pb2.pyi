@@ -1112,13 +1112,14 @@ class UpdateContestInput(_message.Message):
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     DOMAIN: UpdateContestInput.Patch
     DURATION: UpdateContestInput.Patch
-    ENDLESS: UpdateContestInput.Patch
     ENDS_AT: UpdateContestInput.Patch
     FORMAT: UpdateContestInput.Patch
+    JOIN_UNOFFICIALLY: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch
     PARTICIPATION_MODE: UpdateContestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     STARTS_AT: UpdateContestInput.Patch
+    UPSOLVE_MODE: UpdateContestInput.Patch
     VISIBILITY: UpdateContestInput.Patch
     contest: _contest_pb2.Contest
     contest_id: str

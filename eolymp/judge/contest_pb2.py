@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/contest.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf8\x07\n\x07\x43ontest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12-\n\tstarts_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tstarts_in\x18\x0b \x01(\r\x12+\n\x07\x65nds_at\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07\x65nds_in\x18\x10 \x01(\r\x12\x10\n\x08\x64uration\x18\x0c \x01(\r\x12,\n\x06status\x18\x14 \x01(\x0e\x32\x1c.eolymp.judge.Contest.Status\x12\x34\n\nvisibility\x18\x1e \x01(\x0e\x32 .eolymp.judge.Contest.Visibility\x12\x43\n\x12participation_mode\x18\x1f \x01(\x0e\x32\'.eolymp.judge.Contest.ParticipationMode\x12\x0f\n\x07\x65ndless\x18! \x01(\x08\x12,\n\x06\x66ormat\x18  \x01(\x0e\x32\x1c.eolymp.judge.Contest.Format\x12\x0e\n\x06\x64omain\x18( \x01(\t\x12\x11\n\x08space_id\x18\xe8\x07 \x01(\t\x1ap\n\nAppearance\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0f\n\x07tagline\x18\x02 \x01(\t\x12\x12\n\nlogo_image\x18\x03 \x01(\t\x12\x15\n\rprimary_color\x18\x04 \x01(\t\x12\x17\n\x0fsecondary_color\x18\x05 \x01(\t\x1a\xa3\x01\n\x07Scoring\x12\x17\n\x0fshow_scoreboard\x18\x01 \x01(\x08\x12\x17\n\x0f\x61ttempt_penalty\x18\x02 \x01(\r\x12\x15\n\rfreezing_time\x18\x03 \x01(\r\x12\x16\n\x0eunfreeze_delay\x18\x05 \x01(\x05\x12\x17\n\x0f\x61llow_upsolving\x18\x04 \x01(\x08\x12\x1e\n\x16use_name_in_scoreboard\x18\x06 \x01(\x08\"Y\n\x06Status\x12\r\n\tNO_STATUS\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\x08\n\x04OPEN\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\r\n\tSUSPENDED\x10\x04\x12\n\n\x06\x46ROZEN\x10\x05\"F\n\nVisibility\x12\x11\n\rNO_VISIBILITY\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0c\n\x08UNLISTED\x10\x02\x12\x0b\n\x07PRIVATE\x10\x03\"B\n\x11ParticipationMode\x12\x14\n\x10NO_PARTICIPATION\x10\x00\x12\n\n\x06ONLINE\x10\x01\x12\x0b\n\x07VIRTUAL\x10\x02\"*\n\x06\x46ormat\x12\r\n\tNO_FORMAT\x10\x00\x12\x07\n\x03IOI\x10\x01\x12\x08\n\x04ICPC\x10\x02\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/contest.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb6\t\n\x07\x43ontest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12-\n\tstarts_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tstarts_in\x18\x0b \x01(\r\x12+\n\x07\x65nds_at\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07\x65nds_in\x18\x10 \x01(\r\x12\x10\n\x08\x64uration\x18\x0c \x01(\r\x12,\n\x06status\x18\x14 \x01(\x0e\x32\x1c.eolymp.judge.Contest.Status\x12\x34\n\nvisibility\x18\x1e \x01(\x0e\x32 .eolymp.judge.Contest.Visibility\x12\x19\n\x11join_unofficially\x18# \x01(\x08\x12\x43\n\x12participation_mode\x18\x1f \x01(\x0e\x32\'.eolymp.judge.Contest.ParticipationMode\x12\x37\n\x0cupsolve_mode\x18\" \x01(\x0e\x32!.eolymp.judge.Contest.UpsolveMode\x12,\n\x06\x66ormat\x18  \x01(\x0e\x32\x1c.eolymp.judge.Contest.Format\x12\x0e\n\x06\x64omain\x18( \x01(\t\x12\x11\n\x08space_id\x18\xe8\x07 \x01(\t\x1ap\n\nAppearance\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0f\n\x07tagline\x18\x02 \x01(\t\x12\x12\n\nlogo_image\x18\x03 \x01(\t\x12\x15\n\rprimary_color\x18\x04 \x01(\t\x12\x17\n\x0fsecondary_color\x18\x05 \x01(\t\x1a\xa3\x01\n\x07Scoring\x12\x17\n\x0fshow_scoreboard\x18\x01 \x01(\x08\x12\x17\n\x0f\x61ttempt_penalty\x18\x02 \x01(\r\x12\x15\n\rfreezing_time\x18\x03 \x01(\r\x12\x16\n\x0eunfreeze_delay\x18\x05 \x01(\x05\x12\x17\n\x0f\x61llow_upsolving\x18\x04 \x01(\x08\x12\x1e\n\x16use_name_in_scoreboard\x18\x06 \x01(\x08\"^\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\x08\n\x04OPEN\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\r\n\tSUSPENDED\x10\x04\x12\n\n\x06\x46ROZEN\x10\x05\"K\n\nVisibility\x12\x16\n\x12VISIBILITY_UNKNOWN\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0c\n\x08UNLISTED\x10\x02\x12\x0b\n\x07PRIVATE\x10\x03\"L\n\x11ParticipationMode\x12\x1e\n\x1aPARTICIPATION_MODE_UNKNOWN\x10\x00\x12\n\n\x06ONLINE\x10\x01\x12\x0b\n\x07VIRTUAL\x10\x02\"`\n\x0bUpsolveMode\x12\x10\n\x0cUPSOLVE_NONE\x10\x00\x12\x13\n\x0fUPSOLVE_VIRTUAL\x10\x01\x12\x10\n\x0cUPSOLVE_FREE\x10\x02\x12\x18\n\x14UPSOLVE_VIRTUAL_FREE\x10\x03\"/\n\x06\x46ormat\x12\x12\n\x0e\x46ORMAT_UNKNOWN\x10\x00\x12\x07\n\x03IOI\x10\x01\x12\x08\n\x04ICPC\x10\x02\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.contest_pb2', globals())
@@ -23,17 +23,19 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
   _CONTEST._serialized_start=78
-  _CONTEST._serialized_end=1094
-  _CONTEST_APPEARANCE._serialized_start=541
-  _CONTEST_APPEARANCE._serialized_end=653
-  _CONTEST_SCORING._serialized_start=656
-  _CONTEST_SCORING._serialized_end=819
-  _CONTEST_STATUS._serialized_start=821
-  _CONTEST_STATUS._serialized_end=910
-  _CONTEST_VISIBILITY._serialized_start=912
-  _CONTEST_VISIBILITY._serialized_end=982
-  _CONTEST_PARTICIPATIONMODE._serialized_start=984
-  _CONTEST_PARTICIPATIONMODE._serialized_end=1050
-  _CONTEST_FORMAT._serialized_start=1052
-  _CONTEST_FORMAT._serialized_end=1094
+  _CONTEST._serialized_end=1284
+  _CONTEST_APPEARANCE._serialized_start=608
+  _CONTEST_APPEARANCE._serialized_end=720
+  _CONTEST_SCORING._serialized_start=723
+  _CONTEST_SCORING._serialized_end=886
+  _CONTEST_STATUS._serialized_start=888
+  _CONTEST_STATUS._serialized_end=982
+  _CONTEST_VISIBILITY._serialized_start=984
+  _CONTEST_VISIBILITY._serialized_end=1059
+  _CONTEST_PARTICIPATIONMODE._serialized_start=1061
+  _CONTEST_PARTICIPATIONMODE._serialized_end=1137
+  _CONTEST_UPSOLVEMODE._serialized_start=1139
+  _CONTEST_UPSOLVEMODE._serialized_end=1235
+  _CONTEST_FORMAT._serialized_start=1237
+  _CONTEST_FORMAT._serialized_end=1284
 # @@protoc_insertion_point(module_scope)
