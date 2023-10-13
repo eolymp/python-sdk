@@ -1115,6 +1115,7 @@ class UpdateContestInput(_message.Message):
     DURATION: UpdateContestInput.Patch
     ENDS_AT: UpdateContestInput.Patch
     FORMAT: UpdateContestInput.Patch
+    JOIN_UNOFFICIALLY: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch
     PARTICIPATION_MODE: UpdateContestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]

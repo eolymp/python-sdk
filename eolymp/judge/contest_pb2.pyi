@@ -14,8 +14,6 @@ class Contest(_message.Message):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    class UpsolveMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Appearance(_message.Message):
@@ -122,10 +120,6 @@ class Contest(_message.Message):
     TAXONOMY_FIELD_NUMBER: _ClassVar[int]
     UNLISTED: Contest.Visibility
     UPSOLVE_FIELD_NUMBER: _ClassVar[int]
-    UPSOLVE_FREE: Contest.UpsolveMode
-    UPSOLVE_NONE: Contest.UpsolveMode
-    UPSOLVE_VIRTUAL: Contest.UpsolveMode
-    UPSOLVE_VIRTUAL_FREE: Contest.UpsolveMode
     URL_FIELD_NUMBER: _ClassVar[int]
     VIRTUAL: Contest.ParticipationMode
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
