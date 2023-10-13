@@ -1108,18 +1108,21 @@ class UpdateContestInput(_message.Message):
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateContestInput.Patch
+    APPEARANCE: UpdateContestInput.Patch
     CONTEST_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     DOMAIN: UpdateContestInput.Patch
     DURATION: UpdateContestInput.Patch
     ENDS_AT: UpdateContestInput.Patch
     FORMAT: UpdateContestInput.Patch
-    JOIN_UNOFFICIALLY: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch
+    PARTICIPATION: UpdateContestInput.Patch
     PARTICIPATION_MODE: UpdateContestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    SCOREBOARD: UpdateContestInput.Patch
+    SCORING: UpdateContestInput.Patch
     STARTS_AT: UpdateContestInput.Patch
-    UPSOLVE_MODE: UpdateContestInput.Patch
+    TAXONOMY: UpdateContestInput.Patch
     VISIBILITY: UpdateContestInput.Patch
     contest: _contest_pb2.Contest
     contest_id: str
