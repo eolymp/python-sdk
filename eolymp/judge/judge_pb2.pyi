@@ -1116,13 +1116,13 @@ class UpdateContestInput(_message.Message):
     ENDS_AT: UpdateContestInput.Patch
     FORMAT: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch
-    PARTICIPATION: UpdateContestInput.Patch
     PARTICIPATION_MODE: UpdateContestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD: UpdateContestInput.Patch
     SCORING: UpdateContestInput.Patch
     STARTS_AT: UpdateContestInput.Patch
     TAXONOMY: UpdateContestInput.Patch
+    UPSOLVE: UpdateContestInput.Patch
     VISIBILITY: UpdateContestInput.Patch
     contest: _contest_pb2.Contest
     contest_id: str
