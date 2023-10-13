@@ -86,18 +86,6 @@ class ConfigureRuntimeOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class ConfigureScoringInput(_message.Message):
-    __slots__ = ["contest_id", "scoring"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    SCORING_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    scoring: _contest_pb2.Contest.Scoring
-    def __init__(self, contest_id: _Optional[str] = ..., scoring: _Optional[_Union[_contest_pb2.Contest.Scoring, _Mapping]] = ...) -> None: ...
-
-class ConfigureScoringOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class CreateAnnouncementInput(_message.Message):
     __slots__ = ["announcement", "contest_id"]
     ANNOUNCEMENT_FIELD_NUMBER: _ClassVar[int]
@@ -357,18 +345,6 @@ class DescribeScoreOutput(_message.Message):
     SCORE_FIELD_NUMBER: _ClassVar[int]
     score: _score_pb2.Score
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
-
-class DescribeScoringInput(_message.Message):
-    __slots__ = ["contest_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
-
-class DescribeScoringOutput(_message.Message):
-    __slots__ = ["scoring"]
-    SCORING_FIELD_NUMBER: _ClassVar[int]
-    scoring: _contest_pb2.Contest.Scoring
-    def __init__(self, scoring: _Optional[_Union[_contest_pb2.Contest.Scoring, _Mapping]] = ...) -> None: ...
 
 class DescribeSubmissionInput(_message.Message):
     __slots__ = ["contest_id", "submission_id"]
@@ -1114,13 +1090,13 @@ class UpdateContestInput(_message.Message):
     DOMAIN: UpdateContestInput.Patch
     DURATION: UpdateContestInput.Patch
     ENDS_AT: UpdateContestInput.Patch
+    ENVIRONMENT: UpdateContestInput.Patch
     FORMAT: UpdateContestInput.Patch
     JOIN_UNOFFICIALLY: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch
     PARTICIPATION_MODE: UpdateContestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD: UpdateContestInput.Patch
-    SCORING: UpdateContestInput.Patch
     STARTS_AT: UpdateContestInput.Patch
     TAXONOMY: UpdateContestInput.Patch
     UPSOLVE: UpdateContestInput.Patch
