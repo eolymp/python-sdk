@@ -46,16 +46,16 @@ class RetestProblemEvent(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., activity_id: _Optional[str] = ...) -> None: ...
 
 class ScoreUpdatedEvent(_message.Message):
-    __slots__ = ["contest_id", "out_of_competition", "participant_id", "score"]
+    __slots__ = ["contest_id", "participant_id", "score", "unofficial"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     SCORE_FIELD_NUMBER: _ClassVar[int]
+    UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    out_of_competition: bool
     participant_id: str
     score: _score_pb2.Score
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., out_of_competition: bool = ..., score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
+    unofficial: bool
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., unofficial: bool = ..., score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class SubmissionCompletedEvent(_message.Message):
     __slots__ = ["submission"]

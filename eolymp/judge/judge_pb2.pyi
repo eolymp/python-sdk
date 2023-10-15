@@ -23,16 +23,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AddParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "member_id", "name", "out_of_competition"]
+    __slots__ = ["contest_id", "member_id", "name", "unofficial"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
+    UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     member_id: str
     name: str
-    out_of_competition: bool
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ..., out_of_competition: bool = ...) -> None: ...
+    unofficial: bool
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ..., unofficial: bool = ...) -> None: ...
 
 class AddParticipantOutput(_message.Message):
     __slots__ = ["participant_id"]

@@ -67,7 +67,7 @@ class Scoreboard(_message.Message):
         visible: bool
         def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ...) -> None: ...
     class Row(_message.Message):
-        __slots__ = ["ghost", "id", "member_id", "name", "out_of_competition", "penalty", "rank", "rank_lower", "score", "values"]
+        __slots__ = ["ghost", "id", "member_id", "name", "penalty", "rank", "rank_lower", "score", "unofficial", "values"]
         class Value(_message.Message):
             __slots__ = ["attempts", "column_id", "id", "penalty", "percentage", "score", "solved_in", "upsolve", "valid_after", "valid_until", "value_number", "value_string"]
             ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
@@ -99,23 +99,23 @@ class Scoreboard(_message.Message):
         ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
-        OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
         PENALTY_FIELD_NUMBER: _ClassVar[int]
         RANK_FIELD_NUMBER: _ClassVar[int]
         RANK_LOWER_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
+        UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
         VALUES_FIELD_NUMBER: _ClassVar[int]
         ghost: bool
         id: str
         member_id: str
         name: str
-        out_of_competition: bool
         penalty: float
         rank: int
         rank_lower: int
         score: float
+        unofficial: bool
         values: _containers.RepeatedCompositeFieldContainer[Scoreboard.Row.Value]
-        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., member_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., ghost: bool = ..., out_of_competition: bool = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., member_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., ghost: bool = ..., unofficial: bool = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
     DEFAULT_SORT_COLUMN_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_SORT_ORDER_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
