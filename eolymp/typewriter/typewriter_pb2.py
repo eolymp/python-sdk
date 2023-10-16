@@ -18,7 +18,7 @@ from eolymp.typewriter import fragment_pb2 as eolymp_dot_typewriter_dot_fragment
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/typewriter/typewriter.proto\x12\x11\x65olymp.typewriter\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/typewriter/fragment.proto\x1a!eolymp/wellknown/expression.proto\",\n\x15\x44\x65scribeFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\"G\n\x16\x44\x65scribeFragmentOutput\x12-\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x1b.eolymp.typewriter.Fragment\"\x9b\x02\n\x12ListFragmentsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12=\n\x07\x66ilters\x18( \x01(\x0b\x32,.eolymp.typewriter.ListFragmentsInput.Filter\x1a\xa7\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04path\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06locale\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"P\n\x13ListFragmentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.typewriter.Fragment\"D\n\x13\x43reateFragmentInput\x12-\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x1b.eolymp.typewriter.Fragment\"+\n\x14\x43reateFragmentOutput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\"Y\n\x13UpdateFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12-\n\x08\x66ragment\x18\x02 \x01(\x0b\x32\x1b.eolymp.typewriter.Fragment\"\x16\n\x14UpdateFragmentOutput\"*\n\x13\x44\x65leteFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65leteFragmentOutput\"<\n\x11\x44\x65scribePathInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x19\n\x11preferred_locales\x18\x02 \x03(\t\"C\n\x12\x44\x65scribePathOutput\x12-\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x1b.eolymp.typewriter.Fragment\"\x80\x02\n\x0eListPathsInput\x12\x19\n\x11preferred_locales\x18\x01 \x03(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.typewriter.ListPathsInput.Filter\x1az\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12\x30\n\x04path\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12/\n\x05label\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"L\n\x0fListPathsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.typewriter.Fragment\";\n\x10ListParentsInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x19\n\x11preferred_locales\x18\x02 \x03(\t\"N\n\x11ListParentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.typewriter.Fragment\"2\n\x10UploadAssetInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"!\n\x11UploadAssetOutput\x12\x0c\n\x04link\x18\x01 \x01(\t2\xa8\x0c\n\nTypewriter\x12\xc1\x01\n\x10\x44\x65scribeFragment\x12(.eolymp.typewriter.DescribeFragmentInput\x1a).eolymp.typewriter.DescribeFragmentOutput\"X\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\"\x12 /content/fragments/{fragment_id}\x12\xa9\x01\n\rListFragments\x12%.eolymp.typewriter.ListFragmentsInput\x1a&.eolymp.typewriter.ListFragmentsOutput\"I\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/content/fragments\x12\xad\x01\n\x0e\x43reateFragment\x12&.eolymp.typewriter.CreateFragmentInput\x1a\'.eolymp.typewriter.CreateFragmentOutput\"J\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\"\x12/content/fragments\x12\xbb\x01\n\x0eUpdateFragment\x12&.eolymp.typewriter.UpdateFragmentInput\x1a\'.eolymp.typewriter.UpdateFragmentOutput\"X\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"\x1a /content/fragments/{fragment_id}\x12\xbb\x01\n\x0e\x44\x65leteFragment\x12&.eolymp.typewriter.DeleteFragmentInput\x1a\'.eolymp.typewriter.DeleteFragmentOutput\"X\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"* /content/fragments/{fragment_id}\x12\xa2\x01\n\x0c\x44\x65scribePath\x12$.eolymp.typewriter.DescribePathInput\x1a%.eolymp.typewriter.DescribePathOutput\"E\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x0f\x12\r/content/path\x12\x9a\x01\n\tListPaths\x12!.eolymp.typewriter.ListPathsInput\x1a\".eolymp.typewriter.ListPathsOutput\"F\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x10\x12\x0e/content/paths\x12\xa2\x01\n\x0bListParents\x12#.eolymp.typewriter.ListParentsInput\x1a$.eolymp.typewriter.ListParentsOutput\"H\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/content/parents\x12\x96\x01\n\x0bUploadAsset\x12#.eolymp.typewriter.UploadAssetInput\x1a$.eolymp.typewriter.UploadAssetOutput\"<\x82\xe3\n\x1a\x8a\xe3\n\x16typewriter:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\t\"\x07/assetsB7Z5github.com/eolymp/go-sdk/eolymp/typewriter;typewriterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/typewriter/typewriter.proto\x12\x11\x65olymp.typewriter\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/typewriter/fragment.proto\x1a!eolymp/wellknown/expression.proto\"<\n\x15\x44\x65scribeFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12\x0e\n\x06render\x18\x02 \x01(\x08\"G\n\x16\x44\x65scribeFragmentOutput\x12-\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x1b.eolymp.typewriter.Fragment\"\xab\x02\n\x12ListFragmentsInput\x12\x0e\n\x06render\x18\x01 \x01(\x08\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12=\n\x07\x66ilters\x18( \x01(\x0b\x32,.eolymp.typewriter.ListFragmentsInput.Filter\x1a\xa7\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04path\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06locale\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"P\n\x13ListFragmentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.typewriter.Fragment\"D\n\x13\x43reateFragmentInput\x12-\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x1b.eolymp.typewriter.Fragment\"+\n\x14\x43reateFragmentOutput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\"Y\n\x13UpdateFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12-\n\x08\x66ragment\x18\x02 \x01(\x0b\x32\x1b.eolymp.typewriter.Fragment\"\x16\n\x14UpdateFragmentOutput\"*\n\x13\x44\x65leteFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65leteFragmentOutput\"A\n\x11\x44\x65scribePathInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x04 \x01(\t\x12\x0e\n\x06render\x18\x03 \x01(\x08\"C\n\x12\x44\x65scribePathOutput\x12-\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x1b.eolymp.typewriter.Fragment\"\x85\x02\n\x0eListPathsInput\x12\x0e\n\x06render\x18\x02 \x01(\x08\x12\x0e\n\x06locale\x18\x03 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.typewriter.ListPathsInput.Filter\x1az\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12\x30\n\x04path\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12/\n\x05label\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"L\n\x0fListPathsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.typewriter.Fragment\"@\n\x10ListParentsInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0e\n\x06render\x18\x03 \x01(\x08\x12\x0e\n\x06locale\x18\x04 \x01(\t\"N\n\x11ListParentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.typewriter.Fragment\"2\n\x10UploadAssetInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"!\n\x11UploadAssetOutput\x12\x0c\n\x04link\x18\x01 \x01(\t2\xa8\x0c\n\nTypewriter\x12\xc1\x01\n\x10\x44\x65scribeFragment\x12(.eolymp.typewriter.DescribeFragmentInput\x1a).eolymp.typewriter.DescribeFragmentOutput\"X\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\"\x12 /content/fragments/{fragment_id}\x12\xa9\x01\n\rListFragments\x12%.eolymp.typewriter.ListFragmentsInput\x1a&.eolymp.typewriter.ListFragmentsOutput\"I\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/content/fragments\x12\xad\x01\n\x0e\x43reateFragment\x12&.eolymp.typewriter.CreateFragmentInput\x1a\'.eolymp.typewriter.CreateFragmentOutput\"J\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\"\x12/content/fragments\x12\xbb\x01\n\x0eUpdateFragment\x12&.eolymp.typewriter.UpdateFragmentInput\x1a\'.eolymp.typewriter.UpdateFragmentOutput\"X\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"\x1a /content/fragments/{fragment_id}\x12\xbb\x01\n\x0e\x44\x65leteFragment\x12&.eolymp.typewriter.DeleteFragmentInput\x1a\'.eolymp.typewriter.DeleteFragmentOutput\"X\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"* /content/fragments/{fragment_id}\x12\xa2\x01\n\x0c\x44\x65scribePath\x12$.eolymp.typewriter.DescribePathInput\x1a%.eolymp.typewriter.DescribePathOutput\"E\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x0f\x12\r/content/path\x12\x9a\x01\n\tListPaths\x12!.eolymp.typewriter.ListPathsInput\x1a\".eolymp.typewriter.ListPathsOutput\"F\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x10\x12\x0e/content/paths\x12\xa2\x01\n\x0bListParents\x12#.eolymp.typewriter.ListParentsInput\x1a$.eolymp.typewriter.ListParentsOutput\"H\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/content/parents\x12\x96\x01\n\x0bUploadAsset\x12#.eolymp.typewriter.UploadAssetInput\x1a$.eolymp.typewriter.UploadAssetOutput\"<\x82\xe3\n\x1a\x8a\xe3\n\x16typewriter:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\t\"\x07/assetsB7Z5github.com/eolymp/go-sdk/eolymp/typewriter;typewriterb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.typewriter.typewriter_pb2', globals())
@@ -45,45 +45,45 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TYPEWRITER.methods_by_name['UploadAsset']._options = None
   _TYPEWRITER.methods_by_name['UploadAsset']._serialized_options = b'\202\343\n\032\212\343\n\026typewriter:asset:write\352\342\n\013\365\342\n\000\000\000@\370\342\nd\202\323\344\223\002\t\"\007/assets'
   _DESCRIBEFRAGMENTINPUT._serialized_start=225
-  _DESCRIBEFRAGMENTINPUT._serialized_end=269
-  _DESCRIBEFRAGMENTOUTPUT._serialized_start=271
-  _DESCRIBEFRAGMENTOUTPUT._serialized_end=342
-  _LISTFRAGMENTSINPUT._serialized_start=345
-  _LISTFRAGMENTSINPUT._serialized_end=628
-  _LISTFRAGMENTSINPUT_FILTER._serialized_start=461
-  _LISTFRAGMENTSINPUT_FILTER._serialized_end=628
-  _LISTFRAGMENTSOUTPUT._serialized_start=630
-  _LISTFRAGMENTSOUTPUT._serialized_end=710
-  _CREATEFRAGMENTINPUT._serialized_start=712
-  _CREATEFRAGMENTINPUT._serialized_end=780
-  _CREATEFRAGMENTOUTPUT._serialized_start=782
-  _CREATEFRAGMENTOUTPUT._serialized_end=825
-  _UPDATEFRAGMENTINPUT._serialized_start=827
-  _UPDATEFRAGMENTINPUT._serialized_end=916
-  _UPDATEFRAGMENTOUTPUT._serialized_start=918
-  _UPDATEFRAGMENTOUTPUT._serialized_end=940
-  _DELETEFRAGMENTINPUT._serialized_start=942
-  _DELETEFRAGMENTINPUT._serialized_end=984
-  _DELETEFRAGMENTOUTPUT._serialized_start=986
-  _DELETEFRAGMENTOUTPUT._serialized_end=1008
-  _DESCRIBEPATHINPUT._serialized_start=1010
-  _DESCRIBEPATHINPUT._serialized_end=1070
-  _DESCRIBEPATHOUTPUT._serialized_start=1072
-  _DESCRIBEPATHOUTPUT._serialized_end=1139
-  _LISTPATHSINPUT._serialized_start=1142
-  _LISTPATHSINPUT._serialized_end=1398
-  _LISTPATHSINPUT_FILTER._serialized_start=1276
-  _LISTPATHSINPUT_FILTER._serialized_end=1398
-  _LISTPATHSOUTPUT._serialized_start=1400
-  _LISTPATHSOUTPUT._serialized_end=1476
-  _LISTPARENTSINPUT._serialized_start=1478
-  _LISTPARENTSINPUT._serialized_end=1537
-  _LISTPARENTSOUTPUT._serialized_start=1539
-  _LISTPARENTSOUTPUT._serialized_end=1617
-  _UPLOADASSETINPUT._serialized_start=1619
-  _UPLOADASSETINPUT._serialized_end=1669
-  _UPLOADASSETOUTPUT._serialized_start=1671
-  _UPLOADASSETOUTPUT._serialized_end=1704
-  _TYPEWRITER._serialized_start=1707
-  _TYPEWRITER._serialized_end=3283
+  _DESCRIBEFRAGMENTINPUT._serialized_end=285
+  _DESCRIBEFRAGMENTOUTPUT._serialized_start=287
+  _DESCRIBEFRAGMENTOUTPUT._serialized_end=358
+  _LISTFRAGMENTSINPUT._serialized_start=361
+  _LISTFRAGMENTSINPUT._serialized_end=660
+  _LISTFRAGMENTSINPUT_FILTER._serialized_start=493
+  _LISTFRAGMENTSINPUT_FILTER._serialized_end=660
+  _LISTFRAGMENTSOUTPUT._serialized_start=662
+  _LISTFRAGMENTSOUTPUT._serialized_end=742
+  _CREATEFRAGMENTINPUT._serialized_start=744
+  _CREATEFRAGMENTINPUT._serialized_end=812
+  _CREATEFRAGMENTOUTPUT._serialized_start=814
+  _CREATEFRAGMENTOUTPUT._serialized_end=857
+  _UPDATEFRAGMENTINPUT._serialized_start=859
+  _UPDATEFRAGMENTINPUT._serialized_end=948
+  _UPDATEFRAGMENTOUTPUT._serialized_start=950
+  _UPDATEFRAGMENTOUTPUT._serialized_end=972
+  _DELETEFRAGMENTINPUT._serialized_start=974
+  _DELETEFRAGMENTINPUT._serialized_end=1016
+  _DELETEFRAGMENTOUTPUT._serialized_start=1018
+  _DELETEFRAGMENTOUTPUT._serialized_end=1040
+  _DESCRIBEPATHINPUT._serialized_start=1042
+  _DESCRIBEPATHINPUT._serialized_end=1107
+  _DESCRIBEPATHOUTPUT._serialized_start=1109
+  _DESCRIBEPATHOUTPUT._serialized_end=1176
+  _LISTPATHSINPUT._serialized_start=1179
+  _LISTPATHSINPUT._serialized_end=1440
+  _LISTPATHSINPUT_FILTER._serialized_start=1318
+  _LISTPATHSINPUT_FILTER._serialized_end=1440
+  _LISTPATHSOUTPUT._serialized_start=1442
+  _LISTPATHSOUTPUT._serialized_end=1518
+  _LISTPARENTSINPUT._serialized_start=1520
+  _LISTPARENTSINPUT._serialized_end=1584
+  _LISTPARENTSOUTPUT._serialized_start=1586
+  _LISTPARENTSOUTPUT._serialized_end=1664
+  _UPLOADASSETINPUT._serialized_start=1666
+  _UPLOADASSETINPUT._serialized_end=1716
+  _UPLOADASSETOUTPUT._serialized_start=1718
+  _UPLOADASSETOUTPUT._serialized_end=1751
+  _TYPEWRITER._serialized_start=1754
+  _TYPEWRITER._serialized_end=3330
 # @@protoc_insertion_point(module_scope)
