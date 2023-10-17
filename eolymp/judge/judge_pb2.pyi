@@ -1111,28 +1111,25 @@ class UpdateContestOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateParticipantInput(_message.Message):
-    __slots__ = ["bonus_time", "contest_id", "name", "out_of_competition", "participant", "participant_id", "patch"]
+    __slots__ = ["contest_id", "participant", "participant_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    ACTIVE: UpdateParticipantInput.Patch
     ALL: UpdateParticipantInput.Patch
     BONUS_TIME: UpdateParticipantInput.Patch
-    BONUS_TIME_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    MEDAL: UpdateParticipantInput.Patch
     NAME: UpdateParticipantInput.Patch
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    OUT_OF_COMPETITION_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    PASSCODE: UpdateParticipantInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL: UpdateParticipantInput.Patch
-    bonus_time: int
     contest_id: str
-    name: str
-    out_of_competition: bool
     participant: _participant_pb2.Participant
     participant_id: str
-    patch: UpdateParticipantInput.Patch
-    def __init__(self, patch: _Optional[_Union[UpdateParticipantInput.Patch, str]] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., name: _Optional[str] = ..., bonus_time: _Optional[int] = ..., out_of_competition: bool = ...) -> None: ...
+    patch: _containers.RepeatedScalarFieldContainer[UpdateParticipantInput.Patch]
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateParticipantInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class UpdateParticipantOutput(_message.Message):
     __slots__ = []

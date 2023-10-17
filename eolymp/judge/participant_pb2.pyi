@@ -1,3 +1,4 @@
+from eolymp.judge import medal_pb2 as _medal_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -8,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Participant(_message.Message):
-    __slots__ = ["active", "bonus_time", "contest_id", "end_at", "end_in", "ghost", "id", "member_id", "name", "passcode", "started_at", "started_in", "status", "submits", "unofficial"]
+    __slots__ = ["active", "bonus_time", "contest_id", "end_at", "end_in", "ghost", "id", "medal", "member_id", "name", "passcode", "started_at", "started_in", "status", "submits", "unofficial"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Submit(_message.Message):
@@ -28,15 +29,16 @@ class Participant(_message.Message):
     END_IN_FIELD_NUMBER: _ClassVar[int]
     GHOST_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
+    MEDAL_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    NONE: Participant.Status
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     READY: Participant.Status
     STARTED_AT_FIELD_NUMBER: _ClassVar[int]
     STARTED_IN_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     SUBMITS_FIELD_NUMBER: _ClassVar[int]
+    UNKNOWN_STATUS: Participant.Status
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     UPSOLVE: Participant.Status
     WAITING: Participant.Status
@@ -47,6 +49,7 @@ class Participant(_message.Message):
     end_in: int
     ghost: bool
     id: str
+    medal: _medal_pb2.Medal
     member_id: str
     name: str
     passcode: str
@@ -55,4 +58,4 @@ class Participant(_message.Message):
     status: Participant.Status
     submits: _containers.RepeatedCompositeFieldContainer[Participant.Submit]
     unofficial: bool
-    def __init__(self, id: _Optional[str] = ..., contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ..., unofficial: bool = ..., active: bool = ..., ghost: bool = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_in: _Optional[int] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_in: _Optional[int] = ..., bonus_time: _Optional[int] = ..., passcode: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ..., unofficial: bool = ..., active: bool = ..., ghost: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_in: _Optional[int] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_in: _Optional[int] = ..., bonus_time: _Optional[int] = ..., passcode: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
