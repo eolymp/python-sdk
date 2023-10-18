@@ -9,170 +9,170 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class DatasetServiceClient:
+class EnumServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
-    def CreateDataset(self, request, **kwargs):
-        path = "/datasets"
+    def CreateEnum(self, request, **kwargs):
+        path = "/enums"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.CreateDatasetOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.CreateEnumOutput"),
             **kwargs,
         )
 
-    def DeleteDataset(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)
+    def DeleteEnum(self, request, **kwargs):
+        path = "/enums/"+urllib.parse.quote(request.enum_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
+        request.enum_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DeleteDatasetOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DeleteEnumOutput"),
             **kwargs,
         )
 
-    def UpdateDataset(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)
+    def UpdateEnum(self, request, **kwargs):
+        path = "/enums/"+urllib.parse.quote(request.enum_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
+        request.enum_id = ""
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.UpdateDatasetOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.UpdateEnumOutput"),
             **kwargs,
         )
 
-    def DescribeDataset(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)
+    def DescribeEnum(self, request, **kwargs):
+        path = "/enums/"+urllib.parse.quote(request.enum_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
+        request.enum_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DescribeDatasetOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DescribeEnumOutput"),
             **kwargs,
         )
 
-    def ListDatasets(self, request, **kwargs):
-        path = "/datasets"
+    def ListEnums(self, request, **kwargs):
+        path = "/enums"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.ListDatasetsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.ListEnumsOutput"),
             **kwargs,
         )
 
-    def CreateEntry(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)+"/items"
+    def CreateValue(self, request, **kwargs):
+        path = "/enums/"+urllib.parse.quote(request.enum_id)+"/items"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
+        request.enum_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.CreateEntryOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.CreateValueOutput"),
             **kwargs,
         )
 
-    def DeleteEntry(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)+"/items/"+urllib.parse.quote(request.entry_id)
+    def DeleteValue(self, request, **kwargs):
+        path = "/enums/"+urllib.parse.quote(request.enum_id)+"/values/"+urllib.parse.quote(request.value_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
-        request.entry_id = ""
+        request.enum_id = ""
+        request.value_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DeleteEntryOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DeleteValueOutput"),
             **kwargs,
         )
 
-    def UpdateEntry(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)+"/items/"+urllib.parse.quote(request.entry_id)
+    def UpdateValue(self, request, **kwargs):
+        path = "/enums/"+urllib.parse.quote(request.enum_id)+"/values/"+urllib.parse.quote(request.value_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
-        request.entry_id = ""
+        request.enum_id = ""
+        request.value_id = ""
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.UpdateEntryOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.UpdateValueOutput"),
             **kwargs,
         )
 
-    def DescribeEntry(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)+"/items/"+urllib.parse.quote(request.entry_id)
+    def DescribeValue(self, request, **kwargs):
+        path = "/enums/"+urllib.parse.quote(request.enum_id)+"/values/"+urllib.parse.quote(request.value_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
-        request.entry_id = ""
+        request.enum_id = ""
+        request.value_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DescribeEntryOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DescribeValueOutput"),
             **kwargs,
         )
 
-    def ListEntries(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)+"/items"
+    def ListValues(self, request, **kwargs):
+        path = "/enums/"+urllib.parse.quote(request.enum_id)+"/items"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
+        request.enum_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.ListEntriesOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.ListValuesOutput"),
             **kwargs,
         )
 
-    def TranslateEntry(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)+"/items/"+urllib.parse.quote(request.entry_id)+"/translations/"+urllib.parse.quote(request.locale)
+    def TranslateValue(self, request, **kwargs):
+        path = "/enums/"+urllib.parse.quote(request.enum_id)+"/values/"+urllib.parse.quote(request.value_id)+"/translations/"+urllib.parse.quote(request.locale)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
-        request.entry_id = ""
+        request.enum_id = ""
+        request.value_id = ""
         request.locale = ""
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.TranslateEntryOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.TranslateValueOutput"),
             **kwargs,
         )
 
     def DeleteTranslation(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)+"/items/"+urllib.parse.quote(request.entry_id)+"/translations/"+urllib.parse.quote(request.locale)
+        path = "/enums/"+urllib.parse.quote(request.enum_id)+"/values/"+urllib.parse.quote(request.value_id)+"/translations/"+urllib.parse.quote(request.locale)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
-        request.entry_id = ""
+        request.enum_id = ""
+        request.value_id = ""
         request.locale = ""
 
         return self.transport.request(
@@ -184,11 +184,11 @@ class DatasetServiceClient:
         )
 
     def ListTranslations(self, request, **kwargs):
-        path = "/datasets/"+urllib.parse.quote(request.dataset_id)+"/items/"+urllib.parse.quote(request.entry_id)+"/translations"
+        path = "/enums/"+urllib.parse.quote(request.enum_id)+"/values/"+urllib.parse.quote(request.value_id)+"/translations"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.dataset_id = ""
-        request.entry_id = ""
+        request.enum_id = ""
+        request.value_id = ""
 
         return self.transport.request(
             method="DELETE",

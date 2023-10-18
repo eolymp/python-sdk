@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class Entry(_message.Message):
+class Value(_message.Message):
     __slots__ = ["abbr", "id", "image", "keywords", "name", "summary"]
     class Translation(_message.Message):
         __slots__ = ["abbr", "keywords", "locale", "name", "summary"]
