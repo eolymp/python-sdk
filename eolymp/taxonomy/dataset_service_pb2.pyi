@@ -188,14 +188,16 @@ class ListTranslationsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_dataset_entry_pb2.Entry.Translation, _Mapping]]] = ...) -> None: ...
 
 class TranslateEntryInput(_message.Message):
-    __slots__ = ["entry_id", "locale", "translation"]
+    __slots__ = ["dataset_id", "entry_id", "locale", "translation"]
+    DATASET_ID_FIELD_NUMBER: _ClassVar[int]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]
+    dataset_id: str
     entry_id: str
     locale: str
     translation: _dataset_entry_pb2.Entry.Translation
-    def __init__(self, entry_id: _Optional[str] = ..., locale: _Optional[str] = ..., translation: _Optional[_Union[_dataset_entry_pb2.Entry.Translation, _Mapping]] = ...) -> None: ...
+    def __init__(self, dataset_id: _Optional[str] = ..., entry_id: _Optional[str] = ..., locale: _Optional[str] = ..., translation: _Optional[_Union[_dataset_entry_pb2.Entry.Translation, _Mapping]] = ...) -> None: ...
 
 class TranslateEntryOutput(_message.Message):
     __slots__ = []
