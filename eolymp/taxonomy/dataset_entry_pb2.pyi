@@ -5,25 +5,31 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class Topic(_message.Message):
-    __slots__ = ["id", "keywords", "name", "summary"]
+class Entry(_message.Message):
+    __slots__ = ["abbr", "id", "image", "keywords", "name", "summary"]
     class Translation(_message.Message):
-        __slots__ = ["keywords", "locale", "name", "summary"]
+        __slots__ = ["abbr", "keywords", "locale", "name", "summary"]
+        ABBR_FIELD_NUMBER: _ClassVar[int]
         KEYWORDS_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         SUMMARY_FIELD_NUMBER: _ClassVar[int]
+        abbr: str
         keywords: _containers.RepeatedScalarFieldContainer[str]
         locale: str
         name: str
         summary: str
-        def __init__(self, locale: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[str] = ..., keywords: _Optional[_Iterable[str]] = ...) -> None: ...
+        def __init__(self, locale: _Optional[str] = ..., name: _Optional[str] = ..., abbr: _Optional[str] = ..., summary: _Optional[str] = ..., keywords: _Optional[_Iterable[str]] = ...) -> None: ...
+    ABBR_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
     KEYWORDS_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SUMMARY_FIELD_NUMBER: _ClassVar[int]
+    abbr: str
     id: str
+    image: str
     keywords: _containers.RepeatedScalarFieldContainer[str]
     name: str
     summary: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[str] = ..., keywords: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[str] = ..., abbr: _Optional[str] = ..., image: _Optional[str] = ..., keywords: _Optional[_Iterable[str]] = ...) -> None: ...
