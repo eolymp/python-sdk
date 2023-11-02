@@ -11,7 +11,7 @@ class Status(_message.Message):
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Run(_message.Message):
-        __slots__ = ["cost", "cpu_time_limit", "cpu_time_usage", "exit_code", "interactor_exit_code", "interactor_log", "interactor_log_url", "interactor_memory_usage", "interactor_wall_time_usage", "memory_limit", "memory_usage", "output", "reference", "score", "signal", "status", "stderr", "verifier_exit_code", "verifier_log", "verifier_log_url", "verifier_memory_usage", "verifier_wall_time_usage", "wall_time_limit", "wall_time_usage"]
+        __slots__ = ["cost", "cpu_time_limit", "cpu_time_usage", "exit_code", "interactor_exit_code", "interactor_log", "interactor_log_url", "interactor_memory_usage", "interactor_wall_time_usage", "memory_limit", "memory_usage", "output", "output_url", "reference", "score", "signal", "status", "stderr", "stderr_url", "verifier_exit_code", "verifier_log", "verifier_log_url", "verifier_memory_usage", "verifier_wall_time_usage", "wall_time_limit", "wall_time_usage"]
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ACCEPTED: Status.Run.Status
@@ -33,6 +33,7 @@ class Status(_message.Message):
         MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
         NONE: Status.Run.Status
         OUTPUT_FIELD_NUMBER: _ClassVar[int]
+        OUTPUT_URL_FIELD_NUMBER: _ClassVar[int]
         PENDING: Status.Run.Status
         REFERENCE_FIELD_NUMBER: _ClassVar[int]
         RUNTIME_ERROR: Status.Run.Status
@@ -41,6 +42,7 @@ class Status(_message.Message):
         SKIPPED: Status.Run.Status
         STATUS_FIELD_NUMBER: _ClassVar[int]
         STDERR_FIELD_NUMBER: _ClassVar[int]
+        STDERR_URL_FIELD_NUMBER: _ClassVar[int]
         TIMEOUT: Status.Run.Status
         VERIFICATION_FAILURE: Status.Run.Status
         VERIFIER_EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
@@ -63,11 +65,13 @@ class Status(_message.Message):
         memory_limit: int
         memory_usage: int
         output: str
+        output_url: str
         reference: str
         score: float
         signal: int
         status: Status.Run.Status
         stderr: str
+        stderr_url: str
         verifier_exit_code: int
         verifier_log: str
         verifier_log_url: str
@@ -75,7 +79,7 @@ class Status(_message.Message):
         verifier_wall_time_usage: int
         wall_time_limit: int
         wall_time_usage: int
-        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[Status.Run.Status, str]] = ..., score: _Optional[float] = ..., cost: _Optional[float] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., output: _Optional[str] = ..., stderr: _Optional[str] = ..., verifier_log: _Optional[str] = ..., verifier_log_url: _Optional[str] = ..., verifier_wall_time_usage: _Optional[int] = ..., verifier_memory_usage: _Optional[int] = ..., verifier_exit_code: _Optional[int] = ..., interactor_log: _Optional[str] = ..., interactor_log_url: _Optional[str] = ..., interactor_wall_time_usage: _Optional[int] = ..., interactor_memory_usage: _Optional[int] = ..., interactor_exit_code: _Optional[int] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[Status.Run.Status, str]] = ..., score: _Optional[float] = ..., cost: _Optional[float] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., output: _Optional[str] = ..., output_url: _Optional[str] = ..., stderr: _Optional[str] = ..., stderr_url: _Optional[str] = ..., verifier_log: _Optional[str] = ..., verifier_log_url: _Optional[str] = ..., verifier_wall_time_usage: _Optional[int] = ..., verifier_memory_usage: _Optional[int] = ..., verifier_exit_code: _Optional[int] = ..., interactor_log: _Optional[str] = ..., interactor_log_url: _Optional[str] = ..., interactor_wall_time_usage: _Optional[int] = ..., interactor_memory_usage: _Optional[int] = ..., interactor_exit_code: _Optional[int] = ...) -> None: ...
     AGENT_FIELD_NUMBER: _ClassVar[int]
     ERROR: Status.Type
     ERROR_FIELD_NUMBER: _ClassVar[int]
