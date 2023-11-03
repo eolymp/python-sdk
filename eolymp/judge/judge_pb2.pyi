@@ -562,11 +562,12 @@ class ListAttachmentsOutput(_message.Message):
 class ListContestsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
-        __slots__ = ["city", "country", "difficulty", "ends_at", "format", "id", "name", "own", "public", "query", "region", "scale", "series", "starts_at", "visibility", "year"]
+        __slots__ = ["city", "country", "difficulty", "ends_at", "featured", "format", "id", "name", "own", "public", "query", "region", "scale", "series", "starts_at", "status", "visibility", "year"]
         CITY_FIELD_NUMBER: _ClassVar[int]
         COUNTRY_FIELD_NUMBER: _ClassVar[int]
         DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
         ENDS_AT_FIELD_NUMBER: _ClassVar[int]
+        FEATURED_FIELD_NUMBER: _ClassVar[int]
         FORMAT_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -577,12 +578,14 @@ class ListContestsInput(_message.Message):
         SCALE_FIELD_NUMBER: _ClassVar[int]
         SERIES_FIELD_NUMBER: _ClassVar[int]
         STARTS_AT_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
         VISIBILITY_FIELD_NUMBER: _ClassVar[int]
         YEAR_FIELD_NUMBER: _ClassVar[int]
         city: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         difficulty: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         ends_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        featured: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         format: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
@@ -593,9 +596,10 @@ class ListContestsInput(_message.Message):
         scale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         series: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         starts_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         visibility: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         year: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., own: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., starts_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., ends_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., visibility: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., format: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., year: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., scale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., series: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., difficulty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., region: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., city: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., own: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., starts_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., ends_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., visibility: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., format: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., featured: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., year: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., scale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., series: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., difficulty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., region: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., city: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -1101,6 +1105,7 @@ class UpdateContestInput(_message.Message):
     DURATION: UpdateContestInput.Patch
     ENDS_AT: UpdateContestInput.Patch
     ENVIRONMENT: UpdateContestInput.Patch
+    FEATURED_UNTIL: UpdateContestInput.Patch
     FORMAT: UpdateContestInput.Patch
     JOIN_UNOFFICIALLY: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch

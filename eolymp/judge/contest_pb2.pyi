@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
-    __slots__ = ["appearance", "domain", "duration", "ends_at", "ends_in", "environment", "format", "id", "join_unofficially", "name", "participation_mode", "scoreboard", "space_id", "starts_at", "starts_in", "status", "taxonomy", "upsolve", "url", "visibility"]
+    __slots__ = ["appearance", "domain", "duration", "ends_at", "ends_in", "environment", "featured_until", "format", "id", "join_unofficially", "name", "participation_mode", "scoreboard", "space_id", "starts_at", "starts_in", "status", "taxonomy", "upsolve", "url", "visibility"]
     class Format(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class ParticipationMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -94,6 +94,7 @@ class Contest(_message.Message):
     ENDS_AT_FIELD_NUMBER: _ClassVar[int]
     ENDS_IN_FIELD_NUMBER: _ClassVar[int]
     ENVIRONMENT_FIELD_NUMBER: _ClassVar[int]
+    FEATURED_UNTIL_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     FORMAT_UNKNOWN: Contest.Format
     FROZEN: Contest.Status
@@ -129,6 +130,7 @@ class Contest(_message.Message):
     ends_at: _timestamp_pb2.Timestamp
     ends_in: int
     environment: Contest.Environment
+    featured_until: _timestamp_pb2.Timestamp
     format: Contest.Format
     id: str
     join_unofficially: bool
@@ -143,4 +145,4 @@ class Contest(_message.Message):
     upsolve: Contest.Upsolve
     url: str
     visibility: Contest.Visibility
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., domain: _Optional[str] = ..., space_id: _Optional[str] = ..., taxonomy: _Optional[_Union[Contest.Taxonomy, _Mapping]] = ..., appearance: _Optional[_Union[Contest.Appearance, _Mapping]] = ..., environment: _Optional[_Union[Contest.Environment, _Mapping]] = ..., upsolve: _Optional[_Union[Contest.Upsolve, _Mapping]] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., featured_until: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., domain: _Optional[str] = ..., space_id: _Optional[str] = ..., taxonomy: _Optional[_Union[Contest.Taxonomy, _Mapping]] = ..., appearance: _Optional[_Union[Contest.Appearance, _Mapping]] = ..., environment: _Optional[_Union[Contest.Environment, _Mapping]] = ..., upsolve: _Optional[_Union[Contest.Upsolve, _Mapping]] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ...) -> None: ...
