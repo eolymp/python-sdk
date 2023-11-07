@@ -145,5 +145,7 @@ class UploadPictureInput(_message.Message):
     def __init__(self, filename: _Optional[str] = ..., data: _Optional[bytes] = ..., offset_x: _Optional[int] = ..., offset_y: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class UploadPictureOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["picture_url"]
+    PICTURE_URL_FIELD_NUMBER: _ClassVar[int]
+    picture_url: str
+    def __init__(self, picture_url: _Optional[str] = ...) -> None: ...
