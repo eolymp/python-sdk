@@ -195,7 +195,7 @@ class UpdateQuotaOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateSpaceInput(_message.Message):
-    __slots__ = ["space", "space_id"]
+    __slots__ = ["patch", "space", "space_id"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateSpaceInput.Patch
@@ -203,14 +203,16 @@ class UpdateSpaceInput(_message.Message):
     IMAGE: UpdateSpaceInput.Patch
     KEY: UpdateSpaceInput.Patch
     NAME: UpdateSpaceInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
     SPACE_FIELD_NUMBER: _ClassVar[int]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     TYPE: UpdateSpaceInput.Patch
     USER_CONFIG: UpdateSpaceInput.Patch
     VISIBILITY: UpdateSpaceInput.Patch
+    patch: _containers.RepeatedScalarFieldContainer[UpdateSpaceInput.Patch]
     space: _space_pb2.Space
     space_id: str
-    def __init__(self, space_id: _Optional[str] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateSpaceInput.Patch, str]]] = ..., space_id: _Optional[str] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
 
 class UpdateSpaceOutput(_message.Message):
     __slots__ = []

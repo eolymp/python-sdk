@@ -9,8 +9,6 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
     __slots__ = ["appearance_config", "home_url", "id", "image", "issuer_url", "key", "name", "plan", "type", "url", "user_config", "visibility"]
-    class Membership(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -44,7 +42,6 @@ class Space(_message.Message):
     HOME_URL_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
-    INDIVIDUAL: Space.Membership
     ISSUER_URL_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -52,10 +49,8 @@ class Space(_message.Message):
     PLAN_FIELD_NUMBER: _ClassVar[int]
     PRIVATE: Space.Visibility
     PUBLIC: Space.Visibility
-    TEAM: Space.Membership
     TEAMROOM: Space.Type
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    UNKNOWN_MEMBERSHIP: Space.Membership
     UNKNOWN_TYPE: Space.Type
     UNKNOWN_VISIBILITY: Space.Visibility
     URL_FIELD_NUMBER: _ClassVar[int]
