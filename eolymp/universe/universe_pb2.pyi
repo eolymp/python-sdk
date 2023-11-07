@@ -5,6 +5,7 @@ from eolymp.universe import permission_pb2 as _permission_pb2
 from eolymp.universe import space_pb2 as _space_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -195,8 +196,18 @@ class UpdateQuotaOutput(_message.Message):
 
 class UpdateSpaceInput(_message.Message):
     __slots__ = ["space", "space_id"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateSpaceInput.Patch
+    APPEARANCE_CONFIG: UpdateSpaceInput.Patch
+    IMAGE: UpdateSpaceInput.Patch
+    KEY: UpdateSpaceInput.Patch
+    NAME: UpdateSpaceInput.Patch
     SPACE_FIELD_NUMBER: _ClassVar[int]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    TYPE: UpdateSpaceInput.Patch
+    USER_CONFIG: UpdateSpaceInput.Patch
+    VISIBILITY: UpdateSpaceInput.Patch
     space: _space_pb2.Space
     space_id: str
     def __init__(self, space_id: _Optional[str] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
