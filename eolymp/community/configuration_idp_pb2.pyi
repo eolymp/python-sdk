@@ -6,6 +6,20 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class IdentityProvider(_message.Message):
     __slots__ = []
+    class Basecamp(_message.Message):
+        __slots__ = []
+        def __init__(self) -> None: ...
+    class Local(_message.Message):
+        __slots__ = ["allow_modify_basics", "allow_modify_email", "allow_modify_nickname", "allow_modify_password"]
+        ALLOW_MODIFY_BASICS_FIELD_NUMBER: _ClassVar[int]
+        ALLOW_MODIFY_EMAIL_FIELD_NUMBER: _ClassVar[int]
+        ALLOW_MODIFY_NICKNAME_FIELD_NUMBER: _ClassVar[int]
+        ALLOW_MODIFY_PASSWORD_FIELD_NUMBER: _ClassVar[int]
+        allow_modify_basics: bool
+        allow_modify_email: bool
+        allow_modify_nickname: bool
+        allow_modify_password: bool
+        def __init__(self, allow_modify_nickname: bool = ..., allow_modify_basics: bool = ..., allow_modify_email: bool = ..., allow_modify_password: bool = ...) -> None: ...
     class OIDC(_message.Message):
         __slots__ = ["authorize_endpoint", "client_id", "client_secret", "issuer", "keys_endpoint", "redirect_uri", "token_endpoint", "userinfo_endpoint"]
         AUTHORIZE_ENDPOINT_FIELD_NUMBER: _ClassVar[int]

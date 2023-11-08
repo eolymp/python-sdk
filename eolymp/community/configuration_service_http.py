@@ -36,3 +36,25 @@ class ConfigurationServiceClient:
             **kwargs,
         )
 
+    def DescribeIdentityConfig(self, request, **kwargs):
+        path = "/configs/identity"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeIdentityConfigOutput"),
+            **kwargs,
+        )
+
+    def ConfigureIdentityConfig(self, request, **kwargs):
+        path = "/configs/identity"
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ConfigureIdentityConfigOutput"),
+            **kwargs,
+        )
+

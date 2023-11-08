@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/community/configuration_idp.proto\x12\x10\x65olymp.community\"\xd1\x01\n\x10IdentityProvider\x1a\xbc\x01\n\x04OIDC\x12\x11\n\tclient_id\x18\n \x01(\t\x12\x15\n\rclient_secret\x18\x0b \x01(\t\x12\x0e\n\x06issuer\x18\x14 \x01(\t\x12\x1a\n\x12\x61uthorize_endpoint\x18\x15 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x16 \x01(\t\x12\x15\n\rkeys_endpoint\x18\x17 \x01(\t\x12\x19\n\x11userinfo_endpoint\x18\x18 \x01(\t\x12\x14\n\x0credirect_uri\x18\x19 \x01(\tB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/community/configuration_idp.proto\x12\x10\x65olymp.community\"\xdd\x02\n\x10IdentityProvider\x1a\n\n\x08\x42\x61secamp\x1a~\n\x05Local\x12\x1d\n\x15\x61llow_modify_nickname\x18\x01 \x01(\x08\x12\x1b\n\x13\x61llow_modify_basics\x18\x02 \x01(\x08\x12\x1a\n\x12\x61llow_modify_email\x18\x03 \x01(\x08\x12\x1d\n\x15\x61llow_modify_password\x18\x04 \x01(\x08\x1a\xbc\x01\n\x04OIDC\x12\x11\n\tclient_id\x18\n \x01(\t\x12\x15\n\rclient_secret\x18\x0b \x01(\t\x12\x0e\n\x06issuer\x18\x14 \x01(\t\x12\x1a\n\x12\x61uthorize_endpoint\x18\x15 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x16 \x01(\t\x12\x15\n\rkeys_endpoint\x18\x17 \x01(\t\x12\x19\n\x11userinfo_endpoint\x18\x18 \x01(\t\x12\x14\n\x0credirect_uri\x18\x19 \x01(\tB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.configuration_idp_pb2', globals())
@@ -22,7 +22,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _IDENTITYPROVIDER._serialized_start=63
-  _IDENTITYPROVIDER._serialized_end=272
-  _IDENTITYPROVIDER_OIDC._serialized_start=84
-  _IDENTITYPROVIDER_OIDC._serialized_end=272
+  _IDENTITYPROVIDER._serialized_end=412
+  _IDENTITYPROVIDER_BASECAMP._serialized_start=83
+  _IDENTITYPROVIDER_BASECAMP._serialized_end=93
+  _IDENTITYPROVIDER_LOCAL._serialized_start=95
+  _IDENTITYPROVIDER_LOCAL._serialized_end=221
+  _IDENTITYPROVIDER_OIDC._serialized_start=224
+  _IDENTITYPROVIDER_OIDC._serialized_end=412
 # @@protoc_insertion_point(module_scope)
