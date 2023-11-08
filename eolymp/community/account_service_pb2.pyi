@@ -25,12 +25,12 @@ class CompleteRecoverOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class CompleteVerificationInput(_message.Message):
-    __slots__ = ["code", "subject"]
+    __slots__ = ["code", "member_id"]
     CODE_FIELD_NUMBER: _ClassVar[int]
-    SUBJECT_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     code: str
-    subject: str
-    def __init__(self, code: _Optional[str] = ..., subject: _Optional[str] = ...) -> None: ...
+    member_id: str
+    def __init__(self, code: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class CompleteVerificationOutput(_message.Message):
     __slots__ = []
@@ -45,10 +45,12 @@ class CreateAccountInput(_message.Message):
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., captcha: _Optional[str] = ...) -> None: ...
 
 class CreateAccountOutput(_message.Message):
-    __slots__ = ["hint"]
+    __slots__ = ["hint", "member_id"]
     HINT_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     hint: str
-    def __init__(self, hint: _Optional[str] = ...) -> None: ...
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ..., hint: _Optional[str] = ...) -> None: ...
 
 class DeleteAccountInput(_message.Message):
     __slots__ = []
