@@ -199,7 +199,6 @@ class UpdateSpaceInput(_message.Message):
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateSpaceInput.Patch
-    APPEARANCE_CONFIG: UpdateSpaceInput.Patch
     IMAGE: UpdateSpaceInput.Patch
     KEY: UpdateSpaceInput.Patch
     NAME: UpdateSpaceInput.Patch
@@ -207,7 +206,6 @@ class UpdateSpaceInput(_message.Message):
     SPACE_FIELD_NUMBER: _ClassVar[int]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     TYPE: UpdateSpaceInput.Patch
-    USER_CONFIG: UpdateSpaceInput.Patch
     VISIBILITY: UpdateSpaceInput.Patch
     patch: _containers.RepeatedScalarFieldContainer[UpdateSpaceInput.Patch]
     space: _space_pb2.Space
