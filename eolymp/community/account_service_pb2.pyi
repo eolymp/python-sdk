@@ -11,14 +11,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CompleteRecoverInput(_message.Message):
-    __slots__ = ["code", "password", "subject"]
+    __slots__ = ["code", "member_id", "password"]
     CODE_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
-    SUBJECT_FIELD_NUMBER: _ClassVar[int]
     code: str
+    member_id: str
     password: str
-    subject: str
-    def __init__(self, code: _Optional[str] = ..., password: _Optional[str] = ..., subject: _Optional[str] = ...) -> None: ...
+    def __init__(self, code: _Optional[str] = ..., password: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class CompleteRecoverOutput(_message.Message):
     __slots__ = []
@@ -91,10 +91,12 @@ class StartRecoveryInput(_message.Message):
     def __init__(self, email: _Optional[str] = ..., locale: _Optional[str] = ..., captcha: _Optional[str] = ...) -> None: ...
 
 class StartRecoveryOutput(_message.Message):
-    __slots__ = ["hint"]
+    __slots__ = ["hint", "member_id"]
     HINT_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     hint: str
-    def __init__(self, hint: _Optional[str] = ...) -> None: ...
+    member_id: str
+    def __init__(self, hint: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class UpdateAccountInput(_message.Message):
     __slots__ = ["current_password", "member", "patch"]
