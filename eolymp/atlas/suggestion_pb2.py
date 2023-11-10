@@ -12,9 +12,10 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/atlas/suggestion.proto\x12\x0c\x65olymp.atlas\x1a\x18\x65olymp/ecm/content.proto\"\xca\x02\n\nSuggestion\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x06status\x18\x02 \x01(\x0e\x32\x1f.eolymp.atlas.Suggestion.Status\x12\x12\n\nproblem_id\x18\x03 \x01(\t\x12\x0e\n\x06locale\x18\x04 \x01(\t\x12\x11\n\tmember_id\x18\x05 \x01(\t\x12\x0e\n\x06topics\x18\x64 \x03(\t\x12\x12\n\ndifficulty\x18\x65 \x01(\r\x12&\n\tstatement\x18\x66 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12&\n\teditorial\x18g \x01(\x0b\x32\x13.eolymp.ecm.Content\"T\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tIN_REVIEW\x10\x02\x12\x0c\n\x08\x41PPROVED\x10\x03\x12\x0c\n\x08REJECTED\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/atlas/suggestion.proto\x12\x0c\x65olymp.atlas\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x96\x03\n\nSuggestion\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x06status\x18\x02 \x01(\x0e\x32\x1f.eolymp.atlas.Suggestion.Status\x12\x0e\n\x06locale\x18\x04 \x01(\t\x12\x11\n\tmember_id\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06topics\x18\x64 \x03(\t\x12\x12\n\ndifficulty\x18\x65 \x01(\r\x12&\n\tstatement\x18\x66 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12&\n\teditorial\x18g \x01(\x0b\x32\x13.eolymp.ecm.Content\"T\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tIN_REVIEW\x10\x02\x12\x0c\n\x08\x41PPROVED\x10\x03\x12\x0c\n\x08REJECTED\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.suggestion_pb2', globals())
@@ -22,8 +23,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _SUGGESTION._serialized_start=74
-  _SUGGESTION._serialized_end=404
-  _SUGGESTION_STATUS._serialized_start=320
-  _SUGGESTION_STATUS._serialized_end=404
+  _SUGGESTION._serialized_start=107
+  _SUGGESTION._serialized_end=513
+  _SUGGESTION_STATUS._serialized_start=429
+  _SUGGESTION_STATUS._serialized_end=513
 # @@protoc_insertion_point(module_scope)
