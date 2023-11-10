@@ -15,7 +15,7 @@ class SuggestionServiceClient:
         self.url = url
 
     def CreateSuggestion(self, request, **kwargs):
-        path = "/suggestions/"
+        path = "/suggestions"
 
         return self.transport.request(
             method="POST",
