@@ -37,14 +37,12 @@ class DeleteSuggestionOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeSuggestionInput(_message.Message):
-    __slots__ = ["problem_id", "suggestion_id", "version"]
+    __slots__ = ["problem_id", "suggestion_id"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SUGGESTION_ID_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     suggestion_id: str
-    version: int
-    def __init__(self, problem_id: _Optional[str] = ..., suggestion_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., suggestion_id: _Optional[str] = ...) -> None: ...
 
 class DescribeSuggestionOutput(_message.Message):
     __slots__ = ["suggestion"]
@@ -53,25 +51,25 @@ class DescribeSuggestionOutput(_message.Message):
     def __init__(self, suggestion: _Optional[_Union[_suggestion_pb2.Suggestion, _Mapping]] = ...) -> None: ...
 
 class ListSuggestionsInput(_message.Message):
-    __slots__ = ["filters", "offset", "problem_id", "size", "version"]
+    __slots__ = ["filters", "offset", "problem_id", "size"]
     class Filter(_message.Message):
-        __slots__ = ["id", "name"]
+        __slots__ = ["id", "member_id", "status"]
         ID_FIELD_NUMBER: _ClassVar[int]
-        NAME_FIELD_NUMBER: _ClassVar[int]
+        MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+        member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     filters: ListSuggestionsInput.Filter
     offset: int
     problem_id: str
     size: int
-    version: int
-    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSuggestionsInput.Filter, _Mapping]] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSuggestionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListSuggestionsOutput(_message.Message):
     __slots__ = ["items", "total"]
