@@ -1,6 +1,5 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
-from eolymp.community import attribute_pb2 as _attribute_pb2
 from eolymp.community import member_pb2 as _member_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
