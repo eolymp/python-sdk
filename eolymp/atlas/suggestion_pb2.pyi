@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Suggestion(_message.Message):
-    __slots__ = ["created_at", "difficulty", "editorial", "id", "locale", "member_id", "statement", "status", "topics", "updated_at"]
+    __slots__ = ["created_at", "difficulty", "editorial", "id", "locale", "member_id", "statement", "status", "title", "topics", "updated_at"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     APPROVED: Suggestion.Status
@@ -24,6 +24,7 @@ class Suggestion(_message.Message):
     REJECTED: Suggestion.Status
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
+    TITLE_FIELD_NUMBER: _ClassVar[int]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_STATUS: Suggestion.Status
     UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -35,6 +36,7 @@ class Suggestion(_message.Message):
     member_id: str
     statement: _content_pb2.Content
     status: Suggestion.Status
+    title: str
     topics: _containers.RepeatedScalarFieldContainer[str]
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Suggestion.Status, str]] = ..., locale: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., topics: _Optional[_Iterable[str]] = ..., difficulty: _Optional[int] = ..., statement: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., editorial: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Suggestion.Status, str]] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., topics: _Optional[_Iterable[str]] = ..., difficulty: _Optional[int] = ..., statement: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., editorial: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
