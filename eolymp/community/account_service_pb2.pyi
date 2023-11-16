@@ -129,6 +129,18 @@ class UpdateAccountOutput(_message.Message):
     hint: str
     def __init__(self, hint: _Optional[str] = ...) -> None: ...
 
+class UpgradeSubscriptionInput(_message.Message):
+    __slots__ = ["tier_id"]
+    TIER_ID_FIELD_NUMBER: _ClassVar[int]
+    tier_id: str
+    def __init__(self, tier_id: _Optional[str] = ...) -> None: ...
+
+class UpgradeSubscriptionOutput(_message.Message):
+    __slots__ = ["order_id"]
+    ORDER_ID_FIELD_NUMBER: _ClassVar[int]
+    order_id: str
+    def __init__(self, order_id: _Optional[str] = ...) -> None: ...
+
 class UploadPictureInput(_message.Message):
     __slots__ = ["data", "filename", "offset_x", "offset_y", "size"]
     DATA_FIELD_NUMBER: _ClassVar[int]
