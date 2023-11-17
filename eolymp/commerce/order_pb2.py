@@ -15,7 +15,7 @@ from eolymp.commerce import address_pb2 as eolymp_dot_commerce_dot_address__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/commerce/order.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/commerce/address.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf0\x07\n\x05Order\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x10\n\x08space_id\x18\x03 \x01(\t\x12\x13\n\tmember_id\x18\x04 \x01(\tH\x00\x12\x11\n\x07user_id\x18\x05 \x01(\tH\x00\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07paid_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\x06status\x18\x14 \x01(\x0e\x32\x1d.eolymp.commerce.Order.Status\x12\x35\n\nrecurrence\x18\x1e \x01(\x0e\x32!.eolymp.commerce.Order.Recurrence\x12\x31\n\x0f\x62illing_address\x18( \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x10\n\x08\x63urrency\x18\x32 \x01(\t\x12\x10\n\x08subtotal\x18\x33 \x01(\x02\x12\x12\n\ntax_amount\x18\x34 \x01(\x02\x12\x16\n\x0etax_percentage\x18\x35 \x01(\x02\x12\x17\n\x0f\x64iscount_amount\x18\x36 \x01(\x02\x12\x1b\n\x13\x64iscount_percentage\x18\x37 \x01(\x02\x12\x13\n\x0bgrand_total\x18; \x01(\x02\x12*\n\x05items\x18\x64 \x03(\x0b\x32\x1b.eolymp.commerce.Order.Item\x1a\xeb\x01\n\x04Item\x12\x0b\n\x03sku\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x10\n\x08quantity\x18\n \x01(\x02\x12\x12\n\nitem_price\x18\x64 \x01(\x02\x12\x18\n\x10total_tax_amount\x18\x65 \x01(\x02\x12\x1c\n\x14total_tax_percentage\x18\x66 \x01(\x02\x12\x1d\n\x15total_discount_amount\x18g \x01(\x02\x12!\n\x19total_discount_percentage\x18h \x01(\x02\x12\x13\n\x0btotal_price\x18m \x01(\x02\"a\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0e\n\nINCOMPLETE\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08INACTIVE\x10\x04\x12\x0c\n\x08\x43OMPLETE\x10\x05\"G\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x08\n\x04NONE\x10\x01\x12\x0b\n\x07MONTHLY\x10\x02\x12\n\n\x06YEARLY\x10\x03\x42\x07\n\x05payerB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/commerce/order.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/commerce/address.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe4\x07\n\x05Order\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x10\n\x08space_id\x18\x03 \x01(\t\x12\x13\n\tmember_id\x18\x04 \x01(\tH\x00\x12\x11\n\x07user_id\x18\x05 \x01(\tH\x00\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07paid_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\x06status\x18\x14 \x01(\x0e\x32\x1d.eolymp.commerce.Order.Status\x12\x35\n\nrecurrence\x18\x1e \x01(\x0e\x32!.eolymp.commerce.Order.Recurrence\x12\x31\n\x0f\x62illing_address\x18( \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x10\n\x08\x63urrency\x18\x32 \x01(\t\x12\x10\n\x08subtotal\x18\x33 \x01(\x02\x12\x12\n\ntax_amount\x18\x34 \x01(\x02\x12\x16\n\x0etax_percentage\x18\x35 \x01(\x02\x12\x17\n\x0f\x64iscount_amount\x18\x36 \x01(\x02\x12\x1b\n\x13\x64iscount_percentage\x18\x37 \x01(\x02\x12\x13\n\x0bgrand_total\x18; \x01(\x02\x12*\n\x05items\x18\x64 \x03(\x0b\x32\x1b.eolymp.commerce.Order.Item\x1a\xdf\x01\n\x04Item\x12\x0b\n\x03sku\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x10\n\x08quantity\x18\n \x01(\x02\x12\x12\n\nitem_price\x18\x64 \x01(\x02\x12\x16\n\x0etax_percentage\x18\x66 \x01(\x02\x12\x1b\n\x13\x64iscount_percentage\x18h \x01(\x02\x12\x18\n\x10total_tax_amount\x18\x65 \x01(\x02\x12\x1d\n\x15total_discount_amount\x18g \x01(\x02\x12\x13\n\x0btotal_price\x18m \x01(\x02\"a\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0e\n\nINCOMPLETE\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08INACTIVE\x10\x04\x12\x0c\n\x08\x43OMPLETE\x10\x05\"G\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x08\n\x04NONE\x10\x01\x12\x0b\n\x07MONTHLY\x10\x02\x12\n\n\x06YEARLY\x10\x03\x42\x07\n\x05payerB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.order_pb2', globals())
@@ -24,11 +24,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
   _ORDER._serialized_start=113
-  _ORDER._serialized_end=1121
+  _ORDER._serialized_end=1109
   _ORDER_ITEM._serialized_start=705
-  _ORDER_ITEM._serialized_end=940
-  _ORDER_STATUS._serialized_start=942
-  _ORDER_STATUS._serialized_end=1039
-  _ORDER_RECURRENCE._serialized_start=1041
-  _ORDER_RECURRENCE._serialized_end=1112
+  _ORDER_ITEM._serialized_end=928
+  _ORDER_STATUS._serialized_start=930
+  _ORDER_STATUS._serialized_end=1027
+  _ORDER_RECURRENCE._serialized_start=1029
+  _ORDER_RECURRENCE._serialized_end=1100
 # @@protoc_insertion_point(module_scope)

@@ -15,28 +15,28 @@ class Order(_message.Message):
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Item(_message.Message):
-        __slots__ = ["description", "item_price", "name", "quantity", "sku", "total_discount_amount", "total_discount_percentage", "total_price", "total_tax_amount", "total_tax_percentage"]
+        __slots__ = ["description", "discount_percentage", "item_price", "name", "quantity", "sku", "tax_percentage", "total_discount_amount", "total_price", "total_tax_amount"]
         DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+        DISCOUNT_PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
         ITEM_PRICE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         QUANTITY_FIELD_NUMBER: _ClassVar[int]
         SKU_FIELD_NUMBER: _ClassVar[int]
+        TAX_PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
         TOTAL_DISCOUNT_AMOUNT_FIELD_NUMBER: _ClassVar[int]
-        TOTAL_DISCOUNT_PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
         TOTAL_PRICE_FIELD_NUMBER: _ClassVar[int]
         TOTAL_TAX_AMOUNT_FIELD_NUMBER: _ClassVar[int]
-        TOTAL_TAX_PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
         description: str
+        discount_percentage: float
         item_price: float
         name: str
         quantity: float
         sku: str
+        tax_percentage: float
         total_discount_amount: float
-        total_discount_percentage: float
         total_price: float
         total_tax_amount: float
-        total_tax_percentage: float
-        def __init__(self, sku: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., quantity: _Optional[float] = ..., item_price: _Optional[float] = ..., total_tax_amount: _Optional[float] = ..., total_tax_percentage: _Optional[float] = ..., total_discount_amount: _Optional[float] = ..., total_discount_percentage: _Optional[float] = ..., total_price: _Optional[float] = ...) -> None: ...
+        def __init__(self, sku: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., quantity: _Optional[float] = ..., item_price: _Optional[float] = ..., tax_percentage: _Optional[float] = ..., discount_percentage: _Optional[float] = ..., total_tax_amount: _Optional[float] = ..., total_discount_amount: _Optional[float] = ..., total_price: _Optional[float] = ...) -> None: ...
     ACTIVE: Order.Status
     BILLING_ADDRESS_FIELD_NUMBER: _ClassVar[int]
     COMPLETE: Order.Status
