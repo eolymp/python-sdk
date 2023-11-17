@@ -19,6 +19,18 @@ class CancelOrderOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class CreateOrderInput(_message.Message):
+    __slots__ = ["order"]
+    ORDER_FIELD_NUMBER: _ClassVar[int]
+    order: _order_pb2.Order
+    def __init__(self, order: _Optional[_Union[_order_pb2.Order, _Mapping]] = ...) -> None: ...
+
+class CreateOrderOutput(_message.Message):
+    __slots__ = ["order_id"]
+    ORDER_ID_FIELD_NUMBER: _ClassVar[int]
+    order_id: str
+    def __init__(self, order_id: _Optional[str] = ...) -> None: ...
+
 class DescribeOrderInput(_message.Message):
     __slots__ = ["order_id"]
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]

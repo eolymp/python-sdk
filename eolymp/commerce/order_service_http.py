@@ -14,6 +14,17 @@ class OrderServiceClient:
         self.transport = transport
         self.url = url
 
+    def CreateOrder(self, request, **kwargs):
+        path = "/orders"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.CreateOrderOutput"),
+            **kwargs,
+        )
+
     def DescribeOrder(self, request, **kwargs):
         path = "/orders/"+urllib.parse.quote(request.order_id)
 

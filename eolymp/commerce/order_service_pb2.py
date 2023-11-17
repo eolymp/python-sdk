@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.commerce import order_pb2 as eolymp_dot_commerce_dot_order__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/commerce/order_service.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1b\x65olymp/commerce/order.proto\"&\n\x12\x44\x65scribeOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"<\n\x13\x44\x65scribeOrderOutput\x12%\n\x05order\x18\x01 \x01(\x0b\x32\x16.eolymp.commerce.Order\"\xaa\x01\n\x10UpdateOrderInput\x12\x36\n\x05patch\x18\x01 \x03(\x0e\x32\'.eolymp.commerce.UpdateOrderInput.Patch\x12\x10\n\x08order_id\x18\x02 \x01(\t\x12%\n\x05order\x18\x03 \x01(\x0b\x32\x16.eolymp.commerce.Order\"%\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x13\n\x0f\x42ILLING_ADDRESS\x10\x01\"\x13\n\x11UpdateOrderOutput\"#\n\x0fPlaceOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x12\n\x10PlaceOrderOutput\"$\n\x10\x43\x61ncelOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x13\n\x11\x43\x61ncelOrderOutput2\xa5\x04\n\x0cOrderService\x12\x85\x01\n\rDescribeOrder\x12#.eolymp.commerce.DescribeOrderInput\x1a$.eolymp.commerce.DescribeOrderOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\x12\x12/orders/{order_id}\x12\x7f\n\x0bUpdateOrder\x12!.eolymp.commerce.UpdateOrderInput\x1a\".eolymp.commerce.UpdateOrderOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\x1a\x12/orders/{order_id}\x12\x82\x01\n\nPlaceOrder\x12 .eolymp.commerce.PlaceOrderInput\x1a!.eolymp.commerce.PlaceOrderOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1a\"\x18/orders/{order_id}/place\x12\x86\x01\n\x0b\x43\x61ncelOrder\x12!.eolymp.commerce.CancelOrderInput\x1a\".eolymp.commerce.CancelOrderOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1b\"\x19/orders/{order_id}/cancelB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/commerce/order_service.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1b\x65olymp/commerce/order.proto\"9\n\x10\x43reateOrderInput\x12%\n\x05order\x18\x01 \x01(\x0b\x32\x16.eolymp.commerce.Order\"%\n\x11\x43reateOrderOutput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"&\n\x12\x44\x65scribeOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"<\n\x13\x44\x65scribeOrderOutput\x12%\n\x05order\x18\x01 \x01(\x0b\x32\x16.eolymp.commerce.Order\"\xaa\x01\n\x10UpdateOrderInput\x12\x36\n\x05patch\x18\x01 \x03(\x0e\x32\'.eolymp.commerce.UpdateOrderInput.Patch\x12\x10\n\x08order_id\x18\x02 \x01(\t\x12%\n\x05order\x18\x03 \x01(\x0b\x32\x16.eolymp.commerce.Order\"%\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x13\n\x0f\x42ILLING_ADDRESS\x10\x01\"\x13\n\x11UpdateOrderOutput\"#\n\x0fPlaceOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x12\n\x10PlaceOrderOutput\"$\n\x10\x43\x61ncelOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x13\n\x11\x43\x61ncelOrderOutput2\x9b\x05\n\x0cOrderService\x12t\n\x0b\x43reateOrder\x12!.eolymp.commerce.CreateOrderInput\x1a\".eolymp.commerce.CreateOrderOutput\"\x1e\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\t\"\x07/orders\x12\x85\x01\n\rDescribeOrder\x12#.eolymp.commerce.DescribeOrderInput\x1a$.eolymp.commerce.DescribeOrderOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\x12\x12/orders/{order_id}\x12\x7f\n\x0bUpdateOrder\x12!.eolymp.commerce.UpdateOrderInput\x1a\".eolymp.commerce.UpdateOrderOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\x1a\x12/orders/{order_id}\x12\x82\x01\n\nPlaceOrder\x12 .eolymp.commerce.PlaceOrderInput\x1a!.eolymp.commerce.PlaceOrderOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1a\"\x18/orders/{order_id}/place\x12\x86\x01\n\x0b\x43\x61ncelOrder\x12!.eolymp.commerce.CancelOrderInput\x1a\".eolymp.commerce.CancelOrderOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1b\"\x19/orders/{order_id}/cancelB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.order_service_pb2', globals())
@@ -24,6 +24,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
+  _ORDERSERVICE.methods_by_name['CreateOrder']._options = None
+  _ORDERSERVICE.methods_by_name['CreateOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\t\"\007/orders'
   _ORDERSERVICE.methods_by_name['DescribeOrder']._options = None
   _ORDERSERVICE.methods_by_name['DescribeOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\024\022\022/orders/{order_id}'
   _ORDERSERVICE.methods_by_name['UpdateOrder']._options = None
@@ -32,24 +34,28 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ORDERSERVICE.methods_by_name['PlaceOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\032\"\030/orders/{order_id}/place'
   _ORDERSERVICE.methods_by_name['CancelOrder']._options = None
   _ORDERSERVICE.methods_by_name['CancelOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\033\"\031/orders/{order_id}/cancel'
-  _DESCRIBEORDERINPUT._serialized_start=152
-  _DESCRIBEORDERINPUT._serialized_end=190
-  _DESCRIBEORDEROUTPUT._serialized_start=192
-  _DESCRIBEORDEROUTPUT._serialized_end=252
-  _UPDATEORDERINPUT._serialized_start=255
-  _UPDATEORDERINPUT._serialized_end=425
-  _UPDATEORDERINPUT_PATCH._serialized_start=388
-  _UPDATEORDERINPUT_PATCH._serialized_end=425
-  _UPDATEORDEROUTPUT._serialized_start=427
-  _UPDATEORDEROUTPUT._serialized_end=446
-  _PLACEORDERINPUT._serialized_start=448
-  _PLACEORDERINPUT._serialized_end=483
-  _PLACEORDEROUTPUT._serialized_start=485
-  _PLACEORDEROUTPUT._serialized_end=503
-  _CANCELORDERINPUT._serialized_start=505
-  _CANCELORDERINPUT._serialized_end=541
-  _CANCELORDEROUTPUT._serialized_start=543
-  _CANCELORDEROUTPUT._serialized_end=562
-  _ORDERSERVICE._serialized_start=565
-  _ORDERSERVICE._serialized_end=1114
+  _CREATEORDERINPUT._serialized_start=152
+  _CREATEORDERINPUT._serialized_end=209
+  _CREATEORDEROUTPUT._serialized_start=211
+  _CREATEORDEROUTPUT._serialized_end=248
+  _DESCRIBEORDERINPUT._serialized_start=250
+  _DESCRIBEORDERINPUT._serialized_end=288
+  _DESCRIBEORDEROUTPUT._serialized_start=290
+  _DESCRIBEORDEROUTPUT._serialized_end=350
+  _UPDATEORDERINPUT._serialized_start=353
+  _UPDATEORDERINPUT._serialized_end=523
+  _UPDATEORDERINPUT_PATCH._serialized_start=486
+  _UPDATEORDERINPUT_PATCH._serialized_end=523
+  _UPDATEORDEROUTPUT._serialized_start=525
+  _UPDATEORDEROUTPUT._serialized_end=544
+  _PLACEORDERINPUT._serialized_start=546
+  _PLACEORDERINPUT._serialized_end=581
+  _PLACEORDEROUTPUT._serialized_start=583
+  _PLACEORDEROUTPUT._serialized_end=601
+  _CANCELORDERINPUT._serialized_start=603
+  _CANCELORDERINPUT._serialized_end=639
+  _CANCELORDEROUTPUT._serialized_start=641
+  _CANCELORDEROUTPUT._serialized_end=660
+  _ORDERSERVICE._serialized_start=663
+  _ORDERSERVICE._serialized_end=1330
 # @@protoc_insertion_point(module_scope)
