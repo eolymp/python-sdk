@@ -14,14 +14,3 @@ class CheckoutServiceClient:
         self.transport = transport
         self.url = url
 
-    def CreateCheckout(self, request, **kwargs):
-        path = "/checkout"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.commerce.CreateCheckoutOutput"),
-            **kwargs,
-        )
-

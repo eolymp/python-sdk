@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.commerce import checkout_pb2 as eolymp_dot_commerce_dot_checkout__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/commerce/checkout_service.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/commerce/checkout.proto\"B\n\x13\x43reateCheckoutInput\x12+\n\x08\x63heckout\x18\x01 \x01(\x0b\x32\x19.eolymp.commerce.Checkout\",\n\x14\x43reateCheckoutOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t2\x92\x01\n\x0f\x43heckoutService\x12\x7f\n\x0e\x43reateCheckout\x12$.eolymp.commerce.CreateCheckoutInput\x1a%.eolymp.commerce.CreateCheckoutOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0b\"\t/checkoutB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/commerce/checkout_service.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/commerce/checkout.proto\"B\n\x13\x43reateCheckoutInput\x12+\n\x08\x63heckout\x18\x01 \x01(\x0b\x32\x19.eolymp.commerce.Checkout\",\n\x14\x43reateCheckoutOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t2\x81\x01\n\x0f\x43heckoutService\x12n\n\x0e\x43reateCheckout\x12$.eolymp.commerce.CreateCheckoutInput\x1a%.eolymp.commerce.CreateCheckoutOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2B3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.checkout_service_pb2', globals())
@@ -25,11 +25,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
   _CHECKOUTSERVICE.methods_by_name['CreateCheckout']._options = None
-  _CHECKOUTSERVICE.methods_by_name['CreateCheckout']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\013\"\t/checkout'
+  _CHECKOUTSERVICE.methods_by_name['CreateCheckout']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2'
   _CREATECHECKOUTINPUT._serialized_start=158
   _CREATECHECKOUTINPUT._serialized_end=224
   _CREATECHECKOUTOUTPUT._serialized_start=226
   _CREATECHECKOUTOUTPUT._serialized_end=270
   _CHECKOUTSERVICE._serialized_start=273
-  _CHECKOUTSERVICE._serialized_end=419
+  _CHECKOUTSERVICE._serialized_end=402
 # @@protoc_insertion_point(module_scope)
