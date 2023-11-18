@@ -10,12 +10,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeTierInput(_message.Message):
-    __slots__ = ["pricing_country", "tier_id"]
-    PRICING_COUNTRY_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["currency", "locale", "render", "tier_id"]
+    CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     TIER_ID_FIELD_NUMBER: _ClassVar[int]
-    pricing_country: str
+    currency: str
+    locale: str
+    render: bool
     tier_id: str
-    def __init__(self, tier_id: _Optional[str] = ..., pricing_country: _Optional[str] = ...) -> None: ...
+    def __init__(self, tier_id: _Optional[str] = ..., render: bool = ..., locale: _Optional[str] = ..., currency: _Optional[str] = ...) -> None: ...
 
 class DescribeTierOutput(_message.Message):
     __slots__ = ["tier"]
@@ -23,15 +27,29 @@ class DescribeTierOutput(_message.Message):
     tier: _tier_pb2.Tier
     def __init__(self, tier: _Optional[_Union[_tier_pb2.Tier, _Mapping]] = ...) -> None: ...
 
+class ListCurrenciesInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ListCurrenciesOutput(_message.Message):
+    __slots__ = ["items"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, items: _Optional[_Iterable[str]] = ...) -> None: ...
+
 class ListTiersInput(_message.Message):
-    __slots__ = ["offset", "pricing_country", "size"]
+    __slots__ = ["currency", "locale", "offset", "render", "size"]
+    CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
-    PRICING_COUNTRY_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    currency: str
+    locale: str
     offset: int
-    pricing_country: str
+    render: bool
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., pricing_country: _Optional[str] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., render: bool = ..., locale: _Optional[str] = ..., currency: _Optional[str] = ...) -> None: ...
 
 class ListTiersOutput(_message.Message):
     __slots__ = ["items", "total"]

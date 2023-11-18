@@ -113,19 +113,25 @@ class AccountServiceClient:
             **kwargs,
         )
 
-    def UpgradeSubscription(self, request, **kwargs):
+    def ConfigureActiveSubscription(self, request, **kwargs):
         path = "/account/subscription"
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.UpgradeSubscriptionOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ConfigureActiveSubscriptionOutput"),
             **kwargs,
         )
 
-class SubscriptionServiceClient:
-    def __init__(self, transport, url="https://api.eolymp.com"):
-        self.transport = transport
-        self.url = url
+    def DescribeActiveSubscription(self, request, **kwargs):
+        path = "/account/subscription"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeActiveSubscriptionOutput"),
+            **kwargs,
+        )
 

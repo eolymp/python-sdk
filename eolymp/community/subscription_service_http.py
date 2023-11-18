@@ -9,44 +9,33 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class TierServiceClient:
+class SubscriptionServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
-    def DescribeTier(self, request, **kwargs):
-        path = "/tiers/"+urllib.parse.quote(request.tier_id)
+    def DescribeSubscription(self, request, **kwargs):
+        path = "/subscriptions/"+urllib.parse.quote(request.subscription_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.tier_id = ""
+        request.subscription_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeTierOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeSubscriptionOutput"),
             **kwargs,
         )
 
-    def ListTiers(self, request, **kwargs):
-        path = "/tiers"
+    def ListSubscriptions(self, request, **kwargs):
+        path = "/subscriptions"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ListTiersOutput"),
-            **kwargs,
-        )
-
-    def ListCurrencies(self, request, **kwargs):
-        path = "/tier-currencies"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ListCurrenciesOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ListSubscriptionsOutput"),
             **kwargs,
         )
 

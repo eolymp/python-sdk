@@ -10,14 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ["active", "attributes", "ghost", "groups", "id", "incomplete", "name", "secret", "subscription", "team", "unofficial", "user"]
-    class Subscription(_message.Message):
-        __slots__ = ["order_id", "tier_id"]
-        ORDER_ID_FIELD_NUMBER: _ClassVar[int]
-        TIER_ID_FIELD_NUMBER: _ClassVar[int]
-        order_id: str
-        tier_id: str
-        def __init__(self, tier_id: _Optional[str] = ..., order_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ["active", "attributes", "ghost", "groups", "id", "incomplete", "name", "secret", "team", "tier_id", "unofficial", "user"]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     GHOST_FIELD_NUMBER: _ClassVar[int]
@@ -26,8 +19,8 @@ class Member(_message.Message):
     INCOMPLETE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
-    SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TEAM_FIELD_NUMBER: _ClassVar[int]
+    TIER_ID_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     active: bool
@@ -38,8 +31,8 @@ class Member(_message.Message):
     incomplete: bool
     name: str
     secret: bool
-    subscription: Member.Subscription
     team: _member_team_pb2.Team
+    tier_id: str
     unofficial: bool
     user: _member_user_pb2.User
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., active: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., subscription: _Optional[_Union[Member.Subscription, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., active: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., tier_id: _Optional[str] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
