@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Tier(_message.Message):
-    __slots__ = ["description", "id", "image", "name", "price"]
+    __slots__ = ["description", "id", "image", "name", "price", "summary"]
     class Price(_message.Message):
         __slots__ = ["currency", "monthly_price", "onetime_price", "yearly_price"]
         CURRENCY_FIELD_NUMBER: _ClassVar[int]
@@ -23,9 +23,11 @@ class Tier(_message.Message):
     IMAGE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     PRICE_FIELD_NUMBER: _ClassVar[int]
+    SUMMARY_FIELD_NUMBER: _ClassVar[int]
     description: _content_pb2.Content
     id: str
     image: str
     name: str
     price: Tier.Price
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image: _Optional[str] = ..., price: _Optional[_Union[Tier.Price, _Mapping]] = ...) -> None: ...
+    summary: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image: _Optional[str] = ..., price: _Optional[_Union[Tier.Price, _Mapping]] = ...) -> None: ...
