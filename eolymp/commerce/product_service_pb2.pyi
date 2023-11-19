@@ -7,20 +7,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class AddProductPriceInput(_message.Message):
-    __slots__ = ["price", "product_id", "set_default"]
-    PRICE_FIELD_NUMBER: _ClassVar[int]
-    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
-    SET_DEFAULT_FIELD_NUMBER: _ClassVar[int]
-    price: _product_pb2.Product.Price
-    product_id: str
-    set_default: bool
-    def __init__(self, product_id: _Optional[str] = ..., price: _Optional[_Union[_product_pb2.Product.Price, _Mapping]] = ..., set_default: bool = ...) -> None: ...
-
-class AddProductPriceOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class CreateProductInput(_message.Message):
     __slots__ = ["product"]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
@@ -32,6 +18,20 @@ class CreateProductOutput(_message.Message):
     PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
     product_id: str
     def __init__(self, product_id: _Optional[str] = ...) -> None: ...
+
+class CreateProductPriceInput(_message.Message):
+    __slots__ = ["price", "product_id"]
+    PRICE_FIELD_NUMBER: _ClassVar[int]
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    price: _product_pb2.Product.Price
+    product_id: str
+    def __init__(self, product_id: _Optional[str] = ..., price: _Optional[_Union[_product_pb2.Product.Price, _Mapping]] = ...) -> None: ...
+
+class CreateProductPriceOutput(_message.Message):
+    __slots__ = ["price_id"]
+    PRICE_ID_FIELD_NUMBER: _ClassVar[int]
+    price_id: str
+    def __init__(self, price_id: _Optional[str] = ...) -> None: ...
 
 class DeleteProductInput(_message.Message):
     __slots__ = ["product_id"]
