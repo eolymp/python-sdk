@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/community/tier.proto\x12\x10\x65olymp.community\x1a\x18\x65olymp/ecm/content.proto\"\xf6\x01\n\x04Tier\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x06 \x01(\t\x12(\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\r\n\x05image\x18\x04 \x01(\t\x12+\n\x05price\x18\x05 \x01(\x0b\x32\x1c.eolymp.community.Tier.Price\x1a]\n\x05Price\x12\x10\n\x08\x63urrency\x18\n \x01(\t\x12\x15\n\ronetime_price\x18\x0b \x01(\r\x12\x15\n\rmonthly_price\x18\x0c \x01(\r\x12\x14\n\x0cyearly_price\x18\r \x01(\rB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/community/tier.proto\x12\x10\x65olymp.community\x1a\x18\x65olymp/ecm/content.proto\"j\n\x04Tier\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x06 \x01(\t\x12(\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\r\n\x05image\x18\x04 \x01(\tB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.tier_pb2', globals())
@@ -22,8 +22,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
-  _TIER._serialized_start=76
-  _TIER._serialized_end=322
-  _TIER_PRICE._serialized_start=229
-  _TIER_PRICE._serialized_end=322
+  _TIER._serialized_start=75
+  _TIER._serialized_end=181
 # @@protoc_insertion_point(module_scope)

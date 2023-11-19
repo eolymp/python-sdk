@@ -39,14 +39,17 @@ class TierServiceClient:
             **kwargs,
         )
 
-    def ListCurrencies(self, request, **kwargs):
-        path = "/tier-currencies"
+    def ListTierPrices(self, request, **kwargs):
+        path = "/tiers/"+urllib.parse.quote(request.tier_id)+"/prices"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.tier_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ListCurrenciesOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ListTierPricesOutput"),
             **kwargs,
         )
 

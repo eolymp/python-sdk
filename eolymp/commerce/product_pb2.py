@@ -11,10 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from eolymp.commerce import price_pb2 as eolymp_dot_commerce_dot_price__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/product.proto\x12\x0f\x65olymp.commerce\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf5\x02\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05image\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x10\n\x08page_url\x18\x06 \x01(\t\x12\x12\n\nunit_label\x18\x07 \x01(\t\x12\x35\n\rdefault_price\x18\n \x01(\x0b\x32\x1e.eolymp.commerce.Product.Price\x1as\n\x05Price\x12\n\n\x02id\x18\x01 \x01(\t\x12\x37\n\nrecurrence\x18\x03 \x01(\x0e\x32#.eolymp.commerce.Product.Recurrence\x12\x10\n\x08\x63urrency\x18\x1e \x01(\t\x12\x13\n\x0bunit_amount\x18\x1f \x01(\r\"J\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x0b\n\x07ONETIME\x10\x01\x12\x0b\n\x07MONTHLY\x10\x02\x12\n\n\x06YEARLY\x10\x03\x42\x33Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/product.proto\x12\x0f\x65olymp.commerce\x1a\x1b\x65olymp/commerce/price.proto\"\xac\x01\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05image\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x10\n\x08page_url\x18\x06 \x01(\t\x12\x12\n\nunit_label\x18\x07 \x01(\t\x12-\n\rdefault_price\x18\n \x01(\x0b\x32\x16.eolymp.commerce.PriceB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.product_pb2', globals())
@@ -22,10 +22,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
-  _PRODUCT._serialized_start=84
-  _PRODUCT._serialized_end=457
-  _PRODUCT_PRICE._serialized_start=266
-  _PRODUCT_PRICE._serialized_end=381
-  _PRODUCT_RECURRENCE._serialized_start=383
-  _PRODUCT_RECURRENCE._serialized_end=457
+  _PRODUCT._serialized_start=80
+  _PRODUCT._serialized_end=252
 # @@protoc_insertion_point(module_scope)

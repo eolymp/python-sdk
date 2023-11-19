@@ -1,4 +1,5 @@
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.commerce import price_pb2 as _price_pb2
 from eolymp.commerce import product_pb2 as _product_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -23,9 +24,9 @@ class CreateProductPriceInput(_message.Message):
     __slots__ = ["price", "product_id"]
     PRICE_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
-    price: _product_pb2.Product.Price
+    price: _price_pb2.Price
     product_id: str
-    def __init__(self, product_id: _Optional[str] = ..., price: _Optional[_Union[_product_pb2.Product.Price, _Mapping]] = ...) -> None: ...
+    def __init__(self, product_id: _Optional[str] = ..., price: _Optional[_Union[_price_pb2.Price, _Mapping]] = ...) -> None: ...
 
 class CreateProductPriceOutput(_message.Message):
     __slots__ = ["price_id"]
@@ -43,6 +44,18 @@ class DeleteProductOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class DeleteProductPriceInput(_message.Message):
+    __slots__ = ["price_id", "product_id"]
+    PRICE_ID_FIELD_NUMBER: _ClassVar[int]
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    price_id: str
+    product_id: str
+    def __init__(self, product_id: _Optional[str] = ..., price_id: _Optional[str] = ...) -> None: ...
+
+class DeleteProductPriceOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DescribeProductInput(_message.Message):
     __slots__ = ["product_id"]
     PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -56,28 +69,18 @@ class DescribeProductOutput(_message.Message):
     def __init__(self, product: _Optional[_Union[_product_pb2.Product, _Mapping]] = ...) -> None: ...
 
 class ListProductPricesInput(_message.Message):
-    __slots__ = ["product_id"]
+    __slots__ = ["currency", "product_id"]
+    CURRENCY_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    currency: str
     product_id: str
-    def __init__(self, product_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, product_id: _Optional[str] = ..., currency: _Optional[str] = ...) -> None: ...
 
 class ListProductPricesOutput(_message.Message):
     __slots__ = ["items"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_product_pb2.Product.Price]
-    def __init__(self, items: _Optional[_Iterable[_Union[_product_pb2.Product.Price, _Mapping]]] = ...) -> None: ...
-
-class RemoveProductPriceInput(_message.Message):
-    __slots__ = ["price_id", "product_id"]
-    PRICE_ID_FIELD_NUMBER: _ClassVar[int]
-    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
-    price_id: str
-    product_id: str
-    def __init__(self, product_id: _Optional[str] = ..., price_id: _Optional[str] = ...) -> None: ...
-
-class RemoveProductPriceOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[_price_pb2.Price]
+    def __init__(self, items: _Optional[_Iterable[_Union[_price_pb2.Price, _Mapping]]] = ...) -> None: ...
 
 class UpdateProductInput(_message.Message):
     __slots__ = ["product", "product_id"]

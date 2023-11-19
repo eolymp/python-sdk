@@ -12,10 +12,11 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
+from eolymp.commerce import price_pb2 as eolymp_dot_commerce_dot_price__pb2
 from eolymp.commerce import product_pb2 as eolymp_dot_commerce_dot_product__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/commerce/product_service.proto\x12\x0f\x65olymp.commerce\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/commerce/product.proto\"?\n\x12\x43reateProductInput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\")\n\x13\x43reateProductOutput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"S\n\x12UpdateProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12)\n\x07product\x18\x02 \x01(\x0b\x32\x18.eolymp.commerce.Product\"\x15\n\x13UpdateProductOutput\"*\n\x14\x44\x65scribeProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeProductOutput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\"(\n\x12\x44\x65leteProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteProductOutput\",\n\x16ListProductPricesInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"H\n\x17ListProductPricesOutput\x12-\n\x05items\x18\x02 \x03(\x0b\x32\x1e.eolymp.commerce.Product.Price\"\\\n\x17\x43reateProductPriceInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12-\n\x05price\x18\x02 \x01(\x0b\x32\x1e.eolymp.commerce.Product.Price\",\n\x18\x43reateProductPriceOutput\x12\x10\n\x08price_id\x18\x01 \x01(\t\"?\n\x17RemoveProductPriceInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x10\n\x08price_id\x18\x02 \x01(\t\"\x1a\n\x18RemoveProductPriceOutput2\xbb\x06\n\x0eProductService\x12k\n\rCreateProduct\x12#.eolymp.commerce.CreateProductInput\x1a$.eolymp.commerce.CreateProductOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12k\n\rUpdateProduct\x12#.eolymp.commerce.UpdateProductInput\x1a$.eolymp.commerce.UpdateProductOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12q\n\x0f\x44\x65scribeProduct\x12%.eolymp.commerce.DescribeProductInput\x1a&.eolymp.commerce.DescribeProductOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12k\n\rDeleteProduct\x12#.eolymp.commerce.DeleteProductInput\x1a$.eolymp.commerce.DeleteProductOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12w\n\x11ListProductPrices\x12\'.eolymp.commerce.ListProductPricesInput\x1a(.eolymp.commerce.ListProductPricesOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12z\n\x12\x43reateProductPrice\x12(.eolymp.commerce.CreateProductPriceInput\x1a).eolymp.commerce.CreateProductPriceOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12z\n\x12RemoveProductPrice\x12(.eolymp.commerce.RemoveProductPriceInput\x1a).eolymp.commerce.RemoveProductPriceOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2B3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/commerce/product_service.proto\x12\x0f\x65olymp.commerce\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1b\x65olymp/commerce/price.proto\x1a\x1d\x65olymp/commerce/product.proto\"?\n\x12\x43reateProductInput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\")\n\x13\x43reateProductOutput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"S\n\x12UpdateProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12)\n\x07product\x18\x02 \x01(\x0b\x32\x18.eolymp.commerce.Product\"\x15\n\x13UpdateProductOutput\"*\n\x14\x44\x65scribeProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeProductOutput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\"(\n\x12\x44\x65leteProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteProductOutput\">\n\x16ListProductPricesInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x10\n\x08\x63urrency\x18\x02 \x01(\t\"@\n\x17ListProductPricesOutput\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.commerce.Price\"T\n\x17\x43reateProductPriceInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12%\n\x05price\x18\x02 \x01(\x0b\x32\x16.eolymp.commerce.Price\",\n\x18\x43reateProductPriceOutput\x12\x10\n\x08price_id\x18\x01 \x01(\t\"?\n\x17\x44\x65leteProductPriceInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x10\n\x08price_id\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteProductPriceOutput2\xbb\x06\n\x0eProductService\x12k\n\rCreateProduct\x12#.eolymp.commerce.CreateProductInput\x1a$.eolymp.commerce.CreateProductOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12k\n\rUpdateProduct\x12#.eolymp.commerce.UpdateProductInput\x1a$.eolymp.commerce.UpdateProductOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12q\n\x0f\x44\x65scribeProduct\x12%.eolymp.commerce.DescribeProductInput\x1a&.eolymp.commerce.DescribeProductOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12k\n\rDeleteProduct\x12#.eolymp.commerce.DeleteProductInput\x1a$.eolymp.commerce.DeleteProductOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12w\n\x11ListProductPrices\x12\'.eolymp.commerce.ListProductPricesInput\x1a(.eolymp.commerce.ListProductPricesOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12z\n\x12\x43reateProductPrice\x12(.eolymp.commerce.CreateProductPriceInput\x1a).eolymp.commerce.CreateProductPriceOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12z\n\x12\x44\x65leteProductPrice\x12(.eolymp.commerce.DeleteProductPriceInput\x1a).eolymp.commerce.DeleteProductPriceOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2B3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.product_service_pb2', globals())
@@ -35,36 +36,36 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PRODUCTSERVICE.methods_by_name['ListProductPrices']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2'
   _PRODUCTSERVICE.methods_by_name['CreateProductPrice']._options = None
   _PRODUCTSERVICE.methods_by_name['CreateProductPrice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2'
-  _PRODUCTSERVICE.methods_by_name['RemoveProductPrice']._options = None
-  _PRODUCTSERVICE.methods_by_name['RemoveProductPrice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2'
-  _CREATEPRODUCTINPUT._serialized_start=125
-  _CREATEPRODUCTINPUT._serialized_end=188
-  _CREATEPRODUCTOUTPUT._serialized_start=190
-  _CREATEPRODUCTOUTPUT._serialized_end=231
-  _UPDATEPRODUCTINPUT._serialized_start=233
-  _UPDATEPRODUCTINPUT._serialized_end=316
-  _UPDATEPRODUCTOUTPUT._serialized_start=318
-  _UPDATEPRODUCTOUTPUT._serialized_end=339
-  _DESCRIBEPRODUCTINPUT._serialized_start=341
-  _DESCRIBEPRODUCTINPUT._serialized_end=383
-  _DESCRIBEPRODUCTOUTPUT._serialized_start=385
-  _DESCRIBEPRODUCTOUTPUT._serialized_end=451
-  _DELETEPRODUCTINPUT._serialized_start=453
-  _DELETEPRODUCTINPUT._serialized_end=493
-  _DELETEPRODUCTOUTPUT._serialized_start=495
-  _DELETEPRODUCTOUTPUT._serialized_end=516
-  _LISTPRODUCTPRICESINPUT._serialized_start=518
-  _LISTPRODUCTPRICESINPUT._serialized_end=562
-  _LISTPRODUCTPRICESOUTPUT._serialized_start=564
-  _LISTPRODUCTPRICESOUTPUT._serialized_end=636
-  _CREATEPRODUCTPRICEINPUT._serialized_start=638
-  _CREATEPRODUCTPRICEINPUT._serialized_end=730
-  _CREATEPRODUCTPRICEOUTPUT._serialized_start=732
-  _CREATEPRODUCTPRICEOUTPUT._serialized_end=776
-  _REMOVEPRODUCTPRICEINPUT._serialized_start=778
-  _REMOVEPRODUCTPRICEINPUT._serialized_end=841
-  _REMOVEPRODUCTPRICEOUTPUT._serialized_start=843
-  _REMOVEPRODUCTPRICEOUTPUT._serialized_end=869
-  _PRODUCTSERVICE._serialized_start=872
-  _PRODUCTSERVICE._serialized_end=1699
+  _PRODUCTSERVICE.methods_by_name['DeleteProductPrice']._options = None
+  _PRODUCTSERVICE.methods_by_name['DeleteProductPrice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2'
+  _CREATEPRODUCTINPUT._serialized_start=154
+  _CREATEPRODUCTINPUT._serialized_end=217
+  _CREATEPRODUCTOUTPUT._serialized_start=219
+  _CREATEPRODUCTOUTPUT._serialized_end=260
+  _UPDATEPRODUCTINPUT._serialized_start=262
+  _UPDATEPRODUCTINPUT._serialized_end=345
+  _UPDATEPRODUCTOUTPUT._serialized_start=347
+  _UPDATEPRODUCTOUTPUT._serialized_end=368
+  _DESCRIBEPRODUCTINPUT._serialized_start=370
+  _DESCRIBEPRODUCTINPUT._serialized_end=412
+  _DESCRIBEPRODUCTOUTPUT._serialized_start=414
+  _DESCRIBEPRODUCTOUTPUT._serialized_end=480
+  _DELETEPRODUCTINPUT._serialized_start=482
+  _DELETEPRODUCTINPUT._serialized_end=522
+  _DELETEPRODUCTOUTPUT._serialized_start=524
+  _DELETEPRODUCTOUTPUT._serialized_end=545
+  _LISTPRODUCTPRICESINPUT._serialized_start=547
+  _LISTPRODUCTPRICESINPUT._serialized_end=609
+  _LISTPRODUCTPRICESOUTPUT._serialized_start=611
+  _LISTPRODUCTPRICESOUTPUT._serialized_end=675
+  _CREATEPRODUCTPRICEINPUT._serialized_start=677
+  _CREATEPRODUCTPRICEINPUT._serialized_end=761
+  _CREATEPRODUCTPRICEOUTPUT._serialized_start=763
+  _CREATEPRODUCTPRICEOUTPUT._serialized_end=807
+  _DELETEPRODUCTPRICEINPUT._serialized_start=809
+  _DELETEPRODUCTPRICEINPUT._serialized_end=872
+  _DELETEPRODUCTPRICEOUTPUT._serialized_start=874
+  _DELETEPRODUCTPRICEOUTPUT._serialized_end=900
+  _PRODUCTSERVICE._serialized_start=903
+  _PRODUCTSERVICE._serialized_end=1730
 # @@protoc_insertion_point(module_scope)
