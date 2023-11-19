@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Subscription(_message.Message):
-    __slots__ = ["cancel_url", "cancellation_comment", "cancellation_feedback", "cancellation_reason", "cancelled_at", "checkout_url", "created_at", "currency", "id", "items", "payment_method", "period_end", "period_start", "started_at", "status", "success_url", "total_amount"]
+    __slots__ = ["cancel_url", "cancellation_comment", "cancellation_feedback", "cancellation_reason", "cancelled_at", "checkout_url", "created_at", "currency", "id", "items", "member_id", "payment_method", "period_end", "period_start", "space_id", "started_at", "status", "success_url", "total_amount", "user_id"]
     class Recurrence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -46,18 +46,21 @@ class Subscription(_message.Message):
     CURRENCY_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MONTHLY: Subscription.Recurrence
     PAUSED: Subscription.Status
     PAYMENT_METHOD_FIELD_NUMBER: _ClassVar[int]
     PENDING: Subscription.Status
     PERIOD_END_FIELD_NUMBER: _ClassVar[int]
     PERIOD_START_FIELD_NUMBER: _ClassVar[int]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     STARTED_AT_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     SUCCESS_URL_FIELD_NUMBER: _ClassVar[int]
     TOTAL_AMOUNT_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_RECURRENCE: Subscription.Recurrence
     UNKNOWN_STATUS: Subscription.Status
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
     YEARLY: Subscription.Recurrence
     cancel_url: str
     cancellation_comment: str
@@ -69,11 +72,14 @@ class Subscription(_message.Message):
     currency: str
     id: str
     items: _containers.RepeatedCompositeFieldContainer[Subscription.Item]
+    member_id: str
     payment_method: str
     period_end: _timestamp_pb2.Timestamp
     period_start: _timestamp_pb2.Timestamp
+    space_id: str
     started_at: _timestamp_pb2.Timestamp
     status: Subscription.Status
     success_url: str
     total_amount: int
-    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Subscription.Status, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancelled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., payment_method: _Optional[str] = ..., cancellation_comment: _Optional[str] = ..., cancellation_feedback: _Optional[str] = ..., cancellation_reason: _Optional[str] = ..., currency: _Optional[str] = ..., total_amount: _Optional[int] = ..., success_url: _Optional[str] = ..., cancel_url: _Optional[str] = ..., checkout_url: _Optional[str] = ..., items: _Optional[_Iterable[_Union[Subscription.Item, _Mapping]]] = ...) -> None: ...
+    user_id: str
+    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Subscription.Status, str]] = ..., space_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancelled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., payment_method: _Optional[str] = ..., cancellation_comment: _Optional[str] = ..., cancellation_feedback: _Optional[str] = ..., cancellation_reason: _Optional[str] = ..., currency: _Optional[str] = ..., total_amount: _Optional[int] = ..., success_url: _Optional[str] = ..., cancel_url: _Optional[str] = ..., checkout_url: _Optional[str] = ..., items: _Optional[_Iterable[_Union[Subscription.Item, _Mapping]]] = ...) -> None: ...
