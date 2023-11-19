@@ -49,7 +49,7 @@ class Subscription(_message.Message):
     renews_at: _timestamp_pb2.Timestamp
     started_at: _timestamp_pb2.Timestamp
     tax_amount: int
-    tax_name: int
+    tax_name: str
     tax_percentage: int
     tier_id: str
-    def __init__(self, id: _Optional[str] = ..., tier_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., renewed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., renews_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancelled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., paused_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., payment_method: _Optional[str] = ..., recurrence: _Optional[_Union[Subscription.Recurrence, str]] = ..., currency: _Optional[str] = ..., amount: _Optional[int] = ..., tax_name: _Optional[int] = ..., tax_amount: _Optional[int] = ..., tax_percentage: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., tier_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., renewed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., renews_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancelled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., paused_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., payment_method: _Optional[str] = ..., recurrence: _Optional[_Union[Subscription.Recurrence, str]] = ..., currency: _Optional[str] = ..., amount: _Optional[int] = ..., tax_name: _Optional[str] = ..., tax_amount: _Optional[int] = ..., tax_percentage: _Optional[int] = ...) -> None: ...
