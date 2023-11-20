@@ -39,5 +39,7 @@ class UpdateSubscriptionInput(_message.Message):
     def __init__(self, subscription_id: _Optional[str] = ..., subscription: _Optional[_Union[_subscription_pb2.Subscription, _Mapping]] = ...) -> None: ...
 
 class UpdateSubscriptionOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["checkout_url"]
+    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
+    checkout_url: str
+    def __init__(self, checkout_url: _Optional[str] = ...) -> None: ...

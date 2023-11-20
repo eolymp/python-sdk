@@ -15,7 +15,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.commerce import subscription_pb2 as eolymp_dot_commerce_dot_subscription__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*eolymp/commerce/subscription_service.proto\x12\x0f\x65olymp.commerce\x1a\"eolymp/annotations/ratelimit.proto\x1a\"eolymp/commerce/subscription.proto\"N\n\x17\x43reateSubscriptionInput\x12\x33\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1d.eolymp.commerce.Subscription\"I\n\x18\x43reateSubscriptionOutput\x12\x17\n\x0fsubscription_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63heckout_url\x18\x02 \x01(\t\"g\n\x17UpdateSubscriptionInput\x12\x17\n\x0fsubscription_id\x18\x01 \x01(\t\x12\x33\n\x0csubscription\x18\x02 \x01(\x0b\x32\x1d.eolymp.commerce.Subscription\"\x1a\n\x18UpdateSubscriptionOutput\"2\n\x17\x43\x61ncelSubscriptionInput\x12\x17\n\x0fsubscription_id\x18\x01 \x01(\t\"\x1a\n\x18\x43\x61ncelSubscriptionOutput2\x89\x03\n\x13SubscriptionService\x12z\n\x12\x43reateSubscription\x12(.eolymp.commerce.CreateSubscriptionInput\x1a).eolymp.commerce.CreateSubscriptionOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12z\n\x12UpdateSubscription\x12(.eolymp.commerce.UpdateSubscriptionInput\x1a).eolymp.commerce.UpdateSubscriptionOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12z\n\x12\x43\x61ncelSubscription\x12(.eolymp.commerce.CancelSubscriptionInput\x1a).eolymp.commerce.CancelSubscriptionOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2B3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*eolymp/commerce/subscription_service.proto\x12\x0f\x65olymp.commerce\x1a\"eolymp/annotations/ratelimit.proto\x1a\"eolymp/commerce/subscription.proto\"N\n\x17\x43reateSubscriptionInput\x12\x33\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1d.eolymp.commerce.Subscription\"I\n\x18\x43reateSubscriptionOutput\x12\x17\n\x0fsubscription_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63heckout_url\x18\x02 \x01(\t\"g\n\x17UpdateSubscriptionInput\x12\x17\n\x0fsubscription_id\x18\x01 \x01(\t\x12\x33\n\x0csubscription\x18\x02 \x01(\x0b\x32\x1d.eolymp.commerce.Subscription\"0\n\x18UpdateSubscriptionOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"2\n\x17\x43\x61ncelSubscriptionInput\x12\x17\n\x0fsubscription_id\x18\x01 \x01(\t\"\x1a\n\x18\x43\x61ncelSubscriptionOutput2\x89\x03\n\x13SubscriptionService\x12z\n\x12\x43reateSubscription\x12(.eolymp.commerce.CreateSubscriptionInput\x1a).eolymp.commerce.CreateSubscriptionOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12z\n\x12UpdateSubscription\x12(.eolymp.commerce.UpdateSubscriptionInput\x1a).eolymp.commerce.UpdateSubscriptionOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12z\n\x12\x43\x61ncelSubscription\x12(.eolymp.commerce.CancelSubscriptionInput\x1a).eolymp.commerce.CancelSubscriptionOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2B3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.subscription_service_pb2', globals())
@@ -36,11 +36,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATESUBSCRIPTIONINPUT._serialized_start=290
   _UPDATESUBSCRIPTIONINPUT._serialized_end=393
   _UPDATESUBSCRIPTIONOUTPUT._serialized_start=395
-  _UPDATESUBSCRIPTIONOUTPUT._serialized_end=421
-  _CANCELSUBSCRIPTIONINPUT._serialized_start=423
-  _CANCELSUBSCRIPTIONINPUT._serialized_end=473
-  _CANCELSUBSCRIPTIONOUTPUT._serialized_start=475
-  _CANCELSUBSCRIPTIONOUTPUT._serialized_end=501
-  _SUBSCRIPTIONSERVICE._serialized_start=504
-  _SUBSCRIPTIONSERVICE._serialized_end=897
+  _UPDATESUBSCRIPTIONOUTPUT._serialized_end=443
+  _CANCELSUBSCRIPTIONINPUT._serialized_start=445
+  _CANCELSUBSCRIPTIONINPUT._serialized_end=495
+  _CANCELSUBSCRIPTIONOUTPUT._serialized_start=497
+  _CANCELSUBSCRIPTIONOUTPUT._serialized_end=523
+  _SUBSCRIPTIONSERVICE._serialized_start=526
+  _SUBSCRIPTIONSERVICE._serialized_end=919
 # @@protoc_insertion_point(module_scope)
