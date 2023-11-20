@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/commerce/subscription.proto\x12\x0f\x65olymp.commerce\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa2\x08\n\x0cSubscription\x12\n\n\x02id\x18\x01 \x01(\t\x12\x34\n\x06status\x18\x02 \x01(\x0e\x32$.eolymp.commerce.Subscription.Status\x12\x10\n\x08space_id\x18\x03 \x01(\t\x12\x11\n\x07user_id\x18\x05 \x01(\tH\x00\x12\x13\n\tmember_id\x18\x06 \x01(\tH\x00\x12\x13\n\x0bpayer_email\x18\x07 \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x63\x61ncelled_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cperiod_start\x18( \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nperiod_end\x18) \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x0epayment_method\x18\x14 \x01(\t\x12\x1c\n\x14\x63\x61ncellation_comment\x18\x32 \x01(\t\x12\x1d\n\x15\x63\x61ncellation_feedback\x18\x33 \x01(\t\x12\x1b\n\x13\x63\x61ncellation_reason\x18\x34 \x01(\t\x12\x10\n\x08\x63urrency\x18\x1f \x01(\t\x12\x14\n\x0ctotal_amount\x18  \x01(\r\x12\x13\n\x0bsuccess_url\x18< \x01(\t\x12\x12\n\ncancel_url\x18= \x01(\t\x12\x14\n\x0c\x63heckout_url\x18> \x01(\t\x12\x32\n\x05items\x18\xe7\x07 \x03(\x0b\x32\".eolymp.commerce.Subscription.Item\x1a\xe5\x01\n\x04Item\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x12\n\nproduct_id\x18\x14 \x01(\t\x12\x14\n\x0cproduct_name\x18\x15 \x01(\t\x12\x15\n\rproduct_image\x18\x16 \x01(\t\x12\x1b\n\x13product_description\x18\x17 \x01(\t\x12<\n\nrecurrence\x18\n \x01(\x0e\x32(.eolymp.commerce.Subscription.Recurrence\x12\x13\n\x0bunit_amount\x18\x0b \x01(\r\x12\x10\n\x08quantity\x18\x0c \x01(\r\"P\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\n\n\x06PAUSED\x10\x03\x12\r\n\tCANCELLED\x10\x04\"=\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\n\n\x06YEARLY\x10\x02\x42\x07\n\x05payerB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/commerce/subscription.proto\x12\x0f\x65olymp.commerce\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc5\x06\n\x0cSubscription\x12\n\n\x02id\x18\x01 \x01(\t\x12\x34\n\x06status\x18\x02 \x01(\x0e\x32$.eolymp.commerce.Subscription.Status\x12\x10\n\x08space_id\x18\x03 \x01(\t\x12\x11\n\x07user_id\x18\x05 \x01(\tH\x00\x12\x13\n\tmember_id\x18\x06 \x01(\tH\x00\x12\x13\n\x0bpayer_email\x18\x07 \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x63\x61ncelled_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cperiod_start\x18( \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nperiod_end\x18) \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x0epayment_method\x18\x14 \x01(\t\x12\x1c\n\x14\x63\x61ncellation_comment\x18\x32 \x01(\t\x12\x1d\n\x15\x63\x61ncellation_feedback\x18\x33 \x01(\t\x12\x1b\n\x13\x63\x61ncellation_reason\x18\x34 \x01(\t\x12\x10\n\x08\x63urrency\x18\x1f \x01(\t\x12\x14\n\x0ctotal_amount\x18  \x01(\r\x12\x13\n\x0bsuccess_url\x18< \x01(\t\x12\x12\n\ncancel_url\x18= \x01(\t\x12\x14\n\x0c\x63heckout_url\x18> \x01(\t\x12\x32\n\x05items\x18\xe7\x07 \x03(\x0b\x32\".eolymp.commerce.Subscription.Item\x1aH\n\x04Item\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x12\n\nproduct_id\x18\x14 \x01(\t\x12\x10\n\x08price_id\x18\x15 \x01(\t\"P\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\n\n\x06PAUSED\x10\x03\x12\r\n\tCANCELLED\x10\x04\x42\x07\n\x05payerB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.subscription_pb2', globals())
@@ -23,11 +23,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
   _SUBSCRIPTION._serialized_start=89
-  _SUBSCRIPTION._serialized_end=1147
-  _SUBSCRIPTION_ITEM._serialized_start=764
-  _SUBSCRIPTION_ITEM._serialized_end=993
-  _SUBSCRIPTION_STATUS._serialized_start=995
-  _SUBSCRIPTION_STATUS._serialized_end=1075
-  _SUBSCRIPTION_RECURRENCE._serialized_start=1077
-  _SUBSCRIPTION_RECURRENCE._serialized_end=1138
+  _SUBSCRIPTION._serialized_end=926
+  _SUBSCRIPTION_ITEM._serialized_start=763
+  _SUBSCRIPTION_ITEM._serialized_end=835
+  _SUBSCRIPTION_STATUS._serialized_start=837
+  _SUBSCRIPTION_STATUS._serialized_end=917
 # @@protoc_insertion_point(module_scope)

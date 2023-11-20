@@ -9,31 +9,19 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Subscription(_message.Message):
     __slots__ = ["cancel_url", "cancellation_comment", "cancellation_feedback", "cancellation_reason", "cancelled_at", "checkout_url", "created_at", "currency", "id", "items", "member_id", "payer_email", "payment_method", "period_end", "period_start", "space_id", "started_at", "status", "success_url", "total_amount", "user_id"]
-    class Recurrence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Item(_message.Message):
-        __slots__ = ["active", "id", "product_description", "product_id", "product_image", "product_name", "quantity", "recurrence", "unit_amount"]
+        __slots__ = ["active", "id", "price_id", "product_id"]
         ACTIVE_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
-        PRODUCT_DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+        PRICE_ID_FIELD_NUMBER: _ClassVar[int]
         PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
-        PRODUCT_IMAGE_FIELD_NUMBER: _ClassVar[int]
-        PRODUCT_NAME_FIELD_NUMBER: _ClassVar[int]
-        QUANTITY_FIELD_NUMBER: _ClassVar[int]
-        RECURRENCE_FIELD_NUMBER: _ClassVar[int]
-        UNIT_AMOUNT_FIELD_NUMBER: _ClassVar[int]
         active: bool
         id: str
-        product_description: str
+        price_id: str
         product_id: str
-        product_image: str
-        product_name: str
-        quantity: int
-        recurrence: Subscription.Recurrence
-        unit_amount: int
-        def __init__(self, id: _Optional[str] = ..., active: bool = ..., product_id: _Optional[str] = ..., product_name: _Optional[str] = ..., product_image: _Optional[str] = ..., product_description: _Optional[str] = ..., recurrence: _Optional[_Union[Subscription.Recurrence, str]] = ..., unit_amount: _Optional[int] = ..., quantity: _Optional[int] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., active: bool = ..., product_id: _Optional[str] = ..., price_id: _Optional[str] = ...) -> None: ...
     ACTIVE: Subscription.Status
     CANCELLATION_COMMENT_FIELD_NUMBER: _ClassVar[int]
     CANCELLATION_FEEDBACK_FIELD_NUMBER: _ClassVar[int]
@@ -47,7 +35,6 @@ class Subscription(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    MONTHLY: Subscription.Recurrence
     PAUSED: Subscription.Status
     PAYER_EMAIL_FIELD_NUMBER: _ClassVar[int]
     PAYMENT_METHOD_FIELD_NUMBER: _ClassVar[int]
@@ -59,10 +46,8 @@ class Subscription(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     SUCCESS_URL_FIELD_NUMBER: _ClassVar[int]
     TOTAL_AMOUNT_FIELD_NUMBER: _ClassVar[int]
-    UNKNOWN_RECURRENCE: Subscription.Recurrence
     UNKNOWN_STATUS: Subscription.Status
     USER_ID_FIELD_NUMBER: _ClassVar[int]
-    YEARLY: Subscription.Recurrence
     cancel_url: str
     cancellation_comment: str
     cancellation_feedback: str
