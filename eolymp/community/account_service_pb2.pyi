@@ -37,20 +37,12 @@ class CompleteVerificationOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ConfigureActiveSubscriptionInput(_message.Message):
-    __slots__ = ["currency", "payment_option", "tier_id"]
-    class PaymentOption(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    CURRENCY_FIELD_NUMBER: _ClassVar[int]
-    MONTHLY: ConfigureActiveSubscriptionInput.PaymentOption
-    ONETIME: ConfigureActiveSubscriptionInput.PaymentOption
-    PAYMENT_OPTION_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["price_id", "tier_id"]
+    PRICE_ID_FIELD_NUMBER: _ClassVar[int]
     TIER_ID_FIELD_NUMBER: _ClassVar[int]
-    UNKNOWN_VARIANT: ConfigureActiveSubscriptionInput.PaymentOption
-    YEARLY: ConfigureActiveSubscriptionInput.PaymentOption
-    currency: str
-    payment_option: ConfigureActiveSubscriptionInput.PaymentOption
+    price_id: str
     tier_id: str
-    def __init__(self, tier_id: _Optional[str] = ..., currency: _Optional[str] = ..., payment_option: _Optional[_Union[ConfigureActiveSubscriptionInput.PaymentOption, str]] = ...) -> None: ...
+    def __init__(self, tier_id: _Optional[str] = ..., price_id: _Optional[str] = ...) -> None: ...
 
 class ConfigureActiveSubscriptionOutput(_message.Message):
     __slots__ = ["checkout_url"]

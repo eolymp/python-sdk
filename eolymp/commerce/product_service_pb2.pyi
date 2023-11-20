@@ -68,6 +68,20 @@ class DescribeProductOutput(_message.Message):
     product: _product_pb2.Product
     def __init__(self, product: _Optional[_Union[_product_pb2.Product, _Mapping]] = ...) -> None: ...
 
+class DescribeProductPriceInput(_message.Message):
+    __slots__ = ["price_id", "product_id"]
+    PRICE_ID_FIELD_NUMBER: _ClassVar[int]
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    price_id: str
+    product_id: str
+    def __init__(self, product_id: _Optional[str] = ..., price_id: _Optional[str] = ...) -> None: ...
+
+class DescribeProductPriceOutput(_message.Message):
+    __slots__ = ["price"]
+    PRICE_FIELD_NUMBER: _ClassVar[int]
+    price: _price_pb2.Price
+    def __init__(self, price: _Optional[_Union[_price_pb2.Price, _Mapping]] = ...) -> None: ...
+
 class ListProductPricesInput(_message.Message):
     __slots__ = ["currency", "product_id"]
     CURRENCY_FIELD_NUMBER: _ClassVar[int]
