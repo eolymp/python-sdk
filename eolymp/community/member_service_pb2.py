@@ -19,7 +19,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/community/member_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/community/member.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"=\n\x11\x43reateMemberInput\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\"\'\n\x12\x43reateMemberOutput\x12\x11\n\tmember_id\x18\x01 \x01(\t\"\x82\x04\n\x11UpdateMemberInput\x12\x38\n\x05patch\x18\x01 \x03(\x0e\x32).eolymp.community.UpdateMemberInput.Patch\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12(\n\x06member\x18\x03 \x01(\x0b\x32\x18.eolymp.community.Member\"\xf5\x02\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\x0e\n\nUNOFFICIAL\x10\x02\x12\n\n\x06GROUPS\x10\x03\x12\x0b\n\x07\x41\x43\x43OUNT\x10\x64\x12\x11\n\rUSER_NICKNAME\x10\x65\x12\x0e\n\nUSER_EMAIL\x10\x66\x12\x11\n\rUSER_PASSWORD\x10g\x12\r\n\tUSER_NAME\x10h\x12\x10\n\x0cUSER_PICTURE\x10i\x12\x11\n\rUSER_BIRTHDAY\x10j\x12\x10\n\x0cUSER_COUNTRY\x10k\x12\r\n\tUSER_CITY\x10l\x12\x14\n\x10USER_PREFERENCES\x10m\x12\x1c\n\x17USER_PREFERENCES_LOCALE\x10\xbe\x01\x12\x1e\n\x19USER_PREFERENCES_TIMEZONE\x10\xbf\x01\x12\x1d\n\x18USER_PREFERENCES_RUNTIME\x10\xc0\x01\x12\x0e\n\tTEAM_NAME\x10\xc8\x01\x12\x0f\n\nGHOST_NAME\x10\xac\x02\x12\x0f\n\nATTRIBUTES\x10\x84\x07\"\x14\n\x12UpdateMemberOutput\"<\n\x11\x44\x65leteMemberInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x14\n\x0c\x66orce_delete\x18\x02 \x01(\x08\"\x14\n\x12\x44\x65leteMemberOutput\"\'\n\x12RestoreMemberInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\"\x15\n\x13RestoreMemberOutput\"(\n\x13\x44\x65scribeMemberInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\"@\n\x14\x44\x65scribeMemberOutput\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\"\x8c\x07\n\x10ListMembersInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.community.ListMembersInput.Filter\x12\x39\n\x04sort\x18\x32 \x01(\x0e\x32+.eolymp.community.ListMembersInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xf9\x04\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06\x61\x63tive\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x34\n\nincomplete\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x34\n\nunofficial\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x07team_id\x18\x07 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x08group_id\x18\x08 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x37\n\x0buser_issuer\x18\x65 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x38\n\x0cuser_subject\x18\x66 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x36\n\nuser_email\x18g \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x35\n\tuser_name\x18h \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\";\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\x12\x08\n\x04TYPE\x10\x03\"K\n\x11ListMembersOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.community.Member\"7\n\x11\x41ssignMemberInput\x12\x0f\n\x07team_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"\x14\n\x12\x41ssignMemberOutput\"9\n\x13UnassignMemberInput\x12\x0f\n\x07team_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"\x16\n\x14UnassignMemberOutput2\xe1\n\n\rMemberService\x12\x98\x01\n\x0c\x43reateMember\x12#.eolymp.community.CreateMemberInput\x1a$.eolymp.community.CreateMemberOutput\"=\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\n\"\x08/members\x12\xa4\x01\n\x0cUpdateMember\x12#.eolymp.community.UpdateMemberInput\x1a$.eolymp.community.UpdateMemberOutput\"I\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x16\"\x14/members/{member_id}\x12\xa4\x01\n\x0c\x44\x65leteMember\x12#.eolymp.community.DeleteMemberInput\x1a$.eolymp.community.DeleteMemberOutput\"I\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x16*\x14/members/{member_id}\x12\xaf\x01\n\rRestoreMember\x12$.eolymp.community.RestoreMemberInput\x1a%.eolymp.community.RestoreMemberOutput\"Q\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1e\"\x1c/members/{member_id}/restore\x12\xa9\x01\n\x0e\x44\x65scribeMember\x12%.eolymp.community.DescribeMemberInput\x1a&.eolymp.community.DescribeMemberOutput\"H\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x16\x12\x14/members/{member_id}\x12\x94\x01\n\x0bListMembers\x12\".eolymp.community.ListMembersInput\x1a#.eolymp.community.ListMembersOutput\"<\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\n\x12\x08/members\x12\xb4\x01\n\x0c\x41ssignMember\x12#.eolymp.community.AssignMemberInput\x1a$.eolymp.community.AssignMemberOutput\"Y\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02&\x1a$/members/{team_id}/users/{member_id}\x12\xba\x01\n\x0eUnassignMember\x12%.eolymp.community.UnassignMemberInput\x1a&.eolymp.community.UnassignMemberOutput\"Y\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02&*$/members/{team_id}/users/{member_id}B5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/community/member_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/community/member.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"=\n\x11\x43reateMemberInput\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\"\'\n\x12\x43reateMemberOutput\x12\x11\n\tmember_id\x18\x01 \x01(\t\"\xa5\x04\n\x11UpdateMemberInput\x12\x38\n\x05patch\x18\x01 \x03(\x0e\x32).eolymp.community.UpdateMemberInput.Patch\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12(\n\x06member\x18\x03 \x01(\x0b\x32\x18.eolymp.community.Member\"\x98\x03\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\x0e\n\nUNOFFICIAL\x10\x02\x12\n\n\x06GROUPS\x10\x03\x12\x0e\n\nGROUPS_ADD\x10\x04\x12\x11\n\rGROUPS_REMOVE\x10\x05\x12\x0b\n\x07\x41\x43\x43OUNT\x10\x64\x12\x11\n\rUSER_NICKNAME\x10\x65\x12\x0e\n\nUSER_EMAIL\x10\x66\x12\x11\n\rUSER_PASSWORD\x10g\x12\r\n\tUSER_NAME\x10h\x12\x10\n\x0cUSER_PICTURE\x10i\x12\x11\n\rUSER_BIRTHDAY\x10j\x12\x10\n\x0cUSER_COUNTRY\x10k\x12\r\n\tUSER_CITY\x10l\x12\x14\n\x10USER_PREFERENCES\x10m\x12\x1c\n\x17USER_PREFERENCES_LOCALE\x10\xbe\x01\x12\x1e\n\x19USER_PREFERENCES_TIMEZONE\x10\xbf\x01\x12\x1d\n\x18USER_PREFERENCES_RUNTIME\x10\xc0\x01\x12\x0e\n\tTEAM_NAME\x10\xc8\x01\x12\x0f\n\nGHOST_NAME\x10\xac\x02\x12\x0f\n\nATTRIBUTES\x10\x84\x07\"\x14\n\x12UpdateMemberOutput\"<\n\x11\x44\x65leteMemberInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x14\n\x0c\x66orce_delete\x18\x02 \x01(\x08\"\x14\n\x12\x44\x65leteMemberOutput\"\'\n\x12RestoreMemberInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\"\x15\n\x13RestoreMemberOutput\"(\n\x13\x44\x65scribeMemberInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\"@\n\x14\x44\x65scribeMemberOutput\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\"\x8c\x07\n\x10ListMembersInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.community.ListMembersInput.Filter\x12\x39\n\x04sort\x18\x32 \x01(\x0e\x32+.eolymp.community.ListMembersInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xf9\x04\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06\x61\x63tive\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x34\n\nincomplete\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x34\n\nunofficial\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x07team_id\x18\x07 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x08group_id\x18\x08 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x37\n\x0buser_issuer\x18\x65 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x38\n\x0cuser_subject\x18\x66 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x36\n\nuser_email\x18g \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x35\n\tuser_name\x18h \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\";\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\x12\x08\n\x04TYPE\x10\x03\"K\n\x11ListMembersOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.community.Member\"7\n\x11\x41ssignMemberInput\x12\x0f\n\x07team_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"\x14\n\x12\x41ssignMemberOutput\"9\n\x13UnassignMemberInput\x12\x0f\n\x07team_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"\x16\n\x14UnassignMemberOutput2\xe1\n\n\rMemberService\x12\x98\x01\n\x0c\x43reateMember\x12#.eolymp.community.CreateMemberInput\x1a$.eolymp.community.CreateMemberOutput\"=\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\n\"\x08/members\x12\xa4\x01\n\x0cUpdateMember\x12#.eolymp.community.UpdateMemberInput\x1a$.eolymp.community.UpdateMemberOutput\"I\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x16\"\x14/members/{member_id}\x12\xa4\x01\n\x0c\x44\x65leteMember\x12#.eolymp.community.DeleteMemberInput\x1a$.eolymp.community.DeleteMemberOutput\"I\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x16*\x14/members/{member_id}\x12\xaf\x01\n\rRestoreMember\x12$.eolymp.community.RestoreMemberInput\x1a%.eolymp.community.RestoreMemberOutput\"Q\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1e\"\x1c/members/{member_id}/restore\x12\xa9\x01\n\x0e\x44\x65scribeMember\x12%.eolymp.community.DescribeMemberInput\x1a&.eolymp.community.DescribeMemberOutput\"H\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x16\x12\x14/members/{member_id}\x12\x94\x01\n\x0bListMembers\x12\".eolymp.community.ListMembersInput\x1a#.eolymp.community.ListMembersOutput\"<\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\n\x12\x08/members\x12\xb4\x01\n\x0c\x41ssignMember\x12#.eolymp.community.AssignMemberInput\x1a$.eolymp.community.AssignMemberOutput\"Y\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02&\x1a$/members/{team_id}/users/{member_id}\x12\xba\x01\n\x0eUnassignMember\x12%.eolymp.community.UnassignMemberInput\x1a&.eolymp.community.UnassignMemberOutput\"Y\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02&*$/members/{team_id}/users/{member_id}B5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.member_service_pb2', globals())
@@ -48,39 +48,39 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATEMEMBEROUTPUT._serialized_start=321
   _CREATEMEMBEROUTPUT._serialized_end=360
   _UPDATEMEMBERINPUT._serialized_start=363
-  _UPDATEMEMBERINPUT._serialized_end=877
+  _UPDATEMEMBERINPUT._serialized_end=912
   _UPDATEMEMBERINPUT_PATCH._serialized_start=504
-  _UPDATEMEMBERINPUT_PATCH._serialized_end=877
-  _UPDATEMEMBEROUTPUT._serialized_start=879
-  _UPDATEMEMBEROUTPUT._serialized_end=899
-  _DELETEMEMBERINPUT._serialized_start=901
-  _DELETEMEMBERINPUT._serialized_end=961
-  _DELETEMEMBEROUTPUT._serialized_start=963
-  _DELETEMEMBEROUTPUT._serialized_end=983
-  _RESTOREMEMBERINPUT._serialized_start=985
-  _RESTOREMEMBERINPUT._serialized_end=1024
-  _RESTOREMEMBEROUTPUT._serialized_start=1026
-  _RESTOREMEMBEROUTPUT._serialized_end=1047
-  _DESCRIBEMEMBERINPUT._serialized_start=1049
-  _DESCRIBEMEMBERINPUT._serialized_end=1089
-  _DESCRIBEMEMBEROUTPUT._serialized_start=1091
-  _DESCRIBEMEMBEROUTPUT._serialized_end=1155
-  _LISTMEMBERSINPUT._serialized_start=1158
-  _LISTMEMBERSINPUT._serialized_end=2066
-  _LISTMEMBERSINPUT_FILTER._serialized_start=1372
-  _LISTMEMBERSINPUT_FILTER._serialized_end=2005
-  _LISTMEMBERSINPUT_SORTABLE._serialized_start=2007
-  _LISTMEMBERSINPUT_SORTABLE._serialized_end=2066
-  _LISTMEMBERSOUTPUT._serialized_start=2068
-  _LISTMEMBERSOUTPUT._serialized_end=2143
-  _ASSIGNMEMBERINPUT._serialized_start=2145
-  _ASSIGNMEMBERINPUT._serialized_end=2200
-  _ASSIGNMEMBEROUTPUT._serialized_start=2202
-  _ASSIGNMEMBEROUTPUT._serialized_end=2222
-  _UNASSIGNMEMBERINPUT._serialized_start=2224
-  _UNASSIGNMEMBERINPUT._serialized_end=2281
-  _UNASSIGNMEMBEROUTPUT._serialized_start=2283
-  _UNASSIGNMEMBEROUTPUT._serialized_end=2305
-  _MEMBERSERVICE._serialized_start=2308
-  _MEMBERSERVICE._serialized_end=3685
+  _UPDATEMEMBERINPUT_PATCH._serialized_end=912
+  _UPDATEMEMBEROUTPUT._serialized_start=914
+  _UPDATEMEMBEROUTPUT._serialized_end=934
+  _DELETEMEMBERINPUT._serialized_start=936
+  _DELETEMEMBERINPUT._serialized_end=996
+  _DELETEMEMBEROUTPUT._serialized_start=998
+  _DELETEMEMBEROUTPUT._serialized_end=1018
+  _RESTOREMEMBERINPUT._serialized_start=1020
+  _RESTOREMEMBERINPUT._serialized_end=1059
+  _RESTOREMEMBEROUTPUT._serialized_start=1061
+  _RESTOREMEMBEROUTPUT._serialized_end=1082
+  _DESCRIBEMEMBERINPUT._serialized_start=1084
+  _DESCRIBEMEMBERINPUT._serialized_end=1124
+  _DESCRIBEMEMBEROUTPUT._serialized_start=1126
+  _DESCRIBEMEMBEROUTPUT._serialized_end=1190
+  _LISTMEMBERSINPUT._serialized_start=1193
+  _LISTMEMBERSINPUT._serialized_end=2101
+  _LISTMEMBERSINPUT_FILTER._serialized_start=1407
+  _LISTMEMBERSINPUT_FILTER._serialized_end=2040
+  _LISTMEMBERSINPUT_SORTABLE._serialized_start=2042
+  _LISTMEMBERSINPUT_SORTABLE._serialized_end=2101
+  _LISTMEMBERSOUTPUT._serialized_start=2103
+  _LISTMEMBERSOUTPUT._serialized_end=2178
+  _ASSIGNMEMBERINPUT._serialized_start=2180
+  _ASSIGNMEMBERINPUT._serialized_end=2235
+  _ASSIGNMEMBEROUTPUT._serialized_start=2237
+  _ASSIGNMEMBEROUTPUT._serialized_end=2257
+  _UNASSIGNMEMBERINPUT._serialized_start=2259
+  _UNASSIGNMEMBERINPUT._serialized_end=2316
+  _UNASSIGNMEMBEROUTPUT._serialized_start=2318
+  _UNASSIGNMEMBEROUTPUT._serialized_end=2340
+  _MEMBERSERVICE._serialized_start=2343
+  _MEMBERSERVICE._serialized_end=3720
 # @@protoc_insertion_point(module_scope)

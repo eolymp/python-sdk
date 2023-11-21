@@ -147,6 +147,8 @@ class UpdateMemberInput(_message.Message):
     ATTRIBUTES: UpdateMemberInput.Patch
     GHOST_NAME: UpdateMemberInput.Patch
     GROUPS: UpdateMemberInput.Patch
+    GROUPS_ADD: UpdateMemberInput.Patch
+    GROUPS_REMOVE: UpdateMemberInput.Patch
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
