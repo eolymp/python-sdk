@@ -17,7 +17,7 @@ from eolymp.community import member_team_pb2 as eolymp_dot_community_dot_member_
 from eolymp.community import member_user_pb2 as eolymp_dot_community_dot_member__user__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a eolymp/community/attribute.proto\x1a#eolymp/community/member_ghost.proto\x1a\"eolymp/community/member_team.proto\x1a\"eolymp/community/member_user.proto\"\xc9\x02\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\n \x01(\x08\x12\x12\n\nincomplete\x18\x14 \x01(\x08\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x0e\n\x06secret\x18( \x01(\x08\x12\x0f\n\x07tier_id\x18\x32 \x01(\t\x12&\n\x04user\x18\x64 \x01(\x0b\x32\x16.eolymp.community.UserH\x00\x12&\n\x04team\x18\x65 \x01(\x0b\x32\x16.eolymp.community.TeamH\x00\x12(\n\x05ghost\x18\x66 \x01(\x0b\x32\x17.eolymp.community.GhostH\x00\x12\x0f\n\x06groups\x18\xc8\x01 \x03(\t\x12\x36\n\nattributes\x18\x84\x07 \x03(\x0b\x32!.eolymp.community.Attribute.ValueB\t\n\x07\x61\x63\x63ountB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a eolymp/community/attribute.proto\x1a#eolymp/community/member_ghost.proto\x1a\"eolymp/community/member_team.proto\x1a\"eolymp/community/member_user.proto\"\xe3\x02\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\n \x01(\x08\x12\x12\n\nincomplete\x18\x14 \x01(\x08\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x0e\n\x06secret\x18( \x01(\x08\x12\x0f\n\x07tier_id\x18\x32 \x01(\t\x12\x18\n\x10\x66\x61llback_tier_id\x18\x33 \x01(\t\x12&\n\x04user\x18\x64 \x01(\x0b\x32\x16.eolymp.community.UserH\x00\x12&\n\x04team\x18\x65 \x01(\x0b\x32\x16.eolymp.community.TeamH\x00\x12(\n\x05ghost\x18\x66 \x01(\x0b\x32\x17.eolymp.community.GhostH\x00\x12\x0f\n\x06groups\x18\xc8\x01 \x03(\t\x12\x36\n\nattributes\x18\x84\x07 \x03(\x0b\x32!.eolymp.community.Attribute.ValueB\t\n\x07\x61\x63\x63ountB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.member_pb2', globals())
@@ -26,5 +26,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _MEMBER._serialized_start=195
-  _MEMBER._serialized_end=524
+  _MEMBER._serialized_end=550
 # @@protoc_insertion_point(module_scope)
