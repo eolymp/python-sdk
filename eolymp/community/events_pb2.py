@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.community import member_pb2 as eolymp_dot_community_dot_member__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/events.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/community/member.proto\">\n\x12MemberCreatedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\">\n\x12MemberUpdatedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\">\n\x12MemberDeletedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.MemberB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/events.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/community/member.proto\">\n\x12MemberCreatedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\">\n\x12MemberUpdatedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\">\n\x12MemberDeletedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\"\xbd\x01\n\x12MemberChangeRecord\x12:\n\x02op\x18\x01 \x01(\x0e\x32..eolymp.community.MemberChangeRecord.Operation\x12(\n\x06member\x18\x02 \x01(\x0b\x32\x18.eolymp.community.Member\"A\n\tOperation\x12\x10\n\x0cNO_OPERATION\x10\x00\x12\n\n\x06\x43REATE\x10\x01\x12\n\n\x06UPDATE\x10\x02\x12\n\n\x06\x44\x45LETE\x10\x03\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.events_pb2', globals())
@@ -28,4 +28,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MEMBERUPDATEDEVENT._serialized_end=208
   _MEMBERDELETEDEVENT._serialized_start=210
   _MEMBERDELETEDEVENT._serialized_end=272
+  _MEMBERCHANGERECORD._serialized_start=275
+  _MEMBERCHANGERECORD._serialized_end=464
+  _MEMBERCHANGERECORD_OPERATION._serialized_start=399
+  _MEMBERCHANGERECORD_OPERATION._serialized_end=464
 # @@protoc_insertion_point(module_scope)
