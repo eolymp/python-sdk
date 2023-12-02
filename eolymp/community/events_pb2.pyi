@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class MemberChangeRecord(_message.Message):
-    __slots__ = ["member", "op"]
+    __slots__ = ["member", "op", "space_id"]
     class Operation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     CREATE: MemberChangeRecord.Operation
@@ -15,10 +15,12 @@ class MemberChangeRecord(_message.Message):
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     NO_OPERATION: MemberChangeRecord.Operation
     OP_FIELD_NUMBER: _ClassVar[int]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     UPDATE: MemberChangeRecord.Operation
     member: _member_pb2.Member
     op: MemberChangeRecord.Operation
-    def __init__(self, op: _Optional[_Union[MemberChangeRecord.Operation, str]] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
+    space_id: str
+    def __init__(self, space_id: _Optional[str] = ..., op: _Optional[_Union[MemberChangeRecord.Operation, str]] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class MemberCreatedEvent(_message.Message):
     __slots__ = ["member"]
