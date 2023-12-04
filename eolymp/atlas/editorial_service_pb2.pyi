@@ -3,6 +3,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import editorial_pb2 as _editorial_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -92,12 +93,20 @@ class PreviewEditorialOutput(_message.Message):
     def __init__(self, editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
 
 class UpdateEditorialInput(_message.Message):
-    __slots__ = ["editorial", "editorial_id"]
+    __slots__ = ["editorial", "editorial_id", "patch"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateEditorialInput.Patch
+    CONTENT: UpdateEditorialInput.Patch
+    DOWNLOAD_LINK: UpdateEditorialInput.Patch
     EDITORIAL_FIELD_NUMBER: _ClassVar[int]
     EDITORIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALE: UpdateEditorialInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
     editorial: _editorial_pb2.Editorial
     editorial_id: str
-    def __init__(self, editorial_id: _Optional[str] = ..., editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
+    patch: _containers.RepeatedScalarFieldContainer[UpdateEditorialInput.Patch]
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateEditorialInput.Patch, str]]] = ..., editorial_id: _Optional[str] = ..., editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
 
 class UpdateEditorialOutput(_message.Message):
     __slots__ = []
