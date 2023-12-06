@@ -64,3 +64,17 @@ class GeographyClient:
             **kwargs,
         )
 
+    def DeprecatedListRegions(self, request, **kwargs):
+        path = "/geography/countries/"+urllib.parse.quote(request.country_id)+"/regions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.country_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.geography.ListRegionsOutput"),
+            **kwargs,
+        )
+
