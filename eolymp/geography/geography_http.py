@@ -54,10 +54,7 @@ class GeographyClient:
         )
 
     def ListRegions(self, request, **kwargs):
-        path = "/geography/countries/"+urllib.parse.quote(request.country_id)+"/regions"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.country_id = ""
+        path = "/geography/regions"
 
         return self.transport.request(
             method="GET",
