@@ -974,9 +974,9 @@ class ReplyTicketInput(_message.Message):
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     close: bool
-    message: str
+    message: _content_pb2.Content
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ..., message: _Optional[str] = ..., close: bool = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., close: bool = ...) -> None: ...
 
 class ReplyTicketOutput(_message.Message):
     __slots__ = ["reply_id"]
@@ -1184,10 +1184,10 @@ class UpdateReplyInput(_message.Message):
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     REPLY_ID_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
-    message: str
+    message: _content_pb2.Content
     reply_id: str
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ..., reply_id: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., reply_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class UpdateReplyOutput(_message.Message):
     __slots__ = []
