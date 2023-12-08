@@ -216,12 +216,14 @@ class DeleteTicketOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAnnouncementInput(_message.Message):
-    __slots__ = ["announcement_id", "contest_id"]
+    __slots__ = ["announcement_id", "contest_id", "extra"]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     announcement_id: str
     contest_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_announcement_pb2.Announcement.Extra]
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
 
 class DescribeAnnouncementOutput(_message.Message):
     __slots__ = ["announcement"]
@@ -522,7 +524,7 @@ class ListActivitiesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_activity_pb2.Activity, _Mapping]]] = ...) -> None: ...
 
 class ListAnnouncementsInput(_message.Message):
-    __slots__ = ["contest_id", "filters", "offset", "size"]
+    __slots__ = ["contest_id", "extra", "filters", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "is_read"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -531,14 +533,16 @@ class ListAnnouncementsInput(_message.Message):
         is_read: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_read: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
+    extra: _containers.RepeatedScalarFieldContainer[_announcement_pb2.Announcement.Extra]
     filters: ListAnnouncementsInput.Filter
     offset: int
     size: int
-    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAnnouncementsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAnnouncementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
 
 class ListAnnouncementsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -704,14 +708,16 @@ class ListProblemsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem, _Mapping]]] = ...) -> None: ...
 
 class ListRepliesInput(_message.Message):
-    __slots__ = ["offset", "size", "ticket_id"]
+    __slots__ = ["extra", "offset", "size", "ticket_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_reply_pb2.Reply.Extra]
     offset: int
     size: int
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
 
 class ListRepliesOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -1200,6 +1206,28 @@ class VerifyPasscodeOutput(_message.Message):
     required: bool
     valid: bool
     def __init__(self, required: bool = ..., valid: bool = ...) -> None: ...
+
+class WatchRepliesInput(_message.Message):
+    __slots__ = ["cursor", "ticket_id"]
+    CURSOR_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    cursor: str
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., cursor: _Optional[str] = ...) -> None: ...
+
+class WatchRepliesOutput(_message.Message):
+    __slots__ = ["event", "reply"]
+    class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    CREATED: WatchRepliesOutput.Event
+    DELETED: WatchRepliesOutput.Event
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    NO_TYPE: WatchRepliesOutput.Event
+    REPLY_FIELD_NUMBER: _ClassVar[int]
+    UPDATED: WatchRepliesOutput.Event
+    event: WatchRepliesOutput.Event
+    reply: _reply_pb2.Reply
+    def __init__(self, event: _Optional[_Union[WatchRepliesOutput.Event, str]] = ..., reply: _Optional[_Union[_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
 
 class WatchSubmissionInput(_message.Message):
     __slots__ = ["contest_id", "submission_id"]
