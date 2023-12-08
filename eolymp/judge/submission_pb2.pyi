@@ -1,3 +1,4 @@
+from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.atlas import testing_feedback_pb2 as _testing_feedback_pb2
 from eolymp.atlas import testing_scoring_pb2 as _testing_scoring_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -10,11 +11,11 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ["contest_id", "cost", "deleted", "ern", "error", "groups", "id", "lang", "participant_id", "percentage", "problem_id", "score", "signature", "source", "status", "submitted_at"]
+    __slots__ = ["contest_id", "cost", "deleted", "ern", "error", "groups", "id", "lang", "participant_id", "percentage", "problem_id", "score", "signature", "source", "status", "submitted_at", "verdict"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Group(_message.Message):
-        __slots__ = ["cost", "cpu_time_usage", "dependencies", "feedback_policy", "index", "memory_usage", "runs", "score", "scoring_mode", "status", "testset_id", "wall_time_usage"]
+        __slots__ = ["cost", "cpu_time_usage", "dependencies", "feedback_policy", "index", "memory_usage", "runs", "score", "scoring_mode", "status", "testset_id", "verdict", "wall_time_usage"]
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ACCEPTED: Submission.Group.Status
@@ -39,6 +40,7 @@ class Submission(_message.Message):
         TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
         TIMEOUT: Submission.Group.Status
         UNKNOWN: Submission.Group.Status
+        VERDICT_FIELD_NUMBER: _ClassVar[int]
         VERIFICATION_ERROR: Submission.Group.Status
         WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
         WRONG_ANSWER: Submission.Group.Status
@@ -53,8 +55,9 @@ class Submission(_message.Message):
         scoring_mode: _testing_scoring_pb2.ScoringMode
         status: Submission.Group.Status
         testset_id: str
+        verdict: _submission_pb2.Submission.Verdict
         wall_time_usage: int
-        def __init__(self, index: _Optional[int] = ..., testset_id: _Optional[str] = ..., status: _Optional[_Union[Submission.Group.Status, str]] = ..., dependencies: _Optional[_Iterable[int]] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., scoring_mode: _Optional[_Union[_testing_scoring_pb2.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., runs: _Optional[_Iterable[_Union[Submission.Run, _Mapping]]] = ...) -> None: ...
+        def __init__(self, index: _Optional[int] = ..., testset_id: _Optional[str] = ..., status: _Optional[_Union[Submission.Group.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., dependencies: _Optional[_Iterable[int]] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., scoring_mode: _Optional[_Union[_testing_scoring_pb2.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., runs: _Optional[_Iterable[_Union[Submission.Run, _Mapping]]] = ...) -> None: ...
     class InteractorExecutionData(_message.Message):
         __slots__ = ["exit_code", "log_url", "memory_usage", "wall_time_usage"]
         EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
@@ -67,11 +70,12 @@ class Submission(_message.Message):
         wall_time_usage: int
         def __init__(self, log_url: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., exit_code: _Optional[int] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ["cost", "cpu_time_usage", "id", "index", "interactor_execution_data", "memory_usage", "output_url", "score", "status", "stderr_url", "test_id", "verifier_execution_data", "wall_time_usage"]
+        __slots__ = ["cost", "cpu_time_usage", "id", "index", "interactor_execution_data", "memory_usage", "output_url", "score", "status", "stderr_url", "test_id", "verdict", "verifier_execution_data", "wall_time_usage"]
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ACCEPTED: Submission.Run.Status
         BLOCKED: Submission.Run.Status
+        COMPLETE: Submission.Run.Status
         COST_FIELD_NUMBER: _ClassVar[int]
         CPU_EXHAUSTED: Submission.Run.Status
         CPU_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
@@ -92,6 +96,7 @@ class Submission(_message.Message):
         STDERR_URL_FIELD_NUMBER: _ClassVar[int]
         TEST_ID_FIELD_NUMBER: _ClassVar[int]
         TIMEOUT: Submission.Run.Status
+        VERDICT_FIELD_NUMBER: _ClassVar[int]
         VERIFICATION_ERROR: Submission.Run.Status
         VERIFIER_EXECUTION_DATA_FIELD_NUMBER: _ClassVar[int]
         WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
@@ -107,9 +112,10 @@ class Submission(_message.Message):
         status: Submission.Run.Status
         stderr_url: str
         test_id: str
+        verdict: _submission_pb2.Submission.Verdict
         verifier_execution_data: Submission.VerifierExecutionData
         wall_time_usage: int
-        def __init__(self, id: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., output_url: _Optional[str] = ..., stderr_url: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Run.Status, str]] = ..., verifier_execution_data: _Optional[_Union[Submission.VerifierExecutionData, _Mapping]] = ..., interactor_execution_data: _Optional[_Union[Submission.InteractorExecutionData, _Mapping]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., output_url: _Optional[str] = ..., stderr_url: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Run.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., verifier_execution_data: _Optional[_Union[Submission.VerifierExecutionData, _Mapping]] = ..., interactor_execution_data: _Optional[_Union[Submission.InteractorExecutionData, _Mapping]] = ...) -> None: ...
     class VerifierExecutionData(_message.Message):
         __slots__ = ["exit_code", "log_url", "memory_usage", "wall_time_usage"]
         EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
@@ -144,6 +150,7 @@ class Submission(_message.Message):
     SUBMITTED_AT_FIELD_NUMBER: _ClassVar[int]
     TESTING: Submission.Status
     TIMEOUT: Submission.Status
+    VERDICT_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     cost: float
     deleted: bool
@@ -160,4 +167,5 @@ class Submission(_message.Message):
     source: str
     status: Submission.Status
     submitted_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., error: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ...) -> None: ...
+    verdict: _submission_pb2.Submission.Verdict
+    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ...) -> None: ...
