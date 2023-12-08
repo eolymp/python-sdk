@@ -1208,12 +1208,14 @@ class VerifyPasscodeOutput(_message.Message):
     def __init__(self, required: bool = ..., valid: bool = ...) -> None: ...
 
 class WatchRepliesInput(_message.Message):
-    __slots__ = ["cursor", "ticket_id"]
+    __slots__ = ["cursor", "extra", "ticket_id"]
     CURSOR_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     cursor: str
+    extra: _containers.RepeatedScalarFieldContainer[_reply_pb2.Reply.Extra]
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., cursor: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
 
 class WatchRepliesOutput(_message.Message):
     __slots__ = ["event", "reply"]
@@ -1244,8 +1246,10 @@ class WatchSubmissionOutput(_message.Message):
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class WatchTicketsInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["extra"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_ticket_pb2.Ticket.Extra]
+    def __init__(self, extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
 class WatchTicketsOutput(_message.Message):
     __slots__ = ["event", "ticket", "unread_count"]
