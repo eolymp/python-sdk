@@ -1207,3 +1207,24 @@ class WatchSubmissionOutput(_message.Message):
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+
+class WatchTicketsInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class WatchTicketsOutput(_message.Message):
+    __slots__ = ["event", "ticket", "unread_count"]
+    class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    CREATED: WatchTicketsOutput.Event
+    DELETED: WatchTicketsOutput.Event
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    NO_TYPE: WatchTicketsOutput.Event
+    REPLIED: WatchTicketsOutput.Event
+    TICKET_FIELD_NUMBER: _ClassVar[int]
+    UNREAD_COUNT_FIELD_NUMBER: _ClassVar[int]
+    UPDATED: WatchTicketsOutput.Event
+    event: WatchTicketsOutput.Event
+    ticket: _ticket_pb2.Ticket
+    unread_count: int
+    def __init__(self, event: _Optional[_Union[WatchTicketsOutput.Event, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., unread_count: _Optional[int] = ...) -> None: ...
