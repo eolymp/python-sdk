@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.judge import activity_pb2 as _activity_pb2
 from eolymp.judge import announcement_pb2 as _announcement_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
@@ -127,14 +128,16 @@ class CreateSubmissionOutput(_message.Message):
     def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
 
 class CreateTicketInput(_message.Message):
-    __slots__ = ["contest_id", "message", "subject"]
+    __slots__ = ["contest_id", "message", "raw_message", "subject"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    RAW_MESSAGE_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    message: str
+    message: _content_pb2.Content
+    raw_message: str
     subject: str
-    def __init__(self, contest_id: _Optional[str] = ..., subject: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., subject: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., raw_message: _Optional[str] = ...) -> None: ...
 
 class CreateTicketOutput(_message.Message):
     __slots__ = ["ticket_id"]
