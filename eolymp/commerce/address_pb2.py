@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/address.proto\x12\x0f\x65olymp.commerce\"_\n\x07\x41\x64\x64ress\x12\x10\n\x07\x63ountry\x18\xc8\x01 \x01(\t\x12\x12\n\tpost_code\x18\xc9\x01 \x01(\t\x12\x0f\n\x06region\x18\xca\x01 \x01(\t\x12\r\n\x04\x63ity\x18\xcb\x01 \x01(\t\x12\x0e\n\x05lines\x18\xcc\x01 \x03(\tB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/address.proto\x12\x0f\x65olymp.commerce\"o\n\x07\x41\x64\x64ress\x12\x10\n\x07\x63ountry\x18\xc8\x01 \x01(\t\x12\x12\n\tpost_code\x18\xc9\x01 \x01(\t\x12\x0f\n\x06region\x18\xca\x01 \x01(\t\x12\r\n\x04\x63ity\x18\xcb\x01 \x01(\t\x12\x0e\n\x05line1\x18\xd2\x01 \x01(\t\x12\x0e\n\x05line2\x18\xd3\x01 \x01(\tB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.address_pb2', globals())
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
   _ADDRESS._serialized_start=50
-  _ADDRESS._serialized_end=145
+  _ADDRESS._serialized_end=161
 # @@protoc_insertion_point(module_scope)
