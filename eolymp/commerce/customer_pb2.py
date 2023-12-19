@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.commerce import address_pb2 as eolymp_dot_commerce_dot_address__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/commerce/customer.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/commerce/address.proto\"\xa2\x02\n\x08\x43ustomer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0e\n\x06tax_id\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\n \x01(\t\x12\r\n\x05phone\x18\x0b \x01(\t\x12)\n\x07\x61\x64\x64ress\x18\x14 \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x10\n\x08\x63urrency\x18Z \x01(\t\x12\x10\n\x08language\x18[ \x01(\t\x12\x39\n\x08metadata\x18\x64 \x03(\x0b\x32\'.eolymp.commerce.Customer.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/commerce/customer.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/commerce/address.proto\"\xbd\x02\n\x08\x43ustomer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\n \x01(\t\x12\r\n\x05phone\x18\x0b \x01(\t\x12\x13\n\x0btax_id_type\x18\x14 \x01(\t\x12\x14\n\x0ctax_id_value\x18\x15 \x01(\t\x12)\n\x07\x61\x64\x64ress\x18\x1e \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x10\n\x08\x63urrency\x18Z \x01(\t\x12\x10\n\x08language\x18[ \x01(\t\x12\x39\n\x08metadata\x18\x64 \x03(\x0b\x32\'.eolymp.commerce.Customer.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.customer_pb2', globals())
@@ -25,7 +25,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CUSTOMER_METADATAENTRY._options = None
   _CUSTOMER_METADATAENTRY._serialized_options = b'8\001'
   _CUSTOMER._serialized_start=83
-  _CUSTOMER._serialized_end=373
-  _CUSTOMER_METADATAENTRY._serialized_start=326
-  _CUSTOMER_METADATAENTRY._serialized_end=373
+  _CUSTOMER._serialized_end=400
+  _CUSTOMER_METADATAENTRY._serialized_start=353
+  _CUSTOMER_METADATAENTRY._serialized_end=400
 # @@protoc_insertion_point(module_scope)

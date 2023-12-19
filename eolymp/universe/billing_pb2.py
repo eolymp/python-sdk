@@ -11,9 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.commerce import address_pb2 as eolymp_dot_commerce_dot_address__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/universe/billing.proto\x12\x0f\x65olymp.universe\"\xc5\x03\n\x07\x42illing\x1a\xb6\x02\n\x0bInformation\x12\x0c\n\x04name\x18\x64 \x01(\t\x12\r\n\x05\x65mail\x18\x65 \x01(\t\x12\r\n\x05phone\x18\x66 \x01(\t\x12\x18\n\x0f\x61\x64\x64ress_country\x18\xc8\x01 \x01(\t\x12\x1a\n\x11\x61\x64\x64ress_post_code\x18\xc9\x01 \x01(\t\x12\x17\n\x0e\x61\x64\x64ress_region\x18\xca\x01 \x01(\t\x12\x15\n\x0c\x61\x64\x64ress_city\x18\xcb\x01 \x01(\t\x12\x1e\n\x15\x61\x64\x64ress_address_line1\x18\xd2\x01 \x01(\t\x12\x1e\n\x15\x61\x64\x64ress_address_line2\x18\xd3\x01 \x01(\t\x12\x1e\n\x15\x61\x64\x64ress_address_line3\x18\xd4\x01 \x01(\t\x12\x0f\n\x06tax_id\x18\x90\x03 \x01(\t\x12\x11\n\x08\x63urrency\x18\xac\x02 \x01(\t\x12\x11\n\x08language\x18\xad\x02 \x01(\t\"B\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\t\n\x05TRIAL\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tCANCELLED\x10\x03\"=\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\n\n\x06YEARLY\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/universe/billing.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/commerce/address.proto\"\xc2\x02\n\x07\x42illing\x1a\xb3\x01\n\x0bInformation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\r\n\x05phone\x18\x03 \x01(\t\x12\x13\n\x0btax_id_type\x18\n \x01(\t\x12\x14\n\x0ctax_id_value\x18\x0b \x01(\t\x12)\n\x07\x61\x64\x64ress\x18\x14 \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x10\n\x08\x63urrency\x18Z \x01(\t\x12\x10\n\x08language\x18[ \x01(\t\"B\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\t\n\x05TRIAL\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tCANCELLED\x10\x03\"=\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\n\n\x06YEARLY\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.billing_pb2', globals())
@@ -21,12 +22,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/universe;universe'
-  _BILLING._serialized_start=51
-  _BILLING._serialized_end=504
-  _BILLING_INFORMATION._serialized_start=63
-  _BILLING_INFORMATION._serialized_end=373
-  _BILLING_STATUS._serialized_start=375
-  _BILLING_STATUS._serialized_end=441
-  _BILLING_RECURRENCE._serialized_start=443
-  _BILLING_RECURRENCE._serialized_end=504
+  _BILLING._serialized_start=82
+  _BILLING._serialized_end=404
+  _BILLING_INFORMATION._serialized_start=94
+  _BILLING_INFORMATION._serialized_end=273
+  _BILLING_STATUS._serialized_start=275
+  _BILLING_STATUS._serialized_end=341
+  _BILLING_RECURRENCE._serialized_start=343
+  _BILLING_RECURRENCE._serialized_end=404
 # @@protoc_insertion_point(module_scope)
