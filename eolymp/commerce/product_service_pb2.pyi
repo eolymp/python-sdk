@@ -96,6 +96,27 @@ class ListProductPricesOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_price_pb2.Price]
     def __init__(self, items: _Optional[_Iterable[_Union[_price_pb2.Price, _Mapping]]] = ...) -> None: ...
 
+class ListProductsInput(_message.Message):
+    __slots__ = ["filters"]
+    class FiltersEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    filters: _containers.ScalarMap[str, str]
+    def __init__(self, filters: _Optional[_Mapping[str, str]] = ...) -> None: ...
+
+class ListProductsOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_product_pb2.Product]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_product_pb2.Product, _Mapping]]] = ...) -> None: ...
+
 class UpdateProductInput(_message.Message):
     __slots__ = ["product", "product_id"]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
