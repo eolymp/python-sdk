@@ -51,13 +51,13 @@ class ListSubscriptionsInput(_message.Message):
     PRICE_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
-    after: int
-    before: int
+    after: str
+    before: str
     customer_id: str
     price_id: str
     size: int
     status: str
-    def __init__(self, customer_id: _Optional[str] = ..., price_id: _Optional[str] = ..., status: _Optional[str] = ..., size: _Optional[int] = ..., after: _Optional[int] = ..., before: _Optional[int] = ...) -> None: ...
+    def __init__(self, customer_id: _Optional[str] = ..., price_id: _Optional[str] = ..., status: _Optional[str] = ..., size: _Optional[int] = ..., after: _Optional[str] = ..., before: _Optional[str] = ...) -> None: ...
 
 class ListSubscriptionsOutput(_message.Message):
     __slots__ = ["has_more", "items"]
