@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Subscription(_message.Message):
-    __slots__ = ["cancel_at", "cancel_url", "cancellation_comment", "cancellation_feedback", "cancellation_reason", "cancelled_at", "checkout_url", "created_at", "currency", "customer_id", "description", "ended_at", "id", "items", "period_end", "period_start", "started_at", "status", "success_url", "total_amount", "trial_end", "trial_start"]
+    __slots__ = ["cancel_at", "cancellation_comment", "cancellation_feedback", "cancellation_reason", "cancelled_at", "created_at", "currency", "customer_id", "description", "ended_at", "id", "items", "period_end", "period_start", "started_at", "status", "trial_end", "trial_start"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Item(_message.Message):
@@ -30,8 +30,6 @@ class Subscription(_message.Message):
     CANCELLED: Subscription.Status
     CANCELLED_AT_FIELD_NUMBER: _ClassVar[int]
     CANCEL_AT_FIELD_NUMBER: _ClassVar[int]
-    CANCEL_URL_FIELD_NUMBER: _ClassVar[int]
-    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     CURRENCY_FIELD_NUMBER: _ClassVar[int]
     CUSTOMER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -46,20 +44,16 @@ class Subscription(_message.Message):
     PERIOD_START_FIELD_NUMBER: _ClassVar[int]
     STARTED_AT_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
-    SUCCESS_URL_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_AMOUNT_FIELD_NUMBER: _ClassVar[int]
     TRIALING: Subscription.Status
     TRIAL_END_FIELD_NUMBER: _ClassVar[int]
     TRIAL_START_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_STATUS: Subscription.Status
     UNPAID: Subscription.Status
     cancel_at: _timestamp_pb2.Timestamp
-    cancel_url: str
     cancellation_comment: str
     cancellation_feedback: str
     cancellation_reason: str
     cancelled_at: _timestamp_pb2.Timestamp
-    checkout_url: str
     created_at: _timestamp_pb2.Timestamp
     currency: str
     customer_id: str
@@ -71,8 +65,6 @@ class Subscription(_message.Message):
     period_start: _timestamp_pb2.Timestamp
     started_at: _timestamp_pb2.Timestamp
     status: Subscription.Status
-    success_url: str
-    total_amount: int
     trial_end: _timestamp_pb2.Timestamp
     trial_start: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Subscription.Status, str]] = ..., customer_id: _Optional[str] = ..., description: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancel_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancelled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., trial_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., trial_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancellation_comment: _Optional[str] = ..., cancellation_feedback: _Optional[str] = ..., cancellation_reason: _Optional[str] = ..., currency: _Optional[str] = ..., total_amount: _Optional[int] = ..., success_url: _Optional[str] = ..., cancel_url: _Optional[str] = ..., checkout_url: _Optional[str] = ..., items: _Optional[_Iterable[_Union[Subscription.Item, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Subscription.Status, str]] = ..., customer_id: _Optional[str] = ..., description: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancel_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancelled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., trial_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., trial_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancellation_comment: _Optional[str] = ..., cancellation_feedback: _Optional[str] = ..., cancellation_reason: _Optional[str] = ..., currency: _Optional[str] = ..., items: _Optional[_Iterable[_Union[Subscription.Item, _Mapping]]] = ...) -> None: ...
