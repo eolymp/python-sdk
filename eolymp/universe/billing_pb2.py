@@ -12,9 +12,11 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.commerce import address_pb2 as eolymp_dot_commerce_dot_address__pb2
+from eolymp.universe import plan_pb2 as eolymp_dot_universe_dot_plan__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/universe/billing.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/commerce/address.proto\"\xc2\x02\n\x07\x42illing\x1a\xb3\x01\n\x0bInformation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\r\n\x05phone\x18\x03 \x01(\t\x12\x13\n\x0btax_id_type\x18\n \x01(\t\x12\x14\n\x0ctax_id_value\x18\x0b \x01(\t\x12)\n\x07\x61\x64\x64ress\x18\x14 \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x10\n\x08\x63urrency\x18Z \x01(\t\x12\x10\n\x08language\x18[ \x01(\t\"B\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\t\n\x05TRIAL\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tCANCELLED\x10\x03\"=\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\n\n\x06YEARLY\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/universe/billing.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/commerce/address.proto\x1a\x1a\x65olymp/universe/plan.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc1\x07\n\x07\x42illing\x1a\xb3\x01\n\x0bInformation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\r\n\x05phone\x18\x03 \x01(\t\x12\x13\n\x0btax_id_type\x18\n \x01(\t\x12\x14\n\x0ctax_id_value\x18\x0b \x01(\t\x12)\n\x07\x61\x64\x64ress\x18\x14 \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x10\n\x08\x63urrency\x18Z \x01(\t\x12\x10\n\x08language\x18[ \x01(\t\x1a\xfc\x04\n\x0cSubscription\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x06status\x18\x02 \x01(\x0e\x32\x1f.eolymp.universe.Billing.Status\x12\x11\n\tirregular\x18\x03 \x01(\x08\x12#\n\x04plan\x18\n \x01(\x0b\x32\x15.eolymp.universe.Plan\x12.\n\x07variant\x18\x0b \x01(\x0b\x32\x1d.eolymp.universe.Plan.Variant\x12\r\n\x05seats\x18\x0c \x01(\r\x12/\n\ncreated_at\x18\xd2\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\nstarted_at\x18\xd3\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\tcancel_at\x18\xd5\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x0c\x63\x61ncelled_at\x18\xd6\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\x08\x65nded_at\x18\xd7\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x0cperiod_start\x18\xf0\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\nperiod_end\x18\xf1\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0btrial_start\x18\x8e\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ttrial_end\x18\x8f\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"B\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\t\n\x05TRIAL\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tCANCELLED\x10\x03\"=\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\n\n\x06YEARLY\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.billing_pb2', globals())
@@ -22,12 +24,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/universe;universe'
-  _BILLING._serialized_start=82
-  _BILLING._serialized_end=404
-  _BILLING_INFORMATION._serialized_start=94
-  _BILLING_INFORMATION._serialized_end=273
-  _BILLING_STATUS._serialized_start=275
-  _BILLING_STATUS._serialized_end=341
-  _BILLING_RECURRENCE._serialized_start=343
-  _BILLING_RECURRENCE._serialized_end=404
+  _BILLING._serialized_start=143
+  _BILLING._serialized_end=1104
+  _BILLING_INFORMATION._serialized_start=155
+  _BILLING_INFORMATION._serialized_end=334
+  _BILLING_SUBSCRIPTION._serialized_start=337
+  _BILLING_SUBSCRIPTION._serialized_end=973
+  _BILLING_STATUS._serialized_start=975
+  _BILLING_STATUS._serialized_end=1041
+  _BILLING_RECURRENCE._serialized_start=1043
+  _BILLING_RECURRENCE._serialized_end=1104
 # @@protoc_insertion_point(module_scope)

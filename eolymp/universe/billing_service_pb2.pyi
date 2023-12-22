@@ -1,19 +1,19 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
-from eolymp.commerce import price_pb2 as _price_pb2
+from eolymp.commerce import invoice_pb2 as _invoice_pb2
 from eolymp.universe import billing_pb2 as _billing_pb2
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CancelCurrentPlanInput(_message.Message):
+class CancelSubscriptionInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class CancelCurrentPlanOutput(_message.Message):
+class CancelSubscriptionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
@@ -27,39 +27,77 @@ class DescribeBillingInformationOutput(_message.Message):
     info: _billing_pb2.Billing.Information
     def __init__(self, info: _Optional[_Union[_billing_pb2.Billing.Information, _Mapping]] = ...) -> None: ...
 
-class DescribeCurrentPlanInput(_message.Message):
+class DescribeInvoiceInput(_message.Message):
+    __slots__ = ["invoice_id"]
+    INVOICE_ID_FIELD_NUMBER: _ClassVar[int]
+    invoice_id: str
+    def __init__(self, invoice_id: _Optional[str] = ...) -> None: ...
+
+class DescribeInvoiceOutput(_message.Message):
+    __slots__ = ["invoice"]
+    INVOICE_FIELD_NUMBER: _ClassVar[int]
+    invoice: _invoice_pb2.Invoice
+    def __init__(self, invoice: _Optional[_Union[_invoice_pb2.Invoice, _Mapping]] = ...) -> None: ...
+
+class DescribeSubscriptionInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class DescribeCurrentPlanOutput(_message.Message):
-    __slots__ = ["cancel_at", "cancelled_at", "created_at", "invoice_quantity", "invoice_subtotal", "paused_at", "plan_id", "price", "quantity", "renewed_at", "renews_at", "started_at", "status"]
-    CANCELLED_AT_FIELD_NUMBER: _ClassVar[int]
-    CANCEL_AT_FIELD_NUMBER: _ClassVar[int]
-    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
-    INVOICE_QUANTITY_FIELD_NUMBER: _ClassVar[int]
-    INVOICE_SUBTOTAL_FIELD_NUMBER: _ClassVar[int]
-    PAUSED_AT_FIELD_NUMBER: _ClassVar[int]
+class DescribeSubscriptionOutput(_message.Message):
+    __slots__ = ["current", "upcoming"]
+    CURRENT_FIELD_NUMBER: _ClassVar[int]
+    UPCOMING_FIELD_NUMBER: _ClassVar[int]
+    current: _billing_pb2.Billing.Subscription
+    upcoming: _billing_pb2.Billing.Subscription
+    def __init__(self, current: _Optional[_Union[_billing_pb2.Billing.Subscription, _Mapping]] = ..., upcoming: _Optional[_Union[_billing_pb2.Billing.Subscription, _Mapping]] = ...) -> None: ...
+
+class ListInvoicesInput(_message.Message):
+    __slots__ = ["after", "before", "size"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    after: str
+    before: str
+    size: int
+    def __init__(self, size: _Optional[int] = ..., after: _Optional[str] = ..., before: _Optional[str] = ...) -> None: ...
+
+class ListInvoicesOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_invoice_pb2.Invoice]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_invoice_pb2.Invoice, _Mapping]]] = ...) -> None: ...
+
+class PayInvoiceInput(_message.Message):
+    __slots__ = ["invoice_id"]
+    INVOICE_ID_FIELD_NUMBER: _ClassVar[int]
+    invoice_id: str
+    def __init__(self, invoice_id: _Optional[str] = ...) -> None: ...
+
+class PayInvoiceOutput(_message.Message):
+    __slots__ = ["checkout_url"]
+    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
+    checkout_url: str
+    def __init__(self, checkout_url: _Optional[str] = ...) -> None: ...
+
+class UpcomingInvoiceInput(_message.Message):
+    __slots__ = ["coupon", "plan_id", "seats", "variant_id"]
+    COUPON_FIELD_NUMBER: _ClassVar[int]
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
-    PRICE_FIELD_NUMBER: _ClassVar[int]
-    QUANTITY_FIELD_NUMBER: _ClassVar[int]
-    RENEWED_AT_FIELD_NUMBER: _ClassVar[int]
-    RENEWS_AT_FIELD_NUMBER: _ClassVar[int]
-    STARTED_AT_FIELD_NUMBER: _ClassVar[int]
-    STATUS_FIELD_NUMBER: _ClassVar[int]
-    cancel_at: _timestamp_pb2.Timestamp
-    cancelled_at: _timestamp_pb2.Timestamp
-    created_at: _timestamp_pb2.Timestamp
-    invoice_quantity: int
-    invoice_subtotal: int
-    paused_at: _timestamp_pb2.Timestamp
+    SEATS_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    coupon: str
     plan_id: str
-    price: _price_pb2.Price
-    quantity: int
-    renewed_at: _timestamp_pb2.Timestamp
-    renews_at: _timestamp_pb2.Timestamp
-    started_at: _timestamp_pb2.Timestamp
-    status: _billing_pb2.Billing.Status
-    def __init__(self, plan_id: _Optional[str] = ..., quantity: _Optional[int] = ..., status: _Optional[_Union[_billing_pb2.Billing.Status, str]] = ..., price: _Optional[_Union[_price_pb2.Price, _Mapping]] = ..., invoice_quantity: _Optional[int] = ..., invoice_subtotal: _Optional[int] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., renewed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., renews_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancel_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., cancelled_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., paused_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    seats: int
+    variant_id: str
+    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ..., coupon: _Optional[str] = ...) -> None: ...
+
+class UpcomingInvoiceOutput(_message.Message):
+    __slots__ = ["invoice"]
+    INVOICE_FIELD_NUMBER: _ClassVar[int]
+    invoice: _invoice_pb2.Invoice
+    def __init__(self, invoice: _Optional[_Union[_invoice_pb2.Invoice, _Mapping]] = ...) -> None: ...
 
 class UpdateBillingInformationInput(_message.Message):
     __slots__ = ["info"]
@@ -71,17 +109,17 @@ class UpdateBillingInformationOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateCurrentPlanInput(_message.Message):
-    __slots__ = ["plan_id", "price_id", "quantity"]
+class UpdateSubscriptionInput(_message.Message):
+    __slots__ = ["plan_id", "seats", "variant_id"]
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
-    PRICE_ID_FIELD_NUMBER: _ClassVar[int]
-    QUANTITY_FIELD_NUMBER: _ClassVar[int]
+    SEATS_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
     plan_id: str
-    price_id: str
-    quantity: int
-    def __init__(self, plan_id: _Optional[str] = ..., price_id: _Optional[str] = ..., quantity: _Optional[int] = ...) -> None: ...
+    seats: int
+    variant_id: str
+    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ...) -> None: ...
 
-class UpdateCurrentPlanOutput(_message.Message):
+class UpdateSubscriptionOutput(_message.Message):
     __slots__ = ["checkout_url"]
     CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
     checkout_url: str

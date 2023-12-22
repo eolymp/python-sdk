@@ -36,36 +36,86 @@ class BillingServiceClient:
             **kwargs,
         )
 
-    def DescribeCurrentPlan(self, request, **kwargs):
-        path = "/billing/plan"
+    def DescribeSubscription(self, request, **kwargs):
+        path = "/billing/subscription"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeCurrentPlanOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeSubscriptionOutput"),
             **kwargs,
         )
 
-    def UpdateCurrentPlan(self, request, **kwargs):
-        path = "/billing/plan"
+    def UpdateSubscription(self, request, **kwargs):
+        path = "/billing/subscription"
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.UpdateCurrentPlanOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.UpdateSubscriptionOutput"),
             **kwargs,
         )
 
-    def CancelCurrentPlan(self, request, **kwargs):
-        path = "/billing/plan"
+    def CancelSubscription(self, request, **kwargs):
+        path = "/billing/subscription"
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.CancelCurrentPlanOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.CancelSubscriptionOutput"),
+            **kwargs,
+        )
+
+    def UpcomingInvoice(self, request, **kwargs):
+        path = "/billing/upcoming"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.UpcomingInvoiceOutput"),
+            **kwargs,
+        )
+
+    def DescribeInvoice(self, request, **kwargs):
+        path = "/billing/invoice/"+urllib.parse.quote(request.invoice_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.invoice_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeInvoiceOutput"),
+            **kwargs,
+        )
+
+    def PayInvoice(self, request, **kwargs):
+        path = "/billing/invoice/"+urllib.parse.quote(request.invoice_id)+"/pay"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.invoice_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.PayInvoiceOutput"),
+            **kwargs,
+        )
+
+    def ListInvoices(self, request, **kwargs):
+        path = "/billing/invoices"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.ListInvoicesOutput"),
             **kwargs,
         )
 

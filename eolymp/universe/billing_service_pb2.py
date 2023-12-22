@@ -13,12 +13,11 @@ _sym_db = _symbol_database.Default()
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
-from eolymp.commerce import price_pb2 as eolymp_dot_commerce_dot_price__pb2
+from eolymp.commerce import invoice_pb2 as eolymp_dot_commerce_dot_invoice__pb2
 from eolymp.universe import billing_pb2 as eolymp_dot_universe_dot_billing__pb2
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/universe/billing_service.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1b\x65olymp/commerce/price.proto\x1a\x1d\x65olymp/universe/billing.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"!\n\x1f\x44\x65scribeBillingInformationInput\"V\n DescribeBillingInformationOutput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\"S\n\x1dUpdateBillingInformationInput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\" \n\x1eUpdateBillingInformationOutput\"\x1a\n\x18\x44\x65scribeCurrentPlanInput\"\xa0\x04\n\x19\x44\x65scribeCurrentPlanOutput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\r\x12/\n\x06status\x18\x03 \x01(\x0e\x32\x1f.eolymp.universe.Billing.Status\x12%\n\x05price\x18\n \x01(\x0b\x32\x16.eolymp.commerce.Price\x12\x18\n\x10invoice_quantity\x18\x66 \x01(\r\x12\x18\n\x10invoice_subtotal\x18h \x01(\r\x12/\n\ncreated_at\x18\xc8\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\nstarted_at\x18\xc9\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\nrenewed_at\x18\xca\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\trenews_at\x18\xcb\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\tcancel_at\x18\xcc\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x0c\x63\x61ncelled_at\x18\xcd\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\tpaused_at\x18\xce\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"M\n\x16UpdateCurrentPlanInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x10\n\x08price_id\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\r\"/\n\x17UpdateCurrentPlanOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"\x18\n\x16\x43\x61ncelCurrentPlanInput\"\x19\n\x17\x43\x61ncelCurrentPlanOutput2\x91\x06\n\x0e\x42illingService\x12\xa7\x01\n\x1a\x44\x65scribeBillingInformation\x12\x30.eolymp.universe.DescribeBillingInformationInput\x1a\x31.eolymp.universe.DescribeBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x12\r/billing/info\x12\xa1\x01\n\x18UpdateBillingInformation\x12..eolymp.universe.UpdateBillingInformationInput\x1a/.eolymp.universe.UpdateBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x1a\r/billing/info\x12\x92\x01\n\x13\x44\x65scribeCurrentPlan\x12).eolymp.universe.DescribeCurrentPlanInput\x1a*.eolymp.universe.DescribeCurrentPlanOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x12\r/billing/plan\x12\x8c\x01\n\x11UpdateCurrentPlan\x12\'.eolymp.universe.UpdateCurrentPlanInput\x1a(.eolymp.universe.UpdateCurrentPlanOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x1a\r/billing/plan\x12\x8c\x01\n\x11\x43\x61ncelCurrentPlan\x12\'.eolymp.universe.CancelCurrentPlanInput\x1a(.eolymp.universe.CancelCurrentPlanOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f*\r/billing/planB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/universe/billing_service.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/commerce/invoice.proto\x1a\x1d\x65olymp/universe/billing.proto\"!\n\x1f\x44\x65scribeBillingInformationInput\"V\n DescribeBillingInformationOutput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\"S\n\x1dUpdateBillingInformationInput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\" \n\x1eUpdateBillingInformationOutput\"\x1b\n\x19\x44\x65scribeSubscriptionInput\"\x8d\x01\n\x1a\x44\x65scribeSubscriptionOutput\x12\x36\n\x07\x63urrent\x18\x01 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\x12\x37\n\x08upcoming\x18\x02 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\"M\n\x17UpdateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\"0\n\x18UpdateSubscriptionOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"\x19\n\x17\x43\x61ncelSubscriptionInput\"\x1a\n\x18\x43\x61ncelSubscriptionOutput\"Z\n\x14UpcomingInvoiceInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\x12\x0e\n\x06\x63oupon\x18\n \x01(\t\"B\n\x15UpcomingInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"*\n\x14\x44\x65scribeInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"%\n\x0fPayInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"(\n\x10PayInvoiceOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"@\n\x11ListInvoicesInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06\x62\x65\x66ore\x18\r \x01(\t\"L\n\x12ListInvoicesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.commerce.Invoice2\xea\n\n\x0e\x42illingService\x12\xa7\x01\n\x1a\x44\x65scribeBillingInformation\x12\x30.eolymp.universe.DescribeBillingInformationInput\x1a\x31.eolymp.universe.DescribeBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x12\r/billing/info\x12\xa1\x01\n\x18UpdateBillingInformation\x12..eolymp.universe.UpdateBillingInformationInput\x1a/.eolymp.universe.UpdateBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x1a\r/billing/info\x12\x9d\x01\n\x14\x44\x65scribeSubscription\x12*.eolymp.universe.DescribeSubscriptionInput\x1a+.eolymp.universe.DescribeSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x12\x15/billing/subscription\x12\x97\x01\n\x12UpdateSubscription\x12(.eolymp.universe.UpdateSubscriptionInput\x1a).eolymp.universe.UpdateSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x1a\x15/billing/subscription\x12\x97\x01\n\x12\x43\x61ncelSubscription\x12(.eolymp.universe.CancelSubscriptionInput\x1a).eolymp.universe.CancelSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17*\x15/billing/subscription\x12\x8a\x01\n\x0fUpcomingInvoice\x12%.eolymp.universe.UpcomingInvoiceInput\x1a&.eolymp.universe.UpcomingInvoiceOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/upcoming\x12\x96\x01\n\x0f\x44\x65scribeInvoice\x12%.eolymp.universe.DescribeInvoiceInput\x1a&.eolymp.universe.DescribeInvoiceOutput\"4\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1f\"\x1d/billing/invoice/{invoice_id}\x12\x8b\x01\n\nPayInvoice\x12 .eolymp.universe.PayInvoiceInput\x1a!.eolymp.universe.PayInvoiceOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02#\"!/billing/invoice/{invoice_id}/pay\x12\x81\x01\n\x0cListInvoices\x12\".eolymp.universe.ListInvoicesInput\x1a#.eolymp.universe.ListInvoicesOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/invoicesB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.billing_service_pb2', globals())
@@ -30,32 +29,56 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _BILLINGSERVICE.methods_by_name['DescribeBillingInformation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\017\022\r/billing/info'
   _BILLINGSERVICE.methods_by_name['UpdateBillingInformation']._options = None
   _BILLINGSERVICE.methods_by_name['UpdateBillingInformation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\017\032\r/billing/info'
-  _BILLINGSERVICE.methods_by_name['DescribeCurrentPlan']._options = None
-  _BILLINGSERVICE.methods_by_name['DescribeCurrentPlan']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\017\022\r/billing/plan'
-  _BILLINGSERVICE.methods_by_name['UpdateCurrentPlan']._options = None
-  _BILLINGSERVICE.methods_by_name['UpdateCurrentPlan']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\017\032\r/billing/plan'
-  _BILLINGSERVICE.methods_by_name['CancelCurrentPlan']._options = None
-  _BILLINGSERVICE.methods_by_name['CancelCurrentPlan']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\017*\r/billing/plan'
-  _DESCRIBEBILLINGINFORMATIONINPUT._serialized_start=218
-  _DESCRIBEBILLINGINFORMATIONINPUT._serialized_end=251
-  _DESCRIBEBILLINGINFORMATIONOUTPUT._serialized_start=253
-  _DESCRIBEBILLINGINFORMATIONOUTPUT._serialized_end=339
-  _UPDATEBILLINGINFORMATIONINPUT._serialized_start=341
-  _UPDATEBILLINGINFORMATIONINPUT._serialized_end=424
-  _UPDATEBILLINGINFORMATIONOUTPUT._serialized_start=426
-  _UPDATEBILLINGINFORMATIONOUTPUT._serialized_end=458
-  _DESCRIBECURRENTPLANINPUT._serialized_start=460
-  _DESCRIBECURRENTPLANINPUT._serialized_end=486
-  _DESCRIBECURRENTPLANOUTPUT._serialized_start=489
-  _DESCRIBECURRENTPLANOUTPUT._serialized_end=1033
-  _UPDATECURRENTPLANINPUT._serialized_start=1035
-  _UPDATECURRENTPLANINPUT._serialized_end=1112
-  _UPDATECURRENTPLANOUTPUT._serialized_start=1114
-  _UPDATECURRENTPLANOUTPUT._serialized_end=1161
-  _CANCELCURRENTPLANINPUT._serialized_start=1163
-  _CANCELCURRENTPLANINPUT._serialized_end=1187
-  _CANCELCURRENTPLANOUTPUT._serialized_start=1189
-  _CANCELCURRENTPLANOUTPUT._serialized_end=1214
-  _BILLINGSERVICE._serialized_start=1217
-  _BILLINGSERVICE._serialized_end=2002
+  _BILLINGSERVICE.methods_by_name['DescribeSubscription']._options = None
+  _BILLINGSERVICE.methods_by_name['DescribeSubscription']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\027\022\025/billing/subscription'
+  _BILLINGSERVICE.methods_by_name['UpdateSubscription']._options = None
+  _BILLINGSERVICE.methods_by_name['UpdateSubscription']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\027\032\025/billing/subscription'
+  _BILLINGSERVICE.methods_by_name['CancelSubscription']._options = None
+  _BILLINGSERVICE.methods_by_name['CancelSubscription']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\027*\025/billing/subscription'
+  _BILLINGSERVICE.methods_by_name['UpcomingInvoice']._options = None
+  _BILLINGSERVICE.methods_by_name['UpcomingInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\023\"\021/billing/upcoming'
+  _BILLINGSERVICE.methods_by_name['DescribeInvoice']._options = None
+  _BILLINGSERVICE.methods_by_name['DescribeInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\037\"\035/billing/invoice/{invoice_id}'
+  _BILLINGSERVICE.methods_by_name['PayInvoice']._options = None
+  _BILLINGSERVICE.methods_by_name['PayInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\323\344\223\002#\"!/billing/invoice/{invoice_id}/pay'
+  _BILLINGSERVICE.methods_by_name['ListInvoices']._options = None
+  _BILLINGSERVICE.methods_by_name['ListInvoices']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\023\"\021/billing/invoices'
+  _DESCRIBEBILLINGINFORMATIONINPUT._serialized_start=187
+  _DESCRIBEBILLINGINFORMATIONINPUT._serialized_end=220
+  _DESCRIBEBILLINGINFORMATIONOUTPUT._serialized_start=222
+  _DESCRIBEBILLINGINFORMATIONOUTPUT._serialized_end=308
+  _UPDATEBILLINGINFORMATIONINPUT._serialized_start=310
+  _UPDATEBILLINGINFORMATIONINPUT._serialized_end=393
+  _UPDATEBILLINGINFORMATIONOUTPUT._serialized_start=395
+  _UPDATEBILLINGINFORMATIONOUTPUT._serialized_end=427
+  _DESCRIBESUBSCRIPTIONINPUT._serialized_start=429
+  _DESCRIBESUBSCRIPTIONINPUT._serialized_end=456
+  _DESCRIBESUBSCRIPTIONOUTPUT._serialized_start=459
+  _DESCRIBESUBSCRIPTIONOUTPUT._serialized_end=600
+  _UPDATESUBSCRIPTIONINPUT._serialized_start=602
+  _UPDATESUBSCRIPTIONINPUT._serialized_end=679
+  _UPDATESUBSCRIPTIONOUTPUT._serialized_start=681
+  _UPDATESUBSCRIPTIONOUTPUT._serialized_end=729
+  _CANCELSUBSCRIPTIONINPUT._serialized_start=731
+  _CANCELSUBSCRIPTIONINPUT._serialized_end=756
+  _CANCELSUBSCRIPTIONOUTPUT._serialized_start=758
+  _CANCELSUBSCRIPTIONOUTPUT._serialized_end=784
+  _UPCOMINGINVOICEINPUT._serialized_start=786
+  _UPCOMINGINVOICEINPUT._serialized_end=876
+  _UPCOMINGINVOICEOUTPUT._serialized_start=878
+  _UPCOMINGINVOICEOUTPUT._serialized_end=944
+  _DESCRIBEINVOICEINPUT._serialized_start=946
+  _DESCRIBEINVOICEINPUT._serialized_end=988
+  _DESCRIBEINVOICEOUTPUT._serialized_start=990
+  _DESCRIBEINVOICEOUTPUT._serialized_end=1056
+  _PAYINVOICEINPUT._serialized_start=1058
+  _PAYINVOICEINPUT._serialized_end=1095
+  _PAYINVOICEOUTPUT._serialized_start=1097
+  _PAYINVOICEOUTPUT._serialized_end=1137
+  _LISTINVOICESINPUT._serialized_start=1139
+  _LISTINVOICESINPUT._serialized_end=1203
+  _LISTINVOICESOUTPUT._serialized_start=1205
+  _LISTINVOICESOUTPUT._serialized_end=1281
+  _BILLINGSERVICE._serialized_start=1284
+  _BILLINGSERVICE._serialized_end=2670
 # @@protoc_insertion_point(module_scope)
