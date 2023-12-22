@@ -81,7 +81,7 @@ class PayInvoiceOutput(_message.Message):
     checkout_url: str
     def __init__(self, checkout_url: _Optional[str] = ...) -> None: ...
 
-class UpcomingInvoiceInput(_message.Message):
+class SimulateSubscriptionInput(_message.Message):
     __slots__ = ["coupon", "plan_id", "seats", "variant_id"]
     COUPON_FIELD_NUMBER: _ClassVar[int]
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
@@ -92,6 +92,18 @@ class UpcomingInvoiceInput(_message.Message):
     seats: int
     variant_id: str
     def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ..., coupon: _Optional[str] = ...) -> None: ...
+
+class SimulateSubscriptionOutput(_message.Message):
+    __slots__ = ["due", "invoice"]
+    DUE_FIELD_NUMBER: _ClassVar[int]
+    INVOICE_FIELD_NUMBER: _ClassVar[int]
+    due: _invoice_pb2.Invoice
+    invoice: _invoice_pb2.Invoice
+    def __init__(self, due: _Optional[_Union[_invoice_pb2.Invoice, _Mapping]] = ..., invoice: _Optional[_Union[_invoice_pb2.Invoice, _Mapping]] = ...) -> None: ...
+
+class UpcomingInvoiceInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class UpcomingInvoiceOutput(_message.Message):
     __slots__ = ["invoice"]

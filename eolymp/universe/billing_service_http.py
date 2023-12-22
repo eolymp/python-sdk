@@ -69,6 +69,17 @@ class BillingServiceClient:
             **kwargs,
         )
 
+    def SimulateSubscription(self, request, **kwargs):
+        path = "/billing/subscription/simulate"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.SimulateSubscriptionOutput"),
+            **kwargs,
+        )
+
     def UpcomingInvoice(self, request, **kwargs):
         path = "/billing/upcoming"
 
