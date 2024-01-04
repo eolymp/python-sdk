@@ -47,6 +47,17 @@ class BillingServiceClient:
             **kwargs,
         )
 
+    def CreateSubscription(self, request, **kwargs):
+        path = "/billing/subscription"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.CreateSubscriptionOutput"),
+            **kwargs,
+        )
+
     def UpdateSubscription(self, request, **kwargs):
         path = "/billing/subscription"
 
@@ -77,6 +88,17 @@ class BillingServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.SimulateSubscriptionOutput"),
+            **kwargs,
+        )
+
+    def CreatePortalLink(self, request, **kwargs):
+        path = "/billing/portal-link"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.CreatePortalLinkOutput"),
             **kwargs,
         )
 

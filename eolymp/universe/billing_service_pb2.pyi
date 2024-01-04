@@ -17,6 +17,40 @@ class CancelSubscriptionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class CreatePortalLinkInput(_message.Message):
+    __slots__ = ["back_url", "complete_url", "flow", "return_url"]
+    BACK_URL_FIELD_NUMBER: _ClassVar[int]
+    COMPLETE_URL_FIELD_NUMBER: _ClassVar[int]
+    FLOW_FIELD_NUMBER: _ClassVar[int]
+    RETURN_URL_FIELD_NUMBER: _ClassVar[int]
+    back_url: str
+    complete_url: str
+    flow: str
+    return_url: str
+    def __init__(self, flow: _Optional[str] = ..., back_url: _Optional[str] = ..., return_url: _Optional[str] = ..., complete_url: _Optional[str] = ...) -> None: ...
+
+class CreatePortalLinkOutput(_message.Message):
+    __slots__ = ["portal_link"]
+    PORTAL_LINK_FIELD_NUMBER: _ClassVar[int]
+    portal_link: str
+    def __init__(self, portal_link: _Optional[str] = ...) -> None: ...
+
+class CreateSubscriptionInput(_message.Message):
+    __slots__ = ["plan_id", "seats", "variant_id"]
+    PLAN_ID_FIELD_NUMBER: _ClassVar[int]
+    SEATS_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    plan_id: str
+    seats: int
+    variant_id: str
+    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ...) -> None: ...
+
+class CreateSubscriptionOutput(_message.Message):
+    __slots__ = ["checkout_url"]
+    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
+    checkout_url: str
+    def __init__(self, checkout_url: _Optional[str] = ...) -> None: ...
+
 class DescribeBillingInformationInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
@@ -132,7 +166,5 @@ class UpdateSubscriptionInput(_message.Message):
     def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ...) -> None: ...
 
 class UpdateSubscriptionOutput(_message.Message):
-    __slots__ = ["checkout_url"]
-    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
-    checkout_url: str
-    def __init__(self, checkout_url: _Optional[str] = ...) -> None: ...
+    __slots__ = []
+    def __init__(self) -> None: ...
