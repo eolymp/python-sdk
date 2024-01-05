@@ -1,3 +1,4 @@
+from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -7,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Plan(_message.Message):
-    __slots__ = ["id", "name", "variants"]
+    __slots__ = ["description", "id", "name", "variants"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Recurrence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -23,6 +24,7 @@ class Plan(_message.Message):
         recurrence: Plan.Recurrence
         unit_amount: int
         def __init__(self, id: _Optional[str] = ..., recurrence: _Optional[_Union[Plan.Recurrence, str]] = ..., currency: _Optional[str] = ..., unit_amount: _Optional[int] = ...) -> None: ...
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_RENDER: Plan.Extra
     DESCRIPTION_VALUE: Plan.Extra
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -33,7 +35,8 @@ class Plan(_message.Message):
     UNKNOWN_RECURRENCE: Plan.Recurrence
     VARIANTS_FIELD_NUMBER: _ClassVar[int]
     YEARLY: Plan.Recurrence
+    description: _content_pb2.Content
     id: str
     name: str
     variants: _containers.RepeatedCompositeFieldContainer[Plan.Variant]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., variants: _Optional[_Iterable[_Union[Plan.Variant, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., variants: _Optional[_Iterable[_Union[Plan.Variant, _Mapping]]] = ...) -> None: ...

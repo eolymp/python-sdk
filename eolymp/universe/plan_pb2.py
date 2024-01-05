@@ -11,9 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/universe/plan.proto\x12\x0f\x65olymp.universe\"\xd7\x02\n\x04Plan\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12/\n\x08variants\x18\x64 \x03(\x0b\x32\x1d.eolymp.universe.Plan.Variant\x1ar\n\x07Variant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x34\n\nrecurrence\x18\x03 \x01(\x0e\x32 .eolymp.universe.Plan.Recurrence\x12\x10\n\x08\x63urrency\x18\x1e \x01(\t\x12\x13\n\x0bunit_amount\x18\x1f \x01(\x05\"D\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x01\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x02\"J\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x0b\n\x07ONETIME\x10\x01\x12\x0b\n\x07MONTHLY\x10\x02\x12\n\n\x06YEARLY\x10\x03\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/universe/plan.proto\x12\x0f\x65olymp.universe\x1a\x18\x65olymp/ecm/content.proto\"\x81\x03\n\x04Plan\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12(\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12/\n\x08variants\x18\x64 \x03(\x0b\x32\x1d.eolymp.universe.Plan.Variant\x1ar\n\x07Variant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x34\n\nrecurrence\x18\x03 \x01(\x0e\x32 .eolymp.universe.Plan.Recurrence\x12\x10\n\x08\x63urrency\x18\x1e \x01(\t\x12\x13\n\x0bunit_amount\x18\x1f \x01(\x05\"D\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x01\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x02\"J\n\nRecurrence\x12\x16\n\x12UNKNOWN_RECURRENCE\x10\x00\x12\x0b\n\x07ONETIME\x10\x01\x12\x0b\n\x07MONTHLY\x10\x02\x12\n\n\x06YEARLY\x10\x03\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.plan_pb2', globals())
@@ -21,12 +22,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/universe;universe'
-  _PLAN._serialized_start=48
-  _PLAN._serialized_end=391
-  _PLAN_VARIANT._serialized_start=131
-  _PLAN_VARIANT._serialized_end=245
-  _PLAN_EXTRA._serialized_start=247
-  _PLAN_EXTRA._serialized_end=315
-  _PLAN_RECURRENCE._serialized_start=317
-  _PLAN_RECURRENCE._serialized_end=391
+  _PLAN._serialized_start=74
+  _PLAN._serialized_end=459
+  _PLAN_VARIANT._serialized_start=199
+  _PLAN_VARIANT._serialized_end=313
+  _PLAN_EXTRA._serialized_start=315
+  _PLAN_EXTRA._serialized_end=383
+  _PLAN_RECURRENCE._serialized_start=385
+  _PLAN_RECURRENCE._serialized_end=459
 # @@protoc_insertion_point(module_scope)
