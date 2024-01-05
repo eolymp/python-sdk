@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
-    __slots__ = ["graphql_url", "home_url", "id", "image", "issuer_url", "key", "name", "plan", "quota", "type", "url", "visibility"]
+    __slots__ = ["graphql_url", "home_url", "id", "image", "issuer_url", "key", "name", "plan", "quota", "seats", "type", "url", "visibility"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -26,6 +26,7 @@ class Space(_message.Message):
     PRIVATE: Space.Visibility
     PUBLIC: Space.Visibility
     QUOTA_FIELD_NUMBER: _ClassVar[int]
+    SEATS_FIELD_NUMBER: _ClassVar[int]
     TEAMROOM: Space.Type
     TYPE_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_TYPE: Space.Type
@@ -41,7 +42,8 @@ class Space(_message.Message):
     name: str
     plan: str
     quota: _quota_pb2.Quota
+    seats: int
     type: Space.Type
     url: str
     visibility: Space.Visibility
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., type: _Optional[_Union[Space.Type, str]] = ..., plan: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., type: _Optional[_Union[Space.Type, str]] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., plan: _Optional[str] = ..., seats: _Optional[int] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ...) -> None: ...
