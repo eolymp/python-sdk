@@ -2,6 +2,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.universe import permission_pb2 as _permission_pb2
+from eolymp.universe import quota_pb2 as _quota_pb2
 from eolymp.universe import space_pb2 as _space_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
@@ -57,8 +58,8 @@ class DescribeQuotaInput(_message.Message):
 class DescribeQuotaOutput(_message.Message):
     __slots__ = ["quota"]
     QUOTA_FIELD_NUMBER: _ClassVar[int]
-    quota: _space_pb2.Space.Quota
-    def __init__(self, quota: _Optional[_Union[_space_pb2.Space.Quota, _Mapping]] = ...) -> None: ...
+    quota: _quota_pb2.Quota
+    def __init__(self, quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ...) -> None: ...
 
 class DescribeSpaceInput(_message.Message):
     __slots__ = ["space_id"]
@@ -186,9 +187,9 @@ class UpdateQuotaInput(_message.Message):
     __slots__ = ["quota", "space_id"]
     QUOTA_FIELD_NUMBER: _ClassVar[int]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
-    quota: _space_pb2.Space.Quota
+    quota: _quota_pb2.Quota
     space_id: str
-    def __init__(self, space_id: _Optional[str] = ..., quota: _Optional[_Union[_space_pb2.Space.Quota, _Mapping]] = ...) -> None: ...
+    def __init__(self, space_id: _Optional[str] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ...) -> None: ...
 
 class UpdateQuotaOutput(_message.Message):
     __slots__ = []
