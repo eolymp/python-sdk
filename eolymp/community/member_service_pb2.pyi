@@ -4,6 +4,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import member_pb2 as _member_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -59,6 +60,20 @@ class DescribeMemberOutput(_message.Message):
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     member: _member_pb2.Member
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
+
+class DescribeUsageInput(_message.Message):
+    __slots__ = ["period_end", "period_start"]
+    PERIOD_END_FIELD_NUMBER: _ClassVar[int]
+    PERIOD_START_FIELD_NUMBER: _ClassVar[int]
+    period_end: _timestamp_pb2.Timestamp
+    period_start: _timestamp_pb2.Timestamp
+    def __init__(self, period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class DescribeUsageOutput(_message.Message):
+    __slots__ = ["active_members"]
+    ACTIVE_MEMBERS_FIELD_NUMBER: _ClassVar[int]
+    active_members: int
+    def __init__(self, active_members: _Optional[int] = ...) -> None: ...
 
 class ListMembersInput(_message.Message):
     __slots__ = ["filters", "offset", "order", "size", "sort"]
