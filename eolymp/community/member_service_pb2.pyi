@@ -61,7 +61,7 @@ class DescribeMemberOutput(_message.Message):
     member: _member_pb2.Member
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
-class DescribeUsageInput(_message.Message):
+class DescribeMemberUsageInput(_message.Message):
     __slots__ = ["period_end", "period_start"]
     PERIOD_END_FIELD_NUMBER: _ClassVar[int]
     PERIOD_START_FIELD_NUMBER: _ClassVar[int]
@@ -69,11 +69,15 @@ class DescribeUsageInput(_message.Message):
     period_start: _timestamp_pb2.Timestamp
     def __init__(self, period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
-class DescribeUsageOutput(_message.Message):
-    __slots__ = ["active_members"]
+class DescribeMemberUsageOutput(_message.Message):
+    __slots__ = ["active_members", "new_members", "total_members"]
     ACTIVE_MEMBERS_FIELD_NUMBER: _ClassVar[int]
+    NEW_MEMBERS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_MEMBERS_FIELD_NUMBER: _ClassVar[int]
     active_members: int
-    def __init__(self, active_members: _Optional[int] = ...) -> None: ...
+    new_members: int
+    total_members: int
+    def __init__(self, total_members: _Optional[int] = ..., active_members: _Optional[int] = ..., new_members: _Optional[int] = ...) -> None: ...
 
 class ListMembersInput(_message.Message):
     __slots__ = ["filters", "offset", "order", "size", "sort"]

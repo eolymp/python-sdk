@@ -122,14 +122,14 @@ class MemberServiceClient:
             **kwargs,
         )
 
-    def DescribeUsage(self, request, **kwargs):
+    def DescribeMemberUsage(self, request, **kwargs):
         path = "/usage/members"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeUsageOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeMemberUsageOutput"),
             **kwargs,
         )
 
