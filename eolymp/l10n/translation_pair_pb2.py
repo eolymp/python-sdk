@@ -15,7 +15,7 @@ from eolymp.l10n import term_pb2 as eolymp_dot_l10n_dot_term__pb2
 from eolymp.l10n import translation_pb2 as eolymp_dot_l10n_dot_translation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/l10n/translation_pair.proto\x12\x0b\x65olymp.l10n\x1a\x16\x65olymp/l10n/term.proto\x1a\x1d\x65olymp/l10n/translation.proto\"\x8b\x01\n\x0fTranslationPair\x12\x1f\n\x04term\x18\x01 \x01(\x0b\x32\x11.eolymp.l10n.Term\x12(\n\x06source\x18\x02 \x01(\x0b\x32\x18.eolymp.l10n.Translation\x12-\n\x0btranslation\x18\x03 \x01(\x0b\x32\x18.eolymp.l10n.TranslationB+Z)github.com/eolymp/go-sdk/eolymp/l10n;l10nb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/l10n/translation_pair.proto\x12\x0b\x65olymp.l10n\x1a\x16\x65olymp/l10n/term.proto\x1a\x1d\x65olymp/l10n/translation.proto\"\xa4\x01\n\x0fTranslationPair\x12\x1f\n\x04term\x18\x01 \x01(\x0b\x32\x11.eolymp.l10n.Term\x12(\n\x06source\x18\x02 \x01(\x0b\x32\x18.eolymp.l10n.Translation\x12-\n\x0btranslation\x18\x03 \x01(\x0b\x32\x18.eolymp.l10n.Translation\x12\x17\n\x0fhas_suggestions\x18\x04 \x01(\x08\x42+Z)github.com/eolymp/go-sdk/eolymp/l10n;l10nb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.l10n.translation_pair_pb2', globals())
@@ -24,5 +24,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z)github.com/eolymp/go-sdk/eolymp/l10n;l10n'
   _TRANSLATIONPAIR._serialized_start=107
-  _TRANSLATIONPAIR._serialized_end=246
+  _TRANSLATIONPAIR._serialized_end=271
 # @@protoc_insertion_point(module_scope)
