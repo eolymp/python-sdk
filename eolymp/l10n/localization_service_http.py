@@ -288,7 +288,7 @@ class LocalizationServiceClient:
         )
 
     def ListTranslationPairs(self, request, **kwargs):
-        path = "/translations/"+urllib.parse.quote(request.locale)
+        path = "/translate/"+urllib.parse.quote(request.locale)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.locale = ""
