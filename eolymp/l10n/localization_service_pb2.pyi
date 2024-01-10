@@ -161,10 +161,12 @@ class ImportTranslationsOutput(_message.Message):
 class ListLocalesInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
-        __slots__ = ["code"]
+        __slots__ = ["code", "ready"]
         CODE_FIELD_NUMBER: _ClassVar[int]
+        READY_FIELD_NUMBER: _ClassVar[int]
         code: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, code: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        ready: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        def __init__(self, code: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., ready: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -176,16 +178,18 @@ class ListLocalesInput(_message.Message):
 class ListLocalesOutput(_message.Message):
     __slots__ = ["items", "total"]
     class Locale(_message.Message):
-        __slots__ = ["code", "missing_terms", "total_terms", "translated_terms"]
+        __slots__ = ["code", "missing_terms", "ready", "total_terms", "translated_terms"]
         CODE_FIELD_NUMBER: _ClassVar[int]
         MISSING_TERMS_FIELD_NUMBER: _ClassVar[int]
+        READY_FIELD_NUMBER: _ClassVar[int]
         TOTAL_TERMS_FIELD_NUMBER: _ClassVar[int]
         TRANSLATED_TERMS_FIELD_NUMBER: _ClassVar[int]
         code: str
         missing_terms: int
+        ready: bool
         total_terms: int
         translated_terms: int
-        def __init__(self, code: _Optional[str] = ..., translated_terms: _Optional[int] = ..., missing_terms: _Optional[int] = ..., total_terms: _Optional[int] = ...) -> None: ...
+        def __init__(self, code: _Optional[str] = ..., ready: bool = ..., translated_terms: _Optional[int] = ..., missing_terms: _Optional[int] = ..., total_terms: _Optional[int] = ...) -> None: ...
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[ListLocalesOutput.Locale]
