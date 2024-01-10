@@ -3,6 +3,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.l10n import term_pb2 as _term_pb2
 from eolymp.l10n import translation_pb2 as _translation_pb2
+from eolymp.l10n import translation_pair_pb2 as _translation_pair_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -270,9 +271,9 @@ class ListTranslationPairsOutput(_message.Message):
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     has_more: bool
-    items: _containers.RepeatedCompositeFieldContainer[_term_pb2.Term]
+    items: _containers.RepeatedCompositeFieldContainer[_translation_pair_pb2.TranslationPair]
     total: int
-    def __init__(self, total: _Optional[int] = ..., has_more: bool = ..., items: _Optional[_Iterable[_Union[_term_pb2.Term, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., has_more: bool = ..., items: _Optional[_Iterable[_Union[_translation_pair_pb2.TranslationPair, _Mapping]]] = ...) -> None: ...
 
 class ListTranslationsInput(_message.Message):
     __slots__ = ["filters", "offset", "size", "term_id"]
