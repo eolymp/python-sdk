@@ -243,11 +243,11 @@ class ListTranslationPairsInput(_message.Message):
         TRANSLATION_STATUS_FIELD_NUMBER: _ClassVar[int]
         query: str
         source_message: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        term_key: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        term_key: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         term_status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         translation_message: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         translation_status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, query: _Optional[str] = ..., term_key: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., term_status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., source_message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., translation_status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., translation_message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., term_key: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., term_status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., source_message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., translation_status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., translation_message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
