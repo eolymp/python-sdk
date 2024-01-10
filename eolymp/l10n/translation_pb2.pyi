@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Translation(_message.Message):
-    __slots__ = ["approved_at", "created_at", "created_by", "id", "locale", "message", "outdated", "status"]
+    __slots__ = ["approved_at", "created_at", "created_by", "id", "locale", "message", "needs_improvement", "outdated", "status"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ACTIVE: Translation.Status
@@ -17,6 +17,8 @@ class Translation(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    NEEDS_IMPROVEMENT_FIELD_NUMBER: _ClassVar[int]
+    NEEDS_REVIEW: Translation.Status
     NONE: Translation.Status
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
     PENDING: Translation.Status
@@ -28,6 +30,7 @@ class Translation(_message.Message):
     id: str
     locale: str
     message: str
+    needs_improvement: bool
     outdated: bool
     status: Translation.Status
-    def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., message: _Optional[str] = ..., status: _Optional[_Union[Translation.Status, str]] = ..., outdated: bool = ..., created_by: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., approved_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., message: _Optional[str] = ..., status: _Optional[_Union[Translation.Status, str]] = ..., outdated: bool = ..., needs_improvement: bool = ..., created_by: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., approved_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

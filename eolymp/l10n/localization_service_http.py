@@ -287,3 +287,17 @@ class LocalizationServiceClient:
             **kwargs,
         )
 
+    def ListTranslationPairs(self, request, **kwargs):
+        path = "/translations/"+urllib.parse.quote(request.locale)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.locale = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ListTranslationPairsOutput"),
+            **kwargs,
+        )
+

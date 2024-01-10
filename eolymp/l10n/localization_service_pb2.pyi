@@ -175,14 +175,16 @@ class ListLocalesInput(_message.Message):
 class ListLocalesOutput(_message.Message):
     __slots__ = ["items", "total"]
     class Locale(_message.Message):
-        __slots__ = ["code", "missing_terms", "translated_terms"]
+        __slots__ = ["code", "missing_terms", "total_terms", "translated_terms"]
         CODE_FIELD_NUMBER: _ClassVar[int]
         MISSING_TERMS_FIELD_NUMBER: _ClassVar[int]
+        TOTAL_TERMS_FIELD_NUMBER: _ClassVar[int]
         TRANSLATED_TERMS_FIELD_NUMBER: _ClassVar[int]
         code: str
         missing_terms: int
+        total_terms: int
         translated_terms: int
-        def __init__(self, code: _Optional[str] = ..., translated_terms: _Optional[int] = ..., missing_terms: _Optional[int] = ...) -> None: ...
+        def __init__(self, code: _Optional[str] = ..., translated_terms: _Optional[int] = ..., missing_terms: _Optional[int] = ..., total_terms: _Optional[int] = ...) -> None: ...
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[ListLocalesOutput.Locale]
@@ -228,6 +230,49 @@ class ListTermsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_term_pb2.Term]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_term_pb2.Term, _Mapping]]] = ...) -> None: ...
+
+class ListTranslationPairsInput(_message.Message):
+    __slots__ = ["after", "before", "filters", "locale", "offset", "size", "source"]
+    class Filter(_message.Message):
+        __slots__ = ["query", "source_message", "term_key", "term_status", "translation_message", "translation_status"]
+        QUERY_FIELD_NUMBER: _ClassVar[int]
+        SOURCE_MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        TERM_KEY_FIELD_NUMBER: _ClassVar[int]
+        TERM_STATUS_FIELD_NUMBER: _ClassVar[int]
+        TRANSLATION_MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        TRANSLATION_STATUS_FIELD_NUMBER: _ClassVar[int]
+        query: str
+        source_message: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        term_key: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        term_status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        translation_message: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        translation_status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, query: _Optional[str] = ..., term_key: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., term_status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., source_message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., translation_status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., translation_message: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    after: str
+    before: str
+    filters: ListTranslationPairsInput.Filter
+    locale: str
+    offset: int
+    size: int
+    source: str
+    def __init__(self, locale: _Optional[str] = ..., source: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., after: _Optional[str] = ..., before: _Optional[str] = ..., filters: _Optional[_Union[ListTranslationPairsInput.Filter, _Mapping]] = ...) -> None: ...
+
+class ListTranslationPairsOutput(_message.Message):
+    __slots__ = ["has_more", "items", "total"]
+    HAS_MORE_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    has_more: bool
+    items: _containers.RepeatedCompositeFieldContainer[_term_pb2.Term]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., has_more: bool = ..., items: _Optional[_Iterable[_Union[_term_pb2.Term, _Mapping]]] = ...) -> None: ...
 
 class ListTranslationsInput(_message.Message):
     __slots__ = ["filters", "offset", "size", "term_id"]
