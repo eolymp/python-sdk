@@ -58,20 +58,22 @@ class IssueTokenInput(_message.Message):
     def __init__(self, grant_type: _Optional[_Union[IssueTokenInput.GrantType, str]] = ..., username: _Optional[str] = ..., password: _Optional[str] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., code: _Optional[str] = ..., code_verifier: _Optional[str] = ..., scope: _Optional[str] = ..., refresh_token: _Optional[str] = ..., redirect_uri: _Optional[str] = ...) -> None: ...
 
 class IssueTokenOutput(_message.Message):
-    __slots__ = ["access_token", "expires_in", "id_token", "refresh_token", "scope", "token_type"]
+    __slots__ = ["access_token", "claims", "expires_in", "id_token", "refresh_token", "scope", "token_type"]
     ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    CLAIMS_FIELD_NUMBER: _ClassVar[int]
     EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
     ID_TOKEN_FIELD_NUMBER: _ClassVar[int]
     REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     TOKEN_TYPE_FIELD_NUMBER: _ClassVar[int]
     access_token: str
+    claims: _claims_pb2.Claims
     expires_in: int
     id_token: str
     refresh_token: str
     scope: str
     token_type: str
-    def __init__(self, access_token: _Optional[str] = ..., token_type: _Optional[str] = ..., expires_in: _Optional[int] = ..., refresh_token: _Optional[str] = ..., scope: _Optional[str] = ..., id_token: _Optional[str] = ...) -> None: ...
+    def __init__(self, access_token: _Optional[str] = ..., token_type: _Optional[str] = ..., expires_in: _Optional[int] = ..., refresh_token: _Optional[str] = ..., scope: _Optional[str] = ..., claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ..., id_token: _Optional[str] = ...) -> None: ...
 
 class RequestAuthInput(_message.Message):
     __slots__ = ["client_id", "code_challenge", "code_challenge_method", "redirect_uri", "response_type", "scope", "state"]
