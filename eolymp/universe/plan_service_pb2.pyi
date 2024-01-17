@@ -9,18 +9,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribePlanInput(_message.Message):
-    __slots__ = ["currency", "extra", "locale", "plan_id", "space_id"]
+    __slots__ = ["currency", "extra", "locale", "plan_id"]
     CURRENCY_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
-    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     currency: str
     extra: _containers.RepeatedScalarFieldContainer[_plan_pb2.Plan.Extra]
     locale: str
     plan_id: str
-    space_id: str
-    def __init__(self, plan_id: _Optional[str] = ..., locale: _Optional[str] = ..., currency: _Optional[str] = ..., space_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_plan_pb2.Plan.Extra, str]]] = ...) -> None: ...
+    def __init__(self, plan_id: _Optional[str] = ..., locale: _Optional[str] = ..., currency: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_plan_pb2.Plan.Extra, str]]] = ...) -> None: ...
 
 class DescribePlanOutput(_message.Message):
     __slots__ = ["plan"]
@@ -29,20 +27,18 @@ class DescribePlanOutput(_message.Message):
     def __init__(self, plan: _Optional[_Union[_plan_pb2.Plan, _Mapping]] = ...) -> None: ...
 
 class ListPlansInput(_message.Message):
-    __slots__ = ["currency", "extra", "locale", "offset", "size", "space_id"]
+    __slots__ = ["currency", "extra", "locale", "offset", "size"]
     CURRENCY_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     currency: str
     extra: _containers.RepeatedScalarFieldContainer[_plan_pb2.Plan.Extra]
     locale: str
     offset: int
     size: int
-    space_id: str
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., currency: _Optional[str] = ..., space_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_plan_pb2.Plan.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., currency: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_plan_pb2.Plan.Extra, str]]] = ...) -> None: ...
 
 class ListPlansOutput(_message.Message):
     __slots__ = ["items", "total"]
