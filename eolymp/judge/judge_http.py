@@ -1002,3 +1002,14 @@ class JudgeClient:
             **kwargs,
         )
 
+    def DescribeContestUsage(self, request, **kwargs):
+        path = "/usage/contests"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeContestUsageOutput"),
+            **kwargs,
+        )
+

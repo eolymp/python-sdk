@@ -15,6 +15,7 @@ from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.judge import ticket_pb2 as _ticket_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -286,6 +287,24 @@ class DescribeContestOutput(_message.Message):
     CONTEST_FIELD_NUMBER: _ClassVar[int]
     contest: _contest_pb2.Contest
     def __init__(self, contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
+
+class DescribeContestUsageInput(_message.Message):
+    __slots__ = ["period_end", "period_start"]
+    PERIOD_END_FIELD_NUMBER: _ClassVar[int]
+    PERIOD_START_FIELD_NUMBER: _ClassVar[int]
+    period_end: _timestamp_pb2.Timestamp
+    period_start: _timestamp_pb2.Timestamp
+    def __init__(self, period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class DescribeContestUsageOutput(_message.Message):
+    __slots__ = ["active_contests", "monthly_contests", "total_contests"]
+    ACTIVE_CONTESTS_FIELD_NUMBER: _ClassVar[int]
+    MONTHLY_CONTESTS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_CONTESTS_FIELD_NUMBER: _ClassVar[int]
+    active_contests: int
+    monthly_contests: int
+    total_contests: int
+    def __init__(self, total_contests: _Optional[int] = ..., active_contests: _Optional[int] = ..., monthly_contests: _Optional[int] = ...) -> None: ...
 
 class DescribeParticipantInput(_message.Message):
     __slots__ = ["contest_id", "participant_id"]
