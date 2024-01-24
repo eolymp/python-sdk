@@ -9,7 +9,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class UniverseClient:
+class SpaceServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
@@ -78,34 +78,6 @@ class UniverseClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeSpaceOutput"),
-            **kwargs,
-        )
-
-    def DescribeQuota(self, request, **kwargs):
-        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/quota"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.space_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeQuotaOutput"),
-            **kwargs,
-        )
-
-    def UpdateQuota(self, request, **kwargs):
-        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/quota"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.space_id = ""
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.UpdateQuotaOutput"),
             **kwargs,
         )
 

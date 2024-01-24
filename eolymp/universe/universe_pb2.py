@@ -14,13 +14,10 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
-from eolymp.universe import permission_pb2 as eolymp_dot_universe_dot_permission__pb2
-from eolymp.universe import quota_pb2 as eolymp_dot_universe_dot_quota__pb2
-from eolymp.universe import space_pb2 as eolymp_dot_universe_dot_space__pb2
-from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
+from eolymp.universe import space_service_pb2 as eolymp_dot_universe_dot_space__service__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/universe/universe.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/universe/permission.proto\x1a\x1b\x65olymp/universe/quota.proto\x1a\x1b\x65olymp/universe/space.proto\x1a!eolymp/wellknown/expression.proto\"9\n\x10\x43reateSpaceInput\x12%\n\x05space\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\"%\n\x11\x43reateSpaceOutput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"\xcd\x01\n\x10UpdateSpaceInput\x12\x36\n\x05patch\x18\x03 \x03(\x0e\x32\'.eolymp.universe.UpdateSpaceInput.Patch\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12%\n\x05space\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.Space\"H\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x07\n\x03KEY\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\t\n\x05IMAGE\x10\x03\x12\x08\n\x04TYPE\x10\x04\x12\x0e\n\nVISIBILITY\x10\x05\"\x13\n\x11UpdateSpaceOutput\"$\n\x10\x44\x65leteSpaceInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"\x13\n\x11\x44\x65leteSpaceOutput\"\x1f\n\x10LookupSpaceInput\x12\x0b\n\x03key\x18\x01 \x01(\t\":\n\x11LookupSpaceOutput\x12%\n\x05space\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\"&\n\x12\x44\x65scribeSpaceInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"<\n\x13\x44\x65scribeSpaceOutput\x12%\n\x05space\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\"&\n\x12\x44\x65scribeQuotaInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"<\n\x13\x44\x65scribeQuotaOutput\x12%\n\x05quota\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Quota\"K\n\x10UpdateQuotaInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12%\n\x05quota\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.Quota\"\x13\n\x11UpdateQuotaOutput\"\xbd\x02\n\x0fListSpacesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.universe.ListSpacesInput.Filter\x1a\xd1\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x64 \x01(\t\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12+\n\x03key\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12-\n\x03own\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"H\n\x10ListSpacesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.universe.Space\"i\n\x14GrantPermissionInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12.\n\x04role\x18\x02 \x01(\x0e\x32 .eolymp.universe.Permission.Role\x12\x0f\n\x07user_id\x18\x03 \x01(\t\"\x17\n\x15GrantPermissionOutput\":\n\x15RevokePermissionInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\"\x18\n\x16RevokePermissionOutput\"<\n\x17\x44\x65scribePermissionInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\"K\n\x18\x44\x65scribePermissionOutput\x12/\n\npermission\x18\x01 \x01(\x0b\x32\x1b.eolymp.universe.Permission\"-\n\x19IntrospectPermissionInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"M\n\x1aIntrospectPermissionOutput\x12/\n\npermission\x18\x01 \x01(\x0b\x32\x1b.eolymp.universe.Permission\"\x9d\x02\n\x14ListPermissionsInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12=\n\x07\x66ilters\x18( \x01(\x0b\x32,.eolymp.universe.ListPermissionsInput.Filter\x1a\x95\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04role\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"R\n\x15ListPermissionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.universe.Permission2\xbf\x10\n\x08Universe\x12\x83\x01\n\x0bLookupSpace\x12!.eolymp.universe.LookupSpaceInput\x1a\".eolymp.universe.LookupSpaceOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x12\x16/spaces/__lookup/{key}\x12\x90\x01\n\x0b\x43reateSpace\x12!.eolymp.universe.CreateSpaceInput\x1a\".eolymp.universe.CreateSpaceOutput\":\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\"\x07/spaces\x12\x9b\x01\n\x0bUpdateSpace\x12!.eolymp.universe.UpdateSpaceInput\x1a\".eolymp.universe.UpdateSpaceOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x14\x1a\x12/spaces/{space_id}\x12\x9b\x01\n\x0b\x44\x65leteSpace\x12!.eolymp.universe.DeleteSpaceInput\x1a\".eolymp.universe.DeleteSpaceOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x14*\x12/spaces/{space_id}\x12\x85\x01\n\rDescribeSpace\x12#.eolymp.universe.DescribeSpaceInput\x1a$.eolymp.universe.DescribeSpaceOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/spaces/{space_id}\x12\x8b\x01\n\rDescribeQuota\x12#.eolymp.universe.DescribeQuotaInput\x1a$.eolymp.universe.DescribeQuotaOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1a\x12\x18/spaces/{space_id}/quota\x12\x85\x01\n\x0bUpdateQuota\x12!.eolymp.universe.UpdateQuotaInput\x1a\".eolymp.universe.UpdateQuotaOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1a\x1a\x18/spaces/{space_id}/quota\x12\x8c\x01\n\nListSpaces\x12 .eolymp.universe.ListSpacesInput\x1a!.eolymp.universe.ListSpacesOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13universe:space:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\t\x12\x07/spaces\x12\xbd\x01\n\x0fGrantPermission\x12%.eolymp.universe.GrantPermissionInput\x1a&.eolymp.universe.GrantPermissionOutput\"[\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02*\x1a(/spaces/{space_id}/permissions/{user_id}\x12\xc0\x01\n\x10RevokePermission\x12&.eolymp.universe.RevokePermissionInput\x1a\'.eolymp.universe.RevokePermissionOutput\"[\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02**(/spaces/{space_id}/permissions/{user_id}\x12\xc5\x01\n\x12\x44\x65scribePermission\x12(.eolymp.universe.DescribePermissionInput\x1a).eolymp.universe.DescribePermissionOutput\"Z\x82\xe3\n\x17\x8a\xe3\n\x13universe:space:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02*\x12(/spaces/{space_id}/permissions/{user_id}\x12\xb0\x01\n\x14IntrospectPermission\x12*.eolymp.universe.IntrospectPermissionInput\x1a+.eolymp.universe.IntrospectPermissionOutput\"?\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02*\x12(/spaces/{space_id}/introspect-permission\x12\xb2\x01\n\x0fListPermissions\x12%.eolymp.universe.ListPermissionsInput\x1a&.eolymp.universe.ListPermissionsOutput\"P\x82\xe3\n\x17\x8a\xe3\n\x13universe:space:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02 \x12\x1e/spaces/{space_id}/permissionsB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/universe/universe.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a#eolymp/universe/space_service.proto2\x8c\t\n\x08Universe\x12\x83\x01\n\x0bLookupSpace\x12!.eolymp.universe.LookupSpaceInput\x1a\".eolymp.universe.LookupSpaceOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x12\x16/spaces/__lookup/{key}\x12\x90\x01\n\x0b\x43reateSpace\x12!.eolymp.universe.CreateSpaceInput\x1a\".eolymp.universe.CreateSpaceOutput\":\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\"\x07/spaces\x12\x9b\x01\n\x0bUpdateSpace\x12!.eolymp.universe.UpdateSpaceInput\x1a\".eolymp.universe.UpdateSpaceOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x14\x1a\x12/spaces/{space_id}\x12\x9b\x01\n\x0b\x44\x65leteSpace\x12!.eolymp.universe.DeleteSpaceInput\x1a\".eolymp.universe.DeleteSpaceOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x14*\x12/spaces/{space_id}\x12\x85\x01\n\rDescribeSpace\x12#.eolymp.universe.DescribeSpaceInput\x1a$.eolymp.universe.DescribeSpaceOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/spaces/{space_id}\x12\x8b\x01\n\rDescribeQuota\x12#.eolymp.universe.DescribeQuotaInput\x1a$.eolymp.universe.DescribeQuotaOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1a\x12\x18/spaces/{space_id}/quota\x12\x85\x01\n\x0bUpdateQuota\x12!.eolymp.universe.UpdateQuotaInput\x1a\".eolymp.universe.UpdateQuotaOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1a\x1a\x18/spaces/{space_id}/quota\x12\x8c\x01\n\nListSpaces\x12 .eolymp.universe.ListSpacesInput\x1a!.eolymp.universe.ListSpacesOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13universe:space:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\t\x12\x07/spacesB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.universe_pb2', globals())
@@ -44,74 +41,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UNIVERSE.methods_by_name['UpdateQuota']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\032\032\030/spaces/{space_id}/quota'
   _UNIVERSE.methods_by_name['ListSpaces']._options = None
   _UNIVERSE.methods_by_name['ListSpaces']._serialized_options = b'\202\343\n\027\212\343\n\023universe:space:read\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\t\022\007/spaces'
-  _UNIVERSE.methods_by_name['GrantPermission']._options = None
-  _UNIVERSE.methods_by_name['GrantPermission']._serialized_options = b'\202\343\n\030\212\343\n\024universe:space:write\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002*\032(/spaces/{space_id}/permissions/{user_id}'
-  _UNIVERSE.methods_by_name['RevokePermission']._options = None
-  _UNIVERSE.methods_by_name['RevokePermission']._serialized_options = b'\202\343\n\030\212\343\n\024universe:space:write\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002**(/spaces/{space_id}/permissions/{user_id}'
-  _UNIVERSE.methods_by_name['DescribePermission']._options = None
-  _UNIVERSE.methods_by_name['DescribePermission']._serialized_options = b'\202\343\n\027\212\343\n\023universe:space:read\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002*\022(/spaces/{space_id}/permissions/{user_id}'
-  _UNIVERSE.methods_by_name['IntrospectPermission']._options = None
-  _UNIVERSE.methods_by_name['IntrospectPermission']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002*\022(/spaces/{space_id}/introspect-permission'
-  _UNIVERSE.methods_by_name['ListPermissions']._options = None
-  _UNIVERSE.methods_by_name['ListPermissions']._serialized_options = b'\202\343\n\027\212\343\n\023universe:space:read\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002 \022\036/spaces/{space_id}/permissions'
-  _CREATESPACEINPUT._serialized_start=277
-  _CREATESPACEINPUT._serialized_end=334
-  _CREATESPACEOUTPUT._serialized_start=336
-  _CREATESPACEOUTPUT._serialized_end=373
-  _UPDATESPACEINPUT._serialized_start=376
-  _UPDATESPACEINPUT._serialized_end=581
-  _UPDATESPACEINPUT_PATCH._serialized_start=509
-  _UPDATESPACEINPUT_PATCH._serialized_end=581
-  _UPDATESPACEOUTPUT._serialized_start=583
-  _UPDATESPACEOUTPUT._serialized_end=602
-  _DELETESPACEINPUT._serialized_start=604
-  _DELETESPACEINPUT._serialized_end=640
-  _DELETESPACEOUTPUT._serialized_start=642
-  _DELETESPACEOUTPUT._serialized_end=661
-  _LOOKUPSPACEINPUT._serialized_start=663
-  _LOOKUPSPACEINPUT._serialized_end=694
-  _LOOKUPSPACEOUTPUT._serialized_start=696
-  _LOOKUPSPACEOUTPUT._serialized_end=754
-  _DESCRIBESPACEINPUT._serialized_start=756
-  _DESCRIBESPACEINPUT._serialized_end=794
-  _DESCRIBESPACEOUTPUT._serialized_start=796
-  _DESCRIBESPACEOUTPUT._serialized_end=856
-  _DESCRIBEQUOTAINPUT._serialized_start=858
-  _DESCRIBEQUOTAINPUT._serialized_end=896
-  _DESCRIBEQUOTAOUTPUT._serialized_start=898
-  _DESCRIBEQUOTAOUTPUT._serialized_end=958
-  _UPDATEQUOTAINPUT._serialized_start=960
-  _UPDATEQUOTAINPUT._serialized_end=1035
-  _UPDATEQUOTAOUTPUT._serialized_start=1037
-  _UPDATEQUOTAOUTPUT._serialized_end=1056
-  _LISTSPACESINPUT._serialized_start=1059
-  _LISTSPACESINPUT._serialized_end=1376
-  _LISTSPACESINPUT_FILTER._serialized_start=1167
-  _LISTSPACESINPUT_FILTER._serialized_end=1376
-  _LISTSPACESOUTPUT._serialized_start=1378
-  _LISTSPACESOUTPUT._serialized_end=1450
-  _GRANTPERMISSIONINPUT._serialized_start=1452
-  _GRANTPERMISSIONINPUT._serialized_end=1557
-  _GRANTPERMISSIONOUTPUT._serialized_start=1559
-  _GRANTPERMISSIONOUTPUT._serialized_end=1582
-  _REVOKEPERMISSIONINPUT._serialized_start=1584
-  _REVOKEPERMISSIONINPUT._serialized_end=1642
-  _REVOKEPERMISSIONOUTPUT._serialized_start=1644
-  _REVOKEPERMISSIONOUTPUT._serialized_end=1668
-  _DESCRIBEPERMISSIONINPUT._serialized_start=1670
-  _DESCRIBEPERMISSIONINPUT._serialized_end=1730
-  _DESCRIBEPERMISSIONOUTPUT._serialized_start=1732
-  _DESCRIBEPERMISSIONOUTPUT._serialized_end=1807
-  _INTROSPECTPERMISSIONINPUT._serialized_start=1809
-  _INTROSPECTPERMISSIONINPUT._serialized_end=1854
-  _INTROSPECTPERMISSIONOUTPUT._serialized_start=1856
-  _INTROSPECTPERMISSIONOUTPUT._serialized_end=1933
-  _LISTPERMISSIONSINPUT._serialized_start=1936
-  _LISTPERMISSIONSINPUT._serialized_end=2221
-  _LISTPERMISSIONSINPUT_FILTER._serialized_start=2072
-  _LISTPERMISSIONSINPUT_FILTER._serialized_end=2221
-  _LISTPERMISSIONSOUTPUT._serialized_start=2223
-  _LISTPERMISSIONSOUTPUT._serialized_end=2305
-  _UNIVERSE._serialized_start=2308
-  _UNIVERSE._serialized_end=4419
+  _UNIVERSE._serialized_start=188
+  _UNIVERSE._serialized_end=1352
 # @@protoc_insertion_point(module_scope)
