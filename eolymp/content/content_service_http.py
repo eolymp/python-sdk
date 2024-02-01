@@ -78,6 +78,79 @@ class ContentServiceClient:
             **kwargs,
         )
 
+    def DescribeVariant(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants/"+urllib.parse.quote(request.variant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.fragment_id = ""
+        request.variant_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DescribeVariantOutput"),
+            **kwargs,
+        )
+
+    def ListVariants(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.fragment_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.content.ListVariantsOutput"),
+            **kwargs,
+        )
+
+    def CreateVariant(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.fragment_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.content.CreateVariantOutput"),
+            **kwargs,
+        )
+
+    def UpdateVariant(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants/"+urllib.parse.quote(request.variant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.fragment_id = ""
+        request.variant_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.content.UpdateVariantOutput"),
+            **kwargs,
+        )
+
+    def DeleteVariant(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants/"+urllib.parse.quote(request.variant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.fragment_id = ""
+        request.variant_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DeleteVariantOutput"),
+            **kwargs,
+        )
+
     def DescribePath(self, request, **kwargs):
         path = "/content/path"
 
