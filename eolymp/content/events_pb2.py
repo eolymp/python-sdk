@@ -12,9 +12,10 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.content import fragment_pb2 as eolymp_dot_content_dot_fragment__pb2
+from eolymp.content import variant_pb2 as eolymp_dot_content_dot_variant__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/content/events.proto\x12\x0e\x65olymp.content\x1a\x1d\x65olymp/content/fragment.proto\"i\n\x14\x46ragmentChangedEvent\x12(\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x18.eolymp.content.Fragment\x12\'\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x18.eolymp.content.FragmentB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/content/events.proto\x12\x0e\x65olymp.content\x1a\x1d\x65olymp/content/fragment.proto\x1a\x1c\x65olymp/content/variant.proto\"i\n\x14\x46ragmentChangedEvent\x12(\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x18.eolymp.content.Fragment\x12\'\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x18.eolymp.content.Fragment\"f\n\x13VariantChangedEvent\x12\'\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x17.eolymp.content.Variant\x12&\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x17.eolymp.content.VariantB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.content.events_pb2', globals())
@@ -22,6 +23,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
-  _FRAGMENTCHANGEDEVENT._serialized_start=78
-  _FRAGMENTCHANGEDEVENT._serialized_end=183
+  _FRAGMENTCHANGEDEVENT._serialized_start=108
+  _FRAGMENTCHANGEDEVENT._serialized_end=213
+  _VARIANTCHANGEDEVENT._serialized_start=215
+  _VARIANTCHANGEDEVENT._serialized_end=317
 # @@protoc_insertion_point(module_scope)
