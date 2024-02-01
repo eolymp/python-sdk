@@ -99,11 +99,11 @@ class DescribeVariantInput(_message.Message):
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
-    extra: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Extra]
+    extra: _containers.RepeatedScalarFieldContainer[_variant_pb2.Variant.Extra]
     fragment_id: str
     render: bool
     variant_id: str
-    def __init__(self, fragment_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    def __init__(self, fragment_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_variant_pb2.Variant.Extra, str]]] = ...) -> None: ...
 
 class DescribeVariantOutput(_message.Message):
     __slots__ = ["variant"]
@@ -216,13 +216,13 @@ class ListVariantsInput(_message.Message):
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    extra: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Extra]
+    extra: _containers.RepeatedScalarFieldContainer[_variant_pb2.Variant.Extra]
     filters: ListVariantsInput.Filter
     fragment_id: str
     offset: int
     render: bool
     size: int
-    def __init__(self, render: bool = ..., fragment_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListVariantsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    def __init__(self, render: bool = ..., fragment_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListVariantsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_variant_pb2.Variant.Extra, str]]] = ...) -> None: ...
 
 class ListVariantsOutput(_message.Message):
     __slots__ = ["items", "total"]
