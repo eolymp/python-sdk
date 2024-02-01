@@ -24,10 +24,12 @@ class CreateFragmentOutput(_message.Message):
     def __init__(self, fragment_id: _Optional[str] = ...) -> None: ...
 
 class CreateVariantInput(_message.Message):
-    __slots__ = ["variant"]
+    __slots__ = ["fragment_id", "variant"]
+    FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     VARIANT_FIELD_NUMBER: _ClassVar[int]
+    fragment_id: str
     variant: _variant_pb2.Variant
-    def __init__(self, variant: _Optional[_Union[_variant_pb2.Variant, _Mapping]] = ...) -> None: ...
+    def __init__(self, fragment_id: _Optional[str] = ..., variant: _Optional[_Union[_variant_pb2.Variant, _Mapping]] = ...) -> None: ...
 
 class CreateVariantOutput(_message.Message):
     __slots__ = ["variant_id"]
