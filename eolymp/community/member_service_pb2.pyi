@@ -50,10 +50,12 @@ class DeleteMemberOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeMemberInput(_message.Message):
-    __slots__ = ["member_id"]
+    __slots__ = ["extra", "member_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra]
     member_id: str
-    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
 class DescribeMemberOutput(_message.Message):
     __slots__ = ["member"]
@@ -80,7 +82,7 @@ class DescribeMemberUsageOutput(_message.Message):
     def __init__(self, total_members: _Optional[int] = ..., active_members: _Optional[int] = ..., new_members: _Optional[int] = ...) -> None: ...
 
 class ListMembersInput(_message.Message):
-    __slots__ = ["filters", "offset", "order", "size", "sort"]
+    __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -112,6 +114,7 @@ class ListMembersInput(_message.Message):
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., active: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     CREATED_AT: ListMembersInput.Sortable
     DEFAULT: ListMembersInput.Sortable
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     NAME: ListMembersInput.Sortable
     OFFSET_FIELD_NUMBER: _ClassVar[int]
@@ -119,12 +122,13 @@ class ListMembersInput(_message.Message):
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     TYPE: ListMembersInput.Sortable
+    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra]
     filters: ListMembersInput.Filter
     offset: int
     order: _direction_pb2.Direction
     size: int
     sort: ListMembersInput.Sortable
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMembersInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListMembersInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMembersInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListMembersInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
 class ListMembersOutput(_message.Message):
     __slots__ = ["items", "total"]

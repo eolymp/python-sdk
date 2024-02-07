@@ -79,12 +79,14 @@ class DescribeAccountInput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAccountOutput(_message.Message):
-    __slots__ = ["member", "team"]
+    __slots__ = ["extra", "member", "team"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     TEAM_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra]
     member: _member_pb2.Member
     team: _member_pb2.Member
-    def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., team: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
+    def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., team: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
 class DescribeActiveSubscriptionInput(_message.Message):
     __slots__ = []
