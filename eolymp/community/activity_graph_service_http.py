@@ -9,19 +9,19 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class SubmissionGraphServiceClient:
+class ActivityGraphServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
-    def ListSubmissionValues(self, request, **kwargs):
-        path = "/submissions-graph"
+    def DescribeActivityGraph(self, request, **kwargs):
+        path = "/activity-graph"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListSubmissionValuesOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeActivityGraphOutput"),
             **kwargs,
         )
 

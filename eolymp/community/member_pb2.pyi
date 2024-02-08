@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ["active", "attributes", "created_at", "fallback_tier_id", "ghost", "groups", "id", "incomplete", "name", "secret", "stats", "team", "tier_id", "unofficial", "user"]
+    __slots__ = ["active", "attributes", "created_at", "fallback_tier_id", "ghost", "groups", "id", "incomplete", "name", "secret", "stats", "team", "tier_id", "unofficial", "url", "user"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Stats(_message.Message):
@@ -47,6 +47,7 @@ class Member(_message.Message):
     TIER: Member.Extra
     TIER_ID_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
+    URL_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     active: bool
     attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
@@ -62,5 +63,6 @@ class Member(_message.Message):
     team: _member_team_pb2.Team
     tier_id: str
     unofficial: bool
+    url: str
     user: _member_user_pb2.User
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., active: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., tier_id: _Optional[str] = ..., fallback_tier_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., stats: _Optional[_Union[Member.Stats, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., url: _Optional[str] = ..., active: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., tier_id: _Optional[str] = ..., fallback_tier_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., stats: _Optional[_Union[Member.Stats, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
