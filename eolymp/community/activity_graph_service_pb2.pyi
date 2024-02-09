@@ -10,12 +10,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeActivityGraphInput(_message.Message):
-    __slots__ = ["after", "before"]
+    __slots__ = ["after", "before", "metric"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
+    METRIC_FIELD_NUMBER: _ClassVar[int]
     after: _timestamp_pb2.Timestamp
     before: _timestamp_pb2.Timestamp
-    def __init__(self, after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    metric: str
+    def __init__(self, after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., metric: _Optional[str] = ...) -> None: ...
 
 class DescribeActivityGraphOutput(_message.Message):
     __slots__ = ["max_value", "values"]
