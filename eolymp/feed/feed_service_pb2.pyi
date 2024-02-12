@@ -8,18 +8,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class DescribeEntryInput(_message.Message):
-    __slots__ = ["entry_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
-
-class DescribeEntryOutput(_message.Message):
-    __slots__ = ["entry"]
-    ENTRY_FIELD_NUMBER: _ClassVar[int]
-    entry: _entry_pb2.Entry
-    def __init__(self, entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
-
 class ListEntriesInput(_message.Message):
     __slots__ = ["after", "size"]
     AFTER_FIELD_NUMBER: _ClassVar[int]

@@ -9,7 +9,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class EntryServiceClient:
+class FeedServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
@@ -22,20 +22,6 @@ class EntryServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.feed.ListEntriesOutput"),
-            **kwargs,
-        )
-
-    def DescribeEntry(self, request, **kwargs):
-        path = "/feed/"+urllib.parse.quote(request.entry_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.entry_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.feed.DescribeEntryOutput"),
             **kwargs,
         )
 
