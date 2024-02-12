@@ -11,10 +11,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/feed/entry.proto\x12\x0b\x65olymp.feed\x1a\x1fgoogle/protobuf/timestamp.proto\"\xbb\x01\n\x05\x45ntry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\nattributes\x18\n \x03(\x0b\x32\".eolymp.feed.Entry.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42+Z)github.com/eolymp/go-sdk/eolymp/feed;feedb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/feed/entry.proto\x12\x0b\x65olymp.feed\x1a\x15\x65olymp/ecm/node.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xce\x02\n\x05\x45ntry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\nattributes\x18\n \x03(\x0b\x32\".eolymp.feed.Entry.AttributesEntry\x12\x32\n\x0b\x61ttachments\x18\x14 \x03(\x0b\x32\x1d.eolymp.feed.Entry.Attachment\x12!\n\x07\x63ontent\x18\x64 \x01(\x0b\x32\x10.eolymp.ecm.Node\x1a:\n\nAttachment\x12\x0b\n\x03rel\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\n \x01(\t\x12\x11\n\treference\x18\x0b \x01(\t\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42+Z)github.com/eolymp/go-sdk/eolymp/feed;feedb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.feed.entry_pb2', globals())
@@ -24,8 +25,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'Z)github.com/eolymp/go-sdk/eolymp/feed;feed'
   _ENTRY_ATTRIBUTESENTRY._options = None
   _ENTRY_ATTRIBUTESENTRY._serialized_options = b'8\001'
-  _ENTRY._serialized_start=74
-  _ENTRY._serialized_end=261
-  _ENTRY_ATTRIBUTESENTRY._serialized_start=212
-  _ENTRY_ATTRIBUTESENTRY._serialized_end=261
+  _ENTRY._serialized_start=97
+  _ENTRY._serialized_end=431
+  _ENTRY_ATTACHMENT._serialized_start=322
+  _ENTRY_ATTACHMENT._serialized_end=380
+  _ENTRY_ATTRIBUTESENTRY._serialized_start=382
+  _ENTRY_ATTRIBUTESENTRY._serialized_end=431
 # @@protoc_insertion_point(module_scope)
