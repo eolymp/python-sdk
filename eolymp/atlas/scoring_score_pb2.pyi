@@ -6,21 +6,19 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Score(_message.Message):
-    __slots__ = ["accepted_at", "attempts", "grade", "id", "member_id", "problem_id", "score", "user_id"]
-    ACCEPTED_AT_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["attempts", "id", "member_id", "problem_id", "score", "solved_at", "user_id"]
     ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
-    GRADE_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SCORE_FIELD_NUMBER: _ClassVar[int]
+    SOLVED_AT_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
-    accepted_at: _timestamp_pb2.Timestamp
     attempts: int
-    grade: int
     id: str
     member_id: str
     problem_id: str
     score: float
+    solved_at: _timestamp_pb2.Timestamp
     user_id: str
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., accepted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., score: _Optional[float] = ..., attempts: _Optional[int] = ..., grade: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., solved_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., score: _Optional[float] = ..., attempts: _Optional[int] = ...) -> None: ...
