@@ -86,7 +86,7 @@ class ListMembersInput(_message.Message):
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["active", "group_id", "id", "incomplete", "name", "team_id", "type", "unofficial", "user_email", "user_issuer", "user_name", "user_subject"]
+        __slots__ = ["active", "group_id", "id", "incomplete", "name", "team_id", "type", "unofficial", "user_email", "user_issuer", "user_name", "user_nickname", "user_subject"]
         ACTIVE_FIELD_NUMBER: _ClassVar[int]
         GROUP_ID_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -98,6 +98,7 @@ class ListMembersInput(_message.Message):
         USER_EMAIL_FIELD_NUMBER: _ClassVar[int]
         USER_ISSUER_FIELD_NUMBER: _ClassVar[int]
         USER_NAME_FIELD_NUMBER: _ClassVar[int]
+        USER_NICKNAME_FIELD_NUMBER: _ClassVar[int]
         USER_SUBJECT_FIELD_NUMBER: _ClassVar[int]
         active: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         group_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -110,8 +111,9 @@ class ListMembersInput(_message.Message):
         user_email: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_issuer: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        user_nickname: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_subject: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., active: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., active: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_nickname: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     CREATED_AT: ListMembersInput.Sortable
     DEFAULT: ListMembersInput.Sortable
     EXTRA_FIELD_NUMBER: _ClassVar[int]
