@@ -28,12 +28,14 @@ class AddScoreboardColumnOutput(_message.Message):
     def __init__(self, column_id: _Optional[str] = ...) -> None: ...
 
 class CreateScoreboardInput(_message.Message):
-    __slots__ = ["add_default_columns", "scoreboard"]
+    __slots__ = ["add_default_columns", "duplicate_scoreboard_id", "scoreboard"]
     ADD_DEFAULT_COLUMNS_FIELD_NUMBER: _ClassVar[int]
+    DUPLICATE_SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
     add_default_columns: bool
+    duplicate_scoreboard_id: str
     scoreboard: _scoreboard_pb2.Scoreboard
-    def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ..., add_default_columns: bool = ...) -> None: ...
+    def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ..., add_default_columns: bool = ..., duplicate_scoreboard_id: _Optional[str] = ...) -> None: ...
 
 class CreateScoreboardOutput(_message.Message):
     __slots__ = ["scoreboard_id"]
