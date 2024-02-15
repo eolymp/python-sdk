@@ -1,4 +1,3 @@
-from eolymp.ecm import node_pb2 as _node_pb2
 from eolymp.wellknown import link_pb2 as _link_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
