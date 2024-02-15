@@ -11,7 +11,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ["contest_id", "cost", "deleted", "ern", "error", "groups", "id", "lang", "participant_id", "percentage", "problem_id", "score", "signature", "source", "status", "submitted_at", "verdict"]
+    __slots__ = ["contest_id", "cost", "deleted", "error", "groups", "id", "lang", "participant_id", "percentage", "problem_id", "score", "signature", "source", "status", "submitted_at", "url", "verdict"]
+    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Group(_message.Message):
@@ -131,30 +133,33 @@ class Submission(_message.Message):
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     COST_FIELD_NUMBER: _ClassVar[int]
     DELETED_FIELD_NUMBER: _ClassVar[int]
-    ERN_FIELD_NUMBER: _ClassVar[int]
     ERROR: Submission.Status
     ERROR_FIELD_NUMBER: _ClassVar[int]
     FAILURE: Submission.Status
+    GROUPS: Submission.Extra
     GROUPS_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
     NONE: Submission.Status
+    NO_EXTRA: Submission.Extra
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     PENDING: Submission.Status
     PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    RUNS: Submission.Extra
     SCORE_FIELD_NUMBER: _ClassVar[int]
     SIGNATURE_FIELD_NUMBER: _ClassVar[int]
+    SOURCE: Submission.Extra
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     SUBMITTED_AT_FIELD_NUMBER: _ClassVar[int]
     TESTING: Submission.Status
     TIMEOUT: Submission.Status
+    URL_FIELD_NUMBER: _ClassVar[int]
     VERDICT_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     cost: float
     deleted: bool
-    ern: str
     error: str
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     id: str
@@ -167,5 +172,6 @@ class Submission(_message.Message):
     source: str
     status: Submission.Status
     submitted_at: _timestamp_pb2.Timestamp
+    url: str
     verdict: _submission_pb2.Submission.Verdict
-    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ...) -> None: ...

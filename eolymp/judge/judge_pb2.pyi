@@ -367,12 +367,14 @@ class DescribeScoreOutput(_message.Message):
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class DescribeSubmissionInput(_message.Message):
-    __slots__ = ["contest_id", "submission_id"]
+    __slots__ = ["contest_id", "extra", "submission_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
     submission_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
 
 class DescribeSubmissionOutput(_message.Message):
     __slots__ = ["submission"]
@@ -785,7 +787,7 @@ class ListStatementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem.Statement, _Mapping]]] = ...) -> None: ...
 
 class ListSubmissionsInput(_message.Message):
-    __slots__ = ["contest_id", "filters", "offset", "size"]
+    __slots__ = ["contest_id", "extra", "filters", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "lang", "participant_id", "percentage", "problem_id", "score", "signature", "status", "submitted_at"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -808,14 +810,16 @@ class ListSubmissionsInput(_message.Message):
         submitted_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., lang: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., submitted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., signature: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
     filters: ListSubmissionsInput.Filter
     offset: int
     size: int
-    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
 
 class ListSubmissionsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -1251,12 +1255,14 @@ class WatchRepliesOutput(_message.Message):
     def __init__(self, event: _Optional[_Union[WatchRepliesOutput.Event, str]] = ..., reply: _Optional[_Union[_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
 
 class WatchSubmissionInput(_message.Message):
-    __slots__ = ["contest_id", "submission_id"]
+    __slots__ = ["contest_id", "extra", "submission_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
     submission_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
 
 class WatchSubmissionOutput(_message.Message):
     __slots__ = ["submission"]
