@@ -45,6 +45,7 @@ class Ticket(_message.Message):
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    ACADEMIC_PLAN_REQUEST: Ticket.Type
     APPROVED: Ticket.Status
     AWAITING: Ticket.Status
     CLOSED: Ticket.Status
