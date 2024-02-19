@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
-    __slots__ = ["graphql_url", "home_url", "id", "image", "issuer_url", "key", "name", "plan", "quota", "seats", "status", "subscription", "type", "url", "visibility"]
+    __slots__ = ["affiliation", "graphql_url", "home_url", "id", "image", "issuer_url", "key", "name", "plan", "quota", "seats", "status", "subscription", "type", "url", "visibility"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -35,6 +35,7 @@ class Space(_message.Message):
         seats: int
         def __init__(self, plan: _Optional[str] = ..., seats: _Optional[int] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., billing_period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., billing_period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     ACTIVE: Space.Status
+    AFFILIATION_FIELD_NUMBER: _ClassVar[int]
     CLASSROOM: Space.Type
     COMPETITION: Space.Type
     GRAPHQL_URL_FIELD_NUMBER: _ClassVar[int]
@@ -63,6 +64,7 @@ class Space(_message.Message):
     UNKNOWN_VISIBILITY: Space.Visibility
     URL_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
+    affiliation: str
     graphql_url: str
     home_url: str
     id: str
@@ -78,4 +80,4 @@ class Space(_message.Message):
     type: Space.Type
     url: str
     visibility: Space.Visibility
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., type: _Optional[_Union[Space.Type, str]] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., plan: _Optional[str] = ..., seats: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., type: _Optional[_Union[Space.Type, str]] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., plan: _Optional[str] = ..., seats: _Optional[int] = ..., affiliation: _Optional[str] = ...) -> None: ...

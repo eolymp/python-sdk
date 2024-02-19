@@ -15,7 +15,7 @@ from eolymp.universe import quota_pb2 as eolymp_dot_universe_dot_quota__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/universe/space.proto\x12\x0f\x65olymp.universe\x1a\x1b\x65olymp/universe/quota.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcf\x07\n\x05Space\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x10\n\x08home_url\x18\x32 \x01(\t\x12\x12\n\nissuer_url\x18\x33 \x01(\t\x12\x13\n\x0bgraphql_url\x18\x34 \x01(\t\x12\x0c\n\x04name\x18\n \x01(\t\x12\r\n\x05image\x18\x0b \x01(\t\x12)\n\x04type\x18\x0c \x01(\x0e\x32\x1b.eolymp.universe.Space.Type\x12\x35\n\nvisibility\x18\x0e \x01(\x0e\x32!.eolymp.universe.Space.Visibility\x12-\n\x06status\x18\x10 \x01(\x0e\x32\x1d.eolymp.universe.Space.Status\x12:\n\x0csubscription\x18\xa0\x06 \x01(\x0b\x32#.eolymp.universe.Space.Subscription\x12%\n\x05quota\x18\x1e \x01(\x0b\x32\x16.eolymp.universe.Quota\x12\x0c\n\x04plan\x18\r \x01(\t\x12\r\n\x05seats\x18\x1f \x01(\r\x1a\xb2\x02\n\x0cSubscription\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\r\n\x05seats\x18\x02 \x01(\r\x12%\n\x05quota\x18\n \x01(\x0b\x32\x16.eolymp.universe.Quota\x12\x38\n\x14\x62illing_period_start\x18Z \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x12\x62illing_period_end\x18[ \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x12quota_period_start\x18\\ \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x10quota_period_end\x18] \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"Q\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\t\n\x05OTHER\x10\x01\x12\r\n\tCLASSROOM\x10\x02\x12\x0c\n\x08TEAMROOM\x10\x03\x12\x0f\n\x0b\x43OMPETITION\x10\x04\"B\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\t\n\x05TRIAL\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tSUSPENDED\x10\x03\"=\n\nVisibility\x12\x16\n\x12UNKNOWN_VISIBILITY\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0b\n\x07PRIVATE\x10\x02\",\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x10\n\x0cSUBSCRIPTION\x10\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/universe/space.proto\x12\x0f\x65olymp.universe\x1a\x1b\x65olymp/universe/quota.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe4\x07\n\x05Space\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x10\n\x08home_url\x18\x32 \x01(\t\x12\x12\n\nissuer_url\x18\x33 \x01(\t\x12\x13\n\x0bgraphql_url\x18\x34 \x01(\t\x12\x0c\n\x04name\x18\n \x01(\t\x12\r\n\x05image\x18\x0b \x01(\t\x12)\n\x04type\x18\x0c \x01(\x0e\x32\x1b.eolymp.universe.Space.Type\x12\x35\n\nvisibility\x18\x0e \x01(\x0e\x32!.eolymp.universe.Space.Visibility\x12-\n\x06status\x18\x10 \x01(\x0e\x32\x1d.eolymp.universe.Space.Status\x12:\n\x0csubscription\x18\xa0\x06 \x01(\x0b\x32#.eolymp.universe.Space.Subscription\x12%\n\x05quota\x18\x1e \x01(\x0b\x32\x16.eolymp.universe.Quota\x12\x0c\n\x04plan\x18\r \x01(\t\x12\r\n\x05seats\x18\x1f \x01(\r\x12\x13\n\x0b\x61\x66\x66iliation\x18\x0f \x01(\t\x1a\xb2\x02\n\x0cSubscription\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\r\n\x05seats\x18\x02 \x01(\r\x12%\n\x05quota\x18\n \x01(\x0b\x32\x16.eolymp.universe.Quota\x12\x38\n\x14\x62illing_period_start\x18Z \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x12\x62illing_period_end\x18[ \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x12quota_period_start\x18\\ \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x10quota_period_end\x18] \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"Q\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\t\n\x05OTHER\x10\x01\x12\r\n\tCLASSROOM\x10\x02\x12\x0c\n\x08TEAMROOM\x10\x03\x12\x0f\n\x0b\x43OMPETITION\x10\x04\"B\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\t\n\x05TRIAL\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tSUSPENDED\x10\x03\"=\n\nVisibility\x12\x16\n\x12UNKNOWN_VISIBILITY\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0b\n\x07PRIVATE\x10\x02\",\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x10\n\x0cSUBSCRIPTION\x10\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.space_pb2', globals())
@@ -24,15 +24,15 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/universe;universe'
   _SPACE._serialized_start=111
-  _SPACE._serialized_end=1086
-  _SPACE_SUBSCRIPTION._serialized_start=520
-  _SPACE_SUBSCRIPTION._serialized_end=826
-  _SPACE_TYPE._serialized_start=828
-  _SPACE_TYPE._serialized_end=909
-  _SPACE_STATUS._serialized_start=911
-  _SPACE_STATUS._serialized_end=977
-  _SPACE_VISIBILITY._serialized_start=979
-  _SPACE_VISIBILITY._serialized_end=1040
-  _SPACE_EXTRA._serialized_start=1042
-  _SPACE_EXTRA._serialized_end=1086
+  _SPACE._serialized_end=1107
+  _SPACE_SUBSCRIPTION._serialized_start=541
+  _SPACE_SUBSCRIPTION._serialized_end=847
+  _SPACE_TYPE._serialized_start=849
+  _SPACE_TYPE._serialized_end=930
+  _SPACE_STATUS._serialized_start=932
+  _SPACE_STATUS._serialized_end=998
+  _SPACE_VISIBILITY._serialized_start=1000
+  _SPACE_VISIBILITY._serialized_end=1061
+  _SPACE_EXTRA._serialized_start=1063
+  _SPACE_EXTRA._serialized_end=1107
 # @@protoc_insertion_point(module_scope)
