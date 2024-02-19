@@ -60,6 +60,7 @@ class Ticket(_message.Message):
     QUESTION: Ticket.Type
     QUOTA_INCREASE: Ticket.Type
     REJECTED: Ticket.Status
+    SALES_REQUEST: Ticket.Type
     SECRET_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
