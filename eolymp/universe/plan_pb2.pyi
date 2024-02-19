@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Plan(_message.Message):
-    __slots__ = ["description", "id", "name", "quota", "variants"]
+    __slots__ = ["description", "id", "labels", "name", "quota", "variants"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Recurrence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -29,6 +29,7 @@ class Plan(_message.Message):
     DESCRIPTION_RENDER: Plan.Extra
     DESCRIPTION_VALUE: Plan.Extra
     ID_FIELD_NUMBER: _ClassVar[int]
+    LABELS_FIELD_NUMBER: _ClassVar[int]
     MONTHLY: Plan.Recurrence
     NAME_FIELD_NUMBER: _ClassVar[int]
     NO_EXTRA: Plan.Extra
@@ -39,7 +40,8 @@ class Plan(_message.Message):
     YEARLY: Plan.Recurrence
     description: _content_pb2.Content
     id: str
+    labels: _containers.RepeatedScalarFieldContainer[str]
     name: str
     quota: _quota_pb2.Quota
     variants: _containers.RepeatedCompositeFieldContainer[Plan.Variant]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., variants: _Optional[_Iterable[_Union[Plan.Variant, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., variants: _Optional[_Iterable[_Union[Plan.Variant, _Mapping]]] = ...) -> None: ...
