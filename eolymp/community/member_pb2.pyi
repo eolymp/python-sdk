@@ -16,18 +16,16 @@ class Member(_message.Message):
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Stats(_message.Message):
-        __slots__ = ["problems_solved", "rank", "streak", "submissions_accepted", "submissions_total"]
+        __slots__ = ["problems_solved", "streak", "submissions_accepted", "submissions_total"]
         PROBLEMS_SOLVED_FIELD_NUMBER: _ClassVar[int]
-        RANK_FIELD_NUMBER: _ClassVar[int]
         STREAK_FIELD_NUMBER: _ClassVar[int]
         SUBMISSIONS_ACCEPTED_FIELD_NUMBER: _ClassVar[int]
         SUBMISSIONS_TOTAL_FIELD_NUMBER: _ClassVar[int]
         problems_solved: int
-        rank: int
         streak: int
         submissions_accepted: int
         submissions_total: int
-        def __init__(self, rank: _Optional[int] = ..., streak: _Optional[int] = ..., problems_solved: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., submissions_total: _Optional[int] = ...) -> None: ...
+        def __init__(self, streak: _Optional[int] = ..., problems_solved: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., submissions_total: _Optional[int] = ...) -> None: ...
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES: Member.Extra
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
