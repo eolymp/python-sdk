@@ -121,6 +121,7 @@ class ListMembersInput(_message.Message):
     NAME: ListMembersInput.Sortable
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SCORE: ListMembersInput.Sortable
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     TYPE: ListMembersInput.Sortable
