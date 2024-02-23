@@ -22,10 +22,10 @@ class Post(_message.Message):
     LABELS_FIELD_NUMBER: _ClassVar[int]
     LINKS_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    MESSAGE_CONTENT: Post.Extra
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_PREVIEW: Post.Extra
     MESSAGE_RENDER: Post.Extra
+    MESSAGE_VALUE: Post.Extra
     PUBLISHED: Post.Status
     PUBLISHED_AT_FIELD_NUMBER: _ClassVar[int]
     REJECTED: Post.Status
