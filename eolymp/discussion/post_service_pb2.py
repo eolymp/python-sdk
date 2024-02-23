@@ -19,7 +19,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/discussion/post_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/discussion/post.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"S\n\x11\x44\x65scribePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.discussion.Post.Extra\";\n\x12\x44\x65scribePostOutput\x12%\n\x04post\x18\x01 \x01(\x0b\x32\x17.eolymp.discussion.Post\"\xf7\x03\n\x0eListPostsInput\x12\r\n\x05\x61\x66ter\x18\n \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x34\n\x04sort\x18\x32 \x01(\x0e\x32&.eolymp.discussion.ListPostsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.discussion.ListPostsInput.Filter\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.discussion.Post.Extra\x1a\xe1\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x04 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x38\n\tposted_at\x18\x05 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"\x18\n\x04Sort\x12\x10\n\x0cUNKNOWN_SORT\x10\x00\"K\n\x0fListPostsOutput\x12&\n\x05items\x18\x01 \x03(\x0b\x32\x17.eolymp.discussion.Post\x12\x10\n\x08has_more\x18\x02 \x01(\x08\"8\n\x0f\x43reatePostInput\x12%\n\x04post\x18\x01 \x01(\x0b\x32\x17.eolymp.discussion.Post\"#\n\x10\x43reatePostOutput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\"I\n\x0fUpdatePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12%\n\x04post\x18\x02 \x01(\x0b\x32\x17.eolymp.discussion.Post\"\x12\n\x10UpdatePostOutput\"\"\n\x0f\x44\x65letePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\"\x12\n\x10\x44\x65letePostOutput2\x91\x06\n\x0bPostService\x12\xa1\x01\n\x0c\x44\x65scribePost\x12$.eolymp.discussion.DescribePostInput\x1a%.eolymp.discussion.DescribePostOutput\"D\x82\xe3\n\x18\x8a\xe3\n\x14\x64iscussion:post:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/posts/{post_id}\x12\x8d\x01\n\tListPosts\x12!.eolymp.discussion.ListPostsInput\x1a\".eolymp.discussion.ListPostsOutput\"9\x82\xe3\n\x18\x8a\xe3\n\x14\x64iscussion:post:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/posts\x12\x91\x01\n\nCreatePost\x12\".eolymp.discussion.CreatePostInput\x1a#.eolymp.discussion.CreatePostOutput\":\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x08\"\x06/posts\x12\x9b\x01\n\nUpdatePost\x12\".eolymp.discussion.UpdatePostInput\x1a#.eolymp.discussion.UpdatePostOutput\"D\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12\x1a\x10/posts/{post_id}\x12\x9b\x01\n\nDeletePost\x12\".eolymp.discussion.DeletePostInput\x1a#.eolymp.discussion.DeletePostOutput\"D\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12*\x10/posts/{post_id}B7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/discussion/post_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/discussion/post.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"S\n\x11\x44\x65scribePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.discussion.Post.Extra\";\n\x12\x44\x65scribePostOutput\x12%\n\x04post\x18\x01 \x01(\x0b\x32\x17.eolymp.discussion.Post\"\x89\x05\n\x0eListPostsInput\x12\r\n\x05\x61\x66ter\x18\n \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x34\n\x04sort\x18\x32 \x01(\x0e\x32&.eolymp.discussion.ListPostsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.discussion.ListPostsInput.Filter\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.discussion.Post.Extra\x1a\xd1\x02\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x04 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x39\n\ncreated_at\x18\x05 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12;\n\x0cpublished_at\x18\x06 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x30\n\x06status\x18\x07 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\":\n\x04Sort\x12\x10\n\x0cUNKNOWN_SORT\x10\x00\x12\x10\n\x0cPUBLISHED_AT\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\"K\n\x0fListPostsOutput\x12&\n\x05items\x18\x01 \x03(\x0b\x32\x17.eolymp.discussion.Post\x12\x10\n\x08has_more\x18\x02 \x01(\x08\"8\n\x0f\x43reatePostInput\x12%\n\x04post\x18\x01 \x01(\x0b\x32\x17.eolymp.discussion.Post\"#\n\x10\x43reatePostOutput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\"I\n\x0fUpdatePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12%\n\x04post\x18\x02 \x01(\x0b\x32\x17.eolymp.discussion.Post\"\x12\n\x10UpdatePostOutput\"\"\n\x0f\x44\x65letePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\"\x12\n\x10\x44\x65letePostOutput2\x91\x06\n\x0bPostService\x12\xa1\x01\n\x0c\x44\x65scribePost\x12$.eolymp.discussion.DescribePostInput\x1a%.eolymp.discussion.DescribePostOutput\"D\x82\xe3\n\x18\x8a\xe3\n\x14\x64iscussion:post:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/posts/{post_id}\x12\x8d\x01\n\tListPosts\x12!.eolymp.discussion.ListPostsInput\x1a\".eolymp.discussion.ListPostsOutput\"9\x82\xe3\n\x18\x8a\xe3\n\x14\x64iscussion:post:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/posts\x12\x91\x01\n\nCreatePost\x12\".eolymp.discussion.CreatePostInput\x1a#.eolymp.discussion.CreatePostOutput\":\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x08\"\x06/posts\x12\x9b\x01\n\nUpdatePost\x12\".eolymp.discussion.UpdatePostInput\x1a#.eolymp.discussion.UpdatePostOutput\"D\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12\x1a\x10/posts/{post_id}\x12\x9b\x01\n\nDeletePost\x12\".eolymp.discussion.DeletePostInput\x1a#.eolymp.discussion.DeletePostOutput\"D\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x12*\x10/posts/{post_id}B7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.discussion.post_service_pb2', globals())
@@ -42,25 +42,25 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DESCRIBEPOSTOUTPUT._serialized_start=342
   _DESCRIBEPOSTOUTPUT._serialized_end=401
   _LISTPOSTSINPUT._serialized_start=404
-  _LISTPOSTSINPUT._serialized_end=907
+  _LISTPOSTSINPUT._serialized_end=1053
   _LISTPOSTSINPUT_FILTER._serialized_start=656
-  _LISTPOSTSINPUT_FILTER._serialized_end=881
-  _LISTPOSTSINPUT_SORT._serialized_start=883
-  _LISTPOSTSINPUT_SORT._serialized_end=907
-  _LISTPOSTSOUTPUT._serialized_start=909
-  _LISTPOSTSOUTPUT._serialized_end=984
-  _CREATEPOSTINPUT._serialized_start=986
-  _CREATEPOSTINPUT._serialized_end=1042
-  _CREATEPOSTOUTPUT._serialized_start=1044
-  _CREATEPOSTOUTPUT._serialized_end=1079
-  _UPDATEPOSTINPUT._serialized_start=1081
-  _UPDATEPOSTINPUT._serialized_end=1154
-  _UPDATEPOSTOUTPUT._serialized_start=1156
-  _UPDATEPOSTOUTPUT._serialized_end=1174
-  _DELETEPOSTINPUT._serialized_start=1176
-  _DELETEPOSTINPUT._serialized_end=1210
-  _DELETEPOSTOUTPUT._serialized_start=1212
-  _DELETEPOSTOUTPUT._serialized_end=1230
-  _POSTSERVICE._serialized_start=1233
-  _POSTSERVICE._serialized_end=2018
+  _LISTPOSTSINPUT_FILTER._serialized_end=993
+  _LISTPOSTSINPUT_SORT._serialized_start=995
+  _LISTPOSTSINPUT_SORT._serialized_end=1053
+  _LISTPOSTSOUTPUT._serialized_start=1055
+  _LISTPOSTSOUTPUT._serialized_end=1130
+  _CREATEPOSTINPUT._serialized_start=1132
+  _CREATEPOSTINPUT._serialized_end=1188
+  _CREATEPOSTOUTPUT._serialized_start=1190
+  _CREATEPOSTOUTPUT._serialized_end=1225
+  _UPDATEPOSTINPUT._serialized_start=1227
+  _UPDATEPOSTINPUT._serialized_end=1300
+  _UPDATEPOSTOUTPUT._serialized_start=1302
+  _UPDATEPOSTOUTPUT._serialized_end=1320
+  _DELETEPOSTINPUT._serialized_start=1322
+  _DELETEPOSTINPUT._serialized_end=1356
+  _DELETEPOSTOUTPUT._serialized_start=1358
+  _DELETEPOSTOUTPUT._serialized_end=1376
+  _POSTSERVICE._serialized_start=1379
+  _POSTSERVICE._serialized_end=2164
 # @@protoc_insertion_point(module_scope)

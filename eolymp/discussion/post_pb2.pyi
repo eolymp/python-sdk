@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Post(_message.Message):
-    __slots__ = ["created_at", "id", "labels", "links", "member_id", "message", "posted_at", "title", "updated_at", "url", "user_id"]
+    __slots__ = ["created_at", "id", "labels", "links", "member_id", "message", "published_at", "status", "title", "updated_at", "url", "user_id"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -26,9 +26,10 @@ class Post(_message.Message):
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_PREVIEW: Post.Extra
     MESSAGE_RENDER: Post.Extra
-    POSTED_AT_FIELD_NUMBER: _ClassVar[int]
     PUBLISHED: Post.Status
+    PUBLISHED_AT_FIELD_NUMBER: _ClassVar[int]
     REJECTED: Post.Status
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_EXTRA: Post.Extra
     UNKNOWN_STATUS: Post.Status
@@ -41,9 +42,10 @@ class Post(_message.Message):
     links: _containers.RepeatedCompositeFieldContainer[_link_pb2.Link]
     member_id: str
     message: _content_pb2.Content
-    posted_at: _timestamp_pb2.Timestamp
+    published_at: _timestamp_pb2.Timestamp
+    status: Post.Status
     title: str
     updated_at: _timestamp_pb2.Timestamp
     url: str
     user_id: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., posted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., title: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., status: _Optional[_Union[Post.Status, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., title: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
