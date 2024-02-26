@@ -12,9 +12,10 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.discussion import message_pb2 as eolymp_dot_discussion_dot_message__pb2
+from eolymp.discussion import post_pb2 as eolymp_dot_discussion_dot_post__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/discussion/events.proto\x12\x11\x65olymp.discussion\x1a\x1f\x65olymp/discussion/message.proto\"l\n\x13MessageChangedEvent\x12*\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x1a.eolymp.discussion.Message\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.eolymp.discussion.MessageB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/discussion/events.proto\x12\x11\x65olymp.discussion\x1a\x1f\x65olymp/discussion/message.proto\x1a\x1c\x65olymp/discussion/post.proto\"l\n\x13MessageChangedEvent\x12*\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x1a.eolymp.discussion.Message\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.eolymp.discussion.Message\"c\n\x10PostChangedEvent\x12\'\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x17.eolymp.discussion.Post\x12&\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x17.eolymp.discussion.PostB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.discussion.events_pb2', globals())
@@ -22,6 +23,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/discussion;discussion'
-  _MESSAGECHANGEDEVENT._serialized_start=86
-  _MESSAGECHANGEDEVENT._serialized_end=194
+  _MESSAGECHANGEDEVENT._serialized_start=116
+  _MESSAGECHANGEDEVENT._serialized_end=224
+  _POSTCHANGEDEVENT._serialized_start=226
+  _POSTCHANGEDEVENT._serialized_end=325
 # @@protoc_insertion_point(module_scope)
