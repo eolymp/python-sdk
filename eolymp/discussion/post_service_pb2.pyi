@@ -105,3 +105,17 @@ class UpdatePostInput(_message.Message):
 class UpdatePostOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class VotePostInput(_message.Message):
+    __slots__ = ["post_id", "vote"]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    VOTE_FIELD_NUMBER: _ClassVar[int]
+    post_id: str
+    vote: int
+    def __init__(self, post_id: _Optional[str] = ..., vote: _Optional[int] = ...) -> None: ...
+
+class VotePostOutput(_message.Message):
+    __slots__ = ["vote_count"]
+    VOTE_COUNT_FIELD_NUMBER: _ClassVar[int]
+    vote_count: int
+    def __init__(self, vote_count: _Optional[int] = ...) -> None: ...

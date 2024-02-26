@@ -78,3 +78,17 @@ class PostServiceClient:
             **kwargs,
         )
 
+    def VotePost(self, request, **kwargs):
+        path = "/messages/"+urllib.parse.quote(request.message_id)+"/vote"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.message_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.discussion.VotePostOutput"),
+            **kwargs,
+        )
+

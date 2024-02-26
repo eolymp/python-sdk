@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Post(_message.Message):
-    __slots__ = ["created_at", "id", "labels", "links", "member_id", "message", "published_at", "status", "title", "updated_at", "url", "user_id"]
+    __slots__ = ["created_at", "id", "labels", "links", "member_id", "message", "published_at", "reply_count", "status", "title", "updated_at", "url", "user_id", "vote", "vote_count"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -29,6 +29,7 @@ class Post(_message.Message):
     PUBLISHED: Post.Status
     PUBLISHED_AT_FIELD_NUMBER: _ClassVar[int]
     REJECTED: Post.Status
+    REPLY_COUNT_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_EXTRA: Post.Extra
@@ -36,6 +37,9 @@ class Post(_message.Message):
     UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
+    VOTE: Post.Extra
+    VOTE_COUNT_FIELD_NUMBER: _ClassVar[int]
+    VOTE_FIELD_NUMBER: _ClassVar[int]
     created_at: _timestamp_pb2.Timestamp
     id: str
     labels: _containers.RepeatedScalarFieldContainer[str]
@@ -43,9 +47,12 @@ class Post(_message.Message):
     member_id: str
     message: _content_pb2.Content
     published_at: _timestamp_pb2.Timestamp
+    reply_count: int
     status: Post.Status
     title: str
     updated_at: _timestamp_pb2.Timestamp
     url: str
     user_id: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., status: _Optional[_Union[Post.Status, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., title: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
+    vote: int
+    vote_count: int
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., status: _Optional[_Union[Post.Status, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., title: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
