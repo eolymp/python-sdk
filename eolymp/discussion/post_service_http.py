@@ -79,10 +79,10 @@ class PostServiceClient:
         )
 
     def VotePost(self, request, **kwargs):
-        path = "/messages/"+urllib.parse.quote(request.message_id)+"/vote"
+        path = "/posts/"+urllib.parse.quote(request.post_id)+"/vote"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.message_id = ""
+        request.post_id = ""
 
         return self.transport.request(
             method="POST",
