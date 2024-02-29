@@ -75,9 +75,11 @@ class ListPostsInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     PUBLISHED_AT: ListPostsInput.Sort
+    REPLY_COUNT: ListPostsInput.Sort
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_SORT: ListPostsInput.Sort
+    VOTE_COUNT: ListPostsInput.Sort
     after: str
     extra: _containers.RepeatedScalarFieldContainer[_post_pb2.Post.Extra]
     filters: ListPostsInput.Filter

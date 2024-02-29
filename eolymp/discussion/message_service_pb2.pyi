@@ -23,12 +23,14 @@ class DeleteMessageOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeMessageInput(_message.Message):
-    __slots__ = ["message_id", "render"]
+    __slots__ = ["extra", "message_id", "render"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_ID_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_message_pb2.Message.Extra]
     message_id: str
     render: bool
-    def __init__(self, message_id: _Optional[str] = ..., render: bool = ...) -> None: ...
+    def __init__(self, message_id: _Optional[str] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_message_pb2.Message.Extra, str]]] = ...) -> None: ...
 
 class DescribeMessageOutput(_message.Message):
     __slots__ = ["message"]
@@ -37,7 +39,7 @@ class DescribeMessageOutput(_message.Message):
     def __init__(self, message: _Optional[_Union[_message_pb2.Message, _Mapping]] = ...) -> None: ...
 
 class ListMessagesInput(_message.Message):
-    __slots__ = ["filters", "offset", "order", "render", "size", "sort"]
+    __slots__ = ["after", "extra", "filters", "order", "render", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -59,9 +61,10 @@ class ListMessagesInput(_message.Message):
         thread_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         vote_count: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., reply_to: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., thread_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., vote_count: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., reply_count: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., posted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ...) -> None: ...
+    AFTER_FIELD_NUMBER: _ClassVar[int]
     DEFAULT: ListMessagesInput.Sortable
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     POSTED_AT: ListMessagesInput.Sortable
     RENDER_FIELD_NUMBER: _ClassVar[int]
@@ -69,13 +72,14 @@ class ListMessagesInput(_message.Message):
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     VOTE_COUNT: ListMessagesInput.Sortable
+    after: str
+    extra: _containers.RepeatedScalarFieldContainer[_message_pb2.Message.Extra]
     filters: ListMessagesInput.Filter
-    offset: int
     order: _direction_pb2.Direction
     render: bool
     size: int
     sort: ListMessagesInput.Sortable
-    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., sort: _Optional[_Union[ListMessagesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListMessagesInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, render: bool = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., sort: _Optional[_Union[ListMessagesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListMessagesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_message_pb2.Message.Extra, str]]] = ...) -> None: ...
 
 class ListMessagesOutput(_message.Message):
     __slots__ = ["items", "total"]
