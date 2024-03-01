@@ -17,7 +17,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.discussion import post_type_pb2 as eolymp_dot_discussion_dot_post__type__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/discussion/post_type_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/discussion/post_type.proto\"8\n\x15\x44\x65scribePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\"C\n\x16\x44\x65scribePostTypeOutput\x12)\n\x04type\x18\x01 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"2\n\x12ListPostTypesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"`\n\x13ListPostTypesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.discussion.PostType\x12\x0e\n\x06locale\x18\n \x01(\t\"@\n\x13\x43reatePostTypeInput\x12)\n\x04type\x18\x01 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"\'\n\x14\x43reatePostTypeOutput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\"Q\n\x13UpdatePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12)\n\x04type\x18\x02 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"\x16\n\x14UpdatePostTypeOutput\"&\n\x13\x44\x65letePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65letePostTypeOutput\"C\n\x1c\x44\x65scribePostTypeVariantInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"M\n\x1d\x44\x65scribePostTypeVariantOutput\x12,\n\x07variant\x18\x01 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"J\n\x19ListPostTypeVariantsInput\x12\x0f\n\x07type_id\x18\x02 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"_\n\x1aListPostTypeVariantsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x32\n\x05items\x18\x02 \x03(\x0b\x32#.eolymp.discussion.PostType.Variant\"c\n\x1a\x43reatePostTypeVariantInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12\x34\n\x07variant\x18\x02 \x01(\x0b\x32#.eolymp.discussion.PostType.Variant\"1\n\x1b\x43reatePostTypeVariantOutput\x12\x12\n\nvariant_id\x18\x01 \x01(\t\"w\n\x1aUpdatePostTypeVariantInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\x34\n\x07variant\x18\x03 \x01(\x0b\x32#.eolymp.discussion.PostType.Variant\"\x1d\n\x1bUpdatePostTypeVariantOutput\"A\n\x1a\x44\x65letePostTypeVariantInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65letePostTypeVariantOutput2\xc6\x0f\n\x0fPostTypeService\x12\xb7\x01\n\x10\x44\x65scribePostType\x12(.eolymp.discussion.DescribePostTypeInput\x1a).eolymp.discussion.DescribePostTypeOutput\"N\x82\xe3\n\x1d\x8a\xe3\n\x19\x64iscussion:post-type:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x17\x12\x15/post-types/{type_id}\x12\xa3\x01\n\rListPostTypes\x12%.eolymp.discussion.ListPostTypesInput\x1a&.eolymp.discussion.ListPostTypesOutput\"C\x82\xe3\n\x1d\x8a\xe3\n\x19\x64iscussion:post-type:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\r\x12\x0b/post-types\x12\xa7\x01\n\x0e\x43reatePostType\x12&.eolymp.discussion.CreatePostTypeInput\x1a\'.eolymp.discussion.CreatePostTypeOutput\"D\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\r\"\x0b/post-types\x12\xb1\x01\n\x0eUpdatePostType\x12&.eolymp.discussion.UpdatePostTypeInput\x1a\'.eolymp.discussion.UpdatePostTypeOutput\"N\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x1a\x15/post-types/{type_id}\x12\xb1\x01\n\x0e\x44\x65letePostType\x12&.eolymp.discussion.DeletePostTypeInput\x1a\'.eolymp.discussion.DeletePostTypeOutput\"N\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17*\x15/post-types/{type_id}\x12\xe2\x01\n\x17\x44\x65scribePostTypeVariant\x12/.eolymp.discussion.DescribePostTypeVariantInput\x1a\x30.eolymp.discussion.DescribePostTypeVariantOutput\"d\x82\xe3\n\x1d\x8a\xe3\n\x19\x64iscussion:post-type:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02-\x12+/post-types/{type_id}/variants/{variant_id}\x12\xcb\x01\n\x14ListPostTypeVariants\x12,.eolymp.discussion.ListPostTypeVariantsInput\x1a-.eolymp.discussion.ListPostTypeVariantsOutput\"V\x82\xe3\n\x1d\x8a\xe3\n\x19\x64iscussion:post-type:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02 \x12\x1e/post-types/{type_id}/variants\x12\xcf\x01\n\x15\x43reatePostTypeVariant\x12-.eolymp.discussion.CreatePostTypeVariantInput\x1a..eolymp.discussion.CreatePostTypeVariantOutput\"W\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02 \"\x1e/post-types/{type_id}/variants\x12\xdc\x01\n\x15UpdatePostTypeVariant\x12-.eolymp.discussion.UpdatePostTypeVariantInput\x1a..eolymp.discussion.UpdatePostTypeVariantOutput\"d\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02-\x1a+/post-types/{type_id}/variants/{variant_id}\x12\xdc\x01\n\x15\x44\x65letePostTypeVariant\x12-.eolymp.discussion.DeletePostTypeVariantInput\x1a..eolymp.discussion.DeletePostTypeVariantOutput\"d\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02-*+/post-types/{type_id}/variants/{variant_id}B7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/discussion/post_type_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/discussion/post_type.proto\"k\n\x15\x44\x65scribePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.discussion.PostType.Extra\"C\n\x16\x44\x65scribePostTypeOutput\x12)\n\x04type\x18\x01 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"u\n\x12ListPostTypesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x14 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.discussion.PostType.Extra\"P\n\x13ListPostTypesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.discussion.PostType\"@\n\x13\x43reatePostTypeInput\x12)\n\x04type\x18\x01 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"\'\n\x14\x43reatePostTypeOutput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\"Q\n\x13UpdatePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12)\n\x04type\x18\x02 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"\x16\n\x14UpdatePostTypeOutput\"&\n\x13\x44\x65letePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65letePostTypeOutput2\x83\x07\n\x0fPostTypeService\x12\xb7\x01\n\x10\x44\x65scribePostType\x12(.eolymp.discussion.DescribePostTypeInput\x1a).eolymp.discussion.DescribePostTypeOutput\"N\x82\xe3\n\x1d\x8a\xe3\n\x19\x64iscussion:post-type:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x17\x12\x15/post-types/{type_id}\x12\xa3\x01\n\rListPostTypes\x12%.eolymp.discussion.ListPostTypesInput\x1a&.eolymp.discussion.ListPostTypesOutput\"C\x82\xe3\n\x1d\x8a\xe3\n\x19\x64iscussion:post-type:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\r\x12\x0b/post-types\x12\xa7\x01\n\x0e\x43reatePostType\x12&.eolymp.discussion.CreatePostTypeInput\x1a\'.eolymp.discussion.CreatePostTypeOutput\"D\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\r\"\x0b/post-types\x12\xb1\x01\n\x0eUpdatePostType\x12&.eolymp.discussion.UpdatePostTypeInput\x1a\'.eolymp.discussion.UpdatePostTypeOutput\"N\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x1a\x15/post-types/{type_id}\x12\xb1\x01\n\x0e\x44\x65letePostType\x12&.eolymp.discussion.DeletePostTypeInput\x1a\'.eolymp.discussion.DeletePostTypeOutput\"N\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17*\x15/post-types/{type_id}B7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.discussion.post_type_service_pb2', globals())
@@ -35,56 +35,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _POSTTYPESERVICE.methods_by_name['UpdatePostType']._serialized_options = b'\202\343\n\036\212\343\n\032discussion:post-type:write\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\027\032\025/post-types/{type_id}'
   _POSTTYPESERVICE.methods_by_name['DeletePostType']._options = None
   _POSTTYPESERVICE.methods_by_name['DeletePostType']._serialized_options = b'\202\343\n\036\212\343\n\032discussion:post-type:write\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\027*\025/post-types/{type_id}'
-  _POSTTYPESERVICE.methods_by_name['DescribePostTypeVariant']._options = None
-  _POSTTYPESERVICE.methods_by_name['DescribePostTypeVariant']._serialized_options = b'\202\343\n\035\212\343\n\031discussion:post-type:read\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\323\344\223\002-\022+/post-types/{type_id}/variants/{variant_id}'
-  _POSTTYPESERVICE.methods_by_name['ListPostTypeVariants']._options = None
-  _POSTTYPESERVICE.methods_by_name['ListPostTypeVariants']._serialized_options = b'\202\343\n\035\212\343\n\031discussion:post-type:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002 \022\036/post-types/{type_id}/variants'
-  _POSTTYPESERVICE.methods_by_name['CreatePostTypeVariant']._options = None
-  _POSTTYPESERVICE.methods_by_name['CreatePostTypeVariant']._serialized_options = b'\202\343\n\036\212\343\n\032discussion:post-type:write\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002 \"\036/post-types/{type_id}/variants'
-  _POSTTYPESERVICE.methods_by_name['UpdatePostTypeVariant']._options = None
-  _POSTTYPESERVICE.methods_by_name['UpdatePostTypeVariant']._serialized_options = b'\202\343\n\036\212\343\n\032discussion:post-type:write\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002-\032+/post-types/{type_id}/variants/{variant_id}'
-  _POSTTYPESERVICE.methods_by_name['DeletePostTypeVariant']._options = None
-  _POSTTYPESERVICE.methods_by_name['DeletePostTypeVariant']._serialized_options = b'\202\343\n\036\212\343\n\032discussion:post-type:write\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002-*+/post-types/{type_id}/variants/{variant_id}'
   _DESCRIBEPOSTTYPEINPUT._serialized_start=198
-  _DESCRIBEPOSTTYPEINPUT._serialized_end=254
-  _DESCRIBEPOSTTYPEOUTPUT._serialized_start=256
-  _DESCRIBEPOSTTYPEOUTPUT._serialized_end=323
-  _LISTPOSTTYPESINPUT._serialized_start=325
-  _LISTPOSTTYPESINPUT._serialized_end=375
-  _LISTPOSTTYPESOUTPUT._serialized_start=377
-  _LISTPOSTTYPESOUTPUT._serialized_end=473
-  _CREATEPOSTTYPEINPUT._serialized_start=475
-  _CREATEPOSTTYPEINPUT._serialized_end=539
-  _CREATEPOSTTYPEOUTPUT._serialized_start=541
-  _CREATEPOSTTYPEOUTPUT._serialized_end=580
-  _UPDATEPOSTTYPEINPUT._serialized_start=582
-  _UPDATEPOSTTYPEINPUT._serialized_end=663
-  _UPDATEPOSTTYPEOUTPUT._serialized_start=665
-  _UPDATEPOSTTYPEOUTPUT._serialized_end=687
-  _DELETEPOSTTYPEINPUT._serialized_start=689
-  _DELETEPOSTTYPEINPUT._serialized_end=727
-  _DELETEPOSTTYPEOUTPUT._serialized_start=729
-  _DELETEPOSTTYPEOUTPUT._serialized_end=751
-  _DESCRIBEPOSTTYPEVARIANTINPUT._serialized_start=753
-  _DESCRIBEPOSTTYPEVARIANTINPUT._serialized_end=820
-  _DESCRIBEPOSTTYPEVARIANTOUTPUT._serialized_start=822
-  _DESCRIBEPOSTTYPEVARIANTOUTPUT._serialized_end=899
-  _LISTPOSTTYPEVARIANTSINPUT._serialized_start=901
-  _LISTPOSTTYPEVARIANTSINPUT._serialized_end=975
-  _LISTPOSTTYPEVARIANTSOUTPUT._serialized_start=977
-  _LISTPOSTTYPEVARIANTSOUTPUT._serialized_end=1072
-  _CREATEPOSTTYPEVARIANTINPUT._serialized_start=1074
-  _CREATEPOSTTYPEVARIANTINPUT._serialized_end=1173
-  _CREATEPOSTTYPEVARIANTOUTPUT._serialized_start=1175
-  _CREATEPOSTTYPEVARIANTOUTPUT._serialized_end=1224
-  _UPDATEPOSTTYPEVARIANTINPUT._serialized_start=1226
-  _UPDATEPOSTTYPEVARIANTINPUT._serialized_end=1345
-  _UPDATEPOSTTYPEVARIANTOUTPUT._serialized_start=1347
-  _UPDATEPOSTTYPEVARIANTOUTPUT._serialized_end=1376
-  _DELETEPOSTTYPEVARIANTINPUT._serialized_start=1378
-  _DELETEPOSTTYPEVARIANTINPUT._serialized_end=1443
-  _DELETEPOSTTYPEVARIANTOUTPUT._serialized_start=1445
-  _DELETEPOSTTYPEVARIANTOUTPUT._serialized_end=1474
-  _POSTTYPESERVICE._serialized_start=1477
-  _POSTTYPESERVICE._serialized_end=3467
+  _DESCRIBEPOSTTYPEINPUT._serialized_end=305
+  _DESCRIBEPOSTTYPEOUTPUT._serialized_start=307
+  _DESCRIBEPOSTTYPEOUTPUT._serialized_end=374
+  _LISTPOSTTYPESINPUT._serialized_start=376
+  _LISTPOSTTYPESINPUT._serialized_end=493
+  _LISTPOSTTYPESOUTPUT._serialized_start=495
+  _LISTPOSTTYPESOUTPUT._serialized_end=575
+  _CREATEPOSTTYPEINPUT._serialized_start=577
+  _CREATEPOSTTYPEINPUT._serialized_end=641
+  _CREATEPOSTTYPEOUTPUT._serialized_start=643
+  _CREATEPOSTTYPEOUTPUT._serialized_end=682
+  _UPDATEPOSTTYPEINPUT._serialized_start=684
+  _UPDATEPOSTTYPEINPUT._serialized_end=765
+  _UPDATEPOSTTYPEOUTPUT._serialized_start=767
+  _UPDATEPOSTTYPEOUTPUT._serialized_end=789
+  _DELETEPOSTTYPEINPUT._serialized_start=791
+  _DELETEPOSTTYPEINPUT._serialized_end=829
+  _DELETEPOSTTYPEOUTPUT._serialized_start=831
+  _DELETEPOSTTYPEOUTPUT._serialized_end=853
+  _POSTTYPESERVICE._serialized_start=856
+  _POSTTYPESERVICE._serialized_end=1755
 # @@protoc_insertion_point(module_scope)

@@ -21,20 +21,6 @@ class CreatePostTypeOutput(_message.Message):
     type_id: str
     def __init__(self, type_id: _Optional[str] = ...) -> None: ...
 
-class CreatePostTypeVariantInput(_message.Message):
-    __slots__ = ["type_id", "variant"]
-    TYPE_ID_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_FIELD_NUMBER: _ClassVar[int]
-    type_id: str
-    variant: _post_type_pb2.PostType.Variant
-    def __init__(self, type_id: _Optional[str] = ..., variant: _Optional[_Union[_post_type_pb2.PostType.Variant, _Mapping]] = ...) -> None: ...
-
-class CreatePostTypeVariantOutput(_message.Message):
-    __slots__ = ["variant_id"]
-    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
-    variant_id: str
-    def __init__(self, variant_id: _Optional[str] = ...) -> None: ...
-
 class DeletePostTypeInput(_message.Message):
     __slots__ = ["type_id"]
     TYPE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -45,25 +31,15 @@ class DeletePostTypeOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class DeletePostTypeVariantInput(_message.Message):
-    __slots__ = ["type_id", "variant_id"]
-    TYPE_ID_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
-    type_id: str
-    variant_id: str
-    def __init__(self, type_id: _Optional[str] = ..., variant_id: _Optional[str] = ...) -> None: ...
-
-class DeletePostTypeVariantOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class DescribePostTypeInput(_message.Message):
-    __slots__ = ["locale", "type_id"]
+    __slots__ = ["extra", "locale", "type_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     TYPE_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_post_type_pb2.PostType.Extra]
     locale: str
     type_id: str
-    def __init__(self, type_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, type_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_post_type_pb2.PostType.Extra, str]]] = ...) -> None: ...
 
 class DescribePostTypeOutput(_message.Message):
     __slots__ = ["type"]
@@ -71,55 +47,25 @@ class DescribePostTypeOutput(_message.Message):
     type: _post_type_pb2.PostType
     def __init__(self, type: _Optional[_Union[_post_type_pb2.PostType, _Mapping]] = ...) -> None: ...
 
-class DescribePostTypeVariantInput(_message.Message):
-    __slots__ = ["type_id", "variant_id"]
-    TYPE_ID_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
-    type_id: str
-    variant_id: str
-    def __init__(self, type_id: _Optional[str] = ..., variant_id: _Optional[str] = ...) -> None: ...
-
-class DescribePostTypeVariantOutput(_message.Message):
-    __slots__ = ["variant"]
-    VARIANT_FIELD_NUMBER: _ClassVar[int]
-    variant: _post_type_pb2.PostType
-    def __init__(self, variant: _Optional[_Union[_post_type_pb2.PostType, _Mapping]] = ...) -> None: ...
-
-class ListPostTypeVariantsInput(_message.Message):
-    __slots__ = ["offset", "size", "type_id"]
+class ListPostTypesInput(_message.Message):
+    __slots__ = ["extra", "locale", "offset", "size"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    TYPE_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_post_type_pb2.PostType.Extra]
+    locale: str
     offset: int
     size: int
-    type_id: str
-    def __init__(self, type_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_post_type_pb2.PostType.Extra, str]]] = ...) -> None: ...
 
-class ListPostTypeVariantsOutput(_message.Message):
+class ListPostTypesOutput(_message.Message):
     __slots__ = ["items", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_post_type_pb2.PostType.Variant]
-    total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_type_pb2.PostType.Variant, _Mapping]]] = ...) -> None: ...
-
-class ListPostTypesInput(_message.Message):
-    __slots__ = ["offset", "size"]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    offset: int
-    size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
-
-class ListPostTypesOutput(_message.Message):
-    __slots__ = ["items", "locale", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    LOCALE_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_post_type_pb2.PostType]
-    locale: str
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_type_pb2.PostType, _Mapping]]] = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_type_pb2.PostType, _Mapping]]] = ...) -> None: ...
 
 class UpdatePostTypeInput(_message.Message):
     __slots__ = ["type", "type_id"]
@@ -130,19 +76,5 @@ class UpdatePostTypeInput(_message.Message):
     def __init__(self, type_id: _Optional[str] = ..., type: _Optional[_Union[_post_type_pb2.PostType, _Mapping]] = ...) -> None: ...
 
 class UpdatePostTypeOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UpdatePostTypeVariantInput(_message.Message):
-    __slots__ = ["type_id", "variant", "variant_id"]
-    TYPE_ID_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
-    type_id: str
-    variant: _post_type_pb2.PostType.Variant
-    variant_id: str
-    def __init__(self, type_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., variant: _Optional[_Union[_post_type_pb2.PostType.Variant, _Mapping]] = ...) -> None: ...
-
-class UpdatePostTypeVariantOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
