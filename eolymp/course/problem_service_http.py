@@ -9,7 +9,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class ProblemSolverClient:
+class ProblemServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
@@ -21,7 +21,7 @@ class ProblemSolverClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListStatementsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListStatementsOutput"),
             **kwargs,
         )
 
@@ -32,7 +32,7 @@ class ProblemSolverClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListExamplesOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListExamplesOutput"),
             **kwargs,
         )
 
@@ -43,7 +43,7 @@ class ProblemSolverClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateSubmissionOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateSubmissionOutput"),
             **kwargs,
         )
 
@@ -54,7 +54,7 @@ class ProblemSolverClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListSubmissionsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListSubmissionsOutput"),
             **kwargs,
         )
 
@@ -68,7 +68,7 @@ class ProblemSolverClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeSubmissionOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeSubmissionOutput"),
             **kwargs,
         )
 
@@ -79,7 +79,7 @@ class ProblemSolverClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeScoreOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeScoreOutput"),
             **kwargs,
         )
 
@@ -90,7 +90,7 @@ class ProblemSolverClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.LookupCodeTemplateOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.LookupCodeTemplateOutput"),
             **kwargs,
         )
 
