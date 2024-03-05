@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Post(_message.Message):
-    __slots__ = ["created_at", "id", "labels", "links", "locale", "member_id", "message", "published_at", "reply_count", "status", "title", "type_id", "updated_at", "url", "user_id", "vote", "vote_count"]
+    __slots__ = ["created_at", "id", "image", "labels", "links", "locale", "member_id", "message", "published_at", "reply_count", "status", "title", "type_id", "updated_at", "url", "user_id", "vote", "vote_count"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -18,6 +18,7 @@ class Post(_message.Message):
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     DRAFT: Post.Status
     ID_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
     IN_REVIEW: Post.Status
     LABELS_FIELD_NUMBER: _ClassVar[int]
     LINKS_FIELD_NUMBER: _ClassVar[int]
@@ -44,6 +45,7 @@ class Post(_message.Message):
     VOTE_FIELD_NUMBER: _ClassVar[int]
     created_at: _timestamp_pb2.Timestamp
     id: str
+    image: str
     labels: _containers.RepeatedScalarFieldContainer[str]
     links: _containers.RepeatedCompositeFieldContainer[_link_pb2.Link]
     locale: str
@@ -59,4 +61,4 @@ class Post(_message.Message):
     user_id: str
     vote: int
     vote_count: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., status: _Optional[_Union[Post.Status, str]] = ..., type_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., status: _Optional[_Union[Post.Status, str]] = ..., type_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
