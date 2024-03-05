@@ -49,7 +49,7 @@ class DescribePostOutput(_message.Message):
     def __init__(self, post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ...) -> None: ...
 
 class ListPostsInput(_message.Message):
-    __slots__ = ["after", "extra", "filters", "order", "size", "sort"]
+    __slots__ = ["after", "extra", "filters", "offset", "order", "size", "sort"]
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -79,6 +79,7 @@ class ListPostsInput(_message.Message):
     CREATED_AT: ListPostsInput.Sort
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     POPULARITY: ListPostsInput.Sort
     PUBLISHED_AT: ListPostsInput.Sort
@@ -90,10 +91,11 @@ class ListPostsInput(_message.Message):
     after: str
     extra: _containers.RepeatedScalarFieldContainer[_post_pb2.Post.Extra]
     filters: ListPostsInput.Filter
+    offset: int
     order: _direction_pb2.Direction
     size: int
     sort: ListPostsInput.Sort
-    def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., sort: _Optional[_Union[ListPostsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListPostsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
+    def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., sort: _Optional[_Union[ListPostsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListPostsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
 
 class ListPostsOutput(_message.Message):
     __slots__ = ["items", "next_page_cursor", "total"]
