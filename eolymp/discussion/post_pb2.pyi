@@ -1,4 +1,5 @@
 from eolymp.ecm import content_pb2 as _content_pb2
+from eolymp.ecm import node_pb2 as _node_pb2
 from eolymp.wellknown import link_pb2 as _link_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
@@ -10,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Post(_message.Message):
-    __slots__ = ["created_at", "id", "image", "labels", "links", "locale", "member_id", "message", "published_at", "reply_count", "status", "title", "type_id", "updated_at", "url", "user_id", "vote", "vote_count"]
+    __slots__ = ["created_at", "id", "image", "labels", "links", "locale", "member_id", "message", "preview", "published_at", "reply_count", "status", "title", "type_id", "updated_at", "url", "user_id", "vote", "vote_count"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -25,9 +26,10 @@ class Post(_message.Message):
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    MESSAGE_PREVIEW: Post.Extra
     MESSAGE_RENDER: Post.Extra
     MESSAGE_VALUE: Post.Extra
+    PREVIEW: Post.Extra
+    PREVIEW_FIELD_NUMBER: _ClassVar[int]
     PUBLISHED: Post.Status
     PUBLISHED_AT_FIELD_NUMBER: _ClassVar[int]
     REJECTED: Post.Status
@@ -51,6 +53,7 @@ class Post(_message.Message):
     locale: str
     member_id: str
     message: _content_pb2.Content
+    preview: _node_pb2.Node
     published_at: _timestamp_pb2.Timestamp
     reply_count: int
     status: Post.Status
@@ -61,4 +64,4 @@ class Post(_message.Message):
     user_id: str
     vote: int
     vote_count: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., status: _Optional[_Union[Post.Status, str]] = ..., type_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., status: _Optional[_Union[Post.Status, str]] = ..., type_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., image: _Optional[str] = ..., preview: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
