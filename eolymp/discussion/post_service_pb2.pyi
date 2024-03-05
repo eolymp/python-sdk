@@ -94,12 +94,14 @@ class ListPostsInput(_message.Message):
     def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., sort: _Optional[_Union[ListPostsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListPostsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
 
 class ListPostsOutput(_message.Message):
-    __slots__ = ["has_more", "items"]
-    HAS_MORE_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["items", "next_page_cursor", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
-    has_more: bool
+    NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_post_pb2.Post]
-    def __init__(self, items: _Optional[_Iterable[_Union[_post_pb2.Post, _Mapping]]] = ..., has_more: bool = ...) -> None: ...
+    next_page_cursor: str
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_pb2.Post, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class UpdatePostInput(_message.Message):
     __slots__ = ["patch", "post", "post_id"]
