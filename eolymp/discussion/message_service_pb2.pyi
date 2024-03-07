@@ -53,10 +53,10 @@ class ListMessageChangesOutput(_message.Message):
         MESSAGE_FIELD_NUMBER: _ClassVar[int]
         REVISION_FIELD_NUMBER: _ClassVar[int]
         TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-        message: _containers.RepeatedCompositeFieldContainer[_content_pb2.Content]
+        message: _content_pb2.Content
         revision: int
         timestamp: _timestamp_pb2.Timestamp
-        def __init__(self, revision: _Optional[int] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[_Iterable[_Union[_content_pb2.Content, _Mapping]]] = ...) -> None: ...
+        def __init__(self, revision: _Optional[int] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
     HISTORY_FIELD_NUMBER: _ClassVar[int]
     history: _containers.RepeatedCompositeFieldContainer[ListMessageChangesOutput.Record]
     def __init__(self, history: _Optional[_Iterable[_Union[ListMessageChangesOutput.Record, _Mapping]]] = ...) -> None: ...
