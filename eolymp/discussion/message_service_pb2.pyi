@@ -2,8 +2,10 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.discussion import message_pb2 as _message_pb2
+from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -37,6 +39,27 @@ class DescribeMessageOutput(_message.Message):
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     message: _message_pb2.Message
     def __init__(self, message: _Optional[_Union[_message_pb2.Message, _Mapping]] = ...) -> None: ...
+
+class ListMessageChangesInput(_message.Message):
+    __slots__ = ["message_id"]
+    MESSAGE_ID_FIELD_NUMBER: _ClassVar[int]
+    message_id: str
+    def __init__(self, message_id: _Optional[str] = ...) -> None: ...
+
+class ListMessageChangesOutput(_message.Message):
+    __slots__ = ["history"]
+    class Record(_message.Message):
+        __slots__ = ["message", "revision", "timestamp"]
+        MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        REVISION_FIELD_NUMBER: _ClassVar[int]
+        TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+        message: _containers.RepeatedCompositeFieldContainer[_content_pb2.Content]
+        revision: int
+        timestamp: _timestamp_pb2.Timestamp
+        def __init__(self, revision: _Optional[int] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[_Iterable[_Union[_content_pb2.Content, _Mapping]]] = ...) -> None: ...
+    HISTORY_FIELD_NUMBER: _ClassVar[int]
+    history: _containers.RepeatedCompositeFieldContainer[ListMessageChangesOutput.Record]
+    def __init__(self, history: _Optional[_Iterable[_Union[ListMessageChangesOutput.Record, _Mapping]]] = ...) -> None: ...
 
 class ListMessagesInput(_message.Message):
     __slots__ = ["after", "extra", "filters", "order", "render", "size", "sort"]

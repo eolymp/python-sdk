@@ -16,7 +16,7 @@ from eolymp.wellknown import link_pb2 as eolymp_dot_wellknown_dot_link__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/discussion/message.proto\x12\x11\x65olymp.discussion\x1a\x18\x65olymp/ecm/content.proto\x1a\x1b\x65olymp/wellknown/link.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa0\x03\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\x12\x12\n\nthread_url\x18\x02 \x01(\t\x12\x11\n\tmember_id\x18\x03 \x01(\t\x12\x10\n\x08reply_to\x18\x04 \x01(\t\x12\x0c\n\x04vote\x18\x0c \x01(\x05\x12\x12\n\nvote_count\x18\n \x01(\x05\x12\x13\n\x0breply_count\x18\x0b \x01(\x05\x12-\n\tposted_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tedited_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12$\n\x07message\x18\x64 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12&\n\x05links\x18\xc8\x01 \x03(\x0b\x32\x16.eolymp.wellknown.Link\"`\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x11\n\rMESSAGE_VALUE\x10\x01\x12\x12\n\x0eMESSAGE_RENDER\x10\x02\x12\x13\n\x0fMESSAGE_PREVIEW\x10\x03\x12\x08\n\x04VOTE\x10\x04\x42\x37Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/discussion/message.proto\x12\x11\x65olymp.discussion\x1a\x18\x65olymp/ecm/content.proto\x1a\x1b\x65olymp/wellknown/link.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe2\x03\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\x12\x12\n\nthread_url\x18\x02 \x01(\t\x12\x11\n\tmember_id\x18\x03 \x01(\t\x12\x10\n\x08reply_to\x18\x04 \x01(\t\x12\x0c\n\x04vote\x18\x0c \x01(\x05\x12\x12\n\nvote_count\x18\n \x01(\x05\x12\x13\n\x0breply_count\x18\x0b \x01(\x05\x12-\n\tposted_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tedited_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ndeleted_at\x18\x16 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08revision\x18\r \x01(\x05\x12$\n\x07message\x18\x64 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12&\n\x05links\x18\xc8\x01 \x03(\x0b\x32\x16.eolymp.wellknown.Link\"`\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x11\n\rMESSAGE_VALUE\x10\x01\x12\x12\n\x0eMESSAGE_RENDER\x10\x02\x12\x13\n\x0fMESSAGE_PREVIEW\x10\x03\x12\x08\n\x04VOTE\x10\x04\x42\x37Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.discussion.message_pb2', globals())
@@ -25,7 +25,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/discussion;discussion'
   _MESSAGE._serialized_start=143
-  _MESSAGE._serialized_end=559
-  _MESSAGE_EXTRA._serialized_start=463
-  _MESSAGE_EXTRA._serialized_end=559
+  _MESSAGE._serialized_end=625
+  _MESSAGE_EXTRA._serialized_start=529
+  _MESSAGE_EXTRA._serialized_end=625
 # @@protoc_insertion_point(module_scope)
