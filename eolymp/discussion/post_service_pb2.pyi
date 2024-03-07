@@ -53,13 +53,14 @@ class ListPostsInput(_message.Message):
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["created_at", "id", "label", "locale", "member_id", "moderation", "published_at", "query", "status", "type_id", "user_id"]
+        __slots__ = ["created_at", "id", "label", "locale", "member_id", "moderation", "public", "published_at", "query", "status", "type_id", "user_id"]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         LABEL_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         MODERATION_FIELD_NUMBER: _ClassVar[int]
+        PUBLIC_FIELD_NUMBER: _ClassVar[int]
         PUBLISHED_AT_FIELD_NUMBER: _ClassVar[int]
         QUERY_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -71,12 +72,13 @@ class ListPostsInput(_message.Message):
         locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         moderation: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        public: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         published_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         query: str
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         type_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., published_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., moderation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., published_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., moderation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     AFTER_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT: ListPostsInput.Sort
     EXTRA_FIELD_NUMBER: _ClassVar[int]
