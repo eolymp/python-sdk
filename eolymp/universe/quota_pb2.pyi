@@ -1,12 +1,11 @@
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Quota(_message.Message):
-    __slots__ = ["active_contests_per_space", "allow_discussions", "attributes_per_space", "code_templates_per_problem", "contest_upsolve_mode", "contests_per_space", "courses_per_space", "customer_support_reply_time", "dedicated_user_database", "editorial_per_problem", "ghost_participants", "max_contest_duration", "members_per_space", "monthly_contests_per_space", "monthly_evaluations_by_seat", "participants_per_contest", "period_end", "period_start", "permissions_per_space", "plagiarism_analysis", "priority_evaluation_queue", "problems_per_contest", "problems_per_space", "scoreboards_per_space", "single_sing_on", "solutions_per_problem", "statement_per_problem", "team_contests", "tests_per_problem", "testset_per_problem", "unofficial_participants"]
+    __slots__ = ["active_contests_per_space", "allow_discussions", "attributes_per_space", "code_templates_per_problem", "contest_upsolve_mode", "contests_per_space", "courses_per_space", "customer_support_reply_time", "dedicated_user_database", "editorial_per_problem", "ghost_participants", "max_contest_duration", "members_per_space", "monthly_contests_per_space", "monthly_evaluations_by_seat", "participants_per_contest", "permissions_per_space", "plagiarism_analysis", "priority_evaluation_queue", "problems_per_contest", "problems_per_space", "scoreboards_per_space", "single_sing_on", "solutions_per_problem", "statement_per_problem", "team_contests", "tests_per_problem", "testset_per_problem", "unofficial_participants"]
     ACTIVE_CONTESTS_PER_SPACE_FIELD_NUMBER: _ClassVar[int]
     ALLOW_DISCUSSIONS_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_PER_SPACE_FIELD_NUMBER: _ClassVar[int]
@@ -23,8 +22,6 @@ class Quota(_message.Message):
     MONTHLY_CONTESTS_PER_SPACE_FIELD_NUMBER: _ClassVar[int]
     MONTHLY_EVALUATIONS_BY_SEAT_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANTS_PER_CONTEST_FIELD_NUMBER: _ClassVar[int]
-    PERIOD_END_FIELD_NUMBER: _ClassVar[int]
-    PERIOD_START_FIELD_NUMBER: _ClassVar[int]
     PERMISSIONS_PER_SPACE_FIELD_NUMBER: _ClassVar[int]
     PLAGIARISM_ANALYSIS_FIELD_NUMBER: _ClassVar[int]
     PRIORITY_EVALUATION_QUEUE_FIELD_NUMBER: _ClassVar[int]
@@ -54,8 +51,6 @@ class Quota(_message.Message):
     monthly_contests_per_space: int
     monthly_evaluations_by_seat: int
     participants_per_contest: int
-    period_end: _timestamp_pb2.Timestamp
-    period_start: _timestamp_pb2.Timestamp
     permissions_per_space: int
     plagiarism_analysis: bool
     priority_evaluation_queue: bool
@@ -69,4 +64,4 @@ class Quota(_message.Message):
     tests_per_problem: int
     testset_per_problem: int
     unofficial_participants: bool
-    def __init__(self, period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., permissions_per_space: _Optional[int] = ..., single_sing_on: bool = ..., dedicated_user_database: bool = ..., attributes_per_space: _Optional[int] = ..., customer_support_reply_time: _Optional[int] = ..., allow_discussions: bool = ..., monthly_evaluations_by_seat: _Optional[int] = ..., priority_evaluation_queue: bool = ..., plagiarism_analysis: bool = ..., members_per_space: _Optional[int] = ..., scoreboards_per_space: _Optional[int] = ..., courses_per_space: _Optional[int] = ..., problems_per_space: _Optional[int] = ..., tests_per_problem: _Optional[int] = ..., testset_per_problem: _Optional[int] = ..., statement_per_problem: _Optional[int] = ..., editorial_per_problem: _Optional[int] = ..., solutions_per_problem: _Optional[int] = ..., code_templates_per_problem: _Optional[int] = ..., contests_per_space: _Optional[int] = ..., active_contests_per_space: _Optional[int] = ..., monthly_contests_per_space: _Optional[int] = ..., problems_per_contest: _Optional[int] = ..., participants_per_contest: _Optional[int] = ..., contest_upsolve_mode: bool = ..., max_contest_duration: _Optional[int] = ..., team_contests: bool = ..., ghost_participants: bool = ..., unofficial_participants: bool = ...) -> None: ...
+    def __init__(self, permissions_per_space: _Optional[int] = ..., single_sing_on: bool = ..., dedicated_user_database: bool = ..., attributes_per_space: _Optional[int] = ..., customer_support_reply_time: _Optional[int] = ..., allow_discussions: bool = ..., monthly_evaluations_by_seat: _Optional[int] = ..., priority_evaluation_queue: bool = ..., plagiarism_analysis: bool = ..., members_per_space: _Optional[int] = ..., scoreboards_per_space: _Optional[int] = ..., courses_per_space: _Optional[int] = ..., problems_per_space: _Optional[int] = ..., tests_per_problem: _Optional[int] = ..., testset_per_problem: _Optional[int] = ..., statement_per_problem: _Optional[int] = ..., editorial_per_problem: _Optional[int] = ..., solutions_per_problem: _Optional[int] = ..., code_templates_per_problem: _Optional[int] = ..., contests_per_space: _Optional[int] = ..., active_contests_per_space: _Optional[int] = ..., monthly_contests_per_space: _Optional[int] = ..., problems_per_contest: _Optional[int] = ..., participants_per_contest: _Optional[int] = ..., contest_upsolve_mode: bool = ..., max_contest_duration: _Optional[int] = ..., team_contests: bool = ..., ghost_participants: bool = ..., unofficial_participants: bool = ...) -> None: ...
