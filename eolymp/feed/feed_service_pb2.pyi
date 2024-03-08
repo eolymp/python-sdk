@@ -17,9 +17,11 @@ class ListEntriesInput(_message.Message):
     def __init__(self, size: _Optional[int] = ..., after: _Optional[str] = ...) -> None: ...
 
 class ListEntriesOutput(_message.Message):
-    __slots__ = ["items", "total"]
+    __slots__ = ["items", "next_page_cursor", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_entry_pb2.Entry]
+    next_page_cursor: str
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_entry_pb2.Entry, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_entry_pb2.Entry, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
