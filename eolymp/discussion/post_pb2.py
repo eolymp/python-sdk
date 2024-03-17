@@ -17,7 +17,7 @@ from eolymp.wellknown import link_pb2 as eolymp_dot_wellknown_dot_link__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/discussion/post.proto\x12\x11\x65olymp.discussion\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\x1a\x1b\x65olymp/wellknown/link.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9c\x07\n\x04Post\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x11\n\tsource_id\x18\x07 \x01(\t\x12\r\n\x05\x64raft\x18\x03 \x01(\x08\x12\x0e\n\x06public\x18\x04 \x01(\x08\x12\x36\n\nmoderation\x18\x05 \x01(\x0e\x32\".eolymp.discussion.Post.Moderation\x12\x11\n\x07user_id\x18\n \x01(\tH\x00\x12\x13\n\tmember_id\x18\x0b \x01(\tH\x00\x12.\n\ncreated_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cpublished_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x16 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07type_id\x18\x06 \x01(\t\x12\x0e\n\x06locale\x18\x66 \x01(\t\x12$\n\x07\x63ontent\x18\x65 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x30\n\x07preview\x18n \x01(\x0b\x32\x1f.eolymp.discussion.Post.Preview\x12\x0c\n\x04vote\x18\x0c \x01(\x05\x12\x12\n\nvote_count\x18\x1e \x01(\x05\x12\x13\n\x0breply_count\x18\x1f \x01(\x05\x12\x0e\n\x06labels\x18x \x03(\t\x12&\n\x05links\x18\xc8\x01 \x03(\x0b\x32\x16.eolymp.wellknown.Link\x1a\x42\n\x05Image\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12\r\n\x05\x63lass\x18\x04 \x03(\t\x1ai\n\x07Preview\x12\r\n\x05title\x18\x01 \x01(\t\x12,\n\x05image\x18\x02 \x01(\x0b\x32\x1d.eolymp.discussion.Post.Image\x12!\n\x07\x63ontent\x18\x03 \x01(\x0b\x32\x10.eolymp.ecm.Node\"\\\n\nModeration\x12\x16\n\x12UNKNOWN_MODERATION\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tIN_REVIEW\x10\x02\x12\x0c\n\x08\x41PPROVED\x10\x03\x12\x0c\n\x08REJECTED\x10\x04\"X\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x11\n\rCONTENT_VALUE\x10\x01\x12\x12\n\x0e\x43ONTENT_RENDER\x10\x02\x12\x0b\n\x07PREVIEW\x10\x03\x12\x08\n\x04VOTE\x10\x04\x42\x08\n\x06\x61uthorB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/discussion/post.proto\x12\x11\x65olymp.discussion\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\x1a\x1b\x65olymp/wellknown/link.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb0\x07\n\x04Post\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x11\n\tsource_id\x18\x07 \x01(\t\x12\x12\n\nsource_url\x18\x08 \x01(\t\x12\r\n\x05\x64raft\x18\x03 \x01(\x08\x12\x0e\n\x06public\x18\x04 \x01(\x08\x12\x36\n\nmoderation\x18\x05 \x01(\x0e\x32\".eolymp.discussion.Post.Moderation\x12\x11\n\x07user_id\x18\n \x01(\tH\x00\x12\x13\n\tmember_id\x18\x0b \x01(\tH\x00\x12.\n\ncreated_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cpublished_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x16 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07type_id\x18\x06 \x01(\t\x12\x0e\n\x06locale\x18\x66 \x01(\t\x12$\n\x07\x63ontent\x18\x65 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x30\n\x07preview\x18n \x01(\x0b\x32\x1f.eolymp.discussion.Post.Preview\x12\x0c\n\x04vote\x18\x0c \x01(\x05\x12\x12\n\nvote_count\x18\x1e \x01(\x05\x12\x13\n\x0breply_count\x18\x1f \x01(\x05\x12\x0e\n\x06labels\x18x \x03(\t\x12&\n\x05links\x18\xc8\x01 \x03(\x0b\x32\x16.eolymp.wellknown.Link\x1a\x42\n\x05Image\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12\r\n\x05\x63lass\x18\x04 \x03(\t\x1ai\n\x07Preview\x12\r\n\x05title\x18\x01 \x01(\t\x12,\n\x05image\x18\x02 \x01(\x0b\x32\x1d.eolymp.discussion.Post.Image\x12!\n\x07\x63ontent\x18\x03 \x01(\x0b\x32\x10.eolymp.ecm.Node\"\\\n\nModeration\x12\x16\n\x12UNKNOWN_MODERATION\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tIN_REVIEW\x10\x02\x12\x0c\n\x08\x41PPROVED\x10\x03\x12\x0c\n\x08REJECTED\x10\x04\"X\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x11\n\rCONTENT_VALUE\x10\x01\x12\x12\n\x0e\x43ONTENT_RENDER\x10\x02\x12\x0b\n\x07PREVIEW\x10\x03\x12\x08\n\x04VOTE\x10\x04\x42\x08\n\x06\x61uthorB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.discussion.post_pb2', globals())
@@ -26,13 +26,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/discussion;discussion'
   _POST._serialized_start=163
-  _POST._serialized_end=1087
-  _POST_IMAGE._serialized_start=720
-  _POST_IMAGE._serialized_end=786
-  _POST_PREVIEW._serialized_start=788
-  _POST_PREVIEW._serialized_end=893
-  _POST_MODERATION._serialized_start=895
-  _POST_MODERATION._serialized_end=987
-  _POST_EXTRA._serialized_start=989
-  _POST_EXTRA._serialized_end=1077
+  _POST._serialized_end=1107
+  _POST_IMAGE._serialized_start=740
+  _POST_IMAGE._serialized_end=806
+  _POST_PREVIEW._serialized_start=808
+  _POST_PREVIEW._serialized_end=913
+  _POST_MODERATION._serialized_start=915
+  _POST_MODERATION._serialized_end=1007
+  _POST_EXTRA._serialized_start=1009
+  _POST_EXTRA._serialized_end=1097
 # @@protoc_insertion_point(module_scope)
