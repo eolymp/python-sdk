@@ -116,14 +116,14 @@ class UpdatePostInput(_message.Message):
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdatePostInput.Patch
+    CONTENT: UpdatePostInput.Patch
+    DRAFT: UpdatePostInput.Patch
     LABELS: UpdatePostInput.Patch
     LOCALE: UpdatePostInput.Patch
-    MESSAGE: UpdatePostInput.Patch
     MODERATION: UpdatePostInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     POST_FIELD_NUMBER: _ClassVar[int]
     POST_ID_FIELD_NUMBER: _ClassVar[int]
-    STATUS: UpdatePostInput.Patch
     TYPE_ID: UpdatePostInput.Patch
     patch: _containers.RepeatedScalarFieldContainer[UpdatePostInput.Patch]
     post: _post_pb2.Post
