@@ -23,9 +23,11 @@ class PostChangedEvent(_message.Message):
     def __init__(self, before: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., after: _Optional[_Union[_post_pb2.Post, _Mapping]] = ...) -> None: ...
 
 class PostTranslationChangedEvent(_message.Message):
-    __slots__ = ["after", "before"]
+    __slots__ = ["after", "before", "post"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
+    POST_FIELD_NUMBER: _ClassVar[int]
     after: _post_pb2.Post.Translation
     before: _post_pb2.Post.Translation
-    def __init__(self, before: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., after: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ...) -> None: ...
+    post: _post_pb2.Post
+    def __init__(self, post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., before: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., after: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ...) -> None: ...
