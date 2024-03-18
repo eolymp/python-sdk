@@ -6,6 +6,7 @@ from eolymp.atlas import scoring_score_pb2 as _scoring_score_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
+from eolymp.playground import run_pb2 as _run_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -14,21 +15,51 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CreateSubmissionInput(_message.Message):
-    __slots__ = ["lang", "problem_id", "source"]
-    LANG_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+class CreateRunInput(_message.Message):
+    __slots__ = ["input_data", "input_ref", "runtime", "source"]
+    INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
+    INPUT_REF_FIELD_NUMBER: _ClassVar[int]
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
-    lang: str
-    problem_id: str
+    input_data: bytes
+    input_ref: str
+    runtime: str
     source: str
-    def __init__(self, problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ...) -> None: ...
+    def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_data: _Optional[bytes] = ..., input_ref: _Optional[str] = ...) -> None: ...
+
+class CreateRunOutput(_message.Message):
+    __slots__ = ["run_id"]
+    RUN_ID_FIELD_NUMBER: _ClassVar[int]
+    run_id: str
+    def __init__(self, run_id: _Optional[str] = ...) -> None: ...
+
+class CreateSubmissionInput(_message.Message):
+    __slots__ = ["problem_id", "runtime", "source"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    runtime: str
+    source: str
+    def __init__(self, problem_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ["submission_id"]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     submission_id: str
     def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
+
+class DescribeRunInput(_message.Message):
+    __slots__ = ["run_id"]
+    RUN_ID_FIELD_NUMBER: _ClassVar[int]
+    run_id: str
+    def __init__(self, run_id: _Optional[str] = ...) -> None: ...
+
+class DescribeRunOutput(_message.Message):
+    __slots__ = ["run"]
+    RUN_FIELD_NUMBER: _ClassVar[int]
+    run: _run_pb2.Run
+    def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ...) -> None: ...
 
 class DescribeScoreInput(_message.Message):
     __slots__ = ["member_id"]
@@ -126,6 +157,18 @@ class LookupCodeTemplateOutput(_message.Message):
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     template: _code_template_pb2.Template
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
+
+class WatchRunInput(_message.Message):
+    __slots__ = ["run_id"]
+    RUN_ID_FIELD_NUMBER: _ClassVar[int]
+    run_id: str
+    def __init__(self, run_id: _Optional[str] = ...) -> None: ...
+
+class WatchRunOutput(_message.Message):
+    __slots__ = ["run"]
+    RUN_FIELD_NUMBER: _ClassVar[int]
+    run: _run_pb2.Run
+    def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ...) -> None: ...
 
 class WatchSubmissionInput(_message.Message):
     __slots__ = ["problem_id", "submission_id"]

@@ -94,3 +94,42 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def CreateRun(self, request, **kwargs):
+        path = "/runs"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateRunOutput"),
+            **kwargs,
+        )
+
+    def DescribeRun(self, request, **kwargs):
+        path = "/runs/"+urllib.parse.quote(request.run_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.run_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeRunOutput"),
+            **kwargs,
+        )
+
+    def WatchRun(self, request, **kwargs):
+        path = "/runs/"+urllib.parse.quote(request.run_id)+"/watch"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.run_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.WatchRunOutput"),
+            **kwargs,
+        )
+
