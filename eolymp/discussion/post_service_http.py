@@ -92,3 +92,76 @@ class PostServiceClient:
             **kwargs,
         )
 
+    def DescribePostTranslation(self, request, **kwargs):
+        path = "/posts/"+urllib.parse.quote(request.post_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.post_id = ""
+        request.translation_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.discussion.DescribePostTranslationOutput"),
+            **kwargs,
+        )
+
+    def ListPostTranslations(self, request, **kwargs):
+        path = "/posts/"+urllib.parse.quote(request.post_id)+"/translations"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.post_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.discussion.ListPostTranslationsOutput"),
+            **kwargs,
+        )
+
+    def CreatePostTranslation(self, request, **kwargs):
+        path = "/posts/"+urllib.parse.quote(request.post_id)+"/translations"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.post_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.discussion.CreatePostTranslationOutput"),
+            **kwargs,
+        )
+
+    def UpdatePostTranslation(self, request, **kwargs):
+        path = "/posts/"+urllib.parse.quote(request.post_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.post_id = ""
+        request.translation_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.discussion.UpdatePostTranslationOutput"),
+            **kwargs,
+        )
+
+    def DeletePostTranslation(self, request, **kwargs):
+        path = "/posts/"+urllib.parse.quote(request.post_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.post_id = ""
+        request.translation_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.discussion.DeletePostTranslationOutput"),
+            **kwargs,
+        )
+

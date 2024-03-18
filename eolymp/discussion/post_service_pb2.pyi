@@ -24,6 +24,20 @@ class CreatePostOutput(_message.Message):
     post_id: str
     def __init__(self, post_id: _Optional[str] = ...) -> None: ...
 
+class CreatePostTranslationInput(_message.Message):
+    __slots__ = ["post_id", "translation"]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
+    post_id: str
+    translation: _post_pb2.Post.Translation
+    def __init__(self, post_id: _Optional[str] = ..., translation: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ...) -> None: ...
+
+class CreatePostTranslationOutput(_message.Message):
+    __slots__ = ["translation_id"]
+    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
+    translation_id: str
+    def __init__(self, translation_id: _Optional[str] = ...) -> None: ...
+
 class DeletePostInput(_message.Message):
     __slots__ = ["post_id"]
     POST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -31,6 +45,18 @@ class DeletePostInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ...) -> None: ...
 
 class DeletePostOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DeletePostTranslationInput(_message.Message):
+    __slots__ = ["post_id", "translation_id"]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
+    post_id: str
+    translation_id: str
+    def __init__(self, post_id: _Optional[str] = ..., translation_id: _Optional[str] = ...) -> None: ...
+
+class DeletePostTranslationOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
@@ -47,6 +73,53 @@ class DescribePostOutput(_message.Message):
     POST_FIELD_NUMBER: _ClassVar[int]
     post: _post_pb2.Post
     def __init__(self, post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ...) -> None: ...
+
+class DescribePostTranslationInput(_message.Message):
+    __slots__ = ["extra", "post_id", "translation_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_post_pb2.Post.Extra]
+    post_id: str
+    translation_id: str
+    def __init__(self, post_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
+
+class DescribePostTranslationOutput(_message.Message):
+    __slots__ = ["translation"]
+    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
+    translation: _post_pb2.Post.Translation
+    def __init__(self, translation: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ...) -> None: ...
+
+class ListPostTranslationsInput(_message.Message):
+    __slots__ = ["extra", "filters", "offset", "post_id", "size"]
+    class Filter(_message.Message):
+        __slots__ = ["id", "locale", "query"]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        LOCALE_FIELD_NUMBER: _ClassVar[int]
+        QUERY_FIELD_NUMBER: _ClassVar[int]
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        query: str
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_post_pb2.Post.Extra]
+    filters: ListPostTranslationsInput.Filter
+    offset: int
+    post_id: str
+    size: int
+    def __init__(self, post_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPostTranslationsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
+
+class ListPostTranslationsOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_post_pb2.Post.Translation]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_pb2.Post.Translation, _Mapping]]] = ...) -> None: ...
 
 class ListPostsInput(_message.Message):
     __slots__ = ["after", "display_locale", "extra", "filters", "offset", "order", "size", "sort"]
@@ -135,6 +208,28 @@ class UpdatePostInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdatePostInput.Patch, str]]] = ..., post_id: _Optional[str] = ..., post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ...) -> None: ...
 
 class UpdatePostOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdatePostTranslationInput(_message.Message):
+    __slots__ = ["patch", "post_id", "translation", "translation_id"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdatePostTranslationInput.Patch
+    CONTENT: UpdatePostTranslationInput.Patch
+    LABELS: UpdatePostTranslationInput.Patch
+    LOCALE: UpdatePostTranslationInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
+    patch: _containers.RepeatedScalarFieldContainer[UpdatePostTranslationInput.Patch]
+    post_id: str
+    translation: _post_pb2.Post.Translation
+    translation_id: str
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdatePostTranslationInput.Patch, str]]] = ..., post_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., translation: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ...) -> None: ...
+
+class UpdatePostTranslationOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
