@@ -4,7 +4,6 @@ from eolymp.judge import reply_pb2 as _reply_pb2
 from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import submission_pb2 as _submission_pb2
 from eolymp.judge import ticket_pb2 as _ticket_pb2
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -62,32 +61,3 @@ class SubmissionCompletedEvent(_message.Message):
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
-
-class TicketChangeRecord(_message.Message):
-    __slots__ = ["op", "ticket"]
-    class Operation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    CREATE: TicketChangeRecord.Operation
-    DELETE: TicketChangeRecord.Operation
-    OP_FIELD_NUMBER: _ClassVar[int]
-    REPLY: TicketChangeRecord.Operation
-    TICKET_FIELD_NUMBER: _ClassVar[int]
-    UNKNOWN_OPERATION: TicketChangeRecord.Operation
-    UPDATE: TicketChangeRecord.Operation
-    op: TicketChangeRecord.Operation
-    ticket: _ticket_pb2.Ticket
-    def __init__(self, op: _Optional[_Union[TicketChangeRecord.Operation, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
-
-class TicketCreatedEvent(_message.Message):
-    __slots__ = ["ticket"]
-    TICKET_FIELD_NUMBER: _ClassVar[int]
-    ticket: _ticket_pb2.Ticket
-    def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
-
-class TicketUpdatedEvent(_message.Message):
-    __slots__ = ["reply", "ticket"]
-    REPLY_FIELD_NUMBER: _ClassVar[int]
-    TICKET_FIELD_NUMBER: _ClassVar[int]
-    reply: _reply_pb2.Reply
-    ticket: _ticket_pb2.Ticket
-    def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., reply: _Optional[_Union[_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
