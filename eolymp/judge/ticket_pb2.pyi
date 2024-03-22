@@ -8,14 +8,16 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Ticket(_message.Message):
-    __slots__ = ["contest_id", "created_at", "ern", "id", "is_open", "is_read", "member_id", "message", "participant_id", "raw_message", "subject"]
+    __slots__ = ["contest_id", "created_at", "id", "is_read", "member_id", "message", "participant_id", "raw_message", "reply_count", "status", "subject", "updated_at"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    AWAITING: Ticket.Status
+    CLOSED: Ticket.Status
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
-    ERN_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
-    IS_OPEN_FIELD_NUMBER: _ClassVar[int]
     IS_READ_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
@@ -24,16 +26,22 @@ class Ticket(_message.Message):
     NO_EXTRA: Ticket.Extra
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     RAW_MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    REPLY_COUNT_FIELD_NUMBER: _ClassVar[int]
+    RESOLVED: Ticket.Status
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
+    UNKNOWN_STATUS: Ticket.Status
+    UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     created_at: _timestamp_pb2.Timestamp
-    ern: str
     id: str
-    is_open: bool
     is_read: bool
     member_id: str
     message: _content_pb2.Content
     participant_id: str
     raw_message: str
+    reply_count: int
+    status: Ticket.Status
     subject: str
-    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., member_id: _Optional[str] = ..., subject: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., raw_message: _Optional[str] = ..., is_open: bool = ..., is_read: bool = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    updated_at: _timestamp_pb2.Timestamp
+    def __init__(self, id: _Optional[str] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., subject: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., raw_message: _Optional[str] = ..., is_read: bool = ..., reply_count: _Optional[int] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
