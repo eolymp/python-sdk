@@ -38,7 +38,7 @@ class Contest(_message.Message):
         allowed_runtimes: _containers.RepeatedScalarFieldContainer[str]
         def __init__(self, allowed_runtimes: _Optional[_Iterable[str]] = ...) -> None: ...
     class Scoreboard(_message.Message):
-        __slots__ = ["attempt_penalty", "freezing_time", "tie_breaker", "unfreeze_delay", "use_name_in_scoreboard", "visibility"]
+        __slots__ = ["attempt_penalty", "freezing_time", "tie_breaker", "unfreeze_delay", "visibility"]
         class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ATTEMPT_PENALTY_FIELD_NUMBER: _ClassVar[int]
@@ -49,15 +49,13 @@ class Contest(_message.Message):
         TIE_BREAKER_FIELD_NUMBER: _ClassVar[int]
         UNFREEZE_DELAY_FIELD_NUMBER: _ClassVar[int]
         UNKNOWN_VISIBILITY: Contest.Scoreboard.Visibility
-        USE_NAME_IN_SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
         VISIBILITY_FIELD_NUMBER: _ClassVar[int]
         attempt_penalty: int
         freezing_time: int
         tie_breaker: str
         unfreeze_delay: int
-        use_name_in_scoreboard: bool
         visibility: Contest.Scoreboard.Visibility
-        def __init__(self, visibility: _Optional[_Union[Contest.Scoreboard.Visibility, str]] = ..., freezing_time: _Optional[int] = ..., unfreeze_delay: _Optional[int] = ..., attempt_penalty: _Optional[int] = ..., tie_breaker: _Optional[str] = ..., use_name_in_scoreboard: bool = ...) -> None: ...
+        def __init__(self, visibility: _Optional[_Union[Contest.Scoreboard.Visibility, str]] = ..., freezing_time: _Optional[int] = ..., unfreeze_delay: _Optional[int] = ..., attempt_penalty: _Optional[int] = ..., tie_breaker: _Optional[str] = ...) -> None: ...
     class Taxonomy(_message.Message):
         __slots__ = ["city", "country", "difficulty", "region", "scale", "series", "year"]
         class Scale(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
