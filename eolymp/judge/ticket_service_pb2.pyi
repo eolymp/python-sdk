@@ -180,14 +180,14 @@ class ReadTicketOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ReplyTicketInput(_message.Message):
-    __slots__ = ["close", "message", "ticket_id"]
-    CLOSE_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["change_status_to", "message", "ticket_id"]
+    CHANGE_STATUS_TO_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
-    close: bool
+    change_status_to: _ticket_pb2.Ticket.Status
     message: _content_pb2.Content
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., close: bool = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., change_status_to: _Optional[_Union[_ticket_pb2.Ticket.Status, str]] = ...) -> None: ...
 
 class ReplyTicketOutput(_message.Message):
     __slots__ = ["reply_id"]
