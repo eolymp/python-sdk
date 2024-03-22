@@ -2,20 +2,10 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
-from eolymp.judge import activity_pb2 as _activity_pb2
-from eolymp.judge import announcement_pb2 as _announcement_pb2
-from eolymp.judge import contest_pb2 as _contest_pb2
-from eolymp.judge import participant_pb2 as _participant_pb2
-from eolymp.judge import problem_pb2 as _problem_pb2
 from eolymp.judge import reply_pb2 as _reply_pb2
-from eolymp.judge import result_pb2 as _result_pb2
-from eolymp.judge import score_pb2 as _score_pb2
-from eolymp.judge import submission_pb2 as _submission_pb2
-from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.judge import ticket_pb2 as _ticket_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -119,24 +109,22 @@ class ListTicketsInput(_message.Message):
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["contest_id", "id", "is_open", "is_read_by_owner", "is_read_by_participant", "member_id", "own", "participant_id"]
+        __slots__ = ["contest_id", "id", "is_open", "is_read", "member_id", "own", "participant_id"]
         CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         IS_OPEN_FIELD_NUMBER: _ClassVar[int]
-        IS_READ_BY_OWNER_FIELD_NUMBER: _ClassVar[int]
-        IS_READ_BY_PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+        IS_READ_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         OWN_FIELD_NUMBER: _ClassVar[int]
         PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
         contest_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         is_open: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        is_read_by_owner: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        is_read_by_participant: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        is_read: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         own: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         participant_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., contest_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_read_by_participant: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_read_by_owner: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_open: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., own: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., contest_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_read: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_open: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., own: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     CREATED_AT: ListTicketsInput.Sortable
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
@@ -241,10 +229,12 @@ class WatchRepliesOutput(_message.Message):
     def __init__(self, event: _Optional[_Union[WatchRepliesOutput.Event, str]] = ..., reply: _Optional[_Union[_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
 
 class WatchTicketsInput(_message.Message):
-    __slots__ = ["extra"]
+    __slots__ = ["contest_id", "extra"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     extra: _containers.RepeatedScalarFieldContainer[_ticket_pb2.Ticket.Extra]
-    def __init__(self, extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
 class WatchTicketsOutput(_message.Message):
     __slots__ = ["event", "ticket", "unread_count"]

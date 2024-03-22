@@ -15,7 +15,7 @@ from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/ticket.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8e\x03\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x03 \x01(\t\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\n \x01(\t\x12$\n\x07message\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x13\n\x0braw_message\x18\x0b \x01(\t\x12\x0f\n\x07is_open\x18\x14 \x01(\x08\x12\x1e\n\x16is_read_by_participant\x18\x15 \x01(\x08\x12\x18\n\x10is_read_by_owner\x18\x16 \x01(\x08\x12.\n\ncreated_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x07is_read\x18\x87N \x01(\x08\x12\x14\n\x0bneeds_reply\x18\x88N \x01(\x08\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x12\n\x0eMESSAGE_RENDER\x10\x01\x12\x11\n\rMESSAGE_VALUE\x10\x02\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/ticket.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xbd\x02\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x03 \x01(\t\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12\x0f\n\x07subject\x18\n \x01(\t\x12$\n\x07message\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x13\n\x0braw_message\x18\x0b \x01(\t\x12\x0f\n\x07is_open\x18\x14 \x01(\x08\x12\x0f\n\x07is_read\x18\x15 \x01(\x08\x12.\n\ncreated_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x12\n\x0eMESSAGE_RENDER\x10\x01\x12\x11\n\rMESSAGE_VALUE\x10\x02\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.ticket_pb2', globals())
@@ -24,7 +24,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
   _TICKET._serialized_start=103
-  _TICKET._serialized_end=501
-  _TICKET_EXTRA._serialized_start=441
-  _TICKET_EXTRA._serialized_end=501
+  _TICKET._serialized_end=420
+  _TICKET_EXTRA._serialized_start=360
+  _TICKET_EXTRA._serialized_end=420
 # @@protoc_insertion_point(module_scope)
