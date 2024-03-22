@@ -221,8 +221,8 @@ class WatchRepliesOutput(_message.Message):
     CREATED: WatchRepliesOutput.Event
     DELETED: WatchRepliesOutput.Event
     EVENT_FIELD_NUMBER: _ClassVar[int]
-    NO_TYPE: WatchRepliesOutput.Event
     REPLY_FIELD_NUMBER: _ClassVar[int]
+    UNKNOWN_EVENT: WatchRepliesOutput.Event
     UPDATED: WatchRepliesOutput.Event
     event: WatchRepliesOutput.Event
     reply: _reply_pb2.Reply
@@ -243,9 +243,9 @@ class WatchTicketsOutput(_message.Message):
     CREATED: WatchTicketsOutput.Event
     DELETED: WatchTicketsOutput.Event
     EVENT_FIELD_NUMBER: _ClassVar[int]
-    NO_OPERATION: WatchTicketsOutput.Event
     REPLIED: WatchTicketsOutput.Event
     TICKET_FIELD_NUMBER: _ClassVar[int]
+    UNKNOWN_EVENT: WatchTicketsOutput.Event
     UNREAD_COUNT_FIELD_NUMBER: _ClassVar[int]
     UPDATED: WatchTicketsOutput.Event
     event: WatchTicketsOutput.Event

@@ -69,10 +69,10 @@ class TicketChangeRecord(_message.Message):
         __slots__ = []
     CREATE: TicketChangeRecord.Operation
     DELETE: TicketChangeRecord.Operation
-    NO_OPERATION: TicketChangeRecord.Operation
     OP_FIELD_NUMBER: _ClassVar[int]
     REPLY: TicketChangeRecord.Operation
     TICKET_FIELD_NUMBER: _ClassVar[int]
+    UNKNOWN_OPERATION: TicketChangeRecord.Operation
     UPDATE: TicketChangeRecord.Operation
     op: TicketChangeRecord.Operation
     ticket: _ticket_pb2.Ticket
