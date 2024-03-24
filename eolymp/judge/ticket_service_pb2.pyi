@@ -233,6 +233,20 @@ class WatchRepliesOutput(_message.Message):
     reply: _reply_pb2.Reply
     def __init__(self, event: _Optional[_Union[WatchRepliesOutput.Event, str]] = ..., reply: _Optional[_Union[_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
 
+class WatchTicketInput(_message.Message):
+    __slots__ = ["extra", "ticket_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_ticket_pb2.Ticket.Extra]
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
+
+class WatchTicketOutput(_message.Message):
+    __slots__ = ["ticket"]
+    TICKET_FIELD_NUMBER: _ClassVar[int]
+    ticket: _ticket_pb2.Ticket
+    def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
+
 class WatchTicketsInput(_message.Message):
     __slots__ = ["contest_id", "extra"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
