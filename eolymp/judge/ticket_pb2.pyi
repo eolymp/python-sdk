@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Ticket(_message.Message):
-    __slots__ = ["contest_id", "created_at", "id", "is_read", "member_id", "message", "participant_id", "raw_message", "reply_count", "status", "subject", "updated_at"]
+    __slots__ = ["contest_id", "created_at", "id", "is_read", "member_id", "message", "participant_id", "raw_message", "read_at", "reply_count", "status", "subject", "updated_at"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -26,6 +26,7 @@ class Ticket(_message.Message):
     NO_EXTRA: Ticket.Extra
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     RAW_MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    READ_AT_FIELD_NUMBER: _ClassVar[int]
     REPLY_COUNT_FIELD_NUMBER: _ClassVar[int]
     RESOLVED: Ticket.Status
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -40,8 +41,9 @@ class Ticket(_message.Message):
     message: _content_pb2.Content
     participant_id: str
     raw_message: str
+    read_at: _timestamp_pb2.Timestamp
     reply_count: int
     status: Ticket.Status
     subject: str
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., subject: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., raw_message: _Optional[str] = ..., is_read: bool = ..., reply_count: _Optional[int] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., subject: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., raw_message: _Optional[str] = ..., is_read: bool = ..., reply_count: _Optional[int] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., read_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
