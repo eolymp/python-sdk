@@ -1,9 +1,7 @@
 from eolymp.judge import contest_pb2 as _contest_pb2
 from eolymp.judge import participant_pb2 as _participant_pb2
-from eolymp.judge import reply_pb2 as _reply_pb2
 from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import submission_pb2 as _submission_pb2
-from eolymp.judge import ticket_pb2 as _ticket_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union

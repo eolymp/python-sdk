@@ -6,6 +6,7 @@ from eolymp.judge import reply_pb2 as _reply_pb2
 from eolymp.judge import ticket_pb2 as _ticket_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -168,12 +169,14 @@ class OpenTicketOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ReadTicketInput(_message.Message):
-    __slots__ = ["contest_id", "ticket_id"]
+    __slots__ = ["contest_id", "ticket_id", "timestamp"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     ticket_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., ticket_id: _Optional[str] = ...) -> None: ...
+    timestamp: _timestamp_pb2.Timestamp
+    def __init__(self, contest_id: _Optional[str] = ..., ticket_id: _Optional[str] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ReadTicketOutput(_message.Message):
     __slots__ = []
@@ -247,29 +250,42 @@ class WatchTicketOutput(_message.Message):
     ticket: _ticket_pb2.Ticket
     def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
+class WatchTicketSummaryInput(_message.Message):
+    __slots__ = ["contest_id", "member_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    member_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+
+class WatchTicketSummaryOutput(_message.Message):
+    __slots__ = ["unread_count", "unresolved_count"]
+    UNREAD_COUNT_FIELD_NUMBER: _ClassVar[int]
+    UNRESOLVED_COUNT_FIELD_NUMBER: _ClassVar[int]
+    unread_count: int
+    unresolved_count: int
+    def __init__(self, unread_count: _Optional[int] = ..., unresolved_count: _Optional[int] = ...) -> None: ...
+
 class WatchTicketsInput(_message.Message):
-    __slots__ = ["contest_id", "extra"]
+    __slots__ = ["contest_id", "extra", "member_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     extra: _containers.RepeatedScalarFieldContainer[_ticket_pb2.Ticket.Extra]
-    def __init__(self, contest_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
+    member_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
 class WatchTicketsOutput(_message.Message):
-    __slots__ = ["event", "ticket", "unread_count", "unresolved_count"]
+    __slots__ = ["event", "ticket"]
     class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     CREATED: WatchTicketsOutput.Event
     DELETED: WatchTicketsOutput.Event
     EVENT_FIELD_NUMBER: _ClassVar[int]
-    REPLIED: WatchTicketsOutput.Event
     TICKET_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_EVENT: WatchTicketsOutput.Event
-    UNREAD_COUNT_FIELD_NUMBER: _ClassVar[int]
-    UNRESOLVED_COUNT_FIELD_NUMBER: _ClassVar[int]
     UPDATED: WatchTicketsOutput.Event
     event: WatchTicketsOutput.Event
     ticket: _ticket_pb2.Ticket
-    unread_count: int
-    unresolved_count: int
-    def __init__(self, event: _Optional[_Union[WatchTicketsOutput.Event, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., unread_count: _Optional[int] = ..., unresolved_count: _Optional[int] = ...) -> None: ...
+    def __init__(self, event: _Optional[_Union[WatchTicketsOutput.Event, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
