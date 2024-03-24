@@ -256,7 +256,7 @@ class WatchTicketsInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
 class WatchTicketsOutput(_message.Message):
-    __slots__ = ["event", "ticket", "unread_count"]
+    __slots__ = ["event", "ticket", "unread_count", "unresolved_count"]
     class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     CREATED: WatchTicketsOutput.Event
@@ -266,8 +266,10 @@ class WatchTicketsOutput(_message.Message):
     TICKET_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_EVENT: WatchTicketsOutput.Event
     UNREAD_COUNT_FIELD_NUMBER: _ClassVar[int]
+    UNRESOLVED_COUNT_FIELD_NUMBER: _ClassVar[int]
     UPDATED: WatchTicketsOutput.Event
     event: WatchTicketsOutput.Event
     ticket: _ticket_pb2.Ticket
     unread_count: int
-    def __init__(self, event: _Optional[_Union[WatchTicketsOutput.Event, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., unread_count: _Optional[int] = ...) -> None: ...
+    unresolved_count: int
+    def __init__(self, event: _Optional[_Union[WatchTicketsOutput.Event, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., unread_count: _Optional[int] = ..., unresolved_count: _Optional[int] = ...) -> None: ...
