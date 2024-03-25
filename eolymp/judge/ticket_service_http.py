@@ -25,7 +25,7 @@ class TicketServiceClient:
             **kwargs,
         )
 
-    def CloseTicket(self, request, **kwargs):
+    def UpdateTicket(self, request, **kwargs):
         path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/close"
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -35,21 +35,7 @@ class TicketServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.CloseTicketOutput"),
-            **kwargs,
-        )
-
-    def OpenTicket(self, request, **kwargs):
-        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/open"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.ticket_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.OpenTicketOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateTicketOutput"),
             **kwargs,
         )
 

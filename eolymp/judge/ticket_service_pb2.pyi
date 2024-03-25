@@ -15,18 +15,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CloseTicketInput(_message.Message):
-    __slots__ = ["contest_id", "ticket_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    ticket_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., ticket_id: _Optional[str] = ...) -> None: ...
-
-class CloseTicketOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class CreateTicketInput(_message.Message):
     __slots__ = ["contest_id", "message", "raw_message", "subject"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -209,6 +197,25 @@ class UpdateReplyInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., reply_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class UpdateReplyOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdateTicketInput(_message.Message):
+    __slots__ = ["patch", "ticket", "ticket_id"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateTicketInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    STATUS: UpdateTicketInput.Patch
+    SUBJECT: UpdateTicketInput.Patch
+    TICKET_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    patch: _containers.RepeatedScalarFieldContainer[UpdateTicketInput.Patch]
+    ticket: _ticket_pb2.Ticket
+    ticket_id: str
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateTicketInput.Patch, str]]] = ..., ticket_id: _Optional[str] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
+
+class UpdateTicketOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
