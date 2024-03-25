@@ -144,18 +144,6 @@ class ListTicketsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_ticket_pb2.Ticket, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
-class OpenTicketInput(_message.Message):
-    __slots__ = ["contest_id", "ticket_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    ticket_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., ticket_id: _Optional[str] = ...) -> None: ...
-
-class OpenTicketOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class ReadTicketInput(_message.Message):
     __slots__ = ["contest_id", "ticket_id", "timestamp"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
