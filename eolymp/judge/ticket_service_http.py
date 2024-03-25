@@ -26,7 +26,7 @@ class TicketServiceClient:
         )
 
     def UpdateTicket(self, request, **kwargs):
-        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/close"
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.ticket_id = ""
