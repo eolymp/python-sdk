@@ -264,14 +264,16 @@ class WatchTicketSummaryOutput(_message.Message):
     def __init__(self, unread_count: _Optional[int] = ..., unresolved_count: _Optional[int] = ...) -> None: ...
 
 class WatchTicketsInput(_message.Message):
-    __slots__ = ["contest_id", "extra", "member_id"]
+    __slots__ = ["contest_id", "extra", "member_id", "status"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     extra: _containers.RepeatedScalarFieldContainer[_ticket_pb2.Ticket.Extra]
     member_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
+    status: str
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
 class WatchTicketsOutput(_message.Message):
     __slots__ = ["event", "ticket"]
