@@ -158,37 +158,6 @@ class ListParentsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_fragment_pb2.Fragment, _Mapping]]] = ...) -> None: ...
 
-class ListPathsInput(_message.Message):
-    __slots__ = ["extra", "filters", "locale", "offset", "size"]
-    class Filter(_message.Message):
-        __slots__ = ["label", "path", "query"]
-        LABEL_FIELD_NUMBER: _ClassVar[int]
-        PATH_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
-        label: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        path: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        query: str
-        def __init__(self, query: _Optional[str] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    LOCALE_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    extra: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Extra]
-    filters: ListPathsInput.Filter
-    locale: str
-    offset: int
-    size: int
-    def __init__(self, locale: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPathsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
-
-class ListPathsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_fragment_pb2.Fragment]
-    total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_fragment_pb2.Fragment, _Mapping]]] = ...) -> None: ...
-
 class ListVariantsInput(_message.Message):
     __slots__ = ["extra", "filters", "fragment_id", "offset", "size"]
     class Filter(_message.Message):

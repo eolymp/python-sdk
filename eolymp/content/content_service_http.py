@@ -162,17 +162,6 @@ class ContentServiceClient:
             **kwargs,
         )
 
-    def ListPaths(self, request, **kwargs):
-        path = "/content/paths"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.ListPathsOutput"),
-            **kwargs,
-        )
-
     def ListParents(self, request, **kwargs):
         path = "/content/parents"
 
