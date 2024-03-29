@@ -60,14 +60,12 @@ class DeleteVariantOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeFragmentInput(_message.Message):
-    __slots__ = ["extra", "fragment_id", "render"]
+    __slots__ = ["extra", "fragment_id"]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Extra]
     fragment_id: str
-    render: bool
-    def __init__(self, fragment_id: _Optional[str] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    def __init__(self, fragment_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
 
 class DescribeFragmentOutput(_message.Message):
     __slots__ = ["fragment"]
@@ -76,16 +74,14 @@ class DescribeFragmentOutput(_message.Message):
     def __init__(self, fragment: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
 
 class DescribePathInput(_message.Message):
-    __slots__ = ["extra", "locale", "path", "render"]
+    __slots__ = ["extra", "locale", "path"]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Extra]
     locale: str
     path: str
-    render: bool
-    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
 
 class DescribePathOutput(_message.Message):
     __slots__ = ["fragment"]
@@ -94,16 +90,14 @@ class DescribePathOutput(_message.Message):
     def __init__(self, fragment: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
 
 class DescribeVariantInput(_message.Message):
-    __slots__ = ["extra", "fragment_id", "render", "variant_id"]
+    __slots__ = ["extra", "fragment_id", "variant_id"]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_variant_pb2.Variant.Extra]
     fragment_id: str
-    render: bool
     variant_id: str
-    def __init__(self, fragment_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_variant_pb2.Variant.Extra, str]]] = ...) -> None: ...
+    def __init__(self, fragment_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_variant_pb2.Variant.Extra, str]]] = ...) -> None: ...
 
 class DescribeVariantOutput(_message.Message):
     __slots__ = ["variant"]
@@ -112,7 +106,7 @@ class DescribeVariantOutput(_message.Message):
     def __init__(self, variant: _Optional[_Union[_variant_pb2.Variant, _Mapping]] = ...) -> None: ...
 
 class ListFragmentsInput(_message.Message):
-    __slots__ = ["extra", "filters", "offset", "render", "size"]
+    __slots__ = ["extra", "filters", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "label", "locale", "path", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -129,14 +123,12 @@ class ListFragmentsInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Extra]
     filters: ListFragmentsInput.Filter
     offset: int
-    render: bool
     size: int
-    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
 
 class ListFragmentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -147,16 +139,14 @@ class ListFragmentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_fragment_pb2.Fragment, _Mapping]]] = ...) -> None: ...
 
 class ListParentsInput(_message.Message):
-    __slots__ = ["extra", "locale", "path", "render"]
+    __slots__ = ["extra", "locale", "path"]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Extra]
     locale: str
     path: str
-    render: bool
-    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
 
 class ListParentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -167,7 +157,7 @@ class ListParentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_fragment_pb2.Fragment, _Mapping]]] = ...) -> None: ...
 
 class ListPathsInput(_message.Message):
-    __slots__ = ["extra", "filters", "locale", "offset", "render", "size"]
+    __slots__ = ["extra", "filters", "locale", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["label", "path", "query"]
         LABEL_FIELD_NUMBER: _ClassVar[int]
@@ -181,15 +171,13 @@ class ListPathsInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Extra]
     filters: ListPathsInput.Filter
     locale: str
     offset: int
-    render: bool
     size: int
-    def __init__(self, locale: _Optional[str] = ..., render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPathsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPathsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
 
 class ListPathsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -200,7 +188,7 @@ class ListPathsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_fragment_pb2.Fragment, _Mapping]]] = ...) -> None: ...
 
 class ListVariantsInput(_message.Message):
-    __slots__ = ["extra", "filters", "fragment_id", "offset", "render", "size"]
+    __slots__ = ["extra", "filters", "fragment_id", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "locale", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -214,15 +202,13 @@ class ListVariantsInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_variant_pb2.Variant.Extra]
     filters: ListVariantsInput.Filter
     fragment_id: str
     offset: int
-    render: bool
     size: int
-    def __init__(self, render: bool = ..., fragment_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListVariantsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_variant_pb2.Variant.Extra, str]]] = ...) -> None: ...
+    def __init__(self, fragment_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListVariantsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_variant_pb2.Variant.Extra, str]]] = ...) -> None: ...
 
 class ListVariantsOutput(_message.Message):
     __slots__ = ["items", "total"]
