@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Attribute(_message.Message):
-    __slots__ = ["choices", "country", "description", "hidden", "index", "key", "max", "min", "regexp", "required", "type"]
+    __slots__ = ["choices", "country", "description", "hidden", "index", "key", "max", "min", "readonly", "regexp", "required", "type"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Description(_message.Message):
@@ -48,6 +48,7 @@ class Attribute(_message.Message):
     MAX_FIELD_NUMBER: _ClassVar[int]
     MIN_FIELD_NUMBER: _ClassVar[int]
     NUMBER: Attribute.Type
+    READONLY_FIELD_NUMBER: _ClassVar[int]
     REGEXP_FIELD_NUMBER: _ClassVar[int]
     REGION: Attribute.Type
     REQUIRED_FIELD_NUMBER: _ClassVar[int]
@@ -63,7 +64,8 @@ class Attribute(_message.Message):
     key: str
     max: int
     min: int
+    readonly: bool
     regexp: str
     required: bool
     type: Attribute.Type
-    def __init__(self, key: _Optional[str] = ..., description: _Optional[_Iterable[_Union[Attribute.Description, _Mapping]]] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: bool = ..., hidden: bool = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., country: _Optional[str] = ...) -> None: ...
+    def __init__(self, key: _Optional[str] = ..., description: _Optional[_Iterable[_Union[Attribute.Description, _Mapping]]] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: bool = ..., hidden: bool = ..., readonly: bool = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., country: _Optional[str] = ...) -> None: ...
