@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/atlas/testing_test.proto\x12\x0c\x65olymp.atlas\"\x88\x01\n\x04Test\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\x05\x12\x0f\n\x07\x65xample\x18\x04 \x01(\x08\x12\r\n\x05score\x18\x05 \x01(\x02\x12\x17\n\x0finput_object_id\x18\n \x01(\t\x12\x18\n\x10\x61nswer_object_id\x18\x14 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/atlas/testing_test.proto\x12\x0c\x65olymp.atlas\"\xbf\x01\n\x04Test\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\x05\x12\x0f\n\x07\x65xample\x18\x04 \x01(\x08\x12\x0e\n\x06secret\x18\x06 \x01(\x08\x12\r\n\x05score\x18\x05 \x01(\x02\x12\x17\n\x0finput_object_id\x18\n \x01(\t\x12\x11\n\tinput_url\x18\x0b \x01(\t\x12\x18\n\x10\x61nswer_object_id\x18\x14 \x01(\t\x12\x12\n\nanswer_url\x18\x15 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.testing_test_pb2', globals())
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _TEST._serialized_start=50
-  _TEST._serialized_end=186
+  _TEST._serialized_end=241
 # @@protoc_insertion_point(module_scope)
