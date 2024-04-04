@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/atlas/solution.proto\x12\x0c\x65olymp.atlas\"\x9b\x02\n\x08Solution\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\t\x12\x0e\n\x06source\x18\x0b \x01(\t\x12)\n\x04type\x18\x14 \x01(\x0e\x32\x1b.eolymp.atlas.Solution.Type\"\xa8\x01\n\x04Type\x12\t\n\x05UNSET\x10\x00\x12\x0b\n\x07\x43ORRECT\x10\x01\x12\r\n\tINCORRECT\x10\x02\x12\x10\n\x0cWRONG_ANSWER\x10\x03\x12\x0b\n\x07TIMEOUT\x10\x04\x12\x0c\n\x08OVERFLOW\x10\x05\x12\x17\n\x13TIMEOUT_OR_ACCEPTED\x10\x06\x12\x18\n\x14OVERFLOW_OR_ACCEPTED\x10\x07\x12\x0c\n\x08\x44ONT_RUN\x10\x08\x12\x0b\n\x07\x46\x41ILURE\x10\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/atlas/solution.proto\x12\x0c\x65olymp.atlas\"\xbf\x02\n\x08Solution\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0e\n\x06secret\x18\x04 \x01(\x08\x12\x0f\n\x07runtime\x18\n \x01(\t\x12\x0e\n\x06source\x18\x0b \x01(\t\x12\x12\n\nsource_url\x18\x0c \x01(\t\x12)\n\x04type\x18\x14 \x01(\x0e\x32\x1b.eolymp.atlas.Solution.Type\"\xa8\x01\n\x04Type\x12\t\n\x05UNSET\x10\x00\x12\x0b\n\x07\x43ORRECT\x10\x01\x12\r\n\tINCORRECT\x10\x02\x12\x10\n\x0cWRONG_ANSWER\x10\x03\x12\x0b\n\x07TIMEOUT\x10\x04\x12\x0c\n\x08OVERFLOW\x10\x05\x12\x17\n\x13TIMEOUT_OR_ACCEPTED\x10\x06\x12\x18\n\x14OVERFLOW_OR_ACCEPTED\x10\x07\x12\x0c\n\x08\x44ONT_RUN\x10\x08\x12\x0b\n\x07\x46\x41ILURE\x10\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.solution_pb2', globals())
@@ -22,7 +22,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _SOLUTION._serialized_start=46
-  _SOLUTION._serialized_end=329
-  _SOLUTION_TYPE._serialized_start=161
-  _SOLUTION_TYPE._serialized_end=329
+  _SOLUTION._serialized_end=365
+  _SOLUTION_TYPE._serialized_start=197
+  _SOLUTION_TYPE._serialized_end=365
 # @@protoc_insertion_point(module_scope)
