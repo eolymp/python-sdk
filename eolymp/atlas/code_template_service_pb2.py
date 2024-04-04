@@ -17,7 +17,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.atlas import code_template_pb2 as eolymp_dot_atlas_dot_code__template__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/atlas/code_template_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/atlas/code_template.proto\"W\n\x17\x43reateCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12(\n\x08template\x18\x02 \x01(\x0b\x32\x16.eolymp.atlas.Template\"/\n\x18\x43reateCodeTemplateOutput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\"l\n\x17UpdateCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0btemplate_id\x18\x02 \x01(\t\x12(\n\x08template\x18\x03 \x01(\x0b\x32\x16.eolymp.atlas.Template\"\x1a\n\x18UpdateCodeTemplateOutput\"B\n\x17\x44\x65leteCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0btemplate_id\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteCodeTemplateOutput\"=\n\x16ListCodeTemplatesInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"O\n\x17ListCodeTemplatesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.atlas.Template\"l\n\x19\x44\x65scribeCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0btemplate_id\x18\x02 \x01(\t\x12\x15\n\x0ctemplate_ern\x18\x8fN \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"F\n\x1a\x44\x65scribeCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Template\">\n\x17LookupCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\"D\n\x18LookupCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Template2\x96\x08\n\x13\x43odeTemplateService\x12\xa1\x01\n\x12\x43reateCodeTemplate\x12%.eolymp.atlas.CreateCodeTemplateInput\x1a&.eolymp.atlas.CreateCodeTemplateOutput\"<\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0c\"\n/templates\x12\xaf\x01\n\x12UpdateCodeTemplate\x12%.eolymp.atlas.UpdateCodeTemplateInput\x1a&.eolymp.atlas.UpdateCodeTemplateOutput\"J\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1a\"\x18/templates/{template_id}\x12\xaf\x01\n\x12\x44\x65leteCodeTemplate\x12%.eolymp.atlas.DeleteCodeTemplateInput\x1a&.eolymp.atlas.DeleteCodeTemplateOutput\"J\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1a*\x18/templates/{template_id}\x12\x9d\x01\n\x11ListCodeTemplates\x12$.eolymp.atlas.ListCodeTemplatesInput\x1a%.eolymp.atlas.ListCodeTemplatesOutput\";\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0c\x12\n/templates\x12\xb4\x01\n\x14\x44\x65scribeCodeTemplate\x12\'.eolymp.atlas.DescribeCodeTemplateInput\x1a(.eolymp.atlas.DescribeCodeTemplateOutput\"I\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1a\x12\x18/templates/{template_id}\x12\x9f\x01\n\x12LookupCodeTemplate\x12%.eolymp.atlas.LookupCodeTemplateInput\x1a&.eolymp.atlas.LookupCodeTemplateOutput\":\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x0b\x12\t/templateB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/atlas/code_template_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/atlas/code_template.proto\"W\n\x17\x43reateCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12(\n\x08template\x18\x02 \x01(\x0b\x32\x16.eolymp.atlas.Template\"/\n\x18\x43reateCodeTemplateOutput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\"\xc6\x01\n\x17UpdateCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0btemplate_id\x18\x02 \x01(\t\x12(\n\x08template\x18\x03 \x01(\x0b\x32\x16.eolymp.atlas.Template\"X\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x0b\n\x07RUNTIME\x10\x01\x12\n\n\x06SOURCE\x10\x02\x12\n\n\x06HEADER\x10\x03\x12\n\n\x06\x46OOTER\x10\x04\x12\n\n\x06SECRET\x10\x05\x12\t\n\x05\x46ILES\x10\x06\"\x1a\n\x18UpdateCodeTemplateOutput\"B\n\x17\x44\x65leteCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0btemplate_id\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteCodeTemplateOutput\"=\n\x16ListCodeTemplatesInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"O\n\x17ListCodeTemplatesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.atlas.Template\"l\n\x19\x44\x65scribeCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0btemplate_id\x18\x02 \x01(\t\x12\x15\n\x0ctemplate_ern\x18\x8fN \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"F\n\x1a\x44\x65scribeCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Template\">\n\x17LookupCodeTemplateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\"D\n\x18LookupCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Template2\x96\x08\n\x13\x43odeTemplateService\x12\xa1\x01\n\x12\x43reateCodeTemplate\x12%.eolymp.atlas.CreateCodeTemplateInput\x1a&.eolymp.atlas.CreateCodeTemplateOutput\"<\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0c\"\n/templates\x12\xaf\x01\n\x12UpdateCodeTemplate\x12%.eolymp.atlas.UpdateCodeTemplateInput\x1a&.eolymp.atlas.UpdateCodeTemplateOutput\"J\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1a\"\x18/templates/{template_id}\x12\xaf\x01\n\x12\x44\x65leteCodeTemplate\x12%.eolymp.atlas.DeleteCodeTemplateInput\x1a&.eolymp.atlas.DeleteCodeTemplateOutput\"J\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1a*\x18/templates/{template_id}\x12\x9d\x01\n\x11ListCodeTemplates\x12$.eolymp.atlas.ListCodeTemplatesInput\x1a%.eolymp.atlas.ListCodeTemplatesOutput\";\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0c\x12\n/templates\x12\xb4\x01\n\x14\x44\x65scribeCodeTemplate\x12\'.eolymp.atlas.DescribeCodeTemplateInput\x1a(.eolymp.atlas.DescribeCodeTemplateOutput\"I\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1a\x12\x18/templates/{template_id}\x12\x9f\x01\n\x12LookupCodeTemplate\x12%.eolymp.atlas.LookupCodeTemplateInput\x1a&.eolymp.atlas.LookupCodeTemplateOutput\":\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x0b\x12\t/templateB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.code_template_service_pb2', globals())
@@ -41,26 +41,28 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATECODETEMPLATEINPUT._serialized_end=278
   _CREATECODETEMPLATEOUTPUT._serialized_start=280
   _CREATECODETEMPLATEOUTPUT._serialized_end=327
-  _UPDATECODETEMPLATEINPUT._serialized_start=329
-  _UPDATECODETEMPLATEINPUT._serialized_end=437
-  _UPDATECODETEMPLATEOUTPUT._serialized_start=439
-  _UPDATECODETEMPLATEOUTPUT._serialized_end=465
-  _DELETECODETEMPLATEINPUT._serialized_start=467
-  _DELETECODETEMPLATEINPUT._serialized_end=533
-  _DELETECODETEMPLATEOUTPUT._serialized_start=535
-  _DELETECODETEMPLATEOUTPUT._serialized_end=561
-  _LISTCODETEMPLATESINPUT._serialized_start=563
-  _LISTCODETEMPLATESINPUT._serialized_end=624
-  _LISTCODETEMPLATESOUTPUT._serialized_start=626
-  _LISTCODETEMPLATESOUTPUT._serialized_end=705
-  _DESCRIBECODETEMPLATEINPUT._serialized_start=707
-  _DESCRIBECODETEMPLATEINPUT._serialized_end=815
-  _DESCRIBECODETEMPLATEOUTPUT._serialized_start=817
-  _DESCRIBECODETEMPLATEOUTPUT._serialized_end=887
-  _LOOKUPCODETEMPLATEINPUT._serialized_start=889
-  _LOOKUPCODETEMPLATEINPUT._serialized_end=951
-  _LOOKUPCODETEMPLATEOUTPUT._serialized_start=953
-  _LOOKUPCODETEMPLATEOUTPUT._serialized_end=1021
-  _CODETEMPLATESERVICE._serialized_start=1024
-  _CODETEMPLATESERVICE._serialized_end=2070
+  _UPDATECODETEMPLATEINPUT._serialized_start=330
+  _UPDATECODETEMPLATEINPUT._serialized_end=528
+  _UPDATECODETEMPLATEINPUT_PATCH._serialized_start=440
+  _UPDATECODETEMPLATEINPUT_PATCH._serialized_end=528
+  _UPDATECODETEMPLATEOUTPUT._serialized_start=530
+  _UPDATECODETEMPLATEOUTPUT._serialized_end=556
+  _DELETECODETEMPLATEINPUT._serialized_start=558
+  _DELETECODETEMPLATEINPUT._serialized_end=624
+  _DELETECODETEMPLATEOUTPUT._serialized_start=626
+  _DELETECODETEMPLATEOUTPUT._serialized_end=652
+  _LISTCODETEMPLATESINPUT._serialized_start=654
+  _LISTCODETEMPLATESINPUT._serialized_end=715
+  _LISTCODETEMPLATESOUTPUT._serialized_start=717
+  _LISTCODETEMPLATESOUTPUT._serialized_end=796
+  _DESCRIBECODETEMPLATEINPUT._serialized_start=798
+  _DESCRIBECODETEMPLATEINPUT._serialized_end=906
+  _DESCRIBECODETEMPLATEOUTPUT._serialized_start=908
+  _DESCRIBECODETEMPLATEOUTPUT._serialized_end=978
+  _LOOKUPCODETEMPLATEINPUT._serialized_start=980
+  _LOOKUPCODETEMPLATEINPUT._serialized_end=1042
+  _LOOKUPCODETEMPLATEOUTPUT._serialized_start=1044
+  _LOOKUPCODETEMPLATEOUTPUT._serialized_end=1112
+  _CODETEMPLATESERVICE._serialized_start=1115
+  _CODETEMPLATESERVICE._serialized_end=2161
 # @@protoc_insertion_point(module_scope)

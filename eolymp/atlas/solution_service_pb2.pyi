@@ -106,6 +106,7 @@ class UpdateSolutionInput(_message.Message):
     PATCH_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME: UpdateSolutionInput.Patch
+    SECRET: UpdateSolutionInput.Patch
     SOLUTION_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
     SOURCE: UpdateSolutionInput.Patch
