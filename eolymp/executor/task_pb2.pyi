@@ -1,5 +1,5 @@
+from eolymp.executor import checker_pb2 as _checker_pb2
 from eolymp.executor import interactor_pb2 as _interactor_pb2
-from eolymp.executor import verifier_pb2 as _verifier_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Task(_message.Message):
-    __slots__ = ["constraints", "files", "interactor", "lang", "origin", "preconditions", "priority", "redirect_stderr_to_stdout", "reference", "run_count", "runs", "runtime", "source", "use_file_io", "use_workspace_archive", "verifier"]
+    __slots__ = ["checker", "constraints", "files", "interactor", "lang", "origin", "preconditions", "priority", "redirect_stderr_to_stdout", "reference", "run_count", "runs", "runtime", "source", "use_file_io", "use_workspace_archive"]
     class Constraint(_message.Message):
         __slots__ = ["actor", "cpu_time_limit", "file_size_limit", "memory_limit", "selector", "wall_time_limit"]
         ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -25,14 +25,12 @@ class Task(_message.Message):
         wall_time_limit: int
         def __init__(self, selector: _Optional[_Iterable[str]] = ..., actor: _Optional[str] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
     class File(_message.Message):
-        __slots__ = ["path", "source_ern", "source_url"]
+        __slots__ = ["path", "source_url"]
         PATH_FIELD_NUMBER: _ClassVar[int]
-        SOURCE_ERN_FIELD_NUMBER: _ClassVar[int]
         SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
         path: str
-        source_ern: str
         source_url: str
-        def __init__(self, path: _Optional[str] = ..., source_ern: _Optional[str] = ..., source_url: _Optional[str] = ...) -> None: ...
+        def __init__(self, path: _Optional[str] = ..., source_url: _Optional[str] = ...) -> None: ...
     class Precondition(_message.Message):
         __slots__ = ["depends_on", "max_execution_time", "selector", "stop_on_failure"]
         DEPENDS_ON_FIELD_NUMBER: _ClassVar[int]
@@ -69,6 +67,7 @@ class Task(_message.Message):
         labels: _containers.RepeatedScalarFieldContainer[str]
         reference: str
         def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., debug: bool = ..., cost: _Optional[float] = ..., labels: _Optional[_Iterable[str]] = ..., input_object_id: _Optional[str] = ..., input_content: _Optional[str] = ..., input_url: _Optional[str] = ..., answer_object_id: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_url: _Optional[str] = ...) -> None: ...
+    CHECKER_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     FILES_FIELD_NUMBER: _ClassVar[int]
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -84,7 +83,7 @@ class Task(_message.Message):
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     USE_FILE_IO_FIELD_NUMBER: _ClassVar[int]
     USE_WORKSPACE_ARCHIVE_FIELD_NUMBER: _ClassVar[int]
-    VERIFIER_FIELD_NUMBER: _ClassVar[int]
+    checker: _checker_pb2.Checker
     constraints: _containers.RepeatedCompositeFieldContainer[Task.Constraint]
     files: _containers.RepeatedCompositeFieldContainer[Task.File]
     interactor: _interactor_pb2.Interactor
@@ -100,5 +99,4 @@ class Task(_message.Message):
     source: str
     use_file_io: bool
     use_workspace_archive: bool
-    verifier: _verifier_pb2.Verifier
-    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., lang: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., use_file_io: bool = ..., redirect_stderr_to_stdout: bool = ..., use_workspace_archive: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[Task.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[Task.Constraint, _Mapping]]] = ..., verifier: _Optional[_Union[_verifier_pb2.Verifier, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., runs: _Optional[_Iterable[_Union[Task.Run, _Mapping]]] = ..., files: _Optional[_Iterable[_Union[Task.File, _Mapping]]] = ...) -> None: ...
+    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., lang: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., use_file_io: bool = ..., redirect_stderr_to_stdout: bool = ..., use_workspace_archive: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[Task.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[Task.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., runs: _Optional[_Iterable[_Union[Task.Run, _Mapping]]] = ..., files: _Optional[_Iterable[_Union[Task.File, _Mapping]]] = ...) -> None: ...

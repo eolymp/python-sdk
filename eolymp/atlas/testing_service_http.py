@@ -37,24 +37,24 @@ class TestingServiceClient:
         )
 
     def UpdateChecker(self, request, **kwargs):
-        path = "/verifier"
+        path = "/checker"
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateVerifierOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateCheckerOutput"),
             **kwargs,
         )
 
     def DescribeChecker(self, request, **kwargs):
-        path = "/verifier"
+        path = "/checker"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeVerifierOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeCheckerOutput"),
             **kwargs,
         )
 

@@ -162,8 +162,8 @@ class AtlasClient:
             **kwargs,
         )
 
-    def UpdateVerifier(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/verifier"
+    def UpdateChecker(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/checker"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.problem_id = ""
@@ -172,12 +172,12 @@ class AtlasClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateVerifierOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateCheckerOutput"),
             **kwargs,
         )
 
-    def DescribeVerifier(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/verifier"
+    def DescribeChecker(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/checker"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.problem_id = ""
@@ -186,7 +186,7 @@ class AtlasClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeVerifierOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeCheckerOutput"),
             **kwargs,
         )
 

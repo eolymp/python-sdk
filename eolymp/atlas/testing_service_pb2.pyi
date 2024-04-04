@@ -4,8 +4,8 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import testing_config_pb2 as _testing_config_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.atlas import testing_testset_pb2 as _testing_testset_pb2
+from eolymp.executor import checker_pb2 as _checker_pb2
 from eolymp.executor import interactor_pb2 as _interactor_pb2
-from eolymp.executor import verifier_pb2 as _verifier_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -69,6 +69,20 @@ class DeleteTestsetOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class DescribeCheckerInput(_message.Message):
+    __slots__ = ["problem_id", "version"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+
+class DescribeCheckerOutput(_message.Message):
+    __slots__ = ["checker"]
+    CHECKER_FIELD_NUMBER: _ClassVar[int]
+    checker: _checker_pb2.Checker
+    def __init__(self, checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ...) -> None: ...
+
 class DescribeInteractorInput(_message.Message):
     __slots__ = ["problem_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -131,20 +145,6 @@ class DescribeTestsetOutput(_message.Message):
     testset: _testing_testset_pb2.Testset
     def __init__(self, testset: _Optional[_Union[_testing_testset_pb2.Testset, _Mapping]] = ...) -> None: ...
 
-class DescribeVerifierInput(_message.Message):
-    __slots__ = ["problem_id", "version"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    version: int
-    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
-
-class DescribeVerifierOutput(_message.Message):
-    __slots__ = ["verifier"]
-    VERIFIER_FIELD_NUMBER: _ClassVar[int]
-    verifier: _verifier_pb2.Verifier
-    def __init__(self, verifier: _Optional[_Union[_verifier_pb2.Verifier, _Mapping]] = ...) -> None: ...
-
 class ListExamplesInput(_message.Message):
     __slots__ = ["problem_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -192,6 +192,18 @@ class ListTestsetsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_testing_testset_pb2.Testset]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_testing_testset_pb2.Testset, _Mapping]]] = ...) -> None: ...
+
+class UpdateCheckerInput(_message.Message):
+    __slots__ = ["checker", "problem_id"]
+    CHECKER_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    checker: _checker_pb2.Checker
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ...) -> None: ...
+
+class UpdateCheckerOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class UpdateInteractorInput(_message.Message):
     __slots__ = ["interactor", "problem_id"]
@@ -244,17 +256,5 @@ class UpdateTestsetInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., testset: _Optional[_Union[_testing_testset_pb2.Testset, _Mapping]] = ...) -> None: ...
 
 class UpdateTestsetOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UpdateVerifierInput(_message.Message):
-    __slots__ = ["problem_id", "verifier"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    VERIFIER_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    verifier: _verifier_pb2.Verifier
-    def __init__(self, problem_id: _Optional[str] = ..., verifier: _Optional[_Union[_verifier_pb2.Verifier, _Mapping]] = ...) -> None: ...
-
-class UpdateVerifierOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

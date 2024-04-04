@@ -17,11 +17,11 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.atlas import testing_config_pb2 as eolymp_dot_atlas_dot_testing__config__pb2
 from eolymp.atlas import testing_test_pb2 as eolymp_dot_atlas_dot_testing__test__pb2
 from eolymp.atlas import testing_testset_pb2 as eolymp_dot_atlas_dot_testing__testset__pb2
+from eolymp.executor import checker_pb2 as eolymp_dot_executor_dot_checker__pb2
 from eolymp.executor import interactor_pb2 as eolymp_dot_executor_dot_interactor__pb2
-from eolymp.executor import verifier_pb2 as eolymp_dot_executor_dot_verifier__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/testing_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/atlas/testing_config.proto\x1a\x1f\x65olymp/atlas/testing_test.proto\x1a\"eolymp/atlas/testing_testset.proto\x1a eolymp/executor/interactor.proto\x1a\x1e\x65olymp/executor/verifier.proto\"[\n\x18UpdateTestingConfigInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12+\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x1b.eolymp.atlas.TestingConfig\"\x1b\n\x19UpdateTestingConfigOutput\"A\n\x1a\x44\x65scribeTestingConfigInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"J\n\x1b\x44\x65scribeTestingConfigOutput\x12+\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x1b.eolymp.atlas.TestingConfig\"V\n\x13UpdateVerifierInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12+\n\x08verifier\x18\x02 \x01(\x0b\x32\x19.eolymp.executor.Verifier\"\x16\n\x14UpdateVerifierOutput\"<\n\x15\x44\x65scribeVerifierInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"E\n\x16\x44\x65scribeVerifierOutput\x12+\n\x08verifier\x18\x01 \x01(\x0b\x32\x19.eolymp.executor.Verifier\"\\\n\x15UpdateInteractorInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12/\n\ninteractor\x18\x02 \x01(\x0b\x32\x1b.eolymp.executor.Interactor\"\x18\n\x16UpdateInteractorOutput\">\n\x17\x44\x65scribeInteractorInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"K\n\x18\x44\x65scribeInteractorOutput\x12/\n\ninteractor\x18\x01 \x01(\x0b\x32\x1b.eolymp.executor.Interactor\"8\n\x11ListTestsetsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"I\n\x12ListTestsetsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.atlas.Testset\"O\n\x14\x44\x65scribeTestsetInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"?\n\x15\x44\x65scribeTestsetOutput\x12&\n\x07testset\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Testset\"P\n\x12\x43reateTestsetInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12&\n\x07testset\x18\x02 \x01(\x0b\x32\x15.eolymp.atlas.Testset\"!\n\x13\x43reateTestsetOutput\x12\n\n\x02id\x18\x01 \x01(\t\"d\n\x12UpdateTestsetInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12&\n\x07testset\x18\x03 \x01(\x0b\x32\x15.eolymp.atlas.Testset\"\x15\n\x13UpdateTestsetOutput\"<\n\x12\x44\x65leteTestsetInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteTestsetOutput\"8\n\x11ListExamplesInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\":\n\x12ListExamplesOutput\x12$\n\x08\x65xamples\x18\x02 \x03(\x0b\x32\x12.eolymp.atlas.Test\"I\n\x0eListTestsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"C\n\x0fListTestsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.atlas.Test\"]\n\x11\x44\x65scribeTestInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07test_id\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"6\n\x12\x44\x65scribeTestOutput\x12 \n\x04test\x18\x01 \x01(\x0b\x32\x12.eolymp.atlas.Test\"[\n\x0f\x43reateTestInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12 \n\x04test\x18\x03 \x01(\x0b\x32\x12.eolymp.atlas.Test\"#\n\x10\x43reateTestOutput\x12\x0f\n\x07test_id\x18\x01 \x01(\t\"l\n\x0fUpdateTestInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07test_id\x18\x03 \x01(\t\x12 \n\x04test\x18\x04 \x01(\x0b\x32\x12.eolymp.atlas.Test\"\x12\n\x10UpdateTestOutput\"J\n\x0f\x44\x65leteTestInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07test_id\x18\x03 \x01(\t\"\x12\n\x10\x44\x65leteTestOutput2\xae\x15\n\x0eTestingService\x12\xa2\x01\n\x13UpdateTestingConfig\x12&.eolymp.atlas.UpdateTestingConfigInput\x1a\'.eolymp.atlas.UpdateTestingConfigOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\x1a\x08/testing\x12\xa8\x01\n\x15\x44\x65scribeTestingConfig\x12(.eolymp.atlas.DescribeTestingConfigInput\x1a).eolymp.atlas.DescribeTestingConfigOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\n\x12\x08/testing\x12\x93\x01\n\rUpdateChecker\x12!.eolymp.atlas.UpdateVerifierInput\x1a\".eolymp.atlas.UpdateVerifierOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0b\x1a\t/verifier\x12\x99\x01\n\x0f\x44\x65scribeChecker\x12#.eolymp.atlas.DescribeVerifierInput\x1a$.eolymp.atlas.DescribeVerifierOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x0b\x12\t/verifier\x12\x9c\x01\n\x10UpdateInteractor\x12#.eolymp.atlas.UpdateInteractorInput\x1a$.eolymp.atlas.UpdateInteractorOutput\"=\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\r\x1a\x0b/interactor\x12\xa2\x01\n\x12\x44\x65scribeInteractor\x12%.eolymp.atlas.DescribeInteractorInput\x1a&.eolymp.atlas.DescribeInteractorOutput\"=\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\r\x12\x0b/interactor\x12\x91\x01\n\rCreateTestset\x12 .eolymp.atlas.CreateTestsetInput\x1a!.eolymp.atlas.CreateTestsetOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0b\"\t/testsets\x12\x9e\x01\n\rUpdateTestset\x12 .eolymp.atlas.UpdateTestsetInput\x1a!.eolymp.atlas.UpdateTestsetOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x18\x1a\x16/testsets/{testset_id}\x12\x9e\x01\n\rDeleteTestset\x12 .eolymp.atlas.DeleteTestsetInput\x1a!.eolymp.atlas.DeleteTestsetOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x18*\x16/testsets/{testset_id}\x12\xa4\x01\n\x0f\x44\x65scribeTestset\x12\".eolymp.atlas.DescribeTestsetInput\x1a#.eolymp.atlas.DescribeTestsetOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x18\x12\x16/testsets/{testset_id}\x12\x8e\x01\n\x0cListTestsets\x12\x1f.eolymp.atlas.ListTestsetsInput\x1a .eolymp.atlas.ListTestsetsOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0b\x12\t/testsets\x12\x9c\x01\n\nCreateTest\x12\x1d.eolymp.atlas.CreateTestInput\x1a\x1e.eolymp.atlas.CreateTestOutput\"O\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00 A\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x1e\"\x1c/testsets/{testset_id}/tests\x12\xa6\x01\n\nUpdateTest\x12\x1d.eolymp.atlas.UpdateTestInput\x1a\x1e.eolymp.atlas.UpdateTestOutput\"Y\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00 A\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02(\x1a&/testsets/{testset_id}/tests/{test_id}\x12\xa6\x01\n\nDeleteTest\x12\x1d.eolymp.atlas.DeleteTestInput\x1a\x1e.eolymp.atlas.DeleteTestOutput\"Y\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00 A\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02(*&/testsets/{testset_id}/tests/{test_id}\x12\xab\x01\n\x0c\x44\x65scribeTest\x12\x1f.eolymp.atlas.DescribeTestInput\x1a .eolymp.atlas.DescribeTestOutput\"X\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02(\x12&/testsets/{testset_id}/tests/{test_id}\x12\x98\x01\n\tListTests\x12\x1c.eolymp.atlas.ListTestsInput\x1a\x1d.eolymp.atlas.ListTestsOutput\"N\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1e\x12\x1c/testsets/{testset_id}/tests\x12\x8d\x01\n\x0cListExamples\x12\x1f.eolymp.atlas.ListExamplesInput\x1a .eolymp.atlas.ListExamplesOutput\":\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/examplesB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/testing_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/atlas/testing_config.proto\x1a\x1f\x65olymp/atlas/testing_test.proto\x1a\"eolymp/atlas/testing_testset.proto\x1a\x1d\x65olymp/executor/checker.proto\x1a eolymp/executor/interactor.proto\"[\n\x18UpdateTestingConfigInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12+\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x1b.eolymp.atlas.TestingConfig\"\x1b\n\x19UpdateTestingConfigOutput\"A\n\x1a\x44\x65scribeTestingConfigInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"J\n\x1b\x44\x65scribeTestingConfigOutput\x12+\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x1b.eolymp.atlas.TestingConfig\"S\n\x12UpdateCheckerInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12)\n\x07\x63hecker\x18\x02 \x01(\x0b\x32\x18.eolymp.executor.Checker\"\x15\n\x13UpdateCheckerOutput\";\n\x14\x44\x65scribeCheckerInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"B\n\x15\x44\x65scribeCheckerOutput\x12)\n\x07\x63hecker\x18\x01 \x01(\x0b\x32\x18.eolymp.executor.Checker\"\\\n\x15UpdateInteractorInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12/\n\ninteractor\x18\x02 \x01(\x0b\x32\x1b.eolymp.executor.Interactor\"\x18\n\x16UpdateInteractorOutput\">\n\x17\x44\x65scribeInteractorInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"K\n\x18\x44\x65scribeInteractorOutput\x12/\n\ninteractor\x18\x01 \x01(\x0b\x32\x1b.eolymp.executor.Interactor\"8\n\x11ListTestsetsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"I\n\x12ListTestsetsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.atlas.Testset\"O\n\x14\x44\x65scribeTestsetInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"?\n\x15\x44\x65scribeTestsetOutput\x12&\n\x07testset\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Testset\"P\n\x12\x43reateTestsetInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12&\n\x07testset\x18\x02 \x01(\x0b\x32\x15.eolymp.atlas.Testset\"!\n\x13\x43reateTestsetOutput\x12\n\n\x02id\x18\x01 \x01(\t\"d\n\x12UpdateTestsetInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12&\n\x07testset\x18\x03 \x01(\x0b\x32\x15.eolymp.atlas.Testset\"\x15\n\x13UpdateTestsetOutput\"<\n\x12\x44\x65leteTestsetInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteTestsetOutput\"8\n\x11ListExamplesInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\":\n\x12ListExamplesOutput\x12$\n\x08\x65xamples\x18\x02 \x03(\x0b\x32\x12.eolymp.atlas.Test\"I\n\x0eListTestsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"C\n\x0fListTestsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.atlas.Test\"]\n\x11\x44\x65scribeTestInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07test_id\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"6\n\x12\x44\x65scribeTestOutput\x12 \n\x04test\x18\x01 \x01(\x0b\x32\x12.eolymp.atlas.Test\"[\n\x0f\x43reateTestInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12 \n\x04test\x18\x03 \x01(\x0b\x32\x12.eolymp.atlas.Test\"#\n\x10\x43reateTestOutput\x12\x0f\n\x07test_id\x18\x01 \x01(\t\"l\n\x0fUpdateTestInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07test_id\x18\x03 \x01(\t\x12 \n\x04test\x18\x04 \x01(\x0b\x32\x12.eolymp.atlas.Test\"\x12\n\x10UpdateTestOutput\"J\n\x0f\x44\x65leteTestInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\x0f\n\x07test_id\x18\x03 \x01(\t\"\x12\n\x10\x44\x65leteTestOutput2\xa8\x15\n\x0eTestingService\x12\xa2\x01\n\x13UpdateTestingConfig\x12&.eolymp.atlas.UpdateTestingConfigInput\x1a\'.eolymp.atlas.UpdateTestingConfigOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\x1a\x08/testing\x12\xa8\x01\n\x15\x44\x65scribeTestingConfig\x12(.eolymp.atlas.DescribeTestingConfigInput\x1a).eolymp.atlas.DescribeTestingConfigOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\n\x12\x08/testing\x12\x90\x01\n\rUpdateChecker\x12 .eolymp.atlas.UpdateCheckerInput\x1a!.eolymp.atlas.UpdateCheckerOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\x1a\x08/checker\x12\x96\x01\n\x0f\x44\x65scribeChecker\x12\".eolymp.atlas.DescribeCheckerInput\x1a#.eolymp.atlas.DescribeCheckerOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\n\x12\x08/checker\x12\x9c\x01\n\x10UpdateInteractor\x12#.eolymp.atlas.UpdateInteractorInput\x1a$.eolymp.atlas.UpdateInteractorOutput\"=\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\r\x1a\x0b/interactor\x12\xa2\x01\n\x12\x44\x65scribeInteractor\x12%.eolymp.atlas.DescribeInteractorInput\x1a&.eolymp.atlas.DescribeInteractorOutput\"=\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\r\x12\x0b/interactor\x12\x91\x01\n\rCreateTestset\x12 .eolymp.atlas.CreateTestsetInput\x1a!.eolymp.atlas.CreateTestsetOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0b\"\t/testsets\x12\x9e\x01\n\rUpdateTestset\x12 .eolymp.atlas.UpdateTestsetInput\x1a!.eolymp.atlas.UpdateTestsetOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x18\x1a\x16/testsets/{testset_id}\x12\x9e\x01\n\rDeleteTestset\x12 .eolymp.atlas.DeleteTestsetInput\x1a!.eolymp.atlas.DeleteTestsetOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x18*\x16/testsets/{testset_id}\x12\xa4\x01\n\x0f\x44\x65scribeTestset\x12\".eolymp.atlas.DescribeTestsetInput\x1a#.eolymp.atlas.DescribeTestsetOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x18\x12\x16/testsets/{testset_id}\x12\x8e\x01\n\x0cListTestsets\x12\x1f.eolymp.atlas.ListTestsetsInput\x1a .eolymp.atlas.ListTestsetsOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0b\x12\t/testsets\x12\x9c\x01\n\nCreateTest\x12\x1d.eolymp.atlas.CreateTestInput\x1a\x1e.eolymp.atlas.CreateTestOutput\"O\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00 A\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x1e\"\x1c/testsets/{testset_id}/tests\x12\xa6\x01\n\nUpdateTest\x12\x1d.eolymp.atlas.UpdateTestInput\x1a\x1e.eolymp.atlas.UpdateTestOutput\"Y\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00 A\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02(\x1a&/testsets/{testset_id}/tests/{test_id}\x12\xa6\x01\n\nDeleteTest\x12\x1d.eolymp.atlas.DeleteTestInput\x1a\x1e.eolymp.atlas.DeleteTestOutput\"Y\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0c\xf5\xe2\n\x00\x00 A\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02(*&/testsets/{testset_id}/tests/{test_id}\x12\xab\x01\n\x0c\x44\x65scribeTest\x12\x1f.eolymp.atlas.DescribeTestInput\x1a .eolymp.atlas.DescribeTestOutput\"X\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02(\x12&/testsets/{testset_id}/tests/{test_id}\x12\x98\x01\n\tListTests\x12\x1c.eolymp.atlas.ListTestsInput\x1a\x1d.eolymp.atlas.ListTestsOutput\"N\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1e\x12\x1c/testsets/{testset_id}/tests\x12\x8d\x01\n\x0cListExamples\x12\x1f.eolymp.atlas.ListExamplesInput\x1a .eolymp.atlas.ListExamplesOutput\":\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/examplesB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.testing_service_pb2', globals())
@@ -34,9 +34,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TESTINGSERVICE.methods_by_name['DescribeTestingConfig']._options = None
   _TESTINGSERVICE.methods_by_name['DescribeTestingConfig']._serialized_options = b'\202\343\n\027\212\343\n\023atlas:problem:write\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\323\344\223\002\n\022\010/testing'
   _TESTINGSERVICE.methods_by_name['UpdateChecker']._options = None
-  _TESTINGSERVICE.methods_by_name['UpdateChecker']._serialized_options = b'\202\343\n\027\212\343\n\023atlas:problem:write\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002\013\032\t/verifier'
+  _TESTINGSERVICE.methods_by_name['UpdateChecker']._serialized_options = b'\202\343\n\027\212\343\n\023atlas:problem:write\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002\n\032\010/checker'
   _TESTINGSERVICE.methods_by_name['DescribeChecker']._options = None
-  _TESTINGSERVICE.methods_by_name['DescribeChecker']._serialized_options = b'\202\343\n\027\212\343\n\023atlas:problem:write\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\323\344\223\002\013\022\t/verifier'
+  _TESTINGSERVICE.methods_by_name['DescribeChecker']._serialized_options = b'\202\343\n\027\212\343\n\023atlas:problem:write\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\323\344\223\002\n\022\010/checker'
   _TESTINGSERVICE.methods_by_name['UpdateInteractor']._options = None
   _TESTINGSERVICE.methods_by_name['UpdateInteractor']._serialized_options = b'\202\343\n\027\212\343\n\023atlas:problem:write\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002\r\032\013/interactor'
   _TESTINGSERVICE.methods_by_name['DescribeInteractor']._options = None
@@ -63,74 +63,74 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TESTINGSERVICE.methods_by_name['ListTests']._serialized_options = b'\202\343\n\027\212\343\n\023atlas:problem:write\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\036\022\034/testsets/{testset_id}/tests'
   _TESTINGSERVICE.methods_by_name['ListExamples']._options = None
   _TESTINGSERVICE.methods_by_name['ListExamples']._serialized_options = b'\202\343\n\026\212\343\n\022atlas:problem:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\013\022\t/examples'
-  _UPDATETESTINGCONFIGINPUT._serialized_start=321
-  _UPDATETESTINGCONFIGINPUT._serialized_end=412
-  _UPDATETESTINGCONFIGOUTPUT._serialized_start=414
-  _UPDATETESTINGCONFIGOUTPUT._serialized_end=441
-  _DESCRIBETESTINGCONFIGINPUT._serialized_start=443
-  _DESCRIBETESTINGCONFIGINPUT._serialized_end=508
-  _DESCRIBETESTINGCONFIGOUTPUT._serialized_start=510
-  _DESCRIBETESTINGCONFIGOUTPUT._serialized_end=584
-  _UPDATEVERIFIERINPUT._serialized_start=586
-  _UPDATEVERIFIERINPUT._serialized_end=672
-  _UPDATEVERIFIEROUTPUT._serialized_start=674
-  _UPDATEVERIFIEROUTPUT._serialized_end=696
-  _DESCRIBEVERIFIERINPUT._serialized_start=698
-  _DESCRIBEVERIFIERINPUT._serialized_end=758
-  _DESCRIBEVERIFIEROUTPUT._serialized_start=760
-  _DESCRIBEVERIFIEROUTPUT._serialized_end=829
-  _UPDATEINTERACTORINPUT._serialized_start=831
-  _UPDATEINTERACTORINPUT._serialized_end=923
-  _UPDATEINTERACTOROUTPUT._serialized_start=925
-  _UPDATEINTERACTOROUTPUT._serialized_end=949
-  _DESCRIBEINTERACTORINPUT._serialized_start=951
-  _DESCRIBEINTERACTORINPUT._serialized_end=1013
-  _DESCRIBEINTERACTOROUTPUT._serialized_start=1015
-  _DESCRIBEINTERACTOROUTPUT._serialized_end=1090
-  _LISTTESTSETSINPUT._serialized_start=1092
-  _LISTTESTSETSINPUT._serialized_end=1148
-  _LISTTESTSETSOUTPUT._serialized_start=1150
-  _LISTTESTSETSOUTPUT._serialized_end=1223
-  _DESCRIBETESTSETINPUT._serialized_start=1225
-  _DESCRIBETESTSETINPUT._serialized_end=1304
-  _DESCRIBETESTSETOUTPUT._serialized_start=1306
-  _DESCRIBETESTSETOUTPUT._serialized_end=1369
-  _CREATETESTSETINPUT._serialized_start=1371
-  _CREATETESTSETINPUT._serialized_end=1451
-  _CREATETESTSETOUTPUT._serialized_start=1453
-  _CREATETESTSETOUTPUT._serialized_end=1486
-  _UPDATETESTSETINPUT._serialized_start=1488
-  _UPDATETESTSETINPUT._serialized_end=1588
-  _UPDATETESTSETOUTPUT._serialized_start=1590
-  _UPDATETESTSETOUTPUT._serialized_end=1611
-  _DELETETESTSETINPUT._serialized_start=1613
-  _DELETETESTSETINPUT._serialized_end=1673
-  _DELETETESTSETOUTPUT._serialized_start=1675
-  _DELETETESTSETOUTPUT._serialized_end=1696
-  _LISTEXAMPLESINPUT._serialized_start=1698
-  _LISTEXAMPLESINPUT._serialized_end=1754
-  _LISTEXAMPLESOUTPUT._serialized_start=1756
-  _LISTEXAMPLESOUTPUT._serialized_end=1814
-  _LISTTESTSINPUT._serialized_start=1816
-  _LISTTESTSINPUT._serialized_end=1889
-  _LISTTESTSOUTPUT._serialized_start=1891
-  _LISTTESTSOUTPUT._serialized_end=1958
-  _DESCRIBETESTINPUT._serialized_start=1960
-  _DESCRIBETESTINPUT._serialized_end=2053
-  _DESCRIBETESTOUTPUT._serialized_start=2055
-  _DESCRIBETESTOUTPUT._serialized_end=2109
-  _CREATETESTINPUT._serialized_start=2111
-  _CREATETESTINPUT._serialized_end=2202
-  _CREATETESTOUTPUT._serialized_start=2204
-  _CREATETESTOUTPUT._serialized_end=2239
-  _UPDATETESTINPUT._serialized_start=2241
-  _UPDATETESTINPUT._serialized_end=2349
-  _UPDATETESTOUTPUT._serialized_start=2351
-  _UPDATETESTOUTPUT._serialized_end=2369
-  _DELETETESTINPUT._serialized_start=2371
-  _DELETETESTINPUT._serialized_end=2445
-  _DELETETESTOUTPUT._serialized_start=2447
-  _DELETETESTOUTPUT._serialized_end=2465
-  _TESTINGSERVICE._serialized_start=2468
-  _TESTINGSERVICE._serialized_end=5202
+  _UPDATETESTINGCONFIGINPUT._serialized_start=320
+  _UPDATETESTINGCONFIGINPUT._serialized_end=411
+  _UPDATETESTINGCONFIGOUTPUT._serialized_start=413
+  _UPDATETESTINGCONFIGOUTPUT._serialized_end=440
+  _DESCRIBETESTINGCONFIGINPUT._serialized_start=442
+  _DESCRIBETESTINGCONFIGINPUT._serialized_end=507
+  _DESCRIBETESTINGCONFIGOUTPUT._serialized_start=509
+  _DESCRIBETESTINGCONFIGOUTPUT._serialized_end=583
+  _UPDATECHECKERINPUT._serialized_start=585
+  _UPDATECHECKERINPUT._serialized_end=668
+  _UPDATECHECKEROUTPUT._serialized_start=670
+  _UPDATECHECKEROUTPUT._serialized_end=691
+  _DESCRIBECHECKERINPUT._serialized_start=693
+  _DESCRIBECHECKERINPUT._serialized_end=752
+  _DESCRIBECHECKEROUTPUT._serialized_start=754
+  _DESCRIBECHECKEROUTPUT._serialized_end=820
+  _UPDATEINTERACTORINPUT._serialized_start=822
+  _UPDATEINTERACTORINPUT._serialized_end=914
+  _UPDATEINTERACTOROUTPUT._serialized_start=916
+  _UPDATEINTERACTOROUTPUT._serialized_end=940
+  _DESCRIBEINTERACTORINPUT._serialized_start=942
+  _DESCRIBEINTERACTORINPUT._serialized_end=1004
+  _DESCRIBEINTERACTOROUTPUT._serialized_start=1006
+  _DESCRIBEINTERACTOROUTPUT._serialized_end=1081
+  _LISTTESTSETSINPUT._serialized_start=1083
+  _LISTTESTSETSINPUT._serialized_end=1139
+  _LISTTESTSETSOUTPUT._serialized_start=1141
+  _LISTTESTSETSOUTPUT._serialized_end=1214
+  _DESCRIBETESTSETINPUT._serialized_start=1216
+  _DESCRIBETESTSETINPUT._serialized_end=1295
+  _DESCRIBETESTSETOUTPUT._serialized_start=1297
+  _DESCRIBETESTSETOUTPUT._serialized_end=1360
+  _CREATETESTSETINPUT._serialized_start=1362
+  _CREATETESTSETINPUT._serialized_end=1442
+  _CREATETESTSETOUTPUT._serialized_start=1444
+  _CREATETESTSETOUTPUT._serialized_end=1477
+  _UPDATETESTSETINPUT._serialized_start=1479
+  _UPDATETESTSETINPUT._serialized_end=1579
+  _UPDATETESTSETOUTPUT._serialized_start=1581
+  _UPDATETESTSETOUTPUT._serialized_end=1602
+  _DELETETESTSETINPUT._serialized_start=1604
+  _DELETETESTSETINPUT._serialized_end=1664
+  _DELETETESTSETOUTPUT._serialized_start=1666
+  _DELETETESTSETOUTPUT._serialized_end=1687
+  _LISTEXAMPLESINPUT._serialized_start=1689
+  _LISTEXAMPLESINPUT._serialized_end=1745
+  _LISTEXAMPLESOUTPUT._serialized_start=1747
+  _LISTEXAMPLESOUTPUT._serialized_end=1805
+  _LISTTESTSINPUT._serialized_start=1807
+  _LISTTESTSINPUT._serialized_end=1880
+  _LISTTESTSOUTPUT._serialized_start=1882
+  _LISTTESTSOUTPUT._serialized_end=1949
+  _DESCRIBETESTINPUT._serialized_start=1951
+  _DESCRIBETESTINPUT._serialized_end=2044
+  _DESCRIBETESTOUTPUT._serialized_start=2046
+  _DESCRIBETESTOUTPUT._serialized_end=2100
+  _CREATETESTINPUT._serialized_start=2102
+  _CREATETESTINPUT._serialized_end=2193
+  _CREATETESTOUTPUT._serialized_start=2195
+  _CREATETESTOUTPUT._serialized_end=2230
+  _UPDATETESTINPUT._serialized_start=2232
+  _UPDATETESTINPUT._serialized_end=2340
+  _UPDATETESTOUTPUT._serialized_start=2342
+  _UPDATETESTOUTPUT._serialized_end=2360
+  _DELETETESTINPUT._serialized_start=2362
+  _DELETETESTINPUT._serialized_end=2436
+  _DELETETESTOUTPUT._serialized_start=2438
+  _DELETETESTOUTPUT._serialized_end=2456
+  _TESTINGSERVICE._serialized_start=2459
+  _TESTINGSERVICE._serialized_end=5187
 # @@protoc_insertion_point(module_scope)

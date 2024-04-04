@@ -16,6 +16,17 @@ class Submission(_message.Message):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    class CheckerExecutionData(_message.Message):
+        __slots__ = ["exit_code", "log_url", "memory_usage", "wall_time_usage"]
+        EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
+        LOG_URL_FIELD_NUMBER: _ClassVar[int]
+        MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
+        WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
+        exit_code: int
+        log_url: str
+        memory_usage: int
+        wall_time_usage: int
+        def __init__(self, log_url: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., exit_code: _Optional[int] = ...) -> None: ...
     class Group(_message.Message):
         __slots__ = ["cost", "cpu_time_usage", "dependencies", "feedback_policy", "index", "memory_usage", "runs", "score", "scoring_mode", "status", "testset_id", "verdict", "wall_time_usage"]
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -72,11 +83,12 @@ class Submission(_message.Message):
         wall_time_usage: int
         def __init__(self, log_url: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., exit_code: _Optional[int] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ["cost", "cpu_time_usage", "id", "index", "interactor_execution_data", "memory_usage", "output_url", "score", "status", "stderr_url", "test_id", "verdict", "verifier_execution_data", "wall_time_usage"]
+        __slots__ = ["checker_execution_data", "cost", "cpu_time_usage", "id", "index", "interactor_execution_data", "memory_usage", "output_url", "score", "status", "stderr_url", "test_id", "verdict", "wall_time_usage"]
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ACCEPTED: Submission.Run.Status
         BLOCKED: Submission.Run.Status
+        CHECKER_EXECUTION_DATA_FIELD_NUMBER: _ClassVar[int]
         COMPLETE: Submission.Run.Status
         COST_FIELD_NUMBER: _ClassVar[int]
         CPU_EXHAUSTED: Submission.Run.Status
@@ -100,9 +112,9 @@ class Submission(_message.Message):
         TIMEOUT: Submission.Run.Status
         VERDICT_FIELD_NUMBER: _ClassVar[int]
         VERIFICATION_ERROR: Submission.Run.Status
-        VERIFIER_EXECUTION_DATA_FIELD_NUMBER: _ClassVar[int]
         WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
         WRONG_ANSWER: Submission.Run.Status
+        checker_execution_data: Submission.CheckerExecutionData
         cost: float
         cpu_time_usage: int
         id: str
@@ -115,20 +127,8 @@ class Submission(_message.Message):
         stderr_url: str
         test_id: str
         verdict: _submission_pb2.Submission.Verdict
-        verifier_execution_data: Submission.VerifierExecutionData
         wall_time_usage: int
-        def __init__(self, id: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., output_url: _Optional[str] = ..., stderr_url: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Run.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., verifier_execution_data: _Optional[_Union[Submission.VerifierExecutionData, _Mapping]] = ..., interactor_execution_data: _Optional[_Union[Submission.InteractorExecutionData, _Mapping]] = ...) -> None: ...
-    class VerifierExecutionData(_message.Message):
-        __slots__ = ["exit_code", "log_url", "memory_usage", "wall_time_usage"]
-        EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
-        LOG_URL_FIELD_NUMBER: _ClassVar[int]
-        MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
-        WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
-        exit_code: int
-        log_url: str
-        memory_usage: int
-        wall_time_usage: int
-        def __init__(self, log_url: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., exit_code: _Optional[int] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., output_url: _Optional[str] = ..., stderr_url: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Run.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., checker_execution_data: _Optional[_Union[Submission.CheckerExecutionData, _Mapping]] = ..., interactor_execution_data: _Optional[_Union[Submission.InteractorExecutionData, _Mapping]] = ...) -> None: ...
     COMPLETE: Submission.Status
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     COST_FIELD_NUMBER: _ClassVar[int]

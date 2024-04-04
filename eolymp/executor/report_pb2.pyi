@@ -91,14 +91,12 @@ class Report(_message.Message):
             processes: _containers.RepeatedCompositeFieldContainer[Report.Step.Execute]
             def __init__(self, processes: _Optional[_Iterable[_Union[Report.Step.Execute, _Mapping]]] = ...) -> None: ...
         class Upload(_message.Message):
-            __slots__ = ["target_ern", "target_name", "target_url"]
-            TARGET_ERN_FIELD_NUMBER: _ClassVar[int]
+            __slots__ = ["target_name", "target_url"]
             TARGET_NAME_FIELD_NUMBER: _ClassVar[int]
             TARGET_URL_FIELD_NUMBER: _ClassVar[int]
-            target_ern: str
             target_name: str
             target_url: str
-            def __init__(self, target_name: _Optional[str] = ..., target_ern: _Optional[str] = ..., target_url: _Optional[str] = ...) -> None: ...
+            def __init__(self, target_name: _Optional[str] = ..., target_url: _Optional[str] = ...) -> None: ...
         COMPLETE: Report.Step.Outcome
         EXECUTE_FIELD_NUMBER: _ClassVar[int]
         FAILED: Report.Step.Outcome

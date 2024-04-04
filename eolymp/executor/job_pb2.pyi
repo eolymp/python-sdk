@@ -10,7 +10,7 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class Job(_message.Message):
     __slots__ = ["actors", "origin", "preconditions", "reference", "runs", "scenario"]
     class Actor(_message.Message):
-        __slots__ = ["env", "files", "footer_ern", "footer_url", "header_ern", "header_url", "mount", "name", "output_format", "runtime", "source_ern", "source_url"]
+        __slots__ = ["env", "files", "footer_url", "header_url", "mount", "name", "output_format", "runtime", "source_url"]
         class OutputFormat(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         class EnvEntry(_message.Message):
@@ -23,39 +23,31 @@ class Job(_message.Message):
         ENV_FIELD_NUMBER: _ClassVar[int]
         EXIT_CODE: Job.Actor.OutputFormat
         FILES_FIELD_NUMBER: _ClassVar[int]
-        FOOTER_ERN_FIELD_NUMBER: _ClassVar[int]
         FOOTER_URL_FIELD_NUMBER: _ClassVar[int]
-        HEADER_ERN_FIELD_NUMBER: _ClassVar[int]
         HEADER_URL_FIELD_NUMBER: _ClassVar[int]
         MOUNT_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         OUTPUT_FORMAT_FIELD_NUMBER: _ClassVar[int]
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
-        SOURCE_ERN_FIELD_NUMBER: _ClassVar[int]
         SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
         TESTLIB_OUTPUT: Job.Actor.OutputFormat
         env: _containers.ScalarMap[str, str]
         files: _containers.RepeatedCompositeFieldContainer[Job.File]
-        footer_ern: str
         footer_url: str
-        header_ern: str
         header_url: str
         mount: _containers.RepeatedCompositeFieldContainer[Job.Mount]
         name: str
         output_format: Job.Actor.OutputFormat
         runtime: str
-        source_ern: str
         source_url: str
-        def __init__(self, name: _Optional[str] = ..., runtime: _Optional[str] = ..., source_ern: _Optional[str] = ..., header_ern: _Optional[str] = ..., footer_ern: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., env: _Optional[_Mapping[str, str]] = ..., files: _Optional[_Iterable[_Union[Job.File, _Mapping]]] = ..., output_format: _Optional[_Union[Job.Actor.OutputFormat, str]] = ..., mount: _Optional[_Iterable[_Union[Job.Mount, _Mapping]]] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., env: _Optional[_Mapping[str, str]] = ..., files: _Optional[_Iterable[_Union[Job.File, _Mapping]]] = ..., output_format: _Optional[_Union[Job.Actor.OutputFormat, str]] = ..., mount: _Optional[_Iterable[_Union[Job.Mount, _Mapping]]] = ...) -> None: ...
     class File(_message.Message):
-        __slots__ = ["path", "source_ern", "source_url"]
+        __slots__ = ["path", "source_url"]
         PATH_FIELD_NUMBER: _ClassVar[int]
-        SOURCE_ERN_FIELD_NUMBER: _ClassVar[int]
         SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
         path: str
-        source_ern: str
         source_url: str
-        def __init__(self, path: _Optional[str] = ..., source_ern: _Optional[str] = ..., source_url: _Optional[str] = ...) -> None: ...
+        def __init__(self, path: _Optional[str] = ..., source_url: _Optional[str] = ...) -> None: ...
     class Mount(_message.Message):
         __slots__ = ["from_actor", "to_path"]
         FROM_ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -148,18 +140,16 @@ class Job(_message.Message):
             ttl: int
             def __init__(self, source_actor: _Optional[str] = ..., source_path: _Optional[str] = ..., target_name: _Optional[str] = ..., optionally: bool = ..., ttl: _Optional[int] = ..., max_size: _Optional[int] = ..., max_data_size: _Optional[int] = ..., force_upload: bool = ...) -> None: ...
         class Write(_message.Message):
-            __slots__ = ["fix_crlf", "source_ern", "source_url", "target_actor", "target_path"]
+            __slots__ = ["fix_crlf", "source_url", "target_actor", "target_path"]
             FIX_CRLF_FIELD_NUMBER: _ClassVar[int]
-            SOURCE_ERN_FIELD_NUMBER: _ClassVar[int]
             SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
             TARGET_ACTOR_FIELD_NUMBER: _ClassVar[int]
             TARGET_PATH_FIELD_NUMBER: _ClassVar[int]
             fix_crlf: bool
-            source_ern: str
             source_url: str
             target_actor: str
             target_path: str
-            def __init__(self, source_ern: _Optional[str] = ..., source_url: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ..., fix_crlf: bool = ...) -> None: ...
+            def __init__(self, source_url: _Optional[str] = ..., target_actor: _Optional[str] = ..., target_path: _Optional[str] = ..., fix_crlf: bool = ...) -> None: ...
         COPY_FIELD_NUMBER: _ClassVar[int]
         EVEN_ON_FAILURE_FIELD_NUMBER: _ClassVar[int]
         EXECUTE_FIELD_NUMBER: _ClassVar[int]
