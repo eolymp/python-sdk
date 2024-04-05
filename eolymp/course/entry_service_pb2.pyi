@@ -195,3 +195,21 @@ class UpdateEntryInput(_message.Message):
 class UpdateEntryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class WatchProgressInput(_message.Message):
+    __slots__ = ["entry_id", "student_id"]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
+    entry_id: str
+    student_id: str
+    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
+
+class WatchProgressOutput(_message.Message):
+    __slots__ = ["entry_id", "grade", "progress"]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    GRADE_FIELD_NUMBER: _ClassVar[int]
+    PROGRESS_FIELD_NUMBER: _ClassVar[int]
+    entry_id: str
+    grade: int
+    progress: float
+    def __init__(self, entry_id: _Optional[str] = ..., progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...
