@@ -49,10 +49,12 @@ class DescribeEntryOutput(_message.Message):
     def __init__(self, entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
 
 class DescribeProgressInput(_message.Message):
-    __slots__ = ["entry_id"]
+    __slots__ = ["entry_id", "student_id"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     entry_id: str
-    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
+    student_id: str
+    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
 
 class DescribeProgressOutput(_message.Message):
     __slots__ = ["grade", "progress"]
