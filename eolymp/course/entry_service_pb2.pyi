@@ -184,6 +184,7 @@ class UpdateEntryInput(_message.Message):
     TITLE: UpdateEntryInput.Patch
     VIDEO_IMAGE_URL: UpdateEntryInput.Patch
     VIDEO_VIDEO_URL: UpdateEntryInput.Patch
+    WEIGHT: UpdateEntryInput.Patch
     entry: _entry_pb2.Entry
     entry_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateEntryInput.Patch]
