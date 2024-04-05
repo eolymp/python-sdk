@@ -55,10 +55,12 @@ class DescribeProgressInput(_message.Message):
     def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
 
 class DescribeProgressOutput(_message.Message):
-    __slots__ = ["progress"]
+    __slots__ = ["grade", "progress"]
+    GRADE_FIELD_NUMBER: _ClassVar[int]
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
+    grade: int
     progress: float
-    def __init__(self, progress: _Optional[float] = ...) -> None: ...
+    def __init__(self, progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...
 
 class DescribeTOCInput(_message.Message):
     __slots__ = ["depth", "draft", "root_id"]

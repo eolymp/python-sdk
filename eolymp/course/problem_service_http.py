@@ -72,17 +72,6 @@ class ProblemServiceClient:
             **kwargs,
         )
 
-    def DescribeScore(self, request, **kwargs):
-        path = "/score"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeScoreOutput"),
-            **kwargs,
-        )
-
     def LookupCodeTemplate(self, request, **kwargs):
         path = "/template"
 

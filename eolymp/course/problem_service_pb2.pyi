@@ -61,18 +61,6 @@ class DescribeRunOutput(_message.Message):
     run: _run_pb2.Run
     def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ...) -> None: ...
 
-class DescribeScoreInput(_message.Message):
-    __slots__ = ["member_id"]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    member_id: str
-    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
-
-class DescribeScoreOutput(_message.Message):
-    __slots__ = ["score"]
-    SCORE_FIELD_NUMBER: _ClassVar[int]
-    score: _scoring_score_pb2.Score
-    def __init__(self, score: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
-
 class DescribeSubmissionInput(_message.Message):
     __slots__ = ["problem_id", "submission_id"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
