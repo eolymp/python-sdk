@@ -78,6 +78,36 @@ class StudentServiceClient:
             **kwargs,
         )
 
+    def DescribeAssignment(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.student_id)+"/assignments/"+urllib.parse.quote(request.entry_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.student_id = ""
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeAssignmentOutput"),
+            **kwargs,
+        )
+
+    def UpdateAssignment(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.student_id)+"/assignments/"+urllib.parse.quote(request.entry_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.student_id = ""
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateAssignmentOutput"),
+            **kwargs,
+        )
+
     def StartCourse(self, request, **kwargs):
         path = "/start"
 
@@ -86,6 +116,21 @@ class StudentServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.course.StartCourseOutput"),
+            **kwargs,
+        )
+
+    def StartAssignment(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.student_id)+"/assignments/"+urllib.parse.quote(request.entry_id)+"/start"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.student_id = ""
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.StartAssignmentOutput"),
             **kwargs,
         )
 

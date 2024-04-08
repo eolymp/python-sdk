@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.course import assignment_pb2 as _assignment_pb2
 from eolymp.course import student_pb2 as _student_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -33,6 +34,18 @@ class DeleteStudentInput(_message.Message):
 class DeleteStudentOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class DescribeAssignmentInput(_message.Message):
+    __slots__ = ["entry_id"]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    entry_id: str
+    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
+
+class DescribeAssignmentOutput(_message.Message):
+    __slots__ = ["assignment"]
+    ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
+    assignment: _assignment_pb2.Assignment
+    def __init__(self, assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
 
 class DescribeStudentInput(_message.Message):
     __slots__ = ["student_id"]
@@ -97,11 +110,33 @@ class ListStudentsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_student_pb2.Student, _Mapping]]] = ...) -> None: ...
 
+class StartAssignmentInput(_message.Message):
+    __slots__ = ["entry_id"]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    entry_id: str
+    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
+
+class StartAssignmentOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class StartCourseInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class StartCourseOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdateAssignmentInput(_message.Message):
+    __slots__ = ["assignment", "entry_id"]
+    ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    assignment: _assignment_pb2.Assignment
+    entry_id: str
+    def __init__(self, entry_id: _Optional[str] = ..., assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
+
+class UpdateAssignmentOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
