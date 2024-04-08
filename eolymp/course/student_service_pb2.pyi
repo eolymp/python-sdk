@@ -36,10 +36,12 @@ class DeleteStudentOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAssignmentInput(_message.Message):
-    __slots__ = ["entry_id"]
+    __slots__ = ["entry_id", "student_id"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     entry_id: str
-    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
+    student_id: str
+    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ...) -> None: ...
 
 class DescribeAssignmentOutput(_message.Message):
     __slots__ = ["assignment"]
@@ -129,12 +131,14 @@ class StartCourseOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateAssignmentInput(_message.Message):
-    __slots__ = ["assignment", "entry_id"]
+    __slots__ = ["assignment", "entry_id", "student_id"]
     ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     assignment: _assignment_pb2.Assignment
     entry_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
+    student_id: str
+    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ..., assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
 
 class UpdateAssignmentOutput(_message.Message):
     __slots__ = []
