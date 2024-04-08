@@ -2,7 +2,6 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import code_template_pb2 as _code_template_pb2
-from eolymp.atlas import scoring_score_pb2 as _scoring_score_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
