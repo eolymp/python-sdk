@@ -5,6 +5,7 @@ from eolymp.course import assignment_pb2 as _assignment_pb2
 from eolymp.course import student_pb2 as _student_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -12,6 +13,22 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class AssignEntryInput(_message.Message):
+    __slots__ = ["end_at", "entry_id", "start_at", "student_id"]
+    END_AT_FIELD_NUMBER: _ClassVar[int]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    START_AT_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
+    end_at: _timestamp_pb2.Timestamp
+    entry_id: str
+    start_at: _timestamp_pb2.Timestamp
+    student_id: str
+    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ..., start_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class AssignEntryOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class CreateStudentInput(_message.Message):
     __slots__ = ["student"]
@@ -132,17 +149,15 @@ class StartCourseOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateAssignmentInput(_message.Message):
-    __slots__ = ["assignment", "entry_id", "student_id"]
-    ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
+class UnassignEntryInput(_message.Message):
+    __slots__ = ["entry_id", "student_id"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
     STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    assignment: _assignment_pb2.Assignment
     entry_id: str
     student_id: str
-    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ..., assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
+    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ...) -> None: ...
 
-class UpdateAssignmentOutput(_message.Message):
+class UnassignEntryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 

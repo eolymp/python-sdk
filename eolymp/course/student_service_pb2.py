@@ -18,9 +18,10 @@ from eolymp.course import assignment_pb2 as eolymp_dot_course_dot_assignment__pb
 from eolymp.course import student_pb2 as eolymp_dot_course_dot_student__pb2
 from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/course/student_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1e\x65olymp/course/assignment.proto\x1a\x1b\x65olymp/course/student.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"=\n\x12\x43reateStudentInput\x12\'\n\x07student\x18\x01 \x01(\x0b\x32\x16.eolymp.course.Student\")\n\x13\x43reateStudentOutput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\"\xab\x01\n\x12UpdateStudentInput\x12\x36\n\x05patch\x18\x01 \x03(\x0e\x32\'.eolymp.course.UpdateStudentInput.Patch\x12\x12\n\nstudent_id\x18\x02 \x01(\t\x12\'\n\x07student\x18\x03 \x01(\x0b\x32\x16.eolymp.course.Student\" \n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x0e\n\nBONUS_TIME\x10\x01\"\x15\n\x13UpdateStudentOutput\"(\n\x12\x44\x65leteStudentInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteStudentOutput\"*\n\x14\x44\x65scribeStudentInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\"@\n\x15\x44\x65scribeStudentOutput\x12\'\n\x07student\x18\x01 \x01(\x0b\x32\x16.eolymp.course.Student\"\xf1\x03\n\x11ListStudentsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.course.ListStudentsInput.Filter\x12\x37\n\x04sort\x18\x32 \x01(\x0e\x32).eolymp.course.ListStudentsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xda\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x0b \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x0c \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06status\x18\r \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"B\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nSTARTED_AT\x10\x01\x12\x0f\n\x0b\x43OMPLETE_AT\x10\x02\x12\x08\n\x04NAME\x10\x03\"J\n\x12ListStudentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.course.Student\"?\n\x17\x44\x65scribeAssignmentInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\x12\x10\n\x08\x65ntry_id\x18\x02 \x01(\t\"I\n\x18\x44\x65scribeAssignmentOutput\x12-\n\nassignment\x18\x01 \x01(\x0b\x32\x19.eolymp.course.Assignment\"l\n\x15UpdateAssignmentInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\x12\x10\n\x08\x65ntry_id\x18\x02 \x01(\t\x12-\n\nassignment\x18\x03 \x01(\x0b\x32\x19.eolymp.course.Assignment\"\x18\n\x16UpdateAssignmentOutput\"\x12\n\x10StartCourseInput\"\x13\n\x11StartCourseOutput\"<\n\x14StartAssignmentInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\x12\x10\n\x08\x65ntry_id\x18\x02 \x01(\t\"\x17\n\x15StartAssignmentOutput\"\x15\n\x13\x44\x65scribeViewerInput\"?\n\x14\x44\x65scribeViewerOutput\x12\'\n\x07student\x18\x01 \x01(\x0b\x32\x16.eolymp.course.Student2\x9d\x0c\n\x0eStudentService\x12\x95\x01\n\rCreateStudent\x12!.eolymp.course.CreateStudentInput\x1a\".eolymp.course.CreateStudentOutput\"=\x82\xe3\n\x19\x8a\xe3\n\x15student:student:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0b\x1a\t/students\x12\xa2\x01\n\rUpdateStudent\x12!.eolymp.course.UpdateStudentInput\x1a\".eolymp.course.UpdateStudentOutput\"J\x82\xe3\n\x19\x8a\xe3\n\x15student:student:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x18\x1a\x16/students/{student_id}\x12\xa2\x01\n\rDeleteStudent\x12!.eolymp.course.DeleteStudentInput\x1a\".eolymp.course.DeleteStudentOutput\"J\x82\xe3\n\x19\x8a\xe3\n\x15student:student:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x18*\x16/students/{student_id}\x12\xa7\x01\n\x0f\x44\x65scribeStudent\x12#.eolymp.course.DescribeStudentInput\x1a$.eolymp.course.DescribeStudentOutput\"I\x82\xe3\n\x18\x8a\xe3\n\x14student:student:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x12\x16/students/{student_id}\x12\x91\x01\n\x0cListStudents\x12 .eolymp.course.ListStudentsInput\x1a!.eolymp.course.ListStudentsOutput\"<\x82\xe3\n\x18\x8a\xe3\n\x14student:student:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/students\x12\xab\x01\n\x12\x44\x65scribeAssignment\x12&.eolymp.course.DescribeAssignmentInput\x1a\'.eolymp.course.DescribeAssignmentOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02/\x12-/students/{student_id}/assignments/{entry_id}\x12\xa5\x01\n\x10UpdateAssignment\x12$.eolymp.course.UpdateAssignmentInput\x1a%.eolymp.course.UpdateAssignmentOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02/\"-/students/{student_id}/assignments/{entry_id}\x12o\n\x0bStartCourse\x12\x1f.eolymp.course.StartCourseInput\x1a .eolymp.course.StartCourseOutput\"\x1d\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x08\"\x06/start\x12\xa8\x01\n\x0fStartAssignment\x12#.eolymp.course.StartAssignmentInput\x1a$.eolymp.course.StartAssignmentOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x35\"3/students/{student_id}/assignments/{entry_id}/start\x12y\n\x0e\x44\x65scribeViewer\x12\".eolymp.course.DescribeViewerInput\x1a#.eolymp.course.DescribeViewerOutput\"\x1e\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\t\"\x07/viewerB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/course/student_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1e\x65olymp/course/assignment.proto\x1a\x1b\x65olymp/course/student.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"=\n\x12\x43reateStudentInput\x12\'\n\x07student\x18\x01 \x01(\x0b\x32\x16.eolymp.course.Student\")\n\x13\x43reateStudentOutput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\"\xab\x01\n\x12UpdateStudentInput\x12\x36\n\x05patch\x18\x01 \x03(\x0e\x32\'.eolymp.course.UpdateStudentInput.Patch\x12\x12\n\nstudent_id\x18\x02 \x01(\t\x12\'\n\x07student\x18\x03 \x01(\x0b\x32\x16.eolymp.course.Student\" \n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x0e\n\nBONUS_TIME\x10\x01\"\x15\n\x13UpdateStudentOutput\"(\n\x12\x44\x65leteStudentInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteStudentOutput\"*\n\x14\x44\x65scribeStudentInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\"@\n\x15\x44\x65scribeStudentOutput\x12\'\n\x07student\x18\x01 \x01(\x0b\x32\x16.eolymp.course.Student\"\xf1\x03\n\x11ListStudentsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.course.ListStudentsInput.Filter\x12\x37\n\x04sort\x18\x32 \x01(\x0e\x32).eolymp.course.ListStudentsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xda\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x0b \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x0c \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06status\x18\r \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"B\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nSTARTED_AT\x10\x01\x12\x0f\n\x0b\x43OMPLETE_AT\x10\x02\x12\x08\n\x04NAME\x10\x03\"J\n\x12ListStudentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.course.Student\"?\n\x17\x44\x65scribeAssignmentInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\x12\x10\n\x08\x65ntry_id\x18\x02 \x01(\t\"I\n\x18\x44\x65scribeAssignmentOutput\x12-\n\nassignment\x18\x01 \x01(\x0b\x32\x19.eolymp.course.Assignment\"\x92\x01\n\x10\x41ssignEntryInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\x12\x10\n\x08\x65ntry_id\x18\x02 \x01(\t\x12,\n\x08start_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x06\x65nd_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x13\n\x11\x41ssignEntryOutput\":\n\x12UnassignEntryInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\x12\x10\n\x08\x65ntry_id\x18\x02 \x01(\t\"\x15\n\x13UnassignEntryOutput\"\x12\n\x10StartCourseInput\"\x13\n\x11StartCourseOutput\"<\n\x14StartAssignmentInput\x12\x12\n\nstudent_id\x18\x01 \x01(\t\x12\x10\n\x08\x65ntry_id\x18\x02 \x01(\t\"\x17\n\x15StartAssignmentOutput\"\x15\n\x13\x44\x65scribeViewerInput\"?\n\x14\x44\x65scribeViewerOutput\x12\'\n\x07student\x18\x01 \x01(\x0b\x32\x16.eolymp.course.Student2\x82\x0c\n\x0eStudentService\x12\x95\x01\n\rCreateStudent\x12!.eolymp.course.CreateStudentInput\x1a\".eolymp.course.CreateStudentOutput\"=\x82\xe3\n\x19\x8a\xe3\n\x15student:student:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0b\x1a\t/students\x12\xa2\x01\n\rUpdateStudent\x12!.eolymp.course.UpdateStudentInput\x1a\".eolymp.course.UpdateStudentOutput\"J\x82\xe3\n\x19\x8a\xe3\n\x15student:student:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x18\x1a\x16/students/{student_id}\x12\xa2\x01\n\rDeleteStudent\x12!.eolymp.course.DeleteStudentInput\x1a\".eolymp.course.DeleteStudentOutput\"J\x82\xe3\n\x19\x8a\xe3\n\x15student:student:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x18*\x16/students/{student_id}\x12\xa7\x01\n\x0f\x44\x65scribeStudent\x12#.eolymp.course.DescribeStudentInput\x1a$.eolymp.course.DescribeStudentOutput\"I\x82\xe3\n\x18\x8a\xe3\n\x14student:student:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x12\x16/students/{student_id}\x12\x91\x01\n\x0cListStudents\x12 .eolymp.course.ListStudentsInput\x1a!.eolymp.course.ListStudentsOutput\"<\x82\xe3\n\x18\x8a\xe3\n\x14student:student:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/students\x12\xab\x01\n\x12\x44\x65scribeAssignment\x12&.eolymp.course.DescribeAssignmentInput\x1a\'.eolymp.course.DescribeAssignmentOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02/\x12-/students/{student_id}/assignments/{entry_id}\x12\x96\x01\n\x0b\x41ssignEntry\x12\x1f.eolymp.course.AssignEntryInput\x1a .eolymp.course.AssignEntryOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02/\"-/students/{student_id}/assignments/{entry_id}\x12\x9c\x01\n\rUnassignEntry\x12!.eolymp.course.UnassignEntryInput\x1a\".eolymp.course.UnassignEntryOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02/*-/students/{student_id}/assignments/{entry_id}\x12o\n\x0bStartCourse\x12\x1f.eolymp.course.StartCourseInput\x1a .eolymp.course.StartCourseOutput\"\x1d\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x08\"\x06/start\x12y\n\x0e\x44\x65scribeViewer\x12\".eolymp.course.DescribeViewerInput\x1a#.eolymp.course.DescribeViewerOutput\"\x1e\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\t\"\x07/viewerB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.student_service_pb2', globals())
@@ -40,60 +41,64 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _STUDENTSERVICE.methods_by_name['ListStudents']._serialized_options = b'\202\343\n\030\212\343\n\024student:student:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\013\022\t/students'
   _STUDENTSERVICE.methods_by_name['DescribeAssignment']._options = None
   _STUDENTSERVICE.methods_by_name['DescribeAssignment']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002/\022-/students/{student_id}/assignments/{entry_id}'
-  _STUDENTSERVICE.methods_by_name['UpdateAssignment']._options = None
-  _STUDENTSERVICE.methods_by_name['UpdateAssignment']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002/\"-/students/{student_id}/assignments/{entry_id}'
+  _STUDENTSERVICE.methods_by_name['AssignEntry']._options = None
+  _STUDENTSERVICE.methods_by_name['AssignEntry']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002/\"-/students/{student_id}/assignments/{entry_id}'
+  _STUDENTSERVICE.methods_by_name['UnassignEntry']._options = None
+  _STUDENTSERVICE.methods_by_name['UnassignEntry']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002/*-/students/{student_id}/assignments/{entry_id}'
   _STUDENTSERVICE.methods_by_name['StartCourse']._options = None
   _STUDENTSERVICE.methods_by_name['StartCourse']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002\010\"\006/start'
-  _STUDENTSERVICE.methods_by_name['StartAssignment']._options = None
-  _STUDENTSERVICE.methods_by_name['StartAssignment']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\0025\"3/students/{student_id}/assignments/{entry_id}/start'
   _STUDENTSERVICE.methods_by_name['DescribeViewer']._options = None
   _STUDENTSERVICE.methods_by_name['DescribeViewer']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\t\"\007/viewer'
-  _CREATESTUDENTINPUT._serialized_start=283
-  _CREATESTUDENTINPUT._serialized_end=344
-  _CREATESTUDENTOUTPUT._serialized_start=346
-  _CREATESTUDENTOUTPUT._serialized_end=387
-  _UPDATESTUDENTINPUT._serialized_start=390
-  _UPDATESTUDENTINPUT._serialized_end=561
-  _UPDATESTUDENTINPUT_PATCH._serialized_start=529
-  _UPDATESTUDENTINPUT_PATCH._serialized_end=561
-  _UPDATESTUDENTOUTPUT._serialized_start=563
-  _UPDATESTUDENTOUTPUT._serialized_end=584
-  _DELETESTUDENTINPUT._serialized_start=586
-  _DELETESTUDENTINPUT._serialized_end=626
-  _DELETESTUDENTOUTPUT._serialized_start=628
-  _DELETESTUDENTOUTPUT._serialized_end=649
-  _DESCRIBESTUDENTINPUT._serialized_start=651
-  _DESCRIBESTUDENTINPUT._serialized_end=693
-  _DESCRIBESTUDENTOUTPUT._serialized_start=695
-  _DESCRIBESTUDENTOUTPUT._serialized_end=759
-  _LISTSTUDENTSINPUT._serialized_start=762
-  _LISTSTUDENTSINPUT._serialized_end=1259
-  _LISTSTUDENTSINPUT_FILTER._serialized_start=973
-  _LISTSTUDENTSINPUT_FILTER._serialized_end=1191
-  _LISTSTUDENTSINPUT_SORTABLE._serialized_start=1193
-  _LISTSTUDENTSINPUT_SORTABLE._serialized_end=1259
-  _LISTSTUDENTSOUTPUT._serialized_start=1261
-  _LISTSTUDENTSOUTPUT._serialized_end=1335
-  _DESCRIBEASSIGNMENTINPUT._serialized_start=1337
-  _DESCRIBEASSIGNMENTINPUT._serialized_end=1400
-  _DESCRIBEASSIGNMENTOUTPUT._serialized_start=1402
-  _DESCRIBEASSIGNMENTOUTPUT._serialized_end=1475
-  _UPDATEASSIGNMENTINPUT._serialized_start=1477
-  _UPDATEASSIGNMENTINPUT._serialized_end=1585
-  _UPDATEASSIGNMENTOUTPUT._serialized_start=1587
-  _UPDATEASSIGNMENTOUTPUT._serialized_end=1611
-  _STARTCOURSEINPUT._serialized_start=1613
-  _STARTCOURSEINPUT._serialized_end=1631
-  _STARTCOURSEOUTPUT._serialized_start=1633
-  _STARTCOURSEOUTPUT._serialized_end=1652
-  _STARTASSIGNMENTINPUT._serialized_start=1654
-  _STARTASSIGNMENTINPUT._serialized_end=1714
-  _STARTASSIGNMENTOUTPUT._serialized_start=1716
-  _STARTASSIGNMENTOUTPUT._serialized_end=1739
-  _DESCRIBEVIEWERINPUT._serialized_start=1741
-  _DESCRIBEVIEWERINPUT._serialized_end=1762
-  _DESCRIBEVIEWEROUTPUT._serialized_start=1764
-  _DESCRIBEVIEWEROUTPUT._serialized_end=1827
-  _STUDENTSERVICE._serialized_start=1830
-  _STUDENTSERVICE._serialized_end=3395
+  _CREATESTUDENTINPUT._serialized_start=316
+  _CREATESTUDENTINPUT._serialized_end=377
+  _CREATESTUDENTOUTPUT._serialized_start=379
+  _CREATESTUDENTOUTPUT._serialized_end=420
+  _UPDATESTUDENTINPUT._serialized_start=423
+  _UPDATESTUDENTINPUT._serialized_end=594
+  _UPDATESTUDENTINPUT_PATCH._serialized_start=562
+  _UPDATESTUDENTINPUT_PATCH._serialized_end=594
+  _UPDATESTUDENTOUTPUT._serialized_start=596
+  _UPDATESTUDENTOUTPUT._serialized_end=617
+  _DELETESTUDENTINPUT._serialized_start=619
+  _DELETESTUDENTINPUT._serialized_end=659
+  _DELETESTUDENTOUTPUT._serialized_start=661
+  _DELETESTUDENTOUTPUT._serialized_end=682
+  _DESCRIBESTUDENTINPUT._serialized_start=684
+  _DESCRIBESTUDENTINPUT._serialized_end=726
+  _DESCRIBESTUDENTOUTPUT._serialized_start=728
+  _DESCRIBESTUDENTOUTPUT._serialized_end=792
+  _LISTSTUDENTSINPUT._serialized_start=795
+  _LISTSTUDENTSINPUT._serialized_end=1292
+  _LISTSTUDENTSINPUT_FILTER._serialized_start=1006
+  _LISTSTUDENTSINPUT_FILTER._serialized_end=1224
+  _LISTSTUDENTSINPUT_SORTABLE._serialized_start=1226
+  _LISTSTUDENTSINPUT_SORTABLE._serialized_end=1292
+  _LISTSTUDENTSOUTPUT._serialized_start=1294
+  _LISTSTUDENTSOUTPUT._serialized_end=1368
+  _DESCRIBEASSIGNMENTINPUT._serialized_start=1370
+  _DESCRIBEASSIGNMENTINPUT._serialized_end=1433
+  _DESCRIBEASSIGNMENTOUTPUT._serialized_start=1435
+  _DESCRIBEASSIGNMENTOUTPUT._serialized_end=1508
+  _ASSIGNENTRYINPUT._serialized_start=1511
+  _ASSIGNENTRYINPUT._serialized_end=1657
+  _ASSIGNENTRYOUTPUT._serialized_start=1659
+  _ASSIGNENTRYOUTPUT._serialized_end=1678
+  _UNASSIGNENTRYINPUT._serialized_start=1680
+  _UNASSIGNENTRYINPUT._serialized_end=1738
+  _UNASSIGNENTRYOUTPUT._serialized_start=1740
+  _UNASSIGNENTRYOUTPUT._serialized_end=1761
+  _STARTCOURSEINPUT._serialized_start=1763
+  _STARTCOURSEINPUT._serialized_end=1781
+  _STARTCOURSEOUTPUT._serialized_start=1783
+  _STARTCOURSEOUTPUT._serialized_end=1802
+  _STARTASSIGNMENTINPUT._serialized_start=1804
+  _STARTASSIGNMENTINPUT._serialized_end=1864
+  _STARTASSIGNMENTOUTPUT._serialized_start=1866
+  _STARTASSIGNMENTOUTPUT._serialized_end=1889
+  _DESCRIBEVIEWERINPUT._serialized_start=1891
+  _DESCRIBEVIEWERINPUT._serialized_end=1912
+  _DESCRIBEVIEWEROUTPUT._serialized_start=1914
+  _DESCRIBEVIEWEROUTPUT._serialized_end=1977
+  _STUDENTSERVICE._serialized_start=1980
+  _STUDENTSERVICE._serialized_end=3518
 # @@protoc_insertion_point(module_scope)

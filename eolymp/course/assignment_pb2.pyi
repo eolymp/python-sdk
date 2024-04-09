@@ -16,13 +16,12 @@ class Assignment(_message.Message):
     DURATION_FIELD_NUMBER: _ClassVar[int]
     END_AT_FIELD_NUMBER: _ClassVar[int]
     GRADE_FIELD_NUMBER: _ClassVar[int]
-    INACTIVE: Assignment.Status
-    INHERITED: Assignment.Status
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
     READY: Assignment.Status
     SCHEDULED: Assignment.Status
     START_AT_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
+    UNASSIGNED: Assignment.Status
     UNKNOWN_STATUS: Assignment.Status
     UPSOLVE: Assignment.Status
     complete_at: _timestamp_pb2.Timestamp
