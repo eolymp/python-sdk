@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Assignment(_message.Message):
-    __slots__ = ["complete_before", "completed_at", "duration", "grade", "progress", "start_after", "started_at", "status"]
+    __slots__ = ["complete_before", "completed_at", "duration", "explicit", "start_after", "started_at", "status"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ACTIVE: Assignment.Status
@@ -15,8 +15,7 @@ class Assignment(_message.Message):
     COMPLETED_AT_FIELD_NUMBER: _ClassVar[int]
     COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
     DURATION_FIELD_NUMBER: _ClassVar[int]
-    GRADE_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
+    EXPLICIT_FIELD_NUMBER: _ClassVar[int]
     READY: Assignment.Status
     SCHEDULED: Assignment.Status
     STARTED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -28,9 +27,8 @@ class Assignment(_message.Message):
     complete_before: _timestamp_pb2.Timestamp
     completed_at: _timestamp_pb2.Timestamp
     duration: int
-    grade: int
-    progress: float
+    explicit: bool
     start_after: _timestamp_pb2.Timestamp
     started_at: _timestamp_pb2.Timestamp
     status: Assignment.Status
-    def __init__(self, status: _Optional[_Union[Assignment.Status, str]] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...
+    def __init__(self, status: _Optional[_Union[Assignment.Status, str]] = ..., explicit: bool = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ...) -> None: ...
