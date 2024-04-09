@@ -15,16 +15,18 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AssignEntryInput(_message.Message):
-    __slots__ = ["end_at", "entry_id", "start_at", "student_id"]
-    END_AT_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["complete_before", "duration", "entry_id", "start_after", "student_id"]
+    COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
+    DURATION_FIELD_NUMBER: _ClassVar[int]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    START_AT_FIELD_NUMBER: _ClassVar[int]
+    START_AFTER_FIELD_NUMBER: _ClassVar[int]
     STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    end_at: _timestamp_pb2.Timestamp
+    complete_before: _timestamp_pb2.Timestamp
+    duration: int
     entry_id: str
-    start_at: _timestamp_pb2.Timestamp
+    start_after: _timestamp_pb2.Timestamp
     student_id: str
-    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ..., start_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ...) -> None: ...
 
 class AssignEntryOutput(_message.Message):
     __slots__ = []
