@@ -78,3 +78,46 @@ class CourseServiceClient:
             **kwargs,
         )
 
+    def AssignCourse(self, request, **kwargs):
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/assignments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.AssignCourseOutput"),
+            **kwargs,
+        )
+
+    def UnassignCourse(self, request, **kwargs):
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/assignments/"+urllib.parse.quote(request.student_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.student_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UnassignCourseOutput"),
+            **kwargs,
+        )
+
+    def StartCourse(self, request, **kwargs):
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/start"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.StartCourseOutput"),
+            **kwargs,
+        )
+

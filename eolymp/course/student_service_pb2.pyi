@@ -14,24 +14,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class AssignEntryInput(_message.Message):
-    __slots__ = ["complete_before", "duration", "entry_id", "start_after", "student_id"]
-    COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
-    DURATION_FIELD_NUMBER: _ClassVar[int]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    START_AFTER_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    complete_before: _timestamp_pb2.Timestamp
-    duration: int
-    entry_id: str
-    start_after: _timestamp_pb2.Timestamp
-    student_id: str
-    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ...) -> None: ...
-
-class AssignEntryOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class CreateStudentInput(_message.Message):
     __slots__ = ["student"]
     STUDENT_FIELD_NUMBER: _ClassVar[int]
@@ -53,20 +35,6 @@ class DeleteStudentInput(_message.Message):
 class DeleteStudentOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class DescribeAssignmentInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ...) -> None: ...
-
-class DescribeAssignmentOutput(_message.Message):
-    __slots__ = ["assignment"]
-    ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
-    assignment: _assignment_pb2.Assignment
-    def __init__(self, assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
 
 class DescribeStudentInput(_message.Message):
     __slots__ = ["student_id"]
@@ -130,38 +98,6 @@ class ListStudentsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_student_pb2.Student]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_student_pb2.Student, _Mapping]]] = ...) -> None: ...
-
-class StartAssignmentInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ...) -> None: ...
-
-class StartAssignmentOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class StartCourseInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class StartCourseOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UnassignEntryInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, student_id: _Optional[str] = ..., entry_id: _Optional[str] = ...) -> None: ...
-
-class UnassignEntryOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class UpdateStudentInput(_message.Message):
     __slots__ = ["patch", "student", "student_id"]

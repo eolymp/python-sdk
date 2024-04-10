@@ -4,6 +4,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.course import course_pb2 as _course_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -11,6 +12,24 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class AssignCourseInput(_message.Message):
+    __slots__ = ["complete_before", "course_id", "duration", "start_after", "student_id"]
+    COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    DURATION_FIELD_NUMBER: _ClassVar[int]
+    START_AFTER_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
+    complete_before: _timestamp_pb2.Timestamp
+    course_id: str
+    duration: int
+    start_after: _timestamp_pb2.Timestamp
+    student_id: str
+    def __init__(self, course_id: _Optional[str] = ..., student_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ...) -> None: ...
+
+class AssignCourseOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class CreateCourseInput(_message.Message):
     __slots__ = ["course"]
@@ -35,12 +54,14 @@ class DeleteCourseOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeCourseInput(_message.Message):
-    __slots__ = ["course_id", "render"]
+    __slots__ = ["course_id", "extra", "student_id"]
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     course_id: str
-    render: bool
-    def __init__(self, course_id: _Optional[str] = ..., render: bool = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_course_pb2.Course.Extra]
+    student_id: str
+    def __init__(self, course_id: _Optional[str] = ..., student_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_course_pb2.Course.Extra, str]]] = ...) -> None: ...
 
 class DescribeCourseOutput(_message.Message):
     __slots__ = ["course"]
@@ -49,7 +70,7 @@ class DescribeCourseOutput(_message.Message):
     def __init__(self, course: _Optional[_Union[_course_pb2.Course, _Mapping]] = ...) -> None: ...
 
 class ListCoursesInput(_message.Message):
-    __slots__ = ["filters", "offset", "order", "render", "size", "sort"]
+    __slots__ = ["extra", "filters", "offset", "order", "size", "sort", "student_id"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -64,19 +85,21 @@ class ListCoursesInput(_message.Message):
         topic_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., topic_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     DEFAULT: ListCoursesInput.Sortable
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_course_pb2.Course.Extra]
     filters: ListCoursesInput.Filter
     offset: int
     order: _direction_pb2.Direction
-    render: bool
     size: int
     sort: ListCoursesInput.Sortable
-    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCoursesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListCoursesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    student_id: str
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCoursesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListCoursesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., student_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_course_pb2.Course.Extra, str]]] = ...) -> None: ...
 
 class ListCoursesOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -85,6 +108,28 @@ class ListCoursesOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_course_pb2.Course]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_course_pb2.Course, _Mapping]]] = ...) -> None: ...
+
+class StartCourseInput(_message.Message):
+    __slots__ = ["course_id"]
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    def __init__(self, course_id: _Optional[str] = ...) -> None: ...
+
+class StartCourseOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UnassignCourseInput(_message.Message):
+    __slots__ = ["course_id", "student_id"]
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    student_id: str
+    def __init__(self, course_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
+
+class UnassignCourseOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class UpdateCourseInput(_message.Message):
     __slots__ = ["course", "course_id", "patch"]

@@ -159,3 +159,46 @@ class EntryServiceClient:
             **kwargs,
         )
 
+    def AssignEntry(self, request, **kwargs):
+        path = "/entries/"+urllib.parse.quote(request.entry_id)+"/assignments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.AssignEntryOutput"),
+            **kwargs,
+        )
+
+    def UnassignEntry(self, request, **kwargs):
+        path = "/entries/"+urllib.parse.quote(request.entry_id)+"/assignments/"+urllib.parse.quote(request.student_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.entry_id = ""
+        request.student_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UnassignEntryOutput"),
+            **kwargs,
+        )
+
+    def StartEntry(self, request, **kwargs):
+        path = "/entries/"+urllib.parse.quote(request.entry_id)+"/start"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.StartEntryOutput"),
+            **kwargs,
+        )
+
