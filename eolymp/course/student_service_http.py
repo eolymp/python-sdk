@@ -78,8 +78,45 @@ class StudentServiceClient:
             **kwargs,
         )
 
-    def DescribeAssignment(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.student_id)+"/assignments/"+urllib.parse.quote(request.entry_id)
+    def StartCourse(self, request, **kwargs):
+        path = "/start"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.StartCourseOutput"),
+            **kwargs,
+        )
+
+    def StartAssignment(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.student_id)+"/assignments/"+urllib.parse.quote(request.entry_id)+"/start"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.student_id = ""
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.StartAssignmentOutput"),
+            **kwargs,
+        )
+
+    def DescribeViewer(self, request, **kwargs):
+        path = "/viewer"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeViewerOutput"),
+            **kwargs,
+        )
+
+    def DescribeProgress(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.student_id)+"/progress/"+urllib.parse.quote(request.entry_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.student_id = ""
@@ -89,7 +126,22 @@ class StudentServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeAssignmentOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeProgressOutput"),
+            **kwargs,
+        )
+
+    def ReportProgress(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.student_id)+"/progress/"+urllib.parse.quote(request.entry_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.student_id = ""
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ReportProgressOutput"),
             **kwargs,
         )
 
@@ -123,25 +175,18 @@ class StudentServiceClient:
             **kwargs,
         )
 
-    def StartCourse(self, request, **kwargs):
-        path = "/start"
+    def DescribeAssignment(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.student_id)+"/assignments/"+urllib.parse.quote(request.entry_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.student_id = ""
+        request.entry_id = ""
 
         return self.transport.request(
-            method="POST",
+            method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.StartCourseOutput"),
-            **kwargs,
-        )
-
-    def DescribeViewer(self, request, **kwargs):
-        path = "/viewer"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeViewerOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeAssignmentOutput"),
             **kwargs,
         )
 

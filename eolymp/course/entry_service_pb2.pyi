@@ -48,22 +48,6 @@ class DescribeEntryOutput(_message.Message):
     entry: _entry_pb2.Entry
     def __init__(self, entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
 
-class DescribeProgressInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
-
-class DescribeProgressOutput(_message.Message):
-    __slots__ = ["grade", "progress"]
-    GRADE_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    grade: int
-    progress: float
-    def __init__(self, progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...
-
 class DescribeTOCInput(_message.Message):
     __slots__ = ["depth", "draft", "root_id"]
     DEPTH_FIELD_NUMBER: _ClassVar[int]
@@ -158,18 +142,6 @@ class RenameEntryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class ReportProgressInput(_message.Message):
-    __slots__ = ["entry_id", "progress"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    progress: float
-    def __init__(self, entry_id: _Optional[str] = ..., progress: _Optional[float] = ...) -> None: ...
-
-class ReportProgressOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class UpdateEntryInput(_message.Message):
     __slots__ = ["entry", "entry_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -195,21 +167,3 @@ class UpdateEntryInput(_message.Message):
 class UpdateEntryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class WatchProgressInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
-
-class WatchProgressOutput(_message.Message):
-    __slots__ = ["entry_id", "grade", "progress"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    GRADE_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    grade: int
-    progress: float
-    def __init__(self, entry_id: _Optional[str] = ..., progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...

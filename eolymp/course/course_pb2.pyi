@@ -8,7 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Course(_message.Message):
-    __slots__ = ["description", "duration", "estimate", "id", "image", "locale", "name", "topics", "url", "visibility"]
+    __slots__ = ["description", "duration", "estimate", "id", "image", "locale", "name", "participation_mode", "topics", "url", "visibility"]
+    class ParticipationMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -17,11 +19,15 @@ class Course(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
+    MODERATED: Course.ParticipationMode
     NAME_FIELD_NUMBER: _ClassVar[int]
     NONE: Course.Visibility
+    PARTICIPATION_MODE_FIELD_NUMBER: _ClassVar[int]
     PRIVATE: Course.Visibility
     PUBLIC: Course.Visibility
+    SELF_PACED: Course.ParticipationMode
     TOPICS_FIELD_NUMBER: _ClassVar[int]
+    UNKNOWN_PARTICIPATION_MODE: Course.ParticipationMode
     UNLISTED: Course.Visibility
     URL_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
@@ -32,7 +38,8 @@ class Course(_message.Message):
     image: str
     locale: str
     name: str
+    participation_mode: Course.ParticipationMode
     topics: _containers.RepeatedScalarFieldContainer[str]
     url: str
     visibility: Course.Visibility
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., topics: _Optional[_Iterable[str]] = ..., estimate: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., topics: _Optional[_Iterable[str]] = ..., estimate: _Optional[int] = ..., participation_mode: _Optional[_Union[Course.ParticipationMode, str]] = ...) -> None: ...
