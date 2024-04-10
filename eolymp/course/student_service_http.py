@@ -115,36 +115,6 @@ class StudentServiceClient:
             **kwargs,
         )
 
-    def DescribeProgress(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.student_id)+"/progress/"+urllib.parse.quote(request.entry_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.student_id = ""
-        request.entry_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeProgressOutput"),
-            **kwargs,
-        )
-
-    def ReportProgress(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.student_id)+"/progress/"+urllib.parse.quote(request.entry_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.student_id = ""
-        request.entry_id = ""
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.ReportProgressOutput"),
-            **kwargs,
-        )
-
     def AssignEntry(self, request, **kwargs):
         path = "/students/"+urllib.parse.quote(request.student_id)+"/assignments/"+urllib.parse.quote(request.entry_id)
 

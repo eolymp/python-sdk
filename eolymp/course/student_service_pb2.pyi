@@ -68,22 +68,6 @@ class DescribeAssignmentOutput(_message.Message):
     assignment: _assignment_pb2.Assignment
     def __init__(self, assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
 
-class DescribeProgressInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
-
-class DescribeProgressOutput(_message.Message):
-    __slots__ = ["grade", "progress"]
-    GRADE_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    grade: int
-    progress: float
-    def __init__(self, progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...
-
 class DescribeStudentInput(_message.Message):
     __slots__ = ["student_id"]
     STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -147,18 +131,6 @@ class ListStudentsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_student_pb2.Student, _Mapping]]] = ...) -> None: ...
 
-class ReportProgressInput(_message.Message):
-    __slots__ = ["entry_id", "progress"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    progress: float
-    def __init__(self, entry_id: _Optional[str] = ..., progress: _Optional[float] = ...) -> None: ...
-
-class ReportProgressOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class StartAssignmentInput(_message.Message):
     __slots__ = ["entry_id", "student_id"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
@@ -208,21 +180,3 @@ class UpdateStudentInput(_message.Message):
 class UpdateStudentOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class WatchProgressInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
-
-class WatchProgressOutput(_message.Message):
-    __slots__ = ["entry_id", "grade", "progress"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    GRADE_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    grade: int
-    progress: float
-    def __init__(self, entry_id: _Optional[str] = ..., progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...
