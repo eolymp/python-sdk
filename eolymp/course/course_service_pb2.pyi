@@ -98,6 +98,7 @@ class UpdateCourseInput(_message.Message):
     IMAGE: UpdateCourseInput.Patch
     LOCALE: UpdateCourseInput.Patch
     NAME: UpdateCourseInput.Patch
+    PARTICIPATION_MODE: UpdateCourseInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     TOPICS: UpdateCourseInput.Patch
     VISIBILITY: UpdateCourseInput.Patch
