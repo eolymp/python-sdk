@@ -101,3 +101,19 @@ class RebuildScoreOutput(_message.Message):
     ACTIVITY_ID_FIELD_NUMBER: _ClassVar[int]
     activity_id: str
     def __init__(self, activity_id: _Optional[str] = ...) -> None: ...
+
+class WatchScoreInput(_message.Message):
+    __slots__ = ["contest_id", "mode", "participant_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    mode: _score_pb2.Score.FetchingMode
+    participant_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ...) -> None: ...
+
+class WatchScoreOutput(_message.Message):
+    __slots__ = ["score"]
+    SCORE_FIELD_NUMBER: _ClassVar[int]
+    score: _score_pb2.Score
+    def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...

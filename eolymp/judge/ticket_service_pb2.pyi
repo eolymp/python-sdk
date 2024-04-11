@@ -2,8 +2,8 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
-from eolymp.judge import reply_pb2 as _reply_pb2
 from eolymp.judge import ticket_pb2 as _ticket_pb2
+from eolymp.judge import ticket_reply_pb2 as _ticket_reply_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -79,19 +79,19 @@ class ListRepliesInput(_message.Message):
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
-    extra: _containers.RepeatedScalarFieldContainer[_reply_pb2.Reply.Extra]
+    extra: _containers.RepeatedScalarFieldContainer[_ticket_reply_pb2.Reply.Extra]
     offset: int
     size: int
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
 
 class ListRepliesOutput(_message.Message):
     __slots__ = ["items", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_reply_pb2.Reply]
+    items: _containers.RepeatedCompositeFieldContainer[_ticket_reply_pb2.Reply]
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_reply_pb2.Reply, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply, _Mapping]]] = ...) -> None: ...
 
 class ListTicketsInput(_message.Message):
     __slots__ = ["after", "extra", "filters", "offset", "order", "size", "sort"]
@@ -215,9 +215,9 @@ class WatchRepliesInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     cursor: str
-    extra: _containers.RepeatedScalarFieldContainer[_reply_pb2.Reply.Extra]
+    extra: _containers.RepeatedScalarFieldContainer[_ticket_reply_pb2.Reply.Extra]
     ticket_id: str
-    def __init__(self, ticket_id: _Optional[str] = ..., cursor: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., cursor: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
 
 class WatchRepliesOutput(_message.Message):
     __slots__ = ["event", "reply"]
@@ -230,8 +230,8 @@ class WatchRepliesOutput(_message.Message):
     UNKNOWN_EVENT: WatchRepliesOutput.Event
     UPDATED: WatchRepliesOutput.Event
     event: WatchRepliesOutput.Event
-    reply: _reply_pb2.Reply
-    def __init__(self, event: _Optional[_Union[WatchRepliesOutput.Event, str]] = ..., reply: _Optional[_Union[_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
+    reply: _ticket_reply_pb2.Reply
+    def __init__(self, event: _Optional[_Union[WatchRepliesOutput.Event, str]] = ..., reply: _Optional[_Union[_ticket_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
 
 class WatchTicketInput(_message.Message):
     __slots__ = ["extra", "ticket_id"]

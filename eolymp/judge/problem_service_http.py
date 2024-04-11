@@ -78,18 +78,17 @@ class ProblemServiceClient:
             **kwargs,
         )
 
-    def DescribeCodeTemplate(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates/"+urllib.parse.quote(request.template_id)
+    def DeleteProblem(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.problem_id = ""
-        request.template_id = ""
 
         return self.transport.request(
-            method="GET",
+            method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeCodeTemplateOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteProblemOutput"),
             **kwargs,
         )
 
@@ -104,6 +103,21 @@ class ProblemServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.LookupCodeTemplateOutput"),
+            **kwargs,
+        )
+
+    def DescribeCodeTemplate(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates/"+urllib.parse.quote(request.template_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+        request.template_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeCodeTemplateOutput"),
             **kwargs,
         )
 
@@ -146,34 +160,6 @@ class ProblemServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ListExamplesOutput"),
-            **kwargs,
-        )
-
-    def DeleteProblem(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteProblemOutput"),
-            **kwargs,
-        )
-
-    def RetestProblem(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/retest"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.RetestProblemOutput"),
             **kwargs,
         )
 

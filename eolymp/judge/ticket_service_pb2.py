@@ -15,14 +15,14 @@ from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
-from eolymp.judge import reply_pb2 as eolymp_dot_judge_dot_reply__pb2
 from eolymp.judge import ticket_pb2 as eolymp_dot_judge_dot_ticket__pb2
+from eolymp.judge import ticket_reply_pb2 as eolymp_dot_judge_dot_ticket__reply__pb2
 from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/judge/ticket_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x18\x65olymp/judge/reply.proto\x1a\x19\x65olymp/judge/ticket.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"s\n\x11\x43reateTicketInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12$\n\x07message\x18\x04 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x13\n\x0braw_message\x18\x03 \x01(\t\"\'\n\x12\x43reateTicketOutput\x12\x11\n\tticket_id\x18\x01 \x01(\t\"\xad\x01\n\x11UpdateTicketInput\x12\x34\n\x05patch\x18\x03 \x03(\x0e\x32%.eolymp.judge.UpdateTicketInput.Patch\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12$\n\x06ticket\x18\x02 \x01(\x0b\x32\x14.eolymp.judge.Ticket\")\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\n\n\x06STATUS\x10\x01\x12\x0b\n\x07SUBJECT\x10\x02\"\x14\n\x12UpdateTicketOutput\"g\n\x0fReadTicketInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x12\n\x10ReadTicketOutput\":\n\x11\x44\x65leteTicketInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\"\x14\n\x12\x44\x65leteTicketOutput\"h\n\x13\x44\x65scribeTicketInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.judge.Ticket.Extra\"<\n\x14\x44\x65scribeTicketOutput\x12$\n\x06ticket\x18\x01 \x01(\x0b\x32\x14.eolymp.judge.Ticket\"\xc7\x05\n\x10ListTicketsInput\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.judge.ListTicketsInput.Filter\x12\x31\n\x04sort\x18\x32 \x01(\x0e\x32#.eolymp.judge.ListTicketsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.judge.Ticket.Extra\x1a\x9a\x03\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncontest_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x36\n\x0eparticipant_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x08 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\x07is_read\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x31\n\x07is_open\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12-\n\x03own\x18\x07 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x30\n\x06status\x18\t \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"&\n\x04Sort\x12\x0e\n\nCREATED_AT\x10\x00\x12\x0e\n\nUPDATED_AT\x10\x01\"{\n\x11ListTicketsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.judge.Ticket\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\x12\x18\n\x10prev_page_cursor\x18\x04 \x01(\t\"\x82\x01\n\x10ReplyTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12$\n\x07message\x18\n \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x35\n\x10\x63hange_status_to\x18\x14 \x01(\x0e\x32\x1b.eolymp.judge.Ticket.Status\"%\n\x11ReplyTicketOutput\x12\x10\n\x08reply_id\x18\x01 \x01(\t\"Q\n\x10WatchTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.judge.Ticket.Extra\"9\n\x11WatchTicketOutput\x12$\n\x06ticket\x18\x01 \x01(\x0b\x32\x14.eolymp.judge.Ticket\"v\n\x11WatchTicketsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.judge.Ticket.Extra\"\xb4\x01\n\x12WatchTicketsOutput\x12\x35\n\x05\x65vent\x18\x01 \x01(\x0e\x32&.eolymp.judge.WatchTicketsOutput.Event\x12$\n\x06ticket\x18\x02 \x01(\x0b\x32\x14.eolymp.judge.Ticket\"A\n\x05\x45vent\x12\x11\n\rUNKNOWN_EVENT\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07UPDATED\x10\x02\x12\x0b\n\x07\x44\x45LETED\x10\x03\"@\n\x17WatchTicketSummaryInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"J\n\x18WatchTicketSummaryOutput\x12\x14\n\x0cunread_count\x18\x03 \x01(\r\x12\x18\n\x10unresolved_count\x18\x04 \x01(\r\"n\n\x10ListRepliesInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12)\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x19.eolymp.judge.Reply.Extra\"F\n\x11ListRepliesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.eolymp.judge.Reply\"7\n\x10\x44\x65leteReplyInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x10\n\x08reply_id\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteReplyOutput\"]\n\x10UpdateReplyInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x10\n\x08reply_id\x18\x02 \x01(\t\x12$\n\x07message\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x13\n\x11UpdateReplyOutput\"a\n\x11WatchRepliesInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0e\n\x06\x63ursor\x18\x02 \x01(\t\x12)\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x19.eolymp.judge.Reply.Extra\"\xb2\x01\n\x12WatchRepliesOutput\x12\x35\n\x05\x65vent\x18\x01 \x01(\x0e\x32&.eolymp.judge.WatchRepliesOutput.Event\x12\"\n\x05reply\x18\x02 \x01(\x0b\x32\x13.eolymp.judge.Reply\"A\n\x05\x45vent\x12\x11\n\rUNKNOWN_EVENT\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07UPDATED\x10\x02\x12\x0b\n\x07\x44\x45LETED\x10\x03\x32\x97\x10\n\rTicketService\x12\x93\x01\n\x0c\x43reateTicket\x12\x1f.eolymp.judge.CreateTicketInput\x1a .eolymp.judge.CreateTicketOutput\"@\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\"\x08/tickets\x12\x99\x01\n\x0cUpdateTicket\x12\x1f.eolymp.judge.UpdateTicketInput\x1a .eolymp.judge.UpdateTicketOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16\"\x14/tickets/{ticket_id}\x12\x97\x01\n\nReadTicket\x12\x1d.eolymp.judge.ReadTicketInput\x1a\x1e.eolymp.judge.ReadTicketOutput\"J\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x1b\"\x19/tickets/{ticket_id}/read\x12\x99\x01\n\x0c\x44\x65leteTicket\x12\x1f.eolymp.judge.DeleteTicketInput\x1a .eolymp.judge.DeleteTicketOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x16*\x14/tickets/{ticket_id}\x12\x9e\x01\n\x0e\x44\x65scribeTicket\x12!.eolymp.judge.DescribeTicketInput\x1a\".eolymp.judge.DescribeTicketOutput\"E\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x16\x12\x14/tickets/{ticket_id}\x12\x89\x01\n\x0bListTickets\x12\x1e.eolymp.judge.ListTicketsInput\x1a\x1f.eolymp.judge.ListTicketsOutput\"9\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\n\x12\x08/tickets\x12\xa4\x01\n\x0bReplyTicket\x12\x1e.eolymp.judge.ReplyTicketInput\x1a\x1f.eolymp.judge.ReplyTicketOutput\"T\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e\"\x1c/tickets/{ticket_id}/replies\x12l\n\x0bWatchTicket\x12\x1e.eolymp.judge.WatchTicketInput\x1a\x1f.eolymp.judge.WatchTicketOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12o\n\x0cWatchTickets\x12\x1f.eolymp.judge.WatchTicketsInput\x1a .eolymp.judge.WatchTicketsOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\x81\x01\n\x12WatchTicketSummary\x12%.eolymp.judge.WatchTicketSummaryInput\x1a&.eolymp.judge.WatchTicketSummaryOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\x9d\x01\n\x0bListReplies\x12\x1e.eolymp.judge.ListRepliesInput\x1a\x1f.eolymp.judge.ListRepliesOutput\"M\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1e\x12\x1c/tickets/{ticket_id}/replies\x12\xa9\x01\n\x0b\x44\x65leteReply\x12\x1e.eolymp.judge.DeleteReplyInput\x1a\x1f.eolymp.judge.DeleteReplyOutput\"Y\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02)*\'/tickets/{ticket_id}/replies/{reply_id}\x12\xa9\x01\n\x0bUpdateReply\x12\x1e.eolymp.judge.UpdateReplyInput\x1a\x1f.eolymp.judge.UpdateReplyOutput\"Y\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02)\"\'/tickets/{ticket_id}/replies/{reply_id}\x12o\n\x0cWatchReplies\x12\x1f.eolymp.judge.WatchRepliesInput\x1a .eolymp.judge.WatchRepliesOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/judge/ticket_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x19\x65olymp/judge/ticket.proto\x1a\x1f\x65olymp/judge/ticket_reply.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"s\n\x11\x43reateTicketInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12$\n\x07message\x18\x04 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x13\n\x0braw_message\x18\x03 \x01(\t\"\'\n\x12\x43reateTicketOutput\x12\x11\n\tticket_id\x18\x01 \x01(\t\"\xad\x01\n\x11UpdateTicketInput\x12\x34\n\x05patch\x18\x03 \x03(\x0e\x32%.eolymp.judge.UpdateTicketInput.Patch\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12$\n\x06ticket\x18\x02 \x01(\x0b\x32\x14.eolymp.judge.Ticket\")\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\n\n\x06STATUS\x10\x01\x12\x0b\n\x07SUBJECT\x10\x02\"\x14\n\x12UpdateTicketOutput\"g\n\x0fReadTicketInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x12\n\x10ReadTicketOutput\":\n\x11\x44\x65leteTicketInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\"\x14\n\x12\x44\x65leteTicketOutput\"h\n\x13\x44\x65scribeTicketInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.judge.Ticket.Extra\"<\n\x14\x44\x65scribeTicketOutput\x12$\n\x06ticket\x18\x01 \x01(\x0b\x32\x14.eolymp.judge.Ticket\"\xc7\x05\n\x10ListTicketsInput\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.judge.ListTicketsInput.Filter\x12\x31\n\x04sort\x18\x32 \x01(\x0e\x32#.eolymp.judge.ListTicketsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.judge.Ticket.Extra\x1a\x9a\x03\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncontest_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x36\n\x0eparticipant_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x08 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\x07is_read\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x31\n\x07is_open\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12-\n\x03own\x18\x07 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x30\n\x06status\x18\t \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"&\n\x04Sort\x12\x0e\n\nCREATED_AT\x10\x00\x12\x0e\n\nUPDATED_AT\x10\x01\"{\n\x11ListTicketsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.judge.Ticket\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\x12\x18\n\x10prev_page_cursor\x18\x04 \x01(\t\"\x82\x01\n\x10ReplyTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12$\n\x07message\x18\n \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x35\n\x10\x63hange_status_to\x18\x14 \x01(\x0e\x32\x1b.eolymp.judge.Ticket.Status\"%\n\x11ReplyTicketOutput\x12\x10\n\x08reply_id\x18\x01 \x01(\t\"Q\n\x10WatchTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.judge.Ticket.Extra\"9\n\x11WatchTicketOutput\x12$\n\x06ticket\x18\x01 \x01(\x0b\x32\x14.eolymp.judge.Ticket\"v\n\x11WatchTicketsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.judge.Ticket.Extra\"\xb4\x01\n\x12WatchTicketsOutput\x12\x35\n\x05\x65vent\x18\x01 \x01(\x0e\x32&.eolymp.judge.WatchTicketsOutput.Event\x12$\n\x06ticket\x18\x02 \x01(\x0b\x32\x14.eolymp.judge.Ticket\"A\n\x05\x45vent\x12\x11\n\rUNKNOWN_EVENT\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07UPDATED\x10\x02\x12\x0b\n\x07\x44\x45LETED\x10\x03\"@\n\x17WatchTicketSummaryInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"J\n\x18WatchTicketSummaryOutput\x12\x14\n\x0cunread_count\x18\x03 \x01(\r\x12\x18\n\x10unresolved_count\x18\x04 \x01(\r\"n\n\x10ListRepliesInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12)\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x19.eolymp.judge.Reply.Extra\"F\n\x11ListRepliesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.eolymp.judge.Reply\"7\n\x10\x44\x65leteReplyInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x10\n\x08reply_id\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteReplyOutput\"]\n\x10UpdateReplyInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x10\n\x08reply_id\x18\x02 \x01(\t\x12$\n\x07message\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x13\n\x11UpdateReplyOutput\"a\n\x11WatchRepliesInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0e\n\x06\x63ursor\x18\x02 \x01(\t\x12)\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x19.eolymp.judge.Reply.Extra\"\xb2\x01\n\x12WatchRepliesOutput\x12\x35\n\x05\x65vent\x18\x01 \x01(\x0e\x32&.eolymp.judge.WatchRepliesOutput.Event\x12\"\n\x05reply\x18\x02 \x01(\x0b\x32\x13.eolymp.judge.Reply\"A\n\x05\x45vent\x12\x11\n\rUNKNOWN_EVENT\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07UPDATED\x10\x02\x12\x0b\n\x07\x44\x45LETED\x10\x03\x32\x97\x10\n\rTicketService\x12\x93\x01\n\x0c\x43reateTicket\x12\x1f.eolymp.judge.CreateTicketInput\x1a .eolymp.judge.CreateTicketOutput\"@\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\"\x08/tickets\x12\x99\x01\n\x0cUpdateTicket\x12\x1f.eolymp.judge.UpdateTicketInput\x1a .eolymp.judge.UpdateTicketOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16\"\x14/tickets/{ticket_id}\x12\x97\x01\n\nReadTicket\x12\x1d.eolymp.judge.ReadTicketInput\x1a\x1e.eolymp.judge.ReadTicketOutput\"J\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x1b\"\x19/tickets/{ticket_id}/read\x12\x99\x01\n\x0c\x44\x65leteTicket\x12\x1f.eolymp.judge.DeleteTicketInput\x1a .eolymp.judge.DeleteTicketOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x16*\x14/tickets/{ticket_id}\x12\x9e\x01\n\x0e\x44\x65scribeTicket\x12!.eolymp.judge.DescribeTicketInput\x1a\".eolymp.judge.DescribeTicketOutput\"E\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x16\x12\x14/tickets/{ticket_id}\x12\x89\x01\n\x0bListTickets\x12\x1e.eolymp.judge.ListTicketsInput\x1a\x1f.eolymp.judge.ListTicketsOutput\"9\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\n\x12\x08/tickets\x12\xa4\x01\n\x0bReplyTicket\x12\x1e.eolymp.judge.ReplyTicketInput\x1a\x1f.eolymp.judge.ReplyTicketOutput\"T\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e\"\x1c/tickets/{ticket_id}/replies\x12l\n\x0bWatchTicket\x12\x1e.eolymp.judge.WatchTicketInput\x1a\x1f.eolymp.judge.WatchTicketOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12o\n\x0cWatchTickets\x12\x1f.eolymp.judge.WatchTicketsInput\x1a .eolymp.judge.WatchTicketsOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\x81\x01\n\x12WatchTicketSummary\x12%.eolymp.judge.WatchTicketSummaryInput\x1a&.eolymp.judge.WatchTicketSummaryOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\x9d\x01\n\x0bListReplies\x12\x1e.eolymp.judge.ListRepliesInput\x1a\x1f.eolymp.judge.ListRepliesOutput\"M\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1e\x12\x1c/tickets/{ticket_id}/replies\x12\xa9\x01\n\x0b\x44\x65leteReply\x12\x1e.eolymp.judge.DeleteReplyInput\x1a\x1f.eolymp.judge.DeleteReplyOutput\"Y\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02)*\'/tickets/{ticket_id}/replies/{reply_id}\x12\xa9\x01\n\x0bUpdateReply\x12\x1e.eolymp.judge.UpdateReplyInput\x1a\x1f.eolymp.judge.UpdateReplyOutput\"Y\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02)\"\'/tickets/{ticket_id}/replies/{reply_id}\x12o\n\x0cWatchReplies\x12\x1f.eolymp.judge.WatchRepliesInput\x1a .eolymp.judge.WatchRepliesOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.ticket_service_pb2', globals())
@@ -58,72 +58,72 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TICKETSERVICE.methods_by_name['UpdateReply']._serialized_options = b'\202\343\n\027\212\343\n\023judge:contest:write\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002)\"\'/tickets/{ticket_id}/replies/{reply_id}'
   _TICKETSERVICE.methods_by_name['WatchReplies']._options = None
   _TICKETSERVICE.methods_by_name['WatchReplies']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read'
-  _CREATETICKETINPUT._serialized_start=331
-  _CREATETICKETINPUT._serialized_end=446
-  _CREATETICKETOUTPUT._serialized_start=448
-  _CREATETICKETOUTPUT._serialized_end=487
-  _UPDATETICKETINPUT._serialized_start=490
-  _UPDATETICKETINPUT._serialized_end=663
-  _UPDATETICKETINPUT_PATCH._serialized_start=622
-  _UPDATETICKETINPUT_PATCH._serialized_end=663
-  _UPDATETICKETOUTPUT._serialized_start=665
-  _UPDATETICKETOUTPUT._serialized_end=685
-  _READTICKETINPUT._serialized_start=687
-  _READTICKETINPUT._serialized_end=790
-  _READTICKETOUTPUT._serialized_start=792
-  _READTICKETOUTPUT._serialized_end=810
-  _DELETETICKETINPUT._serialized_start=812
-  _DELETETICKETINPUT._serialized_end=870
-  _DELETETICKETOUTPUT._serialized_start=872
-  _DELETETICKETOUTPUT._serialized_end=892
-  _DESCRIBETICKETINPUT._serialized_start=894
-  _DESCRIBETICKETINPUT._serialized_end=998
-  _DESCRIBETICKETOUTPUT._serialized_start=1000
-  _DESCRIBETICKETOUTPUT._serialized_end=1060
-  _LISTTICKETSINPUT._serialized_start=1063
-  _LISTTICKETSINPUT._serialized_end=1774
-  _LISTTICKETSINPUT_FILTER._serialized_start=1324
-  _LISTTICKETSINPUT_FILTER._serialized_end=1734
-  _LISTTICKETSINPUT_SORT._serialized_start=1736
-  _LISTTICKETSINPUT_SORT._serialized_end=1774
-  _LISTTICKETSOUTPUT._serialized_start=1776
-  _LISTTICKETSOUTPUT._serialized_end=1899
-  _REPLYTICKETINPUT._serialized_start=1902
-  _REPLYTICKETINPUT._serialized_end=2032
-  _REPLYTICKETOUTPUT._serialized_start=2034
-  _REPLYTICKETOUTPUT._serialized_end=2071
-  _WATCHTICKETINPUT._serialized_start=2073
-  _WATCHTICKETINPUT._serialized_end=2154
-  _WATCHTICKETOUTPUT._serialized_start=2156
-  _WATCHTICKETOUTPUT._serialized_end=2213
-  _WATCHTICKETSINPUT._serialized_start=2215
-  _WATCHTICKETSINPUT._serialized_end=2333
-  _WATCHTICKETSOUTPUT._serialized_start=2336
-  _WATCHTICKETSOUTPUT._serialized_end=2516
-  _WATCHTICKETSOUTPUT_EVENT._serialized_start=2451
-  _WATCHTICKETSOUTPUT_EVENT._serialized_end=2516
-  _WATCHTICKETSUMMARYINPUT._serialized_start=2518
-  _WATCHTICKETSUMMARYINPUT._serialized_end=2582
-  _WATCHTICKETSUMMARYOUTPUT._serialized_start=2584
-  _WATCHTICKETSUMMARYOUTPUT._serialized_end=2658
-  _LISTREPLIESINPUT._serialized_start=2660
-  _LISTREPLIESINPUT._serialized_end=2770
-  _LISTREPLIESOUTPUT._serialized_start=2772
-  _LISTREPLIESOUTPUT._serialized_end=2842
-  _DELETEREPLYINPUT._serialized_start=2844
-  _DELETEREPLYINPUT._serialized_end=2899
-  _DELETEREPLYOUTPUT._serialized_start=2901
-  _DELETEREPLYOUTPUT._serialized_end=2920
-  _UPDATEREPLYINPUT._serialized_start=2922
-  _UPDATEREPLYINPUT._serialized_end=3015
-  _UPDATEREPLYOUTPUT._serialized_start=3017
-  _UPDATEREPLYOUTPUT._serialized_end=3036
-  _WATCHREPLIESINPUT._serialized_start=3038
-  _WATCHREPLIESINPUT._serialized_end=3135
-  _WATCHREPLIESOUTPUT._serialized_start=3138
-  _WATCHREPLIESOUTPUT._serialized_end=3316
-  _WATCHREPLIESOUTPUT_EVENT._serialized_start=2451
-  _WATCHREPLIESOUTPUT_EVENT._serialized_end=2516
-  _TICKETSERVICE._serialized_start=3319
-  _TICKETSERVICE._serialized_end=5390
+  _CREATETICKETINPUT._serialized_start=338
+  _CREATETICKETINPUT._serialized_end=453
+  _CREATETICKETOUTPUT._serialized_start=455
+  _CREATETICKETOUTPUT._serialized_end=494
+  _UPDATETICKETINPUT._serialized_start=497
+  _UPDATETICKETINPUT._serialized_end=670
+  _UPDATETICKETINPUT_PATCH._serialized_start=629
+  _UPDATETICKETINPUT_PATCH._serialized_end=670
+  _UPDATETICKETOUTPUT._serialized_start=672
+  _UPDATETICKETOUTPUT._serialized_end=692
+  _READTICKETINPUT._serialized_start=694
+  _READTICKETINPUT._serialized_end=797
+  _READTICKETOUTPUT._serialized_start=799
+  _READTICKETOUTPUT._serialized_end=817
+  _DELETETICKETINPUT._serialized_start=819
+  _DELETETICKETINPUT._serialized_end=877
+  _DELETETICKETOUTPUT._serialized_start=879
+  _DELETETICKETOUTPUT._serialized_end=899
+  _DESCRIBETICKETINPUT._serialized_start=901
+  _DESCRIBETICKETINPUT._serialized_end=1005
+  _DESCRIBETICKETOUTPUT._serialized_start=1007
+  _DESCRIBETICKETOUTPUT._serialized_end=1067
+  _LISTTICKETSINPUT._serialized_start=1070
+  _LISTTICKETSINPUT._serialized_end=1781
+  _LISTTICKETSINPUT_FILTER._serialized_start=1331
+  _LISTTICKETSINPUT_FILTER._serialized_end=1741
+  _LISTTICKETSINPUT_SORT._serialized_start=1743
+  _LISTTICKETSINPUT_SORT._serialized_end=1781
+  _LISTTICKETSOUTPUT._serialized_start=1783
+  _LISTTICKETSOUTPUT._serialized_end=1906
+  _REPLYTICKETINPUT._serialized_start=1909
+  _REPLYTICKETINPUT._serialized_end=2039
+  _REPLYTICKETOUTPUT._serialized_start=2041
+  _REPLYTICKETOUTPUT._serialized_end=2078
+  _WATCHTICKETINPUT._serialized_start=2080
+  _WATCHTICKETINPUT._serialized_end=2161
+  _WATCHTICKETOUTPUT._serialized_start=2163
+  _WATCHTICKETOUTPUT._serialized_end=2220
+  _WATCHTICKETSINPUT._serialized_start=2222
+  _WATCHTICKETSINPUT._serialized_end=2340
+  _WATCHTICKETSOUTPUT._serialized_start=2343
+  _WATCHTICKETSOUTPUT._serialized_end=2523
+  _WATCHTICKETSOUTPUT_EVENT._serialized_start=2458
+  _WATCHTICKETSOUTPUT_EVENT._serialized_end=2523
+  _WATCHTICKETSUMMARYINPUT._serialized_start=2525
+  _WATCHTICKETSUMMARYINPUT._serialized_end=2589
+  _WATCHTICKETSUMMARYOUTPUT._serialized_start=2591
+  _WATCHTICKETSUMMARYOUTPUT._serialized_end=2665
+  _LISTREPLIESINPUT._serialized_start=2667
+  _LISTREPLIESINPUT._serialized_end=2777
+  _LISTREPLIESOUTPUT._serialized_start=2779
+  _LISTREPLIESOUTPUT._serialized_end=2849
+  _DELETEREPLYINPUT._serialized_start=2851
+  _DELETEREPLYINPUT._serialized_end=2906
+  _DELETEREPLYOUTPUT._serialized_start=2908
+  _DELETEREPLYOUTPUT._serialized_end=2927
+  _UPDATEREPLYINPUT._serialized_start=2929
+  _UPDATEREPLYINPUT._serialized_end=3022
+  _UPDATEREPLYOUTPUT._serialized_start=3024
+  _UPDATEREPLYOUTPUT._serialized_end=3043
+  _WATCHREPLIESINPUT._serialized_start=3045
+  _WATCHREPLIESINPUT._serialized_end=3142
+  _WATCHREPLIESOUTPUT._serialized_start=3145
+  _WATCHREPLIESOUTPUT._serialized_end=3323
+  _WATCHREPLIESOUTPUT_EVENT._serialized_start=2458
+  _WATCHREPLIESOUTPUT_EVENT._serialized_end=2523
+  _TICKETSERVICE._serialized_start=3326
+  _TICKETSERVICE._serialized_end=5397
 # @@protoc_insertion_point(module_scope)

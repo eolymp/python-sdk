@@ -95,3 +95,17 @@ class SubmissionServiceClient:
             **kwargs,
         )
 
+    def RetestProblem(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/retest"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.RetestProblemOutput"),
+            **kwargs,
+        )
+

@@ -23,16 +23,14 @@ class DeleteProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ["contest_id", "problem_id", "template_ern", "template_id"]
+    __slots__ = ["contest_id", "problem_id", "template_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    TEMPLATE_ERN_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     problem_id: str
-    template_ern: str
     template_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., template_ern: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., template_id: _Optional[str] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
     __slots__ = ["template"]
@@ -41,14 +39,12 @@ class DescribeCodeTemplateOutput(_message.Message):
     def __init__(self, template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ["contest_id", "problem_ern", "problem_id"]
+    __slots__ = ["contest_id", "problem_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ERN_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    problem_ern: str
     problem_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., problem_ern: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ["problem"]
@@ -159,18 +155,6 @@ class LookupCodeTemplateOutput(_message.Message):
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     template: _template_pb2.Template
     def __init__(self, template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
-
-class RetestProblemInput(_message.Message):
-    __slots__ = ["contest_id", "problem_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    problem_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
-
-class RetestProblemOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class SyncProblemInput(_message.Message):
     __slots__ = ["contest_id", "problem_id"]

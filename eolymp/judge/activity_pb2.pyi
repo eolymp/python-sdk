@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Activity(_message.Message):
-    __slots__ = ["complete_at", "contest_id", "created_at", "ern", "error", "id", "problem_id", "progress", "progress_at", "scoreboard_id", "started_at", "status", "total", "type"]
+    __slots__ = ["complete_at", "contest_id", "created_at", "error", "id", "problem_id", "progress", "progress_at", "scoreboard_id", "started_at", "status", "total", "type"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -17,7 +17,6 @@ class Activity(_message.Message):
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CREATED: Activity.Status
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
-    ERN_FIELD_NUMBER: _ClassVar[int]
     ERROR: Activity.Status
     ERROR_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -37,7 +36,6 @@ class Activity(_message.Message):
     complete_at: _timestamp_pb2.Timestamp
     contest_id: str
     created_at: _timestamp_pb2.Timestamp
-    ern: str
     error: str
     id: str
     problem_id: str
@@ -48,4 +46,4 @@ class Activity(_message.Message):
     status: Activity.Status
     total: int
     type: Activity.Type
-    def __init__(self, id: _Optional[str] = ..., ern: _Optional[str] = ..., type: _Optional[_Union[Activity.Type, str]] = ..., status: _Optional[_Union[Activity.Status, str]] = ..., contest_id: _Optional[str] = ..., scoreboard_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., progress_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., progress: _Optional[int] = ..., total: _Optional[int] = ..., error: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Activity.Type, str]] = ..., status: _Optional[_Union[Activity.Status, str]] = ..., contest_id: _Optional[str] = ..., scoreboard_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., progress_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., progress: _Optional[int] = ..., total: _Optional[int] = ..., error: _Optional[str] = ...) -> None: ...

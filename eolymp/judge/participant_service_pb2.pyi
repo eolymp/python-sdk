@@ -248,3 +248,17 @@ class VerifyPasscodeOutput(_message.Message):
     required: bool
     valid: bool
     def __init__(self, required: bool = ..., valid: bool = ...) -> None: ...
+
+class WatchParticipantInput(_message.Message):
+    __slots__ = ["contest_id", "participant_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    participant_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
+
+class WatchParticipantOutput(_message.Message):
+    __slots__ = ["participant"]
+    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    participant: _participant_pb2.Participant
+    def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
