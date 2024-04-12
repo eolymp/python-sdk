@@ -137,10 +137,8 @@ class WatchAnnouncementOutput(_message.Message):
     def __init__(self, announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
 
 class WatchAnnouncementSummaryInput(_message.Message):
-    __slots__ = ["contest_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class WatchAnnouncementSummaryOutput(_message.Message):
     __slots__ = ["unread_count"]
@@ -149,12 +147,10 @@ class WatchAnnouncementSummaryOutput(_message.Message):
     def __init__(self, unread_count: _Optional[int] = ...) -> None: ...
 
 class WatchAnnouncementsInput(_message.Message):
-    __slots__ = ["contest_id", "extra"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["extra"]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
     extra: _containers.RepeatedScalarFieldContainer[_announcement_pb2.Announcement.Extra]
-    def __init__(self, contest_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
+    def __init__(self, extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
 
 class WatchAnnouncementsOutput(_message.Message):
     __slots__ = ["announcement", "event"]
