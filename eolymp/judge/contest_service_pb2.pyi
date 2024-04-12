@@ -219,3 +219,15 @@ class UpdateContestInput(_message.Message):
 class UpdateContestOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class WatchContestInput(_message.Message):
+    __slots__ = ["contest_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class WatchContestOutput(_message.Message):
+    __slots__ = ["contest"]
+    CONTEST_FIELD_NUMBER: _ClassVar[int]
+    contest: _contest_pb2.Contest
+    def __init__(self, contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
