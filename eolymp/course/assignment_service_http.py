@@ -67,6 +67,17 @@ class AssignmentServiceClient:
             **kwargs,
         )
 
+    def IntrospectAssignment(self, request, **kwargs):
+        path = "/viewer/assignment"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.IntrospectAssignmentOutput"),
+            **kwargs,
+        )
+
     def ListAssignments(self, request, **kwargs):
         path = "/assignments"
 

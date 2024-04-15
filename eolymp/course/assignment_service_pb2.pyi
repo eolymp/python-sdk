@@ -4,7 +4,6 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.course import assignment_pb2 as _assignment_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -12,24 +11,6 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
-
-class AssignAssignmentInput(_message.Message):
-    __slots__ = ["assignment_id", "complete_before", "duration", "start_after", "student_id"]
-    ASSIGNMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
-    DURATION_FIELD_NUMBER: _ClassVar[int]
-    START_AFTER_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    assignment_id: str
-    complete_before: _timestamp_pb2.Timestamp
-    duration: int
-    start_after: _timestamp_pb2.Timestamp
-    student_id: str
-    def __init__(self, assignment_id: _Optional[str] = ..., student_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ...) -> None: ...
-
-class AssignAssignmentOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class CreateAssignmentInput(_message.Message):
     __slots__ = ["assignment"]
@@ -54,14 +35,12 @@ class DeleteAssignmentOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAssignmentInput(_message.Message):
-    __slots__ = ["assignment_id", "extra", "student_id"]
+    __slots__ = ["assignment_id", "extra"]
     ASSIGNMENT_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     assignment_id: str
     extra: _containers.RepeatedScalarFieldContainer[_assignment_pb2.Assignment.Extra]
-    student_id: str
-    def __init__(self, assignment_id: _Optional[str] = ..., student_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_assignment_pb2.Assignment.Extra, str]]] = ...) -> None: ...
+    def __init__(self, assignment_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_assignment_pb2.Assignment.Extra, str]]] = ...) -> None: ...
 
 class DescribeAssignmentOutput(_message.Message):
     __slots__ = ["assignment"]
@@ -69,8 +48,18 @@ class DescribeAssignmentOutput(_message.Message):
     assignment: _assignment_pb2.Assignment
     def __init__(self, assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
 
+class IntrospectAssignmentInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class IntrospectAssignmentOutput(_message.Message):
+    __slots__ = ["assignment"]
+    ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
+    assignment: _assignment_pb2.Assignment
+    def __init__(self, assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
+
 class ListAssignmentsInput(_message.Message):
-    __slots__ = ["extra", "filters", "offset", "order", "size", "sort", "student_id"]
+    __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -91,15 +80,13 @@ class ListAssignmentsInput(_message.Message):
     ORDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_assignment_pb2.Assignment.Extra]
     filters: ListAssignmentsInput.Filter
     offset: int
     order: _direction_pb2.Direction
     size: int
     sort: ListAssignmentsInput.Sortable
-    student_id: str
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAssignmentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListAssignmentsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., student_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_assignment_pb2.Assignment.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAssignmentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListAssignmentsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_assignment_pb2.Assignment.Extra, str]]] = ...) -> None: ...
 
 class ListAssignmentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -116,18 +103,6 @@ class StartAssignmentInput(_message.Message):
     def __init__(self, assignment_id: _Optional[str] = ...) -> None: ...
 
 class StartAssignmentOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UnassignAssignmentInput(_message.Message):
-    __slots__ = ["assignment_id", "student_id"]
-    ASSIGNMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    assignment_id: str
-    student_id: str
-    def __init__(self, assignment_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
-
-class UnassignAssignmentOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
