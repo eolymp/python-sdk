@@ -113,15 +113,10 @@ class UpdateAssignmentInput(_message.Message):
     ALL: UpdateAssignmentInput.Patch
     ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
     ASSIGNMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION: UpdateAssignmentInput.Patch
+    COMPLETE_BEFORE: UpdateAssignmentInput.Patch
     DURATION: UpdateAssignmentInput.Patch
-    IMAGE: UpdateAssignmentInput.Patch
-    LOCALE: UpdateAssignmentInput.Patch
-    NAME: UpdateAssignmentInput.Patch
-    PARTICIPATION_MODE: UpdateAssignmentInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    TOPICS: UpdateAssignmentInput.Patch
-    VISIBILITY: UpdateAssignmentInput.Patch
+    START_AFTER: UpdateAssignmentInput.Patch
     assignment: _assignment_pb2.Assignment
     assignment_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateAssignmentInput.Patch]
