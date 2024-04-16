@@ -4,7 +4,6 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.course import entry_pb2 as _entry_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -12,24 +11,6 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
-
-class AssignEntryInput(_message.Message):
-    __slots__ = ["complete_before", "duration", "entry_id", "start_after", "student_id"]
-    COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
-    DURATION_FIELD_NUMBER: _ClassVar[int]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    START_AFTER_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    complete_before: _timestamp_pb2.Timestamp
-    duration: int
-    entry_id: str
-    start_after: _timestamp_pb2.Timestamp
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ...) -> None: ...
-
-class AssignEntryOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class CreateEntryInput(_message.Message):
     __slots__ = ["entry"]
@@ -54,14 +35,12 @@ class DeleteEntryOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeEntryInput(_message.Message):
-    __slots__ = ["entry_id", "extra", "student_id"]
+    __slots__ = ["entry_id", "extra"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     entry_id: str
     extra: _containers.RepeatedScalarFieldContainer[_entry_pb2.Entry.Extra]
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_entry_pb2.Entry.Extra, str]]] = ...) -> None: ...
+    def __init__(self, entry_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_entry_pb2.Entry.Extra, str]]] = ...) -> None: ...
 
 class DescribeEntryOutput(_message.Message):
     __slots__ = ["entry"]
@@ -69,44 +48,26 @@ class DescribeEntryOutput(_message.Message):
     entry: _entry_pb2.Entry
     def __init__(self, entry: _Optional[_Union[_entry_pb2.Entry, _Mapping]] = ...) -> None: ...
 
-class DescribeProgressInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
-
-class DescribeProgressOutput(_message.Message):
-    __slots__ = ["grade", "progress"]
-    GRADE_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    grade: int
-    progress: float
-    def __init__(self, progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...
-
-class DescribeTOCInput(_message.Message):
-    __slots__ = ["depth", "draft", "extra", "root_id", "student_id"]
+class DescribeTreeInput(_message.Message):
+    __slots__ = ["depth", "draft", "extra", "root_id"]
     DEPTH_FIELD_NUMBER: _ClassVar[int]
     DRAFT_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     ROOT_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     depth: int
     draft: bool
     extra: _containers.RepeatedScalarFieldContainer[_entry_pb2.Entry.Extra]
     root_id: str
-    student_id: str
-    def __init__(self, root_id: _Optional[str] = ..., depth: _Optional[int] = ..., draft: bool = ..., student_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_entry_pb2.Entry.Extra, str]]] = ...) -> None: ...
+    def __init__(self, root_id: _Optional[str] = ..., depth: _Optional[int] = ..., draft: bool = ..., extra: _Optional[_Iterable[_Union[_entry_pb2.Entry.Extra, str]]] = ...) -> None: ...
 
-class DescribeTOCOutput(_message.Message):
+class DescribeTreeOutput(_message.Message):
     __slots__ = ["items"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_entry_pb2.Entry]
     def __init__(self, items: _Optional[_Iterable[_Union[_entry_pb2.Entry, _Mapping]]] = ...) -> None: ...
 
 class ListEntriesInput(_message.Message):
-    __slots__ = ["extra", "filters", "offset", "order", "render", "size", "sort", "student_id"]
+    __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -127,19 +88,15 @@ class ListEntriesInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_entry_pb2.Entry.Extra]
     filters: ListEntriesInput.Filter
     offset: int
     order: _direction_pb2.Direction
-    render: bool
     size: int
     sort: ListEntriesInput.Sortable
-    student_id: str
-    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListEntriesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListEntriesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., student_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_entry_pb2.Entry.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListEntriesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListEntriesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_entry_pb2.Entry.Extra, str]]] = ...) -> None: ...
 
 class ListEntriesOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -150,14 +107,12 @@ class ListEntriesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_entry_pb2.Entry, _Mapping]]] = ...) -> None: ...
 
 class ListParentsInput(_message.Message):
-    __slots__ = ["entry_id", "extra", "student_id"]
+    __slots__ = ["entry_id", "extra"]
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     entry_id: str
     extra: _containers.RepeatedScalarFieldContainer[_entry_pb2.Entry.Extra]
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_entry_pb2.Entry.Extra, str]]] = ...) -> None: ...
+    def __init__(self, entry_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_entry_pb2.Entry.Extra, str]]] = ...) -> None: ...
 
 class ListParentsOutput(_message.Message):
     __slots__ = ["items"]
@@ -191,40 +146,6 @@ class RenameEntryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class ReportProgressInput(_message.Message):
-    __slots__ = ["entry_id", "progress"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    progress: float
-    def __init__(self, entry_id: _Optional[str] = ..., progress: _Optional[float] = ...) -> None: ...
-
-class ReportProgressOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class StartEntryInput(_message.Message):
-    __slots__ = ["entry_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
-
-class StartEntryOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UnassignEntryInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
-
-class UnassignEntryOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class UpdateEntryInput(_message.Message):
     __slots__ = ["entry", "entry_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -250,21 +171,3 @@ class UpdateEntryInput(_message.Message):
 class UpdateEntryOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class WatchProgressInput(_message.Message):
-    __slots__ = ["entry_id", "student_id"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    student_id: str
-    def __init__(self, entry_id: _Optional[str] = ..., student_id: _Optional[str] = ...) -> None: ...
-
-class WatchProgressOutput(_message.Message):
-    __slots__ = ["entry_id", "grade", "progress"]
-    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    GRADE_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    entry_id: str
-    grade: int
-    progress: float
-    def __init__(self, entry_id: _Optional[str] = ..., progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...

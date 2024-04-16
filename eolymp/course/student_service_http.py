@@ -14,56 +14,28 @@ class StudentServiceClient:
         self.transport = transport
         self.url = url
 
-    def CreateStudent(self, request, **kwargs):
-        path = "/students"
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateStudentOutput"),
-            **kwargs,
-        )
-
-    def UpdateStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.student_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.student_id = ""
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateStudentOutput"),
-            **kwargs,
-        )
-
-    def DeleteStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.student_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.student_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteStudentOutput"),
-            **kwargs,
-        )
-
     def DescribeStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.student_id)
+        path = "/students/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.student_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeStudentOutput"),
+            **kwargs,
+        )
+
+    def DescribeViewer(self, request, **kwargs):
+        path = "/viewer/student"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeViewerOutput"),
             **kwargs,
         )
 
@@ -75,17 +47,6 @@ class StudentServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.course.ListStudentsOutput"),
-            **kwargs,
-        )
-
-    def DescribeViewer(self, request, **kwargs):
-        path = "/viewer"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeViewerOutput"),
             **kwargs,
         )
 
