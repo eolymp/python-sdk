@@ -69,3 +69,15 @@ class ListStudentsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_student_pb2.Student]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_student_pb2.Student, _Mapping]]] = ...) -> None: ...
+
+class WatchStudentInput(_message.Message):
+    __slots__ = ["student_id"]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
+    student_id: str
+    def __init__(self, student_id: _Optional[str] = ...) -> None: ...
+
+class WatchStudentOutput(_message.Message):
+    __slots__ = ["student"]
+    STUDENT_FIELD_NUMBER: _ClassVar[int]
+    student: _student_pb2.Student
+    def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
