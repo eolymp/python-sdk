@@ -71,10 +71,10 @@ class ListStudentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_student_pb2.Student, _Mapping]]] = ...) -> None: ...
 
 class WatchStudentInput(_message.Message):
-    __slots__ = ["student_id"]
-    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
-    student_id: str
-    def __init__(self, student_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ["member_id"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
 
 class WatchStudentOutput(_message.Message):
     __slots__ = ["student"]
