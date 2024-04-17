@@ -90,10 +90,7 @@ class AssignmentServiceClient:
         )
 
     def StartAssignment(self, request, **kwargs):
-        path = "/assignments/"+urllib.parse.quote(request.assignment_id)+"/start"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.assignment_id = ""
+        path = "/start"
 
         return self.transport.request(
             method="POST",
