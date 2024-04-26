@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/community/ranking_point.proto\x12\x10\x65olymp.community\"q\n\x0cRankingPoint\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\n \x01(\t\x12\x10\n\x08\x65vent_id\x18\x0b \x01(\t\x12\x0c\n\x04rank\x18\x14 \x01(\r\x12\x13\n\x0brank_length\x18\x15 \x01(\r\x12\r\n\x05score\x18\x1e \x01(\rB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/community/ranking_point.proto\x12\x10\x65olymp.community\"p\n\x0cRankingPoint\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\n \x01(\t\x12\x10\n\x08\x65vent_id\x18\x0b \x01(\t\x12\x0c\n\x04rank\x18\x14 \x01(\r\x12\x12\n\nrank_lower\x18\x15 \x01(\r\x12\r\n\x05score\x18\x1e \x01(\rB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.ranking_point_pb2', globals())
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _RANKINGPOINT._serialized_start=58
-  _RANKINGPOINT._serialized_end=171
+  _RANKINGPOINT._serialized_end=170
 # @@protoc_insertion_point(module_scope)
