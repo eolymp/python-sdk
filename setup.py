@@ -4,23 +4,29 @@ import setuptools
 
 # create __init__ in each namespace and export everything
 source = "." + os.sep + "eolymp"
-for module in os.listdir(source):
-    path = source + os.sep + module
-    if not os.path.isdir(path):
-        continue
+root_init = source + os.sep + "__init__.py"
 
-    init = path + os.sep + "__init__.py"
+print("creating", root_init, "file")
+with open(root_init, "w", encoding="utf-8") as ri:
+    for module in os.listdir(source):
+        module_path = source + os.sep + module
+        if not os.path.isdir(module_path):
+            continue
 
-    print("creating", init, "file")
-    with open(init, "w", encoding="utf-8") as fh:
-        for file in os.listdir(path):
-            name = os.path.splitext(file)
-            ext = name[1] if len(name) > 1 else ''
+        ri.write("import {}\n".format(module))
 
-            if os.path.isdir(path + os.sep + file) or ext != '.py' or name[0] == '__init__':
-                continue
+        module_init = module_path + os.sep + "__init__.py"
 
-            fh.write("from .{} import *\n".format(name[0]))
+        print("creating", module_init, "file")
+        with open(module_init, "w", encoding="utf-8") as mi:
+            for file in os.listdir(module_path):
+                name = os.path.splitext(file)
+                ext = name[1] if len(name) > 1 else ''
+
+                if os.path.isdir(module_path + os.sep + file) or ext != '.py' or name[0] == '__init__':
+                    continue
+
+                mi.write("from .{} import *\n".format(name[0]))
 
 
 with open("README.md", "r", encoding="utf-8") as fh:
