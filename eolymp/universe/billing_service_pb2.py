@@ -17,7 +17,7 @@ from eolymp.commerce import invoice_pb2 as eolymp_dot_commerce_dot_invoice__pb2
 from eolymp.universe import billing_pb2 as eolymp_dot_universe_dot_billing__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/universe/billing_service.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/commerce/invoice.proto\x1a\x1d\x65olymp/universe/billing.proto\"!\n\x1f\x44\x65scribeBillingInformationInput\"V\n DescribeBillingInformationOutput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\"S\n\x1dUpdateBillingInformationInput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\" \n\x1eUpdateBillingInformationOutput\"\x1b\n\x19\x44\x65scribeSubscriptionInput\"\x8d\x01\n\x1a\x44\x65scribeSubscriptionOutput\x12\x36\n\x07\x63urrent\x18\x01 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\x12\x37\n\x08upcoming\x18\x02 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\"\\\n\x17\x43reateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\x12\r\n\x05trial\x18\x04 \x01(\x08\"0\n\x18\x43reateSubscriptionOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"\\\n\x17UpdateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\x12\r\n\x05trial\x18\x04 \x01(\x08\"\x1a\n\x18UpdateSubscriptionOutput\"\x19\n\x17\x43\x61ncelSubscriptionInput\"\x1a\n\x18\x43\x61ncelSubscriptionOutput\"_\n\x19SimulateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\x12\x0e\n\x06\x63oupon\x18\n \x01(\t\"n\n\x1aSimulateSubscriptionOutput\x12%\n\x03\x64ue\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\x12)\n\x07invoice\x18\x02 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"a\n\x15\x43reatePortalLinkInput\x12\x0c\n\x04\x66low\x18\x01 \x01(\t\x12\x10\n\x08\x62\x61\x63k_url\x18\x02 \x01(\t\x12\x12\n\nreturn_url\x18\x03 \x01(\t\x12\x14\n\x0c\x63omplete_url\x18\x04 \x01(\t\"-\n\x16\x43reatePortalLinkOutput\x12\x13\n\x0bportal_link\x18\x01 \x01(\t\"\x16\n\x14UpcomingInvoiceInput\"B\n\x15UpcomingInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"*\n\x14\x44\x65scribeInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"%\n\x0fPayInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"(\n\x10PayInvoiceOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"@\n\x11ListInvoicesInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06\x62\x65\x66ore\x18\r \x01(\t\"L\n\x12ListInvoicesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.commerce.Invoice2\xc0\x0e\n\x0e\x42illingService\x12\xa7\x01\n\x1a\x44\x65scribeBillingInformation\x12\x30.eolymp.universe.DescribeBillingInformationInput\x1a\x31.eolymp.universe.DescribeBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x12\r/billing/info\x12\xa1\x01\n\x18UpdateBillingInformation\x12..eolymp.universe.UpdateBillingInformationInput\x1a/.eolymp.universe.UpdateBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x1a\r/billing/info\x12\x9d\x01\n\x14\x44\x65scribeSubscription\x12*.eolymp.universe.DescribeSubscriptionInput\x1a+.eolymp.universe.DescribeSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x12\x15/billing/subscription\x12\x97\x01\n\x12\x43reateSubscription\x12(.eolymp.universe.CreateSubscriptionInput\x1a).eolymp.universe.CreateSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\"\x15/billing/subscription\x12\x97\x01\n\x12UpdateSubscription\x12(.eolymp.universe.UpdateSubscriptionInput\x1a).eolymp.universe.UpdateSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x1a\x15/billing/subscription\x12\x97\x01\n\x12\x43\x61ncelSubscription\x12(.eolymp.universe.CancelSubscriptionInput\x1a).eolymp.universe.CancelSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17*\x15/billing/subscription\x12\xa6\x01\n\x14SimulateSubscription\x12*.eolymp.universe.SimulateSubscriptionInput\x1a+.eolymp.universe.SimulateSubscriptionOutput\"5\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02 \"\x1e/billing/subscription/simulate\x12\x90\x01\n\x10\x43reatePortalLink\x12&.eolymp.universe.CreatePortalLinkInput\x1a\'.eolymp.universe.CreatePortalLinkOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x16\"\x14/billing/portal-link\x12\x8a\x01\n\x0fUpcomingInvoice\x12%.eolymp.universe.UpcomingInvoiceInput\x1a&.eolymp.universe.UpcomingInvoiceOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/upcoming\x12\x96\x01\n\x0f\x44\x65scribeInvoice\x12%.eolymp.universe.DescribeInvoiceInput\x1a&.eolymp.universe.DescribeInvoiceOutput\"4\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1f\"\x1d/billing/invoice/{invoice_id}\x12\x8b\x01\n\nPayInvoice\x12 .eolymp.universe.PayInvoiceInput\x1a!.eolymp.universe.PayInvoiceOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02#\"!/billing/invoice/{invoice_id}/pay\x12\x81\x01\n\x0cListInvoices\x12\".eolymp.universe.ListInvoicesInput\x1a#.eolymp.universe.ListInvoicesOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/invoicesB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/universe/billing_service.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/commerce/invoice.proto\x1a\x1d\x65olymp/universe/billing.proto\"!\n\x1f\x44\x65scribeBillingInformationInput\"V\n DescribeBillingInformationOutput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\"S\n\x1dUpdateBillingInformationInput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\" \n\x1eUpdateBillingInformationOutput\"\x1b\n\x19\x44\x65scribeSubscriptionInput\"\x8d\x01\n\x1a\x44\x65scribeSubscriptionOutput\x12\x36\n\x07\x63urrent\x18\x01 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\x12\x37\n\x08upcoming\x18\x02 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\"\\\n\x17\x43reateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\x12\r\n\x05trial\x18\x04 \x01(\x08\"0\n\x18\x43reateSubscriptionOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"\\\n\x17UpdateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\x12\r\n\x05trial\x18\x04 \x01(\x08\"0\n\x18UpdateSubscriptionOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"\x19\n\x17\x43\x61ncelSubscriptionInput\"\x1a\n\x18\x43\x61ncelSubscriptionOutput\"_\n\x19SimulateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\x12\x0e\n\x06\x63oupon\x18\n \x01(\t\"n\n\x1aSimulateSubscriptionOutput\x12%\n\x03\x64ue\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\x12)\n\x07invoice\x18\x02 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"a\n\x15\x43reatePortalLinkInput\x12\x0c\n\x04\x66low\x18\x01 \x01(\t\x12\x10\n\x08\x62\x61\x63k_url\x18\x02 \x01(\t\x12\x12\n\nreturn_url\x18\x03 \x01(\t\x12\x14\n\x0c\x63omplete_url\x18\x04 \x01(\t\"-\n\x16\x43reatePortalLinkOutput\x12\x13\n\x0bportal_link\x18\x01 \x01(\t\"\x16\n\x14UpcomingInvoiceInput\"B\n\x15UpcomingInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"*\n\x14\x44\x65scribeInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"%\n\x0fPayInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"(\n\x10PayInvoiceOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"@\n\x11ListInvoicesInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06\x62\x65\x66ore\x18\r \x01(\t\"L\n\x12ListInvoicesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.commerce.Invoice2\xc0\x0e\n\x0e\x42illingService\x12\xa7\x01\n\x1a\x44\x65scribeBillingInformation\x12\x30.eolymp.universe.DescribeBillingInformationInput\x1a\x31.eolymp.universe.DescribeBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x12\r/billing/info\x12\xa1\x01\n\x18UpdateBillingInformation\x12..eolymp.universe.UpdateBillingInformationInput\x1a/.eolymp.universe.UpdateBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x1a\r/billing/info\x12\x9d\x01\n\x14\x44\x65scribeSubscription\x12*.eolymp.universe.DescribeSubscriptionInput\x1a+.eolymp.universe.DescribeSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x12\x15/billing/subscription\x12\x97\x01\n\x12\x43reateSubscription\x12(.eolymp.universe.CreateSubscriptionInput\x1a).eolymp.universe.CreateSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\"\x15/billing/subscription\x12\x97\x01\n\x12UpdateSubscription\x12(.eolymp.universe.UpdateSubscriptionInput\x1a).eolymp.universe.UpdateSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x1a\x15/billing/subscription\x12\x97\x01\n\x12\x43\x61ncelSubscription\x12(.eolymp.universe.CancelSubscriptionInput\x1a).eolymp.universe.CancelSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17*\x15/billing/subscription\x12\xa6\x01\n\x14SimulateSubscription\x12*.eolymp.universe.SimulateSubscriptionInput\x1a+.eolymp.universe.SimulateSubscriptionOutput\"5\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02 \"\x1e/billing/subscription/simulate\x12\x90\x01\n\x10\x43reatePortalLink\x12&.eolymp.universe.CreatePortalLinkInput\x1a\'.eolymp.universe.CreatePortalLinkOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x16\"\x14/billing/portal-link\x12\x8a\x01\n\x0fUpcomingInvoice\x12%.eolymp.universe.UpcomingInvoiceInput\x1a&.eolymp.universe.UpcomingInvoiceOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/upcoming\x12\x96\x01\n\x0f\x44\x65scribeInvoice\x12%.eolymp.universe.DescribeInvoiceInput\x1a&.eolymp.universe.DescribeInvoiceOutput\"4\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1f\"\x1d/billing/invoice/{invoice_id}\x12\x8b\x01\n\nPayInvoice\x12 .eolymp.universe.PayInvoiceInput\x1a!.eolymp.universe.PayInvoiceOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02#\"!/billing/invoice/{invoice_id}/pay\x12\x81\x01\n\x0cListInvoices\x12\".eolymp.universe.ListInvoicesInput\x1a#.eolymp.universe.ListInvoicesOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/invoicesB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.billing_service_pb2', globals())
@@ -68,35 +68,35 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATESUBSCRIPTIONINPUT._serialized_start=746
   _UPDATESUBSCRIPTIONINPUT._serialized_end=838
   _UPDATESUBSCRIPTIONOUTPUT._serialized_start=840
-  _UPDATESUBSCRIPTIONOUTPUT._serialized_end=866
-  _CANCELSUBSCRIPTIONINPUT._serialized_start=868
-  _CANCELSUBSCRIPTIONINPUT._serialized_end=893
-  _CANCELSUBSCRIPTIONOUTPUT._serialized_start=895
-  _CANCELSUBSCRIPTIONOUTPUT._serialized_end=921
-  _SIMULATESUBSCRIPTIONINPUT._serialized_start=923
-  _SIMULATESUBSCRIPTIONINPUT._serialized_end=1018
-  _SIMULATESUBSCRIPTIONOUTPUT._serialized_start=1020
-  _SIMULATESUBSCRIPTIONOUTPUT._serialized_end=1130
-  _CREATEPORTALLINKINPUT._serialized_start=1132
-  _CREATEPORTALLINKINPUT._serialized_end=1229
-  _CREATEPORTALLINKOUTPUT._serialized_start=1231
-  _CREATEPORTALLINKOUTPUT._serialized_end=1276
-  _UPCOMINGINVOICEINPUT._serialized_start=1278
-  _UPCOMINGINVOICEINPUT._serialized_end=1300
-  _UPCOMINGINVOICEOUTPUT._serialized_start=1302
-  _UPCOMINGINVOICEOUTPUT._serialized_end=1368
-  _DESCRIBEINVOICEINPUT._serialized_start=1370
-  _DESCRIBEINVOICEINPUT._serialized_end=1412
-  _DESCRIBEINVOICEOUTPUT._serialized_start=1414
-  _DESCRIBEINVOICEOUTPUT._serialized_end=1480
-  _PAYINVOICEINPUT._serialized_start=1482
-  _PAYINVOICEINPUT._serialized_end=1519
-  _PAYINVOICEOUTPUT._serialized_start=1521
-  _PAYINVOICEOUTPUT._serialized_end=1561
-  _LISTINVOICESINPUT._serialized_start=1563
-  _LISTINVOICESINPUT._serialized_end=1627
-  _LISTINVOICESOUTPUT._serialized_start=1629
-  _LISTINVOICESOUTPUT._serialized_end=1705
-  _BILLINGSERVICE._serialized_start=1708
-  _BILLINGSERVICE._serialized_end=3564
+  _UPDATESUBSCRIPTIONOUTPUT._serialized_end=888
+  _CANCELSUBSCRIPTIONINPUT._serialized_start=890
+  _CANCELSUBSCRIPTIONINPUT._serialized_end=915
+  _CANCELSUBSCRIPTIONOUTPUT._serialized_start=917
+  _CANCELSUBSCRIPTIONOUTPUT._serialized_end=943
+  _SIMULATESUBSCRIPTIONINPUT._serialized_start=945
+  _SIMULATESUBSCRIPTIONINPUT._serialized_end=1040
+  _SIMULATESUBSCRIPTIONOUTPUT._serialized_start=1042
+  _SIMULATESUBSCRIPTIONOUTPUT._serialized_end=1152
+  _CREATEPORTALLINKINPUT._serialized_start=1154
+  _CREATEPORTALLINKINPUT._serialized_end=1251
+  _CREATEPORTALLINKOUTPUT._serialized_start=1253
+  _CREATEPORTALLINKOUTPUT._serialized_end=1298
+  _UPCOMINGINVOICEINPUT._serialized_start=1300
+  _UPCOMINGINVOICEINPUT._serialized_end=1322
+  _UPCOMINGINVOICEOUTPUT._serialized_start=1324
+  _UPCOMINGINVOICEOUTPUT._serialized_end=1390
+  _DESCRIBEINVOICEINPUT._serialized_start=1392
+  _DESCRIBEINVOICEINPUT._serialized_end=1434
+  _DESCRIBEINVOICEOUTPUT._serialized_start=1436
+  _DESCRIBEINVOICEOUTPUT._serialized_end=1502
+  _PAYINVOICEINPUT._serialized_start=1504
+  _PAYINVOICEINPUT._serialized_end=1541
+  _PAYINVOICEOUTPUT._serialized_start=1543
+  _PAYINVOICEOUTPUT._serialized_end=1583
+  _LISTINVOICESINPUT._serialized_start=1585
+  _LISTINVOICESINPUT._serialized_end=1649
+  _LISTINVOICESOUTPUT._serialized_start=1651
+  _LISTINVOICESOUTPUT._serialized_end=1727
+  _BILLINGSERVICE._serialized_start=1730
+  _BILLINGSERVICE._serialized_end=3586
 # @@protoc_insertion_point(module_scope)
