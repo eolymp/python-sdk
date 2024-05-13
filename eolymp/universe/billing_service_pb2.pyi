@@ -36,16 +36,16 @@ class CreatePortalLinkOutput(_message.Message):
     def __init__(self, portal_link: _Optional[str] = ...) -> None: ...
 
 class CreateSubscriptionInput(_message.Message):
-    __slots__ = ["plan_id", "seats", "trail", "variant_id"]
+    __slots__ = ["plan_id", "seats", "trial", "variant_id"]
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
     SEATS_FIELD_NUMBER: _ClassVar[int]
-    TRAIL_FIELD_NUMBER: _ClassVar[int]
+    TRIAL_FIELD_NUMBER: _ClassVar[int]
     VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
     plan_id: str
     seats: int
-    trail: bool
+    trial: bool
     variant_id: str
-    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ..., trail: bool = ...) -> None: ...
+    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ..., trial: bool = ...) -> None: ...
 
 class CreateSubscriptionOutput(_message.Message):
     __slots__ = ["checkout_url"]
@@ -158,16 +158,16 @@ class UpdateBillingInformationOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateSubscriptionInput(_message.Message):
-    __slots__ = ["plan_id", "seats", "trail", "variant_id"]
+    __slots__ = ["plan_id", "seats", "trial", "variant_id"]
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
     SEATS_FIELD_NUMBER: _ClassVar[int]
-    TRAIL_FIELD_NUMBER: _ClassVar[int]
+    TRIAL_FIELD_NUMBER: _ClassVar[int]
     VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
     plan_id: str
     seats: int
-    trail: bool
+    trial: bool
     variant_id: str
-    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ..., trail: bool = ...) -> None: ...
+    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ..., trial: bool = ...) -> None: ...
 
 class UpdateSubscriptionOutput(_message.Message):
     __slots__ = []
