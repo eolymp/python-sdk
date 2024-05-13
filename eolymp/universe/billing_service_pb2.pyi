@@ -18,16 +18,14 @@ class CancelSubscriptionOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class CreatePortalLinkInput(_message.Message):
-    __slots__ = ["back_url", "complete_url", "flow", "return_url"]
+    __slots__ = ["back_url", "flow", "return_url"]
     BACK_URL_FIELD_NUMBER: _ClassVar[int]
-    COMPLETE_URL_FIELD_NUMBER: _ClassVar[int]
     FLOW_FIELD_NUMBER: _ClassVar[int]
     RETURN_URL_FIELD_NUMBER: _ClassVar[int]
     back_url: str
-    complete_url: str
     flow: str
     return_url: str
-    def __init__(self, flow: _Optional[str] = ..., back_url: _Optional[str] = ..., return_url: _Optional[str] = ..., complete_url: _Optional[str] = ...) -> None: ...
+    def __init__(self, flow: _Optional[str] = ..., back_url: _Optional[str] = ..., return_url: _Optional[str] = ...) -> None: ...
 
 class CreatePortalLinkOutput(_message.Message):
     __slots__ = ["portal_link"]
@@ -36,16 +34,14 @@ class CreatePortalLinkOutput(_message.Message):
     def __init__(self, portal_link: _Optional[str] = ...) -> None: ...
 
 class CreateSubscriptionInput(_message.Message):
-    __slots__ = ["plan_id", "seats", "trial", "variant_id"]
+    __slots__ = ["plan_id", "seats", "variant_id"]
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
     SEATS_FIELD_NUMBER: _ClassVar[int]
-    TRIAL_FIELD_NUMBER: _ClassVar[int]
     VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
     plan_id: str
     seats: int
-    trial: bool
     variant_id: str
-    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ..., trial: bool = ...) -> None: ...
+    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ...) -> None: ...
 
 class CreateSubscriptionOutput(_message.Message):
     __slots__ = ["checkout_url"]
@@ -86,6 +82,14 @@ class DescribeSubscriptionOutput(_message.Message):
     current: _billing_pb2.Billing.Subscription
     upcoming: _billing_pb2.Billing.Subscription
     def __init__(self, current: _Optional[_Union[_billing_pb2.Billing.Subscription, _Mapping]] = ..., upcoming: _Optional[_Union[_billing_pb2.Billing.Subscription, _Mapping]] = ...) -> None: ...
+
+class EndSubscriptionTrialInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class EndSubscriptionTrialOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class ListInvoicesInput(_message.Message):
     __slots__ = ["after", "before", "size"]
@@ -137,6 +141,18 @@ class SimulateSubscriptionOutput(_message.Message):
     invoice: _invoice_pb2.Invoice
     def __init__(self, due: _Optional[_Union[_invoice_pb2.Invoice, _Mapping]] = ..., invoice: _Optional[_Union[_invoice_pb2.Invoice, _Mapping]] = ...) -> None: ...
 
+class StartSubscriptionTrialInput(_message.Message):
+    __slots__ = ["plan_id", "variant_id"]
+    PLAN_ID_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    plan_id: str
+    variant_id: str
+    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ...) -> None: ...
+
+class StartSubscriptionTrialOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpcomingInvoiceInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
@@ -158,19 +174,15 @@ class UpdateBillingInformationOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateSubscriptionInput(_message.Message):
-    __slots__ = ["plan_id", "seats", "trial", "variant_id"]
+    __slots__ = ["plan_id", "seats", "variant_id"]
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
     SEATS_FIELD_NUMBER: _ClassVar[int]
-    TRIAL_FIELD_NUMBER: _ClassVar[int]
     VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
     plan_id: str
     seats: int
-    trial: bool
     variant_id: str
-    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ..., trial: bool = ...) -> None: ...
+    def __init__(self, plan_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., seats: _Optional[int] = ...) -> None: ...
 
 class UpdateSubscriptionOutput(_message.Message):
-    __slots__ = ["checkout_url"]
-    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
-    checkout_url: str
-    def __init__(self, checkout_url: _Optional[str] = ...) -> None: ...
+    __slots__ = []
+    def __init__(self) -> None: ...

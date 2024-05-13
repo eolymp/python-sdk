@@ -80,6 +80,28 @@ class BillingServiceClient:
             **kwargs,
         )
 
+    def StartSubscriptionTrial(self, request, **kwargs):
+        path = "/billing/trial/start"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.StartSubscriptionTrialOutput"),
+            **kwargs,
+        )
+
+    def EndSubscriptionTrial(self, request, **kwargs):
+        path = "/billing/trial/end"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.EndSubscriptionTrialOutput"),
+            **kwargs,
+        )
+
     def SimulateSubscription(self, request, **kwargs):
         path = "/billing/subscription/simulate"
 
