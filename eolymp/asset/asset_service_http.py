@@ -36,3 +36,53 @@ class AssetServiceClient:
             **kwargs,
         )
 
+    def UploadAsset(self, request, **kwargs):
+        path = "/assets"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.UploadAssetOutput"),
+            **kwargs,
+        )
+
+    def StartMultipartUpload(self, request, **kwargs):
+        path = "/uploads"
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.StartMultipartUploadOutput"),
+            **kwargs,
+        )
+
+    def UploadPart(self, request, **kwargs):
+        path = "/uploads/"+urllib.parse.quote(request.upload_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.upload_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.UploadPartOutput"),
+            **kwargs,
+        )
+
+    def CompleteMultipartUpload(self, request, **kwargs):
+        path = "/uploads/"+urllib.parse.quote(request.upload_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.upload_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.CompleteMultipartUploadOutput"),
+            **kwargs,
+        )
+
