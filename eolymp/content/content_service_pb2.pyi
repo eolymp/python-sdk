@@ -3,8 +3,10 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.content import fragment_pb2 as _fragment_pb2
 from eolymp.content import variant_pb2 as _variant_pb2
+from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -106,7 +108,9 @@ class DescribeVariantOutput(_message.Message):
     def __init__(self, variant: _Optional[_Union[_variant_pb2.Variant, _Mapping]] = ...) -> None: ...
 
 class ListFragmentsInput(_message.Message):
-    __slots__ = ["extra", "filters", "locale", "offset", "size"]
+    __slots__ = ["extra", "filters", "locale", "offset", "order", "size", "sort"]
+    class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
     class Filter(_message.Message):
         __slots__ = ["id", "label", "locale", "path", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -120,17 +124,24 @@ class ListFragmentsInput(_message.Message):
         path: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         query: str
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    CREATED_AT: ListFragmentsInput.Sort
+    DEFAULT: ListFragmentsInput.Sort
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    ORDER_FIELD_NUMBER: _ClassVar[int]
+    PATH: ListFragmentsInput.Sort
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SORT_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Extra]
     filters: ListFragmentsInput.Filter
     locale: str
     offset: int
+    order: _direction_pb2.Direction
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    sort: ListFragmentsInput.Sort
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListFragmentsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
 
 class ListFragmentsOutput(_message.Message):
     __slots__ = ["items", "total"]

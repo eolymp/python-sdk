@@ -16,10 +16,11 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.content import fragment_pb2 as eolymp_dot_content_dot_fragment__pb2
 from eolymp.content import variant_pb2 as eolymp_dot_content_dot_variant__pb2
+from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/content/content_service.proto\x12\x0e\x65olymp.content\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/content/fragment.proto\x1a\x1c\x65olymp/content/variant.proto\x1a!eolymp/wellknown/expression.proto\"\\\n\x15\x44\x65scribeFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.content.Fragment.Extra\"D\n\x16\x44\x65scribeFragmentOutput\x12*\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x18.eolymp.content.Fragment\"\x8a\x03\n\x12ListFragmentsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.content.ListFragmentsInput.Filter\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.content.Fragment.Extra\x1a\xd8\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04path\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06locale\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12/\n\x05label\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"M\n\x13ListFragmentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.content.Fragment\"A\n\x13\x43reateFragmentInput\x12*\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x18.eolymp.content.Fragment\"+\n\x14\x43reateFragmentOutput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\"V\n\x13UpdateFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12*\n\x08\x66ragment\x18\x02 \x01(\x0b\x32\x18.eolymp.content.Fragment\"\x16\n\x14UpdateFragmentOutput\"*\n\x13\x44\x65leteFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65leteFragmentOutput\"n\n\x14\x44\x65scribeVariantInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.content.Variant.Extra\"A\n\x15\x44\x65scribeVariantOutput\x12(\n\x07variant\x18\x01 \x01(\x0b\x32\x17.eolymp.content.Variant\"\xa7\x02\n\x11ListVariantsInput\x12\x13\n\x0b\x66ragment_id\x18\x02 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.content.ListVariantsInput.Filter\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.content.Variant.Extra\x1au\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06locale\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"K\n\x12ListVariantsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.content.Variant\"S\n\x12\x43reateVariantInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12(\n\x07variant\x18\x02 \x01(\x0b\x32\x17.eolymp.content.Variant\")\n\x13\x43reateVariantOutput\x12\x12\n\nvariant_id\x18\x01 \x01(\t\"g\n\x12UpdateVariantInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12(\n\x07variant\x18\x03 \x01(\x0b\x32\x17.eolymp.content.Variant\"\x15\n\x13UpdateVariantOutput\"=\n\x12\x44\x65leteVariantInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteVariantOutput\"a\n\x11\x44\x65scribePathInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.content.Fragment.Extra\"@\n\x12\x44\x65scribePathOutput\x12*\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x18.eolymp.content.Fragment\"`\n\x10ListParentsInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.content.Fragment.Extra\"K\n\x11ListParentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.content.Fragment2\xab\x11\n\x0e\x43ontentService\x12\xbb\x01\n\x10\x44\x65scribeFragment\x12%.eolymp.content.DescribeFragmentInput\x1a&.eolymp.content.DescribeFragmentOutput\"X\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\"\x12 /content/fragments/{fragment_id}\x12\xa3\x01\n\rListFragments\x12\".eolymp.content.ListFragmentsInput\x1a#.eolymp.content.ListFragmentsOutput\"I\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/content/fragments\x12\xa7\x01\n\x0e\x43reateFragment\x12#.eolymp.content.CreateFragmentInput\x1a$.eolymp.content.CreateFragmentOutput\"J\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\"\x12/content/fragments\x12\xb5\x01\n\x0eUpdateFragment\x12#.eolymp.content.UpdateFragmentInput\x1a$.eolymp.content.UpdateFragmentOutput\"X\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"\x1a /content/fragments/{fragment_id}\x12\xb5\x01\n\x0e\x44\x65leteFragment\x12#.eolymp.content.DeleteFragmentInput\x1a$.eolymp.content.DeleteFragmentOutput\"X\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"* /content/fragments/{fragment_id}\x12\xce\x01\n\x0f\x44\x65scribeVariant\x12$.eolymp.content.DescribeVariantInput\x1a%.eolymp.content.DescribeVariantOutput\"n\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x38\x12\x36/content/fragments/{fragment_id}/variants/{variant_id}\x12\xb7\x01\n\x0cListVariants\x12!.eolymp.content.ListVariantsInput\x1a\".eolymp.content.ListVariantsOutput\"`\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02+\x12)/content/fragments/{fragment_id}/variants\x12\xbb\x01\n\rCreateVariant\x12\".eolymp.content.CreateVariantInput\x1a#.eolymp.content.CreateVariantOutput\"a\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02+\")/content/fragments/{fragment_id}/variants\x12\xc8\x01\n\rUpdateVariant\x12\".eolymp.content.UpdateVariantInput\x1a#.eolymp.content.UpdateVariantOutput\"n\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x38\x1a\x36/content/fragments/{fragment_id}/variants/{variant_id}\x12\xc8\x01\n\rDeleteVariant\x12\".eolymp.content.DeleteVariantInput\x1a#.eolymp.content.DeleteVariantOutput\"n\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x38*6/content/fragments/{fragment_id}/variants/{variant_id}\x12\x9c\x01\n\x0c\x44\x65scribePath\x12!.eolymp.content.DescribePathInput\x1a\".eolymp.content.DescribePathOutput\"E\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x0f\x12\r/content/path\x12\x9c\x01\n\x0bListParents\x12 .eolymp.content.ListParentsInput\x1a!.eolymp.content.ListParentsOutput\"H\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/content/parentsB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/content/content_service.proto\x12\x0e\x65olymp.content\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/content/fragment.proto\x1a\x1c\x65olymp/content/variant.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\\\n\x15\x44\x65scribeFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.content.Fragment.Extra\"D\n\x16\x44\x65scribeFragmentOutput\x12*\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x18.eolymp.content.Fragment\"\x9c\x04\n\x12ListFragmentsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.content.ListFragmentsInput.Filter\x12\x35\n\x04sort\x18\x32 \x01(\x0e\x32\'.eolymp.content.ListFragmentsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.content.Fragment.Extra\x1a\xd8\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04path\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06locale\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12/\n\x05label\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"-\n\x04Sort\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x08\n\x04PATH\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\"M\n\x13ListFragmentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.content.Fragment\"A\n\x13\x43reateFragmentInput\x12*\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x18.eolymp.content.Fragment\"+\n\x14\x43reateFragmentOutput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\"V\n\x13UpdateFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12*\n\x08\x66ragment\x18\x02 \x01(\x0b\x32\x18.eolymp.content.Fragment\"\x16\n\x14UpdateFragmentOutput\"*\n\x13\x44\x65leteFragmentInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65leteFragmentOutput\"n\n\x14\x44\x65scribeVariantInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.content.Variant.Extra\"A\n\x15\x44\x65scribeVariantOutput\x12(\n\x07variant\x18\x01 \x01(\x0b\x32\x17.eolymp.content.Variant\"\xa7\x02\n\x11ListVariantsInput\x12\x13\n\x0b\x66ragment_id\x18\x02 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.content.ListVariantsInput.Filter\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.content.Variant.Extra\x1au\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06locale\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"K\n\x12ListVariantsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.content.Variant\"S\n\x12\x43reateVariantInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12(\n\x07variant\x18\x02 \x01(\x0b\x32\x17.eolymp.content.Variant\")\n\x13\x43reateVariantOutput\x12\x12\n\nvariant_id\x18\x01 \x01(\t\"g\n\x12UpdateVariantInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12(\n\x07variant\x18\x03 \x01(\x0b\x32\x17.eolymp.content.Variant\"\x15\n\x13UpdateVariantOutput\"=\n\x12\x44\x65leteVariantInput\x12\x13\n\x0b\x66ragment_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteVariantOutput\"a\n\x11\x44\x65scribePathInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.content.Fragment.Extra\"@\n\x12\x44\x65scribePathOutput\x12*\n\x08\x66ragment\x18\x01 \x01(\x0b\x32\x18.eolymp.content.Fragment\"`\n\x10ListParentsInput\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.content.Fragment.Extra\"K\n\x11ListParentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.content.Fragment2\xab\x11\n\x0e\x43ontentService\x12\xbb\x01\n\x10\x44\x65scribeFragment\x12%.eolymp.content.DescribeFragmentInput\x1a&.eolymp.content.DescribeFragmentOutput\"X\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\"\x12 /content/fragments/{fragment_id}\x12\xa3\x01\n\rListFragments\x12\".eolymp.content.ListFragmentsInput\x1a#.eolymp.content.ListFragmentsOutput\"I\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/content/fragments\x12\xa7\x01\n\x0e\x43reateFragment\x12#.eolymp.content.CreateFragmentInput\x1a$.eolymp.content.CreateFragmentOutput\"J\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\"\x12/content/fragments\x12\xb5\x01\n\x0eUpdateFragment\x12#.eolymp.content.UpdateFragmentInput\x1a$.eolymp.content.UpdateFragmentOutput\"X\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"\x1a /content/fragments/{fragment_id}\x12\xb5\x01\n\x0e\x44\x65leteFragment\x12#.eolymp.content.DeleteFragmentInput\x1a$.eolymp.content.DeleteFragmentOutput\"X\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"* /content/fragments/{fragment_id}\x12\xce\x01\n\x0f\x44\x65scribeVariant\x12$.eolymp.content.DescribeVariantInput\x1a%.eolymp.content.DescribeVariantOutput\"n\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x38\x12\x36/content/fragments/{fragment_id}/variants/{variant_id}\x12\xb7\x01\n\x0cListVariants\x12!.eolymp.content.ListVariantsInput\x1a\".eolymp.content.ListVariantsOutput\"`\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02+\x12)/content/fragments/{fragment_id}/variants\x12\xbb\x01\n\rCreateVariant\x12\".eolymp.content.CreateVariantInput\x1a#.eolymp.content.CreateVariantOutput\"a\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02+\")/content/fragments/{fragment_id}/variants\x12\xc8\x01\n\rUpdateVariant\x12\".eolymp.content.UpdateVariantInput\x1a#.eolymp.content.UpdateVariantOutput\"n\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x38\x1a\x36/content/fragments/{fragment_id}/variants/{variant_id}\x12\xc8\x01\n\rDeleteVariant\x12\".eolymp.content.DeleteVariantInput\x1a#.eolymp.content.DeleteVariantOutput\"n\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x38*6/content/fragments/{fragment_id}/variants/{variant_id}\x12\x9c\x01\n\x0c\x44\x65scribePath\x12!.eolymp.content.DescribePathInput\x1a\".eolymp.content.DescribePathOutput\"E\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x0f\x12\r/content/path\x12\x9c\x01\n\x0bListParents\x12 .eolymp.content.ListParentsInput\x1a!.eolymp.content.ListParentsOutput\"H\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/content/parentsB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.content.content_service_pb2', globals())
@@ -51,58 +52,60 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CONTENTSERVICE.methods_by_name['DescribePath']._serialized_options = b'\202\343\n\034\212\343\n\030typewriter:fragment:read\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\323\344\223\002\017\022\r/content/path'
   _CONTENTSERVICE.methods_by_name['ListParents']._options = None
   _CONTENTSERVICE.methods_by_name['ListParents']._serialized_options = b'\202\343\n\034\212\343\n\030typewriter:fragment:read\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\323\344\223\002\022\022\020/content/parents'
-  _DESCRIBEFRAGMENTINPUT._serialized_start=251
-  _DESCRIBEFRAGMENTINPUT._serialized_end=343
-  _DESCRIBEFRAGMENTOUTPUT._serialized_start=345
-  _DESCRIBEFRAGMENTOUTPUT._serialized_end=413
-  _LISTFRAGMENTSINPUT._serialized_start=416
-  _LISTFRAGMENTSINPUT._serialized_end=810
-  _LISTFRAGMENTSINPUT_FILTER._serialized_start=594
-  _LISTFRAGMENTSINPUT_FILTER._serialized_end=810
-  _LISTFRAGMENTSOUTPUT._serialized_start=812
-  _LISTFRAGMENTSOUTPUT._serialized_end=889
-  _CREATEFRAGMENTINPUT._serialized_start=891
-  _CREATEFRAGMENTINPUT._serialized_end=956
-  _CREATEFRAGMENTOUTPUT._serialized_start=958
-  _CREATEFRAGMENTOUTPUT._serialized_end=1001
-  _UPDATEFRAGMENTINPUT._serialized_start=1003
-  _UPDATEFRAGMENTINPUT._serialized_end=1089
-  _UPDATEFRAGMENTOUTPUT._serialized_start=1091
-  _UPDATEFRAGMENTOUTPUT._serialized_end=1113
-  _DELETEFRAGMENTINPUT._serialized_start=1115
-  _DELETEFRAGMENTINPUT._serialized_end=1157
-  _DELETEFRAGMENTOUTPUT._serialized_start=1159
-  _DELETEFRAGMENTOUTPUT._serialized_end=1181
-  _DESCRIBEVARIANTINPUT._serialized_start=1183
-  _DESCRIBEVARIANTINPUT._serialized_end=1293
-  _DESCRIBEVARIANTOUTPUT._serialized_start=1295
-  _DESCRIBEVARIANTOUTPUT._serialized_end=1360
-  _LISTVARIANTSINPUT._serialized_start=1363
-  _LISTVARIANTSINPUT._serialized_end=1658
-  _LISTVARIANTSINPUT_FILTER._serialized_start=1541
-  _LISTVARIANTSINPUT_FILTER._serialized_end=1658
-  _LISTVARIANTSOUTPUT._serialized_start=1660
-  _LISTVARIANTSOUTPUT._serialized_end=1735
-  _CREATEVARIANTINPUT._serialized_start=1737
-  _CREATEVARIANTINPUT._serialized_end=1820
-  _CREATEVARIANTOUTPUT._serialized_start=1822
-  _CREATEVARIANTOUTPUT._serialized_end=1863
-  _UPDATEVARIANTINPUT._serialized_start=1865
-  _UPDATEVARIANTINPUT._serialized_end=1968
-  _UPDATEVARIANTOUTPUT._serialized_start=1970
-  _UPDATEVARIANTOUTPUT._serialized_end=1991
-  _DELETEVARIANTINPUT._serialized_start=1993
-  _DELETEVARIANTINPUT._serialized_end=2054
-  _DELETEVARIANTOUTPUT._serialized_start=2056
-  _DELETEVARIANTOUTPUT._serialized_end=2077
-  _DESCRIBEPATHINPUT._serialized_start=2079
-  _DESCRIBEPATHINPUT._serialized_end=2176
-  _DESCRIBEPATHOUTPUT._serialized_start=2178
-  _DESCRIBEPATHOUTPUT._serialized_end=2242
-  _LISTPARENTSINPUT._serialized_start=2244
-  _LISTPARENTSINPUT._serialized_end=2340
-  _LISTPARENTSOUTPUT._serialized_start=2342
-  _LISTPARENTSOUTPUT._serialized_end=2417
-  _CONTENTSERVICE._serialized_start=2420
-  _CONTENTSERVICE._serialized_end=4639
+  _DESCRIBEFRAGMENTINPUT._serialized_start=285
+  _DESCRIBEFRAGMENTINPUT._serialized_end=377
+  _DESCRIBEFRAGMENTOUTPUT._serialized_start=379
+  _DESCRIBEFRAGMENTOUTPUT._serialized_end=447
+  _LISTFRAGMENTSINPUT._serialized_start=450
+  _LISTFRAGMENTSINPUT._serialized_end=990
+  _LISTFRAGMENTSINPUT_FILTER._serialized_start=727
+  _LISTFRAGMENTSINPUT_FILTER._serialized_end=943
+  _LISTFRAGMENTSINPUT_SORT._serialized_start=945
+  _LISTFRAGMENTSINPUT_SORT._serialized_end=990
+  _LISTFRAGMENTSOUTPUT._serialized_start=992
+  _LISTFRAGMENTSOUTPUT._serialized_end=1069
+  _CREATEFRAGMENTINPUT._serialized_start=1071
+  _CREATEFRAGMENTINPUT._serialized_end=1136
+  _CREATEFRAGMENTOUTPUT._serialized_start=1138
+  _CREATEFRAGMENTOUTPUT._serialized_end=1181
+  _UPDATEFRAGMENTINPUT._serialized_start=1183
+  _UPDATEFRAGMENTINPUT._serialized_end=1269
+  _UPDATEFRAGMENTOUTPUT._serialized_start=1271
+  _UPDATEFRAGMENTOUTPUT._serialized_end=1293
+  _DELETEFRAGMENTINPUT._serialized_start=1295
+  _DELETEFRAGMENTINPUT._serialized_end=1337
+  _DELETEFRAGMENTOUTPUT._serialized_start=1339
+  _DELETEFRAGMENTOUTPUT._serialized_end=1361
+  _DESCRIBEVARIANTINPUT._serialized_start=1363
+  _DESCRIBEVARIANTINPUT._serialized_end=1473
+  _DESCRIBEVARIANTOUTPUT._serialized_start=1475
+  _DESCRIBEVARIANTOUTPUT._serialized_end=1540
+  _LISTVARIANTSINPUT._serialized_start=1543
+  _LISTVARIANTSINPUT._serialized_end=1838
+  _LISTVARIANTSINPUT_FILTER._serialized_start=1721
+  _LISTVARIANTSINPUT_FILTER._serialized_end=1838
+  _LISTVARIANTSOUTPUT._serialized_start=1840
+  _LISTVARIANTSOUTPUT._serialized_end=1915
+  _CREATEVARIANTINPUT._serialized_start=1917
+  _CREATEVARIANTINPUT._serialized_end=2000
+  _CREATEVARIANTOUTPUT._serialized_start=2002
+  _CREATEVARIANTOUTPUT._serialized_end=2043
+  _UPDATEVARIANTINPUT._serialized_start=2045
+  _UPDATEVARIANTINPUT._serialized_end=2148
+  _UPDATEVARIANTOUTPUT._serialized_start=2150
+  _UPDATEVARIANTOUTPUT._serialized_end=2171
+  _DELETEVARIANTINPUT._serialized_start=2173
+  _DELETEVARIANTINPUT._serialized_end=2234
+  _DELETEVARIANTOUTPUT._serialized_start=2236
+  _DELETEVARIANTOUTPUT._serialized_end=2257
+  _DESCRIBEPATHINPUT._serialized_start=2259
+  _DESCRIBEPATHINPUT._serialized_end=2356
+  _DESCRIBEPATHOUTPUT._serialized_start=2358
+  _DESCRIBEPATHOUTPUT._serialized_end=2422
+  _LISTPARENTSINPUT._serialized_start=2424
+  _LISTPARENTSINPUT._serialized_end=2520
+  _LISTPARENTSOUTPUT._serialized_start=2522
+  _LISTPARENTSOUTPUT._serialized_end=2597
+  _CONTENTSERVICE._serialized_start=2600
+  _CONTENTSERVICE._serialized_end=4819
 # @@protoc_insertion_point(module_scope)
