@@ -1,4 +1,3 @@
-from eolymp.helpdesk import document_pb2 as _document_pb2
 from eolymp.helpdesk import ticket_pb2 as _ticket_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -15,24 +14,6 @@ class CommentChangedEvent(_message.Message):
     before: _ticket_pb2.Ticket.Comment
     ticket_id: str
     def __init__(self, ticket_id: _Optional[str] = ..., before: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ..., after: _Optional[_Union[_ticket_pb2.Ticket.Comment, _Mapping]] = ...) -> None: ...
-
-class DocumentCreatedEvent(_message.Message):
-    __slots__ = ["document"]
-    DOCUMENT_FIELD_NUMBER: _ClassVar[int]
-    document: _document_pb2.Document
-    def __init__(self, document: _Optional[_Union[_document_pb2.Document, _Mapping]] = ...) -> None: ...
-
-class DocumentDeletedEvent(_message.Message):
-    __slots__ = ["document"]
-    DOCUMENT_FIELD_NUMBER: _ClassVar[int]
-    document: _document_pb2.Document
-    def __init__(self, document: _Optional[_Union[_document_pb2.Document, _Mapping]] = ...) -> None: ...
-
-class DocumentUpdatedEvent(_message.Message):
-    __slots__ = ["document"]
-    DOCUMENT_FIELD_NUMBER: _ClassVar[int]
-    document: _document_pb2.Document
-    def __init__(self, document: _Optional[_Union[_document_pb2.Document, _Mapping]] = ...) -> None: ...
 
 class TicketChangedEvent(_message.Message):
     __slots__ = ["after", "before"]

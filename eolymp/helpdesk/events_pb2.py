@@ -11,11 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.helpdesk import document_pb2 as eolymp_dot_helpdesk_dot_document__pb2
 from eolymp.helpdesk import ticket_pb2 as eolymp_dot_helpdesk_dot_ticket__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/helpdesk/events.proto\x12\x0f\x65olymp.helpdesk\x1a\x1e\x65olymp/helpdesk/document.proto\x1a\x1c\x65olymp/helpdesk/ticket.proto\"C\n\x14\x44ocumentCreatedEvent\x12+\n\x08\x64ocument\x18\x01 \x01(\x0b\x32\x19.eolymp.helpdesk.Document\"C\n\x14\x44ocumentUpdatedEvent\x12+\n\x08\x64ocument\x18\x01 \x01(\x0b\x32\x19.eolymp.helpdesk.Document\"C\n\x14\x44ocumentDeletedEvent\x12+\n\x08\x64ocument\x18\x01 \x01(\x0b\x32\x19.eolymp.helpdesk.Document\"e\n\x12TicketChangedEvent\x12\'\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\x12&\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\"\x89\x01\n\x13\x43ommentChangedEvent\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12/\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\x12.\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.CommentB3Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdeskb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/helpdesk/events.proto\x12\x0f\x65olymp.helpdesk\x1a\x1c\x65olymp/helpdesk/ticket.proto\"e\n\x12TicketChangedEvent\x12\'\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\x12&\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\"\x89\x01\n\x13\x43ommentChangedEvent\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12/\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\x12.\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.CommentB3Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdeskb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.helpdesk.events_pb2', globals())
@@ -23,14 +22,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdesk'
-  _DOCUMENTCREATEDEVENT._serialized_start=111
-  _DOCUMENTCREATEDEVENT._serialized_end=178
-  _DOCUMENTUPDATEDEVENT._serialized_start=180
-  _DOCUMENTUPDATEDEVENT._serialized_end=247
-  _DOCUMENTDELETEDEVENT._serialized_start=249
-  _DOCUMENTDELETEDEVENT._serialized_end=316
-  _TICKETCHANGEDEVENT._serialized_start=318
-  _TICKETCHANGEDEVENT._serialized_end=419
-  _COMMENTCHANGEDEVENT._serialized_start=422
-  _COMMENTCHANGEDEVENT._serialized_end=559
+  _TICKETCHANGEDEVENT._serialized_start=79
+  _TICKETCHANGEDEVENT._serialized_end=180
+  _COMMENTCHANGEDEVENT._serialized_start=183
+  _COMMENTCHANGEDEVENT._serialized_end=320
 # @@protoc_insertion_point(module_scope)
