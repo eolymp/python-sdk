@@ -165,6 +165,20 @@ class UnassignMemberOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class UnsubscribeMemberInput(_message.Message):
+    __slots__ = ["member_id", "secret", "topics"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    SECRET_FIELD_NUMBER: _ClassVar[int]
+    TOPICS_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    secret: str
+    topics: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, member_id: _Optional[str] = ..., secret: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class UnsubscribeMemberOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdateMemberInput(_message.Message):
     __slots__ = ["member", "member_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -192,6 +206,7 @@ class UpdateMemberInput(_message.Message):
     USER_PICTURE: UpdateMemberInput.Patch
     USER_PREFERENCES: UpdateMemberInput.Patch
     USER_PREFERENCES_LOCALE: UpdateMemberInput.Patch
+    USER_PREFERENCES_NOTIFICATIONS: UpdateMemberInput.Patch
     USER_PREFERENCES_RUNTIME: UpdateMemberInput.Patch
     USER_PREFERENCES_TIMEZONE: UpdateMemberInput.Patch
     member: _member_pb2.Member

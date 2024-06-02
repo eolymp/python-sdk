@@ -1,21 +1,24 @@
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
     __slots__ = ["birthday", "city", "country", "email", "email_verified", "issuer", "name", "nickname", "nickname_change_timeout", "password", "password_age", "picture", "preferences", "subject", "team_id"]
     class Preferences(_message.Message):
-        __slots__ = ["locale", "runtime", "timezone"]
+        __slots__ = ["locale", "notifications", "runtime", "timezone"]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
+        NOTIFICATIONS_FIELD_NUMBER: _ClassVar[int]
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
         TIMEZONE_FIELD_NUMBER: _ClassVar[int]
         locale: str
+        notifications: _containers.RepeatedScalarFieldContainer[str]
         runtime: str
         timezone: str
-        def __init__(self, locale: _Optional[str] = ..., timezone: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
+        def __init__(self, locale: _Optional[str] = ..., timezone: _Optional[str] = ..., runtime: _Optional[str] = ..., notifications: _Optional[_Iterable[str]] = ...) -> None: ...
     BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
     CITY_FIELD_NUMBER: _ClassVar[int]
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
