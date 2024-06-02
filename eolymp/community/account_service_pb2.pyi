@@ -73,18 +73,6 @@ class DescribeAccountOutput(_message.Message):
     team: _member_pb2.Member
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., team: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
-class DescribeNotificationPreferencesInput(_message.Message):
-    __slots__ = ["token"]
-    TOKEN_FIELD_NUMBER: _ClassVar[int]
-    token: str
-    def __init__(self, token: _Optional[str] = ...) -> None: ...
-
-class DescribeNotificationPreferencesOutput(_message.Message):
-    __slots__ = ["topics"]
-    TOPICS_FIELD_NUMBER: _ClassVar[int]
-    topics: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, topics: _Optional[_Iterable[str]] = ...) -> None: ...
-
 class ResendVerificationInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
@@ -124,13 +112,13 @@ class UpdateAccountInput(_message.Message):
     USER_CITY: UpdateAccountInput.Patch
     USER_COUNTRY: UpdateAccountInput.Patch
     USER_EMAIL: UpdateAccountInput.Patch
+    USER_EMAIL_SUBSCRIPTIONS: UpdateAccountInput.Patch
     USER_NAME: UpdateAccountInput.Patch
     USER_NICKNAME: UpdateAccountInput.Patch
     USER_PASSWORD: UpdateAccountInput.Patch
     USER_PICTURE: UpdateAccountInput.Patch
     USER_PREFERENCES: UpdateAccountInput.Patch
     USER_PREFERENCES_LOCALE: UpdateAccountInput.Patch
-    USER_PREFERENCES_NOTIFICATIONS: UpdateAccountInput.Patch
     USER_PREFERENCES_RUNTIME: UpdateAccountInput.Patch
     USER_PREFERENCES_TIMEZONE: UpdateAccountInput.Patch
     current_password: str
@@ -143,18 +131,6 @@ class UpdateAccountOutput(_message.Message):
     HINT_FIELD_NUMBER: _ClassVar[int]
     hint: str
     def __init__(self, hint: _Optional[str] = ...) -> None: ...
-
-class UpdateNotificationPreferencesInput(_message.Message):
-    __slots__ = ["token", "topics"]
-    TOKEN_FIELD_NUMBER: _ClassVar[int]
-    TOPICS_FIELD_NUMBER: _ClassVar[int]
-    token: str
-    topics: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, token: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ...) -> None: ...
-
-class UpdateNotificationPreferencesOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class UploadPictureInput(_message.Message):
     __slots__ = ["data", "filename", "offset_x", "offset_y", "size"]

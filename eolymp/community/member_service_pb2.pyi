@@ -186,13 +186,13 @@ class UpdateMemberInput(_message.Message):
     USER_CITY: UpdateMemberInput.Patch
     USER_COUNTRY: UpdateMemberInput.Patch
     USER_EMAIL: UpdateMemberInput.Patch
+    USER_EMAIL_SUBSCRIPTIONS: UpdateMemberInput.Patch
     USER_NAME: UpdateMemberInput.Patch
     USER_NICKNAME: UpdateMemberInput.Patch
     USER_PASSWORD: UpdateMemberInput.Patch
     USER_PICTURE: UpdateMemberInput.Patch
     USER_PREFERENCES: UpdateMemberInput.Patch
     USER_PREFERENCES_LOCALE: UpdateMemberInput.Patch
-    USER_PREFERENCES_NOTIFICATIONS: UpdateMemberInput.Patch
     USER_PREFERENCES_RUNTIME: UpdateMemberInput.Patch
     USER_PREFERENCES_TIMEZONE: UpdateMemberInput.Patch
     member: _member_pb2.Member
