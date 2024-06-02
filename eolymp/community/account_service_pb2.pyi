@@ -143,6 +143,7 @@ class UpdateAccountInput(_message.Message):
     USER_PICTURE: UpdateAccountInput.Patch
     USER_PREFERENCES: UpdateAccountInput.Patch
     USER_PREFERENCES_LOCALE: UpdateAccountInput.Patch
+    USER_PREFERENCES_NOTIFICATIONS: UpdateAccountInput.Patch
     USER_PREFERENCES_RUNTIME: UpdateAccountInput.Patch
     USER_PREFERENCES_TIMEZONE: UpdateAccountInput.Patch
     current_password: str
