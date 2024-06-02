@@ -113,25 +113,14 @@ class AccountServiceClient:
             **kwargs,
         )
 
-    def ConfigureActiveSubscription(self, request, **kwargs):
-        path = "/account/subscription"
+    def UpdateNotificationPreferences(self, request, **kwargs):
+        path = "/account/notifications"
 
         return self.transport.request(
-            method="PUT",
+            method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ConfigureActiveSubscriptionOutput"),
-            **kwargs,
-        )
-
-    def DescribeActiveSubscription(self, request, **kwargs):
-        path = "/account/subscription"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeActiveSubscriptionOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateNotificationPreferencesOutput"),
             **kwargs,
         )
 

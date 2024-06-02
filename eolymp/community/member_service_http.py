@@ -133,17 +133,3 @@ class MemberServiceClient:
             **kwargs,
         )
 
-    def UnsubscribeMember(self, request, **kwargs):
-        path = "/members/"+urllib.parse.quote(request.member_id)+"/unsubscribe"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.UnsubscribeMemberOutput"),
-            **kwargs,
-        )
-

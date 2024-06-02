@@ -1,7 +1,6 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.community import member_pb2 as _member_pb2
-from eolymp.community import subscription_pb2 as _subscription_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -35,20 +34,6 @@ class CompleteVerificationInput(_message.Message):
 class CompleteVerificationOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class ConfigureActiveSubscriptionInput(_message.Message):
-    __slots__ = ["price_id", "tier_id"]
-    PRICE_ID_FIELD_NUMBER: _ClassVar[int]
-    TIER_ID_FIELD_NUMBER: _ClassVar[int]
-    price_id: str
-    tier_id: str
-    def __init__(self, tier_id: _Optional[str] = ..., price_id: _Optional[str] = ...) -> None: ...
-
-class ConfigureActiveSubscriptionOutput(_message.Message):
-    __slots__ = ["checkout_url"]
-    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
-    checkout_url: str
-    def __init__(self, checkout_url: _Optional[str] = ...) -> None: ...
 
 class CreateAccountInput(_message.Message):
     __slots__ = ["captcha", "member"]
@@ -87,16 +72,6 @@ class DescribeAccountOutput(_message.Message):
     member: _member_pb2.Member
     team: _member_pb2.Member
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., team: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
-
-class DescribeActiveSubscriptionInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class DescribeActiveSubscriptionOutput(_message.Message):
-    __slots__ = ["subscription"]
-    SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    subscription: _subscription_pb2.Subscription
-    def __init__(self, subscription: _Optional[_Union[_subscription_pb2.Subscription, _Mapping]] = ...) -> None: ...
 
 class ResendVerificationInput(_message.Message):
     __slots__ = []
@@ -156,6 +131,20 @@ class UpdateAccountOutput(_message.Message):
     HINT_FIELD_NUMBER: _ClassVar[int]
     hint: str
     def __init__(self, hint: _Optional[str] = ...) -> None: ...
+
+class UpdateNotificationPreferencesInput(_message.Message):
+    __slots__ = ["member_id", "token", "topics"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    TOPICS_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    token: str
+    topics: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, token: _Optional[str] = ..., member_id: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class UpdateNotificationPreferencesOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class UploadPictureInput(_message.Message):
     __slots__ = ["data", "filename", "offset_x", "offset_y", "size"]
