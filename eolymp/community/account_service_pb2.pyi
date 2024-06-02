@@ -73,6 +73,18 @@ class DescribeAccountOutput(_message.Message):
     team: _member_pb2.Member
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., team: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
+class DescribeNotificationPreferencesInput(_message.Message):
+    __slots__ = ["token"]
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    token: str
+    def __init__(self, token: _Optional[str] = ...) -> None: ...
+
+class DescribeNotificationPreferencesOutput(_message.Message):
+    __slots__ = ["topics"]
+    TOPICS_FIELD_NUMBER: _ClassVar[int]
+    topics: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, topics: _Optional[_Iterable[str]] = ...) -> None: ...
+
 class ResendVerificationInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
@@ -133,14 +145,12 @@ class UpdateAccountOutput(_message.Message):
     def __init__(self, hint: _Optional[str] = ...) -> None: ...
 
 class UpdateNotificationPreferencesInput(_message.Message):
-    __slots__ = ["member_id", "token", "topics"]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["token", "topics"]
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
-    member_id: str
     token: str
     topics: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, token: _Optional[str] = ..., member_id: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, token: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class UpdateNotificationPreferencesOutput(_message.Message):
     __slots__ = []

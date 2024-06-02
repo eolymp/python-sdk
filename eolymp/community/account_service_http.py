@@ -113,11 +113,22 @@ class AccountServiceClient:
             **kwargs,
         )
 
+    def DescribeNotificationPreferences(self, request, **kwargs):
+        path = "/account/notifications"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeNotificationPreferencesOutput"),
+            **kwargs,
+        )
+
     def UpdateNotificationPreferences(self, request, **kwargs):
         path = "/account/notifications"
 
         return self.transport.request(
-            method="DELETE",
+            method="POST",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateNotificationPreferencesOutput"),
