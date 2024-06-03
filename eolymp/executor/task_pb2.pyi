@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Task(_message.Message):
-    __slots__ = ["checker", "constraints", "files", "interactor", "lang", "origin", "preconditions", "priority", "redirect_stderr_to_stdout", "reference", "run_count", "runs", "runtime", "source", "use_file_io", "use_workspace_archive"]
+    __slots__ = ["checker", "constraints", "files", "footer_url", "header_url", "interactor", "origin", "preconditions", "priority", "redirect_stderr_to_stdout", "reference", "run_count", "runs", "runtime", "source", "source_url"]
     class Constraint(_message.Message):
         __slots__ = ["actor", "cpu_time_limit", "file_size_limit", "memory_limit", "selector", "wall_time_limit"]
         ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -70,8 +70,9 @@ class Task(_message.Message):
     CHECKER_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     FILES_FIELD_NUMBER: _ClassVar[int]
+    FOOTER_URL_FIELD_NUMBER: _ClassVar[int]
+    HEADER_URL_FIELD_NUMBER: _ClassVar[int]
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
-    LANG_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
     PRIORITY_FIELD_NUMBER: _ClassVar[int]
@@ -81,13 +82,13 @@ class Task(_message.Message):
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
-    USE_FILE_IO_FIELD_NUMBER: _ClassVar[int]
-    USE_WORKSPACE_ARCHIVE_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
     checker: _checker_pb2.Checker
     constraints: _containers.RepeatedCompositeFieldContainer[Task.Constraint]
     files: _containers.RepeatedCompositeFieldContainer[Task.File]
+    footer_url: str
+    header_url: str
     interactor: _interactor_pb2.Interactor
-    lang: str
     origin: str
     preconditions: _containers.RepeatedCompositeFieldContainer[Task.Precondition]
     priority: int
@@ -97,6 +98,5 @@ class Task(_message.Message):
     runs: _containers.RepeatedCompositeFieldContainer[Task.Run]
     runtime: str
     source: str
-    use_file_io: bool
-    use_workspace_archive: bool
-    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., lang: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., use_file_io: bool = ..., redirect_stderr_to_stdout: bool = ..., use_workspace_archive: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[Task.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[Task.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., runs: _Optional[_Iterable[_Union[Task.Run, _Mapping]]] = ..., files: _Optional[_Iterable[_Union[Task.File, _Mapping]]] = ...) -> None: ...
+    source_url: str
+    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[Task.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[Task.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., runs: _Optional[_Iterable[_Union[Task.Run, _Mapping]]] = ..., files: _Optional[_Iterable[_Union[Task.File, _Mapping]]] = ...) -> None: ...
