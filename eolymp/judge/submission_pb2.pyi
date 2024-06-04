@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ["contest_id", "cost", "deleted", "error", "groups", "id", "lang", "participant_id", "percentage", "problem_id", "score", "signature", "source", "source_url", "status", "submitted_at", "url", "verdict"]
+    __slots__ = ["contest_id", "cost", "deleted", "error", "error_url", "groups", "id", "lang", "participant_id", "percentage", "problem_id", "score", "signature", "source", "source_url", "status", "submitted_at", "url", "verdict"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -135,6 +135,7 @@ class Submission(_message.Message):
     DELETED_FIELD_NUMBER: _ClassVar[int]
     ERROR: Submission.Status
     ERROR_FIELD_NUMBER: _ClassVar[int]
+    ERROR_URL_FIELD_NUMBER: _ClassVar[int]
     FAILURE: Submission.Status
     GROUPS: Submission.Extra
     GROUPS_FIELD_NUMBER: _ClassVar[int]
@@ -162,6 +163,7 @@ class Submission(_message.Message):
     cost: float
     deleted: bool
     error: str
+    error_url: str
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     id: str
     lang: str
@@ -176,4 +178,4 @@ class Submission(_message.Message):
     submitted_at: _timestamp_pb2.Timestamp
     url: str
     verdict: _submission_pb2.Submission.Verdict
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ...) -> None: ...
