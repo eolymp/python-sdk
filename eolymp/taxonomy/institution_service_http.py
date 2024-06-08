@@ -14,6 +14,17 @@ class InstitutionServiceClient:
         self.transport = transport
         self.url = url
 
+    def ListInstitutions(self, request, **kwargs):
+        path = "/institutions"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.ListInstitutionsOutput"),
+            **kwargs,
+        )
+
     def DescribeInstitution(self, request, **kwargs):
         path = "/institutions/"+urllib.parse.quote(request.institution_id)
 
@@ -25,17 +36,6 @@ class InstitutionServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.DescribeInstitutionOutput"),
-            **kwargs,
-        )
-
-    def ListInstitutions(self, request, **kwargs):
-        path = "/institutions"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.taxonomy.ListInstitutionsOutput"),
             **kwargs,
         )
 

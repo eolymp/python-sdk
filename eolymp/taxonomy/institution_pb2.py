@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/taxonomy/institution.proto\x12\x0f\x65olymp.taxonomy\"\xdd\x05\n\x0bInstitution\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bname_locale\x18\x03 \x01(\t\x12\x0c\n\x04\x61\x62\x62r\x18\x04 \x01(\t\x12\x12\n\nabbr_local\x18\x05 \x01(\t\x12\x10\n\x08logo_url\x18\x14 \x01(\t\x12;\n\ngovernance\x18\n \x01(\x0e\x32\'.eolymp.taxonomy.Institution.Governance\x12\x31\n\x05level\x18\x0b \x01(\x0e\x32\".eolymp.taxonomy.Institution.Level\x12/\n\x04type\x18\x0c \x01(\x0e\x32!.eolymp.taxonomy.Institution.Type\x12\x12\n\ncountry_id\x18\x1e \x01(\t\x12\x11\n\tregion_id\x18\x1f \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18  \x01(\t\x12\x36\n\x05links\x18) \x03(\x0b\x32\'.eolymp.taxonomy.Institution.LinksEntry\x1a,\n\nLinksEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\nGovernance\x12\x16\n\x12UNKNOWN_GOVERNANCE\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0b\n\x07PRIVATE\x10\x02\x12\x0b\n\x07\x43HARTER\x10\x03\"S\n\x05Level\x12\x11\n\rUNKNOWN_CLASS\x10\x00\x12\r\n\tPRESCHOOL\x10\x01\x12\x0b\n\x07PRIMARY\x10\x02\x12\r\n\tSECONDARY\x10\x03\x12\x0c\n\x08TERTIARY\x10\x04\"\x8a\x01\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\x10\n\x0cKINDERGARTEN\x10\x01\x12\n\n\x06SCHOOL\x10\x02\x12\n\n\x06LYCEUM\x10\x03\x12\r\n\tGYMNASIUM\x10\x04\x12\x0b\n\x07\x43OLLEGE\x10\x05\x12\r\n\tINSTITUTE\x10\x06\x12\x0e\n\nUNIVERSITY\x10\x07\x12\x0b\n\x07\x41\x43\x41\x44\x45MY\x10\x08\x42\x33Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/taxonomy/institution.proto\x12\x0f\x65olymp.taxonomy\"\xdc\x05\n\x0bInstitution\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x61\x62\x62r\x18\x04 \x01(\t\x12\x12\n\nlocal_name\x18\x03 \x01(\t\x12\x12\n\nlocal_abbr\x18\x05 \x01(\t\x12\x10\n\x08logo_url\x18\x14 \x01(\t\x12;\n\ngovernance\x18\n \x01(\x0e\x32\'.eolymp.taxonomy.Institution.Governance\x12\x31\n\x05level\x18\x0b \x01(\x0e\x32\".eolymp.taxonomy.Institution.Level\x12/\n\x04type\x18\x0c \x01(\x0e\x32!.eolymp.taxonomy.Institution.Type\x12\x12\n\ncountry_id\x18\x1e \x01(\t\x12\x11\n\tregion_id\x18\x1f \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18  \x01(\t\x12\x36\n\x05links\x18) \x03(\x0b\x32\'.eolymp.taxonomy.Institution.LinksEntry\x1a,\n\nLinksEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\nGovernance\x12\x16\n\x12UNKNOWN_GOVERNANCE\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0b\n\x07PRIVATE\x10\x02\x12\x0b\n\x07\x43HARTER\x10\x03\"S\n\x05Level\x12\x11\n\rUNKNOWN_LEVEL\x10\x00\x12\r\n\tPRESCHOOL\x10\x01\x12\x0b\n\x07PRIMARY\x10\x02\x12\r\n\tSECONDARY\x10\x03\x12\x0c\n\x08TERTIARY\x10\x04\"\x8a\x01\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\x10\n\x0cKINDERGARTEN\x10\x01\x12\n\n\x06SCHOOL\x10\x02\x12\n\n\x06LYCEUM\x10\x03\x12\r\n\tGYMNASIUM\x10\x04\x12\x0b\n\x07\x43OLLEGE\x10\x05\x12\r\n\tINSTITUTE\x10\x06\x12\x0e\n\nUNIVERSITY\x10\x07\x12\x0b\n\x07\x41\x43\x41\x44\x45MY\x10\x08\x42\x33Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.taxonomy.institution_pb2', globals())
@@ -24,13 +24,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _INSTITUTION_LINKSENTRY._options = None
   _INSTITUTION_LINKSENTRY._serialized_options = b'8\001'
   _INSTITUTION._serialized_start=55
-  _INSTITUTION._serialized_end=788
-  _INSTITUTION_LINKSENTRY._serialized_start=442
-  _INSTITUTION_LINKSENTRY._serialized_end=486
-  _INSTITUTION_GOVERNANCE._serialized_start=488
-  _INSTITUTION_GOVERNANCE._serialized_end=562
-  _INSTITUTION_LEVEL._serialized_start=564
-  _INSTITUTION_LEVEL._serialized_end=647
-  _INSTITUTION_TYPE._serialized_start=650
-  _INSTITUTION_TYPE._serialized_end=788
+  _INSTITUTION._serialized_end=787
+  _INSTITUTION_LINKSENTRY._serialized_start=441
+  _INSTITUTION_LINKSENTRY._serialized_end=485
+  _INSTITUTION_GOVERNANCE._serialized_start=487
+  _INSTITUTION_GOVERNANCE._serialized_end=561
+  _INSTITUTION_LEVEL._serialized_start=563
+  _INSTITUTION_LEVEL._serialized_end=646
+  _INSTITUTION_TYPE._serialized_start=649
+  _INSTITUTION_TYPE._serialized_end=787
 # @@protoc_insertion_point(module_scope)
