@@ -25,12 +25,12 @@ class DescribeInstitutionOutput(_message.Message):
 class ListInstitutionsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
-        __slots__ = ["abbr", "country_id", "governance", "id", "name", "query", "region_id", "type"]
+        __slots__ = ["abbr", "country_id", "governance", "id", "level", "name", "query", "region_id", "type"]
         ABBR_FIELD_NUMBER: _ClassVar[int]
-        CLASS_FIELD_NUMBER: _ClassVar[int]
         COUNTRY_ID_FIELD_NUMBER: _ClassVar[int]
         GOVERNANCE_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
+        LEVEL_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         QUERY_FIELD_NUMBER: _ClassVar[int]
         REGION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -39,11 +39,12 @@ class ListInstitutionsInput(_message.Message):
         country_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         governance: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        level: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         query: str
         region_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., abbr: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., country_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., region_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., governance: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., **kwargs) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., abbr: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., country_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., region_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., level: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., governance: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
