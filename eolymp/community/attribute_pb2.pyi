@@ -41,8 +41,10 @@ class Attribute(_message.Message):
     DATE: Attribute.Type
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     EMAIL: Attribute.Type
+    FILE: Attribute.Type
     HELP_FIELD_NUMBER: _ClassVar[int]
     HIDDEN_FIELD_NUMBER: _ClassVar[int]
+    IMAGE: Attribute.Type
     INDEX_FIELD_NUMBER: _ClassVar[int]
     INSTITUTION: Attribute.Type
     KEY_FIELD_NUMBER: _ClassVar[int]
