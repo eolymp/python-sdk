@@ -7,22 +7,20 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Attribute(_message.Message):
-    __slots__ = ["choices", "country", "description", "hidden", "index", "key", "max", "min", "readonly", "regexp", "required", "type"]
+    __slots__ = ["choices", "constraints", "country", "description", "help", "hidden", "index", "key", "label", "max", "min", "readonly", "regexp", "required", "type"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Description(_message.Message):
-        __slots__ = ["choices", "default", "help", "label", "locale"]
+        __slots__ = ["choices", "help", "label", "locale"]
         CHOICES_FIELD_NUMBER: _ClassVar[int]
-        DEFAULT_FIELD_NUMBER: _ClassVar[int]
         HELP_FIELD_NUMBER: _ClassVar[int]
         LABEL_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         choices: _containers.RepeatedScalarFieldContainer[str]
-        default: bool
         help: str
         label: str
         locale: str
-        def __init__(self, default: bool = ..., locale: _Optional[str] = ..., label: _Optional[str] = ..., help: _Optional[str] = ..., choices: _Optional[_Iterable[str]] = ...) -> None: ...
+        def __init__(self, locale: _Optional[str] = ..., label: _Optional[str] = ..., help: _Optional[str] = ..., choices: _Optional[_Iterable[str]] = ...) -> None: ...
     class Value(_message.Message):
         __slots__ = ["attribute_key", "attribute_type", "number", "string"]
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -37,14 +35,18 @@ class Attribute(_message.Message):
     CHECKBOX: Attribute.Type
     CHOICE: Attribute.Type
     CHOICES_FIELD_NUMBER: _ClassVar[int]
+    CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     COUNTRY: Attribute.Type
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
     DATE: Attribute.Type
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     EMAIL: Attribute.Type
+    HELP_FIELD_NUMBER: _ClassVar[int]
     HIDDEN_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
+    INSTITUTION: Attribute.Type
     KEY_FIELD_NUMBER: _ClassVar[int]
+    LABEL_FIELD_NUMBER: _ClassVar[int]
     MAX_FIELD_NUMBER: _ClassVar[int]
     MIN_FIELD_NUMBER: _ClassVar[int]
     NUMBER: Attribute.Type
@@ -57,15 +59,18 @@ class Attribute(_message.Message):
     TYPE_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN: Attribute.Type
     choices: _containers.RepeatedScalarFieldContainer[str]
+    constraints: _containers.RepeatedScalarFieldContainer[str]
     country: str
     description: _containers.RepeatedCompositeFieldContainer[Attribute.Description]
+    help: str
     hidden: bool
     index: int
     key: str
+    label: str
     max: int
     min: int
     readonly: bool
     regexp: str
     required: bool
     type: Attribute.Type
-    def __init__(self, key: _Optional[str] = ..., description: _Optional[_Iterable[_Union[Attribute.Description, _Mapping]]] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: bool = ..., hidden: bool = ..., readonly: bool = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., country: _Optional[str] = ...) -> None: ...
+    def __init__(self, key: _Optional[str] = ..., label: _Optional[str] = ..., help: _Optional[str] = ..., description: _Optional[_Iterable[_Union[Attribute.Description, _Mapping]]] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: bool = ..., hidden: bool = ..., readonly: bool = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., country: _Optional[str] = ..., constraints: _Optional[_Iterable[str]] = ...) -> None: ...
