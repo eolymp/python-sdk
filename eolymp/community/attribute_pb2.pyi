@@ -7,8 +7,10 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Attribute(_message.Message):
-    __slots__ = ["choices", "constraints", "country", "description", "help", "hidden", "index", "key", "label", "max", "min", "readonly", "regexp", "required", "type"]
+    __slots__ = ["choices", "constraints", "country", "description", "help", "hidden", "index", "key", "label", "max", "min", "readonly", "regexp", "required", "type", "visibility"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Description(_message.Message):
         __slots__ = ["choices", "help", "label", "locale"]
@@ -47,11 +49,14 @@ class Attribute(_message.Message):
     IMAGE: Attribute.Type
     INDEX_FIELD_NUMBER: _ClassVar[int]
     INSTITUTION: Attribute.Type
+    INTERNAL: Attribute.Visibility
     KEY_FIELD_NUMBER: _ClassVar[int]
     LABEL_FIELD_NUMBER: _ClassVar[int]
     MAX_FIELD_NUMBER: _ClassVar[int]
     MIN_FIELD_NUMBER: _ClassVar[int]
     NUMBER: Attribute.Type
+    PRIVATE: Attribute.Visibility
+    PUBLIC: Attribute.Visibility
     READONLY_FIELD_NUMBER: _ClassVar[int]
     REGEXP_FIELD_NUMBER: _ClassVar[int]
     REGION: Attribute.Type
@@ -60,6 +65,7 @@ class Attribute(_message.Message):
     TEXT: Attribute.Type
     TYPE_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN: Attribute.Type
+    VISIBILITY_FIELD_NUMBER: _ClassVar[int]
     choices: _containers.RepeatedScalarFieldContainer[str]
     constraints: _containers.RepeatedScalarFieldContainer[str]
     country: str
@@ -75,4 +81,5 @@ class Attribute(_message.Message):
     regexp: str
     required: bool
     type: Attribute.Type
-    def __init__(self, key: _Optional[str] = ..., label: _Optional[str] = ..., help: _Optional[str] = ..., description: _Optional[_Iterable[_Union[Attribute.Description, _Mapping]]] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: bool = ..., hidden: bool = ..., readonly: bool = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., country: _Optional[str] = ..., constraints: _Optional[_Iterable[str]] = ...) -> None: ...
+    visibility: Attribute.Visibility
+    def __init__(self, key: _Optional[str] = ..., label: _Optional[str] = ..., help: _Optional[str] = ..., description: _Optional[_Iterable[_Union[Attribute.Description, _Mapping]]] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: bool = ..., readonly: bool = ..., hidden: bool = ..., visibility: _Optional[_Union[Attribute.Visibility, str]] = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., country: _Optional[str] = ..., constraints: _Optional[_Iterable[str]] = ...) -> None: ...
