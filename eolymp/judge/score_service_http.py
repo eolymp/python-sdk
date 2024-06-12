@@ -79,10 +79,10 @@ class ScoreServiceClient:
         )
 
     def ExportResult(self, request, **kwargs):
-        path = "/results/export"
+        path = "/results-export"
 
         return self.transport.request(
-            method="GET",
+            method="POST",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ExportResultOutput"),

@@ -23,6 +23,31 @@ class CloseContestOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class CopyContestInput(_message.Message):
+    __slots__ = ["contest_id", "copy_name", "copy_scope", "copy_visibility"]
+    class Scope(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: CopyContestInput.Scope
+    CONFIGURATION: CopyContestInput.Scope
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    COPY_NAME_FIELD_NUMBER: _ClassVar[int]
+    COPY_SCOPE_FIELD_NUMBER: _ClassVar[int]
+    COPY_VISIBILITY_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANTS: CopyContestInput.Scope
+    PERMISSIONS: CopyContestInput.Scope
+    PROBLEMS: CopyContestInput.Scope
+    contest_id: str
+    copy_name: str
+    copy_scope: _containers.RepeatedScalarFieldContainer[CopyContestInput.Scope]
+    copy_visibility: _contest_pb2.Contest.Visibility
+    def __init__(self, contest_id: _Optional[str] = ..., copy_scope: _Optional[_Iterable[_Union[CopyContestInput.Scope, str]]] = ..., copy_name: _Optional[str] = ..., copy_visibility: _Optional[_Union[_contest_pb2.Contest.Visibility, str]] = ...) -> None: ...
+
+class CopyContestOutput(_message.Message):
+    __slots__ = ["copy_contest_id"]
+    COPY_CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    copy_contest_id: str
+    def __init__(self, copy_contest_id: _Optional[str] = ...) -> None: ...
+
 class CreateContestInput(_message.Message):
     __slots__ = ["contest"]
     CONTEST_FIELD_NUMBER: _ClassVar[int]
