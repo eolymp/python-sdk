@@ -221,16 +221,18 @@ class UpdateContestInput(_message.Message):
     APPEARANCE: UpdateContestInput.Patch
     CONTEST_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    DOMAIN: UpdateContestInput.Patch
     DURATION: UpdateContestInput.Patch
     ENDS_AT: UpdateContestInput.Patch
     ENVIRONMENT: UpdateContestInput.Patch
     FEATURED_UNTIL: UpdateContestInput.Patch
     FORMAT: UpdateContestInput.Patch
     JOIN_UNOFFICIALLY: UpdateContestInput.Patch
+    KEY: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch
+    PARTICIPANT_COUNT_HIDDEN: UpdateContestInput.Patch
     PARTICIPATION_MODE: UpdateContestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_COUNT_HIDDEN: UpdateContestInput.Patch
     SCOREBOARD: UpdateContestInput.Patch
     STARTS_AT: UpdateContestInput.Patch
     TAXONOMY: UpdateContestInput.Patch

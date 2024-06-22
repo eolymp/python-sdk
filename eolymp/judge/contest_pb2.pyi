@@ -18,20 +18,14 @@ class Contest(_message.Message):
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Appearance(_message.Message):
-        __slots__ = ["description", "logo_image", "primary_color", "secondary_color", "tagline", "title"]
+        __slots__ = ["description", "logo_url", "title"]
         DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-        LOGO_IMAGE_FIELD_NUMBER: _ClassVar[int]
-        PRIMARY_COLOR_FIELD_NUMBER: _ClassVar[int]
-        SECONDARY_COLOR_FIELD_NUMBER: _ClassVar[int]
-        TAGLINE_FIELD_NUMBER: _ClassVar[int]
+        LOGO_URL_FIELD_NUMBER: _ClassVar[int]
         TITLE_FIELD_NUMBER: _ClassVar[int]
         description: str
-        logo_image: str
-        primary_color: str
-        secondary_color: str
-        tagline: str
+        logo_url: str
         title: str
-        def __init__(self, title: _Optional[str] = ..., tagline: _Optional[str] = ..., description: _Optional[str] = ..., logo_image: _Optional[str] = ..., primary_color: _Optional[str] = ..., secondary_color: _Optional[str] = ...) -> None: ...
+        def __init__(self, title: _Optional[str] = ..., description: _Optional[str] = ..., logo_url: _Optional[str] = ...) -> None: ...
     class Environment(_message.Message):
         __slots__ = ["allowed_runtimes"]
         ALLOWED_RUNTIMES_FIELD_NUMBER: _ClassVar[int]
@@ -155,4 +149,4 @@ class Contest(_message.Message):
     upsolve: Contest.Upsolve
     url: str
     visibility: Contest.Visibility
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., featured_until: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., taxonomy: _Optional[_Union[Contest.Taxonomy, _Mapping]] = ..., appearance: _Optional[_Union[Contest.Appearance, _Mapping]] = ..., environment: _Optional[_Union[Contest.Environment, _Mapping]] = ..., upsolve: _Optional[_Union[Contest.Upsolve, _Mapping]] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., taxonomy: _Optional[_Union[Contest.Taxonomy, _Mapping]] = ..., appearance: _Optional[_Union[Contest.Appearance, _Mapping]] = ..., environment: _Optional[_Union[Contest.Environment, _Mapping]] = ..., upsolve: _Optional[_Union[Contest.Upsolve, _Mapping]] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ...) -> None: ...
