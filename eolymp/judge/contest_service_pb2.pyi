@@ -228,6 +228,7 @@ class UpdateContestInput(_message.Message):
     FORMAT: UpdateContestInput.Patch
     JOIN_UNOFFICIALLY: UpdateContestInput.Patch
     KEY: UpdateContestInput.Patch
+    LOGO_URL: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch
     PARTICIPANT_COUNT_HIDDEN: UpdateContestInput.Patch
     PARTICIPATION_MODE: UpdateContestInput.Patch
