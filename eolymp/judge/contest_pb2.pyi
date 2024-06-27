@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
-    __slots__ = ["appearance", "duration", "ends_at", "ends_in", "environment", "featured_until", "format", "id", "join_unofficially", "key", "logo_url", "name", "participant_count", "participant_count_hidden", "participation_mode", "problem_count", "problem_count_hidden", "scoreboard", "starts_at", "starts_in", "status", "taxonomy", "upsolve", "url", "visibility"]
+    __slots__ = ["appearance", "duration", "ends_at", "ends_in", "environment", "featured_until", "format", "id", "join_unofficially", "key", "links", "logo_url", "name", "participant_count", "participant_count_hidden", "participation_mode", "problem_count", "problem_count_hidden", "scoreboard", "starts_at", "starts_in", "status", "taxonomy", "upsolve", "url", "visibility"]
     class Format(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class ParticipationMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -31,6 +31,13 @@ class Contest(_message.Message):
         ALLOWED_RUNTIMES_FIELD_NUMBER: _ClassVar[int]
         allowed_runtimes: _containers.RepeatedScalarFieldContainer[str]
         def __init__(self, allowed_runtimes: _Optional[_Iterable[str]] = ...) -> None: ...
+    class LinksEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     class Scoreboard(_message.Message):
         __slots__ = ["attempt_penalty", "freezing_time", "no_spoiler_ui", "share_key", "tie_breaker", "unfreeze_delay", "visibility"]
         class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -100,6 +107,7 @@ class Contest(_message.Message):
     IOI: Contest.Format
     JOIN_UNOFFICIALLY_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
+    LINKS_FIELD_NUMBER: _ClassVar[int]
     LOGO_URL_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ONLINE: Contest.ParticipationMode
@@ -136,6 +144,7 @@ class Contest(_message.Message):
     id: str
     join_unofficially: bool
     key: str
+    links: _containers.ScalarMap[str, str]
     logo_url: str
     name: str
     participant_count: int
@@ -151,4 +160,4 @@ class Contest(_message.Message):
     upsolve: Contest.Upsolve
     url: str
     visibility: Contest.Visibility
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., logo_url: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., taxonomy: _Optional[_Union[Contest.Taxonomy, _Mapping]] = ..., appearance: _Optional[_Union[Contest.Appearance, _Mapping]] = ..., environment: _Optional[_Union[Contest.Environment, _Mapping]] = ..., upsolve: _Optional[_Union[Contest.Upsolve, _Mapping]] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., name: _Optional[str] = ..., logo_url: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., taxonomy: _Optional[_Union[Contest.Taxonomy, _Mapping]] = ..., appearance: _Optional[_Union[Contest.Appearance, _Mapping]] = ..., environment: _Optional[_Union[Contest.Environment, _Mapping]] = ..., upsolve: _Optional[_Union[Contest.Upsolve, _Mapping]] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ...) -> None: ...
