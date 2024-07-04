@@ -39,10 +39,12 @@ class DeleteProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ["extra", "problem_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra]
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ["problem"]
