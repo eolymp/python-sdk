@@ -4,7 +4,6 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import attachment_service_pb2 as _attachment_service_pb2
 from eolymp.atlas import bookmark_service_pb2 as _bookmark_service_pb2
 from eolymp.atlas import code_template_service_pb2 as _code_template_service_pb2
-from eolymp.atlas import library_service_pb2 as _library_service_pb2
 from eolymp.atlas import problem_service_pb2 as _problem_service_pb2
 from eolymp.atlas import scoring_service_pb2 as _scoring_service_pb2
 from eolymp.atlas import statement_service_pb2 as _statement_service_pb2

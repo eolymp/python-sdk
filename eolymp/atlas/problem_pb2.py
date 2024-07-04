@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import endpoint_pb2 as eolymp_dot_annotations_dot_endpoint__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\x1a!eolymp/annotations/endpoint.proto\"\xac\x04\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03url\x18\xaa\x05 \x01(\t\x12\x30\n\x05links\x18\xab\x05 \x03(\x0b\x32 .eolymp.atlas.Problem.LinksEntry\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0f\n\x07private\x18\x0c \x01(\x08\x12\x0e\n\x06origin\x18\r \x01(\t\x12\x0e\n\x06topics\x18\x14 \x03(\t\x12\x12\n\ndifficulty\x18\x15 \x01(\r\x1a,\n\nLinksEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01:\xc0\x02\xda\xe3\n\xbb\x02\x12\x17\n\x15\x65olymp.acl.AclService\x12\x1b\n\x19\x65olymp.atlas.AssetService\x12 \n\x1e\x65olymp.atlas.AttachmentService\x12\"\n eolymp.atlas.CodeTemplateService\x12\x1d\n\x1b\x65olymp.atlas.ProblemService\x12\x1d\n\x1b\x65olymp.atlas.ScoringService\x12\x1f\n\x1d\x65olymp.atlas.StatementService\x12 \n\x1e\x65olymp.atlas.SubmissionService\x12\x1d\n\x1b\x65olymp.atlas.TestingService\x12\x1d\n\x1b\x65olymp.worker.WorkerServiceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\x1a!eolymp/annotations/endpoint.proto\"\xa0\x05\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03url\x18\xaa\x05 \x01(\t\x12\x30\n\x05links\x18\xab\x05 \x03(\x0b\x32 .eolymp.atlas.Problem.LinksEntry\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0f\n\x07private\x18\x0c \x01(\x08\x12\x0e\n\x06origin\x18\r \x01(\t\x12\x0e\n\x06topics\x18\x14 \x03(\t\x12\x17\n\x0f\x61\x63\x63\x65ptance_rate\x18( \x01(\x02\x12\x19\n\x11submissions_count\x18* \x01(\x02\x12\x1c\n\x14submissions_accepted\x18+ \x01(\x02\x12\x0c\n\x04vote\x18\x32 \x01(\x05\x12\x12\n\nvote_count\x18\x33 \x01(\x05\x12\x12\n\ndifficulty\x18\x15 \x01(\r\x1a,\n\nLinksEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01:\xc0\x02\xda\xe3\n\xbb\x02\x12\x17\n\x15\x65olymp.acl.AclService\x12\x1b\n\x19\x65olymp.atlas.AssetService\x12 \n\x1e\x65olymp.atlas.AttachmentService\x12\"\n eolymp.atlas.CodeTemplateService\x12\x1d\n\x1b\x65olymp.atlas.ProblemService\x12\x1d\n\x1b\x65olymp.atlas.ScoringService\x12\x1f\n\x1d\x65olymp.atlas.StatementService\x12 \n\x1e\x65olymp.atlas.SubmissionService\x12\x1d\n\x1b\x65olymp.atlas.TestingService\x12\x1d\n\x1b\x65olymp.worker.WorkerServiceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.problem_pb2', globals())
@@ -27,7 +27,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROBLEM._options = None
   _PROBLEM._serialized_options = b'\332\343\n\273\002\022\027\n\025eolymp.acl.AclService\022\033\n\031eolymp.atlas.AssetService\022 \n\036eolymp.atlas.AttachmentService\022\"\n eolymp.atlas.CodeTemplateService\022\035\n\033eolymp.atlas.ProblemService\022\035\n\033eolymp.atlas.ScoringService\022\037\n\035eolymp.atlas.StatementService\022 \n\036eolymp.atlas.SubmissionService\022\035\n\033eolymp.atlas.TestingService\022\035\n\033eolymp.worker.WorkerService'
   _PROBLEM._serialized_start=80
-  _PROBLEM._serialized_end=636
-  _PROBLEM_LINKSENTRY._serialized_start=269
-  _PROBLEM_LINKSENTRY._serialized_end=313
+  _PROBLEM._serialized_end=752
+  _PROBLEM_LINKSENTRY._serialized_start=385
+  _PROBLEM_LINKSENTRY._serialized_end=429
 # @@protoc_insertion_point(module_scope)

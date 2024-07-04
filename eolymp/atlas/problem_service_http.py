@@ -14,8 +14,22 @@ class ProblemServiceClient:
         self.transport = transport
         self.url = url
 
+    def CreateProblem(self, request, **kwargs):
+        path = "/problems"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateProblemOutput"),
+            **kwargs,
+        )
+
     def DeleteProblem(self, request, **kwargs):
-        path = "/"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="DELETE",
@@ -25,30 +39,11 @@ class ProblemServiceClient:
             **kwargs,
         )
 
-    def UpdateProblem(self, request, **kwargs):
-        path = "/"
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateProblemOutput"),
-            **kwargs,
-        )
-
-    def SyncProblem(self, request, **kwargs):
-        path = "/sync"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.SyncProblemOutput"),
-            **kwargs,
-        )
-
     def DescribeProblem(self, request, **kwargs):
-        path = "/"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -58,36 +53,28 @@ class ProblemServiceClient:
             **kwargs,
         )
 
-    def UpdateVisibility(self, request, **kwargs):
-        path = "/visibility"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateVisibilityOutput"),
-            **kwargs,
-        )
-
-    def UpdatePrivacy(self, request, **kwargs):
-        path = "/privacy"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdatePrivacyOutput"),
-            **kwargs,
-        )
-
-    def ListVersions(self, request, **kwargs):
-        path = "/versions"
+    def ListProblems(self, request, **kwargs):
+        path = "/problems"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListVersionsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListProblemsOutput"),
+            **kwargs,
+        )
+
+    def VoteProblem(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/vote"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.VoteProblemOutput"),
             **kwargs,
         )
 
