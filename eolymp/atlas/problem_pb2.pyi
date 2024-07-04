@@ -36,11 +36,11 @@ class Problem(_message.Message):
     number: int
     origin: str
     private: bool
-    submissions_accepted: float
-    submissions_count: float
+    submissions_accepted: int
+    submissions_count: int
     topics: _containers.RepeatedScalarFieldContainer[str]
     url: str
     visible: bool
     vote: int
     vote_count: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[float] = ..., submissions_accepted: _Optional[float] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ...) -> None: ...
