@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.judge import participant_pb2 as _participant_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -49,6 +50,22 @@ class DisableParticipantInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class DisableParticipantOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DisqualifyParticipantInput(_message.Message):
+    __slots__ = ["contest_id", "disqualify", "participant_id", "reason"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    DISQUALIFY_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    REASON_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    disqualify: bool
+    participant_id: str
+    reason: _content_pb2.Content
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., disqualify: bool = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+
+class DisqualifyParticipantOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 

@@ -53,6 +53,20 @@ class ParticipantServiceClient:
             **kwargs,
         )
 
+    def DisqualifyParticipant(self, request, **kwargs):
+        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/disqualify"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.participant_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DisqualifyParticipantOutput"),
+            **kwargs,
+        )
+
     def UpdateParticipant(self, request, **kwargs):
         path = "/participants/"+urllib.parse.quote(request.participant_id)
 

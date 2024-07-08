@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Participant(_message.Message):
-    __slots__ = ["active", "bonus_time", "contest_id", "end_at", "end_in", "ghost", "id", "medal", "member_id", "name", "passcode", "started_at", "started_in", "status", "submits", "unofficial"]
+    __slots__ = ["bonus_time", "contest_id", "disqualified", "end_at", "end_in", "ghost", "id", "inactive", "medal", "member_id", "name", "passcode", "started_at", "started_in", "status", "submits", "unofficial"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Submit(_message.Message):
@@ -20,15 +20,16 @@ class Participant(_message.Message):
         problem_id: str
         def __init__(self, problem_id: _Optional[str] = ..., counter: _Optional[int] = ...) -> None: ...
     ACTIVE: Participant.Status
-    ACTIVE_FIELD_NUMBER: _ClassVar[int]
     BLOCKED: Participant.Status
     BONUS_TIME_FIELD_NUMBER: _ClassVar[int]
     COMPLETE: Participant.Status
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
     END_AT_FIELD_NUMBER: _ClassVar[int]
     END_IN_FIELD_NUMBER: _ClassVar[int]
     GHOST_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
+    INACTIVE_FIELD_NUMBER: _ClassVar[int]
     MEDAL_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -42,13 +43,14 @@ class Participant(_message.Message):
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     UPSOLVE: Participant.Status
     WAITING: Participant.Status
-    active: bool
     bonus_time: int
     contest_id: str
+    disqualified: bool
     end_at: _timestamp_pb2.Timestamp
     end_in: int
     ghost: bool
     id: str
+    inactive: bool
     medal: _medal_pb2.Medal
     member_id: str
     name: str
@@ -58,4 +60,4 @@ class Participant(_message.Message):
     status: Participant.Status
     submits: _containers.RepeatedCompositeFieldContainer[Participant.Submit]
     unofficial: bool
-    def __init__(self, id: _Optional[str] = ..., contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ..., unofficial: bool = ..., active: bool = ..., ghost: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_in: _Optional[int] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_in: _Optional[int] = ..., bonus_time: _Optional[int] = ..., passcode: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., name: _Optional[str] = ..., unofficial: bool = ..., inactive: bool = ..., disqualified: bool = ..., ghost: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_in: _Optional[int] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_in: _Optional[int] = ..., bonus_time: _Optional[int] = ..., passcode: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
