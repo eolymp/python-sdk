@@ -120,32 +120,30 @@ class ListParticipantsInput(_message.Message):
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["complete_at", "id", "member_id", "name", "penalty", "score", "started_at", "status"]
-        COMPLETE_AT_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ["disqualified", "id", "inactive", "member_id", "name", "started_at", "status", "unofficial"]
+        DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
+        INACTIVE_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
-        PENALTY_FIELD_NUMBER: _ClassVar[int]
-        SCORE_FIELD_NUMBER: _ClassVar[int]
         STARTED_AT_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
-        complete_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
+        disqualified: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        inactive: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        penalty: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
-        score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
         started_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., penalty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., started_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., complete_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ...) -> None: ...
-    COMPLETE_AT: ListParticipantsInput.Sortable
+        unofficial: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., started_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT: ListParticipantsInput.Sortable
+    DISPLAY_NAME: ListParticipantsInput.Sortable
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
-    PENALTY: ListParticipantsInput.Sortable
-    RANK: ListParticipantsInput.Sortable
-    SCORE: ListParticipantsInput.Sortable
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     STARTED_AT: ListParticipantsInput.Sortable
