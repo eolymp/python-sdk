@@ -11,11 +11,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.executor import report_pb2 as eolymp_dot_executor_dot_report__pb2
+from eolymp.executor import deprecated_report_pb2 as eolymp_dot_executor_dot_deprecated__report__pb2
 from eolymp.executor import status_pb2 as eolymp_dot_executor_dot_status__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/executor/events.proto\x12\x0f\x65olymp.executor\x1a\x1c\x65olymp/executor/report.proto\x1a\x1c\x65olymp/executor/status.proto\"=\n\x12StatusUpdatedEvent\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.eolymp.executor.Status\";\n\x10JobReportedEvent\x12\'\n\x06report\x18\x01 \x01(\x0b\x32\x17.eolymp.executor.ReportB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/executor/events.proto\x12\x0f\x65olymp.executor\x1a\'eolymp/executor/deprecated_report.proto\x1a\x1c\x65olymp/executor/status.proto\"=\n\x12StatusUpdatedEvent\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.eolymp.executor.Status\";\n\x10JobReportedEvent\x12\'\n\x06report\x18\x01 \x01(\x0b\x32\x17.eolymp.executor.ReportB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.events_pb2', globals())
@@ -23,8 +23,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
-  _STATUSUPDATEDEVENT._serialized_start=109
-  _STATUSUPDATEDEVENT._serialized_end=170
-  _JOBREPORTEDEVENT._serialized_start=172
-  _JOBREPORTEDEVENT._serialized_end=231
+  _STATUSUPDATEDEVENT._serialized_start=120
+  _STATUSUPDATEDEVENT._serialized_end=181
+  _JOBREPORTEDEVENT._serialized_start=183
+  _JOBREPORTEDEVENT._serialized_end=242
 # @@protoc_insertion_point(module_scope)
