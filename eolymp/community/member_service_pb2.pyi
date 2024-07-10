@@ -180,6 +180,7 @@ class UpdateMemberInput(_message.Message):
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    RATING: UpdateMemberInput.Patch
     TEAM_NAME: UpdateMemberInput.Patch
     UNOFFICIAL: UpdateMemberInput.Patch
     USER_BIRTHDAY: UpdateMemberInput.Patch
