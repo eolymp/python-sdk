@@ -13,12 +13,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DeleteRatingInput(_message.Message):
-    __slots__ = ["point", "rating_id"]
-    POINT_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["rating", "rating_id"]
+    RATING_FIELD_NUMBER: _ClassVar[int]
     RATING_ID_FIELD_NUMBER: _ClassVar[int]
-    point: _rating_pb2.Rating
+    rating: _rating_pb2.Rating
     rating_id: str
-    def __init__(self, rating_id: _Optional[str] = ..., point: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
+    def __init__(self, rating_id: _Optional[str] = ..., rating: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
 
 class DeleteRatingOutput(_message.Message):
     __slots__ = []
@@ -31,10 +31,10 @@ class DescribeRatingInput(_message.Message):
     def __init__(self, rating_id: _Optional[str] = ...) -> None: ...
 
 class DescribeRatingOutput(_message.Message):
-    __slots__ = ["point"]
-    POINT_FIELD_NUMBER: _ClassVar[int]
-    point: _rating_pb2.Rating
-    def __init__(self, point: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
+    __slots__ = ["rating"]
+    RATING_FIELD_NUMBER: _ClassVar[int]
+    rating: _rating_pb2.Rating
+    def __init__(self, rating: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
 
 class ListRatingInput(_message.Message):
     __slots__ = ["after", "filters", "member_id", "offset", "order", "size", "sort"]

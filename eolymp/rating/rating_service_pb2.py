@@ -19,7 +19,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/rating/rating_service.proto\x12\reolymp.rating\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/rating/rating.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"7\n\x0eSetRatingInput\x12%\n\x06rating\x18\x01 \x01(\x0b\x32\x15.eolymp.rating.Rating\"$\n\x0fSetRatingOutput\x12\x11\n\trating_id\x18\x01 \x01(\t\"M\n\x11UpdateRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\x12%\n\x06rating\x18\x02 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\x14\n\x12UpdateRatingOutput\"L\n\x11\x44\x65leteRatingInput\x12\x11\n\trating_id\x18\x02 \x01(\t\x12$\n\x05point\x18\x03 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\x14\n\x12\x44\x65leteRatingOutput\"(\n\x13\x44\x65scribeRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\"<\n\x14\x44\x65scribeRatingOutput\x12$\n\x05point\x18\x01 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\xac\x03\n\x0fListRatingInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.rating.ListRatingInput.Filter\x12\x35\n\x04sort\x18\x32 \x01(\x0e\x32\'.eolymp.rating.ListRatingInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xa2\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncontest_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x38\n\ttimestamp\x18\x03 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"\x19\n\x08Sortable\x12\r\n\tTIMESTAMP\x10\x00\"G\n\x10ListRatingOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.rating.Rating2\xa0\x06\n\rRatingService\x12\x88\x01\n\tSetRating\x12\x1d.eolymp.rating.SetRatingInput\x1a\x1e.eolymp.rating.SetRatingOutput\"<\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\t\"\x07/rating\x12\x9d\x01\n\x0cUpdateRating\x12 .eolymp.rating.UpdateRatingInput\x1a!.eolymp.rating.UpdateRatingOutput\"H\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x15\x1a\x13/rating/{rating_id}\x12\x9d\x01\n\x0c\x44\x65leteRating\x12 .eolymp.rating.DeleteRatingInput\x1a!.eolymp.rating.DeleteRatingOutput\"H\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x15*\x13/rating/{rating_id}\x12\xa2\x01\n\x0e\x44\x65scribeRating\x12\".eolymp.rating.DescribeRatingInput\x1a#.eolymp.rating.DescribeRatingOutput\"G\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x15\x12\x13/rating/{rating_id}\x12\x9e\x01\n\nListRating\x12\x1e.eolymp.rating.ListRatingInput\x1a\x1f.eolymp.rating.ListRatingOutput\"O\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1d\x12\x1b/members/{member_id}/ratingB/Z-github.com/eolymp/go-sdk/eolymp/rating;ratingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/rating/rating_service.proto\x12\reolymp.rating\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/rating/rating.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"7\n\x0eSetRatingInput\x12%\n\x06rating\x18\x01 \x01(\x0b\x32\x15.eolymp.rating.Rating\"$\n\x0fSetRatingOutput\x12\x11\n\trating_id\x18\x01 \x01(\t\"M\n\x11UpdateRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\x12%\n\x06rating\x18\x02 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\x14\n\x12UpdateRatingOutput\"M\n\x11\x44\x65leteRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\x12%\n\x06rating\x18\x02 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\x14\n\x12\x44\x65leteRatingOutput\"(\n\x13\x44\x65scribeRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\"=\n\x14\x44\x65scribeRatingOutput\x12%\n\x06rating\x18\x01 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\xac\x03\n\x0fListRatingInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.rating.ListRatingInput.Filter\x12\x35\n\x04sort\x18\x32 \x01(\x0e\x32\'.eolymp.rating.ListRatingInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xa2\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncontest_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x38\n\ttimestamp\x18\x03 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"\x19\n\x08Sortable\x12\r\n\tTIMESTAMP\x10\x00\"G\n\x10ListRatingOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.rating.Rating2\xa0\x06\n\rRatingService\x12\x88\x01\n\tSetRating\x12\x1d.eolymp.rating.SetRatingInput\x1a\x1e.eolymp.rating.SetRatingOutput\"<\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\t\"\x07/rating\x12\x9d\x01\n\x0cUpdateRating\x12 .eolymp.rating.UpdateRatingInput\x1a!.eolymp.rating.UpdateRatingOutput\"H\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x15\x1a\x13/rating/{rating_id}\x12\x9d\x01\n\x0c\x44\x65leteRating\x12 .eolymp.rating.DeleteRatingInput\x1a!.eolymp.rating.DeleteRatingOutput\"H\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x15*\x13/rating/{rating_id}\x12\xa2\x01\n\x0e\x44\x65scribeRating\x12\".eolymp.rating.DescribeRatingInput\x1a#.eolymp.rating.DescribeRatingOutput\"G\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x15\x12\x13/rating/{rating_id}\x12\x9e\x01\n\nListRating\x12\x1e.eolymp.rating.ListRatingInput\x1a\x1f.eolymp.rating.ListRatingOutput\"O\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1d\x12\x1b/members/{member_id}/ratingB/Z-github.com/eolymp/go-sdk/eolymp/rating;ratingb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.rating.rating_service_pb2', globals())
@@ -46,21 +46,21 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATERATINGOUTPUT._serialized_start=423
   _UPDATERATINGOUTPUT._serialized_end=443
   _DELETERATINGINPUT._serialized_start=445
-  _DELETERATINGINPUT._serialized_end=521
-  _DELETERATINGOUTPUT._serialized_start=523
-  _DELETERATINGOUTPUT._serialized_end=543
-  _DESCRIBERATINGINPUT._serialized_start=545
-  _DESCRIBERATINGINPUT._serialized_end=585
-  _DESCRIBERATINGOUTPUT._serialized_start=587
-  _DESCRIBERATINGOUTPUT._serialized_end=647
-  _LISTRATINGINPUT._serialized_start=650
-  _LISTRATINGINPUT._serialized_end=1078
-  _LISTRATINGINPUT_FILTER._serialized_start=889
-  _LISTRATINGINPUT_FILTER._serialized_end=1051
-  _LISTRATINGINPUT_SORTABLE._serialized_start=1053
-  _LISTRATINGINPUT_SORTABLE._serialized_end=1078
-  _LISTRATINGOUTPUT._serialized_start=1080
-  _LISTRATINGOUTPUT._serialized_end=1151
-  _RATINGSERVICE._serialized_start=1154
-  _RATINGSERVICE._serialized_end=1954
+  _DELETERATINGINPUT._serialized_end=522
+  _DELETERATINGOUTPUT._serialized_start=524
+  _DELETERATINGOUTPUT._serialized_end=544
+  _DESCRIBERATINGINPUT._serialized_start=546
+  _DESCRIBERATINGINPUT._serialized_end=586
+  _DESCRIBERATINGOUTPUT._serialized_start=588
+  _DESCRIBERATINGOUTPUT._serialized_end=649
+  _LISTRATINGINPUT._serialized_start=652
+  _LISTRATINGINPUT._serialized_end=1080
+  _LISTRATINGINPUT_FILTER._serialized_start=891
+  _LISTRATINGINPUT_FILTER._serialized_end=1053
+  _LISTRATINGINPUT_SORTABLE._serialized_start=1055
+  _LISTRATINGINPUT_SORTABLE._serialized_end=1080
+  _LISTRATINGOUTPUT._serialized_start=1082
+  _LISTRATINGOUTPUT._serialized_end=1153
+  _RATINGSERVICE._serialized_start=1156
+  _RATINGSERVICE._serialized_end=1956
 # @@protoc_insertion_point(module_scope)
