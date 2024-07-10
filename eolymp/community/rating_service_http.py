@@ -39,28 +39,3 @@ class RatingServiceClient:
             **kwargs,
         )
 
-    def DescribeRating(self, request, **kwargs):
-        path = "/rating/"+urllib.parse.quote(request.rating_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.rating_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeRatingOutput"),
-            **kwargs,
-        )
-
-    def ListRating(self, request, **kwargs):
-        path = "/rating"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ListRatingOutput"),
-            **kwargs,
-        )
-
