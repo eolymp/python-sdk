@@ -87,10 +87,12 @@ class SetRatingOutput(_message.Message):
     def __init__(self, rating_id: _Optional[str] = ...) -> None: ...
 
 class UpdateRatingInput(_message.Message):
-    __slots__ = ["rating"]
+    __slots__ = ["rating", "rating_id"]
     RATING_FIELD_NUMBER: _ClassVar[int]
+    RATING_ID_FIELD_NUMBER: _ClassVar[int]
     rating: _rating_pb2.Rating
-    def __init__(self, rating: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
+    rating_id: str
+    def __init__(self, rating_id: _Optional[str] = ..., rating: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
 
 class UpdateRatingOutput(_message.Message):
     __slots__ = []
