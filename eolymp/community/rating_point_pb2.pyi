@@ -20,14 +20,14 @@ class RatingPoint(_message.Message):
         URL_FIELD_NUMBER: _ClassVar[int]
         id: str
         name: str
-        penalty: int
+        penalty: float
         rank: int
         rank_lower: int
         rank_total: int
-        score: int
+        score: float
         tie_breaker: int
         url: str
-        def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., score: _Optional[int] = ..., penalty: _Optional[int] = ..., tie_breaker: _Optional[int] = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., rank_total: _Optional[int] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., rank_total: _Optional[int] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     REF_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
