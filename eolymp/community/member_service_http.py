@@ -133,14 +133,3 @@ class MemberServiceClient:
             **kwargs,
         )
 
-    def ListLevels(self, request, **kwargs):
-        path = "/levels"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ListLevelsOutput"),
-            **kwargs,
-        )
-

@@ -24,6 +24,44 @@ class DeleteRatingOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class DescribeRatingBoundariesInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DescribeRatingBoundariesOutput(_message.Message):
+    __slots__ = ["levels"]
+    class Level(_message.Message):
+        __slots__ = ["count", "id", "rating"]
+        COUNT_FIELD_NUMBER: _ClassVar[int]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        RATING_FIELD_NUMBER: _ClassVar[int]
+        count: int
+        id: int
+        rating: int
+        def __init__(self, id: _Optional[int] = ..., rating: _Optional[int] = ..., count: _Optional[int] = ...) -> None: ...
+    LEVELS_FIELD_NUMBER: _ClassVar[int]
+    levels: _containers.RepeatedCompositeFieldContainer[DescribeRatingBoundariesOutput.Level]
+    def __init__(self, levels: _Optional[_Iterable[_Union[DescribeRatingBoundariesOutput.Level, _Mapping]]] = ...) -> None: ...
+
+class DescribeRatingDistributionInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DescribeRatingDistributionOutput(_message.Message):
+    __slots__ = ["buckets"]
+    class Bucket(_message.Message):
+        __slots__ = ["count", "max_rating", "min_rating"]
+        COUNT_FIELD_NUMBER: _ClassVar[int]
+        MAX_RATING_FIELD_NUMBER: _ClassVar[int]
+        MIN_RATING_FIELD_NUMBER: _ClassVar[int]
+        count: int
+        max_rating: int
+        min_rating: int
+        def __init__(self, min_rating: _Optional[int] = ..., max_rating: _Optional[int] = ..., count: _Optional[int] = ...) -> None: ...
+    BUCKETS_FIELD_NUMBER: _ClassVar[int]
+    buckets: _containers.RepeatedCompositeFieldContainer[DescribeRatingDistributionOutput.Bucket]
+    def __init__(self, buckets: _Optional[_Iterable[_Union[DescribeRatingDistributionOutput.Bucket, _Mapping]]] = ...) -> None: ...
+
 class DescribeRatingInput(_message.Message):
     __slots__ = ["rating_id"]
     RATING_ID_FIELD_NUMBER: _ClassVar[int]

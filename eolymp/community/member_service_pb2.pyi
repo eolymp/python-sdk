@@ -81,25 +81,6 @@ class DescribeMemberUsageOutput(_message.Message):
     total_members: int
     def __init__(self, total_members: _Optional[int] = ..., active_members: _Optional[int] = ..., new_members: _Optional[int] = ...) -> None: ...
 
-class ListLevelsInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class ListLevelsOutput(_message.Message):
-    __slots__ = ["levels"]
-    class Level(_message.Message):
-        __slots__ = ["count", "id", "rating"]
-        COUNT_FIELD_NUMBER: _ClassVar[int]
-        ID_FIELD_NUMBER: _ClassVar[int]
-        RATING_FIELD_NUMBER: _ClassVar[int]
-        count: int
-        id: int
-        rating: int
-        def __init__(self, id: _Optional[int] = ..., rating: _Optional[int] = ..., count: _Optional[int] = ...) -> None: ...
-    LEVELS_FIELD_NUMBER: _ClassVar[int]
-    levels: _containers.RepeatedCompositeFieldContainer[ListLevelsOutput.Level]
-    def __init__(self, levels: _Optional[_Iterable[_Union[ListLevelsOutput.Level, _Mapping]]] = ...) -> None: ...
-
 class ListMembersInput(_message.Message):
     __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):

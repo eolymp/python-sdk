@@ -81,3 +81,25 @@ class RatingServiceClient:
             **kwargs,
         )
 
+    def DescribeRatingBoundaries(self, request, **kwargs):
+        path = "/rating-boundaries"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.rating.DescribeRatingBoundariesOutput"),
+            **kwargs,
+        )
+
+    def DescribeRatingDistribution(self, request, **kwargs):
+        path = "/rating-distribution"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.rating.DescribeRatingDistributionOutput"),
+            **kwargs,
+        )
+
