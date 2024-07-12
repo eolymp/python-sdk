@@ -22,6 +22,16 @@ class CreateAchievementOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class DeleteAchievementInput(_message.Message):
+    __slots__ = ["achievement_id"]
+    ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    achievement_id: str
+    def __init__(self, achievement_id: _Optional[str] = ...) -> None: ...
+
+class DeleteAchievementOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DescribeAchievementInput(_message.Message):
     __slots__ = ["achievement_id"]
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -58,16 +68,6 @@ class ListAchievementsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_achievement_pb2.Achievement]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_achievement_pb2.Achievement, _Mapping]]] = ...) -> None: ...
-
-class RemoveAchievementInput(_message.Message):
-    __slots__ = ["achievement_id"]
-    ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    achievement_id: str
-    def __init__(self, achievement_id: _Optional[str] = ...) -> None: ...
-
-class RemoveAchievementOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class UpdateAchievementInput(_message.Message):
     __slots__ = ["achievement", "achievement_id"]

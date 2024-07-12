@@ -39,7 +39,7 @@ class AchievementServiceClient:
             **kwargs,
         )
 
-    def RemoveAchievement(self, request, **kwargs):
+    def DeleteAchievement(self, request, **kwargs):
         path = "/achievements/"+urllib.parse.quote(request.achievement_id)
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -49,7 +49,7 @@ class AchievementServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.reward.RemoveAchievementOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.reward.DeleteAchievementOutput"),
             **kwargs,
         )
 
