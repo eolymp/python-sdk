@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/achievement.proto\x12\x10\x65olymp.community\x1a\x18\x65olymp/ecm/content.proto\"\x91\x01\n\x0b\x41\x63hievement\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x0e\n\x06rarity\x18\x03 \x01(\t\x12\x10\n\x08quantity\x18\x04 \x01(\r\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0c \x01(\t\x12$\n\x07summary\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.ContentB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/achievement.proto\x12\x10\x65olymp.community\x1a\x18\x65olymp/ecm/content.proto\"\x91\x01\n\x0b\x41\x63hievement\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r\x12\x0e\n\x06rarity\x18\x03 \x01(\r\x12\x10\n\x08quantity\x18\x04 \x01(\r\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0c \x01(\t\x12$\n\x07summary\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.ContentB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.achievement_pb2', globals())

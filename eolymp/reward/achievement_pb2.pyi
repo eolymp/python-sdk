@@ -16,5 +16,5 @@ class Achievement(_message.Message):
     image_url: str
     name: str
     summary: _content_pb2.Content
-    value: str
-    def __init__(self, id: _Optional[str] = ..., value: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    value: int
+    def __init__(self, id: _Optional[str] = ..., value: _Optional[int] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...

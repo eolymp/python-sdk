@@ -18,7 +18,7 @@ class Achievement(_message.Message):
     image_url: str
     name: str
     quantity: int
-    rarity: str
+    rarity: int
     summary: _content_pb2.Content
-    value: str
-    def __init__(self, id: _Optional[str] = ..., value: _Optional[str] = ..., rarity: _Optional[str] = ..., quantity: _Optional[int] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    value: int
+    def __init__(self, id: _Optional[str] = ..., value: _Optional[int] = ..., rarity: _Optional[int] = ..., quantity: _Optional[int] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
