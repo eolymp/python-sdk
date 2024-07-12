@@ -11,16 +11,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateAchievementInput(_message.Message):
-    __slots__ = ["achievement", "achievement_id"]
+    __slots__ = ["achievement"]
     ACHIEVEMENT_FIELD_NUMBER: _ClassVar[int]
-    ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     achievement: _achievement_pb2.Achievement
-    achievement_id: str
-    def __init__(self, achievement_id: _Optional[str] = ..., achievement: _Optional[_Union[_achievement_pb2.Achievement, _Mapping]] = ...) -> None: ...
+    def __init__(self, achievement: _Optional[_Union[_achievement_pb2.Achievement, _Mapping]] = ...) -> None: ...
 
 class CreateAchievementOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["achievement_id"]
+    ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    achievement_id: str
+    def __init__(self, achievement_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAchievementInput(_message.Message):
     __slots__ = ["achievement_id"]
