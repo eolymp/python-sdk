@@ -78,3 +78,76 @@ class AchievementServiceClient:
             **kwargs,
         )
 
+    def DescribeAchievementTranslation(self, request, **kwargs):
+        path = "/achievements/"+urllib.parse.quote(request.achievement_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.achievement_id = ""
+        request.translation_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.reward.DescribeAchievementTranslationOutput"),
+            **kwargs,
+        )
+
+    def ListAchievementTranslations(self, request, **kwargs):
+        path = "/achievements/"+urllib.parse.quote(request.achievement_id)+"/translations"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.achievement_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.reward.ListAchievementTranslationsOutput"),
+            **kwargs,
+        )
+
+    def CreateAchievementTranslation(self, request, **kwargs):
+        path = "/achievements/"+urllib.parse.quote(request.achievement_id)+"/translations"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.achievement_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.reward.CreateAchievementTranslationOutput"),
+            **kwargs,
+        )
+
+    def UpdateAchievementTranslation(self, request, **kwargs):
+        path = "/achievements/"+urllib.parse.quote(request.achievement_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.achievement_id = ""
+        request.translation_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.reward.UpdateAchievementTranslationOutput"),
+            **kwargs,
+        )
+
+    def DeleteAchievementTranslation(self, request, **kwargs):
+        path = "/achievements/"+urllib.parse.quote(request.achievement_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.achievement_id = ""
+        request.translation_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.reward.DeleteAchievementTranslationOutput"),
+            **kwargs,
+        )
+

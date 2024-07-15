@@ -10,6 +10,17 @@ class Achievement(_message.Message):
     __slots__ = ["id", "image_url", "name", "rarity", "summary", "value"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    class Translation(_message.Message):
+        __slots__ = ["id", "locale", "name", "summary"]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        LOCALE_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        SUMMARY_FIELD_NUMBER: _ClassVar[int]
+        id: str
+        locale: str
+        name: str
+        summary: _content_pb2.Content
+        def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
