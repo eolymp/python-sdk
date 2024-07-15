@@ -33,10 +33,12 @@ class DeleteAchievementOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeAchievementInput(_message.Message):
-    __slots__ = ["achievement_id"]
+    __slots__ = ["achievement_id", "extra"]
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     achievement_id: str
-    def __init__(self, achievement_id: _Optional[str] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_achievement_pb2.Achievement.Extra]
+    def __init__(self, achievement_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class DescribeAchievementOutput(_message.Message):
     __slots__ = ["achievement"]
@@ -45,7 +47,7 @@ class DescribeAchievementOutput(_message.Message):
     def __init__(self, achievement: _Optional[_Union[_achievement_pb2.Achievement, _Mapping]] = ...) -> None: ...
 
 class ListAchievementsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["extra", "filters", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -53,13 +55,15 @@ class ListAchievementsInput(_message.Message):
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         query: str
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_achievement_pb2.Achievement.Extra]
     filters: ListAchievementsInput.Filter
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class ListAchievementsOutput(_message.Message):
     __slots__ = ["items", "total"]
