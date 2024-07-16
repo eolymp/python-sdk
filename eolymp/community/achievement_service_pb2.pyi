@@ -27,7 +27,7 @@ class AssignAchievementOutput(_message.Message):
     def __init__(self, quantity: _Optional[int] = ...) -> None: ...
 
 class ListAchievementsInput(_message.Message):
-    __slots__ = ["extra", "filters", "locale", "offset", "size"]
+    __slots__ = ["after", "extra", "filters", "locale", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -35,17 +35,19 @@ class ListAchievementsInput(_message.Message):
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         query: str
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+    AFTER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    after: str
     extra: _containers.RepeatedScalarFieldContainer[_achievement_pb2.Achievement.Extra]
     filters: ListAchievementsInput.Filter
     locale: str
     offset: int
     size: int
-    def __init__(self, locale: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class ListAchievementsOutput(_message.Message):
     __slots__ = ["items", "total"]

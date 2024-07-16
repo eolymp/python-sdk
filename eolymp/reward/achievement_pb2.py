@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/reward/achievement.proto\x12\reolymp.reward\x1a\x18\x65olymp/ecm/content.proto\"\x9c\x02\n\x0b\x41\x63hievement\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r\x12\x0e\n\x06rarity\x18\x03 \x01(\r\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0c \x01(\t\x12$\n\x07summary\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\x1a]\n\x0bTranslation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x66 \x01(\t\x12\x0c\n\x04name\x18g \x01(\t\x12$\n\x07summary\x18h \x01(\x0b\x32\x13.eolymp.ecm.Content\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x11\n\rSUMMARY_VALUE\x10\x01\x12\x12\n\x0eSUMMARY_RENDER\x10\x02\x42/Z-github.com/eolymp/go-sdk/eolymp/reward;rewardb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/reward/achievement.proto\x12\reolymp.reward\x1a\x18\x65olymp/ecm/content.proto\"\xac\x02\n\x0b\x41\x63hievement\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r\x12\x0e\n\x06rarity\x18\x03 \x01(\r\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0c \x01(\t\x12$\n\x07summary\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\t\x1a]\n\x0bTranslation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x66 \x01(\t\x12\x0c\n\x04name\x18g \x01(\t\x12$\n\x07summary\x18h \x01(\x0b\x32\x13.eolymp.ecm.Content\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x11\n\rSUMMARY_VALUE\x10\x01\x12\x12\n\x0eSUMMARY_RENDER\x10\x02\x42/Z-github.com/eolymp/go-sdk/eolymp/reward;rewardb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.reward.achievement_pb2', globals())
@@ -23,9 +23,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/reward;reward'
   _ACHIEVEMENT._serialized_start=77
-  _ACHIEVEMENT._serialized_end=361
-  _ACHIEVEMENT_TRANSLATION._serialized_start=206
-  _ACHIEVEMENT_TRANSLATION._serialized_end=299
-  _ACHIEVEMENT_EXTRA._serialized_start=301
-  _ACHIEVEMENT_EXTRA._serialized_end=361
+  _ACHIEVEMENT._serialized_end=377
+  _ACHIEVEMENT_TRANSLATION._serialized_start=222
+  _ACHIEVEMENT_TRANSLATION._serialized_end=315
+  _ACHIEVEMENT_EXTRA._serialized_start=317
+  _ACHIEVEMENT_EXTRA._serialized_end=377
 # @@protoc_insertion_point(module_scope)
