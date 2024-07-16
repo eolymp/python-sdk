@@ -142,12 +142,14 @@ class ListAchievementsInput(_message.Message):
     def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class ListAchievementsOutput(_message.Message):
-    __slots__ = ["items", "total"]
+    __slots__ = ["items", "next_page_cursor", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_achievement_pb2.Achievement]
+    next_page_cursor: str
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_achievement_pb2.Achievement, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., next_page_cursor: _Optional[str] = ..., items: _Optional[_Iterable[_Union[_achievement_pb2.Achievement, _Mapping]]] = ...) -> None: ...
 
 class UpdateAchievementInput(_message.Message):
     __slots__ = ["achievement", "achievement_id"]
