@@ -1,4 +1,3 @@
-from eolymp.course import entry_pb2 as _entry_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -9,20 +8,19 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Module(_message.Message):
-    __slots__ = ["completed_at", "description", "draft", "due_at", "ends_at", "grade", "id", "image_url", "index", "name", "progress", "starts_at", "status", "url"]
+    __slots__ = ["complete_at", "description", "draft", "due_at", "grade", "id", "image_url", "index", "name", "progress", "start_at", "status", "url"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     BLOCKED: Module.Status
     COMPLETE: Module.Status
-    COMPLETED_AT_FIELD_NUMBER: _ClassVar[int]
+    COMPLETE_AT_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_RENDER: Module.Extra
     DESCRIPTION_VALUE: Module.Extra
     DRAFT_FIELD_NUMBER: _ClassVar[int]
     DUE_AT_FIELD_NUMBER: _ClassVar[int]
-    ENDS_AT_FIELD_NUMBER: _ClassVar[int]
     GRADE_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
@@ -31,23 +29,22 @@ class Module(_message.Message):
     NAME_FIELD_NUMBER: _ClassVar[int]
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
     READY: Module.Status
-    STARTS_AT_FIELD_NUMBER: _ClassVar[int]
+    START_AT_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_EXTRA: Module.Extra
     UNKNOWN_STATUS: Module.Status
     URL_FIELD_NUMBER: _ClassVar[int]
-    completed_at: _timestamp_pb2.Timestamp
+    complete_at: _timestamp_pb2.Timestamp
     description: _content_pb2.Content
     draft: bool
     due_at: _timestamp_pb2.Timestamp
-    ends_at: _timestamp_pb2.Timestamp
     grade: int
     id: str
     image_url: str
     index: int
     name: str
     progress: float
-    starts_at: _timestamp_pb2.Timestamp
+    start_at: _timestamp_pb2.Timestamp
     status: Module.Status
     url: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., status: _Optional[_Union[Module.Status, str]] = ..., grade: _Optional[int] = ..., progress: _Optional[float] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., due_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., status: _Optional[_Union[Module.Status, str]] = ..., progress: _Optional[float] = ..., grade: _Optional[int] = ..., due_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., start_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
