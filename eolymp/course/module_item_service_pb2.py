@@ -18,7 +18,7 @@ from eolymp.course import module_item_pb2 as eolymp_dot_course_dot_module__item_
 from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/course/module_item_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1f\x65olymp/course/module_item.proto\x1a eolymp/wellknown/direction.proto\"@\n\x15\x43reateModuleItemInput\x12\'\n\x04item\x18\x01 \x01(\x0b\x32\x19.eolymp.course.ModuleItem\")\n\x16\x43reateModuleItemOutput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"\xde\x01\n\x15UpdateModuleItemInput\x12\x39\n\x05patch\x18\x01 \x03(\x0e\x32*.eolymp.course.UpdateModuleItemInput.Patch\x12\x0f\n\x07item_id\x18\x02 \x01(\t\x12\'\n\x04item\x18\x03 \x01(\x0b\x32\x19.eolymp.course.ModuleItem\"P\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05\x44RAFT\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\r\n\tIMAGE_URL\x10\x03\x12\t\n\x05INDEX\x10\x04\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x05\"\x18\n\x16UpdateModuleItemOutput\"(\n\x15\x44\x65leteModuleItemInput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"\x18\n\x16\x44\x65leteModuleItemOutput\"*\n\x17\x44\x65scribeModuleItemInput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"C\n\x18\x44\x65scribeModuleItemOutput\x12\'\n\x04item\x18\x01 \x01(\x0b\x32\x19.eolymp.course.ModuleItem\"\x81\x02\n\x14ListModuleItemsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12;\n\x07\x66ilters\x18( \x01(\x0b\x32*.eolymp.course.ListModuleItemsInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.course.ListModuleItemsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\x17\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\"\x11\n\x04Sort\x12\t\n\x05INDEX\x10\x00\"P\n\x15ListModuleItemsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12(\n\x05items\x18\x02 \x03(\x0b\x32\x19.eolymp.course.ModuleItem2\xbe\x06\n\x11ModuleItemService\x12\x99\x01\n\x10\x43reateModuleItem\x12$.eolymp.course.CreateModuleItemInput\x1a%.eolymp.course.CreateModuleItemOutput\"8\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x08\"\x06/items\x12\xa3\x01\n\x10UpdateModuleItem\x12$.eolymp.course.UpdateModuleItemInput\x1a%.eolymp.course.UpdateModuleItemOutput\"B\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12\x1a\x10/items/{item_id}\x12\xa3\x01\n\x10\x44\x65leteModuleItem\x12$.eolymp.course.DeleteModuleItemInput\x1a%.eolymp.course.DeleteModuleItemOutput\"B\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12*\x10/items/{item_id}\x12\xa8\x01\n\x12\x44\x65scribeModuleItem\x12&.eolymp.course.DescribeModuleItemInput\x1a\'.eolymp.course.DescribeModuleItemOutput\"A\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x12\x12\x10/items/{item_id}\x12\x95\x01\n\x0fListModuleItems\x12#.eolymp.course.ListModuleItemsInput\x1a$.eolymp.course.ListModuleItemsOutput\"7\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/itemsB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/course/module_item_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1f\x65olymp/course/module_item.proto\x1a eolymp/wellknown/direction.proto\"@\n\x15\x43reateModuleItemInput\x12\'\n\x04item\x18\x01 \x01(\x0b\x32\x19.eolymp.course.ModuleItem\")\n\x16\x43reateModuleItemOutput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"\xf1\x01\n\x15UpdateModuleItemInput\x12\x39\n\x05patch\x18\x01 \x03(\x0e\x32*.eolymp.course.UpdateModuleItemInput.Patch\x12\x0f\n\x07item_id\x18\x02 \x01(\t\x12\'\n\x04item\x18\x03 \x01(\x0b\x32\x19.eolymp.course.ModuleItem\"c\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05\x44RAFT\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\r\n\tIMAGE_URL\x10\x03\x12\t\n\x05INDEX\x10\x04\x12\t\n\x05\x44\x45PTH\x10\x05\x12\n\n\x06TARGET\x10\x06\x12\x0b\n\x07GRADING\x10\x07\"\x18\n\x16UpdateModuleItemOutput\"(\n\x15\x44\x65leteModuleItemInput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"\x18\n\x16\x44\x65leteModuleItemOutput\"*\n\x17\x44\x65scribeModuleItemInput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"C\n\x18\x44\x65scribeModuleItemOutput\x12\'\n\x04item\x18\x01 \x01(\x0b\x32\x19.eolymp.course.ModuleItem\"\x81\x02\n\x14ListModuleItemsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12;\n\x07\x66ilters\x18( \x01(\x0b\x32*.eolymp.course.ListModuleItemsInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.course.ListModuleItemsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\x17\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\"\x11\n\x04Sort\x12\t\n\x05INDEX\x10\x00\"P\n\x15ListModuleItemsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12(\n\x05items\x18\x02 \x03(\x0b\x32\x19.eolymp.course.ModuleItem2\xbe\x06\n\x11ModuleItemService\x12\x99\x01\n\x10\x43reateModuleItem\x12$.eolymp.course.CreateModuleItemInput\x1a%.eolymp.course.CreateModuleItemOutput\"8\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x08\"\x06/items\x12\xa3\x01\n\x10UpdateModuleItem\x12$.eolymp.course.UpdateModuleItemInput\x1a%.eolymp.course.UpdateModuleItemOutput\"B\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12\x1a\x10/items/{item_id}\x12\xa3\x01\n\x10\x44\x65leteModuleItem\x12$.eolymp.course.DeleteModuleItemInput\x1a%.eolymp.course.DeleteModuleItemOutput\"B\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x12*\x10/items/{item_id}\x12\xa8\x01\n\x12\x44\x65scribeModuleItem\x12&.eolymp.course.DescribeModuleItemInput\x1a\'.eolymp.course.DescribeModuleItemOutput\"A\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x12\x12\x10/items/{item_id}\x12\x95\x01\n\x0fListModuleItems\x12#.eolymp.course.ListModuleItemsInput\x1a$.eolymp.course.ListModuleItemsOutput\"7\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/itemsB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.module_item_service_pb2', globals())
@@ -41,27 +41,27 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATEMODULEITEMOUTPUT._serialized_start=290
   _CREATEMODULEITEMOUTPUT._serialized_end=331
   _UPDATEMODULEITEMINPUT._serialized_start=334
-  _UPDATEMODULEITEMINPUT._serialized_end=556
+  _UPDATEMODULEITEMINPUT._serialized_end=575
   _UPDATEMODULEITEMINPUT_PATCH._serialized_start=476
-  _UPDATEMODULEITEMINPUT_PATCH._serialized_end=556
-  _UPDATEMODULEITEMOUTPUT._serialized_start=558
-  _UPDATEMODULEITEMOUTPUT._serialized_end=582
-  _DELETEMODULEITEMINPUT._serialized_start=584
-  _DELETEMODULEITEMINPUT._serialized_end=624
-  _DELETEMODULEITEMOUTPUT._serialized_start=626
-  _DELETEMODULEITEMOUTPUT._serialized_end=650
-  _DESCRIBEMODULEITEMINPUT._serialized_start=652
-  _DESCRIBEMODULEITEMINPUT._serialized_end=694
-  _DESCRIBEMODULEITEMOUTPUT._serialized_start=696
-  _DESCRIBEMODULEITEMOUTPUT._serialized_end=763
-  _LISTMODULEITEMSINPUT._serialized_start=766
-  _LISTMODULEITEMSINPUT._serialized_end=1023
-  _LISTMODULEITEMSINPUT_FILTER._serialized_start=981
-  _LISTMODULEITEMSINPUT_FILTER._serialized_end=1004
-  _LISTMODULEITEMSINPUT_SORT._serialized_start=1006
-  _LISTMODULEITEMSINPUT_SORT._serialized_end=1023
-  _LISTMODULEITEMSOUTPUT._serialized_start=1025
-  _LISTMODULEITEMSOUTPUT._serialized_end=1105
-  _MODULEITEMSERVICE._serialized_start=1108
-  _MODULEITEMSERVICE._serialized_end=1938
+  _UPDATEMODULEITEMINPUT_PATCH._serialized_end=575
+  _UPDATEMODULEITEMOUTPUT._serialized_start=577
+  _UPDATEMODULEITEMOUTPUT._serialized_end=601
+  _DELETEMODULEITEMINPUT._serialized_start=603
+  _DELETEMODULEITEMINPUT._serialized_end=643
+  _DELETEMODULEITEMOUTPUT._serialized_start=645
+  _DELETEMODULEITEMOUTPUT._serialized_end=669
+  _DESCRIBEMODULEITEMINPUT._serialized_start=671
+  _DESCRIBEMODULEITEMINPUT._serialized_end=713
+  _DESCRIBEMODULEITEMOUTPUT._serialized_start=715
+  _DESCRIBEMODULEITEMOUTPUT._serialized_end=782
+  _LISTMODULEITEMSINPUT._serialized_start=785
+  _LISTMODULEITEMSINPUT._serialized_end=1042
+  _LISTMODULEITEMSINPUT_FILTER._serialized_start=1000
+  _LISTMODULEITEMSINPUT_FILTER._serialized_end=1023
+  _LISTMODULEITEMSINPUT_SORT._serialized_start=1025
+  _LISTMODULEITEMSINPUT_SORT._serialized_end=1042
+  _LISTMODULEITEMSOUTPUT._serialized_start=1044
+  _LISTMODULEITEMSOUTPUT._serialized_end=1124
+  _MODULEITEMSERVICE._serialized_start=1127
+  _MODULEITEMSERVICE._serialized_end=1957
 # @@protoc_insertion_point(module_scope)

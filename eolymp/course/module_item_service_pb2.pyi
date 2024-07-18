@@ -80,14 +80,16 @@ class UpdateModuleItemInput(_message.Message):
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateModuleItemInput.Patch
-    DESCRIPTION: UpdateModuleItemInput.Patch
+    DEPTH: UpdateModuleItemInput.Patch
     DRAFT: UpdateModuleItemInput.Patch
+    GRADING: UpdateModuleItemInput.Patch
     IMAGE_URL: UpdateModuleItemInput.Patch
     INDEX: UpdateModuleItemInput.Patch
     ITEM_FIELD_NUMBER: _ClassVar[int]
     ITEM_ID_FIELD_NUMBER: _ClassVar[int]
     NAME: UpdateModuleItemInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    TARGET: UpdateModuleItemInput.Patch
     item: _module_item_pb2.ModuleItem
     item_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateModuleItemInput.Patch]
