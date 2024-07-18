@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Course(_message.Message):
-    __slots__ = ["description", "duration", "estimate", "id", "image", "locale", "name", "topics", "url", "visibility"]
+    __slots__ = ["description", "duration", "estimate", "id", "image_url", "locale", "name", "topics", "url", "visibility"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -19,7 +19,7 @@ class Course(_message.Message):
     DURATION_FIELD_NUMBER: _ClassVar[int]
     ESTIMATE_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
-    IMAGE_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     PRIVATE: Course.Visibility
@@ -34,10 +34,10 @@ class Course(_message.Message):
     duration: int
     estimate: int
     id: str
-    image: str
+    image_url: str
     locale: str
     name: str
     topics: _containers.RepeatedScalarFieldContainer[str]
     url: str
     visibility: Course.Visibility
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., topics: _Optional[_Iterable[str]] = ..., estimate: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image_url: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., topics: _Optional[_Iterable[str]] = ..., estimate: _Optional[int] = ...) -> None: ...

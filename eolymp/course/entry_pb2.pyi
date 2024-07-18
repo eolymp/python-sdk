@@ -11,12 +11,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Entry(_message.Message):
-    __slots__ = ["document", "draft", "estimate", "id", "index", "items", "parent_id", "problem", "section", "title", "url", "video", "weight"]
+    __slots__ = ["depth", "document", "draft", "estimate", "id", "index", "items", "parent_id", "problem", "section", "title", "url", "video", "weight"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     CONTENT: Entry.Extra
     CONTENT_RENDER: Entry.Extra
     CONTENT_VALUE: Entry.Extra
+    DEPTH_FIELD_NUMBER: _ClassVar[int]
     DOCUMENT_FIELD_NUMBER: _ClassVar[int]
     DRAFT_FIELD_NUMBER: _ClassVar[int]
     ESTIMATE_FIELD_NUMBER: _ClassVar[int]
@@ -31,6 +32,7 @@ class Entry(_message.Message):
     URL_FIELD_NUMBER: _ClassVar[int]
     VIDEO_FIELD_NUMBER: _ClassVar[int]
     WEIGHT_FIELD_NUMBER: _ClassVar[int]
+    depth: int
     document: _content_pb2.Content
     draft: bool
     estimate: int
@@ -44,4 +46,4 @@ class Entry(_message.Message):
     url: str
     video: _entry_video_pb2.Video
     weight: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., title: _Optional[str] = ..., draft: bool = ..., parent_id: _Optional[str] = ..., index: _Optional[int] = ..., estimate: _Optional[int] = ..., weight: _Optional[int] = ..., section: _Optional[_Union[_entry_section_pb2.Section, _Mapping]] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., video: _Optional[_Union[_entry_video_pb2.Video, _Mapping]] = ..., problem: _Optional[_Union[_entry_problem_pb2.Problem, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Entry, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., title: _Optional[str] = ..., draft: bool = ..., parent_id: _Optional[str] = ..., index: _Optional[int] = ..., depth: _Optional[int] = ..., estimate: _Optional[int] = ..., weight: _Optional[int] = ..., section: _Optional[_Union[_entry_section_pb2.Section, _Mapping]] = ..., document: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., video: _Optional[_Union[_entry_video_pb2.Video, _Mapping]] = ..., problem: _Optional[_Union[_entry_problem_pb2.Problem, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Entry, _Mapping]]] = ...) -> None: ...
