@@ -91,8 +91,8 @@ class UpdateModuleInput(_message.Message):
     INDEX: UpdateModuleInput.Patch
     MODULE_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME: UpdateModuleInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    TITLE: UpdateModuleInput.Patch
     module: _module_pb2.Module
     module_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateModuleInput.Patch]

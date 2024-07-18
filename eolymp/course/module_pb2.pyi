@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Module(_message.Message):
-    __slots__ = ["completed_at", "description", "draft", "due_at", "ends_at", "grade", "id", "image_url", "index", "progress", "starts_at", "status", "title", "url"]
+    __slots__ = ["completed_at", "description", "draft", "due_at", "ends_at", "grade", "id", "image_url", "index", "name", "progress", "starts_at", "status", "url"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -17,7 +17,6 @@ class Module(_message.Message):
     BLOCKED: Module.Status
     COMPLETE: Module.Status
     COMPLETED_AT_FIELD_NUMBER: _ClassVar[int]
-    CONTENT: Module.Extra
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_RENDER: Module.Extra
     DESCRIPTION_VALUE: Module.Extra
@@ -29,11 +28,11 @@ class Module(_message.Message):
     IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
     IN_PROGRESS: Module.Status
+    NAME_FIELD_NUMBER: _ClassVar[int]
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
     READY: Module.Status
     STARTS_AT_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
-    TITLE_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_EXTRA: Module.Extra
     UNKNOWN_STATUS: Module.Status
     URL_FIELD_NUMBER: _ClassVar[int]
@@ -46,9 +45,9 @@ class Module(_message.Message):
     id: str
     image_url: str
     index: int
+    name: str
     progress: float
     starts_at: _timestamp_pb2.Timestamp
     status: Module.Status
-    title: str
     url: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., title: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., status: _Optional[_Union[Module.Status, str]] = ..., grade: _Optional[int] = ..., progress: _Optional[float] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., due_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., status: _Optional[_Union[Module.Status, str]] = ..., grade: _Optional[int] = ..., progress: _Optional[float] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., due_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
