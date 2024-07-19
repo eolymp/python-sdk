@@ -11,10 +11,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/course/module_item.proto\x12\reolymp.course\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb8\x04\n\nModuleItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\r\n\x05\x64raft\x18\x03 \x01(\x08\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\timage_url\x18\x05 \x01(\t\x12\r\n\x05index\x18\x0b \x01(\r\x12\r\n\x05\x64\x65pth\x18\x0c \x01(\r\x12\x30\n\x06target\x18\x14 \x01(\x0b\x32 .eolymp.course.ModuleItem.Target\x12\x32\n\x07grading\x18\x1e \x01(\x0b\x32!.eolymp.course.ModuleItem.Grading\x12\x11\n\x08progress\x18\xe9\x07 \x01(\x02\x12\x0e\n\x05grade\x18\xea\x07 \x01(\r\x12+\n\x06\x64ue_at\x18\xf2\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\x08start_at\x18\xf3\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0b\x63omplete_at\x18\xf4\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x8d\x01\n\x06Target\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0b\n\x03ref\x18\x02 \x01(\t\x12:\n\x05\x61ttrs\x18\x03 \x03(\x0b\x32+.eolymp.course.ModuleItem.Target.AttrsEntry\x1a,\n\nAttrsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x1c\n\x07Grading\x12\x11\n\tmax_score\x18\x01 \x01(\rB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/course/module_item.proto\x12\reolymp.course\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x99\x05\n\nModuleItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\r\n\x05\x64raft\x18\x03 \x01(\x08\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\timage_url\x18\x05 \x01(\t\x12\r\n\x05index\x18\x0b \x01(\r\x12\r\n\x05\x64\x65pth\x18\x0c \x01(\r\x12\x32\n\x07grading\x18\x1e \x01(\x0b\x32!.eolymp.course.ModuleItem.Grading\x12\x36\n\x08\x64ocument\x18\x64 \x01(\x0b\x32\".eolymp.course.ModuleItem.DocumentH\x00\x12:\n\nassignment\x18\x65 \x01(\x0b\x32$.eolymp.course.ModuleItem.AssignmentH\x00\x12\x11\n\x08progress\x18\xe9\x07 \x01(\x02\x12\x0e\n\x05grade\x18\xea\x07 \x01(\r\x12+\n\x06\x64ue_at\x18\xf2\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\x08start_at\x18\xf3\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0b\x63omplete_at\x18\xf4\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x30\n\x08\x44ocument\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\x1a \n\nAssignment\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x1a\x1c\n\x07Grading\x12\x11\n\tmax_score\x18\x01 \x01(\r\"N\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x0b\n\x07\x43ONTENT\x10\x01\x12\x11\n\rCONTENT_VALUE\x10\x02\x12\x12\n\x0e\x43ONTENT_RENDER\x10\x03\x42\t\n\x07\x63ontentB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.module_item_pb2', globals())
@@ -22,14 +23,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
-  _MODULEITEM_TARGET_ATTRSENTRY._options = None
-  _MODULEITEM_TARGET_ATTRSENTRY._serialized_options = b'8\001'
-  _MODULEITEM._serialized_start=84
-  _MODULEITEM._serialized_end=652
-  _MODULEITEM_TARGET._serialized_start=481
-  _MODULEITEM_TARGET._serialized_end=622
-  _MODULEITEM_TARGET_ATTRSENTRY._serialized_start=578
-  _MODULEITEM_TARGET_ATTRSENTRY._serialized_end=622
-  _MODULEITEM_GRADING._serialized_start=624
-  _MODULEITEM_GRADING._serialized_end=652
+  _MODULEITEM._serialized_start=110
+  _MODULEITEM._serialized_end=775
+  _MODULEITEM_DOCUMENT._serialized_start=572
+  _MODULEITEM_DOCUMENT._serialized_end=620
+  _MODULEITEM_ASSIGNMENT._serialized_start=622
+  _MODULEITEM_ASSIGNMENT._serialized_end=654
+  _MODULEITEM_GRADING._serialized_start=656
+  _MODULEITEM_GRADING._serialized_end=684
+  _MODULEITEM_EXTRA._serialized_start=686
+  _MODULEITEM_EXTRA._serialized_end=764
 # @@protoc_insertion_point(module_scope)
