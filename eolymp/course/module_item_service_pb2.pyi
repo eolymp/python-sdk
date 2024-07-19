@@ -79,6 +79,22 @@ class ListModuleItemsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_module_item_pb2.ModuleItem, _Mapping]]] = ...) -> None: ...
 
+class MoveModuleItemInput(_message.Message):
+    __slots__ = ["item_id", "new_depth", "new_index", "new_module_id"]
+    ITEM_ID_FIELD_NUMBER: _ClassVar[int]
+    NEW_DEPTH_FIELD_NUMBER: _ClassVar[int]
+    NEW_INDEX_FIELD_NUMBER: _ClassVar[int]
+    NEW_MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    item_id: str
+    new_depth: int
+    new_index: int
+    new_module_id: str
+    def __init__(self, item_id: _Optional[str] = ..., new_module_id: _Optional[str] = ..., new_index: _Optional[int] = ..., new_depth: _Optional[int] = ...) -> None: ...
+
+class MoveModuleItemOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdateModuleItemInput(_message.Message):
     __slots__ = ["item", "item_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):

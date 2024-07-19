@@ -39,6 +39,20 @@ class ModuleItemServiceClient:
             **kwargs,
         )
 
+    def MoveModuleItem(self, request, **kwargs):
+        path = "/items/"+urllib.parse.quote(request.item_id)+"/move"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.item_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.MoveModuleItemOutput"),
+            **kwargs,
+        )
+
     def DeleteModuleItem(self, request, **kwargs):
         path = "/items/"+urllib.parse.quote(request.item_id)
 
