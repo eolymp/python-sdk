@@ -8,28 +8,11 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Module(_message.Message):
-    __slots__ = ["assignment", "description", "draft", "id", "image_url", "index", "name", "url"]
+    __slots__ = ["description", "draft", "id", "image_url", "index", "name", "url"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    class Assignment(_message.Message):
-        __slots__ = ["due_time", "end_time", "grade", "progress", "start_time", "status"]
-        DUE_TIME_FIELD_NUMBER: _ClassVar[int]
-        END_TIME_FIELD_NUMBER: _ClassVar[int]
-        GRADE_FIELD_NUMBER: _ClassVar[int]
-        PROGRESS_FIELD_NUMBER: _ClassVar[int]
-        START_TIME_FIELD_NUMBER: _ClassVar[int]
-        STATUS_FIELD_NUMBER: _ClassVar[int]
-        due_time: _timestamp_pb2.Timestamp
-        end_time: _timestamp_pb2.Timestamp
-        grade: int
-        progress: float
-        start_time: _timestamp_pb2.Timestamp
-        status: Module.Status
-        def __init__(self, status: _Optional[_Union[Module.Status, str]] = ..., progress: _Optional[float] = ..., grade: _Optional[int] = ..., due_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., start_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
-    ASSIGNMENT: Module.Extra
-    ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
     BLOCKED: Module.Status
     COMPLETE: Module.Status
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -45,7 +28,6 @@ class Module(_message.Message):
     UNKNOWN_EXTRA: Module.Extra
     UNKNOWN_STATUS: Module.Status
     URL_FIELD_NUMBER: _ClassVar[int]
-    assignment: Module.Assignment
     description: _content_pb2.Content
     draft: bool
     id: str
@@ -53,4 +35,4 @@ class Module(_message.Message):
     index: int
     name: str
     url: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., assignment: _Optional[_Union[Module.Assignment, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...

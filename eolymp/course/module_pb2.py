@@ -15,7 +15,7 @@ from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/course/module.proto\x12\reolymp.course\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe0\x04\n\x06Module\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\r\n\x05\x64raft\x18\x03 \x01(\x08\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\timage_url\x18\x05 \x01(\t\x12\r\n\x05index\x18\x06 \x01(\r\x12(\n\x0b\x64\x65scription\x18\n \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x34\n\nassignment\x18\x14 \x01(\x0b\x32 .eolymp.course.Module.Assignment\x1a\xed\x01\n\nAssignment\x12-\n\x06status\x18\xe8\x07 \x01(\x0e\x32\x1c.eolymp.course.Module.Status\x12\x11\n\x08progress\x18\xe9\x07 \x01(\x02\x12\x0e\n\x05grade\x18\xea\x07 \x01(\r\x12-\n\x08\x64ue_time\x18\xf2\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\nstart_time\x18\xf3\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\x08\x65nd_time\x18\xf4\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"Y\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\x12\x0e\n\nASSIGNMENT\x10\x03\"S\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07\x42LOCKED\x10\x01\x12\t\n\x05READY\x10\x02\x12\x0f\n\x0bIN_PROGRESS\x10\x03\x12\x0c\n\x08\x43OMPLETE\x10\x04\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/course/module.proto\x12\reolymp.course\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaa\x02\n\x06Module\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\r\n\x05\x64raft\x18\x03 \x01(\x08\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\timage_url\x18\x05 \x01(\t\x12\r\n\x05index\x18\x06 \x01(\r\x12(\n\x0b\x64\x65scription\x18\n \x01(\x0b\x32\x13.eolymp.ecm.Content\"I\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\"S\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07\x42LOCKED\x10\x01\x12\t\n\x05READY\x10\x02\x12\x0f\n\x0bIN_PROGRESS\x10\x03\x12\x0c\n\x08\x43OMPLETE\x10\x04\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.module_pb2', globals())
@@ -24,11 +24,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _MODULE._serialized_start=105
-  _MODULE._serialized_end=713
-  _MODULE_ASSIGNMENT._serialized_start=300
-  _MODULE_ASSIGNMENT._serialized_end=537
-  _MODULE_EXTRA._serialized_start=539
-  _MODULE_EXTRA._serialized_end=628
-  _MODULE_STATUS._serialized_start=630
-  _MODULE_STATUS._serialized_end=713
+  _MODULE._serialized_end=403
+  _MODULE_EXTRA._serialized_start=245
+  _MODULE_EXTRA._serialized_end=318
+  _MODULE_STATUS._serialized_start=320
+  _MODULE_STATUS._serialized_end=403
 # @@protoc_insertion_point(module_scope)
