@@ -14,14 +14,12 @@ class Assignment(_message.Message):
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Item(_message.Message):
-        __slots__ = ["item_id", "module_id", "wildcard"]
+        __slots__ = ["item_id", "module_id"]
         ITEM_ID_FIELD_NUMBER: _ClassVar[int]
         MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-        WILDCARD_FIELD_NUMBER: _ClassVar[int]
         item_id: str
         module_id: str
-        wildcard: bool
-        def __init__(self, wildcard: bool = ..., module_id: _Optional[str] = ..., item_id: _Optional[str] = ...) -> None: ...
+        def __init__(self, module_id: _Optional[str] = ..., item_id: _Optional[str] = ...) -> None: ...
     ACTIVE: Assignment.Status
     COMPLETE: Assignment.Status
     COMPLETED_AT_FIELD_NUMBER: _ClassVar[int]
