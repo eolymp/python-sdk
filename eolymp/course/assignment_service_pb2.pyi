@@ -113,6 +113,7 @@ class UpdateAssignmentInput(_message.Message):
     ASSIGNMENT_ID_FIELD_NUMBER: _ClassVar[int]
     COMPLETE_BEFORE: UpdateAssignmentInput.Patch
     DURATION: UpdateAssignmentInput.Patch
+    ITEMS: UpdateAssignmentInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     START_AFTER: UpdateAssignmentInput.Patch
     assignment: _assignment_pb2.Assignment
