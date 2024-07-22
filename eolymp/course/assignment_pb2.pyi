@@ -8,23 +8,20 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Assignment(_message.Message):
-    __slots__ = ["complete_before", "completed_at", "created_at", "duration", "group_id", "id", "member_id", "modules", "start_after", "started_at", "status"]
+    __slots__ = ["complete_before", "completed_at", "created_at", "duration", "group_id", "id", "items", "member_id", "start_after", "started_at", "status"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Item(_message.Message):
-        __slots__ = ["item_id"]
+        __slots__ = ["item_id", "module_id", "wildcard"]
         ITEM_ID_FIELD_NUMBER: _ClassVar[int]
-        item_id: str
-        def __init__(self, item_id: _Optional[str] = ...) -> None: ...
-    class Module(_message.Message):
-        __slots__ = ["items", "module_id"]
-        ITEMS_FIELD_NUMBER: _ClassVar[int]
         MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-        items: _containers.RepeatedCompositeFieldContainer[Assignment.Item]
+        WILDCARD_FIELD_NUMBER: _ClassVar[int]
+        item_id: str
         module_id: str
-        def __init__(self, module_id: _Optional[str] = ..., items: _Optional[_Iterable[_Union[Assignment.Item, _Mapping]]] = ...) -> None: ...
+        wildcard: bool
+        def __init__(self, wildcard: bool = ..., module_id: _Optional[str] = ..., item_id: _Optional[str] = ...) -> None: ...
     ACTIVE: Assignment.Status
     COMPLETE: Assignment.Status
     COMPLETED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -33,8 +30,8 @@ class Assignment(_message.Message):
     DURATION_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    MODULES_FIELD_NUMBER: _ClassVar[int]
     READY: Assignment.Status
     SCHEDULED: Assignment.Status
     STARTED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -50,9 +47,9 @@ class Assignment(_message.Message):
     duration: int
     group_id: str
     id: str
+    items: _containers.RepeatedCompositeFieldContainer[Assignment.Item]
     member_id: str
-    modules: _containers.RepeatedCompositeFieldContainer[Assignment.Module]
     start_after: _timestamp_pb2.Timestamp
     started_at: _timestamp_pb2.Timestamp
     status: Assignment.Status
-    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., modules: _Optional[_Iterable[_Union[Assignment.Module, _Mapping]]] = ..., status: _Optional[_Union[Assignment.Status, str]] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., status: _Optional[_Union[Assignment.Status, str]] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., items: _Optional[_Iterable[_Union[Assignment.Item, _Mapping]]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
