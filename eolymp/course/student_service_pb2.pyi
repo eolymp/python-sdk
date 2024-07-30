@@ -4,6 +4,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.course import student_pb2 as _student_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -11,6 +12,24 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class AssignModuleInput(_message.Message):
+    __slots__ = ["complete_before", "duration", "member_id", "module_id", "start_after"]
+    COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
+    DURATION_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    START_AFTER_FIELD_NUMBER: _ClassVar[int]
+    complete_before: _timestamp_pb2.Timestamp
+    duration: int
+    member_id: str
+    module_id: str
+    start_after: _timestamp_pb2.Timestamp
+    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ...) -> None: ...
+
+class AssignModuleOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class DescribeStudentInput(_message.Message):
     __slots__ = ["extra", "member_id"]
@@ -69,6 +88,36 @@ class ListStudentsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_student_pb2.Student]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_student_pb2.Student, _Mapping]]] = ...) -> None: ...
+
+class UnassignModuleInput(_message.Message):
+    __slots__ = ["member_id", "module_id"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    module_id: str
+    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
+
+class UnassignModuleOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdateStudentInput(_message.Message):
+    __slots__ = ["member_id", "patch", "student"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateStudentInput.Patch
+    INACTIVE: UpdateStudentInput.Patch
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    patch: _containers.RepeatedScalarFieldContainer[UpdateStudentInput.Patch]
+    student: _student_pb2.Student
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateStudentInput.Patch, str]]] = ..., member_id: _Optional[str] = ..., student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
+
+class UpdateStudentOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class WatchStudentInput(_message.Message):
     __slots__ = ["member_id"]

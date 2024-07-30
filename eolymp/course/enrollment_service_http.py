@@ -18,7 +18,7 @@ class EnrollmentServiceClient:
         path = "/enrollments"
 
         return self.transport.request(
-            method="PUT",
+            method="POST",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.course.CreateEnrollmentOutput"),
