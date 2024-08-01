@@ -31,6 +31,18 @@ class AssignModuleOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class CreateStudentInput(_message.Message):
+    __slots__ = ["student"]
+    STUDENT_FIELD_NUMBER: _ClassVar[int]
+    student: _student_pb2.Student
+    def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
+
+class CreateStudentOutput(_message.Message):
+    __slots__ = ["student_id"]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
+    student_id: str
+    def __init__(self, student_id: _Optional[str] = ...) -> None: ...
+
 class DescribeStudentInput(_message.Message):
     __slots__ = ["extra", "member_id"]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -46,8 +58,10 @@ class DescribeStudentOutput(_message.Message):
     def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
 class DescribeViewerInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["extra"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_student_pb2.Student.Extra]
+    def __init__(self, extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
 
 class DescribeViewerOutput(_message.Message):
     __slots__ = ["student"]
@@ -120,10 +134,12 @@ class UpdateStudentOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class WatchStudentInput(_message.Message):
-    __slots__ = ["member_id"]
+    __slots__ = ["extra", "member_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_student_pb2.Student.Extra]
     member_id: str
-    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
 
 class WatchStudentOutput(_message.Message):
     __slots__ = ["student"]

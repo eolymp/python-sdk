@@ -14,17 +14,14 @@ class StudentServiceClient:
         self.transport = transport
         self.url = url
 
-    def DescribeStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+    def CreateStudent(self, request, **kwargs):
+        path = "/students"
 
         return self.transport.request(
-            method="GET",
+            method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeStudentOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateStudentOutput"),
             **kwargs,
         )
 
@@ -80,6 +77,20 @@ class StudentServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeViewerOutput"),
+            **kwargs,
+        )
+
+    def DescribeStudent(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeStudentOutput"),
             **kwargs,
         )
 
