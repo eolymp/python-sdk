@@ -120,6 +120,7 @@ class UpdateStudentInput(_message.Message):
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateStudentInput.Patch
+    ASSIGN_ALL: UpdateStudentInput.Patch
     INACTIVE: UpdateStudentInput.Patch
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
