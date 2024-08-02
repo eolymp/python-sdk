@@ -53,36 +53,6 @@ class StudentServiceClient:
             **kwargs,
         )
 
-    def AssignModule(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments/"+urllib.parse.quote(request.module_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
-        request.module_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.AssignModuleOutput"),
-            **kwargs,
-        )
-
-    def UnassignModule(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments/"+urllib.parse.quote(request.module_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
-        request.module_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.UnassignModuleOutput"),
-            **kwargs,
-        )
-
     def DescribeViewer(self, request, **kwargs):
         path = "/viewer/student"
 
@@ -116,6 +86,50 @@ class StudentServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.course.ListStudentsOutput"),
+            **kwargs,
+        )
+
+    def AssignModule(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments/"+urllib.parse.quote(request.module_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+        request.module_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.AssignModuleOutput"),
+            **kwargs,
+        )
+
+    def UnassignModule(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments/"+urllib.parse.quote(request.module_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+        request.module_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UnassignModuleOutput"),
+            **kwargs,
+        )
+
+    def ListAssignments(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListAssignmentsXOutput"),
             **kwargs,
         )
 
