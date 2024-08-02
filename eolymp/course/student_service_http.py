@@ -39,7 +39,7 @@ class StudentServiceClient:
             **kwargs,
         )
 
-    def DeleteModule(self, request, **kwargs):
+    def DeleteStudent(self, request, **kwargs):
         path = "/students/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
