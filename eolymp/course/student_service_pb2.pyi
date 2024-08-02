@@ -43,6 +43,16 @@ class CreateStudentOutput(_message.Message):
     student_id: str
     def __init__(self, student_id: _Optional[str] = ...) -> None: ...
 
+class DeleteStudentInput(_message.Message):
+    __slots__ = ["member_id"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
+
+class DeleteStudentOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DescribeStudentInput(_message.Message):
     __slots__ = ["extra", "member_id"]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
