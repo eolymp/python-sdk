@@ -110,8 +110,10 @@ class DescribeViewerOutput(_message.Message):
     def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
 class ListAssignmentsXInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["member_id"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
 
 class ListAssignmentsXOutput(_message.Message):
     __slots__ = ["items"]
