@@ -133,3 +133,18 @@ class StudentServiceClient:
             **kwargs,
         )
 
+    def ListGrades(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments/"+urllib.parse.quote(request.module_id)+"/grades"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+        request.module_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListGradesOutput"),
+            **kwargs,
+        )
+

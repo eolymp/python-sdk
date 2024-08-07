@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.course import grade_pb2 as _grade_pb2
 from eolymp.course import module_pb2 as _module_pb2
 from eolymp.course import student_pb2 as _student_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
@@ -120,6 +121,20 @@ class ListAssignmentsXOutput(_message.Message):
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[AssignmentX]
     def __init__(self, items: _Optional[_Iterable[_Union[AssignmentX, _Mapping]]] = ...) -> None: ...
+
+class ListGradesInput(_message.Message):
+    __slots__ = ["member_id", "module_id"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    module_id: str
+    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
+
+class ListGradesOutput(_message.Message):
+    __slots__ = ["items"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_grade_pb2.Grade]
+    def __init__(self, items: _Optional[_Iterable[_Union[_grade_pb2.Grade, _Mapping]]] = ...) -> None: ...
 
 class ListStudentsInput(_message.Message):
     __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
