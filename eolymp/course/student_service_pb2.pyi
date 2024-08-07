@@ -1,12 +1,9 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.course import grade_pb2 as _grade_pb2
-from eolymp.course import module_pb2 as _module_pb2
 from eolymp.course import student_pb2 as _student_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -14,53 +11,6 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
-
-class AssignModuleInput(_message.Message):
-    __slots__ = ["complete_before", "duration", "member_id", "module_id", "start_after"]
-    COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
-    DURATION_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-    START_AFTER_FIELD_NUMBER: _ClassVar[int]
-    complete_before: _timestamp_pb2.Timestamp
-    duration: int
-    member_id: str
-    module_id: str
-    start_after: _timestamp_pb2.Timestamp
-    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ...) -> None: ...
-
-class AssignModuleOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class AssignmentX(_message.Message):
-    __slots__ = ["assigned_at", "complete_before", "completed_at", "duration", "module", "start_after", "started_at", "status"]
-    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    ACTIVE: AssignmentX.Status
-    ASSIGNED_AT_FIELD_NUMBER: _ClassVar[int]
-    COMPLETE: AssignmentX.Status
-    COMPLETED_AT_FIELD_NUMBER: _ClassVar[int]
-    COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
-    DURATION_FIELD_NUMBER: _ClassVar[int]
-    MODULE_FIELD_NUMBER: _ClassVar[int]
-    READY: AssignmentX.Status
-    SCHEDULED: AssignmentX.Status
-    STARTED_AT_FIELD_NUMBER: _ClassVar[int]
-    START_AFTER_FIELD_NUMBER: _ClassVar[int]
-    STATUS_FIELD_NUMBER: _ClassVar[int]
-    UNASSIGNED: AssignmentX.Status
-    UNKNOWN_STATUS: AssignmentX.Status
-    UPSOLVE: AssignmentX.Status
-    assigned_at: _timestamp_pb2.Timestamp
-    complete_before: _timestamp_pb2.Timestamp
-    completed_at: _timestamp_pb2.Timestamp
-    duration: int
-    module: _module_pb2.Module
-    start_after: _timestamp_pb2.Timestamp
-    started_at: _timestamp_pb2.Timestamp
-    status: AssignmentX.Status
-    def __init__(self, module: _Optional[_Union[_module_pb2.Module, _Mapping]] = ..., status: _Optional[_Union[AssignmentX.Status, str]] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., assigned_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateStudentInput(_message.Message):
     __slots__ = ["student"]
@@ -110,32 +60,6 @@ class DescribeViewerOutput(_message.Message):
     student: _student_pb2.Student
     def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
-class ListAssignmentsXInput(_message.Message):
-    __slots__ = ["member_id"]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    member_id: str
-    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
-
-class ListAssignmentsXOutput(_message.Message):
-    __slots__ = ["items"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[AssignmentX]
-    def __init__(self, items: _Optional[_Iterable[_Union[AssignmentX, _Mapping]]] = ...) -> None: ...
-
-class ListGradesInput(_message.Message):
-    __slots__ = ["member_id", "module_id"]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-    member_id: str
-    module_id: str
-    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
-
-class ListGradesOutput(_message.Message):
-    __slots__ = ["items"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_grade_pb2.Grade]
-    def __init__(self, items: _Optional[_Iterable[_Union[_grade_pb2.Grade, _Mapping]]] = ...) -> None: ...
-
 class ListStudentsInput(_message.Message):
     __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -169,18 +93,6 @@ class ListStudentsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_student_pb2.Student]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_student_pb2.Student, _Mapping]]] = ...) -> None: ...
-
-class UnassignModuleInput(_message.Message):
-    __slots__ = ["member_id", "module_id"]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-    member_id: str
-    module_id: str
-    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
-
-class UnassignModuleOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class UpdateStudentInput(_message.Message):
     __slots__ = ["member_id", "patch", "student"]

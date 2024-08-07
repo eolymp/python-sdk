@@ -78,3 +78,81 @@ class ModuleServiceClient:
             **kwargs,
         )
 
+    def CreateModuleItem(self, request, **kwargs):
+        path = "/items"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateModuleItemOutput"),
+            **kwargs,
+        )
+
+    def UpdateModuleItem(self, request, **kwargs):
+        path = "/items/"+urllib.parse.quote(request.item_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.item_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateModuleItemOutput"),
+            **kwargs,
+        )
+
+    def MoveModuleItem(self, request, **kwargs):
+        path = "/items/"+urllib.parse.quote(request.item_id)+"/move"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.item_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.MoveModuleItemOutput"),
+            **kwargs,
+        )
+
+    def DeleteModuleItem(self, request, **kwargs):
+        path = "/items/"+urllib.parse.quote(request.item_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.item_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteModuleItemOutput"),
+            **kwargs,
+        )
+
+    def DescribeModuleItem(self, request, **kwargs):
+        path = "/items/"+urllib.parse.quote(request.item_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.item_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeModuleItemOutput"),
+            **kwargs,
+        )
+
+    def ListModuleItems(self, request, **kwargs):
+        path = "/items"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListModuleItemsOutput"),
+            **kwargs,
+        )
+

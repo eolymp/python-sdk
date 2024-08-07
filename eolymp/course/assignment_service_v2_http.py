@@ -9,83 +9,87 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class StudentServiceClient:
+class AssignmentServiceV2Client:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
-    def CreateStudent(self, request, **kwargs):
-        path = "/students"
+    def CreateAssignment(self, request, **kwargs):
+        path = "/assignments"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateStudentOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateAssignmentV2Output"),
             **kwargs,
         )
 
-    def UpdateStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)
+    def DeleteAssignment(self, request, **kwargs):
+        path = "/assignments/"+urllib.parse.quote(request.module_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateStudentOutput"),
-            **kwargs,
-        )
-
-    def DeleteStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.module_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteStudentOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteAssignmentV2Output"),
             **kwargs,
         )
 
-    def DescribeViewer(self, request, **kwargs):
-        path = "/viewer/student"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeViewerOutput"),
-            **kwargs,
-        )
-
-    def DescribeStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)
+    def StartAssignment(self, request, **kwargs):
+        path = "/assignments/"+urllib.parse.quote(request.module_id)+"/start"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.module_id = ""
 
         return self.transport.request(
-            method="GET",
+            method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeStudentOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.StartAssignmentV2Output"),
             **kwargs,
         )
 
-    def ListStudents(self, request, **kwargs):
-        path = "/students"
+    def ListAssignments(self, request, **kwargs):
+        path = "/assignments"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.ListStudentsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListAssignmentsV2Output"),
+            **kwargs,
+        )
+
+    def ListAssignmentItems(self, request, **kwargs):
+        path = "/assignments/"+urllib.parse.quote(request.module_id)+"/items"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.module_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListAssignmentItemsV2Output"),
+            **kwargs,
+        )
+
+    def DescribeAssignmentItem(self, request, **kwargs):
+        path = "/assignments/"+urllib.parse.quote(request.module_id)+"/items/"+urllib.parse.quote(request.item_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.module_id = ""
+        request.item_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeAssignmentItemV2Output"),
             **kwargs,
         )
 
