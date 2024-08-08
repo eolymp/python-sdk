@@ -93,3 +93,33 @@ class AssignmentServiceV2Client:
             **kwargs,
         )
 
+    def UpdateAssignmentItem(self, request, **kwargs):
+        path = "/assignments/"+urllib.parse.quote(request.module_id)+"/items/"+urllib.parse.quote(request.item_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.module_id = ""
+        request.item_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateAssignmentItemV2Output"),
+            **kwargs,
+        )
+
+    def ResetAssignmentItem(self, request, **kwargs):
+        path = "/assignments/"+urllib.parse.quote(request.module_id)+"/items/"+urllib.parse.quote(request.item_id)+"/reset"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.module_id = ""
+        request.item_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ResetAssignmentItemV2Output"),
+            **kwargs,
+        )
+

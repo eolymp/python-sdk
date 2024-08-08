@@ -10,10 +10,6 @@ class Module(_message.Message):
     __slots__ = ["description", "draft", "id", "image_url", "index", "name", "url"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    BLOCKED: Module.Status
-    COMPLETE: Module.Status
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_RENDER: Module.Extra
     DESCRIPTION_VALUE: Module.Extra
@@ -21,11 +17,8 @@ class Module(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
-    IN_PROGRESS: Module.Status
     NAME_FIELD_NUMBER: _ClassVar[int]
-    READY: Module.Status
     UNKNOWN_EXTRA: Module.Extra
-    UNKNOWN_STATUS: Module.Status
     URL_FIELD_NUMBER: _ClassVar[int]
     description: _content_pb2.Content
     draft: bool

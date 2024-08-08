@@ -6,6 +6,7 @@ from eolymp.course import assignment_v2_pb2 as _assignment_v2_pb2
 from eolymp.course import module_item_pb2 as _module_item_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -76,6 +77,18 @@ class ListAssignmentsV2Output(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_assignment_v2_pb2.AssignmentV2]
     def __init__(self, items: _Optional[_Iterable[_Union[_assignment_v2_pb2.AssignmentV2, _Mapping]]] = ...) -> None: ...
 
+class ResetAssignmentItemV2Input(_message.Message):
+    __slots__ = ["item_id", "module_id"]
+    ITEM_ID_FIELD_NUMBER: _ClassVar[int]
+    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    item_id: str
+    module_id: str
+    def __init__(self, module_id: _Optional[str] = ..., item_id: _Optional[str] = ...) -> None: ...
+
+class ResetAssignmentItemV2Output(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class StartAssignmentV2Input(_message.Message):
     __slots__ = ["module_id"]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -83,5 +96,26 @@ class StartAssignmentV2Input(_message.Message):
     def __init__(self, module_id: _Optional[str] = ...) -> None: ...
 
 class StartAssignmentV2Output(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UpdateAssignmentItemV2Input(_message.Message):
+    __slots__ = ["item", "item_id", "module_id", "patch"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateAssignmentItemV2Input.Patch
+    EXCUSED: UpdateAssignmentItemV2Input.Patch
+    GRADE_OVERRIDE: UpdateAssignmentItemV2Input.Patch
+    ITEM_FIELD_NUMBER: _ClassVar[int]
+    ITEM_ID_FIELD_NUMBER: _ClassVar[int]
+    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    item: _assignment_item_v2_pb2.AssignmentItemV2
+    item_id: str
+    module_id: str
+    patch: _containers.RepeatedScalarFieldContainer[UpdateAssignmentItemV2Input.Patch]
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateAssignmentItemV2Input.Patch, str]]] = ..., module_id: _Optional[str] = ..., item_id: _Optional[str] = ..., item: _Optional[_Union[_assignment_item_v2_pb2.AssignmentItemV2, _Mapping]] = ...) -> None: ...
+
+class UpdateAssignmentItemV2Output(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
