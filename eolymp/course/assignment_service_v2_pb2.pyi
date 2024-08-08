@@ -106,6 +106,7 @@ class UpdateAssignmentItemV2Input(_message.Message):
     ALL: UpdateAssignmentItemV2Input.Patch
     EXCUSED: UpdateAssignmentItemV2Input.Patch
     GRADE_OVERRIDE: UpdateAssignmentItemV2Input.Patch
+    GRADE_OVERRIDE_RESET: UpdateAssignmentItemV2Input.Patch
     ITEM_FIELD_NUMBER: _ClassVar[int]
     ITEM_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
