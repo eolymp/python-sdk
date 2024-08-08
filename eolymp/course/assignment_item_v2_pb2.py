@@ -15,7 +15,7 @@ from eolymp.course import module_item_pb2 as eolymp_dot_course_dot_module__item_
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/course/assignment_item_v2.proto\x12\reolymp.course\x1a\x1f\x65olymp/course/module_item.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x84\x01\n\x10\x41ssignmentItemV2\x12\x0f\n\x07item_id\x18\x02 \x01(\t\x12\x10\n\x08progress\x18\n \x01(\x02\x12\r\n\x05grade\x18\x0f \x01(\r\x12\x0f\n\x07\x65xcused\x18\x10 \x01(\x08\x12-\n\tgraded_at\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.TimestampB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/course/assignment_item_v2.proto\x12\reolymp.course\x1a\x1f\x65olymp/course/module_item.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8b\x01\n\x10\x41ssignmentItemV2\x12\x16\n\x0emodule_item_id\x18\x02 \x01(\t\x12\x10\n\x08progress\x18\n \x01(\x02\x12\r\n\x05grade\x18\x0f \x01(\r\x12\x0f\n\x07\x65xcused\x18\x10 \x01(\x08\x12-\n\tgraded_at\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.TimestampB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.assignment_item_v2_pb2', globals())
@@ -24,5 +24,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _ASSIGNMENTITEMV2._serialized_start=124
-  _ASSIGNMENTITEMV2._serialized_end=256
+  _ASSIGNMENTITEMV2._serialized_end=263
 # @@protoc_insertion_point(module_scope)
