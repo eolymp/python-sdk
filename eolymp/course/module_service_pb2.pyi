@@ -35,12 +35,14 @@ class DeleteModuleOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeModuleInput(_message.Message):
-    __slots__ = ["extra", "module_id"]
+    __slots__ = ["extra", "module_id", "student_id"]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_module_pb2.Module.Extra]
     module_id: str
-    def __init__(self, module_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_module_pb2.Module.Extra, str]]] = ...) -> None: ...
+    student_id: str
+    def __init__(self, module_id: _Optional[str] = ..., student_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_module_pb2.Module.Extra, str]]] = ...) -> None: ...
 
 class DescribeModuleOutput(_message.Message):
     __slots__ = ["module"]
@@ -49,16 +51,18 @@ class DescribeModuleOutput(_message.Message):
     def __init__(self, module: _Optional[_Union[_module_pb2.Module, _Mapping]] = ...) -> None: ...
 
 class ListModulesInput(_message.Message):
-    __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
+    __slots__ = ["extra", "filters", "offset", "order", "size", "sort", "student_id"]
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["draft", "query"]
+        __slots__ = ["draft", "extra", "query"]
         DRAFT_FIELD_NUMBER: _ClassVar[int]
+        EXTRA_FIELD_NUMBER: _ClassVar[int]
         QUERY_FIELD_NUMBER: _ClassVar[int]
         draft: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        extra: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         query: str
-        def __init__(self, query: _Optional[str] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., extra: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     INDEX: ListModulesInput.Sort
@@ -66,13 +70,15 @@ class ListModulesInput(_message.Message):
     ORDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
+    STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_module_pb2.Module.Extra]
     filters: ListModulesInput.Filter
     offset: int
     order: _direction_pb2.Direction
     size: int
     sort: ListModulesInput.Sort
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListModulesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListModulesInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_module_pb2.Module.Extra, str]]] = ...) -> None: ...
+    student_id: str
+    def __init__(self, student_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListModulesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListModulesInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_module_pb2.Module.Extra, str]]] = ...) -> None: ...
 
 class ListModulesOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -89,6 +95,7 @@ class UpdateModuleInput(_message.Message):
     ALL: UpdateModuleInput.Patch
     DESCRIPTION: UpdateModuleInput.Patch
     DRAFT: UpdateModuleInput.Patch
+    EXTRA: UpdateModuleInput.Patch
     IMAGE_URL: UpdateModuleInput.Patch
     INDEX: UpdateModuleInput.Patch
     MODULE_FIELD_NUMBER: _ClassVar[int]
