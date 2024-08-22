@@ -12,10 +12,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateModuleItemInput(_message.Message):
-    __slots__ = ["item"]
+    __slots__ = ["item", "module_id"]
     ITEM_FIELD_NUMBER: _ClassVar[int]
+    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     item: _module_item_pb2.ModuleItem
-    def __init__(self, item: _Optional[_Union[_module_item_pb2.ModuleItem, _Mapping]] = ...) -> None: ...
+    module_id: str
+    def __init__(self, item: _Optional[_Union[_module_item_pb2.ModuleItem, _Mapping]] = ..., module_id: _Optional[str] = ...) -> None: ...
 
 class CreateModuleItemOutput(_message.Message):
     __slots__ = ["item_id"]
@@ -50,7 +52,7 @@ class DescribeModuleItemOutput(_message.Message):
     def __init__(self, item: _Optional[_Union[_module_item_pb2.ModuleItem, _Mapping]] = ...) -> None: ...
 
 class ListModuleItemsInput(_message.Message):
-    __slots__ = ["extra", "filters", "offset", "order", "size", "sort", "student_id"]
+    __slots__ = ["extra", "filters", "module_id", "offset", "order", "size", "sort", "student_id"]
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -61,6 +63,7 @@ class ListModuleItemsInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     INDEX: ListModuleItemsInput.Sort
+    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -68,12 +71,13 @@ class ListModuleItemsInput(_message.Message):
     STUDENT_ID_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_module_item_pb2.ModuleItem.Extra]
     filters: ListModuleItemsInput.Filter
+    module_id: str
     offset: int
     order: _direction_pb2.Direction
     size: int
     sort: ListModuleItemsInput.Sort
     student_id: str
-    def __init__(self, student_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListModuleItemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListModuleItemsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_module_item_pb2.ModuleItem.Extra, str]]] = ...) -> None: ...
+    def __init__(self, module_id: _Optional[str] = ..., student_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListModuleItemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListModuleItemsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_module_item_pb2.ModuleItem.Extra, str]]] = ...) -> None: ...
 
 class ListModuleItemsOutput(_message.Message):
     __slots__ = ["items", "total"]
