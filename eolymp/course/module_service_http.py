@@ -78,3 +78,47 @@ class ModuleServiceClient:
             **kwargs,
         )
 
+    def StartModule(self, request, **kwargs):
+        path = "/modules/"+urllib.parse.quote(request.module_id)+"/start"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.module_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.StartModuleOutput"),
+            **kwargs,
+        )
+
+    def AssignModule(self, request, **kwargs):
+        path = "/modules/"+urllib.parse.quote(request.module_id)+"/assignments/"+urllib.parse.quote(request.member_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.module_id = ""
+        request.member_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.AssignModuleOutput"),
+            **kwargs,
+        )
+
+    def UnassignModule(self, request, **kwargs):
+        path = "/modules/"+urllib.parse.quote(request.module_id)+"/assignments/"+urllib.parse.quote(request.member_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.module_id = ""
+        request.member_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UnassignModuleOutput"),
+            **kwargs,
+        )
+

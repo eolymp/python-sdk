@@ -9,86 +9,86 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class ModuleItemServiceClient:
+class MaterialServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
-    def CreateModuleItem(self, request, **kwargs):
-        path = "/items"
+    def CreateMaterial(self, request, **kwargs):
+        path = "/materials"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateModuleItemOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateMaterialOutput"),
             **kwargs,
         )
 
-    def UpdateModuleItem(self, request, **kwargs):
-        path = "/items/"+urllib.parse.quote(request.item_id)
+    def UpdateMaterial(self, request, **kwargs):
+        path = "/materials/"+urllib.parse.quote(request.material_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.item_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateModuleItemOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateMaterialOutput"),
             **kwargs,
         )
 
-    def MoveModuleItem(self, request, **kwargs):
-        path = "/items/"+urllib.parse.quote(request.item_id)+"/move"
+    def MoveMaterial(self, request, **kwargs):
+        path = "/materials/"+urllib.parse.quote(request.material_id)+"/move"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.item_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.MoveModuleItemOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.MoveMaterialOutput"),
             **kwargs,
         )
 
-    def DeleteModuleItem(self, request, **kwargs):
-        path = "/items/"+urllib.parse.quote(request.item_id)
+    def DeleteMaterial(self, request, **kwargs):
+        path = "/materials/"+urllib.parse.quote(request.material_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.item_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteModuleItemOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteMaterialOutput"),
             **kwargs,
         )
 
-    def DescribeModuleItem(self, request, **kwargs):
-        path = "/items/"+urllib.parse.quote(request.item_id)
+    def DescribeMaterial(self, request, **kwargs):
+        path = "/materials/"+urllib.parse.quote(request.material_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.item_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeModuleItemOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeMaterialOutput"),
             **kwargs,
         )
 
-    def ListModuleItems(self, request, **kwargs):
-        path = "/items"
+    def ListMaterials(self, request, **kwargs):
+        path = "/materials"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.ListModuleItemsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListMaterialsOutput"),
             **kwargs,
         )
 
