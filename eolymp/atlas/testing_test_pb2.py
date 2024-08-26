@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/atlas/testing_test.proto\x12\x0c\x65olymp.atlas\"\xbf\x01\n\x04Test\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\x05\x12\x0f\n\x07\x65xample\x18\x04 \x01(\x08\x12\x0e\n\x06secret\x18\x06 \x01(\x08\x12\r\n\x05score\x18\x05 \x01(\x02\x12\x17\n\x0finput_object_id\x18\n \x01(\t\x12\x11\n\tinput_url\x18\x0b \x01(\t\x12\x18\n\x10\x61nswer_object_id\x18\x14 \x01(\t\x12\x12\n\nanswer_url\x18\x15 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/atlas/testing_test.proto\x12\x0c\x65olymp.atlas\"\xcb\x03\n\x04Test\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\x05\x12\x0f\n\x07\x65xample\x18\x04 \x01(\x08\x12\x10\n\x08inactive\x18\x07 \x01(\x08\x12\x0e\n\x06secret\x18\x06 \x01(\x08\x12\r\n\x05score\x18\x05 \x01(\x02\x12\x19\n\x11\x65xample_input_url\x18( \x01(\t\x12\x1a\n\x12\x65xample_answer_url\x18) \x01(\t\x12\x19\n\x0finput_object_id\x18\n \x01(\tH\x00\x12\x13\n\tinput_url\x18\x0b \x01(\tH\x00\x12\x37\n\x0finput_generator\x18\x0c \x01(\x0b\x32\x1c.eolymp.atlas.Test.GeneratorH\x00\x12\x1a\n\x10\x61nswer_object_id\x18\x14 \x01(\tH\x01\x12\x14\n\nanswer_url\x18\x15 \x01(\tH\x01\x12\x38\n\x10\x61nswer_generator\x18\x16 \x01(\x0b\x32\x1c.eolymp.atlas.Test.GeneratorH\x01\x1a\x33\n\tGenerator\x12\x13\n\x0bscript_name\x18\x01 \x01(\t\x12\x11\n\targuments\x18\x02 \x03(\tB\x07\n\x05inputB\x08\n\x06\x61nswerB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.testing_test_pb2', globals())
@@ -22,5 +22,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _TEST._serialized_start=50
-  _TEST._serialized_end=241
+  _TEST._serialized_end=509
+  _TEST_GENERATOR._serialized_start=439
+  _TEST_GENERATOR._serialized_end=490
 # @@protoc_insertion_point(module_scope)
