@@ -1,4 +1,5 @@
 from eolymp.executor import checker_pb2 as _checker_pb2
+from eolymp.executor import file_pb2 as _file_pb2
 from eolymp.executor import interactor_pb2 as _interactor_pb2
 from eolymp.executor import script_pb2 as _script_pb2
 from google.protobuf.internal import containers as _containers
@@ -25,13 +26,6 @@ class Task(_message.Message):
         selector: _containers.RepeatedScalarFieldContainer[str]
         wall_time_limit: int
         def __init__(self, selector: _Optional[_Iterable[str]] = ..., actor: _Optional[str] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
-    class File(_message.Message):
-        __slots__ = ["path", "source_url"]
-        PATH_FIELD_NUMBER: _ClassVar[int]
-        SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
-        path: str
-        source_url: str
-        def __init__(self, path: _Optional[str] = ..., source_url: _Optional[str] = ...) -> None: ...
     class Generator(_message.Message):
         __slots__ = ["arguments", "script_name"]
         ARGUMENTS_FIELD_NUMBER: _ClassVar[int]
@@ -98,7 +92,7 @@ class Task(_message.Message):
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
     checker: _checker_pb2.Checker
     constraints: _containers.RepeatedCompositeFieldContainer[Task.Constraint]
-    files: _containers.RepeatedCompositeFieldContainer[Task.File]
+    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
     footer_url: str
     header_url: str
     interactor: _interactor_pb2.Interactor
@@ -113,4 +107,4 @@ class Task(_message.Message):
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     source: str
     source_url: str
-    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[Task.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[Task.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., runs: _Optional[_Iterable[_Union[Task.Run, _Mapping]]] = ..., files: _Optional[_Iterable[_Union[Task.File, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...
+    def __init__(self, reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[Task.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[Task.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., runs: _Optional[_Iterable[_Union[Task.Run, _Mapping]]] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...

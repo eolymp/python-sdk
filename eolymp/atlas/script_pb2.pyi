@@ -1,4 +1,4 @@
-from eolymp.atlas import file_pb2 as _file_pb2
+from eolymp.executor import file_pb2 as _file_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
