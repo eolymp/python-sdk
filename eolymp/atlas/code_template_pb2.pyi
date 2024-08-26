@@ -1,4 +1,4 @@
-from eolymp.atlas import code_template_file_pb2 as _code_template_file_pb2
+from eolymp.atlas import file_pb2 as _file_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -16,7 +16,7 @@ class Template(_message.Message):
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
-    files: _containers.RepeatedCompositeFieldContainer[_code_template_file_pb2.File]
+    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
     footer: str
     header: str
     id: str
@@ -24,4 +24,4 @@ class Template(_message.Message):
     runtime: str
     secret: bool
     source: str
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., runtime: _Optional[str] = ..., secret: bool = ..., source: _Optional[str] = ..., header: _Optional[str] = ..., footer: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_code_template_file_pb2.File, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., runtime: _Optional[str] = ..., secret: bool = ..., source: _Optional[str] = ..., header: _Optional[str] = ..., footer: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ...) -> None: ...

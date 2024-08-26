@@ -11,9 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.atlas import file_pb2 as eolymp_dot_atlas_dot_file__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/atlas/script.proto\x12\x0c\x65olymp.atlas\"\xab\x01\n\x06Script\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06secret\x18\x07 \x01(\x08\x12\x0f\n\x07runtime\x18\n \x01(\t\x12\x12\n\nsource_url\x18\x0b \x01(\t\x12(\n\x05\x66iles\x18\x14 \x03(\x0b\x32\x19.eolymp.atlas.Script.File\x1a(\n\x04\x46ile\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x12\n\nsource_url\x18\x03 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/atlas/script.proto\x12\x0c\x65olymp.atlas\x1a\x17\x65olymp/atlas/file.proto\"z\n\x06Script\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06secret\x18\x07 \x01(\x08\x12\x0f\n\x07runtime\x18\n \x01(\t\x12\x12\n\nsource_url\x18\x0b \x01(\t\x12!\n\x05\x66iles\x18\x14 \x03(\x0b\x32\x12.eolymp.atlas.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.script_pb2', globals())
@@ -21,8 +22,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _SCRIPT._serialized_start=44
-  _SCRIPT._serialized_end=215
-  _SCRIPT_FILE._serialized_start=175
-  _SCRIPT_FILE._serialized_end=215
+  _SCRIPT._serialized_start=68
+  _SCRIPT._serialized_end=190
 # @@protoc_insertion_point(module_scope)

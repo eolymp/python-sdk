@@ -1,3 +1,4 @@
+from eolymp.atlas import file_pb2 as _file_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -7,23 +8,16 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Script(_message.Message):
     __slots__ = ["files", "id", "name", "runtime", "secret", "source_url"]
-    class File(_message.Message):
-        __slots__ = ["path", "source_url"]
-        PATH_FIELD_NUMBER: _ClassVar[int]
-        SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
-        path: str
-        source_url: str
-        def __init__(self, path: _Optional[str] = ..., source_url: _Optional[str] = ...) -> None: ...
     FILES_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
-    files: _containers.RepeatedCompositeFieldContainer[Script.File]
+    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
     id: str
     name: str
     runtime: str
     secret: bool
     source_url: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., secret: bool = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., files: _Optional[_Iterable[_Union[Script.File, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., secret: bool = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ...) -> None: ...
