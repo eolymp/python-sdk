@@ -15,6 +15,7 @@ from eolymp.atlas import attachment_pb2 as eolymp_dot_atlas_dot_attachment__pb2
 from eolymp.atlas import code_template_pb2 as eolymp_dot_atlas_dot_code__template__pb2
 from eolymp.atlas import editorial_pb2 as eolymp_dot_atlas_dot_editorial__pb2
 from eolymp.atlas import problem_pb2 as eolymp_dot_atlas_dot_problem__pb2
+from eolymp.atlas import script_pb2 as eolymp_dot_atlas_dot_script__pb2
 from eolymp.atlas import solution_pb2 as eolymp_dot_atlas_dot_solution__pb2
 from eolymp.atlas import statement_pb2 as eolymp_dot_atlas_dot_statement__pb2
 from eolymp.atlas import testing_config_pb2 as eolymp_dot_atlas_dot_testing__config__pb2
@@ -24,7 +25,7 @@ from eolymp.executor import checker_pb2 as eolymp_dot_executor_dot_checker__pb2
 from eolymp.executor import interactor_pb2 as eolymp_dot_executor_dot_interactor__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/atlas/snapshot.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/atlas/attachment.proto\x1a eolymp/atlas/code_template.proto\x1a\x1c\x65olymp/atlas/editorial.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x1b\x65olymp/atlas/solution.proto\x1a\x1c\x65olymp/atlas/statement.proto\x1a!eolymp/atlas/testing_config.proto\x1a\x1f\x65olymp/atlas/testing_test.proto\x1a\"eolymp/atlas/testing_testset.proto\x1a\x1d\x65olymp/executor/checker.proto\x1a eolymp/executor/interactor.proto\"\xe7\x03\n\x08Snapshot\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\x12,\n\x07testing\x18\n \x01(\x0b\x32\x1b.eolymp.atlas.TestingConfig\x12)\n\x07\x63hecker\x18\x02 \x01(\x0b\x32\x18.eolymp.executor.Checker\x12/\n\ninteractor\x18\x03 \x01(\x0b\x32\x1b.eolymp.executor.Interactor\x12+\n\nstatements\x18\x04 \x03(\x0b\x32\x17.eolymp.atlas.Statement\x12)\n\ttemplates\x18\x05 \x03(\x0b\x32\x16.eolymp.atlas.Template\x12-\n\x0b\x61ttachments\x18\x06 \x03(\x0b\x32\x18.eolymp.atlas.Attachment\x12\'\n\x08testsets\x18\x07 \x03(\x0b\x32\x15.eolymp.atlas.Testset\x12!\n\x05tests\x18\x08 \x03(\x0b\x32\x12.eolymp.atlas.Test\x12+\n\neditorials\x18\t \x03(\x0b\x32\x17.eolymp.atlas.Editorial\x12)\n\tsolutions\x18\x0b \x03(\x0b\x32\x16.eolymp.atlas.SolutionB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/atlas/snapshot.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/atlas/attachment.proto\x1a eolymp/atlas/code_template.proto\x1a\x1c\x65olymp/atlas/editorial.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x19\x65olymp/atlas/script.proto\x1a\x1b\x65olymp/atlas/solution.proto\x1a\x1c\x65olymp/atlas/statement.proto\x1a!eolymp/atlas/testing_config.proto\x1a\x1f\x65olymp/atlas/testing_test.proto\x1a\"eolymp/atlas/testing_testset.proto\x1a\x1d\x65olymp/executor/checker.proto\x1a eolymp/executor/interactor.proto\"\x8e\x04\n\x08Snapshot\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\x12,\n\x07testing\x18\n \x01(\x0b\x32\x1b.eolymp.atlas.TestingConfig\x12)\n\x07\x63hecker\x18\x02 \x01(\x0b\x32\x18.eolymp.executor.Checker\x12/\n\ninteractor\x18\x03 \x01(\x0b\x32\x1b.eolymp.executor.Interactor\x12+\n\nstatements\x18\x04 \x03(\x0b\x32\x17.eolymp.atlas.Statement\x12)\n\ttemplates\x18\x05 \x03(\x0b\x32\x16.eolymp.atlas.Template\x12-\n\x0b\x61ttachments\x18\x06 \x03(\x0b\x32\x18.eolymp.atlas.Attachment\x12\'\n\x08testsets\x18\x07 \x03(\x0b\x32\x15.eolymp.atlas.Testset\x12!\n\x05tests\x18\x08 \x03(\x0b\x32\x12.eolymp.atlas.Test\x12+\n\neditorials\x18\t \x03(\x0b\x32\x17.eolymp.atlas.Editorial\x12)\n\tsolutions\x18\x0b \x03(\x0b\x32\x16.eolymp.atlas.Solution\x12%\n\x07scripts\x18\x0c \x03(\x0b\x32\x14.eolymp.atlas.ScriptB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.snapshot_pb2', globals())
@@ -32,6 +33,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _SNAPSHOT._serialized_start=397
-  _SNAPSHOT._serialized_end=884
+  _SNAPSHOT._serialized_start=424
+  _SNAPSHOT._serialized_end=950
 # @@protoc_insertion_point(module_scope)
