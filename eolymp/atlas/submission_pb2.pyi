@@ -85,7 +85,7 @@ class Submission(_message.Message):
         wall_time_usage: int
         def __init__(self, log_url: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., exit_code: _Optional[int] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ["answer_url", "checker_execution_data", "checker_stats", "cost", "cpu_time_usage", "debug_stats", "id", "index", "input_url", "interactor_execution_data", "interactor_stats", "memory_usage", "output_url", "resource_usage", "score", "status", "stderr_url", "test_id", "verdict", "wall_time_usage"]
+        __slots__ = ["answer_url", "checker_execution_data", "checker_stats", "cost", "cpu_time_usage", "debug_stats", "id", "index", "input_url", "interactor_execution_data", "interactor_stats", "memory_usage", "output_url", "resource_usage", "score", "status", "test_id", "verdict", "wall_time_usage"]
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ACCEPTED: Submission.Run.Status
@@ -115,7 +115,6 @@ class Submission(_message.Message):
         SCORE_FIELD_NUMBER: _ClassVar[int]
         SKIPPED: Submission.Run.Status
         STATUS_FIELD_NUMBER: _ClassVar[int]
-        STDERR_URL_FIELD_NUMBER: _ClassVar[int]
         TEST_ID_FIELD_NUMBER: _ClassVar[int]
         TIMEOUT: Submission.Run.Status
         VERDICT_FIELD_NUMBER: _ClassVar[int]
@@ -138,11 +137,10 @@ class Submission(_message.Message):
         resource_usage: float
         score: float
         status: Submission.Run.Status
-        stderr_url: str
         test_id: str
         verdict: Submission.Verdict
         wall_time_usage: int
-        def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., stderr_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Run.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_execution_data: _Optional[_Union[Submission.CheckerExecutionData, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_execution_data: _Optional[_Union[Submission.InteractorExecutionData, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Run.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_execution_data: _Optional[_Union[Submission.CheckerExecutionData, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_execution_data: _Optional[_Union[Submission.InteractorExecutionData, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
     ACCEPTED: Submission.Verdict
     COMPLETE: Submission.Status
     COST_FIELD_NUMBER: _ClassVar[int]
