@@ -12,10 +12,11 @@ class Status(_message.Message):
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Run(_message.Message):
-        __slots__ = ["checker_exit_code", "checker_log_url", "checker_memory_usage", "checker_stats", "checker_wall_time_usage", "cost", "cpu_time_limit", "cpu_time_usage", "exit_code", "interactor_exit_code", "interactor_log_url", "interactor_memory_usage", "interactor_stats", "interactor_wall_time_usage", "memory_limit", "memory_usage", "output_url", "reference", "score", "signal", "stats", "status", "stderr_url", "wall_time_limit", "wall_time_usage"]
+        __slots__ = ["answer_url", "checker_exit_code", "checker_log_url", "checker_memory_usage", "checker_stats", "checker_wall_time_usage", "cost", "cpu_time_limit", "cpu_time_usage", "exit_code", "input_url", "interactor_exit_code", "interactor_log_url", "interactor_memory_usage", "interactor_stats", "interactor_wall_time_usage", "memory_limit", "memory_usage", "output_url", "reference", "score", "signal", "stats", "status", "stderr_url", "wall_time_limit", "wall_time_usage"]
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
         ACCEPTED: Status.Run.Status
+        ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
         CHECKER_EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
         CHECKER_LOG_URL_FIELD_NUMBER: _ClassVar[int]
         CHECKER_MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
@@ -28,6 +29,7 @@ class Status(_message.Message):
         EXECUTED: Status.Run.Status
         EXECUTING: Status.Run.Status
         EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
+        INPUT_URL_FIELD_NUMBER: _ClassVar[int]
         INTERACTION_FAILURE: Status.Run.Status
         INTERACTOR_EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
         INTERACTOR_LOG_URL_FIELD_NUMBER: _ClassVar[int]
@@ -53,6 +55,7 @@ class Status(_message.Message):
         WALL_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
         WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
         WRONG_ANSWER: Status.Run.Status
+        answer_url: str
         checker_exit_code: int
         checker_log_url: str
         checker_memory_usage: int
@@ -62,6 +65,7 @@ class Status(_message.Message):
         cpu_time_limit: int
         cpu_time_usage: int
         exit_code: int
+        input_url: str
         interactor_exit_code: int
         interactor_log_url: str
         interactor_memory_usage: int
@@ -78,7 +82,7 @@ class Status(_message.Message):
         stderr_url: str
         wall_time_limit: int
         wall_time_usage: int
-        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[Status.Run.Status, str]] = ..., stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., score: _Optional[float] = ..., cost: _Optional[float] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., output_url: _Optional[str] = ..., stderr_url: _Optional[str] = ..., checker_log_url: _Optional[str] = ..., checker_wall_time_usage: _Optional[int] = ..., checker_memory_usage: _Optional[int] = ..., checker_exit_code: _Optional[int] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_log_url: _Optional[str] = ..., interactor_wall_time_usage: _Optional[int] = ..., interactor_memory_usage: _Optional[int] = ..., interactor_exit_code: _Optional[int] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[Status.Run.Status, str]] = ..., stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., score: _Optional[float] = ..., cost: _Optional[float] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., stderr_url: _Optional[str] = ..., checker_log_url: _Optional[str] = ..., checker_wall_time_usage: _Optional[int] = ..., checker_memory_usage: _Optional[int] = ..., checker_exit_code: _Optional[int] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_log_url: _Optional[str] = ..., interactor_wall_time_usage: _Optional[int] = ..., interactor_memory_usage: _Optional[int] = ..., interactor_exit_code: _Optional[int] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
     AGENT_FIELD_NUMBER: _ClassVar[int]
     ERROR: Status.Type
     ERROR_FIELD_NUMBER: _ClassVar[int]
