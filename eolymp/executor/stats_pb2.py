@@ -11,10 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.executor import usage_pb2 as eolymp_dot_executor_dot_usage__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/executor/stats.proto\x12\x0f\x65olymp.executor\x1a\x1b\x65olymp/executor/usage.proto\"\xc7\x02\n\x05Stats\x12\x11\n\tstdin_url\x18\x01 \x01(\t\x12\x12\n\nstdout_url\x18\x02 \x01(\t\x12\x12\n\nstderr_url\x18\x03 \x01(\t\x12\x15\n\roverall_usage\x18\n \x01(\x02\x12\x1a\n\x12wall_time_duration\x18\x14 \x01(\r\x12\x17\n\x0fwall_time_usage\x18\x15 \x01(\x02\x12\x19\n\x11\x63pu_time_duration\x18\x19 \x01(\r\x12\x16\n\x0e\x63pu_time_usage\x18\x1a \x01(\x02\x12\x13\n\x0bmemory_peak\x18\x1e \x01(\x04\x12\x14\n\x0cmemory_usage\x18\x1f \x01(\x02\x12\x36\n\x0eresource_usage\x18\x32 \x01(\x0b\x32\x1e.eolymp.executor.ResourceUsage\x12\x11\n\texit_code\x18\x64 \x01(\r\x12\x0e\n\x06signal\x18\x65 \x01(\rB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/executor/stats.proto\x12\x0f\x65olymp.executor\"\xf8\x01\n\x05Stats\x12\x11\n\tstdin_url\x18\x01 \x01(\t\x12\x12\n\nstdout_url\x18\x02 \x01(\t\x12\x12\n\nstderr_url\x18\x03 \x01(\t\x12\x1a\n\x12wall_time_duration\x18\x14 \x01(\r\x12\x17\n\x0fwall_time_limit\x18\x15 \x01(\r\x12\x19\n\x11\x63pu_time_duration\x18\x19 \x01(\r\x12\x16\n\x0e\x63pu_time_limit\x18\x1a \x01(\r\x12\x13\n\x0bmemory_peak\x18\x1e \x01(\x04\x12\x14\n\x0cmemory_limit\x18\x1f \x01(\x04\x12\x0e\n\x06signal\x18\x65 \x01(\r\x12\x11\n\texit_code\x18\x64 \x01(\rB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.stats_pb2', globals())
@@ -22,6 +21,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
-  _STATS._serialized_start=78
-  _STATS._serialized_end=405
+  _STATS._serialized_start=49
+  _STATS._serialized_end=297
 # @@protoc_insertion_point(module_scope)
