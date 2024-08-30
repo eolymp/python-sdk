@@ -12,6 +12,8 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
     __slots__ = ["cost", "cpu_time_usage", "cursor", "error", "error_url", "groups", "id", "lang", "member_id", "memory_usage", "percentage", "problem_id", "resource_usage", "score", "signature", "source", "source_url", "status", "submitted_at", "user_id", "verdict", "wall_time_usage"]
+    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Verdict(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -151,6 +153,7 @@ class Submission(_message.Message):
     ERROR_FIELD_NUMBER: _ClassVar[int]
     ERROR_URL_FIELD_NUMBER: _ClassVar[int]
     FAILURE: Submission.Status
+    GROUPS: Submission.Extra
     GROUPS_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
@@ -158,11 +161,13 @@ class Submission(_message.Message):
     MEMORY_OVERFLOW: Submission.Verdict
     MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
     NONE: Submission.Status
+    NO_EXTRA: Submission.Extra
     NO_VERDICT: Submission.Verdict
     PENDING: Submission.Status
     PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
+    RUNS: Submission.Extra
     RUNTIME_ERROR: Submission.Verdict
     SCORE_FIELD_NUMBER: _ClassVar[int]
     SIGNATURE_FIELD_NUMBER: _ClassVar[int]
