@@ -35,12 +35,14 @@ class DeleteScriptOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeScriptInput(_message.Message):
-    __slots__ = ["script_id", "version"]
+    __slots__ = ["extra", "script_id", "version"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra]
     script_id: str
     version: int
-    def __init__(self, script_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, script_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra, str]]] = ...) -> None: ...
 
 class DescribeScriptOutput(_message.Message):
     __slots__ = ["script"]
@@ -49,7 +51,7 @@ class DescribeScriptOutput(_message.Message):
     def __init__(self, script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class ListScriptsInput(_message.Message):
-    __slots__ = ["filters", "offset", "order", "size", "sort", "version"]
+    __slots__ = ["extra", "filters", "offset", "order", "size", "sort", "version"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -63,6 +65,7 @@ class ListScriptsInput(_message.Message):
         query: str
         runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     NAME: ListScriptsInput.Sortable
     OFFSET_FIELD_NUMBER: _ClassVar[int]
@@ -70,13 +73,14 @@ class ListScriptsInput(_message.Message):
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra]
     filters: ListScriptsInput.Filter
     offset: int
     order: _direction_pb2.Direction
     size: int
     sort: ListScriptsInput.Sortable
     version: int
-    def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScriptsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListScriptsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScriptsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListScriptsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra, str]]] = ...) -> None: ...
 
 class ListScriptsOutput(_message.Message):
     __slots__ = ["items", "total"]
