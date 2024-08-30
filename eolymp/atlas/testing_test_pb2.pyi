@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Test(_message.Message):
-    __slots__ = ["answer_generator", "answer_object_id", "answer_url", "example", "example_answer_url", "example_input_url", "id", "inactive", "index", "input_generator", "input_object_id", "input_url", "score", "secret", "testset_id"]
+    __slots__ = ["answer_generator", "answer_object_id", "answer_url", "example", "example_answer_url", "example_input_url", "generated_answer_url", "generated_input_url", "id", "inactive", "index", "input_generator", "input_object_id", "input_url", "score", "secret", "testset_id"]
     class Generator(_message.Message):
         __slots__ = ["arguments", "script_name"]
         ARGUMENTS_FIELD_NUMBER: _ClassVar[int]
@@ -20,6 +20,8 @@ class Test(_message.Message):
     EXAMPLE_ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
     EXAMPLE_FIELD_NUMBER: _ClassVar[int]
     EXAMPLE_INPUT_URL_FIELD_NUMBER: _ClassVar[int]
+    GENERATED_ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
+    GENERATED_INPUT_URL_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     INACTIVE_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
@@ -35,6 +37,8 @@ class Test(_message.Message):
     example: bool
     example_answer_url: str
     example_input_url: str
+    generated_answer_url: str
+    generated_input_url: str
     id: str
     inactive: bool
     index: int
@@ -44,4 +48,4 @@ class Test(_message.Message):
     score: float
     secret: bool
     testset_id: str
-    def __init__(self, id: _Optional[str] = ..., testset_id: _Optional[str] = ..., index: _Optional[int] = ..., example: bool = ..., inactive: bool = ..., secret: bool = ..., score: _Optional[float] = ..., example_input_url: _Optional[str] = ..., example_answer_url: _Optional[str] = ..., input_object_id: _Optional[str] = ..., input_url: _Optional[str] = ..., input_generator: _Optional[_Union[Test.Generator, _Mapping]] = ..., answer_object_id: _Optional[str] = ..., answer_url: _Optional[str] = ..., answer_generator: _Optional[_Union[Test.Generator, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., testset_id: _Optional[str] = ..., index: _Optional[int] = ..., example: bool = ..., inactive: bool = ..., secret: bool = ..., score: _Optional[float] = ..., example_input_url: _Optional[str] = ..., example_answer_url: _Optional[str] = ..., generated_input_url: _Optional[str] = ..., generated_answer_url: _Optional[str] = ..., input_object_id: _Optional[str] = ..., input_url: _Optional[str] = ..., input_generator: _Optional[_Union[Test.Generator, _Mapping]] = ..., answer_object_id: _Optional[str] = ..., answer_url: _Optional[str] = ..., answer_generator: _Optional[_Union[Test.Generator, _Mapping]] = ...) -> None: ...
