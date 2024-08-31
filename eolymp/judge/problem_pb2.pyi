@@ -41,18 +41,22 @@ class Problem(_message.Message):
         title: str
         def __init__(self, locale: _Optional[str] = ..., title: _Optional[str] = ..., content_raw: _Optional[str] = ..., content: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., format: _Optional[_Union[Problem.Statement.Format, str]] = ..., download_link: _Optional[str] = ...) -> None: ...
     class Test(_message.Message):
-        __slots__ = ["answer_object_id", "example", "index", "input_object_id", "score"]
+        __slots__ = ["answer_object_id", "answer_url", "example", "index", "input_object_id", "input_url", "score"]
         ANSWER_OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
+        ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
         EXAMPLE_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         INPUT_OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
+        INPUT_URL_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         answer_object_id: str
+        answer_url: str
         example: bool
         index: int
         input_object_id: str
+        input_url: str
         score: float
-        def __init__(self, index: _Optional[int] = ..., example: bool = ..., input_object_id: _Optional[str] = ..., answer_object_id: _Optional[str] = ..., score: _Optional[float] = ...) -> None: ...
+        def __init__(self, index: _Optional[int] = ..., example: bool = ..., input_object_id: _Optional[str] = ..., answer_object_id: _Optional[str] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., score: _Optional[float] = ...) -> None: ...
     BASE_ID_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CPU_LIMIT_FIELD_NUMBER: _ClassVar[int]
