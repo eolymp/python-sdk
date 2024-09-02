@@ -228,10 +228,12 @@ class UpdateTestInput(_message.Message):
     EXAMPLE_ANSWER: UpdateTestInput.Patch
     EXAMPLE_INPUT: UpdateTestInput.Patch
     INACTIVE: UpdateTestInput.Patch
+    INDEX: UpdateTestInput.Patch
     INPUT: UpdateTestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SCORE: UpdateTestInput.Patch
+    SECRET: UpdateTestInput.Patch
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_FIELD_NUMBER: _ClassVar[int]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
