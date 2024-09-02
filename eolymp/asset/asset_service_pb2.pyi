@@ -36,12 +36,14 @@ class CompleteMultipartUploadOutput(_message.Message):
     def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
 
 class StartMultipartUploadInput(_message.Message):
-    __slots__ = ["name", "type"]
+    __slots__ = ["name", "ttl", "type"]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    TTL_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     name: str
+    ttl: int
     type: str
-    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., ttl: _Optional[int] = ...) -> None: ...
 
 class StartMultipartUploadOutput(_message.Message):
     __slots__ = ["upload_id"]
@@ -50,14 +52,16 @@ class StartMultipartUploadOutput(_message.Message):
     def __init__(self, upload_id: _Optional[str] = ...) -> None: ...
 
 class UploadAssetInput(_message.Message):
-    __slots__ = ["data", "name", "type"]
+    __slots__ = ["data", "name", "ttl", "type"]
     DATA_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    TTL_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     data: bytes
     name: str
+    ttl: int
     type: str
-    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., data: _Optional[bytes] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., ttl: _Optional[int] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadAssetOutput(_message.Message):
     __slots__ = ["asset_url"]
