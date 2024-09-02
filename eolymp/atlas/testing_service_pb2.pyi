@@ -7,6 +7,7 @@ from eolymp.atlas import testing_testset_pb2 as _testing_testset_pb2
 from eolymp.executor import checker_pb2 as _checker_pb2
 from eolymp.executor import interactor_pb2 as _interactor_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -218,16 +219,28 @@ class UpdateInteractorOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateTestInput(_message.Message):
-    __slots__ = ["problem_id", "test", "test_id", "testset_id"]
+    __slots__ = ["patch", "problem_id", "test", "test_id", "testset_id"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateTestInput.Patch
+    ANSWER: UpdateTestInput.Patch
+    EXAMPLE: UpdateTestInput.Patch
+    EXAMPLE_ANSWER: UpdateTestInput.Patch
+    EXAMPLE_INPUT: UpdateTestInput.Patch
+    INACTIVE: UpdateTestInput.Patch
+    INPUT: UpdateTestInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    SCORE: UpdateTestInput.Patch
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_FIELD_NUMBER: _ClassVar[int]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
+    patch: _containers.RepeatedScalarFieldContainer[UpdateTestInput.Patch]
     problem_id: str
     test: _testing_test_pb2.Test
     test_id: str
     testset_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateTestInput.Patch, str]]] = ..., problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
 
 class UpdateTestOutput(_message.Message):
     __slots__ = []
