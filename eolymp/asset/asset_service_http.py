@@ -47,6 +47,17 @@ class AssetServiceClient:
             **kwargs,
         )
 
+    def ResolveAlias(self, request, **kwargs):
+        path = "/resolve-asset-alias"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.ResolveAliasOutput"),
+            **kwargs,
+        )
+
     def StartMultipartUpload(self, request, **kwargs):
         path = "/uploads"
 

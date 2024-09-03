@@ -35,15 +35,29 @@ class CompleteMultipartUploadOutput(_message.Message):
     asset_url: str
     def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
 
+class ResolveAliasInput(_message.Message):
+    __slots__ = ["alias"]
+    ALIAS_FIELD_NUMBER: _ClassVar[int]
+    alias: str
+    def __init__(self, alias: _Optional[str] = ...) -> None: ...
+
+class ResolveAliasOutput(_message.Message):
+    __slots__ = ["asset_url"]
+    ASSET_URL_FIELD_NUMBER: _ClassVar[int]
+    asset_url: str
+    def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
+
 class StartMultipartUploadInput(_message.Message):
-    __slots__ = ["name", "ttl", "type"]
+    __slots__ = ["aliases", "name", "ttl", "type"]
+    ALIASES_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     TTL_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    aliases: _containers.RepeatedScalarFieldContainer[str]
     name: str
     ttl: int
     type: str
-    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., ttl: _Optional[int] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., aliases: _Optional[_Iterable[str]] = ..., ttl: _Optional[int] = ...) -> None: ...
 
 class StartMultipartUploadOutput(_message.Message):
     __slots__ = ["upload_id"]
@@ -52,16 +66,18 @@ class StartMultipartUploadOutput(_message.Message):
     def __init__(self, upload_id: _Optional[str] = ...) -> None: ...
 
 class UploadAssetInput(_message.Message):
-    __slots__ = ["data", "name", "ttl", "type"]
+    __slots__ = ["aliases", "data", "name", "ttl", "type"]
+    ALIASES_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     TTL_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    aliases: _containers.RepeatedScalarFieldContainer[str]
     data: bytes
     name: str
     ttl: int
     type: str
-    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., ttl: _Optional[int] = ..., data: _Optional[bytes] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., aliases: _Optional[_Iterable[str]] = ..., ttl: _Optional[int] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadAssetOutput(_message.Message):
     __slots__ = ["asset_url"]
