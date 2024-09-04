@@ -47,14 +47,14 @@ class AssetServiceClient:
             **kwargs,
         )
 
-    def ResolveAlias(self, request, **kwargs):
-        path = "/resolve-asset-alias"
+    def LookupAsset(self, request, **kwargs):
+        path = "/assets:lookup"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.asset.ResolveAliasOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.LookupAssetOutput"),
             **kwargs,
         )
 
