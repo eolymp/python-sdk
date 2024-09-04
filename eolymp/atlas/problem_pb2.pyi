@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ["acceptance_rate", "difficulty", "id", "links", "number", "origin", "private", "submissions_accepted", "submissions_count", "topics", "url", "visible", "vote", "vote_count"]
+    __slots__ = ["acceptance_rate", "difficulty", "id", "links", "max_cpu_limit", "max_memory_limit", "max_time_limit", "min_cpu_limit", "min_memory_limit", "min_time_limit", "number", "origin", "private", "submissions_accepted", "submissions_count", "topics", "url", "visible", "vote", "vote_count"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class LinksEntry(_message.Message):
@@ -21,6 +21,12 @@ class Problem(_message.Message):
     DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     LINKS_FIELD_NUMBER: _ClassVar[int]
+    MAX_CPU_LIMIT_FIELD_NUMBER: _ClassVar[int]
+    MAX_MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
+    MAX_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
+    MIN_CPU_LIMIT_FIELD_NUMBER: _ClassVar[int]
+    MIN_MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
+    MIN_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     PRIVATE_FIELD_NUMBER: _ClassVar[int]
@@ -37,6 +43,12 @@ class Problem(_message.Message):
     difficulty: int
     id: str
     links: _containers.ScalarMap[str, str]
+    max_cpu_limit: int
+    max_memory_limit: int
+    max_time_limit: int
+    min_cpu_limit: int
+    min_memory_limit: int
+    min_time_limit: int
     number: int
     origin: str
     private: bool
@@ -47,4 +59,4 @@ class Problem(_message.Message):
     visible: bool
     vote: int
     vote_count: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., min_time_limit: _Optional[int] = ..., max_time_limit: _Optional[int] = ..., min_cpu_limit: _Optional[int] = ..., max_cpu_limit: _Optional[int] = ..., min_memory_limit: _Optional[int] = ..., max_memory_limit: _Optional[int] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ...) -> None: ...
