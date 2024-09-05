@@ -105,16 +105,14 @@ class StartMultipartUploadOutput(_message.Message):
     def __init__(self, upload_id: _Optional[str] = ...) -> None: ...
 
 class StartStreamInput(_message.Message):
-    __slots__ = ["keys", "name", "ttl", "type"]
-    KEYS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["name", "ttl", "type"]
     NAME_FIELD_NUMBER: _ClassVar[int]
     TTL_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    keys: _containers.RepeatedScalarFieldContainer[str]
     name: str
     ttl: int
     type: str
-    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., keys: _Optional[_Iterable[str]] = ..., ttl: _Optional[int] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., ttl: _Optional[int] = ...) -> None: ...
 
 class StartStreamOutput(_message.Message):
     __slots__ = ["stream_id"]
