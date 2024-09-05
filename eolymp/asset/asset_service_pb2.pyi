@@ -9,12 +9,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AppendStreamInput(_message.Message):
-    __slots__ = ["data", "stream_id"]
+    __slots__ = ["data", "offset", "stream_id"]
     DATA_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
     STREAM_ID_FIELD_NUMBER: _ClassVar[int]
     data: bytes
+    offset: int
     stream_id: str
-    def __init__(self, stream_id: _Optional[str] = ..., data: _Optional[bytes] = ...) -> None: ...
+    def __init__(self, stream_id: _Optional[str] = ..., offset: _Optional[int] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class AppendStreamOutput(_message.Message):
     __slots__ = []
