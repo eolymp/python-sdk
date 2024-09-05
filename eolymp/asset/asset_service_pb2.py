@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/asset/asset_service.proto\x12\x0c\x65olymp.asset\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\xc2\x02\n\x10UploadImageInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x31\n\x04\x63rop\x18\n \x01(\x0b\x32#.eolymp.asset.UploadImageInput.Crop\x12\x31\n\x04size\x18\x0b \x01(\x0b\x32#.eolymp.asset.UploadImageInput.Size\x12\x35\n\x08variants\x18\x14 \x03(\x0b\x32#.eolymp.asset.UploadImageInput.Size\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\x1a%\n\x04Size\x12\r\n\x05width\x18\x01 \x01(\r\x12\x0e\n\x06height\x18\x02 \x01(\r\x1a@\n\x04\x43rop\x12\x0b\n\x03top\x18\x01 \x01(\r\x12\r\n\x05right\x18\x02 \x01(\r\x12\x0e\n\x06\x62ottom\x18\x03 \x01(\r\x12\x0c\n\x04left\x18\x04 \x01(\r\"&\n\x11UploadImageOutput\x12\x11\n\timage_url\x18\x01 \x01(\t\";\n\x0fUploadFileInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\"$\n\x10UploadFileOutput\x12\x10\n\x08\x66ile_url\x18\x01 \x01(\t\"W\n\x10UploadAssetInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04keys\x18\x03 \x03(\t\x12\x0b\n\x03ttl\x18\x14 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\"&\n\x11UploadAssetOutput\x12\x11\n\tasset_url\x18\x01 \x01(\t\"R\n\x19StartMultipartUploadInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04keys\x18\x03 \x03(\t\x12\x0b\n\x03ttl\x18\x14 \x01(\r\"/\n\x1aStartMultipartUploadOutput\x12\x11\n\tupload_id\x18\x01 \x01(\t\"G\n\x0fUploadPartInput\x12\x11\n\tupload_id\x18\x01 \x01(\t\x12\x13\n\x0bpart_number\x18\x02 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\"!\n\x10UploadPartOutput\x12\r\n\x05token\x18\x01 \x01(\t\"\xde\x01\n\x1c\x43ompleteMultipartUploadInput\x12\x11\n\tupload_id\x18\x01 \x01(\t\x12>\n\x05parts\x18\n \x03(\x0b\x32/.eolymp.asset.CompleteMultipartUploadInput.Part\x1ak\n\x04Part\x12\x0e\n\x06number\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x14\n\x0c\x63hecksum_md5\x18\n \x01(\t\x12\x15\n\rchecksum_sha1\x18\x0b \x01(\t\x12\x17\n\x0f\x63hecksum_sha256\x18\x0c \x01(\t\"2\n\x1d\x43ompleteMultipartUploadOutput\x12\x11\n\tasset_url\x18\x01 \x01(\t\"\x1f\n\x10LookupAssetInput\x12\x0b\n\x03key\x18\x01 \x01(\t\"&\n\x11LookupAssetOutput\x12\x11\n\tasset_url\x18\x01 \x01(\t2\xbb\x08\n\x0c\x41ssetService\x12\x8e\x01\n\x0bUploadImage\x12\x1e.eolymp.asset.UploadImageInput\x1a\x1f.eolymp.asset.UploadImageOutput\">\x82\xe3\n\x15\x8a\xe3\n\x11\x61sset:image:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\"\x0e/assets/images\x12\x8a\x01\n\nUploadFile\x12\x1d.eolymp.asset.UploadFileInput\x1a\x1e.eolymp.asset.UploadFileOutput\"=\x82\xe3\n\x15\x8a\xe3\n\x11\x61sset:image:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0f\"\r/assets/files\x12\x87\x01\n\x0bUploadAsset\x12\x1e.eolymp.asset.UploadAssetInput\x1a\x1f.eolymp.asset.UploadAssetOutput\"7\x82\xe3\n\x15\x8a\xe3\n\x11\x61sset:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\t\"\x07/assets\x12\x8d\x01\n\x0bLookupAsset\x12\x1e.eolymp.asset.LookupAssetInput\x1a\x1f.eolymp.asset.LookupAssetOutput\"=\x82\xe3\n\x14\x8a\xe3\n\x10\x61sset:asset:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\"\x0e/assets:lookup\x12\xa3\x01\n\x14StartMultipartUpload\x12\'.eolymp.asset.StartMultipartUploadInput\x1a(.eolymp.asset.StartMultipartUploadOutput\"8\x82\xe3\n\x15\x8a\xe3\n\x11\x61tlas:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\x1a\x08/uploads\x12\x91\x01\n\nUploadPart\x12\x1d.eolymp.asset.UploadPartInput\x1a\x1e.eolymp.asset.UploadPartOutput\"D\x82\xe3\n\x15\x8a\xe3\n\x11\x61tlas:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\"\x14/uploads/{upload_id}\x12\xb8\x01\n\x17\x43ompleteMultipartUpload\x12*.eolymp.asset.CompleteMultipartUploadInput\x1a+.eolymp.asset.CompleteMultipartUploadOutput\"D\x82\xe3\n\x15\x8a\xe3\n\x11\x61tlas:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x1a\x14/uploads/{upload_id}B-Z+github.com/eolymp/go-sdk/eolymp/asset;assetb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/asset/asset_service.proto\x12\x0c\x65olymp.asset\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\xc2\x02\n\x10UploadImageInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x31\n\x04\x63rop\x18\n \x01(\x0b\x32#.eolymp.asset.UploadImageInput.Crop\x12\x31\n\x04size\x18\x0b \x01(\x0b\x32#.eolymp.asset.UploadImageInput.Size\x12\x35\n\x08variants\x18\x14 \x03(\x0b\x32#.eolymp.asset.UploadImageInput.Size\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\x1a%\n\x04Size\x12\r\n\x05width\x18\x01 \x01(\r\x12\x0e\n\x06height\x18\x02 \x01(\r\x1a@\n\x04\x43rop\x12\x0b\n\x03top\x18\x01 \x01(\r\x12\r\n\x05right\x18\x02 \x01(\r\x12\x0e\n\x06\x62ottom\x18\x03 \x01(\r\x12\x0c\n\x04left\x18\x04 \x01(\r\"&\n\x11UploadImageOutput\x12\x11\n\timage_url\x18\x01 \x01(\t\";\n\x0fUploadFileInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\"$\n\x10UploadFileOutput\x12\x10\n\x08\x66ile_url\x18\x01 \x01(\t\"W\n\x10UploadAssetInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04keys\x18\x03 \x03(\t\x12\x0b\n\x03ttl\x18\x14 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\"&\n\x11UploadAssetOutput\x12\x11\n\tasset_url\x18\x01 \x01(\t\"\x1f\n\x10LookupAssetInput\x12\x0b\n\x03key\x18\x01 \x01(\t\"&\n\x11LookupAssetOutput\x12\x11\n\tasset_url\x18\x01 \x01(\t\"R\n\x19StartMultipartUploadInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04keys\x18\x03 \x03(\t\x12\x0b\n\x03ttl\x18\x14 \x01(\r\"/\n\x1aStartMultipartUploadOutput\x12\x11\n\tupload_id\x18\x01 \x01(\t\"G\n\x0fUploadPartInput\x12\x11\n\tupload_id\x18\x01 \x01(\t\x12\x13\n\x0bpart_number\x18\x02 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\"!\n\x10UploadPartOutput\x12\r\n\x05token\x18\x01 \x01(\t\"\xde\x01\n\x1c\x43ompleteMultipartUploadInput\x12\x11\n\tupload_id\x18\x01 \x01(\t\x12>\n\x05parts\x18\n \x03(\x0b\x32/.eolymp.asset.CompleteMultipartUploadInput.Part\x1ak\n\x04Part\x12\x0e\n\x06number\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x14\n\x0c\x63hecksum_md5\x18\n \x01(\t\x12\x15\n\rchecksum_sha1\x18\x0b \x01(\t\x12\x17\n\x0f\x63hecksum_sha256\x18\x0c \x01(\t\"2\n\x1d\x43ompleteMultipartUploadOutput\x12\x11\n\tasset_url\x18\x01 \x01(\t\"I\n\x10StartStreamInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04keys\x18\x03 \x03(\t\x12\x0b\n\x03ttl\x18\x14 \x01(\r\"&\n\x11StartStreamOutput\x12\x11\n\tstream_id\x18\x01 \x01(\t\"4\n\x11\x41ppendStreamInput\x12\x11\n\tstream_id\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x64 \x01(\x0c\"\x14\n\x12\x41ppendStreamOutput\"\xc6\x01\n\x10\x43loseStreamInput\x12\x11\n\tstream_id\x18\x01 \x01(\t\x12\x32\n\x05parts\x18\n \x03(\x0b\x32#.eolymp.asset.CloseStreamInput.Part\x1ak\n\x04Part\x12\x0e\n\x06number\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x14\n\x0c\x63hecksum_md5\x18\n \x01(\t\x12\x15\n\rchecksum_sha1\x18\x0b \x01(\t\x12\x17\n\x0f\x63hecksum_sha256\x18\x0c \x01(\t\"&\n\x11\x43loseStreamOutput\x12\x11\n\tasset_url\x18\x01 \x01(\t2\xf7\x0b\n\x0c\x41ssetService\x12\x8e\x01\n\x0bUploadImage\x12\x1e.eolymp.asset.UploadImageInput\x1a\x1f.eolymp.asset.UploadImageOutput\">\x82\xe3\n\x15\x8a\xe3\n\x11\x61sset:image:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\"\x0e/assets/images\x12\x8a\x01\n\nUploadFile\x12\x1d.eolymp.asset.UploadFileInput\x1a\x1e.eolymp.asset.UploadFileOutput\"=\x82\xe3\n\x15\x8a\xe3\n\x11\x61sset:image:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0f\"\r/assets/files\x12\x87\x01\n\x0bUploadAsset\x12\x1e.eolymp.asset.UploadAssetInput\x1a\x1f.eolymp.asset.UploadAssetOutput\"7\x82\xe3\n\x15\x8a\xe3\n\x11\x61sset:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\t\"\x07/assets\x12\x8d\x01\n\x0bLookupAsset\x12\x1e.eolymp.asset.LookupAssetInput\x1a\x1f.eolymp.asset.LookupAssetOutput\"=\x82\xe3\n\x14\x8a\xe3\n\x10\x61sset:asset:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x10\"\x0e/assets:lookup\x12\xa3\x01\n\x14StartMultipartUpload\x12\'.eolymp.asset.StartMultipartUploadInput\x1a(.eolymp.asset.StartMultipartUploadOutput\"8\x82\xe3\n\x15\x8a\xe3\n\x11\x61tlas:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\x1a\x08/uploads\x12\x91\x01\n\nUploadPart\x12\x1d.eolymp.asset.UploadPartInput\x1a\x1e.eolymp.asset.UploadPartOutput\"D\x82\xe3\n\x15\x8a\xe3\n\x11\x61tlas:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\"\x14/uploads/{upload_id}\x12\xb8\x01\n\x17\x43ompleteMultipartUpload\x12*.eolymp.asset.CompleteMultipartUploadInput\x1a+.eolymp.asset.CompleteMultipartUploadOutput\"D\x82\xe3\n\x15\x8a\xe3\n\x11\x61tlas:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x1a\x14/uploads/{upload_id}\x12\x88\x01\n\x0bStartStream\x12\x1e.eolymp.asset.StartStreamInput\x1a\x1f.eolymp.asset.StartStreamOutput\"8\x82\xe3\n\x15\x8a\xe3\n\x11\x61tlas:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\x1a\x08/streams\x12\x97\x01\n\x0c\x41ppendStream\x12\x1f.eolymp.asset.AppendStreamInput\x1a .eolymp.asset.AppendStreamOutput\"D\x82\xe3\n\x15\x8a\xe3\n\x11\x61tlas:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\"\x14/streams/{stream_id}\x12\x94\x01\n\x0b\x43loseStream\x12\x1e.eolymp.asset.CloseStreamInput\x1a\x1f.eolymp.asset.CloseStreamOutput\"D\x82\xe3\n\x15\x8a\xe3\n\x11\x61tlas:asset:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x1a\x14/streams/{stream_id}B-Z+github.com/eolymp/go-sdk/eolymp/asset;assetb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.asset.asset_service_pb2', globals())
@@ -38,6 +38,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ASSETSERVICE.methods_by_name['UploadPart']._serialized_options = b'\202\343\n\025\212\343\n\021atlas:asset:write\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\026\"\024/uploads/{upload_id}'
   _ASSETSERVICE.methods_by_name['CompleteMultipartUpload']._options = None
   _ASSETSERVICE.methods_by_name['CompleteMultipartUpload']._serialized_options = b'\202\343\n\025\212\343\n\021atlas:asset:write\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\026\032\024/uploads/{upload_id}'
+  _ASSETSERVICE.methods_by_name['StartStream']._options = None
+  _ASSETSERVICE.methods_by_name['StartStream']._serialized_options = b'\202\343\n\025\212\343\n\021atlas:asset:write\352\342\n\013\365\342\n\000\000\000@\370\342\nd\202\323\344\223\002\n\032\010/streams'
+  _ASSETSERVICE.methods_by_name['AppendStream']._options = None
+  _ASSETSERVICE.methods_by_name['AppendStream']._serialized_options = b'\202\343\n\025\212\343\n\021atlas:asset:write\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\026\"\024/streams/{stream_id}'
+  _ASSETSERVICE.methods_by_name['CloseStream']._options = None
+  _ASSETSERVICE.methods_by_name['CloseStream']._serialized_options = b'\202\343\n\025\212\343\n\021atlas:asset:write\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\026\032\024/streams/{stream_id}'
   _UPLOADIMAGEINPUT._serialized_start=150
   _UPLOADIMAGEINPUT._serialized_end=472
   _UPLOADIMAGEINPUT_SIZE._serialized_start=369
@@ -54,24 +60,38 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPLOADASSETINPUT._serialized_end=700
   _UPLOADASSETOUTPUT._serialized_start=702
   _UPLOADASSETOUTPUT._serialized_end=740
-  _STARTMULTIPARTUPLOADINPUT._serialized_start=742
-  _STARTMULTIPARTUPLOADINPUT._serialized_end=824
-  _STARTMULTIPARTUPLOADOUTPUT._serialized_start=826
-  _STARTMULTIPARTUPLOADOUTPUT._serialized_end=873
-  _UPLOADPARTINPUT._serialized_start=875
-  _UPLOADPARTINPUT._serialized_end=946
-  _UPLOADPARTOUTPUT._serialized_start=948
-  _UPLOADPARTOUTPUT._serialized_end=981
-  _COMPLETEMULTIPARTUPLOADINPUT._serialized_start=984
-  _COMPLETEMULTIPARTUPLOADINPUT._serialized_end=1206
-  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_start=1099
-  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_end=1206
-  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_start=1208
-  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_end=1258
-  _LOOKUPASSETINPUT._serialized_start=1260
-  _LOOKUPASSETINPUT._serialized_end=1291
-  _LOOKUPASSETOUTPUT._serialized_start=1293
-  _LOOKUPASSETOUTPUT._serialized_end=1331
-  _ASSETSERVICE._serialized_start=1334
-  _ASSETSERVICE._serialized_end=2417
+  _LOOKUPASSETINPUT._serialized_start=742
+  _LOOKUPASSETINPUT._serialized_end=773
+  _LOOKUPASSETOUTPUT._serialized_start=775
+  _LOOKUPASSETOUTPUT._serialized_end=813
+  _STARTMULTIPARTUPLOADINPUT._serialized_start=815
+  _STARTMULTIPARTUPLOADINPUT._serialized_end=897
+  _STARTMULTIPARTUPLOADOUTPUT._serialized_start=899
+  _STARTMULTIPARTUPLOADOUTPUT._serialized_end=946
+  _UPLOADPARTINPUT._serialized_start=948
+  _UPLOADPARTINPUT._serialized_end=1019
+  _UPLOADPARTOUTPUT._serialized_start=1021
+  _UPLOADPARTOUTPUT._serialized_end=1054
+  _COMPLETEMULTIPARTUPLOADINPUT._serialized_start=1057
+  _COMPLETEMULTIPARTUPLOADINPUT._serialized_end=1279
+  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_start=1172
+  _COMPLETEMULTIPARTUPLOADINPUT_PART._serialized_end=1279
+  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_start=1281
+  _COMPLETEMULTIPARTUPLOADOUTPUT._serialized_end=1331
+  _STARTSTREAMINPUT._serialized_start=1333
+  _STARTSTREAMINPUT._serialized_end=1406
+  _STARTSTREAMOUTPUT._serialized_start=1408
+  _STARTSTREAMOUTPUT._serialized_end=1446
+  _APPENDSTREAMINPUT._serialized_start=1448
+  _APPENDSTREAMINPUT._serialized_end=1500
+  _APPENDSTREAMOUTPUT._serialized_start=1502
+  _APPENDSTREAMOUTPUT._serialized_end=1522
+  _CLOSESTREAMINPUT._serialized_start=1525
+  _CLOSESTREAMINPUT._serialized_end=1723
+  _CLOSESTREAMINPUT_PART._serialized_start=1172
+  _CLOSESTREAMINPUT_PART._serialized_end=1279
+  _CLOSESTREAMOUTPUT._serialized_start=1725
+  _CLOSESTREAMOUTPUT._serialized_end=1763
+  _ASSETSERVICE._serialized_start=1766
+  _ASSETSERVICE._serialized_end=3293
 # @@protoc_insertion_point(module_scope)

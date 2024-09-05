@@ -8,6 +8,45 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class AppendStreamInput(_message.Message):
+    __slots__ = ["data", "stream_id"]
+    DATA_FIELD_NUMBER: _ClassVar[int]
+    STREAM_ID_FIELD_NUMBER: _ClassVar[int]
+    data: bytes
+    stream_id: str
+    def __init__(self, stream_id: _Optional[str] = ..., data: _Optional[bytes] = ...) -> None: ...
+
+class AppendStreamOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class CloseStreamInput(_message.Message):
+    __slots__ = ["parts", "stream_id"]
+    class Part(_message.Message):
+        __slots__ = ["checksum_md5", "checksum_sha1", "checksum_sha256", "number", "token"]
+        CHECKSUM_MD5_FIELD_NUMBER: _ClassVar[int]
+        CHECKSUM_SHA1_FIELD_NUMBER: _ClassVar[int]
+        CHECKSUM_SHA256_FIELD_NUMBER: _ClassVar[int]
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        TOKEN_FIELD_NUMBER: _ClassVar[int]
+        checksum_md5: str
+        checksum_sha1: str
+        checksum_sha256: str
+        number: int
+        token: str
+        def __init__(self, number: _Optional[int] = ..., token: _Optional[str] = ..., checksum_md5: _Optional[str] = ..., checksum_sha1: _Optional[str] = ..., checksum_sha256: _Optional[str] = ...) -> None: ...
+    PARTS_FIELD_NUMBER: _ClassVar[int]
+    STREAM_ID_FIELD_NUMBER: _ClassVar[int]
+    parts: _containers.RepeatedCompositeFieldContainer[CloseStreamInput.Part]
+    stream_id: str
+    def __init__(self, stream_id: _Optional[str] = ..., parts: _Optional[_Iterable[_Union[CloseStreamInput.Part, _Mapping]]] = ...) -> None: ...
+
+class CloseStreamOutput(_message.Message):
+    __slots__ = ["asset_url"]
+    ASSET_URL_FIELD_NUMBER: _ClassVar[int]
+    asset_url: str
+    def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
+
 class CompleteMultipartUploadInput(_message.Message):
     __slots__ = ["parts", "upload_id"]
     class Part(_message.Message):
@@ -64,6 +103,24 @@ class StartMultipartUploadOutput(_message.Message):
     UPLOAD_ID_FIELD_NUMBER: _ClassVar[int]
     upload_id: str
     def __init__(self, upload_id: _Optional[str] = ...) -> None: ...
+
+class StartStreamInput(_message.Message):
+    __slots__ = ["keys", "name", "ttl", "type"]
+    KEYS_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    TTL_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    keys: _containers.RepeatedScalarFieldContainer[str]
+    name: str
+    ttl: int
+    type: str
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., keys: _Optional[_Iterable[str]] = ..., ttl: _Optional[int] = ...) -> None: ...
+
+class StartStreamOutput(_message.Message):
+    __slots__ = ["stream_id"]
+    STREAM_ID_FIELD_NUMBER: _ClassVar[int]
+    stream_id: str
+    def __init__(self, stream_id: _Optional[str] = ...) -> None: ...
 
 class UploadAssetInput(_message.Message):
     __slots__ = ["data", "keys", "name", "ttl", "type"]

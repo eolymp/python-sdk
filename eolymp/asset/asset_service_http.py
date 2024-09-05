@@ -97,3 +97,42 @@ class AssetServiceClient:
             **kwargs,
         )
 
+    def StartStream(self, request, **kwargs):
+        path = "/streams"
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.StartStreamOutput"),
+            **kwargs,
+        )
+
+    def AppendStream(self, request, **kwargs):
+        path = "/streams/"+urllib.parse.quote(request.stream_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.stream_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.AppendStreamOutput"),
+            **kwargs,
+        )
+
+    def CloseStream(self, request, **kwargs):
+        path = "/streams/"+urllib.parse.quote(request.stream_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.stream_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.CloseStreamOutput"),
+            **kwargs,
+        )
+
