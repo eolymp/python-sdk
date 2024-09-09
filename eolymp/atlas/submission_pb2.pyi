@@ -87,6 +87,7 @@ class Submission(_message.Message):
         verdict: Submission.Verdict
         def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
     ACCEPTED: Submission.Verdict
+    BLOCKED: Submission.Status
     COMPLETE: Submission.Status
     COST_FIELD_NUMBER: _ClassVar[int]
     CPU_EXHAUSTED: Submission.Verdict
@@ -114,6 +115,7 @@ class Submission(_message.Message):
     RUNTIME_ERROR: Submission.Verdict
     SCORE_FIELD_NUMBER: _ClassVar[int]
     SIGNATURE_FIELD_NUMBER: _ClassVar[int]
+    SKIPPED: Submission.Status
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
