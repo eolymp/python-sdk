@@ -57,6 +57,14 @@ class StatementChangedEvent(_message.Message):
     problem_id: str
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ..., after: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
+class SubmissionChangedEvent(_message.Message):
+    __slots__ = ["after", "before"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    after: _submission_pb2.Submission
+    before: _submission_pb2.Submission
+    def __init__(self, before: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., after: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+
 class SubmissionCompleteEvent(_message.Message):
     __slots__ = ["submission", "update"]
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
