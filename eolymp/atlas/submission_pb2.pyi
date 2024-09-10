@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ["cost", "cpu_usage", "cursor", "error", "error_url", "groups", "id", "lang", "member_id", "memory_usage", "percentage", "problem_id", "resource_usage", "score", "signature", "source", "source_url", "status", "submitted_at", "time_usage", "user_id", "verdict"]
+    __slots__ = ["cost", "cpu_usage", "cursor", "error", "error_url", "groups", "id", "judged_at", "lang", "member_id", "memory_usage", "percentage", "problem_id", "resource_usage", "score", "signature", "source", "source_url", "status", "submitted_at", "time_usage", "user_id", "verdict", "version"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -100,6 +100,7 @@ class Submission(_message.Message):
     GROUPS: Submission.Extra
     GROUPS_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
+    JUDGED_AT_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MEMORY_OVERFLOW: Submission.Verdict
@@ -126,6 +127,7 @@ class Submission(_message.Message):
     TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
     VERDICT_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     WRONG_ANSWER: Submission.Verdict
     cost: float
     cpu_usage: int
@@ -134,6 +136,7 @@ class Submission(_message.Message):
     error_url: str
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     id: str
+    judged_at: _timestamp_pb2.Timestamp
     lang: str
     member_id: str
     memory_usage: int
@@ -149,4 +152,5 @@ class Submission(_message.Message):
     time_usage: int
     user_id: str
     verdict: Submission.Verdict
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., version: _Optional[int] = ..., submitted_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
