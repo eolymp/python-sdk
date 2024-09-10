@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ["base_id", "contest_id", "cpu_limit", "feedback_policy", "file_size_limit", "id", "index", "memory_limit", "score", "score_by_best_testset", "submit_limit", "time_limit", "url"]
+    __slots__ = ["base_id", "base_number", "base_space_id", "base_title", "base_web_url", "contest_id", "cpu_limit", "feedback_policy", "file_size_limit", "id", "index", "memory_limit", "score", "score_by_best_testset", "submit_limit", "time_limit", "url"]
     class Attachment(_message.Message):
         __slots__ = ["id", "link", "name"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -58,6 +58,10 @@ class Problem(_message.Message):
         score: float
         def __init__(self, index: _Optional[int] = ..., example: bool = ..., input_object_id: _Optional[str] = ..., answer_object_id: _Optional[str] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., score: _Optional[float] = ...) -> None: ...
     BASE_ID_FIELD_NUMBER: _ClassVar[int]
+    BASE_NUMBER_FIELD_NUMBER: _ClassVar[int]
+    BASE_SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    BASE_TITLE_FIELD_NUMBER: _ClassVar[int]
+    BASE_WEB_URL_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CPU_LIMIT_FIELD_NUMBER: _ClassVar[int]
     FEEDBACK_POLICY_FIELD_NUMBER: _ClassVar[int]
@@ -71,6 +75,10 @@ class Problem(_message.Message):
     TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     base_id: str
+    base_number: str
+    base_space_id: str
+    base_title: str
+    base_web_url: str
     contest_id: str
     cpu_limit: int
     feedback_policy: _testing_feedback_pb2.FeedbackPolicy
@@ -83,4 +91,4 @@ class Problem(_message.Message):
     submit_limit: int
     time_limit: int
     url: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., index: _Optional[int] = ..., score: _Optional[float] = ..., base_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: bool = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., index: _Optional[int] = ..., score: _Optional[float] = ..., base_id: _Optional[str] = ..., base_space_id: _Optional[str] = ..., base_title: _Optional[str] = ..., base_number: _Optional[str] = ..., base_web_url: _Optional[str] = ..., contest_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: bool = ...) -> None: ...
