@@ -16,26 +16,22 @@ class GenerationTask(_message.Message):
         script_name: str
         def __init__(self, script_name: _Optional[str] = ..., arguments: _Optional[_Iterable[str]] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ["answer_content", "answer_generator", "answer_object_id", "answer_url", "input_content", "input_generator", "input_object_id", "input_url", "reference"]
+        __slots__ = ["answer_content", "answer_generator", "answer_url", "input_content", "input_generator", "input_url", "reference"]
         ANSWER_CONTENT_FIELD_NUMBER: _ClassVar[int]
         ANSWER_GENERATOR_FIELD_NUMBER: _ClassVar[int]
-        ANSWER_OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
         ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
         INPUT_CONTENT_FIELD_NUMBER: _ClassVar[int]
         INPUT_GENERATOR_FIELD_NUMBER: _ClassVar[int]
-        INPUT_OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
         INPUT_URL_FIELD_NUMBER: _ClassVar[int]
         REFERENCE_FIELD_NUMBER: _ClassVar[int]
         answer_content: str
         answer_generator: GenerationTask.Generator
-        answer_object_id: str
         answer_url: str
         input_content: str
         input_generator: GenerationTask.Generator
-        input_object_id: str
         input_url: str
         reference: str
-        def __init__(self, reference: _Optional[str] = ..., input_object_id: _Optional[str] = ..., input_content: _Optional[str] = ..., input_url: _Optional[str] = ..., input_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ..., answer_object_id: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_url: _Optional[str] = ..., answer_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ...) -> None: ...
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]

@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.executor import file_pb2 as eolymp_dot_executor_dot_file__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/judge/template.proto\x12\x0c\x65olymp.judge\x1a\x1a\x65olymp/executor/file.proto\"\xab\x01\n\x08Template\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03\x65rn\x18\x8fN \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\x03 \x01(\t\x12\x12\n\nsource_ern\x18\n \x01(\t\x12\x12\n\nheader_ern\x18\x0b \x01(\t\x12\x12\n\nfooter_ern\x18\x0c \x01(\t\x12$\n\x05\x66iles\x18\x1e \x03(\x0b\x32\x15.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/judge/template.proto\x12\x0c\x65olymp.judge\x1a\x1a\x65olymp/executor/file.proto\"\x9d\x01\n\x08Template\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\x03 \x01(\t\x12\x12\n\nsource_url\x18\n \x01(\t\x12\x12\n\nheader_url\x18\x0b \x01(\t\x12\x12\n\nfooter_url\x18\x0c \x01(\t\x12$\n\x05\x66iles\x18\x1e \x03(\x0b\x32\x15.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.template_pb2', globals())
@@ -23,5 +23,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
   _TEMPLATE._serialized_start=74
-  _TEMPLATE._serialized_end=245
+  _TEMPLATE._serialized_end=231
 # @@protoc_insertion_point(module_scope)

@@ -23,16 +23,14 @@ class DeleteProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ["contest_id", "problem_id", "template_ern", "template_id"]
+    __slots__ = ["contest_id", "problem_id", "template_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    TEMPLATE_ERN_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     problem_id: str
-    template_ern: str
     template_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., template_ern: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., template_id: _Optional[str] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
     __slots__ = ["template"]
@@ -141,16 +139,14 @@ class ListStatementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem.Statement, _Mapping]]] = ...) -> None: ...
 
 class LookupCodeTemplateInput(_message.Message):
-    __slots__ = ["contest_id", "problem_ern", "problem_id", "runtime"]
+    __slots__ = ["contest_id", "problem_id", "runtime"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ERN_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    problem_ern: str
     problem_id: str
     runtime: str
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., problem_ern: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
 
 class LookupCodeTemplateOutput(_message.Message):
     __slots__ = ["template"]

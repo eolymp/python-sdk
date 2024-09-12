@@ -37,16 +37,14 @@ class DeleteCodeTemplateOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ["problem_id", "template_ern", "template_id", "version"]
+    __slots__ = ["problem_id", "template_id", "version"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    TEMPLATE_ERN_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    template_ern: str
     template_id: str
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., template_ern: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
     __slots__ = ["template"]
