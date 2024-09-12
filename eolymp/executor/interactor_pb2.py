@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.executor import file_pb2 as eolymp_dot_executor_dot_file__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/executor/interactor.proto\x12\x0f\x65olymp.executor\x1a\x1a\x65olymp/executor/file.proto\"\xc3\x01\n\nInteractor\x12.\n\x04type\x18\x01 \x01(\x0e\x32 .eolymp.executor.Interactor.Type\x12\x0c\n\x04lang\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\x12\x12\n\nsource_url\x18\x08 \x01(\t\x12\x0e\n\x06secret\x18\x07 \x01(\x08\x12$\n\x05\x66iles\x18\n \x03(\x0b\x32\x15.eolymp.executor.File\"\x1d\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PROGRAM\x10\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/executor/interactor.proto\x12\x0f\x65olymp.executor\x1a\x1a\x65olymp/executor/file.proto\"\xb6\x01\n\nInteractor\x12.\n\x04type\x18\x01 \x01(\x0e\x32 .eolymp.executor.Interactor.Type\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x12\n\nsource_url\x18\x08 \x01(\t\x12\x0e\n\x06secret\x18\x07 \x01(\x08\x12$\n\x05\x66iles\x18\n \x03(\x0b\x32\x15.eolymp.executor.File\"\x1d\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PROGRAM\x10\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.interactor_pb2', globals())
@@ -23,7 +23,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
   _INTERACTOR._serialized_start=82
-  _INTERACTOR._serialized_end=277
-  _INTERACTOR_TYPE._serialized_start=248
-  _INTERACTOR_TYPE._serialized_end=277
+  _INTERACTOR._serialized_end=264
+  _INTERACTOR_TYPE._serialized_start=235
+  _INTERACTOR_TYPE._serialized_end=264
 # @@protoc_insertion_point(module_scope)

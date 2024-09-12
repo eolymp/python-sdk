@@ -1,6 +1,8 @@
 from eolymp.atlas import attachment_pb2 as _attachment_pb2
+from eolymp.atlas import checker_pb2 as _checker_pb2
 from eolymp.atlas import code_template_pb2 as _code_template_pb2
 from eolymp.atlas import editorial_pb2 as _editorial_pb2
+from eolymp.atlas import interactor_pb2 as _interactor_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import script_pb2 as _script_pb2
 from eolymp.atlas import solution_pb2 as _solution_pb2
@@ -8,8 +10,6 @@ from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import testing_config_pb2 as _testing_config_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.atlas import testing_testset_pb2 as _testing_testset_pb2
-from eolymp.executor import checker_pb2 as _checker_pb2
-from eolymp.executor import interactor_pb2 as _interactor_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

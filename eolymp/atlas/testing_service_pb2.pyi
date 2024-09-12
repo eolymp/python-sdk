@@ -1,10 +1,10 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.atlas import checker_pb2 as _checker_pb2
 from eolymp.atlas import testing_config_pb2 as _testing_config_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.atlas import testing_testset_pb2 as _testing_testset_pb2
-from eolymp.executor import checker_pb2 as _checker_pb2
 from eolymp.executor import interactor_pb2 as _interactor_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
