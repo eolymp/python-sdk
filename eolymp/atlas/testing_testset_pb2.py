@@ -15,7 +15,7 @@ from eolymp.atlas import testing_feedback_pb2 as eolymp_dot_atlas_dot_testing__f
 from eolymp.atlas import testing_scoring_pb2 as eolymp_dot_atlas_dot_testing__scoring__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/testing_testset.proto\x12\x0c\x65olymp.atlas\x1a#eolymp/atlas/testing_feedback.proto\x1a\"eolymp/atlas/testing_scoring.proto\"\x8c\x02\n\x07Testset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\r\x12\x12\n\ntime_limit\x18\n \x01(\r\x12\x11\n\tcpu_limit\x18\r \x01(\r\x12\x14\n\x0cmemory_limit\x18\x0b \x01(\x04\x12\x17\n\x0f\x66ile_size_limit\x18\x0c \x01(\x04\x12\x14\n\x0c\x64\x65pendencies\x18\x14 \x03(\r\x12/\n\x0cscoring_mode\x18\x1e \x01(\x0e\x32\x19.eolymp.atlas.ScoringMode\x12\x35\n\x0f\x66\x65\x65\x64\x62\x61\x63k_policy\x18( \x01(\x0e\x32\x1c.eolymp.atlas.FeedbackPolicyB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/testing_testset.proto\x12\x0c\x65olymp.atlas\x1a#eolymp/atlas/testing_feedback.proto\x1a\"eolymp/atlas/testing_scoring.proto\"\xf8\x01\n\x07Testset\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\r\x12\x12\n\ntime_limit\x18\n \x01(\r\x12\x11\n\tcpu_limit\x18\r \x01(\r\x12\x14\n\x0cmemory_limit\x18\x0b \x01(\x04\x12\x17\n\x0f\x66ile_size_limit\x18\x0c \x01(\x04\x12\x14\n\x0c\x64\x65pendencies\x18\x14 \x03(\r\x12/\n\x0cscoring_mode\x18\x1e \x01(\x0e\x32\x19.eolymp.atlas.ScoringMode\x12\x35\n\x0f\x66\x65\x65\x64\x62\x61\x63k_policy\x18( \x01(\x0e\x32\x1c.eolymp.atlas.FeedbackPolicyB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.testing_testset_pb2', globals())
@@ -24,5 +24,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _TESTSET._serialized_start=126
-  _TESTSET._serialized_end=394
+  _TESTSET._serialized_end=374
 # @@protoc_insertion_point(module_scope)
