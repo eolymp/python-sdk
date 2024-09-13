@@ -32,16 +32,16 @@ class DeletePolicyOutput(_message.Message):
     def __init__(self, policy_id: _Optional[str] = ...) -> None: ...
 
 class DescribePolicyInput(_message.Message):
-    __slots__ = ["policy"]
-    POLICY_FIELD_NUMBER: _ClassVar[int]
-    policy: _policy_pb2.Policy
-    def __init__(self, policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
-
-class DescribePolicyOutput(_message.Message):
     __slots__ = ["policy_id"]
     POLICY_ID_FIELD_NUMBER: _ClassVar[int]
     policy_id: str
     def __init__(self, policy_id: _Optional[str] = ...) -> None: ...
+
+class DescribePolicyOutput(_message.Message):
+    __slots__ = ["policy"]
+    POLICY_FIELD_NUMBER: _ClassVar[int]
+    policy: _policy_pb2.Policy
+    def __init__(self, policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
 
 class ListPoliciesInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
