@@ -11,10 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.executor import file_pb2 as eolymp_dot_executor_dot_file__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/judge/template.proto\x12\x0c\x65olymp.judge\x1a\x1a\x65olymp/executor/file.proto\"7\n\x08Template\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x03 \x01(\t\x12\x0e\n\x06source\x18\n \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/judge/template.proto\x12\x0c\x65olymp.judge\"7\n\x08Template\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x03 \x01(\t\x12\x0e\n\x06source\x18\n \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.template_pb2', globals())
@@ -22,6 +21,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _TEMPLATE._serialized_start=73
-  _TEMPLATE._serialized_end=128
+  _TEMPLATE._serialized_start=45
+  _TEMPLATE._serialized_end=100
 # @@protoc_insertion_point(module_scope)
