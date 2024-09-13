@@ -22,14 +22,14 @@ class CreatePolicyOutput(_message.Message):
     def __init__(self, policy_id: _Optional[str] = ...) -> None: ...
 
 class DeletePolicyInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class DeletePolicyOutput(_message.Message):
     __slots__ = ["policy_id"]
     POLICY_ID_FIELD_NUMBER: _ClassVar[int]
     policy_id: str
     def __init__(self, policy_id: _Optional[str] = ...) -> None: ...
+
+class DeletePolicyOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class DescribePolicyInput(_message.Message):
     __slots__ = ["policy_id"]
