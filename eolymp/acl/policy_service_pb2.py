@@ -17,7 +17,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/acl/policy_service.proto\x12\neolymp.acl\x1a\x17\x65olymp/acl/policy.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a!eolymp/wellknown/expression.proto\"7\n\x11\x43reatePolicyInput\x12\"\n\x06policy\x18\x01 \x01(\x0b\x32\x12.eolymp.acl.Policy\"\'\n\x12\x43reatePolicyOutput\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\"J\n\x11UpdatePolicyInput\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\x12\"\n\x06policy\x18\x02 \x01(\x0b\x32\x12.eolymp.acl.Policy\"\x14\n\x12UpdatePolicyOutput\"&\n\x11\x44\x65letePolicyInput\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65letePolicyOutput\"(\n\x13\x44\x65scribePolicyInput\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\":\n\x14\x44\x65scribePolicyOutput\x12\"\n\x06policy\x18\x01 \x01(\x0b\x32\x12.eolymp.acl.Policy\"\xc5\x02\n\x11ListPoliciesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x35\n\x07\x66ilters\x18( \x01(\x0b\x32$.eolymp.acl.ListPoliciesInput.Filter\x1a\xda\x01\n\x06\x46ilter\x12\r\n\x05query\x18\n \x01(\t\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07subject\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x32\n\x08resource\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"F\n\x12ListPoliciesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.acl.Policy2\xef\x04\n\rPolicyService\x12o\n\x0c\x43reatePolicy\x12\x1d.eolymp.acl.CreatePolicyInput\x1a\x1e.eolymp.acl.CreatePolicyOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x0b\"\t/policies\x12{\n\x0cUpdatePolicy\x12\x1d.eolymp.acl.UpdatePolicyInput\x1a\x1e.eolymp.acl.UpdatePolicyOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x17\x1a\x15/policies/{policy_id}\x12{\n\x0c\x44\x65letePolicy\x12\x1d.eolymp.acl.DeletePolicyInput\x1a\x1e.eolymp.acl.DeletePolicyOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x17*\x15/policies/{policy_id}\x12\x81\x01\n\x0e\x44\x65scribePolicy\x12\x1f.eolymp.acl.DescribePolicyInput\x1a .eolymp.acl.DescribePolicyOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x17\x12\x15/policies/{policy_id}\x12o\n\x0cListPolicies\x12\x1d.eolymp.acl.ListPoliciesInput\x1a\x1e.eolymp.acl.ListPoliciesOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x0b\x12\t/policiesB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/acl/policy_service.proto\x12\neolymp.acl\x1a\x17\x65olymp/acl/policy.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a!eolymp/wellknown/expression.proto\"7\n\x11\x43reatePolicyInput\x12\"\n\x06policy\x18\x01 \x01(\x0b\x32\x12.eolymp.acl.Policy\"\'\n\x12\x43reatePolicyOutput\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\"\xa6\x01\n\x11UpdatePolicyInput\x12\x32\n\x05patch\x18\n \x03(\x0e\x32#.eolymp.acl.UpdatePolicyInput.Patch\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\x12\"\n\x06policy\x18\x02 \x01(\x0b\x32\x12.eolymp.acl.Policy\"&\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\n\n\x06\x41LLOWS\x10\x02\"\x14\n\x12UpdatePolicyOutput\"&\n\x11\x44\x65letePolicyInput\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65letePolicyOutput\"(\n\x13\x44\x65scribePolicyInput\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\":\n\x14\x44\x65scribePolicyOutput\x12\"\n\x06policy\x18\x01 \x01(\x0b\x32\x12.eolymp.acl.Policy\"\xc5\x02\n\x11ListPoliciesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x35\n\x07\x66ilters\x18( \x01(\x0b\x32$.eolymp.acl.ListPoliciesInput.Filter\x1a\xda\x01\n\x06\x46ilter\x12\r\n\x05query\x18\n \x01(\t\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07subject\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x32\n\x08resource\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"F\n\x12ListPoliciesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.acl.Policy2\xef\x04\n\rPolicyService\x12o\n\x0c\x43reatePolicy\x12\x1d.eolymp.acl.CreatePolicyInput\x1a\x1e.eolymp.acl.CreatePolicyOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x0b\"\t/policies\x12{\n\x0cUpdatePolicy\x12\x1d.eolymp.acl.UpdatePolicyInput\x1a\x1e.eolymp.acl.UpdatePolicyOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x17\x1a\x15/policies/{policy_id}\x12{\n\x0c\x44\x65letePolicy\x12\x1d.eolymp.acl.DeletePolicyInput\x1a\x1e.eolymp.acl.DeletePolicyOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x17*\x15/policies/{policy_id}\x12\x81\x01\n\x0e\x44\x65scribePolicy\x12\x1f.eolymp.acl.DescribePolicyInput\x1a .eolymp.acl.DescribePolicyOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x17\x12\x15/policies/{policy_id}\x12o\n\x0cListPolicies\x12\x1d.eolymp.acl.ListPoliciesInput\x1a\x1e.eolymp.acl.ListPoliciesOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x0b\x12\t/policiesB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.acl.policy_service_pb2', globals())
@@ -39,24 +39,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATEPOLICYINPUT._serialized_end=229
   _CREATEPOLICYOUTPUT._serialized_start=231
   _CREATEPOLICYOUTPUT._serialized_end=270
-  _UPDATEPOLICYINPUT._serialized_start=272
-  _UPDATEPOLICYINPUT._serialized_end=346
-  _UPDATEPOLICYOUTPUT._serialized_start=348
-  _UPDATEPOLICYOUTPUT._serialized_end=368
-  _DELETEPOLICYINPUT._serialized_start=370
-  _DELETEPOLICYINPUT._serialized_end=408
-  _DELETEPOLICYOUTPUT._serialized_start=410
-  _DELETEPOLICYOUTPUT._serialized_end=430
-  _DESCRIBEPOLICYINPUT._serialized_start=432
-  _DESCRIBEPOLICYINPUT._serialized_end=472
-  _DESCRIBEPOLICYOUTPUT._serialized_start=474
-  _DESCRIBEPOLICYOUTPUT._serialized_end=532
-  _LISTPOLICIESINPUT._serialized_start=535
-  _LISTPOLICIESINPUT._serialized_end=860
-  _LISTPOLICIESINPUT_FILTER._serialized_start=642
-  _LISTPOLICIESINPUT_FILTER._serialized_end=860
-  _LISTPOLICIESOUTPUT._serialized_start=862
-  _LISTPOLICIESOUTPUT._serialized_end=932
-  _POLICYSERVICE._serialized_start=935
-  _POLICYSERVICE._serialized_end=1558
+  _UPDATEPOLICYINPUT._serialized_start=273
+  _UPDATEPOLICYINPUT._serialized_end=439
+  _UPDATEPOLICYINPUT_PATCH._serialized_start=401
+  _UPDATEPOLICYINPUT_PATCH._serialized_end=439
+  _UPDATEPOLICYOUTPUT._serialized_start=441
+  _UPDATEPOLICYOUTPUT._serialized_end=461
+  _DELETEPOLICYINPUT._serialized_start=463
+  _DELETEPOLICYINPUT._serialized_end=501
+  _DELETEPOLICYOUTPUT._serialized_start=503
+  _DELETEPOLICYOUTPUT._serialized_end=523
+  _DESCRIBEPOLICYINPUT._serialized_start=525
+  _DESCRIBEPOLICYINPUT._serialized_end=565
+  _DESCRIBEPOLICYOUTPUT._serialized_start=567
+  _DESCRIBEPOLICYOUTPUT._serialized_end=625
+  _LISTPOLICIESINPUT._serialized_start=628
+  _LISTPOLICIESINPUT._serialized_end=953
+  _LISTPOLICIESINPUT_FILTER._serialized_start=735
+  _LISTPOLICIESINPUT_FILTER._serialized_end=953
+  _LISTPOLICIESOUTPUT._serialized_start=955
+  _LISTPOLICIESOUTPUT._serialized_end=1025
+  _POLICYSERVICE._serialized_start=1028
+  _POLICYSERVICE._serialized_end=1651
 # @@protoc_insertion_point(module_scope)
