@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ["active", "attributes", "created_at", "display_name", "fallback_tier_id", "ghost", "groups", "id", "inactive", "incomplete", "level", "rank", "rank_lower", "rating", "secret", "stats", "team", "tier_id", "unofficial", "url", "user"]
+    __slots__ = ["active", "active_at", "attributes", "created_at", "display_name", "fallback_tier_id", "ghost", "groups", "id", "inactive", "incomplete", "level", "rank", "rank_lower", "rating", "seated_at", "secret", "stats", "team", "tier_id", "unofficial", "url", "user"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Stats(_message.Message):
@@ -26,6 +26,7 @@ class Member(_message.Message):
         submissions_accepted: int
         submissions_total: int
         def __init__(self, streak: _Optional[int] = ..., problems_solved: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., submissions_total: _Optional[int] = ...) -> None: ...
+    ACTIVE_AT_FIELD_NUMBER: _ClassVar[int]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES: Member.Extra
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
@@ -43,6 +44,7 @@ class Member(_message.Message):
     RANK_FIELD_NUMBER: _ClassVar[int]
     RANK_LOWER_FIELD_NUMBER: _ClassVar[int]
     RATING_FIELD_NUMBER: _ClassVar[int]
+    SEATED_AT_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     STATS: Member.Extra
     STATS_FIELD_NUMBER: _ClassVar[int]
@@ -53,6 +55,7 @@ class Member(_message.Message):
     URL_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     active: bool
+    active_at: _timestamp_pb2.Timestamp
     attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
     created_at: _timestamp_pb2.Timestamp
     display_name: str
@@ -66,6 +69,7 @@ class Member(_message.Message):
     rank: int
     rank_lower: int
     rating: int
+    seated_at: _timestamp_pb2.Timestamp
     secret: bool
     stats: Member.Stats
     team: _member_team_pb2.Team
@@ -73,4 +77,4 @@ class Member(_message.Message):
     unofficial: bool
     url: str
     user: _member_user_pb2.User
-    def __init__(self, id: _Optional[str] = ..., display_name: _Optional[str] = ..., url: _Optional[str] = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., rating: _Optional[int] = ..., level: _Optional[int] = ..., active: bool = ..., inactive: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., tier_id: _Optional[str] = ..., fallback_tier_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., stats: _Optional[_Union[Member.Stats, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., display_name: _Optional[str] = ..., url: _Optional[str] = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., rating: _Optional[int] = ..., level: _Optional[int] = ..., active: bool = ..., inactive: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., tier_id: _Optional[str] = ..., fallback_tier_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., seated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., active_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., stats: _Optional[_Union[Member.Stats, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
