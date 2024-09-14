@@ -47,18 +47,18 @@ class DescribePolicyOutput(_message.Message):
 class ListPoliciesInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
-        __slots__ = ["id", "name", "query", "resource", "subject"]
+        __slots__ = ["id", "name", "principal", "query", "resource"]
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
+        PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
         QUERY_FIELD_NUMBER: _ClassVar[int]
         RESOURCE_FIELD_NUMBER: _ClassVar[int]
-        SUBJECT_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        principal: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         query: str
         resource: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        subject: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., resource: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., principal: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., resource: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
