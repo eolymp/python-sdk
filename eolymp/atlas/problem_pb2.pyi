@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ["acceptance_rate", "constraints", "difficulty", "id", "links", "number", "origin", "private", "submissions_accepted", "submissions_count", "topics", "url", "visible", "vote", "vote_count"]
+    __slots__ = ["acceptance_rate", "constraints", "difficulty", "id", "links", "number", "origin", "private", "score", "submissions_accepted", "submissions_count", "topics", "url", "visible", "vote", "vote_count"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Constraints(_message.Message):
@@ -40,6 +40,7 @@ class Problem(_message.Message):
     NUMBER_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     PRIVATE_FIELD_NUMBER: _ClassVar[int]
+    SCORE_FIELD_NUMBER: _ClassVar[int]
     SUBMISSIONS_ACCEPTED_FIELD_NUMBER: _ClassVar[int]
     SUBMISSIONS_COUNT_FIELD_NUMBER: _ClassVar[int]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
@@ -57,6 +58,7 @@ class Problem(_message.Message):
     number: int
     origin: str
     private: bool
+    score: float
     submissions_accepted: int
     submissions_count: int
     topics: _containers.RepeatedScalarFieldContainer[str]
@@ -64,4 +66,4 @@ class Problem(_message.Message):
     visible: bool
     vote: int
     vote_count: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ...) -> None: ...
