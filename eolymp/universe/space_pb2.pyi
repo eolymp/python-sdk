@@ -1,16 +1,14 @@
-from eolymp.acl import action_pb2 as _action_pb2
 from eolymp.universe import quota_pb2 as _quota_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
-from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
-    __slots__ = ["actions", "affiliation", "graphql_url", "home_url", "id", "image", "issuer_url", "key", "name", "status", "subscription", "url", "visibility"]
+    __slots__ = ["affiliation", "graphql_url", "home_url", "id", "image", "issuer_url", "key", "name", "status", "subscription", "url", "visibility"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -34,8 +32,6 @@ class Space(_message.Message):
         quota_period_start: _timestamp_pb2.Timestamp
         seats: int
         def __init__(self, plan: _Optional[str] = ..., seats: _Optional[int] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., billing_period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., billing_period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
-    ACTIONS: Space.Extra
-    ACTIONS_FIELD_NUMBER: _ClassVar[int]
     ACTIVE: Space.Status
     AFFILIATION_FIELD_NUMBER: _ClassVar[int]
     GRAPHQL_URL_FIELD_NUMBER: _ClassVar[int]
@@ -57,7 +53,6 @@ class Space(_message.Message):
     UNKNOWN_VISIBILITY: Space.Visibility
     URL_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
-    actions: _containers.RepeatedScalarFieldContainer[_action_pb2.Action]
     affiliation: str
     graphql_url: str
     home_url: str
@@ -70,4 +65,4 @@ class Space(_message.Message):
     subscription: Space.Subscription
     url: str
     visibility: Space.Visibility
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., affiliation: _Optional[str] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, str]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., affiliation: _Optional[str] = ...) -> None: ...

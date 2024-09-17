@@ -1,4 +1,3 @@
-from eolymp.acl import action_pb2 as _action_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -8,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ["acceptance_rate", "actions", "constraints", "difficulty", "id", "links", "number", "origin", "private", "score", "submissions_accepted", "submissions_count", "topics", "url", "visible", "vote", "vote_count"]
+    __slots__ = ["acceptance_rate", "constraints", "difficulty", "id", "links", "number", "origin", "private", "score", "submissions_accepted", "submissions_count", "topics", "url", "visible", "vote", "vote_count"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Constraints(_message.Message):
@@ -34,8 +33,6 @@ class Problem(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ACCEPTANCE_RATE_FIELD_NUMBER: _ClassVar[int]
-    ACTIONS: Problem.Extra
-    ACTIONS_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -54,7 +51,6 @@ class Problem(_message.Message):
     VOTE_COUNT_FIELD_NUMBER: _ClassVar[int]
     VOTE_FIELD_NUMBER: _ClassVar[int]
     acceptance_rate: float
-    actions: _containers.RepeatedScalarFieldContainer[_action_pb2.Action]
     constraints: Problem.Constraints
     difficulty: int
     id: str
@@ -70,4 +66,4 @@ class Problem(_message.Message):
     visible: bool
     vote: int
     vote_count: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, str]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., private: bool = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ...) -> None: ...
