@@ -19,7 +19,7 @@ from eolymp.universe import space_pb2 as eolymp_dot_universe_dot_space__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/universe/space_service.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/universe/quota.proto\x1a\x1b\x65olymp/universe/space.proto\x1a!eolymp/wellknown/expression.proto\"9\n\x10\x43reateSpaceInput\x12%\n\x05space\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\"%\n\x11\x43reateSpaceOutput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"\xcd\x01\n\x10UpdateSpaceInput\x12\x36\n\x05patch\x18\x03 \x03(\x0e\x32\'.eolymp.universe.UpdateSpaceInput.Patch\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12%\n\x05space\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.Space\"H\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x07\n\x03KEY\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\t\n\x05IMAGE\x10\x03\x12\x08\n\x04TYPE\x10\x04\x12\x0e\n\nVISIBILITY\x10\x05\"\x13\n\x11UpdateSpaceOutput\"$\n\x10\x44\x65leteSpaceInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"\x13\n\x11\x44\x65leteSpaceOutput\"\x1f\n\x10LookupSpaceInput\x12\x0b\n\x03key\x18\x01 \x01(\t\":\n\x11LookupSpaceOutput\x12%\n\x05space\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\"&\n\x12\x44\x65scribeSpaceInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"<\n\x13\x44\x65scribeSpaceOutput\x12%\n\x05space\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\"&\n\x12\x44\x65scribeQuotaInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"<\n\x13\x44\x65scribeQuotaOutput\x12%\n\x05quota\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Quota\"K\n\x10UpdateQuotaInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12%\n\x05quota\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.Quota\"\x13\n\x11UpdateQuotaOutput\"\xbd\x02\n\x0fListSpacesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.universe.ListSpacesInput.Filter\x1a\xd1\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x64 \x01(\t\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12+\n\x03key\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12-\n\x03own\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"H\n\x10ListSpacesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.universe.Space2\xfa\x06\n\x0cSpaceService\x12\x83\x01\n\x0bLookupSpace\x12!.eolymp.universe.LookupSpaceInput\x1a\".eolymp.universe.LookupSpaceOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x12\x16/spaces/__lookup/{key}\x12\x90\x01\n\x0b\x43reateSpace\x12!.eolymp.universe.CreateSpaceInput\x1a\".eolymp.universe.CreateSpaceOutput\":\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\"\x07/spaces\x12\x9b\x01\n\x0bUpdateSpace\x12!.eolymp.universe.UpdateSpaceInput\x1a\".eolymp.universe.UpdateSpaceOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x14\x1a\x12/spaces/{space_id}\x12\x9b\x01\n\x0b\x44\x65leteSpace\x12!.eolymp.universe.DeleteSpaceInput\x1a\".eolymp.universe.DeleteSpaceOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x14*\x12/spaces/{space_id}\x12\x85\x01\n\rDescribeSpace\x12#.eolymp.universe.DescribeSpaceInput\x1a$.eolymp.universe.DescribeSpaceOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/spaces/{space_id}\x12\x8c\x01\n\nListSpaces\x12 .eolymp.universe.ListSpacesInput\x1a!.eolymp.universe.ListSpacesOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13universe:space:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\t\x12\x07/spacesB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/universe/space_service.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/universe/quota.proto\x1a\x1b\x65olymp/universe/space.proto\x1a!eolymp/wellknown/expression.proto\"9\n\x10\x43reateSpaceInput\x12%\n\x05space\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\"%\n\x11\x43reateSpaceOutput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"\xcd\x01\n\x10UpdateSpaceInput\x12\x36\n\x05patch\x18\x03 \x03(\x0e\x32\'.eolymp.universe.UpdateSpaceInput.Patch\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12%\n\x05space\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.Space\"H\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x07\n\x03KEY\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\t\n\x05IMAGE\x10\x03\x12\x08\n\x04TYPE\x10\x04\x12\x0e\n\nVISIBILITY\x10\x05\"\x13\n\x11UpdateSpaceOutput\"$\n\x10\x44\x65leteSpaceInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"\x13\n\x11\x44\x65leteSpaceOutput\"M\n\x10LookupSpaceInput\x12\x0b\n\x03key\x18\x01 \x01(\t\x12,\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1c.eolymp.universe.Space.Extra\":\n\x11LookupSpaceOutput\x12%\n\x05space\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\"T\n\x12\x44\x65scribeSpaceInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12,\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1c.eolymp.universe.Space.Extra\"<\n\x13\x44\x65scribeSpaceOutput\x12%\n\x05space\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\"&\n\x12\x44\x65scribeQuotaInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"<\n\x13\x44\x65scribeQuotaOutput\x12%\n\x05quota\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Quota\"K\n\x10UpdateQuotaInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12%\n\x05quota\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.Quota\"\x13\n\x11UpdateQuotaOutput\"\xeb\x02\n\x0fListSpacesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.universe.ListSpacesInput.Filter\x12,\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1c.eolymp.universe.Space.Extra\x1a\xd1\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x64 \x01(\t\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12+\n\x03key\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12-\n\x03own\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"H\n\x10ListSpacesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.universe.Space2\xfa\x06\n\x0cSpaceService\x12\x83\x01\n\x0bLookupSpace\x12!.eolymp.universe.LookupSpaceInput\x1a\".eolymp.universe.LookupSpaceOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x12\x16/spaces/__lookup/{key}\x12\x90\x01\n\x0b\x43reateSpace\x12!.eolymp.universe.CreateSpaceInput\x1a\".eolymp.universe.CreateSpaceOutput\":\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\t\"\x07/spaces\x12\x9b\x01\n\x0bUpdateSpace\x12!.eolymp.universe.UpdateSpaceInput\x1a\".eolymp.universe.UpdateSpaceOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x14\x1a\x12/spaces/{space_id}\x12\x9b\x01\n\x0b\x44\x65leteSpace\x12!.eolymp.universe.DeleteSpaceInput\x1a\".eolymp.universe.DeleteSpaceOutput\"E\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x14*\x12/spaces/{space_id}\x12\x85\x01\n\rDescribeSpace\x12#.eolymp.universe.DescribeSpaceInput\x1a$.eolymp.universe.DescribeSpaceOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/spaces/{space_id}\x12\x8c\x01\n\nListSpaces\x12 .eolymp.universe.ListSpacesInput\x1a!.eolymp.universe.ListSpacesOutput\"9\x82\xe3\n\x17\x8a\xe3\n\x13universe:space:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\t\x12\x07/spacesB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.space_service_pb2', globals())
@@ -54,27 +54,27 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DELETESPACEOUTPUT._serialized_start=613
   _DELETESPACEOUTPUT._serialized_end=632
   _LOOKUPSPACEINPUT._serialized_start=634
-  _LOOKUPSPACEINPUT._serialized_end=665
-  _LOOKUPSPACEOUTPUT._serialized_start=667
-  _LOOKUPSPACEOUTPUT._serialized_end=725
-  _DESCRIBESPACEINPUT._serialized_start=727
-  _DESCRIBESPACEINPUT._serialized_end=765
-  _DESCRIBESPACEOUTPUT._serialized_start=767
-  _DESCRIBESPACEOUTPUT._serialized_end=827
-  _DESCRIBEQUOTAINPUT._serialized_start=829
-  _DESCRIBEQUOTAINPUT._serialized_end=867
-  _DESCRIBEQUOTAOUTPUT._serialized_start=869
-  _DESCRIBEQUOTAOUTPUT._serialized_end=929
-  _UPDATEQUOTAINPUT._serialized_start=931
-  _UPDATEQUOTAINPUT._serialized_end=1006
-  _UPDATEQUOTAOUTPUT._serialized_start=1008
-  _UPDATEQUOTAOUTPUT._serialized_end=1027
-  _LISTSPACESINPUT._serialized_start=1030
-  _LISTSPACESINPUT._serialized_end=1347
-  _LISTSPACESINPUT_FILTER._serialized_start=1138
-  _LISTSPACESINPUT_FILTER._serialized_end=1347
-  _LISTSPACESOUTPUT._serialized_start=1349
-  _LISTSPACESOUTPUT._serialized_end=1421
-  _SPACESERVICE._serialized_start=1424
-  _SPACESERVICE._serialized_end=2314
+  _LOOKUPSPACEINPUT._serialized_end=711
+  _LOOKUPSPACEOUTPUT._serialized_start=713
+  _LOOKUPSPACEOUTPUT._serialized_end=771
+  _DESCRIBESPACEINPUT._serialized_start=773
+  _DESCRIBESPACEINPUT._serialized_end=857
+  _DESCRIBESPACEOUTPUT._serialized_start=859
+  _DESCRIBESPACEOUTPUT._serialized_end=919
+  _DESCRIBEQUOTAINPUT._serialized_start=921
+  _DESCRIBEQUOTAINPUT._serialized_end=959
+  _DESCRIBEQUOTAOUTPUT._serialized_start=961
+  _DESCRIBEQUOTAOUTPUT._serialized_end=1021
+  _UPDATEQUOTAINPUT._serialized_start=1023
+  _UPDATEQUOTAINPUT._serialized_end=1098
+  _UPDATEQUOTAOUTPUT._serialized_start=1100
+  _UPDATEQUOTAOUTPUT._serialized_end=1119
+  _LISTSPACESINPUT._serialized_start=1122
+  _LISTSPACESINPUT._serialized_end=1485
+  _LISTSPACESINPUT_FILTER._serialized_start=1276
+  _LISTSPACESINPUT_FILTER._serialized_end=1485
+  _LISTSPACESOUTPUT._serialized_start=1487
+  _LISTSPACESOUTPUT._serialized_end=1559
+  _SPACESERVICE._serialized_start=1562
+  _SPACESERVICE._serialized_end=2452
 # @@protoc_insertion_point(module_scope)

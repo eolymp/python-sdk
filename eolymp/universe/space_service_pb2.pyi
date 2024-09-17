@@ -47,10 +47,12 @@ class DescribeQuotaOutput(_message.Message):
     def __init__(self, quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ...) -> None: ...
 
 class DescribeSpaceInput(_message.Message):
-    __slots__ = ["space_id"]
+    __slots__ = ["extra", "space_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra]
     space_id: str
-    def __init__(self, space_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, space_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra, str]]] = ...) -> None: ...
 
 class DescribeSpaceOutput(_message.Message):
     __slots__ = ["space"]
@@ -59,7 +61,7 @@ class DescribeSpaceOutput(_message.Message):
     def __init__(self, space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
 
 class ListSpacesInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["extra", "filters", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "key", "name", "own", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -73,13 +75,15 @@ class ListSpacesInput(_message.Message):
         own: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         query: str
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., key: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., own: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra]
     filters: ListSpacesInput.Filter
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSpacesInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSpacesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra, str]]] = ...) -> None: ...
 
 class ListSpacesOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -90,10 +94,12 @@ class ListSpacesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_space_pb2.Space, _Mapping]]] = ...) -> None: ...
 
 class LookupSpaceInput(_message.Message):
-    __slots__ = ["key"]
+    __slots__ = ["extra", "key"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra]
     key: str
-    def __init__(self, key: _Optional[str] = ...) -> None: ...
+    def __init__(self, key: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra, str]]] = ...) -> None: ...
 
 class LookupSpaceOutput(_message.Message):
     __slots__ = ["space"]
