@@ -3,6 +3,7 @@ from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import scoring_score_pb2 as _scoring_score_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
+from eolymp.atlas import suggestion_pb2 as _suggestion_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -72,3 +73,13 @@ class SubmissionCompleteEvent(_message.Message):
     submission: _submission_pb2.Submission
     update: bool
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., update: bool = ...) -> None: ...
+
+class SuggestionChangedEvent(_message.Message):
+    __slots__ = ["after", "before", "problem_id"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    after: _suggestion_pb2.Suggestion
+    before: _suggestion_pb2.Suggestion
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_suggestion_pb2.Suggestion, _Mapping]] = ..., after: _Optional[_Union[_suggestion_pb2.Suggestion, _Mapping]] = ...) -> None: ...
