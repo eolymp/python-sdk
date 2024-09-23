@@ -10,6 +10,24 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class CopyPoliciesInput(_message.Message):
+    __slots__ = ["dst_principal", "dst_resource", "src_principal", "src_resource"]
+    DST_PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
+    DST_RESOURCE_FIELD_NUMBER: _ClassVar[int]
+    SRC_PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
+    SRC_RESOURCE_FIELD_NUMBER: _ClassVar[int]
+    dst_principal: str
+    dst_resource: str
+    src_principal: str
+    src_resource: str
+    def __init__(self, src_principal: _Optional[str] = ..., dst_principal: _Optional[str] = ..., src_resource: _Optional[str] = ..., dst_resource: _Optional[str] = ...) -> None: ...
+
+class CopyPoliciesOutput(_message.Message):
+    __slots__ = ["copies_count"]
+    COPIES_COUNT_FIELD_NUMBER: _ClassVar[int]
+    copies_count: int
+    def __init__(self, copies_count: _Optional[int] = ...) -> None: ...
+
 class CreatePolicyInput(_message.Message):
     __slots__ = ["policy"]
     POLICY_FIELD_NUMBER: _ClassVar[int]

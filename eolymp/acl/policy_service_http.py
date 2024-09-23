@@ -78,3 +78,14 @@ class PolicyServiceClient:
             **kwargs,
         )
 
+    def CopyPolicies(self, request, **kwargs):
+        path = "/policies:copy"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.acl.CopyPoliciesOutput"),
+            **kwargs,
+        )
+

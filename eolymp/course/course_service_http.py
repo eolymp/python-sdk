@@ -78,3 +78,17 @@ class CourseServiceClient:
             **kwargs,
         )
 
+    def CopyCourse(self, request, **kwargs):
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/copy"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.CopyCourseOutput"),
+            **kwargs,
+        )
+

@@ -12,6 +12,29 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class CopyCourseInput(_message.Message):
+    __slots__ = ["copy_name", "copy_scope", "course_id"]
+    class Scope(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: CopyCourseInput.Scope
+    ASSIGNMENTS: CopyCourseInput.Scope
+    COPY_NAME_FIELD_NUMBER: _ClassVar[int]
+    COPY_SCOPE_FIELD_NUMBER: _ClassVar[int]
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MODULES: CopyCourseInput.Scope
+    PERMISSIONS: CopyCourseInput.Scope
+    STUDENTS: CopyCourseInput.Scope
+    copy_name: str
+    copy_scope: _containers.RepeatedScalarFieldContainer[CopyCourseInput.Scope]
+    course_id: str
+    def __init__(self, course_id: _Optional[str] = ..., copy_scope: _Optional[_Iterable[_Union[CopyCourseInput.Scope, str]]] = ..., copy_name: _Optional[str] = ...) -> None: ...
+
+class CopyCourseOutput(_message.Message):
+    __slots__ = ["copy_course_id"]
+    COPY_COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    copy_course_id: str
+    def __init__(self, copy_course_id: _Optional[str] = ...) -> None: ...
+
 class CreateCourseInput(_message.Message):
     __slots__ = ["course"]
     COURSE_FIELD_NUMBER: _ClassVar[int]
