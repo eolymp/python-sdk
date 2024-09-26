@@ -60,6 +60,14 @@ class DescribeViewerOutput(_message.Message):
     student: _student_pb2.Student
     def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
+class JoinCourseInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class JoinCourseOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class ListStudentsInput(_message.Message):
     __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):

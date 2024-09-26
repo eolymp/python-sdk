@@ -109,16 +109,6 @@ class ListCoursesOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_course_pb2.Course, _Mapping]]] = ...) -> None: ...
 
-class StartCourseInput(_message.Message):
-    __slots__ = ["course_id"]
-    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
-    course_id: str
-    def __init__(self, course_id: _Optional[str] = ...) -> None: ...
-
-class StartCourseOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class UpdateCourseInput(_message.Message):
     __slots__ = ["course", "course_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):

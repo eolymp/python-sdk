@@ -89,3 +89,14 @@ class StudentServiceClient:
             **kwargs,
         )
 
+    def JoinCourse(self, request, **kwargs):
+        path = "/join"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.JoinCourseOutput"),
+            **kwargs,
+        )
+
