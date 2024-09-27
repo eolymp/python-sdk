@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class GroupChangedRecord(_message.Message):
+class GroupChangedEvent(_message.Message):
     __slots__ = ["after", "before"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
@@ -14,7 +14,7 @@ class GroupChangedRecord(_message.Message):
     before: _group_pb2.Group
     def __init__(self, before: _Optional[_Union[_group_pb2.Group, _Mapping]] = ..., after: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
 
-class MemberChangedRecord(_message.Message):
+class MemberChangedEvent(_message.Message):
     __slots__ = ["after", "before"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]

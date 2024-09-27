@@ -15,7 +15,7 @@ from eolymp.community import group_pb2 as eolymp_dot_community_dot_group__pb2
 from eolymp.community import member_pb2 as eolymp_dot_community_dot_member__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/events.proto\x12\x10\x65olymp.community\x1a\x1c\x65olymp/community/group.proto\x1a\x1d\x65olymp/community/member.proto\">\n\x12MemberCreatedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\">\n\x12MemberUpdatedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\">\n\x12MemberDeletedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\"h\n\x13MemberChangedRecord\x12(\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\x12\'\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x18.eolymp.community.Member\"e\n\x12GroupChangedRecord\x12\'\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x17.eolymp.community.Group\x12&\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x17.eolymp.community.GroupB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/events.proto\x12\x10\x65olymp.community\x1a\x1c\x65olymp/community/group.proto\x1a\x1d\x65olymp/community/member.proto\">\n\x12MemberCreatedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\">\n\x12MemberUpdatedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\">\n\x12MemberDeletedEvent\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\"g\n\x12MemberChangedEvent\x12(\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\x12\'\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x18.eolymp.community.Member\"d\n\x11GroupChangedEvent\x12\'\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x17.eolymp.community.Group\x12&\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x17.eolymp.community.GroupB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.events_pb2', globals())
@@ -29,8 +29,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MEMBERUPDATEDEVENT._serialized_end=238
   _MEMBERDELETEDEVENT._serialized_start=240
   _MEMBERDELETEDEVENT._serialized_end=302
-  _MEMBERCHANGEDRECORD._serialized_start=304
-  _MEMBERCHANGEDRECORD._serialized_end=408
-  _GROUPCHANGEDRECORD._serialized_start=410
-  _GROUPCHANGEDRECORD._serialized_end=511
+  _MEMBERCHANGEDEVENT._serialized_start=304
+  _MEMBERCHANGEDEVENT._serialized_end=407
+  _GROUPCHANGEDEVENT._serialized_start=409
+  _GROUPCHANGEDEVENT._serialized_end=509
 # @@protoc_insertion_point(module_scope)
