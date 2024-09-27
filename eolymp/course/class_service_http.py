@@ -9,24 +9,24 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class GroupServiceClient:
+class ClassServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
-    def CreateGroup(self, request, **kwargs):
-        path = "/groups"
+    def CreateClass(self, request, **kwargs):
+        path = "/classes"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateGroupOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.CreateClassOutput"),
             **kwargs,
         )
 
-    def UpdateGroup(self, request, **kwargs):
-        path = "/groups/"+urllib.parse.quote(request.group_id)
+    def UpdateClass(self, request, **kwargs):
+        path = "/classes/"+urllib.parse.quote(request.group_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.group_id = ""
@@ -35,12 +35,12 @@ class GroupServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateGroupOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateClassOutput"),
             **kwargs,
         )
 
-    def DeleteGroup(self, request, **kwargs):
-        path = "/groups/"+urllib.parse.quote(request.group_id)
+    def DeleteClass(self, request, **kwargs):
+        path = "/classes/"+urllib.parse.quote(request.group_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.group_id = ""
@@ -49,12 +49,12 @@ class GroupServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteGroupOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteClassOutput"),
             **kwargs,
         )
 
-    def DescribeGroup(self, request, **kwargs):
-        path = "/groups/"+urllib.parse.quote(request.group_id)
+    def DescribeClass(self, request, **kwargs):
+        path = "/classes/"+urllib.parse.quote(request.group_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.group_id = ""
@@ -63,18 +63,18 @@ class GroupServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeGroupOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeClassOutput"),
             **kwargs,
         )
 
-    def ListGroups(self, request, **kwargs):
-        path = "/groups"
+    def ListClasses(self, request, **kwargs):
+        path = "/classes"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.ListGroupsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListClassesOutput"),
             **kwargs,
         )
 

@@ -15,7 +15,7 @@ from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/course/assignment.proto\x12\reolymp.course\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd6\x01\n\nAssignment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\tmember_id\x18\x02 \x01(\tH\x00\x12\x12\n\x08group_id\x18\x03 \x01(\tH\x00\x12/\n\x0bstart_after\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x0f\x63omplete_before\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64uration\x18\r \x01(\r\x12\x0f\n\x07upsolve\x18\x1e \x01(\x08\x42\n\n\x08\x61ssigneeB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/course/assignment.proto\x12\reolymp.course\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe9\x01\n\nAssignment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmodule_id\x18\x04 \x01(\t\x12\x13\n\tmember_id\x18\x02 \x01(\tH\x00\x12\x12\n\x08group_id\x18\x03 \x01(\tH\x00\x12/\n\x0bstart_after\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x0f\x63omplete_before\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64uration\x18\r \x01(\r\x12\x0f\n\x07upsolve\x18\x1e \x01(\x08\x42\n\n\x08\x61ssigneeB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.assignment_pb2', globals())
@@ -24,5 +24,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _ASSIGNMENT._serialized_start=109
-  _ASSIGNMENT._serialized_end=323
+  _ASSIGNMENT._serialized_end=342
 # @@protoc_insertion_point(module_scope)
