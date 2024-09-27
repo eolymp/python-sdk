@@ -53,17 +53,6 @@ class StudentServiceClient:
             **kwargs,
         )
 
-    def DescribeViewer(self, request, **kwargs):
-        path = "/viewer/student"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeViewerOutput"),
-            **kwargs,
-        )
-
     def DescribeStudent(self, request, **kwargs):
         path = "/students/"+urllib.parse.quote(request.member_id)
 
@@ -97,6 +86,17 @@ class StudentServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.course.JoinCourseOutput"),
+            **kwargs,
+        )
+
+    def DescribeViewer(self, request, **kwargs):
+        path = "/viewer/student"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeViewerOutput"),
             **kwargs,
         )
 

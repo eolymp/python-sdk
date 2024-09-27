@@ -16,7 +16,14 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class DeleteMessageInput(_message.Message):
     __slots__ = ["message_id"]
+    class Reason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    INAPPROPRIATE: DeleteMessageInput.Reason
     MESSAGE_ID_FIELD_NUMBER: _ClassVar[int]
+    OFF_TOPIC: DeleteMessageInput.Reason
+    UNKNOWN_REASON: DeleteMessageInput.Reason
+    UNSOLICITED: DeleteMessageInput.Reason
+    VIOLATION: DeleteMessageInput.Reason
     message_id: str
     def __init__(self, message_id: _Optional[str] = ...) -> None: ...
 

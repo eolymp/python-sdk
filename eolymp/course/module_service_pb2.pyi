@@ -14,18 +14,20 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AssignModuleInput(_message.Message):
-    __slots__ = ["complete_before", "duration", "member_id", "module_id", "start_after"]
+    __slots__ = ["complete_before", "duration", "member_id", "module_id", "start_after", "upsolve"]
     COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
     DURATION_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     START_AFTER_FIELD_NUMBER: _ClassVar[int]
+    UPSOLVE_FIELD_NUMBER: _ClassVar[int]
     complete_before: _timestamp_pb2.Timestamp
     duration: int
     member_id: str
     module_id: str
     start_after: _timestamp_pb2.Timestamp
-    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ...) -> None: ...
+    upsolve: bool
+    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: bool = ...) -> None: ...
 
 class AssignModuleOutput(_message.Message):
     __slots__ = []
