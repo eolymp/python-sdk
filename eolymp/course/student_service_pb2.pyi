@@ -83,7 +83,7 @@ class JoinCourseOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListStudentAssignmentsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["filters", "member_id", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "module_id", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -94,12 +94,14 @@ class ListStudentAssignmentsInput(_message.Message):
         query: str
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., module_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     filters: ListStudentAssignmentsInput.Filter
+    member_id: str
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListStudentAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListStudentAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListStudentAssignmentsOutput(_message.Message):
     __slots__ = ["items", "total"]

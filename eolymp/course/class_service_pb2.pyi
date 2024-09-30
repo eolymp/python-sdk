@@ -59,7 +59,7 @@ class DescribeClassOutput(_message.Message):
     def __init__(self, **kwargs) -> None: ...
 
 class ListClassAssignmentsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["filters", "group_id", "offset", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "module_id", "query"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -70,12 +70,14 @@ class ListClassAssignmentsInput(_message.Message):
         query: str
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., module_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     filters: ListClassAssignmentsInput.Filter
+    group_id: str
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListClassAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, group_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListClassAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListClassAssignmentsOutput(_message.Message):
     __slots__ = ["items", "total"]
