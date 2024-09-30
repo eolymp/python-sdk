@@ -15,10 +15,10 @@ class NotificationServiceClient:
         self.url = url
 
     def DescribeNotification(self, request, **kwargs):
-        path = "/notifications/"+urllib.parse.quote(request.notification)
+        path = "/notifications/"+urllib.parse.quote(request.notification_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.notification = ""
+        request.notification_id = ""
 
         return self.transport.request(
             method="GET",
@@ -29,10 +29,10 @@ class NotificationServiceClient:
         )
 
     def ReadNotification(self, request, **kwargs):
-        path = "/notifications/"+urllib.parse.quote(request.notification)+"/read"
+        path = "/notifications/"+urllib.parse.quote(request.notification_id)+"/read"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.notification = ""
+        request.notification_id = ""
 
         return self.transport.request(
             method="POST",
@@ -43,10 +43,10 @@ class NotificationServiceClient:
         )
 
     def DeleteNotification(self, request, **kwargs):
-        path = "/notifications/"+urllib.parse.quote(request.notification)
+        path = "/notifications/"+urllib.parse.quote(request.notification_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.notification = ""
+        request.notification_id = ""
 
         return self.transport.request(
             method="DELETE",
