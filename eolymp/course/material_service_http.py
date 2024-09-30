@@ -92,3 +92,17 @@ class MaterialServiceClient:
             **kwargs,
         )
 
+    def ReportProgress(self, request, **kwargs):
+        path = "/materials/"+urllib.parse.quote(request.material_id)+"/progress"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.material_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ReportProgressOutput"),
+            **kwargs,
+        )
+

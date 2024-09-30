@@ -103,6 +103,18 @@ class MoveMaterialOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class ReportProgressInput(_message.Message):
+    __slots__ = ["material_id", "progress"]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    PROGRESS_FIELD_NUMBER: _ClassVar[int]
+    material_id: str
+    progress: float
+    def __init__(self, material_id: _Optional[str] = ..., progress: _Optional[float] = ...) -> None: ...
+
+class ReportProgressOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdateMaterialInput(_message.Message):
     __slots__ = ["material", "material_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
