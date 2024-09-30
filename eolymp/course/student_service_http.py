@@ -100,3 +100,45 @@ class StudentServiceClient:
             **kwargs,
         )
 
+    def ListStudentAssignments(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListStudentAssignmentsOutput"),
+            **kwargs,
+        )
+
+    def UpdateStudentAssignment(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateStudentAssignmentOutput"),
+            **kwargs,
+        )
+
+    def DeleteStudentAssignment(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteStudentAssignmentOutput"),
+            **kwargs,
+        )
+

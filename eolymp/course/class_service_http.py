@@ -78,3 +78,45 @@ class ClassServiceClient:
             **kwargs,
         )
 
+    def ListClassAssignments(self, request, **kwargs):
+        path = "/classes/"+urllib.parse.quote(request.group_id)+"/assignments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.group_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListClassAssignmentsOutput"),
+            **kwargs,
+        )
+
+    def UpdateClassAssignment(self, request, **kwargs):
+        path = "/classes/"+urllib.parse.quote(request.group_id)+"/assignments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.group_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateClassAssignmentOutput"),
+            **kwargs,
+        )
+
+    def DeleteClassAssignment(self, request, **kwargs):
+        path = "/classes/"+urllib.parse.quote(request.group_id)+"/assignments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.group_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DeleteClassAssignmentOutput"),
+            **kwargs,
+        )
+

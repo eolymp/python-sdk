@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/course/class.proto\x12\reolymp.course\"Y\n\x05\x43lass\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08group_id\x18\x03 \x01(\t\x12\x10\n\x08inactive\x18\x04 \x01(\x08\x12\x12\n\nassign_all\x18\x05 \x01(\x08\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/course/class.proto\x12\reolymp.course\";\n\x05\x43lass\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08group_id\x18\x03 \x01(\t\x12\x14\n\x0cmodule_count\x18\x06 \x01(\rB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.class_pb2', globals())
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _CLASS._serialized_start=44
-  _CLASS._serialized_end=133
+  _CLASS._serialized_end=103
 # @@protoc_insertion_point(module_scope)
