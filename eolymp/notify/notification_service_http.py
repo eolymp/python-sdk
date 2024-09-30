@@ -24,7 +24,7 @@ class NotificationServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeNotificationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.notify.DescribeNotificationOutput"),
             **kwargs,
         )
 
@@ -38,7 +38,7 @@ class NotificationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.ReadNotificationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.notify.ReadNotificationOutput"),
             **kwargs,
         )
 
@@ -52,7 +52,7 @@ class NotificationServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.DeleteNotificationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.notify.DeleteNotificationOutput"),
             **kwargs,
         )
 
@@ -63,7 +63,7 @@ class NotificationServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.ListNotificationsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.notify.ListNotificationsOutput"),
             **kwargs,
         )
 
@@ -74,7 +74,7 @@ class NotificationServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeNotificationConfigOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.notify.DescribeNotificationConfigOutput"),
             **kwargs,
         )
 
@@ -85,7 +85,7 @@ class NotificationServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.universe.UpdateNotificationConfigOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.notify.UpdateNotificationConfigOutput"),
             **kwargs,
         )
 
