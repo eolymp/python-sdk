@@ -14,24 +14,15 @@ class Module(_message.Message):
         __slots__ = []
     class Progress(_message.Message):
         __slots__ = ["assigned_at", "complete_before", "completed_at", "duration", "grade", "percentage", "start_after", "started_at", "status", "upsolve"]
-        class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = []
-        ACTIVE: Module.Progress.Status
         ASSIGNED_AT_FIELD_NUMBER: _ClassVar[int]
-        COMPLETE: Module.Progress.Status
         COMPLETED_AT_FIELD_NUMBER: _ClassVar[int]
         COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
         DURATION_FIELD_NUMBER: _ClassVar[int]
         GRADE_FIELD_NUMBER: _ClassVar[int]
         PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
-        READY: Module.Progress.Status
-        SCHEDULED: Module.Progress.Status
         STARTED_AT_FIELD_NUMBER: _ClassVar[int]
         START_AFTER_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
-        UNASSIGNED: Module.Progress.Status
-        UNKNOWN_STATUS: Module.Progress.Status
-        UPSOLVE: Module.Progress.Status
         UPSOLVE_FIELD_NUMBER: _ClassVar[int]
         assigned_at: _timestamp_pb2.Timestamp
         complete_before: _timestamp_pb2.Timestamp
@@ -41,9 +32,9 @@ class Module(_message.Message):
         percentage: float
         start_after: _timestamp_pb2.Timestamp
         started_at: _timestamp_pb2.Timestamp
-        status: Module.Progress.Status
+        status: _assignment_pb2.Assignment.Status
         upsolve: bool
-        def __init__(self, status: _Optional[_Union[Module.Progress.Status, str]] = ..., percentage: _Optional[float] = ..., grade: _Optional[int] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: bool = ..., assigned_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+        def __init__(self, status: _Optional[_Union[_assignment_pb2.Assignment.Status, str]] = ..., percentage: _Optional[float] = ..., grade: _Optional[int] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: bool = ..., assigned_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     ASSIGNMENT: Module.Extra
     ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
     COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
