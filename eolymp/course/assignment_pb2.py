@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/course/assignment.proto\x12\reolymp.course\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe9\x01\n\nAssignment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmodule_id\x18\x04 \x01(\t\x12\x13\n\tmember_id\x18\x02 \x01(\tH\x00\x12\x12\n\x08group_id\x18\x03 \x01(\tH\x00\x12/\n\x0bstart_after\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x0f\x63omplete_before\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64uration\x18\r \x01(\r\x12\x0f\n\x07upsolve\x18\x1e \x01(\x08\x42\n\n\x08\x61ssigneeB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/course/assignment.proto\x12\reolymp.course\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8a\x03\n\nAssignment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmodule_id\x18\x04 \x01(\t\x12\x30\n\x06status\x18\x06 \x01(\x0e\x32 .eolymp.course.Assignment.Status\x12\x13\n\tmember_id\x18\x02 \x01(\tH\x00\x12\x12\n\x08group_id\x18\x03 \x01(\tH\x00\x12/\n\x0bstart_after\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x0f\x63omplete_before\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64uration\x18\r \x01(\r\x12\x0f\n\x07upsolve\x18\x1e \x01(\x08\"m\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0e\n\nUNASSIGNED\x10\x01\x12\r\n\tSCHEDULED\x10\x03\x12\t\n\x05READY\x10\x04\x12\n\n\x06\x41\x43TIVE\x10\x05\x12\x0c\n\x08\x43OMPLETE\x10\x06\x12\x0b\n\x07UPSOLVE\x10\x07\x42\n\n\x08\x61ssigneeB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.assignment_pb2', globals())
@@ -23,5 +23,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _ASSIGNMENT._serialized_start=83
-  _ASSIGNMENT._serialized_end=316
+  _ASSIGNMENT._serialized_end=477
+  _ASSIGNMENT_STATUS._serialized_start=356
+  _ASSIGNMENT_STATUS._serialized_end=465
 # @@protoc_insertion_point(module_scope)
