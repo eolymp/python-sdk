@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Material(_message.Message):
-    __slots__ = ["depth", "document", "draft", "grade", "grading", "id", "image_url", "index", "name", "progress", "task", "url"]
+    __slots__ = ["depth", "document", "draft", "grade", "grading", "id", "image_url", "index", "name", "percentage", "progress", "task", "url"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Document(_message.Message):
@@ -22,6 +22,17 @@ class Material(_message.Message):
         max_score: int
         weight: float
         def __init__(self, max_score: _Optional[int] = ..., weight: _Optional[float] = ...) -> None: ...
+    class Progress(_message.Message):
+        __slots__ = ["grade", "grade_automatic", "grade_override", "percentage"]
+        GRADE_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
+        GRADE_FIELD_NUMBER: _ClassVar[int]
+        GRADE_OVERRIDE_FIELD_NUMBER: _ClassVar[int]
+        PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
+        grade: int
+        grade_automatic: int
+        grade_override: int
+        percentage: float
+        def __init__(self, percentage: _Optional[float] = ..., grade: _Optional[int] = ..., grade_automatic: _Optional[int] = ..., grade_override: _Optional[int] = ...) -> None: ...
     class Task(_message.Message):
         __slots__ = ["problem_id"]
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -40,6 +51,8 @@ class Material(_message.Message):
     IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    PERCENTAGE: Material.Extra
+    PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
     PROGRESS: Material.Extra
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
     TASK_FIELD_NUMBER: _ClassVar[int]
@@ -54,7 +67,8 @@ class Material(_message.Message):
     image_url: str
     index: int
     name: str
-    progress: float
+    percentage: float
+    progress: Material.Progress
     task: Material.Task
     url: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., depth: _Optional[int] = ..., grading: _Optional[_Union[Material.Grading, _Mapping]] = ..., document: _Optional[_Union[Material.Document, _Mapping]] = ..., task: _Optional[_Union[Material.Task, _Mapping]] = ..., progress: _Optional[float] = ..., grade: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., depth: _Optional[int] = ..., grading: _Optional[_Union[Material.Grading, _Mapping]] = ..., document: _Optional[_Union[Material.Document, _Mapping]] = ..., task: _Optional[_Union[Material.Task, _Mapping]] = ..., percentage: _Optional[float] = ..., grade: _Optional[int] = ..., progress: _Optional[_Union[Material.Progress, _Mapping]] = ...) -> None: ...

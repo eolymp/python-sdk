@@ -13,28 +13,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class AssignModuleInput(_message.Message):
-    __slots__ = ["complete_before", "duration", "group_id", "member_id", "module_id", "start_after", "upsolve"]
-    COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
-    DURATION_FIELD_NUMBER: _ClassVar[int]
-    GROUP_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-    START_AFTER_FIELD_NUMBER: _ClassVar[int]
-    UPSOLVE_FIELD_NUMBER: _ClassVar[int]
-    complete_before: _timestamp_pb2.Timestamp
-    duration: int
-    group_id: str
-    member_id: str
-    module_id: str
-    start_after: _timestamp_pb2.Timestamp
-    upsolve: bool
-    def __init__(self, member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: bool = ...) -> None: ...
-
-class AssignModuleOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class CreateModuleInput(_message.Message):
     __slots__ = ["module"]
     MODULE_FIELD_NUMBER: _ClassVar[int]
@@ -74,6 +52,20 @@ class DescribeModuleOutput(_message.Message):
     MODULE_FIELD_NUMBER: _ClassVar[int]
     module: _module_pb2.Module
     def __init__(self, module: _Optional[_Union[_module_pb2.Module, _Mapping]] = ...) -> None: ...
+
+class GradeModuleInput(_message.Message):
+    __slots__ = ["grade", "member_id", "module_id"]
+    GRADE_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    grade: int
+    member_id: str
+    module_id: str
+    def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ...) -> None: ...
+
+class GradeModuleOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class ListModulesInput(_message.Message):
     __slots__ = ["extra", "filters", "group_id", "member_id", "offset", "order", "size", "sort"]
@@ -122,20 +114,6 @@ class StartModuleInput(_message.Message):
     def __init__(self, module_id: _Optional[str] = ...) -> None: ...
 
 class StartModuleOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UnassignModuleInput(_message.Message):
-    __slots__ = ["group_id", "member_id", "module_id"]
-    GROUP_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-    group_id: str
-    member_id: str
-    module_id: str
-    def __init__(self, member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
-
-class UnassignModuleOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 

@@ -92,8 +92,8 @@ class ModuleServiceClient:
             **kwargs,
         )
 
-    def AssignModule(self, request, **kwargs):
-        path = "/modules/"+urllib.parse.quote(request.module_id)+"/assignments"
+    def GradeModule(self, request, **kwargs):
+        path = "/modules/"+urllib.parse.quote(request.module_id)+"/grade"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.module_id = ""
@@ -102,21 +102,7 @@ class ModuleServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.AssignModuleOutput"),
-            **kwargs,
-        )
-
-    def UnassignModule(self, request, **kwargs):
-        path = "/modules/"+urllib.parse.quote(request.module_id)+"/assignments"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.module_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.course.UnassignModuleOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.GradeModuleOutput"),
             **kwargs,
         )
 

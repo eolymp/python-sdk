@@ -51,6 +51,20 @@ class DescribeMaterialOutput(_message.Message):
     material: _material_pb2.Material
     def __init__(self, material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
 
+class GradeMaterialInput(_message.Message):
+    __slots__ = ["grade", "material_id", "member_id"]
+    GRADE_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    grade: int
+    material_id: str
+    member_id: str
+    def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ...) -> None: ...
+
+class GradeMaterialOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class ListMaterialsInput(_message.Message):
     __slots__ = ["extra", "filters", "member_id", "module_id", "offset", "order", "size", "sort"]
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
