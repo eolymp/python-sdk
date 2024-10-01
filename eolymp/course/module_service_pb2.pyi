@@ -54,14 +54,16 @@ class DescribeModuleOutput(_message.Message):
     def __init__(self, module: _Optional[_Union[_module_pb2.Module, _Mapping]] = ...) -> None: ...
 
 class GradeModuleInput(_message.Message):
-    __slots__ = ["grade", "member_id", "module_id"]
+    __slots__ = ["excused", "grade", "member_id", "module_id"]
+    EXCUSED_FIELD_NUMBER: _ClassVar[int]
     GRADE_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    excused: bool
     grade: int
     member_id: str
     module_id: str
-    def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ...) -> None: ...
+    def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: bool = ...) -> None: ...
 
 class GradeModuleOutput(_message.Message):
     __slots__ = []

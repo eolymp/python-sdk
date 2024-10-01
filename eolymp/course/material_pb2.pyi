@@ -23,16 +23,18 @@ class Material(_message.Message):
         weight: float
         def __init__(self, max_score: _Optional[int] = ..., weight: _Optional[float] = ...) -> None: ...
     class Progress(_message.Message):
-        __slots__ = ["grade", "grade_automatic", "grade_override", "percentage"]
+        __slots__ = ["excused", "grade", "grade_automatic", "grade_override", "percentage"]
+        EXCUSED_FIELD_NUMBER: _ClassVar[int]
         GRADE_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
         GRADE_FIELD_NUMBER: _ClassVar[int]
         GRADE_OVERRIDE_FIELD_NUMBER: _ClassVar[int]
         PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
+        excused: bool
         grade: int
         grade_automatic: int
         grade_override: int
         percentage: float
-        def __init__(self, percentage: _Optional[float] = ..., grade: _Optional[int] = ..., grade_automatic: _Optional[int] = ..., grade_override: _Optional[int] = ...) -> None: ...
+        def __init__(self, percentage: _Optional[float] = ..., grade: _Optional[int] = ..., grade_automatic: _Optional[int] = ..., grade_override: _Optional[int] = ..., excused: bool = ...) -> None: ...
     class Task(_message.Message):
         __slots__ = ["problem_id"]
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]

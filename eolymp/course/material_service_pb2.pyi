@@ -52,14 +52,16 @@ class DescribeMaterialOutput(_message.Message):
     def __init__(self, material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
 
 class GradeMaterialInput(_message.Message):
-    __slots__ = ["grade", "material_id", "member_id"]
+    __slots__ = ["excused", "grade", "material_id", "member_id"]
+    EXCUSED_FIELD_NUMBER: _ClassVar[int]
     GRADE_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    excused: bool
     grade: int
     material_id: str
     member_id: str
-    def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ...) -> None: ...
+    def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: bool = ...) -> None: ...
 
 class GradeMaterialOutput(_message.Message):
     __slots__ = []
