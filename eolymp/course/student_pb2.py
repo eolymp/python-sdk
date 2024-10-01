@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/course/student.proto\x12\reolymp.course\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf0\x03\n\x07Student\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x10\n\x08inactive\x18\x04 \x01(\x08\x12\x12\n\nassign_all\x18\x05 \x01(\x08\x12\x18\n\x10overall_progress\x18\n \x01(\x02\x12\x15\n\roverall_grade\x18\x0f \x01(\r\x12,\n\x06grades\x18\x14 \x03(\x0b\x32\x1c.eolymp.course.Student.Grade\x12-\n\tgraded_at\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x19 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncreated_at\x18\x1b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a}\n\x05Grade\x12\x13\n\tmodule_id\x18\x01 \x01(\tH\x00\x12\x15\n\x0bmaterial_id\x18\x02 \x01(\tH\x00\x12\r\n\x05grade\x18\n \x01(\r\x12\x17\n\x0fgrade_automatic\x18\x0b \x01(\r\x12\x16\n\x0egrade_override\x18\x0c \x01(\rB\x08\n\x06source\"&\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\n\n\x06GRADES\x10\x01\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/course/student.proto\x12\reolymp.course\x1a\x1fgoogle/protobuf/timestamp.proto\"\x80\x04\n\x07Student\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x10\n\x08inactive\x18\x04 \x01(\x08\x12\x12\n\nassign_all\x18\x05 \x01(\x08\x12\x18\n\x10overall_progress\x18\n \x01(\x02\x12\x15\n\roverall_grade\x18\x0f \x01(\r\x12,\n\x06grades\x18\x14 \x03(\x0b\x32\x1c.eolymp.course.Student.Grade\x12-\n\tgraded_at\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x19 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncreated_at\x18\x1b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\t\x1a}\n\x05Grade\x12\x13\n\tmodule_id\x18\x01 \x01(\tH\x00\x12\x15\n\x0bmaterial_id\x18\x02 \x01(\tH\x00\x12\r\n\x05grade\x18\n \x01(\r\x12\x17\n\x0fgrade_automatic\x18\x0b \x01(\r\x12\x16\n\x0egrade_override\x18\x0c \x01(\rB\x08\n\x06source\"&\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\n\n\x06GRADES\x10\x01\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.student_pb2', globals())
@@ -23,9 +23,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _STUDENT._serialized_start=80
-  _STUDENT._serialized_end=576
-  _STUDENT_GRADE._serialized_start=411
-  _STUDENT_GRADE._serialized_end=536
-  _STUDENT_EXTRA._serialized_start=538
-  _STUDENT_EXTRA._serialized_end=576
+  _STUDENT._serialized_end=592
+  _STUDENT_GRADE._serialized_start=427
+  _STUDENT_GRADE._serialized_end=552
+  _STUDENT_EXTRA._serialized_start=554
+  _STUDENT_EXTRA._serialized_end=592
 # @@protoc_insertion_point(module_scope)
