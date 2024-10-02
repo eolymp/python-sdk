@@ -12,18 +12,18 @@ class Student(_message.Message):
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Grade(_message.Message):
-        __slots__ = ["grade", "grade_automatic", "grade_override", "material_id", "module_id"]
+        __slots__ = ["excused", "grade", "grade_automatic", "grade_override", "module_id"]
+        EXCUSED_FIELD_NUMBER: _ClassVar[int]
         GRADE_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
         GRADE_FIELD_NUMBER: _ClassVar[int]
         GRADE_OVERRIDE_FIELD_NUMBER: _ClassVar[int]
-        MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
         MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+        excused: bool
         grade: int
         grade_automatic: int
         grade_override: int
-        material_id: str
         module_id: str
-        def __init__(self, module_id: _Optional[str] = ..., material_id: _Optional[str] = ..., grade: _Optional[int] = ..., grade_automatic: _Optional[int] = ..., grade_override: _Optional[int] = ...) -> None: ...
+        def __init__(self, module_id: _Optional[str] = ..., grade: _Optional[int] = ..., grade_automatic: _Optional[int] = ..., grade_override: _Optional[int] = ..., excused: bool = ...) -> None: ...
     ASSIGN_ALL_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     CURSOR_FIELD_NUMBER: _ClassVar[int]

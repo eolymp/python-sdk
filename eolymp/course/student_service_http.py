@@ -142,3 +142,32 @@ class StudentServiceClient:
             **kwargs,
         )
 
+    def ListStudentGrades(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)+"/grades"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListStudentGradesOutput"),
+            **kwargs,
+        )
+
+    def ListModuleGrades(self, request, **kwargs):
+        path = "/students/"+urllib.parse.quote(request.member_id)+"/grades/"+urllib.parse.quote(request.module_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+        request.module_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListModuleGradesOutput"),
+            **kwargs,
+        )
+

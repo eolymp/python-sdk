@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Module(_message.Message):
-    __slots__ = ["assignment", "complete_before", "description", "draft", "duration", "extra", "id", "image_url", "index", "name", "progress", "start_after", "url"]
+    __slots__ = ["assignment", "complete_before", "description", "draft", "duration", "extra", "id", "image_url", "index", "name", "progress", "start_after", "url", "weight"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Progress(_message.Message):
@@ -59,6 +59,7 @@ class Module(_message.Message):
     START_AFTER_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_EXTRA: Module.Extra
     URL_FIELD_NUMBER: _ClassVar[int]
+    WEIGHT_FIELD_NUMBER: _ClassVar[int]
     assignment: _assignment_pb2.Assignment
     complete_before: _timestamp_pb2.Timestamp
     description: _content_pb2.Content
@@ -72,4 +73,5 @@ class Module(_message.Message):
     progress: Module.Progress
     start_after: _timestamp_pb2.Timestamp
     url: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., extra: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., progress: _Optional[_Union[Module.Progress, _Mapping]] = ..., assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
+    weight: bool
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., extra: bool = ..., weight: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., start_after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., progress: _Optional[_Union[Module.Progress, _Mapping]] = ..., assignment: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...

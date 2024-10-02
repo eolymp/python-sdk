@@ -2,6 +2,8 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.course import assignment_pb2 as _assignment_pb2
+from eolymp.course import material_pb2 as _material_pb2
+from eolymp.course import module_pb2 as _module_pb2
 from eolymp.course import student_pb2 as _student_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
@@ -82,6 +84,20 @@ class JoinCourseOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class ListModuleGradesInput(_message.Message):
+    __slots__ = ["member_id", "module_id"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    module_id: str
+    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
+
+class ListModuleGradesOutput(_message.Message):
+    __slots__ = ["items"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_material_pb2.Material.Progress]
+    def __init__(self, items: _Optional[_Iterable[_Union[_material_pb2.Material.Progress, _Mapping]]] = ...) -> None: ...
+
 class ListStudentAssignmentsInput(_message.Message):
     __slots__ = ["filters", "member_id", "offset", "size"]
     class Filter(_message.Message):
@@ -110,6 +126,18 @@ class ListStudentAssignmentsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_assignment_pb2.Assignment]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_assignment_pb2.Assignment, _Mapping]]] = ...) -> None: ...
+
+class ListStudentGradesInput(_message.Message):
+    __slots__ = ["member_id"]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
+
+class ListStudentGradesOutput(_message.Message):
+    __slots__ = ["items"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_module_pb2.Module.Progress]
+    def __init__(self, items: _Optional[_Iterable[_Union[_module_pb2.Module.Progress, _Mapping]]] = ...) -> None: ...
 
 class ListStudentsInput(_message.Message):
     __slots__ = ["after", "extra", "filters", "offset", "order", "size", "sort"]
