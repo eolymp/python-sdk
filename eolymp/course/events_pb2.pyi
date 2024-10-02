@@ -21,16 +21,14 @@ class AssignmentChangedEvent(_message.Message):
     def __init__(self, course_id: _Optional[str] = ..., module_id: _Optional[str] = ..., before: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ..., after: _Optional[_Union[_assignment_pb2.Assignment, _Mapping]] = ...) -> None: ...
 
 class MaterialChangedEvent(_message.Message):
-    __slots__ = ["after", "before", "course_id", "module_id"]
+    __slots__ = ["after", "before", "course_id"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
-    MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     after: _material_pb2.Material
     before: _material_pb2.Material
     course_id: str
-    module_id: str
-    def __init__(self, course_id: _Optional[str] = ..., module_id: _Optional[str] = ..., before: _Optional[_Union[_material_pb2.Material, _Mapping]] = ..., after: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., before: _Optional[_Union[_material_pb2.Material, _Mapping]] = ..., after: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
 
 class ModuleChangedEvent(_message.Message):
     __slots__ = ["after", "before", "course_id"]
