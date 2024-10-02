@@ -73,14 +73,18 @@ class ListModulesInput(_message.Message):
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["draft", "extra", "query"]
+        __slots__ = ["draft", "extra", "graded", "query", "weight"]
         DRAFT_FIELD_NUMBER: _ClassVar[int]
         EXTRA_FIELD_NUMBER: _ClassVar[int]
+        GRADED_FIELD_NUMBER: _ClassVar[int]
         QUERY_FIELD_NUMBER: _ClassVar[int]
+        WEIGHT_FIELD_NUMBER: _ClassVar[int]
         draft: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         extra: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        graded: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         query: str
-        def __init__(self, query: _Optional[str] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., extra: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        weight: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        def __init__(self, query: _Optional[str] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., extra: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., graded: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., weight: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
