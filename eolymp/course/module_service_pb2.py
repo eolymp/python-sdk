@@ -17,10 +17,9 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.course import module_pb2 as eolymp_dot_course_dot_module__pb2
 from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/course/module_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/course/module.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\":\n\x11\x43reateModuleInput\x12%\n\x06module\x18\x01 \x01(\x0b\x32\x15.eolymp.course.Module\"\'\n\x12\x43reateModuleOutput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\"\xe1\x01\n\x11UpdateModuleInput\x12\x35\n\x05patch\x18\x01 \x03(\x0e\x32&.eolymp.course.UpdateModuleInput.Patch\x12\x11\n\tmodule_id\x18\x02 \x01(\t\x12%\n\x06module\x18\x03 \x01(\x0b\x32\x15.eolymp.course.Module\"[\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05\x44RAFT\x10\x01\x12\t\n\x05\x45XTRA\x10\x06\x12\x08\n\x04NAME\x10\x02\x12\r\n\tIMAGE_URL\x10\x03\x12\t\n\x05INDEX\x10\x04\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x05\"\x14\n\x12UpdateModuleOutput\"&\n\x11\x44\x65leteModuleInput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteModuleOutput\"\x8a\x01\n\x13\x44\x65scribeModuleInput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\x12\x13\n\tmember_id\x18\x02 \x01(\tH\x00\x12\x12\n\x08group_id\x18\x03 \x01(\tH\x00\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.course.Module.ExtraB\n\n\x08\x61ssignee\"=\n\x14\x44\x65scribeModuleOutput\x12%\n\x06module\x18\x01 \x01(\x0b\x32\x15.eolymp.course.Module\"\xb9\x03\n\x10ListModulesInput\x12\x13\n\tmember_id\x18\x05 \x01(\tH\x00\x12\x12\n\x08group_id\x18\x06 \x01(\tH\x00\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.course.ListModulesInput.Filter\x12\x32\n\x04sort\x18\x32 \x01(\x0e\x32$.eolymp.course.ListModulesInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.course.Module.Extra\x1ay\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12/\n\x05\x64raft\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x05\x65xtra\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"\x11\n\x04Sort\x12\t\n\x05INDEX\x10\x00\x42\n\n\x08\x61ssignee\"H\n\x11ListModulesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.course.Module\"%\n\x10StartModuleInput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\"\x13\n\x11StartModuleOutput\"e\n\x10GradeModuleInput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x0f\n\x05grade\x18\x03 \x01(\rH\x00\x12\x11\n\x07\x65xcused\x18\x04 \x01(\x08H\x00\x42\x07\n\x05value\"\x13\n\x11GradeModuleOutput2\xce\x08\n\rModuleService\x12\x8f\x01\n\x0c\x43reateModule\x12 .eolymp.course.CreateModuleInput\x1a!.eolymp.course.CreateModuleOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\x1a\x08/modules\x12\x9b\x01\n\x0cUpdateModule\x12 .eolymp.course.UpdateModuleInput\x1a!.eolymp.course.UpdateModuleOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16\x1a\x14/modules/{module_id}\x12\x9b\x01\n\x0c\x44\x65leteModule\x12 .eolymp.course.DeleteModuleInput\x1a!.eolymp.course.DeleteModuleOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16*\x14/modules/{module_id}\x12\xa0\x01\n\x0e\x44\x65scribeModule\x12\".eolymp.course.DescribeModuleInput\x1a#.eolymp.course.DescribeModuleOutput\"E\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x12\x14/modules/{module_id}\x12\x8b\x01\n\x0bListModules\x12\x1f.eolymp.course.ListModulesInput\x1a .eolymp.course.ListModulesOutput\"9\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\x12\x08/modules\x12\x9d\x01\n\x0bStartModule\x12\x1f.eolymp.course.StartModuleInput\x1a .eolymp.course.StartModuleOutput\"K\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1c\"\x1a/modules/{module_id}/start\x12\x9d\x01\n\x0bGradeModule\x12\x1f.eolymp.course.GradeModuleInput\x1a .eolymp.course.GradeModuleOutput\"K\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1c\"\x1a/modules/{module_id}/gradeB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/course/module_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/course/module.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\":\n\x11\x43reateModuleInput\x12%\n\x06module\x18\x01 \x01(\x0b\x32\x15.eolymp.course.Module\"\'\n\x12\x43reateModuleOutput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\"\xe1\x01\n\x11UpdateModuleInput\x12\x35\n\x05patch\x18\x01 \x03(\x0e\x32&.eolymp.course.UpdateModuleInput.Patch\x12\x11\n\tmodule_id\x18\x02 \x01(\t\x12%\n\x06module\x18\x03 \x01(\x0b\x32\x15.eolymp.course.Module\"[\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05\x44RAFT\x10\x01\x12\t\n\x05\x45XTRA\x10\x06\x12\x08\n\x04NAME\x10\x02\x12\r\n\tIMAGE_URL\x10\x03\x12\t\n\x05INDEX\x10\x04\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x05\"\x14\n\x12UpdateModuleOutput\"&\n\x11\x44\x65leteModuleInput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteModuleOutput\"\x8a\x01\n\x13\x44\x65scribeModuleInput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\x12\x13\n\tmember_id\x18\x02 \x01(\tH\x00\x12\x12\n\x08group_id\x18\x03 \x01(\tH\x00\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.course.Module.ExtraB\n\n\x08\x61ssignee\"=\n\x14\x44\x65scribeModuleOutput\x12%\n\x06module\x18\x01 \x01(\x0b\x32\x15.eolymp.course.Module\"\xb9\x03\n\x10ListModulesInput\x12\x13\n\tmember_id\x18\x05 \x01(\tH\x00\x12\x12\n\x08group_id\x18\x06 \x01(\tH\x00\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.course.ListModulesInput.Filter\x12\x32\n\x04sort\x18\x32 \x01(\x0e\x32$.eolymp.course.ListModulesInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.course.Module.Extra\x1ay\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12/\n\x05\x64raft\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x05\x65xtra\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"\x11\n\x04Sort\x12\t\n\x05INDEX\x10\x00\x42\n\n\x08\x61ssignee\"H\n\x11ListModulesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.course.Module\"%\n\x10StartModuleInput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\"\x13\n\x11StartModuleOutput\"e\n\x10GradeModuleInput\x12\x11\n\tmodule_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x0f\n\x05grade\x18\x03 \x01(\rH\x00\x12\x11\n\x07\x65xcused\x18\x04 \x01(\x08H\x00\x42\x07\n\x05value\"\x13\n\x11GradeModuleOutput2\xce\x08\n\rModuleService\x12\x8f\x01\n\x0c\x43reateModule\x12 .eolymp.course.CreateModuleInput\x1a!.eolymp.course.CreateModuleOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\n\x1a\x08/modules\x12\x9b\x01\n\x0cUpdateModule\x12 .eolymp.course.UpdateModuleInput\x1a!.eolymp.course.UpdateModuleOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16\x1a\x14/modules/{module_id}\x12\x9b\x01\n\x0c\x44\x65leteModule\x12 .eolymp.course.DeleteModuleInput\x1a!.eolymp.course.DeleteModuleOutput\"F\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16*\x14/modules/{module_id}\x12\xa0\x01\n\x0e\x44\x65scribeModule\x12\".eolymp.course.DescribeModuleInput\x1a#.eolymp.course.DescribeModuleOutput\"E\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x12\x14/modules/{module_id}\x12\x8b\x01\n\x0bListModules\x12\x1f.eolymp.course.ListModulesInput\x1a .eolymp.course.ListModulesOutput\"9\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\x12\x08/modules\x12\x9d\x01\n\x0bStartModule\x12\x1f.eolymp.course.StartModuleInput\x1a .eolymp.course.StartModuleOutput\"K\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1c\"\x1a/modules/{module_id}/start\x12\x9d\x01\n\x0bGradeModule\x12\x1f.eolymp.course.GradeModuleInput\x1a .eolymp.course.GradeModuleOutput\"K\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1c\"\x1a/modules/{module_id}/gradeB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.module_service_pb2', globals())
@@ -42,40 +41,40 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MODULESERVICE.methods_by_name['StartModule']._serialized_options = b'\202\343\n\026\212\343\n\022course:course:read\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\034\"\032/modules/{module_id}/start'
   _MODULESERVICE.methods_by_name['GradeModule']._options = None
   _MODULESERVICE.methods_by_name['GradeModule']._serialized_options = b'\202\343\n\026\212\343\n\022course:course:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\034\"\032/modules/{module_id}/grade'
-  _CREATEMODULEINPUT._serialized_start=282
-  _CREATEMODULEINPUT._serialized_end=340
-  _CREATEMODULEOUTPUT._serialized_start=342
-  _CREATEMODULEOUTPUT._serialized_end=381
-  _UPDATEMODULEINPUT._serialized_start=384
-  _UPDATEMODULEINPUT._serialized_end=609
-  _UPDATEMODULEINPUT_PATCH._serialized_start=518
-  _UPDATEMODULEINPUT_PATCH._serialized_end=609
-  _UPDATEMODULEOUTPUT._serialized_start=611
-  _UPDATEMODULEOUTPUT._serialized_end=631
-  _DELETEMODULEINPUT._serialized_start=633
-  _DELETEMODULEINPUT._serialized_end=671
-  _DELETEMODULEOUTPUT._serialized_start=673
-  _DELETEMODULEOUTPUT._serialized_end=693
-  _DESCRIBEMODULEINPUT._serialized_start=696
-  _DESCRIBEMODULEINPUT._serialized_end=834
-  _DESCRIBEMODULEOUTPUT._serialized_start=836
-  _DESCRIBEMODULEOUTPUT._serialized_end=897
-  _LISTMODULESINPUT._serialized_start=900
-  _LISTMODULESINPUT._serialized_end=1341
-  _LISTMODULESINPUT_FILTER._serialized_start=1189
-  _LISTMODULESINPUT_FILTER._serialized_end=1310
-  _LISTMODULESINPUT_SORT._serialized_start=1312
-  _LISTMODULESINPUT_SORT._serialized_end=1329
-  _LISTMODULESOUTPUT._serialized_start=1343
-  _LISTMODULESOUTPUT._serialized_end=1415
-  _STARTMODULEINPUT._serialized_start=1417
-  _STARTMODULEINPUT._serialized_end=1454
-  _STARTMODULEOUTPUT._serialized_start=1456
-  _STARTMODULEOUTPUT._serialized_end=1475
-  _GRADEMODULEINPUT._serialized_start=1477
-  _GRADEMODULEINPUT._serialized_end=1578
-  _GRADEMODULEOUTPUT._serialized_start=1580
-  _GRADEMODULEOUTPUT._serialized_end=1599
-  _MODULESERVICE._serialized_start=1602
-  _MODULESERVICE._serialized_end=2704
+  _CREATEMODULEINPUT._serialized_start=249
+  _CREATEMODULEINPUT._serialized_end=307
+  _CREATEMODULEOUTPUT._serialized_start=309
+  _CREATEMODULEOUTPUT._serialized_end=348
+  _UPDATEMODULEINPUT._serialized_start=351
+  _UPDATEMODULEINPUT._serialized_end=576
+  _UPDATEMODULEINPUT_PATCH._serialized_start=485
+  _UPDATEMODULEINPUT_PATCH._serialized_end=576
+  _UPDATEMODULEOUTPUT._serialized_start=578
+  _UPDATEMODULEOUTPUT._serialized_end=598
+  _DELETEMODULEINPUT._serialized_start=600
+  _DELETEMODULEINPUT._serialized_end=638
+  _DELETEMODULEOUTPUT._serialized_start=640
+  _DELETEMODULEOUTPUT._serialized_end=660
+  _DESCRIBEMODULEINPUT._serialized_start=663
+  _DESCRIBEMODULEINPUT._serialized_end=801
+  _DESCRIBEMODULEOUTPUT._serialized_start=803
+  _DESCRIBEMODULEOUTPUT._serialized_end=864
+  _LISTMODULESINPUT._serialized_start=867
+  _LISTMODULESINPUT._serialized_end=1308
+  _LISTMODULESINPUT_FILTER._serialized_start=1156
+  _LISTMODULESINPUT_FILTER._serialized_end=1277
+  _LISTMODULESINPUT_SORT._serialized_start=1279
+  _LISTMODULESINPUT_SORT._serialized_end=1296
+  _LISTMODULESOUTPUT._serialized_start=1310
+  _LISTMODULESOUTPUT._serialized_end=1382
+  _STARTMODULEINPUT._serialized_start=1384
+  _STARTMODULEINPUT._serialized_end=1421
+  _STARTMODULEOUTPUT._serialized_start=1423
+  _STARTMODULEOUTPUT._serialized_end=1442
+  _GRADEMODULEINPUT._serialized_start=1444
+  _GRADEMODULEINPUT._serialized_end=1545
+  _GRADEMODULEOUTPUT._serialized_start=1547
+  _GRADEMODULEOUTPUT._serialized_end=1566
+  _MODULESERVICE._serialized_start=1569
+  _MODULESERVICE._serialized_end=2671
 # @@protoc_insertion_point(module_scope)
