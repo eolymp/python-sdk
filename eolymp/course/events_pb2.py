@@ -17,7 +17,7 @@ from eolymp.course import module_pb2 as eolymp_dot_course_dot_module__pb2
 from eolymp.course import student_pb2 as eolymp_dot_course_dot_student__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/course/events.proto\x12\reolymp.course\x1a\x1e\x65olymp/course/assignment.proto\x1a\x1c\x65olymp/course/material.proto\x1a\x1a\x65olymp/course/module.proto\x1a\x1b\x65olymp/course/student.proto\"a\n\x12ModuleChangedEvent\x12%\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x15.eolymp.course.Module\x12$\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x15.eolymp.course.Module\"g\n\x14MaterialChangedEvent\x12\'\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x17.eolymp.course.Material\x12&\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x17.eolymp.course.Material\"d\n\x13StudentChangedEvent\x12&\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x16.eolymp.course.Student\x12%\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x16.eolymp.course.Student\"m\n\x16\x41ssignmentChangedEvent\x12)\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x19.eolymp.course.Assignment\x12(\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x19.eolymp.course.AssignmentB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/course/events.proto\x12\reolymp.course\x1a\x1e\x65olymp/course/assignment.proto\x1a\x1c\x65olymp/course/material.proto\x1a\x1a\x65olymp/course/module.proto\x1a\x1b\x65olymp/course/student.proto\"t\n\x12ModuleChangedEvent\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12%\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x15.eolymp.course.Module\x12$\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x15.eolymp.course.Module\"\x8d\x01\n\x14MaterialChangedEvent\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12\x11\n\tmodule_id\x18\x02 \x01(\t\x12\'\n\x06\x62\x65\x66ore\x18\x03 \x01(\x0b\x32\x17.eolymp.course.Material\x12&\n\x05\x61\x66ter\x18\x04 \x01(\x0b\x32\x17.eolymp.course.Material\"w\n\x13StudentChangedEvent\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12&\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x16.eolymp.course.Student\x12%\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x16.eolymp.course.Student\"\x93\x01\n\x16\x41ssignmentChangedEvent\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12\x11\n\tmodule_id\x18\x02 \x01(\t\x12)\n\x06\x62\x65\x66ore\x18\x03 \x01(\x0b\x32\x19.eolymp.course.Assignment\x12(\n\x05\x61\x66ter\x18\x04 \x01(\x0b\x32\x19.eolymp.course.AssignmentB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.events_pb2', globals())
@@ -26,11 +26,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
   _MODULECHANGEDEVENT._serialized_start=164
-  _MODULECHANGEDEVENT._serialized_end=261
-  _MATERIALCHANGEDEVENT._serialized_start=263
-  _MATERIALCHANGEDEVENT._serialized_end=366
-  _STUDENTCHANGEDEVENT._serialized_start=368
-  _STUDENTCHANGEDEVENT._serialized_end=468
-  _ASSIGNMENTCHANGEDEVENT._serialized_start=470
-  _ASSIGNMENTCHANGEDEVENT._serialized_end=579
+  _MODULECHANGEDEVENT._serialized_end=280
+  _MATERIALCHANGEDEVENT._serialized_start=283
+  _MATERIALCHANGEDEVENT._serialized_end=424
+  _STUDENTCHANGEDEVENT._serialized_start=426
+  _STUDENTCHANGEDEVENT._serialized_end=545
+  _ASSIGNMENTCHANGEDEVENT._serialized_start=548
+  _ASSIGNMENTCHANGEDEVENT._serialized_end=695
 # @@protoc_insertion_point(module_scope)
