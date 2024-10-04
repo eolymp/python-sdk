@@ -19,7 +19,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/judge/scoreboard_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/judge/scoreboard.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\x19\n\x17\x44\x65scribeScoreboardInput\"H\n\x18\x44\x65scribeScoreboardOutput\x12,\n\nscoreboard\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Scoreboard\"\xe7\x02\n\x17ListScoreboardRowsInput\x12+\n\x04mode\x18\x01 \x01(\x0e\x32\x1d.eolymp.judge.Scoreboard.Mode\x12\x10\n\x08round_id\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\n \x01(\x05\x12\x0e\n\x06offset\x18\x0c \x01(\x05\x12=\n\x07\x66ilters\x18( \x01(\x0b\x32,.eolymp.judge.ListScoreboardRowsInput.Filter\x12\x0c\n\x04sort\x18\x32 \x01(\t\x12*\n\x05order\x18< \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1av\n\x06\x46ilter\x12\x34\n\nunofficial\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x36\n\x0c\x64isqualified\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"V\n\x18ListScoreboardRowsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.eolymp.judge.Scoreboard.Row2\xe2\x02\n\x11ScoreboardService\x12\xa2\x01\n\x12\x44\x65scribeScoreboard\x12%.eolymp.judge.DescribeScoreboardInput\x1a&.eolymp.judge.DescribeScoreboardOutput\"=\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\r\x12\x0b/scoreboard\x12\xa7\x01\n\x12ListScoreboardRows\x12%.eolymp.judge.ListScoreboardRowsInput\x1a&.eolymp.judge.ListScoreboardRowsOutput\"B\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/scoreboard/rowsB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/judge/scoreboard_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/judge/scoreboard.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"+\n\x17\x44\x65scribeScoreboardInput\x12\x10\n\x08round_id\x18\x01 \x01(\t\"H\n\x18\x44\x65scribeScoreboardOutput\x12,\n\nscoreboard\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Scoreboard\"\xe7\x02\n\x17ListScoreboardRowsInput\x12+\n\x04mode\x18\x01 \x01(\x0e\x32\x1d.eolymp.judge.Scoreboard.Mode\x12\x10\n\x08round_id\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\n \x01(\x05\x12\x0e\n\x06offset\x18\x0c \x01(\x05\x12=\n\x07\x66ilters\x18( \x01(\x0b\x32,.eolymp.judge.ListScoreboardRowsInput.Filter\x12\x0c\n\x04sort\x18\x32 \x01(\t\x12*\n\x05order\x18< \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1av\n\x06\x46ilter\x12\x34\n\nunofficial\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x36\n\x0c\x64isqualified\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"V\n\x18ListScoreboardRowsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.eolymp.judge.Scoreboard.Row2\xe2\x02\n\x11ScoreboardService\x12\xa2\x01\n\x12\x44\x65scribeScoreboard\x12%.eolymp.judge.DescribeScoreboardInput\x1a&.eolymp.judge.DescribeScoreboardOutput\"=\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\r\x12\x0b/scoreboard\x12\xa7\x01\n\x12ListScoreboardRows\x12%.eolymp.judge.ListScoreboardRowsInput\x1a&.eolymp.judge.ListScoreboardRowsOutput\"B\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/scoreboard/rowsB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.scoreboard_service_pb2', globals())
@@ -32,15 +32,15 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SCOREBOARDSERVICE.methods_by_name['ListScoreboardRows']._options = None
   _SCOREBOARDSERVICE.methods_by_name['ListScoreboardRows']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read\352\342\n\014\365\342\n\000\000HB\370\342\n\310\001\202\323\344\223\002\022\022\020/scoreboard/rows'
   _DESCRIBESCOREBOARDINPUT._serialized_start=254
-  _DESCRIBESCOREBOARDINPUT._serialized_end=279
-  _DESCRIBESCOREBOARDOUTPUT._serialized_start=281
-  _DESCRIBESCOREBOARDOUTPUT._serialized_end=353
-  _LISTSCOREBOARDROWSINPUT._serialized_start=356
-  _LISTSCOREBOARDROWSINPUT._serialized_end=715
-  _LISTSCOREBOARDROWSINPUT_FILTER._serialized_start=597
-  _LISTSCOREBOARDROWSINPUT_FILTER._serialized_end=715
-  _LISTSCOREBOARDROWSOUTPUT._serialized_start=717
-  _LISTSCOREBOARDROWSOUTPUT._serialized_end=803
-  _SCOREBOARDSERVICE._serialized_start=806
-  _SCOREBOARDSERVICE._serialized_end=1160
+  _DESCRIBESCOREBOARDINPUT._serialized_end=297
+  _DESCRIBESCOREBOARDOUTPUT._serialized_start=299
+  _DESCRIBESCOREBOARDOUTPUT._serialized_end=371
+  _LISTSCOREBOARDROWSINPUT._serialized_start=374
+  _LISTSCOREBOARDROWSINPUT._serialized_end=733
+  _LISTSCOREBOARDROWSINPUT_FILTER._serialized_start=615
+  _LISTSCOREBOARDROWSINPUT_FILTER._serialized_end=733
+  _LISTSCOREBOARDROWSOUTPUT._serialized_start=735
+  _LISTSCOREBOARDROWSOUTPUT._serialized_end=821
+  _SCOREBOARDSERVICE._serialized_start=824
+  _SCOREBOARDSERVICE._serialized_end=1178
 # @@protoc_insertion_point(module_scope)

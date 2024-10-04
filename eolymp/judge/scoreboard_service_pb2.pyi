@@ -12,8 +12,10 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeScoreboardInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["round_id"]
+    ROUND_ID_FIELD_NUMBER: _ClassVar[int]
+    round_id: str
+    def __init__(self, round_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreboardOutput(_message.Message):
     __slots__ = ["scoreboard"]
