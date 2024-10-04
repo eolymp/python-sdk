@@ -22,7 +22,7 @@ class DescribeScoreboardOutput(_message.Message):
     def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
 
 class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ["after", "filters", "mode", "order", "problem_id", "round_id", "size"]
+    __slots__ = ["filters", "mode", "offset", "order", "round_id", "size", "sort"]
     class Filter(_message.Message):
         __slots__ = ["disqualified", "unofficial"]
         DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
@@ -30,21 +30,21 @@ class ListScoreboardRowsInput(_message.Message):
         disqualified: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         unofficial: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         def __init__(self, unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
-    AFTER_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     ROUND_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    after: str
+    SORT_FIELD_NUMBER: _ClassVar[int]
     filters: ListScoreboardRowsInput.Filter
     mode: _scoreboard_pb2.Scoreboard.Mode
+    offset: int
     order: _direction_pb2.Direction
-    problem_id: str
     round_id: str
     size: int
-    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., size: _Optional[int] = ..., after: _Optional[str] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., round_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    sort: str
+    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., round_id: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
     __slots__ = ["items", "total"]
