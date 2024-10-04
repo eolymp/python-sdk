@@ -106,28 +106,6 @@ class ListResultOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_result_pb2.Result, _Mapping]]] = ...) -> None: ...
 
-class ListResultsInput(_message.Message):
-    __slots__ = ["after", "mode", "round_id", "size", "time_offset"]
-    AFTER_FIELD_NUMBER: _ClassVar[int]
-    MODE_FIELD_NUMBER: _ClassVar[int]
-    ROUND_ID_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    TIME_OFFSET_FIELD_NUMBER: _ClassVar[int]
-    after: str
-    mode: _score_pb2.Score.FetchingMode
-    round_id: str
-    size: int
-    time_offset: int
-    def __init__(self, mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ..., round_id: _Optional[str] = ..., size: _Optional[int] = ..., after: _Optional[str] = ...) -> None: ...
-
-class ListResultsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_result_pb2.ResultV2]
-    total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_result_pb2.ResultV2, _Mapping]]] = ...) -> None: ...
-
 class RebuildScoreInput(_message.Message):
     __slots__ = ["contest_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]

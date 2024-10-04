@@ -15,7 +15,7 @@ from eolymp.judge import medal_pb2 as eolymp_dot_judge_dot_medal__pb2
 from eolymp.judge import score_pb2 as eolymp_dot_judge_dot_score__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/result.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/judge/medal.proto\x1a\x18\x65olymp/judge/score.proto\"\xf8\x01\n\x06Result\x12\x16\n\x0eparticipant_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x07 \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\nunofficial\x18\x04 \x01(\x08\x12\x14\n\x0c\x64isqualified\x18\x0b \x01(\x08\x12\r\n\x05ghost\x18\t \x01(\x08\x12\"\n\x05medal\x18\x08 \x01(\x0e\x32\x13.eolymp.judge.Medal\x12\x0c\n\x04rank\x18\x05 \x01(\r\x12\x12\n\nrank_lower\x18\x06 \x01(\r\x12\"\n\x05score\x18\n \x01(\x0b\x32\x13.eolymp.judge.Score\"\xb7\x04\n\x08ResultV2\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0f\n\x07picture\x18\x03 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x04 \x01(\t\x12\x12\n\nunofficial\x18\n \x01(\x08\x12\x14\n\x0c\x64isqualified\x18\x0b \x01(\x08\x12\r\n\x05ghost\x18\x0c \x01(\x08\x12\"\n\x05medal\x18\r \x01(\x0e\x32\x13.eolymp.judge.Medal\x12\r\n\x05index\x18\x14 \x01(\r\x12\x0c\n\x04rank\x18\x15 \x01(\r\x12\x0f\n\x07rank_to\x18\x16 \x01(\r\x12\r\n\x05score\x18\x32 \x01(\x02\x12\x0f\n\x07penalty\x18\x33 \x01(\x02\x12\x34\n\tbreakdown\x18\x34 \x03(\x0b\x32!.eolymp.judge.ResultV2.RoundScore\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\t\x1aw\n\x0cProblemScore\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06solved\x18\x04 \x01(\x08\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x10\n\x08\x61ttempts\x18\x07 \x01(\r\x12\x11\n\tsolved_in\x18\t \x01(\r\x1av\n\nRoundScore\x12\x10\n\x08round_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x36\n\tbreakdown\x18\n \x03(\x0b\x32#.eolymp.judge.ResultV2.ProblemScoreB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/result.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/judge/medal.proto\x1a\x18\x65olymp/judge/score.proto\"\xf8\x01\n\x06Result\x12\x16\n\x0eparticipant_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x07 \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\nunofficial\x18\x04 \x01(\x08\x12\x14\n\x0c\x64isqualified\x18\x0b \x01(\x08\x12\r\n\x05ghost\x18\t \x01(\x08\x12\"\n\x05medal\x18\x08 \x01(\x0e\x32\x13.eolymp.judge.Medal\x12\x0c\n\x04rank\x18\x05 \x01(\r\x12\x12\n\nrank_lower\x18\x06 \x01(\r\x12\"\n\x05score\x18\n \x01(\x0b\x32\x13.eolymp.judge.ScoreB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.result_pb2', globals())
@@ -25,10 +25,4 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
   _RESULT._serialized_start=96
   _RESULT._serialized_end=344
-  _RESULTV2._serialized_start=347
-  _RESULTV2._serialized_end=914
-  _RESULTV2_PROBLEMSCORE._serialized_start=675
-  _RESULTV2_PROBLEMSCORE._serialized_end=794
-  _RESULTV2_ROUNDSCORE._serialized_start=796
-  _RESULTV2_ROUNDSCORE._serialized_end=914
 # @@protoc_insertion_point(module_scope)
