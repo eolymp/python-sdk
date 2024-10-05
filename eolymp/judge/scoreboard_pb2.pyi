@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ["columns", "modes"]
+    __slots__ = ["columns", "modes", "rounds"]
     class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Column(_message.Message):
@@ -28,6 +28,13 @@ class Scoreboard(_message.Message):
         title: str
         type: Scoreboard.Column.Type
         def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., title: _Optional[str] = ..., sortable: bool = ..., filterable: bool = ...) -> None: ...
+    class Round(_message.Message):
+        __slots__ = ["id", "title"]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        TITLE_FIELD_NUMBER: _ClassVar[int]
+        id: str
+        title: str
+        def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ...) -> None: ...
     class Row(_message.Message):
         __slots__ = ["disqualified", "id", "index", "member_id", "penalty", "rank", "rank_length", "score", "tie_breaker", "unofficial", "values"]
         class ProblemScore(_message.Message):
@@ -92,7 +99,9 @@ class Scoreboard(_message.Message):
     FROZEN: Scoreboard.Mode
     MODES_FIELD_NUMBER: _ClassVar[int]
     RESULT: Scoreboard.Mode
+    ROUNDS_FIELD_NUMBER: _ClassVar[int]
     UPSOLVE: Scoreboard.Mode
     columns: _containers.RepeatedCompositeFieldContainer[Scoreboard.Column]
     modes: _containers.RepeatedScalarFieldContainer[Scoreboard.Mode]
-    def __init__(self, modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
+    rounds: _containers.RepeatedCompositeFieldContainer[Scoreboard.Round]
+    def __init__(self, modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., rounds: _Optional[_Iterable[_Union[Scoreboard.Round, _Mapping]]] = ..., columns: _Optional[_Iterable[_Union[Scoreboard.Column, _Mapping]]] = ...) -> None: ...
