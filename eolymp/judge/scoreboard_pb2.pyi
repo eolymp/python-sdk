@@ -11,23 +11,34 @@ class Scoreboard(_message.Message):
     class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Column(_message.Message):
-        __slots__ = ["filterable", "id", "sortable", "title", "type"]
+        __slots__ = ["choices", "filterable", "id", "sortable", "title", "type"]
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = []
+        CHECKBOX: Scoreboard.Column.Type
+        CHOICE: Scoreboard.Column.Type
+        CHOICES_FIELD_NUMBER: _ClassVar[int]
+        COUNTRY: Scoreboard.Column.Type
+        DATE: Scoreboard.Column.Type
+        EMAIL: Scoreboard.Column.Type
         FILTERABLE_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
+        INSTITUTION: Scoreboard.Column.Type
+        NUMBER: Scoreboard.Column.Type
         PROBLEM_SCORE: Scoreboard.Column.Type
+        REGION: Scoreboard.Column.Type
         ROUND_SCORE: Scoreboard.Column.Type
         SORTABLE_FIELD_NUMBER: _ClassVar[int]
+        STRING: Scoreboard.Column.Type
         TITLE_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         UNKNOWN_TYPE: Scoreboard.Column.Type
+        choices: _containers.RepeatedScalarFieldContainer[str]
         filterable: bool
         id: str
         sortable: bool
         title: str
         type: Scoreboard.Column.Type
-        def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., title: _Optional[str] = ..., sortable: bool = ..., filterable: bool = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., title: _Optional[str] = ..., choices: _Optional[_Iterable[str]] = ..., sortable: bool = ..., filterable: bool = ...) -> None: ...
     class Round(_message.Message):
         __slots__ = ["id", "title"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -64,14 +75,18 @@ class Scoreboard(_message.Message):
             unofficial: bool
             def __init__(self, score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: bool = ..., disqualified: bool = ...) -> None: ...
         class Value(_message.Message):
-            __slots__ = ["column_id", "problem_score", "round_score"]
+            __slots__ = ["column_id", "number", "problem_score", "round_score", "string"]
             COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
+            NUMBER_FIELD_NUMBER: _ClassVar[int]
             PROBLEM_SCORE_FIELD_NUMBER: _ClassVar[int]
             ROUND_SCORE_FIELD_NUMBER: _ClassVar[int]
+            STRING_FIELD_NUMBER: _ClassVar[int]
             column_id: str
+            number: str
             problem_score: Scoreboard.Row.ProblemScore
             round_score: Scoreboard.Row.RoundScore
-            def __init__(self, column_id: _Optional[str] = ..., round_score: _Optional[_Union[Scoreboard.Row.RoundScore, _Mapping]] = ..., problem_score: _Optional[_Union[Scoreboard.Row.ProblemScore, _Mapping]] = ...) -> None: ...
+            string: str
+            def __init__(self, column_id: _Optional[str] = ..., round_score: _Optional[_Union[Scoreboard.Row.RoundScore, _Mapping]] = ..., problem_score: _Optional[_Union[Scoreboard.Row.ProblemScore, _Mapping]] = ..., string: _Optional[str] = ..., number: _Optional[str] = ...) -> None: ...
         DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
