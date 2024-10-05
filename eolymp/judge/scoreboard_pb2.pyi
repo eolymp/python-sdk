@@ -1,3 +1,4 @@
+from eolymp.judge import medal_pb2 as _medal_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -47,7 +48,7 @@ class Scoreboard(_message.Message):
         title: str
         def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ...) -> None: ...
     class Row(_message.Message):
-        __slots__ = ["disqualified", "id", "index", "member_id", "penalty", "rank", "rank_length", "score", "tie_breaker", "unofficial", "values"]
+        __slots__ = ["disqualified", "id", "index", "medal", "member_id", "penalty", "rank", "rank_length", "score", "tie_breaker", "unofficial", "values"]
         class ProblemScore(_message.Message):
             __slots__ = ["attempts", "penalty", "percentage", "score", "time"]
             ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
@@ -62,18 +63,20 @@ class Scoreboard(_message.Message):
             time: int
             def __init__(self, score: _Optional[float] = ..., penalty: _Optional[float] = ..., attempts: _Optional[int] = ..., percentage: _Optional[float] = ..., time: _Optional[int] = ...) -> None: ...
         class RoundScore(_message.Message):
-            __slots__ = ["disqualified", "penalty", "score", "tie_breaker", "unofficial"]
+            __slots__ = ["disqualified", "medal", "penalty", "score", "tie_breaker", "unofficial"]
             DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
+            MEDAL_FIELD_NUMBER: _ClassVar[int]
             PENALTY_FIELD_NUMBER: _ClassVar[int]
             SCORE_FIELD_NUMBER: _ClassVar[int]
             TIE_BREAKER_FIELD_NUMBER: _ClassVar[int]
             UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
             disqualified: bool
+            medal: _medal_pb2.Medal
             penalty: float
             score: float
             tie_breaker: int
             unofficial: bool
-            def __init__(self, score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: bool = ..., disqualified: bool = ...) -> None: ...
+            def __init__(self, score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: bool = ..., disqualified: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ...) -> None: ...
         class Value(_message.Message):
             __slots__ = ["column_id", "number", "problem_score", "round_score", "string"]
             COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
@@ -90,6 +93,7 @@ class Scoreboard(_message.Message):
         DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
+        MEDAL_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         PENALTY_FIELD_NUMBER: _ClassVar[int]
         RANK_FIELD_NUMBER: _ClassVar[int]
@@ -101,6 +105,7 @@ class Scoreboard(_message.Message):
         disqualified: bool
         id: str
         index: int
+        medal: _medal_pb2.Medal
         member_id: str
         penalty: float
         rank: int
@@ -109,7 +114,7 @@ class Scoreboard(_message.Message):
         tie_breaker: int
         unofficial: bool
         values: _containers.RepeatedCompositeFieldContainer[Scoreboard.Row.Value]
-        def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., index: _Optional[int] = ..., rank: _Optional[int] = ..., rank_length: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: bool = ..., disqualified: bool = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., index: _Optional[int] = ..., rank: _Optional[int] = ..., rank_length: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: bool = ..., disqualified: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
     COLUMNS_FIELD_NUMBER: _ClassVar[int]
     FROZEN: Scoreboard.Mode
     MODES_FIELD_NUMBER: _ClassVar[int]
