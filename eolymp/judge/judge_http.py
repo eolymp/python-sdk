@@ -327,7 +327,7 @@ class JudgeClient:
             **kwargs,
         )
 
-    def AddParticipant(self, request, **kwargs):
+    def AssignParticipant(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants"
 
         # Cleanup URL parameters to avoid any ambiguity
