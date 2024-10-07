@@ -18,7 +18,7 @@ from eolymp.judge import result_pb2 as eolymp_dot_judge_dot_result__pb2
 from eolymp.judge import score_pb2 as eolymp_dot_judge_dot_score__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/judge/score_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/judge/result.proto\x1a\x18\x65olymp/judge/score.proto\"\'\n\x11RebuildScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\")\n\x12RebuildScoreOutput\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\t\"*\n\x14IntrospectScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\";\n\x15IntrospectScoreOutput\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.judge.Score\"h\n\x0fWatchScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12.\n\x04mode\x18\x03 \x01(\x0e\x32 .eolymp.judge.Score.FetchingMode\"6\n\x10WatchScoreOutput\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.judge.Score\"\x80\x01\n\x12\x44\x65scribeScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12.\n\x04mode\x18\x03 \x01(\x0e\x32 .eolymp.judge.Score.FetchingMode\x12\x13\n\x0btime_offset\x18\x04 \x01(\x05\"9\n\x13\x44\x65scribeScoreOutput\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.judge.Score\"^\n\x10ImportScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12#\n\x06scores\x18\n \x03(\x0b\x32\x13.eolymp.judge.Score\"\x13\n\x11ImportScoreOutput\"9\n\x10\x45xportScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"8\n\x11\x45xportScoreOutput\x12#\n\x06scores\x18\n \x03(\x0b\x32\x13.eolymp.judge.Score\"\x88\x01\n\x0fListResultInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12.\n\x04mode\x18\x02 \x01(\x0e\x32 .eolymp.judge.Score.FetchingMode\x12\x13\n\x0btime_offset\x18\x03 \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"F\n\x10ListResultOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.judge.Result\"l\n\x11\x45xportResultInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12.\n\x04mode\x18\x02 \x01(\x0e\x32 .eolymp.judge.Score.FetchingMode\x12\x13\n\x0btime_offset\x18\x03 \x01(\x05\"(\n\x12\x45xportResultOutput\x12\x12\n\nexport_url\x18\x01 \x01(\t2\xa4\t\n\x0cScoreService\x12\x84\x01\n\x0fIntrospectScore\x12\".eolymp.judge.IntrospectScoreInput\x1a#.eolymp.judge.IntrospectScoreOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\x12\x11/introspect/score\x12i\n\nWatchScore\x12\x1d.eolymp.judge.WatchScoreInput\x1a\x1e.eolymp.judge.WatchScoreOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\xa7\x01\n\rDescribeScore\x12 .eolymp.judge.DescribeScoreInput\x1a!.eolymp.judge.DescribeScoreOutput\"Q\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02!\x12\x1f/participants/{member_id}/score\x12\xa2\x01\n\x0bImportScore\x12\x1e.eolymp.judge.ImportScoreInput\x1a\x1f.eolymp.judge.ImportScoreOutput\"R\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\"\" /participants/{member_id}/scores\x12\xa2\x01\n\x0b\x45xportScore\x12\x1e.eolymp.judge.ExportScoreInput\x1a\x1f.eolymp.judge.ExportScoreOutput\"R\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\"\x12 /participants/{member_id}/scores\x12\x87\x01\n\nListResult\x12\x1d.eolymp.judge.ListResultInput\x1a\x1e.eolymp.judge.ListResultOutput\":\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\n\x12\x08/results\x12\x93\x01\n\x0c\x45xportResult\x12\x1f.eolymp.judge.ExportResultInput\x1a .eolymp.judge.ExportResultOutput\"@\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x11\"\x0f/results-export\x12\x8d\x01\n\x0cRebuildScore\x12\x1f.eolymp.judge.RebuildScoreInput\x1a .eolymp.judge.RebuildScoreOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\n\"\x08/rebuildB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/judge/score_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/judge/result.proto\x1a\x18\x65olymp/judge/score.proto\"\'\n\x11RebuildScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\")\n\x12RebuildScoreOutput\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\t\"*\n\x14IntrospectScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\";\n\x15IntrospectScoreOutput\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.judge.Score\"m\n\x0fWatchScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12.\n\x04mode\x18\x03 \x01(\x0e\x32 .eolymp.judge.Score.FetchingMode\"6\n\x10WatchScoreOutput\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.judge.Score\"\x85\x01\n\x12\x44\x65scribeScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12.\n\x04mode\x18\x03 \x01(\x0e\x32 .eolymp.judge.Score.FetchingMode\x12\x13\n\x0btime_offset\x18\x04 \x01(\x05\"9\n\x13\x44\x65scribeScoreOutput\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.judge.Score\"c\n\x10ImportScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12#\n\x06scores\x18\n \x03(\x0b\x32\x13.eolymp.judge.Score\"\x13\n\x11ImportScoreOutput\">\n\x10\x45xportScoreInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\"8\n\x11\x45xportScoreOutput\x12#\n\x06scores\x18\n \x03(\x0b\x32\x13.eolymp.judge.Score\"\x88\x01\n\x0fListResultInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12.\n\x04mode\x18\x02 \x01(\x0e\x32 .eolymp.judge.Score.FetchingMode\x12\x13\n\x0btime_offset\x18\x03 \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"F\n\x10ListResultOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.judge.Result\"l\n\x11\x45xportResultInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12.\n\x04mode\x18\x02 \x01(\x0e\x32 .eolymp.judge.Score.FetchingMode\x12\x13\n\x0btime_offset\x18\x03 \x01(\x05\"(\n\x12\x45xportResultOutput\x12\x12\n\nexport_url\x18\x01 \x01(\t2\xb3\t\n\x0cScoreService\x12\x84\x01\n\x0fIntrospectScore\x12\".eolymp.judge.IntrospectScoreInput\x1a#.eolymp.judge.IntrospectScoreOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\x12\x11/introspect/score\x12i\n\nWatchScore\x12\x1d.eolymp.judge.WatchScoreInput\x1a\x1e.eolymp.judge.WatchScoreOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\xac\x01\n\rDescribeScore\x12 .eolymp.judge.DescribeScoreInput\x1a!.eolymp.judge.DescribeScoreOutput\"V\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02&\x12$/participants/{participant_id}/score\x12\xa7\x01\n\x0bImportScore\x12\x1e.eolymp.judge.ImportScoreInput\x1a\x1f.eolymp.judge.ImportScoreOutput\"W\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\'\"%/participants/{participant_id}/scores\x12\xa7\x01\n\x0b\x45xportScore\x12\x1e.eolymp.judge.ExportScoreInput\x1a\x1f.eolymp.judge.ExportScoreOutput\"W\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\'\x12%/participants/{participant_id}/scores\x12\x87\x01\n\nListResult\x12\x1d.eolymp.judge.ListResultInput\x1a\x1e.eolymp.judge.ListResultOutput\":\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\n\x12\x08/results\x12\x93\x01\n\x0c\x45xportResult\x12\x1f.eolymp.judge.ExportResultInput\x1a .eolymp.judge.ExportResultOutput\"@\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x11\"\x0f/results-export\x12\x8d\x01\n\x0cRebuildScore\x12\x1f.eolymp.judge.RebuildScoreInput\x1a .eolymp.judge.RebuildScoreOutput\":\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\n\"\x08/rebuildB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.score_service_pb2', globals())
@@ -31,11 +31,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SCORESERVICE.methods_by_name['WatchScore']._options = None
   _SCORESERVICE.methods_by_name['WatchScore']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read'
   _SCORESERVICE.methods_by_name['DescribeScore']._options = None
-  _SCORESERVICE.methods_by_name['DescribeScore']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read\352\342\n\014\365\342\n\000\000HB\370\342\n\310\001\202\323\344\223\002!\022\037/participants/{member_id}/score'
+  _SCORESERVICE.methods_by_name['DescribeScore']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read\352\342\n\014\365\342\n\000\000HB\370\342\n\310\001\202\323\344\223\002&\022$/participants/{participant_id}/score'
   _SCORESERVICE.methods_by_name['ImportScore']._options = None
-  _SCORESERVICE.methods_by_name['ImportScore']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read\352\342\n\014\365\342\n\000\000HB\370\342\n\310\001\202\323\344\223\002\"\" /participants/{member_id}/scores'
+  _SCORESERVICE.methods_by_name['ImportScore']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read\352\342\n\014\365\342\n\000\000HB\370\342\n\310\001\202\323\344\223\002\'\"%/participants/{participant_id}/scores'
   _SCORESERVICE.methods_by_name['ExportScore']._options = None
-  _SCORESERVICE.methods_by_name['ExportScore']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read\352\342\n\014\365\342\n\000\000HB\370\342\n\310\001\202\323\344\223\002\"\022 /participants/{member_id}/scores'
+  _SCORESERVICE.methods_by_name['ExportScore']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read\352\342\n\014\365\342\n\000\000HB\370\342\n\310\001\202\323\344\223\002\'\022%/participants/{participant_id}/scores'
   _SCORESERVICE.methods_by_name['ListResult']._options = None
   _SCORESERVICE.methods_by_name['ListResult']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read\352\342\n\014\365\342\n\000\000HB\370\342\n\310\001\202\323\344\223\002\n\022\010/results'
   _SCORESERVICE.methods_by_name['ExportResult']._options = None
@@ -51,29 +51,29 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _INTROSPECTSCOREOUTPUT._serialized_start=330
   _INTROSPECTSCOREOUTPUT._serialized_end=389
   _WATCHSCOREINPUT._serialized_start=391
-  _WATCHSCOREINPUT._serialized_end=495
-  _WATCHSCOREOUTPUT._serialized_start=497
-  _WATCHSCOREOUTPUT._serialized_end=551
-  _DESCRIBESCOREINPUT._serialized_start=554
-  _DESCRIBESCOREINPUT._serialized_end=682
-  _DESCRIBESCOREOUTPUT._serialized_start=684
-  _DESCRIBESCOREOUTPUT._serialized_end=741
-  _IMPORTSCOREINPUT._serialized_start=743
-  _IMPORTSCOREINPUT._serialized_end=837
-  _IMPORTSCOREOUTPUT._serialized_start=839
-  _IMPORTSCOREOUTPUT._serialized_end=858
-  _EXPORTSCOREINPUT._serialized_start=860
-  _EXPORTSCOREINPUT._serialized_end=917
-  _EXPORTSCOREOUTPUT._serialized_start=919
-  _EXPORTSCOREOUTPUT._serialized_end=975
-  _LISTRESULTINPUT._serialized_start=978
-  _LISTRESULTINPUT._serialized_end=1114
-  _LISTRESULTOUTPUT._serialized_start=1116
-  _LISTRESULTOUTPUT._serialized_end=1186
-  _EXPORTRESULTINPUT._serialized_start=1188
-  _EXPORTRESULTINPUT._serialized_end=1296
-  _EXPORTRESULTOUTPUT._serialized_start=1298
-  _EXPORTRESULTOUTPUT._serialized_end=1338
-  _SCORESERVICE._serialized_start=1341
-  _SCORESERVICE._serialized_end=2529
+  _WATCHSCOREINPUT._serialized_end=500
+  _WATCHSCOREOUTPUT._serialized_start=502
+  _WATCHSCOREOUTPUT._serialized_end=556
+  _DESCRIBESCOREINPUT._serialized_start=559
+  _DESCRIBESCOREINPUT._serialized_end=692
+  _DESCRIBESCOREOUTPUT._serialized_start=694
+  _DESCRIBESCOREOUTPUT._serialized_end=751
+  _IMPORTSCOREINPUT._serialized_start=753
+  _IMPORTSCOREINPUT._serialized_end=852
+  _IMPORTSCOREOUTPUT._serialized_start=854
+  _IMPORTSCOREOUTPUT._serialized_end=873
+  _EXPORTSCOREINPUT._serialized_start=875
+  _EXPORTSCOREINPUT._serialized_end=937
+  _EXPORTSCOREOUTPUT._serialized_start=939
+  _EXPORTSCOREOUTPUT._serialized_end=995
+  _LISTRESULTINPUT._serialized_start=998
+  _LISTRESULTINPUT._serialized_end=1134
+  _LISTRESULTOUTPUT._serialized_start=1136
+  _LISTRESULTOUTPUT._serialized_end=1206
+  _EXPORTRESULTINPUT._serialized_start=1208
+  _EXPORTRESULTINPUT._serialized_end=1316
+  _EXPORTRESULTOUTPUT._serialized_start=1318
+  _EXPORTRESULTOUTPUT._serialized_end=1358
+  _SCORESERVICE._serialized_start=1361
+  _SCORESERVICE._serialized_end=2564
 # @@protoc_insertion_point(module_scope)

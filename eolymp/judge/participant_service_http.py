@@ -54,10 +54,10 @@ class ParticipantServiceClient:
         )
 
     def UpdateParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)
+        path = "/participants/"+urllib.parse.quote(request.participant_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -68,10 +68,10 @@ class ParticipantServiceClient:
         )
 
     def DisqualifyParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)+"/disqualify"
+        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/disqualify"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="POST",
@@ -82,10 +82,10 @@ class ParticipantServiceClient:
         )
 
     def DeleteParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)
+        path = "/participants/"+urllib.parse.quote(request.participant_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="DELETE",
@@ -96,10 +96,10 @@ class ParticipantServiceClient:
         )
 
     def DescribeParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)
+        path = "/participants/"+urllib.parse.quote(request.participant_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="GET",

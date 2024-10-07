@@ -37,10 +37,10 @@ class PasscodeServiceClient:
         )
 
     def ResetPasscode(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)+"/passcode"
+        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="POST",
@@ -51,10 +51,10 @@ class PasscodeServiceClient:
         )
 
     def SetPasscode(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)+"/passcode"
+        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -65,10 +65,10 @@ class PasscodeServiceClient:
         )
 
     def RemovePasscode(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)+"/passcode"
+        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="DELETE",

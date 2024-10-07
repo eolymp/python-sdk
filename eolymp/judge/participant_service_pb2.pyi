@@ -36,24 +36,24 @@ class AssignParticipantOutput(_message.Message):
     def __init__(self, participant_id: _Optional[str] = ...) -> None: ...
 
 class DeleteParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "member_id"]
+    __slots__ = ["contest_id", "participant_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    member_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    participant_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class DeleteParticipantOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class DescribeParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "member_id"]
+    __slots__ = ["contest_id", "participant_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    member_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    participant_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class DescribeParticipantOutput(_message.Message):
     __slots__ = ["participant"]
@@ -86,16 +86,16 @@ class DisableParticipantOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DisqualifyParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "disqualify", "member_id", "reason"]
+    __slots__ = ["contest_id", "disqualify", "participant_id", "reason"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     DISQUALIFY_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     disqualify: bool
-    member_id: str
+    participant_id: str
     reason: _content_pb2.Content
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., disqualify: bool = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., disqualify: bool = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class DisqualifyParticipantOutput(_message.Message):
     __slots__ = []
@@ -184,7 +184,7 @@ class StartContestOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "member_id", "participant", "patch"]
+    __slots__ = ["contest_id", "participant", "participant_id", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateParticipantInput.Patch
@@ -193,28 +193,28 @@ class UpdateParticipantInput(_message.Message):
     DISPLAY_NAME: UpdateParticipantInput.Patch
     INACTIVE: UpdateParticipantInput.Patch
     MEDAL: UpdateParticipantInput.Patch
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     PASSCODE: UpdateParticipantInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL: UpdateParticipantInput.Patch
     contest_id: str
-    member_id: str
     participant: _participant_pb2.Participant
+    participant_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateParticipantInput.Patch]
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateParticipantInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateParticipantInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class UpdateParticipantOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class WatchParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "member_id"]
+    __slots__ = ["contest_id", "participant_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    member_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    participant_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class WatchParticipantOutput(_message.Message):
     __slots__ = ["participant"]

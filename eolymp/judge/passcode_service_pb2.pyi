@@ -20,24 +20,24 @@ class EnterPasscodeOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class RemovePasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "member_id"]
+    __slots__ = ["contest_id", "participant_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    member_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    participant_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class RemovePasscodeOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class ResetPasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "member_id"]
+    __slots__ = ["contest_id", "participant_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    member_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    participant_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class ResetPasscodeOutput(_message.Message):
     __slots__ = ["passcode"]
@@ -46,14 +46,14 @@ class ResetPasscodeOutput(_message.Message):
     def __init__(self, passcode: _Optional[str] = ...) -> None: ...
 
 class SetPasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "member_id", "passcode"]
+    __slots__ = ["contest_id", "participant_id", "passcode"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    member_id: str
+    participant_id: str
     passcode: str
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., passcode: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., passcode: _Optional[str] = ...) -> None: ...
 
 class SetPasscodeOutput(_message.Message):
     __slots__ = []

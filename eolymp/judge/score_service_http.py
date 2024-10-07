@@ -26,10 +26,10 @@ class ScoreServiceClient:
         )
 
     def DescribeScore(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)+"/score"
+        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/score"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="GET",
@@ -40,10 +40,10 @@ class ScoreServiceClient:
         )
 
     def ImportScore(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)+"/scores"
+        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="POST",
@@ -54,10 +54,10 @@ class ScoreServiceClient:
         )
 
     def ExportScore(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.member_id)+"/scores"
+        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.member_id = ""
+        request.participant_id = ""
 
         return self.transport.request(
             method="GET",
