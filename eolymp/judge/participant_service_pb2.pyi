@@ -13,29 +13,61 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class AddParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant"]
+class AssignParticipantInput(_message.Message):
+    __slots__ = ["contest_id", "group_id", "inactive", "member_id", "participant", "unofficial"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    GROUP_ID_FIELD_NUMBER: _ClassVar[int]
+    INACTIVE_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
+    group_id: str
+    inactive: bool
+    member_id: str
     participant: _participant_pb2.Participant
-    def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+    unofficial: bool
+    def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., unofficial: bool = ..., inactive: bool = ...) -> None: ...
 
-class AddParticipantOutput(_message.Message):
+class AssignParticipantOutput(_message.Message):
     __slots__ = ["participant_id"]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     participant_id: str
     def __init__(self, participant_id: _Optional[str] = ...) -> None: ...
 
-class DescribeParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+class DeleteParticipantInput(_message.Message):
+    __slots__ = ["contest_id", "member_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    participant_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
+    member_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+
+class DeleteParticipantOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DescribeParticipantInput(_message.Message):
+    __slots__ = ["contest_id", "member_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    member_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class DescribeParticipantOutput(_message.Message):
+    __slots__ = ["participant"]
+    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    participant: _participant_pb2.Participant
+    def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+
+class DescribeViewerInput(_message.Message):
+    __slots__ = ["contest_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class DescribeViewerOutput(_message.Message):
     __slots__ = ["participant"]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
     participant: _participant_pb2.Participant
@@ -54,16 +86,16 @@ class DisableParticipantOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DisqualifyParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "disqualify", "participant_id", "reason"]
+    __slots__ = ["contest_id", "disqualify", "member_id", "reason"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     DISQUALIFY_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     disqualify: bool
-    participant_id: str
+    member_id: str
     reason: _content_pb2.Content
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., disqualify: bool = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., disqualify: bool = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class DisqualifyParticipantOutput(_message.Message):
     __slots__ = []
@@ -81,30 +113,6 @@ class EnableParticipantOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class EnterPasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "passcode"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PASSCODE_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    passcode: str
-    def __init__(self, contest_id: _Optional[str] = ..., passcode: _Optional[str] = ...) -> None: ...
-
-class EnterPasscodeOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class IntrospectParticipantInput(_message.Message):
-    __slots__ = ["contest_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
-
-class IntrospectParticipantOutput(_message.Message):
-    __slots__ = ["participant"]
-    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
-    participant: _participant_pb2.Participant
-    def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
-
 class JoinContestInput(_message.Message):
     __slots__ = ["contest_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -120,26 +128,26 @@ class ListParticipantsInput(_message.Message):
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["disqualified", "group_id", "id", "inactive", "member_id", "name", "started_at", "status", "unofficial"]
+        __slots__ = ["display_name", "disqualified", "group_id", "id", "inactive", "member_id", "started_at", "status", "unofficial"]
+        DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
         DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
         GROUP_ID_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         INACTIVE_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-        NAME_FIELD_NUMBER: _ClassVar[int]
         STARTED_AT_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
+        display_name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         disqualified: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         group_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         inactive: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         started_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         unofficial: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., started_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., display_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., started_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     DEFAULT: ListParticipantsInput.Sortable
     DISPLAY_NAME: ListParticipantsInput.Sortable
@@ -165,58 +173,6 @@ class ListParticipantsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_participant_pb2.Participant, _Mapping]]] = ...) -> None: ...
 
-class RemoveParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    participant_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
-
-class RemoveParticipantOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class RemovePasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    participant_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
-
-class RemovePasscodeOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class ResetPasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    participant_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
-
-class ResetPasscodeOutput(_message.Message):
-    __slots__ = ["passcode"]
-    PASSCODE_FIELD_NUMBER: _ClassVar[int]
-    passcode: str
-    def __init__(self, passcode: _Optional[str] = ...) -> None: ...
-
-class SetPasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id", "passcode"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    PASSCODE_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    participant_id: str
-    passcode: str
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., passcode: _Optional[str] = ...) -> None: ...
-
-class SetPasscodeOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class StartContestInput(_message.Message):
     __slots__ = ["contest_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -228,51 +184,37 @@ class StartContestOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant", "participant_id", "patch"]
+    __slots__ = ["contest_id", "member_id", "participant", "patch"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    ACTIVE: UpdateParticipantInput.Patch
     ALL: UpdateParticipantInput.Patch
     BONUS_TIME: UpdateParticipantInput.Patch
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    DISPLAY_NAME: UpdateParticipantInput.Patch
+    INACTIVE: UpdateParticipantInput.Patch
     MEDAL: UpdateParticipantInput.Patch
-    NAME: UpdateParticipantInput.Patch
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     PASSCODE: UpdateParticipantInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL: UpdateParticipantInput.Patch
     contest_id: str
+    member_id: str
     participant: _participant_pb2.Participant
-    participant_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateParticipantInput.Patch]
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateParticipantInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateParticipantInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class UpdateParticipantOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class VerifyPasscodeInput(_message.Message):
-    __slots__ = ["contest_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
-
-class VerifyPasscodeOutput(_message.Message):
-    __slots__ = ["required", "valid"]
-    REQUIRED_FIELD_NUMBER: _ClassVar[int]
-    VALID_FIELD_NUMBER: _ClassVar[int]
-    required: bool
-    valid: bool
-    def __init__(self, required: bool = ..., valid: bool = ...) -> None: ...
-
 class WatchParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+    __slots__ = ["contest_id", "member_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    participant_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
+    member_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class WatchParticipantOutput(_message.Message):
     __slots__ = ["participant"]

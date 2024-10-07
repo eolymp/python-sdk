@@ -337,7 +337,7 @@ class JudgeClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.AddParticipantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.AssignParticipantOutput"),
             **kwargs,
         )
 
@@ -372,11 +372,11 @@ class JudgeClient:
         )
 
     def UpdateParticipant(self, request, **kwargs):
-        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.contest_id = ""
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -386,18 +386,18 @@ class JudgeClient:
             **kwargs,
         )
 
-    def RemoveParticipant(self, request, **kwargs):
-        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)
+    def DeleteParticipant(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.contest_id = ""
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.RemoveParticipantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteParticipantOutput"),
             **kwargs,
         )
 
@@ -416,11 +416,11 @@ class JudgeClient:
         )
 
     def DescribeParticipant(self, request, **kwargs):
-        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.contest_id = ""
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="GET",
@@ -430,7 +430,7 @@ class JudgeClient:
             **kwargs,
         )
 
-    def IntrospectParticipant(self, request, **kwargs):
+    def DescribeViewer(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/introspect"
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -440,7 +440,7 @@ class JudgeClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.IntrospectParticipantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeViewerOutput"),
             **kwargs,
         )
 
@@ -501,11 +501,11 @@ class JudgeClient:
         )
 
     def ResetPasscode(self, request, **kwargs):
-        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.member_id)+"/passcode"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.contest_id = ""
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="POST",
@@ -516,11 +516,11 @@ class JudgeClient:
         )
 
     def SetPasscode(self, request, **kwargs):
-        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.member_id)+"/passcode"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.contest_id = ""
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -531,11 +531,11 @@ class JudgeClient:
         )
 
     def RemovePasscode(self, request, **kwargs):
-        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.member_id)+"/passcode"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.contest_id = ""
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="DELETE",
@@ -752,11 +752,11 @@ class JudgeClient:
         )
 
     def DescribeScore(self, request, **kwargs):
-        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/score"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.member_id)+"/score"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.contest_id = ""
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="GET",
@@ -767,11 +767,11 @@ class JudgeClient:
         )
 
     def ImportScore(self, request, **kwargs):
-        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.member_id)+"/scores"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.contest_id = ""
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="POST",
@@ -782,11 +782,11 @@ class JudgeClient:
         )
 
     def ExportScore(self, request, **kwargs):
-        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.member_id)+"/scores"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.contest_id = ""
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="GET",

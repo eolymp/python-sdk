@@ -14,14 +14,14 @@ class ParticipantServiceClient:
         self.transport = transport
         self.url = url
 
-    def AddParticipant(self, request, **kwargs):
+    def AssignParticipant(self, request, **kwargs):
         path = "/participants"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.AddParticipantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.AssignParticipantOutput"),
             **kwargs,
         )
 
@@ -53,25 +53,11 @@ class ParticipantServiceClient:
             **kwargs,
         )
 
-    def DisqualifyParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/disqualify"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.participant_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.DisqualifyParticipantOutput"),
-            **kwargs,
-        )
-
     def UpdateParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)
+        path = "/participants/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.participant_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -81,17 +67,45 @@ class ParticipantServiceClient:
             **kwargs,
         )
 
-    def RemoveParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)
+    def DisqualifyParticipant(self, request, **kwargs):
+        path = "/participants/"+urllib.parse.quote(request.member_id)+"/disqualify"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.participant_id = ""
+        request.member_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DisqualifyParticipantOutput"),
+            **kwargs,
+        )
+
+    def DeleteParticipant(self, request, **kwargs):
+        path = "/participants/"+urllib.parse.quote(request.member_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.RemoveParticipantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DeleteParticipantOutput"),
+            **kwargs,
+        )
+
+    def DescribeParticipant(self, request, **kwargs):
+        path = "/participants/"+urllib.parse.quote(request.member_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeParticipantOutput"),
             **kwargs,
         )
 
@@ -106,28 +120,14 @@ class ParticipantServiceClient:
             **kwargs,
         )
 
-    def DescribeParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.participant_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeParticipantOutput"),
-            **kwargs,
-        )
-
-    def IntrospectParticipant(self, request, **kwargs):
+    def DescribeViewer(self, request, **kwargs):
         path = "/introspect"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.IntrospectParticipantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeViewerOutput"),
             **kwargs,
         )
 
@@ -150,70 +150,6 @@ class ParticipantServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.StartContestOutput"),
-            **kwargs,
-        )
-
-    def VerifyPasscode(self, request, **kwargs):
-        path = "/verify-passcode"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.VerifyPasscodeOutput"),
-            **kwargs,
-        )
-
-    def EnterPasscode(self, request, **kwargs):
-        path = "/enter-passcode"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.EnterPasscodeOutput"),
-            **kwargs,
-        )
-
-    def ResetPasscode(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.participant_id = ""
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.ResetPasscodeOutput"),
-            **kwargs,
-        )
-
-    def SetPasscode(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.participant_id = ""
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.SetPasscodeOutput"),
-            **kwargs,
-        )
-
-    def RemovePasscode(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.participant_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.RemovePasscodeOutput"),
             **kwargs,
         )
 
