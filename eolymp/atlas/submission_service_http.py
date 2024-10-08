@@ -64,3 +64,14 @@ class SubmissionServiceClient:
             **kwargs,
         )
 
+    def DescribeSubmissionUsage(self, request, **kwargs):
+        path = "/usage/submissions"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeSubmissionUsageOutput"),
+            **kwargs,
+        )
+

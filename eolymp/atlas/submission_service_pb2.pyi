@@ -3,6 +3,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -41,6 +42,22 @@ class DescribeSubmissionOutput(_message.Message):
     extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
     submission: _submission_pb2.Submission
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
+
+class DescribeSubmissionUsageInput(_message.Message):
+    __slots__ = ["period_end", "period_start"]
+    PERIOD_END_FIELD_NUMBER: _ClassVar[int]
+    PERIOD_START_FIELD_NUMBER: _ClassVar[int]
+    period_end: _timestamp_pb2.Timestamp
+    period_start: _timestamp_pb2.Timestamp
+    def __init__(self, period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class DescribeSubmissionUsageOutput(_message.Message):
+    __slots__ = ["retested_submissions", "total_submissions"]
+    RETESTED_SUBMISSIONS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_SUBMISSIONS_FIELD_NUMBER: _ClassVar[int]
+    retested_submissions: int
+    total_submissions: int
+    def __init__(self, total_submissions: _Optional[int] = ..., retested_submissions: _Optional[int] = ...) -> None: ...
 
 class ListSubmissionsInput(_message.Message):
     __slots__ = ["after", "extra", "filters", "offset", "problem_id", "size"]
