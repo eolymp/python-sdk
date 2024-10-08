@@ -52,12 +52,16 @@ class DescribeSubmissionUsageInput(_message.Message):
     def __init__(self, period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class DescribeSubmissionUsageOutput(_message.Message):
-    __slots__ = ["retested_submissions", "total_submissions"]
-    RETESTED_SUBMISSIONS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["available_evaluations", "monthly_evaluations", "monthly_submissions", "total_submissions"]
+    AVAILABLE_EVALUATIONS_FIELD_NUMBER: _ClassVar[int]
+    MONTHLY_EVALUATIONS_FIELD_NUMBER: _ClassVar[int]
+    MONTHLY_SUBMISSIONS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_SUBMISSIONS_FIELD_NUMBER: _ClassVar[int]
-    retested_submissions: int
+    available_evaluations: int
+    monthly_evaluations: int
+    monthly_submissions: int
     total_submissions: int
-    def __init__(self, total_submissions: _Optional[int] = ..., retested_submissions: _Optional[int] = ...) -> None: ...
+    def __init__(self, total_submissions: _Optional[int] = ..., monthly_submissions: _Optional[int] = ..., monthly_evaluations: _Optional[int] = ..., available_evaluations: _Optional[int] = ...) -> None: ...
 
 class ListSubmissionsInput(_message.Message):
     __slots__ = ["after", "extra", "filters", "offset", "problem_id", "size"]
