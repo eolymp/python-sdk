@@ -11,12 +11,10 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateStatementInput(_message.Message):
-    __slots__ = ["problem_id", "statement"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["statement"]
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
     statement: _statement_pb2.Statement
-    def __init__(self, problem_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+    def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class CreateStatementOutput(_message.Message):
     __slots__ = ["statement_id"]
@@ -25,28 +23,24 @@ class CreateStatementOutput(_message.Message):
     def __init__(self, statement_id: _Optional[str] = ...) -> None: ...
 
 class DeleteStatementInput(_message.Message):
-    __slots__ = ["problem_id", "statement_id"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["statement_id"]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
     statement_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, statement_id: _Optional[str] = ...) -> None: ...
 
 class DeleteStatementOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class DescribeStatementInput(_message.Message):
-    __slots__ = ["problem_id", "render", "statement_id", "version"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["render", "statement_id", "version"]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
     render: bool
     statement_id: str
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, statement_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeStatementOutput(_message.Message):
     __slots__ = ["statement"]
@@ -55,14 +49,12 @@ class DescribeStatementOutput(_message.Message):
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class ListStatementsInput(_message.Message):
-    __slots__ = ["problem_id", "render", "version"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["render", "version"]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
     render: bool
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListStatementsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -73,16 +65,14 @@ class ListStatementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
 
 class LookupStatementInput(_message.Message):
-    __slots__ = ["locale", "problem_id", "render", "version"]
+    __slots__ = ["locale", "render", "version"]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     locale: str
-    problem_id: str
     render: bool
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class LookupStatementOutput(_message.Message):
     __slots__ = ["statement"]
@@ -91,12 +81,10 @@ class LookupStatementOutput(_message.Message):
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class PreviewStatementInput(_message.Message):
-    __slots__ = ["problem_id", "statement"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["statement"]
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
     statement: _statement_pb2.Statement
-    def __init__(self, problem_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+    def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class PreviewStatementOutput(_message.Message):
     __slots__ = ["statement"]
@@ -104,8 +92,18 @@ class PreviewStatementOutput(_message.Message):
     statement: _statement_pb2.Statement
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
+class StatementChangedEvent(_message.Message):
+    __slots__ = ["after", "before", "problem_id"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    after: _statement_pb2.Statement
+    before: _statement_pb2.Statement
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ..., after: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+
 class UpdateStatementInput(_message.Message):
-    __slots__ = ["patch", "problem_id", "statement", "statement_id"]
+    __slots__ = ["patch", "statement", "statement_id"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateStatementInput.Patch
@@ -114,16 +112,14 @@ class UpdateStatementInput(_message.Message):
     DOWNLOAD_LINK: UpdateStatementInput.Patch
     LOCALE: UpdateStatementInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SOURCE: UpdateStatementInput.Patch
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     TITLE: UpdateStatementInput.Patch
     patch: _containers.RepeatedScalarFieldContainer[UpdateStatementInput.Patch]
-    problem_id: str
     statement: _statement_pb2.Statement
     statement_id: str
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateStatementInput.Patch, str]]] = ..., problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateStatementInput.Patch, str]]] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class UpdateStatementOutput(_message.Message):
     __slots__ = []

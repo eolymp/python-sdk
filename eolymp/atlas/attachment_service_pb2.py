@@ -18,7 +18,7 @@ from eolymp.atlas import attachment_pb2 as eolymp_dot_atlas_dot_attachment__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/attachment_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/atlas/attachment.proto\x1a!eolymp/wellknown/expression.proto\"Y\n\x15\x43reateAttachmentInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12,\n\nattachment\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Attachment\"/\n\x16\x43reateAttachmentOutput\x12\x15\n\rattachment_id\x18\x01 \x01(\t\"p\n\x15UpdateAttachmentInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rattachment_id\x18\x02 \x01(\t\x12,\n\nattachment\x18\x03 \x01(\x0b\x32\x18.eolymp.atlas.Attachment\"\x18\n\x16UpdateAttachmentOutput\"B\n\x15\x44\x65leteAttachmentInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rattachment_id\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteAttachmentOutput\"\xfd\x01\n\x14ListAttachmentsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.atlas.ListAttachmentsInput.Filter\x12\x0f\n\x07version\x18\x64 \x01(\r\x1a\x66\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"O\n\x15ListAttachmentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.atlas.Attachment\"U\n\x17\x44\x65scribeAttachmentInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rattachment_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"H\n\x18\x44\x65scribeAttachmentOutput\x12,\n\nattachment\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Attachment2\xe4\x06\n\x11\x41ttachmentService\x12\x9d\x01\n\x10\x43reateAttachment\x12#.eolymp.atlas.CreateAttachmentInput\x1a$.eolymp.atlas.CreateAttachmentOutput\">\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0e\"\x0c/attachments\x12\xad\x01\n\x10UpdateAttachment\x12#.eolymp.atlas.UpdateAttachmentInput\x1a$.eolymp.atlas.UpdateAttachmentOutput\"N\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e\"\x1c/attachments/{attachment_id}\x12\xad\x01\n\x10\x44\x65leteAttachment\x12#.eolymp.atlas.DeleteAttachmentInput\x1a$.eolymp.atlas.DeleteAttachmentOutput\"N\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e*\x1c/attachments/{attachment_id}\x12\x99\x01\n\x0fListAttachments\x12\".eolymp.atlas.ListAttachmentsInput\x1a#.eolymp.atlas.ListAttachmentsOutput\"=\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0e\x12\x0c/attachments\x12\xb2\x01\n\x12\x44\x65scribeAttachment\x12%.eolymp.atlas.DescribeAttachmentInput\x1a&.eolymp.atlas.DescribeAttachmentOutput\"M\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1e\x12\x1c/attachments/{attachment_id}B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/attachment_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/atlas/attachment.proto\x1a!eolymp/wellknown/expression.proto\"E\n\x15\x43reateAttachmentInput\x12,\n\nattachment\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Attachment\"/\n\x16\x43reateAttachmentOutput\x12\x15\n\rattachment_id\x18\x01 \x01(\t\"\\\n\x15UpdateAttachmentInput\x12\x15\n\rattachment_id\x18\x02 \x01(\t\x12,\n\nattachment\x18\x03 \x01(\x0b\x32\x18.eolymp.atlas.Attachment\"\x18\n\x16UpdateAttachmentOutput\".\n\x15\x44\x65leteAttachmentInput\x12\x15\n\rattachment_id\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteAttachmentOutput\"\xe9\x01\n\x14ListAttachmentsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.atlas.ListAttachmentsInput.Filter\x12\x0f\n\x07version\x18\x64 \x01(\r\x1a\x66\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"O\n\x15ListAttachmentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.atlas.Attachment\"A\n\x17\x44\x65scribeAttachmentInput\x12\x15\n\rattachment_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"H\n\x18\x44\x65scribeAttachmentOutput\x12,\n\nattachment\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Attachment2\xe4\x06\n\x11\x41ttachmentService\x12\x9d\x01\n\x10\x43reateAttachment\x12#.eolymp.atlas.CreateAttachmentInput\x1a$.eolymp.atlas.CreateAttachmentOutput\">\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0e\"\x0c/attachments\x12\xad\x01\n\x10UpdateAttachment\x12#.eolymp.atlas.UpdateAttachmentInput\x1a$.eolymp.atlas.UpdateAttachmentOutput\"N\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e\"\x1c/attachments/{attachment_id}\x12\xad\x01\n\x10\x44\x65leteAttachment\x12#.eolymp.atlas.DeleteAttachmentInput\x1a$.eolymp.atlas.DeleteAttachmentOutput\"N\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1e*\x1c/attachments/{attachment_id}\x12\x99\x01\n\x0fListAttachments\x12\".eolymp.atlas.ListAttachmentsInput\x1a#.eolymp.atlas.ListAttachmentsOutput\"=\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0e\x12\x0c/attachments\x12\xb2\x01\n\x12\x44\x65scribeAttachment\x12%.eolymp.atlas.DescribeAttachmentInput\x1a&.eolymp.atlas.DescribeAttachmentOutput\"M\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1e\x12\x1c/attachments/{attachment_id}B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.attachment_service_pb2', globals())
@@ -37,27 +37,27 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ATTACHMENTSERVICE.methods_by_name['DescribeAttachment']._options = None
   _ATTACHMENTSERVICE.methods_by_name['DescribeAttachment']._serialized_options = b'\202\343\n\026\212\343\n\022atlas:problem:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\036\022\034/attachments/{attachment_id}'
   _CREATEATTACHMENTINPUT._serialized_start=220
-  _CREATEATTACHMENTINPUT._serialized_end=309
-  _CREATEATTACHMENTOUTPUT._serialized_start=311
-  _CREATEATTACHMENTOUTPUT._serialized_end=358
-  _UPDATEATTACHMENTINPUT._serialized_start=360
-  _UPDATEATTACHMENTINPUT._serialized_end=472
-  _UPDATEATTACHMENTOUTPUT._serialized_start=474
-  _UPDATEATTACHMENTOUTPUT._serialized_end=498
-  _DELETEATTACHMENTINPUT._serialized_start=500
-  _DELETEATTACHMENTINPUT._serialized_end=566
-  _DELETEATTACHMENTOUTPUT._serialized_start=568
-  _DELETEATTACHMENTOUTPUT._serialized_end=592
-  _LISTATTACHMENTSINPUT._serialized_start=595
-  _LISTATTACHMENTSINPUT._serialized_end=848
-  _LISTATTACHMENTSINPUT_FILTER._serialized_start=746
-  _LISTATTACHMENTSINPUT_FILTER._serialized_end=848
-  _LISTATTACHMENTSOUTPUT._serialized_start=850
-  _LISTATTACHMENTSOUTPUT._serialized_end=929
-  _DESCRIBEATTACHMENTINPUT._serialized_start=931
-  _DESCRIBEATTACHMENTINPUT._serialized_end=1016
-  _DESCRIBEATTACHMENTOUTPUT._serialized_start=1018
-  _DESCRIBEATTACHMENTOUTPUT._serialized_end=1090
-  _ATTACHMENTSERVICE._serialized_start=1093
-  _ATTACHMENTSERVICE._serialized_end=1961
+  _CREATEATTACHMENTINPUT._serialized_end=289
+  _CREATEATTACHMENTOUTPUT._serialized_start=291
+  _CREATEATTACHMENTOUTPUT._serialized_end=338
+  _UPDATEATTACHMENTINPUT._serialized_start=340
+  _UPDATEATTACHMENTINPUT._serialized_end=432
+  _UPDATEATTACHMENTOUTPUT._serialized_start=434
+  _UPDATEATTACHMENTOUTPUT._serialized_end=458
+  _DELETEATTACHMENTINPUT._serialized_start=460
+  _DELETEATTACHMENTINPUT._serialized_end=506
+  _DELETEATTACHMENTOUTPUT._serialized_start=508
+  _DELETEATTACHMENTOUTPUT._serialized_end=532
+  _LISTATTACHMENTSINPUT._serialized_start=535
+  _LISTATTACHMENTSINPUT._serialized_end=768
+  _LISTATTACHMENTSINPUT_FILTER._serialized_start=666
+  _LISTATTACHMENTSINPUT_FILTER._serialized_end=768
+  _LISTATTACHMENTSOUTPUT._serialized_start=770
+  _LISTATTACHMENTSOUTPUT._serialized_end=849
+  _DESCRIBEATTACHMENTINPUT._serialized_start=851
+  _DESCRIBEATTACHMENTINPUT._serialized_end=916
+  _DESCRIBEATTACHMENTOUTPUT._serialized_start=918
+  _DESCRIBEATTACHMENTOUTPUT._serialized_end=990
+  _ATTACHMENTSERVICE._serialized_start=993
+  _ATTACHMENTSERVICE._serialized_end=1861
 # @@protoc_insertion_point(module_scope)

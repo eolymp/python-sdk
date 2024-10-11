@@ -10,10 +10,8 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeProblemGradingInput(_message.Message):
-    __slots__ = ["problem_id"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class DescribeProblemGradingOutput(_message.Message):
     __slots__ = ["ranges"]
@@ -29,12 +27,10 @@ class DescribeProblemGradingOutput(_message.Message):
     def __init__(self, ranges: _Optional[_Iterable[_Union[DescribeProblemGradingOutput.Range, _Mapping]]] = ...) -> None: ...
 
 class DescribeScoreInput(_message.Message):
-    __slots__ = ["member_id", "problem_id"]
+    __slots__ = ["member_id"]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     member_id: str
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreOutput(_message.Message):
     __slots__ = ["score"]
@@ -43,13 +39,19 @@ class DescribeScoreOutput(_message.Message):
     def __init__(self, score: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class ListProblemTopInput(_message.Message):
-    __slots__ = ["problem_id"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class ListProblemTopOutput(_message.Message):
     __slots__ = ["items"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission]
     def __init__(self, items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ...) -> None: ...
+
+class ScoreChangedEvent(_message.Message):
+    __slots__ = ["after", "before"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    after: _scoring_score_pb2.Score
+    before: _scoring_score_pb2.Score
+    def __init__(self, before: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ..., after: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...

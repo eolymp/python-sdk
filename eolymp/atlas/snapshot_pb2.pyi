@@ -1,13 +1,13 @@
 from eolymp.atlas import attachment_pb2 as _attachment_pb2
-from eolymp.atlas import checker_pb2 as _checker_pb2
 from eolymp.atlas import code_template_pb2 as _code_template_pb2
 from eolymp.atlas import editorial_pb2 as _editorial_pb2
-from eolymp.atlas import interactor_pb2 as _interactor_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import script_pb2 as _script_pb2
 from eolymp.atlas import solution_pb2 as _solution_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
+from eolymp.atlas import testing_checker_pb2 as _testing_checker_pb2
 from eolymp.atlas import testing_config_pb2 as _testing_config_pb2
+from eolymp.atlas import testing_interactor_pb2 as _testing_interactor_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.atlas import testing_testset_pb2 as _testing_testset_pb2
 from google.protobuf.internal import containers as _containers
@@ -32,9 +32,9 @@ class Snapshot(_message.Message):
     TESTSETS_FIELD_NUMBER: _ClassVar[int]
     TESTS_FIELD_NUMBER: _ClassVar[int]
     attachments: _containers.RepeatedCompositeFieldContainer[_attachment_pb2.Attachment]
-    checker: _checker_pb2.Checker
+    checker: _testing_checker_pb2.Checker
     editorials: _containers.RepeatedCompositeFieldContainer[_editorial_pb2.Editorial]
-    interactor: _interactor_pb2.Interactor
+    interactor: _testing_interactor_pb2.Interactor
     problem: _problem_pb2.Problem
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     solutions: _containers.RepeatedCompositeFieldContainer[_solution_pb2.Solution]
@@ -43,4 +43,4 @@ class Snapshot(_message.Message):
     testing: _testing_config_pb2.TestingConfig
     tests: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
     testsets: _containers.RepeatedCompositeFieldContainer[_testing_testset_pb2.Testset]
-    def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., testing: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., statements: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ..., templates: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ..., attachments: _Optional[_Iterable[_Union[_attachment_pb2.Attachment, _Mapping]]] = ..., testsets: _Optional[_Iterable[_Union[_testing_testset_pb2.Testset, _Mapping]]] = ..., tests: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ..., editorials: _Optional[_Iterable[_Union[_editorial_pb2.Editorial, _Mapping]]] = ..., solutions: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...
+    def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., testing: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ..., checker: _Optional[_Union[_testing_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ..., statements: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ..., templates: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ..., attachments: _Optional[_Iterable[_Union[_attachment_pb2.Attachment, _Mapping]]] = ..., testsets: _Optional[_Iterable[_Union[_testing_testset_pb2.Testset, _Mapping]]] = ..., tests: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ..., editorials: _Optional[_Iterable[_Union[_editorial_pb2.Editorial, _Mapping]]] = ..., solutions: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...

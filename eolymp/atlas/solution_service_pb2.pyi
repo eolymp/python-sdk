@@ -13,12 +13,10 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateSolutionInput(_message.Message):
-    __slots__ = ["problem_id", "solution"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["solution"]
     SOLUTION_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
     solution: _solution_pb2.Solution
-    def __init__(self, problem_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
+    def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class CreateSolutionOutput(_message.Message):
     __slots__ = ["solution_id"]
@@ -27,26 +25,22 @@ class CreateSolutionOutput(_message.Message):
     def __init__(self, solution_id: _Optional[str] = ...) -> None: ...
 
 class DeleteSolutionInput(_message.Message):
-    __slots__ = ["problem_id", "solution_id"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["solution_id"]
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
     solution_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., solution_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, solution_id: _Optional[str] = ...) -> None: ...
 
 class DeleteSolutionOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class DescribeSolutionInput(_message.Message):
-    __slots__ = ["problem_id", "solution_id", "version"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["solution_id", "version"]
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
     solution_id: str
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., solution_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, solution_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeSolutionOutput(_message.Message):
     __slots__ = ["solution"]
@@ -55,7 +49,7 @@ class DescribeSolutionOutput(_message.Message):
     def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class ListSolutionsInput(_message.Message):
-    __slots__ = ["filters", "offset", "order", "problem_id", "size", "sort", "version"]
+    __slots__ = ["filters", "offset", "order", "size", "sort", "version"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -75,7 +69,6 @@ class ListSolutionsInput(_message.Message):
     NAME: ListSolutionsInput.Sortable
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     TYPE: ListSolutionsInput.Sortable
@@ -83,11 +76,10 @@ class ListSolutionsInput(_message.Message):
     filters: ListSolutionsInput.Filter
     offset: int
     order: _direction_pb2.Direction
-    problem_id: str
     size: int
     sort: ListSolutionsInput.Sortable
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSolutionsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListSolutionsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSolutionsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListSolutionsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListSolutionsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -98,13 +90,12 @@ class ListSolutionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ...) -> None: ...
 
 class UpdateSolutionInput(_message.Message):
-    __slots__ = ["patch", "problem_id", "solution", "solution_id"]
+    __slots__ = ["patch", "solution", "solution_id"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateSolutionInput.Patch
     NAME: UpdateSolutionInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME: UpdateSolutionInput.Patch
     SECRET: UpdateSolutionInput.Patch
     SOLUTION_FIELD_NUMBER: _ClassVar[int]
@@ -112,10 +103,9 @@ class UpdateSolutionInput(_message.Message):
     SOURCE: UpdateSolutionInput.Patch
     TYPE: UpdateSolutionInput.Patch
     patch: _containers.RepeatedScalarFieldContainer[UpdateSolutionInput.Patch]
-    problem_id: str
     solution: _solution_pb2.Solution
     solution_id: str
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateSolutionInput.Patch, str]]] = ..., problem_id: _Optional[str] = ..., solution_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateSolutionInput.Patch, str]]] = ..., solution_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class UpdateSolutionOutput(_message.Message):
     __slots__ = []

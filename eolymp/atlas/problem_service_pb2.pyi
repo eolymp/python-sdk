@@ -137,6 +137,14 @@ class ListVersionsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ...) -> None: ...
 
+class ProblemChangedEvent(_message.Message):
+    __slots__ = ["after", "before"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    after: _problem_pb2.Problem
+    before: _problem_pb2.Problem
+    def __init__(self, before: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., after: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
+
 class SyncProblemInput(_message.Message):
     __slots__ = ["problem_id"]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]

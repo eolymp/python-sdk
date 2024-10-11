@@ -11,12 +11,10 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateAttachmentInput(_message.Message):
-    __slots__ = ["attachment", "problem_id"]
+    __slots__ = ["attachment"]
     ATTACHMENT_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     attachment: _attachment_pb2.Attachment
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., attachment: _Optional[_Union[_attachment_pb2.Attachment, _Mapping]] = ...) -> None: ...
+    def __init__(self, attachment: _Optional[_Union[_attachment_pb2.Attachment, _Mapping]] = ...) -> None: ...
 
 class CreateAttachmentOutput(_message.Message):
     __slots__ = ["attachment_id"]
@@ -25,26 +23,22 @@ class CreateAttachmentOutput(_message.Message):
     def __init__(self, attachment_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAttachmentInput(_message.Message):
-    __slots__ = ["attachment_id", "problem_id"]
+    __slots__ = ["attachment_id"]
     ATTACHMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     attachment_id: str
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., attachment_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, attachment_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAttachmentOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class DescribeAttachmentInput(_message.Message):
-    __slots__ = ["attachment_id", "problem_id", "version"]
+    __slots__ = ["attachment_id", "version"]
     ATTACHMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     attachment_id: str
-    problem_id: str
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., attachment_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, attachment_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeAttachmentOutput(_message.Message):
     __slots__ = ["attachment"]
@@ -53,7 +47,7 @@ class DescribeAttachmentOutput(_message.Message):
     def __init__(self, attachment: _Optional[_Union[_attachment_pb2.Attachment, _Mapping]] = ...) -> None: ...
 
 class ListAttachmentsInput(_message.Message):
-    __slots__ = ["filters", "offset", "problem_id", "size", "version"]
+    __slots__ = ["filters", "offset", "size", "version"]
     class Filter(_message.Message):
         __slots__ = ["id", "name"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -63,15 +57,13 @@ class ListAttachmentsInput(_message.Message):
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     filters: ListAttachmentsInput.Filter
     offset: int
-    problem_id: str
     size: int
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAttachmentsInput.Filter, _Mapping]] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAttachmentsInput.Filter, _Mapping]] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListAttachmentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -82,14 +74,12 @@ class ListAttachmentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_attachment_pb2.Attachment, _Mapping]]] = ...) -> None: ...
 
 class UpdateAttachmentInput(_message.Message):
-    __slots__ = ["attachment", "attachment_id", "problem_id"]
+    __slots__ = ["attachment", "attachment_id"]
     ATTACHMENT_FIELD_NUMBER: _ClassVar[int]
     ATTACHMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     attachment: _attachment_pb2.Attachment
     attachment_id: str
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., attachment_id: _Optional[str] = ..., attachment: _Optional[_Union[_attachment_pb2.Attachment, _Mapping]] = ...) -> None: ...
+    def __init__(self, attachment_id: _Optional[str] = ..., attachment: _Optional[_Union[_attachment_pb2.Attachment, _Mapping]] = ...) -> None: ...
 
 class UpdateAttachmentOutput(_message.Message):
     __slots__ = []
