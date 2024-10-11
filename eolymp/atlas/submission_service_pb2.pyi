@@ -61,6 +61,18 @@ class DescribeSubmissionUsageOutput(_message.Message):
     total_submissions: int
     def __init__(self, total_submissions: _Optional[int] = ..., monthly_submissions: _Optional[int] = ..., monthly_evaluations: _Optional[int] = ..., available_evaluations: _Optional[int] = ...) -> None: ...
 
+class ListProblemTopInput(_message.Message):
+    __slots__ = ["problem_id"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+
+class ListProblemTopOutput(_message.Message):
+    __slots__ = ["items"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission]
+    def __init__(self, items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ...) -> None: ...
+
 class ListSubmissionsInput(_message.Message):
     __slots__ = ["after", "extra", "filters", "offset", "size"]
     class Filter(_message.Message):

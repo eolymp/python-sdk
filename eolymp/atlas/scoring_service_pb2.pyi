@@ -38,16 +38,6 @@ class DescribeScoreOutput(_message.Message):
     score: _scoring_score_pb2.Score
     def __init__(self, score: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
-class ListProblemTopInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class ListProblemTopOutput(_message.Message):
-    __slots__ = ["items"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission]
-    def __init__(self, items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ...) -> None: ...
-
 class ScoreChangedEvent(_message.Message):
     __slots__ = ["after", "before"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
