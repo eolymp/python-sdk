@@ -1,7 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.notify import notification_pb2 as _notification_pb2
-from eolymp.notify import subscription_pb2 as _subscription_pb2
+from eolymp.notify import preferences_pb2 as _preferences_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -41,17 +41,17 @@ class DescribeNotificationOutput(_message.Message):
     notification: _notification_pb2.Notification
     def __init__(self, notification: _Optional[_Union[_notification_pb2.Notification, _Mapping]] = ...) -> None: ...
 
-class DescribeSubscriptionsInput(_message.Message):
+class DescribePreferencesInput(_message.Message):
     __slots__ = ["space_id"]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     space_id: str
     def __init__(self, space_id: _Optional[str] = ...) -> None: ...
 
-class DescribeSubscriptionsOutput(_message.Message):
-    __slots__ = ["subscriptions"]
-    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
-    subscriptions: _containers.RepeatedCompositeFieldContainer[_subscription_pb2.Subscription]
-    def __init__(self, subscriptions: _Optional[_Iterable[_Union[_subscription_pb2.Subscription, _Mapping]]] = ...) -> None: ...
+class DescribePreferencesOutput(_message.Message):
+    __slots__ = ["preferences"]
+    PREFERENCES_FIELD_NUMBER: _ClassVar[int]
+    preferences: _preferences_pb2.Preferences
+    def __init__(self, preferences: _Optional[_Union[_preferences_pb2.Preferences, _Mapping]] = ...) -> None: ...
 
 class ListNotificationsInput(_message.Message):
     __slots__ = ["after", "size"]
@@ -85,14 +85,14 @@ class ReadNotificationOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateSubscriptionsInput(_message.Message):
-    __slots__ = ["space_id", "subscriptions"]
+class UpdatePreferencesInput(_message.Message):
+    __slots__ = ["preferences", "space_id"]
+    PREFERENCES_FIELD_NUMBER: _ClassVar[int]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
-    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+    preferences: _preferences_pb2.Preferences
     space_id: str
-    subscriptions: _containers.RepeatedCompositeFieldContainer[_subscription_pb2.Subscription]
-    def __init__(self, space_id: _Optional[str] = ..., subscriptions: _Optional[_Iterable[_Union[_subscription_pb2.Subscription, _Mapping]]] = ...) -> None: ...
+    def __init__(self, space_id: _Optional[str] = ..., preferences: _Optional[_Union[_preferences_pb2.Preferences, _Mapping]] = ...) -> None: ...
 
-class UpdateSubscriptionsOutput(_message.Message):
+class UpdatePreferencesOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
