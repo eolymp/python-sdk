@@ -68,10 +68,7 @@ class NotificationServiceClient:
         )
 
     def DescribePreferences(self, request, **kwargs):
-        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/preferences"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.space_id = ""
+        path = "/preferences/notifications"
 
         return self.transport.request(
             method="GET",
@@ -82,10 +79,7 @@ class NotificationServiceClient:
         )
 
     def UpdatePreferences(self, request, **kwargs):
-        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/preferences"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.space_id = ""
+        path = "/preferences/notifications"
 
         return self.transport.request(
             method="POST",

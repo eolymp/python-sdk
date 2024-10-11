@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/notify/preferences.proto\x12\reolymp.notify\"\xe2\x01\n\x0bPreferences\x12=\n\x0csubscription\x18\n \x03(\x0b\x32\'.eolymp.notify.Preferences.Subscription\x1aP\n\x0cSubscription\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x31\n\x06\x64igest\x18\x02 \x01(\x0e\x32!.eolymp.notify.Preferences.Digest\"B\n\x06\x44igest\x12\x12\n\x0eUNKNOWN_DIGEST\x10\x00\x12\r\n\tIMMEDIATE\x10\x01\x12\n\n\x06HOURLY\x10\x02\x12\t\n\x05\x44\x41ILY\x10\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/notify;notifyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/notify/preferences.proto\x12\reolymp.notify\"\xe3\x01\n\x0bPreferences\x12>\n\rsubscriptions\x18\n \x03(\x0b\x32\'.eolymp.notify.Preferences.Subscription\x1aP\n\x0cSubscription\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x31\n\x06\x64igest\x18\x02 \x01(\x0e\x32!.eolymp.notify.Preferences.Digest\"B\n\x06\x44igest\x12\x12\n\x0eUNKNOWN_DIGEST\x10\x00\x12\r\n\tIMMEDIATE\x10\x01\x12\n\n\x06HOURLY\x10\x02\x12\t\n\x05\x44\x41ILY\x10\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/notify;notifyb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.notify.preferences_pb2', globals())
@@ -22,9 +22,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/notify;notify'
   _PREFERENCES._serialized_start=51
-  _PREFERENCES._serialized_end=277
-  _PREFERENCES_SUBSCRIPTION._serialized_start=129
-  _PREFERENCES_SUBSCRIPTION._serialized_end=209
-  _PREFERENCES_DIGEST._serialized_start=211
-  _PREFERENCES_DIGEST._serialized_end=277
+  _PREFERENCES._serialized_end=278
+  _PREFERENCES_SUBSCRIPTION._serialized_start=130
+  _PREFERENCES_SUBSCRIPTION._serialized_end=210
+  _PREFERENCES_DIGEST._serialized_start=212
+  _PREFERENCES_DIGEST._serialized_end=278
 # @@protoc_insertion_point(module_scope)

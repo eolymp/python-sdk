@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Preferences(_message.Message):
-    __slots__ = ["subscription"]
+    __slots__ = ["subscriptions"]
     class Digest(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Subscription(_message.Message):
@@ -20,7 +20,7 @@ class Preferences(_message.Message):
     DAILY: Preferences.Digest
     HOURLY: Preferences.Digest
     IMMEDIATE: Preferences.Digest
-    SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_DIGEST: Preferences.Digest
-    subscription: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
-    def __init__(self, subscription: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ...) -> None: ...
+    subscriptions: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
+    def __init__(self, subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ...) -> None: ...
