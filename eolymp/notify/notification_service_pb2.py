@@ -14,9 +14,10 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.notify import notification_pb2 as eolymp_dot_notify_dot_notification__pb2
+from eolymp.notify import subscription_pb2 as eolymp_dot_notify_dot_subscription__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/notify/notification_service.proto\x12\reolymp.notify\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a eolymp/notify/notification.proto\"F\n\x11NotificationEvent\x12\x31\n\x0cnotification\x18\x01 \x01(\x0b\x32\x1b.eolymp.notify.Notification\"L\n\x17\x43reateNotificationInput\x12\x31\n\x0cnotification\x18\x01 \x01(\x0b\x32\x1b.eolymp.notify.Notification\"\x1a\n\x18\x43reateNotificationOutput\"4\n\x19\x44\x65scribeNotificationInput\x12\x17\n\x0fnotification_id\x18\x01 \x01(\t\"O\n\x1a\x44\x65scribeNotificationOutput\x12\x31\n\x0cnotification\x18\x01 \x01(\x0b\x32\x1b.eolymp.notify.Notification\"0\n\x15ReadNotificationInput\x12\x17\n\x0fnotification_id\x18\x01 \x01(\t\"\x18\n\x16ReadNotificationOutput\"2\n\x17\x44\x65leteNotificationInput\x12\x17\n\x0fnotification_id\x18\x01 \x01(\t\"\x1a\n\x18\x44\x65leteNotificationOutput\"5\n\x16ListNotificationsInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\"T\n\x17ListNotificationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.notify.Notification\"!\n\x1f\x44\x65scribeNotificationConfigInput\"?\n DescribeNotificationConfigOutput\x12\x1b\n\x13\x65mail_subscriptions\x18\x02 \x03(\t\"<\n\x1dUpdateNotificationConfigInput\x12\x1b\n\x13\x65mail_subscriptions\x18\x02 \x03(\t\" \n\x1eUpdateNotificationConfigOutput2\xd9\x08\n\x13NotificationService\x12v\n\x12\x43reateNotification\x12&.eolymp.notify.CreateNotificationInput\x1a\'.eolymp.notify.CreateNotificationOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12\xa4\x01\n\x14\x44\x65scribeNotification\x12(.eolymp.notify.DescribeNotificationInput\x1a).eolymp.notify.DescribeNotificationOutput\"7\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"\x12 /notifications/{notification_id}\x12\x9d\x01\n\x10ReadNotification\x12$.eolymp.notify.ReadNotificationInput\x1a%.eolymp.notify.ReadNotificationOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\'\"%/notifications/{notification_id}/read\x12\x9e\x01\n\x12\x44\x65leteNotification\x12&.eolymp.notify.DeleteNotificationInput\x1a\'.eolymp.notify.DeleteNotificationOutput\"7\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"* /notifications/{notification_id}\x12\x89\x01\n\x11ListNotifications\x12%.eolymp.notify.ListNotificationsInput\x1a&.eolymp.notify.ListNotificationsOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x10\x12\x0e/notifications\x12\xac\x01\n\x1a\x44\x65scribeNotificationConfig\x12..eolymp.notify.DescribeNotificationConfigInput\x1a/.eolymp.notify.DescribeNotificationConfigOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x18\x12\x16/configs/notifications\x12\xa6\x01\n\x18UpdateNotificationConfig\x12,.eolymp.notify.UpdateNotificationConfigInput\x1a-.eolymp.notify.UpdateNotificationConfigOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x18\"\x16/configs/notificationsB/Z-github.com/eolymp/go-sdk/eolymp/notify;notifyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/notify/notification_service.proto\x12\reolymp.notify\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a eolymp/notify/notification.proto\x1a eolymp/notify/subscription.proto\"F\n\x11NotificationEvent\x12\x31\n\x0cnotification\x18\x01 \x01(\x0b\x32\x1b.eolymp.notify.Notification\"L\n\x17\x43reateNotificationInput\x12\x31\n\x0cnotification\x18\x01 \x01(\x0b\x32\x1b.eolymp.notify.Notification\"\x1a\n\x18\x43reateNotificationOutput\"4\n\x19\x44\x65scribeNotificationInput\x12\x17\n\x0fnotification_id\x18\x01 \x01(\t\"O\n\x1a\x44\x65scribeNotificationOutput\x12\x31\n\x0cnotification\x18\x01 \x01(\x0b\x32\x1b.eolymp.notify.Notification\"0\n\x15ReadNotificationInput\x12\x17\n\x0fnotification_id\x18\x01 \x01(\t\"\x18\n\x16ReadNotificationOutput\"2\n\x17\x44\x65leteNotificationInput\x12\x17\n\x0fnotification_id\x18\x01 \x01(\t\"\x1a\n\x18\x44\x65leteNotificationOutput\"5\n\x16ListNotificationsInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\"T\n\x17ListNotificationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.notify.Notification\".\n\x1a\x44\x65scribeSubscriptionsInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\"Q\n\x1b\x44\x65scribeSubscriptionsOutput\x12\x32\n\rsubscriptions\x18\x01 \x03(\x0b\x32\x1b.eolymp.notify.Subscription\"`\n\x18UpdateSubscriptionsInput\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12\x32\n\rsubscriptions\x18\x02 \x03(\x0b\x32\x1b.eolymp.notify.Subscription\"\x1b\n\x19UpdateSubscriptionsOutput2\xcf\x08\n\x13NotificationService\x12v\n\x12\x43reateNotification\x12&.eolymp.notify.CreateNotificationInput\x1a\'.eolymp.notify.CreateNotificationOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x12\xa4\x01\n\x14\x44\x65scribeNotification\x12(.eolymp.notify.DescribeNotificationInput\x1a).eolymp.notify.DescribeNotificationOutput\"7\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"\x12 /notifications/{notification_id}\x12\x9d\x01\n\x10ReadNotification\x12$.eolymp.notify.ReadNotificationInput\x1a%.eolymp.notify.ReadNotificationOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\'\"%/notifications/{notification_id}/read\x12\x9e\x01\n\x12\x44\x65leteNotification\x12&.eolymp.notify.DeleteNotificationInput\x1a\'.eolymp.notify.DeleteNotificationOutput\"7\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\"* /notifications/{notification_id}\x12\x89\x01\n\x11ListNotifications\x12%.eolymp.notify.ListNotificationsInput\x1a&.eolymp.notify.ListNotificationsOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x10\x12\x0e/notifications\x12\xa7\x01\n\x15\x44\x65scribeSubscriptions\x12).eolymp.notify.DescribeSubscriptionsInput\x1a*.eolymp.notify.DescribeSubscriptionsOutput\"7\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\"\x12 /spaces/{space_id}/notifications\x12\xa1\x01\n\x13UpdateSubscriptions\x12\'.eolymp.notify.UpdateSubscriptionsInput\x1a(.eolymp.notify.UpdateSubscriptionsOutput\"7\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\"\" /spaces/{space_id}/notificationsB/Z-github.com/eolymp/go-sdk/eolymp/notify;notifyb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.notify.notification_service_pb2', globals())
@@ -34,40 +35,40 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _NOTIFICATIONSERVICE.methods_by_name['DeleteNotification']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\"* /notifications/{notification_id}'
   _NOTIFICATIONSERVICE.methods_by_name['ListNotifications']._options = None
   _NOTIFICATIONSERVICE.methods_by_name['ListNotifications']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\020\022\016/notifications'
-  _NOTIFICATIONSERVICE.methods_by_name['DescribeNotificationConfig']._options = None
-  _NOTIFICATIONSERVICE.methods_by_name['DescribeNotificationConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\323\344\223\002\030\022\026/configs/notifications'
-  _NOTIFICATIONSERVICE.methods_by_name['UpdateNotificationConfig']._options = None
-  _NOTIFICATIONSERVICE.methods_by_name['UpdateNotificationConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\323\344\223\002\030\"\026/configs/notifications'
-  _NOTIFICATIONEVENT._serialized_start=160
-  _NOTIFICATIONEVENT._serialized_end=230
-  _CREATENOTIFICATIONINPUT._serialized_start=232
-  _CREATENOTIFICATIONINPUT._serialized_end=308
-  _CREATENOTIFICATIONOUTPUT._serialized_start=310
-  _CREATENOTIFICATIONOUTPUT._serialized_end=336
-  _DESCRIBENOTIFICATIONINPUT._serialized_start=338
-  _DESCRIBENOTIFICATIONINPUT._serialized_end=390
-  _DESCRIBENOTIFICATIONOUTPUT._serialized_start=392
-  _DESCRIBENOTIFICATIONOUTPUT._serialized_end=471
-  _READNOTIFICATIONINPUT._serialized_start=473
-  _READNOTIFICATIONINPUT._serialized_end=521
-  _READNOTIFICATIONOUTPUT._serialized_start=523
-  _READNOTIFICATIONOUTPUT._serialized_end=547
-  _DELETENOTIFICATIONINPUT._serialized_start=549
-  _DELETENOTIFICATIONINPUT._serialized_end=599
-  _DELETENOTIFICATIONOUTPUT._serialized_start=601
-  _DELETENOTIFICATIONOUTPUT._serialized_end=627
-  _LISTNOTIFICATIONSINPUT._serialized_start=629
-  _LISTNOTIFICATIONSINPUT._serialized_end=682
-  _LISTNOTIFICATIONSOUTPUT._serialized_start=684
-  _LISTNOTIFICATIONSOUTPUT._serialized_end=768
-  _DESCRIBENOTIFICATIONCONFIGINPUT._serialized_start=770
-  _DESCRIBENOTIFICATIONCONFIGINPUT._serialized_end=803
-  _DESCRIBENOTIFICATIONCONFIGOUTPUT._serialized_start=805
-  _DESCRIBENOTIFICATIONCONFIGOUTPUT._serialized_end=868
-  _UPDATENOTIFICATIONCONFIGINPUT._serialized_start=870
-  _UPDATENOTIFICATIONCONFIGINPUT._serialized_end=930
-  _UPDATENOTIFICATIONCONFIGOUTPUT._serialized_start=932
-  _UPDATENOTIFICATIONCONFIGOUTPUT._serialized_end=964
-  _NOTIFICATIONSERVICE._serialized_start=967
-  _NOTIFICATIONSERVICE._serialized_end=2080
+  _NOTIFICATIONSERVICE.methods_by_name['DescribeSubscriptions']._options = None
+  _NOTIFICATIONSERVICE.methods_by_name['DescribeSubscriptions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\323\344\223\002\"\022 /spaces/{space_id}/notifications'
+  _NOTIFICATIONSERVICE.methods_by_name['UpdateSubscriptions']._options = None
+  _NOTIFICATIONSERVICE.methods_by_name['UpdateSubscriptions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\323\344\223\002\"\" /spaces/{space_id}/notifications'
+  _NOTIFICATIONEVENT._serialized_start=194
+  _NOTIFICATIONEVENT._serialized_end=264
+  _CREATENOTIFICATIONINPUT._serialized_start=266
+  _CREATENOTIFICATIONINPUT._serialized_end=342
+  _CREATENOTIFICATIONOUTPUT._serialized_start=344
+  _CREATENOTIFICATIONOUTPUT._serialized_end=370
+  _DESCRIBENOTIFICATIONINPUT._serialized_start=372
+  _DESCRIBENOTIFICATIONINPUT._serialized_end=424
+  _DESCRIBENOTIFICATIONOUTPUT._serialized_start=426
+  _DESCRIBENOTIFICATIONOUTPUT._serialized_end=505
+  _READNOTIFICATIONINPUT._serialized_start=507
+  _READNOTIFICATIONINPUT._serialized_end=555
+  _READNOTIFICATIONOUTPUT._serialized_start=557
+  _READNOTIFICATIONOUTPUT._serialized_end=581
+  _DELETENOTIFICATIONINPUT._serialized_start=583
+  _DELETENOTIFICATIONINPUT._serialized_end=633
+  _DELETENOTIFICATIONOUTPUT._serialized_start=635
+  _DELETENOTIFICATIONOUTPUT._serialized_end=661
+  _LISTNOTIFICATIONSINPUT._serialized_start=663
+  _LISTNOTIFICATIONSINPUT._serialized_end=716
+  _LISTNOTIFICATIONSOUTPUT._serialized_start=718
+  _LISTNOTIFICATIONSOUTPUT._serialized_end=802
+  _DESCRIBESUBSCRIPTIONSINPUT._serialized_start=804
+  _DESCRIBESUBSCRIPTIONSINPUT._serialized_end=850
+  _DESCRIBESUBSCRIPTIONSOUTPUT._serialized_start=852
+  _DESCRIBESUBSCRIPTIONSOUTPUT._serialized_end=933
+  _UPDATESUBSCRIPTIONSINPUT._serialized_start=935
+  _UPDATESUBSCRIPTIONSINPUT._serialized_end=1031
+  _UPDATESUBSCRIPTIONSOUTPUT._serialized_start=1033
+  _UPDATESUBSCRIPTIONSOUTPUT._serialized_end=1060
+  _NOTIFICATIONSERVICE._serialized_start=1063
+  _NOTIFICATIONSERVICE._serialized_end=2166
 # @@protoc_insertion_point(module_scope)

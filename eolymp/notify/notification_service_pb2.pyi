@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.notify import notification_pb2 as _notification_pb2
+from eolymp.notify import subscription_pb2 as _subscription_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -28,16 +29,6 @@ class DeleteNotificationOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class DescribeNotificationConfigInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class DescribeNotificationConfigOutput(_message.Message):
-    __slots__ = ["email_subscriptions"]
-    EMAIL_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
-    email_subscriptions: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, email_subscriptions: _Optional[_Iterable[str]] = ...) -> None: ...
-
 class DescribeNotificationInput(_message.Message):
     __slots__ = ["notification_id"]
     NOTIFICATION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -49,6 +40,18 @@ class DescribeNotificationOutput(_message.Message):
     NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
     notification: _notification_pb2.Notification
     def __init__(self, notification: _Optional[_Union[_notification_pb2.Notification, _Mapping]] = ...) -> None: ...
+
+class DescribeSubscriptionsInput(_message.Message):
+    __slots__ = ["space_id"]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    space_id: str
+    def __init__(self, space_id: _Optional[str] = ...) -> None: ...
+
+class DescribeSubscriptionsOutput(_message.Message):
+    __slots__ = ["subscriptions"]
+    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+    subscriptions: _containers.RepeatedCompositeFieldContainer[_subscription_pb2.Subscription]
+    def __init__(self, subscriptions: _Optional[_Iterable[_Union[_subscription_pb2.Subscription, _Mapping]]] = ...) -> None: ...
 
 class ListNotificationsInput(_message.Message):
     __slots__ = ["after", "size"]
@@ -82,12 +85,14 @@ class ReadNotificationOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateNotificationConfigInput(_message.Message):
-    __slots__ = ["email_subscriptions"]
-    EMAIL_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
-    email_subscriptions: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, email_subscriptions: _Optional[_Iterable[str]] = ...) -> None: ...
+class UpdateSubscriptionsInput(_message.Message):
+    __slots__ = ["space_id", "subscriptions"]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+    space_id: str
+    subscriptions: _containers.RepeatedCompositeFieldContainer[_subscription_pb2.Subscription]
+    def __init__(self, space_id: _Optional[str] = ..., subscriptions: _Optional[_Iterable[_Union[_subscription_pb2.Subscription, _Mapping]]] = ...) -> None: ...
 
-class UpdateNotificationConfigOutput(_message.Message):
+class UpdateSubscriptionsOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

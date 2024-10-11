@@ -160,6 +160,16 @@ class ReadTicketOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class ReplyChangedEvent(_message.Message):
+    __slots__ = ["after", "before", "ticket_id"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    after: _ticket_reply_pb2.Reply
+    before: _ticket_reply_pb2.Reply
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., before: _Optional[_Union[_ticket_reply_pb2.Reply, _Mapping]] = ..., after: _Optional[_Union[_ticket_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
+
 class ReplyTicketInput(_message.Message):
     __slots__ = ["change_status_to", "message", "ticket_id"]
     CHANGE_STATUS_TO_FIELD_NUMBER: _ClassVar[int]
@@ -175,6 +185,14 @@ class ReplyTicketOutput(_message.Message):
     REPLY_ID_FIELD_NUMBER: _ClassVar[int]
     reply_id: str
     def __init__(self, reply_id: _Optional[str] = ...) -> None: ...
+
+class TicketChangedEvent(_message.Message):
+    __slots__ = ["after", "before"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    after: _ticket_pb2.Ticket
+    before: _ticket_pb2.Ticket
+    def __init__(self, before: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., after: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
 class UpdateReplyInput(_message.Message):
     __slots__ = ["message", "reply_id", "ticket_id"]

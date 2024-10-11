@@ -67,25 +67,31 @@ class NotificationServiceClient:
             **kwargs,
         )
 
-    def DescribeNotificationConfig(self, request, **kwargs):
-        path = "/configs/notifications"
+    def DescribeSubscriptions(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/notifications"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.notify.DescribeNotificationConfigOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.notify.DescribeSubscriptionsOutput"),
             **kwargs,
         )
 
-    def UpdateNotificationConfig(self, request, **kwargs):
-        path = "/configs/notifications"
+    def UpdateSubscriptions(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/notifications"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.notify.UpdateNotificationConfigOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.notify.UpdateSubscriptionsOutput"),
             **kwargs,
         )
 
