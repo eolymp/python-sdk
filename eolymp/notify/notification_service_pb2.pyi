@@ -66,6 +66,12 @@ class ListNotificationsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_notification_pb2.Notification, _Mapping]]] = ...) -> None: ...
 
+class NotificationEvent(_message.Message):
+    __slots__ = ["notification"]
+    NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
+    notification: _notification_pb2.Notification
+    def __init__(self, notification: _Optional[_Union[_notification_pb2.Notification, _Mapping]] = ...) -> None: ...
+
 class ReadNotificationInput(_message.Message):
     __slots__ = ["notification_id"]
     NOTIFICATION_ID_FIELD_NUMBER: _ClassVar[int]
