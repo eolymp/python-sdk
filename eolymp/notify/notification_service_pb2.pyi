@@ -3,6 +3,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.notify import notification_pb2 as _notification_pb2
 from eolymp.notify import preferences_pb2 as _preferences_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -86,12 +87,20 @@ class ReadNotificationOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdatePreferencesInput(_message.Message):
-    __slots__ = ["preferences", "space_id"]
+    __slots__ = ["patch", "preferences", "space_id"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdatePreferencesInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
     PREFERENCES_FIELD_NUMBER: _ClassVar[int]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    SUBSCRIPTIONS: UpdatePreferencesInput.Patch
+    SUBSCRIPTIONS_ADD: UpdatePreferencesInput.Patch
+    SUBSCRIPTIONS_REMOVE: UpdatePreferencesInput.Patch
+    patch: _containers.RepeatedScalarFieldContainer[UpdatePreferencesInput.Patch]
     preferences: _preferences_pb2.Preferences
     space_id: str
-    def __init__(self, space_id: _Optional[str] = ..., preferences: _Optional[_Union[_preferences_pb2.Preferences, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdatePreferencesInput.Patch, str]]] = ..., space_id: _Optional[str] = ..., preferences: _Optional[_Union[_preferences_pb2.Preferences, _Mapping]] = ...) -> None: ...
 
 class UpdatePreferencesOutput(_message.Message):
     __slots__ = []
