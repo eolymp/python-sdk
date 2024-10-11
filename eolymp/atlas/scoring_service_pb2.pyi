@@ -38,9 +38,13 @@ class DescribeScoreOutput(_message.Message):
     def __init__(self, score: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class ScoreChangedEvent(_message.Message):
-    __slots__ = ["after", "before"]
+    __slots__ = ["after", "before", "member_id", "problem_id"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     after: _scoring_score_pb2.Score
     before: _scoring_score_pb2.Score
-    def __init__(self, before: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ..., after: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
+    member_id: str
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ..., before: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ..., after: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
