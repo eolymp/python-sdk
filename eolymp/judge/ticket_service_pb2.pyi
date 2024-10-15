@@ -57,6 +57,20 @@ class DeleteTicketOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class DescribeReplyInput(_message.Message):
+    __slots__ = ["extra", "reply_id", "ticket_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    REPLY_ID_FIELD_NUMBER: _ClassVar[int]
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_ticket_reply_pb2.Reply.Extra]
+    reply_id: str
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ..., reply_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
+
+class DescribeReplyOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DescribeTicketInput(_message.Message):
     __slots__ = ["contest_id", "extra", "ticket_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]

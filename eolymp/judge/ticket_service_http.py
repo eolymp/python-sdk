@@ -120,6 +120,21 @@ class TicketServiceClient:
             **kwargs,
         )
 
+    def DescribeReply(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/replies/"+urllib.parse.quote(request.reply_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+        request.reply_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeReplyOutput"),
+            **kwargs,
+        )
+
     def DeleteReply(self, request, **kwargs):
         path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/replies/"+urllib.parse.quote(request.reply_id)
 
