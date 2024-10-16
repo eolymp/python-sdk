@@ -68,8 +68,10 @@ class DescribeReplyInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., reply_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
 
 class DescribeReplyOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["reply"]
+    REPLY_FIELD_NUMBER: _ClassVar[int]
+    reply: _ticket_reply_pb2.Reply
+    def __init__(self, reply: _Optional[_Union[_ticket_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
 
 class DescribeTicketInput(_message.Message):
     __slots__ = ["contest_id", "extra", "ticket_id"]
