@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IdentityConfig(_message.Message):
-    __slots__ = ["allow_sign_up", "basecamp", "display_name_attribute", "display_name_type", "local", "oidc"]
+    __slots__ = ["allow_sign_up", "basecamp", "display_name_attribute", "display_name_type", "local", "oidc", "require_email_verified"]
     class DisplayNameType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALLOW_SIGN_UP_FIELD_NUMBER: _ClassVar[int]
@@ -19,6 +19,7 @@ class IdentityConfig(_message.Message):
     NAME: IdentityConfig.DisplayNameType
     NICKNAME: IdentityConfig.DisplayNameType
     OIDC_FIELD_NUMBER: _ClassVar[int]
+    REQUIRE_EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_DISPLAY_NAME: IdentityConfig.DisplayNameType
     allow_sign_up: bool
     basecamp: _configuration_idp_pb2.IdentityProvider.Basecamp
@@ -26,4 +27,5 @@ class IdentityConfig(_message.Message):
     display_name_type: IdentityConfig.DisplayNameType
     local: _configuration_idp_pb2.IdentityProvider.Local
     oidc: _configuration_idp_pb2.IdentityProvider.OIDC
-    def __init__(self, local: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.Local, _Mapping]] = ..., basecamp: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.Basecamp, _Mapping]] = ..., oidc: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ..., display_name_type: _Optional[_Union[IdentityConfig.DisplayNameType, str]] = ..., display_name_attribute: _Optional[str] = ..., allow_sign_up: bool = ...) -> None: ...
+    require_email_verified: bool
+    def __init__(self, local: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.Local, _Mapping]] = ..., basecamp: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.Basecamp, _Mapping]] = ..., oidc: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ..., display_name_type: _Optional[_Union[IdentityConfig.DisplayNameType, str]] = ..., display_name_attribute: _Optional[str] = ..., allow_sign_up: bool = ..., require_email_verified: bool = ...) -> None: ...

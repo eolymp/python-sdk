@@ -18,7 +18,7 @@ from eolymp.community import configuration_identity_pb2 as eolymp_dot_community_
 from eolymp.community import configuration_idp_pb2 as eolymp_dot_community_dot_configuration__idp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/community/configuration_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a-eolymp/community/configuration_identity.proto\x1a(eolymp/community/configuration_idp.proto\"\x1f\n\x1d\x44\x65scribeIdentityProviderInput\"v\n\x1e\x44\x65scribeIdentityProviderOutput\x12\x0f\n\x05local\x18\x01 \x01(\x08H\x00\x12\x37\n\x04oidc\x18\x03 \x01(\x0b\x32\'.eolymp.community.IdentityProvider.OIDCH\x00\x42\n\n\x08provider\"v\n\x1e\x43onfigureIdentityProviderInput\x12\x0f\n\x05local\x18\x01 \x01(\x08H\x00\x12\x37\n\x04oidc\x18\x03 \x01(\x0b\x32\'.eolymp.community.IdentityProvider.OIDCH\x00\x42\n\n\x08provider\"!\n\x1f\x43onfigureIdentityProviderOutput\"\x1d\n\x1b\x44\x65scribeIdentityConfigInput\"P\n\x1c\x44\x65scribeIdentityConfigOutput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.IdentityConfig\"P\n\x1c\x43onfigureIdentityConfigInput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.IdentityConfig\"\x1f\n\x1d\x43onfigureIdentityConfigOutput2\xda\x05\n\x14\x43onfigurationService\x12\x9a\x01\n\x18\x44\x65scribeIdentityProvider\x12/.eolymp.community.DescribeIdentityProviderInput\x1a\x30.eolymp.community.DescribeIdentityProviderOutput\"\x1b\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x06\x12\x04/idp\x12\xbb\x01\n\x19\x43onfigureIdentityProvider\x12\x30.eolymp.community.ConfigureIdentityProviderInput\x1a\x31.eolymp.community.ConfigureIdentityProviderOutput\"9\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x06\x1a\x04/idp\x12\xa1\x01\n\x16\x44\x65scribeIdentityConfig\x12-.eolymp.community.DescribeIdentityConfigInput\x1a..eolymp.community.DescribeIdentityConfigOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x13\x12\x11/configs/identity\x12\xc2\x01\n\x17\x43onfigureIdentityConfig\x12..eolymp.community.ConfigureIdentityConfigInput\x1a/.eolymp.community.ConfigureIdentityConfigOutput\"F\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x13\x1a\x11/configs/identityB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/community/configuration_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a-eolymp/community/configuration_identity.proto\x1a(eolymp/community/configuration_idp.proto\"\x1d\n\x1b\x44\x65scribeIdentityConfigInput\"P\n\x1c\x44\x65scribeIdentityConfigOutput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.IdentityConfig\"P\n\x1c\x43onfigureIdentityConfigInput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.IdentityConfig\"\x1f\n\x1d\x43onfigureIdentityConfigOutput2\xff\x02\n\x14\x43onfigurationService\x12\xa1\x01\n\x16\x44\x65scribeIdentityConfig\x12-.eolymp.community.DescribeIdentityConfigInput\x1a..eolymp.community.DescribeIdentityConfigOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x13\x12\x11/configs/identity\x12\xc2\x01\n\x17\x43onfigureIdentityConfig\x12..eolymp.community.ConfigureIdentityConfigInput\x1a/.eolymp.community.ConfigureIdentityConfigOutput\"F\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x13\x1a\x11/configs/identityB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.configuration_service_pb2', globals())
@@ -26,30 +26,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
-  _CONFIGURATIONSERVICE.methods_by_name['DescribeIdentityProvider']._options = None
-  _CONFIGURATIONSERVICE.methods_by_name['DescribeIdentityProvider']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\006\022\004/idp'
-  _CONFIGURATIONSERVICE.methods_by_name['ConfigureIdentityProvider']._options = None
-  _CONFIGURATIONSERVICE.methods_by_name['ConfigureIdentityProvider']._serialized_options = b'\202\343\n\032\212\343\n\026community:member:write\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002\006\032\004/idp'
   _CONFIGURATIONSERVICE.methods_by_name['DescribeIdentityConfig']._options = None
   _CONFIGURATIONSERVICE.methods_by_name['DescribeIdentityConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\023\022\021/configs/identity'
   _CONFIGURATIONSERVICE.methods_by_name['ConfigureIdentityConfig']._options = None
   _CONFIGURATIONSERVICE.methods_by_name['ConfigureIdentityConfig']._serialized_options = b'\202\343\n\032\212\343\n\026community:member:write\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002\023\032\021/configs/identity'
-  _DESCRIBEIDENTITYPROVIDERINPUT._serialized_start=254
-  _DESCRIBEIDENTITYPROVIDERINPUT._serialized_end=285
-  _DESCRIBEIDENTITYPROVIDEROUTPUT._serialized_start=287
-  _DESCRIBEIDENTITYPROVIDEROUTPUT._serialized_end=405
-  _CONFIGUREIDENTITYPROVIDERINPUT._serialized_start=407
-  _CONFIGUREIDENTITYPROVIDERINPUT._serialized_end=525
-  _CONFIGUREIDENTITYPROVIDEROUTPUT._serialized_start=527
-  _CONFIGUREIDENTITYPROVIDEROUTPUT._serialized_end=560
-  _DESCRIBEIDENTITYCONFIGINPUT._serialized_start=562
-  _DESCRIBEIDENTITYCONFIGINPUT._serialized_end=591
-  _DESCRIBEIDENTITYCONFIGOUTPUT._serialized_start=593
-  _DESCRIBEIDENTITYCONFIGOUTPUT._serialized_end=673
-  _CONFIGUREIDENTITYCONFIGINPUT._serialized_start=675
-  _CONFIGUREIDENTITYCONFIGINPUT._serialized_end=755
-  _CONFIGUREIDENTITYCONFIGOUTPUT._serialized_start=757
-  _CONFIGUREIDENTITYCONFIGOUTPUT._serialized_end=788
-  _CONFIGURATIONSERVICE._serialized_start=791
-  _CONFIGURATIONSERVICE._serialized_end=1521
+  _DESCRIBEIDENTITYCONFIGINPUT._serialized_start=254
+  _DESCRIBEIDENTITYCONFIGINPUT._serialized_end=283
+  _DESCRIBEIDENTITYCONFIGOUTPUT._serialized_start=285
+  _DESCRIBEIDENTITYCONFIGOUTPUT._serialized_end=365
+  _CONFIGUREIDENTITYCONFIGINPUT._serialized_start=367
+  _CONFIGUREIDENTITYCONFIGINPUT._serialized_end=447
+  _CONFIGUREIDENTITYCONFIGOUTPUT._serialized_start=449
+  _CONFIGUREIDENTITYCONFIGOUTPUT._serialized_end=480
+  _CONFIGURATIONSERVICE._serialized_start=483
+  _CONFIGURATIONSERVICE._serialized_end=866
 # @@protoc_insertion_point(module_scope)

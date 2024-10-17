@@ -14,28 +14,6 @@ class ConfigurationServiceClient:
         self.transport = transport
         self.url = url
 
-    def DescribeIdentityProvider(self, request, **kwargs):
-        path = "/idp"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeIdentityProviderOutput"),
-            **kwargs,
-        )
-
-    def ConfigureIdentityProvider(self, request, **kwargs):
-        path = "/idp"
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ConfigureIdentityProviderOutput"),
-            **kwargs,
-        )
-
     def DescribeIdentityConfig(self, request, **kwargs):
         path = "/configs/identity"
 

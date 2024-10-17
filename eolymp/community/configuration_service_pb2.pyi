@@ -19,18 +19,6 @@ class ConfigureIdentityConfigOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class ConfigureIdentityProviderInput(_message.Message):
-    __slots__ = ["local", "oidc"]
-    LOCAL_FIELD_NUMBER: _ClassVar[int]
-    OIDC_FIELD_NUMBER: _ClassVar[int]
-    local: bool
-    oidc: _configuration_idp_pb2.IdentityProvider.OIDC
-    def __init__(self, local: bool = ..., oidc: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
-
-class ConfigureIdentityProviderOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class DescribeIdentityConfigInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
@@ -40,15 +28,3 @@ class DescribeIdentityConfigOutput(_message.Message):
     CONFIG_FIELD_NUMBER: _ClassVar[int]
     config: _configuration_identity_pb2.IdentityConfig
     def __init__(self, config: _Optional[_Union[_configuration_identity_pb2.IdentityConfig, _Mapping]] = ...) -> None: ...
-
-class DescribeIdentityProviderInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class DescribeIdentityProviderOutput(_message.Message):
-    __slots__ = ["local", "oidc"]
-    LOCAL_FIELD_NUMBER: _ClassVar[int]
-    OIDC_FIELD_NUMBER: _ClassVar[int]
-    local: bool
-    oidc: _configuration_idp_pb2.IdentityProvider.OIDC
-    def __init__(self, local: bool = ..., oidc: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ...) -> None: ...
