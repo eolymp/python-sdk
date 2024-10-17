@@ -5,10 +5,11 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Claims(_message.Message):
-    __slots__ = ["birthday", "country", "email", "email_verified", "id", "issuer", "locale", "minor", "name", "nickname", "picture", "preferred_runtime", "subject", "timezone"]
+    __slots__ = ["birthday", "country", "email", "email_restricted", "email_verified", "id", "issuer", "locale", "minor", "name", "nickname", "picture", "preferred_runtime", "subject", "timezone"]
     BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_RESTRICTED_FIELD_NUMBER: _ClassVar[int]
     EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     ISSUER_FIELD_NUMBER: _ClassVar[int]
@@ -23,6 +24,7 @@ class Claims(_message.Message):
     birthday: str
     country: str
     email: str
+    email_restricted: bool
     email_verified: bool
     id: str
     issuer: str
@@ -34,4 +36,4 @@ class Claims(_message.Message):
     preferred_runtime: str
     subject: str
     timezone: str
-    def __init__(self, id: _Optional[str] = ..., issuer: _Optional[str] = ..., subject: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., locale: _Optional[str] = ..., timezone: _Optional[str] = ..., birthday: _Optional[str] = ..., minor: bool = ..., country: _Optional[str] = ..., preferred_runtime: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., issuer: _Optional[str] = ..., subject: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., email_restricted: bool = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., locale: _Optional[str] = ..., timezone: _Optional[str] = ..., birthday: _Optional[str] = ..., minor: bool = ..., country: _Optional[str] = ..., preferred_runtime: _Optional[str] = ...) -> None: ...
