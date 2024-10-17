@@ -27,20 +27,18 @@ class DescribePlanOutput(_message.Message):
     def __init__(self, plan: _Optional[_Union[_plan_pb2.Plan, _Mapping]] = ...) -> None: ...
 
 class ListPlansInput(_message.Message):
-    __slots__ = ["currency", "extra", "locale", "offset", "show_unavailable", "size"]
+    __slots__ = ["currency", "extra", "locale", "offset", "size"]
     CURRENCY_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
-    SHOW_UNAVAILABLE_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     currency: str
     extra: _containers.RepeatedScalarFieldContainer[_plan_pb2.Plan.Extra]
     locale: str
     offset: int
-    show_unavailable: bool
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., currency: _Optional[str] = ..., show_unavailable: bool = ..., extra: _Optional[_Iterable[_Union[_plan_pb2.Plan.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., currency: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_plan_pb2.Plan.Extra, str]]] = ...) -> None: ...
 
 class ListPlansOutput(_message.Message):
     __slots__ = ["items", "total"]

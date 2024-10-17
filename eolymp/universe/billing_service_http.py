@@ -174,3 +174,14 @@ class BillingServiceClient:
             **kwargs,
         )
 
+    def ListAvailablePlans(self, request, **kwargs):
+        path = "/billing/plans"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.ListAvailablePlansOutput"),
+            **kwargs,
+        )
+

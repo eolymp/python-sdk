@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Plan(_message.Message):
-    __slots__ = ["available", "description", "id", "labels", "max_seats", "min_seats", "name", "quota", "variants"]
+    __slots__ = ["description", "id", "labels", "max_seats", "min_seats", "name", "quota", "requires_approval", "variants"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Recurrence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -25,7 +25,6 @@ class Plan(_message.Message):
         recurrence: Plan.Recurrence
         unit_amount: int
         def __init__(self, id: _Optional[str] = ..., recurrence: _Optional[_Union[Plan.Recurrence, str]] = ..., currency: _Optional[str] = ..., unit_amount: _Optional[int] = ...) -> None: ...
-    AVAILABLE_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_RENDER: Plan.Extra
     DESCRIPTION_VALUE: Plan.Extra
@@ -38,10 +37,10 @@ class Plan(_message.Message):
     NO_EXTRA: Plan.Extra
     ONETIME: Plan.Recurrence
     QUOTA_FIELD_NUMBER: _ClassVar[int]
+    REQUIRES_APPROVAL_FIELD_NUMBER: _ClassVar[int]
     UNKNOWN_RECURRENCE: Plan.Recurrence
     VARIANTS_FIELD_NUMBER: _ClassVar[int]
     YEARLY: Plan.Recurrence
-    available: bool
     description: _content_pb2.Content
     id: str
     labels: _containers.RepeatedScalarFieldContainer[str]
@@ -49,5 +48,6 @@ class Plan(_message.Message):
     min_seats: int
     name: str
     quota: _quota_pb2.Quota
+    requires_approval: bool
     variants: _containers.RepeatedCompositeFieldContainer[Plan.Variant]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., available: bool = ..., min_seats: _Optional[int] = ..., max_seats: _Optional[int] = ..., variants: _Optional[_Iterable[_Union[Plan.Variant, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., requires_approval: bool = ..., min_seats: _Optional[int] = ..., max_seats: _Optional[int] = ..., variants: _Optional[_Iterable[_Union[Plan.Variant, _Mapping]]] = ...) -> None: ...
