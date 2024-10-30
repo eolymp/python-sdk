@@ -55,7 +55,7 @@ class SecurityEvent(_message.Message):
     JTI_FIELD_NUMBER: _ClassVar[int]
     aud: str
     events: _containers.RepeatedCompositeFieldContainer[SecurityEvent.Event]
-    iat: str
+    iat: int
     iss: str
     jti: str
-    def __init__(self, iss: _Optional[str] = ..., aud: _Optional[str] = ..., iat: _Optional[str] = ..., jti: _Optional[str] = ..., events: _Optional[_Iterable[_Union[SecurityEvent.Event, _Mapping]]] = ...) -> None: ...
+    def __init__(self, iss: _Optional[str] = ..., aud: _Optional[str] = ..., iat: _Optional[int] = ..., jti: _Optional[str] = ..., events: _Optional[_Iterable[_Union[SecurityEvent.Event, _Mapping]]] = ...) -> None: ...
