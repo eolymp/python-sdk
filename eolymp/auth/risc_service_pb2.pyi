@@ -21,11 +21,11 @@ class HandleSecurityEventOutput(_message.Message):
 class SecurityEvent(_message.Message):
     __slots__ = ["aud", "events", "iat", "iss", "jti"]
     class Event(_message.Message):
-        __slots__ = ["claims", "reason", "state", "subjects", "token", "token_identifier_alg", "token_type", "type"]
+        __slots__ = ["claims", "reason", "state", "subject", "token", "token_identifier_alg", "token_type", "type"]
         CLAIMS_FIELD_NUMBER: _ClassVar[int]
         REASON_FIELD_NUMBER: _ClassVar[int]
         STATE_FIELD_NUMBER: _ClassVar[int]
-        SUBJECTS_FIELD_NUMBER: _ClassVar[int]
+        SUBJECT_FIELD_NUMBER: _ClassVar[int]
         TOKEN_FIELD_NUMBER: _ClassVar[int]
         TOKEN_IDENTIFIER_ALG_FIELD_NUMBER: _ClassVar[int]
         TOKEN_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -33,12 +33,12 @@ class SecurityEvent(_message.Message):
         claims: _claims_pb2.Claims
         reason: str
         state: str
-        subjects: SecurityEvent.Subject
+        subject: SecurityEvent.Subject
         token: str
         token_identifier_alg: str
         token_type: str
         type: str
-        def __init__(self, type: _Optional[str] = ..., subjects: _Optional[_Union[SecurityEvent.Subject, _Mapping]] = ..., claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ..., reason: _Optional[str] = ..., state: _Optional[str] = ..., token: _Optional[str] = ..., token_type: _Optional[str] = ..., token_identifier_alg: _Optional[str] = ...) -> None: ...
+        def __init__(self, type: _Optional[str] = ..., subject: _Optional[_Union[SecurityEvent.Subject, _Mapping]] = ..., claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ..., reason: _Optional[str] = ..., state: _Optional[str] = ..., token: _Optional[str] = ..., token_type: _Optional[str] = ..., token_identifier_alg: _Optional[str] = ...) -> None: ...
     class Subject(_message.Message):
         __slots__ = ["email", "format", "id", "iss", "sub"]
         EMAIL_FIELD_NUMBER: _ClassVar[int]

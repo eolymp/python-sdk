@@ -16,7 +16,7 @@ from eolymp.auth import claims_pb2 as eolymp_dot_auth_dot_claims__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/auth/risc_service.proto\x12\x0b\x65olymp.auth\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/auth/claims.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x98\x03\n\rSecurityEvent\x12\x0b\n\x03iss\x18\x01 \x01(\t\x12\x0b\n\x03\x61ud\x18\x02 \x01(\t\x12\x0b\n\x03iat\x18\x03 \x01(\x03\x12\x0b\n\x03jti\x18\x04 \x01(\t\x12\x30\n\x06\x65vents\x18\n \x03(\x0b\x32 .eolymp.auth.SecurityEvent.Event\x1aN\n\x07Subject\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\n\n\x02id\x18\x05 \x01(\t\x12\x0b\n\x03iss\x18\x02 \x01(\t\x12\x0b\n\x03sub\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x1a\xd0\x01\n\x05\x45vent\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x34\n\x08subjects\x18\n \x01(\x0b\x32\".eolymp.auth.SecurityEvent.Subject\x12#\n\x06\x63laims\x18\x0b \x01(\x0b\x32\x13.eolymp.auth.Claims\x12\x0e\n\x06reason\x18\x14 \x01(\t\x12\r\n\x05state\x18\x1e \x01(\t\x12\r\n\x05token\x18\x64 \x01(\t\x12\x12\n\ntoken_type\x18\x66 \x01(\t\x12\x1c\n\x14token_identifier_alg\x18\x65 \x01(\t\"2\n\x18HandleSecurityEventInput\x12\x16\n\x0esecurity_event\x18\x01 \x01(\t\"\x1b\n\x19HandleSecurityEventOutput2\x85\x01\n\x0bRISCService\x12v\n\x13HandleSecurityEvent\x12%.eolymp.auth.HandleSecurityEventInput\x1a&.eolymp.auth.HandleSecurityEventOutput\"\x10\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x42+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/auth/risc_service.proto\x12\x0b\x65olymp.auth\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/auth/claims.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x97\x03\n\rSecurityEvent\x12\x0b\n\x03iss\x18\x01 \x01(\t\x12\x0b\n\x03\x61ud\x18\x02 \x01(\t\x12\x0b\n\x03iat\x18\x03 \x01(\x03\x12\x0b\n\x03jti\x18\x04 \x01(\t\x12\x30\n\x06\x65vents\x18\n \x03(\x0b\x32 .eolymp.auth.SecurityEvent.Event\x1aN\n\x07Subject\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\n\n\x02id\x18\x05 \x01(\t\x12\x0b\n\x03iss\x18\x02 \x01(\t\x12\x0b\n\x03sub\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x1a\xcf\x01\n\x05\x45vent\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x33\n\x07subject\x18\n \x01(\x0b\x32\".eolymp.auth.SecurityEvent.Subject\x12#\n\x06\x63laims\x18\x0b \x01(\x0b\x32\x13.eolymp.auth.Claims\x12\x0e\n\x06reason\x18\x14 \x01(\t\x12\r\n\x05state\x18\x1e \x01(\t\x12\r\n\x05token\x18\x64 \x01(\t\x12\x12\n\ntoken_type\x18\x66 \x01(\t\x12\x1c\n\x14token_identifier_alg\x18\x65 \x01(\t\"2\n\x18HandleSecurityEventInput\x12\x16\n\x0esecurity_event\x18\x01 \x01(\t\"\x1b\n\x19HandleSecurityEventOutput2\x85\x01\n\x0bRISCService\x12v\n\x13HandleSecurityEvent\x12%.eolymp.auth.HandleSecurityEventInput\x1a&.eolymp.auth.HandleSecurityEventOutput\"\x10\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xf0\x41\xf8\xe2\n\xac\x02\x42+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.auth.risc_service_pb2', globals())
@@ -27,15 +27,15 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RISCSERVICE.methods_by_name['HandleSecurityEvent']._options = None
   _RISCSERVICE.methods_by_name['HandleSecurityEvent']._serialized_options = b'\352\342\n\014\365\342\n\000\000\360A\370\342\n\254\002'
   _SECURITYEVENT._serialized_start=143
-  _SECURITYEVENT._serialized_end=551
+  _SECURITYEVENT._serialized_end=550
   _SECURITYEVENT_SUBJECT._serialized_start=262
   _SECURITYEVENT_SUBJECT._serialized_end=340
   _SECURITYEVENT_EVENT._serialized_start=343
-  _SECURITYEVENT_EVENT._serialized_end=551
-  _HANDLESECURITYEVENTINPUT._serialized_start=553
-  _HANDLESECURITYEVENTINPUT._serialized_end=603
-  _HANDLESECURITYEVENTOUTPUT._serialized_start=605
-  _HANDLESECURITYEVENTOUTPUT._serialized_end=632
-  _RISCSERVICE._serialized_start=635
-  _RISCSERVICE._serialized_end=768
+  _SECURITYEVENT_EVENT._serialized_end=550
+  _HANDLESECURITYEVENTINPUT._serialized_start=552
+  _HANDLESECURITYEVENTINPUT._serialized_end=602
+  _HANDLESECURITYEVENTOUTPUT._serialized_start=604
+  _HANDLESECURITYEVENTOUTPUT._serialized_end=631
+  _RISCSERVICE._serialized_start=634
+  _RISCSERVICE._serialized_end=767
 # @@protoc_insertion_point(module_scope)
