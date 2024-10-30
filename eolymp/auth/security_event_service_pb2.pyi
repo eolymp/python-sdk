@@ -18,7 +18,7 @@ class HandleSecurityEventOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class SecurityEvent(_message.Message):
-    __slots__ = ["aud", "events", "iat", "iss", "jti"]
+    __slots__ = ["aud", "events", "iat", "iss", "jti", "sid"]
     class Event(_message.Message):
         __slots__ = ["claims", "reason", "state", "subject", "token", "token_identifier_alg", "token_type", "type"]
         CLAIMS_FIELD_NUMBER: _ClassVar[int]
@@ -56,9 +56,11 @@ class SecurityEvent(_message.Message):
     IAT_FIELD_NUMBER: _ClassVar[int]
     ISS_FIELD_NUMBER: _ClassVar[int]
     JTI_FIELD_NUMBER: _ClassVar[int]
+    SID_FIELD_NUMBER: _ClassVar[int]
     aud: str
     events: _containers.RepeatedCompositeFieldContainer[SecurityEvent.Event]
     iat: int
     iss: str
     jti: str
-    def __init__(self, iss: _Optional[str] = ..., aud: _Optional[str] = ..., iat: _Optional[int] = ..., jti: _Optional[str] = ..., events: _Optional[_Iterable[_Union[SecurityEvent.Event, _Mapping]]] = ...) -> None: ...
+    sid: str
+    def __init__(self, iss: _Optional[str] = ..., aud: _Optional[str] = ..., iat: _Optional[int] = ..., jti: _Optional[str] = ..., sid: _Optional[str] = ..., events: _Optional[_Iterable[_Union[SecurityEvent.Event, _Mapping]]] = ...) -> None: ...
