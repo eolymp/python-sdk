@@ -14,17 +14,6 @@ class CognitoClient:
         self.transport = transport
         self.url = url
 
-    def Signout(self, request, **kwargs):
-        path = "/self/signout"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.SignoutOutput"),
-            **kwargs,
-        )
-
     def CreateAccessKey(self, request, **kwargs):
         path = "/access-keys"
 
@@ -185,45 +174,6 @@ class CognitoClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.cognito.IntrospectQuotaOutput"),
-            **kwargs,
-        )
-
-    def IntrospectRoles(self, request, **kwargs):
-        path = "/self/roles"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.IntrospectRolesOutput"),
-            **kwargs,
-        )
-
-    def ListRoles(self, request, **kwargs):
-        path = "/users/"+urllib.parse.quote(request.user_id)+"/roles"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.user_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListRolesOutput"),
-            **kwargs,
-        )
-
-    def UpdateRoles(self, request, **kwargs):
-        path = "/users/"+urllib.parse.quote(request.user_id)+"/roles"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.user_id = ""
-
-        return self.transport.request(
-            method="PUT",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.UpdateRolesOutput"),
             **kwargs,
         )
 

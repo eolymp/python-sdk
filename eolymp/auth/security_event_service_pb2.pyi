@@ -1,6 +1,5 @@
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.auth import claims_pb2 as _claims_pb2
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -9,10 +8,10 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class HandleSecurityEventInput(_message.Message):
-    __slots__ = ["security_event"]
-    SECURITY_EVENT_FIELD_NUMBER: _ClassVar[int]
-    security_event: str
-    def __init__(self, security_event: _Optional[str] = ...) -> None: ...
+    __slots__ = ["signed_security_event"]
+    SIGNED_SECURITY_EVENT_FIELD_NUMBER: _ClassVar[int]
+    signed_security_event: str
+    def __init__(self, signed_security_event: _Optional[str] = ...) -> None: ...
 
 class HandleSecurityEventOutput(_message.Message):
     __slots__ = []

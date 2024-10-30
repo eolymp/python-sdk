@@ -46,79 +46,6 @@ class CreateAccessKeyOutput(_message.Message):
     secret: str
     def __init__(self, key_id: _Optional[str] = ..., secret: _Optional[str] = ...) -> None: ...
 
-class CreateAuthorizationInput(_message.Message):
-    __slots__ = ["client_id", "code_challenge", "code_challenge_method", "redirect_uri", "response_type", "scope", "state"]
-    CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
-    CODE_CHALLENGE_FIELD_NUMBER: _ClassVar[int]
-    CODE_CHALLENGE_METHOD_FIELD_NUMBER: _ClassVar[int]
-    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
-    RESPONSE_TYPE_FIELD_NUMBER: _ClassVar[int]
-    SCOPE_FIELD_NUMBER: _ClassVar[int]
-    STATE_FIELD_NUMBER: _ClassVar[int]
-    client_id: str
-    code_challenge: str
-    code_challenge_method: str
-    redirect_uri: str
-    response_type: str
-    scope: str
-    state: str
-    def __init__(self, client_id: _Optional[str] = ..., code_challenge: _Optional[str] = ..., code_challenge_method: _Optional[str] = ..., redirect_uri: _Optional[str] = ..., response_type: _Optional[str] = ..., scope: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
-
-class CreateAuthorizationOutput(_message.Message):
-    __slots__ = ["authorization_code", "redirect_uri"]
-    AUTHORIZATION_CODE_FIELD_NUMBER: _ClassVar[int]
-    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
-    authorization_code: str
-    redirect_uri: str
-    def __init__(self, authorization_code: _Optional[str] = ..., redirect_uri: _Optional[str] = ...) -> None: ...
-
-class CreateTokenInput(_message.Message):
-    __slots__ = ["client_id", "client_secret", "code", "code_verifier", "grant_type", "password", "refresh_token", "scope", "username"]
-    class GrantType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    AUTHORIZATION_CODE: CreateTokenInput.GrantType
-    CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
-    CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
-    CODE_FIELD_NUMBER: _ClassVar[int]
-    CODE_VERIFIER_FIELD_NUMBER: _ClassVar[int]
-    GOOGLE_CODE: CreateTokenInput.GrantType
-    GRANT_TYPE_FIELD_NUMBER: _ClassVar[int]
-    NONE: CreateTokenInput.GrantType
-    PASSWORD: CreateTokenInput.GrantType
-    PASSWORD_FIELD_NUMBER: _ClassVar[int]
-    REFRESH_TOKEN: CreateTokenInput.GrantType
-    REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    SCOPE_FIELD_NUMBER: _ClassVar[int]
-    USERNAME_FIELD_NUMBER: _ClassVar[int]
-    client_id: str
-    client_secret: str
-    code: str
-    code_verifier: str
-    grant_type: CreateTokenInput.GrantType
-    password: str
-    refresh_token: str
-    scope: str
-    username: str
-    def __init__(self, grant_type: _Optional[_Union[CreateTokenInput.GrantType, str]] = ..., username: _Optional[str] = ..., password: _Optional[str] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., code: _Optional[str] = ..., code_verifier: _Optional[str] = ..., scope: _Optional[str] = ..., refresh_token: _Optional[str] = ...) -> None: ...
-
-class CreateTokenOutput(_message.Message):
-    __slots__ = ["expires_at", "refresh_token", "scopes", "token", "type", "user_id", "username"]
-    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
-    REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    SCOPES_FIELD_NUMBER: _ClassVar[int]
-    TOKEN_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
-    USERNAME_FIELD_NUMBER: _ClassVar[int]
-    USER_ID_FIELD_NUMBER: _ClassVar[int]
-    expires_at: _timestamp_pb2.Timestamp
-    refresh_token: str
-    scopes: _containers.RepeatedScalarFieldContainer[str]
-    token: str
-    type: str
-    user_id: str
-    username: str
-    def __init__(self, token: _Optional[str] = ..., type: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., scopes: _Optional[_Iterable[str]] = ..., refresh_token: _Optional[str] = ..., user_id: _Optional[str] = ..., username: _Optional[str] = ...) -> None: ...
-
 class CreateUserInput(_message.Message):
     __slots__ = ["birthday", "captcha", "country", "email", "full_name", "locale", "password", "username"]
     BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
@@ -185,50 +112,6 @@ class IntrospectQuotaOutput(_message.Message):
     problems_per_user: _quota_pb2.Quota
     def __init__(self, contests_per_user: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., problems_per_contest: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., participants_per_contest: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., problems_per_user: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ...) -> None: ...
 
-class IntrospectRolesInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class IntrospectRolesOutput(_message.Message):
-    __slots__ = ["roles"]
-    ROLES_FIELD_NUMBER: _ClassVar[int]
-    roles: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, roles: _Optional[_Iterable[str]] = ...) -> None: ...
-
-class IntrospectTokenInput(_message.Message):
-    __slots__ = ["token"]
-    TOKEN_FIELD_NUMBER: _ClassVar[int]
-    token: str
-    def __init__(self, token: _Optional[str] = ...) -> None: ...
-
-class IntrospectTokenOutput(_message.Message):
-    __slots__ = ["active", "audience", "email", "email_verified", "expire", "issuer", "locale", "name", "nickname", "picture", "scope", "subject"]
-    ACTIVE_FIELD_NUMBER: _ClassVar[int]
-    AUDIENCE_FIELD_NUMBER: _ClassVar[int]
-    EMAIL_FIELD_NUMBER: _ClassVar[int]
-    EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
-    EXPIRE_FIELD_NUMBER: _ClassVar[int]
-    ISSUER_FIELD_NUMBER: _ClassVar[int]
-    LOCALE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    NICKNAME_FIELD_NUMBER: _ClassVar[int]
-    PICTURE_FIELD_NUMBER: _ClassVar[int]
-    SCOPE_FIELD_NUMBER: _ClassVar[int]
-    SUBJECT_FIELD_NUMBER: _ClassVar[int]
-    active: bool
-    audience: str
-    email: str
-    email_verified: bool
-    expire: _timestamp_pb2.Timestamp
-    issuer: str
-    locale: str
-    name: str
-    nickname: str
-    picture: str
-    scope: str
-    subject: str
-    def __init__(self, active: bool = ..., scope: _Optional[str] = ..., expire: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., subject: _Optional[str] = ..., audience: _Optional[str] = ..., issuer: _Optional[str] = ..., name: _Optional[str] = ..., nickname: _Optional[str] = ..., picture: _Optional[str] = ..., email: _Optional[str] = ..., email_verified: bool = ..., locale: _Optional[str] = ...) -> None: ...
-
 class IntrospectUserInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
@@ -254,18 +137,6 @@ class ListAccessKeysOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_access_key_pb2.AccessKey]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_access_key_pb2.AccessKey, _Mapping]]] = ...) -> None: ...
-
-class ListRolesInput(_message.Message):
-    __slots__ = ["user_id"]
-    USER_ID_FIELD_NUMBER: _ClassVar[int]
-    user_id: str
-    def __init__(self, user_id: _Optional[str] = ...) -> None: ...
-
-class ListRolesOutput(_message.Message):
-    __slots__ = ["roles"]
-    ROLES_FIELD_NUMBER: _ClassVar[int]
-    roles: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, roles: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ListUsersInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
@@ -325,16 +196,6 @@ class ResendEmailVerificationOutput(_message.Message):
     email_confirmation_hint: str
     def __init__(self, email_confirmation_hint: _Optional[str] = ...) -> None: ...
 
-class RevokeTokenInput(_message.Message):
-    __slots__ = ["token"]
-    TOKEN_FIELD_NUMBER: _ClassVar[int]
-    token: str
-    def __init__(self, token: _Optional[str] = ...) -> None: ...
-
-class RevokeTokenOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class SelfDestructInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
@@ -344,30 +205,6 @@ class SelfDestructOutput(_message.Message):
     DELETE_ON_FIELD_NUMBER: _ClassVar[int]
     delete_on: _timestamp_pb2.Timestamp
     def __init__(self, delete_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
-
-class SigninInput(_message.Message):
-    __slots__ = ["password", "username"]
-    PASSWORD_FIELD_NUMBER: _ClassVar[int]
-    USERNAME_FIELD_NUMBER: _ClassVar[int]
-    password: str
-    username: str
-    def __init__(self, username: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
-
-class SigninOutput(_message.Message):
-    __slots__ = ["user"]
-    USER_FIELD_NUMBER: _ClassVar[int]
-    user: _user_pb2.User
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
-
-class SignoutInput(_message.Message):
-    __slots__ = ["everywhere"]
-    EVERYWHERE_FIELD_NUMBER: _ClassVar[int]
-    everywhere: bool
-    def __init__(self, everywhere: bool = ...) -> None: ...
-
-class SignoutOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class StartRecoveryInput(_message.Message):
     __slots__ = ["captcha", "email", "locale"]
@@ -467,18 +304,6 @@ class UpdateProfileOutput(_message.Message):
     EMAIL_CONFIRMATION_HINT_FIELD_NUMBER: _ClassVar[int]
     email_confirmation_hint: str
     def __init__(self, email_confirmation_hint: _Optional[str] = ...) -> None: ...
-
-class UpdateRolesInput(_message.Message):
-    __slots__ = ["roles", "user_id"]
-    ROLES_FIELD_NUMBER: _ClassVar[int]
-    USER_ID_FIELD_NUMBER: _ClassVar[int]
-    roles: _containers.RepeatedScalarFieldContainer[str]
-    user_id: str
-    def __init__(self, user_id: _Optional[str] = ..., roles: _Optional[_Iterable[str]] = ...) -> None: ...
-
-class UpdateRolesOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class VerifyEmailInput(_message.Message):
     __slots__ = ["secret", "user_id"]
