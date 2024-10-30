@@ -9,46 +9,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class CognitoClient:
+class UserServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
-
-    def CreateAccessKey(self, request, **kwargs):
-        path = "/access-keys"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.CreateAccessKeyOutput"),
-            **kwargs,
-        )
-
-    def DeleteAccessKey(self, request, **kwargs):
-        path = "/access-keys/"+urllib.parse.quote(request.key_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.key_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.DeleteAccessKeyOutput"),
-            **kwargs,
-        )
-
-    def ListAccessKeys(self, request, **kwargs):
-        path = "/access-keys"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListAccessKeysOutput"),
-            **kwargs,
-        )
 
     def CreateUser(self, request, **kwargs):
         path = "/users"
