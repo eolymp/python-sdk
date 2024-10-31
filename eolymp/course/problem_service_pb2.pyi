@@ -86,10 +86,8 @@ class ListExamplesOutput(_message.Message):
     def __init__(self, examples: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
 
 class ListRuntimesInput(_message.Message):
-    __slots__ = ["problem_id"]
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class ListRuntimesOutput(_message.Message):
     __slots__ = ["items", "total"]
