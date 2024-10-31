@@ -122,3 +122,14 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def ListRuntimes(self, request, **kwargs):
+        path = "/runtime"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListRuntimesOutput"),
+            **kwargs,
+        )
+

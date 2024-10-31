@@ -6,6 +6,7 @@ from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.playground import run_pb2 as _run_pb2
+from eolymp.runtime import runtime_pb2 as _runtime_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -83,6 +84,20 @@ class ListExamplesOutput(_message.Message):
     EXAMPLES_FIELD_NUMBER: _ClassVar[int]
     examples: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
     def __init__(self, examples: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
+
+class ListRuntimesInput(_message.Message):
+    __slots__ = ["problem_id"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+
+class ListRuntimesOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_runtime_pb2.Runtime]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ...) -> None: ...
 
 class ListStatementsInput(_message.Message):
     __slots__ = []
