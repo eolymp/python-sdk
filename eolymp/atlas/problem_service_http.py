@@ -120,7 +120,7 @@ class ProblemServiceClient:
             **kwargs,
         )
 
-    def ListRuntime(self, request, **kwargs):
+    def ListRuntimes(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/runtime"
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -130,7 +130,7 @@ class ProblemServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListRuntimeOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListRuntimesOutput"),
             **kwargs,
         )
 

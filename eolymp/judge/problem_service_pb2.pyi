@@ -123,7 +123,7 @@ class ListProblemsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem, _Mapping]]] = ...) -> None: ...
 
-class ListRuntimeInput(_message.Message):
+class ListRuntimesInput(_message.Message):
     __slots__ = ["contest_id", "problem_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -131,7 +131,7 @@ class ListRuntimeInput(_message.Message):
     problem_id: str
     def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
 
-class ListRuntimeOutput(_message.Message):
+class ListRuntimesOutput(_message.Message):
     __slots__ = ["items", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
