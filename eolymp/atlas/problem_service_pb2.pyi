@@ -4,7 +4,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import version_pb2 as _version_pb2
-from eolymp.executor import runtime_pb2 as _runtime_pb2
+from eolymp.runtime import runtime_pb2 as _runtime_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers

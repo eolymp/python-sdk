@@ -1,9 +1,9 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.executor import runtime_pb2 as _runtime_pb2
 from eolymp.judge import problem_pb2 as _problem_pb2
 from eolymp.judge import template_pb2 as _template_pb2
+from eolymp.runtime import runtime_pb2 as _runtime_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
