@@ -65,7 +65,7 @@ class RuntimeServiceClient:
         )
 
     def DescribeCodeTemplate(self, request, **kwargs):
-        path = "/exec/runtime/"+urllib.parse.quote(request.runtime_id)+"/template"
+        path = "/runtime/"+urllib.parse.quote(request.runtime_id)+"/template"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.runtime_id = ""
