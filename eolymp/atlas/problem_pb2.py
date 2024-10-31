@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\"\xec\x04\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03url\x18\xaa\x05 \x01(\t\x12\x30\n\x05links\x18\xab\x05 \x03(\x0b\x32 .eolymp.atlas.Problem.LinksEntry\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0f\n\x07private\x18\x0c \x01(\x08\x12\x0e\n\x06origin\x18\r \x01(\t\x12\x0e\n\x06topics\x18\x14 \x03(\t\x12\r\n\x05score\x18\x1f \x01(\x02\x12\x36\n\x0b\x63onstraints\x18\x1e \x01(\x0b\x32!.eolymp.atlas.Problem.Constraints\x12\x17\n\x0f\x61\x63\x63\x65ptance_rate\x18( \x01(\x02\x12\x19\n\x11submissions_count\x18* \x01(\r\x12\x1c\n\x14submissions_accepted\x18+ \x01(\r\x12\x0c\n\x04vote\x18\x32 \x01(\x05\x12\x12\n\nvote_count\x18\x33 \x01(\x05\x12\x12\n\ndifficulty\x18\x15 \x01(\r\x1a\x9f\x01\n\x0b\x43onstraints\x12\x16\n\x0etime_limit_min\x18< \x01(\r\x12\x16\n\x0etime_limit_max\x18= \x01(\r\x12\x15\n\rcpu_limit_min\x18> \x01(\r\x12\x15\n\rcpu_limit_max\x18? \x01(\r\x12\x18\n\x10memory_limit_min\x18@ \x01(\x04\x12\x18\n\x10memory_limit_max\x18\x41 \x01(\x04\x1a,\n\nLinksEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"$\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x08\n\x04VOTE\x10\x01\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\"\xf5\x04\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x03url\x18\xaa\x05 \x01(\t\x12\x30\n\x05links\x18\xab\x05 \x03(\x0b\x32 .eolymp.atlas.Problem.LinksEntry\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0e\n\x06origin\x18\r \x01(\t\x12\x0e\n\x06topics\x18\x14 \x03(\t\x12\x18\n\x10\x61llowed_runtimes\x18\x16 \x03(\t\x12\r\n\x05score\x18\x1f \x01(\x02\x12\x36\n\x0b\x63onstraints\x18\x1e \x01(\x0b\x32!.eolymp.atlas.Problem.Constraints\x12\x17\n\x0f\x61\x63\x63\x65ptance_rate\x18( \x01(\x02\x12\x19\n\x11submissions_count\x18* \x01(\r\x12\x1c\n\x14submissions_accepted\x18+ \x01(\r\x12\x0c\n\x04vote\x18\x32 \x01(\x05\x12\x12\n\nvote_count\x18\x33 \x01(\x05\x12\x12\n\ndifficulty\x18\x15 \x01(\r\x1a\x9f\x01\n\x0b\x43onstraints\x12\x16\n\x0etime_limit_min\x18< \x01(\r\x12\x16\n\x0etime_limit_max\x18= \x01(\r\x12\x15\n\rcpu_limit_min\x18> \x01(\r\x12\x15\n\rcpu_limit_max\x18? \x01(\r\x12\x18\n\x10memory_limit_min\x18@ \x01(\x04\x12\x18\n\x10memory_limit_max\x18\x41 \x01(\x04\x1a,\n\nLinksEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"$\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x08\n\x04VOTE\x10\x01\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.problem_pb2', globals())
@@ -24,11 +24,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROBLEM_LINKSENTRY._options = None
   _PROBLEM_LINKSENTRY._serialized_options = b'8\001'
   _PROBLEM._serialized_start=45
-  _PROBLEM._serialized_end=665
-  _PROBLEM_CONSTRAINTS._serialized_start=422
-  _PROBLEM_CONSTRAINTS._serialized_end=581
-  _PROBLEM_LINKSENTRY._serialized_start=583
-  _PROBLEM_LINKSENTRY._serialized_end=627
-  _PROBLEM_EXTRA._serialized_start=629
-  _PROBLEM_EXTRA._serialized_end=665
+  _PROBLEM._serialized_end=674
+  _PROBLEM_CONSTRAINTS._serialized_start=431
+  _PROBLEM_CONSTRAINTS._serialized_end=590
+  _PROBLEM_LINKSENTRY._serialized_start=592
+  _PROBLEM_LINKSENTRY._serialized_end=636
+  _PROBLEM_EXTRA._serialized_start=638
+  _PROBLEM_EXTRA._serialized_end=674
 # @@protoc_insertion_point(module_scope)

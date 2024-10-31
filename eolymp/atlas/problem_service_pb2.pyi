@@ -4,6 +4,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import version_pb2 as _version_pb2
+from eolymp.executor import runtime_pb2 as _runtime_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
@@ -103,6 +104,20 @@ class ListProblemsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem, _Mapping]]] = ...) -> None: ...
+
+class ListRuntimeInput(_message.Message):
+    __slots__ = ["problem_id"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+
+class ListRuntimeOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_runtime_pb2.Runtime]
+    total: int
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ...) -> None: ...
 
 class ListVersionsInput(_message.Message):
     __slots__ = ["filters", "offset", "problem_id", "size"]
