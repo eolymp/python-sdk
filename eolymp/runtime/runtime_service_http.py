@@ -15,7 +15,7 @@ class RuntimeServiceClient:
         self.url = url
 
     def DescribeLanguage(self, request, **kwargs):
-        path = "/exec/languages/"+urllib.parse.quote(request.language_id)
+        path = "/languages/"+urllib.parse.quote(request.language_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.language_id = ""
@@ -29,7 +29,7 @@ class RuntimeServiceClient:
         )
 
     def ListLanguages(self, request, **kwargs):
-        path = "/exec/languages"
+        path = "/languages"
 
         return self.transport.request(
             method="GET",
@@ -40,7 +40,7 @@ class RuntimeServiceClient:
         )
 
     def DescribeRuntime(self, request, **kwargs):
-        path = "/exec/runtime/"+urllib.parse.quote(request.runtime_id)
+        path = "/runtime/"+urllib.parse.quote(request.runtime_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.runtime_id = ""
@@ -54,7 +54,7 @@ class RuntimeServiceClient:
         )
 
     def ListRuntimes(self, request, **kwargs):
-        path = "/exec/runtime"
+        path = "/runtime"
 
         return self.transport.request(
             method="GET",
