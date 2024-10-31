@@ -187,6 +187,7 @@ class UpdateProblemInput(_message.Message):
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateProblemInput.Patch
+    ALLOWED_RUNTIMES: UpdateProblemInput.Patch
     DIFFICULTY: UpdateProblemInput.Patch
     ORIGIN: UpdateProblemInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
