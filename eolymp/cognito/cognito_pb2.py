@@ -14,11 +14,10 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
-from eolymp.cognito import access_key_service_pb2 as eolymp_dot_cognito_dot_access__key__service__pb2
 from eolymp.cognito import user_service_pb2 as eolymp_dot_cognito_dot_user__service__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/cognito/cognito.proto\x12\x0e\x65olymp.cognito\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\'eolymp/cognito/access_key_service.proto\x1a!eolymp/cognito/user_service.proto2\xe4\x11\n\x07\x43ognito\x12\xa3\x01\n\x0f\x43reateAccessKey\x12$.eolymp.cognito.CreateAccessKeyInput\x1a%.eolymp.cognito.CreateAccessKeyOutput\"C\x82\xe3\n\x1c\x8a\xe3\n\x18\x63ognito:access-key:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x0e\"\x0c/access-keys\x12\xac\x01\n\x0f\x44\x65leteAccessKey\x12$.eolymp.cognito.DeleteAccessKeyInput\x1a%.eolymp.cognito.DeleteAccessKeyOutput\"L\x82\xe3\n\x1c\x8a\xe3\n\x18\x63ognito:access-key:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17*\x15/access-keys/{key_id}\x12\x9f\x01\n\x0eListAccessKeys\x12#.eolymp.cognito.ListAccessKeysInput\x1a$.eolymp.cognito.ListAccessKeysOutput\"B\x82\xe3\n\x1b\x8a\xe3\n\x17\x63ognito:access-key:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0e\x12\x0c/access-keys\x12n\n\nCreateUser\x12\x1f.eolymp.cognito.CreateUserInput\x1a .eolymp.cognito.CreateUserOutput\"\x1d\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x08\"\x06/users\x12\x82\x01\n\x0bVerifyEmail\x12 .eolymp.cognito.VerifyEmailInput\x1a!.eolymp.cognito.VerifyEmailOutput\".\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x01\x82\xd3\xe4\x93\x02\x19\"\x17/users/{user_id}/verify\x12\xae\x01\n\x17ResendEmailVerification\x12,.eolymp.cognito.ResendEmailVerificationInput\x1a-.eolymp.cognito.ResendEmailVerificationOutput\"6\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02!\"\x1f/self/email/resend-verification\x12v\n\rUpdateProfile\x12\".eolymp.cognito.UpdateProfileInput\x1a#.eolymp.cognito.UpdateProfileOutput\"\x1c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x07\"\x05/self\x12~\n\rUpdatePicture\x12\".eolymp.cognito.UpdatePictureInput\x1a#.eolymp.cognito.UpdatePictureOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0f\"\r/self/picture\x12\x98\x01\n\x0eUpdatePassword\x12#.eolymp.cognito.UpdatePasswordInput\x1a$.eolymp.cognito.UpdatePasswordOutput\";\x82\xe3\n\x12\x8a\xe3\n\x0epassword_grant\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x10\"\x0e/self/password\x12y\n\x0eIntrospectUser\x12#.eolymp.cognito.IntrospectUserInput\x1a$.eolymp.cognito.IntrospectUserOutput\"\x1c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x07\x12\x05/self\x12\x98\x01\n\x0c\x44\x65scribeUser\x12!.eolymp.cognito.DescribeUserInput\x1a\".eolymp.cognito.DescribeUserOutput\"A\x82\xe3\n\x15\x8a\xe3\n\x11\x63ognito:user:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HC\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/users/{user_id}\x12\x84\x01\n\tListUsers\x12\x1e.eolymp.cognito.ListUsersInput\x1a\x1f.eolymp.cognito.ListUsersOutput\"6\x82\xe3\n\x15\x8a\xe3\n\x11\x63ognito:user:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00pA\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/users\x12\x82\x01\n\x0fIntrospectQuota\x12$.eolymp.cognito.IntrospectQuotaInput\x1a%.eolymp.cognito.IntrospectQuotaOutput\"\"\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\r\x12\x0b/self/quota\x12\x7f\n\rStartRecovery\x12\".eolymp.cognito.StartRecoveryInput\x1a#.eolymp.cognito.StartRecoveryOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x10\"\x0e/self/recovery\x12\x90\x01\n\x10\x43ompleteRecovery\x12$.eolymp.cognito.CompleteRecoverInput\x1a%.eolymp.cognito.CompleteRecoverOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1a\"\x18/users/{user_id}/recover\x12s\n\x0cSelfDestruct\x12!.eolymp.cognito.SelfDestructInput\x1a\".eolymp.cognito.SelfDestructOutput\"\x1c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x07*\x05/selfB1Z/github.com/eolymp/go-sdk/eolymp/cognito;cognitob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/cognito/cognito.proto\x12\x0e\x65olymp.cognito\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/cognito/user_service.proto2\xa6\x03\n\x07\x43ognito\x12y\n\x0eIntrospectUser\x12#.eolymp.cognito.IntrospectUserInput\x1a$.eolymp.cognito.IntrospectUserOutput\"\x1c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x07\x12\x05/self\x12\x98\x01\n\x0c\x44\x65scribeUser\x12!.eolymp.cognito.DescribeUserInput\x1a\".eolymp.cognito.DescribeUserOutput\"A\x82\xe3\n\x15\x8a\xe3\n\x11\x63ognito:user:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HC\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/users/{user_id}\x12\x84\x01\n\tListUsers\x12\x1e.eolymp.cognito.ListUsersInput\x1a\x1f.eolymp.cognito.ListUsersOutput\"6\x82\xe3\n\x15\x8a\xe3\n\x11\x63ognito:user:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00pA\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/usersB1Z/github.com/eolymp/go-sdk/eolymp/cognito;cognitob\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.cognito.cognito_pb2', globals())
@@ -26,38 +25,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/cognito;cognito'
-  _COGNITO.methods_by_name['CreateAccessKey']._options = None
-  _COGNITO.methods_by_name['CreateAccessKey']._serialized_options = b'\202\343\n\034\212\343\n\030cognito:access-key:write\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\323\344\223\002\016\"\014/access-keys'
-  _COGNITO.methods_by_name['DeleteAccessKey']._options = None
-  _COGNITO.methods_by_name['DeleteAccessKey']._serialized_options = b'\202\343\n\034\212\343\n\030cognito:access-key:write\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\027*\025/access-keys/{key_id}'
-  _COGNITO.methods_by_name['ListAccessKeys']._options = None
-  _COGNITO.methods_by_name['ListAccessKeys']._serialized_options = b'\202\343\n\033\212\343\n\027cognito:access-key:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\016\022\014/access-keys'
-  _COGNITO.methods_by_name['CreateUser']._options = None
-  _COGNITO.methods_by_name['CreateUser']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\010\"\006/users'
-  _COGNITO.methods_by_name['VerifyEmail']._options = None
-  _COGNITO.methods_by_name['VerifyEmail']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\001\202\323\344\223\002\031\"\027/users/{user_id}/verify'
-  _COGNITO.methods_by_name['ResendEmailVerification']._options = None
-  _COGNITO.methods_by_name['ResendEmailVerification']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002!\"\037/self/email/resend-verification'
-  _COGNITO.methods_by_name['UpdateProfile']._options = None
-  _COGNITO.methods_by_name['UpdateProfile']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002\007\"\005/self'
-  _COGNITO.methods_by_name['UpdatePicture']._options = None
-  _COGNITO.methods_by_name['UpdatePicture']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002\017\"\r/self/picture'
-  _COGNITO.methods_by_name['UpdatePassword']._options = None
-  _COGNITO.methods_by_name['UpdatePassword']._serialized_options = b'\202\343\n\022\212\343\n\016password_grant\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002\020\"\016/self/password'
   _COGNITO.methods_by_name['IntrospectUser']._options = None
   _COGNITO.methods_by_name['IntrospectUser']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\007\022\005/self'
   _COGNITO.methods_by_name['DescribeUser']._options = None
   _COGNITO.methods_by_name['DescribeUser']._serialized_options = b'\202\343\n\025\212\343\n\021cognito:user:read\352\342\n\014\365\342\n\000\000HC\370\342\n\364\003\202\323\344\223\002\022\022\020/users/{user_id}'
   _COGNITO.methods_by_name['ListUsers']._options = None
   _COGNITO.methods_by_name['ListUsers']._serialized_options = b'\202\343\n\025\212\343\n\021cognito:user:read\352\342\n\013\365\342\n\000\000pA\370\342\nd\202\323\344\223\002\010\022\006/users'
-  _COGNITO.methods_by_name['IntrospectQuota']._options = None
-  _COGNITO.methods_by_name['IntrospectQuota']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\r\022\013/self/quota'
-  _COGNITO.methods_by_name['StartRecovery']._options = None
-  _COGNITO.methods_by_name['StartRecovery']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\005\202\323\344\223\002\020\"\016/self/recovery'
-  _COGNITO.methods_by_name['CompleteRecovery']._options = None
-  _COGNITO.methods_by_name['CompleteRecovery']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\032\"\030/users/{user_id}/recover'
-  _COGNITO.methods_by_name['SelfDestruct']._options = None
-  _COGNITO.methods_by_name['SelfDestruct']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\323\344\223\002\007*\005/self'
-  _COGNITO._serialized_start=224
-  _COGNITO._serialized_end=2500
+  _COGNITO._serialized_start=183
+  _COGNITO._serialized_end=605
 # @@protoc_insertion_point(module_scope)

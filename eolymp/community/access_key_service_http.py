@@ -21,7 +21,7 @@ class AccessKeyServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.CreateAccessKeyOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.CreateAccessKeyOutput"),
             **kwargs,
         )
 
@@ -35,7 +35,7 @@ class AccessKeyServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.DeleteAccessKeyOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DeleteAccessKeyOutput"),
             **kwargs,
         )
 
@@ -46,7 +46,7 @@ class AccessKeyServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.cognito.ListAccessKeysOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ListAccessKeysOutput"),
             **kwargs,
         )
 
