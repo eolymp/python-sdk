@@ -187,7 +187,6 @@ class UpdateProblemInput(_message.Message):
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateProblemInput.Patch
-    ALLOWED_RUNTIMES: UpdateProblemInput.Patch
     DIFFICULTY: UpdateProblemInput.Patch
     ORIGIN: UpdateProblemInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
@@ -195,6 +194,7 @@ class UpdateProblemInput(_message.Message):
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TOPICS: UpdateProblemInput.Patch
+    TYPE: UpdateProblemInput.Patch
     VISIBLE: UpdateProblemInput.Patch
     patch: _containers.RepeatedScalarFieldContainer[UpdateProblemInput.Patch]
     problem: _problem_pb2.Problem

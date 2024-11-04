@@ -11,9 +11,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.executor import language_pb2 as eolymp_dot_executor_dot_language__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/executor/runtime.proto\x12\x0f\x65olymp.executor\"V\n\x07Runtime\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04lang\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\n \x01(\t\x12\x12\n\ndeprecated\x18\x0c \x01(\x08\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/executor/runtime.proto\x12\x0f\x65olymp.executor\x1a\x1e\x65olymp/executor/language.proto\"\x84\x01\n\x07Runtime\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04lang\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12,\n\x04type\x18\x04 \x01(\x0e\x32\x1e.eolymp.executor.Language.Type\x12\x0c\n\x04name\x18\n \x01(\t\x12\x12\n\ndeprecated\x18\x0c \x01(\x08\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.runtime_pb2', globals())
@@ -21,6 +22,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
-  _RUNTIME._serialized_start=50
-  _RUNTIME._serialized_end=136
+  _RUNTIME._serialized_start=83
+  _RUNTIME._serialized_end=215
 # @@protoc_insertion_point(module_scope)
