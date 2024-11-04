@@ -50,16 +50,14 @@ class DescribeRuntimeOutput(_message.Message):
 class ListLanguagesInput(_message.Message):
     __slots__ = ["filters"]
     class Filter(_message.Message):
-        __slots__ = ["deprecated", "id", "name", "type"]
+        __slots__ = ["deprecated", "id", "name"]
         DEPRECATED_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
-        TYPE_FIELD_NUMBER: _ClassVar[int]
         deprecated: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., deprecated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., deprecated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     filters: ListLanguagesInput.Filter
     def __init__(self, filters: _Optional[_Union[ListLanguagesInput.Filter, _Mapping]] = ...) -> None: ...
@@ -73,20 +71,18 @@ class ListLanguagesOutput(_message.Message):
 class ListRuntimeInput(_message.Message):
     __slots__ = ["filters"]
     class Filter(_message.Message):
-        __slots__ = ["deprecated", "id", "lang", "name", "type", "version"]
+        __slots__ = ["deprecated", "id", "lang", "name", "version"]
         DEPRECATED_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         LANG_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
-        TYPE_FIELD_NUMBER: _ClassVar[int]
         VERSION_FIELD_NUMBER: _ClassVar[int]
         deprecated: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         lang: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         version: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., lang: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., version: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., deprecated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., lang: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., version: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., deprecated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     filters: ListRuntimeInput.Filter
     def __init__(self, filters: _Optional[_Union[ListRuntimeInput.Filter, _Mapping]] = ...) -> None: ...

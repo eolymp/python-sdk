@@ -19,7 +19,7 @@ from eolymp.executor import runtime_pb2 as eolymp_dot_executor_dot_runtime__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/executor/language_service.proto\x12\x0f\x65olymp.executor\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1e\x65olymp/executor/language.proto\x1a\x1d\x65olymp/executor/runtime.proto\x1a!eolymp/wellknown/expression.proto\",\n\x15\x44\x65scribeLanguageInput\x12\x13\n\x0blanguage_id\x18\x01 \x01(\t\"E\n\x16\x44\x65scribeLanguageOutput\x12+\n\x08language\x18\x01 \x01(\x0b\x32\x19.eolymp.executor.Language\"\xa0\x02\n\x12ListLanguagesInput\x12;\n\x07\x66ilters\x18( \x01(\x0b\x32*.eolymp.executor.ListLanguagesInput.Filter\x1a\xcc\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x34\n\ndeprecated\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12.\n\x04type\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"?\n\x13ListLanguagesOutput\x12(\n\x05items\x18\x02 \x03(\x0b\x32\x19.eolymp.executor.Language\"*\n\x14\x44\x65scribeRuntimeInput\x12\x12\n\nruntime_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeRuntimeOutput\x12)\n\x07runtime\x18\x01 \x01(\x0b\x32\x18.eolymp.executor.Runtime\"\xfb\x02\n\x10ListRuntimeInput\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.executor.ListRuntimeInput.Filter\x1a\xab\x02\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12,\n\x04lang\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07version\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x04 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x34\n\ndeprecated\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12.\n\x04type\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"<\n\x11ListRuntimeOutput\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.executor.Runtime\"/\n\x19\x44\x65scribeCodeTemplateInput\x12\x12\n\nruntime_id\x18\x01 \x01(\t\".\n\x1a\x44\x65scribeCodeTemplateOutput\x12\x10\n\x08template\x18\x01 \x01(\t2\x89\x07\n\x0fLanguageService\x12\xb7\x01\n\x10\x44\x65scribeLanguage\x12&.eolymp.executor.DescribeLanguageInput\x1a\'.eolymp.executor.DescribeLanguageOutput\"R\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x1f\x12\x1d/exec/languages/{language_id}\x12\xa0\x01\n\rListLanguages\x12#.eolymp.executor.ListLanguagesInput\x1a$.eolymp.executor.ListLanguagesOutput\"D\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x11\x12\x0f/exec/languages\x12\xb1\x01\n\x0f\x44\x65scribeRuntime\x12%.eolymp.executor.DescribeRuntimeInput\x1a&.eolymp.executor.DescribeRuntimeOutput\"O\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x1c\x12\x1a/exec/runtime/{runtime_id}\x12\x98\x01\n\x0bListRuntime\x12!.eolymp.executor.ListRuntimeInput\x1a\".eolymp.executor.ListRuntimeOutput\"B\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x0f\x12\r/exec/runtime\x12\xc9\x01\n\x14\x44\x65scribeCodeTemplate\x12*.eolymp.executor.DescribeCodeTemplateInput\x1a+.eolymp.executor.DescribeCodeTemplateOutput\"X\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02%\x12#/exec/runtime/{runtime_id}/templateB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/executor/language_service.proto\x12\x0f\x65olymp.executor\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1e\x65olymp/executor/language.proto\x1a\x1d\x65olymp/executor/runtime.proto\x1a!eolymp/wellknown/expression.proto\",\n\x15\x44\x65scribeLanguageInput\x12\x13\n\x0blanguage_id\x18\x01 \x01(\t\"E\n\x16\x44\x65scribeLanguageOutput\x12+\n\x08language\x18\x01 \x01(\x0b\x32\x19.eolymp.executor.Language\"\xf0\x01\n\x12ListLanguagesInput\x12;\n\x07\x66ilters\x18( \x01(\x0b\x32*.eolymp.executor.ListLanguagesInput.Filter\x1a\x9c\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x34\n\ndeprecated\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"?\n\x13ListLanguagesOutput\x12(\n\x05items\x18\x02 \x03(\x0b\x32\x19.eolymp.executor.Language\"*\n\x14\x44\x65scribeRuntimeInput\x12\x12\n\nruntime_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeRuntimeOutput\x12)\n\x07runtime\x18\x01 \x01(\x0b\x32\x18.eolymp.executor.Runtime\"\xcb\x02\n\x10ListRuntimeInput\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.executor.ListRuntimeInput.Filter\x1a\xfb\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12,\n\x04lang\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07version\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x04 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x34\n\ndeprecated\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"<\n\x11ListRuntimeOutput\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.executor.Runtime\"/\n\x19\x44\x65scribeCodeTemplateInput\x12\x12\n\nruntime_id\x18\x01 \x01(\t\".\n\x1a\x44\x65scribeCodeTemplateOutput\x12\x10\n\x08template\x18\x01 \x01(\t2\x89\x07\n\x0fLanguageService\x12\xb7\x01\n\x10\x44\x65scribeLanguage\x12&.eolymp.executor.DescribeLanguageInput\x1a\'.eolymp.executor.DescribeLanguageOutput\"R\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x1f\x12\x1d/exec/languages/{language_id}\x12\xa0\x01\n\rListLanguages\x12#.eolymp.executor.ListLanguagesInput\x1a$.eolymp.executor.ListLanguagesOutput\"D\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x11\x12\x0f/exec/languages\x12\xb1\x01\n\x0f\x44\x65scribeRuntime\x12%.eolymp.executor.DescribeRuntimeInput\x1a&.eolymp.executor.DescribeRuntimeOutput\"O\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x1c\x12\x1a/exec/runtime/{runtime_id}\x12\x98\x01\n\x0bListRuntime\x12!.eolymp.executor.ListRuntimeInput\x1a\".eolymp.executor.ListRuntimeOutput\"B\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02\x0f\x12\r/exec/runtime\x12\xc9\x01\n\x14\x44\x65scribeCodeTemplate\x12*.eolymp.executor.DescribeCodeTemplateInput\x1a+.eolymp.executor.DescribeCodeTemplateOutput\"X\x82\xe3\n\x19\x8a\xe3\n\x15\x65xecutor:runtime:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xd3\xe4\x93\x02%\x12#/exec/runtime/{runtime_id}/templateB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.language_service_pb2', globals())
@@ -42,25 +42,25 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DESCRIBELANGUAGEOUTPUT._serialized_start=302
   _DESCRIBELANGUAGEOUTPUT._serialized_end=371
   _LISTLANGUAGESINPUT._serialized_start=374
-  _LISTLANGUAGESINPUT._serialized_end=662
+  _LISTLANGUAGESINPUT._serialized_end=614
   _LISTLANGUAGESINPUT_FILTER._serialized_start=458
-  _LISTLANGUAGESINPUT_FILTER._serialized_end=662
-  _LISTLANGUAGESOUTPUT._serialized_start=664
-  _LISTLANGUAGESOUTPUT._serialized_end=727
-  _DESCRIBERUNTIMEINPUT._serialized_start=729
-  _DESCRIBERUNTIMEINPUT._serialized_end=771
-  _DESCRIBERUNTIMEOUTPUT._serialized_start=773
-  _DESCRIBERUNTIMEOUTPUT._serialized_end=839
-  _LISTRUNTIMEINPUT._serialized_start=842
-  _LISTRUNTIMEINPUT._serialized_end=1221
-  _LISTRUNTIMEINPUT_FILTER._serialized_start=922
-  _LISTRUNTIMEINPUT_FILTER._serialized_end=1221
-  _LISTRUNTIMEOUTPUT._serialized_start=1223
-  _LISTRUNTIMEOUTPUT._serialized_end=1283
-  _DESCRIBECODETEMPLATEINPUT._serialized_start=1285
-  _DESCRIBECODETEMPLATEINPUT._serialized_end=1332
-  _DESCRIBECODETEMPLATEOUTPUT._serialized_start=1334
-  _DESCRIBECODETEMPLATEOUTPUT._serialized_end=1380
-  _LANGUAGESERVICE._serialized_start=1383
-  _LANGUAGESERVICE._serialized_end=2288
+  _LISTLANGUAGESINPUT_FILTER._serialized_end=614
+  _LISTLANGUAGESOUTPUT._serialized_start=616
+  _LISTLANGUAGESOUTPUT._serialized_end=679
+  _DESCRIBERUNTIMEINPUT._serialized_start=681
+  _DESCRIBERUNTIMEINPUT._serialized_end=723
+  _DESCRIBERUNTIMEOUTPUT._serialized_start=725
+  _DESCRIBERUNTIMEOUTPUT._serialized_end=791
+  _LISTRUNTIMEINPUT._serialized_start=794
+  _LISTRUNTIMEINPUT._serialized_end=1125
+  _LISTRUNTIMEINPUT_FILTER._serialized_start=874
+  _LISTRUNTIMEINPUT_FILTER._serialized_end=1125
+  _LISTRUNTIMEOUTPUT._serialized_start=1127
+  _LISTRUNTIMEOUTPUT._serialized_end=1187
+  _DESCRIBECODETEMPLATEINPUT._serialized_start=1189
+  _DESCRIBECODETEMPLATEINPUT._serialized_end=1236
+  _DESCRIBECODETEMPLATEOUTPUT._serialized_start=1238
+  _DESCRIBECODETEMPLATEOUTPUT._serialized_end=1284
+  _LANGUAGESERVICE._serialized_start=1287
+  _LANGUAGESERVICE._serialized_end=2192
 # @@protoc_insertion_point(module_scope)
