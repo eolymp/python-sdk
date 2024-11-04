@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/executor/language.proto\x12\x0f\x65olymp.executor\"\xa6\x01\n\x08Language\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\n \x01(\t\x12,\n\x04type\x18\x0c \x01(\x0e\x32\x1e.eolymp.executor.Language.Type\x12\x12\n\ndeprecated\x18\x0b \x01(\x08\">\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\x0f\n\x0bPROGRAMMING\x10\x01\x12\x07\n\x03SQL\x10\x03\x12\n\n\x05OTHER\x10\xe7\x07\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/executor/language.proto\x12\x0f\x65olymp.executor\"8\n\x08Language\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\n \x01(\t\x12\x12\n\ndeprecated\x18\x0b \x01(\x08\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.language_pb2', globals())
@@ -21,8 +21,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
-  _LANGUAGE._serialized_start=52
-  _LANGUAGE._serialized_end=218
-  _LANGUAGE_TYPE._serialized_start=156
-  _LANGUAGE_TYPE._serialized_end=218
+  _LANGUAGE._serialized_start=51
+  _LANGUAGE._serialized_end=107
 # @@protoc_insertion_point(module_scope)
