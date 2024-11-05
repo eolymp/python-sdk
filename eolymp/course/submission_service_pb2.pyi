@@ -39,7 +39,7 @@ class DescribeSubmissionOutput(_message.Message):
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class ListSubmissionsInput(_message.Message):
-    __slots__ = ["after", "filters", "offset", "size"]
+    __slots__ = ["after", "filters", "size"]
     class Filter(_message.Message):
         __slots__ = ["id", "material_id", "member_id", "percentage", "runtime", "score", "status", "submitted_at", "user_id", "verdict"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -65,13 +65,11 @@ class ListSubmissionsInput(_message.Message):
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., material_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., submitted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., verdict: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ...) -> None: ...
     AFTER_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     after: str
     filters: ListSubmissionsInput.Filter
-    offset: int
     size: int
-    def __init__(self, after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListSubmissionsOutput(_message.Message):
     __slots__ = ["items", "next_page_cursor", "total"]
