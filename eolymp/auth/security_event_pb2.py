@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/auth/security_event.proto\x12\x0b\x65olymp.auth\"\xc1\x02\n\rSecurityEvent\x12\x42\n\x0esession_closed\x18\x01 \x01(\x0b\x32(.eolymp.auth.SecurityEvent.SessionClosedH\x00\x12@\n\rtoken_revoked\x18\x02 \x01(\x0b\x32\'.eolymp.auth.SecurityEvent.TokenRevokedH\x00\x1a\x44\n\rSessionClosed\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x12\n\nsession_id\x18\x03 \x01(\t\x1a[\n\x0cTokenRevoked\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x12\n\ntoken_type\x18\x03 \x01(\t\x12\x16\n\x0etoken_hash_md5\x18\x04 \x01(\tB\x07\n\x05\x65ventB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/auth/security_event.proto\x12\x0b\x65olymp.auth\"\xb7\x03\n\rSecurityEvent\x12\x42\n\x0esession_closed\x18\x01 \x01(\x0b\x32(.eolymp.auth.SecurityEvent.SessionClosedH\x00\x12@\n\rtoken_revoked\x18\x02 \x01(\x0b\x32\'.eolymp.auth.SecurityEvent.TokenRevokedH\x00\x12\x42\n\x0e\x61\x63\x63ount_purged\x18\x03 \x01(\x0b\x32(.eolymp.auth.SecurityEvent.AccountPurgedH\x00\x1a\x44\n\rSessionClosed\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x12\n\nsession_id\x18\x03 \x01(\t\x1a[\n\x0cTokenRevoked\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x12\n\ntoken_type\x18\x03 \x01(\t\x12\x16\n\x0etoken_hash_md5\x18\x04 \x01(\t\x1a\x30\n\rAccountPurged\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\tB\x07\n\x05\x65ventB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.auth.security_event_pb2', globals())
@@ -22,9 +22,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z)github.com/eolymp/go-sdk/eolymp/auth;auth'
   _SECURITYEVENT._serialized_start=50
-  _SECURITYEVENT._serialized_end=371
-  _SECURITYEVENT_SESSIONCLOSED._serialized_start=201
-  _SECURITYEVENT_SESSIONCLOSED._serialized_end=269
-  _SECURITYEVENT_TOKENREVOKED._serialized_start=271
-  _SECURITYEVENT_TOKENREVOKED._serialized_end=362
+  _SECURITYEVENT._serialized_end=489
+  _SECURITYEVENT_SESSIONCLOSED._serialized_start=269
+  _SECURITYEVENT_SESSIONCLOSED._serialized_end=337
+  _SECURITYEVENT_TOKENREVOKED._serialized_start=339
+  _SECURITYEVENT_TOKENREVOKED._serialized_end=430
+  _SECURITYEVENT_ACCOUNTPURGED._serialized_start=432
+  _SECURITYEVENT_ACCOUNTPURGED._serialized_end=480
 # @@protoc_insertion_point(module_scope)
