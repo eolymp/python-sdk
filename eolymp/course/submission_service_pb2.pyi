@@ -74,12 +74,14 @@ class ListSubmissionsInput(_message.Message):
     def __init__(self, after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListSubmissionsOutput(_message.Message):
-    __slots__ = ["items", "total"]
+    __slots__ = ["items", "next_page_cursor", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission]
+    next_page_cursor: str
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class WatchSubmissionInput(_message.Message):
     __slots__ = ["submission_id"]
