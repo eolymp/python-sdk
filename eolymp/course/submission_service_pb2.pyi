@@ -41,7 +41,7 @@ class DescribeSubmissionOutput(_message.Message):
 class ListSubmissionsInput(_message.Message):
     __slots__ = ["after", "filters", "size"]
     class Filter(_message.Message):
-        __slots__ = ["id", "material_id", "member_id", "percentage", "runtime", "score", "status", "submitted_at", "user_id", "verdict"]
+        __slots__ = ["id", "material_id", "member_id", "percentage", "runtime", "score", "status", "submitted_at", "verdict"]
         ID_FIELD_NUMBER: _ClassVar[int]
         MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -50,7 +50,6 @@ class ListSubmissionsInput(_message.Message):
         SCORE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         SUBMITTED_AT_FIELD_NUMBER: _ClassVar[int]
-        USER_ID_FIELD_NUMBER: _ClassVar[int]
         VERDICT_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         material_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -60,9 +59,8 @@ class ListSubmissionsInput(_message.Message):
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         submitted_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
-        user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         verdict: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., material_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., submitted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., verdict: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., material_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., submitted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., verdict: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ...) -> None: ...
     AFTER_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
