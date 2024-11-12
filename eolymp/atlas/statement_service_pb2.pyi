@@ -119,8 +119,10 @@ class TranslateStatementsInput(_message.Message):
     def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
 
 class TranslateStatementsOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["job_id"]
+    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    job_id: str
+    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
 
 class UpdateStatementInput(_message.Message):
     __slots__ = ["patch", "statement", "statement_id"]
