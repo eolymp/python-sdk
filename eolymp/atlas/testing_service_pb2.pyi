@@ -157,10 +157,14 @@ class ListTestsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
 
 class ListTestsetsInput(_message.Message):
-    __slots__ = ["version"]
+    __slots__ = ["offset", "size", "version"]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    offset: int
+    size: int
     version: int
-    def __init__(self, version: _Optional[int] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListTestsetsOutput(_message.Message):
     __slots__ = ["items", "total"]

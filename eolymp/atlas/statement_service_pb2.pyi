@@ -49,12 +49,16 @@ class DescribeStatementOutput(_message.Message):
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class ListStatementsInput(_message.Message):
-    __slots__ = ["render", "version"]
+    __slots__ = ["offset", "render", "size", "version"]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    offset: int
     render: bool
+    size: int
     version: int
-    def __init__(self, render: bool = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListStatementsOutput(_message.Message):
     __slots__ = ["items", "total"]

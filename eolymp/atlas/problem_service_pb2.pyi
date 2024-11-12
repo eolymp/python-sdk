@@ -54,18 +54,17 @@ class DescribeProblemOutput(_message.Message):
     def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
 
 class ListProblemsInput(_message.Message):
-    __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
+    __slots__ = ["extra", "filters", "offset", "order", "search", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["difficulty", "id", "is_bookmarked", "is_private", "is_visible", "number", "query", "score", "status", "topic_id"]
+        __slots__ = ["difficulty", "id", "is_bookmarked", "is_private", "is_visible", "number", "score", "status", "topic_id"]
         DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         IS_BOOKMARKED_FIELD_NUMBER: _ClassVar[int]
         IS_PRIVATE_FIELD_NUMBER: _ClassVar[int]
         IS_VISIBLE_FIELD_NUMBER: _ClassVar[int]
         NUMBER_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
@@ -75,11 +74,10 @@ class ListProblemsInput(_message.Message):
         is_private: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         is_visible: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         number: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
-        query: str
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         topic_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., topic_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_visible: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_private: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., difficulty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., is_bookmarked: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., topic_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_visible: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., is_private: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., difficulty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., is_bookmarked: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     DEFAULT: ListProblemsInput.Sortable
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
@@ -87,15 +85,17 @@ class ListProblemsInput(_message.Message):
     ORDER_FIELD_NUMBER: _ClassVar[int]
     POPULAR: ListProblemsInput.Sortable
     RECENT: ListProblemsInput.Sortable
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra]
     filters: ListProblemsInput.Filter
     offset: int
     order: _direction_pb2.Direction
+    search: str
     size: int
     sort: ListProblemsInput.Sortable
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
 
 class ListProblemsOutput(_message.Message):
     __slots__ = ["items", "total"]
