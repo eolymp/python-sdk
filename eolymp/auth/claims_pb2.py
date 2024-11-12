@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/auth/claims.proto\x12\x0b\x65olymp.auth\"\xab\x02\n\x06\x43laims\x12\x0b\n\x02id\x18\xe8\x07 \x01(\t\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x12\n\nsession_id\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\n \x01(\t\x12\x16\n\x0e\x65mail_verified\x18\x0b \x01(\x08\x12\x18\n\x10\x65mail_restricted\x18\x0c \x01(\x08\x12\x0c\n\x04name\x18\x1e \x01(\t\x12\x10\n\x08nickname\x18\x1f \x01(\t\x12\x0f\n\x07picture\x18( \x01(\t\x12\x0e\n\x06locale\x18\x32 \x01(\t\x12\x10\n\x08timezone\x18\x33 \x01(\t\x12\x10\n\x08\x62irthday\x18< \x01(\t\x12\r\n\x05minor\x18= \x01(\x08\x12\x0f\n\x07\x63ountry\x18\x46 \x01(\t\x12\x19\n\x11preferred_runtime\x18Z \x01(\tB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/auth/claims.proto\x12\x0b\x65olymp.auth\"\xc1\x02\n\x06\x43laims\x12\x0b\n\x02id\x18\xe8\x07 \x01(\t\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x12\n\nsession_id\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\n \x01(\t\x12\x16\n\x0e\x65mail_verified\x18\x0b \x01(\x08\x12\x18\n\x10\x65mail_restricted\x18\x0c \x01(\x08\x12\x0c\n\x04name\x18\x1e \x01(\t\x12\x10\n\x08nickname\x18\x1f \x01(\t\x12\x0f\n\x07picture\x18( \x01(\t\x12\x0e\n\x06locale\x18\x32 \x01(\t\x12\x10\n\x08timezone\x18\x33 \x01(\t\x12\x10\n\x08\x62irthday\x18< \x01(\t\x12\r\n\x05minor\x18= \x01(\x08\x12\x0f\n\x07\x63ountry\x18\x46 \x01(\t\x12\x19\n\x11preferred_runtime\x18Z \x01(\t\x12\x14\n\x0crestrictions\x18\x64 \x01(\tB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.auth.claims_pb2', globals())
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z)github.com/eolymp/go-sdk/eolymp/auth;auth'
   _CLAIMS._serialized_start=42
-  _CLAIMS._serialized_end=341
+  _CLAIMS._serialized_end=363
 # @@protoc_insertion_point(module_scope)
