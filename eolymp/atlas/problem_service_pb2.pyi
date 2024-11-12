@@ -120,7 +120,7 @@ class ListRuntimesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ...) -> None: ...
 
 class ListVersionsInput(_message.Message):
-    __slots__ = ["filters", "offset", "problem_id", "size"]
+    __slots__ = ["after", "filters", "offset", "problem_id", "size"]
     class Filter(_message.Message):
         __slots__ = ["change_op", "change_path", "created_at", "created_by", "number"]
         CHANGE_OP_FIELD_NUMBER: _ClassVar[int]
@@ -134,23 +134,27 @@ class ListVersionsInput(_message.Message):
         created_by: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         number: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         def __init__(self, number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., created_by: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., change_op: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., change_path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+    AFTER_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    after: str
     filters: ListVersionsInput.Filter
     offset: int
     problem_id: str
     size: int
-    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListVersionsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., after: _Optional[str] = ..., filters: _Optional[_Union[ListVersionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListVersionsOutput(_message.Message):
-    __slots__ = ["items", "total"]
+    __slots__ = ["items", "next_page_cursor", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_version_pb2.Version]
+    next_page_cursor: str
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class ProblemChangedEvent(_message.Message):
     __slots__ = ["after", "before"]

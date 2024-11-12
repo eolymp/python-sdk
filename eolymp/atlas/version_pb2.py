@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/version.proto\x12\x0c\x65olymp.atlas\x1a\x1fgoogle/protobuf/timestamp.proto\"\x85\x01\n\x07Version\x12\x0e\n\x06number\x18\x01 \x01(\r\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12\x11\n\tchange_op\x18\x04 \x01(\t\x12\x13\n\x0b\x63hange_path\x18\x05 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/version.proto\x12\x0c\x65olymp.atlas\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa1\x01\n\x07Version\x12\n\n\x02id\x18\x06 \x01(\t\x12\x0e\n\x06number\x18\x01 \x01(\r\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12\x11\n\tchange_op\x18\x04 \x01(\t\x12\x13\n\x0b\x63hange_path\x18\x05 \x01(\t\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.version_pb2', globals())
@@ -23,5 +23,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _VERSION._serialized_start=78
-  _VERSION._serialized_end=211
+  _VERSION._serialized_end=239
 # @@protoc_insertion_point(module_scope)
