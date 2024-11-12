@@ -43,8 +43,10 @@ class DescribePenaltyInput(_message.Message):
     def __init__(self, penalty_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_penalty_pb2.Penalty.Extra, str]]] = ...) -> None: ...
 
 class DescribePenaltyOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["penalty"]
+    PENALTY_FIELD_NUMBER: _ClassVar[int]
+    penalty: _penalty_pb2.Penalty
+    def __init__(self, penalty: _Optional[_Union[_penalty_pb2.Penalty, _Mapping]] = ...) -> None: ...
 
 class ListPenaltiesInput(_message.Message):
     __slots__ = ["extra", "offset", "size"]
