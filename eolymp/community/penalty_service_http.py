@@ -39,7 +39,7 @@ class PenaltyServiceClient:
             **kwargs,
         )
 
-    def CancelPenalty(self, request, **kwargs):
+    def DeletePenalty(self, request, **kwargs):
         path = "/penalties/"+urllib.parse.quote(request.penalty_id)
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -49,7 +49,7 @@ class PenaltyServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.CancelPenaltyOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DeletePenaltyOutput"),
             **kwargs,
         )
 

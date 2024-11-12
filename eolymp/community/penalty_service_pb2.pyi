@@ -10,16 +10,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CancelPenaltyInput(_message.Message):
-    __slots__ = ["penalty_id"]
-    PENALTY_ID_FIELD_NUMBER: _ClassVar[int]
-    penalty_id: str
-    def __init__(self, penalty_id: _Optional[str] = ...) -> None: ...
-
-class CancelPenaltyOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class CreatePenaltyInput(_message.Message):
     __slots__ = ["dont_notify", "penalty"]
     DONT_NOTIFY_FIELD_NUMBER: _ClassVar[int]
@@ -34,23 +24,37 @@ class CreatePenaltyOutput(_message.Message):
     penalty_id: str
     def __init__(self, penalty_id: _Optional[str] = ...) -> None: ...
 
-class DescribePenaltyInput(_message.Message):
+class DeletePenaltyInput(_message.Message):
     __slots__ = ["penalty_id"]
     PENALTY_ID_FIELD_NUMBER: _ClassVar[int]
     penalty_id: str
     def __init__(self, penalty_id: _Optional[str] = ...) -> None: ...
+
+class DeletePenaltyOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DescribePenaltyInput(_message.Message):
+    __slots__ = ["extra", "penalty_id"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    PENALTY_ID_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_penalty_pb2.Penalty.Extra]
+    penalty_id: str
+    def __init__(self, penalty_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_penalty_pb2.Penalty.Extra, str]]] = ...) -> None: ...
 
 class DescribePenaltyOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class ListPenaltiesInput(_message.Message):
-    __slots__ = ["offset", "size"]
+    __slots__ = ["extra", "offset", "size"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_penalty_pb2.Penalty.Extra]
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_penalty_pb2.Penalty.Extra, str]]] = ...) -> None: ...
 
 class ListPenaltiesOutput(_message.Message):
     __slots__ = ["items", "total"]
