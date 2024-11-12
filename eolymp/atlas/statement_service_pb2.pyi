@@ -107,12 +107,16 @@ class StatementChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ..., after: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class TranslateStatementsInput(_message.Message):
-    __slots__ = ["source", "target"]
+    __slots__ = ["override_manual", "source", "target", "target_automatic"]
+    OVERRIDE_MANUAL_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
+    TARGET_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
+    override_manual: bool
     source: str
     target: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ...) -> None: ...
+    target_automatic: bool
+    def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
 
 class TranslateStatementsOutput(_message.Message):
     __slots__ = []
