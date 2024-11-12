@@ -106,12 +106,25 @@ class StatementChangedEvent(_message.Message):
     problem_id: str
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ..., after: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
+class TranslateStatementsInput(_message.Message):
+    __slots__ = ["source", "target"]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    TARGET_FIELD_NUMBER: _ClassVar[int]
+    source: str
+    target: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class TranslateStatementsOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdateStatementInput(_message.Message):
     __slots__ = ["patch", "statement", "statement_id"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     ALL: UpdateStatementInput.Patch
     AUTHOR: UpdateStatementInput.Patch
+    AUTOMATIC: UpdateStatementInput.Patch
     CONTENT: UpdateStatementInput.Patch
     DOWNLOAD_LINK: UpdateStatementInput.Patch
     LOCALE: UpdateStatementInput.Patch

@@ -100,3 +100,14 @@ class StatementServiceClient:
             **kwargs,
         )
 
+    def TranslateStatements(self, request, **kwargs):
+        path = "/statements:translate"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.TranslateStatementsOutput"),
+            **kwargs,
+        )
+

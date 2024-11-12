@@ -17,7 +17,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.atlas import statement_pb2 as eolymp_dot_atlas_dot_statement__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/atlas/statement_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/atlas/statement.proto\"|\n\x15StatementChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\'\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\x12&\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"T\n\x13ListStatementsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06render\x18\x02 \x01(\x08\x12\x0f\n\x07version\x18\x64 \x01(\r\"M\n\x14ListStatementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.atlas.Statement\"O\n\x16\x44\x65scribeStatementInput\x12\x14\n\x0cstatement_id\x18\x02 \x01(\t\x12\x0e\n\x06render\x18\x03 \x01(\x08\x12\x0f\n\x07version\x18\x64 \x01(\r\"E\n\x17\x44\x65scribeStatementOutput\x12*\n\tstatement\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"G\n\x14LookupStatementInput\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0e\n\x06render\x18\x03 \x01(\x08\x12\x0f\n\x07version\x18\x64 \x01(\r\"C\n\x15LookupStatementOutput\x12*\n\tstatement\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"C\n\x15PreviewStatementInput\x12*\n\tstatement\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"D\n\x16PreviewStatementOutput\x12*\n\tstatement\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"B\n\x14\x43reateStatementInput\x12*\n\tstatement\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"-\n\x15\x43reateStatementOutput\x12\x14\n\x0cstatement_id\x18\x01 \x01(\t\"\xf2\x01\n\x14UpdateStatementInput\x12\x37\n\x05patch\x18\n \x03(\x0e\x32(.eolymp.atlas.UpdateStatementInput.Patch\x12\x14\n\x0cstatement_id\x18\x02 \x01(\t\x12*\n\tstatement\x18\x03 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"_\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\n\n\x06LOCALE\x10\x01\x12\t\n\x05TITLE\x10\x02\x12\x0b\n\x07\x43ONTENT\x10\x03\x12\x11\n\rDOWNLOAD_LINK\x10\x04\x12\n\n\x06\x41UTHOR\x10\x05\x12\n\n\x06SOURCE\x10\x06\"\x17\n\x15UpdateStatementOutput\",\n\x14\x44\x65leteStatementInput\x12\x14\n\x0cstatement_id\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteStatementOutput2\x81\t\n\x10StatementService\x12\x99\x01\n\x0f\x43reateStatement\x12\".eolymp.atlas.CreateStatementInput\x1a#.eolymp.atlas.CreateStatementOutput\"=\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\r\x1a\x0b/statements\x12\xa8\x01\n\x0fUpdateStatement\x12\".eolymp.atlas.UpdateStatementInput\x1a#.eolymp.atlas.UpdateStatementOutput\"L\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1c\x1a\x1a/statements/{statement_id}\x12\xa8\x01\n\x0f\x44\x65leteStatement\x12\".eolymp.atlas.DeleteStatementInput\x1a#.eolymp.atlas.DeleteStatementOutput\"L\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1c*\x1a/statements/{statement_id}\x12\xad\x01\n\x11\x44\x65scribeStatement\x12$.eolymp.atlas.DescribeStatementInput\x1a%.eolymp.atlas.DescribeStatementOutput\"K\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1c\x12\x1a/statements/{statement_id}\x12\x97\x01\n\x0fLookupStatement\x12\".eolymp.atlas.LookupStatementInput\x1a#.eolymp.atlas.LookupStatementOutput\";\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0c\x12\n/translate\x12\x98\x01\n\x10PreviewStatement\x12#.eolymp.atlas.PreviewStatementInput\x1a$.eolymp.atlas.PreviewStatementOutput\"9\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\"\x08/renders\x12\x95\x01\n\x0eListStatements\x12!.eolymp.atlas.ListStatementsInput\x1a\".eolymp.atlas.ListStatementsOutput\"<\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\r\x12\x0b/statementsB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/atlas/statement_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/atlas/statement.proto\"|\n\x15StatementChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\'\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\x12&\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"T\n\x13ListStatementsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06render\x18\x02 \x01(\x08\x12\x0f\n\x07version\x18\x64 \x01(\r\"M\n\x14ListStatementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.atlas.Statement\":\n\x18TranslateStatementsInput\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x0e\n\x06target\x18\x02 \x03(\t\"\x1b\n\x19TranslateStatementsOutput\"O\n\x16\x44\x65scribeStatementInput\x12\x14\n\x0cstatement_id\x18\x02 \x01(\t\x12\x0e\n\x06render\x18\x03 \x01(\x08\x12\x0f\n\x07version\x18\x64 \x01(\r\"E\n\x17\x44\x65scribeStatementOutput\x12*\n\tstatement\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"G\n\x14LookupStatementInput\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0e\n\x06render\x18\x03 \x01(\x08\x12\x0f\n\x07version\x18\x64 \x01(\r\"C\n\x15LookupStatementOutput\x12*\n\tstatement\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"C\n\x15PreviewStatementInput\x12*\n\tstatement\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"D\n\x16PreviewStatementOutput\x12*\n\tstatement\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"B\n\x14\x43reateStatementInput\x12*\n\tstatement\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"-\n\x15\x43reateStatementOutput\x12\x14\n\x0cstatement_id\x18\x01 \x01(\t\"\x81\x02\n\x14UpdateStatementInput\x12\x37\n\x05patch\x18\n \x03(\x0e\x32(.eolymp.atlas.UpdateStatementInput.Patch\x12\x14\n\x0cstatement_id\x18\x02 \x01(\t\x12*\n\tstatement\x18\x03 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"n\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\n\n\x06LOCALE\x10\x01\x12\t\n\x05TITLE\x10\x02\x12\x0b\n\x07\x43ONTENT\x10\x03\x12\x11\n\rDOWNLOAD_LINK\x10\x04\x12\n\n\x06\x41UTHOR\x10\x05\x12\n\n\x06SOURCE\x10\x06\x12\r\n\tAUTOMATIC\x10\x07\"\x17\n\x15UpdateStatementOutput\",\n\x14\x44\x65leteStatementInput\x12\x14\n\x0cstatement_id\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteStatementOutput2\xb3\n\n\x10StatementService\x12\x99\x01\n\x0f\x43reateStatement\x12\".eolymp.atlas.CreateStatementInput\x1a#.eolymp.atlas.CreateStatementOutput\"=\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\r\x1a\x0b/statements\x12\xa8\x01\n\x0fUpdateStatement\x12\".eolymp.atlas.UpdateStatementInput\x1a#.eolymp.atlas.UpdateStatementOutput\"L\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1c\x1a\x1a/statements/{statement_id}\x12\xa8\x01\n\x0f\x44\x65leteStatement\x12\".eolymp.atlas.DeleteStatementInput\x1a#.eolymp.atlas.DeleteStatementOutput\"L\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1c*\x1a/statements/{statement_id}\x12\xad\x01\n\x11\x44\x65scribeStatement\x12$.eolymp.atlas.DescribeStatementInput\x1a%.eolymp.atlas.DescribeStatementOutput\"K\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1c\x12\x1a/statements/{statement_id}\x12\x97\x01\n\x0fLookupStatement\x12\".eolymp.atlas.LookupStatementInput\x1a#.eolymp.atlas.LookupStatementOutput\";\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0c\x12\n/translate\x12\x98\x01\n\x10PreviewStatement\x12#.eolymp.atlas.PreviewStatementInput\x1a$.eolymp.atlas.PreviewStatementOutput\"9\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\n\"\x08/renders\x12\x95\x01\n\x0eListStatements\x12!.eolymp.atlas.ListStatementsInput\x1a\".eolymp.atlas.ListStatementsOutput\"<\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\r\x12\x0b/statements\x12\xaf\x01\n\x13TranslateStatements\x12&.eolymp.atlas.TranslateStatementsInput\x1a\'.eolymp.atlas.TranslateStatementsOutput\"G\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x17\"\x15/statements:translateB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.statement_service_pb2', globals())
@@ -39,38 +39,44 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _STATEMENTSERVICE.methods_by_name['PreviewStatement']._serialized_options = b'\202\343\n\026\212\343\n\022atlas:problem:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\n\"\010/renders'
   _STATEMENTSERVICE.methods_by_name['ListStatements']._options = None
   _STATEMENTSERVICE.methods_by_name['ListStatements']._serialized_options = b'\202\343\n\026\212\343\n\022atlas:problem:read\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\r\022\013/statements'
+  _STATEMENTSERVICE.methods_by_name['TranslateStatements']._options = None
+  _STATEMENTSERVICE.methods_by_name['TranslateStatements']._serialized_options = b'\202\343\n\027\212\343\n\023atlas:problem:write\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\323\344\223\002\027\"\025/statements:translate'
   _STATEMENTCHANGEDEVENT._serialized_start=183
   _STATEMENTCHANGEDEVENT._serialized_end=307
   _LISTSTATEMENTSINPUT._serialized_start=309
   _LISTSTATEMENTSINPUT._serialized_end=393
   _LISTSTATEMENTSOUTPUT._serialized_start=395
   _LISTSTATEMENTSOUTPUT._serialized_end=472
-  _DESCRIBESTATEMENTINPUT._serialized_start=474
-  _DESCRIBESTATEMENTINPUT._serialized_end=553
-  _DESCRIBESTATEMENTOUTPUT._serialized_start=555
-  _DESCRIBESTATEMENTOUTPUT._serialized_end=624
-  _LOOKUPSTATEMENTINPUT._serialized_start=626
-  _LOOKUPSTATEMENTINPUT._serialized_end=697
-  _LOOKUPSTATEMENTOUTPUT._serialized_start=699
-  _LOOKUPSTATEMENTOUTPUT._serialized_end=766
-  _PREVIEWSTATEMENTINPUT._serialized_start=768
-  _PREVIEWSTATEMENTINPUT._serialized_end=835
-  _PREVIEWSTATEMENTOUTPUT._serialized_start=837
-  _PREVIEWSTATEMENTOUTPUT._serialized_end=905
-  _CREATESTATEMENTINPUT._serialized_start=907
-  _CREATESTATEMENTINPUT._serialized_end=973
-  _CREATESTATEMENTOUTPUT._serialized_start=975
-  _CREATESTATEMENTOUTPUT._serialized_end=1020
-  _UPDATESTATEMENTINPUT._serialized_start=1023
-  _UPDATESTATEMENTINPUT._serialized_end=1265
-  _UPDATESTATEMENTINPUT_PATCH._serialized_start=1170
-  _UPDATESTATEMENTINPUT_PATCH._serialized_end=1265
-  _UPDATESTATEMENTOUTPUT._serialized_start=1267
-  _UPDATESTATEMENTOUTPUT._serialized_end=1290
-  _DELETESTATEMENTINPUT._serialized_start=1292
-  _DELETESTATEMENTINPUT._serialized_end=1336
-  _DELETESTATEMENTOUTPUT._serialized_start=1338
-  _DELETESTATEMENTOUTPUT._serialized_end=1361
-  _STATEMENTSERVICE._serialized_start=1364
-  _STATEMENTSERVICE._serialized_end=2517
+  _TRANSLATESTATEMENTSINPUT._serialized_start=474
+  _TRANSLATESTATEMENTSINPUT._serialized_end=532
+  _TRANSLATESTATEMENTSOUTPUT._serialized_start=534
+  _TRANSLATESTATEMENTSOUTPUT._serialized_end=561
+  _DESCRIBESTATEMENTINPUT._serialized_start=563
+  _DESCRIBESTATEMENTINPUT._serialized_end=642
+  _DESCRIBESTATEMENTOUTPUT._serialized_start=644
+  _DESCRIBESTATEMENTOUTPUT._serialized_end=713
+  _LOOKUPSTATEMENTINPUT._serialized_start=715
+  _LOOKUPSTATEMENTINPUT._serialized_end=786
+  _LOOKUPSTATEMENTOUTPUT._serialized_start=788
+  _LOOKUPSTATEMENTOUTPUT._serialized_end=855
+  _PREVIEWSTATEMENTINPUT._serialized_start=857
+  _PREVIEWSTATEMENTINPUT._serialized_end=924
+  _PREVIEWSTATEMENTOUTPUT._serialized_start=926
+  _PREVIEWSTATEMENTOUTPUT._serialized_end=994
+  _CREATESTATEMENTINPUT._serialized_start=996
+  _CREATESTATEMENTINPUT._serialized_end=1062
+  _CREATESTATEMENTOUTPUT._serialized_start=1064
+  _CREATESTATEMENTOUTPUT._serialized_end=1109
+  _UPDATESTATEMENTINPUT._serialized_start=1112
+  _UPDATESTATEMENTINPUT._serialized_end=1369
+  _UPDATESTATEMENTINPUT_PATCH._serialized_start=1259
+  _UPDATESTATEMENTINPUT_PATCH._serialized_end=1369
+  _UPDATESTATEMENTOUTPUT._serialized_start=1371
+  _UPDATESTATEMENTOUTPUT._serialized_end=1394
+  _DELETESTATEMENTINPUT._serialized_start=1396
+  _DELETESTATEMENTINPUT._serialized_end=1440
+  _DELETESTATEMENTOUTPUT._serialized_start=1442
+  _DELETESTATEMENTOUTPUT._serialized_end=1465
+  _STATEMENTSERVICE._serialized_start=1468
+  _STATEMENTSERVICE._serialized_end=2799
 # @@protoc_insertion_point(module_scope)
