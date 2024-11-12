@@ -25,6 +25,20 @@ class PenaltyServiceClient:
             **kwargs,
         )
 
+    def UpdatePenalty(self, request, **kwargs):
+        path = "/penalties/"+urllib.parse.quote(request.penalty_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.penalty_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.UpdatePenaltyOutput"),
+            **kwargs,
+        )
+
     def CancelPenalty(self, request, **kwargs):
         path = "/penalties/"+urllib.parse.quote(request.penalty_id)
 

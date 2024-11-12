@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/community/penalty.proto\x12\x10\x65olymp.community\x1a\x1fgoogle/protobuf/timestamp.proto\"\x95\x01\n\x07Penalty\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07summary\x18\x02 \x01(\t\x12\r\n\x05scope\x18\x03 \x03(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/community/penalty.proto\x12\x10\x65olymp.community\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdc\x01\n\x07Penalty\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07summary\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05scope\x18\x14 \x03(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x63\x61ncelled_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.TimestampB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.penalty_pb2', globals())
@@ -23,5 +23,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _PENALTY._serialized_start=86
-  _PENALTY._serialized_end=235
+  _PENALTY._serialized_end=306
 # @@protoc_insertion_point(module_scope)
