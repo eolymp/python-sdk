@@ -195,6 +195,26 @@ class ListPostsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_pb2.Post, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
+class ModeratePostInput(_message.Message):
+    __slots__ = ["outcome", "post_id", "reason"]
+    class Outcome(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    APPROVED: ModeratePostInput.Outcome
+    IN_REVIEW: ModeratePostInput.Outcome
+    OUTCOME_FIELD_NUMBER: _ClassVar[int]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    REASON_FIELD_NUMBER: _ClassVar[int]
+    REJECTED: ModeratePostInput.Outcome
+    UNKNOWN_OUTCOME: ModeratePostInput.Outcome
+    outcome: ModeratePostInput.Outcome
+    post_id: str
+    reason: _content_pb2.Content
+    def __init__(self, post_id: _Optional[str] = ..., outcome: _Optional[_Union[ModeratePostInput.Outcome, str]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+
+class ModeratePostOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class PostChangedEvent(_message.Message):
     __slots__ = ["after", "before", "reason"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
