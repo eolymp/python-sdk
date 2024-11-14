@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Post(_message.Message):
-    __slots__ = ["content", "created_at", "draft", "featured", "id", "image_url", "labels", "links", "locale", "member_id", "moderation", "preview", "public", "published_at", "reply_count", "source_id", "source_url", "title", "type_id", "updated_at", "url", "user_id", "vote", "vote_count"]
+    __slots__ = ["content", "created_at", "draft", "featured", "id", "image_url", "labels", "links", "locale", "member_id", "moderation", "pinned", "preview", "public", "published_at", "reply_count", "source_id", "source_url", "title", "type_id", "updated_at", "url", "user_id", "vote", "vote_count"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Moderation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -62,6 +62,7 @@ class Post(_message.Message):
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MODERATION_FIELD_NUMBER: _ClassVar[int]
     PENDING: Post.Moderation
+    PINNED_FIELD_NUMBER: _ClassVar[int]
     PREVIEW: Post.Extra
     PREVIEW_FIELD_NUMBER: _ClassVar[int]
     PUBLIC_FIELD_NUMBER: _ClassVar[int]
@@ -91,6 +92,7 @@ class Post(_message.Message):
     locale: str
     member_id: str
     moderation: Post.Moderation
+    pinned: bool
     preview: Post.Preview
     public: bool
     published_at: _timestamp_pb2.Timestamp
@@ -104,4 +106,4 @@ class Post(_message.Message):
     user_id: str
     vote: int
     vote_count: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., source_id: _Optional[str] = ..., source_url: _Optional[str] = ..., draft: bool = ..., public: bool = ..., featured: bool = ..., moderation: _Optional[_Union[Post.Moderation, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., type_id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., image_url: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., preview: _Optional[_Union[Post.Preview, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., source_id: _Optional[str] = ..., source_url: _Optional[str] = ..., draft: bool = ..., public: bool = ..., featured: bool = ..., pinned: bool = ..., moderation: _Optional[_Union[Post.Moderation, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., type_id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., image_url: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., preview: _Optional[_Union[Post.Preview, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...

@@ -195,6 +195,38 @@ class ListPostsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_pb2.Post, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
+class PostChangedEvent(_message.Message):
+    __slots__ = ["after", "before", "reason"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    REASON_FIELD_NUMBER: _ClassVar[int]
+    after: _post_pb2.Post
+    before: _post_pb2.Post
+    reason: _content_pb2.Content
+    def __init__(self, before: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., after: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+
+class PostPublishedEvent(_message.Message):
+    __slots__ = ["post", "published", "reason"]
+    POST_FIELD_NUMBER: _ClassVar[int]
+    PUBLISHED_FIELD_NUMBER: _ClassVar[int]
+    REASON_FIELD_NUMBER: _ClassVar[int]
+    post: _post_pb2.Post
+    published: bool
+    reason: _content_pb2.Content
+    def __init__(self, published: bool = ..., post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+
+class PostTranslationChangedEvent(_message.Message):
+    __slots__ = ["after", "before", "post", "reason"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    POST_FIELD_NUMBER: _ClassVar[int]
+    REASON_FIELD_NUMBER: _ClassVar[int]
+    after: _post_pb2.Post.Translation
+    before: _post_pb2.Post.Translation
+    post: _post_pb2.Post
+    reason: _content_pb2.Content
+    def __init__(self, post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., before: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., after: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+
 class PublishPostInput(_message.Message):
     __slots__ = ["post_id"]
     POST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -229,6 +261,7 @@ class UpdatePostInput(_message.Message):
     LOCALE: UpdatePostInput.Patch
     MODERATION: UpdatePostInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    PINNED: UpdatePostInput.Patch
     POST_FIELD_NUMBER: _ClassVar[int]
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_ID: UpdatePostInput.Patch
