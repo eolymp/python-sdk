@@ -15,17 +15,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DeleteMessageInput(_message.Message):
-    __slots__ = ["message_id"]
-    class Reason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    INAPPROPRIATE: DeleteMessageInput.Reason
+    __slots__ = ["message_id", "reason"]
     MESSAGE_ID_FIELD_NUMBER: _ClassVar[int]
-    OFF_TOPIC: DeleteMessageInput.Reason
-    UNKNOWN_REASON: DeleteMessageInput.Reason
-    UNSOLICITED: DeleteMessageInput.Reason
-    VIOLATION: DeleteMessageInput.Reason
+    REASON_FIELD_NUMBER: _ClassVar[int]
     message_id: str
-    def __init__(self, message_id: _Optional[str] = ...) -> None: ...
+    reason: str
+    def __init__(self, message_id: _Optional[str] = ..., reason: _Optional[str] = ...) -> None: ...
 
 class DeleteMessageOutput(_message.Message):
     __slots__ = []
@@ -118,6 +113,16 @@ class ListMessagesOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_message_pb2.Message]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_message_pb2.Message, _Mapping]]] = ...) -> None: ...
+
+class MessageChangedEvent(_message.Message):
+    __slots__ = ["after", "before", "reason"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    REASON_FIELD_NUMBER: _ClassVar[int]
+    after: _message_pb2.Message
+    before: _message_pb2.Message
+    reason: str
+    def __init__(self, before: _Optional[_Union[_message_pb2.Message, _Mapping]] = ..., after: _Optional[_Union[_message_pb2.Message, _Mapping]] = ..., reason: _Optional[str] = ...) -> None: ...
 
 class PostMessageInput(_message.Message):
     __slots__ = ["message", "reply_to"]
