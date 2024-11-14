@@ -64,6 +64,34 @@ class PostServiceClient:
             **kwargs,
         )
 
+    def PublishPost(self, request, **kwargs):
+        path = "/posts/"+urllib.parse.quote(request.post_id)+"/publish"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.post_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.discussion.PublishPostOutput"),
+            **kwargs,
+        )
+
+    def UnpublishPost(self, request, **kwargs):
+        path = "/posts/"+urllib.parse.quote(request.post_id)+"/publish"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.post_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.discussion.UnpublishPostOutput"),
+            **kwargs,
+        )
+
     def DeletePost(self, request, **kwargs):
         path = "/posts/"+urllib.parse.quote(request.post_id)
 

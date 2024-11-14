@@ -2,6 +2,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.discussion import post_pb2 as _post_pb2
+from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
@@ -45,8 +46,10 @@ class DeletePostInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ...) -> None: ...
 
 class DeletePostOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["reason"]
+    REASON_FIELD_NUMBER: _ClassVar[int]
+    reason: _content_pb2.Content
+    def __init__(self, reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class DeletePostTranslationInput(_message.Message):
     __slots__ = ["post_id", "translation_id"]
@@ -128,9 +131,10 @@ class ListPostsInput(_message.Message):
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["created_at", "draft", "id", "label", "locale", "member_id", "moderation", "public", "published_at", "query", "source_id", "type_id", "user_id"]
+        __slots__ = ["created_at", "draft", "featured", "id", "label", "locale", "member_id", "moderation", "public", "published_at", "query", "source_id", "type_id", "user_id"]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
         DRAFT_FIELD_NUMBER: _ClassVar[int]
+        FEATURED_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         LABEL_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -144,6 +148,7 @@ class ListPostsInput(_message.Message):
         USER_ID_FIELD_NUMBER: _ClassVar[int]
         created_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         draft: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        featured: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         label: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
@@ -155,7 +160,7 @@ class ListPostsInput(_message.Message):
         source_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         type_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., source_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., published_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., moderation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., source_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., published_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., featured: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., moderation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     AFTER_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT: ListPostsInput.Sort
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -190,6 +195,28 @@ class ListPostsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_pb2.Post, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
+class PublishPostInput(_message.Message):
+    __slots__ = ["post_id"]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    post_id: str
+    def __init__(self, post_id: _Optional[str] = ...) -> None: ...
+
+class PublishPostOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class UnpublishPostInput(_message.Message):
+    __slots__ = ["post_id", "reason"]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    REASON_FIELD_NUMBER: _ClassVar[int]
+    post_id: str
+    reason: _content_pb2.Content
+    def __init__(self, post_id: _Optional[str] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+
+class UnpublishPostOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class UpdatePostInput(_message.Message):
     __slots__ = ["patch", "post", "post_id"]
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -197,6 +224,7 @@ class UpdatePostInput(_message.Message):
     ALL: UpdatePostInput.Patch
     CONTENT: UpdatePostInput.Patch
     DRAFT: UpdatePostInput.Patch
+    FEATURED: UpdatePostInput.Patch
     LABELS: UpdatePostInput.Patch
     LOCALE: UpdatePostInput.Patch
     MODERATION: UpdatePostInput.Patch
