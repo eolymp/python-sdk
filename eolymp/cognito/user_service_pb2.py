@@ -18,7 +18,7 @@ from eolymp.cognito import user_pb2 as eolymp_dot_cognito_dot_user__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/cognito/user_service.proto\x12\x0e\x65olymp.cognito\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/cognito/user.proto\x1a!eolymp/wellknown/expression.proto\"]\n\x10UserChangedEvent\x12$\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x14.eolymp.cognito.User\x12#\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x14.eolymp.cognito.User\"\x15\n\x13IntrospectUserInput\":\n\x14IntrospectUserOutput\x12\"\n\x04user\x18\x01 \x01(\x0b\x32\x14.eolymp.cognito.User\"$\n\x11\x44\x65scribeUserInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"8\n\x12\x44\x65scribeUserOutput\x12\"\n\x04user\x18\x01 \x01(\x0b\x32\x14.eolymp.cognito.User\"\xd2\x01\n\x0eListUsersInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.cognito.ListUsersInput.Filter\x1aj\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\x08username\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"E\n\x0fListUsersOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.cognito.User2\xaf\x02\n\x0bUserService\x12\x98\x01\n\x0c\x44\x65scribeUser\x12!.eolymp.cognito.DescribeUserInput\x1a\".eolymp.cognito.DescribeUserOutput\"A\x82\xe3\n\x15\x8a\xe3\n\x11\x63ognito:user:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HC\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/users/{user_id}\x12\x84\x01\n\tListUsers\x12\x1e.eolymp.cognito.ListUsersInput\x1a\x1f.eolymp.cognito.ListUsersOutput\"6\x82\xe3\n\x15\x8a\xe3\n\x11\x63ognito:user:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00pA\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/usersB1Z/github.com/eolymp/go-sdk/eolymp/cognito;cognitob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/cognito/user_service.proto\x12\x0e\x65olymp.cognito\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/cognito/user.proto\x1a!eolymp/wellknown/expression.proto\"]\n\x10UserChangedEvent\x12$\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x14.eolymp.cognito.User\x12#\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x14.eolymp.cognito.User\"$\n\x11\x44\x65scribeUserInput\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"8\n\x12\x44\x65scribeUserOutput\x12\"\n\x04user\x18\x01 \x01(\x0b\x32\x14.eolymp.cognito.User\"\xd2\x01\n\x0eListUsersInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.cognito.ListUsersInput.Filter\x1aj\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\x08username\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"E\n\x0fListUsersOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.cognito.User2\xaf\x02\n\x0bUserService\x12\x98\x01\n\x0c\x44\x65scribeUser\x12!.eolymp.cognito.DescribeUserInput\x1a\".eolymp.cognito.DescribeUserOutput\"A\x82\xe3\n\x15\x8a\xe3\n\x11\x63ognito:user:read\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HC\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x12\x12\x10/users/{user_id}\x12\x84\x01\n\tListUsers\x12\x1e.eolymp.cognito.ListUsersInput\x1a\x1f.eolymp.cognito.ListUsersOutput\"6\x82\xe3\n\x15\x8a\xe3\n\x11\x63ognito:user:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00pA\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x08\x12\x06/usersB1Z/github.com/eolymp/go-sdk/eolymp/cognito;cognitob\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.cognito.user_service_pb2', globals())
@@ -32,20 +32,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _USERSERVICE.methods_by_name['ListUsers']._serialized_options = b'\202\343\n\025\212\343\n\021cognito:user:read\352\342\n\013\365\342\n\000\000pA\370\342\nd\202\323\344\223\002\010\022\006/users'
   _USERCHANGEDEVENT._serialized_start=214
   _USERCHANGEDEVENT._serialized_end=307
-  _INTROSPECTUSERINPUT._serialized_start=309
-  _INTROSPECTUSERINPUT._serialized_end=330
-  _INTROSPECTUSEROUTPUT._serialized_start=332
-  _INTROSPECTUSEROUTPUT._serialized_end=390
-  _DESCRIBEUSERINPUT._serialized_start=392
-  _DESCRIBEUSERINPUT._serialized_end=428
-  _DESCRIBEUSEROUTPUT._serialized_start=430
-  _DESCRIBEUSEROUTPUT._serialized_end=486
-  _LISTUSERSINPUT._serialized_start=489
-  _LISTUSERSINPUT._serialized_end=699
-  _LISTUSERSINPUT_FILTER._serialized_start=593
-  _LISTUSERSINPUT_FILTER._serialized_end=699
-  _LISTUSERSOUTPUT._serialized_start=701
-  _LISTUSERSOUTPUT._serialized_end=770
-  _USERSERVICE._serialized_start=773
-  _USERSERVICE._serialized_end=1076
+  _DESCRIBEUSERINPUT._serialized_start=309
+  _DESCRIBEUSERINPUT._serialized_end=345
+  _DESCRIBEUSEROUTPUT._serialized_start=347
+  _DESCRIBEUSEROUTPUT._serialized_end=403
+  _LISTUSERSINPUT._serialized_start=406
+  _LISTUSERSINPUT._serialized_end=616
+  _LISTUSERSINPUT_FILTER._serialized_start=510
+  _LISTUSERSINPUT_FILTER._serialized_end=616
+  _LISTUSERSOUTPUT._serialized_start=618
+  _LISTUSERSOUTPUT._serialized_end=687
+  _USERSERVICE._serialized_start=690
+  _USERSERVICE._serialized_end=993
 # @@protoc_insertion_point(module_scope)

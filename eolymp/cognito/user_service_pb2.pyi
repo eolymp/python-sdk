@@ -22,16 +22,6 @@ class DescribeUserOutput(_message.Message):
     user: _user_pb2.User
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
 
-class IntrospectUserInput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class IntrospectUserOutput(_message.Message):
-    __slots__ = ["user"]
-    USER_FIELD_NUMBER: _ClassVar[int]
-    user: _user_pb2.User
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
-
 class ListUsersInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):
