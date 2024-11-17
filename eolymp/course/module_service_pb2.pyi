@@ -69,22 +69,20 @@ class GradeModuleOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListModulesInput(_message.Message):
-    __slots__ = ["extra", "filters", "group_id", "member_id", "offset", "order", "size", "sort"]
+    __slots__ = ["extra", "filters", "group_id", "member_id", "offset", "order", "search", "size", "sort"]
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["draft", "extra", "graded", "query", "weight"]
+        __slots__ = ["draft", "extra", "graded", "weight"]
         DRAFT_FIELD_NUMBER: _ClassVar[int]
         EXTRA_FIELD_NUMBER: _ClassVar[int]
         GRADED_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
         WEIGHT_FIELD_NUMBER: _ClassVar[int]
         draft: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         extra: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         graded: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        query: str
         weight: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
-        def __init__(self, query: _Optional[str] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., extra: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., graded: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., weight: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
+        def __init__(self, draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., extra: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., graded: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., weight: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
@@ -92,6 +90,7 @@ class ListModulesInput(_message.Message):
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_module_pb2.Module.Extra]
@@ -100,9 +99,10 @@ class ListModulesInput(_message.Message):
     member_id: str
     offset: int
     order: _direction_pb2.Direction
+    search: str
     size: int
     sort: ListModulesInput.Sort
-    def __init__(self, member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListModulesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListModulesInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_module_pb2.Module.Extra, str]]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListModulesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListModulesInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_module_pb2.Module.Extra, str]]] = ...) -> None: ...
 
 class ListModulesOutput(_message.Message):
     __slots__ = ["items", "total"]

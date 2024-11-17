@@ -69,18 +69,16 @@ class GradeMaterialOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListMaterialsInput(_message.Message):
-    __slots__ = ["extra", "filters", "member_id", "module_id", "offset", "order", "size", "sort"]
+    __slots__ = ["extra", "filters", "member_id", "module_id", "offset", "order", "search", "size", "sort"]
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["graded", "query", "weight"]
+        __slots__ = ["graded", "weight"]
         GRADED_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
         WEIGHT_FIELD_NUMBER: _ClassVar[int]
         graded: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        query: str
         weight: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
-        def __init__(self, query: _Optional[str] = ..., graded: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., weight: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
+        def __init__(self, graded: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., weight: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     INDEX: ListMaterialsInput.Sort
@@ -88,6 +86,7 @@ class ListMaterialsInput(_message.Message):
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_material_pb2.Material.Extra]
@@ -96,9 +95,10 @@ class ListMaterialsInput(_message.Message):
     module_id: str
     offset: int
     order: _direction_pb2.Direction
+    search: str
     size: int
     sort: ListMaterialsInput.Sort
-    def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMaterialsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListMaterialsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_material_pb2.Material.Extra, str]]] = ...) -> None: ...
+    def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., search: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMaterialsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListMaterialsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_material_pb2.Material.Extra, str]]] = ...) -> None: ...
 
 class ListMaterialsOutput(_message.Message):
     __slots__ = ["items", "total"]

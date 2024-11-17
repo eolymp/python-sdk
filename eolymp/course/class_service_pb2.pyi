@@ -59,25 +59,25 @@ class DescribeClassOutput(_message.Message):
     def __init__(self, **kwargs) -> None: ...
 
 class ListClassAssignmentsInput(_message.Message):
-    __slots__ = ["filters", "group_id", "offset", "size"]
+    __slots__ = ["filters", "group_id", "offset", "search", "size"]
     class Filter(_message.Message):
-        __slots__ = ["id", "module_id", "query"]
+        __slots__ = ["id", "module_id"]
         ID_FIELD_NUMBER: _ClassVar[int]
         MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         module_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        query: str
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., module_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., module_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     filters: ListClassAssignmentsInput.Filter
     group_id: str
     offset: int
+    search: str
     size: int
-    def __init__(self, group_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListClassAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, group_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListClassAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListClassAssignmentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -88,32 +88,32 @@ class ListClassAssignmentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_assignment_pb2.Assignment, _Mapping]]] = ...) -> None: ...
 
 class ListClassesInput(_message.Message):
-    __slots__ = ["filters", "offset", "order", "size", "sort"]
+    __slots__ = ["filters", "offset", "order", "search", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["group_id", "id", "member_id", "query"]
+        __slots__ = ["group_id", "id", "member_id"]
         GROUP_ID_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
         group_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        query: str
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     DEFAULT: ListClassesInput.Sortable
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     filters: ListClassesInput.Filter
     offset: int
     order: _direction_pb2.Direction
+    search: str
     size: int
     sort: ListClassesInput.Sortable
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListClassesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListClassesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListClassesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListClassesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListClassesOutput(_message.Message):
     __slots__ = ["items", "total"]

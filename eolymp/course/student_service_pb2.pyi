@@ -99,25 +99,25 @@ class ListModuleGradesOutput(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[_material_pb2.Material.Progress, _Mapping]]] = ...) -> None: ...
 
 class ListStudentAssignmentsInput(_message.Message):
-    __slots__ = ["filters", "member_id", "offset", "size"]
+    __slots__ = ["filters", "member_id", "offset", "search", "size"]
     class Filter(_message.Message):
-        __slots__ = ["id", "module_id", "query"]
+        __slots__ = ["id", "module_id"]
         ID_FIELD_NUMBER: _ClassVar[int]
         MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         module_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        query: str
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., module_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., module_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     filters: ListStudentAssignmentsInput.Filter
     member_id: str
     offset: int
+    search: str
     size: int
-    def __init__(self, member_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListStudentAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListStudentAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListStudentAssignmentsOutput(_message.Message):
     __slots__ = ["items", "total"]
@@ -140,36 +140,34 @@ class ListStudentGradesOutput(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[_module_pb2.Module.Progress, _Mapping]]] = ...) -> None: ...
 
 class ListStudentsInput(_message.Message):
-    __slots__ = ["after", "extra", "filters", "offset", "order", "size", "sort"]
+    __slots__ = ["extra", "filters", "offset", "order", "search", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["group_id", "id", "member_id", "query"]
+        __slots__ = ["group_id", "id", "member_id"]
         GROUP_ID_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
         group_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        query: str
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
-    AFTER_FIELD_NUMBER: _ClassVar[int]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     DEFAULT: ListStudentsInput.Sortable
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
-    after: str
     extra: _containers.RepeatedScalarFieldContainer[_student_pb2.Student.Extra]
     filters: ListStudentsInput.Filter
     offset: int
     order: _direction_pb2.Direction
+    search: str
     size: int
     sort: ListStudentsInput.Sortable
-    def __init__(self, after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListStudentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListStudentsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListStudentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListStudentsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
 
 class ListStudentsOutput(_message.Message):
     __slots__ = ["items", "next_page_cursor", "total"]

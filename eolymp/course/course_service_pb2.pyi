@@ -72,34 +72,34 @@ class DescribeCourseOutput(_message.Message):
     def __init__(self, course: _Optional[_Union[_course_pb2.Course, _Mapping]] = ...) -> None: ...
 
 class ListCoursesInput(_message.Message):
-    __slots__ = ["extra", "filters", "offset", "order", "size", "sort"]
+    __slots__ = ["extra", "filters", "offset", "order", "search", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
-        __slots__ = ["id", "locale", "query", "topic_id"]
+        __slots__ = ["id", "locale", "topic_id"]
         ID_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
         TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        query: str
         topic_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., topic_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., topic_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     DEFAULT: ListCoursesInput.Sortable
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_course_pb2.Course.Extra]
     filters: ListCoursesInput.Filter
     offset: int
     order: _direction_pb2.Direction
+    search: str
     size: int
     sort: ListCoursesInput.Sortable
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCoursesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListCoursesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_course_pb2.Course.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListCoursesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListCoursesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_course_pb2.Course.Extra, str]]] = ...) -> None: ...
 
 class ListCoursesOutput(_message.Message):
     __slots__ = ["items", "total"]
