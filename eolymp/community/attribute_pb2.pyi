@@ -8,6 +8,8 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Attribute(_message.Message):
     __slots__ = ["choices", "constraints", "country", "description", "help", "hidden", "index", "key", "label", "max", "min", "readonly", "regexp", "required", "type", "visibility"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -55,6 +57,19 @@ class Attribute(_message.Message):
     MAX_FIELD_NUMBER: _ClassVar[int]
     MIN_FIELD_NUMBER: _ClassVar[int]
     NUMBER: Attribute.Type
+    PATCH_ALL: Attribute.Patch
+    PATCH_CHOICES: Attribute.Patch
+    PATCH_CONSTRAINTS: Attribute.Patch
+    PATCH_HELP: Attribute.Patch
+    PATCH_INDEX: Attribute.Patch
+    PATCH_LABEL: Attribute.Patch
+    PATCH_MAX: Attribute.Patch
+    PATCH_MIN: Attribute.Patch
+    PATCH_READONLY: Attribute.Patch
+    PATCH_REGEXP: Attribute.Patch
+    PATCH_REQUIRED: Attribute.Patch
+    PATCH_TYPE: Attribute.Patch
+    PATCH_VISIBILITY: Attribute.Patch
     PRIVATE: Attribute.Visibility
     PUBLIC: Attribute.Visibility
     READONLY_FIELD_NUMBER: _ClassVar[int]

@@ -76,12 +76,14 @@ class RemoveAttributeOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateAttributeInput(_message.Message):
-    __slots__ = ["attribute", "attribute_key"]
+    __slots__ = ["attribute", "attribute_key", "patch"]
     ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+    PATCH_FIELD_NUMBER: _ClassVar[int]
     attribute: _attribute_pb2.Attribute
     attribute_key: str
-    def __init__(self, attribute_key: _Optional[str] = ..., attribute: _Optional[_Union[_attribute_pb2.Attribute, _Mapping]] = ...) -> None: ...
+    patch: _containers.RepeatedScalarFieldContainer[_attribute_pb2.Attribute.Patch]
+    def __init__(self, patch: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Patch, str]]] = ..., attribute_key: _Optional[str] = ..., attribute: _Optional[_Union[_attribute_pb2.Attribute, _Mapping]] = ...) -> None: ...
 
 class UpdateAttributeOutput(_message.Message):
     __slots__ = []
