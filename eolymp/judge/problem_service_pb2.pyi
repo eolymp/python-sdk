@@ -5,6 +5,7 @@ from eolymp.judge import problem_pb2 as _problem_pb2
 from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -184,18 +185,22 @@ class SyncProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateProblemInput(_message.Message):
-    __slots__ = ["contest_id", "index", "problem_id", "score_by_best_testset", "submit_limit"]
+    __slots__ = ["contest_id", "patch", "problem", "problem_id"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    ALL: UpdateProblemInput.Patch
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    INDEX_FIELD_NUMBER: _ClassVar[int]
+    INDEX: UpdateProblemInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    SCORE_BY_BEST_TESTSET_FIELD_NUMBER: _ClassVar[int]
-    SUBMIT_LIMIT_FIELD_NUMBER: _ClassVar[int]
+    SCORE_BY_BEST_TESTSET: UpdateProblemInput.Patch
+    SUBMIT_LIMIT: UpdateProblemInput.Patch
     contest_id: str
-    index: int
+    patch: _containers.RepeatedScalarFieldContainer[UpdateProblemInput.Patch]
+    problem: _problem_pb2.Problem
     problem_id: str
-    score_by_best_testset: bool
-    submit_limit: int
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: bool = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProblemInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
 
 class UpdateProblemOutput(_message.Message):
     __slots__ = []
