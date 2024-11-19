@@ -40,12 +40,14 @@ class DeleteProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ["extra", "problem_id"]
+    __slots__ = ["extra", "locale", "problem_id"]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra]
+    locale: str
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ["problem"]
@@ -54,7 +56,7 @@ class DescribeProblemOutput(_message.Message):
     def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
 
 class ListProblemsInput(_message.Message):
-    __slots__ = ["extra", "filters", "offset", "order", "search", "size", "sort"]
+    __slots__ = ["extra", "filters", "locale", "offset", "order", "search", "size", "sort"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     class Filter(_message.Message):
@@ -81,6 +83,7 @@ class ListProblemsInput(_message.Message):
     DEFAULT: ListProblemsInput.Sortable
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     POPULAR: ListProblemsInput.Sortable
@@ -90,12 +93,13 @@ class ListProblemsInput(_message.Message):
     SORT_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra]
     filters: ListProblemsInput.Filter
+    locale: str
     offset: int
     order: _direction_pb2.Direction
     search: str
     size: int
     sort: ListProblemsInput.Sortable
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
 
 class ListProblemsOutput(_message.Message):
     __slots__ = ["items", "total"]
