@@ -1,8 +1,9 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.ecm import node_pb2 as _node_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Optional as _Optional
+from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -15,12 +16,10 @@ class DebugSubmissionInput(_message.Message):
     def __init__(self, submission_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class DebugSubmissionOutput(_message.Message):
-    __slots__ = ["assistance_id", "assistance_message"]
-    ASSISTANCE_ID_FIELD_NUMBER: _ClassVar[int]
-    ASSISTANCE_MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    assistance_id: str
-    assistance_message: str
-    def __init__(self, assistance_id: _Optional[str] = ..., assistance_message: _Optional[str] = ...) -> None: ...
+    __slots__ = ["message"]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    message: _node_pb2.Node
+    def __init__(self, message: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
 
 class RateDebugAssistanceInput(_message.Message):
     __slots__ = ["rating", "submission_id"]
