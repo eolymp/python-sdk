@@ -11,6 +11,7 @@ class Language(_message.Message):
         __slots__ = []
     DEPRECATED_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
+    ML: Language.Type
     NAME_FIELD_NUMBER: _ClassVar[int]
     OTHER: Language.Type
     PROGRAMMING: Language.Type
