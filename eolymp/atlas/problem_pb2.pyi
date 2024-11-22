@@ -36,7 +36,6 @@ class Problem(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ACCEPTANCE_RATE_FIELD_NUMBER: _ClassVar[int]
-    ALGORITHMIC: Problem.Type
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     CONTENT_RENDER: Problem.Extra
@@ -49,6 +48,7 @@ class Problem(_message.Message):
     NUMBER_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     OUTPUT: Problem.Type
+    PROGRAM: Problem.Type
     SCORE_FIELD_NUMBER: _ClassVar[int]
     SQL: Problem.Type
     SUBMISSIONS_ACCEPTED_FIELD_NUMBER: _ClassVar[int]
