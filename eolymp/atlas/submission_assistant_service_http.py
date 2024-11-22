@@ -14,7 +14,7 @@ class SubmissionAssistantServiceClient:
         self.transport = transport
         self.url = url
 
-    def DebugSubmission(self, request, **kwargs):
+    def RequestDebugAssistance(self, request, **kwargs):
         path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/assistant:debug"
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -24,7 +24,21 @@ class SubmissionAssistantServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DebugSubmissionOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.RequestDebugAssistanceOutput"),
+            **kwargs,
+        )
+
+    def DescribeDebugAssistance(self, request, **kwargs):
+        path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/assistant:debug"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.submission_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeDebugAssistanceOutput"),
             **kwargs,
         )
 

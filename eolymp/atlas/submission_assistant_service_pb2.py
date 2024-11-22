@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/eolymp/atlas/submission_assistant_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x15\x65olymp/ecm/node.proto\"=\n\x14\x44\x65\x62ugSubmissionInput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\":\n\x15\x44\x65\x62ugSubmissionOutput\x12!\n\x07message\x18\x02 \x01(\x0b\x32\x10.eolymp.ecm.Node\"A\n\x18RateDebugAssistanceInput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\x12\x0e\n\x06rating\x18\x02 \x01(\x05\"\x1b\n\x19RateDebugAssistanceOutput2\xeb\x02\n\x1aSubmissionAssistantService\x12\x9f\x01\n\x0f\x44\x65\x62ugSubmission\x12\".eolymp.atlas.DebugSubmissionInput\x1a#.eolymp.atlas.DebugSubmissionOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02.\",/submissions/{submission_id}/assistant:debug\x12\xaa\x01\n\x13RateDebugAssistance\x12&.eolymp.atlas.RateDebugAssistanceInput\x1a\'.eolymp.atlas.RateDebugAssistanceOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02-\"+/submissions/{submission_id}/assistant:rateB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/eolymp/atlas/submission_assistant_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x15\x65olymp/ecm/node.proto\"g\n\x16\x44\x65\x62ugAssistanceMessage\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x03 \x01(\t\x12!\n\x07message\x18\x04 \x01(\x0b\x32\x10.eolymp.ecm.Node\x12\x0e\n\x06rating\x18\x05 \x01(\x05\"D\n\x1bRequestDebugAssistanceInput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\"U\n\x1cRequestDebugAssistanceOutput\x12\x35\n\x07message\x18\x02 \x01(\x0b\x32$.eolymp.atlas.DebugAssistanceMessage\"5\n\x1c\x44\x65scribeDebugAssistanceInput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"V\n\x1d\x44\x65scribeDebugAssistanceOutput\x12\x35\n\x07message\x18\x02 \x01(\x0b\x32$.eolymp.atlas.DebugAssistanceMessage\"A\n\x18RateDebugAssistanceInput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\x12\x0e\n\x06rating\x18\x02 \x01(\x05\"\x1b\n\x19RateDebugAssistanceOutput2\xba\x04\n\x1aSubmissionAssistantService\x12\xb4\x01\n\x16RequestDebugAssistance\x12).eolymp.atlas.RequestDebugAssistanceInput\x1a*.eolymp.atlas.RequestDebugAssistanceOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02.\",/submissions/{submission_id}/assistant:debug\x12\xb7\x01\n\x17\x44\x65scribeDebugAssistance\x12*.eolymp.atlas.DescribeDebugAssistanceInput\x1a+.eolymp.atlas.DescribeDebugAssistanceOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02.\x12,/submissions/{submission_id}/assistant:debug\x12\xaa\x01\n\x13RateDebugAssistance\x12&.eolymp.atlas.RateDebugAssistanceInput\x1a\'.eolymp.atlas.RateDebugAssistanceOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02-\"+/submissions/{submission_id}/assistant:rateB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.submission_assistant_service_pb2', globals())
@@ -24,18 +24,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _SUBMISSIONASSISTANTSERVICE.methods_by_name['DebugSubmission']._options = None
-  _SUBMISSIONASSISTANTSERVICE.methods_by_name['DebugSubmission']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002.\",/submissions/{submission_id}/assistant:debug'
+  _SUBMISSIONASSISTANTSERVICE.methods_by_name['RequestDebugAssistance']._options = None
+  _SUBMISSIONASSISTANTSERVICE.methods_by_name['RequestDebugAssistance']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002.\",/submissions/{submission_id}/assistant:debug'
+  _SUBMISSIONASSISTANTSERVICE.methods_by_name['DescribeDebugAssistance']._options = None
+  _SUBMISSIONASSISTANTSERVICE.methods_by_name['DescribeDebugAssistance']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002.\022,/submissions/{submission_id}/assistant:debug'
   _SUBMISSIONASSISTANTSERVICE.methods_by_name['RateDebugAssistance']._options = None
   _SUBMISSIONASSISTANTSERVICE.methods_by_name['RateDebugAssistance']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002-\"+/submissions/{submission_id}/assistant:rate'
-  _DEBUGSUBMISSIONINPUT._serialized_start=155
-  _DEBUGSUBMISSIONINPUT._serialized_end=216
-  _DEBUGSUBMISSIONOUTPUT._serialized_start=218
-  _DEBUGSUBMISSIONOUTPUT._serialized_end=276
-  _RATEDEBUGASSISTANCEINPUT._serialized_start=278
-  _RATEDEBUGASSISTANCEINPUT._serialized_end=343
-  _RATEDEBUGASSISTANCEOUTPUT._serialized_start=345
-  _RATEDEBUGASSISTANCEOUTPUT._serialized_end=372
-  _SUBMISSIONASSISTANTSERVICE._serialized_start=375
-  _SUBMISSIONASSISTANTSERVICE._serialized_end=738
+  _DEBUGASSISTANCEMESSAGE._serialized_start=155
+  _DEBUGASSISTANCEMESSAGE._serialized_end=258
+  _REQUESTDEBUGASSISTANCEINPUT._serialized_start=260
+  _REQUESTDEBUGASSISTANCEINPUT._serialized_end=328
+  _REQUESTDEBUGASSISTANCEOUTPUT._serialized_start=330
+  _REQUESTDEBUGASSISTANCEOUTPUT._serialized_end=415
+  _DESCRIBEDEBUGASSISTANCEINPUT._serialized_start=417
+  _DESCRIBEDEBUGASSISTANCEINPUT._serialized_end=470
+  _DESCRIBEDEBUGASSISTANCEOUTPUT._serialized_start=472
+  _DESCRIBEDEBUGASSISTANCEOUTPUT._serialized_end=558
+  _RATEDEBUGASSISTANCEINPUT._serialized_start=560
+  _RATEDEBUGASSISTANCEINPUT._serialized_end=625
+  _RATEDEBUGASSISTANCEOUTPUT._serialized_start=627
+  _RATEDEBUGASSISTANCEOUTPUT._serialized_end=654
+  _SUBMISSIONASSISTANTSERVICE._serialized_start=657
+  _SUBMISSIONASSISTANTSERVICE._serialized_end=1227
 # @@protoc_insertion_point(module_scope)
