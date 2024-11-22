@@ -45,6 +45,7 @@ class Problem(_message.Message):
     FUNCTION: Problem.Type
     ID_FIELD_NUMBER: _ClassVar[int]
     LINKS_FIELD_NUMBER: _ClassVar[int]
+    ML: Problem.Type
     NUMBER_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     OUTPUT: Problem.Type
