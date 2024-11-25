@@ -147,6 +147,14 @@ class ListMembersOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_member_pb2.Member, _Mapping]]] = ...) -> None: ...
 
+class MemberChangedEvent(_message.Message):
+    __slots__ = ["after", "before"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    after: _member_pb2.Member
+    before: _member_pb2.Member
+    def __init__(self, before: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., after: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
+
 class RestoreMemberInput(_message.Message):
     __slots__ = ["member_id"]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]

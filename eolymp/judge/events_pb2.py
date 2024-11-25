@@ -11,13 +11,12 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.judge import contest_pb2 as eolymp_dot_judge_dot_contest__pb2
 from eolymp.judge import participant_pb2 as eolymp_dot_judge_dot_participant__pb2
 from eolymp.judge import score_pb2 as eolymp_dot_judge_dot_score__pb2
 from eolymp.judge import submission_pb2 as eolymp_dot_judge_dot_submission__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/events.proto\x12\x0c\x65olymp.judge\x1a\x1a\x65olymp/judge/contest.proto\x1a\x1e\x65olymp/judge/participant.proto\x1a\x18\x65olymp/judge/score.proto\x1a\x1d\x65olymp/judge/submission.proto\"H\n\x18SubmissionCompletedEvent\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"<\n\x11RebuildScoreEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x02 \x01(\t\"w\n\x11ScoreUpdatedEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12\x12\n\nunofficial\x18\x04 \x01(\x08\x12\"\n\x05score\x18\x03 \x01(\x0b\x32\x13.eolymp.judge.Score\"n\n\x17ParticipantChangedEvent\x12)\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x19.eolymp.judge.Participant\x12(\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x19.eolymp.judge.Participant\"p\n\x16ParticipantJoinedEvent\x12&\n\x07\x63ontest\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Contest\x12.\n\x0bparticipant\x18\x02 \x01(\x0b\x32\x19.eolymp.judge.Participant\"Q\n\x12RetestProblemEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x03 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/events.proto\x12\x0c\x65olymp.judge\x1a\x1e\x65olymp/judge/participant.proto\x1a\x18\x65olymp/judge/score.proto\x1a\x1d\x65olymp/judge/submission.proto\"\\\n\x18SubmissionCompletedEvent\x12\x12\n\ncontest_id\x18\n \x01(\t\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"<\n\x11RebuildScoreEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x02 \x01(\t\"w\n\x11ScoreChangedEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12\x12\n\nunofficial\x18\x04 \x01(\x08\x12\"\n\x05score\x18\x03 \x01(\x0b\x32\x13.eolymp.judge.Score\"\x82\x01\n\x17ParticipantChangedEvent\x12\x12\n\ncontest_id\x18\n \x01(\t\x12)\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x19.eolymp.judge.Participant\x12(\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x19.eolymp.judge.Participant\"\\\n\x16ParticipantJoinedEvent\x12\x12\n\ncontest_id\x18\n \x01(\t\x12.\n\x0bparticipant\x18\x02 \x01(\x0b\x32\x19.eolymp.judge.Participant\"Q\n\x12RetestProblemEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x03 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.events_pb2', globals())
@@ -25,16 +24,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _SUBMISSIONCOMPLETEDEVENT._serialized_start=160
-  _SUBMISSIONCOMPLETEDEVENT._serialized_end=232
-  _REBUILDSCOREEVENT._serialized_start=234
-  _REBUILDSCOREEVENT._serialized_end=294
-  _SCOREUPDATEDEVENT._serialized_start=296
-  _SCOREUPDATEDEVENT._serialized_end=415
-  _PARTICIPANTCHANGEDEVENT._serialized_start=417
-  _PARTICIPANTCHANGEDEVENT._serialized_end=527
-  _PARTICIPANTJOINEDEVENT._serialized_start=529
-  _PARTICIPANTJOINEDEVENT._serialized_end=641
-  _RETESTPROBLEMEVENT._serialized_start=643
-  _RETESTPROBLEMEVENT._serialized_end=724
+  _SUBMISSIONCOMPLETEDEVENT._serialized_start=132
+  _SUBMISSIONCOMPLETEDEVENT._serialized_end=224
+  _REBUILDSCOREEVENT._serialized_start=226
+  _REBUILDSCOREEVENT._serialized_end=286
+  _SCORECHANGEDEVENT._serialized_start=288
+  _SCORECHANGEDEVENT._serialized_end=407
+  _PARTICIPANTCHANGEDEVENT._serialized_start=410
+  _PARTICIPANTCHANGEDEVENT._serialized_end=540
+  _PARTICIPANTJOINEDEVENT._serialized_start=542
+  _PARTICIPANTJOINEDEVENT._serialized_end=634
+  _RETESTPROBLEMEVENT._serialized_start=636
+  _RETESTPROBLEMEVENT._serialized_end=717
 # @@protoc_insertion_point(module_scope)

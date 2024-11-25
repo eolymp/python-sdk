@@ -115,14 +115,16 @@ class ListMessagesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_message_pb2.Message, _Mapping]]] = ...) -> None: ...
 
 class MessageChangedEvent(_message.Message):
-    __slots__ = ["after", "before", "reason"]
+    __slots__ = ["after", "before", "reason", "scope"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
+    SCOPE_FIELD_NUMBER: _ClassVar[int]
     after: _message_pb2.Message
     before: _message_pb2.Message
     reason: str
-    def __init__(self, before: _Optional[_Union[_message_pb2.Message, _Mapping]] = ..., after: _Optional[_Union[_message_pb2.Message, _Mapping]] = ..., reason: _Optional[str] = ...) -> None: ...
+    scope: str
+    def __init__(self, scope: _Optional[str] = ..., before: _Optional[_Union[_message_pb2.Message, _Mapping]] = ..., after: _Optional[_Union[_message_pb2.Message, _Mapping]] = ..., reason: _Optional[str] = ...) -> None: ...
 
 class PostMessageInput(_message.Message):
     __slots__ = ["message", "reply_to"]

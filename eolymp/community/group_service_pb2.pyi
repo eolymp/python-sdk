@@ -45,6 +45,14 @@ class DescribeGroupOutput(_message.Message):
     group: _group_pb2.Group
     def __init__(self, group: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
 
+class GroupChangedEvent(_message.Message):
+    __slots__ = ["after", "before"]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    after: _group_pb2.Group
+    before: _group_pb2.Group
+    def __init__(self, before: _Optional[_Union[_group_pb2.Group, _Mapping]] = ..., after: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
+
 class ListGroupsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
     class Filter(_message.Message):

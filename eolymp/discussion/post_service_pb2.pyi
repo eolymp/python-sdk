@@ -236,16 +236,16 @@ class PostPublishedEvent(_message.Message):
     def __init__(self, published: bool = ..., post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class PostTranslationChangedEvent(_message.Message):
-    __slots__ = ["after", "before", "post", "reason"]
+    __slots__ = ["after", "before", "post_id", "reason"]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
-    POST_FIELD_NUMBER: _ClassVar[int]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
     after: _post_pb2.Post.Translation
     before: _post_pb2.Post.Translation
-    post: _post_pb2.Post
+    post_id: str
     reason: _content_pb2.Content
-    def __init__(self, post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., before: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., after: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, post_id: _Optional[str] = ..., before: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., after: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class PublishPostInput(_message.Message):
     __slots__ = ["post_id"]
