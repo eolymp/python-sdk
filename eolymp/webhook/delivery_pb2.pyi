@@ -8,17 +8,15 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Delivery(_message.Message):
-    __slots__ = ["event", "id", "payload", "signature", "timestamp", "webhook_id"]
+    __slots__ = ["event", "id", "payload", "timestamp", "webhook_id"]
     EVENT_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     PAYLOAD_FIELD_NUMBER: _ClassVar[int]
-    SIGNATURE_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     WEBHOOK_ID_FIELD_NUMBER: _ClassVar[int]
     event: _webhook_pb2.Webhook.Event
     id: str
     payload: _any_pb2.Any
-    signature: str
     timestamp: _timestamp_pb2.Timestamp
     webhook_id: str
-    def __init__(self, id: _Optional[str] = ..., webhook_id: _Optional[str] = ..., signature: _Optional[str] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., event: _Optional[_Union[_webhook_pb2.Webhook.Event, str]] = ..., payload: _Optional[_Union[_any_pb2.Any, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., webhook_id: _Optional[str] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., event: _Optional[_Union[_webhook_pb2.Webhook.Event, str]] = ..., payload: _Optional[_Union[_any_pb2.Any, _Mapping]] = ...) -> None: ...
