@@ -12,9 +12,10 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/webhook/webhook.proto\x12\x0e\x65olymp.webhook\x1a\x18\x65olymp/ecm/content.proto\"\xce\x05\n\x07Webhook\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08inactive\x18\x02 \x01(\x08\x12\x0c\n\x04link\x18\x03 \x01(\t\x12\x0e\n\x06secret\x18\x04 \x01(\t\x12-\n\x06\x65vents\x18\n \x03(\x0e\x32\x1d.eolymp.webhook.Webhook.Event\"\xd7\x04\n\x05\x45vent\x12\x11\n\rUNKNOWN_EVENT\x10\x00\x12\x13\n\x0fPROBLEM_CHANGED\x10\x64\x12\x1d\n\x19PROBLEM_STATEMENT_CHANGED\x10\x65\x12\x19\n\x15PROBLEM_SCORE_CHANGED\x10\x66\x12\x17\n\x12SUBMISSION_CHANGED\x10\xc8\x01\x12\x19\n\x14SUBMISSION_COMPLETED\x10\xc9\x01\x12\x13\n\x0eMEMBER_CHANGED\x10\xac\x02\x12\x12\n\rGROUP_CHANGED\x10\xde\x02\x12\x1a\n\x15\x43OURSE_MODULE_CHANGED\x10\x90\x03\x12\x1c\n\x17\x43OURSE_MATERIAL_CHANGED\x10\x91\x03\x12\x1b\n\x16\x43OURSE_STUDENT_CHANGED\x10\x92\x03\x12\x1e\n\x19\x43OURSE_ASSIGNMENT_CHANGED\x10\x93\x03\x12\x1f\n\x1a\x44ISCUSSION_MESSAGE_CHANGED\x10\xf4\x03\x12\x11\n\x0cPOST_CHANGED\x10\xd8\x04\x12\x1d\n\x18POST_TRANSLATION_CHANGED\x10\xd9\x04\x12\x13\n\x0ePOST_PUBLISHED\x10\xda\x04\x12\x13\n\x0eTICKET_CHANGED\x10\xbc\x05\x12\x19\n\x14TICKET_REPLY_CHANGED\x10\xbd\x05\x12!\n\x1c\x43ONTEST_SUBMISSION_COMPLETED\x10\xa0\x06\x12\x1a\n\x15\x43ONTEST_SCORE_CHANGED\x10\xa1\x06\x12 \n\x1b\x43ONTEST_PARTICIPANT_CHANGED\x10\xa2\x06\x12\x1f\n\x1a\x43ONTEST_PARTICIPANT_JOINED\x10\xa3\x06\x42\x31Z/github.com/eolymp/go-sdk/eolymp/webhook;webhookb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/webhook/webhook.proto\x12\x0e\x65olymp.webhook\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\x08\n\x07Webhook\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06secret\x18\x03 \x01(\t\x12\x10\n\x08\x65ndpoint\x18\x04 \x01(\t\x12\x10\n\x08inactive\x18\x05 \x01(\x08\x12-\n\x06\x65vents\x18\n \x03(\x0e\x32\x1d.eolymp.webhook.Webhook.Event\x12.\n\ncreated_at\x18\x1e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x0flast_failure_at\x18  \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x0flast_success_at\x18! \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x0e\x64\x65livery_count\x18\x14 \x01(\x05\x12\x15\n\rfailure_count\x18\x15 \x01(\x05\"\xd7\x04\n\x05\x45vent\x12\x11\n\rUNKNOWN_EVENT\x10\x00\x12\x13\n\x0fPROBLEM_CHANGED\x10\x64\x12\x1d\n\x19PROBLEM_STATEMENT_CHANGED\x10\x65\x12\x19\n\x15PROBLEM_SCORE_CHANGED\x10\x66\x12\x17\n\x12SUBMISSION_CHANGED\x10\xc8\x01\x12\x19\n\x14SUBMISSION_COMPLETED\x10\xc9\x01\x12\x13\n\x0eMEMBER_CHANGED\x10\xac\x02\x12\x12\n\rGROUP_CHANGED\x10\xde\x02\x12\x1a\n\x15\x43OURSE_MODULE_CHANGED\x10\x90\x03\x12\x1c\n\x17\x43OURSE_MATERIAL_CHANGED\x10\x91\x03\x12\x1b\n\x16\x43OURSE_STUDENT_CHANGED\x10\x92\x03\x12\x1e\n\x19\x43OURSE_ASSIGNMENT_CHANGED\x10\x93\x03\x12\x1f\n\x1a\x44ISCUSSION_MESSAGE_CHANGED\x10\xf4\x03\x12\x11\n\x0cPOST_CHANGED\x10\xd8\x04\x12\x1d\n\x18POST_TRANSLATION_CHANGED\x10\xd9\x04\x12\x13\n\x0ePOST_PUBLISHED\x10\xda\x04\x12\x13\n\x0eTICKET_CHANGED\x10\xbc\x05\x12\x19\n\x14TICKET_REPLY_CHANGED\x10\xbd\x05\x12!\n\x1c\x43ONTEST_SUBMISSION_COMPLETED\x10\xa0\x06\x12\x1a\n\x15\x43ONTEST_SCORE_CHANGED\x10\xa1\x06\x12 \n\x1b\x43ONTEST_PARTICIPANT_CHANGED\x10\xa2\x06\x12\x1f\n\x1a\x43ONTEST_PARTICIPANT_JOINED\x10\xa3\x06\"s\n\x05Patch\x12\x11\n\rPATCH_UNKNOWN\x10\x00\x12\r\n\tPATCH_ALL\x10\x01\x12\x0e\n\nPATCH_NAME\x10\x02\x12\x12\n\x0ePATCH_ENDPOINT\x10\x03\x12\x12\n\x0ePATCH_INACTIVE\x10\x04\x12\x10\n\x0cPATCH_EVENTS\x10\x05\x42\x31Z/github.com/eolymp/go-sdk/eolymp/webhook;webhookb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.webhook.webhook_pb2', globals())
@@ -22,8 +23,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/webhook;webhook'
-  _WEBHOOK._serialized_start=75
-  _WEBHOOK._serialized_end=793
-  _WEBHOOK_EVENT._serialized_start=194
-  _WEBHOOK_EVENT._serialized_end=793
+  _WEBHOOK._serialized_start=108
+  _WEBHOOK._serialized_end=1162
+  _WEBHOOK_EVENT._serialized_start=446
+  _WEBHOOK_EVENT._serialized_end=1045
+  _WEBHOOK_PATCH._serialized_start=1047
+  _WEBHOOK_PATCH._serialized_end=1162
 # @@protoc_insertion_point(module_scope)
