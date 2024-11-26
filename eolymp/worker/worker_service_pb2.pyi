@@ -75,17 +75,3 @@ class ListJobsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_worker_job_pb2.Job]
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_worker_job_pb2.Job, _Mapping]]] = ...) -> None: ...
-
-class UpdateJobInput(_message.Message):
-    __slots__ = ["job", "job_id", "patch"]
-    JOB_FIELD_NUMBER: _ClassVar[int]
-    JOB_ID_FIELD_NUMBER: _ClassVar[int]
-    PATCH_FIELD_NUMBER: _ClassVar[int]
-    job: _worker_job_pb2.Job
-    job_id: str
-    patch: _containers.RepeatedScalarFieldContainer[_worker_job_pb2.Job.Patch]
-    def __init__(self, patch: _Optional[_Iterable[_Union[_worker_job_pb2.Job.Patch, str]]] = ..., job_id: _Optional[str] = ..., job: _Optional[_Union[_worker_job_pb2.Job, _Mapping]] = ...) -> None: ...
-
-class UpdateJobOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
