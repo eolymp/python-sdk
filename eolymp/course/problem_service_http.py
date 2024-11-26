@@ -25,6 +25,17 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def LookupStatement(self, request, **kwargs):
+        path = "/statements:lookup"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.LookupStatementOutput"),
+            **kwargs,
+        )
+
     def ListExamples(self, request, **kwargs):
         path = "/examples"
 

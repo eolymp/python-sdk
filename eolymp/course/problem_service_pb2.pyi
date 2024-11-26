@@ -90,6 +90,18 @@ class LookupCodeTemplateOutput(_message.Message):
     template: _code_template_pb2.Template
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
+class LookupStatementInput(_message.Message):
+    __slots__ = ["locale"]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    locale: str
+    def __init__(self, locale: _Optional[str] = ...) -> None: ...
+
+class LookupStatementOutput(_message.Message):
+    __slots__ = ["statement"]
+    STATEMENT_FIELD_NUMBER: _ClassVar[int]
+    statement: _containers.RepeatedCompositeFieldContainer[_statement_pb2.Statement]
+    def __init__(self, statement: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
+
 class WatchRunInput(_message.Message):
     __slots__ = ["run_id"]
     RUN_ID_FIELD_NUMBER: _ClassVar[int]
