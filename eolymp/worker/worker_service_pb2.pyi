@@ -2,7 +2,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
-from eolymp.worker import job_pb2 as _job_pb2
+from eolymp.worker import worker_job_pb2 as _worker_job_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -40,8 +40,14 @@ class DescribeJobInput(_message.Message):
 class DescribeJobOutput(_message.Message):
     __slots__ = ["job"]
     JOB_FIELD_NUMBER: _ClassVar[int]
-    job: _job_pb2.Job
-    def __init__(self, job: _Optional[_Union[_job_pb2.Job, _Mapping]] = ...) -> None: ...
+    job: _worker_job_pb2.Job
+    def __init__(self, job: _Optional[_Union[_worker_job_pb2.Job, _Mapping]] = ...) -> None: ...
+
+class JobTriggerEvent(_message.Message):
+    __slots__ = ["job"]
+    JOB_FIELD_NUMBER: _ClassVar[int]
+    job: _worker_job_pb2.Job
+    def __init__(self, job: _Optional[_Union[_worker_job_pb2.Job, _Mapping]] = ...) -> None: ...
 
 class ListJobsInput(_message.Message):
     __slots__ = ["filters", "offset", "size"]
@@ -66,19 +72,19 @@ class ListJobsOutput(_message.Message):
     __slots__ = ["items", "total"]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_job_pb2.Job]
+    items: _containers.RepeatedCompositeFieldContainer[_worker_job_pb2.Job]
     total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_job_pb2.Job, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_worker_job_pb2.Job, _Mapping]]] = ...) -> None: ...
 
 class UpdateJobInput(_message.Message):
     __slots__ = ["job", "job_id", "patch"]
     JOB_FIELD_NUMBER: _ClassVar[int]
     JOB_ID_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    job: _job_pb2.Job
+    job: _worker_job_pb2.Job
     job_id: str
-    patch: _containers.RepeatedScalarFieldContainer[_job_pb2.Job.Patch]
-    def __init__(self, patch: _Optional[_Iterable[_Union[_job_pb2.Job.Patch, str]]] = ..., job_id: _Optional[str] = ..., job: _Optional[_Union[_job_pb2.Job, _Mapping]] = ...) -> None: ...
+    patch: _containers.RepeatedScalarFieldContainer[_worker_job_pb2.Job.Patch]
+    def __init__(self, patch: _Optional[_Iterable[_Union[_worker_job_pb2.Job.Patch, str]]] = ..., job_id: _Optional[str] = ..., job: _Optional[_Union[_worker_job_pb2.Job, _Mapping]] = ...) -> None: ...
 
 class UpdateJobOutput(_message.Message):
     __slots__ = []

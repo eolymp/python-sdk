@@ -15,10 +15,10 @@ from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
-from eolymp.worker import job_pb2 as eolymp_dot_worker_dot_job__pb2
+from eolymp.worker import worker_job_pb2 as eolymp_dot_worker_dot_worker__job__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/worker/executor_service.proto\x12\reolymp.worker\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/wellknown/expression.proto\x1a\x17\x65olymp/worker/job.proto\"\xad\x01\n\x0f\x45xecuteJobInput\x12\x0e\n\x06job_id\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\n \x01(\t\x12:\n\x06inputs\x18\x0b \x03(\x0b\x32*.eolymp.worker.ExecuteJobInput.InputsEntry\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc0\x03\n\x10\x45xecuteJobUpdate\x12\x42\n\x08progress\x18\x01 \x01(\x0b\x32..eolymp.worker.ExecuteJobUpdate.ProgressUpdateH\x00\x12?\n\x07outputs\x18\x02 \x01(\x0b\x32,.eolymp.worker.ExecuteJobUpdate.OutputUpdateH\x00\x12=\n\x04logs\x18\x03 \x01(\x0b\x32-.eolymp.worker.ExecuteJobUpdate.LoggingUpdateH\x00\x1a\x31\n\x0eProgressUpdate\x12\x10\n\x08progress\x18\x01 \x01(\r\x12\r\n\x05total\x18\x02 \x01(\r\x1a\x8a\x01\n\x0cOutputUpdate\x12J\n\x07outputs\x18\x01 \x03(\x0b\x32\x39.eolymp.worker.ExecuteJobUpdate.OutputUpdate.OutputsEntry\x1a.\n\x0cOutputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x1e\n\rLoggingUpdate\x12\r\n\x05\x63hunk\x18\x01 \x01(\x0c\x42\x08\n\x06update2d\n\x0f\x45xecutorService\x12Q\n\nExecuteJob\x12\x1e.eolymp.worker.ExecuteJobInput\x1a\x1f.eolymp.worker.ExecuteJobUpdate\"\x00\x30\x01\x42/Z-github.com/eolymp/go-sdk/eolymp/worker;workerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/worker/executor_service.proto\x12\reolymp.worker\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1e\x65olymp/worker/worker_job.proto\"\xad\x01\n\x0f\x45xecuteJobInput\x12\x0e\n\x06job_id\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\n \x01(\t\x12:\n\x06inputs\x18\x0b \x03(\x0b\x32*.eolymp.worker.ExecuteJobInput.InputsEntry\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc0\x03\n\x10\x45xecuteJobUpdate\x12\x42\n\x08progress\x18\x01 \x01(\x0b\x32..eolymp.worker.ExecuteJobUpdate.ProgressUpdateH\x00\x12?\n\x07outputs\x18\x02 \x01(\x0b\x32,.eolymp.worker.ExecuteJobUpdate.OutputUpdateH\x00\x12=\n\x04logs\x18\x03 \x01(\x0b\x32-.eolymp.worker.ExecuteJobUpdate.LoggingUpdateH\x00\x1a\x31\n\x0eProgressUpdate\x12\x10\n\x08progress\x18\x01 \x01(\r\x12\r\n\x05total\x18\x02 \x01(\r\x1a\x8a\x01\n\x0cOutputUpdate\x12J\n\x07outputs\x18\x01 \x03(\x0b\x32\x39.eolymp.worker.ExecuteJobUpdate.OutputUpdate.OutputsEntry\x1a.\n\x0cOutputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x1e\n\rLoggingUpdate\x12\r\n\x05\x63hunk\x18\x01 \x01(\x0c\x42\x08\n\x06update2d\n\x0f\x45xecutorService\x12Q\n\nExecuteJob\x12\x1e.eolymp.worker.ExecuteJobInput\x1a\x1f.eolymp.worker.ExecuteJobUpdate\"\x00\x30\x01\x42/Z-github.com/eolymp/go-sdk/eolymp/worker;workerb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.worker.executor_service_pb2', globals())
@@ -30,20 +30,20 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EXECUTEJOBINPUT_INPUTSENTRY._serialized_options = b'8\001'
   _EXECUTEJOBUPDATE_OUTPUTUPDATE_OUTPUTSENTRY._options = None
   _EXECUTEJOBUPDATE_OUTPUTUPDATE_OUTPUTSENTRY._serialized_options = b'8\001'
-  _EXECUTEJOBINPUT._serialized_start=215
-  _EXECUTEJOBINPUT._serialized_end=388
-  _EXECUTEJOBINPUT_INPUTSENTRY._serialized_start=343
-  _EXECUTEJOBINPUT_INPUTSENTRY._serialized_end=388
-  _EXECUTEJOBUPDATE._serialized_start=391
-  _EXECUTEJOBUPDATE._serialized_end=839
-  _EXECUTEJOBUPDATE_PROGRESSUPDATE._serialized_start=607
-  _EXECUTEJOBUPDATE_PROGRESSUPDATE._serialized_end=656
-  _EXECUTEJOBUPDATE_OUTPUTUPDATE._serialized_start=659
-  _EXECUTEJOBUPDATE_OUTPUTUPDATE._serialized_end=797
-  _EXECUTEJOBUPDATE_OUTPUTUPDATE_OUTPUTSENTRY._serialized_start=751
-  _EXECUTEJOBUPDATE_OUTPUTUPDATE_OUTPUTSENTRY._serialized_end=797
-  _EXECUTEJOBUPDATE_LOGGINGUPDATE._serialized_start=799
-  _EXECUTEJOBUPDATE_LOGGINGUPDATE._serialized_end=829
-  _EXECUTORSERVICE._serialized_start=841
-  _EXECUTORSERVICE._serialized_end=941
+  _EXECUTEJOBINPUT._serialized_start=222
+  _EXECUTEJOBINPUT._serialized_end=395
+  _EXECUTEJOBINPUT_INPUTSENTRY._serialized_start=350
+  _EXECUTEJOBINPUT_INPUTSENTRY._serialized_end=395
+  _EXECUTEJOBUPDATE._serialized_start=398
+  _EXECUTEJOBUPDATE._serialized_end=846
+  _EXECUTEJOBUPDATE_PROGRESSUPDATE._serialized_start=614
+  _EXECUTEJOBUPDATE_PROGRESSUPDATE._serialized_end=663
+  _EXECUTEJOBUPDATE_OUTPUTUPDATE._serialized_start=666
+  _EXECUTEJOBUPDATE_OUTPUTUPDATE._serialized_end=804
+  _EXECUTEJOBUPDATE_OUTPUTUPDATE_OUTPUTSENTRY._serialized_start=758
+  _EXECUTEJOBUPDATE_OUTPUTUPDATE_OUTPUTSENTRY._serialized_end=804
+  _EXECUTEJOBUPDATE_LOGGINGUPDATE._serialized_start=806
+  _EXECUTEJOBUPDATE_LOGGINGUPDATE._serialized_end=836
+  _EXECUTORSERVICE._serialized_start=848
+  _EXECUTORSERVICE._serialized_end=948
 # @@protoc_insertion_point(module_scope)
