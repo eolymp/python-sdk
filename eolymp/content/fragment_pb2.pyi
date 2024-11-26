@@ -24,6 +24,7 @@ class Fragment(_message.Message):
     LABELS_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     NO_EXTRA: Fragment.Extra
+    PATCH_ALL: Fragment.Patch
     PATCH_AUTOMATIC: Fragment.Patch
     PATCH_CONTENT: Fragment.Patch
     PATCH_DRAFT: Fragment.Patch
