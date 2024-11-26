@@ -22,6 +22,8 @@ class Editorial(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     NO_EXTRA: Editorial.Extra
+    PATCH_ALL: Editorial.Patch
+    PATCH_AUTHOR_ID: Editorial.Patch
     PATCH_AUTOMATIC: Editorial.Patch
     PATCH_CONTENT: Editorial.Patch
     PATCH_DOWNLOAD_LINK: Editorial.Patch

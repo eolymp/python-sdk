@@ -24,6 +24,7 @@ class Statement(_message.Message):
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     PATCH_ALL: Statement.Patch
     PATCH_AUTHOR: Statement.Patch
+    PATCH_AUTHOR_ID: Statement.Patch
     PATCH_AUTOMATIC: Statement.Patch
     PATCH_CONTENT: Statement.Patch
     PATCH_DOWNLOAD_LINK: Statement.Patch
