@@ -201,16 +201,18 @@ class ListVariantsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_variant_pb2.Variant, _Mapping]]] = ...) -> None: ...
 
 class TranslateFragmentsInput(_message.Message):
-    __slots__ = ["override_manual", "source", "target", "target_automatic"]
+    __slots__ = ["fragment_id", "override_manual", "source", "target", "target_automatic"]
+    FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     OVERRIDE_MANUAL_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     TARGET_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
+    fragment_id: str
     override_manual: bool
     source: str
     target: _containers.RepeatedScalarFieldContainer[str]
     target_automatic: bool
-    def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
+    def __init__(self, fragment_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
 
 class TranslateFragmentsOutput(_message.Message):
     __slots__ = ["job_id"]

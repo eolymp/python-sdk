@@ -79,7 +79,10 @@ class ContentServiceClient:
         )
 
     def TranslateFragments(self, request, **kwargs):
-        path = "/content/fragments:translate"
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/translate"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.fragment_id = ""
 
         return self.transport.request(
             method="POST",
