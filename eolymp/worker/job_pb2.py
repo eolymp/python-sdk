@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/worker/job.proto\x12\reolymp.worker\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc6\x04\n\x03Job\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12.\n\x06inputs\x18\x04 \x03(\x0b\x32\x1e.eolymp.worker.Job.InputsEntry\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bprogress_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x63omplete_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08progress\x18\x14 \x01(\r\x12\r\n\x05total\x18\x15 \x01(\r\x12)\n\x06status\x18\x1e \x01(\x0e\x32\x19.eolymp.worker.Job.Status\x12\x30\n\x07outputs\x18\x1f \x03(\x0b\x32\x1f.eolymp.worker.Job.OutputsEntry\x12\x0c\n\x04logs\x18\x64 \x01(\t\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a.\n\x0cOutputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07STARTED\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x42/Z-github.com/eolymp/go-sdk/eolymp/worker;workerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/worker/job.proto\x12\reolymp.worker\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd5\x05\n\x03Job\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x11\n\tnamespace\x18\x03 \x01(\t\x12)\n\x06status\x18\x1e \x01(\x0e\x32\x19.eolymp.worker.Job.Status\x12\x10\n\x08progress\x18\x14 \x01(\r\x12\r\n\x05total\x18\x15 \x01(\r\x12.\n\x06inputs\x18\x04 \x03(\x0b\x32\x1e.eolymp.worker.Job.InputsEntry\x12\x30\n\x07outputs\x18\x1f \x03(\x0b\x32\x1f.eolymp.worker.Job.OutputsEntry\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bprogress_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x63omplete_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08logs_url\x18\x64 \x01(\t\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a.\n\x0cOutputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07STARTED\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\t\n\x05\x45RROR\x10\x04\"v\n\x05Patch\x12\x11\n\rUNKNOWN_PATCH\x10\x00\x12\r\n\tPATCH_ALL\x10\x01\x12\x12\n\x0ePATCH_PROGRESS\x10\x02\x12\x11\n\rPATCH_OUTPUTS\x10\x03\x12\x12\n\x0ePATCH_LOGS_URL\x10\x04\x12\x10\n\x0cPATCH_STATUS\x10\x05\x42/Z-github.com/eolymp/go-sdk/eolymp/worker;workerb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.worker.job_pb2', globals())
@@ -27,11 +27,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _JOB_OUTPUTSENTRY._options = None
   _JOB_OUTPUTSENTRY._serialized_options = b'8\001'
   _JOB._serialized_start=76
-  _JOB._serialized_end=658
-  _JOB_INPUTSENTRY._serialized_start=491
-  _JOB_INPUTSENTRY._serialized_end=536
-  _JOB_OUTPUTSENTRY._serialized_start=538
-  _JOB_OUTPUTSENTRY._serialized_end=584
-  _JOB_STATUS._serialized_start=586
-  _JOB_STATUS._serialized_end=658
+  _JOB._serialized_end=801
+  _JOB_INPUTSENTRY._serialized_start=514
+  _JOB_INPUTSENTRY._serialized_end=559
+  _JOB_OUTPUTSENTRY._serialized_start=561
+  _JOB_OUTPUTSENTRY._serialized_end=607
+  _JOB_STATUS._serialized_start=609
+  _JOB_STATUS._serialized_end=681
+  _JOB_PATCH._serialized_start=683
+  _JOB_PATCH._serialized_end=801
 # @@protoc_insertion_point(module_scope)
