@@ -78,6 +78,17 @@ class ContentServiceClient:
             **kwargs,
         )
 
+    def TranslateFragments(self, request, **kwargs):
+        path = "/content/fragments:translate"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.content.TranslateFragmentsOutput"),
+            **kwargs,
+        )
+
     def DescribeVariant(self, request, **kwargs):
         path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants/"+urllib.parse.quote(request.variant_id)
 

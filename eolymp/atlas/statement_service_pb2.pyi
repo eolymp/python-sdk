@@ -3,7 +3,6 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -33,14 +32,16 @@ class DeleteStatementOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeStatementInput(_message.Message):
-    __slots__ = ["render", "statement_id", "version"]
+    __slots__ = ["extra", "render", "statement_id", "version"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra]
     render: bool
     statement_id: str
     version: int
-    def __init__(self, statement_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, statement_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra, str]]] = ...) -> None: ...
 
 class DescribeStatementOutput(_message.Message):
     __slots__ = ["statement"]
@@ -69,14 +70,16 @@ class ListStatementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
 
 class LookupStatementInput(_message.Message):
-    __slots__ = ["locale", "render", "version"]
+    __slots__ = ["extra", "locale", "render", "version"]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra]
     locale: str
     render: bool
     version: int
-    def __init__(self, locale: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra, str]]] = ...) -> None: ...
 
 class LookupStatementOutput(_message.Message):
     __slots__ = ["statement"]
@@ -126,23 +129,13 @@ class TranslateStatementsOutput(_message.Message):
 
 class UpdateStatementInput(_message.Message):
     __slots__ = ["patch", "statement", "statement_id"]
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    ALL: UpdateStatementInput.Patch
-    AUTHOR: UpdateStatementInput.Patch
-    AUTOMATIC: UpdateStatementInput.Patch
-    CONTENT: UpdateStatementInput.Patch
-    DOWNLOAD_LINK: UpdateStatementInput.Patch
-    LOCALE: UpdateStatementInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    SOURCE: UpdateStatementInput.Patch
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    TITLE: UpdateStatementInput.Patch
-    patch: _containers.RepeatedScalarFieldContainer[UpdateStatementInput.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Patch]
     statement: _statement_pb2.Statement
     statement_id: str
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateStatementInput.Patch, str]]] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_statement_pb2.Statement.Patch, str]]] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class UpdateStatementOutput(_message.Message):
     __slots__ = []

@@ -200,13 +200,33 @@ class ListVariantsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_variant_pb2.Variant, _Mapping]]] = ...) -> None: ...
 
+class TranslateFragmentsInput(_message.Message):
+    __slots__ = ["override_manual", "source", "target", "target_automatic"]
+    OVERRIDE_MANUAL_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    TARGET_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
+    TARGET_FIELD_NUMBER: _ClassVar[int]
+    override_manual: bool
+    source: str
+    target: _containers.RepeatedScalarFieldContainer[str]
+    target_automatic: bool
+    def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
+
+class TranslateFragmentsOutput(_message.Message):
+    __slots__ = ["job_id"]
+    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    job_id: str
+    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
+
 class UpdateFragmentInput(_message.Message):
-    __slots__ = ["fragment", "fragment_id"]
+    __slots__ = ["fragment", "fragment_id", "patch"]
     FRAGMENT_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    PATCH_FIELD_NUMBER: _ClassVar[int]
     fragment: _fragment_pb2.Fragment
     fragment_id: str
-    def __init__(self, fragment_id: _Optional[str] = ..., fragment: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
+    patch: _containers.RepeatedScalarFieldContainer[_fragment_pb2.Fragment.Patch]
+    def __init__(self, patch: _Optional[_Iterable[_Union[_fragment_pb2.Fragment.Patch, str]]] = ..., fragment_id: _Optional[str] = ..., fragment: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
 
 class UpdateFragmentOutput(_message.Message):
     __slots__ = []

@@ -100,3 +100,14 @@ class EditorialServiceClient:
             **kwargs,
         )
 
+    def TranslateEditorials(self, request, **kwargs):
+        path = "/editorials:translate"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.TranslateEditorialsOutput"),
+            **kwargs,
+        )
+
