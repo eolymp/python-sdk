@@ -99,8 +99,8 @@ class LookupStatementInput(_message.Message):
 class LookupStatementOutput(_message.Message):
     __slots__ = ["statement"]
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
-    statement: _containers.RepeatedCompositeFieldContainer[_statement_pb2.Statement]
-    def __init__(self, statement: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
+    statement: _statement_pb2.Statement
+    def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class WatchRunInput(_message.Message):
     __slots__ = ["run_id"]
