@@ -7,9 +7,10 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Variant(_message.Message):
-    __slots__ = ["content", "id", "locale", "title"]
+    __slots__ = ["automatic", "content", "id", "locale", "title"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+    AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     CONTENT_RENDER: Variant.Extra
     CONTENT_VALUE: Variant.Extra
@@ -17,8 +18,9 @@ class Variant(_message.Message):
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     NO_EXTRA: Variant.Extra
     TITLE_FIELD_NUMBER: _ClassVar[int]
+    automatic: bool
     content: _content_pb2.Content
     id: str
     locale: str
     title: str
-    def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., automatic: bool = ...) -> None: ...
