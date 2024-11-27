@@ -200,7 +200,7 @@ class ListVariantsOutput(_message.Message):
     total: int
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_variant_pb2.Variant, _Mapping]]] = ...) -> None: ...
 
-class TranslateFragmentsInput(_message.Message):
+class TranslateFragmentInput(_message.Message):
     __slots__ = ["fragment_id", "override_manual", "source", "target", "target_automatic"]
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     OVERRIDE_MANUAL_FIELD_NUMBER: _ClassVar[int]
@@ -214,7 +214,7 @@ class TranslateFragmentsInput(_message.Message):
     target_automatic: bool
     def __init__(self, fragment_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
 
-class TranslateFragmentsOutput(_message.Message):
+class TranslateFragmentOutput(_message.Message):
     __slots__ = ["job_id"]
     JOB_ID_FIELD_NUMBER: _ClassVar[int]
     job_id: str

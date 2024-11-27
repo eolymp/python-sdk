@@ -36,16 +36,18 @@ class Post(_message.Message):
         title: str
         def __init__(self, title: _Optional[str] = ..., image: _Optional[_Union[Post.Image, _Mapping]] = ..., content: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
     class Translation(_message.Message):
-        __slots__ = ["content", "id", "labels", "locale"]
+        __slots__ = ["automatic", "content", "id", "labels", "locale"]
+        AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         LABELS_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
+        automatic: bool
         content: _content_pb2.Content
         id: str
         labels: _containers.RepeatedScalarFieldContainer[str]
         locale: str
-        def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., automatic: bool = ...) -> None: ...
     APPROVED: Post.Moderation
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     CONTENT_RENDER: Post.Extra

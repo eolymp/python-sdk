@@ -257,6 +257,26 @@ class PublishPostOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class TranslatePostInput(_message.Message):
+    __slots__ = ["override_manual", "post_id", "source", "target", "target_automatic"]
+    OVERRIDE_MANUAL_FIELD_NUMBER: _ClassVar[int]
+    POST_ID_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    TARGET_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
+    TARGET_FIELD_NUMBER: _ClassVar[int]
+    override_manual: bool
+    post_id: str
+    source: str
+    target: _containers.RepeatedScalarFieldContainer[str]
+    target_automatic: bool
+    def __init__(self, post_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
+
+class TranslatePostOutput(_message.Message):
+    __slots__ = ["job_id"]
+    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    job_id: str
+    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
+
 class UnpublishPostInput(_message.Message):
     __slots__ = ["post_id", "reason"]
     POST_ID_FIELD_NUMBER: _ClassVar[int]

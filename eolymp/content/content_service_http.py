@@ -78,7 +78,7 @@ class ContentServiceClient:
             **kwargs,
         )
 
-    def TranslateFragments(self, request, **kwargs):
+    def TranslateFragment(self, request, **kwargs):
         path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/translate"
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -88,7 +88,7 @@ class ContentServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.TranslateFragmentsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.TranslateFragmentOutput"),
             **kwargs,
         )
 

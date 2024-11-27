@@ -134,6 +134,20 @@ class PostServiceClient:
             **kwargs,
         )
 
+    def TranslatePost(self, request, **kwargs):
+        path = "/posts/"+urllib.parse.quote(request.post_id)+"/translate"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.post_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.discussion.TranslatePostOutput"),
+            **kwargs,
+        )
+
     def DescribePostTranslation(self, request, **kwargs):
         path = "/posts/"+urllib.parse.quote(request.post_id)+"/translations/"+urllib.parse.quote(request.translation_id)
 
