@@ -2,6 +2,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
+from eolymp.atlas import snapshot_pb2 as _snapshot_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import version_pb2 as _version_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
@@ -54,6 +55,20 @@ class DescribeProblemOutput(_message.Message):
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
     problem: _problem_pb2.Problem
     def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
+
+class ExportProblemInput(_message.Message):
+    __slots__ = ["problem_id", "version"]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+
+class ExportProblemOutput(_message.Message):
+    __slots__ = ["snapshot_url"]
+    SNAPSHOT_URL_FIELD_NUMBER: _ClassVar[int]
+    snapshot_url: str
+    def __init__(self, snapshot_url: _Optional[str] = ...) -> None: ...
 
 class ListProblemsInput(_message.Message):
     __slots__ = ["extra", "filters", "locale", "offset", "order", "search", "size", "sort"]
