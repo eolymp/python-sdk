@@ -2,7 +2,6 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
-from eolymp.atlas import snapshot_pb2 as _snapshot_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import version_pb2 as _version_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2

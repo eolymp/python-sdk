@@ -15,7 +15,6 @@ from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.atlas import problem_pb2 as eolymp_dot_atlas_dot_problem__pb2
-from eolymp.atlas import snapshot_pb2 as eolymp_dot_atlas_dot_snapshot__pb2
 from eolymp.atlas import statement_pb2 as eolymp_dot_atlas_dot_statement__pb2
 from eolymp.atlas import version_pb2 as eolymp_dot_atlas_dot_version__pb2
 from eolymp.runtime import runtime_pb2 as eolymp_dot_runtime_dot_runtime__pb2
@@ -23,7 +22,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/problem_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x1b\x65olymp/atlas/snapshot.proto\x1a\x1c\x65olymp/atlas/statement.proto\x1a\x1a\x65olymp/atlas/version.proto\x1a\x1c\x65olymp/runtime/runtime.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"b\n\x13ProblemChangedEvent\x12%\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\x12$\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x15.eolymp.atlas.Problem\"h\n\x12\x43reateProblemInput\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\x12*\n\tstatement\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\")\n\x13\x43reateProblemOutput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"(\n\x12\x44\x65leteProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteProblemOutput\"h\n\x14\x44\x65scribeProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.atlas.Problem.Extra\"?\n\x15\x44\x65scribeProblemOutput\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\"\xa6\x06\n\x11ListProblemsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.atlas.ListProblemsInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.atlas.ListProblemsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.atlas.Problem.Extra\x1a\xd5\x03\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x08topic_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\nis_visible\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x34\n\nis_private\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x06number\x18\x05 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x33\n\ndifficulty\x18\x06 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x30\n\x06status\x18\x07 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x05score\x18\t \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\x12\x37\n\ris_bookmarked\x18\x08 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"0\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\n\n\x06RECENT\x10\x01\x12\x0b\n\x07POPULAR\x10\x02\"I\n\x12ListProblemsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.atlas.Problem\"<\n\x15UpdateVisibilityInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07visible\x18\x02 \x01(\x08\"\x18\n\x16UpdateVisibilityOutput\"9\n\x12UpdatePrivacyInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07private\x18\x02 \x01(\x08\"\x15\n\x13UpdatePrivacyOutput\"\xe5\x01\n\x12UpdateProblemInput\x12\x35\n\x05patch\x18\x01 \x03(\x0e\x32&.eolymp.atlas.UpdateProblemInput.Patch\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12&\n\x07problem\x18\x03 \x01(\x0b\x32\x15.eolymp.atlas.Problem\"\\\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x0b\n\x07VISIBLE\x10\x01\x12\x0b\n\x07PRIVATE\x10\x02\x12\n\n\x06TOPICS\x10\x03\x12\x0e\n\nDIFFICULTY\x10\x04\x12\n\n\x06ORIGIN\x10\x05\x12\x08\n\x04TYPE\x10\x06\"\x15\n\x13UpdateProblemOutput\"&\n\x10SyncProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"\x13\n\x11SyncProblemOutput\"\xa6\x03\n\x11ListVersionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.atlas.ListVersionsInput.Filter\x1a\x96\x02\n\x06\x46ilter\x12/\n\x06number\x18\x01 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x32\n\ncreated_by\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x39\n\ncreated_at\x18\x03 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x33\n\tchange_op\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x37\n\x0b\x63hange_path\x18\x05 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"c\n\x12ListVersionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.atlas.Version\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\"4\n\x10VoteProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0c\n\x04vote\x18\x02 \x01(\x05\"\'\n\x11VoteProblemOutput\x12\x12\n\nvote_count\x18\x01 \x01(\x05\"\'\n\x11ListRuntimesInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"K\n\x12ListRuntimesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.runtime.Runtime\"9\n\x12\x45xportProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"+\n\x13\x45xportProblemOutput\x12\x14\n\x0csnapshot_url\x18\x01 \x01(\t2\xc2\x0c\n\x0eProblemService\x12\x91\x01\n\rCreateProblem\x12 .eolymp.atlas.CreateProblemInput\x1a!.eolymp.atlas.CreateProblemOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0b\"\t/problems\x12\x9e\x01\n\rUpdateProblem\x12 .eolymp.atlas.UpdateProblemInput\x1a!.eolymp.atlas.UpdateProblemOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x1a\x16/problems/{problem_id}\x12\x9e\x01\n\rDeleteProblem\x12 .eolymp.atlas.DeleteProblemInput\x1a!.eolymp.atlas.DeleteProblemOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x18*\x16/problems/{problem_id}\x12\xa3\x01\n\x0f\x44\x65scribeProblem\x12\".eolymp.atlas.DescribeProblemInput\x1a#.eolymp.atlas.DescribeProblemOutput\"G\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x12\x16/problems/{problem_id}\x12\x8d\x01\n\x0cListProblems\x12\x1f.eolymp.atlas.ListProblemsInput\x1a .eolymp.atlas.ListProblemsOutput\":\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/problems\x12\x9d\x01\n\x0bSyncProblem\x12\x1e.eolymp.atlas.SyncProblemInput\x1a\x1f.eolymp.atlas.SyncProblemOutput\"M\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1d\"\x1b/problems/{problem_id}/sync\x12\x9d\x01\n\x0bVoteProblem\x12\x1e.eolymp.atlas.VoteProblemInput\x1a\x1f.eolymp.atlas.VoteProblemOutput\"M\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1d\"\x1b/problems/{problem_id}/vote\x12\x95\x01\n\x0cListVersions\x12\x1f.eolymp.atlas.ListVersionsInput\x1a .eolymp.atlas.ListVersionsOutput\"B\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02!\x12\x1f/problems/{problem_id}/versions\x12\xa2\x01\n\x0cListRuntimes\x12\x1f.eolymp.atlas.ListRuntimesInput\x1a .eolymp.atlas.ListRuntimesOutput\"O\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x19\x82\xd3\xe4\x93\x02 \x12\x1e/problems/{problem_id}/runtime\x12\xa6\x01\n\rExportProblem\x12 .eolymp.atlas.ExportProblemInput\x1a!.eolymp.atlas.ExportProblemOutput\"P\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02!\x12\x1f/problems/{problem_id}/snapshotB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/problem_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x1c\x65olymp/atlas/statement.proto\x1a\x1a\x65olymp/atlas/version.proto\x1a\x1c\x65olymp/runtime/runtime.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"b\n\x13ProblemChangedEvent\x12%\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\x12$\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x15.eolymp.atlas.Problem\"h\n\x12\x43reateProblemInput\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\x12*\n\tstatement\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\")\n\x13\x43reateProblemOutput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"(\n\x12\x44\x65leteProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteProblemOutput\"h\n\x14\x44\x65scribeProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.atlas.Problem.Extra\"?\n\x15\x44\x65scribeProblemOutput\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.atlas.Problem\"\xa6\x06\n\x11ListProblemsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.atlas.ListProblemsInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.atlas.ListProblemsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.atlas.Problem.Extra\x1a\xd5\x03\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x08topic_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\nis_visible\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x34\n\nis_private\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x06number\x18\x05 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x33\n\ndifficulty\x18\x06 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x30\n\x06status\x18\x07 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x05score\x18\t \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\x12\x37\n\ris_bookmarked\x18\x08 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"0\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\n\n\x06RECENT\x10\x01\x12\x0b\n\x07POPULAR\x10\x02\"I\n\x12ListProblemsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.atlas.Problem\"<\n\x15UpdateVisibilityInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07visible\x18\x02 \x01(\x08\"\x18\n\x16UpdateVisibilityOutput\"9\n\x12UpdatePrivacyInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07private\x18\x02 \x01(\x08\"\x15\n\x13UpdatePrivacyOutput\"\xe5\x01\n\x12UpdateProblemInput\x12\x35\n\x05patch\x18\x01 \x03(\x0e\x32&.eolymp.atlas.UpdateProblemInput.Patch\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12&\n\x07problem\x18\x03 \x01(\x0b\x32\x15.eolymp.atlas.Problem\"\\\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x0b\n\x07VISIBLE\x10\x01\x12\x0b\n\x07PRIVATE\x10\x02\x12\n\n\x06TOPICS\x10\x03\x12\x0e\n\nDIFFICULTY\x10\x04\x12\n\n\x06ORIGIN\x10\x05\x12\x08\n\x04TYPE\x10\x06\"\x15\n\x13UpdateProblemOutput\"&\n\x10SyncProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"\x13\n\x11SyncProblemOutput\"\xa6\x03\n\x11ListVersionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.atlas.ListVersionsInput.Filter\x1a\x96\x02\n\x06\x46ilter\x12/\n\x06number\x18\x01 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x32\n\ncreated_by\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x39\n\ncreated_at\x18\x03 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x33\n\tchange_op\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x37\n\x0b\x63hange_path\x18\x05 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"c\n\x12ListVersionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.atlas.Version\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\"4\n\x10VoteProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0c\n\x04vote\x18\x02 \x01(\x05\"\'\n\x11VoteProblemOutput\x12\x12\n\nvote_count\x18\x01 \x01(\x05\"\'\n\x11ListRuntimesInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"K\n\x12ListRuntimesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.runtime.Runtime\"9\n\x12\x45xportProblemInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"+\n\x13\x45xportProblemOutput\x12\x14\n\x0csnapshot_url\x18\x01 \x01(\t2\xc2\x0c\n\x0eProblemService\x12\x91\x01\n\rCreateProblem\x12 .eolymp.atlas.CreateProblemInput\x1a!.eolymp.atlas.CreateProblemOutput\";\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x0b\"\t/problems\x12\x9e\x01\n\rUpdateProblem\x12 .eolymp.atlas.UpdateProblemInput\x1a!.eolymp.atlas.UpdateProblemOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x1a\x16/problems/{problem_id}\x12\x9e\x01\n\rDeleteProblem\x12 .eolymp.atlas.DeleteProblemInput\x1a!.eolymp.atlas.DeleteProblemOutput\"H\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x18*\x16/problems/{problem_id}\x12\xa3\x01\n\x0f\x44\x65scribeProblem\x12\".eolymp.atlas.DescribeProblemInput\x1a#.eolymp.atlas.DescribeProblemOutput\"G\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x18\x12\x16/problems/{problem_id}\x12\x8d\x01\n\x0cListProblems\x12\x1f.eolymp.atlas.ListProblemsInput\x1a .eolymp.atlas.ListProblemsOutput\":\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/problems\x12\x9d\x01\n\x0bSyncProblem\x12\x1e.eolymp.atlas.SyncProblemInput\x1a\x1f.eolymp.atlas.SyncProblemOutput\"M\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x1d\"\x1b/problems/{problem_id}/sync\x12\x9d\x01\n\x0bVoteProblem\x12\x1e.eolymp.atlas.VoteProblemInput\x1a\x1f.eolymp.atlas.VoteProblemOutput\"M\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1d\"\x1b/problems/{problem_id}/vote\x12\x95\x01\n\x0cListVersions\x12\x1f.eolymp.atlas.ListVersionsInput\x1a .eolymp.atlas.ListVersionsOutput\"B\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02!\x12\x1f/problems/{problem_id}/versions\x12\xa2\x01\n\x0cListRuntimes\x12\x1f.eolymp.atlas.ListRuntimesInput\x1a .eolymp.atlas.ListRuntimesOutput\"O\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x19\x82\xd3\xe4\x93\x02 \x12\x1e/problems/{problem_id}/runtime\x12\xa6\x01\n\rExportProblem\x12 .eolymp.atlas.ExportProblemInput\x1a!.eolymp.atlas.ExportProblemOutput\"P\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02!\x12\x1f/problems/{problem_id}/snapshotB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.problem_service_pb2', globals())
@@ -51,64 +50,64 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROBLEMSERVICE.methods_by_name['ListRuntimes']._serialized_options = b'\202\343\n\026\212\343\n\022atlas:problem:read\352\342\n\013\365\342\n\000\000\240@\370\342\n\031\202\323\344\223\002 \022\036/problems/{problem_id}/runtime'
   _PROBLEMSERVICE.methods_by_name['ExportProblem']._options = None
   _PROBLEMSERVICE.methods_by_name['ExportProblem']._serialized_options = b'\202\343\n\026\212\343\n\022atlas:problem:read\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002!\022\037/problems/{problem_id}/snapshot'
-  _PROBLEMCHANGEDEVENT._serialized_start=365
-  _PROBLEMCHANGEDEVENT._serialized_end=463
-  _CREATEPROBLEMINPUT._serialized_start=465
-  _CREATEPROBLEMINPUT._serialized_end=569
-  _CREATEPROBLEMOUTPUT._serialized_start=571
-  _CREATEPROBLEMOUTPUT._serialized_end=612
-  _DELETEPROBLEMINPUT._serialized_start=614
-  _DELETEPROBLEMINPUT._serialized_end=654
-  _DELETEPROBLEMOUTPUT._serialized_start=656
-  _DELETEPROBLEMOUTPUT._serialized_end=677
-  _DESCRIBEPROBLEMINPUT._serialized_start=679
-  _DESCRIBEPROBLEMINPUT._serialized_end=783
-  _DESCRIBEPROBLEMOUTPUT._serialized_start=785
-  _DESCRIBEPROBLEMOUTPUT._serialized_end=848
-  _LISTPROBLEMSINPUT._serialized_start=851
-  _LISTPROBLEMSINPUT._serialized_end=1657
-  _LISTPROBLEMSINPUT_FILTER._serialized_start=1138
-  _LISTPROBLEMSINPUT_FILTER._serialized_end=1607
-  _LISTPROBLEMSINPUT_SORTABLE._serialized_start=1609
-  _LISTPROBLEMSINPUT_SORTABLE._serialized_end=1657
-  _LISTPROBLEMSOUTPUT._serialized_start=1659
-  _LISTPROBLEMSOUTPUT._serialized_end=1732
-  _UPDATEVISIBILITYINPUT._serialized_start=1734
-  _UPDATEVISIBILITYINPUT._serialized_end=1794
-  _UPDATEVISIBILITYOUTPUT._serialized_start=1796
-  _UPDATEVISIBILITYOUTPUT._serialized_end=1820
-  _UPDATEPRIVACYINPUT._serialized_start=1822
-  _UPDATEPRIVACYINPUT._serialized_end=1879
-  _UPDATEPRIVACYOUTPUT._serialized_start=1881
-  _UPDATEPRIVACYOUTPUT._serialized_end=1902
-  _UPDATEPROBLEMINPUT._serialized_start=1905
-  _UPDATEPROBLEMINPUT._serialized_end=2134
-  _UPDATEPROBLEMINPUT_PATCH._serialized_start=2042
-  _UPDATEPROBLEMINPUT_PATCH._serialized_end=2134
-  _UPDATEPROBLEMOUTPUT._serialized_start=2136
-  _UPDATEPROBLEMOUTPUT._serialized_end=2157
-  _SYNCPROBLEMINPUT._serialized_start=2159
-  _SYNCPROBLEMINPUT._serialized_end=2197
-  _SYNCPROBLEMOUTPUT._serialized_start=2199
-  _SYNCPROBLEMOUTPUT._serialized_end=2218
-  _LISTVERSIONSINPUT._serialized_start=2221
-  _LISTVERSIONSINPUT._serialized_end=2643
-  _LISTVERSIONSINPUT_FILTER._serialized_start=2365
-  _LISTVERSIONSINPUT_FILTER._serialized_end=2643
-  _LISTVERSIONSOUTPUT._serialized_start=2645
-  _LISTVERSIONSOUTPUT._serialized_end=2744
-  _VOTEPROBLEMINPUT._serialized_start=2746
-  _VOTEPROBLEMINPUT._serialized_end=2798
-  _VOTEPROBLEMOUTPUT._serialized_start=2800
-  _VOTEPROBLEMOUTPUT._serialized_end=2839
-  _LISTRUNTIMESINPUT._serialized_start=2841
-  _LISTRUNTIMESINPUT._serialized_end=2880
-  _LISTRUNTIMESOUTPUT._serialized_start=2882
-  _LISTRUNTIMESOUTPUT._serialized_end=2957
-  _EXPORTPROBLEMINPUT._serialized_start=2959
-  _EXPORTPROBLEMINPUT._serialized_end=3016
-  _EXPORTPROBLEMOUTPUT._serialized_start=3018
-  _EXPORTPROBLEMOUTPUT._serialized_end=3061
-  _PROBLEMSERVICE._serialized_start=3064
-  _PROBLEMSERVICE._serialized_end=4666
+  _PROBLEMCHANGEDEVENT._serialized_start=336
+  _PROBLEMCHANGEDEVENT._serialized_end=434
+  _CREATEPROBLEMINPUT._serialized_start=436
+  _CREATEPROBLEMINPUT._serialized_end=540
+  _CREATEPROBLEMOUTPUT._serialized_start=542
+  _CREATEPROBLEMOUTPUT._serialized_end=583
+  _DELETEPROBLEMINPUT._serialized_start=585
+  _DELETEPROBLEMINPUT._serialized_end=625
+  _DELETEPROBLEMOUTPUT._serialized_start=627
+  _DELETEPROBLEMOUTPUT._serialized_end=648
+  _DESCRIBEPROBLEMINPUT._serialized_start=650
+  _DESCRIBEPROBLEMINPUT._serialized_end=754
+  _DESCRIBEPROBLEMOUTPUT._serialized_start=756
+  _DESCRIBEPROBLEMOUTPUT._serialized_end=819
+  _LISTPROBLEMSINPUT._serialized_start=822
+  _LISTPROBLEMSINPUT._serialized_end=1628
+  _LISTPROBLEMSINPUT_FILTER._serialized_start=1109
+  _LISTPROBLEMSINPUT_FILTER._serialized_end=1578
+  _LISTPROBLEMSINPUT_SORTABLE._serialized_start=1580
+  _LISTPROBLEMSINPUT_SORTABLE._serialized_end=1628
+  _LISTPROBLEMSOUTPUT._serialized_start=1630
+  _LISTPROBLEMSOUTPUT._serialized_end=1703
+  _UPDATEVISIBILITYINPUT._serialized_start=1705
+  _UPDATEVISIBILITYINPUT._serialized_end=1765
+  _UPDATEVISIBILITYOUTPUT._serialized_start=1767
+  _UPDATEVISIBILITYOUTPUT._serialized_end=1791
+  _UPDATEPRIVACYINPUT._serialized_start=1793
+  _UPDATEPRIVACYINPUT._serialized_end=1850
+  _UPDATEPRIVACYOUTPUT._serialized_start=1852
+  _UPDATEPRIVACYOUTPUT._serialized_end=1873
+  _UPDATEPROBLEMINPUT._serialized_start=1876
+  _UPDATEPROBLEMINPUT._serialized_end=2105
+  _UPDATEPROBLEMINPUT_PATCH._serialized_start=2013
+  _UPDATEPROBLEMINPUT_PATCH._serialized_end=2105
+  _UPDATEPROBLEMOUTPUT._serialized_start=2107
+  _UPDATEPROBLEMOUTPUT._serialized_end=2128
+  _SYNCPROBLEMINPUT._serialized_start=2130
+  _SYNCPROBLEMINPUT._serialized_end=2168
+  _SYNCPROBLEMOUTPUT._serialized_start=2170
+  _SYNCPROBLEMOUTPUT._serialized_end=2189
+  _LISTVERSIONSINPUT._serialized_start=2192
+  _LISTVERSIONSINPUT._serialized_end=2614
+  _LISTVERSIONSINPUT_FILTER._serialized_start=2336
+  _LISTVERSIONSINPUT_FILTER._serialized_end=2614
+  _LISTVERSIONSOUTPUT._serialized_start=2616
+  _LISTVERSIONSOUTPUT._serialized_end=2715
+  _VOTEPROBLEMINPUT._serialized_start=2717
+  _VOTEPROBLEMINPUT._serialized_end=2769
+  _VOTEPROBLEMOUTPUT._serialized_start=2771
+  _VOTEPROBLEMOUTPUT._serialized_end=2810
+  _LISTRUNTIMESINPUT._serialized_start=2812
+  _LISTRUNTIMESINPUT._serialized_end=2851
+  _LISTRUNTIMESOUTPUT._serialized_start=2853
+  _LISTRUNTIMESOUTPUT._serialized_end=2928
+  _EXPORTPROBLEMINPUT._serialized_start=2930
+  _EXPORTPROBLEMINPUT._serialized_end=2987
+  _EXPORTPROBLEMOUTPUT._serialized_start=2989
+  _EXPORTPROBLEMOUTPUT._serialized_end=3032
+  _PROBLEMSERVICE._serialized_start=3035
+  _PROBLEMSERVICE._serialized_end=4637
 # @@protoc_insertion_point(module_scope)
