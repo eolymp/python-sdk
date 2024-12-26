@@ -12,6 +12,8 @@ class Run(_message.Message):
         __slots__ = []
         NONE: _ClassVar[Run.Status]
         PENDING: _ClassVar[Run.Status]
+        PROVISIONING: _ClassVar[Run.Status]
+        INITIALIZING: _ClassVar[Run.Status]
         EXECUTING: _ClassVar[Run.Status]
         EXECUTED: _ClassVar[Run.Status]
         TIMEOUT: _ClassVar[Run.Status]
@@ -21,6 +23,8 @@ class Run(_message.Message):
         FAILURE: _ClassVar[Run.Status]
     NONE: Run.Status
     PENDING: Run.Status
+    PROVISIONING: Run.Status
+    INITIALIZING: Run.Status
     EXECUTING: Run.Status
     EXECUTED: Run.Status
     TIMEOUT: Run.Status
