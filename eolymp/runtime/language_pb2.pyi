@@ -6,20 +6,25 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Language(_message.Message):
-    __slots__ = ["deprecated", "id", "name", "type"]
+    __slots__ = ["id", "name", "type", "deprecated"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    DEPRECATED_FIELD_NUMBER: _ClassVar[int]
-    ID_FIELD_NUMBER: _ClassVar[int]
-    ML: Language.Type
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    OTHER: Language.Type
+        UNKNOWN_TYPE: _ClassVar[Language.Type]
+        PROGRAMMING: _ClassVar[Language.Type]
+        SQL: _ClassVar[Language.Type]
+        ML: _ClassVar[Language.Type]
+        OTHER: _ClassVar[Language.Type]
+    UNKNOWN_TYPE: Language.Type
     PROGRAMMING: Language.Type
     SQL: Language.Type
+    ML: Language.Type
+    OTHER: Language.Type
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    UNKNOWN_TYPE: Language.Type
-    deprecated: bool
+    DEPRECATED_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     type: Language.Type
+    deprecated: bool
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., type: _Optional[_Union[Language.Type, str]] = ..., deprecated: bool = ...) -> None: ...

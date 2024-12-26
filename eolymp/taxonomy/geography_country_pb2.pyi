@@ -5,13 +5,13 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Country(_message.Message):
-    __slots__ = ["flag_url", "id", "local_name", "name"]
-    FLAG_URL_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["id", "name", "local_name", "flag_url"]
     ID_FIELD_NUMBER: _ClassVar[int]
-    LOCAL_NAME_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    flag_url: str
+    LOCAL_NAME_FIELD_NUMBER: _ClassVar[int]
+    FLAG_URL_FIELD_NUMBER: _ClassVar[int]
     id: str
-    local_name: str
     name: str
+    local_name: str
+    flag_url: str
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., local_name: _Optional[str] = ..., flag_url: _Optional[str] = ...) -> None: ...

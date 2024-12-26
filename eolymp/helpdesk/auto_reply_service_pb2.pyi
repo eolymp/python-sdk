@@ -22,6 +22,18 @@ class CreateAutoReplyOutput(_message.Message):
     reply_id: str
     def __init__(self, reply_id: _Optional[str] = ...) -> None: ...
 
+class UpdateAutoReplyInput(_message.Message):
+    __slots__ = ["reply_id", "reply"]
+    REPLY_ID_FIELD_NUMBER: _ClassVar[int]
+    REPLY_FIELD_NUMBER: _ClassVar[int]
+    reply_id: str
+    reply: _auto_reply_pb2.AutoReply
+    def __init__(self, reply_id: _Optional[str] = ..., reply: _Optional[_Union[_auto_reply_pb2.AutoReply, _Mapping]] = ...) -> None: ...
+
+class UpdateAutoReplyOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DeleteAutoReplyInput(_message.Message):
     __slots__ = ["reply_id"]
     REPLY_ID_FIELD_NUMBER: _ClassVar[int]
@@ -32,12 +44,41 @@ class DeleteAutoReplyOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class DescribeAutoReplyInput(_message.Message):
-    __slots__ = ["render", "reply_id"]
+class ListAutoRepliesInput(_message.Message):
+    __slots__ = ["render", "offset", "size", "filters"]
+    class Filter(_message.Message):
+        __slots__ = ["query", "id", "locale"]
+        QUERY_FIELD_NUMBER: _ClassVar[int]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        LOCALE_FIELD_NUMBER: _ClassVar[int]
+        query: str
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     RENDER_FIELD_NUMBER: _ClassVar[int]
-    REPLY_ID_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
     render: bool
+    offset: int
+    size: int
+    filters: ListAutoRepliesInput.Filter
+    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAutoRepliesInput.Filter, _Mapping]] = ...) -> None: ...
+
+class ListAutoRepliesOutput(_message.Message):
+    __slots__ = ["total", "items"]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_auto_reply_pb2.AutoReply]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_auto_reply_pb2.AutoReply, _Mapping]]] = ...) -> None: ...
+
+class DescribeAutoReplyInput(_message.Message):
+    __slots__ = ["reply_id", "render"]
+    REPLY_ID_FIELD_NUMBER: _ClassVar[int]
+    RENDER_FIELD_NUMBER: _ClassVar[int]
     reply_id: str
+    render: bool
     def __init__(self, reply_id: _Optional[str] = ..., render: bool = ...) -> None: ...
 
 class DescribeAutoReplyOutput(_message.Message):
@@ -45,44 +86,3 @@ class DescribeAutoReplyOutput(_message.Message):
     REPLY_FIELD_NUMBER: _ClassVar[int]
     reply: _auto_reply_pb2.AutoReply
     def __init__(self, reply: _Optional[_Union[_auto_reply_pb2.AutoReply, _Mapping]] = ...) -> None: ...
-
-class ListAutoRepliesInput(_message.Message):
-    __slots__ = ["filters", "offset", "render", "size"]
-    class Filter(_message.Message):
-        __slots__ = ["id", "locale", "query"]
-        ID_FIELD_NUMBER: _ClassVar[int]
-        LOCALE_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
-        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        query: str
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListAutoRepliesInput.Filter
-    offset: int
-    render: bool
-    size: int
-    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAutoRepliesInput.Filter, _Mapping]] = ...) -> None: ...
-
-class ListAutoRepliesOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_auto_reply_pb2.AutoReply]
-    total: int
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_auto_reply_pb2.AutoReply, _Mapping]]] = ...) -> None: ...
-
-class UpdateAutoReplyInput(_message.Message):
-    __slots__ = ["reply", "reply_id"]
-    REPLY_FIELD_NUMBER: _ClassVar[int]
-    REPLY_ID_FIELD_NUMBER: _ClassVar[int]
-    reply: _auto_reply_pb2.AutoReply
-    reply_id: str
-    def __init__(self, reply_id: _Optional[str] = ..., reply: _Optional[_Union[_auto_reply_pb2.AutoReply, _Mapping]] = ...) -> None: ...
-
-class UpdateAutoReplyOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...

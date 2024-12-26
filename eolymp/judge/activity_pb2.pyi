@@ -7,43 +7,51 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Activity(_message.Message):
-    __slots__ = ["complete_at", "contest_id", "created_at", "error", "id", "problem_id", "progress", "progress_at", "scoreboard_id", "started_at", "status", "total", "type"]
-    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+    __slots__ = ["id", "type", "status", "contest_id", "scoreboard_id", "problem_id", "created_at", "started_at", "progress_at", "complete_at", "progress", "total", "error"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    COMPLETE: Activity.Status
-    COMPLETE_AT_FIELD_NUMBER: _ClassVar[int]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    CREATED: Activity.Status
-    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
-    ERROR: Activity.Status
-    ERROR_FIELD_NUMBER: _ClassVar[int]
-    ID_FIELD_NUMBER: _ClassVar[int]
+        NONE: _ClassVar[Activity.Type]
+        PROBLEM_RETEST: _ClassVar[Activity.Type]
+        SCOREBOARD_REBUILD: _ClassVar[Activity.Type]
     NONE: Activity.Type
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_RETEST: Activity.Type
-    PROGRESS_AT_FIELD_NUMBER: _ClassVar[int]
-    PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_REBUILD: Activity.Type
-    STARTED: Activity.Status
-    STARTED_AT_FIELD_NUMBER: _ClassVar[int]
-    STATUS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
+    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+        UNKNOWN: _ClassVar[Activity.Status]
+        CREATED: _ClassVar[Activity.Status]
+        STARTED: _ClassVar[Activity.Status]
+        COMPLETE: _ClassVar[Activity.Status]
+        ERROR: _ClassVar[Activity.Status]
     UNKNOWN: Activity.Status
-    complete_at: _timestamp_pb2.Timestamp
-    contest_id: str
-    created_at: _timestamp_pb2.Timestamp
-    error: str
+    CREATED: Activity.Status
+    STARTED: Activity.Status
+    COMPLETE: Activity.Status
+    ERROR: Activity.Status
+    ID_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+    STARTED_AT_FIELD_NUMBER: _ClassVar[int]
+    PROGRESS_AT_FIELD_NUMBER: _ClassVar[int]
+    COMPLETE_AT_FIELD_NUMBER: _ClassVar[int]
+    PROGRESS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ERROR_FIELD_NUMBER: _ClassVar[int]
     id: str
-    problem_id: str
-    progress: int
-    progress_at: _timestamp_pb2.Timestamp
-    scoreboard_id: str
-    started_at: _timestamp_pb2.Timestamp
-    status: Activity.Status
-    total: int
     type: Activity.Type
+    status: Activity.Status
+    contest_id: str
+    scoreboard_id: str
+    problem_id: str
+    created_at: _timestamp_pb2.Timestamp
+    started_at: _timestamp_pb2.Timestamp
+    progress_at: _timestamp_pb2.Timestamp
+    complete_at: _timestamp_pb2.Timestamp
+    progress: int
+    total: int
+    error: str
     def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Activity.Type, str]] = ..., status: _Optional[_Union[Activity.Status, str]] = ..., contest_id: _Optional[str] = ..., scoreboard_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., progress_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., complete_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., progress: _Optional[int] = ..., total: _Optional[int] = ..., error: _Optional[str] = ...) -> None: ...

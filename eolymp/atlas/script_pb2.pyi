@@ -8,21 +8,23 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Script(_message.Message):
-    __slots__ = ["files", "id", "name", "runtime", "secret", "source"]
+    __slots__ = ["id", "name", "secret", "runtime", "source", "files"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    FILES_FIELD_NUMBER: _ClassVar[int]
+        NO_EXTRA: _ClassVar[Script.Extra]
+        SOURCE: _ClassVar[Script.Extra]
+    NO_EXTRA: Script.Extra
+    SOURCE: Script.Extra
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    NO_EXTRA: Script.Extra
-    RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
-    SOURCE: Script.Extra
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
-    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
+    FILES_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
-    runtime: str
     secret: bool
+    runtime: str
     source: str
+    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., secret: bool = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ...) -> None: ...

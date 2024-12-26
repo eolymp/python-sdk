@@ -22,6 +22,33 @@ class DescribeCountryOutput(_message.Message):
     country: _geography_country_pb2.Country
     def __init__(self, country: _Optional[_Union[_geography_country_pb2.Country, _Mapping]] = ...) -> None: ...
 
+class ListCountriesInput(_message.Message):
+    __slots__ = ["offset", "size", "filters"]
+    class Filter(_message.Message):
+        __slots__ = ["query", "id", "name"]
+        QUERY_FIELD_NUMBER: _ClassVar[int]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        query: str
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    offset: int
+    size: int
+    filters: ListCountriesInput.Filter
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCountriesInput.Filter, _Mapping]] = ...) -> None: ...
+
+class ListCountriesOutput(_message.Message):
+    __slots__ = ["items", "total"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_geography_country_pb2.Country]
+    total: int
+    def __init__(self, items: _Optional[_Iterable[_Union[_geography_country_pb2.Country, _Mapping]]] = ..., total: _Optional[int] = ...) -> None: ...
+
 class DescribeRegionInput(_message.Message):
     __slots__ = ["region_id"]
     REGION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -34,52 +61,25 @@ class DescribeRegionOutput(_message.Message):
     region: _geography_region_pb2.Region
     def __init__(self, region: _Optional[_Union[_geography_region_pb2.Region, _Mapping]] = ...) -> None: ...
 
-class ListCountriesInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
-    class Filter(_message.Message):
-        __slots__ = ["id", "name", "query"]
-        ID_FIELD_NUMBER: _ClassVar[int]
-        NAME_FIELD_NUMBER: _ClassVar[int]
-        QUERY_FIELD_NUMBER: _ClassVar[int]
-        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        query: str
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListCountriesInput.Filter
-    offset: int
-    size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCountriesInput.Filter, _Mapping]] = ...) -> None: ...
-
-class ListCountriesOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_geography_country_pb2.Country]
-    total: int
-    def __init__(self, items: _Optional[_Iterable[_Union[_geography_country_pb2.Country, _Mapping]]] = ..., total: _Optional[int] = ...) -> None: ...
-
 class ListRegionsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["offset", "size", "filters"]
     class Filter(_message.Message):
-        __slots__ = ["country_id", "id", "name", "query"]
-        COUNTRY_ID_FIELD_NUMBER: _ClassVar[int]
-        ID_FIELD_NUMBER: _ClassVar[int]
-        NAME_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ["query", "id", "country_id", "name"]
         QUERY_FIELD_NUMBER: _ClassVar[int]
-        country_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        COUNTRY_ID_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
         query: str
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        country_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., country_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListRegionsInput.Filter
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    filters: ListRegionsInput.Filter
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListRegionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListRegionsOutput(_message.Message):

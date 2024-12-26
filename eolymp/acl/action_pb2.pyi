@@ -2,43 +2,79 @@ from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from typing import ClassVar as _ClassVar
 
-BILLING_READ: Action
-BILLING_WRITE: Action
-CONTENT_LIST: Action
-CONTENT_READ: Action
-CONTENT_WRITE: Action
-CONTEST_LIST: Action
-CONTEST_READ: Action
-CONTEST_WRITE: Action
-COURSE_ASSIGN: Action
-COURSE_LIST: Action
-COURSE_READ: Action
-COURSE_WRITE: Action
 DESCRIPTOR: _descriptor.FileDescriptor
-MEMBER_LIST: Action
-MEMBER_READ: Action
-MEMBER_WRITE: Action
-POLICY_LIST: Action
-POLICY_READ: Action
-POLICY_WRITE: Action
-POST_LIST: Action
-POST_READ: Action
-POST_WRITE: Action
-PROBLEM_LIST: Action
-PROBLEM_READ: Action
-PROBLEM_TESTING: Action
-PROBLEM_WRITE: Action
-SCOREBOARD_LIST: Action
-SCOREBOARD_READ: Action
-SCOREBOARD_WRITE: Action
-SPACE_DELETE: Action
-SPACE_LIST: Action
-SPACE_READ: Action
-SPACE_WRITE: Action
-TICKET_LIST: Action
-TICKET_READ: Action
-TICKET_WRITE: Action
-UNKNOWN_ACTION: Action
 
 class Action(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
+    UNKNOWN_ACTION: _ClassVar[Action]
+    SPACE_LIST: _ClassVar[Action]
+    SPACE_READ: _ClassVar[Action]
+    SPACE_WRITE: _ClassVar[Action]
+    SPACE_DELETE: _ClassVar[Action]
+    BILLING_READ: _ClassVar[Action]
+    BILLING_WRITE: _ClassVar[Action]
+    POLICY_LIST: _ClassVar[Action]
+    POLICY_READ: _ClassVar[Action]
+    POLICY_WRITE: _ClassVar[Action]
+    PROBLEM_LIST: _ClassVar[Action]
+    PROBLEM_READ: _ClassVar[Action]
+    PROBLEM_WRITE: _ClassVar[Action]
+    PROBLEM_TESTING: _ClassVar[Action]
+    CONTEST_LIST: _ClassVar[Action]
+    CONTEST_READ: _ClassVar[Action]
+    CONTEST_WRITE: _ClassVar[Action]
+    TICKET_LIST: _ClassVar[Action]
+    TICKET_READ: _ClassVar[Action]
+    TICKET_WRITE: _ClassVar[Action]
+    MEMBER_LIST: _ClassVar[Action]
+    MEMBER_READ: _ClassVar[Action]
+    MEMBER_WRITE: _ClassVar[Action]
+    SCOREBOARD_LIST: _ClassVar[Action]
+    SCOREBOARD_READ: _ClassVar[Action]
+    SCOREBOARD_WRITE: _ClassVar[Action]
+    CONTENT_LIST: _ClassVar[Action]
+    CONTENT_READ: _ClassVar[Action]
+    CONTENT_WRITE: _ClassVar[Action]
+    COURSE_LIST: _ClassVar[Action]
+    COURSE_READ: _ClassVar[Action]
+    COURSE_WRITE: _ClassVar[Action]
+    COURSE_ASSIGN: _ClassVar[Action]
+    POST_LIST: _ClassVar[Action]
+    POST_READ: _ClassVar[Action]
+    POST_WRITE: _ClassVar[Action]
+UNKNOWN_ACTION: Action
+SPACE_LIST: Action
+SPACE_READ: Action
+SPACE_WRITE: Action
+SPACE_DELETE: Action
+BILLING_READ: Action
+BILLING_WRITE: Action
+POLICY_LIST: Action
+POLICY_READ: Action
+POLICY_WRITE: Action
+PROBLEM_LIST: Action
+PROBLEM_READ: Action
+PROBLEM_WRITE: Action
+PROBLEM_TESTING: Action
+CONTEST_LIST: Action
+CONTEST_READ: Action
+CONTEST_WRITE: Action
+TICKET_LIST: Action
+TICKET_READ: Action
+TICKET_WRITE: Action
+MEMBER_LIST: Action
+MEMBER_READ: Action
+MEMBER_WRITE: Action
+SCOREBOARD_LIST: Action
+SCOREBOARD_READ: Action
+SCOREBOARD_WRITE: Action
+CONTENT_LIST: Action
+CONTENT_READ: Action
+CONTENT_WRITE: Action
+COURSE_LIST: Action
+COURSE_READ: Action
+COURSE_WRITE: Action
+COURSE_ASSIGN: Action
+POST_LIST: Action
+POST_READ: Action
+POST_WRITE: Action

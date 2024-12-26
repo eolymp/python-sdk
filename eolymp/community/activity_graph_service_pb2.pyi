@@ -20,9 +20,9 @@ class DescribeActivityGraphInput(_message.Message):
     def __init__(self, after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., metric: _Optional[str] = ...) -> None: ...
 
 class DescribeActivityGraphOutput(_message.Message):
-    __slots__ = ["max_value", "values"]
-    MAX_VALUE_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["values", "max_value"]
     VALUES_FIELD_NUMBER: _ClassVar[int]
-    max_value: int
+    MAX_VALUE_FIELD_NUMBER: _ClassVar[int]
     values: _containers.RepeatedScalarFieldContainer[int]
+    max_value: int
     def __init__(self, values: _Optional[_Iterable[int]] = ..., max_value: _Optional[int] = ...) -> None: ...

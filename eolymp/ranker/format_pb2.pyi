@@ -3,9 +3,12 @@ from google.protobuf import descriptor as _descriptor
 from typing import ClassVar as _ClassVar
 
 DESCRIPTOR: _descriptor.FileDescriptor
-ICPC: Format
-IOI: Format
-NONE: Format
 
 class Format(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
+    NONE: _ClassVar[Format]
+    IOI: _ClassVar[Format]
+    ICPC: _ClassVar[Format]
+NONE: Format
+IOI: Format
+ICPC: Format

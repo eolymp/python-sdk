@@ -19,6 +19,20 @@ class DebugAssistanceMessage(_message.Message):
     rating: int
     def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., rating: _Optional[int] = ...) -> None: ...
 
+class RequestDebugAssistanceInput(_message.Message):
+    __slots__ = ["submission_id", "locale"]
+    SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    submission_id: str
+    locale: str
+    def __init__(self, submission_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+
+class RequestDebugAssistanceOutput(_message.Message):
+    __slots__ = ["message"]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    message: DebugAssistanceMessage
+    def __init__(self, message: _Optional[_Union[DebugAssistanceMessage, _Mapping]] = ...) -> None: ...
+
 class DescribeDebugAssistanceInput(_message.Message):
     __slots__ = ["submission_id"]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -32,27 +46,13 @@ class DescribeDebugAssistanceOutput(_message.Message):
     def __init__(self, message: _Optional[_Union[DebugAssistanceMessage, _Mapping]] = ...) -> None: ...
 
 class RateDebugAssistanceInput(_message.Message):
-    __slots__ = ["rating", "submission_id"]
-    RATING_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["submission_id", "rating"]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
-    rating: int
+    RATING_FIELD_NUMBER: _ClassVar[int]
     submission_id: str
+    rating: int
     def __init__(self, submission_id: _Optional[str] = ..., rating: _Optional[int] = ...) -> None: ...
 
 class RateDebugAssistanceOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class RequestDebugAssistanceInput(_message.Message):
-    __slots__ = ["locale", "submission_id"]
-    LOCALE_FIELD_NUMBER: _ClassVar[int]
-    SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
-    locale: str
-    submission_id: str
-    def __init__(self, submission_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
-
-class RequestDebugAssistanceOutput(_message.Message):
-    __slots__ = ["message"]
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    message: DebugAssistanceMessage
-    def __init__(self, message: _Optional[_Union[DebugAssistanceMessage, _Mapping]] = ...) -> None: ...

@@ -8,19 +8,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Interactor(_message.Message):
-    __slots__ = ["files", "runtime", "secret", "source_url", "type"]
+    __slots__ = ["type", "runtime", "source_url", "secret", "files"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    FILES_FIELD_NUMBER: _ClassVar[int]
+        NONE: _ClassVar[Interactor.Type]
+        PROGRAM: _ClassVar[Interactor.Type]
     NONE: Interactor.Type
     PROGRAM: Interactor.Type
-    RUNTIME_FIELD_NUMBER: _ClassVar[int]
-    SECRET_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
-    runtime: str
-    secret: bool
-    source_url: str
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
+    SECRET_FIELD_NUMBER: _ClassVar[int]
+    FILES_FIELD_NUMBER: _ClassVar[int]
     type: Interactor.Type
+    runtime: str
+    source_url: str
+    secret: bool
+    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
     def __init__(self, type: _Optional[_Union[Interactor.Type, str]] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., secret: bool = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ...) -> None: ...

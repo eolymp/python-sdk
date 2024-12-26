@@ -7,9 +7,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class PostType(_message.Message):
-    __slots__ = ["hidden", "id", "name", "order", "variants"]
+    __slots__ = ["id", "name", "hidden", "order", "variants"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+        UNKNOWN_EXTRA: _ClassVar[PostType.Extra]
+        VARIANTS: _ClassVar[PostType.Extra]
+    UNKNOWN_EXTRA: PostType.Extra
+    VARIANTS: PostType.Extra
     class Variant(_message.Message):
         __slots__ = ["locale", "name"]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -17,16 +21,14 @@ class PostType(_message.Message):
         locale: str
         name: str
         def __init__(self, locale: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-    HIDDEN_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    HIDDEN_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
-    UNKNOWN_EXTRA: PostType.Extra
-    VARIANTS: PostType.Extra
     VARIANTS_FIELD_NUMBER: _ClassVar[int]
-    hidden: bool
     id: str
     name: str
+    hidden: bool
     order: int
     variants: _containers.RepeatedCompositeFieldContainer[PostType.Variant]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., hidden: bool = ..., order: _Optional[int] = ..., variants: _Optional[_Iterable[_Union[PostType.Variant, _Mapping]]] = ...) -> None: ...

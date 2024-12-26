@@ -8,36 +8,43 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Course(_message.Message):
-    __slots__ = ["description", "duration", "estimate", "id", "image_url", "locale", "name", "topics", "url", "visibility"]
+    __slots__ = ["id", "url", "locale", "name", "description", "image_url", "visibility", "duration", "topics", "estimate"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+        UNKNOWN_EXTRA: _ClassVar[Course.Extra]
+        DESCRIPTION_VALUE: _ClassVar[Course.Extra]
+        DESCRIPTION_RENDER: _ClassVar[Course.Extra]
+    UNKNOWN_EXTRA: Course.Extra
+    DESCRIPTION_VALUE: Course.Extra
+    DESCRIPTION_RENDER: Course.Extra
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_RENDER: Course.Extra
-    DESCRIPTION_VALUE: Course.Extra
-    DURATION_FIELD_NUMBER: _ClassVar[int]
-    ESTIMATE_FIELD_NUMBER: _ClassVar[int]
+        UNKNOWN_VISIBILITY: _ClassVar[Course.Visibility]
+        PUBLIC: _ClassVar[Course.Visibility]
+        UNLISTED: _ClassVar[Course.Visibility]
+        PRIVATE: _ClassVar[Course.Visibility]
+    UNKNOWN_VISIBILITY: Course.Visibility
+    PUBLIC: Course.Visibility
+    UNLISTED: Course.Visibility
+    PRIVATE: Course.Visibility
     ID_FIELD_NUMBER: _ClassVar[int]
-    IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
+    URL_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    PRIVATE: Course.Visibility
-    PUBLIC: Course.Visibility
-    TOPICS_FIELD_NUMBER: _ClassVar[int]
-    UNKNOWN_EXTRA: Course.Extra
-    UNKNOWN_VISIBILITY: Course.Visibility
-    UNLISTED: Course.Visibility
-    URL_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
-    description: _content_pb2.Content
-    duration: int
-    estimate: int
+    DURATION_FIELD_NUMBER: _ClassVar[int]
+    TOPICS_FIELD_NUMBER: _ClassVar[int]
+    ESTIMATE_FIELD_NUMBER: _ClassVar[int]
     id: str
-    image_url: str
+    url: str
     locale: str
     name: str
-    topics: _containers.RepeatedScalarFieldContainer[str]
-    url: str
+    description: _content_pb2.Content
+    image_url: str
     visibility: Course.Visibility
+    duration: int
+    topics: _containers.RepeatedScalarFieldContainer[str]
+    estimate: int
     def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image_url: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., topics: _Optional[_Iterable[str]] = ..., estimate: _Optional[int] = ...) -> None: ...

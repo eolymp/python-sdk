@@ -24,6 +24,34 @@ class CreateScriptOutput(_message.Message):
     script_id: str
     def __init__(self, script_id: _Optional[str] = ...) -> None: ...
 
+class UpdateScriptInput(_message.Message):
+    __slots__ = ["patch", "script_id", "script"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+        ALL: _ClassVar[UpdateScriptInput.Patch]
+        NAME: _ClassVar[UpdateScriptInput.Patch]
+        SECRET: _ClassVar[UpdateScriptInput.Patch]
+        RUNTIME: _ClassVar[UpdateScriptInput.Patch]
+        SOURCE_URL: _ClassVar[UpdateScriptInput.Patch]
+        FILES: _ClassVar[UpdateScriptInput.Patch]
+    ALL: UpdateScriptInput.Patch
+    NAME: UpdateScriptInput.Patch
+    SECRET: UpdateScriptInput.Patch
+    RUNTIME: UpdateScriptInput.Patch
+    SOURCE_URL: UpdateScriptInput.Patch
+    FILES: UpdateScriptInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
+    SCRIPT_FIELD_NUMBER: _ClassVar[int]
+    patch: _containers.RepeatedScalarFieldContainer[UpdateScriptInput.Patch]
+    script_id: str
+    script: _script_pb2.Script
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateScriptInput.Patch, str]]] = ..., script_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
+
+class UpdateScriptOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DeleteScriptInput(_message.Message):
     __slots__ = ["script_id"]
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -35,13 +63,13 @@ class DeleteScriptOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeScriptInput(_message.Message):
-    __slots__ = ["extra", "script_id", "version"]
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["script_id", "version", "extra"]
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     script_id: str
     version: int
+    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra]
     def __init__(self, script_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra, str]]] = ...) -> None: ...
 
 class DescribeScriptOutput(_message.Message):
@@ -51,9 +79,11 @@ class DescribeScriptOutput(_message.Message):
     def __init__(self, script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class ListScriptsInput(_message.Message):
-    __slots__ = ["extra", "filters", "offset", "order", "search", "size", "sort", "version"]
+    __slots__ = ["version", "offset", "size", "search", "filters", "sort", "order", "extra"]
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+        NAME: _ClassVar[ListScriptsInput.Sortable]
+    NAME: ListScriptsInput.Sortable
     class Filter(_message.Message):
         __slots__ = ["id", "name", "runtime"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -63,51 +93,28 @@ class ListScriptsInput(_message.Message):
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    NAME: ListScriptsInput.Sortable
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    ORDER_FIELD_NUMBER: _ClassVar[int]
-    SEARCH_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    SORT_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra]
-    filters: ListScriptsInput.Filter
-    offset: int
-    order: _direction_pb2.Direction
-    search: str
-    size: int
-    sort: ListScriptsInput.Sortable
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    SORT_FIELD_NUMBER: _ClassVar[int]
+    ORDER_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     version: int
+    offset: int
+    size: int
+    search: str
+    filters: ListScriptsInput.Filter
+    sort: ListScriptsInput.Sortable
+    order: _direction_pb2.Direction
+    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra]
     def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListScriptsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListScriptsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra, str]]] = ...) -> None: ...
 
 class ListScriptsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["total", "items"]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
+    items: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...
-
-class UpdateScriptInput(_message.Message):
-    __slots__ = ["patch", "script", "script_id"]
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    ALL: UpdateScriptInput.Patch
-    FILES: UpdateScriptInput.Patch
-    NAME: UpdateScriptInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
-    RUNTIME: UpdateScriptInput.Patch
-    SCRIPT_FIELD_NUMBER: _ClassVar[int]
-    SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
-    SECRET: UpdateScriptInput.Patch
-    SOURCE_URL: UpdateScriptInput.Patch
-    patch: _containers.RepeatedScalarFieldContainer[UpdateScriptInput.Patch]
-    script: _script_pb2.Script
-    script_id: str
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateScriptInput.Patch, str]]] = ..., script_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
-
-class UpdateScriptOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...

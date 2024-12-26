@@ -26,6 +26,54 @@ class CreateMaterialOutput(_message.Message):
     material_id: str
     def __init__(self, material_id: _Optional[str] = ...) -> None: ...
 
+class UpdateMaterialInput(_message.Message):
+    __slots__ = ["patch", "material_id", "material"]
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+        ALL: _ClassVar[UpdateMaterialInput.Patch]
+        DRAFT: _ClassVar[UpdateMaterialInput.Patch]
+        NAME: _ClassVar[UpdateMaterialInput.Patch]
+        IMAGE_URL: _ClassVar[UpdateMaterialInput.Patch]
+        INDEX: _ClassVar[UpdateMaterialInput.Patch]
+        DEPTH: _ClassVar[UpdateMaterialInput.Patch]
+        CONTENT: _ClassVar[UpdateMaterialInput.Patch]
+        GRADING: _ClassVar[UpdateMaterialInput.Patch]
+    ALL: UpdateMaterialInput.Patch
+    DRAFT: UpdateMaterialInput.Patch
+    NAME: UpdateMaterialInput.Patch
+    IMAGE_URL: UpdateMaterialInput.Patch
+    INDEX: UpdateMaterialInput.Patch
+    DEPTH: UpdateMaterialInput.Patch
+    CONTENT: UpdateMaterialInput.Patch
+    GRADING: UpdateMaterialInput.Patch
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_FIELD_NUMBER: _ClassVar[int]
+    patch: _containers.RepeatedScalarFieldContainer[UpdateMaterialInput.Patch]
+    material_id: str
+    material: _material_pb2.Material
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMaterialInput.Patch, str]]] = ..., material_id: _Optional[str] = ..., material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
+
+class UpdateMaterialOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class MoveMaterialInput(_message.Message):
+    __slots__ = ["material_id", "new_module_id", "new_index", "new_depth"]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    NEW_MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    NEW_INDEX_FIELD_NUMBER: _ClassVar[int]
+    NEW_DEPTH_FIELD_NUMBER: _ClassVar[int]
+    material_id: str
+    new_module_id: str
+    new_index: int
+    new_depth: int
+    def __init__(self, material_id: _Optional[str] = ..., new_module_id: _Optional[str] = ..., new_index: _Optional[int] = ..., new_depth: _Optional[int] = ...) -> None: ...
+
+class MoveMaterialOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DeleteMaterialInput(_message.Message):
     __slots__ = ["material_id"]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
@@ -37,13 +85,13 @@ class DeleteMaterialOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeMaterialInput(_message.Message):
-    __slots__ = ["extra", "material_id", "member_id"]
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["material_id", "member_id", "extra"]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    extra: _containers.RepeatedScalarFieldContainer[_material_pb2.Material.Extra]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     material_id: str
     member_id: str
+    extra: _containers.RepeatedScalarFieldContainer[_material_pb2.Material.Extra]
     def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_material_pb2.Material.Extra, str]]] = ...) -> None: ...
 
 class DescribeMaterialOutput(_message.Message):
@@ -52,26 +100,12 @@ class DescribeMaterialOutput(_message.Message):
     material: _material_pb2.Material
     def __init__(self, material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
 
-class GradeMaterialInput(_message.Message):
-    __slots__ = ["excused", "grade", "material_id", "member_id"]
-    EXCUSED_FIELD_NUMBER: _ClassVar[int]
-    GRADE_FIELD_NUMBER: _ClassVar[int]
-    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    excused: bool
-    grade: int
-    material_id: str
-    member_id: str
-    def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: bool = ...) -> None: ...
-
-class GradeMaterialOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class ListMaterialsInput(_message.Message):
-    __slots__ = ["extra", "filters", "member_id", "module_id", "offset", "order", "search", "size", "sort"]
+    __slots__ = ["module_id", "member_id", "search", "offset", "size", "filters", "sort", "order", "extra"]
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+        INDEX: _ClassVar[ListMaterialsInput.Sort]
+    INDEX: ListMaterialsInput.Sort
     class Filter(_message.Message):
         __slots__ = ["graded", "weight"]
         GRADED_FIELD_NUMBER: _ClassVar[int]
@@ -79,50 +113,33 @@ class ListMaterialsInput(_message.Message):
         graded: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         weight: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         def __init__(self, graded: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., weight: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    INDEX: ListMaterialsInput.Sort
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    ORDER_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
-    extra: _containers.RepeatedScalarFieldContainer[_material_pb2.Material.Extra]
-    filters: ListMaterialsInput.Filter
-    member_id: str
+    ORDER_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     module_id: str
-    offset: int
-    order: _direction_pb2.Direction
+    member_id: str
     search: str
+    offset: int
     size: int
+    filters: ListMaterialsInput.Filter
     sort: ListMaterialsInput.Sort
+    order: _direction_pb2.Direction
+    extra: _containers.RepeatedScalarFieldContainer[_material_pb2.Material.Extra]
     def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., search: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMaterialsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListMaterialsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_material_pb2.Material.Extra, str]]] = ...) -> None: ...
 
 class ListMaterialsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["total", "items"]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_material_pb2.Material]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
+    items: _containers.RepeatedCompositeFieldContainer[_material_pb2.Material]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_material_pb2.Material, _Mapping]]] = ...) -> None: ...
-
-class MoveMaterialInput(_message.Message):
-    __slots__ = ["material_id", "new_depth", "new_index", "new_module_id"]
-    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
-    NEW_DEPTH_FIELD_NUMBER: _ClassVar[int]
-    NEW_INDEX_FIELD_NUMBER: _ClassVar[int]
-    NEW_MODULE_ID_FIELD_NUMBER: _ClassVar[int]
-    material_id: str
-    new_depth: int
-    new_index: int
-    new_module_id: str
-    def __init__(self, material_id: _Optional[str] = ..., new_module_id: _Optional[str] = ..., new_index: _Optional[int] = ..., new_depth: _Optional[int] = ...) -> None: ...
-
-class MoveMaterialOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class ReportProgressInput(_message.Message):
     __slots__ = ["material_id", "progress"]
@@ -136,26 +153,18 @@ class ReportProgressOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateMaterialInput(_message.Message):
-    __slots__ = ["material", "material_id", "patch"]
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
-    ALL: UpdateMaterialInput.Patch
-    CONTENT: UpdateMaterialInput.Patch
-    DEPTH: UpdateMaterialInput.Patch
-    DRAFT: UpdateMaterialInput.Patch
-    GRADING: UpdateMaterialInput.Patch
-    IMAGE_URL: UpdateMaterialInput.Patch
-    INDEX: UpdateMaterialInput.Patch
-    MATERIAL_FIELD_NUMBER: _ClassVar[int]
+class GradeMaterialInput(_message.Message):
+    __slots__ = ["material_id", "member_id", "grade", "excused"]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
-    NAME: UpdateMaterialInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
-    material: _material_pb2.Material
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    GRADE_FIELD_NUMBER: _ClassVar[int]
+    EXCUSED_FIELD_NUMBER: _ClassVar[int]
     material_id: str
-    patch: _containers.RepeatedScalarFieldContainer[UpdateMaterialInput.Patch]
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMaterialInput.Patch, str]]] = ..., material_id: _Optional[str] = ..., material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
+    member_id: str
+    grade: int
+    excused: bool
+    def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: bool = ...) -> None: ...
 
-class UpdateMaterialOutput(_message.Message):
+class GradeMaterialOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

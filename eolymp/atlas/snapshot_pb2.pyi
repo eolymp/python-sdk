@@ -18,29 +18,29 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Snapshot(_message.Message):
-    __slots__ = ["attachments", "checker", "editorials", "interactor", "problem", "scripts", "solutions", "statements", "templates", "testing", "tests", "testsets"]
-    ATTACHMENTS_FIELD_NUMBER: _ClassVar[int]
-    CHECKER_FIELD_NUMBER: _ClassVar[int]
-    EDITORIALS_FIELD_NUMBER: _ClassVar[int]
-    INTERACTOR_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["problem", "testing", "checker", "interactor", "statements", "templates", "attachments", "testsets", "tests", "editorials", "solutions", "scripts"]
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
-    SCRIPTS_FIELD_NUMBER: _ClassVar[int]
-    SOLUTIONS_FIELD_NUMBER: _ClassVar[int]
+    TESTING_FIELD_NUMBER: _ClassVar[int]
+    CHECKER_FIELD_NUMBER: _ClassVar[int]
+    INTERACTOR_FIELD_NUMBER: _ClassVar[int]
     STATEMENTS_FIELD_NUMBER: _ClassVar[int]
     TEMPLATES_FIELD_NUMBER: _ClassVar[int]
-    TESTING_FIELD_NUMBER: _ClassVar[int]
+    ATTACHMENTS_FIELD_NUMBER: _ClassVar[int]
     TESTSETS_FIELD_NUMBER: _ClassVar[int]
     TESTS_FIELD_NUMBER: _ClassVar[int]
-    attachments: _containers.RepeatedCompositeFieldContainer[_attachment_pb2.Attachment]
-    checker: _testing_checker_pb2.Checker
-    editorials: _containers.RepeatedCompositeFieldContainer[_editorial_pb2.Editorial]
-    interactor: _testing_interactor_pb2.Interactor
+    EDITORIALS_FIELD_NUMBER: _ClassVar[int]
+    SOLUTIONS_FIELD_NUMBER: _ClassVar[int]
+    SCRIPTS_FIELD_NUMBER: _ClassVar[int]
     problem: _problem_pb2.Problem
-    scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
-    solutions: _containers.RepeatedCompositeFieldContainer[_solution_pb2.Solution]
+    testing: _testing_config_pb2.TestingConfig
+    checker: _testing_checker_pb2.Checker
+    interactor: _testing_interactor_pb2.Interactor
     statements: _containers.RepeatedCompositeFieldContainer[_statement_pb2.Statement]
     templates: _containers.RepeatedCompositeFieldContainer[_code_template_pb2.Template]
-    testing: _testing_config_pb2.TestingConfig
-    tests: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
+    attachments: _containers.RepeatedCompositeFieldContainer[_attachment_pb2.Attachment]
     testsets: _containers.RepeatedCompositeFieldContainer[_testing_testset_pb2.Testset]
+    tests: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
+    editorials: _containers.RepeatedCompositeFieldContainer[_editorial_pb2.Editorial]
+    solutions: _containers.RepeatedCompositeFieldContainer[_solution_pb2.Solution]
+    scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., testing: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ..., checker: _Optional[_Union[_testing_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ..., statements: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ..., templates: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ..., attachments: _Optional[_Iterable[_Union[_attachment_pb2.Attachment, _Mapping]]] = ..., testsets: _Optional[_Iterable[_Union[_testing_testset_pb2.Testset, _Mapping]]] = ..., tests: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ..., editorials: _Optional[_Iterable[_Union[_editorial_pb2.Editorial, _Mapping]]] = ..., solutions: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...

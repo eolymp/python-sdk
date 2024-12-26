@@ -5,11 +5,11 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Class(_message.Message):
-    __slots__ = ["group_id", "id", "module_count"]
-    GROUP_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["id", "group_id", "module_count"]
     ID_FIELD_NUMBER: _ClassVar[int]
+    GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_COUNT_FIELD_NUMBER: _ClassVar[int]
-    group_id: str
     id: str
+    group_id: str
     module_count: int
     def __init__(self, id: _Optional[str] = ..., group_id: _Optional[str] = ..., module_count: _Optional[int] = ...) -> None: ...

@@ -7,13 +7,13 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TranslationPair(_message.Message):
-    __slots__ = ["source", "suggestion", "term", "translation"]
-    SOURCE_FIELD_NUMBER: _ClassVar[int]
-    SUGGESTION_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["term", "source", "translation", "suggestion"]
     TERM_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]
-    source: _translation_pb2.Translation
-    suggestion: _translation_pb2.Translation
+    SUGGESTION_FIELD_NUMBER: _ClassVar[int]
     term: _term_pb2.Term
+    source: _translation_pb2.Translation
     translation: _translation_pb2.Translation
+    suggestion: _translation_pb2.Translation
     def __init__(self, term: _Optional[_Union[_term_pb2.Term, _Mapping]] = ..., source: _Optional[_Union[_translation_pb2.Translation, _Mapping]] = ..., translation: _Optional[_Union[_translation_pb2.Translation, _Mapping]] = ..., suggestion: _Optional[_Union[_translation_pb2.Translation, _Mapping]] = ...) -> None: ...

@@ -10,8 +10,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class JobTriggerEvent(_message.Message):
+    __slots__ = ["job"]
+    JOB_FIELD_NUMBER: _ClassVar[int]
+    job: _worker_job_pb2.Job
+    def __init__(self, job: _Optional[_Union[_worker_job_pb2.Job, _Mapping]] = ...) -> None: ...
+
 class CreateJobInput(_message.Message):
-    __slots__ = ["inputs", "type"]
+    __slots__ = ["type", "inputs"]
     class InputsEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -19,10 +25,10 @@ class CreateJobInput(_message.Message):
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    INPUTS_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    inputs: _containers.ScalarMap[str, str]
+    INPUTS_FIELD_NUMBER: _ClassVar[int]
     type: str
+    inputs: _containers.ScalarMap[str, str]
     def __init__(self, type: _Optional[str] = ..., inputs: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class CreateJobOutput(_message.Message):
@@ -43,35 +49,29 @@ class DescribeJobOutput(_message.Message):
     job: _worker_job_pb2.Job
     def __init__(self, job: _Optional[_Union[_worker_job_pb2.Job, _Mapping]] = ...) -> None: ...
 
-class JobTriggerEvent(_message.Message):
-    __slots__ = ["job"]
-    JOB_FIELD_NUMBER: _ClassVar[int]
-    job: _worker_job_pb2.Job
-    def __init__(self, job: _Optional[_Union[_worker_job_pb2.Job, _Mapping]] = ...) -> None: ...
-
 class ListJobsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["offset", "size", "filters"]
     class Filter(_message.Message):
-        __slots__ = ["id", "status", "type"]
+        __slots__ = ["id", "type", "status"]
         ID_FIELD_NUMBER: _ClassVar[int]
-        STATUS_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListJobsInput.Filter
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    filters: ListJobsInput.Filter
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListJobsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListJobsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["total", "items"]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_worker_job_pb2.Job]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
+    items: _containers.RepeatedCompositeFieldContainer[_worker_job_pb2.Job]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_worker_job_pb2.Job, _Mapping]]] = ...) -> None: ...

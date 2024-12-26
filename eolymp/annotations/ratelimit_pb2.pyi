@@ -8,9 +8,9 @@ RATELIMIT_FIELD_NUMBER: _ClassVar[int]
 ratelimit: _descriptor.FieldDescriptor
 
 class RateLimit(_message.Message):
-    __slots__ = ["burst", "limit"]
-    BURST_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["limit", "burst"]
     LIMIT_FIELD_NUMBER: _ClassVar[int]
-    burst: int
+    BURST_FIELD_NUMBER: _ClassVar[int]
     limit: float
+    burst: int
     def __init__(self, limit: _Optional[float] = ..., burst: _Optional[int] = ...) -> None: ...

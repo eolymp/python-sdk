@@ -9,16 +9,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class DeleteLinkedAccountInput(_message.Message):
-    __slots__ = ["link_id"]
-    LINK_ID_FIELD_NUMBER: _ClassVar[int]
-    link_id: str
-    def __init__(self, link_id: _Optional[str] = ...) -> None: ...
-
-class DeleteLinkedAccountOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class DescribeLinkedAccountInput(_message.Message):
     __slots__ = ["link_id"]
     LINK_ID_FIELD_NUMBER: _ClassVar[int]
@@ -32,7 +22,7 @@ class DescribeLinkedAccountOutput(_message.Message):
     def __init__(self, link: _Optional[_Union[_linked_account_pb2.LinkedAccount, _Mapping]] = ...) -> None: ...
 
 class ListLinkedAccountsInput(_message.Message):
-    __slots__ = ["filters", "offset", "size"]
+    __slots__ = ["offset", "size", "filters"]
     class Filter(_message.Message):
         __slots__ = ["id", "type"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -40,18 +30,28 @@ class ListLinkedAccountsInput(_message.Message):
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
-    filters: ListLinkedAccountsInput.Filter
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    filters: ListLinkedAccountsInput.Filter
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListLinkedAccountsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListLinkedAccountsOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["total", "items"]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_linked_account_pb2.LinkedAccount]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
+    items: _containers.RepeatedCompositeFieldContainer[_linked_account_pb2.LinkedAccount]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_linked_account_pb2.LinkedAccount, _Mapping]]] = ...) -> None: ...
+
+class DeleteLinkedAccountInput(_message.Message):
+    __slots__ = ["link_id"]
+    LINK_ID_FIELD_NUMBER: _ClassVar[int]
+    link_id: str
+    def __init__(self, link_id: _Optional[str] = ...) -> None: ...
+
+class DeleteLinkedAccountOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...

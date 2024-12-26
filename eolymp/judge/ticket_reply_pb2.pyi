@@ -8,22 +8,25 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Reply(_message.Message):
-    __slots__ = ["created_at", "id", "member_id", "message", "ticket_id", "user_id"]
+    __slots__ = ["id", "ticket_id", "user_id", "member_id", "message", "created_at"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
-    ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        NO_EXTRA: _ClassVar[Reply.Extra]
+        MESSAGE_RENDER: _ClassVar[Reply.Extra]
+        MESSAGE_VALUE: _ClassVar[Reply.Extra]
+    NO_EXTRA: Reply.Extra
     MESSAGE_RENDER: Reply.Extra
     MESSAGE_VALUE: Reply.Extra
-    NO_EXTRA: Reply.Extra
+    ID_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
-    created_at: _timestamp_pb2.Timestamp
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     id: str
-    member_id: str
-    message: _content_pb2.Content
     ticket_id: str
     user_id: str
+    member_id: str
+    message: _content_pb2.Content
+    created_at: _timestamp_pb2.Timestamp
     def __init__(self, id: _Optional[str] = ..., ticket_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

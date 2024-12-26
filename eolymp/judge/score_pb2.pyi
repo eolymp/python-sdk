@@ -8,62 +8,67 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Score(_message.Message):
-    __slots__ = ["breakdown", "penalty", "score", "tie_breaker", "timestamp", "upsolve", "valid_after", "valid_until"]
+    __slots__ = ["valid_after", "valid_until", "timestamp", "score", "penalty", "tie_breaker", "upsolve", "breakdown"]
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+        ACTUAL: _ClassVar[Score.FetchingMode]
+        PUNCTUAL: _ClassVar[Score.FetchingMode]
+        LATEST: _ClassVar[Score.FetchingMode]
+        FROZEN: _ClassVar[Score.FetchingMode]
+        UPSOLVE: _ClassVar[Score.FetchingMode]
+    ACTUAL: Score.FetchingMode
+    PUNCTUAL: Score.FetchingMode
+    LATEST: Score.FetchingMode
+    FROZEN: Score.FetchingMode
+    UPSOLVE: Score.FetchingMode
     class Problem(_message.Message):
-        __slots__ = ["attempts", "breakdown", "changed", "penalty", "percentage", "problem_id", "score", "solved", "solved_at", "solved_in"]
-        ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
-        BREAKDOWN_FIELD_NUMBER: _ClassVar[int]
-        CHANGED_FIELD_NUMBER: _ClassVar[int]
-        PENALTY_FIELD_NUMBER: _ClassVar[int]
-        PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ["problem_id", "score", "penalty", "solved", "percentage", "attempts", "solved_at", "solved_in", "changed", "breakdown"]
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
-        SOLVED_AT_FIELD_NUMBER: _ClassVar[int]
+        PENALTY_FIELD_NUMBER: _ClassVar[int]
         SOLVED_FIELD_NUMBER: _ClassVar[int]
+        PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
+        ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
+        SOLVED_AT_FIELD_NUMBER: _ClassVar[int]
         SOLVED_IN_FIELD_NUMBER: _ClassVar[int]
-        attempts: int
-        breakdown: _containers.RepeatedCompositeFieldContainer[Score.Testset]
-        changed: bool
-        penalty: float
-        percentage: float
+        CHANGED_FIELD_NUMBER: _ClassVar[int]
+        BREAKDOWN_FIELD_NUMBER: _ClassVar[int]
         problem_id: str
         score: float
+        penalty: float
         solved: bool
+        percentage: float
+        attempts: int
         solved_at: _timestamp_pb2.Timestamp
         solved_in: int
+        changed: bool
+        breakdown: _containers.RepeatedCompositeFieldContainer[Score.Testset]
         def __init__(self, problem_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., solved: bool = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., solved_in: _Optional[int] = ..., changed: bool = ..., breakdown: _Optional[_Iterable[_Union[Score.Testset, _Mapping]]] = ...) -> None: ...
     class Testset(_message.Message):
-        __slots__ = ["cost", "index", "score", "testset_id"]
-        COST_FIELD_NUMBER: _ClassVar[int]
-        INDEX_FIELD_NUMBER: _ClassVar[int]
-        SCORE_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ["testset_id", "index", "cost", "score"]
         TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
-        cost: float
-        index: int
-        score: float
+        INDEX_FIELD_NUMBER: _ClassVar[int]
+        COST_FIELD_NUMBER: _ClassVar[int]
+        SCORE_FIELD_NUMBER: _ClassVar[int]
         testset_id: str
+        index: int
+        cost: float
+        score: float
         def __init__(self, testset_id: _Optional[str] = ..., index: _Optional[int] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ...) -> None: ...
-    ACTUAL: Score.FetchingMode
-    BREAKDOWN_FIELD_NUMBER: _ClassVar[int]
-    FROZEN: Score.FetchingMode
-    LATEST: Score.FetchingMode
-    PENALTY_FIELD_NUMBER: _ClassVar[int]
-    PUNCTUAL: Score.FetchingMode
-    SCORE_FIELD_NUMBER: _ClassVar[int]
-    TIE_BREAKER_FIELD_NUMBER: _ClassVar[int]
-    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    UPSOLVE: Score.FetchingMode
-    UPSOLVE_FIELD_NUMBER: _ClassVar[int]
     VALID_AFTER_FIELD_NUMBER: _ClassVar[int]
     VALID_UNTIL_FIELD_NUMBER: _ClassVar[int]
-    breakdown: _containers.RepeatedCompositeFieldContainer[Score.Problem]
-    penalty: float
-    score: float
-    tie_breaker: int
-    timestamp: _timestamp_pb2.Timestamp
-    upsolve: bool
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    SCORE_FIELD_NUMBER: _ClassVar[int]
+    PENALTY_FIELD_NUMBER: _ClassVar[int]
+    TIE_BREAKER_FIELD_NUMBER: _ClassVar[int]
+    UPSOLVE_FIELD_NUMBER: _ClassVar[int]
+    BREAKDOWN_FIELD_NUMBER: _ClassVar[int]
     valid_after: int
     valid_until: int
+    timestamp: _timestamp_pb2.Timestamp
+    score: float
+    penalty: float
+    tie_breaker: int
+    upsolve: bool
+    breakdown: _containers.RepeatedCompositeFieldContainer[Score.Problem]
     def __init__(self, valid_after: _Optional[int] = ..., valid_until: _Optional[int] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., upsolve: bool = ..., breakdown: _Optional[_Iterable[_Union[Score.Problem, _Mapping]]] = ...) -> None: ...

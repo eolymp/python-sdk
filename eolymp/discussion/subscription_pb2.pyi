@@ -9,10 +9,14 @@ class Subscription(_message.Message):
     __slots__ = ["type"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    MUTED: Subscription.Type
+        NONE: _ClassVar[Subscription.Type]
+        MUTED: _ClassVar[Subscription.Type]
+        SUBSCRIBED: _ClassVar[Subscription.Type]
+        WATCHING: _ClassVar[Subscription.Type]
     NONE: Subscription.Type
+    MUTED: Subscription.Type
     SUBSCRIBED: Subscription.Type
-    TYPE_FIELD_NUMBER: _ClassVar[int]
     WATCHING: Subscription.Type
+    TYPE_FIELD_NUMBER: _ClassVar[int]
     type: Subscription.Type
     def __init__(self, type: _Optional[_Union[Subscription.Type, str]] = ...) -> None: ...

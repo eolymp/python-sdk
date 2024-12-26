@@ -9,15 +9,15 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateRunInput(_message.Message):
-    __slots__ = ["input_data", "input_ref", "runtime", "source"]
-    INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
-    INPUT_REF_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["runtime", "source", "input_data", "input_ref"]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
-    input_data: bytes
-    input_ref: str
+    INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
+    INPUT_REF_FIELD_NUMBER: _ClassVar[int]
     runtime: str
     source: str
+    input_data: bytes
+    input_ref: str
     def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_data: _Optional[bytes] = ..., input_ref: _Optional[str] = ...) -> None: ...
 
 class CreateRunOutput(_message.Message):

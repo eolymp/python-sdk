@@ -8,16 +8,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class ConfigureRuntimeConfigInput(_message.Message):
-    __slots__ = ["allowed_runtime"]
-    ALLOWED_RUNTIME_FIELD_NUMBER: _ClassVar[int]
-    allowed_runtime: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, allowed_runtime: _Optional[_Iterable[str]] = ...) -> None: ...
-
-class ConfigureRuntimeConfigOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class DescribeRuntimeConfigInput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
@@ -27,3 +17,13 @@ class DescribeRuntimeConfigOutput(_message.Message):
     ALLOWED_RUNTIME_FIELD_NUMBER: _ClassVar[int]
     allowed_runtime: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, allowed_runtime: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class ConfigureRuntimeConfigInput(_message.Message):
+    __slots__ = ["allowed_runtime"]
+    ALLOWED_RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    allowed_runtime: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, allowed_runtime: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class ConfigureRuntimeConfigOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...

@@ -7,42 +7,51 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Run(_message.Message):
-    __slots__ = ["cpu_time_usage", "error", "exit_code", "id", "input_url", "memory_usage", "output_url", "resource_usage", "runtime", "signal", "source_url", "status", "wall_time_usage"]
+    __slots__ = ["id", "runtime", "source_url", "input_url", "status", "error", "exit_code", "signal", "wall_time_usage", "cpu_time_usage", "memory_usage", "resource_usage", "output_url"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    CPU_EXHAUSTED: Run.Status
-    CPU_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
-    ERROR: Run.Status
-    ERROR_FIELD_NUMBER: _ClassVar[int]
-    EXECUTED: Run.Status
+        NONE: _ClassVar[Run.Status]
+        PENDING: _ClassVar[Run.Status]
+        EXECUTING: _ClassVar[Run.Status]
+        EXECUTED: _ClassVar[Run.Status]
+        TIMEOUT: _ClassVar[Run.Status]
+        CPU_EXHAUSTED: _ClassVar[Run.Status]
+        MEMORY_OVERFLOW: _ClassVar[Run.Status]
+        ERROR: _ClassVar[Run.Status]
+        FAILURE: _ClassVar[Run.Status]
+    NONE: Run.Status
+    PENDING: Run.Status
     EXECUTING: Run.Status
-    EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
+    EXECUTED: Run.Status
+    TIMEOUT: Run.Status
+    CPU_EXHAUSTED: Run.Status
+    MEMORY_OVERFLOW: Run.Status
+    ERROR: Run.Status
     FAILURE: Run.Status
     ID_FIELD_NUMBER: _ClassVar[int]
-    INPUT_URL_FIELD_NUMBER: _ClassVar[int]
-    MEMORY_OVERFLOW: Run.Status
-    MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
-    NONE: Run.Status
-    OUTPUT_URL_FIELD_NUMBER: _ClassVar[int]
-    PENDING: Run.Status
-    RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
-    SIGNAL_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
+    INPUT_URL_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
-    TIMEOUT: Run.Status
+    ERROR_FIELD_NUMBER: _ClassVar[int]
+    EXIT_CODE_FIELD_NUMBER: _ClassVar[int]
+    SIGNAL_FIELD_NUMBER: _ClassVar[int]
     WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
-    cpu_time_usage: int
+    CPU_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
+    MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
+    OUTPUT_URL_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    runtime: str
+    source_url: str
+    input_url: str
+    status: Run.Status
     error: str
     exit_code: int
-    id: str
-    input_url: str
-    memory_usage: int
-    output_url: str
-    resource_usage: _usage_pb2.ResourceUsage
-    runtime: str
     signal: int
-    source_url: str
-    status: Run.Status
     wall_time_usage: int
+    cpu_time_usage: int
+    memory_usage: int
+    resource_usage: _usage_pb2.ResourceUsage
+    output_url: str
     def __init__(self, id: _Optional[str] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., input_url: _Optional[str] = ..., status: _Optional[_Union[Run.Status, str]] = ..., error: _Optional[str] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[_Union[_usage_pb2.ResourceUsage, _Mapping]] = ..., output_url: _Optional[str] = ...) -> None: ...

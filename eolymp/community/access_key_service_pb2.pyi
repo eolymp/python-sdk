@@ -10,13 +10,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateAccessKeyInput(_message.Message):
-    __slots__ = ["expires_in", "name", "scope"]
-    EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["name", "scope", "expires_in"]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SCOPE_FIELD_NUMBER: _ClassVar[int]
-    expires_in: int
+    EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
     name: str
     scope: str
+    expires_in: int
     def __init__(self, name: _Optional[str] = ..., scope: _Optional[str] = ..., expires_in: _Optional[int] = ...) -> None: ...
 
 class CreateAccessKeyOutput(_message.Message):
@@ -46,9 +46,9 @@ class ListAccessKeysInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class ListAccessKeysOutput(_message.Message):
-    __slots__ = ["items", "total"]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["total", "items"]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_access_key_pb2.AccessKey]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
+    items: _containers.RepeatedCompositeFieldContainer[_access_key_pb2.AccessKey]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_access_key_pb2.AccessKey, _Mapping]]] = ...) -> None: ...

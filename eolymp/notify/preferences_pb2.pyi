@@ -10,17 +10,21 @@ class Preferences(_message.Message):
     __slots__ = ["subscriptions"]
     class Digest(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    class Subscription(_message.Message):
-        __slots__ = ["digest", "topic"]
-        DIGEST_FIELD_NUMBER: _ClassVar[int]
-        TOPIC_FIELD_NUMBER: _ClassVar[int]
-        digest: Preferences.Digest
-        topic: str
-        def __init__(self, topic: _Optional[str] = ..., digest: _Optional[_Union[Preferences.Digest, str]] = ...) -> None: ...
-    DAILY: Preferences.Digest
-    HOURLY: Preferences.Digest
-    IMMEDIATE: Preferences.Digest
-    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+        UNKNOWN_DIGEST: _ClassVar[Preferences.Digest]
+        IMMEDIATE: _ClassVar[Preferences.Digest]
+        HOURLY: _ClassVar[Preferences.Digest]
+        DAILY: _ClassVar[Preferences.Digest]
     UNKNOWN_DIGEST: Preferences.Digest
+    IMMEDIATE: Preferences.Digest
+    HOURLY: Preferences.Digest
+    DAILY: Preferences.Digest
+    class Subscription(_message.Message):
+        __slots__ = ["topic", "digest"]
+        TOPIC_FIELD_NUMBER: _ClassVar[int]
+        DIGEST_FIELD_NUMBER: _ClassVar[int]
+        topic: str
+        digest: Preferences.Digest
+        def __init__(self, topic: _Optional[str] = ..., digest: _Optional[_Union[Preferences.Digest, str]] = ...) -> None: ...
+    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
     subscriptions: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
     def __init__(self, subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ...) -> None: ...

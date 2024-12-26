@@ -7,6 +7,20 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class VerifyPasscodeInput(_message.Message):
+    __slots__ = ["contest_id"]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class VerifyPasscodeOutput(_message.Message):
+    __slots__ = ["required", "valid"]
+    REQUIRED_FIELD_NUMBER: _ClassVar[int]
+    VALID_FIELD_NUMBER: _ClassVar[int]
+    required: bool
+    valid: bool
+    def __init__(self, required: bool = ..., valid: bool = ...) -> None: ...
+
 class EnterPasscodeInput(_message.Message):
     __slots__ = ["contest_id", "passcode"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -16,18 +30,6 @@ class EnterPasscodeInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., passcode: _Optional[str] = ...) -> None: ...
 
 class EnterPasscodeOutput(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class RemovePasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    participant_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
-
-class RemovePasscodeOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
@@ -59,16 +61,14 @@ class SetPasscodeOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class VerifyPasscodeInput(_message.Message):
-    __slots__ = ["contest_id"]
+class RemovePasscodeInput(_message.Message):
+    __slots__ = ["contest_id", "participant_id"]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+    participant_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
-class VerifyPasscodeOutput(_message.Message):
-    __slots__ = ["required", "valid"]
-    REQUIRED_FIELD_NUMBER: _ClassVar[int]
-    VALID_FIELD_NUMBER: _ClassVar[int]
-    required: bool
-    valid: bool
-    def __init__(self, required: bool = ..., valid: bool = ...) -> None: ...
+class RemovePasscodeOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...

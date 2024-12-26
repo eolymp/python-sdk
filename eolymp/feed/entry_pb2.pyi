@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Entry(_message.Message):
-    __slots__ = ["attributes", "id", "links", "timestamp", "type"]
+    __slots__ = ["id", "type", "timestamp", "attributes", "links"]
     class AttributesEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -16,14 +16,14 @@ class Entry(_message.Message):
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
-    LINKS_FIELD_NUMBER: _ClassVar[int]
-    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    attributes: _containers.ScalarMap[str, str]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
+    LINKS_FIELD_NUMBER: _ClassVar[int]
     id: str
-    links: _containers.RepeatedCompositeFieldContainer[_link_pb2.Link]
-    timestamp: _timestamp_pb2.Timestamp
     type: str
+    timestamp: _timestamp_pb2.Timestamp
+    attributes: _containers.ScalarMap[str, str]
+    links: _containers.RepeatedCompositeFieldContainer[_link_pb2.Link]
     def __init__(self, id: _Optional[str] = ..., type: _Optional[str] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., attributes: _Optional[_Mapping[str, str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...

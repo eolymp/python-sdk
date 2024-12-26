@@ -21,11 +21,11 @@ class DescribeEmailSubscriptionOutput(_message.Message):
     def __init__(self, subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ...) -> None: ...
 
 class UpdateEmailSubscriptionInput(_message.Message):
-    __slots__ = ["subscriptions", "token"]
-    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["token", "subscriptions"]
     TOKEN_FIELD_NUMBER: _ClassVar[int]
-    subscriptions: _containers.RepeatedScalarFieldContainer[_email_type_pb2.EmailType]
+    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
     token: str
+    subscriptions: _containers.RepeatedScalarFieldContainer[_email_type_pb2.EmailType]
     def __init__(self, token: _Optional[str] = ..., subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ...) -> None: ...
 
 class UpdateEmailSubscriptionOutput(_message.Message):

@@ -7,9 +7,15 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Achievement(_message.Message):
-    __slots__ = ["cursor", "id", "image_url", "name", "rarity", "summary", "value"]
+    __slots__ = ["id", "value", "rarity", "name", "image_url", "summary", "cursor"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+        NO_EXTRA: _ClassVar[Achievement.Extra]
+        SUMMARY_VALUE: _ClassVar[Achievement.Extra]
+        SUMMARY_RENDER: _ClassVar[Achievement.Extra]
+    NO_EXTRA: Achievement.Extra
+    SUMMARY_VALUE: Achievement.Extra
+    SUMMARY_RENDER: Achievement.Extra
     class Translation(_message.Message):
         __slots__ = ["id", "locale", "name", "summary"]
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -21,21 +27,18 @@ class Achievement(_message.Message):
         name: str
         summary: _content_pb2.Content
         def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
-    CURSOR_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
-    IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    NO_EXTRA: Achievement.Extra
-    RARITY_FIELD_NUMBER: _ClassVar[int]
-    SUMMARY_FIELD_NUMBER: _ClassVar[int]
-    SUMMARY_RENDER: Achievement.Extra
-    SUMMARY_VALUE: Achievement.Extra
     VALUE_FIELD_NUMBER: _ClassVar[int]
-    cursor: str
+    RARITY_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
+    SUMMARY_FIELD_NUMBER: _ClassVar[int]
+    CURSOR_FIELD_NUMBER: _ClassVar[int]
     id: str
-    image_url: str
-    name: str
-    rarity: int
-    summary: _content_pb2.Content
     value: int
+    rarity: int
+    name: str
+    image_url: str
+    summary: _content_pb2.Content
+    cursor: str
     def __init__(self, id: _Optional[str] = ..., value: _Optional[int] = ..., rarity: _Optional[int] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., cursor: _Optional[str] = ...) -> None: ...

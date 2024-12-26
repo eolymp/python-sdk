@@ -7,20 +7,23 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Variant(_message.Message):
-    __slots__ = ["automatic", "content", "id", "locale", "title"]
+    __slots__ = ["id", "locale", "title", "content", "automatic"]
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
-    AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
-    CONTENT_FIELD_NUMBER: _ClassVar[int]
+        NO_EXTRA: _ClassVar[Variant.Extra]
+        CONTENT_RENDER: _ClassVar[Variant.Extra]
+        CONTENT_VALUE: _ClassVar[Variant.Extra]
+    NO_EXTRA: Variant.Extra
     CONTENT_RENDER: Variant.Extra
     CONTENT_VALUE: Variant.Extra
     ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
-    NO_EXTRA: Variant.Extra
     TITLE_FIELD_NUMBER: _ClassVar[int]
-    automatic: bool
-    content: _content_pb2.Content
+    CONTENT_FIELD_NUMBER: _ClassVar[int]
+    AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
     id: str
     locale: str
     title: str
+    content: _content_pb2.Content
+    automatic: bool
     def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., automatic: bool = ...) -> None: ...

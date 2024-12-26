@@ -7,19 +7,19 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Template(_message.Message):
-    __slots__ = ["files", "footer", "header", "id", "runtime", "secret", "source"]
-    FILES_FIELD_NUMBER: _ClassVar[int]
-    FOOTER_FIELD_NUMBER: _ClassVar[int]
-    HEADER_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["id", "runtime", "secret", "source", "header", "footer", "files"]
     ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
-    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
-    footer: str
-    header: str
+    HEADER_FIELD_NUMBER: _ClassVar[int]
+    FOOTER_FIELD_NUMBER: _ClassVar[int]
+    FILES_FIELD_NUMBER: _ClassVar[int]
     id: str
     runtime: str
     secret: bool
     source: str
+    header: str
+    footer: str
+    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
     def __init__(self, id: _Optional[str] = ..., runtime: _Optional[str] = ..., secret: bool = ..., source: _Optional[str] = ..., header: _Optional[str] = ..., footer: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ...) -> None: ...

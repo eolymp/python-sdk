@@ -6,20 +6,23 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Term(_message.Message):
-    __slots__ = ["description", "id", "key", "message", "status"]
+    __slots__ = ["id", "key", "message", "description", "status"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
+        NONE: _ClassVar[Term.Status]
+        ACTIVE: _ClassVar[Term.Status]
+        DEPRECATED: _ClassVar[Term.Status]
+    NONE: Term.Status
     ACTIVE: Term.Status
     DEPRECATED: Term.Status
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    NONE: Term.Status
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
-    description: str
     id: str
     key: str
     message: str
+    description: str
     status: Term.Status
     def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., message: _Optional[str] = ..., description: _Optional[str] = ..., status: _Optional[_Union[Term.Status, str]] = ...) -> None: ...
