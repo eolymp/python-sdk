@@ -86,6 +86,20 @@ class ListPrintersOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_printer_pb2.Printer]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_printer_pb2.Printer, _Mapping]]] = ...) -> None: ...
 
+class CreatePrinterJobInput(_message.Message):
+    __slots__ = ["printer_job", "document_url"]
+    PRINTER_JOB_FIELD_NUMBER: _ClassVar[int]
+    DOCUMENT_URL_FIELD_NUMBER: _ClassVar[int]
+    printer_job: str
+    document_url: str
+    def __init__(self, printer_job: _Optional[str] = ..., document_url: _Optional[str] = ...) -> None: ...
+
+class CreatePrinterJobOutput(_message.Message):
+    __slots__ = ["job_id"]
+    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    job_id: str
+    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
+
 class DescribePrinterJobInput(_message.Message):
     __slots__ = ["printer_id", "job_id"]
     PRINTER_ID_FIELD_NUMBER: _ClassVar[int]

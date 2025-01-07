@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Job(_message.Message):
-    __slots__ = ["id", "status", "document_url"]
+    __slots__ = ["id", "status", "user_id", "member_id", "document_url"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNKNOWN_STATUS: _ClassVar[Job.Status]
@@ -22,8 +22,12 @@ class Job(_message.Message):
     ERROR: Job.Status
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     DOCUMENT_URL_FIELD_NUMBER: _ClassVar[int]
     id: str
     status: Job.Status
+    user_id: str
+    member_id: str
     document_url: str
-    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Job.Status, str]] = ..., document_url: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Job.Status, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., document_url: _Optional[str] = ...) -> None: ...

@@ -78,6 +78,20 @@ class PrinterServiceClient:
             **kwargs,
         )
 
+    def CreatePrinterJob(self, request, **kwargs):
+        path = "/printers/"+urllib.parse.quote(request.printer_id)+"/jobs"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.printer_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.printer.CreatePrinterJobOutput"),
+            **kwargs,
+        )
+
     def DescribePrinterJob(self, request, **kwargs):
         path = "/printers/"+urllib.parse.quote(request.printer_id)+"/jobs/"+urllib.parse.quote(request.job_id)
 
