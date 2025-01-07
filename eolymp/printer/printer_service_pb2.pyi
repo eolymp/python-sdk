@@ -87,12 +87,12 @@ class ListPrintersOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_printer_pb2.Printer, _Mapping]]] = ...) -> None: ...
 
 class CreatePrinterJobInput(_message.Message):
-    __slots__ = ["printer_job", "document_url"]
-    PRINTER_JOB_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["printer_id", "document_url"]
+    PRINTER_ID_FIELD_NUMBER: _ClassVar[int]
     DOCUMENT_URL_FIELD_NUMBER: _ClassVar[int]
-    printer_job: str
+    printer_id: str
     document_url: str
-    def __init__(self, printer_job: _Optional[str] = ..., document_url: _Optional[str] = ...) -> None: ...
+    def __init__(self, printer_id: _Optional[str] = ..., document_url: _Optional[str] = ...) -> None: ...
 
 class CreatePrinterJobOutput(_message.Message):
     __slots__ = ["job_id"]
