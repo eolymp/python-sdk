@@ -9,19 +9,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class PrintServiceClient:
+class PrinterConnectorClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
-
-    def PrintContent(self, request, **kwargs):
-        path = "/print"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.PrintContentOutput"),
-            **kwargs,
-        )
 

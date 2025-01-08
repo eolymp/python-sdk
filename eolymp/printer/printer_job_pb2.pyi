@@ -1,4 +1,3 @@
-from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -15,11 +14,13 @@ class Job(_message.Message):
         PRINTING: _ClassVar[Job.Status]
         COMPLETE: _ClassVar[Job.Status]
         ERROR: _ClassVar[Job.Status]
+        EXPIRED: _ClassVar[Job.Status]
     UNKNOWN_STATUS: Job.Status
     PENDING: Job.Status
     PRINTING: Job.Status
     COMPLETE: Job.Status
     ERROR: Job.Status
+    EXPIRED: Job.Status
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]

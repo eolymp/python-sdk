@@ -1,4 +1,3 @@
-from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -13,9 +12,11 @@ class Printer(_message.Message):
         UNKNOWN_STATUS: _ClassVar[Printer.Status]
         OFFLINE: _ClassVar[Printer.Status]
         READY: _ClassVar[Printer.Status]
+        BUSY: _ClassVar[Printer.Status]
     UNKNOWN_STATUS: Printer.Status
     OFFLINE: Printer.Status
     READY: Printer.Status
+    BUSY: Printer.Status
     ID_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]

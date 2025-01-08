@@ -121,7 +121,7 @@ class PrinterServiceClient:
             **kwargs,
         )
 
-    def CancelPrinterJob(self, request, **kwargs):
+    def DeletePrinterJob(self, request, **kwargs):
         path = "/printers/"+urllib.parse.quote(request.printer_id)+"/jobs/"+urllib.parse.quote(request.job_id)
 
         # Cleanup URL parameters to avoid any ambiguity
@@ -132,7 +132,7 @@ class PrinterServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.printer.CancelPrinterJobOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.printer.DeletePrinterJobOutput"),
             **kwargs,
         )
 

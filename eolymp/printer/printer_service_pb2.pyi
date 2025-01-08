@@ -87,12 +87,12 @@ class ListPrintersOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_printer_pb2.Printer, _Mapping]]] = ...) -> None: ...
 
 class CreatePrinterJobInput(_message.Message):
-    __slots__ = ["printer_id", "document_url"]
+    __slots__ = ["printer_id", "html"]
     PRINTER_ID_FIELD_NUMBER: _ClassVar[int]
-    DOCUMENT_URL_FIELD_NUMBER: _ClassVar[int]
+    HTML_FIELD_NUMBER: _ClassVar[int]
     printer_id: str
-    document_url: str
-    def __init__(self, printer_id: _Optional[str] = ..., document_url: _Optional[str] = ...) -> None: ...
+    html: str
+    def __init__(self, printer_id: _Optional[str] = ..., html: _Optional[str] = ...) -> None: ...
 
 class CreatePrinterJobOutput(_message.Message):
     __slots__ = ["job_id"]
@@ -150,5 +150,17 @@ class CancelPrinterJobInput(_message.Message):
     def __init__(self, printer_id: _Optional[str] = ..., job_id: _Optional[str] = ...) -> None: ...
 
 class CancelPrinterJobOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DeletePrinterJobInput(_message.Message):
+    __slots__ = ["printer_id", "job_id"]
+    PRINTER_ID_FIELD_NUMBER: _ClassVar[int]
+    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    printer_id: str
+    job_id: str
+    def __init__(self, printer_id: _Optional[str] = ..., job_id: _Optional[str] = ...) -> None: ...
+
+class DeletePrinterJobOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
