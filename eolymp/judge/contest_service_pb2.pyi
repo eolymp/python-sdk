@@ -53,6 +53,7 @@ class UpdateContestInput(_message.Message):
         PROBLEM_COUNT_HIDDEN: _ClassVar[UpdateContestInput.Patch]
         PARTICIPANT_COUNT_HIDDEN: _ClassVar[UpdateContestInput.Patch]
         FEATURED_UNTIL: _ClassVar[UpdateContestInput.Patch]
+        PRINTER: _ClassVar[UpdateContestInput.Patch]
         TAXONOMY: _ClassVar[UpdateContestInput.Patch]
         APPEARANCE: _ClassVar[UpdateContestInput.Patch]
         ENVIRONMENT: _ClassVar[UpdateContestInput.Patch]
@@ -72,6 +73,7 @@ class UpdateContestInput(_message.Message):
     PROBLEM_COUNT_HIDDEN: UpdateContestInput.Patch
     PARTICIPANT_COUNT_HIDDEN: UpdateContestInput.Patch
     FEATURED_UNTIL: UpdateContestInput.Patch
+    PRINTER: UpdateContestInput.Patch
     TAXONOMY: UpdateContestInput.Patch
     APPEARANCE: UpdateContestInput.Patch
     ENVIRONMENT: UpdateContestInput.Patch
