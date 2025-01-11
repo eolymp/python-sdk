@@ -53,6 +53,20 @@ class SubmissionServiceClient:
             **kwargs,
         )
 
+    def PrintSubmission(self, request, **kwargs):
+        path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/print"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.submission_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.PrintSubmissionOutput"),
+            **kwargs,
+        )
+
     def RetestSubmission(self, request, **kwargs):
         path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/retest"
 
