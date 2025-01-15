@@ -7,12 +7,30 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class PrintCodeInput(_message.Message):
-    __slots__ = ["source"]
-    SOURCE_FIELD_NUMBER: _ClassVar[int]
-    source: str
-    def __init__(self, source: _Optional[str] = ...) -> None: ...
+class DescribeStateInput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
-class PrintCodeOutput(_message.Message):
+class DescribeStateOutput(_message.Message):
+    __slots__ = ["runtime", "source_code", "input_data"]
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
+    INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
+    runtime: str
+    source_code: str
+    input_data: str
+    def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ...) -> None: ...
+
+class UpdateStateInput(_message.Message):
+    __slots__ = ["runtime", "source_code", "input_data"]
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
+    INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
+    runtime: str
+    source_code: str
+    input_data: str
+    def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ...) -> None: ...
+
+class UpdateStateOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

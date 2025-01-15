@@ -14,14 +14,25 @@ class EditorServiceClient:
         self.transport = transport
         self.url = url
 
-    def PrintCode(self, request, **kwargs):
-        path = "/editor:print"
+    def DescribeState(self, request, **kwargs):
+        path = "/editor/state"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeStateOutput"),
+            **kwargs,
+        )
+
+    def UpdateState(self, request, **kwargs):
+        path = "/editor/state"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.PrintCodeOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateStateOutput"),
             **kwargs,
         )
 
