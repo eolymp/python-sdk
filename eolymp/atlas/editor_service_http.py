@@ -14,36 +14,47 @@ class EditorServiceClient:
         self.transport = transport
         self.url = url
 
-    def DescribeState(self, request, **kwargs):
+    def DescribeEditor(self, request, **kwargs):
+        path = "/editor"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeEditorOutput"),
+            **kwargs,
+        )
+
+    def DescribeEditorState(self, request, **kwargs):
         path = "/editor/state"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeStateOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeEditorStateOutput"),
             **kwargs,
         )
 
-    def UpdateState(self, request, **kwargs):
+    def UpdateEditorState(self, request, **kwargs):
         path = "/editor/state"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateStateOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateEditorStateOutput"),
             **kwargs,
         )
 
-    def PrintCode(self, request, **kwargs):
+    def PrintEditorCode(self, request, **kwargs):
         path = "/editor/print"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.PrintCodeOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.PrintEditorCodeOutput"),
             **kwargs,
         )
 
