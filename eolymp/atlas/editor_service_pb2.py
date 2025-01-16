@@ -16,7 +16,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/editor_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\x14\n\x12\x44\x65scribeStateInput\"O\n\x13\x44\x65scribeStateOutput\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\"L\n\x10UpdateStateInput\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\"\x13\n\x11UpdateStateOutput2\xbe\x02\n\rEditorService\x12\x97\x01\n\rDescribeState\x12 .eolymp.atlas.DescribeStateInput\x1a!.eolymp.atlas.DescribeStateOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\x0f\x12\r/editor/state\x12\x92\x01\n\x0bUpdateState\x12\x1e.eolymp.atlas.UpdateStateInput\x1a\x1f.eolymp.atlas.UpdateStateOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x02\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\x82\xd3\xe4\x93\x02\x0f\"\r/editor/stateB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/editor_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\x14\n\x12\x44\x65scribeStateInput\"O\n\x13\x44\x65scribeStateOutput\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\"L\n\x10UpdateStateInput\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\"\x13\n\x11UpdateStateOutput\"6\n\x0ePrintCodeInput\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\"\x11\n\x0fPrintCodeOutput2\xcd\x03\n\rEditorService\x12\x97\x01\n\rDescribeState\x12 .eolymp.atlas.DescribeStateInput\x1a!.eolymp.atlas.DescribeStateOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\x0f\x12\r/editor/state\x12\x92\x01\n\x0bUpdateState\x12\x1e.eolymp.atlas.UpdateStateInput\x1a\x1f.eolymp.atlas.UpdateStateOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x02\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\x82\xd3\xe4\x93\x02\x0f\"\r/editor/state\x12\x8c\x01\n\tPrintCode\x12\x1c.eolymp.atlas.PrintCodeInput\x1a\x1d.eolymp.atlas.PrintCodeOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x02\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\x82\xd3\xe4\x93\x02\x0f\"\r/editor/printB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -28,6 +28,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_EDITORSERVICE'].methods_by_name['DescribeState']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\n\202\343\n\031\212\343\n\025atlas:submission:read\202\323\344\223\002\017\022\r/editor/state'
   _globals['_EDITORSERVICE'].methods_by_name['UpdateState']._options = None
   _globals['_EDITORSERVICE'].methods_by_name['UpdateState']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\002\202\343\n\032\212\343\n\026atlas:submission:write\202\323\344\223\002\017\"\r/editor/state'
+  _globals['_EDITORSERVICE'].methods_by_name['PrintCode']._options = None
+  _globals['_EDITORSERVICE'].methods_by_name['PrintCode']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\002\202\343\n\032\212\343\n\026atlas:submission:write\202\323\344\223\002\017\"\r/editor/print'
   _globals['_DESCRIBESTATEINPUT']._serialized_start=150
   _globals['_DESCRIBESTATEINPUT']._serialized_end=170
   _globals['_DESCRIBESTATEOUTPUT']._serialized_start=172
@@ -36,6 +38,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_UPDATESTATEINPUT']._serialized_end=329
   _globals['_UPDATESTATEOUTPUT']._serialized_start=331
   _globals['_UPDATESTATEOUTPUT']._serialized_end=350
-  _globals['_EDITORSERVICE']._serialized_start=353
-  _globals['_EDITORSERVICE']._serialized_end=671
+  _globals['_PRINTCODEINPUT']._serialized_start=352
+  _globals['_PRINTCODEINPUT']._serialized_end=406
+  _globals['_PRINTCODEOUTPUT']._serialized_start=408
+  _globals['_PRINTCODEOUTPUT']._serialized_end=425
+  _globals['_EDITORSERVICE']._serialized_start=428
+  _globals['_EDITORSERVICE']._serialized_end=889
 # @@protoc_insertion_point(module_scope)

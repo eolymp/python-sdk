@@ -36,3 +36,14 @@ class EditorServiceClient:
             **kwargs,
         )
 
+    def PrintCode(self, request, **kwargs):
+        path = "/editor/print"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.PrintCodeOutput"),
+            **kwargs,
+        )
+

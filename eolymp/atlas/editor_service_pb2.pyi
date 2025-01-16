@@ -34,3 +34,15 @@ class UpdateStateInput(_message.Message):
 class UpdateStateOutput(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class PrintCodeInput(_message.Message):
+    __slots__ = ["runtime", "source_code"]
+    RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
+    runtime: str
+    source_code: str
+    def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ...) -> None: ...
+
+class PrintCodeOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
