@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/printer/printer_job.proto\x12\x0e\x65olymp.printer\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc5\x02\n\x03Job\x12\n\n\x02id\x18\x01 \x01(\t\x12*\n\x06status\x18\x02 \x01(\x0e\x32\x1a.eolymp.printer.Job.Status\x12\x11\n\x07user_id\x18\n \x01(\tH\x00\x12\x13\n\tmember_id\x18\x0b \x01(\tH\x00\x12\x14\n\x0c\x64ocument_url\x18\x14 \x01(\t\x12.\n\ncreated_at\x18\x1e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x1f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"]\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0c\n\x08PRINTING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0b\n\x07\x45XPIRED\x10\x05\x42\t\n\x07\x63reatorB1Z/github.com/eolymp/go-sdk/eolymp/printer;printerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/printer/printer_job.proto\x12\x0e\x65olymp.printer\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc7\x02\n\x03Job\x12\n\n\x02id\x18\x01 \x01(\t\x12*\n\x06status\x18\x02 \x01(\x0e\x32\x1a.eolymp.printer.Job.Status\x12\x11\n\x07user_id\x18\n \x01(\tH\x00\x12\x13\n\tmember_id\x18\x0b \x01(\tH\x00\x12\x14\n\x0c\x64ocument_url\x18\x14 \x01(\t\x12.\n\ncreated_at\x18\x1e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x1f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"_\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0c\n\x08PRINTING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\r\n\tCANCELLED\x10\x05\x42\t\n\x07\x63reatorB1Z/github.com/eolymp/go-sdk/eolymp/printer;printerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,7 +23,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/printer;printer'
   _globals['_JOB']._serialized_start=86
-  _globals['_JOB']._serialized_end=411
+  _globals['_JOB']._serialized_end=413
   _globals['_JOB_STATUS']._serialized_start=307
-  _globals['_JOB_STATUS']._serialized_end=400
+  _globals['_JOB_STATUS']._serialized_end=402
 # @@protoc_insertion_point(module_scope)

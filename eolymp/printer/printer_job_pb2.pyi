@@ -15,13 +15,13 @@ class Job(_message.Message):
         PRINTING: _ClassVar[Job.Status]
         COMPLETE: _ClassVar[Job.Status]
         ERROR: _ClassVar[Job.Status]
-        EXPIRED: _ClassVar[Job.Status]
+        CANCELLED: _ClassVar[Job.Status]
     UNKNOWN_STATUS: Job.Status
     PENDING: Job.Status
     PRINTING: Job.Status
     COMPLETE: Job.Status
     ERROR: Job.Status
-    EXPIRED: Job.Status
+    CANCELLED: Job.Status
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
