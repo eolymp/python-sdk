@@ -10,16 +10,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationTask(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "priority", "runtime", "source", "source_url", "header_url", "footer_url", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "checker", "interactor", "runs", "files", "scripts"]
-    class Generator(_message.Message):
-        __slots__ = ["script_name", "arguments"]
-        SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
-        ARGUMENTS_FIELD_NUMBER: _ClassVar[int]
-        script_name: str
-        arguments: _containers.RepeatedScalarFieldContainer[str]
-        def __init__(self, script_name: _Optional[str] = ..., arguments: _Optional[_Iterable[str]] = ...) -> None: ...
+    __slots__ = ["task_id", "reference", "origin", "priority", "runtime", "source", "source_url", "header_url", "footer_url", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "checker", "interactor", "runs", "files"]
     class Run(_message.Message):
-        __slots__ = ["reference", "index", "debug", "cost", "env", "labels", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator"]
+        __slots__ = ["reference", "index", "debug", "cost", "env", "labels", "input_url", "input_content", "answer_url", "answer_content"]
         class EnvEntry(_message.Message):
             __slots__ = ["key", "value"]
             KEY_FIELD_NUMBER: _ClassVar[int]
@@ -35,10 +28,8 @@ class EvaluationTask(_message.Message):
         LABELS_FIELD_NUMBER: _ClassVar[int]
         INPUT_URL_FIELD_NUMBER: _ClassVar[int]
         INPUT_CONTENT_FIELD_NUMBER: _ClassVar[int]
-        INPUT_GENERATOR_FIELD_NUMBER: _ClassVar[int]
         ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
         ANSWER_CONTENT_FIELD_NUMBER: _ClassVar[int]
-        ANSWER_GENERATOR_FIELD_NUMBER: _ClassVar[int]
         reference: str
         index: int
         debug: bool
@@ -47,11 +38,9 @@ class EvaluationTask(_message.Message):
         labels: _containers.RepeatedScalarFieldContainer[str]
         input_url: str
         input_content: str
-        input_generator: EvaluationTask.Generator
         answer_url: str
         answer_content: str
-        answer_generator: EvaluationTask.Generator
-        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., debug: bool = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., labels: _Optional[_Iterable[str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., debug: bool = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., labels: _Optional[_Iterable[str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ...) -> None: ...
     class Precondition(_message.Message):
         __slots__ = ["selector", "depends_on", "stop_on_failure", "max_execution_time"]
         SELECTOR_FIELD_NUMBER: _ClassVar[int]
@@ -95,7 +84,6 @@ class EvaluationTask(_message.Message):
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
     FILES_FIELD_NUMBER: _ClassVar[int]
-    SCRIPTS_FIELD_NUMBER: _ClassVar[int]
     task_id: str
     reference: str
     origin: str
@@ -113,5 +101,4 @@ class EvaluationTask(_message.Message):
     interactor: _interactor_pb2.Interactor
     runs: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Run]
     files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
-    scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ...) -> None: ...

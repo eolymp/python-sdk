@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.executor import file_pb2 as eolymp_dot_executor_dot_file__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/executor/script.proto\x12\x0f\x65olymp.executor\x1a\x1a\x65olymp/executor/file.proto\"a\n\x06Script\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x12\n\nsource_url\x18\x08 \x01(\t\x12$\n\x05\x66iles\x18\n \x03(\x0b\x32\x15.eolymp.executor.FileB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/executor/script.proto\x12\x0f\x65olymp.executor\x1a\x1a\x65olymp/executor/file.proto\"\x89\x01\n\x06Script\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x12\n\nsource_url\x18\x08 \x01(\t\x12\x12\n\nheader_url\x18\x0b \x01(\t\x12\x12\n\nfooter_url\x18\x0c \x01(\t\x12$\n\x05\x66iles\x18\n \x03(\x0b\x32\x15.eolymp.executor.FileB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,6 +22,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.script_pb2'
 if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
-  _globals['_SCRIPT']._serialized_start=77
-  _globals['_SCRIPT']._serialized_end=174
+  _globals['_SCRIPT']._serialized_start=78
+  _globals['_SCRIPT']._serialized_end=215
 # @@protoc_insertion_point(module_scope)
