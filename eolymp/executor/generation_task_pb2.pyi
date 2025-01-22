@@ -1,3 +1,4 @@
+from eolymp.executor import interactor_pb2 as _interactor_pb2
 from eolymp.executor import script_pb2 as _script_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -7,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GenerationTask(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "runs", "scripts"]
+    __slots__ = ["task_id", "reference", "origin", "runs", "scripts", "interactor"]
     class Generator(_message.Message):
         __slots__ = ["script_name", "arguments"]
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -37,9 +38,11 @@ class GenerationTask(_message.Message):
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
     SCRIPTS_FIELD_NUMBER: _ClassVar[int]
+    INTERACTOR_FIELD_NUMBER: _ClassVar[int]
     task_id: str
     reference: str
     origin: str
     runs: _containers.RepeatedCompositeFieldContainer[GenerationTask.Run]
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., runs: _Optional[_Iterable[_Union[GenerationTask.Run, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...
+    interactor: _interactor_pb2.Interactor
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., runs: _Optional[_Iterable[_Union[GenerationTask.Run, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ...) -> None: ...

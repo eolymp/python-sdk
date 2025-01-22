@@ -15,7 +15,7 @@ from eolymp.printer import printer_pb2 as eolymp_dot_printer_dot_printer__pb2
 from eolymp.printer import printer_job_pb2 as eolymp_dot_printer_dot_printer__job__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/printer/printer_connector.proto\x12\x0e\x65olymp.printer\x1a\x1c\x65olymp/printer/printer.proto\x1a eolymp/printer/printer_job.proto\"\xaa\x03\n\x1dPrinterConnectorClientMessage\x12\n\n\x02id\x18\x01 \x01(\t\x12R\n\x0c\x61uthenticate\x18\x64 \x01(\x0b\x32:.eolymp.printer.PrinterConnectorClientMessage.AuthenticateH\x00\x12\x46\n\x06status\x18\x65 \x01(\x0b\x32\x34.eolymp.printer.PrinterConnectorClientMessage.StatusH\x00\x12\x46\n\x06report\x18\x66 \x01(\x0b\x32\x34.eolymp.printer.PrinterConnectorClientMessage.ReportH\x00\x1a\x1e\n\x0c\x41uthenticate\x12\x0e\n\x06secret\x18\x01 \x01(\t\x1a\x34\n\x06Report\x12*\n\x06status\x18\x01 \x01(\x0e\x32\x1a.eolymp.printer.Job.Status\x1a\x38\n\x06Status\x12.\n\x06status\x18\x01 \x01(\x0e\x32\x1e.eolymp.printer.Printer.StatusB\t\n\x07message\"\x87\x02\n\x1dPrinterConnectorServerMessage\x12\n\n\x02id\x18\x01 \x01(\t\x12\x44\n\x05hello\x18\x64 \x01(\x0b\x32\x33.eolymp.printer.PrinterConnectorServerMessage.HelloH\x00\x12\x44\n\x05print\x18n \x01(\x0b\x32\x33.eolymp.printer.PrinterConnectorServerMessage.PrintH\x00\x1a\x18\n\x05Hello\x12\x0f\n\x07\x63omment\x18\x01 \x01(\t\x1a)\n\x05Print\x12 \n\x03job\x18\x01 \x01(\x0b\x32\x13.eolymp.printer.JobB\t\n\x07message2\x81\x01\n\x10PrinterConnector\x12m\n\x07\x43onnect\x12-.eolymp.printer.PrinterConnectorClientMessage\x1a-.eolymp.printer.PrinterConnectorServerMessage\"\x00(\x01\x30\x01\x42\x31Z/github.com/eolymp/go-sdk/eolymp/printer;printerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/printer/printer_connector.proto\x12\x0e\x65olymp.printer\x1a\x1c\x65olymp/printer/printer.proto\x1a eolymp/printer/printer_job.proto\"\xb6\x02\n\x1dPrinterConnectorClientMessage\x12\x46\n\x06status\x18\x65 \x01(\x0b\x32\x34.eolymp.printer.PrinterConnectorClientMessage.StatusH\x00\x12\x46\n\x06report\x18\x66 \x01(\x0b\x32\x34.eolymp.printer.PrinterConnectorClientMessage.ReportH\x00\x1a@\n\x06Report\x12\n\n\x02id\x18\x02 \x01(\t\x12*\n\x06status\x18\x01 \x01(\x0e\x32\x1a.eolymp.printer.Job.Status\x1a\x38\n\x06Status\x12.\n\x06status\x18\x01 \x01(\x0e\x32\x1e.eolymp.printer.Printer.StatusB\t\n\x07message\"\xa5\x02\n\x1dPrinterConnectorServerMessage\x12\x44\n\x05hello\x18\x64 \x01(\x0b\x32\x33.eolymp.printer.PrinterConnectorServerMessage.HelloH\x00\x12\x44\n\x05print\x18n \x01(\x0b\x32\x33.eolymp.printer.PrinterConnectorServerMessage.PrintH\x00\x1a\x42\n\x05Hello\x12\x0f\n\x07\x63omment\x18\x01 \x01(\t\x12(\n\x07printer\x18\x02 \x01(\x0b\x32\x17.eolymp.printer.Printer\x1a)\n\x05Print\x12 \n\x03job\x18\x01 \x01(\x0b\x32\x13.eolymp.printer.JobB\t\n\x07message2\x81\x01\n\x10PrinterConnector\x12m\n\x07\x43onnect\x12-.eolymp.printer.PrinterConnectorClientMessage\x1a-.eolymp.printer.PrinterConnectorServerMessage\"\x00(\x01\x30\x01\x42\x31Z/github.com/eolymp/go-sdk/eolymp/printer;printerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,19 +24,17 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/printer;printer'
   _globals['_PRINTERCONNECTORCLIENTMESSAGE']._serialized_start=123
-  _globals['_PRINTERCONNECTORCLIENTMESSAGE']._serialized_end=549
-  _globals['_PRINTERCONNECTORCLIENTMESSAGE_AUTHENTICATE']._serialized_start=396
-  _globals['_PRINTERCONNECTORCLIENTMESSAGE_AUTHENTICATE']._serialized_end=426
-  _globals['_PRINTERCONNECTORCLIENTMESSAGE_REPORT']._serialized_start=428
-  _globals['_PRINTERCONNECTORCLIENTMESSAGE_REPORT']._serialized_end=480
-  _globals['_PRINTERCONNECTORCLIENTMESSAGE_STATUS']._serialized_start=482
-  _globals['_PRINTERCONNECTORCLIENTMESSAGE_STATUS']._serialized_end=538
-  _globals['_PRINTERCONNECTORSERVERMESSAGE']._serialized_start=552
-  _globals['_PRINTERCONNECTORSERVERMESSAGE']._serialized_end=815
-  _globals['_PRINTERCONNECTORSERVERMESSAGE_HELLO']._serialized_start=737
-  _globals['_PRINTERCONNECTORSERVERMESSAGE_HELLO']._serialized_end=761
-  _globals['_PRINTERCONNECTORSERVERMESSAGE_PRINT']._serialized_start=763
-  _globals['_PRINTERCONNECTORSERVERMESSAGE_PRINT']._serialized_end=804
-  _globals['_PRINTERCONNECTOR']._serialized_start=818
-  _globals['_PRINTERCONNECTOR']._serialized_end=947
+  _globals['_PRINTERCONNECTORCLIENTMESSAGE']._serialized_end=433
+  _globals['_PRINTERCONNECTORCLIENTMESSAGE_REPORT']._serialized_start=300
+  _globals['_PRINTERCONNECTORCLIENTMESSAGE_REPORT']._serialized_end=364
+  _globals['_PRINTERCONNECTORCLIENTMESSAGE_STATUS']._serialized_start=366
+  _globals['_PRINTERCONNECTORCLIENTMESSAGE_STATUS']._serialized_end=422
+  _globals['_PRINTERCONNECTORSERVERMESSAGE']._serialized_start=436
+  _globals['_PRINTERCONNECTORSERVERMESSAGE']._serialized_end=729
+  _globals['_PRINTERCONNECTORSERVERMESSAGE_HELLO']._serialized_start=609
+  _globals['_PRINTERCONNECTORSERVERMESSAGE_HELLO']._serialized_end=675
+  _globals['_PRINTERCONNECTORSERVERMESSAGE_PRINT']._serialized_start=677
+  _globals['_PRINTERCONNECTORSERVERMESSAGE_PRINT']._serialized_end=718
+  _globals['_PRINTERCONNECTOR']._serialized_start=732
+  _globals['_PRINTERCONNECTOR']._serialized_end=861
 # @@protoc_insertion_point(module_scope)
