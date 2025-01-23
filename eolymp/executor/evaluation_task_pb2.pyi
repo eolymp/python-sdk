@@ -19,7 +19,7 @@ class EvaluationTask(_message.Message):
         arguments: _containers.RepeatedScalarFieldContainer[str]
         def __init__(self, script_name: _Optional[str] = ..., arguments: _Optional[_Iterable[str]] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ["reference", "index", "debug", "cost", "env", "labels", "input_url", "input_content", "input_generator", "answer_url", "answer_content"]
+        __slots__ = ["reference", "index", "debug", "cost", "env", "labels", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator"]
         class EnvEntry(_message.Message):
             __slots__ = ["key", "value"]
             KEY_FIELD_NUMBER: _ClassVar[int]
@@ -38,6 +38,7 @@ class EvaluationTask(_message.Message):
         INPUT_GENERATOR_FIELD_NUMBER: _ClassVar[int]
         ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
         ANSWER_CONTENT_FIELD_NUMBER: _ClassVar[int]
+        ANSWER_GENERATOR_FIELD_NUMBER: _ClassVar[int]
         reference: str
         index: int
         debug: bool
@@ -46,10 +47,11 @@ class EvaluationTask(_message.Message):
         labels: _containers.RepeatedScalarFieldContainer[str]
         input_url: str
         input_content: str
-        input_generator: str
+        input_generator: EvaluationTask.Generator
         answer_url: str
         answer_content: str
-        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., debug: bool = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., labels: _Optional[_Iterable[str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[str] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ...) -> None: ...
+        answer_generator: EvaluationTask.Generator
+        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., debug: bool = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., labels: _Optional[_Iterable[str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ...) -> None: ...
     class Precondition(_message.Message):
         __slots__ = ["selector", "depends_on", "stop_on_failure", "max_execution_time"]
         SELECTOR_FIELD_NUMBER: _ClassVar[int]
