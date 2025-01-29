@@ -3,6 +3,7 @@ from eolymp.executor import file_pb2 as _file_pb2
 from eolymp.executor import interactor_pb2 as _interactor_pb2
 from eolymp.executor import script_pb2 as _script_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -11,6 +12,14 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationTask(_message.Message):
     __slots__ = ["task_id", "reference", "origin", "priority", "runtime", "source", "source_url", "header_url", "footer_url", "files", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "checker", "interactor", "scripts", "runs"]
+    class DependencyMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+        UNKNOWN_DEPENDENCY_MODE: _ClassVar[EvaluationTask.DependencyMode]
+        FULLY_ACCEPTED: _ClassVar[EvaluationTask.DependencyMode]
+        FIRST_POINT: _ClassVar[EvaluationTask.DependencyMode]
+    UNKNOWN_DEPENDENCY_MODE: EvaluationTask.DependencyMode
+    FULLY_ACCEPTED: EvaluationTask.DependencyMode
+    FIRST_POINT: EvaluationTask.DependencyMode
     class Generator(_message.Message):
         __slots__ = ["script_name", "arguments"]
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -53,16 +62,18 @@ class EvaluationTask(_message.Message):
         answer_generator: EvaluationTask.Generator
         def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., debug: bool = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., labels: _Optional[_Iterable[str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ...) -> None: ...
     class Precondition(_message.Message):
-        __slots__ = ["selector", "depends_on", "stop_on_failure", "max_execution_time"]
+        __slots__ = ["selector", "depends_on", "dependency_mode", "stop_on_failure", "max_execution_time"]
         SELECTOR_FIELD_NUMBER: _ClassVar[int]
         DEPENDS_ON_FIELD_NUMBER: _ClassVar[int]
+        DEPENDENCY_MODE_FIELD_NUMBER: _ClassVar[int]
         STOP_ON_FAILURE_FIELD_NUMBER: _ClassVar[int]
         MAX_EXECUTION_TIME_FIELD_NUMBER: _ClassVar[int]
         selector: _containers.RepeatedScalarFieldContainer[str]
         depends_on: _containers.RepeatedScalarFieldContainer[str]
+        dependency_mode: EvaluationTask.DependencyMode
         stop_on_failure: bool
         max_execution_time: int
-        def __init__(self, selector: _Optional[_Iterable[str]] = ..., depends_on: _Optional[_Iterable[str]] = ..., stop_on_failure: bool = ..., max_execution_time: _Optional[int] = ...) -> None: ...
+        def __init__(self, selector: _Optional[_Iterable[str]] = ..., depends_on: _Optional[_Iterable[str]] = ..., dependency_mode: _Optional[_Union[EvaluationTask.DependencyMode, str]] = ..., stop_on_failure: bool = ..., max_execution_time: _Optional[int] = ...) -> None: ...
     class Constraint(_message.Message):
         __slots__ = ["selector", "actor", "wall_time_limit", "cpu_time_limit", "memory_limit", "file_size_limit"]
         SELECTOR_FIELD_NUMBER: _ClassVar[int]
