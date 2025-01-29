@@ -54,6 +54,7 @@ class EvaluationReport(_message.Message):
             VERIFICATION_FAILURE: _ClassVar[EvaluationReport.Run.Status]
             SKIPPED: _ClassVar[EvaluationReport.Run.Status]
             INTERACTION_FAILURE: _ClassVar[EvaluationReport.Run.Status]
+            BLOCKED: _ClassVar[EvaluationReport.Run.Status]
         NONE: EvaluationReport.Run.Status
         PENDING: EvaluationReport.Run.Status
         EXECUTING: EvaluationReport.Run.Status
@@ -67,6 +68,7 @@ class EvaluationReport(_message.Message):
         VERIFICATION_FAILURE: EvaluationReport.Run.Status
         SKIPPED: EvaluationReport.Run.Status
         INTERACTION_FAILURE: EvaluationReport.Run.Status
+        BLOCKED: EvaluationReport.Run.Status
         REFERENCE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
