@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationTask(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "priority", "runtime", "source", "source_url", "header_url", "footer_url", "files", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "checker", "interactor", "scripts", "runs"]
+    __slots__ = ["task_id", "reference", "origin", "priority", "runtime", "source_url", "header_url", "footer_url", "files", "solution", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "checker", "interactor", "scripts", "runs"]
     class DependencyMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNKNOWN_DEPENDENCY_MODE: _ClassVar[EvaluationTask.DependencyMode]
@@ -94,11 +94,11 @@ class EvaluationTask(_message.Message):
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     PRIORITY_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
     HEADER_URL_FIELD_NUMBER: _ClassVar[int]
     FOOTER_URL_FIELD_NUMBER: _ClassVar[int]
     FILES_FIELD_NUMBER: _ClassVar[int]
+    SOLUTION_FIELD_NUMBER: _ClassVar[int]
     REDIRECT_STDERR_TO_STDOUT_FIELD_NUMBER: _ClassVar[int]
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
@@ -112,11 +112,11 @@ class EvaluationTask(_message.Message):
     origin: str
     priority: int
     runtime: str
-    source: str
     source_url: str
     header_url: str
     footer_url: str
     files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
+    solution: _script_pb2.Script
     redirect_stderr_to_stdout: bool
     run_count: int
     preconditions: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Precondition]
@@ -125,4 +125,4 @@ class EvaluationTask(_message.Message):
     interactor: _interactor_pb2.Interactor
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     runs: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ..., solution: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...
