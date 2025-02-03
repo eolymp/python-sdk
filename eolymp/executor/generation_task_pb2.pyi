@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GenerationTask(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "priority", "solution", "redirect_stderr_to_stdout", "run_count", "interactor", "scripts", "runs"]
+    __slots__ = ["task_id", "reference", "origin", "run_count", "interactor", "scripts", "runs"]
     class Generator(_message.Message):
         __slots__ = ["script_name", "arguments"]
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -17,7 +17,7 @@ class GenerationTask(_message.Message):
         arguments: _containers.RepeatedScalarFieldContainer[str]
         def __init__(self, script_name: _Optional[str] = ..., arguments: _Optional[_Iterable[str]] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ["reference", "index", "debug", "cost", "env", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator"]
+        __slots__ = ["reference", "index", "cost", "env", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator"]
         class EnvEntry(_message.Message):
             __slots__ = ["key", "value"]
             KEY_FIELD_NUMBER: _ClassVar[int]
@@ -27,7 +27,6 @@ class GenerationTask(_message.Message):
             def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
         REFERENCE_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
-        DEBUG_FIELD_NUMBER: _ClassVar[int]
         COST_FIELD_NUMBER: _ClassVar[int]
         ENV_FIELD_NUMBER: _ClassVar[int]
         INPUT_URL_FIELD_NUMBER: _ClassVar[int]
@@ -38,7 +37,6 @@ class GenerationTask(_message.Message):
         ANSWER_GENERATOR_FIELD_NUMBER: _ClassVar[int]
         reference: str
         index: int
-        debug: bool
         cost: float
         env: _containers.ScalarMap[str, str]
         input_url: str
@@ -47,13 +45,10 @@ class GenerationTask(_message.Message):
         answer_url: str
         answer_content: str
         answer_generator: GenerationTask.Generator
-        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., debug: bool = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ...) -> None: ...
     TASK_ID_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
-    PRIORITY_FIELD_NUMBER: _ClassVar[int]
-    SOLUTION_FIELD_NUMBER: _ClassVar[int]
-    REDIRECT_STDERR_TO_STDOUT_FIELD_NUMBER: _ClassVar[int]
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
     SCRIPTS_FIELD_NUMBER: _ClassVar[int]
@@ -61,11 +56,8 @@ class GenerationTask(_message.Message):
     task_id: str
     reference: str
     origin: str
-    priority: int
-    solution: _script_pb2.Script
-    redirect_stderr_to_stdout: bool
     run_count: int
     interactor: _interactor_pb2.Interactor
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     runs: _containers.RepeatedCompositeFieldContainer[GenerationTask.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., solution: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[GenerationTask.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., run_count: _Optional[int] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[GenerationTask.Run, _Mapping]]] = ...) -> None: ...
