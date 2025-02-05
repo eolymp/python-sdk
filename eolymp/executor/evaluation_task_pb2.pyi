@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationTask(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "priority", "runtime", "source_url", "header_url", "footer_url", "files", "solution", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "checker", "interactor", "scripts", "runs"]
+    __slots__ = ["task_id", "reference", "origin", "priority", "runtime", "source_url", "header_url", "footer_url", "files", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "submission", "checker", "interactor_deprecated", "interactor", "scripts", "runs"]
     class DependencyMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNKNOWN_DEPENDENCY_MODE: _ClassVar[EvaluationTask.DependencyMode]
@@ -98,12 +98,13 @@ class EvaluationTask(_message.Message):
     HEADER_URL_FIELD_NUMBER: _ClassVar[int]
     FOOTER_URL_FIELD_NUMBER: _ClassVar[int]
     FILES_FIELD_NUMBER: _ClassVar[int]
-    SOLUTION_FIELD_NUMBER: _ClassVar[int]
     REDIRECT_STDERR_TO_STDOUT_FIELD_NUMBER: _ClassVar[int]
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     CHECKER_FIELD_NUMBER: _ClassVar[int]
+    INTERACTOR_DEPRECATED_FIELD_NUMBER: _ClassVar[int]
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
     SCRIPTS_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
@@ -116,13 +117,14 @@ class EvaluationTask(_message.Message):
     header_url: str
     footer_url: str
     files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
-    solution: _script_pb2.Script
     redirect_stderr_to_stdout: bool
     run_count: int
     preconditions: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Precondition]
     constraints: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Constraint]
+    submission: _script_pb2.Script
     checker: _checker_pb2.Checker
-    interactor: _interactor_pb2.Interactor
+    interactor_deprecated: _interactor_pb2.Interactor
+    interactor: _script_pb2.Script
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     runs: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ..., solution: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., submission: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor_deprecated: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...
