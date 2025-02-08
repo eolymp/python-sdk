@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationReport(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "agent", "signature", "version", "type", "status", "error_message", "runs"]
+    __slots__ = ["task_id", "reference", "origin", "metadata", "agent", "signature", "version", "type", "status", "error_message", "runs"]
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNKNOWN_STATUS: _ClassVar[EvaluationReport.Status]
@@ -102,9 +102,17 @@ class EvaluationReport(_message.Message):
         checker_stats: _stats_pb2.Stats
         interactor_stats: _stats_pb2.Stats
         def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[EvaluationReport.Run.Status, str]] = ..., score: _Optional[float] = ..., cost: _Optional[float] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
+    class MetadataEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     TASK_ID_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
+    METADATA_FIELD_NUMBER: _ClassVar[int]
     AGENT_FIELD_NUMBER: _ClassVar[int]
     SIGNATURE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
@@ -115,6 +123,7 @@ class EvaluationReport(_message.Message):
     task_id: str
     reference: str
     origin: str
+    metadata: _containers.ScalarMap[str, str]
     agent: str
     signature: str
     version: int
@@ -122,4 +131,4 @@ class EvaluationReport(_message.Message):
     status: EvaluationReport.Status
     error_message: str
     runs: _containers.RepeatedCompositeFieldContainer[EvaluationReport.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., agent: _Optional[str] = ..., signature: _Optional[str] = ..., version: _Optional[int] = ..., type: _Optional[_Union[EvaluationReport.Type, str]] = ..., status: _Optional[_Union[EvaluationReport.Status, str]] = ..., error_message: _Optional[str] = ..., runs: _Optional[_Iterable[_Union[EvaluationReport.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., agent: _Optional[str] = ..., signature: _Optional[str] = ..., version: _Optional[int] = ..., type: _Optional[_Union[EvaluationReport.Type, str]] = ..., status: _Optional[_Union[EvaluationReport.Status, str]] = ..., error_message: _Optional[str] = ..., runs: _Optional[_Iterable[_Union[EvaluationReport.Run, _Mapping]]] = ...) -> None: ...

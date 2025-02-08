@@ -1,4 +1,3 @@
-from eolymp.executor import interactor_pb2 as _interactor_pb2
 from eolymp.executor import script_pb2 as _script_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -8,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GenerationTask(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "run_count", "interactor", "scripts", "runs"]
+    __slots__ = ["task_id", "reference", "origin", "metadata", "run_count", "interactor", "scripts", "runs"]
     class Generator(_message.Message):
         __slots__ = ["script_name", "arguments"]
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -46,9 +45,17 @@ class GenerationTask(_message.Message):
         answer_content: str
         answer_generator: GenerationTask.Generator
         def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ...) -> None: ...
+    class MetadataEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     TASK_ID_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
+    METADATA_FIELD_NUMBER: _ClassVar[int]
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
     SCRIPTS_FIELD_NUMBER: _ClassVar[int]
@@ -56,8 +63,9 @@ class GenerationTask(_message.Message):
     task_id: str
     reference: str
     origin: str
+    metadata: _containers.ScalarMap[str, str]
     run_count: int
-    interactor: _interactor_pb2.Interactor
+    interactor: _script_pb2.Script
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     runs: _containers.RepeatedCompositeFieldContainer[GenerationTask.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., run_count: _Optional[int] = ..., interactor: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[GenerationTask.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., run_count: _Optional[int] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[GenerationTask.Run, _Mapping]]] = ...) -> None: ...

@@ -1,6 +1,4 @@
 from eolymp.executor import checker_pb2 as _checker_pb2
-from eolymp.executor import file_pb2 as _file_pb2
-from eolymp.executor import interactor_pb2 as _interactor_pb2
 from eolymp.executor import script_pb2 as _script_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -11,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationTask(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "priority", "runtime", "source_url", "header_url", "footer_url", "files", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "submission", "checker", "interactor_deprecated", "interactor", "scripts", "runs"]
+    __slots__ = ["task_id", "reference", "origin", "metadata", "priority", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "submission", "interactor", "checker", "scripts", "runs"]
     class DependencyMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNKNOWN_DEPENDENCY_MODE: _ClassVar[EvaluationTask.DependencyMode]
@@ -89,42 +87,39 @@ class EvaluationTask(_message.Message):
         memory_limit: int
         file_size_limit: int
         def __init__(self, selector: _Optional[_Iterable[str]] = ..., actor: _Optional[str] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
+    class MetadataEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     TASK_ID_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
+    METADATA_FIELD_NUMBER: _ClassVar[int]
     PRIORITY_FIELD_NUMBER: _ClassVar[int]
-    RUNTIME_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
-    HEADER_URL_FIELD_NUMBER: _ClassVar[int]
-    FOOTER_URL_FIELD_NUMBER: _ClassVar[int]
-    FILES_FIELD_NUMBER: _ClassVar[int]
     REDIRECT_STDERR_TO_STDOUT_FIELD_NUMBER: _ClassVar[int]
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
-    CHECKER_FIELD_NUMBER: _ClassVar[int]
-    INTERACTOR_DEPRECATED_FIELD_NUMBER: _ClassVar[int]
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
+    CHECKER_FIELD_NUMBER: _ClassVar[int]
     SCRIPTS_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
     task_id: str
     reference: str
     origin: str
+    metadata: _containers.ScalarMap[str, str]
     priority: int
-    runtime: str
-    source_url: str
-    header_url: str
-    footer_url: str
-    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
     redirect_stderr_to_stdout: bool
     run_count: int
     preconditions: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Precondition]
     constraints: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Constraint]
     submission: _script_pb2.Script
-    checker: _checker_pb2.Checker
-    interactor_deprecated: _interactor_pb2.Interactor
     interactor: _script_pb2.Script
+    checker: _checker_pb2.Checker
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     runs: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., priority: _Optional[int] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., header_url: _Optional[str] = ..., footer_url: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., submission: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., interactor_deprecated: _Optional[_Union[_interactor_pb2.Interactor, _Mapping]] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., priority: _Optional[int] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., submission: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...

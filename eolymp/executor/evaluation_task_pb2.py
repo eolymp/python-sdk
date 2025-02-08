@@ -12,12 +12,10 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.executor import checker_pb2 as eolymp_dot_executor_dot_checker__pb2
-from eolymp.executor import file_pb2 as eolymp_dot_executor_dot_file__pb2
-from eolymp.executor import interactor_pb2 as eolymp_dot_executor_dot_interactor__pb2
 from eolymp.executor import script_pb2 as eolymp_dot_executor_dot_script__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/executor/evaluation_task.proto\x12\x0f\x65olymp.executor\x1a\x1d\x65olymp/executor/checker.proto\x1a\x1a\x65olymp/executor/file.proto\x1a eolymp/executor/interactor.proto\x1a\x1c\x65olymp/executor/script.proto\"\xad\x0c\n\x0e\x45valuationTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0e\n\x06origin\x18\x03 \x01(\t\x12\x10\n\x08priority\x18\x04 \x01(\r\x12\x0f\n\x07runtime\x18\n \x01(\t\x12\x12\n\nsource_url\x18n \x01(\t\x12\x12\n\nheader_url\x18o \x01(\t\x12\x12\n\nfooter_url\x18p \x01(\t\x12$\n\x05\x66iles\x18\x32 \x03(\x0b\x32\x15.eolymp.executor.File\x12!\n\x19redirect_stderr_to_stdout\x18\r \x01(\x08\x12\x11\n\trun_count\x18\x10 \x01(\r\x12\x43\n\rpreconditions\x18( \x03(\x0b\x32,.eolymp.executor.EvaluationTask.Precondition\x12?\n\x0b\x63onstraints\x18\x14 \x03(\x0b\x32*.eolymp.executor.EvaluationTask.Constraint\x12+\n\nsubmission\x18\x0c \x01(\x0b\x32\x17.eolymp.executor.Script\x12)\n\x07\x63hecker\x18\x18 \x01(\x0b\x32\x18.eolymp.executor.Checker\x12:\n\x15interactor_deprecated\x18\x19 \x01(\x0b\x32\x1b.eolymp.executor.Interactor\x12+\n\ninteractor\x18\x1a \x01(\x0b\x32\x17.eolymp.executor.Script\x12(\n\x07scripts\x18< \x03(\x0b\x32\x17.eolymp.executor.Script\x12\x31\n\x04runs\x18\x1e \x03(\x0b\x32#.eolymp.executor.EvaluationTask.Run\x1a\x33\n\tGenerator\x12\x13\n\x0bscript_name\x18\x01 \x01(\t\x12\x11\n\targuments\x18\x02 \x03(\t\x1a\xb9\x03\n\x03Run\x12\x11\n\treference\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05\x64\x65\x62ug\x18\x03 \x01(\x08\x12\x0c\n\x04\x63ost\x18\x04 \x01(\x02\x12\x39\n\x03\x65nv\x18\x05 \x03(\x0b\x32,.eolymp.executor.EvaluationTask.Run.EnvEntry\x12\x0e\n\x06labels\x18\x1e \x03(\t\x12\x13\n\tinput_url\x18\x0c \x01(\tH\x00\x12\x17\n\rinput_content\x18\x0b \x01(\tH\x00\x12\x44\n\x0finput_generator\x18\r \x01(\x0b\x32).eolymp.executor.EvaluationTask.GeneratorH\x00\x12\x14\n\nanswer_url\x18\x16 \x01(\tH\x01\x12\x18\n\x0e\x61nswer_content\x18\x15 \x01(\tH\x01\x12\x45\n\x10\x61nswer_generator\x18\x17 \x01(\x0b\x32).eolymp.executor.EvaluationTask.GeneratorH\x01\x1a*\n\x08\x45nvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x07\n\x05inputB\x08\n\x06\x61nswer\x1a\xb2\x01\n\x0cPrecondition\x12\x10\n\x08selector\x18\x01 \x03(\t\x12\x12\n\ndepends_on\x18\n \x03(\t\x12G\n\x0f\x64\x65pendency_mode\x18\x14 \x01(\x0e\x32..eolymp.executor.EvaluationTask.DependencyMode\x12\x17\n\x0fstop_on_failure\x18\x0b \x01(\x08\x12\x1a\n\x12max_execution_time\x18\x0c \x01(\r\x1a\x8d\x01\n\nConstraint\x12\x10\n\x08selector\x18\x01 \x03(\t\x12\r\n\x05\x61\x63tor\x18\x02 \x01(\t\x12\x17\n\x0fwall_time_limit\x18\n \x01(\r\x12\x16\n\x0e\x63pu_time_limit\x18\x0b \x01(\r\x12\x14\n\x0cmemory_limit\x18\x0c \x01(\x04\x12\x17\n\x0f\x66ile_size_limit\x18\r \x01(\x04\"R\n\x0e\x44\x65pendencyMode\x12\x1b\n\x17UNKNOWN_DEPENDENCY_MODE\x10\x00\x12\x12\n\x0e\x46ULLY_ACCEPTED\x10\x01\x12\x0f\n\x0b\x46IRST_POINT\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/executor/evaluation_task.proto\x12\x0f\x65olymp.executor\x1a\x1d\x65olymp/executor/checker.proto\x1a\x1c\x65olymp/executor/script.proto\"\xf0\x0b\n\x0e\x45valuationTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0e\n\x06origin\x18\x03 \x01(\t\x12?\n\x08metadata\x18\x05 \x03(\x0b\x32-.eolymp.executor.EvaluationTask.MetadataEntry\x12\x10\n\x08priority\x18\x04 \x01(\r\x12!\n\x19redirect_stderr_to_stdout\x18\r \x01(\x08\x12\x11\n\trun_count\x18\x10 \x01(\r\x12\x43\n\rpreconditions\x18( \x03(\x0b\x32,.eolymp.executor.EvaluationTask.Precondition\x12?\n\x0b\x63onstraints\x18\x14 \x03(\x0b\x32*.eolymp.executor.EvaluationTask.Constraint\x12+\n\nsubmission\x18\x0c \x01(\x0b\x32\x17.eolymp.executor.Script\x12+\n\ninteractor\x18\x1a \x01(\x0b\x32\x17.eolymp.executor.Script\x12)\n\x07\x63hecker\x18\x18 \x01(\x0b\x32\x18.eolymp.executor.Checker\x12(\n\x07scripts\x18< \x03(\x0b\x32\x17.eolymp.executor.Script\x12\x31\n\x04runs\x18\x1e \x03(\x0b\x32#.eolymp.executor.EvaluationTask.Run\x1a\x33\n\tGenerator\x12\x13\n\x0bscript_name\x18\x01 \x01(\t\x12\x11\n\targuments\x18\x02 \x03(\t\x1a\xb9\x03\n\x03Run\x12\x11\n\treference\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05\x64\x65\x62ug\x18\x03 \x01(\x08\x12\x0c\n\x04\x63ost\x18\x04 \x01(\x02\x12\x39\n\x03\x65nv\x18\x05 \x03(\x0b\x32,.eolymp.executor.EvaluationTask.Run.EnvEntry\x12\x0e\n\x06labels\x18\x1e \x03(\t\x12\x13\n\tinput_url\x18\x0c \x01(\tH\x00\x12\x17\n\rinput_content\x18\x0b \x01(\tH\x00\x12\x44\n\x0finput_generator\x18\r \x01(\x0b\x32).eolymp.executor.EvaluationTask.GeneratorH\x00\x12\x14\n\nanswer_url\x18\x16 \x01(\tH\x01\x12\x18\n\x0e\x61nswer_content\x18\x15 \x01(\tH\x01\x12\x45\n\x10\x61nswer_generator\x18\x17 \x01(\x0b\x32).eolymp.executor.EvaluationTask.GeneratorH\x01\x1a*\n\x08\x45nvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x07\n\x05inputB\x08\n\x06\x61nswer\x1a\xb2\x01\n\x0cPrecondition\x12\x10\n\x08selector\x18\x01 \x03(\t\x12\x12\n\ndepends_on\x18\n \x03(\t\x12G\n\x0f\x64\x65pendency_mode\x18\x14 \x01(\x0e\x32..eolymp.executor.EvaluationTask.DependencyMode\x12\x17\n\x0fstop_on_failure\x18\x0b \x01(\x08\x12\x1a\n\x12max_execution_time\x18\x0c \x01(\r\x1a\x8d\x01\n\nConstraint\x12\x10\n\x08selector\x18\x01 \x03(\t\x12\r\n\x05\x61\x63tor\x18\x02 \x01(\t\x12\x17\n\x0fwall_time_limit\x18\n \x01(\r\x12\x16\n\x0e\x63pu_time_limit\x18\x0b \x01(\r\x12\x14\n\x0cmemory_limit\x18\x0c \x01(\x04\x12\x17\n\x0f\x66ile_size_limit\x18\r \x01(\x04\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"R\n\x0e\x44\x65pendencyMode\x12\x1b\n\x17UNKNOWN_DEPENDENCY_MODE\x10\x00\x12\x12\n\x0e\x46ULLY_ACCEPTED\x10\x01\x12\x0f\n\x0b\x46IRST_POINT\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,18 +25,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
   _globals['_EVALUATIONTASK_RUN_ENVENTRY']._options = None
   _globals['_EVALUATIONTASK_RUN_ENVENTRY']._serialized_options = b'8\001'
-  _globals['_EVALUATIONTASK']._serialized_start=182
-  _globals['_EVALUATIONTASK']._serialized_end=1763
-  _globals['_EVALUATIONTASK_GENERATOR']._serialized_start=859
-  _globals['_EVALUATIONTASK_GENERATOR']._serialized_end=910
-  _globals['_EVALUATIONTASK_RUN']._serialized_start=913
-  _globals['_EVALUATIONTASK_RUN']._serialized_end=1354
-  _globals['_EVALUATIONTASK_RUN_ENVENTRY']._serialized_start=1293
-  _globals['_EVALUATIONTASK_RUN_ENVENTRY']._serialized_end=1335
-  _globals['_EVALUATIONTASK_PRECONDITION']._serialized_start=1357
-  _globals['_EVALUATIONTASK_PRECONDITION']._serialized_end=1535
-  _globals['_EVALUATIONTASK_CONSTRAINT']._serialized_start=1538
-  _globals['_EVALUATIONTASK_CONSTRAINT']._serialized_end=1679
-  _globals['_EVALUATIONTASK_DEPENDENCYMODE']._serialized_start=1681
-  _globals['_EVALUATIONTASK_DEPENDENCYMODE']._serialized_end=1763
+  _globals['_EVALUATIONTASK_METADATAENTRY']._options = None
+  _globals['_EVALUATIONTASK_METADATAENTRY']._serialized_options = b'8\001'
+  _globals['_EVALUATIONTASK']._serialized_start=120
+  _globals['_EVALUATIONTASK']._serialized_end=1640
+  _globals['_EVALUATIONTASK_GENERATOR']._serialized_start=687
+  _globals['_EVALUATIONTASK_GENERATOR']._serialized_end=738
+  _globals['_EVALUATIONTASK_RUN']._serialized_start=741
+  _globals['_EVALUATIONTASK_RUN']._serialized_end=1182
+  _globals['_EVALUATIONTASK_RUN_ENVENTRY']._serialized_start=1121
+  _globals['_EVALUATIONTASK_RUN_ENVENTRY']._serialized_end=1163
+  _globals['_EVALUATIONTASK_PRECONDITION']._serialized_start=1185
+  _globals['_EVALUATIONTASK_PRECONDITION']._serialized_end=1363
+  _globals['_EVALUATIONTASK_CONSTRAINT']._serialized_start=1366
+  _globals['_EVALUATIONTASK_CONSTRAINT']._serialized_end=1507
+  _globals['_EVALUATIONTASK_METADATAENTRY']._serialized_start=1509
+  _globals['_EVALUATIONTASK_METADATAENTRY']._serialized_end=1556
+  _globals['_EVALUATIONTASK_DEPENDENCYMODE']._serialized_start=1558
+  _globals['_EVALUATIONTASK_DEPENDENCYMODE']._serialized_end=1640
 # @@protoc_insertion_point(module_scope)
