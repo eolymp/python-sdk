@@ -55,6 +55,27 @@ class ListSolutionsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_solution_pb2.Solution]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ...) -> None: ...
 
+class CheckSolutionsInput(_message.Message):
+    __slots__ = ["filters"]
+    class Filter(_message.Message):
+        __slots__ = ["id", "type", "name", "runtime"]
+        ID_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        RUNTIME_FIELD_NUMBER: _ClassVar[int]
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    filters: CheckSolutionsInput.Filter
+    def __init__(self, filters: _Optional[_Union[CheckSolutionsInput.Filter, _Mapping]] = ...) -> None: ...
+
+class CheckSolutionsOutput(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DescribeSolutionInput(_message.Message):
     __slots__ = ["solution_id", "version"]
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]

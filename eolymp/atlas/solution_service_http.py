@@ -78,3 +78,14 @@ class SolutionServiceClient:
             **kwargs,
         )
 
+    def CheckSolutions(self, request, **kwargs):
+        path = "/solutions:check"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CheckSolutionsOutput"),
+            **kwargs,
+        )
+

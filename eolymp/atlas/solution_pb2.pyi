@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Solution(_message.Message):
-    __slots__ = ["id", "name", "secret", "runtime", "source", "type"]
+    __slots__ = ["id", "name", "secret", "runtime", "source", "type", "status", "submission_id"]
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNSET: _ClassVar[Solution.Type]
@@ -29,16 +29,30 @@ class Solution(_message.Message):
     OVERFLOW_OR_ACCEPTED: Solution.Type
     DONT_RUN: Solution.Type
     FAILURE: Solution.Type
+    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+        UNKNOWN_STATUS: _ClassVar[Solution.Status]
+        PASS: _ClassVar[Solution.Status]
+        FAIL: _ClassVar[Solution.Status]
+        ERROR: _ClassVar[Solution.Status]
+    UNKNOWN_STATUS: Solution.Status
+    PASS: Solution.Status
+    FAIL: Solution.Status
+    ERROR: Solution.Status
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     secret: bool
     runtime: str
     source: str
     type: Solution.Type
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., secret: bool = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., type: _Optional[_Union[Solution.Type, str]] = ...) -> None: ...
+    status: Solution.Status
+    submission_id: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., secret: bool = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., type: _Optional[_Union[Solution.Type, str]] = ..., status: _Optional[_Union[Solution.Status, str]] = ..., submission_id: _Optional[str] = ...) -> None: ...
