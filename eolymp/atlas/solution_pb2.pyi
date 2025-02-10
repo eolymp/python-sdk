@@ -32,10 +32,12 @@ class Solution(_message.Message):
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
         UNKNOWN_STATUS: _ClassVar[Solution.Status]
+        PENDING: _ClassVar[Solution.Status]
         PASS: _ClassVar[Solution.Status]
         FAIL: _ClassVar[Solution.Status]
         ERROR: _ClassVar[Solution.Status]
     UNKNOWN_STATUS: Solution.Status
+    PENDING: Solution.Status
     PASS: Solution.Status
     FAIL: Solution.Status
     ERROR: Solution.Status
