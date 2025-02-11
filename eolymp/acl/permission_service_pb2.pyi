@@ -9,13 +9,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IntrospectPermissionsInput(_message.Message):
-    __slots__ = ["resource"]
+    __slots__ = ("resource",)
     RESOURCE_FIELD_NUMBER: _ClassVar[int]
     resource: str
     def __init__(self, resource: _Optional[str] = ...) -> None: ...
 
 class IntrospectPermissionsOutput(_message.Message):
-    __slots__ = ["actions"]
+    __slots__ = ("actions",)
     ACTIONS_FIELD_NUMBER: _ClassVar[int]
     actions: _containers.RepeatedScalarFieldContainer[_action_pb2.Action]
     def __init__(self, actions: _Optional[_Iterable[_Union[_action_pb2.Action, str]]] = ...) -> None: ...

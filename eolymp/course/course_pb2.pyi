@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Course(_message.Message):
-    __slots__ = ["id", "url", "locale", "name", "description", "image_url", "visibility", "duration", "topics", "estimate"]
+    __slots__ = ("id", "url", "locale", "name", "description", "image_url", "visibility", "duration", "topics", "estimate")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Course.Extra]
         DESCRIPTION_VALUE: _ClassVar[Course.Extra]
         DESCRIPTION_RENDER: _ClassVar[Course.Extra]
@@ -18,7 +18,7 @@ class Course(_message.Message):
     DESCRIPTION_VALUE: Course.Extra
     DESCRIPTION_RENDER: Course.Extra
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_VISIBILITY: _ClassVar[Course.Visibility]
         PUBLIC: _ClassVar[Course.Visibility]
         UNLISTED: _ClassVar[Course.Visibility]

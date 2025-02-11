@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Assignment(_message.Message):
-    __slots__ = ["id", "module_id", "status", "member_id", "group_id", "start_after", "complete_before", "duration", "upsolve"]
+    __slots__ = ("id", "module_id", "status", "member_id", "group_id", "start_after", "complete_before", "duration", "upsolve")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Assignment.Status]
         UNASSIGNED: _ClassVar[Assignment.Status]
         SCHEDULED: _ClassVar[Assignment.Status]

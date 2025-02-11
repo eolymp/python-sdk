@@ -11,9 +11,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Authorization(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     class OAuth2(_message.Message):
-        __slots__ = ["client_id", "token_endpoint", "authorize_endpoint", "userinfo_endpoint", "signout_endpoint"]
+        __slots__ = ("client_id", "token_endpoint", "authorize_endpoint", "userinfo_endpoint", "signout_endpoint")
         CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
         TOKEN_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
         AUTHORIZE_ENDPOINT_FIELD_NUMBER: _ClassVar[int]
@@ -28,9 +28,9 @@ class Authorization(_message.Message):
     def __init__(self) -> None: ...
 
 class Record(_message.Message):
-    __slots__ = ["target"]
+    __slots__ = ("target",)
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNSPECIFIED: _ClassVar[Record.Type]
         SPACE: _ClassVar[Record.Type]
         CONTEST: _ClassVar[Record.Type]
@@ -40,7 +40,7 @@ class Record(_message.Message):
     CONTEST: Record.Type
     SCOREBOARD: Record.Type
     class Target(_message.Message):
-        __slots__ = ["type", "url"]
+        __slots__ = ("type", "url")
         TYPE_FIELD_NUMBER: _ClassVar[int]
         URL_FIELD_NUMBER: _ClassVar[int]
         type: Record.Type
@@ -51,13 +51,13 @@ class Record(_message.Message):
     def __init__(self, target: _Optional[_Union[Record.Target, _Mapping]] = ...) -> None: ...
 
 class ResolveNameInput(_message.Message):
-    __slots__ = ["name"]
+    __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ResolveNameOutput(_message.Message):
-    __slots__ = ["target", "space", "contest", "scoreboard", "oauth2"]
+    __slots__ = ("target", "space", "contest", "scoreboard", "oauth2")
     TARGET_FIELD_NUMBER: _ClassVar[int]
     SPACE_FIELD_NUMBER: _ClassVar[int]
     CONTEST_FIELD_NUMBER: _ClassVar[int]

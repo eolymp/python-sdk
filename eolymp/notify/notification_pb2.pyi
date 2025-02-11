@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Notification(_message.Message):
-    __slots__ = ["id", "read", "topic", "parameters", "created_at", "sent_at", "read_at"]
+    __slots__ = ("id", "read", "topic", "parameters", "created_at", "sent_at", "read_at")
     class ParametersEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

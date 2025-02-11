@@ -12,19 +12,19 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateAchievementInput(_message.Message):
-    __slots__ = ["achievement"]
+    __slots__ = ("achievement",)
     ACHIEVEMENT_FIELD_NUMBER: _ClassVar[int]
     achievement: _achievement_pb2.Achievement
     def __init__(self, achievement: _Optional[_Union[_achievement_pb2.Achievement, _Mapping]] = ...) -> None: ...
 
 class CreateAchievementOutput(_message.Message):
-    __slots__ = ["achievement_id"]
+    __slots__ = ("achievement_id",)
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     achievement_id: str
     def __init__(self, achievement_id: _Optional[str] = ...) -> None: ...
 
 class UpdateAchievementInput(_message.Message):
-    __slots__ = ["achievement_id", "achievement"]
+    __slots__ = ("achievement_id", "achievement")
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     ACHIEVEMENT_FIELD_NUMBER: _ClassVar[int]
     achievement_id: str
@@ -32,21 +32,21 @@ class UpdateAchievementInput(_message.Message):
     def __init__(self, achievement_id: _Optional[str] = ..., achievement: _Optional[_Union[_achievement_pb2.Achievement, _Mapping]] = ...) -> None: ...
 
 class UpdateAchievementOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteAchievementInput(_message.Message):
-    __slots__ = ["achievement_id"]
+    __slots__ = ("achievement_id",)
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     achievement_id: str
     def __init__(self, achievement_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAchievementOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeAchievementInput(_message.Message):
-    __slots__ = ["achievement_id", "extra"]
+    __slots__ = ("achievement_id", "extra")
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     achievement_id: str
@@ -54,15 +54,15 @@ class DescribeAchievementInput(_message.Message):
     def __init__(self, achievement_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class DescribeAchievementOutput(_message.Message):
-    __slots__ = ["achievement"]
+    __slots__ = ("achievement",)
     ACHIEVEMENT_FIELD_NUMBER: _ClassVar[int]
     achievement: _achievement_pb2.Achievement
     def __init__(self, achievement: _Optional[_Union[_achievement_pb2.Achievement, _Mapping]] = ...) -> None: ...
 
 class ListAchievementsInput(_message.Message):
-    __slots__ = ["after", "size", "offset", "filters", "extra"]
+    __slots__ = ("after", "size", "offset", "filters", "extra")
     class Filter(_message.Message):
-        __slots__ = ["query", "id"]
+        __slots__ = ("query", "id")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         query: str
@@ -81,7 +81,7 @@ class ListAchievementsInput(_message.Message):
     def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class ListAchievementsOutput(_message.Message):
-    __slots__ = ["total", "next_page_cursor", "items"]
+    __slots__ = ("total", "next_page_cursor", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
@@ -91,7 +91,7 @@ class ListAchievementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., next_page_cursor: _Optional[str] = ..., items: _Optional[_Iterable[_Union[_achievement_pb2.Achievement, _Mapping]]] = ...) -> None: ...
 
 class DescribeAchievementTranslationInput(_message.Message):
-    __slots__ = ["achievement_id", "translation_id", "extra"]
+    __slots__ = ("achievement_id", "translation_id", "extra")
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -101,15 +101,15 @@ class DescribeAchievementTranslationInput(_message.Message):
     def __init__(self, achievement_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class DescribeAchievementTranslationOutput(_message.Message):
-    __slots__ = ["translation"]
+    __slots__ = ("translation",)
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]
     translation: _achievement_pb2.Achievement.Translation
     def __init__(self, translation: _Optional[_Union[_achievement_pb2.Achievement.Translation, _Mapping]] = ...) -> None: ...
 
 class ListAchievementTranslationsInput(_message.Message):
-    __slots__ = ["achievement_id", "offset", "size", "filters", "extra"]
+    __slots__ = ("achievement_id", "offset", "size", "filters", "extra")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "locale"]
+        __slots__ = ("query", "id", "locale")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -130,7 +130,7 @@ class ListAchievementTranslationsInput(_message.Message):
     def __init__(self, achievement_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementTranslationsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class ListAchievementTranslationsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -138,7 +138,7 @@ class ListAchievementTranslationsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Translation, _Mapping]]] = ...) -> None: ...
 
 class CreateAchievementTranslationInput(_message.Message):
-    __slots__ = ["achievement_id", "translation"]
+    __slots__ = ("achievement_id", "translation")
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]
     achievement_id: str
@@ -146,15 +146,15 @@ class CreateAchievementTranslationInput(_message.Message):
     def __init__(self, achievement_id: _Optional[str] = ..., translation: _Optional[_Union[_achievement_pb2.Achievement.Translation, _Mapping]] = ...) -> None: ...
 
 class CreateAchievementTranslationOutput(_message.Message):
-    __slots__ = ["translation_id"]
+    __slots__ = ("translation_id",)
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     translation_id: str
     def __init__(self, translation_id: _Optional[str] = ...) -> None: ...
 
 class UpdateAchievementTranslationInput(_message.Message):
-    __slots__ = ["patch", "achievement_id", "translation_id", "translation"]
+    __slots__ = ("patch", "achievement_id", "translation_id", "translation")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateAchievementTranslationInput.Patch]
         NAME: _ClassVar[UpdateAchievementTranslationInput.Patch]
         SUMMARY: _ClassVar[UpdateAchievementTranslationInput.Patch]
@@ -174,11 +174,11 @@ class UpdateAchievementTranslationInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateAchievementTranslationInput.Patch, str]]] = ..., achievement_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., translation: _Optional[_Union[_achievement_pb2.Achievement.Translation, _Mapping]] = ...) -> None: ...
 
 class UpdateAchievementTranslationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteAchievementTranslationInput(_message.Message):
-    __slots__ = ["achievement_id", "translation_id"]
+    __slots__ = ("achievement_id", "translation_id")
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     achievement_id: str
@@ -186,5 +186,5 @@ class DeleteAchievementTranslationInput(_message.Message):
     def __init__(self, achievement_id: _Optional[str] = ..., translation_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAchievementTranslationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

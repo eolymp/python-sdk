@@ -11,15 +11,15 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Editor(_message.Message):
-    __slots__ = ["state", "features", "runtimes"]
+    __slots__ = ("state", "features", "runtimes")
     class Feature(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_FEATURE: _ClassVar[Editor.Feature]
         PRINT_CODE: _ClassVar[Editor.Feature]
     UNKNOWN_FEATURE: Editor.Feature
     PRINT_CODE: Editor.Feature
     class State(_message.Message):
-        __slots__ = ["runtime", "source_code", "input_data"]
+        __slots__ = ("runtime", "source_code", "input_data")
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
         SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
         INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
@@ -36,21 +36,21 @@ class Editor(_message.Message):
     def __init__(self, state: _Optional[_Union[Editor.State, _Mapping]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ..., runtimes: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ...) -> None: ...
 
 class DescribeEditorInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeEditorOutput(_message.Message):
-    __slots__ = ["editor"]
+    __slots__ = ("editor",)
     EDITOR_FIELD_NUMBER: _ClassVar[int]
     editor: Editor
     def __init__(self, editor: _Optional[_Union[Editor, _Mapping]] = ...) -> None: ...
 
 class DescribeEditorStateInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeEditorStateOutput(_message.Message):
-    __slots__ = ["runtime", "source_code", "input_data", "features"]
+    __slots__ = ("runtime", "source_code", "input_data", "features")
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
     INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
@@ -62,7 +62,7 @@ class DescribeEditorStateOutput(_message.Message):
     def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ...) -> None: ...
 
 class UpdateEditorStateInput(_message.Message):
-    __slots__ = ["runtime", "source_code", "input_data"]
+    __slots__ = ("runtime", "source_code", "input_data")
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
     INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
@@ -72,11 +72,11 @@ class UpdateEditorStateInput(_message.Message):
     def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ...) -> None: ...
 
 class UpdateEditorStateOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class PrintEditorCodeInput(_message.Message):
-    __slots__ = ["runtime", "source_code"]
+    __slots__ = ("runtime", "source_code")
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
     runtime: str
@@ -84,5 +84,5 @@ class PrintEditorCodeInput(_message.Message):
     def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ...) -> None: ...
 
 class PrintEditorCodeOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

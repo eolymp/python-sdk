@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Preferences(_message.Message):
-    __slots__ = ["subscriptions"]
+    __slots__ = ("subscriptions",)
     class Digest(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_DIGEST: _ClassVar[Preferences.Digest]
         IMMEDIATE: _ClassVar[Preferences.Digest]
         HOURLY: _ClassVar[Preferences.Digest]
@@ -19,7 +19,7 @@ class Preferences(_message.Message):
     HOURLY: Preferences.Digest
     DAILY: Preferences.Digest
     class Subscription(_message.Message):
-        __slots__ = ["topic", "digest"]
+        __slots__ = ("topic", "digest")
         TOPIC_FIELD_NUMBER: _ClassVar[int]
         DIGEST_FIELD_NUMBER: _ClassVar[int]
         topic: str

@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Translation(_message.Message):
-    __slots__ = ["id", "locale", "message", "status", "needs_review", "created_by", "created_at", "approved_at"]
+    __slots__ = ("id", "locale", "message", "status", "needs_review", "created_by", "created_at", "approved_at")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[Translation.Status]
         PENDING: _ClassVar[Translation.Status]
         ACTIVE: _ClassVar[Translation.Status]

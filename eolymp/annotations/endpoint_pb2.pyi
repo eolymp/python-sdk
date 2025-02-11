@@ -9,9 +9,9 @@ ENDPOINT_FIELD_NUMBER: _ClassVar[int]
 endpoint: _descriptor.FieldDescriptor
 
 class Endpoint(_message.Message):
-    __slots__ = ["field", "service"]
+    __slots__ = ("field", "service")
     class Service(_message.Message):
-        __slots__ = ["name"]
+        __slots__ = ("name",)
         NAME_FIELD_NUMBER: _ClassVar[int]
         name: str
         def __init__(self, name: _Optional[str] = ...) -> None: ...

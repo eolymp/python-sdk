@@ -16,7 +16,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ProblemChangedEvent(_message.Message):
-    __slots__ = ["before", "after"]
+    __slots__ = ("before", "after")
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     before: _problem_pb2.Problem
@@ -24,7 +24,7 @@ class ProblemChangedEvent(_message.Message):
     def __init__(self, before: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., after: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
 
 class CreateProblemInput(_message.Message):
-    __slots__ = ["problem", "statement"]
+    __slots__ = ("problem", "statement")
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
     problem: _problem_pb2.Problem
@@ -32,23 +32,23 @@ class CreateProblemInput(_message.Message):
     def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class CreateProblemOutput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ("problem_id",)
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class DeleteProblemInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ("problem_id",)
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class DeleteProblemOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ["problem_id", "locale", "extra"]
+    __slots__ = ("problem_id", "locale", "extra")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -58,15 +58,15 @@ class DescribeProblemInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
-    __slots__ = ["problem"]
+    __slots__ = ("problem",)
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
     problem: _problem_pb2.Problem
     def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
 
 class ListProblemsInput(_message.Message):
-    __slots__ = ["offset", "size", "search", "filters", "sort", "order", "locale", "extra"]
+    __slots__ = ("offset", "size", "search", "filters", "sort", "order", "locale", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         DEFAULT: _ClassVar[ListProblemsInput.Sortable]
         RECENT: _ClassVar[ListProblemsInput.Sortable]
         POPULAR: _ClassVar[ListProblemsInput.Sortable]
@@ -74,7 +74,7 @@ class ListProblemsInput(_message.Message):
     RECENT: ListProblemsInput.Sortable
     POPULAR: ListProblemsInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ["id", "topic_id", "is_visible", "is_private", "number", "difficulty", "status", "score", "is_bookmarked"]
+        __slots__ = ("id", "topic_id", "is_visible", "is_private", "number", "difficulty", "status", "score", "is_bookmarked")
         ID_FIELD_NUMBER: _ClassVar[int]
         TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
         IS_VISIBLE_FIELD_NUMBER: _ClassVar[int]
@@ -113,7 +113,7 @@ class ListProblemsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
 
 class ListProblemsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -121,7 +121,7 @@ class ListProblemsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem, _Mapping]]] = ...) -> None: ...
 
 class UpdateVisibilityInput(_message.Message):
-    __slots__ = ["problem_id", "visible"]
+    __slots__ = ("problem_id", "visible")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VISIBLE_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
@@ -129,11 +129,11 @@ class UpdateVisibilityInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., visible: bool = ...) -> None: ...
 
 class UpdateVisibilityOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdatePrivacyInput(_message.Message):
-    __slots__ = ["problem_id", "private"]
+    __slots__ = ("problem_id", "private")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     PRIVATE_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
@@ -141,13 +141,13 @@ class UpdatePrivacyInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., private: bool = ...) -> None: ...
 
 class UpdatePrivacyOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateProblemInput(_message.Message):
-    __slots__ = ["patch", "problem_id", "problem"]
+    __slots__ = ("patch", "problem_id", "problem")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateProblemInput.Patch]
         VISIBLE: _ClassVar[UpdateProblemInput.Patch]
         PRIVATE: _ClassVar[UpdateProblemInput.Patch]
@@ -171,23 +171,23 @@ class UpdateProblemInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProblemInput.Patch, str]]] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
 
 class UpdateProblemOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class SyncProblemInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ("problem_id",)
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class SyncProblemOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListVersionsInput(_message.Message):
-    __slots__ = ["problem_id", "offset", "size", "after", "filters"]
+    __slots__ = ("problem_id", "offset", "size", "after", "filters")
     class Filter(_message.Message):
-        __slots__ = ["number", "created_by", "created_at", "change_op", "change_path"]
+        __slots__ = ("number", "created_by", "created_at", "change_op", "change_path")
         NUMBER_FIELD_NUMBER: _ClassVar[int]
         CREATED_BY_FIELD_NUMBER: _ClassVar[int]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -212,7 +212,7 @@ class ListVersionsInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., after: _Optional[str] = ..., filters: _Optional[_Union[ListVersionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListVersionsOutput(_message.Message):
-    __slots__ = ["total", "items", "next_page_cursor"]
+    __slots__ = ("total", "items", "next_page_cursor")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
@@ -222,7 +222,7 @@ class ListVersionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class VoteProblemInput(_message.Message):
-    __slots__ = ["problem_id", "vote"]
+    __slots__ = ("problem_id", "vote")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VOTE_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
@@ -230,19 +230,19 @@ class VoteProblemInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., vote: _Optional[int] = ...) -> None: ...
 
 class VoteProblemOutput(_message.Message):
-    __slots__ = ["vote_count"]
+    __slots__ = ("vote_count",)
     VOTE_COUNT_FIELD_NUMBER: _ClassVar[int]
     vote_count: int
     def __init__(self, vote_count: _Optional[int] = ...) -> None: ...
 
 class ListRuntimesInput(_message.Message):
-    __slots__ = ["problem_id"]
+    __slots__ = ("problem_id",)
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class ListRuntimesOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -250,7 +250,7 @@ class ListRuntimesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ...) -> None: ...
 
 class ExportProblemInput(_message.Message):
-    __slots__ = ["problem_id", "version"]
+    __slots__ = ("problem_id", "version")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
@@ -258,7 +258,7 @@ class ExportProblemInput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ExportProblemOutput(_message.Message):
-    __slots__ = ["snapshot_url"]
+    __slots__ = ("snapshot_url",)
     SNAPSHOT_URL_FIELD_NUMBER: _ClassVar[int]
     snapshot_url: str
     def __init__(self, snapshot_url: _Optional[str] = ...) -> None: ...

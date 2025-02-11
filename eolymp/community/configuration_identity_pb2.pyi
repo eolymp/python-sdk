@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IdentityConfig(_message.Message):
-    __slots__ = ["local", "basecamp", "oidc", "display_name_type", "display_name_attribute", "allow_sign_up", "require_email_verified"]
+    __slots__ = ("local", "basecamp", "oidc", "display_name_type", "display_name_attribute", "allow_sign_up", "require_email_verified")
     class DisplayNameType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_DISPLAY_NAME: _ClassVar[IdentityConfig.DisplayNameType]
         NICKNAME: _ClassVar[IdentityConfig.DisplayNameType]
         NAME: _ClassVar[IdentityConfig.DisplayNameType]

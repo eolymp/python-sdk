@@ -8,7 +8,7 @@ RATELIMIT_FIELD_NUMBER: _ClassVar[int]
 ratelimit: _descriptor.FieldDescriptor
 
 class RateLimit(_message.Message):
-    __slots__ = ["limit", "burst"]
+    __slots__ = ("limit", "burst")
     LIMIT_FIELD_NUMBER: _ClassVar[int]
     BURST_FIELD_NUMBER: _ClassVar[int]
     limit: float

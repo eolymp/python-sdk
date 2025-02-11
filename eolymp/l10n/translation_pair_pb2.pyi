@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TranslationPair(_message.Message):
-    __slots__ = ["term", "source", "translation", "suggestion"]
+    __slots__ = ("term", "source", "translation", "suggestion")
     TERM_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]

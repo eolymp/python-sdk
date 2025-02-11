@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Entry(_message.Message):
-    __slots__ = ["id", "type", "timestamp", "attributes", "links"]
+    __slots__ = ("id", "type", "timestamp", "attributes", "links")
     class AttributesEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

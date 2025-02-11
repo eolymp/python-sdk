@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TicketChangedEvent(_message.Message):
-    __slots__ = ["scope", "before", "after"]
+    __slots__ = ("scope", "before", "after")
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -16,7 +16,7 @@ class TicketChangedEvent(_message.Message):
     def __init__(self, scope: _Optional[str] = ..., before: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., after: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
 class CommentChangedEvent(_message.Message):
-    __slots__ = ["ticket_id", "before", "after"]
+    __slots__ = ("ticket_id", "before", "after")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]

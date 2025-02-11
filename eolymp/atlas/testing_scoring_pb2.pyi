@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ScoringMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     NO_SCORE: _ClassVar[ScoringMode]
     EACH: _ClassVar[ScoringMode]
     ALL: _ClassVar[ScoringMode]

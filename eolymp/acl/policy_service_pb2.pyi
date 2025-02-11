@@ -11,21 +11,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreatePolicyInput(_message.Message):
-    __slots__ = ["policy"]
+    __slots__ = ("policy",)
     POLICY_FIELD_NUMBER: _ClassVar[int]
     policy: _policy_pb2.Policy
     def __init__(self, policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
 
 class CreatePolicyOutput(_message.Message):
-    __slots__ = ["policy_id"]
+    __slots__ = ("policy_id",)
     POLICY_ID_FIELD_NUMBER: _ClassVar[int]
     policy_id: str
     def __init__(self, policy_id: _Optional[str] = ...) -> None: ...
 
 class UpdatePolicyInput(_message.Message):
-    __slots__ = ["patch", "policy_id", "policy"]
+    __slots__ = ("patch", "policy_id", "policy")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdatePolicyInput.Patch]
         NAME: _ClassVar[UpdatePolicyInput.Patch]
         ALLOWS: _ClassVar[UpdatePolicyInput.Patch]
@@ -41,35 +41,35 @@ class UpdatePolicyInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdatePolicyInput.Patch, str]]] = ..., policy_id: _Optional[str] = ..., policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
 
 class UpdatePolicyOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeletePolicyInput(_message.Message):
-    __slots__ = ["policy_id"]
+    __slots__ = ("policy_id",)
     POLICY_ID_FIELD_NUMBER: _ClassVar[int]
     policy_id: str
     def __init__(self, policy_id: _Optional[str] = ...) -> None: ...
 
 class DeletePolicyOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribePolicyInput(_message.Message):
-    __slots__ = ["policy_id"]
+    __slots__ = ("policy_id",)
     POLICY_ID_FIELD_NUMBER: _ClassVar[int]
     policy_id: str
     def __init__(self, policy_id: _Optional[str] = ...) -> None: ...
 
 class DescribePolicyOutput(_message.Message):
-    __slots__ = ["policy"]
+    __slots__ = ("policy",)
     POLICY_FIELD_NUMBER: _ClassVar[int]
     policy: _policy_pb2.Policy
     def __init__(self, policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
 
 class ListPoliciesInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "principal", "name", "resource"]
+        __slots__ = ("query", "id", "principal", "name", "resource")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
@@ -90,7 +90,7 @@ class ListPoliciesInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPoliciesInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListPoliciesOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -98,7 +98,7 @@ class ListPoliciesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_policy_pb2.Policy, _Mapping]]] = ...) -> None: ...
 
 class CopyPoliciesInput(_message.Message):
-    __slots__ = ["src_principal", "dst_principal", "src_resource", "dst_resource"]
+    __slots__ = ("src_principal", "dst_principal", "src_resource", "dst_resource")
     SRC_PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
     DST_PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
     SRC_RESOURCE_FIELD_NUMBER: _ClassVar[int]
@@ -110,7 +110,7 @@ class CopyPoliciesInput(_message.Message):
     def __init__(self, src_principal: _Optional[str] = ..., dst_principal: _Optional[str] = ..., src_resource: _Optional[str] = ..., dst_resource: _Optional[str] = ...) -> None: ...
 
 class CopyPoliciesOutput(_message.Message):
-    __slots__ = ["copies_count"]
+    __slots__ = ("copies_count",)
     COPIES_COUNT_FIELD_NUMBER: _ClassVar[int]
     copies_count: int
     def __init__(self, copies_count: _Optional[int] = ...) -> None: ...

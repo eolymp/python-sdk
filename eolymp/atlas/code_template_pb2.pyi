@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Template(_message.Message):
-    __slots__ = ["id", "runtime", "secret", "source", "header", "footer", "files"]
+    __slots__ = ("id", "runtime", "secret", "source", "header", "footer", "files")
     ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]

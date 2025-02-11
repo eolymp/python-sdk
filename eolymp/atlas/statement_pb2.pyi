@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Statement(_message.Message):
-    __slots__ = ["id", "locale", "automatic", "draft", "title", "content", "download_link", "author", "source", "author_id"]
+    __slots__ = ("id", "locale", "automatic", "draft", "title", "content", "download_link", "author", "source", "author_id")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Statement.Extra]
         CONTENT_RENDER: _ClassVar[Statement.Extra]
         CONTENT_VALUE: _ClassVar[Statement.Extra]
@@ -17,7 +17,7 @@ class Statement(_message.Message):
     CONTENT_RENDER: Statement.Extra
     CONTENT_VALUE: Statement.Extra
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_PATCH: _ClassVar[Statement.Patch]
         PATCH_ALL: _ClassVar[Statement.Patch]
         PATCH_LOCALE: _ClassVar[Statement.Patch]

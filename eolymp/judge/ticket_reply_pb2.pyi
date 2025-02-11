@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Reply(_message.Message):
-    __slots__ = ["id", "ticket_id", "user_id", "member_id", "message", "created_at"]
+    __slots__ = ("id", "ticket_id", "user_id", "member_id", "message", "created_at")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Reply.Extra]
         MESSAGE_RENDER: _ClassVar[Reply.Extra]
         MESSAGE_VALUE: _ClassVar[Reply.Extra]

@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Billing(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Billing.Status]
         TRIAL: _ClassVar[Billing.Status]
         ACTIVE: _ClassVar[Billing.Status]
@@ -21,7 +21,7 @@ class Billing(_message.Message):
     ACTIVE: Billing.Status
     CANCELLED: Billing.Status
     class Recurrence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_RECURRENCE: _ClassVar[Billing.Recurrence]
         MONTHLY: _ClassVar[Billing.Recurrence]
         YEARLY: _ClassVar[Billing.Recurrence]
@@ -29,7 +29,7 @@ class Billing(_message.Message):
     MONTHLY: Billing.Recurrence
     YEARLY: Billing.Recurrence
     class Information(_message.Message):
-        __slots__ = ["name", "email", "phone", "tax_id_type", "tax_id_value", "address", "currency", "language"]
+        __slots__ = ("name", "email", "phone", "tax_id_type", "tax_id_value", "address", "currency", "language")
         NAME_FIELD_NUMBER: _ClassVar[int]
         EMAIL_FIELD_NUMBER: _ClassVar[int]
         PHONE_FIELD_NUMBER: _ClassVar[int]
@@ -48,7 +48,7 @@ class Billing(_message.Message):
         language: str
         def __init__(self, name: _Optional[str] = ..., email: _Optional[str] = ..., phone: _Optional[str] = ..., tax_id_type: _Optional[str] = ..., tax_id_value: _Optional[str] = ..., address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., currency: _Optional[str] = ..., language: _Optional[str] = ...) -> None: ...
     class Subscription(_message.Message):
-        __slots__ = ["id", "status", "irregular", "has_payment_method", "plan", "variant", "seats", "created_at", "started_at", "cancel_at", "cancelled_at", "ended_at", "period_start", "period_end", "trial_start", "trial_end"]
+        __slots__ = ("id", "status", "irregular", "has_payment_method", "plan", "variant", "seats", "created_at", "started_at", "cancel_at", "cancelled_at", "ended_at", "period_start", "period_end", "trial_start", "trial_end")
         ID_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         IRREGULAR_FIELD_NUMBER: _ClassVar[int]

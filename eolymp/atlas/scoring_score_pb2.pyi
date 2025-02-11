@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Score(_message.Message):
-    __slots__ = ["id", "user_id", "member_id", "solved_at", "score", "attempts"]
+    __slots__ = ("id", "user_id", "member_id", "solved_at", "score", "attempts")
     ID_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]

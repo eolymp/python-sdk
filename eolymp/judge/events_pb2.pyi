@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SubmissionCompletedEvent(_message.Message):
-    __slots__ = ["contest_id", "submission"]
+    __slots__ = ("contest_id", "submission")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -16,7 +16,7 @@ class SubmissionCompletedEvent(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class RebuildScoreEvent(_message.Message):
-    __slots__ = ["contest_id", "activity_id"]
+    __slots__ = ("contest_id", "activity_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ACTIVITY_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -24,7 +24,7 @@ class RebuildScoreEvent(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., activity_id: _Optional[str] = ...) -> None: ...
 
 class ScoreChangedEvent(_message.Message):
-    __slots__ = ["contest_id", "participant_id", "unofficial", "score"]
+    __slots__ = ("contest_id", "participant_id", "unofficial", "score")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
@@ -36,7 +36,7 @@ class ScoreChangedEvent(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., unofficial: bool = ..., score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class ParticipantChangedEvent(_message.Message):
-    __slots__ = ["contest_id", "before", "after"]
+    __slots__ = ("contest_id", "before", "after")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -46,7 +46,7 @@ class ParticipantChangedEvent(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., before: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., after: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class ParticipantJoinedEvent(_message.Message):
-    __slots__ = ["contest_id", "participant"]
+    __slots__ = ("contest_id", "participant")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -54,7 +54,7 @@ class ParticipantJoinedEvent(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class RetestProblemEvent(_message.Message):
-    __slots__ = ["contest_id", "problem_id", "activity_id"]
+    __slots__ = ("contest_id", "problem_id", "activity_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     ACTIVITY_ID_FIELD_NUMBER: _ClassVar[int]

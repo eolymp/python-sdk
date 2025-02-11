@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Attribute(_message.Message):
-    __slots__ = ["id", "key", "label", "help", "type", "index", "required", "readonly", "hidden", "visibility", "regexp", "min", "max", "choices", "country", "constraints"]
+    __slots__ = ("id", "key", "label", "help", "type", "index", "required", "readonly", "hidden", "visibility", "regexp", "min", "max", "choices", "country", "constraints")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         PATCH_ALL: _ClassVar[Attribute.Patch]
         PATCH_LABEL: _ClassVar[Attribute.Patch]
         PATCH_HELP: _ClassVar[Attribute.Patch]
@@ -37,7 +37,7 @@ class Attribute(_message.Message):
     PATCH_CHOICES: Attribute.Patch
     PATCH_CONSTRAINTS: Attribute.Patch
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Attribute.Type]
         STRING: _ClassVar[Attribute.Type]
         TEXT: _ClassVar[Attribute.Type]
@@ -65,7 +65,7 @@ class Attribute(_message.Message):
     IMAGE: Attribute.Type
     FILE: Attribute.Type
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_VISIBILITY: _ClassVar[Attribute.Visibility]
         PRIVATE: _ClassVar[Attribute.Visibility]
         PUBLIC: _ClassVar[Attribute.Visibility]
@@ -75,7 +75,7 @@ class Attribute(_message.Message):
     PUBLIC: Attribute.Visibility
     INTERNAL: Attribute.Visibility
     class Description(_message.Message):
-        __slots__ = ["locale", "label", "help", "choices"]
+        __slots__ = ("locale", "label", "help", "choices")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         LABEL_FIELD_NUMBER: _ClassVar[int]
         HELP_FIELD_NUMBER: _ClassVar[int]
@@ -86,7 +86,7 @@ class Attribute(_message.Message):
         choices: _containers.RepeatedScalarFieldContainer[str]
         def __init__(self, locale: _Optional[str] = ..., label: _Optional[str] = ..., help: _Optional[str] = ..., choices: _Optional[_Iterable[str]] = ...) -> None: ...
     class Value(_message.Message):
-        __slots__ = ["attribute_key", "attribute_type", "string", "number"]
+        __slots__ = ("attribute_key", "attribute_type", "string", "number")
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
         ATTRIBUTE_TYPE_FIELD_NUMBER: _ClassVar[int]
         STRING_FIELD_NUMBER: _ClassVar[int]

@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class PostChangedEvent(_message.Message):
-    __slots__ = ["before", "after", "reason"]
+    __slots__ = ("before", "after", "reason")
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
@@ -24,7 +24,7 @@ class PostChangedEvent(_message.Message):
     def __init__(self, before: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., after: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class PostPublishedEvent(_message.Message):
-    __slots__ = ["published", "post", "reason"]
+    __slots__ = ("published", "post", "reason")
     PUBLISHED_FIELD_NUMBER: _ClassVar[int]
     POST_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
@@ -34,7 +34,7 @@ class PostPublishedEvent(_message.Message):
     def __init__(self, published: bool = ..., post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class PostTranslationChangedEvent(_message.Message):
-    __slots__ = ["post_id", "before", "after", "reason"]
+    __slots__ = ("post_id", "before", "after", "reason")
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -46,7 +46,7 @@ class PostTranslationChangedEvent(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., before: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., after: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class DescribePostInput(_message.Message):
-    __slots__ = ["post_id", "locale", "extra"]
+    __slots__ = ("post_id", "locale", "extra")
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -56,15 +56,15 @@ class DescribePostInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
 
 class DescribePostOutput(_message.Message):
-    __slots__ = ["post"]
+    __slots__ = ("post",)
     POST_FIELD_NUMBER: _ClassVar[int]
     post: _post_pb2.Post
     def __init__(self, post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ...) -> None: ...
 
 class ListPostsInput(_message.Message):
-    __slots__ = ["after", "size", "offset", "sort", "order", "filters", "locale", "extra"]
+    __slots__ = ("after", "size", "offset", "sort", "order", "filters", "locale", "extra")
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_SORT: _ClassVar[ListPostsInput.Sort]
         PUBLISHED_AT: _ClassVar[ListPostsInput.Sort]
         CREATED_AT: _ClassVar[ListPostsInput.Sort]
@@ -78,7 +78,7 @@ class ListPostsInput(_message.Message):
     REPLY_COUNT: ListPostsInput.Sort
     POPULARITY: ListPostsInput.Sort
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "source_id", "user_id", "member_id", "type_id", "created_at", "published_at", "draft", "public", "featured", "moderation", "locale", "label"]
+        __slots__ = ("query", "id", "source_id", "user_id", "member_id", "type_id", "created_at", "published_at", "draft", "public", "featured", "moderation", "locale", "label")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         SOURCE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -127,7 +127,7 @@ class ListPostsInput(_message.Message):
     def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., sort: _Optional[_Union[ListPostsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListPostsInput.Filter, _Mapping]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
 
 class ListPostsOutput(_message.Message):
-    __slots__ = ["total", "items", "next_page_cursor"]
+    __slots__ = ("total", "items", "next_page_cursor")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
@@ -137,21 +137,21 @@ class ListPostsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_pb2.Post, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class CreatePostInput(_message.Message):
-    __slots__ = ["post"]
+    __slots__ = ("post",)
     POST_FIELD_NUMBER: _ClassVar[int]
     post: _post_pb2.Post
     def __init__(self, post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ...) -> None: ...
 
 class CreatePostOutput(_message.Message):
-    __slots__ = ["post_id"]
+    __slots__ = ("post_id",)
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     post_id: str
     def __init__(self, post_id: _Optional[str] = ...) -> None: ...
 
 class UpdatePostInput(_message.Message):
-    __slots__ = ["patch", "post_id", "post"]
+    __slots__ = ("patch", "post_id", "post")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdatePostInput.Patch]
         CONTENT: _ClassVar[UpdatePostInput.Patch]
         LABELS: _ClassVar[UpdatePostInput.Patch]
@@ -179,21 +179,21 @@ class UpdatePostInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdatePostInput.Patch, str]]] = ..., post_id: _Optional[str] = ..., post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ...) -> None: ...
 
 class UpdatePostOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class PublishPostInput(_message.Message):
-    __slots__ = ["post_id"]
+    __slots__ = ("post_id",)
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     post_id: str
     def __init__(self, post_id: _Optional[str] = ...) -> None: ...
 
 class PublishPostOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UnpublishPostInput(_message.Message):
-    __slots__ = ["post_id", "reason"]
+    __slots__ = ("post_id", "reason")
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
     post_id: str
@@ -201,13 +201,13 @@ class UnpublishPostInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class UnpublishPostOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ModeratePostInput(_message.Message):
-    __slots__ = ["post_id", "outcome", "reason"]
+    __slots__ = ("post_id", "outcome", "reason")
     class Outcome(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_OUTCOME: _ClassVar[ModeratePostInput.Outcome]
         APPROVED: _ClassVar[ModeratePostInput.Outcome]
         REJECTED: _ClassVar[ModeratePostInput.Outcome]
@@ -225,23 +225,23 @@ class ModeratePostInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., outcome: _Optional[_Union[ModeratePostInput.Outcome, str]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class ModeratePostOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeletePostInput(_message.Message):
-    __slots__ = ["post_id"]
+    __slots__ = ("post_id",)
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     post_id: str
     def __init__(self, post_id: _Optional[str] = ...) -> None: ...
 
 class DeletePostOutput(_message.Message):
-    __slots__ = ["reason"]
+    __slots__ = ("reason",)
     REASON_FIELD_NUMBER: _ClassVar[int]
     reason: _content_pb2.Content
     def __init__(self, reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class VotePostInput(_message.Message):
-    __slots__ = ["post_id", "vote"]
+    __slots__ = ("post_id", "vote")
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     VOTE_FIELD_NUMBER: _ClassVar[int]
     post_id: str
@@ -249,13 +249,13 @@ class VotePostInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., vote: _Optional[int] = ...) -> None: ...
 
 class VotePostOutput(_message.Message):
-    __slots__ = ["vote_count"]
+    __slots__ = ("vote_count",)
     VOTE_COUNT_FIELD_NUMBER: _ClassVar[int]
     vote_count: int
     def __init__(self, vote_count: _Optional[int] = ...) -> None: ...
 
 class TranslatePostInput(_message.Message):
-    __slots__ = ["post_id", "source", "target", "target_automatic", "override_manual"]
+    __slots__ = ("post_id", "source", "target", "target_automatic", "override_manual")
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
@@ -269,13 +269,13 @@ class TranslatePostInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
 
 class TranslatePostOutput(_message.Message):
-    __slots__ = ["job_id"]
+    __slots__ = ("job_id",)
     JOB_ID_FIELD_NUMBER: _ClassVar[int]
     job_id: str
     def __init__(self, job_id: _Optional[str] = ...) -> None: ...
 
 class DescribePostTranslationInput(_message.Message):
-    __slots__ = ["post_id", "translation_id", "extra"]
+    __slots__ = ("post_id", "translation_id", "extra")
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -285,15 +285,15 @@ class DescribePostTranslationInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
 
 class DescribePostTranslationOutput(_message.Message):
-    __slots__ = ["translation"]
+    __slots__ = ("translation",)
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]
     translation: _post_pb2.Post.Translation
     def __init__(self, translation: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ...) -> None: ...
 
 class ListPostTranslationsInput(_message.Message):
-    __slots__ = ["post_id", "offset", "size", "filters", "extra"]
+    __slots__ = ("post_id", "offset", "size", "filters", "extra")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "locale"]
+        __slots__ = ("query", "id", "locale")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -314,7 +314,7 @@ class ListPostTranslationsInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPostTranslationsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
 
 class ListPostTranslationsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -322,7 +322,7 @@ class ListPostTranslationsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_post_pb2.Post.Translation, _Mapping]]] = ...) -> None: ...
 
 class CreatePostTranslationInput(_message.Message):
-    __slots__ = ["post_id", "translation"]
+    __slots__ = ("post_id", "translation")
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]
     post_id: str
@@ -330,15 +330,15 @@ class CreatePostTranslationInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., translation: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ...) -> None: ...
 
 class CreatePostTranslationOutput(_message.Message):
-    __slots__ = ["translation_id"]
+    __slots__ = ("translation_id",)
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     translation_id: str
     def __init__(self, translation_id: _Optional[str] = ...) -> None: ...
 
 class UpdatePostTranslationInput(_message.Message):
-    __slots__ = ["patch", "post_id", "translation_id", "translation"]
+    __slots__ = ("patch", "post_id", "translation_id", "translation")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdatePostTranslationInput.Patch]
         CONTENT: _ClassVar[UpdatePostTranslationInput.Patch]
         LABELS: _ClassVar[UpdatePostTranslationInput.Patch]
@@ -358,11 +358,11 @@ class UpdatePostTranslationInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdatePostTranslationInput.Patch, str]]] = ..., post_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., translation: _Optional[_Union[_post_pb2.Post.Translation, _Mapping]] = ...) -> None: ...
 
 class UpdatePostTranslationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeletePostTranslationInput(_message.Message):
-    __slots__ = ["post_id", "translation_id"]
+    __slots__ = ("post_id", "translation_id")
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     post_id: str
@@ -370,5 +370,5 @@ class DeletePostTranslationInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., translation_id: _Optional[str] = ...) -> None: ...
 
 class DeletePostTranslationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

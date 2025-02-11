@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Score(_message.Message):
-    __slots__ = ["valid_after", "valid_until", "timestamp", "score", "penalty", "tie_breaker", "upsolve", "breakdown"]
+    __slots__ = ("valid_after", "valid_until", "timestamp", "score", "penalty", "tie_breaker", "upsolve", "breakdown")
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ACTUAL: _ClassVar[Score.FetchingMode]
         PUNCTUAL: _ClassVar[Score.FetchingMode]
         LATEST: _ClassVar[Score.FetchingMode]
@@ -22,7 +22,7 @@ class Score(_message.Message):
     FROZEN: Score.FetchingMode
     UPSOLVE: Score.FetchingMode
     class Problem(_message.Message):
-        __slots__ = ["problem_id", "score", "penalty", "solved", "percentage", "attempts", "solved_at", "solved_in", "changed", "breakdown"]
+        __slots__ = ("problem_id", "score", "penalty", "solved", "percentage", "attempts", "solved_at", "solved_in", "changed", "breakdown")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         PENALTY_FIELD_NUMBER: _ClassVar[int]
@@ -45,7 +45,7 @@ class Score(_message.Message):
         breakdown: _containers.RepeatedCompositeFieldContainer[Score.Testset]
         def __init__(self, problem_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., solved: bool = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., solved_in: _Optional[int] = ..., changed: bool = ..., breakdown: _Optional[_Iterable[_Union[Score.Testset, _Mapping]]] = ...) -> None: ...
     class Testset(_message.Message):
-        __slots__ = ["testset_id", "index", "cost", "score"]
+        __slots__ = ("testset_id", "index", "cost", "score")
         TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         COST_FIELD_NUMBER: _ClassVar[int]

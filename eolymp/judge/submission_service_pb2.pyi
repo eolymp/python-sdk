@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ["contest_id", "problem_id", "lang", "source"]
+    __slots__ = ("contest_id", "problem_id", "lang", "source")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
@@ -23,15 +23,15 @@ class CreateSubmissionInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
-    __slots__ = ["submission_id"]
+    __slots__ = ("submission_id",)
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     submission_id: str
     def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
 
 class ListSubmissionsInput(_message.Message):
-    __slots__ = ["contest_id", "offset", "size", "filters", "extra"]
+    __slots__ = ("contest_id", "offset", "size", "filters", "extra")
     class Filter(_message.Message):
-        __slots__ = ["id", "participant_id", "problem_id", "status", "lang", "score", "percentage", "submitted_at", "signature"]
+        __slots__ = ("id", "participant_id", "problem_id", "status", "lang", "score", "percentage", "submitted_at", "signature")
         ID_FIELD_NUMBER: _ClassVar[int]
         PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -64,7 +64,7 @@ class ListSubmissionsInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
 
 class ListSubmissionsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -72,7 +72,7 @@ class ListSubmissionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ...) -> None: ...
 
 class DescribeSubmissionInput(_message.Message):
-    __slots__ = ["contest_id", "submission_id", "extra"]
+    __slots__ = ("contest_id", "submission_id", "extra")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -82,13 +82,13 @@ class DescribeSubmissionInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
 
 class DescribeSubmissionOutput(_message.Message):
-    __slots__ = ["submission"]
+    __slots__ = ("submission",)
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class PrintSubmissionInput(_message.Message):
-    __slots__ = ["contest_id", "submission_id"]
+    __slots__ = ("contest_id", "submission_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -96,11 +96,11 @@ class PrintSubmissionInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
 
 class PrintSubmissionOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class WatchSubmissionInput(_message.Message):
-    __slots__ = ["contest_id", "submission_id", "extra"]
+    __slots__ = ("contest_id", "submission_id", "extra")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -110,13 +110,13 @@ class WatchSubmissionInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
 
 class WatchSubmissionOutput(_message.Message):
-    __slots__ = ["submission"]
+    __slots__ = ("submission",)
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class RetestSubmissionInput(_message.Message):
-    __slots__ = ["contest_id", "submission_id"]
+    __slots__ = ("contest_id", "submission_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -124,11 +124,11 @@ class RetestSubmissionInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
 
 class RetestSubmissionOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteSubmissionInput(_message.Message):
-    __slots__ = ["contest_id", "submission_id"]
+    __slots__ = ("contest_id", "submission_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -136,11 +136,11 @@ class DeleteSubmissionInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
 
 class DeleteSubmissionOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RestoreSubmissionInput(_message.Message):
-    __slots__ = ["contest_id", "submission_id"]
+    __slots__ = ("contest_id", "submission_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -148,11 +148,11 @@ class RestoreSubmissionInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
 
 class RestoreSubmissionOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RetestProblemInput(_message.Message):
-    __slots__ = ["contest_id", "problem_id"]
+    __slots__ = ("contest_id", "problem_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -160,5 +160,5 @@ class RetestProblemInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
 
 class RetestProblemOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

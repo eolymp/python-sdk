@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Price(_message.Message):
-    __slots__ = ["id", "recurrence", "currency", "unit_amount"]
+    __slots__ = ("id", "recurrence", "currency", "unit_amount")
     class Recurrence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_RECURRENCE: _ClassVar[Price.Recurrence]
         ONETIME: _ClassVar[Price.Recurrence]
         MONTHLY: _ClassVar[Price.Recurrence]

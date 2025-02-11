@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Checker(_message.Message):
-    __slots__ = ["type", "runtime", "source_url", "precision", "case_sensitive", "order_sensitive", "files"]
+    __slots__ = ("type", "runtime", "source_url", "precision", "case_sensitive", "order_sensitive", "files")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[Checker.Type]
         TOKENS: _ClassVar[Checker.Type]
         LINES: _ClassVar[Checker.Type]

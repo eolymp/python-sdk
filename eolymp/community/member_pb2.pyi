@@ -12,9 +12,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ["id", "display_name", "url", "rank", "rank_lower", "rating", "level", "inactive", "incomplete", "unofficial", "secret", "tier_id", "fallback_tier_id", "created_at", "seated_at", "active_at", "user", "team", "ghost", "stats", "groups", "attributes"]
+    __slots__ = ("id", "display_name", "url", "rank", "rank_lower", "rating", "level", "inactive", "incomplete", "unofficial", "secret", "tier_id", "fallback_tier_id", "created_at", "seated_at", "active_at", "user", "team", "ghost", "stats", "groups", "attributes")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Member.Extra]
         TIER: _ClassVar[Member.Extra]
         STATS: _ClassVar[Member.Extra]
@@ -26,7 +26,7 @@ class Member(_message.Message):
     GROUPS: Member.Extra
     ATTRIBUTES: Member.Extra
     class Stats(_message.Message):
-        __slots__ = ["streak", "problems_solved", "submissions_accepted", "submissions_total"]
+        __slots__ = ("streak", "problems_solved", "submissions_accepted", "submissions_total")
         STREAK_FIELD_NUMBER: _ClassVar[int]
         PROBLEMS_SOLVED_FIELD_NUMBER: _ClassVar[int]
         SUBMISSIONS_ACCEPTED_FIELD_NUMBER: _ClassVar[int]

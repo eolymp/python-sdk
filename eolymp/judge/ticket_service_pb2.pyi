@@ -16,7 +16,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TicketChangedEvent(_message.Message):
-    __slots__ = ["scope", "before", "after"]
+    __slots__ = ("scope", "before", "after")
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -26,7 +26,7 @@ class TicketChangedEvent(_message.Message):
     def __init__(self, scope: _Optional[str] = ..., before: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., after: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
 class ReplyChangedEvent(_message.Message):
-    __slots__ = ["ticket_id", "before", "after"]
+    __slots__ = ("ticket_id", "before", "after")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -36,7 +36,7 @@ class ReplyChangedEvent(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., before: _Optional[_Union[_ticket_reply_pb2.Reply, _Mapping]] = ..., after: _Optional[_Union[_ticket_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
 
 class CreateTicketInput(_message.Message):
-    __slots__ = ["contest_id", "subject", "message", "raw_message"]
+    __slots__ = ("contest_id", "subject", "message", "raw_message")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
@@ -48,15 +48,15 @@ class CreateTicketInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., subject: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., raw_message: _Optional[str] = ...) -> None: ...
 
 class CreateTicketOutput(_message.Message):
-    __slots__ = ["ticket_id"]
+    __slots__ = ("ticket_id",)
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     ticket_id: str
     def __init__(self, ticket_id: _Optional[str] = ...) -> None: ...
 
 class UpdateTicketInput(_message.Message):
-    __slots__ = ["patch", "ticket_id", "ticket"]
+    __slots__ = ("patch", "ticket_id", "ticket")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateTicketInput.Patch]
         STATUS: _ClassVar[UpdateTicketInput.Patch]
         SUBJECT: _ClassVar[UpdateTicketInput.Patch]
@@ -72,11 +72,11 @@ class UpdateTicketInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateTicketInput.Patch, str]]] = ..., ticket_id: _Optional[str] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
 class UpdateTicketOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ReadTicketInput(_message.Message):
-    __slots__ = ["contest_id", "ticket_id", "timestamp"]
+    __slots__ = ("contest_id", "ticket_id", "timestamp")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
@@ -86,11 +86,11 @@ class ReadTicketInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., ticket_id: _Optional[str] = ..., timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ReadTicketOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteTicketInput(_message.Message):
-    __slots__ = ["contest_id", "ticket_id"]
+    __slots__ = ("contest_id", "ticket_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -98,11 +98,11 @@ class DeleteTicketInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., ticket_id: _Optional[str] = ...) -> None: ...
 
 class DeleteTicketOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeTicketInput(_message.Message):
-    __slots__ = ["contest_id", "ticket_id", "extra"]
+    __slots__ = ("contest_id", "ticket_id", "extra")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -112,21 +112,21 @@ class DescribeTicketInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., ticket_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
 class DescribeTicketOutput(_message.Message):
-    __slots__ = ["ticket"]
+    __slots__ = ("ticket",)
     TICKET_FIELD_NUMBER: _ClassVar[int]
     ticket: _ticket_pb2.Ticket
     def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
 class ListTicketsInput(_message.Message):
-    __slots__ = ["after", "offset", "size", "filters", "sort", "order", "extra"]
+    __slots__ = ("after", "offset", "size", "filters", "sort", "order", "extra")
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         CREATED_AT: _ClassVar[ListTicketsInput.Sort]
         UPDATED_AT: _ClassVar[ListTicketsInput.Sort]
     CREATED_AT: ListTicketsInput.Sort
     UPDATED_AT: ListTicketsInput.Sort
     class Filter(_message.Message):
-        __slots__ = ["id", "contest_id", "participant_id", "member_id", "is_read", "is_open", "own", "status"]
+        __slots__ = ("id", "contest_id", "participant_id", "member_id", "is_read", "is_open", "own", "status")
         ID_FIELD_NUMBER: _ClassVar[int]
         CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
         PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -161,7 +161,7 @@ class ListTicketsInput(_message.Message):
     def __init__(self, after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTicketsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListTicketsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
 class ListTicketsOutput(_message.Message):
-    __slots__ = ["total", "items", "next_page_cursor"]
+    __slots__ = ("total", "items", "next_page_cursor")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
@@ -171,7 +171,7 @@ class ListTicketsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_ticket_pb2.Ticket, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class ReplyTicketInput(_message.Message):
-    __slots__ = ["ticket_id", "message", "change_status_to"]
+    __slots__ = ("ticket_id", "message", "change_status_to")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     CHANGE_STATUS_TO_FIELD_NUMBER: _ClassVar[int]
@@ -181,13 +181,13 @@ class ReplyTicketInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., change_status_to: _Optional[_Union[_ticket_pb2.Ticket.Status, str]] = ...) -> None: ...
 
 class ReplyTicketOutput(_message.Message):
-    __slots__ = ["reply_id"]
+    __slots__ = ("reply_id",)
     REPLY_ID_FIELD_NUMBER: _ClassVar[int]
     reply_id: str
     def __init__(self, reply_id: _Optional[str] = ...) -> None: ...
 
 class WatchTicketInput(_message.Message):
-    __slots__ = ["ticket_id", "extra"]
+    __slots__ = ("ticket_id", "extra")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     ticket_id: str
@@ -195,13 +195,13 @@ class WatchTicketInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
 class WatchTicketOutput(_message.Message):
-    __slots__ = ["ticket"]
+    __slots__ = ("ticket",)
     TICKET_FIELD_NUMBER: _ClassVar[int]
     ticket: _ticket_pb2.Ticket
     def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
 class WatchTicketsInput(_message.Message):
-    __slots__ = ["contest_id", "member_id", "status", "extra"]
+    __slots__ = ("contest_id", "member_id", "status", "extra")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -213,9 +213,9 @@ class WatchTicketsInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
 class WatchTicketsOutput(_message.Message):
-    __slots__ = ["event", "ticket"]
+    __slots__ = ("event", "ticket")
     class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EVENT: _ClassVar[WatchTicketsOutput.Event]
         CREATED: _ClassVar[WatchTicketsOutput.Event]
         UPDATED: _ClassVar[WatchTicketsOutput.Event]
@@ -231,7 +231,7 @@ class WatchTicketsOutput(_message.Message):
     def __init__(self, event: _Optional[_Union[WatchTicketsOutput.Event, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
 class WatchTicketSummaryInput(_message.Message):
-    __slots__ = ["contest_id", "member_id"]
+    __slots__ = ("contest_id", "member_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -239,7 +239,7 @@ class WatchTicketSummaryInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class WatchTicketSummaryOutput(_message.Message):
-    __slots__ = ["unread_count", "unresolved_count"]
+    __slots__ = ("unread_count", "unresolved_count")
     UNREAD_COUNT_FIELD_NUMBER: _ClassVar[int]
     UNRESOLVED_COUNT_FIELD_NUMBER: _ClassVar[int]
     unread_count: int
@@ -247,7 +247,7 @@ class WatchTicketSummaryOutput(_message.Message):
     def __init__(self, unread_count: _Optional[int] = ..., unresolved_count: _Optional[int] = ...) -> None: ...
 
 class ListRepliesInput(_message.Message):
-    __slots__ = ["ticket_id", "offset", "size", "extra"]
+    __slots__ = ("ticket_id", "offset", "size", "extra")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -259,7 +259,7 @@ class ListRepliesInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
 
 class ListRepliesOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -267,7 +267,7 @@ class ListRepliesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply, _Mapping]]] = ...) -> None: ...
 
 class DescribeReplyInput(_message.Message):
-    __slots__ = ["ticket_id", "reply_id", "extra"]
+    __slots__ = ("ticket_id", "reply_id", "extra")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     REPLY_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -277,13 +277,13 @@ class DescribeReplyInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., reply_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
 
 class DescribeReplyOutput(_message.Message):
-    __slots__ = ["reply"]
+    __slots__ = ("reply",)
     REPLY_FIELD_NUMBER: _ClassVar[int]
     reply: _ticket_reply_pb2.Reply
     def __init__(self, reply: _Optional[_Union[_ticket_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
 
 class DeleteReplyInput(_message.Message):
-    __slots__ = ["ticket_id", "reply_id"]
+    __slots__ = ("ticket_id", "reply_id")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     REPLY_ID_FIELD_NUMBER: _ClassVar[int]
     ticket_id: str
@@ -291,11 +291,11 @@ class DeleteReplyInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., reply_id: _Optional[str] = ...) -> None: ...
 
 class DeleteReplyOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateReplyInput(_message.Message):
-    __slots__ = ["ticket_id", "reply_id", "message"]
+    __slots__ = ("ticket_id", "reply_id", "message")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     REPLY_ID_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
@@ -305,11 +305,11 @@ class UpdateReplyInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., reply_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class UpdateReplyOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class WatchRepliesInput(_message.Message):
-    __slots__ = ["ticket_id", "cursor", "extra"]
+    __slots__ = ("ticket_id", "cursor", "extra")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     CURSOR_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -319,9 +319,9 @@ class WatchRepliesInput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ..., cursor: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
 
 class WatchRepliesOutput(_message.Message):
-    __slots__ = ["event", "reply"]
+    __slots__ = ("event", "reply")
     class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EVENT: _ClassVar[WatchRepliesOutput.Event]
         CREATED: _ClassVar[WatchRepliesOutput.Event]
         UPDATED: _ClassVar[WatchRepliesOutput.Event]

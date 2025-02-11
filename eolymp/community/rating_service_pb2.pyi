@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SetRatingInput(_message.Message):
-    __slots__ = ["rating_id", "rating"]
+    __slots__ = ("rating_id", "rating")
     RATING_ID_FIELD_NUMBER: _ClassVar[int]
     RATING_FIELD_NUMBER: _ClassVar[int]
     rating_id: str
@@ -17,13 +17,13 @@ class SetRatingInput(_message.Message):
     def __init__(self, rating_id: _Optional[str] = ..., rating: _Optional[_Union[_rating_point_pb2.RatingPoint, _Mapping]] = ...) -> None: ...
 
 class SetRatingOutput(_message.Message):
-    __slots__ = ["rating_id"]
+    __slots__ = ("rating_id",)
     RATING_ID_FIELD_NUMBER: _ClassVar[int]
     rating_id: str
     def __init__(self, rating_id: _Optional[str] = ...) -> None: ...
 
 class DeleteRatingInput(_message.Message):
-    __slots__ = ["rating_id", "point"]
+    __slots__ = ("rating_id", "point")
     RATING_ID_FIELD_NUMBER: _ClassVar[int]
     POINT_FIELD_NUMBER: _ClassVar[int]
     rating_id: str
@@ -31,5 +31,5 @@ class DeleteRatingInput(_message.Message):
     def __init__(self, rating_id: _Optional[str] = ..., point: _Optional[_Union[_rating_point_pb2.RatingPoint, _Mapping]] = ...) -> None: ...
 
 class DeleteRatingOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

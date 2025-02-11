@@ -7,15 +7,15 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class PostType(_message.Message):
-    __slots__ = ["id", "name", "hidden", "order", "variants"]
+    __slots__ = ("id", "name", "hidden", "order", "variants")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[PostType.Extra]
         VARIANTS: _ClassVar[PostType.Extra]
     UNKNOWN_EXTRA: PostType.Extra
     VARIANTS: PostType.Extra
     class Variant(_message.Message):
-        __slots__ = ["locale", "name"]
+        __slots__ = ("locale", "name")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         locale: str

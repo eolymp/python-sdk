@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Term(_message.Message):
-    __slots__ = ["id", "key", "message", "description", "status"]
+    __slots__ = ("id", "key", "message", "description", "status")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[Term.Status]
         ACTIVE: _ClassVar[Term.Status]
         DEPRECATED: _ClassVar[Term.Status]

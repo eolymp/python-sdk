@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ScoreChangedEvent(_message.Message):
-    __slots__ = ["problem_id", "member_id", "before", "after"]
+    __slots__ = ("problem_id", "member_id", "before", "after")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
@@ -21,25 +21,25 @@ class ScoreChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ..., before: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ..., after: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class DescribeScoreInput(_message.Message):
-    __slots__ = ["member_id"]
+    __slots__ = ("member_id",)
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     def __init__(self, member_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreOutput(_message.Message):
-    __slots__ = ["score"]
+    __slots__ = ("score",)
     SCORE_FIELD_NUMBER: _ClassVar[int]
     score: _scoring_score_pb2.Score
     def __init__(self, score: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class DescribeProblemGradingInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeProblemGradingOutput(_message.Message):
-    __slots__ = ["ranges"]
+    __slots__ = ("ranges",)
     class Range(_message.Message):
-        __slots__ = ["grade", "upper_bound"]
+        __slots__ = ("grade", "upper_bound")
         GRADE_FIELD_NUMBER: _ClassVar[int]
         UPPER_BOUND_FIELD_NUMBER: _ClassVar[int]
         grade: int

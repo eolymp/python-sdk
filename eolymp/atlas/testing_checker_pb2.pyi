@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Checker(_message.Message):
-    __slots__ = ["type", "runtime", "source", "precision", "case_sensitive", "order_sensitive", "secret", "files"]
+    __slots__ = ("type", "runtime", "source", "precision", "case_sensitive", "order_sensitive", "secret", "files")
     TYPE_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]

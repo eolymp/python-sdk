@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ["id", "username", "email", "active", "rank", "rank_trend", "name", "picture", "company", "occupation", "country", "city", "email_status", "birthday", "registered_on", "last_activity", "username_changed_on", "password_changed_on", "locale"]
+    __slots__ = ("id", "username", "email", "active", "rank", "rank_trend", "name", "picture", "company", "occupation", "country", "city", "email_status", "birthday", "registered_on", "last_activity", "username_changed_on", "password_changed_on", "locale")
     class RankTrend(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[User.RankTrend]
         UP: _ClassVar[User.RankTrend]
         DOWN: _ClassVar[User.RankTrend]

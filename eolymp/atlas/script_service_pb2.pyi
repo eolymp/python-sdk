@@ -13,21 +13,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateScriptInput(_message.Message):
-    __slots__ = ["script"]
+    __slots__ = ("script",)
     SCRIPT_FIELD_NUMBER: _ClassVar[int]
     script: _script_pb2.Script
     def __init__(self, script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class CreateScriptOutput(_message.Message):
-    __slots__ = ["script_id"]
+    __slots__ = ("script_id",)
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
     script_id: str
     def __init__(self, script_id: _Optional[str] = ...) -> None: ...
 
 class UpdateScriptInput(_message.Message):
-    __slots__ = ["patch", "script_id", "script"]
+    __slots__ = ("patch", "script_id", "script")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateScriptInput.Patch]
         NAME: _ClassVar[UpdateScriptInput.Patch]
         SECRET: _ClassVar[UpdateScriptInput.Patch]
@@ -49,21 +49,21 @@ class UpdateScriptInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateScriptInput.Patch, str]]] = ..., script_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class UpdateScriptOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteScriptInput(_message.Message):
-    __slots__ = ["script_id"]
+    __slots__ = ("script_id",)
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
     script_id: str
     def __init__(self, script_id: _Optional[str] = ...) -> None: ...
 
 class DeleteScriptOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeScriptInput(_message.Message):
-    __slots__ = ["script_id", "version", "extra"]
+    __slots__ = ("script_id", "version", "extra")
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -73,19 +73,19 @@ class DescribeScriptInput(_message.Message):
     def __init__(self, script_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra, str]]] = ...) -> None: ...
 
 class DescribeScriptOutput(_message.Message):
-    __slots__ = ["script"]
+    __slots__ = ("script",)
     SCRIPT_FIELD_NUMBER: _ClassVar[int]
     script: _script_pb2.Script
     def __init__(self, script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class ListScriptsInput(_message.Message):
-    __slots__ = ["version", "offset", "size", "search", "filters", "sort", "order", "extra"]
+    __slots__ = ("version", "offset", "size", "search", "filters", "sort", "order", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NAME: _ClassVar[ListScriptsInput.Sortable]
     NAME: ListScriptsInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ["id", "name", "runtime"]
+        __slots__ = ("id", "name", "runtime")
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
@@ -112,7 +112,7 @@ class ListScriptsInput(_message.Message):
     def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListScriptsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListScriptsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra, str]]] = ...) -> None: ...
 
 class ListScriptsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int

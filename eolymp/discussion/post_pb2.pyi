@@ -11,9 +11,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Post(_message.Message):
-    __slots__ = ["id", "url", "source_id", "source_url", "draft", "public", "featured", "pinned", "moderation", "user_id", "member_id", "created_at", "published_at", "updated_at", "type_id", "locale", "title", "image_url", "content", "preview", "vote", "vote_count", "reply_count", "labels", "links"]
+    __slots__ = ("id", "url", "source_id", "source_url", "draft", "public", "featured", "pinned", "moderation", "user_id", "member_id", "created_at", "published_at", "updated_at", "type_id", "locale", "title", "image_url", "content", "preview", "vote", "vote_count", "reply_count", "labels", "links")
     class Moderation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_MODERATION: _ClassVar[Post.Moderation]
         PENDING: _ClassVar[Post.Moderation]
         IN_REVIEW: _ClassVar[Post.Moderation]
@@ -25,7 +25,7 @@ class Post(_message.Message):
     APPROVED: Post.Moderation
     REJECTED: Post.Moderation
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Post.Extra]
         CONTENT_VALUE: _ClassVar[Post.Extra]
         CONTENT_RENDER: _ClassVar[Post.Extra]
@@ -37,7 +37,7 @@ class Post(_message.Message):
     PREVIEW: Post.Extra
     VOTE: Post.Extra
     class Translation(_message.Message):
-        __slots__ = ["id", "locale", "content", "labels", "automatic"]
+        __slots__ = ("id", "locale", "content", "labels", "automatic")
         ID_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
@@ -50,7 +50,7 @@ class Post(_message.Message):
         automatic: bool
         def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., automatic: bool = ...) -> None: ...
     class Image(_message.Message):
-        __slots__ = ["src", "width", "height"]
+        __slots__ = ("src", "width", "height")
         SRC_FIELD_NUMBER: _ClassVar[int]
         WIDTH_FIELD_NUMBER: _ClassVar[int]
         HEIGHT_FIELD_NUMBER: _ClassVar[int]
@@ -60,7 +60,7 @@ class Post(_message.Message):
         height: int
         def __init__(self, src: _Optional[str] = ..., width: _Optional[int] = ..., height: _Optional[int] = ..., **kwargs) -> None: ...
     class Preview(_message.Message):
-        __slots__ = ["title", "image", "content"]
+        __slots__ = ("title", "image", "content")
         TITLE_FIELD_NUMBER: _ClassVar[int]
         IMAGE_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]

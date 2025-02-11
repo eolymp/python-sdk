@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Ticket(_message.Message):
-    __slots__ = ["id", "contest_id", "participant_id", "member_id", "status", "subject", "message", "raw_message", "is_read", "reply_count", "created_at", "updated_at", "read_at", "last_reply_at", "cursor"]
+    __slots__ = ("id", "contest_id", "participant_id", "member_id", "status", "subject", "message", "raw_message", "is_read", "reply_count", "created_at", "updated_at", "read_at", "last_reply_at", "cursor")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Ticket.Extra]
         MESSAGE_RENDER: _ClassVar[Ticket.Extra]
         MESSAGE_VALUE: _ClassVar[Ticket.Extra]
@@ -18,7 +18,7 @@ class Ticket(_message.Message):
     MESSAGE_RENDER: Ticket.Extra
     MESSAGE_VALUE: Ticket.Extra
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Ticket.Status]
         AWAITING: _ClassVar[Ticket.Status]
         RESOLVED: _ClassVar[Ticket.Status]

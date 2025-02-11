@@ -11,9 +11,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ["id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "assistant_available", "cursor"]
+    __slots__ = ("id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "assistant_available", "cursor")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Submission.Extra]
         GROUPS: _ClassVar[Submission.Extra]
         RUNS: _ClassVar[Submission.Extra]
@@ -21,7 +21,7 @@ class Submission(_message.Message):
     GROUPS: Submission.Extra
     RUNS: Submission.Extra
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[Submission.Status]
         PENDING: _ClassVar[Submission.Status]
         PROVISIONING: _ClassVar[Submission.Status]
@@ -45,7 +45,7 @@ class Submission(_message.Message):
     SKIPPED: Submission.Status
     BLOCKED: Submission.Status
     class Verdict(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_VERDICT: _ClassVar[Submission.Verdict]
         ACCEPTED: _ClassVar[Submission.Verdict]
         WRONG_ANSWER: _ClassVar[Submission.Verdict]
@@ -61,7 +61,7 @@ class Submission(_message.Message):
     MEMORY_OVERFLOW: Submission.Verdict
     RUNTIME_ERROR: Submission.Verdict
     class Run(_message.Message):
-        __slots__ = ["id", "index", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "input_url", "output_url", "answer_url", "cost", "score", "status", "verdict", "debug_stats", "checker_stats", "interactor_stats"]
+        __slots__ = ("id", "index", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "input_url", "output_url", "answer_url", "cost", "score", "status", "verdict", "debug_stats", "checker_stats", "interactor_stats")
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
@@ -96,7 +96,7 @@ class Submission(_message.Message):
         interactor_stats: _stats_pb2.Stats
         def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
     class Group(_message.Message):
-        __slots__ = ["index", "status", "verdict", "dependencies", "cost", "score", "scoring_mode", "feedback_policy", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "runs"]
+        __slots__ = ("index", "status", "verdict", "dependencies", "cost", "score", "scoring_mode", "feedback_policy", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "runs")
         INDEX_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         VERDICT_FIELD_NUMBER: _ClassVar[int]

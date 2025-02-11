@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Subscription(_message.Message):
-    __slots__ = ["type"]
+    __slots__ = ("type",)
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[Subscription.Type]
         MUTED: _ClassVar[Subscription.Type]
         SUBSCRIBED: _ClassVar[Subscription.Type]

@@ -6,13 +6,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ErrorReport(_message.Message):
-    __slots__ = ["report_id"]
+    __slots__ = ("report_id",)
     REPORT_ID_FIELD_NUMBER: _ClassVar[int]
     report_id: str
     def __init__(self, report_id: _Optional[str] = ...) -> None: ...
 
 class InvalidArgument(_message.Message):
-    __slots__ = ["argument_path", "validation"]
+    __slots__ = ("argument_path", "validation")
     ARGUMENT_PATH_FIELD_NUMBER: _ClassVar[int]
     VALIDATION_FIELD_NUMBER: _ClassVar[int]
     argument_path: str
@@ -20,7 +20,7 @@ class InvalidArgument(_message.Message):
     def __init__(self, argument_path: _Optional[str] = ..., validation: _Optional[_Iterable[_Union[Validation, _Mapping]]] = ...) -> None: ...
 
 class Validation(_message.Message):
-    __slots__ = ["argument_path", "error_message", "localization"]
+    __slots__ = ("argument_path", "error_message", "localization")
     ARGUMENT_PATH_FIELD_NUMBER: _ClassVar[int]
     ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
     LOCALIZATION_FIELD_NUMBER: _ClassVar[int]
@@ -30,7 +30,7 @@ class Validation(_message.Message):
     def __init__(self, argument_path: _Optional[_Iterable[str]] = ..., error_message: _Optional[str] = ..., localization: _Optional[_Union[ErrorLocalization, _Mapping]] = ...) -> None: ...
 
 class QuotaExceeded(_message.Message):
-    __slots__ = ["quota", "usage"]
+    __slots__ = ("quota", "usage")
     QUOTA_FIELD_NUMBER: _ClassVar[int]
     USAGE_FIELD_NUMBER: _ClassVar[int]
     quota: int
@@ -38,9 +38,9 @@ class QuotaExceeded(_message.Message):
     def __init__(self, quota: _Optional[int] = ..., usage: _Optional[int] = ...) -> None: ...
 
 class ErrorLocalization(_message.Message):
-    __slots__ = ["phrase_key", "phrase_params"]
+    __slots__ = ("phrase_key", "phrase_params")
     class PhraseParamsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

@@ -7,18 +7,18 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GenerationTask(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "metadata", "run_count", "interactor", "scripts", "runs"]
+    __slots__ = ("task_id", "reference", "origin", "metadata", "run_count", "interactor", "scripts", "runs")
     class Generator(_message.Message):
-        __slots__ = ["script_name", "arguments"]
+        __slots__ = ("script_name", "arguments")
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
         ARGUMENTS_FIELD_NUMBER: _ClassVar[int]
         script_name: str
         arguments: _containers.RepeatedScalarFieldContainer[str]
         def __init__(self, script_name: _Optional[str] = ..., arguments: _Optional[_Iterable[str]] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ["reference", "index", "cost", "env", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator"]
+        __slots__ = ("reference", "index", "cost", "env", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator")
         class EnvEntry(_message.Message):
-            __slots__ = ["key", "value"]
+            __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]
             VALUE_FIELD_NUMBER: _ClassVar[int]
             key: str
@@ -46,7 +46,7 @@ class GenerationTask(_message.Message):
         answer_generator: GenerationTask.Generator
         def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ...) -> None: ...
     class MetadataEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

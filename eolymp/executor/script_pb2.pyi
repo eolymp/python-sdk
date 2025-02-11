@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Script(_message.Message):
-    __slots__ = ["name", "runtime", "source_url", "header_url", "footer_url", "files"]
+    __slots__ = ("name", "runtime", "source_url", "header_url", "footer_url", "files")
     NAME_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]

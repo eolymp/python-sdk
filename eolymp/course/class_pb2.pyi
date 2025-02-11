@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Class(_message.Message):
-    __slots__ = ["id", "group_id", "module_count"]
+    __slots__ = ("id", "group_id", "module_count")
     ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_COUNT_FIELD_NUMBER: _ClassVar[int]

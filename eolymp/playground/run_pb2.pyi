@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Run(_message.Message):
-    __slots__ = ["id", "runtime", "source_url", "input_url", "status", "error", "exit_code", "signal", "wall_time_usage", "cpu_time_usage", "memory_usage", "resource_usage", "output_url"]
+    __slots__ = ("id", "runtime", "source_url", "input_url", "status", "error", "exit_code", "signal", "wall_time_usage", "cpu_time_usage", "memory_usage", "resource_usage", "output_url")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[Run.Status]
         PENDING: _ClassVar[Run.Status]
         PROVISIONING: _ClassVar[Run.Status]

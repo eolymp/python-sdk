@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Ticket(_message.Message):
-    __slots__ = ["id", "type", "user_id", "user_email", "metadata", "status", "locale", "created_at", "updated_at", "secret", "subject", "message"]
+    __slots__ = ("id", "type", "user_id", "user_email", "metadata", "status", "locale", "created_at", "updated_at", "secret", "subject", "message")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[Ticket.Type]
         QUESTION: _ClassVar[Ticket.Type]
         QUOTA_INCREASE: _ClassVar[Ticket.Type]
@@ -25,7 +25,7 @@ class Ticket(_message.Message):
     ACADEMIC_PLAN_REQUEST: Ticket.Type
     SALES_REQUEST: Ticket.Type
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN: _ClassVar[Ticket.Status]
         PENDING: _ClassVar[Ticket.Status]
         AWAITING: _ClassVar[Ticket.Status]
@@ -39,9 +39,9 @@ class Ticket(_message.Message):
     APPROVED: Ticket.Status
     REJECTED: Ticket.Status
     class Comment(_message.Message):
-        __slots__ = ["id", "user_id", "user_email", "metadata", "created_at", "updated_at", "message"]
+        __slots__ = ("id", "user_id", "user_email", "metadata", "created_at", "updated_at", "message")
         class MetadataEntry(_message.Message):
-            __slots__ = ["key", "value"]
+            __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]
             VALUE_FIELD_NUMBER: _ClassVar[int]
             key: str
@@ -63,7 +63,7 @@ class Ticket(_message.Message):
         message: _content_pb2.Content
         def __init__(self, id: _Optional[str] = ..., user_id: _Optional[str] = ..., user_email: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
     class MetadataEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

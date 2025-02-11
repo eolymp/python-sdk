@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateRunInput(_message.Message):
-    __slots__ = ["runtime", "source", "input_data", "input_ref"]
+    __slots__ = ("runtime", "source", "input_data", "input_ref")
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
@@ -21,31 +21,31 @@ class CreateRunInput(_message.Message):
     def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_data: _Optional[bytes] = ..., input_ref: _Optional[str] = ...) -> None: ...
 
 class CreateRunOutput(_message.Message):
-    __slots__ = ["run_id"]
+    __slots__ = ("run_id",)
     RUN_ID_FIELD_NUMBER: _ClassVar[int]
     run_id: str
     def __init__(self, run_id: _Optional[str] = ...) -> None: ...
 
 class DescribeRunInput(_message.Message):
-    __slots__ = ["run_id"]
+    __slots__ = ("run_id",)
     RUN_ID_FIELD_NUMBER: _ClassVar[int]
     run_id: str
     def __init__(self, run_id: _Optional[str] = ...) -> None: ...
 
 class DescribeRunOutput(_message.Message):
-    __slots__ = ["run"]
+    __slots__ = ("run",)
     RUN_FIELD_NUMBER: _ClassVar[int]
     run: _run_pb2.Run
     def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ...) -> None: ...
 
 class WatchRunInput(_message.Message):
-    __slots__ = ["run_id"]
+    __slots__ = ("run_id",)
     RUN_ID_FIELD_NUMBER: _ClassVar[int]
     run_id: str
     def __init__(self, run_id: _Optional[str] = ...) -> None: ...
 
 class WatchRunOutput(_message.Message):
-    __slots__ = ["run"]
+    __slots__ = ("run",)
     RUN_FIELD_NUMBER: _ClassVar[int]
     run: _run_pb2.Run
     def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ...) -> None: ...

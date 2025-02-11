@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Stats(_message.Message):
-    __slots__ = ["stdin_url", "stdout_url", "stderr_url", "wall_time_duration", "cpu_time_duration", "memory_peak", "signal", "exit_code"]
+    __slots__ = ("stdin_url", "stdout_url", "stderr_url", "wall_time_duration", "cpu_time_duration", "memory_peak", "signal", "exit_code")
     STDIN_URL_FIELD_NUMBER: _ClassVar[int]
     STDOUT_URL_FIELD_NUMBER: _ClassVar[int]
     STDERR_URL_FIELD_NUMBER: _ClassVar[int]

@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GroupChangedEvent(_message.Message):
-    __slots__ = ["before", "after"]
+    __slots__ = ("before", "after")
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     before: _group_pb2.Group
@@ -20,21 +20,21 @@ class GroupChangedEvent(_message.Message):
     def __init__(self, before: _Optional[_Union[_group_pb2.Group, _Mapping]] = ..., after: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
 
 class CreateGroupInput(_message.Message):
-    __slots__ = ["group"]
+    __slots__ = ("group",)
     GROUP_FIELD_NUMBER: _ClassVar[int]
     group: _group_pb2.Group
     def __init__(self, group: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
 
 class CreateGroupOutput(_message.Message):
-    __slots__ = ["group_id"]
+    __slots__ = ("group_id",)
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     group_id: str
     def __init__(self, group_id: _Optional[str] = ...) -> None: ...
 
 class UpdateGroupInput(_message.Message):
-    __slots__ = ["patch", "group_id", "group"]
+    __slots__ = ("patch", "group_id", "group")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateGroupInput.Patch]
         NAME: _ClassVar[UpdateGroupInput.Patch]
         DESCRIPTION: _ClassVar[UpdateGroupInput.Patch]
@@ -50,35 +50,35 @@ class UpdateGroupInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateGroupInput.Patch, str]]] = ..., group_id: _Optional[str] = ..., group: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
 
 class UpdateGroupOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteGroupInput(_message.Message):
-    __slots__ = ["group_id"]
+    __slots__ = ("group_id",)
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     group_id: str
     def __init__(self, group_id: _Optional[str] = ...) -> None: ...
 
 class DeleteGroupOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeGroupInput(_message.Message):
-    __slots__ = ["group_id"]
+    __slots__ = ("group_id",)
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     group_id: str
     def __init__(self, group_id: _Optional[str] = ...) -> None: ...
 
 class DescribeGroupOutput(_message.Message):
-    __slots__ = ["group"]
+    __slots__ = ("group",)
     GROUP_FIELD_NUMBER: _ClassVar[int]
     group: _group_pb2.Group
     def __init__(self, group: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
 
 class ListGroupsInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "name"]
+        __slots__ = ("query", "id", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -95,7 +95,7 @@ class ListGroupsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListGroupsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListGroupsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int

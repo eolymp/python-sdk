@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationTask(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "metadata", "priority", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "submission", "interactor", "checker", "scripts", "runs"]
+    __slots__ = ("task_id", "reference", "origin", "metadata", "priority", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "submission", "interactor", "checker", "scripts", "runs")
     class DependencyMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_DEPENDENCY_MODE: _ClassVar[EvaluationTask.DependencyMode]
         FULLY_ACCEPTED: _ClassVar[EvaluationTask.DependencyMode]
         FIRST_POINT: _ClassVar[EvaluationTask.DependencyMode]
@@ -19,16 +19,16 @@ class EvaluationTask(_message.Message):
     FULLY_ACCEPTED: EvaluationTask.DependencyMode
     FIRST_POINT: EvaluationTask.DependencyMode
     class Generator(_message.Message):
-        __slots__ = ["script_name", "arguments"]
+        __slots__ = ("script_name", "arguments")
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
         ARGUMENTS_FIELD_NUMBER: _ClassVar[int]
         script_name: str
         arguments: _containers.RepeatedScalarFieldContainer[str]
         def __init__(self, script_name: _Optional[str] = ..., arguments: _Optional[_Iterable[str]] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ["reference", "index", "debug", "cost", "env", "labels", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator"]
+        __slots__ = ("reference", "index", "debug", "cost", "env", "labels", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator")
         class EnvEntry(_message.Message):
-            __slots__ = ["key", "value"]
+            __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]
             VALUE_FIELD_NUMBER: _ClassVar[int]
             key: str
@@ -60,7 +60,7 @@ class EvaluationTask(_message.Message):
         answer_generator: EvaluationTask.Generator
         def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., debug: bool = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., labels: _Optional[_Iterable[str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ...) -> None: ...
     class Precondition(_message.Message):
-        __slots__ = ["selector", "depends_on", "dependency_mode", "stop_on_failure", "max_execution_time"]
+        __slots__ = ("selector", "depends_on", "dependency_mode", "stop_on_failure", "max_execution_time")
         SELECTOR_FIELD_NUMBER: _ClassVar[int]
         DEPENDS_ON_FIELD_NUMBER: _ClassVar[int]
         DEPENDENCY_MODE_FIELD_NUMBER: _ClassVar[int]
@@ -73,7 +73,7 @@ class EvaluationTask(_message.Message):
         max_execution_time: int
         def __init__(self, selector: _Optional[_Iterable[str]] = ..., depends_on: _Optional[_Iterable[str]] = ..., dependency_mode: _Optional[_Union[EvaluationTask.DependencyMode, str]] = ..., stop_on_failure: bool = ..., max_execution_time: _Optional[int] = ...) -> None: ...
     class Constraint(_message.Message):
-        __slots__ = ["selector", "actor", "wall_time_limit", "cpu_time_limit", "memory_limit", "file_size_limit"]
+        __slots__ = ("selector", "actor", "wall_time_limit", "cpu_time_limit", "memory_limit", "file_size_limit")
         SELECTOR_FIELD_NUMBER: _ClassVar[int]
         ACTOR_FIELD_NUMBER: _ClassVar[int]
         WALL_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
@@ -88,7 +88,7 @@ class EvaluationTask(_message.Message):
         file_size_limit: int
         def __init__(self, selector: _Optional[_Iterable[str]] = ..., actor: _Optional[str] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ...) -> None: ...
     class MetadataEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

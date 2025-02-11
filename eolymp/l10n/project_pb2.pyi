@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Project(_message.Message):
-    __slots__ = ["id", "name", "url", "logo_url", "home_url", "description"]
+    __slots__ = ("id", "name", "url", "logo_url", "home_url", "description")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]

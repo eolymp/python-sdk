@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Variant(_message.Message):
-    __slots__ = ["id", "locale", "title", "content", "automatic"]
+    __slots__ = ("id", "locale", "title", "content", "automatic")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Variant.Extra]
         CONTENT_RENDER: _ClassVar[Variant.Extra]
         CONTENT_VALUE: _ClassVar[Variant.Extra]

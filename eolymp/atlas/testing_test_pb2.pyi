@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Test(_message.Message):
-    __slots__ = ["id", "testset_id", "index", "example", "inactive", "secret", "score", "example_input_url", "example_answer_url", "generated_input_url", "generated_answer_url", "input_url", "input_generator", "answer_url", "answer_generator"]
+    __slots__ = ("id", "testset_id", "index", "example", "inactive", "secret", "score", "example_input_url", "example_answer_url", "generated_input_url", "generated_answer_url", "input_url", "input_generator", "answer_url", "answer_generator")
     class Generator(_message.Message):
-        __slots__ = ["script_name", "arguments"]
+        __slots__ = ("script_name", "arguments")
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
         ARGUMENTS_FIELD_NUMBER: _ClassVar[int]
         script_name: str

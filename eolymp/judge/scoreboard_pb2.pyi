@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ["modes", "rounds", "columns"]
+    __slots__ = ("modes", "rounds", "columns")
     class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         RESULT: _ClassVar[Scoreboard.Mode]
         FROZEN: _ClassVar[Scoreboard.Mode]
         UPSOLVE: _ClassVar[Scoreboard.Mode]
@@ -18,16 +18,16 @@ class Scoreboard(_message.Message):
     FROZEN: Scoreboard.Mode
     UPSOLVE: Scoreboard.Mode
     class Round(_message.Message):
-        __slots__ = ["id", "title"]
+        __slots__ = ("id", "title")
         ID_FIELD_NUMBER: _ClassVar[int]
         TITLE_FIELD_NUMBER: _ClassVar[int]
         id: str
         title: str
         def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ...) -> None: ...
     class Column(_message.Message):
-        __slots__ = ["id", "type", "title", "choices", "sortable", "filterable"]
+        __slots__ = ("id", "type", "title", "choices", "sortable", "filterable")
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = []
+            __slots__ = ()
             UNKNOWN_TYPE: _ClassVar[Scoreboard.Column.Type]
             ROUND_SCORE: _ClassVar[Scoreboard.Column.Type]
             PROBLEM_SCORE: _ClassVar[Scoreboard.Column.Type]
@@ -66,9 +66,9 @@ class Scoreboard(_message.Message):
         filterable: bool
         def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., title: _Optional[str] = ..., choices: _Optional[_Iterable[str]] = ..., sortable: bool = ..., filterable: bool = ...) -> None: ...
     class Row(_message.Message):
-        __slots__ = ["id", "member_id", "index", "rank", "rank_length", "score", "penalty", "tie_breaker", "unofficial", "disqualified", "medal", "values"]
+        __slots__ = ("id", "member_id", "index", "rank", "rank_length", "score", "penalty", "tie_breaker", "unofficial", "disqualified", "medal", "values")
         class Value(_message.Message):
-            __slots__ = ["column_id", "round_score", "problem_score", "string", "number"]
+            __slots__ = ("column_id", "round_score", "problem_score", "string", "number")
             COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
             ROUND_SCORE_FIELD_NUMBER: _ClassVar[int]
             PROBLEM_SCORE_FIELD_NUMBER: _ClassVar[int]
@@ -81,7 +81,7 @@ class Scoreboard(_message.Message):
             number: str
             def __init__(self, column_id: _Optional[str] = ..., round_score: _Optional[_Union[Scoreboard.Row.RoundScore, _Mapping]] = ..., problem_score: _Optional[_Union[Scoreboard.Row.ProblemScore, _Mapping]] = ..., string: _Optional[str] = ..., number: _Optional[str] = ...) -> None: ...
         class RoundScore(_message.Message):
-            __slots__ = ["score", "penalty", "tie_breaker", "unofficial", "disqualified", "medal"]
+            __slots__ = ("score", "penalty", "tie_breaker", "unofficial", "disqualified", "medal")
             SCORE_FIELD_NUMBER: _ClassVar[int]
             PENALTY_FIELD_NUMBER: _ClassVar[int]
             TIE_BREAKER_FIELD_NUMBER: _ClassVar[int]
@@ -96,7 +96,7 @@ class Scoreboard(_message.Message):
             medal: _medal_pb2.Medal
             def __init__(self, score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: bool = ..., disqualified: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ...) -> None: ...
         class ProblemScore(_message.Message):
-            __slots__ = ["score", "penalty", "attempts", "percentage", "time"]
+            __slots__ = ("score", "penalty", "attempts", "percentage", "time")
             SCORE_FIELD_NUMBER: _ClassVar[int]
             PENALTY_FIELD_NUMBER: _ClassVar[int]
             ATTEMPTS_FIELD_NUMBER: _ClassVar[int]

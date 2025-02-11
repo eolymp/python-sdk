@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class MemberChangedEvent(_message.Message):
-    __slots__ = ["before", "after"]
+    __slots__ = ("before", "after")
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     before: _member_pb2.Member
@@ -22,21 +22,21 @@ class MemberChangedEvent(_message.Message):
     def __init__(self, before: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., after: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class CreateMemberInput(_message.Message):
-    __slots__ = ["member"]
+    __slots__ = ("member",)
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     member: _member_pb2.Member
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class CreateMemberOutput(_message.Message):
-    __slots__ = ["member_id"]
+    __slots__ = ("member_id",)
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     def __init__(self, member_id: _Optional[str] = ...) -> None: ...
 
 class UpdateMemberInput(_message.Message):
-    __slots__ = ["patch", "member_id", "member"]
+    __slots__ = ("patch", "member_id", "member")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateMemberInput.Patch]
         INACTIVE: _ClassVar[UpdateMemberInput.Patch]
         UNOFFICIAL: _ClassVar[UpdateMemberInput.Patch]
@@ -94,11 +94,11 @@ class UpdateMemberInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMemberInput.Patch, str]]] = ..., member_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class UpdateMemberOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteMemberInput(_message.Message):
-    __slots__ = ["member_id", "force_delete"]
+    __slots__ = ("member_id", "force_delete")
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     FORCE_DELETE_FIELD_NUMBER: _ClassVar[int]
     member_id: str
@@ -106,21 +106,21 @@ class DeleteMemberInput(_message.Message):
     def __init__(self, member_id: _Optional[str] = ..., force_delete: bool = ...) -> None: ...
 
 class DeleteMemberOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RestoreMemberInput(_message.Message):
-    __slots__ = ["member_id"]
+    __slots__ = ("member_id",)
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     def __init__(self, member_id: _Optional[str] = ...) -> None: ...
 
 class RestoreMemberOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeMemberInput(_message.Message):
-    __slots__ = ["member_id", "extra"]
+    __slots__ = ("member_id", "extra")
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     member_id: str
@@ -128,15 +128,15 @@ class DescribeMemberInput(_message.Message):
     def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
 class DescribeMemberOutput(_message.Message):
-    __slots__ = ["member"]
+    __slots__ = ("member",)
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     member: _member_pb2.Member
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class ListMembersInput(_message.Message):
-    __slots__ = ["offset", "size", "filters", "sort", "order", "extra"]
+    __slots__ = ("offset", "size", "filters", "sort", "order", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         DEFAULT: _ClassVar[ListMembersInput.Sortable]
         NAME: _ClassVar[ListMembersInput.Sortable]
         CREATED_AT: _ClassVar[ListMembersInput.Sortable]
@@ -148,7 +148,7 @@ class ListMembersInput(_message.Message):
     TYPE: ListMembersInput.Sortable
     SCORE: ListMembersInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "type", "name", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "user_issuer", "user_subject", "user_email", "user_name", "user_nickname", "score"]
+        __slots__ = ("query", "id", "type", "name", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "user_issuer", "user_subject", "user_email", "user_name", "user_nickname", "score")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -197,7 +197,7 @@ class ListMembersInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMembersInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListMembersInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
 class ListMembersOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -205,7 +205,7 @@ class ListMembersOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_member_pb2.Member, _Mapping]]] = ...) -> None: ...
 
 class AssignMemberInput(_message.Message):
-    __slots__ = ["team_id", "member_id"]
+    __slots__ = ("team_id", "member_id")
     TEAM_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     team_id: str
@@ -213,11 +213,11 @@ class AssignMemberInput(_message.Message):
     def __init__(self, team_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class AssignMemberOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UnassignMemberInput(_message.Message):
-    __slots__ = ["team_id", "member_id"]
+    __slots__ = ("team_id", "member_id")
     TEAM_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     team_id: str
@@ -225,11 +225,11 @@ class UnassignMemberInput(_message.Message):
     def __init__(self, team_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class UnassignMemberOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeMemberUsageInput(_message.Message):
-    __slots__ = ["period_start", "period_end"]
+    __slots__ = ("period_start", "period_end")
     PERIOD_START_FIELD_NUMBER: _ClassVar[int]
     PERIOD_END_FIELD_NUMBER: _ClassVar[int]
     period_start: _timestamp_pb2.Timestamp
@@ -237,7 +237,7 @@ class DescribeMemberUsageInput(_message.Message):
     def __init__(self, period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class DescribeMemberUsageOutput(_message.Message):
-    __slots__ = ["total_members", "active_members", "new_members"]
+    __slots__ = ("total_members", "active_members", "new_members")
     TOTAL_MEMBERS_FIELD_NUMBER: _ClassVar[int]
     ACTIVE_MEMBERS_FIELD_NUMBER: _ClassVar[int]
     NEW_MEMBERS_FIELD_NUMBER: _ClassVar[int]

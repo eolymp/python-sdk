@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ExpressionID(_message.Message):
-    __slots__ = ["value"]
+    __slots__ = ("value",)
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[ExpressionID.Type]
         EQUAL: _ClassVar[ExpressionID.Type]
         NOT_EQUAL: _ClassVar[ExpressionID.Type]
@@ -22,9 +22,9 @@ class ExpressionID(_message.Message):
     def __init__(self, value: _Optional[str] = ..., **kwargs) -> None: ...
 
 class ExpressionInt(_message.Message):
-    __slots__ = ["value"]
+    __slots__ = ("value",)
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[ExpressionInt.Type]
         EQUAL: _ClassVar[ExpressionInt.Type]
         NOT_EQUAL: _ClassVar[ExpressionInt.Type]
@@ -45,9 +45,9 @@ class ExpressionInt(_message.Message):
     def __init__(self, value: _Optional[int] = ..., **kwargs) -> None: ...
 
 class ExpressionFloat(_message.Message):
-    __slots__ = ["value"]
+    __slots__ = ("value",)
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[ExpressionFloat.Type]
         EQUAL: _ClassVar[ExpressionFloat.Type]
         NOT_EQUAL: _ClassVar[ExpressionFloat.Type]
@@ -68,9 +68,9 @@ class ExpressionFloat(_message.Message):
     def __init__(self, value: _Optional[float] = ..., **kwargs) -> None: ...
 
 class ExpressionString(_message.Message):
-    __slots__ = ["value"]
+    __slots__ = ("value",)
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[ExpressionString.Type]
         EQUAL: _ClassVar[ExpressionString.Type]
         NOT_EQUAL: _ClassVar[ExpressionString.Type]
@@ -87,9 +87,9 @@ class ExpressionString(_message.Message):
     def __init__(self, value: _Optional[str] = ..., **kwargs) -> None: ...
 
 class ExpressionEnum(_message.Message):
-    __slots__ = ["value"]
+    __slots__ = ("value",)
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[ExpressionEnum.Type]
         EQUAL: _ClassVar[ExpressionEnum.Type]
         NOT_EQUAL: _ClassVar[ExpressionEnum.Type]
@@ -102,9 +102,9 @@ class ExpressionEnum(_message.Message):
     def __init__(self, value: _Optional[str] = ..., **kwargs) -> None: ...
 
 class ExpressionBool(_message.Message):
-    __slots__ = ["value"]
+    __slots__ = ("value",)
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[ExpressionBool.Type]
         EQUAL: _ClassVar[ExpressionBool.Type]
     NONE: ExpressionBool.Type
@@ -115,9 +115,9 @@ class ExpressionBool(_message.Message):
     def __init__(self, value: bool = ..., **kwargs) -> None: ...
 
 class ExpressionTimestamp(_message.Message):
-    __slots__ = ["value"]
+    __slots__ = ("value",)
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[ExpressionTimestamp.Type]
         EQUAL: _ClassVar[ExpressionTimestamp.Type]
         NOT_EQUAL: _ClassVar[ExpressionTimestamp.Type]

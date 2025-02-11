@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateAccessKeyInput(_message.Message):
-    __slots__ = ["name", "scope", "expires_in"]
+    __slots__ = ("name", "scope", "expires_in")
     NAME_FIELD_NUMBER: _ClassVar[int]
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
@@ -20,7 +20,7 @@ class CreateAccessKeyInput(_message.Message):
     def __init__(self, name: _Optional[str] = ..., scope: _Optional[str] = ..., expires_in: _Optional[int] = ...) -> None: ...
 
 class CreateAccessKeyOutput(_message.Message):
-    __slots__ = ["key_id", "secret"]
+    __slots__ = ("key_id", "secret")
     KEY_ID_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     key_id: str
@@ -28,17 +28,17 @@ class CreateAccessKeyOutput(_message.Message):
     def __init__(self, key_id: _Optional[str] = ..., secret: _Optional[str] = ...) -> None: ...
 
 class DeleteAccessKeyInput(_message.Message):
-    __slots__ = ["key_id"]
+    __slots__ = ("key_id",)
     KEY_ID_FIELD_NUMBER: _ClassVar[int]
     key_id: str
     def __init__(self, key_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAccessKeyOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListAccessKeysInput(_message.Message):
-    __slots__ = ["offset", "size"]
+    __slots__ = ("offset", "size")
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     offset: int
@@ -46,7 +46,7 @@ class ListAccessKeysInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class ListAccessKeysOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int

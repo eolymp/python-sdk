@@ -5,9 +5,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SecurityEvent(_message.Message):
-    __slots__ = ["session_closed", "token_revoked", "account_purged"]
+    __slots__ = ("session_closed", "token_revoked", "account_purged")
     class SessionClosed(_message.Message):
-        __slots__ = ["issuer", "subject", "session_id"]
+        __slots__ = ("issuer", "subject", "session_id")
         ISSUER_FIELD_NUMBER: _ClassVar[int]
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
         SESSION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -16,7 +16,7 @@ class SecurityEvent(_message.Message):
         session_id: str
         def __init__(self, issuer: _Optional[str] = ..., subject: _Optional[str] = ..., session_id: _Optional[str] = ...) -> None: ...
     class TokenRevoked(_message.Message):
-        __slots__ = ["issuer", "subject", "token_type", "token_hash_md5"]
+        __slots__ = ("issuer", "subject", "token_type", "token_hash_md5")
         ISSUER_FIELD_NUMBER: _ClassVar[int]
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
         TOKEN_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -27,7 +27,7 @@ class SecurityEvent(_message.Message):
         token_hash_md5: str
         def __init__(self, issuer: _Optional[str] = ..., subject: _Optional[str] = ..., token_type: _Optional[str] = ..., token_hash_md5: _Optional[str] = ...) -> None: ...
     class AccountPurged(_message.Message):
-        __slots__ = ["issuer", "subject"]
+        __slots__ = ("issuer", "subject")
         ISSUER_FIELD_NUMBER: _ClassVar[int]
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
         issuer: str

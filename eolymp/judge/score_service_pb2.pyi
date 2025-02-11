@@ -11,31 +11,31 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RebuildScoreInput(_message.Message):
-    __slots__ = ["contest_id"]
+    __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class RebuildScoreOutput(_message.Message):
-    __slots__ = ["activity_id"]
+    __slots__ = ("activity_id",)
     ACTIVITY_ID_FIELD_NUMBER: _ClassVar[int]
     activity_id: str
     def __init__(self, activity_id: _Optional[str] = ...) -> None: ...
 
 class IntrospectScoreInput(_message.Message):
-    __slots__ = ["contest_id"]
+    __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class IntrospectScoreOutput(_message.Message):
-    __slots__ = ["score"]
+    __slots__ = ("score",)
     SCORE_FIELD_NUMBER: _ClassVar[int]
     score: _score_pb2.Score
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class WatchScoreInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id", "mode"]
+    __slots__ = ("contest_id", "participant_id", "mode")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
@@ -45,13 +45,13 @@ class WatchScoreInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ...) -> None: ...
 
 class WatchScoreOutput(_message.Message):
-    __slots__ = ["score"]
+    __slots__ = ("score",)
     SCORE_FIELD_NUMBER: _ClassVar[int]
     score: _score_pb2.Score
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class DescribeScoreInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id", "mode", "time_offset"]
+    __slots__ = ("contest_id", "participant_id", "mode", "time_offset")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
@@ -63,13 +63,13 @@ class DescribeScoreInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ...) -> None: ...
 
 class DescribeScoreOutput(_message.Message):
-    __slots__ = ["score"]
+    __slots__ = ("score",)
     SCORE_FIELD_NUMBER: _ClassVar[int]
     score: _score_pb2.Score
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class ImportScoreInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id", "scores"]
+    __slots__ = ("contest_id", "participant_id", "scores")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     SCORES_FIELD_NUMBER: _ClassVar[int]
@@ -79,11 +79,11 @@ class ImportScoreInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., scores: _Optional[_Iterable[_Union[_score_pb2.Score, _Mapping]]] = ...) -> None: ...
 
 class ImportScoreOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ExportScoreInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+    __slots__ = ("contest_id", "participant_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -91,13 +91,13 @@ class ExportScoreInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class ExportScoreOutput(_message.Message):
-    __slots__ = ["scores"]
+    __slots__ = ("scores",)
     SCORES_FIELD_NUMBER: _ClassVar[int]
     scores: _containers.RepeatedCompositeFieldContainer[_score_pb2.Score]
     def __init__(self, scores: _Optional[_Iterable[_Union[_score_pb2.Score, _Mapping]]] = ...) -> None: ...
 
 class ListResultInput(_message.Message):
-    __slots__ = ["contest_id", "mode", "time_offset", "offset", "size"]
+    __slots__ = ("contest_id", "mode", "time_offset", "offset", "size")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
     TIME_OFFSET_FIELD_NUMBER: _ClassVar[int]
@@ -111,7 +111,7 @@ class ListResultInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class ListResultOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -119,7 +119,7 @@ class ListResultOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_result_pb2.Result, _Mapping]]] = ...) -> None: ...
 
 class ExportResultInput(_message.Message):
-    __slots__ = ["contest_id", "mode", "time_offset"]
+    __slots__ = ("contest_id", "mode", "time_offset")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
     TIME_OFFSET_FIELD_NUMBER: _ClassVar[int]
@@ -129,7 +129,7 @@ class ExportResultInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ...) -> None: ...
 
 class ExportResultOutput(_message.Message):
-    __slots__ = ["export_url"]
+    __slots__ = ("export_url",)
     EXPORT_URL_FIELD_NUMBER: _ClassVar[int]
     export_url: str
     def __init__(self, export_url: _Optional[str] = ...) -> None: ...

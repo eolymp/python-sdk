@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Job(_message.Message):
-    __slots__ = ["id", "status", "user_id", "member_id", "document_url", "created_at", "updated_at"]
+    __slots__ = ("id", "status", "user_id", "member_id", "document_url", "created_at", "updated_at")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Job.Status]
         PENDING: _ClassVar[Job.Status]
         PRINTING: _ClassVar[Job.Status]

@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Language(_message.Message):
-    __slots__ = ["id", "name", "type", "deprecated"]
+    __slots__ = ("id", "name", "type", "deprecated")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Language.Type]
         PROGRAMMING: _ClassVar[Language.Type]
         SQL: _ClassVar[Language.Type]

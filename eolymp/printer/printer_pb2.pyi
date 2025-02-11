@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Printer(_message.Message):
-    __slots__ = ["id", "secret", "status", "name"]
+    __slots__ = ("id", "secret", "status", "name")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Printer.Status]
         OFFLINE: _ClassVar[Printer.Status]
         READY: _ClassVar[Printer.Status]

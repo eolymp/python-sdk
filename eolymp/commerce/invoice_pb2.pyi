@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Invoice(_message.Message):
-    __slots__ = ["id", "number", "status", "customer_id", "description", "from_invoice", "created_at", "due_at", "hosted_invoice_url", "invoice_pdf_url", "currency", "amount_due", "amount_paid", "amount_remaining", "subtotal", "subtotal_excluding_tax", "tax_amounts", "tax", "discount_amounts", "total", "total_excluding_tax", "items"]
+    __slots__ = ("id", "number", "status", "customer_id", "description", "from_invoice", "created_at", "due_at", "hosted_invoice_url", "invoice_pdf_url", "currency", "amount_due", "amount_paid", "amount_remaining", "subtotal", "subtotal_excluding_tax", "tax_amounts", "tax", "discount_amounts", "total", "total_excluding_tax", "items")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Invoice.Status]
         DRAFT: _ClassVar[Invoice.Status]
         OPEN: _ClassVar[Invoice.Status]
@@ -25,7 +25,7 @@ class Invoice(_message.Message):
     UNCOLLECTIBLE: Invoice.Status
     VOID: Invoice.Status
     class Item(_message.Message):
-        __slots__ = ["id", "description", "quantity", "price", "currency", "amount", "amount_excluding_tax", "unit_amount_excluding_tax", "discount_amounts", "tax_amounts"]
+        __slots__ = ("id", "description", "quantity", "price", "currency", "amount", "amount_excluding_tax", "unit_amount_excluding_tax", "discount_amounts", "tax_amounts")
         ID_FIELD_NUMBER: _ClassVar[int]
         DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
         QUANTITY_FIELD_NUMBER: _ClassVar[int]
@@ -48,7 +48,7 @@ class Invoice(_message.Message):
         tax_amounts: _containers.RepeatedCompositeFieldContainer[Invoice.TaxAmount]
         def __init__(self, id: _Optional[str] = ..., description: _Optional[str] = ..., quantity: _Optional[int] = ..., price: _Optional[_Union[_price_pb2.Price, _Mapping]] = ..., currency: _Optional[str] = ..., amount: _Optional[int] = ..., amount_excluding_tax: _Optional[int] = ..., unit_amount_excluding_tax: _Optional[int] = ..., discount_amounts: _Optional[_Iterable[_Union[Invoice.DiscountAmount, _Mapping]]] = ..., tax_amounts: _Optional[_Iterable[_Union[Invoice.TaxAmount, _Mapping]]] = ...) -> None: ...
     class TaxAmount(_message.Message):
-        __slots__ = ["amount", "inclusive", "tax_rate", "taxability_reason", "taxable_amount"]
+        __slots__ = ("amount", "inclusive", "tax_rate", "taxability_reason", "taxable_amount")
         AMOUNT_FIELD_NUMBER: _ClassVar[int]
         INCLUSIVE_FIELD_NUMBER: _ClassVar[int]
         TAX_RATE_FIELD_NUMBER: _ClassVar[int]
@@ -61,14 +61,14 @@ class Invoice(_message.Message):
         taxable_amount: int
         def __init__(self, amount: _Optional[int] = ..., inclusive: bool = ..., tax_rate: _Optional[str] = ..., taxability_reason: _Optional[str] = ..., taxable_amount: _Optional[int] = ...) -> None: ...
     class DiscountAmount(_message.Message):
-        __slots__ = ["amount", "discount"]
+        __slots__ = ("amount", "discount")
         AMOUNT_FIELD_NUMBER: _ClassVar[int]
         DISCOUNT_FIELD_NUMBER: _ClassVar[int]
         amount: int
         discount: str
         def __init__(self, amount: _Optional[int] = ..., discount: _Optional[str] = ...) -> None: ...
     class FromInvoice(_message.Message):
-        __slots__ = ["relation", "invoice"]
+        __slots__ = ("relation", "invoice")
         RELATION_FIELD_NUMBER: _ClassVar[int]
         INVOICE_FIELD_NUMBER: _ClassVar[int]
         relation: str

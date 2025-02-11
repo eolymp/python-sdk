@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Material(_message.Message):
-    __slots__ = ["id", "url", "draft", "name", "image_url", "module_id", "index", "depth", "grading", "document", "task", "percentage", "grade", "progress"]
+    __slots__ = ("id", "url", "draft", "name", "image_url", "module_id", "index", "depth", "grading", "document", "task", "percentage", "grade", "progress")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Material.Extra]
         CONTENT: _ClassVar[Material.Extra]
         CONTENT_VALUE: _ClassVar[Material.Extra]
@@ -25,24 +25,24 @@ class Material(_message.Message):
     GRADE: Material.Extra
     PROGRESS: Material.Extra
     class Document(_message.Message):
-        __slots__ = ["content"]
+        __slots__ = ("content",)
         CONTENT_FIELD_NUMBER: _ClassVar[int]
         content: _content_pb2.Content
         def __init__(self, content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
     class Task(_message.Message):
-        __slots__ = ["problem_id"]
+        __slots__ = ("problem_id",)
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         problem_id: str
         def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
     class Grading(_message.Message):
-        __slots__ = ["max_score", "weight"]
+        __slots__ = ("max_score", "weight")
         MAX_SCORE_FIELD_NUMBER: _ClassVar[int]
         WEIGHT_FIELD_NUMBER: _ClassVar[int]
         max_score: int
         weight: float
         def __init__(self, max_score: _Optional[int] = ..., weight: _Optional[float] = ...) -> None: ...
     class Progress(_message.Message):
-        __slots__ = ["percentage", "grade", "grade_automatic", "grade_override", "excused"]
+        __slots__ = ("percentage", "grade", "grade_automatic", "grade_override", "excused")
         PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
         GRADE_FIELD_NUMBER: _ClassVar[int]
         GRADE_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]

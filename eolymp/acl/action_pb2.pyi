@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Action(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     UNKNOWN_ACTION: _ClassVar[Action]
     SPACE_LIST: _ClassVar[Action]
     SPACE_READ: _ClassVar[Action]

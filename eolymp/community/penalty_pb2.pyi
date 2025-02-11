@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Penalty(_message.Message):
-    __slots__ = ["id", "summary", "description", "scope", "created_at", "expires_at", "cancelled_at"]
+    __slots__ = ("id", "summary", "description", "scope", "created_at", "expires_at", "cancelled_at")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Penalty.Extra]
         DESCRIPTION_VALUE: _ClassVar[Penalty.Extra]
         DESCRIPTION_RENDER: _ClassVar[Penalty.Extra]

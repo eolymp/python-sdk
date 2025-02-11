@@ -18,7 +18,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Snapshot(_message.Message):
-    __slots__ = ["problem", "testing", "checker", "interactor", "statements", "templates", "attachments", "testsets", "tests", "editorials", "solutions", "scripts"]
+    __slots__ = ("problem", "testing", "checker", "interactor", "statements", "templates", "attachments", "testsets", "tests", "editorials", "solutions", "scripts")
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
     TESTING_FIELD_NUMBER: _ClassVar[int]
     CHECKER_FIELD_NUMBER: _ClassVar[int]

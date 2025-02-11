@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Claims(_message.Message):
-    __slots__ = ["id", "issuer", "subject", "session_id", "email", "email_verified", "email_restricted", "name", "nickname", "picture", "locale", "timezone", "birthday", "minor", "country", "preferred_runtime", "restrictions"]
+    __slots__ = ("id", "issuer", "subject", "session_id", "email", "email_verified", "email_restricted", "name", "nickname", "picture", "locale", "timezone", "birthday", "minor", "country", "preferred_runtime", "restrictions")
     ID_FIELD_NUMBER: _ClassVar[int]
     ISSUER_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]

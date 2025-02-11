@@ -8,15 +8,15 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Student(_message.Message):
-    __slots__ = ["id", "url", "member_id", "inactive", "assign_all", "overall_progress", "overall_grade", "grades", "graded_at", "updated_at", "created_at", "cursor"]
+    __slots__ = ("id", "url", "member_id", "inactive", "assign_all", "overall_progress", "overall_grade", "grades", "graded_at", "updated_at", "created_at", "cursor")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Student.Extra]
         GRADES: _ClassVar[Student.Extra]
     UNKNOWN_EXTRA: Student.Extra
     GRADES: Student.Extra
     class Grade(_message.Message):
-        __slots__ = ["module_id", "grade", "grade_automatic", "grade_override", "excused"]
+        __slots__ = ("module_id", "grade", "grade_automatic", "grade_override", "excused")
         MODULE_ID_FIELD_NUMBER: _ClassVar[int]
         GRADE_FIELD_NUMBER: _ClassVar[int]
         GRADE_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]

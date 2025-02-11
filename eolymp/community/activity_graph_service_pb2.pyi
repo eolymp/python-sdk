@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeActivityGraphInput(_message.Message):
-    __slots__ = ["after", "before", "metric"]
+    __slots__ = ("after", "before", "metric")
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     METRIC_FIELD_NUMBER: _ClassVar[int]
@@ -20,7 +20,7 @@ class DescribeActivityGraphInput(_message.Message):
     def __init__(self, after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., metric: _Optional[str] = ...) -> None: ...
 
 class DescribeActivityGraphOutput(_message.Message):
-    __slots__ = ["values", "max_value"]
+    __slots__ = ("values", "max_value")
     VALUES_FIELD_NUMBER: _ClassVar[int]
     MAX_VALUE_FIELD_NUMBER: _ClassVar[int]
     values: _containers.RepeatedScalarFieldContainer[int]

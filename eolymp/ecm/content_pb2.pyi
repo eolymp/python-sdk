@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Content(_message.Message):
-    __slots__ = ["html", "latex", "markdown", "ecm", "render"]
+    __slots__ = ("html", "latex", "markdown", "ecm", "render")
     HTML_FIELD_NUMBER: _ClassVar[int]
     LATEX_FIELD_NUMBER: _ClassVar[int]
     MARKDOWN_FIELD_NUMBER: _ClassVar[int]

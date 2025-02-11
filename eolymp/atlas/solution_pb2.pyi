@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Solution(_message.Message):
-    __slots__ = ["id", "name", "secret", "runtime", "source", "type", "status", "submission_id"]
+    __slots__ = ("id", "name", "secret", "runtime", "source", "type", "status", "submission_id")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNSET: _ClassVar[Solution.Type]
         CORRECT: _ClassVar[Solution.Type]
         INCORRECT: _ClassVar[Solution.Type]
@@ -30,7 +30,7 @@ class Solution(_message.Message):
     DONT_RUN: Solution.Type
     FAILURE: Solution.Type
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Solution.Status]
         PENDING: _ClassVar[Solution.Status]
         PASS: _ClassVar[Solution.Status]

@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Participant(_message.Message):
-    __slots__ = ["id", "member_id", "display_name", "unofficial", "inactive", "disqualified", "ghost", "medal", "status", "started_at", "started_in", "end_at", "end_in", "bonus_time", "passcode", "submits"]
+    __slots__ = ("id", "member_id", "display_name", "unofficial", "inactive", "disqualified", "ghost", "medal", "status", "started_at", "started_in", "end_at", "end_in", "bonus_time", "passcode", "submits")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Participant.Status]
         WAITING: _ClassVar[Participant.Status]
         READY: _ClassVar[Participant.Status]
@@ -27,7 +27,7 @@ class Participant(_message.Message):
     UPSOLVE: Participant.Status
     BLOCKED: Participant.Status
     class Submit(_message.Message):
-        __slots__ = ["problem_id", "counter"]
+        __slots__ = ("problem_id", "counter")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         COUNTER_FIELD_NUMBER: _ClassVar[int]
         problem_id: str

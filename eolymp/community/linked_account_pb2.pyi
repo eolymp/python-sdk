@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LinkedAccount(_message.Message):
-    __slots__ = ["id", "type", "issuer", "subject"]
+    __slots__ = ("id", "type", "issuer", "subject")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[LinkedAccount.Type]
         GOOGLE: _ClassVar[LinkedAccount.Type]
     UNKNOWN_TYPE: LinkedAccount.Type

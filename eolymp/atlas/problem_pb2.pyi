@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ["id", "url", "type", "links", "number", "visible", "origin", "title", "content", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "vote", "vote_count", "difficulty"]
+    __slots__ = ("id", "url", "type", "links", "number", "visible", "origin", "title", "content", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "vote", "vote_count", "difficulty")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Problem.Extra]
         VOTE: _ClassVar[Problem.Extra]
         TITLE: _ClassVar[Problem.Extra]
@@ -22,7 +22,7 @@ class Problem(_message.Message):
     CONTENT_VALUE: Problem.Extra
     CONTENT_RENDER: Problem.Extra
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Problem.Type]
         PROGRAM: _ClassVar[Problem.Type]
         FUNCTION: _ClassVar[Problem.Type]
@@ -36,7 +36,7 @@ class Problem(_message.Message):
     SQL: Problem.Type
     ML: Problem.Type
     class Constraints(_message.Message):
-        __slots__ = ["time_limit_min", "time_limit_max", "cpu_limit_min", "cpu_limit_max", "memory_limit_min", "memory_limit_max"]
+        __slots__ = ("time_limit_min", "time_limit_max", "cpu_limit_min", "cpu_limit_max", "memory_limit_min", "memory_limit_max")
         TIME_LIMIT_MIN_FIELD_NUMBER: _ClassVar[int]
         TIME_LIMIT_MAX_FIELD_NUMBER: _ClassVar[int]
         CPU_LIMIT_MIN_FIELD_NUMBER: _ClassVar[int]
@@ -51,7 +51,7 @@ class Problem(_message.Message):
         memory_limit_max: int
         def __init__(self, time_limit_min: _Optional[int] = ..., time_limit_max: _Optional[int] = ..., cpu_limit_min: _Optional[int] = ..., cpu_limit_max: _Optional[int] = ..., memory_limit_min: _Optional[int] = ..., memory_limit_max: _Optional[int] = ...) -> None: ...
     class LinksEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

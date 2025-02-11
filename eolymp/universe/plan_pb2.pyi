@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Plan(_message.Message):
-    __slots__ = ["id", "name", "description", "quota", "labels", "requires_approval", "min_seats", "max_seats", "variants"]
+    __slots__ = ("id", "name", "description", "quota", "labels", "requires_approval", "min_seats", "max_seats", "variants")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Plan.Extra]
         DESCRIPTION_RENDER: _ClassVar[Plan.Extra]
         DESCRIPTION_VALUE: _ClassVar[Plan.Extra]
@@ -19,7 +19,7 @@ class Plan(_message.Message):
     DESCRIPTION_RENDER: Plan.Extra
     DESCRIPTION_VALUE: Plan.Extra
     class Recurrence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_RECURRENCE: _ClassVar[Plan.Recurrence]
         ONETIME: _ClassVar[Plan.Recurrence]
         MONTHLY: _ClassVar[Plan.Recurrence]
@@ -29,7 +29,7 @@ class Plan(_message.Message):
     MONTHLY: Plan.Recurrence
     YEARLY: Plan.Recurrence
     class Variant(_message.Message):
-        __slots__ = ["id", "recurrence", "currency", "unit_amount"]
+        __slots__ = ("id", "recurrence", "currency", "unit_amount")
         ID_FIELD_NUMBER: _ClassVar[int]
         RECURRENCE_FIELD_NUMBER: _ClassVar[int]
         CURRENCY_FIELD_NUMBER: _ClassVar[int]

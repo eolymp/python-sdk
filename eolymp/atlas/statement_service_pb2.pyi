@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class StatementChangedEvent(_message.Message):
-    __slots__ = ["problem_id", "before", "after"]
+    __slots__ = ("problem_id", "before", "after")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -20,7 +20,7 @@ class StatementChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ..., after: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class ListStatementsInput(_message.Message):
-    __slots__ = ["offset", "size", "render", "version", "extra"]
+    __slots__ = ("offset", "size", "render", "version", "extra")
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
@@ -34,7 +34,7 @@ class ListStatementsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra, str]]] = ...) -> None: ...
 
 class ListStatementsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -42,7 +42,7 @@ class ListStatementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
 
 class TranslateStatementsInput(_message.Message):
-    __slots__ = ["source", "target", "target_automatic", "override_manual"]
+    __slots__ = ("source", "target", "target_automatic", "override_manual")
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
     TARGET_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
@@ -54,13 +54,13 @@ class TranslateStatementsInput(_message.Message):
     def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
 
 class TranslateStatementsOutput(_message.Message):
-    __slots__ = ["job_id"]
+    __slots__ = ("job_id",)
     JOB_ID_FIELD_NUMBER: _ClassVar[int]
     job_id: str
     def __init__(self, job_id: _Optional[str] = ...) -> None: ...
 
 class DescribeStatementInput(_message.Message):
-    __slots__ = ["statement_id", "render", "version", "extra"]
+    __slots__ = ("statement_id", "render", "version", "extra")
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
@@ -72,13 +72,13 @@ class DescribeStatementInput(_message.Message):
     def __init__(self, statement_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra, str]]] = ...) -> None: ...
 
 class DescribeStatementOutput(_message.Message):
-    __slots__ = ["statement"]
+    __slots__ = ("statement",)
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
     statement: _statement_pb2.Statement
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class LookupStatementInput(_message.Message):
-    __slots__ = ["locale", "render", "version", "extra"]
+    __slots__ = ("locale", "render", "version", "extra")
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
@@ -90,37 +90,37 @@ class LookupStatementInput(_message.Message):
     def __init__(self, locale: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra, str]]] = ...) -> None: ...
 
 class LookupStatementOutput(_message.Message):
-    __slots__ = ["statement"]
+    __slots__ = ("statement",)
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
     statement: _statement_pb2.Statement
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class PreviewStatementInput(_message.Message):
-    __slots__ = ["statement"]
+    __slots__ = ("statement",)
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
     statement: _statement_pb2.Statement
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class PreviewStatementOutput(_message.Message):
-    __slots__ = ["statement"]
+    __slots__ = ("statement",)
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
     statement: _statement_pb2.Statement
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class CreateStatementInput(_message.Message):
-    __slots__ = ["statement"]
+    __slots__ = ("statement",)
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
     statement: _statement_pb2.Statement
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class CreateStatementOutput(_message.Message):
-    __slots__ = ["statement_id"]
+    __slots__ = ("statement_id",)
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     statement_id: str
     def __init__(self, statement_id: _Optional[str] = ...) -> None: ...
 
 class UpdateStatementInput(_message.Message):
-    __slots__ = ["patch", "statement_id", "statement"]
+    __slots__ = ("patch", "statement_id", "statement")
     PATCH_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
@@ -130,15 +130,15 @@ class UpdateStatementInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[_statement_pb2.Statement.Patch, str]]] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class UpdateStatementOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteStatementInput(_message.Message):
-    __slots__ = ["statement_id"]
+    __slots__ = ("statement_id",)
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     statement_id: str
     def __init__(self, statement_id: _Optional[str] = ...) -> None: ...
 
 class DeleteStatementOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

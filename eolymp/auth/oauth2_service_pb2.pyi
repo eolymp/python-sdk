@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IssueTokenInput(_message.Message):
-    __slots__ = ["grant_type", "username", "password", "client_id", "client_secret", "code", "code_verifier", "scope", "refresh_token", "redirect_uri"]
+    __slots__ = ("grant_type", "username", "password", "client_id", "client_secret", "code", "code_verifier", "scope", "refresh_token", "redirect_uri")
     class GrantType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[IssueTokenInput.GrantType]
         PASSWORD: _ClassVar[IssueTokenInput.GrantType]
         AUTHORIZATION_CODE: _ClassVar[IssueTokenInput.GrantType]
@@ -45,7 +45,7 @@ class IssueTokenInput(_message.Message):
     def __init__(self, grant_type: _Optional[_Union[IssueTokenInput.GrantType, str]] = ..., username: _Optional[str] = ..., password: _Optional[str] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., code: _Optional[str] = ..., code_verifier: _Optional[str] = ..., scope: _Optional[str] = ..., refresh_token: _Optional[str] = ..., redirect_uri: _Optional[str] = ...) -> None: ...
 
 class IssueTokenOutput(_message.Message):
-    __slots__ = ["access_token", "token_type", "expires_in", "refresh_token", "scope", "claims", "id_token"]
+    __slots__ = ("access_token", "token_type", "expires_in", "refresh_token", "scope", "claims", "id_token")
     ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
     TOKEN_TYPE_FIELD_NUMBER: _ClassVar[int]
     EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
@@ -63,13 +63,13 @@ class IssueTokenOutput(_message.Message):
     def __init__(self, access_token: _Optional[str] = ..., token_type: _Optional[str] = ..., expires_in: _Optional[int] = ..., refresh_token: _Optional[str] = ..., scope: _Optional[str] = ..., claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ..., id_token: _Optional[str] = ...) -> None: ...
 
 class IntrospectTokenInput(_message.Message):
-    __slots__ = ["token"]
+    __slots__ = ("token",)
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     token: str
     def __init__(self, token: _Optional[str] = ...) -> None: ...
 
 class IntrospectTokenOutput(_message.Message):
-    __slots__ = ["active", "scope", "expire", "claims"]
+    __slots__ = ("active", "scope", "expire", "claims")
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     EXPIRE_FIELD_NUMBER: _ClassVar[int]
@@ -81,17 +81,17 @@ class IntrospectTokenOutput(_message.Message):
     def __init__(self, active: bool = ..., scope: _Optional[str] = ..., expire: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ...) -> None: ...
 
 class RevokeTokenInput(_message.Message):
-    __slots__ = ["token"]
+    __slots__ = ("token",)
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     token: str
     def __init__(self, token: _Optional[str] = ...) -> None: ...
 
 class RevokeTokenOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RequestAuthInput(_message.Message):
-    __slots__ = ["client_id", "code_challenge", "code_challenge_method", "redirect_uri", "response_type", "scope", "state"]
+    __slots__ = ("client_id", "code_challenge", "code_challenge_method", "redirect_uri", "response_type", "scope", "state")
     CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
     CODE_CHALLENGE_FIELD_NUMBER: _ClassVar[int]
     CODE_CHALLENGE_METHOD_FIELD_NUMBER: _ClassVar[int]
@@ -109,7 +109,7 @@ class RequestAuthInput(_message.Message):
     def __init__(self, client_id: _Optional[str] = ..., code_challenge: _Optional[str] = ..., code_challenge_method: _Optional[str] = ..., redirect_uri: _Optional[str] = ..., response_type: _Optional[str] = ..., scope: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
 
 class RequestAuthOutput(_message.Message):
-    __slots__ = ["authorization_code", "redirect_uri"]
+    __slots__ = ("authorization_code", "redirect_uri")
     AUTHORIZATION_CODE_FIELD_NUMBER: _ClassVar[int]
     REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
     authorization_code: str
@@ -117,11 +117,11 @@ class RequestAuthOutput(_message.Message):
     def __init__(self, authorization_code: _Optional[str] = ..., redirect_uri: _Optional[str] = ...) -> None: ...
 
 class UserInfoInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UserInfoOutput(_message.Message):
-    __slots__ = ["claims"]
+    __slots__ = ("claims",)
     CLAIMS_FIELD_NUMBER: _ClassVar[int]
     claims: _claims_pb2.Claims
     def __init__(self, claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ...) -> None: ...

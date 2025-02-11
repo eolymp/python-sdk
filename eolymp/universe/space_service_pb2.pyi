@@ -13,21 +13,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateSpaceInput(_message.Message):
-    __slots__ = ["space"]
+    __slots__ = ("space",)
     SPACE_FIELD_NUMBER: _ClassVar[int]
     space: _space_pb2.Space
     def __init__(self, space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
 
 class CreateSpaceOutput(_message.Message):
-    __slots__ = ["space_id"]
+    __slots__ = ("space_id",)
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     space_id: str
     def __init__(self, space_id: _Optional[str] = ...) -> None: ...
 
 class UpdateSpaceInput(_message.Message):
-    __slots__ = ["patch", "space_id", "space"]
+    __slots__ = ("patch", "space_id", "space")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateSpaceInput.Patch]
         KEY: _ClassVar[UpdateSpaceInput.Patch]
         NAME: _ClassVar[UpdateSpaceInput.Patch]
@@ -49,21 +49,21 @@ class UpdateSpaceInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateSpaceInput.Patch, str]]] = ..., space_id: _Optional[str] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
 
 class UpdateSpaceOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteSpaceInput(_message.Message):
-    __slots__ = ["space_id"]
+    __slots__ = ("space_id",)
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     space_id: str
     def __init__(self, space_id: _Optional[str] = ...) -> None: ...
 
 class DeleteSpaceOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class LookupSpaceInput(_message.Message):
-    __slots__ = ["key", "extra"]
+    __slots__ = ("key", "extra")
     KEY_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     key: str
@@ -71,13 +71,13 @@ class LookupSpaceInput(_message.Message):
     def __init__(self, key: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra, str]]] = ...) -> None: ...
 
 class LookupSpaceOutput(_message.Message):
-    __slots__ = ["space"]
+    __slots__ = ("space",)
     SPACE_FIELD_NUMBER: _ClassVar[int]
     space: _space_pb2.Space
     def __init__(self, space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
 
 class DescribeSpaceInput(_message.Message):
-    __slots__ = ["space_id", "extra"]
+    __slots__ = ("space_id", "extra")
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     space_id: str
@@ -85,25 +85,25 @@ class DescribeSpaceInput(_message.Message):
     def __init__(self, space_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra, str]]] = ...) -> None: ...
 
 class DescribeSpaceOutput(_message.Message):
-    __slots__ = ["space"]
+    __slots__ = ("space",)
     SPACE_FIELD_NUMBER: _ClassVar[int]
     space: _space_pb2.Space
     def __init__(self, space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
 
 class DescribeQuotaInput(_message.Message):
-    __slots__ = ["space_id"]
+    __slots__ = ("space_id",)
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     space_id: str
     def __init__(self, space_id: _Optional[str] = ...) -> None: ...
 
 class DescribeQuotaOutput(_message.Message):
-    __slots__ = ["quota"]
+    __slots__ = ("quota",)
     QUOTA_FIELD_NUMBER: _ClassVar[int]
     quota: _quota_pb2.Quota
     def __init__(self, quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ...) -> None: ...
 
 class UpdateQuotaInput(_message.Message):
-    __slots__ = ["space_id", "quota"]
+    __slots__ = ("space_id", "quota")
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     QUOTA_FIELD_NUMBER: _ClassVar[int]
     space_id: str
@@ -111,13 +111,13 @@ class UpdateQuotaInput(_message.Message):
     def __init__(self, space_id: _Optional[str] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ...) -> None: ...
 
 class UpdateQuotaOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListSpacesInput(_message.Message):
-    __slots__ = ["offset", "size", "filters", "extra"]
+    __slots__ = ("offset", "size", "filters", "extra")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "key", "name", "own"]
+        __slots__ = ("query", "id", "key", "name", "own")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -140,7 +140,7 @@ class ListSpacesInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSpacesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra, str]]] = ...) -> None: ...
 
 class ListSpacesOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int

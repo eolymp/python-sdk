@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class BookmarkChangedEvent(_message.Message):
-    __slots__ = ["problem_id", "member_id", "before", "after"]
+    __slots__ = ("problem_id", "member_id", "before", "after")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
@@ -19,21 +19,21 @@ class BookmarkChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ..., before: bool = ..., after: bool = ...) -> None: ...
 
 class SetBookmarkInput(_message.Message):
-    __slots__ = ["bookmark"]
+    __slots__ = ("bookmark",)
     BOOKMARK_FIELD_NUMBER: _ClassVar[int]
     bookmark: bool
     def __init__(self, bookmark: bool = ...) -> None: ...
 
 class SetBookmarkOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetBookmarkInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetBookmarkOutput(_message.Message):
-    __slots__ = ["bookmark"]
+    __slots__ = ("bookmark",)
     BOOKMARK_FIELD_NUMBER: _ClassVar[int]
     bookmark: bool
     def __init__(self, bookmark: bool = ...) -> None: ...

@@ -11,21 +11,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeCountryInput(_message.Message):
-    __slots__ = ["country_id"]
+    __slots__ = ("country_id",)
     COUNTRY_ID_FIELD_NUMBER: _ClassVar[int]
     country_id: str
     def __init__(self, country_id: _Optional[str] = ...) -> None: ...
 
 class DescribeCountryOutput(_message.Message):
-    __slots__ = ["country"]
+    __slots__ = ("country",)
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
     country: _geography_country_pb2.Country
     def __init__(self, country: _Optional[_Union[_geography_country_pb2.Country, _Mapping]] = ...) -> None: ...
 
 class ListCountriesInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "name"]
+        __slots__ = ("query", "id", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -42,7 +42,7 @@ class ListCountriesInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCountriesInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListCountriesOutput(_message.Message):
-    __slots__ = ["items", "total"]
+    __slots__ = ("items", "total")
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_geography_country_pb2.Country]
@@ -50,21 +50,21 @@ class ListCountriesOutput(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[_geography_country_pb2.Country, _Mapping]]] = ..., total: _Optional[int] = ...) -> None: ...
 
 class DescribeRegionInput(_message.Message):
-    __slots__ = ["region_id"]
+    __slots__ = ("region_id",)
     REGION_ID_FIELD_NUMBER: _ClassVar[int]
     region_id: str
     def __init__(self, region_id: _Optional[str] = ...) -> None: ...
 
 class DescribeRegionOutput(_message.Message):
-    __slots__ = ["region"]
+    __slots__ = ("region",)
     REGION_FIELD_NUMBER: _ClassVar[int]
     region: _geography_region_pb2.Region
     def __init__(self, region: _Optional[_Union[_geography_region_pb2.Region, _Mapping]] = ...) -> None: ...
 
 class ListRegionsInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "country_id", "name"]
+        __slots__ = ("query", "id", "country_id", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         COUNTRY_ID_FIELD_NUMBER: _ClassVar[int]
@@ -83,7 +83,7 @@ class ListRegionsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListRegionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListRegionsOutput(_message.Message):
-    __slots__ = ["items", "total"]
+    __slots__ = ("items", "total")
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_geography_region_pb2.Region]

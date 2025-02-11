@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Value(_message.Message):
-    __slots__ = ["id", "name", "summary", "abbr", "image", "keywords"]
+    __slots__ = ("id", "name", "summary", "abbr", "image", "keywords")
     class Translation(_message.Message):
-        __slots__ = ["locale", "name", "abbr", "summary", "keywords"]
+        __slots__ = ("locale", "name", "abbr", "summary", "keywords")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         ABBR_FIELD_NUMBER: _ClassVar[int]

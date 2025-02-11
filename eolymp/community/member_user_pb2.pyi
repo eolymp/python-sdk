@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ["issuer", "subject", "nickname", "nickname_change_timeout", "email", "email_verified", "email_restricted", "email_subscriptions", "password", "password_age", "name", "picture", "birthday", "country", "city", "team_id", "preferences"]
+    __slots__ = ("issuer", "subject", "nickname", "nickname_change_timeout", "email", "email_verified", "email_restricted", "email_subscriptions", "password", "password_age", "name", "picture", "birthday", "country", "city", "team_id", "preferences")
     class Preferences(_message.Message):
-        __slots__ = ["locale", "timezone", "runtime"]
+        __slots__ = ("locale", "timezone", "runtime")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         TIMEZONE_FIELD_NUMBER: _ClassVar[int]
         RUNTIME_FIELD_NUMBER: _ClassVar[int]

@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class FeedbackPolicy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     COMPLETE: _ClassVar[FeedbackPolicy]
     ICPC: _ClassVar[FeedbackPolicy]
     ICPC_EXPANDED: _ClassVar[FeedbackPolicy]

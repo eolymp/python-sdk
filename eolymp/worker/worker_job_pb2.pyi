@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Job(_message.Message):
-    __slots__ = ["id", "type", "namespace", "status", "progress", "total", "inputs", "outputs", "created_at", "started_at", "progress_at", "complete_at", "logs_url"]
+    __slots__ = ("id", "type", "namespace", "status", "progress", "total", "inputs", "outputs", "created_at", "started_at", "progress_at", "complete_at", "logs_url")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN: _ClassVar[Job.Status]
         CREATED: _ClassVar[Job.Status]
         STARTED: _ClassVar[Job.Status]
@@ -22,7 +22,7 @@ class Job(_message.Message):
     COMPLETE: Job.Status
     ERROR: Job.Status
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_PATCH: _ClassVar[Job.Patch]
         PATCH_ALL: _ClassVar[Job.Patch]
         PATCH_PROGRESS: _ClassVar[Job.Patch]
@@ -36,14 +36,14 @@ class Job(_message.Message):
     PATCH_LOGS_URL: Job.Patch
     PATCH_STATUS: Job.Patch
     class InputsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     class OutputsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

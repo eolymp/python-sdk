@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationReport(_message.Message):
-    __slots__ = ["task_id", "reference", "origin", "metadata", "agent", "signature", "version", "type", "status", "error_message", "runs"]
+    __slots__ = ("task_id", "reference", "origin", "metadata", "agent", "signature", "version", "type", "status", "error_message", "runs")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[EvaluationReport.Status]
         PENDING: _ClassVar[EvaluationReport.Status]
         PROVISIONING: _ClassVar[EvaluationReport.Status]
@@ -28,7 +28,7 @@ class EvaluationReport(_message.Message):
     ERROR: EvaluationReport.Status
     FAILED: EvaluationReport.Status
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[EvaluationReport.Type]
         TYPE_UPDATE: _ClassVar[EvaluationReport.Type]
         TYPE_ERROR: _ClassVar[EvaluationReport.Type]
@@ -38,9 +38,9 @@ class EvaluationReport(_message.Message):
     TYPE_ERROR: EvaluationReport.Type
     TYPE_FAILURE: EvaluationReport.Type
     class Run(_message.Message):
-        __slots__ = ["reference", "status", "score", "cost", "wall_time_usage", "wall_time_limit", "cpu_time_usage", "cpu_time_limit", "memory_usage", "memory_limit", "input_url", "output_url", "answer_url", "debug_stats", "checker_stats", "interactor_stats"]
+        __slots__ = ("reference", "status", "score", "cost", "wall_time_usage", "wall_time_limit", "cpu_time_usage", "cpu_time_limit", "memory_usage", "memory_limit", "input_url", "output_url", "answer_url", "debug_stats", "checker_stats", "interactor_stats")
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = []
+            __slots__ = ()
             NONE: _ClassVar[EvaluationReport.Run.Status]
             PENDING: _ClassVar[EvaluationReport.Run.Status]
             EXECUTING: _ClassVar[EvaluationReport.Run.Status]
@@ -103,7 +103,7 @@ class EvaluationReport(_message.Message):
         interactor_stats: _stats_pb2.Stats
         def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[EvaluationReport.Run.Status, str]] = ..., score: _Optional[float] = ..., cost: _Optional[float] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
     class MetadataEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

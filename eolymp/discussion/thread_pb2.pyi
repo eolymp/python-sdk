@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Thread(_message.Message):
-    __slots__ = ["id", "url", "name", "vote", "vote_count", "reply_count"]
+    __slots__ = ("id", "url", "name", "vote", "vote_count", "reply_count")
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]

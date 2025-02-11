@@ -13,31 +13,31 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateEnumInput(_message.Message):
-    __slots__ = ["enum"]
+    __slots__ = ("enum",)
     ENUM_FIELD_NUMBER: _ClassVar[int]
     enum: _enum_pb2.Enum
     def __init__(self, enum: _Optional[_Union[_enum_pb2.Enum, _Mapping]] = ...) -> None: ...
 
 class CreateEnumOutput(_message.Message):
-    __slots__ = ["enum_id"]
+    __slots__ = ("enum_id",)
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     enum_id: str
     def __init__(self, enum_id: _Optional[str] = ...) -> None: ...
 
 class DeleteEnumInput(_message.Message):
-    __slots__ = ["enum_id"]
+    __slots__ = ("enum_id",)
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     enum_id: str
     def __init__(self, enum_id: _Optional[str] = ...) -> None: ...
 
 class DeleteEnumOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateEnumInput(_message.Message):
-    __slots__ = ["patch", "enum_id", "enum"]
+    __slots__ = ("patch", "enum_id", "enum")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateEnumInput.Patch]
         NAME: _ClassVar[UpdateEnumInput.Patch]
     ALL: UpdateEnumInput.Patch
@@ -51,25 +51,25 @@ class UpdateEnumInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateEnumInput.Patch, str]]] = ..., enum_id: _Optional[str] = ..., enum: _Optional[_Union[_enum_pb2.Enum, _Mapping]] = ...) -> None: ...
 
 class UpdateEnumOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeEnumInput(_message.Message):
-    __slots__ = ["enum_id"]
+    __slots__ = ("enum_id",)
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     enum_id: str
     def __init__(self, enum_id: _Optional[str] = ...) -> None: ...
 
 class DescribeEnumOutput(_message.Message):
-    __slots__ = ["enum"]
+    __slots__ = ("enum",)
     ENUM_FIELD_NUMBER: _ClassVar[int]
     enum: _enum_pb2.Enum
     def __init__(self, enum: _Optional[_Union[_enum_pb2.Enum, _Mapping]] = ...) -> None: ...
 
 class ListEnumsInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "name"]
+        __slots__ = ("query", "id", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -86,7 +86,7 @@ class ListEnumsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListEnumsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListEnumsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -94,7 +94,7 @@ class ListEnumsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_enum_pb2.Enum, _Mapping]]] = ...) -> None: ...
 
 class CreateValueInput(_message.Message):
-    __slots__ = ["enum_id", "value"]
+    __slots__ = ("enum_id", "value")
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     enum_id: str
@@ -102,13 +102,13 @@ class CreateValueInput(_message.Message):
     def __init__(self, enum_id: _Optional[str] = ..., value: _Optional[_Union[_enum_value_pb2.Value, _Mapping]] = ...) -> None: ...
 
 class CreateValueOutput(_message.Message):
-    __slots__ = ["value_id"]
+    __slots__ = ("value_id",)
     VALUE_ID_FIELD_NUMBER: _ClassVar[int]
     value_id: str
     def __init__(self, value_id: _Optional[str] = ...) -> None: ...
 
 class DeleteValueInput(_message.Message):
-    __slots__ = ["enum_id", "value_id"]
+    __slots__ = ("enum_id", "value_id")
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     VALUE_ID_FIELD_NUMBER: _ClassVar[int]
     enum_id: str
@@ -116,13 +116,13 @@ class DeleteValueInput(_message.Message):
     def __init__(self, enum_id: _Optional[str] = ..., value_id: _Optional[str] = ...) -> None: ...
 
 class DeleteValueOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateValueInput(_message.Message):
-    __slots__ = ["patch", "enum_id", "value_id", "value"]
+    __slots__ = ("patch", "enum_id", "value_id", "value")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateValueInput.Patch]
         NAME: _ClassVar[UpdateValueInput.Patch]
         ABBR: _ClassVar[UpdateValueInput.Patch]
@@ -146,11 +146,11 @@ class UpdateValueInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateValueInput.Patch, str]]] = ..., enum_id: _Optional[str] = ..., value_id: _Optional[str] = ..., value: _Optional[_Union[_enum_value_pb2.Value, _Mapping]] = ...) -> None: ...
 
 class UpdateValueOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeValueInput(_message.Message):
-    __slots__ = ["enum_id", "value_id", "locale"]
+    __slots__ = ("enum_id", "value_id", "locale")
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     VALUE_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -160,15 +160,15 @@ class DescribeValueInput(_message.Message):
     def __init__(self, enum_id: _Optional[str] = ..., value_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class DescribeValueOutput(_message.Message):
-    __slots__ = ["value"]
+    __slots__ = ("value",)
     VALUE_FIELD_NUMBER: _ClassVar[int]
     value: _enum_value_pb2.Value
     def __init__(self, value: _Optional[_Union[_enum_value_pb2.Value, _Mapping]] = ...) -> None: ...
 
 class ListValuesInput(_message.Message):
-    __slots__ = ["enum_id", "offset", "size", "filters", "locale"]
+    __slots__ = ("enum_id", "offset", "size", "filters", "locale")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "name"]
+        __slots__ = ("query", "id", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -189,7 +189,7 @@ class ListValuesInput(_message.Message):
     def __init__(self, enum_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListValuesInput.Filter, _Mapping]] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class ListValuesOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -197,7 +197,7 @@ class ListValuesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_enum_value_pb2.Value, _Mapping]]] = ...) -> None: ...
 
 class TranslateValueInput(_message.Message):
-    __slots__ = ["enum_id", "value_id", "locale", "translation"]
+    __slots__ = ("enum_id", "value_id", "locale", "translation")
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     VALUE_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -209,11 +209,11 @@ class TranslateValueInput(_message.Message):
     def __init__(self, enum_id: _Optional[str] = ..., value_id: _Optional[str] = ..., locale: _Optional[str] = ..., translation: _Optional[_Union[_enum_value_pb2.Value.Translation, _Mapping]] = ...) -> None: ...
 
 class TranslateValueOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteTranslationInput(_message.Message):
-    __slots__ = ["enum_id", "value_id", "locale"]
+    __slots__ = ("enum_id", "value_id", "locale")
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     VALUE_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -223,13 +223,13 @@ class DeleteTranslationInput(_message.Message):
     def __init__(self, enum_id: _Optional[str] = ..., value_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class DeleteTranslationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListTranslationsInput(_message.Message):
-    __slots__ = ["enum_id", "value_id", "offset", "size", "filters"]
+    __slots__ = ("enum_id", "value_id", "offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["locale"]
+        __slots__ = ("locale",)
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
@@ -246,7 +246,7 @@ class ListTranslationsInput(_message.Message):
     def __init__(self, enum_id: _Optional[str] = ..., value_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTranslationsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListTranslationsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int

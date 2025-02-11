@@ -9,7 +9,7 @@ SCOPE_FIELD_NUMBER: _ClassVar[int]
 scope: _descriptor.FieldDescriptor
 
 class Scope(_message.Message):
-    __slots__ = ["scope"]
+    __slots__ = ("scope",)
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     scope: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, scope: _Optional[_Iterable[str]] = ...) -> None: ...

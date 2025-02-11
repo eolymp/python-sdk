@@ -13,19 +13,19 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SetRatingInput(_message.Message):
-    __slots__ = ["rating"]
+    __slots__ = ("rating",)
     RATING_FIELD_NUMBER: _ClassVar[int]
     rating: _rating_pb2.Rating
     def __init__(self, rating: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
 
 class SetRatingOutput(_message.Message):
-    __slots__ = ["rating_id"]
+    __slots__ = ("rating_id",)
     RATING_ID_FIELD_NUMBER: _ClassVar[int]
     rating_id: str
     def __init__(self, rating_id: _Optional[str] = ...) -> None: ...
 
 class UpdateRatingInput(_message.Message):
-    __slots__ = ["rating_id", "rating"]
+    __slots__ = ("rating_id", "rating")
     RATING_ID_FIELD_NUMBER: _ClassVar[int]
     RATING_FIELD_NUMBER: _ClassVar[int]
     rating_id: str
@@ -33,11 +33,11 @@ class UpdateRatingInput(_message.Message):
     def __init__(self, rating_id: _Optional[str] = ..., rating: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
 
 class UpdateRatingOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteRatingInput(_message.Message):
-    __slots__ = ["rating_id", "rating"]
+    __slots__ = ("rating_id", "rating")
     RATING_ID_FIELD_NUMBER: _ClassVar[int]
     RATING_FIELD_NUMBER: _ClassVar[int]
     rating_id: str
@@ -45,29 +45,29 @@ class DeleteRatingInput(_message.Message):
     def __init__(self, rating_id: _Optional[str] = ..., rating: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
 
 class DeleteRatingOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeRatingInput(_message.Message):
-    __slots__ = ["rating_id"]
+    __slots__ = ("rating_id",)
     RATING_ID_FIELD_NUMBER: _ClassVar[int]
     rating_id: str
     def __init__(self, rating_id: _Optional[str] = ...) -> None: ...
 
 class DescribeRatingOutput(_message.Message):
-    __slots__ = ["rating"]
+    __slots__ = ("rating",)
     RATING_FIELD_NUMBER: _ClassVar[int]
     rating: _rating_pb2.Rating
     def __init__(self, rating: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
 
 class ListRatingInput(_message.Message):
-    __slots__ = ["member_id", "offset", "size", "after", "filters", "sort", "order"]
+    __slots__ = ("member_id", "offset", "size", "after", "filters", "sort", "order")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         TIMESTAMP: _ClassVar[ListRatingInput.Sortable]
     TIMESTAMP: ListRatingInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ["id", "contest_id", "timestamp"]
+        __slots__ = ("id", "contest_id", "timestamp")
         ID_FIELD_NUMBER: _ClassVar[int]
         CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
         TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
@@ -92,7 +92,7 @@ class ListRatingInput(_message.Message):
     def __init__(self, member_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., after: _Optional[str] = ..., filters: _Optional[_Union[ListRatingInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListRatingInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListRatingOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -100,13 +100,13 @@ class ListRatingOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_rating_pb2.Rating, _Mapping]]] = ...) -> None: ...
 
 class DescribeRatingBoundariesInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeRatingBoundariesOutput(_message.Message):
-    __slots__ = ["levels"]
+    __slots__ = ("levels",)
     class Level(_message.Message):
-        __slots__ = ["id", "rating", "count"]
+        __slots__ = ("id", "rating", "count")
         ID_FIELD_NUMBER: _ClassVar[int]
         RATING_FIELD_NUMBER: _ClassVar[int]
         COUNT_FIELD_NUMBER: _ClassVar[int]
@@ -119,13 +119,13 @@ class DescribeRatingBoundariesOutput(_message.Message):
     def __init__(self, levels: _Optional[_Iterable[_Union[DescribeRatingBoundariesOutput.Level, _Mapping]]] = ...) -> None: ...
 
 class DescribeRatingDistributionInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeRatingDistributionOutput(_message.Message):
-    __slots__ = ["buckets"]
+    __slots__ = ("buckets",)
     class Bucket(_message.Message):
-        __slots__ = ["min_rating", "max_rating", "count"]
+        __slots__ = ("min_rating", "max_rating", "count")
         MIN_RATING_FIELD_NUMBER: _ClassVar[int]
         MAX_RATING_FIELD_NUMBER: _ClassVar[int]
         COUNT_FIELD_NUMBER: _ClassVar[int]

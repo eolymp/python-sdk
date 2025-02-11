@@ -13,13 +13,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListCoursesInput(_message.Message):
-    __slots__ = ["offset", "size", "search", "filters", "sort", "order", "extra"]
+    __slots__ = ("offset", "size", "search", "filters", "sort", "order", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         DEFAULT: _ClassVar[ListCoursesInput.Sortable]
     DEFAULT: ListCoursesInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ["id", "topic_id", "locale"]
+        __slots__ = ("id", "topic_id", "locale")
         ID_FIELD_NUMBER: _ClassVar[int]
         TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -44,7 +44,7 @@ class ListCoursesInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListCoursesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListCoursesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_course_pb2.Course.Extra, str]]] = ...) -> None: ...
 
 class ListCoursesOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -52,7 +52,7 @@ class ListCoursesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_course_pb2.Course, _Mapping]]] = ...) -> None: ...
 
 class DescribeCourseInput(_message.Message):
-    __slots__ = ["course_id", "extra"]
+    __slots__ = ("course_id", "extra")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     course_id: str
@@ -60,27 +60,27 @@ class DescribeCourseInput(_message.Message):
     def __init__(self, course_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_course_pb2.Course.Extra, str]]] = ...) -> None: ...
 
 class DescribeCourseOutput(_message.Message):
-    __slots__ = ["course"]
+    __slots__ = ("course",)
     COURSE_FIELD_NUMBER: _ClassVar[int]
     course: _course_pb2.Course
     def __init__(self, course: _Optional[_Union[_course_pb2.Course, _Mapping]] = ...) -> None: ...
 
 class CreateCourseInput(_message.Message):
-    __slots__ = ["course"]
+    __slots__ = ("course",)
     COURSE_FIELD_NUMBER: _ClassVar[int]
     course: _course_pb2.Course
     def __init__(self, course: _Optional[_Union[_course_pb2.Course, _Mapping]] = ...) -> None: ...
 
 class CreateCourseOutput(_message.Message):
-    __slots__ = ["course_id"]
+    __slots__ = ("course_id",)
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     course_id: str
     def __init__(self, course_id: _Optional[str] = ...) -> None: ...
 
 class UpdateCourseInput(_message.Message):
-    __slots__ = ["patch", "course_id", "course"]
+    __slots__ = ("patch", "course_id", "course")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateCourseInput.Patch]
         LOCALE: _ClassVar[UpdateCourseInput.Patch]
         NAME: _ClassVar[UpdateCourseInput.Patch]
@@ -106,23 +106,23 @@ class UpdateCourseInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateCourseInput.Patch, str]]] = ..., course_id: _Optional[str] = ..., course: _Optional[_Union[_course_pb2.Course, _Mapping]] = ...) -> None: ...
 
 class UpdateCourseOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteCourseInput(_message.Message):
-    __slots__ = ["course_id"]
+    __slots__ = ("course_id",)
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     course_id: str
     def __init__(self, course_id: _Optional[str] = ...) -> None: ...
 
 class DeleteCourseOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class CopyCourseInput(_message.Message):
-    __slots__ = ["course_id", "copy_scope", "copy_name"]
+    __slots__ = ("course_id", "copy_scope", "copy_name")
     class Scope(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[CopyCourseInput.Scope]
         MODULES: _ClassVar[CopyCourseInput.Scope]
         STUDENTS: _ClassVar[CopyCourseInput.Scope]
@@ -142,7 +142,7 @@ class CopyCourseInput(_message.Message):
     def __init__(self, course_id: _Optional[str] = ..., copy_scope: _Optional[_Iterable[_Union[CopyCourseInput.Scope, str]]] = ..., copy_name: _Optional[str] = ...) -> None: ...
 
 class CopyCourseOutput(_message.Message):
-    __slots__ = ["copy_course_id"]
+    __slots__ = ("copy_course_id",)
     COPY_COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     copy_course_id: str
     def __init__(self, copy_course_id: _Optional[str] = ...) -> None: ...

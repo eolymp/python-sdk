@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Script(_message.Message):
-    __slots__ = ["id", "name", "secret", "runtime", "source", "files"]
+    __slots__ = ("id", "name", "secret", "runtime", "source", "files")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Script.Extra]
         SOURCE: _ClassVar[Script.Extra]
     NO_EXTRA: Script.Extra

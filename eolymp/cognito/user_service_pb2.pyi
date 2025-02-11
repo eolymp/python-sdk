@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class UserChangedEvent(_message.Message):
-    __slots__ = ["before", "after"]
+    __slots__ = ("before", "after")
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     before: _user_pb2.User
@@ -19,21 +19,21 @@ class UserChangedEvent(_message.Message):
     def __init__(self, before: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., after: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
 
 class DescribeUserInput(_message.Message):
-    __slots__ = ["user_id"]
+    __slots__ = ("user_id",)
     USER_ID_FIELD_NUMBER: _ClassVar[int]
     user_id: str
     def __init__(self, user_id: _Optional[str] = ...) -> None: ...
 
 class DescribeUserOutput(_message.Message):
-    __slots__ = ["user"]
+    __slots__ = ("user",)
     USER_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
 
 class ListUsersInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["id", "username"]
+        __slots__ = ("id", "username")
         ID_FIELD_NUMBER: _ClassVar[int]
         USERNAME_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -48,7 +48,7 @@ class ListUsersInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListUsersInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListUsersOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int

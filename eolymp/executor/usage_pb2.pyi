@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ResourceUsage(_message.Message):
-    __slots__ = ["user_cpu_time", "system_cpu_time", "max_resident_set_size", "page_reclaims", "page_faults", "block_input_operations", "block_output_operations", "voluntary_context_switches", "involuntary_context_switches"]
+    __slots__ = ("user_cpu_time", "system_cpu_time", "max_resident_set_size", "page_reclaims", "page_faults", "block_input_operations", "block_output_operations", "voluntary_context_switches", "involuntary_context_switches")
     USER_CPU_TIME_FIELD_NUMBER: _ClassVar[int]
     SYSTEM_CPU_TIME_FIELD_NUMBER: _ClassVar[int]
     MAX_RESIDENT_SET_SIZE_FIELD_NUMBER: _ClassVar[int]

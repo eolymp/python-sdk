@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class FragmentChangedEvent(_message.Message):
-    __slots__ = ["scope", "before", "after"]
+    __slots__ = ("scope", "before", "after")
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -17,7 +17,7 @@ class FragmentChangedEvent(_message.Message):
     def __init__(self, scope: _Optional[str] = ..., before: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ..., after: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
 
 class VariantChangedEvent(_message.Message):
-    __slots__ = ["fragment_id", "before", "after"]
+    __slots__ = ("fragment_id", "before", "after")
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]

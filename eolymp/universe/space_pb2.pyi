@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
-    __slots__ = ["id", "key", "url", "home_url", "issuer_url", "graphql_url", "name", "image", "visibility", "status", "subscription", "affiliation"]
+    __slots__ = ("id", "key", "url", "home_url", "issuer_url", "graphql_url", "name", "image", "visibility", "status", "subscription", "affiliation")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Space.Status]
         TRIAL: _ClassVar[Space.Status]
         ACTIVE: _ClassVar[Space.Status]
@@ -20,7 +20,7 @@ class Space(_message.Message):
     ACTIVE: Space.Status
     SUSPENDED: Space.Status
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_VISIBILITY: _ClassVar[Space.Visibility]
         PUBLIC: _ClassVar[Space.Visibility]
         PRIVATE: _ClassVar[Space.Visibility]
@@ -28,13 +28,13 @@ class Space(_message.Message):
     PUBLIC: Space.Visibility
     PRIVATE: Space.Visibility
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Space.Extra]
         SUBSCRIPTION: _ClassVar[Space.Extra]
     UNKNOWN_EXTRA: Space.Extra
     SUBSCRIPTION: Space.Extra
     class Subscription(_message.Message):
-        __slots__ = ["plan", "seats", "quota", "billing_period_start", "billing_period_end", "quota_period_start", "quota_period_end"]
+        __slots__ = ("plan", "seats", "quota", "billing_period_start", "billing_period_end", "quota_period_start", "quota_period_end")
         PLAN_FIELD_NUMBER: _ClassVar[int]
         SEATS_FIELD_NUMBER: _ClassVar[int]
         QUOTA_FIELD_NUMBER: _ClassVar[int]

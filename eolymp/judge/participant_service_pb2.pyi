@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AssignParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant", "member_id", "group_id", "unofficial", "inactive"]
+    __slots__ = ("contest_id", "participant", "member_id", "group_id", "unofficial", "inactive")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -30,13 +30,13 @@ class AssignParticipantInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., unofficial: bool = ..., inactive: bool = ...) -> None: ...
 
 class AssignParticipantOutput(_message.Message):
-    __slots__ = ["participant_id"]
+    __slots__ = ("participant_id",)
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     participant_id: str
     def __init__(self, participant_id: _Optional[str] = ...) -> None: ...
 
 class EnableParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+    __slots__ = ("contest_id", "participant_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -44,11 +44,11 @@ class EnableParticipantInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class EnableParticipantOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DisableParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+    __slots__ = ("contest_id", "participant_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -56,13 +56,13 @@ class DisableParticipantInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class DisableParticipantOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateParticipantInput(_message.Message):
-    __slots__ = ["patch", "contest_id", "participant_id", "participant"]
+    __slots__ = ("patch", "contest_id", "participant_id", "participant")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateParticipantInput.Patch]
         DISPLAY_NAME: _ClassVar[UpdateParticipantInput.Patch]
         BONUS_TIME: _ClassVar[UpdateParticipantInput.Patch]
@@ -88,11 +88,11 @@ class UpdateParticipantInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateParticipantInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class UpdateParticipantOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DisqualifyParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id", "disqualify", "reason"]
+    __slots__ = ("contest_id", "participant_id", "disqualify", "reason")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     DISQUALIFY_FIELD_NUMBER: _ClassVar[int]
@@ -104,11 +104,11 @@ class DisqualifyParticipantInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., disqualify: bool = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class DisqualifyParticipantOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+    __slots__ = ("contest_id", "participant_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -116,11 +116,11 @@ class DeleteParticipantInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class DeleteParticipantOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+    __slots__ = ("contest_id", "participant_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -128,15 +128,15 @@ class DescribeParticipantInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class DescribeParticipantOutput(_message.Message):
-    __slots__ = ["participant"]
+    __slots__ = ("participant",)
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
     participant: _participant_pb2.Participant
     def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class ListParticipantsInput(_message.Message):
-    __slots__ = ["contest_id", "offset", "size", "search", "filters", "sort", "order"]
+    __slots__ = ("contest_id", "offset", "size", "search", "filters", "sort", "order")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         DEFAULT: _ClassVar[ListParticipantsInput.Sortable]
         DISPLAY_NAME: _ClassVar[ListParticipantsInput.Sortable]
         STARTED_AT: _ClassVar[ListParticipantsInput.Sortable]
@@ -144,7 +144,7 @@ class ListParticipantsInput(_message.Message):
     DISPLAY_NAME: ListParticipantsInput.Sortable
     STARTED_AT: ListParticipantsInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ["id", "member_id", "group_id", "status", "started_at", "unofficial", "disqualified", "inactive"]
+        __slots__ = ("id", "member_id", "group_id", "status", "started_at", "unofficial", "disqualified", "inactive")
         ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         GROUP_ID_FIELD_NUMBER: _ClassVar[int]
@@ -179,7 +179,7 @@ class ListParticipantsInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListParticipantsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListParticipantsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListParticipantsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -187,7 +187,7 @@ class ListParticipantsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_participant_pb2.Participant, _Mapping]]] = ...) -> None: ...
 
 class WatchParticipantInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+    __slots__ = ("contest_id", "participant_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -195,39 +195,39 @@ class WatchParticipantInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class WatchParticipantOutput(_message.Message):
-    __slots__ = ["participant"]
+    __slots__ = ("participant",)
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
     participant: _participant_pb2.Participant
     def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class DescribeViewerInput(_message.Message):
-    __slots__ = ["contest_id"]
+    __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class DescribeViewerOutput(_message.Message):
-    __slots__ = ["participant"]
+    __slots__ = ("participant",)
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
     participant: _participant_pb2.Participant
     def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class JoinContestInput(_message.Message):
-    __slots__ = ["contest_id"]
+    __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class JoinContestOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class StartContestInput(_message.Message):
-    __slots__ = ["contest_id"]
+    __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class StartContestOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateTaskInput(_message.Message):
-    __slots__ = ["evaluation", "generation"]
+    __slots__ = ("evaluation", "generation")
     EVALUATION_FIELD_NUMBER: _ClassVar[int]
     GENERATION_FIELD_NUMBER: _ClassVar[int]
     evaluation: _evaluation_task_pb2.EvaluationTask
@@ -16,7 +16,7 @@ class CreateTaskInput(_message.Message):
     def __init__(self, evaluation: _Optional[_Union[_evaluation_task_pb2.EvaluationTask, _Mapping]] = ..., generation: _Optional[_Union[_generation_task_pb2.GenerationTask, _Mapping]] = ...) -> None: ...
 
 class CreateTaskOutput(_message.Message):
-    __slots__ = ["task_id"]
+    __slots__ = ("task_id",)
     TASK_ID_FIELD_NUMBER: _ClassVar[int]
     task_id: str
     def __init__(self, task_id: _Optional[str] = ...) -> None: ...

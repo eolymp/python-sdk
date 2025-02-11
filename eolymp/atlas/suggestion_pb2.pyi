@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Suggestion(_message.Message):
-    __slots__ = ["id", "status", "locale", "title", "member_id", "created_at", "updated_at", "topics", "difficulty", "statement", "editorial"]
+    __slots__ = ("id", "status", "locale", "title", "member_id", "created_at", "updated_at", "topics", "difficulty", "statement", "editorial")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Suggestion.Status]
         PENDING: _ClassVar[Suggestion.Status]
         IN_REVIEW: _ClassVar[Suggestion.Status]

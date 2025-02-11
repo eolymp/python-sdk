@@ -8,13 +8,13 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class VerifyPasscodeInput(_message.Message):
-    __slots__ = ["contest_id"]
+    __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class VerifyPasscodeOutput(_message.Message):
-    __slots__ = ["required", "valid"]
+    __slots__ = ("required", "valid")
     REQUIRED_FIELD_NUMBER: _ClassVar[int]
     VALID_FIELD_NUMBER: _ClassVar[int]
     required: bool
@@ -22,7 +22,7 @@ class VerifyPasscodeOutput(_message.Message):
     def __init__(self, required: bool = ..., valid: bool = ...) -> None: ...
 
 class EnterPasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "passcode"]
+    __slots__ = ("contest_id", "passcode")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -30,11 +30,11 @@ class EnterPasscodeInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., passcode: _Optional[str] = ...) -> None: ...
 
 class EnterPasscodeOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ResetPasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+    __slots__ = ("contest_id", "participant_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -42,13 +42,13 @@ class ResetPasscodeInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class ResetPasscodeOutput(_message.Message):
-    __slots__ = ["passcode"]
+    __slots__ = ("passcode",)
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     passcode: str
     def __init__(self, passcode: _Optional[str] = ...) -> None: ...
 
 class SetPasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id", "passcode"]
+    __slots__ = ("contest_id", "participant_id", "passcode")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
@@ -58,11 +58,11 @@ class SetPasscodeInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., passcode: _Optional[str] = ...) -> None: ...
 
 class SetPasscodeOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RemovePasscodeInput(_message.Message):
-    __slots__ = ["contest_id", "participant_id"]
+    __slots__ = ("contest_id", "participant_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -70,5 +70,5 @@ class RemovePasscodeInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class RemovePasscodeOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

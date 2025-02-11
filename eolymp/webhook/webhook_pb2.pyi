@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Webhook(_message.Message):
-    __slots__ = ["id", "name", "secret", "endpoint", "inactive", "events", "created_at", "last_failure_at", "last_success_at", "delivery_count", "failure_count"]
+    __slots__ = ("id", "name", "secret", "endpoint", "inactive", "events", "created_at", "last_failure_at", "last_success_at", "delivery_count", "failure_count")
     class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EVENT: _ClassVar[Webhook.Event]
         PROBLEM_CHANGED: _ClassVar[Webhook.Event]
         PROBLEM_STATEMENT_CHANGED: _ClassVar[Webhook.Event]
@@ -56,7 +56,7 @@ class Webhook(_message.Message):
     CONTEST_PARTICIPANT_CHANGED: Webhook.Event
     CONTEST_PARTICIPANT_JOINED: Webhook.Event
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         PATCH_UNKNOWN: _ClassVar[Webhook.Patch]
         PATCH_ALL: _ClassVar[Webhook.Patch]
         PATCH_NAME: _ClassVar[Webhook.Patch]

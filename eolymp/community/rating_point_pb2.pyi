@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RatingPoint(_message.Message):
-    __slots__ = ["id", "ref", "timestamp", "value", "target_link"]
+    __slots__ = ("id", "ref", "timestamp", "value", "target_link")
     ID_FIELD_NUMBER: _ClassVar[int]
     REF_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]

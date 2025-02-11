@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Institution(_message.Message):
-    __slots__ = ["id", "name", "acronym", "local_name", "local_acronym", "logo_url", "governance", "level", "type", "country_id", "region_id", "address", "links"]
+    __slots__ = ("id", "name", "acronym", "local_name", "local_acronym", "logo_url", "governance", "level", "type", "country_id", "region_id", "address", "links")
     class Governance(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_GOVERNANCE: _ClassVar[Institution.Governance]
         PUBLIC: _ClassVar[Institution.Governance]
         PRIVATE: _ClassVar[Institution.Governance]
@@ -19,7 +19,7 @@ class Institution(_message.Message):
     PRIVATE: Institution.Governance
     CHARTER: Institution.Governance
     class Level(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_LEVEL: _ClassVar[Institution.Level]
         PRESCHOOL: _ClassVar[Institution.Level]
         PRIMARY: _ClassVar[Institution.Level]
@@ -31,7 +31,7 @@ class Institution(_message.Message):
     SECONDARY: Institution.Level
     TERTIARY: Institution.Level
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Institution.Type]
         KINDERGARTEN: _ClassVar[Institution.Type]
         SCHOOL: _ClassVar[Institution.Type]
@@ -51,7 +51,7 @@ class Institution(_message.Message):
     UNIVERSITY: Institution.Type
     ACADEMY: Institution.Type
     class LinksEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

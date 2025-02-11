@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Testset(_message.Message):
-    __slots__ = ["id", "index", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "dependencies", "dependency_mode", "scoring_mode", "feedback_policy"]
+    __slots__ = ("id", "index", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "dependencies", "dependency_mode", "scoring_mode", "feedback_policy")
     class DependencyMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_DEPENDENCY_MODE: _ClassVar[Testset.DependencyMode]
         FULLY_ACCEPTED: _ClassVar[Testset.DependencyMode]
         FIRST_POINT: _ClassVar[Testset.DependencyMode]

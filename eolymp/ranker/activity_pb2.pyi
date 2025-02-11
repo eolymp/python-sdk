@@ -7,15 +7,15 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Activity(_message.Message):
-    __slots__ = ["id", "type", "status", "scoreboard_id", "created_at", "started_at", "progress_at", "complete_at", "progress", "total", "error"]
+    __slots__ = ("id", "type", "status", "scoreboard_id", "created_at", "started_at", "progress_at", "complete_at", "progress", "total", "error")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[Activity.Type]
         SCOREBOARD_REBUILD: _ClassVar[Activity.Type]
     NONE: Activity.Type
     SCOREBOARD_REBUILD: Activity.Type
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN: _ClassVar[Activity.Status]
         CREATED: _ClassVar[Activity.Status]
         STARTED: _ClassVar[Activity.Status]

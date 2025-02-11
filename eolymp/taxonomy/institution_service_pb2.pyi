@@ -10,21 +10,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeInstitutionInput(_message.Message):
-    __slots__ = ["institution_id"]
+    __slots__ = ("institution_id",)
     INSTITUTION_ID_FIELD_NUMBER: _ClassVar[int]
     institution_id: str
     def __init__(self, institution_id: _Optional[str] = ...) -> None: ...
 
 class DescribeInstitutionOutput(_message.Message):
-    __slots__ = ["institution"]
+    __slots__ = ("institution",)
     INSTITUTION_FIELD_NUMBER: _ClassVar[int]
     institution: _institution_pb2.Institution
     def __init__(self, institution: _Optional[_Union[_institution_pb2.Institution, _Mapping]] = ...) -> None: ...
 
 class ListInstitutionsInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "name", "acronym", "country_id", "region_id", "level", "type", "governance"]
+        __slots__ = ("query", "id", "name", "acronym", "country_id", "region_id", "level", "type", "governance")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -53,7 +53,7 @@ class ListInstitutionsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListInstitutionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListInstitutionsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int

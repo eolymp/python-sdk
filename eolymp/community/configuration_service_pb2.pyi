@@ -9,21 +9,21 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeIdentityConfigInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeIdentityConfigOutput(_message.Message):
-    __slots__ = ["config"]
+    __slots__ = ("config",)
     CONFIG_FIELD_NUMBER: _ClassVar[int]
     config: _configuration_identity_pb2.IdentityConfig
     def __init__(self, config: _Optional[_Union[_configuration_identity_pb2.IdentityConfig, _Mapping]] = ...) -> None: ...
 
 class ConfigureIdentityConfigInput(_message.Message):
-    __slots__ = ["config"]
+    __slots__ = ("config",)
     CONFIG_FIELD_NUMBER: _ClassVar[int]
     config: _configuration_identity_pb2.IdentityConfig
     def __init__(self, config: _Optional[_Union[_configuration_identity_pb2.IdentityConfig, _Mapping]] = ...) -> None: ...
 
 class ConfigureIdentityConfigOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

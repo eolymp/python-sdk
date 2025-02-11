@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AssignAchievementInput(_message.Message):
-    __slots__ = ["achievement_id", "set_to", "inc_by"]
+    __slots__ = ("achievement_id", "set_to", "inc_by")
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     SET_TO_FIELD_NUMBER: _ClassVar[int]
     INC_BY_FIELD_NUMBER: _ClassVar[int]
@@ -21,25 +21,25 @@ class AssignAchievementInput(_message.Message):
     def __init__(self, achievement_id: _Optional[str] = ..., set_to: _Optional[int] = ..., inc_by: _Optional[int] = ...) -> None: ...
 
 class AssignAchievementOutput(_message.Message):
-    __slots__ = ["quantity"]
+    __slots__ = ("quantity",)
     QUANTITY_FIELD_NUMBER: _ClassVar[int]
     quantity: int
     def __init__(self, quantity: _Optional[int] = ...) -> None: ...
 
 class UnassignAchievementInput(_message.Message):
-    __slots__ = ["achievement_id"]
+    __slots__ = ("achievement_id",)
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     achievement_id: str
     def __init__(self, achievement_id: _Optional[str] = ...) -> None: ...
 
 class UnassignAchievementOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListAchievementsInput(_message.Message):
-    __slots__ = ["locale", "after", "size", "offset", "filters", "extra"]
+    __slots__ = ("locale", "after", "size", "offset", "filters", "extra")
     class Filter(_message.Message):
-        __slots__ = ["query", "id"]
+        __slots__ = ("query", "id")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         query: str
@@ -60,7 +60,7 @@ class ListAchievementsInput(_message.Message):
     def __init__(self, locale: _Optional[str] = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class ListAchievementsOutput(_message.Message):
-    __slots__ = ["total", "next_page_cursor", "items"]
+    __slots__ = ("total", "next_page_cursor", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]

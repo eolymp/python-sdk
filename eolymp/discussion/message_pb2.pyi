@@ -10,9 +10,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Message(_message.Message):
-    __slots__ = ["id", "url", "thread_url", "member_id", "reply_to", "vote", "vote_count", "reply_count", "posted_at", "edited_at", "deleted_at", "revision", "message", "links"]
+    __slots__ = ("id", "url", "thread_url", "member_id", "reply_to", "vote", "vote_count", "reply_count", "posted_at", "edited_at", "deleted_at", "revision", "message", "links")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Message.Extra]
         MESSAGE_VALUE: _ClassVar[Message.Extra]
         MESSAGE_RENDER: _ClassVar[Message.Extra]

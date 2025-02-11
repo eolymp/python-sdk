@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SpaceChangeRecord(_message.Message):
-    __slots__ = ["op", "space"]
+    __slots__ = ("op", "space")
     class Operation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_OPERATION: _ClassVar[SpaceChangeRecord.Operation]
         CREATE: _ClassVar[SpaceChangeRecord.Operation]
         UPDATE: _ClassVar[SpaceChangeRecord.Operation]

@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Delivery(_message.Message):
-    __slots__ = ["id", "webhook_id", "timestamp", "event", "payload"]
+    __slots__ = ("id", "webhook_id", "timestamp", "event", "payload")
     ID_FIELD_NUMBER: _ClassVar[int]
     WEBHOOK_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]

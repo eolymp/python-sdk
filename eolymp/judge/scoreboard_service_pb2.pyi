@@ -12,21 +12,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeScoreboardInput(_message.Message):
-    __slots__ = ["round_id"]
+    __slots__ = ("round_id",)
     ROUND_ID_FIELD_NUMBER: _ClassVar[int]
     round_id: str
     def __init__(self, round_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreboardOutput(_message.Message):
-    __slots__ = ["scoreboard"]
+    __slots__ = ("scoreboard",)
     SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
     scoreboard: _scoreboard_pb2.Scoreboard
     def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
 
 class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ["mode", "round_id", "size", "offset", "filters", "sort", "order"]
+    __slots__ = ("mode", "round_id", "size", "offset", "filters", "sort", "order")
     class Filter(_message.Message):
-        __slots__ = ["unofficial", "disqualified"]
+        __slots__ = ("unofficial", "disqualified")
         UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
         DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
         unofficial: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
@@ -49,7 +49,7 @@ class ListScoreboardRowsInput(_message.Message):
     def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., round_id: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int

@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Announcement(_message.Message):
-    __slots__ = ["id", "contest_id", "created_at", "subject", "message"]
+    __slots__ = ("id", "contest_id", "created_at", "subject", "message")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Announcement.Extra]
         MESSAGE_RENDER: _ClassVar[Announcement.Extra]
         MESSAGE_VALUE: _ClassVar[Announcement.Extra]

@@ -13,25 +13,25 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateTermInput(_message.Message):
-    __slots__ = ["term"]
+    __slots__ = ("term",)
     TERM_FIELD_NUMBER: _ClassVar[int]
     term: _term_pb2.Term
     def __init__(self, term: _Optional[_Union[_term_pb2.Term, _Mapping]] = ...) -> None: ...
 
 class CreateTermOutput(_message.Message):
-    __slots__ = ["term_id"]
+    __slots__ = ("term_id",)
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     term_id: str
     def __init__(self, term_id: _Optional[str] = ...) -> None: ...
 
 class ImportTermsInput(_message.Message):
-    __slots__ = ["terms"]
+    __slots__ = ("terms",)
     TERMS_FIELD_NUMBER: _ClassVar[int]
     terms: _containers.RepeatedCompositeFieldContainer[_term_pb2.Term]
     def __init__(self, terms: _Optional[_Iterable[_Union[_term_pb2.Term, _Mapping]]] = ...) -> None: ...
 
 class ImportTermsOutput(_message.Message):
-    __slots__ = ["created_count", "updated_count", "deprecated_count"]
+    __slots__ = ("created_count", "updated_count", "deprecated_count")
     CREATED_COUNT_FIELD_NUMBER: _ClassVar[int]
     UPDATED_COUNT_FIELD_NUMBER: _ClassVar[int]
     DEPRECATED_COUNT_FIELD_NUMBER: _ClassVar[int]
@@ -41,16 +41,16 @@ class ImportTermsOutput(_message.Message):
     def __init__(self, created_count: _Optional[int] = ..., updated_count: _Optional[int] = ..., deprecated_count: _Optional[int] = ...) -> None: ...
 
 class ListTermsInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class ExpressionTranslation(_message.Message):
-        __slots__ = ["locale", "status"]
+        __slots__ = ("locale", "status")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         locale: str
         status: _expression_pb2.ExpressionEnum
         def __init__(self, locale: _Optional[str] = ..., status: _Optional[_Union[_expression_pb2.ExpressionEnum, _Mapping]] = ...) -> None: ...
     class Filter(_message.Message):
-        __slots__ = ["query", "id", "key", "message", "status", "translation"]
+        __slots__ = ("query", "id", "key", "message", "status", "translation")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -73,7 +73,7 @@ class ListTermsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTermsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListTermsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -81,7 +81,7 @@ class ListTermsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_term_pb2.Term, _Mapping]]] = ...) -> None: ...
 
 class UpdateTermInput(_message.Message):
-    __slots__ = ["term_id", "term"]
+    __slots__ = ("term_id", "term")
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     TERM_FIELD_NUMBER: _ClassVar[int]
     term_id: str
@@ -89,75 +89,75 @@ class UpdateTermInput(_message.Message):
     def __init__(self, term_id: _Optional[str] = ..., term: _Optional[_Union[_term_pb2.Term, _Mapping]] = ...) -> None: ...
 
 class UpdateTermOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RestoreTermInput(_message.Message):
-    __slots__ = ["term_id"]
+    __slots__ = ("term_id",)
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     term_id: str
     def __init__(self, term_id: _Optional[str] = ...) -> None: ...
 
 class RestoreTermOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeprecateTermInput(_message.Message):
-    __slots__ = ["term_id"]
+    __slots__ = ("term_id",)
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     term_id: str
     def __init__(self, term_id: _Optional[str] = ...) -> None: ...
 
 class DeprecateTermOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteTermInput(_message.Message):
-    __slots__ = ["term_id"]
+    __slots__ = ("term_id",)
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     term_id: str
     def __init__(self, term_id: _Optional[str] = ...) -> None: ...
 
 class DeleteTermOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeTermInput(_message.Message):
-    __slots__ = ["term_id"]
+    __slots__ = ("term_id",)
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     term_id: str
     def __init__(self, term_id: _Optional[str] = ...) -> None: ...
 
 class DescribeTermOutput(_message.Message):
-    __slots__ = ["term"]
+    __slots__ = ("term",)
     TERM_FIELD_NUMBER: _ClassVar[int]
     term: _term_pb2.Term
     def __init__(self, term: _Optional[_Union[_term_pb2.Term, _Mapping]] = ...) -> None: ...
 
 class AddLocaleInput(_message.Message):
-    __slots__ = ["locale_code"]
+    __slots__ = ("locale_code",)
     LOCALE_CODE_FIELD_NUMBER: _ClassVar[int]
     locale_code: str
     def __init__(self, locale_code: _Optional[str] = ...) -> None: ...
 
 class AddLocaleOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RemoveLocaleInput(_message.Message):
-    __slots__ = ["locale_code"]
+    __slots__ = ("locale_code",)
     LOCALE_CODE_FIELD_NUMBER: _ClassVar[int]
     locale_code: str
     def __init__(self, locale_code: _Optional[str] = ...) -> None: ...
 
 class RemoveLocaleOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListLocalesInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["code", "ready"]
+        __slots__ = ("code", "ready")
         CODE_FIELD_NUMBER: _ClassVar[int]
         READY_FIELD_NUMBER: _ClassVar[int]
         code: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -172,9 +172,9 @@ class ListLocalesInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListLocalesInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListLocalesOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     class Locale(_message.Message):
-        __slots__ = ["code", "ready", "translated_terms", "missing_terms", "total_terms"]
+        __slots__ = ("code", "ready", "translated_terms", "missing_terms", "total_terms")
         CODE_FIELD_NUMBER: _ClassVar[int]
         READY_FIELD_NUMBER: _ClassVar[int]
         TRANSLATED_TERMS_FIELD_NUMBER: _ClassVar[int]
@@ -193,7 +193,7 @@ class ListLocalesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[ListLocalesOutput.Locale, _Mapping]]] = ...) -> None: ...
 
 class TranslateTermInput(_message.Message):
-    __slots__ = ["term_id", "translation"]
+    __slots__ = ("term_id", "translation")
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]
     term_id: str
@@ -201,15 +201,15 @@ class TranslateTermInput(_message.Message):
     def __init__(self, term_id: _Optional[str] = ..., translation: _Optional[_Union[_translation_pb2.Translation, _Mapping]] = ...) -> None: ...
 
 class TranslateTermOutput(_message.Message):
-    __slots__ = ["translation_id"]
+    __slots__ = ("translation_id",)
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     translation_id: str
     def __init__(self, translation_id: _Optional[str] = ...) -> None: ...
 
 class ListTranslationsInput(_message.Message):
-    __slots__ = ["term_id", "offset", "size", "filters"]
+    __slots__ = ("term_id", "offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["id", "message", "status", "locale"]
+        __slots__ = ("id", "message", "status", "locale")
         ID_FIELD_NUMBER: _ClassVar[int]
         MESSAGE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -230,7 +230,7 @@ class ListTranslationsInput(_message.Message):
     def __init__(self, term_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTranslationsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListTranslationsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -238,7 +238,7 @@ class ListTranslationsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_translation_pb2.Translation, _Mapping]]] = ...) -> None: ...
 
 class SuggestTranslationInput(_message.Message):
-    __slots__ = ["term_id", "locale"]
+    __slots__ = ("term_id", "locale")
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     term_id: str
@@ -246,13 +246,13 @@ class SuggestTranslationInput(_message.Message):
     def __init__(self, term_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class SuggestTranslationOutput(_message.Message):
-    __slots__ = ["messages"]
+    __slots__ = ("messages",)
     MESSAGES_FIELD_NUMBER: _ClassVar[int]
     messages: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, messages: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class UpdateTranslationInput(_message.Message):
-    __slots__ = ["term_id", "translation_id", "translation"]
+    __slots__ = ("term_id", "translation_id", "translation")
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]
@@ -262,11 +262,11 @@ class UpdateTranslationInput(_message.Message):
     def __init__(self, term_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., translation: _Optional[_Union[_translation_pb2.Translation, _Mapping]] = ...) -> None: ...
 
 class UpdateTranslationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ApproveTranslationInput(_message.Message):
-    __slots__ = ["term_id", "translation_id"]
+    __slots__ = ("term_id", "translation_id")
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     term_id: str
@@ -274,11 +274,11 @@ class ApproveTranslationInput(_message.Message):
     def __init__(self, term_id: _Optional[str] = ..., translation_id: _Optional[str] = ...) -> None: ...
 
 class ApproveTranslationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RejectTranslationInput(_message.Message):
-    __slots__ = ["term_id", "translation_id"]
+    __slots__ = ("term_id", "translation_id")
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     term_id: str
@@ -286,11 +286,11 @@ class RejectTranslationInput(_message.Message):
     def __init__(self, term_id: _Optional[str] = ..., translation_id: _Optional[str] = ...) -> None: ...
 
 class RejectTranslationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteTranslationInput(_message.Message):
-    __slots__ = ["term_id", "translation_id"]
+    __slots__ = ("term_id", "translation_id")
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     term_id: str
@@ -298,25 +298,25 @@ class DeleteTranslationInput(_message.Message):
     def __init__(self, term_id: _Optional[str] = ..., translation_id: _Optional[str] = ...) -> None: ...
 
 class DeleteTranslationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeTranslationInput(_message.Message):
-    __slots__ = ["term_id"]
+    __slots__ = ("term_id",)
     TERM_ID_FIELD_NUMBER: _ClassVar[int]
     term_id: str
     def __init__(self, term_id: _Optional[str] = ...) -> None: ...
 
 class DescribeTranslationOutput(_message.Message):
-    __slots__ = ["term"]
+    __slots__ = ("term",)
     TERM_FIELD_NUMBER: _ClassVar[int]
     term: _term_pb2.Term
     def __init__(self, term: _Optional[_Union[_term_pb2.Term, _Mapping]] = ...) -> None: ...
 
 class ImportTranslationsInput(_message.Message):
-    __slots__ = ["locale", "translations"]
+    __slots__ = ("locale", "translations")
     class TranslationsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -329,21 +329,21 @@ class ImportTranslationsInput(_message.Message):
     def __init__(self, locale: _Optional[str] = ..., translations: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ImportTranslationsOutput(_message.Message):
-    __slots__ = ["created_count"]
+    __slots__ = ("created_count",)
     CREATED_COUNT_FIELD_NUMBER: _ClassVar[int]
     created_count: int
     def __init__(self, created_count: _Optional[int] = ...) -> None: ...
 
 class ExportTranslationsInput(_message.Message):
-    __slots__ = ["locale"]
+    __slots__ = ("locale",)
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     locale: str
     def __init__(self, locale: _Optional[str] = ...) -> None: ...
 
 class ExportTranslationsOutput(_message.Message):
-    __slots__ = ["translations"]
+    __slots__ = ("translations",)
     class TranslationsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -354,9 +354,9 @@ class ExportTranslationsOutput(_message.Message):
     def __init__(self, translations: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListTranslationPairsInput(_message.Message):
-    __slots__ = ["locale", "source", "size", "offset", "after", "before", "filters"]
+    __slots__ = ("locale", "source", "size", "offset", "after", "before", "filters")
     class Filter(_message.Message):
-        __slots__ = ["query", "term_key", "term_status", "source_message", "translation_status", "translation_message"]
+        __slots__ = ("query", "term_key", "term_status", "source_message", "translation_status", "translation_message")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         TERM_KEY_FIELD_NUMBER: _ClassVar[int]
         TERM_STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -387,7 +387,7 @@ class ListTranslationPairsInput(_message.Message):
     def __init__(self, locale: _Optional[str] = ..., source: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., after: _Optional[str] = ..., before: _Optional[str] = ..., filters: _Optional[_Union[ListTranslationPairsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListTranslationPairsOutput(_message.Message):
-    __slots__ = ["total", "has_more", "items"]
+    __slots__ = ("total", "has_more", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     HAS_MORE_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]

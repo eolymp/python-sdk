@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListEntriesInput(_message.Message):
-    __slots__ = ["size", "after"]
+    __slots__ = ("size", "after")
     SIZE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     size: int
@@ -17,7 +17,7 @@ class ListEntriesInput(_message.Message):
     def __init__(self, size: _Optional[int] = ..., after: _Optional[str] = ...) -> None: ...
 
 class ListEntriesOutput(_message.Message):
-    __slots__ = ["total", "items", "next_page_cursor"]
+    __slots__ = ("total", "items", "next_page_cursor")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]

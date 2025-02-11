@@ -13,15 +13,15 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListSolutionsInput(_message.Message):
-    __slots__ = ["version", "offset", "size", "search", "filters", "sort", "order"]
+    __slots__ = ("version", "offset", "size", "search", "filters", "sort", "order")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NAME: _ClassVar[ListSolutionsInput.Sortable]
         TYPE: _ClassVar[ListSolutionsInput.Sortable]
     NAME: ListSolutionsInput.Sortable
     TYPE: ListSolutionsInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ["id", "type", "name", "runtime"]
+        __slots__ = ("id", "type", "name", "runtime")
         ID_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -48,7 +48,7 @@ class ListSolutionsInput(_message.Message):
     def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListSolutionsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListSolutionsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListSolutionsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -56,9 +56,9 @@ class ListSolutionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ...) -> None: ...
 
 class CheckSolutionsInput(_message.Message):
-    __slots__ = ["filters"]
+    __slots__ = ("filters",)
     class Filter(_message.Message):
-        __slots__ = ["id", "type", "name", "runtime"]
+        __slots__ = ("id", "type", "name", "runtime")
         ID_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -73,11 +73,11 @@ class CheckSolutionsInput(_message.Message):
     def __init__(self, filters: _Optional[_Union[CheckSolutionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class CheckSolutionsOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeSolutionInput(_message.Message):
-    __slots__ = ["solution_id", "version"]
+    __slots__ = ("solution_id", "version")
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     solution_id: str
@@ -85,27 +85,27 @@ class DescribeSolutionInput(_message.Message):
     def __init__(self, solution_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeSolutionOutput(_message.Message):
-    __slots__ = ["solution"]
+    __slots__ = ("solution",)
     SOLUTION_FIELD_NUMBER: _ClassVar[int]
     solution: _solution_pb2.Solution
     def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class CreateSolutionInput(_message.Message):
-    __slots__ = ["solution"]
+    __slots__ = ("solution",)
     SOLUTION_FIELD_NUMBER: _ClassVar[int]
     solution: _solution_pb2.Solution
     def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class CreateSolutionOutput(_message.Message):
-    __slots__ = ["solution_id"]
+    __slots__ = ("solution_id",)
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
     solution_id: str
     def __init__(self, solution_id: _Optional[str] = ...) -> None: ...
 
 class UpdateSolutionInput(_message.Message):
-    __slots__ = ["patch", "solution_id", "solution"]
+    __slots__ = ("patch", "solution_id", "solution")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateSolutionInput.Patch]
         NAME: _ClassVar[UpdateSolutionInput.Patch]
         TYPE: _ClassVar[UpdateSolutionInput.Patch]
@@ -127,15 +127,15 @@ class UpdateSolutionInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateSolutionInput.Patch, str]]] = ..., solution_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class UpdateSolutionOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteSolutionInput(_message.Message):
-    __slots__ = ["solution_id"]
+    __slots__ = ("solution_id",)
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
     solution_id: str
     def __init__(self, solution_id: _Optional[str] = ...) -> None: ...
 
 class DeleteSolutionOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

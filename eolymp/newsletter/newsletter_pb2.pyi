@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Newsletter(_message.Message):
-    __slots__ = ["id", "created_at", "subject", "content"]
+    __slots__ = ("id", "created_at", "subject", "content")
     class Translation(_message.Message):
-        __slots__ = ["id", "locale", "subject", "content"]
+        __slots__ = ("id", "locale", "subject", "content")
         ID_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         SUBJECT_FIELD_NUMBER: _ClassVar[int]

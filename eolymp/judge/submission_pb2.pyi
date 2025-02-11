@@ -11,9 +11,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ["id", "url", "contest_id", "problem_id", "participant_id", "submitted_at", "deleted", "lang", "source", "source_url", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "groups"]
+    __slots__ = ("id", "url", "contest_id", "problem_id", "participant_id", "submitted_at", "deleted", "lang", "source", "source_url", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "groups")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Submission.Extra]
         SOURCE: _ClassVar[Submission.Extra]
         GROUPS: _ClassVar[Submission.Extra]
@@ -23,7 +23,7 @@ class Submission(_message.Message):
     GROUPS: Submission.Extra
     RUNS: Submission.Extra
     class Run(_message.Message):
-        __slots__ = ["id", "index", "test_id", "cost", "score", "wall_time_usage", "cpu_time_usage", "memory_usage", "status", "verdict"]
+        __slots__ = ("id", "index", "test_id", "cost", "score", "wall_time_usage", "cpu_time_usage", "memory_usage", "status", "verdict")
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         TEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -46,7 +46,7 @@ class Submission(_message.Message):
         verdict: _submission_pb2.Submission.Verdict
         def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ...) -> None: ...
     class Group(_message.Message):
-        __slots__ = ["index", "testset_id", "status", "verdict", "dependencies", "cost", "score", "scoring_mode", "feedback_policy", "wall_time_usage", "cpu_time_usage", "memory_usage", "runs"]
+        __slots__ = ("index", "testset_id", "status", "verdict", "dependencies", "cost", "score", "scoring_mode", "feedback_policy", "wall_time_usage", "cpu_time_usage", "memory_usage", "runs")
         INDEX_FIELD_NUMBER: _ClassVar[int]
         TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]

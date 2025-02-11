@@ -5,12 +5,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IdentityProvider(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     class Basecamp(_message.Message):
-        __slots__ = []
+        __slots__ = ()
         def __init__(self) -> None: ...
     class Local(_message.Message):
-        __slots__ = ["allow_modify_nickname", "allow_modify_basics", "allow_modify_email", "allow_modify_password"]
+        __slots__ = ("allow_modify_nickname", "allow_modify_basics", "allow_modify_email", "allow_modify_password")
         ALLOW_MODIFY_NICKNAME_FIELD_NUMBER: _ClassVar[int]
         ALLOW_MODIFY_BASICS_FIELD_NUMBER: _ClassVar[int]
         ALLOW_MODIFY_EMAIL_FIELD_NUMBER: _ClassVar[int]
@@ -21,7 +21,7 @@ class IdentityProvider(_message.Message):
         allow_modify_password: bool
         def __init__(self, allow_modify_nickname: bool = ..., allow_modify_basics: bool = ..., allow_modify_email: bool = ..., allow_modify_password: bool = ...) -> None: ...
     class OIDC(_message.Message):
-        __slots__ = ["client_id", "client_secret", "issuer", "authorize_endpoint", "token_endpoint", "keys_endpoint", "userinfo_endpoint", "redirect_uri"]
+        __slots__ = ("client_id", "client_secret", "issuer", "authorize_endpoint", "token_endpoint", "keys_endpoint", "userinfo_endpoint", "redirect_uri")
         CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
         CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
         ISSUER_FIELD_NUMBER: _ClassVar[int]

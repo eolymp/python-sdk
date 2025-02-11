@@ -9,21 +9,21 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeSubscriptionInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeSubscriptionOutput(_message.Message):
-    __slots__ = ["subscription"]
+    __slots__ = ("subscription",)
     SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
     subscription: _subscription_pb2.Subscription
     def __init__(self, subscription: _Optional[_Union[_subscription_pb2.Subscription, _Mapping]] = ...) -> None: ...
 
 class UpdateSubscriptionInput(_message.Message):
-    __slots__ = ["subscription"]
+    __slots__ = ("subscription",)
     SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
     subscription: _subscription_pb2.Subscription
     def __init__(self, subscription: _Optional[_Union[_subscription_pb2.Subscription, _Mapping]] = ...) -> None: ...
 
 class UpdateSubscriptionOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

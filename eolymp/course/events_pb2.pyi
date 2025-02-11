@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ModuleChangedEvent(_message.Message):
-    __slots__ = ["course_id", "before", "after"]
+    __slots__ = ("course_id", "before", "after")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -19,7 +19,7 @@ class ModuleChangedEvent(_message.Message):
     def __init__(self, course_id: _Optional[str] = ..., before: _Optional[_Union[_module_pb2.Module, _Mapping]] = ..., after: _Optional[_Union[_module_pb2.Module, _Mapping]] = ...) -> None: ...
 
 class MaterialChangedEvent(_message.Message):
-    __slots__ = ["course_id", "before", "after"]
+    __slots__ = ("course_id", "before", "after")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -29,7 +29,7 @@ class MaterialChangedEvent(_message.Message):
     def __init__(self, course_id: _Optional[str] = ..., before: _Optional[_Union[_material_pb2.Material, _Mapping]] = ..., after: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
 
 class StudentChangedEvent(_message.Message):
-    __slots__ = ["course_id", "before", "after"]
+    __slots__ = ("course_id", "before", "after")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -39,7 +39,7 @@ class StudentChangedEvent(_message.Message):
     def __init__(self, course_id: _Optional[str] = ..., before: _Optional[_Union[_student_pb2.Student, _Mapping]] = ..., after: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
 class AssignmentChangedEvent(_message.Message):
-    __slots__ = ["course_id", "module_id", "before", "after"]
+    __slots__ = ("course_id", "module_id", "before", "after")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]

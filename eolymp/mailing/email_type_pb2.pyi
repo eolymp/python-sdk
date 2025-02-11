@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EmailType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     UNKNOWN_TYPE: _ClassVar[EmailType]
     ACCOUNT: _ClassVar[EmailType]
     NEWSLETTER: _ClassVar[EmailType]

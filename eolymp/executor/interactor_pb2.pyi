@@ -8,9 +8,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Interactor(_message.Message):
-    __slots__ = ["type", "runtime", "source_url", "secret", "files"]
+    __slots__ = ("type", "runtime", "source_url", "secret", "files")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NONE: _ClassVar[Interactor.Type]
         PROGRAM: _ClassVar[Interactor.Type]
     NONE: Interactor.Type

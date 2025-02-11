@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Fragment(_message.Message):
-    __slots__ = ["id", "path", "locale", "draft", "title", "content", "created_at", "updated_at", "labels"]
+    __slots__ = ("id", "path", "locale", "draft", "title", "content", "created_at", "updated_at", "labels")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Fragment.Extra]
         CONTENT_RENDER: _ClassVar[Fragment.Extra]
         CONTENT_VALUE: _ClassVar[Fragment.Extra]
@@ -19,7 +19,7 @@ class Fragment(_message.Message):
     CONTENT_RENDER: Fragment.Extra
     CONTENT_VALUE: Fragment.Extra
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_PATCH: _ClassVar[Fragment.Patch]
         PATCH_ALL: _ClassVar[Fragment.Patch]
         PATCH_PATH: _ClassVar[Fragment.Patch]

@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Configuration(_message.Message):
-    __slots__ = ["members_can_create_posts", "members_can_comment_on_posts", "members_can_comment_on_problems", "post_moderation", "comment_moderation"]
+    __slots__ = ("members_can_create_posts", "members_can_comment_on_posts", "members_can_comment_on_problems", "post_moderation", "comment_moderation")
     class Moderation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_MODERATION: _ClassVar[Configuration.Moderation]
         NO_MODERATION: _ClassVar[Configuration.Moderation]
         PRE_MODERATION: _ClassVar[Configuration.Moderation]

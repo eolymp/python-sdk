@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Achievement(_message.Message):
-    __slots__ = ["id", "value", "rarity", "name", "image_url", "summary", "cursor"]
+    __slots__ = ("id", "value", "rarity", "name", "image_url", "summary", "cursor")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         NO_EXTRA: _ClassVar[Achievement.Extra]
         SUMMARY_VALUE: _ClassVar[Achievement.Extra]
         SUMMARY_RENDER: _ClassVar[Achievement.Extra]
@@ -17,7 +17,7 @@ class Achievement(_message.Message):
     SUMMARY_VALUE: Achievement.Extra
     SUMMARY_RENDER: Achievement.Extra
     class Translation(_message.Message):
-        __slots__ = ["id", "locale", "name", "summary"]
+        __slots__ = ("id", "locale", "name", "summary")
         ID_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]

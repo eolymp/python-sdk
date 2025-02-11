@@ -11,19 +11,19 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateAttachmentInput(_message.Message):
-    __slots__ = ["attachment"]
+    __slots__ = ("attachment",)
     ATTACHMENT_FIELD_NUMBER: _ClassVar[int]
     attachment: _attachment_pb2.Attachment
     def __init__(self, attachment: _Optional[_Union[_attachment_pb2.Attachment, _Mapping]] = ...) -> None: ...
 
 class CreateAttachmentOutput(_message.Message):
-    __slots__ = ["attachment_id"]
+    __slots__ = ("attachment_id",)
     ATTACHMENT_ID_FIELD_NUMBER: _ClassVar[int]
     attachment_id: str
     def __init__(self, attachment_id: _Optional[str] = ...) -> None: ...
 
 class UpdateAttachmentInput(_message.Message):
-    __slots__ = ["attachment_id", "attachment"]
+    __slots__ = ("attachment_id", "attachment")
     ATTACHMENT_ID_FIELD_NUMBER: _ClassVar[int]
     ATTACHMENT_FIELD_NUMBER: _ClassVar[int]
     attachment_id: str
@@ -31,23 +31,23 @@ class UpdateAttachmentInput(_message.Message):
     def __init__(self, attachment_id: _Optional[str] = ..., attachment: _Optional[_Union[_attachment_pb2.Attachment, _Mapping]] = ...) -> None: ...
 
 class UpdateAttachmentOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteAttachmentInput(_message.Message):
-    __slots__ = ["attachment_id"]
+    __slots__ = ("attachment_id",)
     ATTACHMENT_ID_FIELD_NUMBER: _ClassVar[int]
     attachment_id: str
     def __init__(self, attachment_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAttachmentOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListAttachmentsInput(_message.Message):
-    __slots__ = ["offset", "size", "filters", "version"]
+    __slots__ = ("offset", "size", "filters", "version")
     class Filter(_message.Message):
-        __slots__ = ["id", "name"]
+        __slots__ = ("id", "name")
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -64,7 +64,7 @@ class ListAttachmentsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAttachmentsInput.Filter, _Mapping]] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListAttachmentsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -72,7 +72,7 @@ class ListAttachmentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_attachment_pb2.Attachment, _Mapping]]] = ...) -> None: ...
 
 class DescribeAttachmentInput(_message.Message):
-    __slots__ = ["attachment_id", "version"]
+    __slots__ = ("attachment_id", "version")
     ATTACHMENT_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     attachment_id: str
@@ -80,7 +80,7 @@ class DescribeAttachmentInput(_message.Message):
     def __init__(self, attachment_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeAttachmentOutput(_message.Message):
-    __slots__ = ["attachment"]
+    __slots__ = ("attachment",)
     ATTACHMENT_FIELD_NUMBER: _ClassVar[int]
     attachment: _attachment_pb2.Attachment
     def __init__(self, attachment: _Optional[_Union[_attachment_pb2.Attachment, _Mapping]] = ...) -> None: ...

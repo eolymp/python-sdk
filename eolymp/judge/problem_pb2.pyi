@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ["id", "url", "index", "score", "base_id", "base_number", "base_space_id", "contest_id", "feedback_policy", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score_by_best_testset"]
+    __slots__ = ("id", "url", "index", "score", "base_id", "base_number", "base_space_id", "contest_id", "feedback_policy", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score_by_best_testset")
     class Statement(_message.Message):
-        __slots__ = ["locale", "title", "content", "download_link"]
+        __slots__ = ("locale", "title", "content", "download_link")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         TITLE_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
@@ -20,7 +20,7 @@ class Problem(_message.Message):
         download_link: str
         def __init__(self, locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., download_link: _Optional[str] = ...) -> None: ...
     class Test(_message.Message):
-        __slots__ = ["index", "example", "input_url", "answer_url", "score"]
+        __slots__ = ("index", "example", "input_url", "answer_url", "score")
         INDEX_FIELD_NUMBER: _ClassVar[int]
         EXAMPLE_FIELD_NUMBER: _ClassVar[int]
         INPUT_URL_FIELD_NUMBER: _ClassVar[int]
@@ -33,7 +33,7 @@ class Problem(_message.Message):
         score: float
         def __init__(self, index: _Optional[int] = ..., example: bool = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., score: _Optional[float] = ...) -> None: ...
     class Attachment(_message.Message):
-        __slots__ = ["id", "name", "link"]
+        __slots__ = ("id", "name", "link")
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         LINK_FIELD_NUMBER: _ClassVar[int]

@@ -9,19 +9,19 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeEmailSubscriptionInput(_message.Message):
-    __slots__ = ["token"]
+    __slots__ = ("token",)
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     token: str
     def __init__(self, token: _Optional[str] = ...) -> None: ...
 
 class DescribeEmailSubscriptionOutput(_message.Message):
-    __slots__ = ["subscriptions"]
+    __slots__ = ("subscriptions",)
     SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
     subscriptions: _containers.RepeatedScalarFieldContainer[_email_type_pb2.EmailType]
     def __init__(self, subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ...) -> None: ...
 
 class UpdateEmailSubscriptionInput(_message.Message):
-    __slots__ = ["token", "subscriptions"]
+    __slots__ = ("token", "subscriptions")
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
     token: str
@@ -29,5 +29,5 @@ class UpdateEmailSubscriptionInput(_message.Message):
     def __init__(self, token: _Optional[str] = ..., subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ...) -> None: ...
 
 class UpdateEmailSubscriptionOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

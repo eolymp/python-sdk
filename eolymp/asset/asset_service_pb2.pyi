@@ -9,16 +9,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class UploadImageInput(_message.Message):
-    __slots__ = ["name", "type", "crop", "size", "variants", "data"]
+    __slots__ = ("name", "type", "crop", "size", "variants", "data")
     class Size(_message.Message):
-        __slots__ = ["width", "height"]
+        __slots__ = ("width", "height")
         WIDTH_FIELD_NUMBER: _ClassVar[int]
         HEIGHT_FIELD_NUMBER: _ClassVar[int]
         width: int
         height: int
         def __init__(self, width: _Optional[int] = ..., height: _Optional[int] = ...) -> None: ...
     class Crop(_message.Message):
-        __slots__ = ["top", "right", "bottom", "left"]
+        __slots__ = ("top", "right", "bottom", "left")
         TOP_FIELD_NUMBER: _ClassVar[int]
         RIGHT_FIELD_NUMBER: _ClassVar[int]
         BOTTOM_FIELD_NUMBER: _ClassVar[int]
@@ -43,13 +43,13 @@ class UploadImageInput(_message.Message):
     def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., crop: _Optional[_Union[UploadImageInput.Crop, _Mapping]] = ..., size: _Optional[_Union[UploadImageInput.Size, _Mapping]] = ..., variants: _Optional[_Iterable[_Union[UploadImageInput.Size, _Mapping]]] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadImageOutput(_message.Message):
-    __slots__ = ["image_url"]
+    __slots__ = ("image_url",)
     IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
     image_url: str
     def __init__(self, image_url: _Optional[str] = ...) -> None: ...
 
 class UploadFileInput(_message.Message):
-    __slots__ = ["name", "type", "data"]
+    __slots__ = ("name", "type", "data")
     NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
@@ -59,13 +59,13 @@ class UploadFileInput(_message.Message):
     def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadFileOutput(_message.Message):
-    __slots__ = ["file_url"]
+    __slots__ = ("file_url",)
     FILE_URL_FIELD_NUMBER: _ClassVar[int]
     file_url: str
     def __init__(self, file_url: _Optional[str] = ...) -> None: ...
 
 class UploadAssetInput(_message.Message):
-    __slots__ = ["name", "type", "keys", "ttl", "data"]
+    __slots__ = ("name", "type", "keys", "ttl", "data")
     NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     KEYS_FIELD_NUMBER: _ClassVar[int]
@@ -79,25 +79,25 @@ class UploadAssetInput(_message.Message):
     def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., keys: _Optional[_Iterable[str]] = ..., ttl: _Optional[int] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadAssetOutput(_message.Message):
-    __slots__ = ["asset_url"]
+    __slots__ = ("asset_url",)
     ASSET_URL_FIELD_NUMBER: _ClassVar[int]
     asset_url: str
     def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
 
 class LookupAssetInput(_message.Message):
-    __slots__ = ["key"]
+    __slots__ = ("key",)
     KEY_FIELD_NUMBER: _ClassVar[int]
     key: str
     def __init__(self, key: _Optional[str] = ...) -> None: ...
 
 class LookupAssetOutput(_message.Message):
-    __slots__ = ["asset_url"]
+    __slots__ = ("asset_url",)
     ASSET_URL_FIELD_NUMBER: _ClassVar[int]
     asset_url: str
     def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
 
 class StartMultipartUploadInput(_message.Message):
-    __slots__ = ["name", "type", "keys", "ttl"]
+    __slots__ = ("name", "type", "keys", "ttl")
     NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     KEYS_FIELD_NUMBER: _ClassVar[int]
@@ -109,13 +109,13 @@ class StartMultipartUploadInput(_message.Message):
     def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., keys: _Optional[_Iterable[str]] = ..., ttl: _Optional[int] = ...) -> None: ...
 
 class StartMultipartUploadOutput(_message.Message):
-    __slots__ = ["upload_id"]
+    __slots__ = ("upload_id",)
     UPLOAD_ID_FIELD_NUMBER: _ClassVar[int]
     upload_id: str
     def __init__(self, upload_id: _Optional[str] = ...) -> None: ...
 
 class UploadPartInput(_message.Message):
-    __slots__ = ["upload_id", "part_number", "data"]
+    __slots__ = ("upload_id", "part_number", "data")
     UPLOAD_ID_FIELD_NUMBER: _ClassVar[int]
     PART_NUMBER_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
@@ -125,15 +125,15 @@ class UploadPartInput(_message.Message):
     def __init__(self, upload_id: _Optional[str] = ..., part_number: _Optional[int] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadPartOutput(_message.Message):
-    __slots__ = ["token"]
+    __slots__ = ("token",)
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     token: str
     def __init__(self, token: _Optional[str] = ...) -> None: ...
 
 class CompleteMultipartUploadInput(_message.Message):
-    __slots__ = ["upload_id", "parts"]
+    __slots__ = ("upload_id", "parts")
     class Part(_message.Message):
-        __slots__ = ["number", "token", "checksum_md5", "checksum_sha1", "checksum_sha256"]
+        __slots__ = ("number", "token", "checksum_md5", "checksum_sha1", "checksum_sha256")
         NUMBER_FIELD_NUMBER: _ClassVar[int]
         TOKEN_FIELD_NUMBER: _ClassVar[int]
         CHECKSUM_MD5_FIELD_NUMBER: _ClassVar[int]
@@ -152,13 +152,13 @@ class CompleteMultipartUploadInput(_message.Message):
     def __init__(self, upload_id: _Optional[str] = ..., parts: _Optional[_Iterable[_Union[CompleteMultipartUploadInput.Part, _Mapping]]] = ...) -> None: ...
 
 class CompleteMultipartUploadOutput(_message.Message):
-    __slots__ = ["asset_url"]
+    __slots__ = ("asset_url",)
     ASSET_URL_FIELD_NUMBER: _ClassVar[int]
     asset_url: str
     def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
 
 class StartStreamInput(_message.Message):
-    __slots__ = ["name", "type", "ttl"]
+    __slots__ = ("name", "type", "ttl")
     NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     TTL_FIELD_NUMBER: _ClassVar[int]
@@ -168,7 +168,7 @@ class StartStreamInput(_message.Message):
     def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., ttl: _Optional[int] = ...) -> None: ...
 
 class StartStreamOutput(_message.Message):
-    __slots__ = ["stream_id", "stream_url"]
+    __slots__ = ("stream_id", "stream_url")
     STREAM_ID_FIELD_NUMBER: _ClassVar[int]
     STREAM_URL_FIELD_NUMBER: _ClassVar[int]
     stream_id: str
@@ -176,7 +176,7 @@ class StartStreamOutput(_message.Message):
     def __init__(self, stream_id: _Optional[str] = ..., stream_url: _Optional[str] = ...) -> None: ...
 
 class AppendStreamInput(_message.Message):
-    __slots__ = ["stream_id", "offset", "data"]
+    __slots__ = ("stream_id", "offset", "data")
     STREAM_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
@@ -186,15 +186,15 @@ class AppendStreamInput(_message.Message):
     def __init__(self, stream_id: _Optional[str] = ..., offset: _Optional[int] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class AppendStreamOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class CloseStreamInput(_message.Message):
-    __slots__ = ["stream_id"]
+    __slots__ = ("stream_id",)
     STREAM_ID_FIELD_NUMBER: _ClassVar[int]
     stream_id: str
     def __init__(self, stream_id: _Optional[str] = ...) -> None: ...
 
 class CloseStreamOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

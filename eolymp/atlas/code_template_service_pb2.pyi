@@ -11,21 +11,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateCodeTemplateInput(_message.Message):
-    __slots__ = ["template"]
+    __slots__ = ("template",)
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     template: _code_template_pb2.Template
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class CreateCodeTemplateOutput(_message.Message):
-    __slots__ = ["template_id"]
+    __slots__ = ("template_id",)
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     template_id: str
     def __init__(self, template_id: _Optional[str] = ...) -> None: ...
 
 class UpdateCodeTemplateInput(_message.Message):
-    __slots__ = ["template_id", "template"]
+    __slots__ = ("template_id", "template")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateCodeTemplateInput.Patch]
         RUNTIME: _ClassVar[UpdateCodeTemplateInput.Patch]
         SOURCE: _ClassVar[UpdateCodeTemplateInput.Patch]
@@ -47,21 +47,21 @@ class UpdateCodeTemplateInput(_message.Message):
     def __init__(self, template_id: _Optional[str] = ..., template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class UpdateCodeTemplateOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteCodeTemplateInput(_message.Message):
-    __slots__ = ["template_id"]
+    __slots__ = ("template_id",)
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     template_id: str
     def __init__(self, template_id: _Optional[str] = ...) -> None: ...
 
 class DeleteCodeTemplateOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListCodeTemplatesInput(_message.Message):
-    __slots__ = ["offset", "size", "version"]
+    __slots__ = ("offset", "size", "version")
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
@@ -71,7 +71,7 @@ class ListCodeTemplatesInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListCodeTemplatesOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -79,7 +79,7 @@ class ListCodeTemplatesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ...) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ["template_id", "version"]
+    __slots__ = ("template_id", "version")
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     template_id: str
@@ -87,19 +87,19 @@ class DescribeCodeTemplateInput(_message.Message):
     def __init__(self, template_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
-    __slots__ = ["template"]
+    __slots__ = ("template",)
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     template: _code_template_pb2.Template
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class LookupCodeTemplateInput(_message.Message):
-    __slots__ = ["runtime"]
+    __slots__ = ("runtime",)
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     runtime: str
     def __init__(self, runtime: _Optional[str] = ...) -> None: ...
 
 class LookupCodeTemplateOutput(_message.Message):
-    __slots__ = ["template"]
+    __slots__ = ("template",)
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     template: _code_template_pb2.Template
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...

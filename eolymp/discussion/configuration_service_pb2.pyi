@@ -9,19 +9,19 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeDiscussionConfigInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeDiscussionConfigOutput(_message.Message):
-    __slots__ = ["config"]
+    __slots__ = ("config",)
     CONFIG_FIELD_NUMBER: _ClassVar[int]
     config: _configuration_pb2.Configuration
     def __init__(self, config: _Optional[_Union[_configuration_pb2.Configuration, _Mapping]] = ...) -> None: ...
 
 class UpdateDiscussionConfigInput(_message.Message):
-    __slots__ = ["config"]
+    __slots__ = ("config",)
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateDiscussionConfigInput.Patch]
         MEMBERS_CAN_CREATE_POSTS: _ClassVar[UpdateDiscussionConfigInput.Patch]
         MEMBERS_CAN_COMMENT_ON_POSTS: _ClassVar[UpdateDiscussionConfigInput.Patch]
@@ -39,5 +39,5 @@ class UpdateDiscussionConfigInput(_message.Message):
     def __init__(self, config: _Optional[_Union[_configuration_pb2.Configuration, _Mapping]] = ...) -> None: ...
 
 class UpdateDiscussionConfigOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

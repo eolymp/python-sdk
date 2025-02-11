@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateAccountInput(_message.Message):
-    __slots__ = ["member", "captcha"]
+    __slots__ = ("member", "captcha")
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     CAPTCHA_FIELD_NUMBER: _ClassVar[int]
     member: _member_pb2.Member
@@ -18,7 +18,7 @@ class CreateAccountInput(_message.Message):
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., captcha: _Optional[str] = ...) -> None: ...
 
 class CreateAccountOutput(_message.Message):
-    __slots__ = ["member_id", "hint"]
+    __slots__ = ("member_id", "hint")
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     HINT_FIELD_NUMBER: _ClassVar[int]
     member_id: str
@@ -26,11 +26,11 @@ class CreateAccountOutput(_message.Message):
     def __init__(self, member_id: _Optional[str] = ..., hint: _Optional[str] = ...) -> None: ...
 
 class DescribeAccountInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeAccountOutput(_message.Message):
-    __slots__ = ["member", "team", "extra"]
+    __slots__ = ("member", "team", "extra")
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     TEAM_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -40,9 +40,9 @@ class DescribeAccountOutput(_message.Message):
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., team: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
 class UpdateAccountInput(_message.Message):
-    __slots__ = ["patch", "current_password", "member"]
+    __slots__ = ("patch", "current_password", "member")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateAccountInput.Patch]
         USER_NICKNAME: _ClassVar[UpdateAccountInput.Patch]
         USER_EMAIL: _ClassVar[UpdateAccountInput.Patch]
@@ -82,13 +82,13 @@ class UpdateAccountInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateAccountInput.Patch, str]]] = ..., current_password: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class UpdateAccountOutput(_message.Message):
-    __slots__ = ["hint"]
+    __slots__ = ("hint",)
     HINT_FIELD_NUMBER: _ClassVar[int]
     hint: str
     def __init__(self, hint: _Optional[str] = ...) -> None: ...
 
 class UploadPictureInput(_message.Message):
-    __slots__ = ["filename", "data", "offset_x", "offset_y", "size"]
+    __slots__ = ("filename", "data", "offset_x", "offset_y", "size")
     FILENAME_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
     OFFSET_X_FIELD_NUMBER: _ClassVar[int]
@@ -102,29 +102,29 @@ class UploadPictureInput(_message.Message):
     def __init__(self, filename: _Optional[str] = ..., data: _Optional[bytes] = ..., offset_x: _Optional[int] = ..., offset_y: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class UploadPictureOutput(_message.Message):
-    __slots__ = ["picture_url"]
+    __slots__ = ("picture_url",)
     PICTURE_URL_FIELD_NUMBER: _ClassVar[int]
     picture_url: str
     def __init__(self, picture_url: _Optional[str] = ...) -> None: ...
 
 class DeleteAccountInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteAccountOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ResendVerificationInput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ResendVerificationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class CompleteVerificationInput(_message.Message):
-    __slots__ = ["code", "member_id"]
+    __slots__ = ("code", "member_id")
     CODE_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     code: str
@@ -132,11 +132,11 @@ class CompleteVerificationInput(_message.Message):
     def __init__(self, code: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class CompleteVerificationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class StartRecoveryInput(_message.Message):
-    __slots__ = ["email", "locale", "captcha"]
+    __slots__ = ("email", "locale", "captcha")
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     CAPTCHA_FIELD_NUMBER: _ClassVar[int]
@@ -146,7 +146,7 @@ class StartRecoveryInput(_message.Message):
     def __init__(self, email: _Optional[str] = ..., locale: _Optional[str] = ..., captcha: _Optional[str] = ...) -> None: ...
 
 class StartRecoveryOutput(_message.Message):
-    __slots__ = ["hint", "member_id"]
+    __slots__ = ("hint", "member_id")
     HINT_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     hint: str
@@ -154,7 +154,7 @@ class StartRecoveryOutput(_message.Message):
     def __init__(self, hint: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class CompleteRecoverInput(_message.Message):
-    __slots__ = ["code", "password", "member_id"]
+    __slots__ = ("code", "password", "member_id")
     CODE_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -164,5 +164,5 @@ class CompleteRecoverInput(_message.Message):
     def __init__(self, code: _Optional[str] = ..., password: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class CompleteRecoverOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

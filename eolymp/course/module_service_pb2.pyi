@@ -13,21 +13,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateModuleInput(_message.Message):
-    __slots__ = ["module"]
+    __slots__ = ("module",)
     MODULE_FIELD_NUMBER: _ClassVar[int]
     module: _module_pb2.Module
     def __init__(self, module: _Optional[_Union[_module_pb2.Module, _Mapping]] = ...) -> None: ...
 
 class CreateModuleOutput(_message.Message):
-    __slots__ = ["module_id"]
+    __slots__ = ("module_id",)
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     module_id: str
     def __init__(self, module_id: _Optional[str] = ...) -> None: ...
 
 class UpdateModuleInput(_message.Message):
-    __slots__ = ["patch", "module_id", "module"]
+    __slots__ = ("patch", "module_id", "module")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         ALL: _ClassVar[UpdateModuleInput.Patch]
         DRAFT: _ClassVar[UpdateModuleInput.Patch]
         EXTRA: _ClassVar[UpdateModuleInput.Patch]
@@ -53,21 +53,21 @@ class UpdateModuleInput(_message.Message):
     def __init__(self, patch: _Optional[_Iterable[_Union[UpdateModuleInput.Patch, str]]] = ..., module_id: _Optional[str] = ..., module: _Optional[_Union[_module_pb2.Module, _Mapping]] = ...) -> None: ...
 
 class UpdateModuleOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteModuleInput(_message.Message):
-    __slots__ = ["module_id"]
+    __slots__ = ("module_id",)
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     module_id: str
     def __init__(self, module_id: _Optional[str] = ...) -> None: ...
 
 class DeleteModuleOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeModuleInput(_message.Message):
-    __slots__ = ["module_id", "member_id", "group_id", "extra"]
+    __slots__ = ("module_id", "member_id", "group_id", "extra")
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
@@ -79,19 +79,19 @@ class DescribeModuleInput(_message.Message):
     def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_module_pb2.Module.Extra, str]]] = ...) -> None: ...
 
 class DescribeModuleOutput(_message.Message):
-    __slots__ = ["module"]
+    __slots__ = ("module",)
     MODULE_FIELD_NUMBER: _ClassVar[int]
     module: _module_pb2.Module
     def __init__(self, module: _Optional[_Union[_module_pb2.Module, _Mapping]] = ...) -> None: ...
 
 class ListModulesInput(_message.Message):
-    __slots__ = ["member_id", "group_id", "offset", "size", "search", "filters", "sort", "order", "extra"]
+    __slots__ = ("member_id", "group_id", "offset", "size", "search", "filters", "sort", "order", "extra")
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         INDEX: _ClassVar[ListModulesInput.Sort]
     INDEX: ListModulesInput.Sort
     class Filter(_message.Message):
-        __slots__ = ["draft", "extra", "graded", "weight"]
+        __slots__ = ("draft", "extra", "graded", "weight")
         DRAFT_FIELD_NUMBER: _ClassVar[int]
         EXTRA_FIELD_NUMBER: _ClassVar[int]
         GRADED_FIELD_NUMBER: _ClassVar[int]
@@ -122,7 +122,7 @@ class ListModulesInput(_message.Message):
     def __init__(self, member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListModulesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListModulesInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_module_pb2.Module.Extra, str]]] = ...) -> None: ...
 
 class ListModulesOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -130,17 +130,17 @@ class ListModulesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_module_pb2.Module, _Mapping]]] = ...) -> None: ...
 
 class StartModuleInput(_message.Message):
-    __slots__ = ["module_id"]
+    __slots__ = ("module_id",)
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     module_id: str
     def __init__(self, module_id: _Optional[str] = ...) -> None: ...
 
 class StartModuleOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GradeModuleInput(_message.Message):
-    __slots__ = ["module_id", "member_id", "grade", "excused"]
+    __slots__ = ("module_id", "member_id", "grade", "excused")
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     GRADE_FIELD_NUMBER: _ClassVar[int]
@@ -152,5 +152,5 @@ class GradeModuleInput(_message.Message):
     def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: bool = ...) -> None: ...
 
 class GradeModuleOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

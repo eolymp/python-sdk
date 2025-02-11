@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Team(_message.Message):
-    __slots__ = ["name", "staffed"]
+    __slots__ = ("name", "staffed")
     NAME_FIELD_NUMBER: _ClassVar[int]
     STAFFED_FIELD_NUMBER: _ClassVar[int]
     name: str

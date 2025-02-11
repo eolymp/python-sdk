@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Session(_message.Message):
-    __slots__ = ["id", "user_agent", "device", "location", "ip_address", "first_seen_at", "last_seen_at"]
+    __slots__ = ("id", "user_agent", "device", "location", "ip_address", "first_seen_at", "last_seen_at")
     ID_FIELD_NUMBER: _ClassVar[int]
     USER_AGENT_FIELD_NUMBER: _ClassVar[int]
     DEVICE_FIELD_NUMBER: _ClassVar[int]

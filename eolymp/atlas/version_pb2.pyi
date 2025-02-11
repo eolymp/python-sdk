@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Version(_message.Message):
-    __slots__ = ["id", "number", "created_at", "created_by", "change_op", "change_path", "cursor"]
+    __slots__ = ("id", "number", "created_at", "created_by", "change_op", "change_path", "cursor")
     ID_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]

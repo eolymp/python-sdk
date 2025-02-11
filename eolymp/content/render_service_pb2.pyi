@@ -9,13 +9,13 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RenderContentInput(_message.Message):
-    __slots__ = ["content"]
+    __slots__ = ("content",)
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     content: _content_pb2.Content
     def __init__(self, content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class RenderContentOutput(_message.Message):
-    __slots__ = ["render"]
+    __slots__ = ("render",)
     RENDER_FIELD_NUMBER: _ClassVar[int]
     render: _node_pb2.Node
     def __init__(self, render: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...

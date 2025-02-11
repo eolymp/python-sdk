@@ -11,15 +11,15 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class JobTriggerEvent(_message.Message):
-    __slots__ = ["job"]
+    __slots__ = ("job",)
     JOB_FIELD_NUMBER: _ClassVar[int]
     job: _worker_job_pb2.Job
     def __init__(self, job: _Optional[_Union[_worker_job_pb2.Job, _Mapping]] = ...) -> None: ...
 
 class CreateJobInput(_message.Message):
-    __slots__ = ["type", "inputs"]
+    __slots__ = ("type", "inputs")
     class InputsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -32,27 +32,27 @@ class CreateJobInput(_message.Message):
     def __init__(self, type: _Optional[str] = ..., inputs: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class CreateJobOutput(_message.Message):
-    __slots__ = ["job_id"]
+    __slots__ = ("job_id",)
     JOB_ID_FIELD_NUMBER: _ClassVar[int]
     job_id: str
     def __init__(self, job_id: _Optional[str] = ...) -> None: ...
 
 class DescribeJobInput(_message.Message):
-    __slots__ = ["job_id"]
+    __slots__ = ("job_id",)
     JOB_ID_FIELD_NUMBER: _ClassVar[int]
     job_id: str
     def __init__(self, job_id: _Optional[str] = ...) -> None: ...
 
 class DescribeJobOutput(_message.Message):
-    __slots__ = ["job"]
+    __slots__ = ("job",)
     JOB_FIELD_NUMBER: _ClassVar[int]
     job: _worker_job_pb2.Job
     def __init__(self, job: _Optional[_Union[_worker_job_pb2.Job, _Mapping]] = ...) -> None: ...
 
 class ListJobsInput(_message.Message):
-    __slots__ = ["offset", "size", "filters"]
+    __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ["id", "type", "status"]
+        __slots__ = ("id", "type", "status")
         ID_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -69,7 +69,7 @@ class ListJobsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListJobsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListJobsOutput(_message.Message):
-    __slots__ = ["total", "items"]
+    __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int

@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Module(_message.Message):
-    __slots__ = ["id", "url", "draft", "extra", "weight", "name", "image_url", "index", "description", "start_after", "complete_before", "duration", "progress", "assignment"]
+    __slots__ = ("id", "url", "draft", "extra", "weight", "name", "image_url", "index", "description", "start_after", "complete_before", "duration", "progress", "assignment")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Module.Extra]
         DESCRIPTION_VALUE: _ClassVar[Module.Extra]
         DESCRIPTION_RENDER: _ClassVar[Module.Extra]
@@ -23,7 +23,7 @@ class Module(_message.Message):
     PROGRESS: Module.Extra
     ASSIGNMENT: Module.Extra
     class Progress(_message.Message):
-        __slots__ = ["status", "percentage", "grade", "grade_automatic", "grade_override", "excused", "start_after", "complete_before", "duration", "upsolve", "assigned_at", "started_at", "completed_at"]
+        __slots__ = ("status", "percentage", "grade", "grade_automatic", "grade_override", "excused", "start_after", "complete_before", "duration", "upsolve", "assigned_at", "started_at", "completed_at")
         STATUS_FIELD_NUMBER: _ClassVar[int]
         PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
         GRADE_FIELD_NUMBER: _ClassVar[int]

@@ -6,9 +6,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ExecuteJobInput(_message.Message):
-    __slots__ = ["job_id", "namespace", "type", "inputs"]
+    __slots__ = ("job_id", "namespace", "type", "inputs")
     class InputsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -25,18 +25,18 @@ class ExecuteJobInput(_message.Message):
     def __init__(self, job_id: _Optional[str] = ..., namespace: _Optional[str] = ..., type: _Optional[str] = ..., inputs: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ExecuteJobUpdate(_message.Message):
-    __slots__ = ["progress", "outputs", "logs"]
+    __slots__ = ("progress", "outputs", "logs")
     class ProgressUpdate(_message.Message):
-        __slots__ = ["progress", "total"]
+        __slots__ = ("progress", "total")
         PROGRESS_FIELD_NUMBER: _ClassVar[int]
         TOTAL_FIELD_NUMBER: _ClassVar[int]
         progress: int
         total: int
         def __init__(self, progress: _Optional[int] = ..., total: _Optional[int] = ...) -> None: ...
     class OutputUpdate(_message.Message):
-        __slots__ = ["outputs"]
+        __slots__ = ("outputs",)
         class OutputsEntry(_message.Message):
-            __slots__ = ["key", "value"]
+            __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]
             VALUE_FIELD_NUMBER: _ClassVar[int]
             key: str
@@ -46,7 +46,7 @@ class ExecuteJobUpdate(_message.Message):
         outputs: _containers.ScalarMap[str, str]
         def __init__(self, outputs: _Optional[_Mapping[str, str]] = ...) -> None: ...
     class LoggingUpdate(_message.Message):
-        __slots__ = ["chunk"]
+        __slots__ = ("chunk",)
         CHUNK_FIELD_NUMBER: _ClassVar[int]
         chunk: bytes
         def __init__(self, chunk: _Optional[bytes] = ...) -> None: ...

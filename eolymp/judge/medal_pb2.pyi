@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Medal(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     NO_MEDAL: _ClassVar[Medal]
     GOLD_MEDAL: _ClassVar[Medal]
     SILVER_MEDAL: _ClassVar[Medal]

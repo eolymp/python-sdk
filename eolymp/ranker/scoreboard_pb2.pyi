@@ -10,9 +10,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ["id", "key", "name", "historical", "frozen", "freeze_at", "freeze_in", "unfreeze_at", "unfreeze_in", "default_sort_column", "default_sort_order", "format"]
+    __slots__ = ("id", "key", "name", "historical", "frozen", "freeze_at", "freeze_in", "unfreeze_at", "unfreeze_in", "default_sort_column", "default_sort_order", "format")
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         LATEST: _ClassVar[Scoreboard.FetchingMode]
         PUNCTUAL: _ClassVar[Scoreboard.FetchingMode]
         FROZEN: _ClassVar[Scoreboard.FetchingMode]
@@ -22,9 +22,9 @@ class Scoreboard(_message.Message):
     FROZEN: Scoreboard.FetchingMode
     UPSOLVE: Scoreboard.FetchingMode
     class Row(_message.Message):
-        __slots__ = ["id", "name", "member_id", "score", "penalty", "ghost", "unofficial", "rank", "rank_lower", "values"]
+        __slots__ = ("id", "name", "member_id", "score", "penalty", "ghost", "unofficial", "rank", "rank_lower", "values")
         class Value(_message.Message):
-            __slots__ = ["id", "column_id", "valid_after", "valid_until", "score", "penalty", "percentage", "attempts", "solved_in", "upsolve", "value_string", "value_number"]
+            __slots__ = ("id", "column_id", "valid_after", "valid_until", "score", "penalty", "percentage", "attempts", "solved_in", "upsolve", "value_string", "value_number")
             ID_FIELD_NUMBER: _ClassVar[int]
             COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
             VALID_AFTER_FIELD_NUMBER: _ClassVar[int]
@@ -72,9 +72,9 @@ class Scoreboard(_message.Message):
         values: _containers.RepeatedCompositeFieldContainer[Scoreboard.Row.Value]
         def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., member_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., ghost: bool = ..., unofficial: bool = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
     class Column(_message.Message):
-        __slots__ = ["id", "parent_id", "key", "name", "short_name", "type", "index", "visible", "filterable", "sortable", "judge_contest_id", "judge_problem_id", "community_attribute_key", "community_attribute_type"]
+        __slots__ = ("id", "parent_id", "key", "name", "short_name", "type", "index", "visible", "filterable", "sortable", "judge_contest_id", "judge_problem_id", "community_attribute_key", "community_attribute_type")
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = []
+            __slots__ = ()
             NONE: _ClassVar[Scoreboard.Column.Type]
             CONTEST: _ClassVar[Scoreboard.Column.Type]
             PROBLEM: _ClassVar[Scoreboard.Column.Type]
@@ -117,9 +117,9 @@ class Scoreboard(_message.Message):
         community_attribute_type: str
         def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ...) -> None: ...
     class Action(_message.Message):
-        __slots__ = ["id", "execute_at", "type"]
+        __slots__ = ("id", "execute_at", "type")
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = []
+            __slots__ = ()
             NONE: _ClassVar[Scoreboard.Action.Type]
             FREEZE: _ClassVar[Scoreboard.Action.Type]
             UNFREEZE: _ClassVar[Scoreboard.Action.Type]

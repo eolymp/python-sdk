@@ -10,13 +10,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeRegistrationInput(_message.Message):
-    __slots__ = ["contest_id"]
+    __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class DescribeRegistrationOutput(_message.Message):
-    __slots__ = ["attributes", "values"]
+    __slots__ = ("attributes", "values")
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     VALUES_FIELD_NUMBER: _ClassVar[int]
     attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute]
@@ -24,7 +24,7 @@ class DescribeRegistrationOutput(_message.Message):
     def __init__(self, attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute, _Mapping]]] = ..., values: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
 
 class SubmitRegistrationInput(_message.Message):
-    __slots__ = ["contest_id", "values"]
+    __slots__ = ("contest_id", "values")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     VALUES_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -32,5 +32,5 @@ class SubmitRegistrationInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...
 
 class SubmitRegistrationOutput(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

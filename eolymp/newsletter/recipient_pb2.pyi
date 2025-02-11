@@ -7,9 +7,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Recipient(_message.Message):
-    __slots__ = ["id", "created_at", "updated_at", "sent_at", "delivered_at", "member_id", "status"]
+    __slots__ = ("id", "created_at", "updated_at", "sent_at", "delivered_at", "member_id", "status")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Recipient.Status]
         CREATED: _ClassVar[Recipient.Status]
         PENDING: _ClassVar[Recipient.Status]
