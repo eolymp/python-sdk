@@ -80,6 +80,28 @@ class TestingServiceClient:
             **kwargs,
         )
 
+    def UpdateValidator(self, request, **kwargs):
+        path = "/validator"
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateValidatorOutput"),
+            **kwargs,
+        )
+
+    def DescribeValidator(self, request, **kwargs):
+        path = "/validator"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeValidatorOutput"),
+            **kwargs,
+        )
+
     def CreateTestset(self, request, **kwargs):
         path = "/testsets"
 

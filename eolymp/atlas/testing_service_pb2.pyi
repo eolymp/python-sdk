@@ -6,6 +6,7 @@ from eolymp.atlas import testing_config_pb2 as _testing_config_pb2
 from eolymp.atlas import testing_interactor_pb2 as _testing_interactor_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.atlas import testing_testset_pb2 as _testing_testset_pb2
+from eolymp.atlas import testing_validator_pb2 as _testing_validator_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -79,6 +80,28 @@ class DescribeInteractorOutput(_message.Message):
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
     interactor: _testing_interactor_pb2.Interactor
     def __init__(self, interactor: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ...) -> None: ...
+
+class UpdateValidatorInput(_message.Message):
+    __slots__ = ("validator",)
+    VALIDATOR_FIELD_NUMBER: _ClassVar[int]
+    validator: _testing_validator_pb2.Validator
+    def __init__(self, validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
+
+class UpdateValidatorOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeValidatorInput(_message.Message):
+    __slots__ = ("version",)
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    version: int
+    def __init__(self, version: _Optional[int] = ...) -> None: ...
+
+class DescribeValidatorOutput(_message.Message):
+    __slots__ = ("validator",)
+    VALIDATOR_FIELD_NUMBER: _ClassVar[int]
+    validator: _testing_validator_pb2.Validator
+    def __init__(self, validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
 
 class ListTestsetsInput(_message.Message):
     __slots__ = ("offset", "size", "version")
