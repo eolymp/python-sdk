@@ -153,6 +153,20 @@ class CancelPrinterJobOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class UpdatePrinterJobInput(_message.Message):
+    __slots__ = ("printer_id", "job_id", "job")
+    PRINTER_ID_FIELD_NUMBER: _ClassVar[int]
+    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    JOB_FIELD_NUMBER: _ClassVar[int]
+    printer_id: str
+    job_id: str
+    job: _printer_job_pb2.Job
+    def __init__(self, printer_id: _Optional[str] = ..., job_id: _Optional[str] = ..., job: _Optional[_Union[_printer_job_pb2.Job, _Mapping]] = ...) -> None: ...
+
+class UpdatePrinterJobOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class DeletePrinterJobInput(_message.Message):
     __slots__ = ("printer_id", "job_id")
     PRINTER_ID_FIELD_NUMBER: _ClassVar[int]

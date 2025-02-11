@@ -121,6 +121,21 @@ class PrinterServiceClient:
             **kwargs,
         )
 
+    def UpdatePrinterJob(self, request, **kwargs):
+        path = "/printers/"+urllib.parse.quote(request.printer_id)+"/jobs/"+urllib.parse.quote(request.job_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.printer_id = ""
+        request.job_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.printer.UpdatePrinterJobOutput"),
+            **kwargs,
+        )
+
     def DeletePrinterJob(self, request, **kwargs):
         path = "/printers/"+urllib.parse.quote(request.printer_id)+"/jobs/"+urllib.parse.quote(request.job_id)
 
