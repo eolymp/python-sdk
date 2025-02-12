@@ -12,6 +12,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class ScriptChangedEvent(_message.Message):
+    __slots__ = ("problem_id", "before", "after")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    before: _script_pb2.Script
+    after: _script_pb2.Script
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., after: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
+
 class CreateScriptInput(_message.Message):
     __slots__ = ("script",)
     SCRIPT_FIELD_NUMBER: _ClassVar[int]
