@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/atlas/testing_test.proto\x12\x0c\x65olymp.atlas\"\xd5\x04\n\x04Test\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\x05\x12)\n\x06status\x18< \x01(\x0e\x32\x19.eolymp.atlas.Test.Status\x12\x16\n\x0estatus_message\x18= \x01(\t\x12\x0f\n\x07\x65xample\x18\x04 \x01(\x08\x12\x10\n\x08inactive\x18\x07 \x01(\x08\x12\x0e\n\x06secret\x18\x06 \x01(\x08\x12\r\n\x05score\x18\x05 \x01(\x02\x12\x19\n\x11\x65xample_input_url\x18( \x01(\t\x12\x1a\n\x12\x65xample_answer_url\x18) \x01(\t\x12\x1b\n\x13generated_input_url\x18\x32 \x01(\t\x12\x1c\n\x14generated_answer_url\x18\x33 \x01(\t\x12\x13\n\tinput_url\x18\x0b \x01(\tH\x00\x12\x37\n\x0finput_generator\x18\x0c \x01(\x0b\x32\x1c.eolymp.atlas.Test.GeneratorH\x00\x12\x14\n\nanswer_url\x18\x15 \x01(\tH\x01\x12\x38\n\x10\x61nswer_generator\x18\x16 \x01(\x0b\x32\x1c.eolymp.atlas.Test.GeneratorH\x01\x1a\x33\n\tGenerator\x12\x13\n\x0bscript_name\x18\x01 \x01(\t\x12\x11\n\targuments\x18\x02 \x03(\t\"A\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\t\n\x05READY\x10\x02\x12\x0b\n\x07INVALID\x10\x03\x42\x07\n\x05inputB\x08\n\x06\x61nswerB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/atlas/testing_test.proto\x12\x0c\x65olymp.atlas\"\xe9\x04\n\x04Test\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x14 \x01(\t\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\x03 \x01(\x05\x12)\n\x06status\x18< \x01(\x0e\x32\x19.eolymp.atlas.Test.Status\x12\x16\n\x0estatus_message\x18= \x01(\t\x12\x0f\n\x07\x65xample\x18\x04 \x01(\x08\x12\x10\n\x08inactive\x18\x07 \x01(\x08\x12\x0e\n\x06secret\x18\x06 \x01(\x08\x12\r\n\x05score\x18\x05 \x01(\x02\x12\x19\n\x11\x65xample_input_url\x18( \x01(\t\x12\x1a\n\x12\x65xample_answer_url\x18) \x01(\t\x12\x1b\n\x13generated_input_url\x18\x32 \x01(\t\x12\x1c\n\x14generated_answer_url\x18\x33 \x01(\t\x12\x13\n\tinput_url\x18\x0b \x01(\tH\x00\x12\x37\n\x0finput_generator\x18\x0c \x01(\x0b\x32\x1c.eolymp.atlas.Test.GeneratorH\x00\x12\x14\n\nanswer_url\x18\x15 \x01(\tH\x01\x12\x38\n\x10\x61nswer_generator\x18\x16 \x01(\x0b\x32\x1c.eolymp.atlas.Test.GeneratorH\x01\x1a\x33\n\tGenerator\x12\x13\n\x0bscript_name\x18\x01 \x01(\t\x12\x11\n\targuments\x18\x02 \x03(\t\"A\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\t\n\x05READY\x10\x02\x12\x0b\n\x07INVALID\x10\x03\x42\x07\n\x05inputB\x08\n\x06\x61nswerB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,9 +33,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_TEST']._serialized_start=50
-  _globals['_TEST']._serialized_end=647
-  _globals['_TEST_GENERATOR']._serialized_start=510
-  _globals['_TEST_GENERATOR']._serialized_end=561
-  _globals['_TEST_STATUS']._serialized_start=563
-  _globals['_TEST_STATUS']._serialized_end=628
+  _globals['_TEST']._serialized_end=667
+  _globals['_TEST_GENERATOR']._serialized_start=530
+  _globals['_TEST_GENERATOR']._serialized_end=581
+  _globals['_TEST_STATUS']._serialized_start=583
+  _globals['_TEST_STATUS']._serialized_end=648
 # @@protoc_insertion_point(module_scope)

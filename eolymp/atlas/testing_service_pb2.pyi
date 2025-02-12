@@ -15,6 +15,66 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class TestingConfigChangedEvent(_message.Message):
+    __slots__ = ("problem_id", "before", "after")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    before: _testing_config_pb2.TestingConfig
+    after: _testing_config_pb2.TestingConfig
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ..., after: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ...) -> None: ...
+
+class InteractorChangedEvent(_message.Message):
+    __slots__ = ("problem_id", "before", "after")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    before: _testing_interactor_pb2.Interactor
+    after: _testing_interactor_pb2.Interactor
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ..., after: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ...) -> None: ...
+
+class CheckerChangedEvent(_message.Message):
+    __slots__ = ("problem_id", "before", "after")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    before: _testing_checker_pb2.Checker
+    after: _testing_checker_pb2.Checker
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_testing_checker_pb2.Checker, _Mapping]] = ..., after: _Optional[_Union[_testing_checker_pb2.Checker, _Mapping]] = ...) -> None: ...
+
+class ValidatorChangedEvent(_message.Message):
+    __slots__ = ("problem_id", "before", "after")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    before: _testing_validator_pb2.Validator
+    after: _testing_validator_pb2.Validator
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ..., after: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
+
+class TestsetChangedEvent(_message.Message):
+    __slots__ = ("problem_id", "before", "after")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    before: _testing_testset_pb2.Testset
+    after: _testing_testset_pb2.Testset
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_testing_testset_pb2.Testset, _Mapping]] = ..., after: _Optional[_Union[_testing_testset_pb2.Testset, _Mapping]] = ...) -> None: ...
+
+class TestChangedEvent(_message.Message):
+    __slots__ = ("problem_id", "before", "after")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    before: _testing_test_pb2.Test
+    after: _testing_test_pb2.Test
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ..., after: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
+
 class UpdateTestingConfigInput(_message.Message):
     __slots__ = ("config",)
     CONFIG_FIELD_NUMBER: _ClassVar[int]

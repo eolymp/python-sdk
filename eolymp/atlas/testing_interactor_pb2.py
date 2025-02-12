@@ -26,7 +26,7 @@ from eolymp.executor import file_pb2 as eolymp_dot_executor_dot_file__pb2
 from eolymp.executor import interactor_pb2 as eolymp_dot_executor_dot_interactor__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/testing_interactor.proto\x12\x0c\x65olymp.atlas\x1a\x1a\x65olymp/executor/file.proto\x1a eolymp/executor/interactor.proto\"\x93\x01\n\nInteractor\x12.\n\x04type\x18\x01 \x01(\x0e\x32 .eolymp.executor.Interactor.Type\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x08 \x01(\t\x12\x0e\n\x06secret\x18\x07 \x01(\x08\x12$\n\x05\x66iles\x18\n \x03(\x0b\x32\x15.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/testing_interactor.proto\x12\x0c\x65olymp.atlas\x1a\x1a\x65olymp/executor/file.proto\x1a eolymp/executor/interactor.proto\"\xa7\x01\n\nInteractor\x12\x12\n\nversion_id\x18\x03 \x01(\t\x12\x0e\n\x06secret\x18\x07 \x01(\x08\x12.\n\x04type\x18\x01 \x01(\x0e\x32 .eolymp.executor.Interactor.Type\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x08 \x01(\t\x12$\n\x05\x66iles\x18\n \x03(\x0b\x32\x15.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,5 +35,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_INTERACTOR']._serialized_start=118
-  _globals['_INTERACTOR']._serialized_end=265
+  _globals['_INTERACTOR']._serialized_end=285
 # @@protoc_insertion_point(module_scope)
