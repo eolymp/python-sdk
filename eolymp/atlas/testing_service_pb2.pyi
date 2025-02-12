@@ -76,16 +76,14 @@ class TestChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ..., after: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
 
 class TestBatchChangedEvent(_message.Message):
-    __slots__ = ("problem_id", "created", "updated", "deleted")
+    __slots__ = ("problem_id", "before", "after")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    CREATED_FIELD_NUMBER: _ClassVar[int]
-    UPDATED_FIELD_NUMBER: _ClassVar[int]
-    DELETED_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    created: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
-    updated: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
-    deleted: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
-    def __init__(self, problem_id: _Optional[str] = ..., created: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ..., updated: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ..., deleted: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
+    before: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
+    after: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ..., after: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
 
 class UpdateTestingConfigInput(_message.Message):
     __slots__ = ("config",)
