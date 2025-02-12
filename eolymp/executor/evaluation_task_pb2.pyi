@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationTask(_message.Message):
-    __slots__ = ("task_id", "reference", "origin", "metadata", "priority", "redirect_stderr_to_stdout", "run_count", "preconditions", "constraints", "submission", "interactor", "checker", "scripts", "runs")
+    __slots__ = ("task_id", "reference", "origin", "metadata", "priority", "redirect_stderr_to_stdout", "time_coefficient_deviation", "run_count", "preconditions", "constraints", "submission", "interactor", "checker", "scripts", "runs")
     class DependencyMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_DEPENDENCY_MODE: _ClassVar[EvaluationTask.DependencyMode]
@@ -100,6 +100,7 @@ class EvaluationTask(_message.Message):
     METADATA_FIELD_NUMBER: _ClassVar[int]
     PRIORITY_FIELD_NUMBER: _ClassVar[int]
     REDIRECT_STDERR_TO_STDOUT_FIELD_NUMBER: _ClassVar[int]
+    TIME_COEFFICIENT_DEVIATION_FIELD_NUMBER: _ClassVar[int]
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
@@ -114,6 +115,7 @@ class EvaluationTask(_message.Message):
     metadata: _containers.ScalarMap[str, str]
     priority: int
     redirect_stderr_to_stdout: bool
+    time_coefficient_deviation: float
     run_count: int
     preconditions: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Precondition]
     constraints: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Constraint]
@@ -122,4 +124,4 @@ class EvaluationTask(_message.Message):
     checker: _checker_pb2.Checker
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     runs: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., priority: _Optional[int] = ..., redirect_stderr_to_stdout: bool = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., submission: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., priority: _Optional[int] = ..., redirect_stderr_to_stdout: bool = ..., time_coefficient_deviation: _Optional[float] = ..., run_count: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., submission: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...

@@ -38,7 +38,7 @@ class EvaluationReport(_message.Message):
     TYPE_ERROR: EvaluationReport.Type
     TYPE_FAILURE: EvaluationReport.Type
     class Run(_message.Message):
-        __slots__ = ("reference", "status", "score", "cost", "wall_time_usage", "wall_time_limit", "cpu_time_usage", "cpu_time_limit", "memory_usage", "memory_limit", "input_url", "output_url", "answer_url", "debug_stats", "checker_stats", "interactor_stats")
+        __slots__ = ("reference", "status", "score", "cost", "time_usage", "time_limit", "cpu_usage", "cpu_limit", "memory_usage", "memory_limit", "time_coefficient", "input_url", "output_url", "answer_url", "debug_stats", "checker_stats", "interactor_stats")
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             NONE: _ClassVar[EvaluationReport.Run.Status]
@@ -73,12 +73,13 @@ class EvaluationReport(_message.Message):
         STATUS_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         COST_FIELD_NUMBER: _ClassVar[int]
-        WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
-        WALL_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
-        CPU_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
-        CPU_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
+        TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
+        TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
+        CPU_USAGE_FIELD_NUMBER: _ClassVar[int]
+        CPU_LIMIT_FIELD_NUMBER: _ClassVar[int]
         MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
         MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
+        TIME_COEFFICIENT_FIELD_NUMBER: _ClassVar[int]
         INPUT_URL_FIELD_NUMBER: _ClassVar[int]
         OUTPUT_URL_FIELD_NUMBER: _ClassVar[int]
         ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
@@ -89,19 +90,20 @@ class EvaluationReport(_message.Message):
         status: EvaluationReport.Run.Status
         score: float
         cost: float
-        wall_time_usage: int
-        wall_time_limit: int
-        cpu_time_usage: int
-        cpu_time_limit: int
+        time_usage: int
+        time_limit: int
+        cpu_usage: int
+        cpu_limit: int
         memory_usage: int
         memory_limit: int
+        time_coefficient: float
         input_url: str
         output_url: str
         answer_url: str
         debug_stats: _stats_pb2.Stats
         checker_stats: _stats_pb2.Stats
         interactor_stats: _stats_pb2.Stats
-        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[EvaluationReport.Run.Status, str]] = ..., score: _Optional[float] = ..., cost: _Optional[float] = ..., wall_time_usage: _Optional[int] = ..., wall_time_limit: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., cpu_time_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[EvaluationReport.Run.Status, str]] = ..., score: _Optional[float] = ..., cost: _Optional[float] = ..., time_usage: _Optional[int] = ..., time_limit: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_usage: _Optional[int] = ..., memory_limit: _Optional[int] = ..., time_coefficient: _Optional[float] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
