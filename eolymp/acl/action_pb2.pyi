@@ -23,6 +23,7 @@ class Action(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     CONTEST_LIST: _ClassVar[Action]
     CONTEST_READ: _ClassVar[Action]
     CONTEST_WRITE: _ClassVar[Action]
+    CONTEST_ADMIT: _ClassVar[Action]
     TICKET_LIST: _ClassVar[Action]
     TICKET_READ: _ClassVar[Action]
     TICKET_WRITE: _ClassVar[Action]
@@ -59,6 +60,7 @@ PROBLEM_TESTING: Action
 CONTEST_LIST: Action
 CONTEST_READ: Action
 CONTEST_WRITE: Action
+CONTEST_ADMIT: Action
 TICKET_LIST: Action
 TICKET_READ: Action
 TICKET_WRITE: Action
