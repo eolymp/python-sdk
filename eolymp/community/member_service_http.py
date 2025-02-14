@@ -39,6 +39,20 @@ class MemberServiceClient:
             **kwargs,
         )
 
+    def UpdateMemberPicture(self, request, **kwargs):
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/picture"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateMemberPictureOutput"),
+            **kwargs,
+        )
+
     def DeleteMember(self, request, **kwargs):
         path = "/members/"+urllib.parse.quote(request.member_id)
 

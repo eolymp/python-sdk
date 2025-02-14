@@ -25,6 +25,17 @@ class AdmissionServiceClient:
             **kwargs,
         )
 
+    def DescribeAdmission(self, request, **kwargs):
+        path = "/admission:request"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeAdmissionOutput"),
+            **kwargs,
+        )
+
     def AcceptAdmission(self, request, **kwargs):
         path = "/admission:accept"
 

@@ -97,6 +97,28 @@ class UpdateMemberOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class UpdateMemberPictureInput(_message.Message):
+    __slots__ = ("member_id", "filename", "data", "offset_x", "offset_y", "size")
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    FILENAME_FIELD_NUMBER: _ClassVar[int]
+    DATA_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_X_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_Y_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    filename: str
+    data: bytes
+    offset_x: int
+    offset_y: int
+    size: int
+    def __init__(self, member_id: _Optional[str] = ..., filename: _Optional[str] = ..., data: _Optional[bytes] = ..., offset_x: _Optional[int] = ..., offset_y: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+
+class UpdateMemberPictureOutput(_message.Message):
+    __slots__ = ("picture_url",)
+    PICTURE_URL_FIELD_NUMBER: _ClassVar[int]
+    picture_url: str
+    def __init__(self, picture_url: _Optional[str] = ...) -> None: ...
+
 class DeleteMemberInput(_message.Message):
     __slots__ = ("member_id", "force_delete")
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
