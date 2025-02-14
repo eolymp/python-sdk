@@ -16,7 +16,7 @@ class GenerationTask(_message.Message):
         arguments: _containers.RepeatedScalarFieldContainer[str]
         def __init__(self, script_name: _Optional[str] = ..., arguments: _Optional[_Iterable[str]] = ...) -> None: ...
     class Run(_message.Message):
-        __slots__ = ("reference", "index", "cost", "env", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator")
+        __slots__ = ("reference", "index", "group", "cost", "env", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator")
         class EnvEntry(_message.Message):
             __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]
@@ -26,6 +26,7 @@ class GenerationTask(_message.Message):
             def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
         REFERENCE_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
+        GROUP_FIELD_NUMBER: _ClassVar[int]
         COST_FIELD_NUMBER: _ClassVar[int]
         ENV_FIELD_NUMBER: _ClassVar[int]
         INPUT_URL_FIELD_NUMBER: _ClassVar[int]
@@ -36,6 +37,7 @@ class GenerationTask(_message.Message):
         ANSWER_GENERATOR_FIELD_NUMBER: _ClassVar[int]
         reference: str
         index: int
+        group: int
         cost: float
         env: _containers.ScalarMap[str, str]
         input_url: str
@@ -44,7 +46,7 @@ class GenerationTask(_message.Message):
         answer_url: str
         answer_content: str
         answer_generator: GenerationTask.Generator
-        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., group: _Optional[int] = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[GenerationTask.Generator, _Mapping]] = ...) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
