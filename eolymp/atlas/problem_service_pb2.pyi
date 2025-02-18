@@ -16,12 +16,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ProblemChangedEvent(_message.Message):
-    __slots__ = ("before", "after")
+    __slots__ = ("before", "after", "version")
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     before: _problem_pb2.Problem
     after: _problem_pb2.Problem
-    def __init__(self, before: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., after: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
+    version: _version_pb2.Version
+    def __init__(self, before: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., after: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., version: _Optional[_Union[_version_pb2.Version, _Mapping]] = ...) -> None: ...
 
 class CreateProblemInput(_message.Message):
     __slots__ = ("problem", "statement")

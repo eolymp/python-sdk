@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/version.proto\x12\x0c\x65olymp.atlas\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa1\x01\n\x07Version\x12\n\n\x02id\x18\x06 \x01(\t\x12\x0e\n\x06number\x18\x01 \x01(\r\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12\x11\n\tchange_op\x18\x04 \x01(\t\x12\x13\n\x0b\x63hange_path\x18\x05 \x01(\t\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/version.proto\x12\x0c\x65olymp.atlas\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc3\x02\n\x07Version\x12\n\n\x02id\x18\x06 \x01(\t\x12\x0e\n\x06number\x18\x01 \x01(\r\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12\x0f\n\x07summary\x18\t \x01(\t\x12-\n\x07\x63hanges\x18\n \x03(\x0b\x32\x1c.eolymp.atlas.Version.Change\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\t\x1a\x43\n\x06\x43hange\x12+\n\x02op\x18\x01 \x01(\x0e\x32\x1f.eolymp.atlas.Version.Operation\x12\x0c\n\x04path\x18\x02 \x01(\t\"C\n\tOperation\x12\x15\n\x11UNKNOWN_OPERATION\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06UPDATE\x10\x02\x12\n\n\x06\x44\x45LETE\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,5 +34,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_VERSION']._serialized_start=78
-  _globals['_VERSION']._serialized_end=239
+  _globals['_VERSION']._serialized_end=401
+  _globals['_VERSION_CHANGE']._serialized_start=265
+  _globals['_VERSION_CHANGE']._serialized_end=332
+  _globals['_VERSION_OPERATION']._serialized_start=334
+  _globals['_VERSION_OPERATION']._serialized_end=401
 # @@protoc_insertion_point(module_scope)
