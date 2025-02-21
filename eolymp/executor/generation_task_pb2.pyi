@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GenerationTask(_message.Message):
-    __slots__ = ("task_id", "reference", "origin", "metadata", "run_count", "interactor", "validator", "scripts", "runs")
+    __slots__ = ("task_id", "reference", "origin", "metadata", "run_count", "interactive_followup", "interactor", "validator", "scripts", "runs")
     class Generator(_message.Message):
         __slots__ = ("script_name", "arguments")
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -59,6 +59,7 @@ class GenerationTask(_message.Message):
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     METADATA_FIELD_NUMBER: _ClassVar[int]
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
+    INTERACTIVE_FOLLOWUP_FIELD_NUMBER: _ClassVar[int]
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
     VALIDATOR_FIELD_NUMBER: _ClassVar[int]
     SCRIPTS_FIELD_NUMBER: _ClassVar[int]
@@ -68,8 +69,9 @@ class GenerationTask(_message.Message):
     origin: str
     metadata: _containers.ScalarMap[str, str]
     run_count: int
+    interactive_followup: bool
     interactor: _script_pb2.Script
     validator: _script_pb2.Script
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     runs: _containers.RepeatedCompositeFieldContainer[GenerationTask.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., run_count: _Optional[int] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., validator: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[GenerationTask.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., run_count: _Optional[int] = ..., interactive_followup: bool = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., validator: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[GenerationTask.Run, _Mapping]]] = ...) -> None: ...

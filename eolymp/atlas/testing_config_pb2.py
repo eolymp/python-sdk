@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/testing_config.proto\x12\x0c\x65olymp.atlas\"\"\n\rTestingConfig\x12\x11\n\trun_count\x18\x01 \x01(\rB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/testing_config.proto\x12\x0c\x65olymp.atlas\"@\n\rTestingConfig\x12\x11\n\trun_count\x18\x01 \x01(\r\x12\x1c\n\x14interactive_followup\x18\x02 \x01(\x08\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_TESTINGCONFIG']._serialized_start=51
-  _globals['_TESTINGCONFIG']._serialized_end=85
+  _globals['_TESTINGCONFIG']._serialized_end=115
 # @@protoc_insertion_point(module_scope)
