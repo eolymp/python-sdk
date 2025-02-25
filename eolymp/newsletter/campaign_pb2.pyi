@@ -30,16 +30,18 @@ class Campaign(_message.Message):
     CONTENT_VALUE: Campaign.Extra
     CONTENT_RENDER: Campaign.Extra
     class Translation(_message.Message):
-        __slots__ = ("id", "locale", "subject", "content")
+        __slots__ = ("id", "locale", "subject", "content", "automatic")
         ID_FIELD_NUMBER: _ClassVar[int]
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
+        AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
         id: str
         locale: str
         subject: str
         content: _content_pb2.Content
-        def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+        automatic: bool
+        def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., automatic: bool = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]

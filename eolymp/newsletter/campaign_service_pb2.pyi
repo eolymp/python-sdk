@@ -128,6 +128,26 @@ class SendCampaignOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class TranslateCampaignInput(_message.Message):
+    __slots__ = ("campaign_id", "source", "target", "target_automatic", "override_manual")
+    CAMPAIGN_ID_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    TARGET_FIELD_NUMBER: _ClassVar[int]
+    TARGET_AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
+    OVERRIDE_MANUAL_FIELD_NUMBER: _ClassVar[int]
+    campaign_id: str
+    source: str
+    target: _containers.RepeatedScalarFieldContainer[str]
+    target_automatic: bool
+    override_manual: bool
+    def __init__(self, campaign_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
+
+class TranslateCampaignOutput(_message.Message):
+    __slots__ = ("job_id",)
+    JOB_ID_FIELD_NUMBER: _ClassVar[int]
+    job_id: str
+    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
+
 class CreateTranslationInput(_message.Message):
     __slots__ = ("campaign_id", "translation")
     CAMPAIGN_ID_FIELD_NUMBER: _ClassVar[int]

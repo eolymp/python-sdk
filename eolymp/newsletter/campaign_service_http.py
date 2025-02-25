@@ -106,6 +106,20 @@ class CampaignServiceClient:
             **kwargs,
         )
 
+    def TranslateCampaign(self, request, **kwargs):
+        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/translate"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.campaign_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.TranslateCampaignOutput"),
+            **kwargs,
+        )
+
     def CreateTranslation(self, request, **kwargs):
         path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/translations"
 
