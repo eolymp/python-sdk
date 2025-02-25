@@ -267,10 +267,12 @@ class ListRecipientsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_recipient_pb2.Recipient, _Mapping]]] = ...) -> None: ...
 
 class DescribeRecipientInput(_message.Message):
-    __slots__ = ("recipient_id",)
+    __slots__ = ("campaign_id", "recipient_id")
+    CAMPAIGN_ID_FIELD_NUMBER: _ClassVar[int]
     RECIPIENT_ID_FIELD_NUMBER: _ClassVar[int]
+    campaign_id: str
     recipient_id: str
-    def __init__(self, recipient_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, campaign_id: _Optional[str] = ..., recipient_id: _Optional[str] = ...) -> None: ...
 
 class DescribeRecipientOutput(_message.Message):
     __slots__ = ("recipient",)
