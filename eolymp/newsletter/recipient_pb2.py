@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/newsletter/recipient.proto\x12\x11\x65olymp.newsletter\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfc\x02\n\tRecipient\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07sent_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x64\x65livered_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x33\n\x06status\x18\x03 \x01(\x0e\x32#.eolymp.newsletter.Recipient.Status\"\\\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x08\n\x04SENT\x10\x03\x12\r\n\tDELIVERED\x10\x04\x12\x0b\n\x07\x42OUNCED\x10\x05\x42\x37Z5github.com/eolymp/go-sdk/eolymp/newsletter;newsletterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/newsletter/recipient.proto\x12\x11\x65olymp.newsletter\x1a\x1fgoogle/protobuf/timestamp.proto\"\xab\x03\n\tRecipient\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07sent_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x64\x65livered_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x33\n\x06status\x18\x03 \x01(\x0e\x32#.eolymp.newsletter.Recipient.Status\x12\x15\n\rstatus_reason\x18\x04 \x01(\t\"t\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x08\n\x04SENT\x10\x03\x12\r\n\tDELIVERED\x10\x04\x12\x0b\n\x07\x42OUNCED\x10\x05\x12\x0b\n\x07SKIPPED\x10\x06\x12\t\n\x05\x45RROR\x10\x07\x42\x37Z5github.com/eolymp/go-sdk/eolymp/newsletter;newsletterb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,7 +34,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/newsletter;newsletter'
   _globals['_RECIPIENT']._serialized_start=90
-  _globals['_RECIPIENT']._serialized_end=470
-  _globals['_RECIPIENT_STATUS']._serialized_start=378
-  _globals['_RECIPIENT_STATUS']._serialized_end=470
+  _globals['_RECIPIENT']._serialized_end=517
+  _globals['_RECIPIENT_STATUS']._serialized_start=401
+  _globals['_RECIPIENT_STATUS']._serialized_end=517
 # @@protoc_insertion_point(module_scope)
