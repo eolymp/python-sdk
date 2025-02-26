@@ -137,10 +137,10 @@ class MemberServiceClient:
         )
 
     def NotifyMember(self, request, **kwargs):
-        path = "/members/"+urllib.parse.quote(request.team_id)+"/notify"
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/notify"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.team_id = ""
+        request.member_id = ""
 
         return self.transport.request(
             method="POST",
