@@ -1,3 +1,4 @@
+from eolymp.community import email_type_pb2 as _email_type_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -52,7 +53,7 @@ class Campaign(_message.Message):
     SENT_COUNT_FIELD_NUMBER: _ClassVar[int]
     ERROR_COUNT_FIELD_NUMBER: _ClassVar[int]
     id: str
-    type: str
+    type: _email_type_pb2.EmailType
     created_at: _timestamp_pb2.Timestamp
     subject: str
     content: _content_pb2.Content
@@ -60,4 +61,4 @@ class Campaign(_message.Message):
     pending_count: int
     sent_count: int
     error_count: int
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., recipients_count: _Optional[int] = ..., pending_count: _Optional[int] = ..., sent_count: _Optional[int] = ..., error_count: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., recipients_count: _Optional[int] = ..., pending_count: _Optional[int] = ..., sent_count: _Optional[int] = ..., error_count: _Optional[int] = ...) -> None: ...
