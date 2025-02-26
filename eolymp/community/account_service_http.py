@@ -113,3 +113,25 @@ class AccountServiceClient:
             **kwargs,
         )
 
+    def DescribeEmailSubscription(self, request, **kwargs):
+        path = "/account/email-subscription"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeEmailSubscriptionOutput"),
+            **kwargs,
+        )
+
+    def UpdateEmailSubscription(self, request, **kwargs):
+        path = "/account/email-subscription"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.UpdateEmailSubscriptionOutput"),
+            **kwargs,
+        )
+

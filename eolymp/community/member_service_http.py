@@ -136,6 +136,20 @@ class MemberServiceClient:
             **kwargs,
         )
 
+    def NotifyMember(self, request, **kwargs):
+        path = "/members/"+urllib.parse.quote(request.team_id)+"/notify"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.team_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.NotifyMemberOutput"),
+            **kwargs,
+        )
+
     def DescribeMemberUsage(self, request, **kwargs):
         path = "/usage/members"
 

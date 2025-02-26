@@ -1,5 +1,6 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.community import email_type_pb2 as _email_type_pb2
 from eolymp.community import member_pb2 as _member_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -164,5 +165,31 @@ class CompleteRecoverInput(_message.Message):
     def __init__(self, code: _Optional[str] = ..., password: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class CompleteRecoverOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeEmailSubscriptionInput(_message.Message):
+    __slots__ = ("token",)
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    token: str
+    def __init__(self, token: _Optional[str] = ...) -> None: ...
+
+class DescribeEmailSubscriptionOutput(_message.Message):
+    __slots__ = ("subscriptions", "email")
+    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_FIELD_NUMBER: _ClassVar[int]
+    subscriptions: _containers.RepeatedScalarFieldContainer[_email_type_pb2.EmailType]
+    email: str
+    def __init__(self, subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ..., email: _Optional[str] = ...) -> None: ...
+
+class UpdateEmailSubscriptionInput(_message.Message):
+    __slots__ = ("token", "subscriptions")
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+    token: str
+    subscriptions: _containers.RepeatedScalarFieldContainer[_email_type_pb2.EmailType]
+    def __init__(self, token: _Optional[str] = ..., subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ...) -> None: ...
+
+class UpdateEmailSubscriptionOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
