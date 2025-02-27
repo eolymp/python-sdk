@@ -158,22 +158,30 @@ class DescribeMemberOutput(_message.Message):
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class ListMembersInput(_message.Message):
-    __slots__ = ("offset", "size", "filters", "sort", "order", "extra")
+    __slots__ = ("offset", "size", "filters", "search", "sort", "order", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListMembersInput.Sortable]
-        NAME: _ClassVar[ListMembersInput.Sortable]
+        DISPLAY_NAME: _ClassVar[ListMembersInput.Sortable]
         CREATED_AT: _ClassVar[ListMembersInput.Sortable]
         TYPE: _ClassVar[ListMembersInput.Sortable]
         SCORE: _ClassVar[ListMembersInput.Sortable]
     DEFAULT: ListMembersInput.Sortable
-    NAME: ListMembersInput.Sortable
+    DISPLAY_NAME: ListMembersInput.Sortable
     CREATED_AT: ListMembersInput.Sortable
     TYPE: ListMembersInput.Sortable
     SCORE: ListMembersInput.Sortable
+    class ExpressionAttribute(_message.Message):
+        __slots__ = ("attribute_key", "number", "string")
+        ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        STRING_FIELD_NUMBER: _ClassVar[int]
+        attribute_key: str
+        number: _expression_pb2.ExpressionInt
+        string: _expression_pb2.ExpressionInt
+        def __init__(self, attribute_key: _Optional[str] = ..., number: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ..., string: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ...) -> None: ...
     class Filter(_message.Message):
-        __slots__ = ("query", "id", "type", "name", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "user_issuer", "user_subject", "user_email", "user_name", "user_nickname", "score")
-        QUERY_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ("id", "type", "name", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "user_issuer", "user_subject", "user_email", "user_name", "user_nickname", "birthday", "country", "score", "attribute")
         ID_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -188,8 +196,10 @@ class ListMembersInput(_message.Message):
         USER_EMAIL_FIELD_NUMBER: _ClassVar[int]
         USER_NAME_FIELD_NUMBER: _ClassVar[int]
         USER_NICKNAME_FIELD_NUMBER: _ClassVar[int]
+        BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
+        COUNTRY_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
-        query: str
+        ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
@@ -204,21 +214,26 @@ class ListMembersInput(_message.Message):
         user_email: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_nickname: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        birthday: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_nickname: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
+        attribute: _containers.RepeatedCompositeFieldContainer[ListMembersInput.ExpressionAttribute]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_nickname: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[ListMembersInput.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
     filters: ListMembersInput.Filter
+    search: str
     sort: ListMembersInput.Sortable
     order: _direction_pb2.Direction
     extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMembersInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListMembersInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMembersInput.Filter, _Mapping]] = ..., search: _Optional[str] = ..., sort: _Optional[_Union[ListMembersInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
 class ListMembersOutput(_message.Message):
     __slots__ = ("total", "items")
