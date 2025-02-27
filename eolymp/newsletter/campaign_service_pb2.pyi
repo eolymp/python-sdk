@@ -234,14 +234,16 @@ class ListTranslationsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_campaign_pb2.Campaign.Translation, _Mapping]]] = ...) -> None: ...
 
 class CreateRecipientInput(_message.Message):
-    __slots__ = ("campaign_id", "member_id", "group_id")
+    __slots__ = ("campaign_id", "member_id", "group_id", "everybody")
     CAMPAIGN_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
+    EVERYBODY_FIELD_NUMBER: _ClassVar[int]
     campaign_id: str
     member_id: str
     group_id: str
-    def __init__(self, campaign_id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ...) -> None: ...
+    everybody: bool
+    def __init__(self, campaign_id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., everybody: bool = ...) -> None: ...
 
 class CreateRecipientOutput(_message.Message):
     __slots__ = ("recipient_id",)

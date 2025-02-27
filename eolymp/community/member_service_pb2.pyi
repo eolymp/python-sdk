@@ -286,7 +286,7 @@ class DescribeMemberUsageOutput(_message.Message):
     def __init__(self, total_members: _Optional[int] = ..., active_members: _Optional[int] = ..., new_members: _Optional[int] = ...) -> None: ...
 
 class NotifyMemberInput(_message.Message):
-    __slots__ = ("member_id", "type", "locale", "subject", "content", "parameters")
+    __slots__ = ("member_id", "dry_run", "bcc_me", "type", "locale", "subject", "content", "parameters")
     class ParametersEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -295,18 +295,22 @@ class NotifyMemberInput(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    DRY_RUN_FIELD_NUMBER: _ClassVar[int]
+    BCC_ME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     member_id: str
+    dry_run: bool
+    bcc_me: bool
     type: _email_type_pb2.EmailType
     locale: str
     subject: str
     content: _content_pb2.Content
     parameters: _containers.ScalarMap[str, str]
-    def __init__(self, member_id: _Optional[str] = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., locale: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., locale: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class NotifyMemberOutput(_message.Message):
     __slots__ = ("message_id",)
