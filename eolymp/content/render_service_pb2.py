@@ -28,7 +28,7 @@ from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/render_service.proto\x12\x0e\x65olymp.content\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\":\n\x12RenderContentInput\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\"7\n\x13RenderContentOutput\x12 \n\x06render\x18\x01 \x01(\x0b\x32\x10.eolymp.ecm.Node\":\n\x12\x45xportContentInput\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\"+\n\x13\x45xportContentOutput\x12\x14\n\x0c\x64ocument_url\x18\x01 \x01(\t2\xa2\x02\n\rRenderService\x12\x8d\x01\n\rRenderContent\x12\".eolymp.content.RenderContentInput\x1a#.eolymp.content.RenderContentOutput\"3\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1e\"\x0f/content:renderZ\x0b\"\t/renderer\x12\x80\x01\n\rExportContent\x12\".eolymp.content.ExportContentInput\x1a#.eolymp.content.ExportContentOutput\"&\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x11\"\x0f/content:exportB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/render_service.proto\x12\x0e\x65olymp.content\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\":\n\x12RenderContentInput\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\"7\n\x13RenderContentOutput\x12 \n\x06render\x18\x01 \x01(\x0b\x32\x10.eolymp.ecm.Node2\x9f\x01\n\rRenderService\x12\x8d\x01\n\rRenderContent\x12\".eolymp.content.RenderContentInput\x1a#.eolymp.content.RenderContentOutput\"3\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1e\"\x0f/content:renderZ\x0b\"\t/rendererB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,16 +38,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
   _globals['_RENDERSERVICE'].methods_by_name['RenderContent']._loaded_options = None
   _globals['_RENDERSERVICE'].methods_by_name['RenderContent']._serialized_options = b'\352\342\n\013\365\342\n\000\000\310A\370\342\nd\202\323\344\223\002\036\"\017/content:renderZ\013\"\t/renderer'
-  _globals['_RENDERSERVICE'].methods_by_name['ExportContent']._loaded_options = None
-  _globals['_RENDERSERVICE'].methods_by_name['ExportContent']._serialized_options = b'\352\342\n\013\365\342\n\000\000\310A\370\342\nd\202\323\344\223\002\021\"\017/content:export'
   _globals['_RENDERCONTENTINPUT']._serialized_start=171
   _globals['_RENDERCONTENTINPUT']._serialized_end=229
   _globals['_RENDERCONTENTOUTPUT']._serialized_start=231
   _globals['_RENDERCONTENTOUTPUT']._serialized_end=286
-  _globals['_EXPORTCONTENTINPUT']._serialized_start=288
-  _globals['_EXPORTCONTENTINPUT']._serialized_end=346
-  _globals['_EXPORTCONTENTOUTPUT']._serialized_start=348
-  _globals['_EXPORTCONTENTOUTPUT']._serialized_end=391
-  _globals['_RENDERSERVICE']._serialized_start=394
-  _globals['_RENDERSERVICE']._serialized_end=684
+  _globals['_RENDERSERVICE']._serialized_start=289
+  _globals['_RENDERSERVICE']._serialized_end=448
 # @@protoc_insertion_point(module_scope)
