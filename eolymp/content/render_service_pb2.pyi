@@ -19,3 +19,15 @@ class RenderContentOutput(_message.Message):
     RENDER_FIELD_NUMBER: _ClassVar[int]
     render: _node_pb2.Node
     def __init__(self, render: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
+
+class ExportContentInput(_message.Message):
+    __slots__ = ("content",)
+    CONTENT_FIELD_NUMBER: _ClassVar[int]
+    content: _content_pb2.Content
+    def __init__(self, content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+
+class ExportContentOutput(_message.Message):
+    __slots__ = ("document_url",)
+    DOCUMENT_URL_FIELD_NUMBER: _ClassVar[int]
+    document_url: str
+    def __init__(self, document_url: _Optional[str] = ...) -> None: ...

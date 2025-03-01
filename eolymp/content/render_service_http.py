@@ -15,13 +15,24 @@ class RenderServiceClient:
         self.url = url
 
     def RenderContent(self, request, **kwargs):
-        path = "/renderer"
+        path = "/content:render"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.content.RenderContentOutput"),
+            **kwargs,
+        )
+
+    def ExportContent(self, request, **kwargs):
+        path = "/content:export"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.content.ExportContentOutput"),
             **kwargs,
         )
 
