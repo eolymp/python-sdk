@@ -142,3 +142,15 @@ class DeleteStatementInput(_message.Message):
 class DeleteStatementOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class ExportStatementInput(_message.Message):
+    __slots__ = ("statement_id",)
+    STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    statement_id: str
+    def __init__(self, statement_id: _Optional[str] = ...) -> None: ...
+
+class ExportStatementOutput(_message.Message):
+    __slots__ = ("download_url",)
+    DOWNLOAD_URL_FIELD_NUMBER: _ClassVar[int]
+    download_url: str
+    def __init__(self, download_url: _Optional[str] = ...) -> None: ...

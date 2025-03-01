@@ -111,3 +111,17 @@ class StatementServiceClient:
             **kwargs,
         )
 
+    def ExportStatement(self, request, **kwargs):
+        path = "/statements/"+urllib.parse.quote(request.statement_id)+"/export"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.statement_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ExportStatementOutput"),
+            **kwargs,
+        )
+
