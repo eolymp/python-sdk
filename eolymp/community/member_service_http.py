@@ -161,3 +161,14 @@ class MemberServiceClient:
             **kwargs,
         )
 
+    def DescribeNotificationUsage(self, request, **kwargs):
+        path = "/usage/notifications"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeNotificationUsageOutput"),
+            **kwargs,
+        )
+

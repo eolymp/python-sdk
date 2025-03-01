@@ -317,3 +317,15 @@ class NotifyMemberOutput(_message.Message):
     MESSAGE_ID_FIELD_NUMBER: _ClassVar[int]
     message_id: str
     def __init__(self, message_id: _Optional[str] = ...) -> None: ...
+
+class DescribeNotificationUsageInput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeNotificationUsageOutput(_message.Message):
+    __slots__ = ("daily_emails", "monthly_emails")
+    DAILY_EMAILS_FIELD_NUMBER: _ClassVar[int]
+    MONTHLY_EMAILS_FIELD_NUMBER: _ClassVar[int]
+    daily_emails: int
+    monthly_emails: int
+    def __init__(self, daily_emails: _Optional[int] = ..., monthly_emails: _Optional[int] = ...) -> None: ...
