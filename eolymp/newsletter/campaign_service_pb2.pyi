@@ -103,16 +103,25 @@ class ListCampaignsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_campaign_pb2.Campaign, _Mapping]]] = ...) -> None: ...
 
 class TestCampaignInput(_message.Message):
-    __slots__ = ("campaign_id", "email", "locale", "member_id")
+    __slots__ = ("campaign_id", "email", "locale", "member_id", "parameters")
+    class ParametersEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     CAMPAIGN_ID_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     campaign_id: str
     email: str
     locale: str
     member_id: str
-    def __init__(self, campaign_id: _Optional[str] = ..., email: _Optional[str] = ..., locale: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    parameters: _containers.ScalarMap[str, str]
+    def __init__(self, campaign_id: _Optional[str] = ..., email: _Optional[str] = ..., locale: _Optional[str] = ..., member_id: _Optional[str] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class TestCampaignOutput(_message.Message):
     __slots__ = ()
