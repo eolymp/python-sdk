@@ -33,7 +33,7 @@ from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expressi
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/community/email_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/community/email_type.proto\x1a\x1d\x65olymp/community/member.proto\x1a\x18\x65olymp/ecm/content.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaf\x02\n\x0eSendEmailInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64ry_run\x18\x14 \x01(\x08\x12\x0e\n\x06\x62\x63\x63_me\x18\x15 \x01(\x08\x12)\n\x04type\x18\n \x01(\x0e\x32\x1b.eolymp.community.EmailType\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\x0f\n\x07subject\x18\x0c \x01(\t\x12$\n\x07\x63ontent\x18\r \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x44\n\nparameters\x18\x0e \x03(\x0b\x32\x30.eolymp.community.SendEmailInput.ParametersEntry\x1a\x31\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"%\n\x0fSendEmailOutput\x12\x12\n\nmessage_id\x18\x01 \x01(\t\"\x19\n\x17\x44\x65scribeEmailUsageInput\"H\n\x18\x44\x65scribeEmailUsageOutput\x12\x14\n\x0c\x64\x61ily_emails\x18\x02 \x01(\r\x12\x16\n\x0emonthly_emails\x18\x03 \x01(\r2\xe4\x02\n\x0c\x45mailService\x12\xa2\x01\n\tSendEmail\x12 .eolymp.community.SendEmailInput\x1a!.eolymp.community.SendEmailOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/members/{member_id}/notify\x12\xae\x01\n\x12\x44\x65scribeEmailUsage\x12).eolymp.community.DescribeEmailUsageInput\x1a*.eolymp.community.DescribeEmailUsageOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02\x0f\x12\r/usage/emailsB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/community/email_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/community/email_type.proto\x1a\x1d\x65olymp/community/member.proto\x1a\x18\x65olymp/ecm/content.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc1\x02\n\x0eSendEmailInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64ry_run\x18\x14 \x01(\x08\x12\x0e\n\x06\x62\x63\x63_me\x18\x15 \x01(\x08\x12)\n\x04type\x18\n \x01(\x0e\x32\x1b.eolymp.community.EmailType\x12\x10\n\x08\x63\x61mpaign\x18\x0f \x01(\t\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\x0f\n\x07subject\x18\x0c \x01(\t\x12$\n\x07\x63ontent\x18\r \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x44\n\nparameters\x18\x0e \x03(\x0b\x32\x30.eolymp.community.SendEmailInput.ParametersEntry\x1a\x31\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"%\n\x0fSendEmailOutput\x12\x12\n\nmessage_id\x18\x01 \x01(\t\"\x19\n\x17\x44\x65scribeEmailUsageInput\"H\n\x18\x44\x65scribeEmailUsageOutput\x12\x14\n\x0c\x64\x61ily_emails\x18\x02 \x01(\r\x12\x16\n\x0emonthly_emails\x18\x03 \x01(\r2\xe4\x02\n\x0c\x45mailService\x12\xa2\x01\n\tSendEmail\x12 .eolymp.community.SendEmailInput\x1a!.eolymp.community.SendEmailOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/members/{member_id}/notify\x12\xae\x01\n\x12\x44\x65scribeEmailUsage\x12).eolymp.community.DescribeEmailUsageInput\x1a*.eolymp.community.DescribeEmailUsageOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02\x0f\x12\r/usage/emailsB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -48,15 +48,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EMAILSERVICE'].methods_by_name['DescribeEmailUsage']._loaded_options = None
   _globals['_EMAILSERVICE'].methods_by_name['DescribeEmailUsage']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\031\212\343\n\025community:member:read\202\323\344\223\002\017\022\r/usage/emails'
   _globals['_SENDEMAILINPUT']._serialized_start=352
-  _globals['_SENDEMAILINPUT']._serialized_end=655
-  _globals['_SENDEMAILINPUT_PARAMETERSENTRY']._serialized_start=606
-  _globals['_SENDEMAILINPUT_PARAMETERSENTRY']._serialized_end=655
-  _globals['_SENDEMAILOUTPUT']._serialized_start=657
-  _globals['_SENDEMAILOUTPUT']._serialized_end=694
-  _globals['_DESCRIBEEMAILUSAGEINPUT']._serialized_start=696
-  _globals['_DESCRIBEEMAILUSAGEINPUT']._serialized_end=721
-  _globals['_DESCRIBEEMAILUSAGEOUTPUT']._serialized_start=723
-  _globals['_DESCRIBEEMAILUSAGEOUTPUT']._serialized_end=795
-  _globals['_EMAILSERVICE']._serialized_start=798
-  _globals['_EMAILSERVICE']._serialized_end=1154
+  _globals['_SENDEMAILINPUT']._serialized_end=673
+  _globals['_SENDEMAILINPUT_PARAMETERSENTRY']._serialized_start=624
+  _globals['_SENDEMAILINPUT_PARAMETERSENTRY']._serialized_end=673
+  _globals['_SENDEMAILOUTPUT']._serialized_start=675
+  _globals['_SENDEMAILOUTPUT']._serialized_end=712
+  _globals['_DESCRIBEEMAILUSAGEINPUT']._serialized_start=714
+  _globals['_DESCRIBEEMAILUSAGEINPUT']._serialized_end=739
+  _globals['_DESCRIBEEMAILUSAGEOUTPUT']._serialized_start=741
+  _globals['_DESCRIBEEMAILUSAGEOUTPUT']._serialized_end=813
+  _globals['_EMAILSERVICE']._serialized_start=816
+  _globals['_EMAILSERVICE']._serialized_end=1172
 # @@protoc_insertion_point(module_scope)

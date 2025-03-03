@@ -15,7 +15,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SendEmailInput(_message.Message):
-    __slots__ = ("member_id", "dry_run", "bcc_me", "type", "locale", "subject", "content", "parameters")
+    __slots__ = ("member_id", "dry_run", "bcc_me", "type", "campaign", "locale", "subject", "content", "parameters")
     class ParametersEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -27,6 +27,7 @@ class SendEmailInput(_message.Message):
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     BCC_ME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    CAMPAIGN_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
@@ -35,11 +36,12 @@ class SendEmailInput(_message.Message):
     dry_run: bool
     bcc_me: bool
     type: _email_type_pb2.EmailType
+    campaign: str
     locale: str
     subject: str
     content: _content_pb2.Content
     parameters: _containers.ScalarMap[str, str]
-    def __init__(self, member_id: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., locale: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., campaign: _Optional[str] = ..., locale: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class SendEmailOutput(_message.Message):
     __slots__ = ("message_id",)
