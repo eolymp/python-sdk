@@ -234,12 +234,21 @@ class ListTranslationsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_campaign_pb2.Campaign.Translation, _Mapping]]] = ...) -> None: ...
 
 class CreateRecipientInput(_message.Message):
-    __slots__ = ("campaign_id", "member_id")
+    __slots__ = ("campaign_id", "member_id", "parameters")
+    class ParametersEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     CAMPAIGN_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     campaign_id: str
     member_id: str
-    def __init__(self, campaign_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+    parameters: _containers.ScalarMap[str, str]
+    def __init__(self, campaign_id: _Optional[str] = ..., member_id: _Optional[str] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class CreateRecipientOutput(_message.Message):
     __slots__ = ("recipient_id",)
@@ -248,14 +257,25 @@ class CreateRecipientOutput(_message.Message):
     def __init__(self, recipient_id: _Optional[str] = ...) -> None: ...
 
 class ImportRecipientInput(_message.Message):
-    __slots__ = ("campaign_id", "all_members", "group_id")
+    __slots__ = ("campaign_id", "all_members", "group_id", "contest_id", "parameters")
+    class ParametersEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     CAMPAIGN_ID_FIELD_NUMBER: _ClassVar[int]
     ALL_MEMBERS_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     campaign_id: str
     all_members: bool
     group_id: str
-    def __init__(self, campaign_id: _Optional[str] = ..., all_members: bool = ..., group_id: _Optional[str] = ...) -> None: ...
+    contest_id: str
+    parameters: _containers.ScalarMap[str, str]
+    def __init__(self, campaign_id: _Optional[str] = ..., all_members: bool = ..., group_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ImportRecipientOutput(_message.Message):
     __slots__ = ()
