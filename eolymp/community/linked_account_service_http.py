@@ -15,13 +15,24 @@ class LinkedAccountServiceClient:
         self.url = url
 
     def RequestLinkedAccount(self, request, **kwargs):
-        path = "/linked-accounts"
+        path = "/linked-accounts:request"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.RequestLinkedAccountOutput"),
+            **kwargs,
+        )
+
+    def CreateLinkedAccount(self, request, **kwargs):
+        path = "/linked-accounts"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.CreateLinkedAccountOutput"),
             **kwargs,
         )
 

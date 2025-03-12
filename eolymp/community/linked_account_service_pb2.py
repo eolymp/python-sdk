@@ -28,7 +28,7 @@ from eolymp.community import linked_account_pb2 as eolymp_dot_community_dot_link
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-eolymp/community/linked_account_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a%eolymp/community/linked_account.proto\x1a!eolymp/wellknown/expression.proto\"O\n\x19RequestLinkedAccountInput\x12\x32\n\x04type\x18\x01 \x01(\x0e\x32$.eolymp.community.LinkedAccount.Type\"\x1c\n\x1aRequestLinkedAccountOutput\"+\n\x18\x44\x65leteLinkedAccountInput\x12\x0f\n\x07link_id\x18\x01 \x01(\t\"\x1b\n\x19\x44\x65leteLinkedAccountOutput\"-\n\x1a\x44\x65scribeLinkedAccountInput\x12\x0f\n\x07link_id\x18\x01 \x01(\t\"L\n\x1b\x44\x65scribeLinkedAccountOutput\x12-\n\x04link\x18\x01 \x01(\x0b\x32\x1f.eolymp.community.LinkedAccount\"\xe0\x01\n\x17ListLinkedAccountsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x41\n\x07\x66ilters\x18( \x01(\x0b\x32\x30.eolymp.community.ListLinkedAccountsInput.Filter\x1a\x64\n\x06\x46ilter\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"Y\n\x18ListLinkedAccountsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.eolymp.community.LinkedAccount2\x98\x05\n\x14LinkedAccountService\x12\x9a\x01\n\x14RequestLinkedAccount\x12+.eolymp.community.RequestLinkedAccountInput\x1a,.eolymp.community.RequestLinkedAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x12\"\x10/linked-accounts\x12\xa1\x01\n\x13\x44\x65leteLinkedAccount\x12*.eolymp.community.DeleteLinkedAccountInput\x1a+.eolymp.community.DeleteLinkedAccountOutput\"1\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1c*\x1a/linked-accounts/{link_id}\x12\xa7\x01\n\x15\x44\x65scribeLinkedAccount\x12,.eolymp.community.DescribeLinkedAccountInput\x1a-.eolymp.community.DescribeLinkedAccountOutput\"1\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1c\x12\x1a/linked-accounts/{link_id}\x12\x94\x01\n\x12ListLinkedAccounts\x12).eolymp.community.ListLinkedAccountsInput\x1a*.eolymp.community.ListLinkedAccountsOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x12\x12\x10/linked-accountsB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-eolymp/community/linked_account_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a%eolymp/community/linked_account.proto\x1a!eolymp/wellknown/expression.proto\"O\n\x19RequestLinkedAccountInput\x12\x32\n\x04type\x18\x01 \x01(\x0e\x32$.eolymp.community.LinkedAccount.Type\"2\n\x1aRequestLinkedAccountOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\"7\n\x18\x43reateLinkedAccountInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\",\n\x19\x43reateLinkedAccountOutput\x12\x0f\n\x07link_id\x18\x01 \x01(\t\"+\n\x18\x44\x65leteLinkedAccountInput\x12\x0f\n\x07link_id\x18\x01 \x01(\t\"\x1b\n\x19\x44\x65leteLinkedAccountOutput\"-\n\x1a\x44\x65scribeLinkedAccountInput\x12\x0f\n\x07link_id\x18\x01 \x01(\t\"L\n\x1b\x44\x65scribeLinkedAccountOutput\x12-\n\x04link\x18\x01 \x01(\x0b\x32\x1f.eolymp.community.LinkedAccount\"\xe0\x01\n\x17ListLinkedAccountsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x41\n\x07\x66ilters\x18( \x01(\x0b\x32\x30.eolymp.community.ListLinkedAccountsInput.Filter\x1a\x64\n\x06\x46ilter\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"Y\n\x18ListLinkedAccountsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.eolymp.community.LinkedAccount2\xba\x06\n\x14LinkedAccountService\x12\xa2\x01\n\x14RequestLinkedAccount\x12+.eolymp.community.RequestLinkedAccountInput\x1a,.eolymp.community.RequestLinkedAccountOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1a\"\x18/linked-accounts:request\x12\x97\x01\n\x13\x43reateLinkedAccount\x12*.eolymp.community.CreateLinkedAccountInput\x1a+.eolymp.community.CreateLinkedAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x12\"\x10/linked-accounts\x12\xa1\x01\n\x13\x44\x65leteLinkedAccount\x12*.eolymp.community.DeleteLinkedAccountInput\x1a+.eolymp.community.DeleteLinkedAccountOutput\"1\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1c*\x1a/linked-accounts/{link_id}\x12\xa7\x01\n\x15\x44\x65scribeLinkedAccount\x12,.eolymp.community.DescribeLinkedAccountInput\x1a-.eolymp.community.DescribeLinkedAccountOutput\"1\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x1c\x12\x1a/linked-accounts/{link_id}\x12\x94\x01\n\x12ListLinkedAccounts\x12).eolymp.community.ListLinkedAccountsInput\x1a*.eolymp.community.ListLinkedAccountsOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x12\x12\x10/linked-accountsB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,7 +37,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _globals['_LINKEDACCOUNTSERVICE'].methods_by_name['RequestLinkedAccount']._loaded_options = None
-  _globals['_LINKEDACCOUNTSERVICE'].methods_by_name['RequestLinkedAccount']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\022\"\020/linked-accounts'
+  _globals['_LINKEDACCOUNTSERVICE'].methods_by_name['RequestLinkedAccount']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\032\"\030/linked-accounts:request'
+  _globals['_LINKEDACCOUNTSERVICE'].methods_by_name['CreateLinkedAccount']._loaded_options = None
+  _globals['_LINKEDACCOUNTSERVICE'].methods_by_name['CreateLinkedAccount']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\022\"\020/linked-accounts'
   _globals['_LINKEDACCOUNTSERVICE'].methods_by_name['DeleteLinkedAccount']._loaded_options = None
   _globals['_LINKEDACCOUNTSERVICE'].methods_by_name['DeleteLinkedAccount']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\034*\032/linked-accounts/{link_id}'
   _globals['_LINKEDACCOUNTSERVICE'].methods_by_name['DescribeLinkedAccount']._loaded_options = None
@@ -47,21 +49,25 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_REQUESTLINKEDACCOUNTINPUT']._serialized_start=208
   _globals['_REQUESTLINKEDACCOUNTINPUT']._serialized_end=287
   _globals['_REQUESTLINKEDACCOUNTOUTPUT']._serialized_start=289
-  _globals['_REQUESTLINKEDACCOUNTOUTPUT']._serialized_end=317
-  _globals['_DELETELINKEDACCOUNTINPUT']._serialized_start=319
-  _globals['_DELETELINKEDACCOUNTINPUT']._serialized_end=362
-  _globals['_DELETELINKEDACCOUNTOUTPUT']._serialized_start=364
-  _globals['_DELETELINKEDACCOUNTOUTPUT']._serialized_end=391
-  _globals['_DESCRIBELINKEDACCOUNTINPUT']._serialized_start=393
-  _globals['_DESCRIBELINKEDACCOUNTINPUT']._serialized_end=438
-  _globals['_DESCRIBELINKEDACCOUNTOUTPUT']._serialized_start=440
-  _globals['_DESCRIBELINKEDACCOUNTOUTPUT']._serialized_end=516
-  _globals['_LISTLINKEDACCOUNTSINPUT']._serialized_start=519
-  _globals['_LISTLINKEDACCOUNTSINPUT']._serialized_end=743
-  _globals['_LISTLINKEDACCOUNTSINPUT_FILTER']._serialized_start=643
-  _globals['_LISTLINKEDACCOUNTSINPUT_FILTER']._serialized_end=743
-  _globals['_LISTLINKEDACCOUNTSOUTPUT']._serialized_start=745
-  _globals['_LISTLINKEDACCOUNTSOUTPUT']._serialized_end=834
-  _globals['_LINKEDACCOUNTSERVICE']._serialized_start=837
-  _globals['_LINKEDACCOUNTSERVICE']._serialized_end=1501
+  _globals['_REQUESTLINKEDACCOUNTOUTPUT']._serialized_end=339
+  _globals['_CREATELINKEDACCOUNTINPUT']._serialized_start=341
+  _globals['_CREATELINKEDACCOUNTINPUT']._serialized_end=396
+  _globals['_CREATELINKEDACCOUNTOUTPUT']._serialized_start=398
+  _globals['_CREATELINKEDACCOUNTOUTPUT']._serialized_end=442
+  _globals['_DELETELINKEDACCOUNTINPUT']._serialized_start=444
+  _globals['_DELETELINKEDACCOUNTINPUT']._serialized_end=487
+  _globals['_DELETELINKEDACCOUNTOUTPUT']._serialized_start=489
+  _globals['_DELETELINKEDACCOUNTOUTPUT']._serialized_end=516
+  _globals['_DESCRIBELINKEDACCOUNTINPUT']._serialized_start=518
+  _globals['_DESCRIBELINKEDACCOUNTINPUT']._serialized_end=563
+  _globals['_DESCRIBELINKEDACCOUNTOUTPUT']._serialized_start=565
+  _globals['_DESCRIBELINKEDACCOUNTOUTPUT']._serialized_end=641
+  _globals['_LISTLINKEDACCOUNTSINPUT']._serialized_start=644
+  _globals['_LISTLINKEDACCOUNTSINPUT']._serialized_end=868
+  _globals['_LISTLINKEDACCOUNTSINPUT_FILTER']._serialized_start=768
+  _globals['_LISTLINKEDACCOUNTSINPUT_FILTER']._serialized_end=868
+  _globals['_LISTLINKEDACCOUNTSOUTPUT']._serialized_start=870
+  _globals['_LISTLINKEDACCOUNTSOUTPUT']._serialized_end=959
+  _globals['_LINKEDACCOUNTSERVICE']._serialized_start=962
+  _globals['_LINKEDACCOUNTSERVICE']._serialized_end=1788
 # @@protoc_insertion_point(module_scope)

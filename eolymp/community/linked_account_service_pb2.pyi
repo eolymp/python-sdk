@@ -16,8 +16,24 @@ class RequestLinkedAccountInput(_message.Message):
     def __init__(self, type: _Optional[_Union[_linked_account_pb2.LinkedAccount.Type, str]] = ...) -> None: ...
 
 class RequestLinkedAccountOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("redirect_uri",)
+    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
+    redirect_uri: str
+    def __init__(self, redirect_uri: _Optional[str] = ...) -> None: ...
+
+class CreateLinkedAccountInput(_message.Message):
+    __slots__ = ("code", "state")
+    CODE_FIELD_NUMBER: _ClassVar[int]
+    STATE_FIELD_NUMBER: _ClassVar[int]
+    code: str
+    state: str
+    def __init__(self, code: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
+
+class CreateLinkedAccountOutput(_message.Message):
+    __slots__ = ("link_id",)
+    LINK_ID_FIELD_NUMBER: _ClassVar[int]
+    link_id: str
+    def __init__(self, link_id: _Optional[str] = ...) -> None: ...
 
 class DeleteLinkedAccountInput(_message.Message):
     __slots__ = ("link_id",)
