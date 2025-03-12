@@ -11,8 +11,12 @@ class LinkedAccount(_message.Message):
         __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[LinkedAccount.Type]
         GOOGLE: _ClassVar[LinkedAccount.Type]
+        GITHUB: _ClassVar[LinkedAccount.Type]
+        DISCORD: _ClassVar[LinkedAccount.Type]
     UNKNOWN_TYPE: LinkedAccount.Type
     GOOGLE: LinkedAccount.Type
+    GITHUB: LinkedAccount.Type
+    DISCORD: LinkedAccount.Type
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     ISSUER_FIELD_NUMBER: _ClassVar[int]

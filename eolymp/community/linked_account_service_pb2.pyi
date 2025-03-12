@@ -9,6 +9,26 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class RequestLinkedAccountInput(_message.Message):
+    __slots__ = ("type",)
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    type: _linked_account_pb2.LinkedAccount.Type
+    def __init__(self, type: _Optional[_Union[_linked_account_pb2.LinkedAccount.Type, str]] = ...) -> None: ...
+
+class RequestLinkedAccountOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DeleteLinkedAccountInput(_message.Message):
+    __slots__ = ("link_id",)
+    LINK_ID_FIELD_NUMBER: _ClassVar[int]
+    link_id: str
+    def __init__(self, link_id: _Optional[str] = ...) -> None: ...
+
+class DeleteLinkedAccountOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class DescribeLinkedAccountInput(_message.Message):
     __slots__ = ("link_id",)
     LINK_ID_FIELD_NUMBER: _ClassVar[int]
@@ -45,13 +65,3 @@ class ListLinkedAccountsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_linked_account_pb2.LinkedAccount]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_linked_account_pb2.LinkedAccount, _Mapping]]] = ...) -> None: ...
-
-class DeleteLinkedAccountInput(_message.Message):
-    __slots__ = ("link_id",)
-    LINK_ID_FIELD_NUMBER: _ClassVar[int]
-    link_id: str
-    def __init__(self, link_id: _Optional[str] = ...) -> None: ...
-
-class DeleteLinkedAccountOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...

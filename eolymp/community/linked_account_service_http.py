@@ -14,6 +14,31 @@ class LinkedAccountServiceClient:
         self.transport = transport
         self.url = url
 
+    def RequestLinkedAccount(self, request, **kwargs):
+        path = "/linked-accounts"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.RequestLinkedAccountOutput"),
+            **kwargs,
+        )
+
+    def DeleteLinkedAccount(self, request, **kwargs):
+        path = "/linked-accounts/"+urllib.parse.quote(request.link_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.link_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DeleteLinkedAccountOutput"),
+            **kwargs,
+        )
+
     def DescribeLinkedAccount(self, request, **kwargs):
         path = "/linked-accounts/"+urllib.parse.quote(request.link_id)
 
@@ -36,20 +61,6 @@ class LinkedAccountServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.ListLinkedAccountsOutput"),
-            **kwargs,
-        )
-
-    def DeleteLinkedAccount(self, request, **kwargs):
-        path = "/linked-accounts/"+urllib.parse.quote(request.link_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.link_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DeleteLinkedAccountOutput"),
             **kwargs,
         )
 

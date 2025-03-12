@@ -5,7 +5,7 @@ import warnings
 
 from eolymp.printer import printer_connector_pb2 as eolymp_dot_printer_dot_printer__connector__pb2
 
-GRPC_GENERATED_VERSION = '1.70.0'
+GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
