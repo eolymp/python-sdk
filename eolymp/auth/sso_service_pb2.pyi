@@ -30,7 +30,13 @@ class SignonExchangeInput(_message.Message):
     def __init__(self, code: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
 
 class SignonExchangeOutput(_message.Message):
-    __slots__ = ("authorization_code",)
-    AUTHORIZATION_CODE_FIELD_NUMBER: _ClassVar[int]
-    authorization_code: str
-    def __init__(self, authorization_code: _Optional[str] = ...) -> None: ...
+    __slots__ = ("access_token", "token_type", "expires_in", "refresh_token")
+    ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    TOKEN_TYPE_FIELD_NUMBER: _ClassVar[int]
+    EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
+    REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    access_token: str
+    token_type: str
+    expires_in: int
+    refresh_token: str
+    def __init__(self, access_token: _Optional[str] = ..., token_type: _Optional[str] = ..., expires_in: _Optional[int] = ..., refresh_token: _Optional[str] = ...) -> None: ...
