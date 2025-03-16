@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/auth/sso_service.proto\x12\x0b\x65olymp.auth\x1a\"eolymp/annotations/ratelimit.proto\"\xac\x01\n\x15\x41uthorizeRequestInput\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ode_challenge\x18\x02 \x01(\t\x12\x1d\n\x15\x63ode_challenge_method\x18\x03 \x01(\t\x12\x14\n\x0credirect_uri\x18\x04 \x01(\t\x12\x15\n\rresponse_type\x18\x05 \x01(\t\x12\r\n\x05scope\x18\x06 \x01(\t\x12\r\n\x05state\x18\x07 \x01(\t\".\n\x16\x41uthorizeRequestOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\"5\n\x16\x41uthorizeCallbackInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"/\n\x17\x41uthorizeCallbackOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t2\xeb\x01\n\nSSOService\x12l\n\x10\x41uthorizeRequest\x12\".eolymp.auth.AuthorizeRequestInput\x1a#.eolymp.auth.AuthorizeRequestOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x12o\n\x11\x41uthorizeCallback\x12#.eolymp.auth.AuthorizeCallbackInput\x1a$.eolymp.auth.AuthorizeCallbackOutput\"\x0f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2B+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/auth/sso_service.proto\x12\x0b\x65olymp.auth\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\"\xb9\x01\n\x15\x41uthorizeRequestInput\x12\x0b\n\x03via\x18\n \x01(\t\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ode_challenge\x18\x02 \x01(\t\x12\x1d\n\x15\x63ode_challenge_method\x18\x03 \x01(\t\x12\x14\n\x0credirect_uri\x18\x04 \x01(\t\x12\x15\n\rresponse_type\x18\x05 \x01(\t\x12\r\n\x05scope\x18\x06 \x01(\t\x12\r\n\x05state\x18\x07 \x01(\t\".\n\x16\x41uthorizeRequestOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\"5\n\x16\x41uthorizeCallbackInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"=\n\x17\x41uthorizeCallbackOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2\x98\x02\n\nSSOService\x12\x82\x01\n\x10\x41uthorizeRequest\x12\".eolymp.auth.AuthorizeRequestInput\x1a#.eolymp.auth.AuthorizeRequestOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x10\"\x0e/sso:authorize\x12\x84\x01\n\x11\x41uthorizeCallback\x12#.eolymp.auth.AuthorizeCallbackInput\x1a$.eolymp.auth.AuthorizeCallbackOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\"\r/sso:exchangeB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,17 +35,17 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z)github.com/eolymp/go-sdk/eolymp/auth;auth'
   _globals['_SSOSERVICE'].methods_by_name['AuthorizeRequest']._loaded_options = None
-  _globals['_SSOSERVICE'].methods_by_name['AuthorizeRequest']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2'
+  _globals['_SSOSERVICE'].methods_by_name['AuthorizeRequest']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\020\"\016/sso:authorize'
   _globals['_SSOSERVICE'].methods_by_name['AuthorizeCallback']._loaded_options = None
-  _globals['_SSOSERVICE'].methods_by_name['AuthorizeCallback']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2'
-  _globals['_AUTHORIZEREQUESTINPUT']._serialized_start=83
-  _globals['_AUTHORIZEREQUESTINPUT']._serialized_end=255
-  _globals['_AUTHORIZEREQUESTOUTPUT']._serialized_start=257
-  _globals['_AUTHORIZEREQUESTOUTPUT']._serialized_end=303
-  _globals['_AUTHORIZECALLBACKINPUT']._serialized_start=305
-  _globals['_AUTHORIZECALLBACKINPUT']._serialized_end=358
-  _globals['_AUTHORIZECALLBACKOUTPUT']._serialized_start=360
-  _globals['_AUTHORIZECALLBACKOUTPUT']._serialized_end=407
-  _globals['_SSOSERVICE']._serialized_start=410
-  _globals['_SSOSERVICE']._serialized_end=645
+  _globals['_SSOSERVICE'].methods_by_name['AuthorizeCallback']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\017\"\r/sso:exchange'
+  _globals['_AUTHORIZEREQUESTINPUT']._serialized_start=114
+  _globals['_AUTHORIZEREQUESTINPUT']._serialized_end=299
+  _globals['_AUTHORIZEREQUESTOUTPUT']._serialized_start=301
+  _globals['_AUTHORIZEREQUESTOUTPUT']._serialized_end=347
+  _globals['_AUTHORIZECALLBACKINPUT']._serialized_start=349
+  _globals['_AUTHORIZECALLBACKINPUT']._serialized_end=402
+  _globals['_AUTHORIZECALLBACKOUTPUT']._serialized_start=404
+  _globals['_AUTHORIZECALLBACKOUTPUT']._serialized_end=465
+  _globals['_SSOSERVICE']._serialized_start=468
+  _globals['_SSOSERVICE']._serialized_end=748
 # @@protoc_insertion_point(module_scope)
