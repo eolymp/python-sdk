@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/community/linked_account.proto\x12\x10\x65olymp.community\"\xaf\x01\n\rLinkedAccount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\x04type\x18\x02 \x01(\x0e\x32$.eolymp.community.LinkedAccount.Type\x12\x0e\n\x06issuer\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\x04 \x01(\t\"=\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\n\n\x06GOOGLE\x10\x01\x12\n\n\x06GITHUB\x10\x02\x12\x0b\n\x07\x44ISCORD\x10\x03\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/community/linked_account.proto\x12\x10\x65olymp.community\"\xc1\x01\n\rLinkedAccount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\x04type\x18\x02 \x01(\x0e\x32$.eolymp.community.LinkedAccount.Type\x12\x0e\n\x06issuer\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\x04 \x01(\t\x12\x10\n\x08nickname\x18\x05 \x01(\t\"=\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\n\n\x06GOOGLE\x10\x01\x12\n\n\x06GITHUB\x10\x02\x12\x0b\n\x07\x44ISCORD\x10\x03\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,7 +33,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _globals['_LINKEDACCOUNT']._serialized_start=60
-  _globals['_LINKEDACCOUNT']._serialized_end=235
-  _globals['_LINKEDACCOUNT_TYPE']._serialized_start=174
-  _globals['_LINKEDACCOUNT_TYPE']._serialized_end=235
+  _globals['_LINKEDACCOUNT']._serialized_end=253
+  _globals['_LINKEDACCOUNT_TYPE']._serialized_start=192
+  _globals['_LINKEDACCOUNT_TYPE']._serialized_end=253
 # @@protoc_insertion_point(module_scope)

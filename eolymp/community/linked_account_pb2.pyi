@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LinkedAccount(_message.Message):
-    __slots__ = ("id", "type", "issuer", "subject")
+    __slots__ = ("id", "type", "issuer", "subject", "nickname")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[LinkedAccount.Type]
@@ -21,8 +21,10 @@ class LinkedAccount(_message.Message):
     TYPE_FIELD_NUMBER: _ClassVar[int]
     ISSUER_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
+    NICKNAME_FIELD_NUMBER: _ClassVar[int]
     id: str
     type: LinkedAccount.Type
     issuer: str
     subject: str
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[LinkedAccount.Type, str]] = ..., issuer: _Optional[str] = ..., subject: _Optional[str] = ...) -> None: ...
+    nickname: str
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[LinkedAccount.Type, str]] = ..., issuer: _Optional[str] = ..., subject: _Optional[str] = ..., nickname: _Optional[str] = ...) -> None: ...
