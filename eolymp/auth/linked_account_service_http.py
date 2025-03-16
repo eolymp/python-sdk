@@ -21,7 +21,7 @@ class LinkedAccountServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.RequestLinkedAccountOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.RequestLinkedAccountOutput"),
             **kwargs,
         )
 
@@ -32,7 +32,7 @@ class LinkedAccountServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.CreateLinkedAccountOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.CreateLinkedAccountOutput"),
             **kwargs,
         )
 
@@ -46,7 +46,7 @@ class LinkedAccountServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DeleteLinkedAccountOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.DeleteLinkedAccountOutput"),
             **kwargs,
         )
 
@@ -60,7 +60,7 @@ class LinkedAccountServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeLinkedAccountOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.DescribeLinkedAccountOutput"),
             **kwargs,
         )
 
@@ -71,7 +71,7 @@ class LinkedAccountServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ListLinkedAccountsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.ListLinkedAccountsOutput"),
             **kwargs,
         )
 

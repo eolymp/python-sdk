@@ -14,25 +14,25 @@ class SSOServiceClient:
         self.transport = transport
         self.url = url
 
-    def AuthorizeRequest(self, request, **kwargs):
-        path = "/sso:authorize"
+    def SignonRequest(self, request, **kwargs):
+        path = "/sso:request"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.auth.AuthorizeRequestOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.SignonRequestOutput"),
             **kwargs,
         )
 
-    def AuthorizeCallback(self, request, **kwargs):
+    def SignonExchange(self, request, **kwargs):
         path = "/sso:exchange"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.auth.AuthorizeCallbackOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.auth.SignonExchangeOutput"),
             **kwargs,
         )
 

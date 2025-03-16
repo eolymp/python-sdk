@@ -1,38 +1,27 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.auth import linked_account_pb2 as _linked_account_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Optional as _Optional
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class AuthorizeRequestInput(_message.Message):
-    __slots__ = ("via", "client_id", "code_challenge", "code_challenge_method", "redirect_uri", "response_type", "scope", "state")
-    VIA_FIELD_NUMBER: _ClassVar[int]
-    CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
-    CODE_CHALLENGE_FIELD_NUMBER: _ClassVar[int]
-    CODE_CHALLENGE_METHOD_FIELD_NUMBER: _ClassVar[int]
-    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
-    RESPONSE_TYPE_FIELD_NUMBER: _ClassVar[int]
-    SCOPE_FIELD_NUMBER: _ClassVar[int]
-    STATE_FIELD_NUMBER: _ClassVar[int]
-    via: str
-    client_id: str
-    code_challenge: str
-    code_challenge_method: str
-    redirect_uri: str
-    response_type: str
-    scope: str
-    state: str
-    def __init__(self, via: _Optional[str] = ..., client_id: _Optional[str] = ..., code_challenge: _Optional[str] = ..., code_challenge_method: _Optional[str] = ..., redirect_uri: _Optional[str] = ..., response_type: _Optional[str] = ..., scope: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
+class SignonRequestInput(_message.Message):
+    __slots__ = ("type", "callback_uri")
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    CALLBACK_URI_FIELD_NUMBER: _ClassVar[int]
+    type: _linked_account_pb2.LinkedAccount.Type
+    callback_uri: str
+    def __init__(self, type: _Optional[_Union[_linked_account_pb2.LinkedAccount.Type, str]] = ..., callback_uri: _Optional[str] = ...) -> None: ...
 
-class AuthorizeRequestOutput(_message.Message):
+class SignonRequestOutput(_message.Message):
     __slots__ = ("redirect_uri",)
     REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
     redirect_uri: str
     def __init__(self, redirect_uri: _Optional[str] = ...) -> None: ...
 
-class AuthorizeCallbackInput(_message.Message):
+class SignonExchangeInput(_message.Message):
     __slots__ = ("code", "state")
     CODE_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
@@ -40,10 +29,8 @@ class AuthorizeCallbackInput(_message.Message):
     state: str
     def __init__(self, code: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
 
-class AuthorizeCallbackOutput(_message.Message):
-    __slots__ = ("redirect_uri", "code")
-    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
-    CODE_FIELD_NUMBER: _ClassVar[int]
-    redirect_uri: str
-    code: str
-    def __init__(self, redirect_uri: _Optional[str] = ..., code: _Optional[str] = ...) -> None: ...
+class SignonExchangeOutput(_message.Message):
+    __slots__ = ("authorization_code",)
+    AUTHORIZATION_CODE_FIELD_NUMBER: _ClassVar[int]
+    authorization_code: str
+    def __init__(self, authorization_code: _Optional[str] = ...) -> None: ...

@@ -1,6 +1,6 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
-from eolymp.community import linked_account_pb2 as _linked_account_pb2
+from eolymp.auth import linked_account_pb2 as _linked_account_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -10,10 +10,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RequestLinkedAccountInput(_message.Message):
-    __slots__ = ("type",)
+    __slots__ = ("type", "callback_uri")
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    CALLBACK_URI_FIELD_NUMBER: _ClassVar[int]
     type: _linked_account_pb2.LinkedAccount.Type
-    def __init__(self, type: _Optional[_Union[_linked_account_pb2.LinkedAccount.Type, str]] = ...) -> None: ...
+    callback_uri: str
+    def __init__(self, type: _Optional[_Union[_linked_account_pb2.LinkedAccount.Type, str]] = ..., callback_uri: _Optional[str] = ...) -> None: ...
 
 class RequestLinkedAccountOutput(_message.Message):
     __slots__ = ("redirect_uri",)
