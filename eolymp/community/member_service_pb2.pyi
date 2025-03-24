@@ -42,7 +42,6 @@ class UpdateMemberInput(_message.Message):
         ALL: _ClassVar[UpdateMemberInput.Patch]
         INACTIVE: _ClassVar[UpdateMemberInput.Patch]
         UNOFFICIAL: _ClassVar[UpdateMemberInput.Patch]
-        RATING: _ClassVar[UpdateMemberInput.Patch]
         GROUPS: _ClassVar[UpdateMemberInput.Patch]
         GROUPS_ADD: _ClassVar[UpdateMemberInput.Patch]
         GROUPS_REMOVE: _ClassVar[UpdateMemberInput.Patch]
@@ -66,7 +65,6 @@ class UpdateMemberInput(_message.Message):
     ALL: UpdateMemberInput.Patch
     INACTIVE: UpdateMemberInput.Patch
     UNOFFICIAL: UpdateMemberInput.Patch
-    RATING: UpdateMemberInput.Patch
     GROUPS: UpdateMemberInput.Patch
     GROUPS_ADD: UpdateMemberInput.Patch
     GROUPS_REMOVE: UpdateMemberInput.Patch
