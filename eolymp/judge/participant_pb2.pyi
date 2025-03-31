@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Participant(_message.Message):
-    __slots__ = ("id", "member_id", "display_name", "unofficial", "inactive", "disqualified", "ghost", "medal", "status", "started_at", "started_in", "end_at", "end_in", "bonus_time", "passcode", "submits")
+    __slots__ = ("id", "member_id", "display_name", "unofficial", "inactive", "disqualified", "ghost", "medal", "status", "started_at", "started_in", "end_at", "end_in", "bonus_time", "passcode", "certificate_url", "submits")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Participant.Status]
@@ -48,6 +48,7 @@ class Participant(_message.Message):
     END_IN_FIELD_NUMBER: _ClassVar[int]
     BONUS_TIME_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
+    CERTIFICATE_URL_FIELD_NUMBER: _ClassVar[int]
     SUBMITS_FIELD_NUMBER: _ClassVar[int]
     id: str
     member_id: str
@@ -64,5 +65,6 @@ class Participant(_message.Message):
     end_in: int
     bonus_time: int
     passcode: str
+    certificate_url: str
     submits: _containers.RepeatedCompositeFieldContainer[Participant.Submit]
-    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., display_name: _Optional[str] = ..., unofficial: bool = ..., inactive: bool = ..., disqualified: bool = ..., ghost: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_in: _Optional[int] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_in: _Optional[int] = ..., bonus_time: _Optional[int] = ..., passcode: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., display_name: _Optional[str] = ..., unofficial: bool = ..., inactive: bool = ..., disqualified: bool = ..., ghost: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., started_in: _Optional[int] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_in: _Optional[int] = ..., bonus_time: _Optional[int] = ..., passcode: _Optional[str] = ..., certificate_url: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
