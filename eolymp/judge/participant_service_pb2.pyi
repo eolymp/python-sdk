@@ -13,6 +13,32 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class ParticipantChangedEvent(_message.Message):
+    __slots__ = ("contest_id", "before", "after")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    before: _participant_pb2.Participant
+    after: _participant_pb2.Participant
+    def __init__(self, contest_id: _Optional[str] = ..., before: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., after: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+
+class ParticipantJoinedEvent(_message.Message):
+    __slots__ = ("contest_id", "participant")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    participant: _participant_pb2.Participant
+    def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+
+class ParticipantFinalizedEvent(_message.Message):
+    __slots__ = ("contest_id", "participant")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    participant: _participant_pb2.Participant
+    def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+
 class AssignParticipantInput(_message.Message):
     __slots__ = ("contest_id", "participant", "member_id", "group_id", "unofficial", "inactive")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]

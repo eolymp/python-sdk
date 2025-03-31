@@ -35,24 +35,6 @@ class ScoreChangedEvent(_message.Message):
     score: _score_pb2.Score
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., unofficial: bool = ..., score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
-class ParticipantChangedEvent(_message.Message):
-    __slots__ = ("contest_id", "before", "after")
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    BEFORE_FIELD_NUMBER: _ClassVar[int]
-    AFTER_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    before: _participant_pb2.Participant
-    after: _participant_pb2.Participant
-    def __init__(self, contest_id: _Optional[str] = ..., before: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., after: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
-
-class ParticipantJoinedEvent(_message.Message):
-    __slots__ = ("contest_id", "participant")
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    participant: _participant_pb2.Participant
-    def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
-
 class RetestProblemEvent(_message.Message):
     __slots__ = ("contest_id", "problem_id", "activity_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]

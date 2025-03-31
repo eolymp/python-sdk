@@ -27,7 +27,7 @@ from eolymp.judge import score_pb2 as eolymp_dot_judge_dot_score__pb2
 from eolymp.judge import submission_pb2 as eolymp_dot_judge_dot_submission__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/events.proto\x12\x0c\x65olymp.judge\x1a\x1e\x65olymp/judge/participant.proto\x1a\x18\x65olymp/judge/score.proto\x1a\x1d\x65olymp/judge/submission.proto\"\\\n\x18SubmissionCompletedEvent\x12\x12\n\ncontest_id\x18\n \x01(\t\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"<\n\x11RebuildScoreEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x02 \x01(\t\"w\n\x11ScoreChangedEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12\x12\n\nunofficial\x18\x04 \x01(\x08\x12\"\n\x05score\x18\x03 \x01(\x0b\x32\x13.eolymp.judge.Score\"\x82\x01\n\x17ParticipantChangedEvent\x12\x12\n\ncontest_id\x18\n \x01(\t\x12)\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x19.eolymp.judge.Participant\x12(\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x19.eolymp.judge.Participant\"\\\n\x16ParticipantJoinedEvent\x12\x12\n\ncontest_id\x18\n \x01(\t\x12.\n\x0bparticipant\x18\x02 \x01(\x0b\x32\x19.eolymp.judge.Participant\"Q\n\x12RetestProblemEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x03 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/events.proto\x12\x0c\x65olymp.judge\x1a\x1e\x65olymp/judge/participant.proto\x1a\x18\x65olymp/judge/score.proto\x1a\x1d\x65olymp/judge/submission.proto\"\\\n\x18SubmissionCompletedEvent\x12\x12\n\ncontest_id\x18\n \x01(\t\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"<\n\x11RebuildScoreEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x02 \x01(\t\"w\n\x11ScoreChangedEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12\x12\n\nunofficial\x18\x04 \x01(\x08\x12\"\n\x05score\x18\x03 \x01(\x0b\x32\x13.eolymp.judge.Score\"Q\n\x12RetestProblemEvent\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x03 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,10 +41,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_REBUILDSCOREEVENT']._serialized_end=286
   _globals['_SCORECHANGEDEVENT']._serialized_start=288
   _globals['_SCORECHANGEDEVENT']._serialized_end=407
-  _globals['_PARTICIPANTCHANGEDEVENT']._serialized_start=410
-  _globals['_PARTICIPANTCHANGEDEVENT']._serialized_end=540
-  _globals['_PARTICIPANTJOINEDEVENT']._serialized_start=542
-  _globals['_PARTICIPANTJOINEDEVENT']._serialized_end=634
-  _globals['_RETESTPROBLEMEVENT']._serialized_start=636
-  _globals['_RETESTPROBLEMEVENT']._serialized_end=717
+  _globals['_RETESTPROBLEMEVENT']._serialized_start=409
+  _globals['_RETESTPROBLEMEVENT']._serialized_end=490
 # @@protoc_insertion_point(module_scope)
