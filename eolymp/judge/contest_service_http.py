@@ -148,6 +148,20 @@ class ContestServiceClient:
             **kwargs,
         )
 
+    def FinalizeContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/finalize"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.FinalizeContestOutput"),
+            **kwargs,
+        )
+
     def ResumeContest(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/resume"
 

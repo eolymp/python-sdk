@@ -13,6 +13,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class ContestChangedEvent(_message.Message):
+    __slots__ = ("before", "after")
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    before: _contest_pb2.Contest
+    after: _contest_pb2.Contest
+    def __init__(self, before: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ..., after: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
+
 class CreateContestInput(_message.Message):
     __slots__ = ("contest",)
     CONTEST_FIELD_NUMBER: _ClassVar[int]
@@ -227,6 +235,16 @@ class FreezeContestInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class FreezeContestOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class FinalizeContestInput(_message.Message):
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class FinalizeContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
