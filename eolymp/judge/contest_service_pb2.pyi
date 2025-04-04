@@ -68,6 +68,7 @@ class UpdateContestInput(_message.Message):
         ENVIRONMENT: _ClassVar[UpdateContestInput.Patch]
         UPSOLVE: _ClassVar[UpdateContestInput.Patch]
         SCOREBOARD: _ClassVar[UpdateContestInput.Patch]
+        CERTIFICATION: _ClassVar[UpdateContestInput.Patch]
     ALL: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch
     STARTS_AT: UpdateContestInput.Patch
@@ -89,6 +90,7 @@ class UpdateContestInput(_message.Message):
     ENVIRONMENT: UpdateContestInput.Patch
     UPSOLVE: UpdateContestInput.Patch
     SCOREBOARD: UpdateContestInput.Patch
+    CERTIFICATION: UpdateContestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CONTEST_FIELD_NUMBER: _ClassVar[int]

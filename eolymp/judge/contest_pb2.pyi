@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
-    __slots__ = ("id", "url", "name", "logo_url", "starts_at", "starts_in", "ends_at", "ends_in", "duration", "status", "visibility", "join_unofficially", "issue_certificates", "participation_mode", "require_admission", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "taxonomy", "appearance", "environment", "upsolve", "scoreboard")
+    __slots__ = ("id", "url", "name", "logo_url", "starts_at", "starts_in", "ends_at", "ends_in", "duration", "status", "visibility", "join_unofficially", "participation_mode", "require_admission", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "taxonomy", "appearance", "environment", "upsolve", "scoreboard", "certification")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATUS_UNKNOWN: _ClassVar[Contest.Status]
@@ -128,6 +128,22 @@ class Contest(_message.Message):
         no_spoiler_ui: bool
         share_key: str
         def __init__(self, visibility: _Optional[_Union[Contest.Scoreboard.Visibility, str]] = ..., freezing_time: _Optional[int] = ..., unfreeze_delay: _Optional[int] = ..., attempt_penalty: _Optional[int] = ..., tie_breaker: _Optional[str] = ..., no_spoiler_ui: bool = ..., share_key: _Optional[str] = ...) -> None: ...
+    class Certification(_message.Message):
+        __slots__ = ("enabled", "affiliation", "signers")
+        class Signer(_message.Message):
+            __slots__ = ("name", "title")
+            NAME_FIELD_NUMBER: _ClassVar[int]
+            TITLE_FIELD_NUMBER: _ClassVar[int]
+            name: str
+            title: str
+            def __init__(self, name: _Optional[str] = ..., title: _Optional[str] = ...) -> None: ...
+        ENABLED_FIELD_NUMBER: _ClassVar[int]
+        AFFILIATION_FIELD_NUMBER: _ClassVar[int]
+        SIGNERS_FIELD_NUMBER: _ClassVar[int]
+        enabled: bool
+        affiliation: str
+        signers: _containers.RepeatedCompositeFieldContainer[Contest.Certification.Signer]
+        def __init__(self, enabled: bool = ..., affiliation: _Optional[str] = ..., signers: _Optional[_Iterable[_Union[Contest.Certification.Signer, _Mapping]]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -140,7 +156,6 @@ class Contest(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
     JOIN_UNOFFICIALLY_FIELD_NUMBER: _ClassVar[int]
-    ISSUE_CERTIFICATES_FIELD_NUMBER: _ClassVar[int]
     PARTICIPATION_MODE_FIELD_NUMBER: _ClassVar[int]
     REQUIRE_ADMISSION_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
@@ -156,6 +171,7 @@ class Contest(_message.Message):
     ENVIRONMENT_FIELD_NUMBER: _ClassVar[int]
     UPSOLVE_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
+    CERTIFICATION_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
     name: str
@@ -168,7 +184,6 @@ class Contest(_message.Message):
     status: Contest.Status
     visibility: Contest.Visibility
     join_unofficially: bool
-    issue_certificates: bool
     participation_mode: Contest.ParticipationMode
     require_admission: bool
     format: Contest.Format
@@ -184,4 +199,5 @@ class Contest(_message.Message):
     environment: Contest.Environment
     upsolve: Contest.Upsolve
     scoreboard: Contest.Scoreboard
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., logo_url: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., issue_certificates: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., require_admission: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., taxonomy: _Optional[_Union[Contest.Taxonomy, _Mapping]] = ..., appearance: _Optional[_Union[Contest.Appearance, _Mapping]] = ..., environment: _Optional[_Union[Contest.Environment, _Mapping]] = ..., upsolve: _Optional[_Union[Contest.Upsolve, _Mapping]] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ...) -> None: ...
+    certification: Contest.Certification
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., logo_url: _Optional[str] = ..., starts_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., require_admission: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., taxonomy: _Optional[_Union[Contest.Taxonomy, _Mapping]] = ..., appearance: _Optional[_Union[Contest.Appearance, _Mapping]] = ..., environment: _Optional[_Union[Contest.Environment, _Mapping]] = ..., upsolve: _Optional[_Union[Contest.Upsolve, _Mapping]] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ..., certification: _Optional[_Union[Contest.Certification, _Mapping]] = ...) -> None: ...

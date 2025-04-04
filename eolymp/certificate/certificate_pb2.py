@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/certificate/certificate.proto\x12\x12\x65olymp.certificate\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe6\x02\n\x0b\x43\x65rtificate\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x11\n\ttarget_id\x18\x03 \x01(\t\x12\x18\n\x10verification_url\x18\x14 \x01(\t\x12\x14\n\x0c\x64ownload_url\x18\x15 \x01(\t\x12\x10\n\x08html_url\x18\x16 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\x43\n\nattributes\x18\x06 \x03(\x0b\x32/.eolymp.certificate.Certificate.AttributesEntry\x12-\n\tissued_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x39Z7github.com/eolymp/go-sdk/eolymp/certificate;certificateb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/certificate/certificate.proto\x12\x12\x65olymp.certificate\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf6\x02\n\x0b\x43\x65rtificate\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x11\n\ttarget_id\x18\x03 \x01(\t\x12\x18\n\x10verification_url\x18\x14 \x01(\t\x12\x14\n\x0c\x64ownload_url\x18\x15 \x01(\t\x12\x10\n\x08html_url\x18\x16 \x01(\t\x12\x0e\n\x06locale\x18\x07 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\x43\n\nattributes\x18\x06 \x03(\x0b\x32/.eolymp.certificate.Certificate.AttributesEntry\x12-\n\tissued_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x39Z7github.com/eolymp/go-sdk/eolymp/certificate;certificateb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,7 +36,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CERTIFICATE_ATTRIBUTESENTRY']._loaded_options = None
   _globals['_CERTIFICATE_ATTRIBUTESENTRY']._serialized_options = b'8\001'
   _globals['_CERTIFICATE']._serialized_start=94
-  _globals['_CERTIFICATE']._serialized_end=452
-  _globals['_CERTIFICATE_ATTRIBUTESENTRY']._serialized_start=403
-  _globals['_CERTIFICATE_ATTRIBUTESENTRY']._serialized_end=452
+  _globals['_CERTIFICATE']._serialized_end=468
+  _globals['_CERTIFICATE_ATTRIBUTESENTRY']._serialized_start=419
+  _globals['_CERTIFICATE_ATTRIBUTESENTRY']._serialized_end=468
 # @@protoc_insertion_point(module_scope)

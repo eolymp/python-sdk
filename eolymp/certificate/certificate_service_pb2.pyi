@@ -16,10 +16,12 @@ class CreateCertificateInput(_message.Message):
     def __init__(self, certificate: _Optional[_Union[_certificate_pb2.Certificate, _Mapping]] = ...) -> None: ...
 
 class CreateCertificateOutput(_message.Message):
-    __slots__ = ("certificate_id",)
+    __slots__ = ("certificate_id", "download_url")
     CERTIFICATE_ID_FIELD_NUMBER: _ClassVar[int]
+    DOWNLOAD_URL_FIELD_NUMBER: _ClassVar[int]
     certificate_id: str
-    def __init__(self, certificate_id: _Optional[str] = ...) -> None: ...
+    download_url: str
+    def __init__(self, certificate_id: _Optional[str] = ..., download_url: _Optional[str] = ...) -> None: ...
 
 class VoidCertificateInput(_message.Message):
     __slots__ = ("certificate_id",)
