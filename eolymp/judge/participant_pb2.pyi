@@ -19,6 +19,7 @@ class Participant(_message.Message):
         COMPLETE: _ClassVar[Participant.Status]
         UPSOLVE: _ClassVar[Participant.Status]
         BLOCKED: _ClassVar[Participant.Status]
+        PAUSED: _ClassVar[Participant.Status]
     UNKNOWN_STATUS: Participant.Status
     WAITING: Participant.Status
     READY: Participant.Status
@@ -26,6 +27,7 @@ class Participant(_message.Message):
     COMPLETE: Participant.Status
     UPSOLVE: Participant.Status
     BLOCKED: Participant.Status
+    PAUSED: Participant.Status
     class Submit(_message.Message):
         __slots__ = ("problem_id", "counter")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]

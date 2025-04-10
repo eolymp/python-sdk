@@ -257,3 +257,23 @@ class StartContestInput(_message.Message):
 class StartContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class PauseContestInput(_message.Message):
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class PauseContestOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class FinishContestInput(_message.Message):
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class FinishContestOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

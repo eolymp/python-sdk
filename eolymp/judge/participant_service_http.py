@@ -120,17 +120,6 @@ class ParticipantServiceClient:
             **kwargs,
         )
 
-    def DescribeViewer(self, request, **kwargs):
-        path = "/introspect"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeViewerOutput"),
-            **kwargs,
-        )
-
     def JoinContest(self, request, **kwargs):
         path = "/join"
 
@@ -142,6 +131,17 @@ class ParticipantServiceClient:
             **kwargs,
         )
 
+    def DescribeViewer(self, request, **kwargs):
+        path = "/introspect"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeViewerOutput"),
+            **kwargs,
+        )
+
     def StartContest(self, request, **kwargs):
         path = "/start"
 
@@ -150,6 +150,28 @@ class ParticipantServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.StartContestOutput"),
+            **kwargs,
+        )
+
+    def PauseContest(self, request, **kwargs):
+        path = "/pause"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.PauseContestOutput"),
+            **kwargs,
+        )
+
+    def FinishContest(self, request, **kwargs):
+        path = "/finish"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.FinishContestOutput"),
             **kwargs,
         )
 
