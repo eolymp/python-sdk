@@ -55,6 +55,8 @@ class UpdateContestInput(_message.Message):
         VISIBILITY: _ClassVar[UpdateContestInput.Patch]
         JOIN_UNOFFICIALLY: _ClassVar[UpdateContestInput.Patch]
         REQUIRE_ADMISSION: _ClassVar[UpdateContestInput.Patch]
+        ALLOW_PAUSE: _ClassVar[UpdateContestInput.Patch]
+        ALLOW_FINISH_EARLY: _ClassVar[UpdateContestInput.Patch]
         PARTICIPATION_MODE: _ClassVar[UpdateContestInput.Patch]
         FORMAT: _ClassVar[UpdateContestInput.Patch]
         KEY: _ClassVar[UpdateContestInput.Patch]
@@ -77,6 +79,8 @@ class UpdateContestInput(_message.Message):
     VISIBILITY: UpdateContestInput.Patch
     JOIN_UNOFFICIALLY: UpdateContestInput.Patch
     REQUIRE_ADMISSION: UpdateContestInput.Patch
+    ALLOW_PAUSE: UpdateContestInput.Patch
+    ALLOW_FINISH_EARLY: UpdateContestInput.Patch
     PARTICIPATION_MODE: UpdateContestInput.Patch
     FORMAT: UpdateContestInput.Patch
     KEY: UpdateContestInput.Patch
