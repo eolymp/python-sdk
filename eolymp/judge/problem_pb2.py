@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.atlas import problem_pb2 as eolymp_dot_atlas_dot_problem__pb2
 from eolymp.atlas import testing_feedback_pb2 as eolymp_dot_atlas_dot_testing__feedback__pb2
 from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/problem.proto\x12\x0c\x65olymp.judge\x1a#eolymp/atlas/testing_feedback.proto\x1a\x15\x65olymp/ecm/node.proto\"\xd3\x04\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05score\x18\x03 \x01(\x02\x12\x0f\n\x07\x62\x61se_id\x18\x04 \x01(\t\x12\x13\n\x0b\x62\x61se_number\x18- \x01(\r\x12\x15\n\rbase_space_id\x18( \x01(\t\x12\x12\n\ncontest_id\x18\x05 \x01(\t\x12\x35\n\x0f\x66\x65\x65\x64\x62\x61\x63k_policy\x18\n \x01(\x0e\x32\x1c.eolymp.atlas.FeedbackPolicy\x12\x13\n\ntime_limit\x18\xc8\x01 \x01(\r\x12\x12\n\tcpu_limit\x18\xcc\x01 \x01(\r\x12\x15\n\x0cmemory_limit\x18\xc9\x01 \x01(\x04\x12\x18\n\x0f\x66ile_size_limit\x18\xca\x01 \x01(\x04\x12\x15\n\x0csubmit_limit\x18\xcb\x01 \x01(\r\x12\x1e\n\x15score_by_best_testset\x18\xd2\x01 \x01(\x08\x1a\x64\n\tStatement\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12!\n\x07\x63ontent\x18\x04 \x01(\x0b\x32\x10.eolymp.ecm.Node\x12\x15\n\rdownload_link\x18\x06 \x01(\t\x1a\\\n\x04Test\x12\r\n\x05index\x18\x01 \x01(\r\x12\x0f\n\x07\x65xample\x18\x02 \x01(\x08\x12\x11\n\tinput_url\x18\r \x01(\t\x12\x12\n\nanswer_url\x18\x0e \x01(\t\x12\r\n\x05score\x18\x05 \x01(\x02\x1a\x34\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/problem.proto\x12\x0c\x65olymp.judge\x1a\x1a\x65olymp/atlas/problem.proto\x1a#eolymp/atlas/testing_feedback.proto\x1a\x15\x65olymp/ecm/node.proto\"\xfd\x04\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\x12(\n\x04type\x18\x17 \x01(\x0e\x32\x1a.eolymp.atlas.Problem.Type\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05score\x18\x03 \x01(\x02\x12\x0f\n\x07\x62\x61se_id\x18\x04 \x01(\t\x12\x13\n\x0b\x62\x61se_number\x18- \x01(\r\x12\x15\n\rbase_space_id\x18( \x01(\t\x12\x12\n\ncontest_id\x18\x05 \x01(\t\x12\x35\n\x0f\x66\x65\x65\x64\x62\x61\x63k_policy\x18\n \x01(\x0e\x32\x1c.eolymp.atlas.FeedbackPolicy\x12\x13\n\ntime_limit\x18\xc8\x01 \x01(\r\x12\x12\n\tcpu_limit\x18\xcc\x01 \x01(\r\x12\x15\n\x0cmemory_limit\x18\xc9\x01 \x01(\x04\x12\x18\n\x0f\x66ile_size_limit\x18\xca\x01 \x01(\x04\x12\x15\n\x0csubmit_limit\x18\xcb\x01 \x01(\r\x12\x1e\n\x15score_by_best_testset\x18\xd2\x01 \x01(\x08\x1a\x64\n\tStatement\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12!\n\x07\x63ontent\x18\x04 \x01(\x0b\x32\x10.eolymp.ecm.Node\x12\x15\n\rdownload_link\x18\x06 \x01(\t\x1a\\\n\x04Test\x12\r\n\x05index\x18\x01 \x01(\r\x12\x0f\n\x07\x65xample\x18\x02 \x01(\x08\x12\x11\n\tinput_url\x18\r \x01(\t\x12\x12\n\nanswer_url\x18\x0e \x01(\t\x12\r\n\x05score\x18\x05 \x01(\x02\x1a\x34\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,12 +35,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.problem_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _globals['_PROBLEM']._serialized_start=105
-  _globals['_PROBLEM']._serialized_end=700
-  _globals['_PROBLEM_STATEMENT']._serialized_start=452
-  _globals['_PROBLEM_STATEMENT']._serialized_end=552
-  _globals['_PROBLEM_TEST']._serialized_start=554
-  _globals['_PROBLEM_TEST']._serialized_end=646
-  _globals['_PROBLEM_ATTACHMENT']._serialized_start=648
-  _globals['_PROBLEM_ATTACHMENT']._serialized_end=700
+  _globals['_PROBLEM']._serialized_start=133
+  _globals['_PROBLEM']._serialized_end=770
+  _globals['_PROBLEM_STATEMENT']._serialized_start=522
+  _globals['_PROBLEM_STATEMENT']._serialized_end=622
+  _globals['_PROBLEM_TEST']._serialized_start=624
+  _globals['_PROBLEM_TEST']._serialized_end=716
+  _globals['_PROBLEM_ATTACHMENT']._serialized_start=718
+  _globals['_PROBLEM_ATTACHMENT']._serialized_end=770
 # @@protoc_insertion_point(module_scope)

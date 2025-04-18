@@ -1,3 +1,4 @@
+from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import testing_feedback_pb2 as _testing_feedback_pb2
 from eolymp.ecm import node_pb2 as _node_pb2
 from google.protobuf import descriptor as _descriptor
@@ -7,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ("id", "url", "index", "score", "base_id", "base_number", "base_space_id", "contest_id", "feedback_policy", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score_by_best_testset")
+    __slots__ = ("id", "url", "type", "index", "score", "base_id", "base_number", "base_space_id", "contest_id", "feedback_policy", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score_by_best_testset")
     class Statement(_message.Message):
         __slots__ = ("locale", "title", "content", "download_link")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -43,6 +44,7 @@ class Problem(_message.Message):
         def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., link: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
     SCORE_FIELD_NUMBER: _ClassVar[int]
     BASE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -58,6 +60,7 @@ class Problem(_message.Message):
     SCORE_BY_BEST_TESTSET_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
+    type: _problem_pb2.Problem.Type
     index: int
     score: float
     base_id: str
@@ -71,4 +74,4 @@ class Problem(_message.Message):
     file_size_limit: int
     submit_limit: int
     score_by_best_testset: bool
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., index: _Optional[int] = ..., score: _Optional[float] = ..., base_id: _Optional[str] = ..., base_number: _Optional[int] = ..., base_space_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: bool = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., index: _Optional[int] = ..., score: _Optional[float] = ..., base_id: _Optional[str] = ..., base_number: _Optional[int] = ..., base_space_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: bool = ...) -> None: ...
