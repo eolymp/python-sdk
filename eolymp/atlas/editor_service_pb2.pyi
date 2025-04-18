@@ -16,8 +16,14 @@ class Editor(_message.Message):
         __slots__ = ()
         UNKNOWN_FEATURE: _ClassVar[Editor.Feature]
         PRINT_CODE: _ClassVar[Editor.Feature]
+        RUN_CODE: _ClassVar[Editor.Feature]
+        UPLOAD_CODE: _ClassVar[Editor.Feature]
+        EDIT_CODE: _ClassVar[Editor.Feature]
     UNKNOWN_FEATURE: Editor.Feature
     PRINT_CODE: Editor.Feature
+    RUN_CODE: Editor.Feature
+    UPLOAD_CODE: Editor.Feature
+    EDIT_CODE: Editor.Feature
     class State(_message.Message):
         __slots__ = ("runtime", "source_code", "input_data")
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
