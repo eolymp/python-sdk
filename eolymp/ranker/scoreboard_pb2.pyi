@@ -10,7 +10,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ("id", "key", "name", "historical", "frozen", "freeze_at", "freeze_in", "unfreeze_at", "unfreeze_in", "default_sort_column", "default_sort_order", "format")
+    __slots__ = ("id", "key", "name", "historical", "frozen", "freeze_at", "unfreeze_at", "default_sort_column", "default_sort_order", "format", "contests")
+    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_EXTRA: _ClassVar[Scoreboard.Extra]
+        CONTESTS: _ClassVar[Scoreboard.Extra]
+    UNKNOWN_EXTRA: Scoreboard.Extra
+    CONTESTS: Scoreboard.Extra
     class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         LATEST: _ClassVar[Scoreboard.FetchingMode]
@@ -133,28 +139,41 @@ class Scoreboard(_message.Message):
         execute_at: _timestamp_pb2.Timestamp
         type: Scoreboard.Action.Type
         def __init__(self, id: _Optional[str] = ..., execute_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., type: _Optional[_Union[Scoreboard.Action.Type, str]] = ...) -> None: ...
+    class Contest(_message.Message):
+        __slots__ = ("id", "name", "image_url", "start_at", "end_at", "status")
+        ID_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
+        START_AT_FIELD_NUMBER: _ClassVar[int]
+        END_AT_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        id: str
+        name: str
+        image_url: str
+        start_at: _timestamp_pb2.Timestamp
+        end_at: _timestamp_pb2.Timestamp
+        status: str
+        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., start_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., status: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     HISTORICAL_FIELD_NUMBER: _ClassVar[int]
     FROZEN_FIELD_NUMBER: _ClassVar[int]
     FREEZE_AT_FIELD_NUMBER: _ClassVar[int]
-    FREEZE_IN_FIELD_NUMBER: _ClassVar[int]
     UNFREEZE_AT_FIELD_NUMBER: _ClassVar[int]
-    UNFREEZE_IN_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_SORT_COLUMN_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_SORT_ORDER_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
+    CONTESTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     key: str
     name: str
     historical: bool
     frozen: bool
     freeze_at: _timestamp_pb2.Timestamp
-    freeze_in: int
     unfreeze_at: _timestamp_pb2.Timestamp
-    unfreeze_in: int
     default_sort_column: str
     default_sort_order: _direction_pb2.Direction
     format: _format_pb2.Format
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., historical: bool = ..., frozen: bool = ..., freeze_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., freeze_in: _Optional[int] = ..., unfreeze_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., unfreeze_in: _Optional[int] = ..., default_sort_column: _Optional[str] = ..., default_sort_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ...) -> None: ...
+    contests: _containers.RepeatedCompositeFieldContainer[Scoreboard.Contest]
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., historical: bool = ..., frozen: bool = ..., freeze_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., unfreeze_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., default_sort_column: _Optional[str] = ..., default_sort_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ...) -> None: ...

@@ -27,7 +27,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/ranker/scoreboard.proto\x12\reolymp.ranker\x1a\x1a\x65olymp/ranker/format.proto\x1a eolymp/wellknown/direction.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9a\x0b\n\nScoreboard\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\nhistorical\x18\x07 \x01(\x08\x12\x0e\n\x06\x66rozen\x18\x14 \x01(\x08\x12-\n\tfreeze_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tfreeze_in\x18\x16 \x01(\r\x12/\n\x0bunfreeze_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0bunfreeze_in\x18\x18 \x01(\r\x12\x1b\n\x13\x64\x65\x66\x61ult_sort_column\x18( \x01(\t\x12\x37\n\x12\x64\x65\x66\x61ult_sort_order\x18) \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12%\n\x06\x66ormat\x18\n \x01(\x0e\x32\x15.eolymp.ranker.Format\x1a\xb5\x03\n\x03Row\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tmember_id\x18\x03 \x01(\t\x12\r\n\x05score\x18\n \x01(\x02\x12\x0f\n\x07penalty\x18\x0b \x01(\x02\x12\r\n\x05ghost\x18( \x01(\x08\x12\x12\n\nunofficial\x18) \x01(\x08\x12\x0c\n\x04rank\x18\x1e \x01(\r\x12\x12\n\nrank_lower\x18\x1f \x01(\r\x12\x33\n\x06values\x18\x14 \x03(\x0b\x32#.eolymp.ranker.Scoreboard.Row.Value\x1a\xe6\x01\n\x05Value\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tcolumn_id\x18\x02 \x01(\t\x12\x13\n\x0bvalid_after\x18\x1f \x01(\r\x12\x13\n\x0bvalid_until\x18  \x01(\r\x12\r\n\x05score\x18\n \x01(\x02\x12\x0f\n\x07penalty\x18\x0b \x01(\x02\x12\x12\n\npercentage\x18\x0c \x01(\x02\x12\x10\n\x08\x61ttempts\x18\r \x01(\r\x12\x11\n\tsolved_in\x18\x0e \x01(\r\x12\x0f\n\x07upsolve\x18( \x01(\x08\x12\x14\n\x0cvalue_string\x18\x14 \x01(\t\x12\x14\n\x0cvalue_number\x18\x15 \x01(\x05\x1a\x98\x03\n\x06\x43olumn\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tparent_id\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x12\n\nshort_name\x18\x05 \x01(\t\x12\x33\n\x04type\x18\x06 \x01(\x0e\x32%.eolymp.ranker.Scoreboard.Column.Type\x12\r\n\x05index\x18\x07 \x01(\r\x12\x0f\n\x07visible\x18\x08 \x01(\x08\x12\x12\n\nfilterable\x18\t \x01(\x08\x12\x10\n\x08sortable\x18\n \x01(\x08\x12\x18\n\x10judge_contest_id\x18\x14 \x01(\t\x12\x18\n\x10judge_problem_id\x18\x15 \x01(\t\x12\x1f\n\x17\x63ommunity_attribute_key\x18\x16 \x01(\t\x12 \n\x18\x63ommunity_attribute_type\x18\x17 \x01(\t\"N\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07\x43ONTEST\x10\x01\x12\x0b\n\x07PROBLEM\x10\x02\x12\r\n\tATTRIBUTE\x10\x03\x12\x08\n\x04NAME\x10\x04\x12\t\n\x05TOTAL\x10\x05\x1a\xa5\x01\n\x06\x41\x63tion\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\nexecute_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x04type\x18\x03 \x01(\x0e\x32%.eolymp.ranker.Scoreboard.Action.Type\"*\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\n\n\x06\x46REEZE\x10\x01\x12\x0c\n\x08UNFREEZE\x10\x02\"A\n\x0c\x46\x65tchingMode\x12\n\n\x06LATEST\x10\x00\x12\x0c\n\x08PUNCTUAL\x10\x01\x12\n\n\x06\x46ROZEN\x10\x02\x12\x0b\n\x07UPSOLVE\x10\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/ranker;rankerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/ranker/scoreboard.proto\x12\reolymp.ranker\x1a\x1a\x65olymp/ranker/format.proto\x1a eolymp/wellknown/direction.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf4\x0c\n\nScoreboard\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\nhistorical\x18\x07 \x01(\x08\x12\x0e\n\x06\x66rozen\x18\x14 \x01(\x08\x12-\n\tfreeze_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bunfreeze_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1b\n\x13\x64\x65\x66\x61ult_sort_column\x18( \x01(\t\x12\x37\n\x12\x64\x65\x66\x61ult_sort_order\x18) \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12%\n\x06\x66ormat\x18\n \x01(\x0e\x32\x15.eolymp.ranker.Format\x12\x33\n\x08\x63ontests\x18\x33 \x03(\x0b\x32!.eolymp.ranker.Scoreboard.Contest\x1a\xb5\x03\n\x03Row\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tmember_id\x18\x03 \x01(\t\x12\r\n\x05score\x18\n \x01(\x02\x12\x0f\n\x07penalty\x18\x0b \x01(\x02\x12\r\n\x05ghost\x18( \x01(\x08\x12\x12\n\nunofficial\x18) \x01(\x08\x12\x0c\n\x04rank\x18\x1e \x01(\r\x12\x12\n\nrank_lower\x18\x1f \x01(\r\x12\x33\n\x06values\x18\x14 \x03(\x0b\x32#.eolymp.ranker.Scoreboard.Row.Value\x1a\xe6\x01\n\x05Value\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tcolumn_id\x18\x02 \x01(\t\x12\x13\n\x0bvalid_after\x18\x1f \x01(\r\x12\x13\n\x0bvalid_until\x18  \x01(\r\x12\r\n\x05score\x18\n \x01(\x02\x12\x0f\n\x07penalty\x18\x0b \x01(\x02\x12\x12\n\npercentage\x18\x0c \x01(\x02\x12\x10\n\x08\x61ttempts\x18\r \x01(\r\x12\x11\n\tsolved_in\x18\x0e \x01(\r\x12\x0f\n\x07upsolve\x18( \x01(\x08\x12\x14\n\x0cvalue_string\x18\x14 \x01(\t\x12\x14\n\x0cvalue_number\x18\x15 \x01(\x05\x1a\x98\x03\n\x06\x43olumn\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tparent_id\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x12\n\nshort_name\x18\x05 \x01(\t\x12\x33\n\x04type\x18\x06 \x01(\x0e\x32%.eolymp.ranker.Scoreboard.Column.Type\x12\r\n\x05index\x18\x07 \x01(\r\x12\x0f\n\x07visible\x18\x08 \x01(\x08\x12\x12\n\nfilterable\x18\t \x01(\x08\x12\x10\n\x08sortable\x18\n \x01(\x08\x12\x18\n\x10judge_contest_id\x18\x14 \x01(\t\x12\x18\n\x10judge_problem_id\x18\x15 \x01(\t\x12\x1f\n\x17\x63ommunity_attribute_key\x18\x16 \x01(\t\x12 \n\x18\x63ommunity_attribute_type\x18\x17 \x01(\t\"N\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07\x43ONTEST\x10\x01\x12\x0b\n\x07PROBLEM\x10\x02\x12\r\n\tATTRIBUTE\x10\x03\x12\x08\n\x04NAME\x10\x04\x12\t\n\x05TOTAL\x10\x05\x1a\xa5\x01\n\x06\x41\x63tion\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\nexecute_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x04type\x18\x03 \x01(\x0e\x32%.eolymp.ranker.Scoreboard.Action.Type\"*\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\n\n\x06\x46REEZE\x10\x01\x12\x0c\n\x08UNFREEZE\x10\x02\x1a\xa0\x01\n\x07\x43ontest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\timage_url\x18\x03 \x01(\t\x12,\n\x08start_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x06\x65nd_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06status\x18\x06 \x01(\t\"(\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x0c\n\x08\x43ONTESTS\x10\x01\"A\n\x0c\x46\x65tchingMode\x12\n\n\x06LATEST\x10\x00\x12\x0c\n\x08PUNCTUAL\x10\x01\x12\n\n\x06\x46ROZEN\x10\x02\x12\x0b\n\x07UPSOLVE\x10\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/ranker;rankerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,19 +36,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/ranker;ranker'
   _globals['_SCOREBOARD']._serialized_start=145
-  _globals['_SCOREBOARD']._serialized_end=1579
-  _globals['_SCOREBOARD_ROW']._serialized_start=496
-  _globals['_SCOREBOARD_ROW']._serialized_end=933
-  _globals['_SCOREBOARD_ROW_VALUE']._serialized_start=703
-  _globals['_SCOREBOARD_ROW_VALUE']._serialized_end=933
-  _globals['_SCOREBOARD_COLUMN']._serialized_start=936
-  _globals['_SCOREBOARD_COLUMN']._serialized_end=1344
-  _globals['_SCOREBOARD_COLUMN_TYPE']._serialized_start=1266
-  _globals['_SCOREBOARD_COLUMN_TYPE']._serialized_end=1344
-  _globals['_SCOREBOARD_ACTION']._serialized_start=1347
-  _globals['_SCOREBOARD_ACTION']._serialized_end=1512
-  _globals['_SCOREBOARD_ACTION_TYPE']._serialized_start=1470
-  _globals['_SCOREBOARD_ACTION_TYPE']._serialized_end=1512
-  _globals['_SCOREBOARD_FETCHINGMODE']._serialized_start=1514
-  _globals['_SCOREBOARD_FETCHINGMODE']._serialized_end=1579
+  _globals['_SCOREBOARD']._serialized_end=1797
+  _globals['_SCOREBOARD_ROW']._serialized_start=509
+  _globals['_SCOREBOARD_ROW']._serialized_end=946
+  _globals['_SCOREBOARD_ROW_VALUE']._serialized_start=716
+  _globals['_SCOREBOARD_ROW_VALUE']._serialized_end=946
+  _globals['_SCOREBOARD_COLUMN']._serialized_start=949
+  _globals['_SCOREBOARD_COLUMN']._serialized_end=1357
+  _globals['_SCOREBOARD_COLUMN_TYPE']._serialized_start=1279
+  _globals['_SCOREBOARD_COLUMN_TYPE']._serialized_end=1357
+  _globals['_SCOREBOARD_ACTION']._serialized_start=1360
+  _globals['_SCOREBOARD_ACTION']._serialized_end=1525
+  _globals['_SCOREBOARD_ACTION_TYPE']._serialized_start=1483
+  _globals['_SCOREBOARD_ACTION_TYPE']._serialized_end=1525
+  _globals['_SCOREBOARD_CONTEST']._serialized_start=1528
+  _globals['_SCOREBOARD_CONTEST']._serialized_end=1688
+  _globals['_SCOREBOARD_EXTRA']._serialized_start=1690
+  _globals['_SCOREBOARD_EXTRA']._serialized_end=1730
+  _globals['_SCOREBOARD_FETCHINGMODE']._serialized_start=1732
+  _globals['_SCOREBOARD_FETCHINGMODE']._serialized_end=1797
 # @@protoc_insertion_point(module_scope)
