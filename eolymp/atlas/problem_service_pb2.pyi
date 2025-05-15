@@ -157,6 +157,7 @@ class UpdateProblemInput(_message.Message):
         DIFFICULTY: _ClassVar[UpdateProblemInput.Patch]
         ORIGIN: _ClassVar[UpdateProblemInput.Patch]
         TYPE: _ClassVar[UpdateProblemInput.Patch]
+        NUMBER: _ClassVar[UpdateProblemInput.Patch]
     ALL: UpdateProblemInput.Patch
     VISIBLE: UpdateProblemInput.Patch
     PRIVATE: UpdateProblemInput.Patch
@@ -164,6 +165,7 @@ class UpdateProblemInput(_message.Message):
     DIFFICULTY: UpdateProblemInput.Patch
     ORIGIN: UpdateProblemInput.Patch
     TYPE: UpdateProblemInput.Patch
+    NUMBER: UpdateProblemInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
