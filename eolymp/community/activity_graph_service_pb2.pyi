@@ -5,7 +5,8 @@ from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -17,7 +18,7 @@ class DescribeActivityGraphInput(_message.Message):
     after: _timestamp_pb2.Timestamp
     before: _timestamp_pb2.Timestamp
     metric: str
-    def __init__(self, after: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., before: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., metric: _Optional[str] = ...) -> None: ...
+    def __init__(self, after: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., before: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., metric: _Optional[str] = ...) -> None: ...
 
 class DescribeActivityGraphOutput(_message.Message):
     __slots__ = ("values", "max_value")

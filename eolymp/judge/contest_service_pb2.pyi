@@ -3,13 +3,17 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.judge import activity_pb2 as _activity_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
+from eolymp.judge import contest_certification_pb2 as _contest_certification_pb2
+from eolymp.judge import contest_environment_pb2 as _contest_environment_pb2
+from eolymp.judge import contest_taxonomy_pb2 as _contest_taxonomy_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -57,6 +61,8 @@ class UpdateContestInput(_message.Message):
         REQUIRE_ADMISSION: _ClassVar[UpdateContestInput.Patch]
         ALLOW_PAUSE: _ClassVar[UpdateContestInput.Patch]
         ALLOW_FINISH_EARLY: _ClassVar[UpdateContestInput.Patch]
+        ALLOW_UPSOLVE: _ClassVar[UpdateContestInput.Patch]
+        ALLOW_FOLLOWUP: _ClassVar[UpdateContestInput.Patch]
         PARTICIPATION_MODE: _ClassVar[UpdateContestInput.Patch]
         FORMAT: _ClassVar[UpdateContestInput.Patch]
         KEY: _ClassVar[UpdateContestInput.Patch]
@@ -65,12 +71,8 @@ class UpdateContestInput(_message.Message):
         PARTICIPANT_COUNT_HIDDEN: _ClassVar[UpdateContestInput.Patch]
         FEATURED_UNTIL: _ClassVar[UpdateContestInput.Patch]
         PRINTER: _ClassVar[UpdateContestInput.Patch]
-        TAXONOMY: _ClassVar[UpdateContestInput.Patch]
-        APPEARANCE: _ClassVar[UpdateContestInput.Patch]
         ENVIRONMENT: _ClassVar[UpdateContestInput.Patch]
-        UPSOLVE: _ClassVar[UpdateContestInput.Patch]
         SCOREBOARD: _ClassVar[UpdateContestInput.Patch]
-        CERTIFICATION: _ClassVar[UpdateContestInput.Patch]
     ALL: UpdateContestInput.Patch
     NAME: UpdateContestInput.Patch
     STARTS_AT: UpdateContestInput.Patch
@@ -81,6 +83,8 @@ class UpdateContestInput(_message.Message):
     REQUIRE_ADMISSION: UpdateContestInput.Patch
     ALLOW_PAUSE: UpdateContestInput.Patch
     ALLOW_FINISH_EARLY: UpdateContestInput.Patch
+    ALLOW_UPSOLVE: UpdateContestInput.Patch
+    ALLOW_FOLLOWUP: UpdateContestInput.Patch
     PARTICIPATION_MODE: UpdateContestInput.Patch
     FORMAT: UpdateContestInput.Patch
     KEY: UpdateContestInput.Patch
@@ -89,12 +93,8 @@ class UpdateContestInput(_message.Message):
     PARTICIPANT_COUNT_HIDDEN: UpdateContestInput.Patch
     FEATURED_UNTIL: UpdateContestInput.Patch
     PRINTER: UpdateContestInput.Patch
-    TAXONOMY: UpdateContestInput.Patch
-    APPEARANCE: UpdateContestInput.Patch
     ENVIRONMENT: UpdateContestInput.Patch
-    UPSOLVE: UpdateContestInput.Patch
     SCOREBOARD: UpdateContestInput.Patch
-    CERTIFICATION: UpdateContestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CONTEST_FIELD_NUMBER: _ClassVar[int]
@@ -264,6 +264,78 @@ class ResumeContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class DescribeEnvironmentInput(_message.Message):
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class DescribeEnvironmentOutput(_message.Message):
+    __slots__ = ("environment",)
+    ENVIRONMENT_FIELD_NUMBER: _ClassVar[int]
+    environment: _contest_environment_pb2.Environment
+    def __init__(self, environment: _Optional[_Union[_contest_environment_pb2.Environment, _Mapping]] = ...) -> None: ...
+
+class ConfigureEnvironmentInput(_message.Message):
+    __slots__ = ("contest_id", "environment")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    ENVIRONMENT_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    environment: _contest_environment_pb2.Environment
+    def __init__(self, contest_id: _Optional[str] = ..., environment: _Optional[_Union[_contest_environment_pb2.Environment, _Mapping]] = ...) -> None: ...
+
+class ConfigureEnvironmentOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeCertificationInput(_message.Message):
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class DescribeCertificationOutput(_message.Message):
+    __slots__ = ("certification",)
+    CERTIFICATION_FIELD_NUMBER: _ClassVar[int]
+    certification: _contest_certification_pb2.Certification
+    def __init__(self, certification: _Optional[_Union[_contest_certification_pb2.Certification, _Mapping]] = ...) -> None: ...
+
+class ConfigureCertificationInput(_message.Message):
+    __slots__ = ("contest_id", "certification")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    CERTIFICATION_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    certification: _contest_certification_pb2.Certification
+    def __init__(self, contest_id: _Optional[str] = ..., certification: _Optional[_Union[_contest_certification_pb2.Certification, _Mapping]] = ...) -> None: ...
+
+class ConfigureCertificationOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeTaxonomyInput(_message.Message):
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class DescribeTaxonomyOutput(_message.Message):
+    __slots__ = ("taxonomy",)
+    TAXONOMY_FIELD_NUMBER: _ClassVar[int]
+    taxonomy: _contest_taxonomy_pb2.Taxonomy
+    def __init__(self, taxonomy: _Optional[_Union[_contest_taxonomy_pb2.Taxonomy, _Mapping]] = ...) -> None: ...
+
+class ConfigureTaxonomyInput(_message.Message):
+    __slots__ = ("contest_id", "taxonomy")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    TAXONOMY_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    taxonomy: _contest_taxonomy_pb2.Taxonomy
+    def __init__(self, contest_id: _Optional[str] = ..., taxonomy: _Optional[_Union[_contest_taxonomy_pb2.Taxonomy, _Mapping]] = ...) -> None: ...
+
+class ConfigureTaxonomyOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class WatchContestInput(_message.Message):
     __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -300,7 +372,7 @@ class DescribeContestUsageInput(_message.Message):
     PERIOD_END_FIELD_NUMBER: _ClassVar[int]
     period_start: _timestamp_pb2.Timestamp
     period_end: _timestamp_pb2.Timestamp
-    def __init__(self, period_start: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class DescribeContestUsageOutput(_message.Message):
     __slots__ = ("total_contests", "active_contests", "monthly_contests")

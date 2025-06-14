@@ -1,7 +1,8 @@
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -43,4 +44,4 @@ class User(_message.Message):
     username_changed_on: _timestamp_pb2.Timestamp
     password_changed_on: _timestamp_pb2.Timestamp
     locale: str
-    def __init__(self, id: _Optional[str] = ..., username: _Optional[str] = ..., email: _Optional[str] = ..., active: bool = ..., rating: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., company: _Optional[str] = ..., occupation: _Optional[str] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., email_status: _Optional[str] = ..., birthday: _Optional[str] = ..., registered_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., last_activity: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., username_changed_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., password_changed_on: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., username: _Optional[str] = ..., email: _Optional[str] = ..., active: bool = ..., rating: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., company: _Optional[str] = ..., occupation: _Optional[str] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., email_status: _Optional[str] = ..., birthday: _Optional[str] = ..., registered_on: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., last_activity: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., username_changed_on: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., password_changed_on: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., locale: _Optional[str] = ...) -> None: ...

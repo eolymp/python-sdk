@@ -4,7 +4,8 @@ from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -65,4 +66,4 @@ class Campaign(_message.Message):
     pending_count: int
     sent_count: int
     error_count: int
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., recipients_count: _Optional[int] = ..., pending_count: _Optional[int] = ..., sent_count: _Optional[int] = ..., error_count: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., recipients_count: _Optional[int] = ..., pending_count: _Optional[int] = ..., sent_count: _Optional[int] = ..., error_count: _Optional[int] = ...) -> None: ...

@@ -6,7 +6,8 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -118,4 +119,4 @@ class Post(_message.Message):
     reply_count: int
     labels: _containers.RepeatedScalarFieldContainer[str]
     links: _containers.RepeatedCompositeFieldContainer[_link_pb2.Link]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., source_id: _Optional[str] = ..., source_url: _Optional[str] = ..., draft: bool = ..., public: bool = ..., featured: bool = ..., pinned: bool = ..., moderation: _Optional[_Union[Post.Moderation, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., type_id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., image_url: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., preview: _Optional[_Union[Post.Preview, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., source_id: _Optional[str] = ..., source_url: _Optional[str] = ..., draft: bool = ..., public: bool = ..., featured: bool = ..., pinned: bool = ..., moderation: _Optional[_Union[Post.Moderation, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., type_id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., image_url: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., preview: _Optional[_Union[Post.Preview, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...

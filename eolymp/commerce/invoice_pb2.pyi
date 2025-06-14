@@ -4,7 +4,8 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -118,4 +119,4 @@ class Invoice(_message.Message):
     total: int
     total_excluding_tax: int
     items: _containers.RepeatedCompositeFieldContainer[Invoice.Item]
-    def __init__(self, id: _Optional[str] = ..., number: _Optional[str] = ..., status: _Optional[_Union[Invoice.Status, str]] = ..., customer_id: _Optional[str] = ..., description: _Optional[str] = ..., from_invoice: _Optional[_Union[Invoice.FromInvoice, _Mapping]] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., due_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., hosted_invoice_url: _Optional[str] = ..., invoice_pdf_url: _Optional[str] = ..., currency: _Optional[str] = ..., amount_due: _Optional[int] = ..., amount_paid: _Optional[int] = ..., amount_remaining: _Optional[int] = ..., subtotal: _Optional[int] = ..., subtotal_excluding_tax: _Optional[int] = ..., tax_amounts: _Optional[_Iterable[_Union[Invoice.TaxAmount, _Mapping]]] = ..., tax: _Optional[int] = ..., discount_amounts: _Optional[_Iterable[_Union[Invoice.DiscountAmount, _Mapping]]] = ..., total: _Optional[int] = ..., total_excluding_tax: _Optional[int] = ..., items: _Optional[_Iterable[_Union[Invoice.Item, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., number: _Optional[str] = ..., status: _Optional[_Union[Invoice.Status, str]] = ..., customer_id: _Optional[str] = ..., description: _Optional[str] = ..., from_invoice: _Optional[_Union[Invoice.FromInvoice, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., due_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., hosted_invoice_url: _Optional[str] = ..., invoice_pdf_url: _Optional[str] = ..., currency: _Optional[str] = ..., amount_due: _Optional[int] = ..., amount_paid: _Optional[int] = ..., amount_remaining: _Optional[int] = ..., subtotal: _Optional[int] = ..., subtotal_excluding_tax: _Optional[int] = ..., tax_amounts: _Optional[_Iterable[_Union[Invoice.TaxAmount, _Mapping]]] = ..., tax: _Optional[int] = ..., discount_amounts: _Optional[_Iterable[_Union[Invoice.DiscountAmount, _Mapping]]] = ..., total: _Optional[int] = ..., total_excluding_tax: _Optional[int] = ..., items: _Optional[_Iterable[_Union[Invoice.Item, _Mapping]]] = ...) -> None: ...
