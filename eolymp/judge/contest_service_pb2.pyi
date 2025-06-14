@@ -49,59 +49,13 @@ class DeleteContestOutput(_message.Message):
 
 class UpdateContestInput(_message.Message):
     __slots__ = ("patch", "contest_id", "contest")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateContestInput.Patch]
-        NAME: _ClassVar[UpdateContestInput.Patch]
-        STARTS_AT: _ClassVar[UpdateContestInput.Patch]
-        ENDS_AT: _ClassVar[UpdateContestInput.Patch]
-        DURATION: _ClassVar[UpdateContestInput.Patch]
-        VISIBILITY: _ClassVar[UpdateContestInput.Patch]
-        JOIN_UNOFFICIALLY: _ClassVar[UpdateContestInput.Patch]
-        REQUIRE_ADMISSION: _ClassVar[UpdateContestInput.Patch]
-        ALLOW_PAUSE: _ClassVar[UpdateContestInput.Patch]
-        ALLOW_FINISH_EARLY: _ClassVar[UpdateContestInput.Patch]
-        ALLOW_UPSOLVE: _ClassVar[UpdateContestInput.Patch]
-        ALLOW_FOLLOWUP: _ClassVar[UpdateContestInput.Patch]
-        PARTICIPATION_MODE: _ClassVar[UpdateContestInput.Patch]
-        FORMAT: _ClassVar[UpdateContestInput.Patch]
-        KEY: _ClassVar[UpdateContestInput.Patch]
-        LOGO_URL: _ClassVar[UpdateContestInput.Patch]
-        PROBLEM_COUNT_HIDDEN: _ClassVar[UpdateContestInput.Patch]
-        PARTICIPANT_COUNT_HIDDEN: _ClassVar[UpdateContestInput.Patch]
-        FEATURED_UNTIL: _ClassVar[UpdateContestInput.Patch]
-        PRINTER: _ClassVar[UpdateContestInput.Patch]
-        ENVIRONMENT: _ClassVar[UpdateContestInput.Patch]
-        SCOREBOARD: _ClassVar[UpdateContestInput.Patch]
-    ALL: UpdateContestInput.Patch
-    NAME: UpdateContestInput.Patch
-    STARTS_AT: UpdateContestInput.Patch
-    ENDS_AT: UpdateContestInput.Patch
-    DURATION: UpdateContestInput.Patch
-    VISIBILITY: UpdateContestInput.Patch
-    JOIN_UNOFFICIALLY: UpdateContestInput.Patch
-    REQUIRE_ADMISSION: UpdateContestInput.Patch
-    ALLOW_PAUSE: UpdateContestInput.Patch
-    ALLOW_FINISH_EARLY: UpdateContestInput.Patch
-    ALLOW_UPSOLVE: UpdateContestInput.Patch
-    ALLOW_FOLLOWUP: UpdateContestInput.Patch
-    PARTICIPATION_MODE: UpdateContestInput.Patch
-    FORMAT: UpdateContestInput.Patch
-    KEY: UpdateContestInput.Patch
-    LOGO_URL: UpdateContestInput.Patch
-    PROBLEM_COUNT_HIDDEN: UpdateContestInput.Patch
-    PARTICIPANT_COUNT_HIDDEN: UpdateContestInput.Patch
-    FEATURED_UNTIL: UpdateContestInput.Patch
-    PRINTER: UpdateContestInput.Patch
-    ENVIRONMENT: UpdateContestInput.Patch
-    SCOREBOARD: UpdateContestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CONTEST_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateContestInput.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_contest_pb2.Contest.Patch]
     contest_id: str
     contest: _contest_pb2.Contest
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateContestInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_contest_pb2.Contest.Patch, str]]] = ..., contest_id: _Optional[str] = ..., contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
 
 class UpdateContestOutput(_message.Message):
     __slots__ = ()

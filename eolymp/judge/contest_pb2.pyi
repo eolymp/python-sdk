@@ -9,6 +9,50 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
     __slots__ = ("id", "url", "name", "image_url", "starts_at", "starts_in", "ends_at", "ends_in", "duration", "status", "visibility", "join_unofficially", "participation_mode", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "scoreboard")
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        ALL: _ClassVar[Contest.Patch]
+        NAME: _ClassVar[Contest.Patch]
+        STARTS_AT: _ClassVar[Contest.Patch]
+        ENDS_AT: _ClassVar[Contest.Patch]
+        DURATION: _ClassVar[Contest.Patch]
+        VISIBILITY: _ClassVar[Contest.Patch]
+        JOIN_UNOFFICIALLY: _ClassVar[Contest.Patch]
+        REQUIRE_ADMISSION: _ClassVar[Contest.Patch]
+        ALLOW_PAUSE: _ClassVar[Contest.Patch]
+        ALLOW_FINISH_EARLY: _ClassVar[Contest.Patch]
+        ALLOW_UPSOLVE: _ClassVar[Contest.Patch]
+        ALLOW_FOLLOWUP: _ClassVar[Contest.Patch]
+        PARTICIPATION_MODE: _ClassVar[Contest.Patch]
+        FORMAT: _ClassVar[Contest.Patch]
+        KEY: _ClassVar[Contest.Patch]
+        IMAGE_URL: _ClassVar[Contest.Patch]
+        PROBLEM_COUNT_HIDDEN: _ClassVar[Contest.Patch]
+        PARTICIPANT_COUNT_HIDDEN: _ClassVar[Contest.Patch]
+        FEATURED_UNTIL: _ClassVar[Contest.Patch]
+        PRINTER: _ClassVar[Contest.Patch]
+        SCOREBOARD: _ClassVar[Contest.Patch]
+    ALL: Contest.Patch
+    NAME: Contest.Patch
+    STARTS_AT: Contest.Patch
+    ENDS_AT: Contest.Patch
+    DURATION: Contest.Patch
+    VISIBILITY: Contest.Patch
+    JOIN_UNOFFICIALLY: Contest.Patch
+    REQUIRE_ADMISSION: Contest.Patch
+    ALLOW_PAUSE: Contest.Patch
+    ALLOW_FINISH_EARLY: Contest.Patch
+    ALLOW_UPSOLVE: Contest.Patch
+    ALLOW_FOLLOWUP: Contest.Patch
+    PARTICIPATION_MODE: Contest.Patch
+    FORMAT: Contest.Patch
+    KEY: Contest.Patch
+    IMAGE_URL: Contest.Patch
+    PROBLEM_COUNT_HIDDEN: Contest.Patch
+    PARTICIPANT_COUNT_HIDDEN: Contest.Patch
+    FEATURED_UNTIL: Contest.Patch
+    PRINTER: Contest.Patch
+    SCOREBOARD: Contest.Patch
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATUS_UNKNOWN: _ClassVar[Contest.Status]
