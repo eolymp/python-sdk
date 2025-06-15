@@ -41,20 +41,20 @@ class ParticipantFinalizedEvent(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class AssignParticipantInput(_message.Message):
-    __slots__ = ("contest_id", "participant", "member_id", "group_id", "unofficial", "inactive")
+    __slots__ = ("contest_id", "member_id", "group_id", "unofficial", "inactive", "role")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     INACTIVE_FIELD_NUMBER: _ClassVar[int]
+    ROLE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    participant: _participant_pb2.Participant
     member_id: str
     group_id: str
     unofficial: bool
     inactive: bool
-    def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., unofficial: bool = ..., inactive: bool = ...) -> None: ...
+    role: _participant_pb2.Participant.Role
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., unofficial: bool = ..., inactive: bool = ..., role: _Optional[_Union[_participant_pb2.Participant.Role, str]] = ...) -> None: ...
 
 class AssignParticipantOutput(_message.Message):
     __slots__ = ("participant_id",)
@@ -92,6 +92,7 @@ class UpdateParticipantInput(_message.Message):
         __slots__ = ()
         ALL: _ClassVar[UpdateParticipantInput.Patch]
         DISPLAY_NAME: _ClassVar[UpdateParticipantInput.Patch]
+        ROLE: _ClassVar[UpdateParticipantInput.Patch]
         BONUS_TIME: _ClassVar[UpdateParticipantInput.Patch]
         UNOFFICIAL: _ClassVar[UpdateParticipantInput.Patch]
         MEDAL: _ClassVar[UpdateParticipantInput.Patch]
@@ -99,6 +100,7 @@ class UpdateParticipantInput(_message.Message):
         PASSCODE: _ClassVar[UpdateParticipantInput.Patch]
     ALL: UpdateParticipantInput.Patch
     DISPLAY_NAME: UpdateParticipantInput.Patch
+    ROLE: UpdateParticipantInput.Patch
     BONUS_TIME: UpdateParticipantInput.Patch
     UNOFFICIAL: UpdateParticipantInput.Patch
     MEDAL: UpdateParticipantInput.Patch
