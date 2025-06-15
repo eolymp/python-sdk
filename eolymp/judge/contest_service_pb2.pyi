@@ -49,10 +49,10 @@ class UpdateContestInput(_message.Message):
     PATCH_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CONTEST_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_contest_pb2.Contest.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_contest_pb2.Contest.Patch.Field]
     contest_id: str
     contest: _contest_pb2.Contest
-    def __init__(self, patch: _Optional[_Iterable[_Union[_contest_pb2.Contest.Patch, str]]] = ..., contest_id: _Optional[str] = ..., contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_contest_pb2.Contest.Patch.Field, str]]] = ..., contest_id: _Optional[str] = ..., contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
 
 class UpdateContestOutput(_message.Message):
     __slots__ = ()
@@ -93,8 +93,8 @@ class DescribeContestInput(_message.Message):
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_contest_pb2.Contest.Extra]
-    def __init__(self, contest_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_contest_pb2.Contest.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_contest_pb2.Contest.Extra.Field]
+    def __init__(self, contest_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_contest_pb2.Contest.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeContestOutput(_message.Message):
     __slots__ = ("contest",)
@@ -148,8 +148,8 @@ class ListContestsInput(_message.Message):
     size: int
     search: str
     filters: ListContestsInput.Filter
-    extra: _containers.RepeatedScalarFieldContainer[_contest_pb2.Contest.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListContestsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_contest_pb2.Contest.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_contest_pb2.Contest.Extra.Field]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListContestsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_contest_pb2.Contest.Extra.Field, str]]] = ...) -> None: ...
 
 class ListContestsOutput(_message.Message):
     __slots__ = ("items", "total")

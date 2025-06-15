@@ -88,33 +88,15 @@ class DisableParticipantOutput(_message.Message):
 
 class UpdateParticipantInput(_message.Message):
     __slots__ = ("patch", "contest_id", "participant_id", "participant")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateParticipantInput.Patch]
-        DISPLAY_NAME: _ClassVar[UpdateParticipantInput.Patch]
-        ROLE: _ClassVar[UpdateParticipantInput.Patch]
-        BONUS_TIME: _ClassVar[UpdateParticipantInput.Patch]
-        UNOFFICIAL: _ClassVar[UpdateParticipantInput.Patch]
-        MEDAL: _ClassVar[UpdateParticipantInput.Patch]
-        INACTIVE: _ClassVar[UpdateParticipantInput.Patch]
-        PASSCODE: _ClassVar[UpdateParticipantInput.Patch]
-    ALL: UpdateParticipantInput.Patch
-    DISPLAY_NAME: UpdateParticipantInput.Patch
-    ROLE: UpdateParticipantInput.Patch
-    BONUS_TIME: UpdateParticipantInput.Patch
-    UNOFFICIAL: UpdateParticipantInput.Patch
-    MEDAL: UpdateParticipantInput.Patch
-    INACTIVE: UpdateParticipantInput.Patch
-    PASSCODE: UpdateParticipantInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateParticipantInput.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_participant_pb2.Participant.Patch.Field]
     contest_id: str
     participant_id: str
     participant: _participant_pb2.Participant
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateParticipantInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_participant_pb2.Participant.Patch.Field, str]]] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class UpdateParticipantOutput(_message.Message):
     __slots__ = ()
