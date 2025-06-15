@@ -80,6 +80,7 @@ class Contest(_message.Message):
             CLASSIFICATION: _ClassVar[Contest.Patch.Field]
             SCOREBOARD_CONFIG: _ClassVar[Contest.Patch.Field]
             CERTIFICATION_CONFIG: _ClassVar[Contest.Patch.Field]
+            ENVIRONMENT_CONFIG: _ClassVar[Contest.Patch.Field]
         UNKNOWN: Contest.Patch.Field
         NAME: Contest.Patch.Field
         IMAGE_URL: Contest.Patch.Field
@@ -103,6 +104,7 @@ class Contest(_message.Message):
         CLASSIFICATION: Contest.Patch.Field
         SCOREBOARD_CONFIG: Contest.Patch.Field
         CERTIFICATION_CONFIG: Contest.Patch.Field
+        ENVIRONMENT_CONFIG: Contest.Patch.Field
         def __init__(self) -> None: ...
     class Extra(_message.Message):
         __slots__ = ()
