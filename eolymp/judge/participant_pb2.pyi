@@ -29,6 +29,18 @@ class Participant(_message.Message):
     UPSOLVE: Participant.Status
     BLOCKED: Participant.Status
     PAUSED: Participant.Status
+    class Role(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        PARTICIPANT: _ClassVar[Participant.Role]
+        STAFF: _ClassVar[Participant.Role]
+        TESTER: _ClassVar[Participant.Role]
+        AUTHOR: _ClassVar[Participant.Role]
+        COORDINATOR: _ClassVar[Participant.Role]
+    PARTICIPANT: Participant.Role
+    STAFF: Participant.Role
+    TESTER: Participant.Role
+    AUTHOR: Participant.Role
+    COORDINATOR: Participant.Role
     class Submit(_message.Message):
         __slots__ = ("problem_id", "counter")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]

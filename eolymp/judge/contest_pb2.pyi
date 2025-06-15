@@ -1,3 +1,4 @@
+from eolymp.judge import contest_taxonomy_pb2 as _contest_taxonomy_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -8,7 +9,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
-    __slots__ = ("id", "url", "name", "image_url", "starts_at", "starts_in", "ends_at", "ends_in", "duration", "status", "visibility", "join_unofficially", "participation_mode", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "scoreboard")
+    __slots__ = ("id", "url", "name", "image_url", "starts_at", "starts_in", "ends_at", "ends_in", "duration", "status", "visibility", "join_unofficially", "participation_mode", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "scoreboard", "taxonomy")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         ALL: _ClassVar[Contest.Patch]
@@ -53,6 +54,12 @@ class Contest(_message.Message):
     FEATURED_UNTIL: Contest.Patch
     PRINTER: Contest.Patch
     SCOREBOARD: Contest.Patch
+    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_EXTRA: _ClassVar[Contest.Extra]
+        TAXONOMY: _ClassVar[Contest.Extra]
+    UNKNOWN_EXTRA: Contest.Extra
+    TAXONOMY: Contest.Extra
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATUS_UNKNOWN: _ClassVar[Contest.Status]
@@ -149,6 +156,7 @@ class Contest(_message.Message):
     FEATURED_UNTIL_FIELD_NUMBER: _ClassVar[int]
     PRINTER_ID_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_FIELD_NUMBER: _ClassVar[int]
+    TAXONOMY_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
     name: str
@@ -176,4 +184,5 @@ class Contest(_message.Message):
     featured_until: _timestamp_pb2.Timestamp
     printer_id: str
     scoreboard: Contest.Scoreboard
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., require_admission: bool = ..., allow_pause: bool = ..., allow_finish_early: bool = ..., allow_upsolve: bool = ..., allow_followup: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ...) -> None: ...
+    taxonomy: _contest_taxonomy_pb2.Taxonomy
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., starts_in: _Optional[int] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_in: _Optional[int] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: bool = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., require_admission: bool = ..., allow_pause: bool = ..., allow_finish_early: bool = ..., allow_upsolve: bool = ..., allow_followup: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., scoreboard: _Optional[_Union[Contest.Scoreboard, _Mapping]] = ..., taxonomy: _Optional[_Union[_contest_taxonomy_pb2.Taxonomy, _Mapping]] = ...) -> None: ...
