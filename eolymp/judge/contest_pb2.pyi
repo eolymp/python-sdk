@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
-    __slots__ = ("id", "url", "name", "image_url", "starts_at", "ends_at", "duration", "status", "visibility", "participation_mode", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "classification", "scoreboard_config", "environment_config", "certification_config")
+    __slots__ = ("id", "url", "name", "image_url", "starts_at", "ends_at", "duration", "status", "visibility", "participation_mode", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "classification", "scoreboard_config", "environment_config", "certification_config", "staff")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATUS_UNKNOWN: _ClassVar[Contest.Status]
@@ -115,11 +115,13 @@ class Contest(_message.Message):
             SCOREBOARD_CONFIG: _ClassVar[Contest.Extra.Field]
             CERTIFICATION_CONFIG: _ClassVar[Contest.Extra.Field]
             ENVIRONMENT_CONFIG: _ClassVar[Contest.Extra.Field]
+            STAFF: _ClassVar[Contest.Extra.Field]
         UNKNOWN: Contest.Extra.Field
         CLASSIFICATION: Contest.Extra.Field
         SCOREBOARD_CONFIG: Contest.Extra.Field
         CERTIFICATION_CONFIG: Contest.Extra.Field
         ENVIRONMENT_CONFIG: Contest.Extra.Field
+        STAFF: Contest.Extra.Field
         def __init__(self) -> None: ...
     class Classification(_message.Message):
         __slots__ = ("year", "series", "scale", "difficulty", "country", "region", "city")
@@ -198,6 +200,15 @@ class Contest(_message.Message):
         RUNTIMES_FIELD_NUMBER: _ClassVar[int]
         runtimes: _containers.RepeatedCompositeFieldContainer[_runtime_pb2.Runtime]
         def __init__(self, runtimes: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ...) -> None: ...
+    class Staff(_message.Message):
+        __slots__ = ("member_id", "display_name", "role")
+        MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+        DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+        ROLE_FIELD_NUMBER: _ClassVar[int]
+        member_id: str
+        display_name: str
+        role: str
+        def __init__(self, member_id: _Optional[str] = ..., display_name: _Optional[str] = ..., role: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -226,6 +237,7 @@ class Contest(_message.Message):
     SCOREBOARD_CONFIG_FIELD_NUMBER: _ClassVar[int]
     ENVIRONMENT_CONFIG_FIELD_NUMBER: _ClassVar[int]
     CERTIFICATION_CONFIG_FIELD_NUMBER: _ClassVar[int]
+    STAFF_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
     name: str
@@ -254,4 +266,5 @@ class Contest(_message.Message):
     scoreboard_config: Contest.ScoreboardConfig
     environment_config: Contest.EnvironmentConfig
     certification_config: Contest.CertificationConfig
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., join_unofficially: bool = ..., require_admission: bool = ..., allow_pause: bool = ..., allow_finish_early: bool = ..., allow_upsolve: bool = ..., allow_followup: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ...) -> None: ...
+    staff: _containers.RepeatedCompositeFieldContainer[Contest.Staff]
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., join_unofficially: bool = ..., require_admission: bool = ..., allow_pause: bool = ..., allow_finish_early: bool = ..., allow_upsolve: bool = ..., allow_followup: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ..., staff: _Optional[_Iterable[_Union[Contest.Staff, _Mapping]]] = ...) -> None: ...
