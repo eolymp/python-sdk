@@ -14,9 +14,11 @@ class Activity(_message.Message):
         NONE: _ClassVar[Activity.Type]
         PROBLEM_RETEST: _ClassVar[Activity.Type]
         SCOREBOARD_REBUILD: _ClassVar[Activity.Type]
+        ANALYZE_CONTEST: _ClassVar[Activity.Type]
     NONE: Activity.Type
     PROBLEM_RETEST: Activity.Type
     SCOREBOARD_REBUILD: Activity.Type
+    ANALYZE_CONTEST: Activity.Type
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN: _ClassVar[Activity.Status]
