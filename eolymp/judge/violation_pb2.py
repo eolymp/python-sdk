@@ -26,7 +26,7 @@ from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/judge/violation.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdc\x01\n\tViolation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tcancelled\x18\x02 \x01(\x08\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x11\n\tautomatic\x18\x04 \x01(\x08\x12\x10\n\x08given_by\x18\n \x01(\t\x12,\n\x08given_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1aL\n\x05Patch\"C\n\x05\x46ield\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x0b\n\x07SUMMARY\x10\x01\x12\r\n\tCANCELLED\x10\x02\x12\r\n\tAUTOMATIC\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/judge/violation.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf4\x01\n\tViolation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tcancelled\x18\x02 \x01(\x08\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x11\n\tautomatic\x18\x04 \x01(\x08\x12\x16\n\x0eparticipant_id\x18\x05 \x01(\t\x12\x10\n\x08given_by\x18\n \x01(\t\x12,\n\x08given_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1aL\n\x05Patch\"C\n\x05\x46ield\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x0b\n\x07SUMMARY\x10\x01\x12\r\n\tCANCELLED\x10\x02\x12\r\n\tAUTOMATIC\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,9 +35,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
   _globals['_VIOLATION']._serialized_start=106
-  _globals['_VIOLATION']._serialized_end=326
-  _globals['_VIOLATION_PATCH']._serialized_start=250
-  _globals['_VIOLATION_PATCH']._serialized_end=326
-  _globals['_VIOLATION_PATCH_FIELD']._serialized_start=259
-  _globals['_VIOLATION_PATCH_FIELD']._serialized_end=326
+  _globals['_VIOLATION']._serialized_end=350
+  _globals['_VIOLATION_PATCH']._serialized_start=274
+  _globals['_VIOLATION_PATCH']._serialized_end=350
+  _globals['_VIOLATION_PATCH_FIELD']._serialized_start=283
+  _globals['_VIOLATION_PATCH_FIELD']._serialized_end=350
 # @@protoc_insertion_point(module_scope)
