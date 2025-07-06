@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Participant(_message.Message):
-    __slots__ = ("id", "member_id", "display_name", "role", "unofficial", "inactive", "disqualified", "ghost", "finalized", "medal", "status", "started_at", "end_at", "bonus_time", "passcode", "certificate_id", "submits")
+    __slots__ = ("id", "member_id", "display_name", "role", "unofficial", "inactive", "disqualified", "ghost", "finalized", "medal", "status", "started_at", "end_at", "bonus_time", "violation_count", "passcode", "certificate_id", "submits")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Participant.Status]
@@ -83,6 +83,7 @@ class Participant(_message.Message):
     STARTED_AT_FIELD_NUMBER: _ClassVar[int]
     END_AT_FIELD_NUMBER: _ClassVar[int]
     BONUS_TIME_FIELD_NUMBER: _ClassVar[int]
+    VIOLATION_COUNT_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     CERTIFICATE_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMITS_FIELD_NUMBER: _ClassVar[int]
@@ -100,7 +101,8 @@ class Participant(_message.Message):
     started_at: _timestamp_pb2.Timestamp
     end_at: _timestamp_pb2.Timestamp
     bonus_time: int
+    violation_count: int
     passcode: str
     certificate_id: str
     submits: _containers.RepeatedCompositeFieldContainer[Participant.Submit]
-    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., display_name: _Optional[str] = ..., role: _Optional[_Union[Participant.Role, str]] = ..., unofficial: bool = ..., inactive: bool = ..., disqualified: bool = ..., ghost: bool = ..., finalized: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., bonus_time: _Optional[int] = ..., passcode: _Optional[str] = ..., certificate_id: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., display_name: _Optional[str] = ..., role: _Optional[_Union[Participant.Role, str]] = ..., unofficial: bool = ..., inactive: bool = ..., disqualified: bool = ..., ghost: bool = ..., finalized: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., bonus_time: _Optional[int] = ..., violation_count: _Optional[int] = ..., passcode: _Optional[str] = ..., certificate_id: _Optional[str] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...

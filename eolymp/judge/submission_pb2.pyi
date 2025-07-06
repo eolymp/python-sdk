@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ("id", "url", "contest_id", "problem_id", "participant_id", "submitted_at", "deleted", "lang", "source", "source_url", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "cursor")
+    __slots__ = ("id", "url", "contest_id", "problem_id", "participant_id", "submitted_at", "deleted", "lang", "source", "source_url", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "genai_use_probability", "groups", "cursor")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NO_EXTRA: _ClassVar[Submission.Extra]
@@ -97,6 +97,7 @@ class Submission(_message.Message):
     CPU_USAGE_FIELD_NUMBER: _ClassVar[int]
     MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
+    GENAI_USE_PROBABILITY_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
     CURSOR_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -121,6 +122,7 @@ class Submission(_message.Message):
     cpu_usage: int
     memory_usage: int
     resource_usage: float
+    genai_use_probability: float
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., genai_use_probability: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...

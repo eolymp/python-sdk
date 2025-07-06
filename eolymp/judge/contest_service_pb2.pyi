@@ -219,6 +219,16 @@ class ResumeContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class AnalyzeContestInput(_message.Message):
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class AnalyzeContestOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class WatchContestInput(_message.Message):
     __slots__ = ("contest_id", "extra")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
