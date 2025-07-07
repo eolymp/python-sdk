@@ -64,20 +64,24 @@ class DescribeViolationOutput(_message.Message):
 class ListViolationsInput(_message.Message):
     __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ("id", "cancelled", "summary", "automatic", "participant_id", "given_by")
+        __slots__ = ("id", "status", "type", "summary", "participant_id", "submission_id", "created_by", "confirmed_by")
         ID_FIELD_NUMBER: _ClassVar[int]
-        CANCELLED_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
         SUMMARY_FIELD_NUMBER: _ClassVar[int]
-        AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
         PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-        GIVEN_BY_FIELD_NUMBER: _ClassVar[int]
+        SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+        CREATED_BY_FIELD_NUMBER: _ClassVar[int]
+        CONFIRMED_BY_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        cancelled: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         summary: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        automatic: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         participant_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        given_by: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., cancelled: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., summary: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., automatic: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., given_by: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        submission_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        created_by: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        confirmed_by: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., summary: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., submission_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_by: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., confirmed_by: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
