@@ -123,3 +123,17 @@ class SubmissionServiceClient:
             **kwargs,
         )
 
+    def AnalyzeSubmission(self, request, **kwargs):
+        path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/analyze"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.submission_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.AnalyzeSubmissionOutput"),
+            **kwargs,
+        )
+

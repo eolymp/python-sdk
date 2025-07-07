@@ -167,3 +167,15 @@ class RetestProblemInput(_message.Message):
 class RetestProblemOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class AnalyzeSubmissionInput(_message.Message):
+    __slots__ = ("contest_id", "submission")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    submission: _submission_pb2.Submission
+    def __init__(self, contest_id: _Optional[str] = ..., submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+
+class AnalyzeSubmissionOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
