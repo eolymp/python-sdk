@@ -44,20 +44,27 @@ class ParticipantFinalizedEvent(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., result: _Optional[_Union[_result_pb2.Result, _Mapping]] = ...) -> None: ...
 
 class AssignParticipantInput(_message.Message):
-    __slots__ = ("contest_id", "member_id", "group_id", "unofficial", "inactive", "role")
+    __slots__ = ("contest_id", "member_id", "group_id", "ghost", "unofficial", "inactive", "role")
+    class Ghost(_message.Message):
+        __slots__ = ("display_name",)
+        DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+        display_name: str
+        def __init__(self, display_name: _Optional[str] = ...) -> None: ...
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
+    GHOST_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     INACTIVE_FIELD_NUMBER: _ClassVar[int]
     ROLE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     member_id: str
     group_id: str
+    ghost: AssignParticipantInput.Ghost
     unofficial: bool
     inactive: bool
     role: _participant_pb2.Participant.Role
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., unofficial: bool = ..., inactive: bool = ..., role: _Optional[_Union[_participant_pb2.Participant.Role, str]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., ghost: _Optional[_Union[AssignParticipantInput.Ghost, _Mapping]] = ..., unofficial: bool = ..., inactive: bool = ..., role: _Optional[_Union[_participant_pb2.Participant.Role, str]] = ...) -> None: ...
 
 class AssignParticipantOutput(_message.Message):
     __slots__ = ("participant_id",)
