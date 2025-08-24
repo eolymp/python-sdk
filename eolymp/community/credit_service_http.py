@@ -25,6 +25,17 @@ class CreditServiceClient:
             **kwargs,
         )
 
+    def ListCredits(self, request, **kwargs):
+        path = "/credits"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ListCreditsOutput"),
+            **kwargs,
+        )
+
     def RecordCredit(self, request, **kwargs):
         path = "/credits"
 
@@ -47,17 +58,6 @@ class CreditServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.DeleteCreditOutput"),
-            **kwargs,
-        )
-
-    def ListCredits(self, request, **kwargs):
-        path = "/credits"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ListCreditsOutput"),
             **kwargs,
         )
 

@@ -21,28 +21,6 @@ class DescribeBalanceOutput(_message.Message):
     balance: int
     def __init__(self, balance: _Optional[int] = ...) -> None: ...
 
-class RecordCreditInput(_message.Message):
-    __slots__ = ("credit",)
-    CREDIT_FIELD_NUMBER: _ClassVar[int]
-    credit: _credit_pb2.Credit
-    def __init__(self, credit: _Optional[_Union[_credit_pb2.Credit, _Mapping]] = ...) -> None: ...
-
-class RecordCreditOutput(_message.Message):
-    __slots__ = ("credit_id",)
-    CREDIT_ID_FIELD_NUMBER: _ClassVar[int]
-    credit_id: str
-    def __init__(self, credit_id: _Optional[str] = ...) -> None: ...
-
-class DeleteCreditInput(_message.Message):
-    __slots__ = ("credit_id",)
-    CREDIT_ID_FIELD_NUMBER: _ClassVar[int]
-    credit_id: str
-    def __init__(self, credit_id: _Optional[str] = ...) -> None: ...
-
-class DeleteCreditOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
 class ListCreditsInput(_message.Message):
     __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
@@ -73,3 +51,25 @@ class ListCreditsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_credit_pb2.Credit]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_credit_pb2.Credit, _Mapping]]] = ...) -> None: ...
+
+class RecordCreditInput(_message.Message):
+    __slots__ = ("credit",)
+    CREDIT_FIELD_NUMBER: _ClassVar[int]
+    credit: _credit_pb2.Credit
+    def __init__(self, credit: _Optional[_Union[_credit_pb2.Credit, _Mapping]] = ...) -> None: ...
+
+class RecordCreditOutput(_message.Message):
+    __slots__ = ("credit_id",)
+    CREDIT_ID_FIELD_NUMBER: _ClassVar[int]
+    credit_id: str
+    def __init__(self, credit_id: _Optional[str] = ...) -> None: ...
+
+class DeleteCreditInput(_message.Message):
+    __slots__ = ("credit_id",)
+    CREDIT_ID_FIELD_NUMBER: _ClassVar[int]
+    credit_id: str
+    def __init__(self, credit_id: _Optional[str] = ...) -> None: ...
+
+class DeleteCreditOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
