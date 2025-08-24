@@ -1,3 +1,5 @@
+import datetime
+
 from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.atlas import testing_feedback_pb2 as _testing_feedback_pb2
 from eolymp.atlas import testing_scoring_pb2 as _testing_scoring_pb2

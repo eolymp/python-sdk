@@ -1,3 +1,5 @@
+import datetime
+
 from eolymp.community import attribute_pb2 as _attribute_pb2
 from eolymp.community import member_ghost_pb2 as _member_ghost_pb2
 from eolymp.community import member_team_pb2 as _member_team_pb2

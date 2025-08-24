@@ -1,3 +1,5 @@
+import datetime
+
 from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.wellknown import link_pb2 as _link_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2

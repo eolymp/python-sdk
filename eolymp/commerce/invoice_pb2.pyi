@@ -1,3 +1,5 @@
+import datetime
+
 from eolymp.commerce import price_pb2 as _price_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers

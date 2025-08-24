@@ -1,3 +1,5 @@
+import datetime
+
 from eolymp.commerce import address_pb2 as _address_pb2
 from eolymp.universe import plan_pb2 as _plan_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2

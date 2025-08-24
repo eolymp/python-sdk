@@ -1,3 +1,5 @@
+import datetime
+
 from eolymp.ranker import format_pb2 as _format_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
