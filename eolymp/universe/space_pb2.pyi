@@ -42,9 +42,11 @@ class Space(_message.Message):
         UNKNOWN_FEATURE: _ClassVar[Space.Feature]
         PRINTERS: _ClassVar[Space.Feature]
         NEWSLETTERS: _ClassVar[Space.Feature]
+        MEMBER_CREDITS: _ClassVar[Space.Feature]
     UNKNOWN_FEATURE: Space.Feature
     PRINTERS: Space.Feature
     NEWSLETTERS: Space.Feature
+    MEMBER_CREDITS: Space.Feature
     class Subscription(_message.Message):
         __slots__ = ("plan", "seats", "quota", "billing_period_start", "billing_period_end", "quota_period_start", "quota_period_end")
         PLAN_FIELD_NUMBER: _ClassVar[int]
