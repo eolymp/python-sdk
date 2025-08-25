@@ -29,7 +29,7 @@ from eolymp.community import credit_pb2 as eolymp_dot_community_dot_credit__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/community/credit_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/community/credit.proto\x1a!eolymp/wellknown/expression.proto\"\x16\n\x14\x44\x65scribeBalanceInput\"(\n\x15\x44\x65scribeBalanceOutput\x12\x0f\n\x07\x62\x61lance\x18\x01 \x01(\r\"\xeb\x02\n\x10ListCreditsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.community.ListCreditsInput.Filter\x1a\xfc\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\treference\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04note\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12/\n\x06\x61mount\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x30\n\x06\x61\x63tive\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"K\n\x11ListCreditsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.community.Credit\"=\n\x11RecordCreditInput\x12(\n\x06\x63redit\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Credit\"\'\n\x12RecordCreditOutput\x12\x11\n\tcredit_id\x18\x01 \x01(\t\"&\n\x11\x44\x65leteCreditInput\x12\x11\n\tcredit_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteCreditOutput2\x8b\x05\n\rCreditService\x12\xa0\x01\n\x0f\x44\x65scribeBalance\x12&.eolymp.community.DescribeBalanceInput\x1a\'.eolymp.community.DescribeBalanceOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:credit:read\x82\xd3\xe4\x93\x02\n\x12\x08/balance\x12\x94\x01\n\x0bListCredits\x12\".eolymp.community.ListCreditsInput\x1a#.eolymp.community.ListCreditsOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:credit:read\x82\xd3\xe4\x93\x02\n\x12\x08/credits\x12\x98\x01\n\x0cRecordCredit\x12#.eolymp.community.RecordCreditInput\x1a$.eolymp.community.RecordCreditOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\n\"\x08/credits\x12\xa4\x01\n\x0c\x44\x65leteCredit\x12#.eolymp.community.DeleteCreditInput\x1a$.eolymp.community.DeleteCreditOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\x16*\x14/credits/{credit_id}B5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/community/credit_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/community/credit.proto\x1a!eolymp/wellknown/expression.proto\"=\n\x11\x43reateCreditInput\x12(\n\x06\x63redit\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Credit\"\'\n\x12\x43reateCreditOutput\x12\x11\n\tcredit_id\x18\x01 \x01(\t\"&\n\x11\x44\x65leteCreditInput\x12\x11\n\tcredit_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteCreditOutput\"\xeb\x02\n\x10ListCreditsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.community.ListCreditsInput.Filter\x1a\xfc\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\treference\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04note\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12/\n\x06\x61mount\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x30\n\x06\x61\x63tive\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"K\n\x11ListCreditsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.community.Credit\"D\n\x11RedeemCreditInput\x12\x0e\n\x06\x61mount\x18\x01 \x01(\r\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0c\n\x04note\x18\x03 \x01(\t\"\x14\n\x12RedeemCreditOutput\"\x1c\n\x1a\x44\x65scribeCreditBalanceInput\".\n\x1b\x44\x65scribeCreditBalanceOutput\x12\x0f\n\x07\x62\x61lance\x18\x01 \x01(\r2\xc1\x06\n\rCreditService\x12\x98\x01\n\x0c\x43reateCredit\x12#.eolymp.community.CreateCreditInput\x1a$.eolymp.community.CreateCreditOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\n\"\x08/credits\x12\xa4\x01\n\x0c\x44\x65leteCredit\x12#.eolymp.community.DeleteCreditInput\x1a$.eolymp.community.DeleteCreditOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\x16*\x14/credits/{credit_id}\x12\x94\x01\n\x0bListCredits\x12\".eolymp.community.ListCreditsInput\x1a#.eolymp.community.ListCreditsOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:credit:read\x82\xd3\xe4\x93\x02\n\x12\x08/credits\x12\x9f\x01\n\x0cRedeemCredit\x12#.eolymp.community.RedeemCreditInput\x1a$.eolymp.community.RedeemCreditOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\x11\"\x0f/credits:redeem\x12\xb4\x01\n\x0f\x44\x65scribeBalance\x12,.eolymp.community.DescribeCreditBalanceInput\x1a-.eolymp.community.DescribeCreditBalanceOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:credit:read\x82\xd3\xe4\x93\x02\x12\x12\x10/credits:balanceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,32 +37,38 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.credit_ser
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
-  _globals['_CREDITSERVICE'].methods_by_name['DescribeBalance']._loaded_options = None
-  _globals['_CREDITSERVICE'].methods_by_name['DescribeBalance']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:credit:read\202\323\344\223\002\n\022\010/balance'
-  _globals['_CREDITSERVICE'].methods_by_name['ListCredits']._loaded_options = None
-  _globals['_CREDITSERVICE'].methods_by_name['ListCredits']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:credit:read\202\323\344\223\002\n\022\010/credits'
-  _globals['_CREDITSERVICE'].methods_by_name['RecordCredit']._loaded_options = None
-  _globals['_CREDITSERVICE'].methods_by_name['RecordCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\n\"\010/credits'
+  _globals['_CREDITSERVICE'].methods_by_name['CreateCredit']._loaded_options = None
+  _globals['_CREDITSERVICE'].methods_by_name['CreateCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\n\"\010/credits'
   _globals['_CREDITSERVICE'].methods_by_name['DeleteCredit']._loaded_options = None
   _globals['_CREDITSERVICE'].methods_by_name['DeleteCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\026*\024/credits/{credit_id}'
-  _globals['_DESCRIBEBALANCEINPUT']._serialized_start=224
-  _globals['_DESCRIBEBALANCEINPUT']._serialized_end=246
-  _globals['_DESCRIBEBALANCEOUTPUT']._serialized_start=248
-  _globals['_DESCRIBEBALANCEOUTPUT']._serialized_end=288
-  _globals['_LISTCREDITSINPUT']._serialized_start=291
-  _globals['_LISTCREDITSINPUT']._serialized_end=654
-  _globals['_LISTCREDITSINPUT_FILTER']._serialized_start=402
-  _globals['_LISTCREDITSINPUT_FILTER']._serialized_end=654
-  _globals['_LISTCREDITSOUTPUT']._serialized_start=656
-  _globals['_LISTCREDITSOUTPUT']._serialized_end=731
-  _globals['_RECORDCREDITINPUT']._serialized_start=733
-  _globals['_RECORDCREDITINPUT']._serialized_end=794
-  _globals['_RECORDCREDITOUTPUT']._serialized_start=796
-  _globals['_RECORDCREDITOUTPUT']._serialized_end=835
-  _globals['_DELETECREDITINPUT']._serialized_start=837
-  _globals['_DELETECREDITINPUT']._serialized_end=875
-  _globals['_DELETECREDITOUTPUT']._serialized_start=877
-  _globals['_DELETECREDITOUTPUT']._serialized_end=897
-  _globals['_CREDITSERVICE']._serialized_start=900
-  _globals['_CREDITSERVICE']._serialized_end=1551
+  _globals['_CREDITSERVICE'].methods_by_name['ListCredits']._loaded_options = None
+  _globals['_CREDITSERVICE'].methods_by_name['ListCredits']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:credit:read\202\323\344\223\002\n\022\010/credits'
+  _globals['_CREDITSERVICE'].methods_by_name['RedeemCredit']._loaded_options = None
+  _globals['_CREDITSERVICE'].methods_by_name['RedeemCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\021\"\017/credits:redeem'
+  _globals['_CREDITSERVICE'].methods_by_name['DescribeBalance']._loaded_options = None
+  _globals['_CREDITSERVICE'].methods_by_name['DescribeBalance']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:credit:read\202\323\344\223\002\022\022\020/credits:balance'
+  _globals['_CREATECREDITINPUT']._serialized_start=224
+  _globals['_CREATECREDITINPUT']._serialized_end=285
+  _globals['_CREATECREDITOUTPUT']._serialized_start=287
+  _globals['_CREATECREDITOUTPUT']._serialized_end=326
+  _globals['_DELETECREDITINPUT']._serialized_start=328
+  _globals['_DELETECREDITINPUT']._serialized_end=366
+  _globals['_DELETECREDITOUTPUT']._serialized_start=368
+  _globals['_DELETECREDITOUTPUT']._serialized_end=388
+  _globals['_LISTCREDITSINPUT']._serialized_start=391
+  _globals['_LISTCREDITSINPUT']._serialized_end=754
+  _globals['_LISTCREDITSINPUT_FILTER']._serialized_start=502
+  _globals['_LISTCREDITSINPUT_FILTER']._serialized_end=754
+  _globals['_LISTCREDITSOUTPUT']._serialized_start=756
+  _globals['_LISTCREDITSOUTPUT']._serialized_end=831
+  _globals['_REDEEMCREDITINPUT']._serialized_start=833
+  _globals['_REDEEMCREDITINPUT']._serialized_end=901
+  _globals['_REDEEMCREDITOUTPUT']._serialized_start=903
+  _globals['_REDEEMCREDITOUTPUT']._serialized_end=923
+  _globals['_DESCRIBECREDITBALANCEINPUT']._serialized_start=925
+  _globals['_DESCRIBECREDITBALANCEINPUT']._serialized_end=953
+  _globals['_DESCRIBECREDITBALANCEOUTPUT']._serialized_start=955
+  _globals['_DESCRIBECREDITBALANCEOUTPUT']._serialized_end=1001
+  _globals['_CREDITSERVICE']._serialized_start=1004
+  _globals['_CREDITSERVICE']._serialized_end=1837
 # @@protoc_insertion_point(module_scope)

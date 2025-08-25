@@ -14,36 +14,14 @@ class CreditServiceClient:
         self.transport = transport
         self.url = url
 
-    def DescribeBalance(self, request, **kwargs):
-        path = "/balance"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeBalanceOutput"),
-            **kwargs,
-        )
-
-    def ListCredits(self, request, **kwargs):
-        path = "/credits"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ListCreditsOutput"),
-            **kwargs,
-        )
-
-    def RecordCredit(self, request, **kwargs):
+    def CreateCredit(self, request, **kwargs):
         path = "/credits"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.RecordCreditOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.CreateCreditOutput"),
             **kwargs,
         )
 
@@ -58,6 +36,39 @@ class CreditServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.community.DeleteCreditOutput"),
+            **kwargs,
+        )
+
+    def ListCredits(self, request, **kwargs):
+        path = "/credits"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ListCreditsOutput"),
+            **kwargs,
+        )
+
+    def RedeemCredit(self, request, **kwargs):
+        path = "/credits:redeem"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.RedeemCreditOutput"),
+            **kwargs,
+        )
+
+    def DescribeBalance(self, request, **kwargs):
+        path = "/credits:balance"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeCreditBalanceOutput"),
             **kwargs,
         )
 
