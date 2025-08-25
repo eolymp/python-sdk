@@ -30,7 +30,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/commerce/product_service.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/commerce/product.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"q\n\x14\x44\x65scribeProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x34\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32$.eolymp.commerce.Product.Extra.Field\"B\n\x15\x44\x65scribeProductOutput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\"\x8f\x04\n\x11ListProductsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.commerce.ListProductsInput.Filter\x12\x39\n\x04sort\x18\x32 \x01(\x0e\x32+.eolymp.commerce.ListProductsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0b\x32\x1e.eolymp.commerce.Product.Extra\x1a\xce\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x36\n\x0cout_of_stock\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12.\n\x05price\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"L\n\x12ListProductsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.commerce.Product2\xd8\x02\n\x0eProductService\x12\xac\x01\n\x0f\x44\x65scribeProduct\x12%.eolymp.commerce.DescribeProductInput\x1a&.eolymp.commerce.DescribeProductOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\x82\xd3\xe4\x93\x02\x18\"\x16/products/{product_id}\x12\x96\x01\n\x0cListProducts\x12\".eolymp.commerce.ListProductsInput\x1a#.eolymp.commerce.ListProductsOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\x82\xd3\xe4\x93\x02\x0b\x12\t/productsB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/commerce/product_service.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/commerce/product.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"q\n\x14\x44\x65scribeProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x34\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32$.eolymp.commerce.Product.Extra.Field\"B\n\x15\x44\x65scribeProductOutput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\"\x95\x04\n\x11ListProductsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.commerce.ListProductsInput.Filter\x12\x39\n\x04sort\x18\x32 \x01(\x0e\x32+.eolymp.commerce.ListProductsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x34\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32$.eolymp.commerce.Product.Extra.Field\x1a\xce\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x36\n\x0cout_of_stock\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12.\n\x05price\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"L\n\x12ListProductsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.commerce.Product2\xd8\x02\n\x0eProductService\x12\xac\x01\n\x0f\x44\x65scribeProduct\x12%.eolymp.commerce.DescribeProductInput\x1a&.eolymp.commerce.DescribeProductOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\x82\xd3\xe4\x93\x02\x18\"\x16/products/{product_id}\x12\x96\x01\n\x0cListProducts\x12\".eolymp.commerce.ListProductsInput\x1a#.eolymp.commerce.ListProductsOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\x82\xd3\xe4\x93\x02\x0b\x12\t/productsB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,13 +47,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DESCRIBEPRODUCTOUTPUT']._serialized_start=372
   _globals['_DESCRIBEPRODUCTOUTPUT']._serialized_end=438
   _globals['_LISTPRODUCTSINPUT']._serialized_start=441
-  _globals['_LISTPRODUCTSINPUT']._serialized_end=968
-  _globals['_LISTPRODUCTSINPUT_FILTER']._serialized_start=737
-  _globals['_LISTPRODUCTSINPUT_FILTER']._serialized_end=943
-  _globals['_LISTPRODUCTSINPUT_SORTABLE']._serialized_start=945
-  _globals['_LISTPRODUCTSINPUT_SORTABLE']._serialized_end=968
-  _globals['_LISTPRODUCTSOUTPUT']._serialized_start=970
-  _globals['_LISTPRODUCTSOUTPUT']._serialized_end=1046
-  _globals['_PRODUCTSERVICE']._serialized_start=1049
-  _globals['_PRODUCTSERVICE']._serialized_end=1393
+  _globals['_LISTPRODUCTSINPUT']._serialized_end=974
+  _globals['_LISTPRODUCTSINPUT_FILTER']._serialized_start=743
+  _globals['_LISTPRODUCTSINPUT_FILTER']._serialized_end=949
+  _globals['_LISTPRODUCTSINPUT_SORTABLE']._serialized_start=951
+  _globals['_LISTPRODUCTSINPUT_SORTABLE']._serialized_end=974
+  _globals['_LISTPRODUCTSOUTPUT']._serialized_start=976
+  _globals['_LISTPRODUCTSOUTPUT']._serialized_end=1052
+  _globals['_PRODUCTSERVICE']._serialized_start=1055
+  _globals['_PRODUCTSERVICE']._serialized_end=1399
 # @@protoc_insertion_point(module_scope)

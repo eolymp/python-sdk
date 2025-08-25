@@ -61,8 +61,8 @@ class ListProductsInput(_message.Message):
     sort: ListProductsInput.Sortable
     order: _direction_pb2.Direction
     locale: str
-    extra: _containers.RepeatedCompositeFieldContainer[_product_pb2.Product.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProductsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProductsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_product_pb2.Product.Extra, _Mapping]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_product_pb2.Product.Extra.Field]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProductsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProductsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_product_pb2.Product.Extra.Field, str]]] = ...) -> None: ...
 
 class ListProductsOutput(_message.Message):
     __slots__ = ("total", "items")
