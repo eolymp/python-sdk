@@ -76,7 +76,7 @@ class ShoppingServiceClient:
         )
 
     def UpdateBillingAddress(self, request, **kwargs):
-        path = "/store/cart/shipping-address"
+        path = "/store/cart/billing-address"
 
         return self.transport.request(
             method="POST",
