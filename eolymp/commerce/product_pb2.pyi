@@ -62,8 +62,8 @@ class Product(_message.Message):
     images: _containers.RepeatedScalarFieldContainer[str]
     out_of_stock: bool
     currency: str
-    unit_price: str
-    credit_equivalence: str
+    unit_price: int
+    credit_equivalence: int
     attributes: _containers.RepeatedCompositeFieldContainer[Product.Attribute]
     variants: _containers.RepeatedCompositeFieldContainer[Product.Variant]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: bool = ..., currency: _Optional[str] = ..., unit_price: _Optional[str] = ..., credit_equivalence: _Optional[str] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ..., variants: _Optional[_Iterable[_Union[Product.Variant, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: bool = ..., currency: _Optional[str] = ..., unit_price: _Optional[int] = ..., credit_equivalence: _Optional[int] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ..., variants: _Optional[_Iterable[_Union[Product.Variant, _Mapping]]] = ...) -> None: ...
