@@ -78,3 +78,14 @@ class ScriptServiceClient:
             **kwargs,
         )
 
+    def ExecuteStressCheck(self, request, **kwargs):
+        path = "/scripts:stress-check"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ExecuteStressCheckOutput"),
+            **kwargs,
+        )
+
