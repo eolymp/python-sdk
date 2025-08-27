@@ -15,7 +15,7 @@ class ProductServiceClient:
         self.url = url
 
     def CreateProduct(self, request, **kwargs):
-        path = "/products"
+        path = "/store/products"
 
         return self.transport.request(
             method="POST",
@@ -26,7 +26,7 @@ class ProductServiceClient:
         )
 
     def UpdateProduct(self, request, **kwargs):
-        path = "/products/"+urllib.parse.quote(request.product_id)
+        path = "/store/products/"+urllib.parse.quote(request.product_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.product_id = ""
@@ -40,7 +40,7 @@ class ProductServiceClient:
         )
 
     def DeleteProduct(self, request, **kwargs):
-        path = "/products/"+urllib.parse.quote(request.product_id)
+        path = "/store/products/"+urllib.parse.quote(request.product_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.product_id = ""
@@ -54,7 +54,7 @@ class ProductServiceClient:
         )
 
     def DescribeProduct(self, request, **kwargs):
-        path = "/products/"+urllib.parse.quote(request.product_id)
+        path = "/store/products/"+urllib.parse.quote(request.product_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.product_id = ""
@@ -68,7 +68,7 @@ class ProductServiceClient:
         )
 
     def ListProducts(self, request, **kwargs):
-        path = "/products"
+        path = "/store/products"
 
         return self.transport.request(
             method="GET",
