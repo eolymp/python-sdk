@@ -17,9 +17,13 @@ class Product(_message.Message):
             UNKNOWN_FIELD: _ClassVar[Product.Extra.Field]
             DESCRIPTION_VALUE: _ClassVar[Product.Extra.Field]
             DESCRIPTION_RENDER: _ClassVar[Product.Extra.Field]
+            ATTRIBUTES: _ClassVar[Product.Extra.Field]
+            VARIANTS: _ClassVar[Product.Extra.Field]
         UNKNOWN_FIELD: Product.Extra.Field
         DESCRIPTION_VALUE: Product.Extra.Field
         DESCRIPTION_RENDER: Product.Extra.Field
+        ATTRIBUTES: Product.Extra.Field
+        VARIANTS: Product.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
         __slots__ = ()
