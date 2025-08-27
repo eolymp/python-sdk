@@ -13,6 +13,42 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class CreateProductInput(_message.Message):
+    __slots__ = ("product",)
+    PRODUCT_FIELD_NUMBER: _ClassVar[int]
+    product: _product_pb2.Product
+    def __init__(self, product: _Optional[_Union[_product_pb2.Product, _Mapping]] = ...) -> None: ...
+
+class CreateProductOutput(_message.Message):
+    __slots__ = ("product_id",)
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    product_id: str
+    def __init__(self, product_id: _Optional[str] = ...) -> None: ...
+
+class UpdateProductInput(_message.Message):
+    __slots__ = ("patch", "product_id", "product")
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    PRODUCT_FIELD_NUMBER: _ClassVar[int]
+    patch: _containers.RepeatedScalarFieldContainer[_product_pb2.Product.Patch.Field]
+    product_id: str
+    product: _product_pb2.Product
+    def __init__(self, patch: _Optional[_Iterable[_Union[_product_pb2.Product.Patch.Field, str]]] = ..., product_id: _Optional[str] = ..., product: _Optional[_Union[_product_pb2.Product, _Mapping]] = ...) -> None: ...
+
+class UpdateProductOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DeleteProductInput(_message.Message):
+    __slots__ = ("product_id",)
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    product_id: str
+    def __init__(self, product_id: _Optional[str] = ...) -> None: ...
+
+class DeleteProductOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class DescribeProductInput(_message.Message):
     __slots__ = ("product_id", "locale", "extra")
     PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]

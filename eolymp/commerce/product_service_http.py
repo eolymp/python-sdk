@@ -14,6 +14,45 @@ class ProductServiceClient:
         self.transport = transport
         self.url = url
 
+    def CreateProduct(self, request, **kwargs):
+        path = "/products"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.CreateProductOutput"),
+            **kwargs,
+        )
+
+    def UpdateProduct(self, request, **kwargs):
+        path = "/products/"+urllib.parse.quote(request.product_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.product_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.UpdateProductOutput"),
+            **kwargs,
+        )
+
+    def DeleteProduct(self, request, **kwargs):
+        path = "/products/"+urllib.parse.quote(request.product_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.product_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.DeleteProductOutput"),
+            **kwargs,
+        )
+
     def DescribeProduct(self, request, **kwargs):
         path = "/products/"+urllib.parse.quote(request.product_id)
 

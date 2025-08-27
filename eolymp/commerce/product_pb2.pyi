@@ -21,6 +21,29 @@ class Product(_message.Message):
         DESCRIPTION_VALUE: Product.Extra.Field
         DESCRIPTION_RENDER: Product.Extra.Field
         def __init__(self) -> None: ...
+    class Patch(_message.Message):
+        __slots__ = ()
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_FIELD: _ClassVar[Product.Patch.Field]
+            ALL: _ClassVar[Product.Patch.Field]
+            NAME: _ClassVar[Product.Patch.Field]
+            DESCRIPTION: _ClassVar[Product.Patch.Field]
+            IMAGES: _ClassVar[Product.Patch.Field]
+            UNIT_PRICE: _ClassVar[Product.Patch.Field]
+            CREDIT_EQUIVALENCE: _ClassVar[Product.Patch.Field]
+            ATTRIBUTES: _ClassVar[Product.Patch.Field]
+            VARIANTS: _ClassVar[Product.Patch.Field]
+        UNKNOWN_FIELD: Product.Patch.Field
+        ALL: Product.Patch.Field
+        NAME: Product.Patch.Field
+        DESCRIPTION: Product.Patch.Field
+        IMAGES: Product.Patch.Field
+        UNIT_PRICE: Product.Patch.Field
+        CREDIT_EQUIVALENCE: Product.Patch.Field
+        ATTRIBUTES: Product.Patch.Field
+        VARIANTS: Product.Patch.Field
+        def __init__(self) -> None: ...
     class Attribute(_message.Message):
         __slots__ = ("key", "label")
         KEY_FIELD_NUMBER: _ClassVar[int]
