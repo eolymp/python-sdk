@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.executor import stats_pb2 as eolymp_dot_executor_dot_stats__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/executor/stress_report.proto\x12\x0f\x65olymp.executor\"%\n\x0cStressReport\x12\x15\n\rerror_message\x18\x32 \x01(\tB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/executor/stress_report.proto\x12\x0f\x65olymp.executor\x1a\x1b\x65olymp/executor/stats.proto\"\x8d\x04\n\x0cStressReport\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0e\n\x06origin\x18\x03 \x01(\t\x12=\n\x08metadata\x18\x05 \x03(\x0b\x32+.eolymp.executor.StressReport.MetadataEntry\x12\r\n\x05\x61gent\x18\x04 \x01(\t\x12/\n\x04runs\x18( \x03(\x0b\x32!.eolymp.executor.StressReport.Run\x12\x15\n\rerror_message\x18\x32 \x01(\t\x1a\x81\x02\n\x03Run\x12\x11\n\titeration\x18\x01 \x01(\r\x12\x38\n\x06status\x18\x02 \x01(\x0e\x32(.eolymp.executor.StressReport.Run.Status\x12\x11\n\tinput_url\x18\n \x01(\t\x12/\n\x0fgenerator_stats\x18\x14 \x01(\x0b\x32\x16.eolymp.executor.Stats\x12.\n\x0esolution_stats\x18\x15 \x01(\x0b\x32\x16.eolymp.executor.Stats\"9\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0c\n\x08\x43OMPLETE\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.executor.stress_repo
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
-  _globals['_STRESSREPORT']._serialized_start=56
-  _globals['_STRESSREPORT']._serialized_end=93
+  _globals['_STRESSREPORT_METADATAENTRY']._loaded_options = None
+  _globals['_STRESSREPORT_METADATAENTRY']._serialized_options = b'8\001'
+  _globals['_STRESSREPORT']._serialized_start=86
+  _globals['_STRESSREPORT']._serialized_end=611
+  _globals['_STRESSREPORT_RUN']._serialized_start=305
+  _globals['_STRESSREPORT_RUN']._serialized_end=562
+  _globals['_STRESSREPORT_RUN_STATUS']._serialized_start=505
+  _globals['_STRESSREPORT_RUN_STATUS']._serialized_end=562
+  _globals['_STRESSREPORT_METADATAENTRY']._serialized_start=564
+  _globals['_STRESSREPORT_METADATAENTRY']._serialized_end=611
 # @@protoc_insertion_point(module_scope)
