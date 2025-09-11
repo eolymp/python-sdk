@@ -7,11 +7,13 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class ShoppingCart(_message.Message):
+class Order(_message.Message):
     __slots__ = ("id", "items", "billing_address", "shipping_address", "billing_same_as_shipping", "currency", "total_amount", "shipping_amount", "discount_amount", "tax_amount", "tax_rate", "tax_note", "grand_total")
     class Item(_message.Message):
-        __slots__ = ("id", "product_id", "variant_id", "quantity", "unit_amount", "total_amount", "discount_amount")
+        __slots__ = ("id", "name", "image_url", "product_id", "variant_id", "quantity", "unit_amount", "total_amount", "discount_amount")
         ID_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
         PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
         VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
         QUANTITY_FIELD_NUMBER: _ClassVar[int]
@@ -19,13 +21,15 @@ class ShoppingCart(_message.Message):
         TOTAL_AMOUNT_FIELD_NUMBER: _ClassVar[int]
         DISCOUNT_AMOUNT_FIELD_NUMBER: _ClassVar[int]
         id: str
+        name: str
+        image_url: str
         product_id: str
         variant_id: str
         quantity: int
         unit_amount: int
         total_amount: int
         discount_amount: int
-        def __init__(self, id: _Optional[str] = ..., product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., quantity: _Optional[int] = ..., unit_amount: _Optional[int] = ..., total_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., quantity: _Optional[int] = ..., unit_amount: _Optional[int] = ..., total_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     BILLING_ADDRESS_FIELD_NUMBER: _ClassVar[int]
@@ -40,7 +44,7 @@ class ShoppingCart(_message.Message):
     TAX_NOTE_FIELD_NUMBER: _ClassVar[int]
     GRAND_TOTAL_FIELD_NUMBER: _ClassVar[int]
     id: str
-    items: _containers.RepeatedCompositeFieldContainer[ShoppingCart.Item]
+    items: _containers.RepeatedCompositeFieldContainer[Order.Item]
     billing_address: _address_pb2.Address
     shipping_address: _address_pb2.Address
     billing_same_as_shipping: bool
@@ -52,4 +56,4 @@ class ShoppingCart(_message.Message):
     tax_rate: int
     tax_note: str
     grand_total: int
-    def __init__(self, id: _Optional[str] = ..., items: _Optional[_Iterable[_Union[ShoppingCart.Item, _Mapping]]] = ..., billing_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., shipping_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., billing_same_as_shipping: bool = ..., currency: _Optional[str] = ..., total_amount: _Optional[int] = ..., shipping_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., tax_rate: _Optional[int] = ..., tax_note: _Optional[str] = ..., grand_total: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., items: _Optional[_Iterable[_Union[Order.Item, _Mapping]]] = ..., billing_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., shipping_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., billing_same_as_shipping: bool = ..., currency: _Optional[str] = ..., total_amount: _Optional[int] = ..., shipping_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., tax_rate: _Optional[int] = ..., tax_note: _Optional[str] = ..., grand_total: _Optional[int] = ...) -> None: ...
