@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.commerce import address_pb2 as eolymp_dot_commerce_dot_address__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/commerce/order.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/commerce/address.proto\"\xb6\x04\n\x05Order\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12*\n\x05items\x18\n \x03(\x0b\x32\x1b.eolymp.commerce.Order.Item\x12\x31\n\x0f\x62illing_address\x18( \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x32\n\x10shipping_address\x18) \x01(\x0b\x32\x18.eolymp.commerce.Address\x12 \n\x18\x62illing_same_as_shipping\x18* \x01(\x08\x12\x10\n\x08\x63urrency\x18\x14 \x01(\t\x12\x14\n\x0ctotal_amount\x18\x15 \x01(\r\x12\x17\n\x0fshipping_amount\x18\x16 \x01(\r\x12\x17\n\x0f\x64iscount_amount\x18\x17 \x01(\r\x12\x12\n\ntax_amount\x18\x18 \x01(\r\x12\x10\n\x08tax_rate\x18\x19 \x01(\r\x12\x10\n\x08tax_note\x18\x1a \x01(\t\x12\x13\n\x0bgrand_total\x18\x1e \x01(\r\x1a\xb1\x01\n\x04Item\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\timage_url\x18\x05 \x01(\t\x12\x12\n\nproduct_id\x18\x02 \x01(\t\x12\x12\n\nvariant_id\x18\x03 \x01(\t\x12\x10\n\x08quantity\x18\n \x01(\x05\x12\x13\n\x0bunit_amount\x18\x15 \x01(\r\x12\x14\n\x0ctotal_amount\x18\x16 \x01(\r\x12\x17\n\x0f\x64iscount_amount\x18\x17 \x01(\rB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/commerce/order.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/commerce/address.proto\"\xc2\x06\n\x05Order\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12-\n\x06status\x18\x03 \x01(\x0e\x32\x1d.eolymp.commerce.Order.Status\x12*\n\x05items\x18\n \x03(\x0b\x32\x1b.eolymp.commerce.Order.Item\x12\x31\n\x0f\x62illing_address\x18( \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x32\n\x10shipping_address\x18) \x01(\x0b\x32\x18.eolymp.commerce.Address\x12 \n\x18\x62illing_same_as_shipping\x18* \x01(\x08\x12\x10\n\x08\x63urrency\x18\x14 \x01(\t\x12\x14\n\x0ctotal_amount\x18\x15 \x01(\r\x12\x17\n\x0fshipping_amount\x18\x16 \x01(\r\x12\x17\n\x0f\x64iscount_amount\x18\x17 \x01(\r\x12\x12\n\ntax_amount\x18\x18 \x01(\r\x12\x10\n\x08tax_rate\x18\x19 \x01(\r\x12\x10\n\x08tax_note\x18\x1a \x01(\t\x12\x13\n\x0bgrand_total\x18\x1e \x01(\r\x1a\x8a\x02\n\x04Item\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\timage_url\x18\x05 \x01(\t\x12\x12\n\nproduct_id\x18\x02 \x01(\t\x12\x12\n\nvariant_id\x18\x03 \x01(\t\x12\x18\n\x10quantity_ordered\x18\n \x01(\r\x12\x1a\n\x12quantity_cancelled\x18\x0b \x01(\r\x12\x18\n\x10quantity_shipped\x18\x0c \x01(\r\x12\x19\n\x11quantity_returned\x18\r \x01(\r\x12\x13\n\x0bunit_amount\x18\x15 \x01(\r\x12\x14\n\x0ctotal_amount\x18\x16 \x01(\r\x12\x17\n\x0f\x64iscount_amount\x18\x17 \x01(\r\"\x81\x01\n\x06Status\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_CREATED\x10\x01\x12\x12\n\x0eSTATUS_PENDING\x10\x02\x12\x15\n\x11STATUS_PROCESSING\x10\x03\x12\x13\n\x0fSTATUS_CANCELED\x10\x04\x12\x12\n\x0eSTATUS_SHIPPED\x10\x05\x42\x33Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,7 +34,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
   _globals['_ORDER']._serialized_start=80
-  _globals['_ORDER']._serialized_end=646
-  _globals['_ORDER_ITEM']._serialized_start=469
-  _globals['_ORDER_ITEM']._serialized_end=646
+  _globals['_ORDER']._serialized_end=914
+  _globals['_ORDER_ITEM']._serialized_start=516
+  _globals['_ORDER_ITEM']._serialized_end=782
+  _globals['_ORDER_STATUS']._serialized_start=785
+  _globals['_ORDER_STATUS']._serialized_end=914
 # @@protoc_insertion_point(module_scope)
