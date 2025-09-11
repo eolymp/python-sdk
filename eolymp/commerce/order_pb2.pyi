@@ -13,17 +13,17 @@ class Order(_message.Message):
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNSPECIFIED: _ClassVar[Order.Status]
-        STATUS_CREATED: _ClassVar[Order.Status]
-        STATUS_PENDING: _ClassVar[Order.Status]
-        STATUS_PROCESSING: _ClassVar[Order.Status]
-        STATUS_CANCELED: _ClassVar[Order.Status]
-        STATUS_SHIPPED: _ClassVar[Order.Status]
+        CREATED: _ClassVar[Order.Status]
+        PENDING: _ClassVar[Order.Status]
+        PROCESSING: _ClassVar[Order.Status]
+        CANCELED: _ClassVar[Order.Status]
+        SHIPPED: _ClassVar[Order.Status]
     UNSPECIFIED: Order.Status
-    STATUS_CREATED: Order.Status
-    STATUS_PENDING: Order.Status
-    STATUS_PROCESSING: Order.Status
-    STATUS_CANCELED: Order.Status
-    STATUS_SHIPPED: Order.Status
+    CREATED: Order.Status
+    PENDING: Order.Status
+    PROCESSING: Order.Status
+    CANCELED: Order.Status
+    SHIPPED: Order.Status
     class Item(_message.Message):
         __slots__ = ("id", "name", "image_url", "product_id", "variant_id", "quantity_ordered", "quantity_cancelled", "quantity_shipped", "quantity_returned", "unit_amount", "total_amount", "discount_amount")
         ID_FIELD_NUMBER: _ClassVar[int]
