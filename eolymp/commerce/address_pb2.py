@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/address.proto\x12\x0f\x65olymp.commerce\"p\n\x07\x41\x64\x64ress\x12\x10\n\x07\x63ountry\x18\xc8\x01 \x01(\t\x12\x0e\n\x05state\x18\xc9\x01 \x01(\t\x12\x14\n\x0bpostal_code\x18\xca\x01 \x01(\t\x12\r\n\x04\x63ity\x18\xcb\x01 \x01(\t\x12\x0e\n\x05line1\x18\xd2\x01 \x01(\t\x12\x0e\n\x05line2\x18\xd3\x01 \x01(\tB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/address.proto\x12\x0f\x65olymp.commerce\"\xcd\x01\n\x07\x41\x64\x64ress\x12\x0c\n\x04name\x18\x64 \x01(\t\x12\r\n\x05phone\x18\x65 \x01(\t\x12\r\n\x05\x65mail\x18\x66 \x01(\t\x12\x10\n\x07\x63ountry\x18\xc8\x01 \x01(\t\x12\x0e\n\x05state\x18\xc9\x01 \x01(\t\x12\x14\n\x0bpostal_code\x18\xca\x01 \x01(\t\x12\r\n\x04\x63ity\x18\xcb\x01 \x01(\t\x12\x0e\n\x05line1\x18\xd2\x01 \x01(\t\x12\x15\n\x0chouse_number\x18\xd4\x01 \x01(\t\x12\x0e\n\x05line2\x18\xd3\x01 \x01(\t\x12\x18\n\x0fpickup_location\x18\xac\x02 \x01(\tB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +32,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.address_pb2
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
-  _globals['_ADDRESS']._serialized_start=50
-  _globals['_ADDRESS']._serialized_end=162
+  _globals['_ADDRESS']._serialized_start=51
+  _globals['_ADDRESS']._serialized_end=256
 # @@protoc_insertion_point(module_scope)
