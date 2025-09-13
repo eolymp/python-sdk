@@ -12,33 +12,54 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SendEmailInput(_message.Message):
-    __slots__ = ("member_id", "dry_run", "bcc_me", "type", "campaign", "locale", "subject", "content", "parameters")
-    class ParametersEntry(_message.Message):
-        __slots__ = ("key", "value")
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    __slots__ = ("member_id", "dry_run", "bcc_me", "type", "campaign", "locale", "message", "fragment")
+    class Message(_message.Message):
+        __slots__ = ("subject", "body", "parameters")
+        class ParametersEntry(_message.Message):
+            __slots__ = ("key", "value")
+            KEY_FIELD_NUMBER: _ClassVar[int]
+            VALUE_FIELD_NUMBER: _ClassVar[int]
+            key: str
+            value: str
+            def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+        SUBJECT_FIELD_NUMBER: _ClassVar[int]
+        BODY_FIELD_NUMBER: _ClassVar[int]
+        PARAMETERS_FIELD_NUMBER: _ClassVar[int]
+        subject: str
+        body: _content_pb2.Content
+        parameters: _containers.ScalarMap[str, str]
+        def __init__(self, subject: _Optional[str] = ..., body: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    class Fragment(_message.Message):
+        __slots__ = ("path", "parameters")
+        class ParametersEntry(_message.Message):
+            __slots__ = ("key", "value")
+            KEY_FIELD_NUMBER: _ClassVar[int]
+            VALUE_FIELD_NUMBER: _ClassVar[int]
+            key: str
+            value: str
+            def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+        PATH_FIELD_NUMBER: _ClassVar[int]
+        PARAMETERS_FIELD_NUMBER: _ClassVar[int]
+        path: str
+        parameters: _containers.ScalarMap[str, str]
+        def __init__(self, path: _Optional[str] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     BCC_ME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     CAMPAIGN_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
-    SUBJECT_FIELD_NUMBER: _ClassVar[int]
-    CONTENT_FIELD_NUMBER: _ClassVar[int]
-    PARAMETERS_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    FRAGMENT_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     dry_run: bool
     bcc_me: bool
     type: _email_type_pb2.EmailType
     campaign: str
     locale: str
-    subject: str
-    content: _content_pb2.Content
-    parameters: _containers.ScalarMap[str, str]
-    def __init__(self, member_id: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., campaign: _Optional[str] = ..., locale: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    message: SendEmailInput.Message
+    fragment: SendEmailInput.Fragment
+    def __init__(self, member_id: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., campaign: _Optional[str] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[SendEmailInput.Message, _Mapping]] = ..., fragment: _Optional[_Union[SendEmailInput.Fragment, _Mapping]] = ...) -> None: ...
 
 class SendEmailOutput(_message.Message):
     __slots__ = ("message_id",)
