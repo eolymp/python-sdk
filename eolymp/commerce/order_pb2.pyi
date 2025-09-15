@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Order(_message.Message):
-    __slots__ = ("id", "reference", "status", "items", "billing_address", "shipping_address", "billing_same_as_shipping", "estimated_shipping_date", "currency", "total_amount", "shipping_amount", "discount_amount", "tax_amount", "tax_rate", "tax_note", "grand_total", "created_at", "updated_at")
+    __slots__ = ("id", "reference", "member_id", "status", "items", "billing_address", "shipping_address", "billing_same_as_shipping", "estimated_shipping_date", "currency", "total_amount", "shipping_amount", "discount_amount", "tax_amount", "tax_rate", "tax_note", "grand_total", "created_at", "updated_at")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNSPECIFIED: _ClassVar[Order.Status]
@@ -58,6 +58,7 @@ class Order(_message.Message):
         def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., quantity_ordered: _Optional[int] = ..., quantity_cancelled: _Optional[int] = ..., quantity_shipped: _Optional[int] = ..., quantity_returned: _Optional[int] = ..., quantity_allocated: _Optional[int] = ..., unit_amount: _Optional[int] = ..., total_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     BILLING_ADDRESS_FIELD_NUMBER: _ClassVar[int]
@@ -76,6 +77,7 @@ class Order(_message.Message):
     UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
     id: str
     reference: str
+    member_id: str
     status: Order.Status
     items: _containers.RepeatedCompositeFieldContainer[Order.Item]
     billing_address: _address_pb2.Address
@@ -92,4 +94,4 @@ class Order(_message.Message):
     grand_total: int
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., reference: _Optional[str] = ..., status: _Optional[_Union[Order.Status, str]] = ..., items: _Optional[_Iterable[_Union[Order.Item, _Mapping]]] = ..., billing_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., shipping_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., billing_same_as_shipping: bool = ..., estimated_shipping_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., currency: _Optional[str] = ..., total_amount: _Optional[int] = ..., shipping_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., tax_rate: _Optional[int] = ..., tax_note: _Optional[str] = ..., grand_total: _Optional[int] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., reference: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Order.Status, str]] = ..., items: _Optional[_Iterable[_Union[Order.Item, _Mapping]]] = ..., billing_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., shipping_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., billing_same_as_shipping: bool = ..., estimated_shipping_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., currency: _Optional[str] = ..., total_amount: _Optional[int] = ..., shipping_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., tax_rate: _Optional[int] = ..., tax_note: _Optional[str] = ..., grand_total: _Optional[int] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
