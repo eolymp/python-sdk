@@ -28,7 +28,7 @@ class Order(_message.Message):
     CANCELED: Order.Status
     SHIPPED: Order.Status
     class Item(_message.Message):
-        __slots__ = ("id", "name", "image_url", "product_id", "variant_id", "quantity_ordered", "quantity_cancelled", "quantity_shipped", "quantity_returned", "unit_amount", "total_amount", "discount_amount")
+        __slots__ = ("id", "name", "image_url", "product_id", "variant_id", "quantity_ordered", "quantity_cancelled", "quantity_shipped", "quantity_returned", "quantity_allocated", "unit_amount", "total_amount", "discount_amount")
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
@@ -38,6 +38,7 @@ class Order(_message.Message):
         QUANTITY_CANCELLED_FIELD_NUMBER: _ClassVar[int]
         QUANTITY_SHIPPED_FIELD_NUMBER: _ClassVar[int]
         QUANTITY_RETURNED_FIELD_NUMBER: _ClassVar[int]
+        QUANTITY_ALLOCATED_FIELD_NUMBER: _ClassVar[int]
         UNIT_AMOUNT_FIELD_NUMBER: _ClassVar[int]
         TOTAL_AMOUNT_FIELD_NUMBER: _ClassVar[int]
         DISCOUNT_AMOUNT_FIELD_NUMBER: _ClassVar[int]
@@ -50,10 +51,11 @@ class Order(_message.Message):
         quantity_cancelled: int
         quantity_shipped: int
         quantity_returned: int
+        quantity_allocated: int
         unit_amount: int
         total_amount: int
         discount_amount: int
-        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., quantity_ordered: _Optional[int] = ..., quantity_cancelled: _Optional[int] = ..., quantity_shipped: _Optional[int] = ..., quantity_returned: _Optional[int] = ..., unit_amount: _Optional[int] = ..., total_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., quantity_ordered: _Optional[int] = ..., quantity_cancelled: _Optional[int] = ..., quantity_shipped: _Optional[int] = ..., quantity_returned: _Optional[int] = ..., quantity_allocated: _Optional[int] = ..., unit_amount: _Optional[int] = ..., total_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
