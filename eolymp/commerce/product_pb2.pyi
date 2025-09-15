@@ -15,11 +15,15 @@ class Product(_message.Message):
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             UNKNOWN_FIELD: _ClassVar[Product.Extra.Field]
+            SUMMARY_VALUE: _ClassVar[Product.Extra.Field]
+            SUMMARY_RENDER: _ClassVar[Product.Extra.Field]
             DESCRIPTION_VALUE: _ClassVar[Product.Extra.Field]
             DESCRIPTION_RENDER: _ClassVar[Product.Extra.Field]
             ATTRIBUTES: _ClassVar[Product.Extra.Field]
             VARIANTS: _ClassVar[Product.Extra.Field]
         UNKNOWN_FIELD: Product.Extra.Field
+        SUMMARY_VALUE: Product.Extra.Field
+        SUMMARY_RENDER: Product.Extra.Field
         DESCRIPTION_VALUE: Product.Extra.Field
         DESCRIPTION_RENDER: Product.Extra.Field
         ATTRIBUTES: Product.Extra.Field
@@ -40,6 +44,7 @@ class Product(_message.Message):
             VARIANTS: _ClassVar[Product.Patch.Field]
             FEATURED: _ClassVar[Product.Patch.Field]
             INACTIVE: _ClassVar[Product.Patch.Field]
+            BACKORDER: _ClassVar[Product.Patch.Field]
         UNKNOWN_FIELD: Product.Patch.Field
         ALL: Product.Patch.Field
         NAME: Product.Patch.Field
@@ -51,6 +56,7 @@ class Product(_message.Message):
         VARIANTS: Product.Patch.Field
         FEATURED: Product.Patch.Field
         INACTIVE: Product.Patch.Field
+        BACKORDER: Product.Patch.Field
         def __init__(self) -> None: ...
     class Attribute(_message.Message):
         __slots__ = ("key", "label")

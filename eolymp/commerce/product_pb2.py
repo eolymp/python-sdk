@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/product.proto\x12\x0f\x65olymp.commerce\x1a\x18\x65olymp/ecm/content.proto\"\xfb\x06\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12$\n\x07summary\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12(\n\x0b\x64\x65scription\x18\x04 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x0cout_of_stock\x18\x1e \x01(\x08\x12\x10\n\x08\x66\x65\x61tured\x18\x1f \x01(\x08\x12\x10\n\x08inactive\x18  \x01(\x08\x12\x11\n\tbackorder\x18! \x01(\x08\x12\x10\n\x08\x63urrency\x18\x14 \x01(\t\x12\x12\n\nunit_price\x18\x15 \x01(\r\x12\x36\n\nattributes\x18( \x03(\x0b\x32\".eolymp.commerce.Product.Attribute\x12\x32\n\x08variants\x18\x32 \x03(\x0b\x32 .eolymp.commerce.Product.Variant\x1ap\n\x05\x45xtra\"g\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\x12\x0e\n\nATTRIBUTES\x10\x03\x12\x0c\n\x08VARIANTS\x10\x04\x1a\xab\x01\n\x05Patch\"\xa1\x01\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x07\n\x03\x41LL\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\x0b\n\x07SUMMARY\x10\x0b\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x03\x12\n\n\x06IMAGES\x10\x04\x12\x0e\n\nUNIT_PRICE\x10\x05\x12\x0e\n\nATTRIBUTES\x10\x07\x12\x0c\n\x08VARIANTS\x10\x08\x12\x0c\n\x08\x46\x45\x41TURED\x10\t\x12\x0c\n\x08INACTIVE\x10\n\x1a\'\n\tAttribute\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x1a\xcd\x01\n\x07Variant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12<\n\x06values\x18\x02 \x03(\x0b\x32,.eolymp.commerce.Product.Variant.ValuesEntry\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x0cout_of_stock\x18\x1e \x01(\x08\x12\x15\n\ravailable_qty\x18! \x01(\x08\x1a-\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/product.proto\x12\x0f\x65olymp.commerce\x1a\x18\x65olymp/ecm/content.proto\"\xb3\x07\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12$\n\x07summary\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12(\n\x0b\x64\x65scription\x18\x04 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x0cout_of_stock\x18\x1e \x01(\x08\x12\x10\n\x08\x66\x65\x61tured\x18\x1f \x01(\x08\x12\x10\n\x08inactive\x18  \x01(\x08\x12\x11\n\tbackorder\x18! \x01(\x08\x12\x10\n\x08\x63urrency\x18\x14 \x01(\t\x12\x12\n\nunit_price\x18\x15 \x01(\r\x12\x36\n\nattributes\x18( \x03(\x0b\x32\".eolymp.commerce.Product.Attribute\x12\x32\n\x08variants\x18\x32 \x03(\x0b\x32 .eolymp.commerce.Product.Variant\x1a\x98\x01\n\x05\x45xtra\"\x8e\x01\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x11\n\rSUMMARY_VALUE\x10\x05\x12\x12\n\x0eSUMMARY_RENDER\x10\x06\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\x12\x0e\n\nATTRIBUTES\x10\x03\x12\x0c\n\x08VARIANTS\x10\x04\x1a\xba\x01\n\x05Patch\"\xb0\x01\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x07\n\x03\x41LL\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\x0b\n\x07SUMMARY\x10\x0b\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x03\x12\n\n\x06IMAGES\x10\x04\x12\x0e\n\nUNIT_PRICE\x10\x05\x12\x0e\n\nATTRIBUTES\x10\x07\x12\x0c\n\x08VARIANTS\x10\x08\x12\x0c\n\x08\x46\x45\x41TURED\x10\t\x12\x0c\n\x08INACTIVE\x10\n\x12\r\n\tBACKORDER\x10\x0c\x1a\'\n\tAttribute\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x1a\xcd\x01\n\x07Variant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12<\n\x06values\x18\x02 \x03(\x0b\x32,.eolymp.commerce.Product.Variant.ValuesEntry\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x0cout_of_stock\x18\x1e \x01(\x08\x12\x15\n\ravailable_qty\x18! \x01(\x08\x1a-\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,19 +36,19 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRODUCT_VARIANT_VALUESENTRY']._loaded_options = None
   _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_options = b'8\001'
   _globals['_PRODUCT']._serialized_start=77
-  _globals['_PRODUCT']._serialized_end=968
-  _globals['_PRODUCT_EXTRA']._serialized_start=433
-  _globals['_PRODUCT_EXTRA']._serialized_end=545
-  _globals['_PRODUCT_EXTRA_FIELD']._serialized_start=442
-  _globals['_PRODUCT_EXTRA_FIELD']._serialized_end=545
-  _globals['_PRODUCT_PATCH']._serialized_start=548
-  _globals['_PRODUCT_PATCH']._serialized_end=719
-  _globals['_PRODUCT_PATCH_FIELD']._serialized_start=558
-  _globals['_PRODUCT_PATCH_FIELD']._serialized_end=719
-  _globals['_PRODUCT_ATTRIBUTE']._serialized_start=721
-  _globals['_PRODUCT_ATTRIBUTE']._serialized_end=760
-  _globals['_PRODUCT_VARIANT']._serialized_start=763
-  _globals['_PRODUCT_VARIANT']._serialized_end=968
-  _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_start=923
-  _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_end=968
+  _globals['_PRODUCT']._serialized_end=1024
+  _globals['_PRODUCT_EXTRA']._serialized_start=434
+  _globals['_PRODUCT_EXTRA']._serialized_end=586
+  _globals['_PRODUCT_EXTRA_FIELD']._serialized_start=444
+  _globals['_PRODUCT_EXTRA_FIELD']._serialized_end=586
+  _globals['_PRODUCT_PATCH']._serialized_start=589
+  _globals['_PRODUCT_PATCH']._serialized_end=775
+  _globals['_PRODUCT_PATCH_FIELD']._serialized_start=599
+  _globals['_PRODUCT_PATCH_FIELD']._serialized_end=775
+  _globals['_PRODUCT_ATTRIBUTE']._serialized_start=777
+  _globals['_PRODUCT_ATTRIBUTE']._serialized_end=816
+  _globals['_PRODUCT_VARIANT']._serialized_start=819
+  _globals['_PRODUCT_VARIANT']._serialized_end=1024
+  _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_start=979
+  _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_end=1024
 # @@protoc_insertion_point(module_scope)
