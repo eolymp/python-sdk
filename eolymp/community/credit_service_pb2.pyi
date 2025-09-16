@@ -87,3 +87,15 @@ class DescribeCreditBalanceOutput(_message.Message):
     BALANCE_FIELD_NUMBER: _ClassVar[int]
     balance: int
     def __init__(self, balance: _Optional[int] = ...) -> None: ...
+
+class RefundCreditInput(_message.Message):
+    __slots__ = ("credit_id", "amount")
+    CREDIT_ID_FIELD_NUMBER: _ClassVar[int]
+    AMOUNT_FIELD_NUMBER: _ClassVar[int]
+    credit_id: str
+    amount: int
+    def __init__(self, credit_id: _Optional[str] = ..., amount: _Optional[int] = ...) -> None: ...
+
+class RefundCreditOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

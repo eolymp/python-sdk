@@ -72,3 +72,17 @@ class CreditServiceClient:
             **kwargs,
         )
 
+    def RefundCredit(self, request, **kwargs):
+        path = "/credits/"+urllib.parse.quote(request.credit_id)+"/refund"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.credit_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.RefundCreditOutput"),
+            **kwargs,
+        )
+

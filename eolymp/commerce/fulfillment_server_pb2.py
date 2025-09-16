@@ -25,12 +25,10 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
-from eolymp.commerce import order_pb2 as eolymp_dot_commerce_dot_order__pb2
-from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction__pb2
-from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
+from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/commerce/fulfillment_server.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/commerce/order.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"&\n\x12\x41llocateStockInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x15\n\x13\x41llocateStockOutput2\xc8\x01\n\x12\x46ulfillmentService\x12\xb1\x01\n\rAllocateStock\x12#.eolymp.commerce.AllocateStockInput\x1a$.eolymp.commerce.AllocateStockOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02#\"!/store/orders/{order_id}/allocateB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/commerce/fulfillment_server.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/ecm/content.proto\"&\n\x12\x41llocateStockInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x15\n\x13\x41llocateStockOutput\"I\n\x10RejectOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12#\n\x06reason\x18\x02 \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x13\n\x11RejectOrderOutput2\xf4\x02\n\x12\x46ulfillmentService\x12\xb1\x01\n\rAllocateStock\x12#.eolymp.commerce.AllocateStockInput\x1a$.eolymp.commerce.AllocateStockOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02#\"!/store/orders/{order_id}/allocate\x12\xa9\x01\n\x0bRejectOrder\x12!.eolymp.commerce.RejectOrderInput\x1a\".eolymp.commerce.RejectOrderOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02!\"\x1f/store/orders/{order_id}/rejectB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,10 +38,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
   _globals['_FULFILLMENTSERVICE'].methods_by_name['AllocateStock']._loaded_options = None
   _globals['_FULFILLMENTSERVICE'].methods_by_name['AllocateStock']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025commerce:orders:write\202\323\344\223\002#\"!/store/orders/{order_id}/allocate'
-  _globals['_ALLOCATESTOCKINPUT']._serialized_start=258
-  _globals['_ALLOCATESTOCKINPUT']._serialized_end=296
-  _globals['_ALLOCATESTOCKOUTPUT']._serialized_start=298
-  _globals['_ALLOCATESTOCKOUTPUT']._serialized_end=319
-  _globals['_FULFILLMENTSERVICE']._serialized_start=322
-  _globals['_FULFILLMENTSERVICE']._serialized_end=522
+  _globals['_FULFILLMENTSERVICE'].methods_by_name['RejectOrder']._loaded_options = None
+  _globals['_FULFILLMENTSERVICE'].methods_by_name['RejectOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025commerce:orders:write\202\323\344\223\002!\"\037/store/orders/{order_id}/reject'
+  _globals['_ALLOCATESTOCKINPUT']._serialized_start=186
+  _globals['_ALLOCATESTOCKINPUT']._serialized_end=224
+  _globals['_ALLOCATESTOCKOUTPUT']._serialized_start=226
+  _globals['_ALLOCATESTOCKOUTPUT']._serialized_end=247
+  _globals['_REJECTORDERINPUT']._serialized_start=249
+  _globals['_REJECTORDERINPUT']._serialized_end=322
+  _globals['_REJECTORDEROUTPUT']._serialized_start=324
+  _globals['_REJECTORDEROUTPUT']._serialized_end=343
+  _globals['_FULFILLMENTSERVICE']._serialized_start=346
+  _globals['_FULFILLMENTSERVICE']._serialized_end=718
 # @@protoc_insertion_point(module_scope)
