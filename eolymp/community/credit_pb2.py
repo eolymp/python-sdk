@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/credit.proto\x12\x10\x65olymp.community\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd4\x01\n\x06\x43redit\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0c\n\x04note\x18\x03 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x14 \x01(\x08\x12\x14\n\x0ctotal_amount\x18\x04 \x01(\r\x12\x17\n\x0fredeemed_amount\x18\x05 \x01(\r\x12.\n\ngranted_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/credit.proto\x12\x10\x65olymp.community\x1a\x1fgoogle/protobuf/timestamp.proto\"\xda\x02\n\x06\x43redit\x1a\xe4\x01\n\x05Grant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0c\n\x04note\x18\x03 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x14 \x01(\x08\x12\x0f\n\x07revoked\x18\x15 \x01(\x08\x12\x14\n\x0ctotal_amount\x18\x04 \x01(\r\x12\x17\n\x0fredeemed_amount\x18\x05 \x01(\r\x12.\n\ngranted_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1ai\n\x0bTransaction\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x0e\n\x06\x61mount\x18\x04 \x01(\rB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,5 +34,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _globals['_CREDIT']._serialized_start=85
-  _globals['_CREDIT']._serialized_end=297
+  _globals['_CREDIT']._serialized_end=431
+  _globals['_CREDIT_GRANT']._serialized_start=96
+  _globals['_CREDIT_GRANT']._serialized_end=324
+  _globals['_CREDIT_TRANSACTION']._serialized_start=326
+  _globals['_CREDIT_TRANSACTION']._serialized_end=431
 # @@protoc_insertion_point(module_scope)

@@ -14,44 +14,55 @@ class CreditServiceClient:
         self.transport = transport
         self.url = url
 
-    def CreateCredit(self, request, **kwargs):
-        path = "/credits"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.CreateCreditOutput"),
-            **kwargs,
-        )
-
-    def DeleteCredit(self, request, **kwargs):
-        path = "/credits/"+urllib.parse.quote(request.credit_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.credit_id = ""
-
-        return self.transport.request(
-            method="DELETE",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DeleteCreditOutput"),
-            **kwargs,
-        )
-
-    def ListCredits(self, request, **kwargs):
-        path = "/credits"
+    def DescribeBalance(self, request, **kwargs):
+        path = "/credit/balance"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.ListCreditsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeBalanceOutput"),
+            **kwargs,
+        )
+
+    def GrantCredit(self, request, **kwargs):
+        path = "/credit/grants"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.GrantCreditOutput"),
+            **kwargs,
+        )
+
+    def CancelCredit(self, request, **kwargs):
+        path = "/credit/grants/"+urllib.parse.quote(request.grant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.grant_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.CancelCreditOutput"),
+            **kwargs,
+        )
+
+    def ListCreditGrants(self, request, **kwargs):
+        path = "/credit/grants"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ListCreditGrantsOutput"),
             **kwargs,
         )
 
     def RedeemCredit(self, request, **kwargs):
-        path = "/credits:redeem"
+        path = "/credit/redeem"
 
         return self.transport.request(
             method="POST",
@@ -61,22 +72,22 @@ class CreditServiceClient:
             **kwargs,
         )
 
-    def DescribeBalance(self, request, **kwargs):
-        path = "/credits:balance"
+    def ListCreditTransactions(self, request, **kwargs):
+        path = "/credit/grants"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeCreditBalanceOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ListCreditTransactionsOutput"),
             **kwargs,
         )
 
     def RefundCredit(self, request, **kwargs):
-        path = "/credits/"+urllib.parse.quote(request.credit_id)+"/refund"
+        path = "/credit/transactions/"+urllib.parse.quote(request.transaction_id)+"/refund"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.credit_id = ""
+        request.transaction_id = ""
 
         return self.transport.request(
             method="POST",

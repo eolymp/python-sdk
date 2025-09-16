@@ -11,29 +11,39 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CreateCreditInput(_message.Message):
-    __slots__ = ("credit",)
-    CREDIT_FIELD_NUMBER: _ClassVar[int]
-    credit: _credit_pb2.Credit
-    def __init__(self, credit: _Optional[_Union[_credit_pb2.Credit, _Mapping]] = ...) -> None: ...
-
-class CreateCreditOutput(_message.Message):
-    __slots__ = ("credit_id",)
-    CREDIT_ID_FIELD_NUMBER: _ClassVar[int]
-    credit_id: str
-    def __init__(self, credit_id: _Optional[str] = ...) -> None: ...
-
-class DeleteCreditInput(_message.Message):
-    __slots__ = ("credit_id",)
-    CREDIT_ID_FIELD_NUMBER: _ClassVar[int]
-    credit_id: str
-    def __init__(self, credit_id: _Optional[str] = ...) -> None: ...
-
-class DeleteCreditOutput(_message.Message):
+class DescribeBalanceInput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
-class ListCreditsInput(_message.Message):
+class DescribeBalanceOutput(_message.Message):
+    __slots__ = ("balance",)
+    BALANCE_FIELD_NUMBER: _ClassVar[int]
+    balance: int
+    def __init__(self, balance: _Optional[int] = ...) -> None: ...
+
+class GrantCreditInput(_message.Message):
+    __slots__ = ("grant",)
+    GRANT_FIELD_NUMBER: _ClassVar[int]
+    grant: _credit_pb2.Credit.Grant
+    def __init__(self, grant: _Optional[_Union[_credit_pb2.Credit.Grant, _Mapping]] = ...) -> None: ...
+
+class GrantCreditOutput(_message.Message):
+    __slots__ = ("grant_id",)
+    GRANT_ID_FIELD_NUMBER: _ClassVar[int]
+    grant_id: str
+    def __init__(self, grant_id: _Optional[str] = ...) -> None: ...
+
+class CancelCreditInput(_message.Message):
+    __slots__ = ("grant_id",)
+    GRANT_ID_FIELD_NUMBER: _ClassVar[int]
+    grant_id: str
+    def __init__(self, grant_id: _Optional[str] = ...) -> None: ...
+
+class CancelCreditOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class ListCreditGrantsInput(_message.Message):
     __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
         __slots__ = ("id", "reference", "note", "amount", "active")
@@ -53,16 +63,16 @@ class ListCreditsInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
-    filters: ListCreditsInput.Filter
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCreditsInput.Filter, _Mapping]] = ...) -> None: ...
+    filters: ListCreditGrantsInput.Filter
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCreditGrantsInput.Filter, _Mapping]] = ...) -> None: ...
 
-class ListCreditsOutput(_message.Message):
+class ListCreditGrantsOutput(_message.Message):
     __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
-    items: _containers.RepeatedCompositeFieldContainer[_credit_pb2.Credit]
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_credit_pb2.Credit, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[_credit_pb2.Credit.Grant]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_credit_pb2.Credit.Grant, _Mapping]]] = ...) -> None: ...
 
 class RedeemCreditInput(_message.Message):
     __slots__ = ("amount", "reference", "note")
@@ -75,26 +85,41 @@ class RedeemCreditInput(_message.Message):
     def __init__(self, amount: _Optional[int] = ..., reference: _Optional[str] = ..., note: _Optional[str] = ...) -> None: ...
 
 class RedeemCreditOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("transaction_id",)
+    TRANSACTION_ID_FIELD_NUMBER: _ClassVar[int]
+    transaction_id: str
+    def __init__(self, transaction_id: _Optional[str] = ...) -> None: ...
 
-class DescribeCreditBalanceInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+class ListCreditTransactionsInput(_message.Message):
+    __slots__ = ("offset", "size", "filters")
+    class Filter(_message.Message):
+        __slots__ = ("id",)
+        ID_FIELD_NUMBER: _ClassVar[int]
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    offset: int
+    size: int
+    filters: ListCreditTransactionsInput.Filter
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCreditTransactionsInput.Filter, _Mapping]] = ...) -> None: ...
 
-class DescribeCreditBalanceOutput(_message.Message):
-    __slots__ = ("balance",)
-    BALANCE_FIELD_NUMBER: _ClassVar[int]
-    balance: int
-    def __init__(self, balance: _Optional[int] = ...) -> None: ...
+class ListCreditTransactionsOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_credit_pb2.Credit.Transaction]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_credit_pb2.Credit.Transaction, _Mapping]]] = ...) -> None: ...
 
 class RefundCreditInput(_message.Message):
-    __slots__ = ("credit_id", "amount")
-    CREDIT_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("transaction_id", "amount")
+    TRANSACTION_ID_FIELD_NUMBER: _ClassVar[int]
     AMOUNT_FIELD_NUMBER: _ClassVar[int]
-    credit_id: str
+    transaction_id: str
     amount: int
-    def __init__(self, credit_id: _Optional[str] = ..., amount: _Optional[int] = ...) -> None: ...
+    def __init__(self, transaction_id: _Optional[str] = ..., amount: _Optional[int] = ...) -> None: ...
 
 class RefundCreditOutput(_message.Message):
     __slots__ = ()

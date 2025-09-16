@@ -29,7 +29,7 @@ from eolymp.community import credit_pb2 as eolymp_dot_community_dot_credit__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/community/credit_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/community/credit.proto\x1a!eolymp/wellknown/expression.proto\"=\n\x11\x43reateCreditInput\x12(\n\x06\x63redit\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Credit\"\'\n\x12\x43reateCreditOutput\x12\x11\n\tcredit_id\x18\x01 \x01(\t\"&\n\x11\x44\x65leteCreditInput\x12\x11\n\tcredit_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteCreditOutput\"\xeb\x02\n\x10ListCreditsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.community.ListCreditsInput.Filter\x1a\xfc\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\treference\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04note\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12/\n\x06\x61mount\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x30\n\x06\x61\x63tive\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"K\n\x11ListCreditsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.community.Credit\"D\n\x11RedeemCreditInput\x12\x0e\n\x06\x61mount\x18\x01 \x01(\r\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0c\n\x04note\x18\x03 \x01(\t\"\x14\n\x12RedeemCreditOutput\"\x1c\n\x1a\x44\x65scribeCreditBalanceInput\".\n\x1b\x44\x65scribeCreditBalanceOutput\x12\x0f\n\x07\x62\x61lance\x18\x01 \x01(\r\"6\n\x11RefundCreditInput\x12\x11\n\tcredit_id\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\r\"\x14\n\x12RefundCreditOutput2\xef\x07\n\rCreditService\x12\x98\x01\n\x0c\x43reateCredit\x12#.eolymp.community.CreateCreditInput\x1a$.eolymp.community.CreateCreditOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\n\"\x08/credits\x12\xa4\x01\n\x0c\x44\x65leteCredit\x12#.eolymp.community.DeleteCreditInput\x1a$.eolymp.community.DeleteCreditOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\x16*\x14/credits/{credit_id}\x12\x94\x01\n\x0bListCredits\x12\".eolymp.community.ListCreditsInput\x1a#.eolymp.community.ListCreditsOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:credit:read\x82\xd3\xe4\x93\x02\n\x12\x08/credits\x12\x9f\x01\n\x0cRedeemCredit\x12#.eolymp.community.RedeemCreditInput\x1a$.eolymp.community.RedeemCreditOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\x11\"\x0f/credits:redeem\x12\xb4\x01\n\x0f\x44\x65scribeBalance\x12,.eolymp.community.DescribeCreditBalanceInput\x1a-.eolymp.community.DescribeCreditBalanceOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:credit:read\x82\xd3\xe4\x93\x02\x12\x12\x10/credits:balance\x12\xab\x01\n\x0cRefundCredit\x12#.eolymp.community.RefundCreditInput\x1a$.eolymp.community.RefundCreditOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/credits/{credit_id}/refundB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/community/credit_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/community/credit.proto\x1a!eolymp/wellknown/expression.proto\"\x16\n\x14\x44\x65scribeBalanceInput\"(\n\x15\x44\x65scribeBalanceOutput\x12\x0f\n\x07\x62\x61lance\x18\x01 \x01(\r\"A\n\x10GrantCreditInput\x12-\n\x05grant\x18\x01 \x01(\x0b\x32\x1e.eolymp.community.Credit.Grant\"%\n\x11GrantCreditOutput\x12\x10\n\x08grant_id\x18\x01 \x01(\t\"%\n\x11\x43\x61ncelCreditInput\x12\x10\n\x08grant_id\x18\x01 \x01(\t\"\x14\n\x12\x43\x61ncelCreditOutput\"\xf5\x02\n\x15ListCreditGrantsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12?\n\x07\x66ilters\x18( \x01(\x0b\x32..eolymp.community.ListCreditGrantsInput.Filter\x1a\xfc\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\treference\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04note\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12/\n\x06\x61mount\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x30\n\x06\x61\x63tive\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"V\n\x16ListCreditGrantsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12-\n\x05items\x18\x02 \x03(\x0b\x32\x1e.eolymp.community.Credit.Grant\"D\n\x11RedeemCreditInput\x12\x0e\n\x06\x61mount\x18\x01 \x01(\r\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0c\n\x04note\x18\x03 \x01(\t\",\n\x12RedeemCreditOutput\x12\x16\n\x0etransaction_id\x18\x01 \x01(\t\"\xb8\x01\n\x1bListCreditTransactionsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x45\n\x07\x66ilters\x18( \x01(\x0b\x32\x34.eolymp.community.ListCreditTransactionsInput.Filter\x1a\x34\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"b\n\x1cListCreditTransactionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x33\n\x05items\x18\x02 \x03(\x0b\x32$.eolymp.community.Credit.Transaction\";\n\x11RefundCreditInput\x12\x16\n\x0etransaction_id\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\r\"\x14\n\x12RefundCreditOutput2\xcd\t\n\rCreditService\x12\xa7\x01\n\x0f\x44\x65scribeBalance\x12&.eolymp.community.DescribeBalanceInput\x1a\'.eolymp.community.DescribeBalanceOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:credit:read\x82\xd3\xe4\x93\x02\x11\x12\x0f/credit/balance\x12\x9b\x01\n\x0bGrantCredit\x12\".eolymp.community.GrantCreditInput\x1a#.eolymp.community.GrantCreditOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\x10\"\x0e/credit/grants\x12\xa9\x01\n\x0c\x43\x61ncelCredit\x12#.eolymp.community.CancelCreditInput\x1a$.eolymp.community.CancelCreditOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\x1b*\x19/credit/grants/{grant_id}\x12\xa9\x01\n\x10ListCreditGrants\x12\'.eolymp.community.ListCreditGrantsInput\x1a(.eolymp.community.ListCreditGrantsOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:credit:read\x82\xd3\xe4\x93\x02\x10\x12\x0e/credit/grants\x12\x9e\x01\n\x0cRedeemCredit\x12#.eolymp.community.RedeemCreditInput\x1a$.eolymp.community.RedeemCreditOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02\x10\"\x0e/credit/redeem\x12\xbb\x01\n\x16ListCreditTransactions\x12-.eolymp.community.ListCreditTransactionsInput\x1a..eolymp.community.ListCreditTransactionsOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:credit:read\x82\xd3\xe4\x93\x02\x10\x12\x0e/credit/grants\x12\xbc\x01\n\x0cRefundCredit\x12#.eolymp.community.RefundCreditInput\x1a$.eolymp.community.RefundCreditOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:credit:write\x82\xd3\xe4\x93\x02.\",/credit/transactions/{transaction_id}/refundB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,44 +37,52 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.credit_ser
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
-  _globals['_CREDITSERVICE'].methods_by_name['CreateCredit']._loaded_options = None
-  _globals['_CREDITSERVICE'].methods_by_name['CreateCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\n\"\010/credits'
-  _globals['_CREDITSERVICE'].methods_by_name['DeleteCredit']._loaded_options = None
-  _globals['_CREDITSERVICE'].methods_by_name['DeleteCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\026*\024/credits/{credit_id}'
-  _globals['_CREDITSERVICE'].methods_by_name['ListCredits']._loaded_options = None
-  _globals['_CREDITSERVICE'].methods_by_name['ListCredits']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:credit:read\202\323\344\223\002\n\022\010/credits'
-  _globals['_CREDITSERVICE'].methods_by_name['RedeemCredit']._loaded_options = None
-  _globals['_CREDITSERVICE'].methods_by_name['RedeemCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\021\"\017/credits:redeem'
   _globals['_CREDITSERVICE'].methods_by_name['DescribeBalance']._loaded_options = None
-  _globals['_CREDITSERVICE'].methods_by_name['DescribeBalance']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:credit:read\202\323\344\223\002\022\022\020/credits:balance'
+  _globals['_CREDITSERVICE'].methods_by_name['DescribeBalance']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:credit:read\202\323\344\223\002\021\022\017/credit/balance'
+  _globals['_CREDITSERVICE'].methods_by_name['GrantCredit']._loaded_options = None
+  _globals['_CREDITSERVICE'].methods_by_name['GrantCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\020\"\016/credit/grants'
+  _globals['_CREDITSERVICE'].methods_by_name['CancelCredit']._loaded_options = None
+  _globals['_CREDITSERVICE'].methods_by_name['CancelCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\033*\031/credit/grants/{grant_id}'
+  _globals['_CREDITSERVICE'].methods_by_name['ListCreditGrants']._loaded_options = None
+  _globals['_CREDITSERVICE'].methods_by_name['ListCreditGrants']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:credit:read\202\323\344\223\002\020\022\016/credit/grants'
+  _globals['_CREDITSERVICE'].methods_by_name['RedeemCredit']._loaded_options = None
+  _globals['_CREDITSERVICE'].methods_by_name['RedeemCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\020\"\016/credit/redeem'
+  _globals['_CREDITSERVICE'].methods_by_name['ListCreditTransactions']._loaded_options = None
+  _globals['_CREDITSERVICE'].methods_by_name['ListCreditTransactions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:credit:read\202\323\344\223\002\020\022\016/credit/grants'
   _globals['_CREDITSERVICE'].methods_by_name['RefundCredit']._loaded_options = None
-  _globals['_CREDITSERVICE'].methods_by_name['RefundCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002\035\"\033/credits/{credit_id}/refund'
-  _globals['_CREATECREDITINPUT']._serialized_start=224
-  _globals['_CREATECREDITINPUT']._serialized_end=285
-  _globals['_CREATECREDITOUTPUT']._serialized_start=287
-  _globals['_CREATECREDITOUTPUT']._serialized_end=326
-  _globals['_DELETECREDITINPUT']._serialized_start=328
-  _globals['_DELETECREDITINPUT']._serialized_end=366
-  _globals['_DELETECREDITOUTPUT']._serialized_start=368
-  _globals['_DELETECREDITOUTPUT']._serialized_end=388
-  _globals['_LISTCREDITSINPUT']._serialized_start=391
-  _globals['_LISTCREDITSINPUT']._serialized_end=754
-  _globals['_LISTCREDITSINPUT_FILTER']._serialized_start=502
-  _globals['_LISTCREDITSINPUT_FILTER']._serialized_end=754
-  _globals['_LISTCREDITSOUTPUT']._serialized_start=756
-  _globals['_LISTCREDITSOUTPUT']._serialized_end=831
-  _globals['_REDEEMCREDITINPUT']._serialized_start=833
-  _globals['_REDEEMCREDITINPUT']._serialized_end=901
-  _globals['_REDEEMCREDITOUTPUT']._serialized_start=903
-  _globals['_REDEEMCREDITOUTPUT']._serialized_end=923
-  _globals['_DESCRIBECREDITBALANCEINPUT']._serialized_start=925
-  _globals['_DESCRIBECREDITBALANCEINPUT']._serialized_end=953
-  _globals['_DESCRIBECREDITBALANCEOUTPUT']._serialized_start=955
-  _globals['_DESCRIBECREDITBALANCEOUTPUT']._serialized_end=1001
-  _globals['_REFUNDCREDITINPUT']._serialized_start=1003
-  _globals['_REFUNDCREDITINPUT']._serialized_end=1057
-  _globals['_REFUNDCREDITOUTPUT']._serialized_start=1059
-  _globals['_REFUNDCREDITOUTPUT']._serialized_end=1079
-  _globals['_CREDITSERVICE']._serialized_start=1082
-  _globals['_CREDITSERVICE']._serialized_end=2089
+  _globals['_CREDITSERVICE'].methods_by_name['RefundCredit']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\032\212\343\n\026community:credit:write\202\323\344\223\002.\",/credit/transactions/{transaction_id}/refund'
+  _globals['_DESCRIBEBALANCEINPUT']._serialized_start=224
+  _globals['_DESCRIBEBALANCEINPUT']._serialized_end=246
+  _globals['_DESCRIBEBALANCEOUTPUT']._serialized_start=248
+  _globals['_DESCRIBEBALANCEOUTPUT']._serialized_end=288
+  _globals['_GRANTCREDITINPUT']._serialized_start=290
+  _globals['_GRANTCREDITINPUT']._serialized_end=355
+  _globals['_GRANTCREDITOUTPUT']._serialized_start=357
+  _globals['_GRANTCREDITOUTPUT']._serialized_end=394
+  _globals['_CANCELCREDITINPUT']._serialized_start=396
+  _globals['_CANCELCREDITINPUT']._serialized_end=433
+  _globals['_CANCELCREDITOUTPUT']._serialized_start=435
+  _globals['_CANCELCREDITOUTPUT']._serialized_end=455
+  _globals['_LISTCREDITGRANTSINPUT']._serialized_start=458
+  _globals['_LISTCREDITGRANTSINPUT']._serialized_end=831
+  _globals['_LISTCREDITGRANTSINPUT_FILTER']._serialized_start=579
+  _globals['_LISTCREDITGRANTSINPUT_FILTER']._serialized_end=831
+  _globals['_LISTCREDITGRANTSOUTPUT']._serialized_start=833
+  _globals['_LISTCREDITGRANTSOUTPUT']._serialized_end=919
+  _globals['_REDEEMCREDITINPUT']._serialized_start=921
+  _globals['_REDEEMCREDITINPUT']._serialized_end=989
+  _globals['_REDEEMCREDITOUTPUT']._serialized_start=991
+  _globals['_REDEEMCREDITOUTPUT']._serialized_end=1035
+  _globals['_LISTCREDITTRANSACTIONSINPUT']._serialized_start=1038
+  _globals['_LISTCREDITTRANSACTIONSINPUT']._serialized_end=1222
+  _globals['_LISTCREDITTRANSACTIONSINPUT_FILTER']._serialized_start=579
+  _globals['_LISTCREDITTRANSACTIONSINPUT_FILTER']._serialized_end=631
+  _globals['_LISTCREDITTRANSACTIONSOUTPUT']._serialized_start=1224
+  _globals['_LISTCREDITTRANSACTIONSOUTPUT']._serialized_end=1322
+  _globals['_REFUNDCREDITINPUT']._serialized_start=1324
+  _globals['_REFUNDCREDITINPUT']._serialized_end=1383
+  _globals['_REFUNDCREDITOUTPUT']._serialized_start=1385
+  _globals['_REFUNDCREDITOUTPUT']._serialized_end=1405
+  _globals['_CREDITSERVICE']._serialized_start=1408
+  _globals['_CREDITSERVICE']._serialized_end=2637
 # @@protoc_insertion_point(module_scope)

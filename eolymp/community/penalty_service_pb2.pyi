@@ -12,12 +12,10 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreatePenaltyInput(_message.Message):
-    __slots__ = ("penalty", "dont_notify")
+    __slots__ = ("penalty",)
     PENALTY_FIELD_NUMBER: _ClassVar[int]
-    DONT_NOTIFY_FIELD_NUMBER: _ClassVar[int]
     penalty: _penalty_pb2.Penalty
-    dont_notify: bool
-    def __init__(self, penalty: _Optional[_Union[_penalty_pb2.Penalty, _Mapping]] = ..., dont_notify: bool = ...) -> None: ...
+    def __init__(self, penalty: _Optional[_Union[_penalty_pb2.Penalty, _Mapping]] = ...) -> None: ...
 
 class CreatePenaltyOutput(_message.Message):
     __slots__ = ("penalty_id",)
