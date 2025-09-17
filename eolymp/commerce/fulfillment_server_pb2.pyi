@@ -30,3 +30,13 @@ class RejectOrderInput(_message.Message):
 class RejectOrderOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class ShipOrderInput(_message.Message):
+    __slots__ = ("order_id",)
+    ORDER_ID_FIELD_NUMBER: _ClassVar[int]
+    order_id: str
+    def __init__(self, order_id: _Optional[str] = ...) -> None: ...
+
+class ShipOrderOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
