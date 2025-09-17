@@ -28,10 +28,12 @@ class GrantCreditInput(_message.Message):
     def __init__(self, grant: _Optional[_Union[_credit_pb2.Credit.Grant, _Mapping]] = ...) -> None: ...
 
 class GrantCreditOutput(_message.Message):
-    __slots__ = ("grant_id",)
+    __slots__ = ("grant_id", "transaction_id")
     GRANT_ID_FIELD_NUMBER: _ClassVar[int]
+    TRANSACTION_ID_FIELD_NUMBER: _ClassVar[int]
     grant_id: str
-    def __init__(self, grant_id: _Optional[str] = ...) -> None: ...
+    transaction_id: str
+    def __init__(self, grant_id: _Optional[str] = ..., transaction_id: _Optional[str] = ...) -> None: ...
 
 class CancelCreditInput(_message.Message):
     __slots__ = ("grant_id",)
