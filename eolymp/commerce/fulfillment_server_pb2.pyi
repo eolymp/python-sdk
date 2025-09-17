@@ -1,7 +1,10 @@
+import datetime
+
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Mapping as _Mapping
@@ -28,6 +31,18 @@ class RejectOrderInput(_message.Message):
     def __init__(self, order_id: _Optional[str] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class RejectOrderOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class ProcessOrderInput(_message.Message):
+    __slots__ = ("order_id", "estimated_shipping_date")
+    ORDER_ID_FIELD_NUMBER: _ClassVar[int]
+    ESTIMATED_SHIPPING_DATE_FIELD_NUMBER: _ClassVar[int]
+    order_id: str
+    estimated_shipping_date: _timestamp_pb2.Timestamp
+    def __init__(self, order_id: _Optional[str] = ..., estimated_shipping_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class ProcessOrderOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
