@@ -47,11 +47,23 @@ class ProcessOrderOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ShipOrderInput(_message.Message):
+    __slots__ = ("order_id", "tracking_link")
+    ORDER_ID_FIELD_NUMBER: _ClassVar[int]
+    TRACKING_LINK_FIELD_NUMBER: _ClassVar[int]
+    order_id: str
+    tracking_link: str
+    def __init__(self, order_id: _Optional[str] = ..., tracking_link: _Optional[str] = ...) -> None: ...
+
+class ShipOrderOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class CompleteOrderInput(_message.Message):
     __slots__ = ("order_id",)
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]
     order_id: str
     def __init__(self, order_id: _Optional[str] = ...) -> None: ...
 
-class ShipOrderOutput(_message.Message):
+class CompleteOrderOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...

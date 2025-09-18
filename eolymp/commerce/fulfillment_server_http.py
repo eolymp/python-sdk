@@ -70,3 +70,17 @@ class FulfillmentServiceClient:
             **kwargs,
         )
 
+    def CompleteOrder(self, request, **kwargs):
+        path = "/store/orders/"+urllib.parse.quote(request.order_id)+"/complete"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.order_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.CompleteOrderOutput"),
+            **kwargs,
+        )
+
