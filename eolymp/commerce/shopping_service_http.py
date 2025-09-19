@@ -86,6 +86,28 @@ class ShoppingServiceClient:
             **kwargs,
         )
 
+    def UpdateShippingMethod(self, request, **kwargs):
+        path = "/store/cart/shipping-method"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.UpdateShippingMethodOutput"),
+            **kwargs,
+        )
+
+    def ListShippingMethods(self, request, **kwargs):
+        path = "/store/cart/shipping-methods"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.ListShippingMethodsOutput"),
+            **kwargs,
+        )
+
     def PlaceOrder(self, request, **kwargs):
         path = "/store/cart:order"
 
