@@ -13,6 +13,14 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class OrderChangedEvent(_message.Message):
+    __slots__ = ("before", "after")
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    before: _order_pb2.Order
+    after: _order_pb2.Order
+    def __init__(self, before: _Optional[_Union[_order_pb2.Order, _Mapping]] = ..., after: _Optional[_Union[_order_pb2.Order, _Mapping]] = ...) -> None: ...
+
 class CancelOrderInput(_message.Message):
     __slots__ = ("order_id",)
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]
