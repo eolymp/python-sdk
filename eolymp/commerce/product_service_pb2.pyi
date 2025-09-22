@@ -66,7 +66,7 @@ class DescribeProductOutput(_message.Message):
     def __init__(self, product: _Optional[_Union[_product_pb2.Product, _Mapping]] = ...) -> None: ...
 
 class ListProductsInput(_message.Message):
-    __slots__ = ("offset", "size", "search", "filters", "sort", "order", "locale", "extra")
+    __slots__ = ("offset", "size", "after", "search", "filters", "sort", "order", "locale", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListProductsInput.Sortable]
@@ -84,6 +84,7 @@ class ListProductsInput(_message.Message):
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., out_of_stock: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., price: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
@@ -92,13 +93,14 @@ class ListProductsInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    after: str
     search: str
     filters: ListProductsInput.Filter
     sort: ListProductsInput.Sortable
     order: _direction_pb2.Direction
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_product_pb2.Product.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProductsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProductsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_product_pb2.Product.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., after: _Optional[str] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProductsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProductsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_product_pb2.Product.Extra.Field, str]]] = ...) -> None: ...
 
 class ListProductsOutput(_message.Message):
     __slots__ = ("total", "items")
