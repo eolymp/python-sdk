@@ -23,13 +23,14 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.community import group_pb2 as eolymp_dot_community_dot_group__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/community/group_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/community/group.proto\x1a!eolymp/wellknown/expression.proto\"d\n\x11GroupChangedEvent\x12\'\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x17.eolymp.community.Group\x12&\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x17.eolymp.community.Group\":\n\x10\x43reateGroupInput\x12&\n\x05group\x18\x01 \x01(\x0b\x32\x17.eolymp.community.Group\"%\n\x11\x43reateGroupOutput\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xb2\x01\n\x10UpdateGroupInput\x12\x37\n\x05patch\x18\x01 \x03(\x0e\x32(.eolymp.community.UpdateGroupInput.Patch\x12\x10\n\x08group_id\x18\x02 \x01(\t\x12&\n\x05group\x18\x03 \x01(\x0b\x32\x17.eolymp.community.Group\"+\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x02\"\x13\n\x11UpdateGroupOutput\"$\n\x10\x44\x65leteGroupInput\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\x13\n\x11\x44\x65leteGroupOutput\"&\n\x12\x44\x65scribeGroupInput\x12\x10\n\x08group_id\x18\x01 \x01(\t\"=\n\x13\x44\x65scribeGroupOutput\x12&\n\x05group\x18\x01 \x01(\x0b\x32\x17.eolymp.community.Group\"\xe1\x01\n\x0fListGroupsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.community.ListGroupsInput.Filter\x1au\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"I\n\x10ListGroupsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.community.Group2\x9e\x06\n\x0cGroupService\x12\x93\x01\n\x0b\x43reateGroup\x12\".eolymp.community.CreateGroupInput\x1a#.eolymp.community.CreateGroupOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:group:write\x82\xd3\xe4\x93\x02\t\"\x07/groups\x12\x9e\x01\n\x0bUpdateGroup\x12\".eolymp.community.UpdateGroupInput\x1a#.eolymp.community.UpdateGroupOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:group:write\x82\xd3\xe4\x93\x02\x14\"\x12/groups/{group_id}\x12\x9e\x01\n\x0b\x44\x65leteGroup\x12\".eolymp.community.DeleteGroupInput\x1a#.eolymp.community.DeleteGroupOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:group:write\x82\xd3\xe4\x93\x02\x14*\x12/groups/{group_id}\x12\xa3\x01\n\rDescribeGroup\x12$.eolymp.community.DescribeGroupInput\x1a%.eolymp.community.DescribeGroupOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x63ommunity:group:read\x82\xd3\xe4\x93\x02\x14\x12\x12/groups/{group_id}\x12\x8f\x01\n\nListGroups\x12!.eolymp.community.ListGroupsInput\x1a\".eolymp.community.ListGroupsOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x63ommunity:group:read\x82\xd3\xe4\x93\x02\t\x12\x07/groupsB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/community/group_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/community/group.proto\x1a!eolymp/wellknown/expression.proto\"d\n\x11GroupChangedEvent\x12\'\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x17.eolymp.community.Group\x12&\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x17.eolymp.community.Group\":\n\x10\x43reateGroupInput\x12&\n\x05group\x18\x01 \x01(\x0b\x32\x17.eolymp.community.Group\"%\n\x11\x43reateGroupOutput\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xb2\x01\n\x10UpdateGroupInput\x12\x37\n\x05patch\x18\x01 \x03(\x0e\x32(.eolymp.community.UpdateGroupInput.Patch\x12\x10\n\x08group_id\x18\x02 \x01(\t\x12&\n\x05group\x18\x03 \x01(\x0b\x32\x17.eolymp.community.Group\"+\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x02\"\x13\n\x11UpdateGroupOutput\"$\n\x10\x44\x65leteGroupInput\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\x13\n\x11\x44\x65leteGroupOutput\"&\n\x12\x44\x65scribeGroupInput\x12\x10\n\x08group_id\x18\x01 \x01(\t\"=\n\x13\x44\x65scribeGroupOutput\x12&\n\x05group\x18\x01 \x01(\x0b\x32\x17.eolymp.community.Group\"\xe1\x01\n\x0fListGroupsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.community.ListGroupsInput.Filter\x1au\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"I\n\x10ListGroupsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.community.Group2\xbb\x06\n\x0cGroupService\x12\x93\x01\n\x0b\x43reateGroup\x12\".eolymp.community.CreateGroupInput\x1a#.eolymp.community.CreateGroupOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:group:write\x82\xd3\xe4\x93\x02\t\"\x07/groups\x12\x9e\x01\n\x0bUpdateGroup\x12\".eolymp.community.UpdateGroupInput\x1a#.eolymp.community.UpdateGroupOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:group:write\x82\xd3\xe4\x93\x02\x14\"\x12/groups/{group_id}\x12\x9e\x01\n\x0b\x44\x65leteGroup\x12\".eolymp.community.DeleteGroupInput\x1a#.eolymp.community.DeleteGroupOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:group:write\x82\xd3\xe4\x93\x02\x14*\x12/groups/{group_id}\x12\xa3\x01\n\rDescribeGroup\x12$.eolymp.community.DescribeGroupInput\x1a%.eolymp.community.DescribeGroupOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x63ommunity:group:read\x82\xd3\xe4\x93\x02\x14\x12\x12/groups/{group_id}\x12\x8f\x01\n\nListGroups\x12!.eolymp.community.ListGroupsInput\x1a\".eolymp.community.ListGroupsOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x63ommunity:group:read\x82\xd3\xe4\x93\x02\t\x12\x07/groups\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,6 +38,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.group_serv
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
+  _globals['_GROUPSERVICE']._loaded_options = None
+  _globals['_GROUPSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_GROUPSERVICE'].methods_by_name['CreateGroup']._loaded_options = None
   _globals['_GROUPSERVICE'].methods_by_name['CreateGroup']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\031\212\343\n\025community:group:write\202\323\344\223\002\t\"\007/groups'
   _globals['_GROUPSERVICE'].methods_by_name['UpdateGroup']._loaded_options = None
@@ -47,32 +50,32 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GROUPSERVICE'].methods_by_name['DescribeGroup']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024community:group:read\202\323\344\223\002\024\022\022/groups/{group_id}'
   _globals['_GROUPSERVICE'].methods_by_name['ListGroups']._loaded_options = None
   _globals['_GROUPSERVICE'].methods_by_name['ListGroups']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024community:group:read\202\323\344\223\002\t\022\007/groups'
-  _globals['_GROUPCHANGEDEVENT']._serialized_start=222
-  _globals['_GROUPCHANGEDEVENT']._serialized_end=322
-  _globals['_CREATEGROUPINPUT']._serialized_start=324
-  _globals['_CREATEGROUPINPUT']._serialized_end=382
-  _globals['_CREATEGROUPOUTPUT']._serialized_start=384
-  _globals['_CREATEGROUPOUTPUT']._serialized_end=421
-  _globals['_UPDATEGROUPINPUT']._serialized_start=424
-  _globals['_UPDATEGROUPINPUT']._serialized_end=602
-  _globals['_UPDATEGROUPINPUT_PATCH']._serialized_start=559
-  _globals['_UPDATEGROUPINPUT_PATCH']._serialized_end=602
-  _globals['_UPDATEGROUPOUTPUT']._serialized_start=604
-  _globals['_UPDATEGROUPOUTPUT']._serialized_end=623
-  _globals['_DELETEGROUPINPUT']._serialized_start=625
-  _globals['_DELETEGROUPINPUT']._serialized_end=661
-  _globals['_DELETEGROUPOUTPUT']._serialized_start=663
-  _globals['_DELETEGROUPOUTPUT']._serialized_end=682
-  _globals['_DESCRIBEGROUPINPUT']._serialized_start=684
-  _globals['_DESCRIBEGROUPINPUT']._serialized_end=722
-  _globals['_DESCRIBEGROUPOUTPUT']._serialized_start=724
-  _globals['_DESCRIBEGROUPOUTPUT']._serialized_end=785
-  _globals['_LISTGROUPSINPUT']._serialized_start=788
-  _globals['_LISTGROUPSINPUT']._serialized_end=1013
-  _globals['_LISTGROUPSINPUT_FILTER']._serialized_start=896
-  _globals['_LISTGROUPSINPUT_FILTER']._serialized_end=1013
-  _globals['_LISTGROUPSOUTPUT']._serialized_start=1015
-  _globals['_LISTGROUPSOUTPUT']._serialized_end=1088
-  _globals['_GROUPSERVICE']._serialized_start=1091
-  _globals['_GROUPSERVICE']._serialized_end=1889
+  _globals['_GROUPCHANGEDEVENT']._serialized_start=258
+  _globals['_GROUPCHANGEDEVENT']._serialized_end=358
+  _globals['_CREATEGROUPINPUT']._serialized_start=360
+  _globals['_CREATEGROUPINPUT']._serialized_end=418
+  _globals['_CREATEGROUPOUTPUT']._serialized_start=420
+  _globals['_CREATEGROUPOUTPUT']._serialized_end=457
+  _globals['_UPDATEGROUPINPUT']._serialized_start=460
+  _globals['_UPDATEGROUPINPUT']._serialized_end=638
+  _globals['_UPDATEGROUPINPUT_PATCH']._serialized_start=595
+  _globals['_UPDATEGROUPINPUT_PATCH']._serialized_end=638
+  _globals['_UPDATEGROUPOUTPUT']._serialized_start=640
+  _globals['_UPDATEGROUPOUTPUT']._serialized_end=659
+  _globals['_DELETEGROUPINPUT']._serialized_start=661
+  _globals['_DELETEGROUPINPUT']._serialized_end=697
+  _globals['_DELETEGROUPOUTPUT']._serialized_start=699
+  _globals['_DELETEGROUPOUTPUT']._serialized_end=718
+  _globals['_DESCRIBEGROUPINPUT']._serialized_start=720
+  _globals['_DESCRIBEGROUPINPUT']._serialized_end=758
+  _globals['_DESCRIBEGROUPOUTPUT']._serialized_start=760
+  _globals['_DESCRIBEGROUPOUTPUT']._serialized_end=821
+  _globals['_LISTGROUPSINPUT']._serialized_start=824
+  _globals['_LISTGROUPSINPUT']._serialized_end=1049
+  _globals['_LISTGROUPSINPUT_FILTER']._serialized_start=932
+  _globals['_LISTGROUPSINPUT_FILTER']._serialized_end=1049
+  _globals['_LISTGROUPSOUTPUT']._serialized_start=1051
+  _globals['_LISTGROUPSOUTPUT']._serialized_end=1124
+  _globals['_GROUPSERVICE']._serialized_start=1127
+  _globals['_GROUPSERVICE']._serialized_end=1954
 # @@protoc_insertion_point(module_scope)

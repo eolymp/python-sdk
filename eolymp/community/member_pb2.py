@@ -29,7 +29,7 @@ from eolymp.community import member_user_pb2 as eolymp_dot_community_dot_member_
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a eolymp/community/attribute.proto\x1a#eolymp/community/member_ghost.proto\x1a\"eolymp/community/member_team.proto\x1a\"eolymp/community/member_user.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xac\x06\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x0c\n\x04rank\x18\x46 \x01(\x05\x12\x12\n\nrank_lower\x18H \x01(\x05\x12\x0e\n\x06rating\x18G \x01(\x05\x12\r\n\x05level\x18O \x01(\r\x12\x10\n\x08inactive\x18\x0b \x01(\x08\x12\x12\n\nincomplete\x18\x14 \x01(\x08\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x0e\n\x06secret\x18( \x01(\x08\x12\x0f\n\x07tier_id\x18\x32 \x01(\t\x12\x18\n\x10\x66\x61llback_tier_id\x18\x33 \x01(\t\x12.\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tseated_at\x18= \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tactive_at\x18> \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12&\n\x04user\x18\x64 \x01(\x0b\x32\x16.eolymp.community.UserH\x00\x12&\n\x04team\x18\x65 \x01(\x0b\x32\x16.eolymp.community.TeamH\x00\x12(\n\x05ghost\x18\x66 \x01(\x0b\x32\x17.eolymp.community.GhostH\x00\x12.\n\x05stats\x18\xac\x02 \x01(\x0b\x32\x1e.eolymp.community.Member.Stats\x12\x0f\n\x06groups\x18\xc8\x01 \x03(\t\x12\x36\n\nattributes\x18\x84\x07 \x03(\x0b\x32!.eolymp.community.Attribute.Value\x1ai\n\x05Stats\x12\x0e\n\x06streak\x18\n \x01(\x05\x12\x17\n\x0fproblems_solved\x18\x14 \x01(\x05\x12\x1c\n\x14submissions_accepted\x18\x1e \x01(\x05\x12\x19\n\x11submissions_total\x18) \x01(\x05\"F\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x08\n\x04TIER\x10\x01\x12\t\n\x05STATS\x10\x02\x12\n\n\x06GROUPS\x10\x03\x12\x0e\n\nATTRIBUTES\x10\x04\x42\t\n\x07\x61\x63\x63ountB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a eolymp/community/attribute.proto\x1a#eolymp/community/member_ghost.proto\x1a\"eolymp/community/member_team.proto\x1a\"eolymp/community/member_user.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x81\x06\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x0c\n\x04rank\x18\x46 \x01(\x05\x12\x12\n\nrank_lower\x18H \x01(\x05\x12\x0e\n\x06rating\x18G \x01(\x05\x12\r\n\x05level\x18O \x01(\r\x12\x10\n\x08inactive\x18\x0b \x01(\x08\x12\x12\n\nincomplete\x18\x14 \x01(\x08\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x0e\n\x06secret\x18( \x01(\x08\x12.\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tseated_at\x18= \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tactive_at\x18> \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12&\n\x04user\x18\x64 \x01(\x0b\x32\x16.eolymp.community.UserH\x00\x12&\n\x04team\x18\x65 \x01(\x0b\x32\x16.eolymp.community.TeamH\x00\x12(\n\x05ghost\x18\x66 \x01(\x0b\x32\x17.eolymp.community.GhostH\x00\x12.\n\x05stats\x18\xac\x02 \x01(\x0b\x32\x1e.eolymp.community.Member.Stats\x12\x0f\n\x06groups\x18\xc8\x01 \x03(\t\x12\x36\n\nattributes\x18\x84\x07 \x03(\x0b\x32!.eolymp.community.Attribute.Value\x1ai\n\x05Stats\x12\x0e\n\x06streak\x18\n \x01(\x05\x12\x17\n\x0fproblems_solved\x18\x14 \x01(\x05\x12\x1c\n\x14submissions_accepted\x18\x1e \x01(\x05\x12\x19\n\x11submissions_total\x18) \x01(\x05\"F\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x08\n\x04TIER\x10\x01\x12\t\n\x05STATS\x10\x02\x12\n\n\x06GROUPS\x10\x03\x12\x0e\n\nATTRIBUTES\x10\x04\x42\t\n\x07\x61\x63\x63ountB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,9 +38,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _globals['_MEMBER']._serialized_start=228
-  _globals['_MEMBER']._serialized_end=1040
-  _globals['_MEMBER_STATS']._serialized_start=852
-  _globals['_MEMBER_STATS']._serialized_end=957
-  _globals['_MEMBER_EXTRA']._serialized_start=959
-  _globals['_MEMBER_EXTRA']._serialized_end=1029
+  _globals['_MEMBER']._serialized_end=997
+  _globals['_MEMBER_STATS']._serialized_start=809
+  _globals['_MEMBER_STATS']._serialized_end=914
+  _globals['_MEMBER_EXTRA']._serialized_start=916
+  _globals['_MEMBER_EXTRA']._serialized_end=986
 # @@protoc_insertion_point(module_scope)
