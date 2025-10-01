@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ("id", "username", "email", "active", "rating", "name", "picture", "company", "occupation", "country", "city", "email_status", "birthday", "registered_on", "last_activity", "username_changed_on", "password_changed_on", "locale", "aliases")
+    __slots__ = ("id", "username", "email", "active", "rating", "name", "picture", "company", "occupation", "country", "city", "email_status", "birthday", "registered_on", "last_activity", "username_changed_on", "password_changed_on", "locale", "aliases", "discord_user_id")
     class Alias(_message.Message):
         __slots__ = ("nickname", "changed_at")
         NICKNAME_FIELD_NUMBER: _ClassVar[int]
@@ -37,6 +37,7 @@ class User(_message.Message):
     PASSWORD_CHANGED_ON_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     ALIASES_FIELD_NUMBER: _ClassVar[int]
+    DISCORD_USER_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     username: str
     email: str
@@ -56,4 +57,5 @@ class User(_message.Message):
     password_changed_on: _timestamp_pb2.Timestamp
     locale: str
     aliases: _containers.RepeatedCompositeFieldContainer[User.Alias]
-    def __init__(self, id: _Optional[str] = ..., username: _Optional[str] = ..., email: _Optional[str] = ..., active: bool = ..., rating: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., company: _Optional[str] = ..., occupation: _Optional[str] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., email_status: _Optional[str] = ..., birthday: _Optional[str] = ..., registered_on: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., last_activity: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., username_changed_on: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., password_changed_on: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., locale: _Optional[str] = ..., aliases: _Optional[_Iterable[_Union[User.Alias, _Mapping]]] = ...) -> None: ...
+    discord_user_id: str
+    def __init__(self, id: _Optional[str] = ..., username: _Optional[str] = ..., email: _Optional[str] = ..., active: bool = ..., rating: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., company: _Optional[str] = ..., occupation: _Optional[str] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., email_status: _Optional[str] = ..., birthday: _Optional[str] = ..., registered_on: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., last_activity: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., username_changed_on: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., password_changed_on: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., locale: _Optional[str] = ..., aliases: _Optional[_Iterable[_Union[User.Alias, _Mapping]]] = ..., discord_user_id: _Optional[str] = ...) -> None: ...
