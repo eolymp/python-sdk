@@ -23,14 +23,13 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.community import attribute_pb2 as eolymp_dot_community_dot_attribute__pb2
-from eolymp.community import group_pb2 as eolymp_dot_community_dot_group__pb2
 from eolymp.community import member_ghost_pb2 as eolymp_dot_community_dot_member__ghost__pb2
 from eolymp.community import member_team_pb2 as eolymp_dot_community_dot_member__team__pb2
 from eolymp.community import member_user_pb2 as eolymp_dot_community_dot_member__user__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a eolymp/community/attribute.proto\x1a\x1c\x65olymp/community/group.proto\x1a#eolymp/community/member_ghost.proto\x1a\"eolymp/community/member_team.proto\x1a\"eolymp/community/member_user.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfa\n\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x14\n\x0c\x65xternal_ref\x18\x04 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0c\n\x04rank\x18\x46 \x01(\x05\x12\x12\n\nrank_lower\x18H \x01(\x05\x12\x0e\n\x06rating\x18G \x01(\x05\x12\r\n\x05level\x18O \x01(\r\x12\x10\n\x08inactive\x18\x0b \x01(\x08\x12\x12\n\nincomplete\x18\x14 \x01(\x08\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x0e\n\x06secret\x18( \x01(\x08\x12.\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tseated_at\x18= \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tactive_at\x18> \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12&\n\x04user\x18\x64 \x01(\x0b\x32\x16.eolymp.community.UserH\x00\x12&\n\x04team\x18\x65 \x01(\x0b\x32\x16.eolymp.community.TeamH\x00\x12(\n\x05ghost\x18\x66 \x01(\x0b\x32\x17.eolymp.community.GhostH\x00\x12.\n\x05stats\x18\xac\x02 \x01(\x0b\x32\x1e.eolymp.community.Member.Stats\x12\x0f\n\x06groups\x18\xc8\x01 \x03(\t\x12\x36\n\nattributes\x18\x84\x07 \x03(\x0b\x32!.eolymp.community.Attribute.Value\x12\x39\n\x08metadata\x18\x80\x08 \x03(\x0b\x32&.eolymp.community.Member.MetadataEntry\x1aS\n\x05\x45xtra\"J\n\x05\x46ield\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\t\n\x05STATS\x10\x02\x12\n\n\x06GROUPS\x10\x03\x12\x0e\n\nATTRIBUTES\x10\x04\x12\x0c\n\x08METADATA\x10\x05\x1a\xe7\x03\n\x05Patch\"\xdd\x03\n\x05\x46ield\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x10\n\x0c\x45XTERNAL_REF\x10\x06\x12\x0c\n\x08INACTIVE\x10\x01\x12\x0e\n\nUNOFFICIAL\x10\x02\x12\n\n\x06GROUPS\x10\x03\x12\x0e\n\nGROUPS_ADD\x10\x04\x12\x11\n\rGROUPS_REMOVE\x10\x05\x12\x0b\n\x07\x41\x43\x43OUNT\x10\x64\x12\x11\n\rUSER_NICKNAME\x10\x65\x12\x0e\n\nUSER_EMAIL\x10\x66\x12\x11\n\rUSER_PASSWORD\x10g\x12\r\n\tUSER_NAME\x10h\x12\x10\n\x0cUSER_PICTURE\x10i\x12\x11\n\rUSER_BIRTHDAY\x10j\x12\x10\n\x0cUSER_COUNTRY\x10k\x12\r\n\tUSER_CITY\x10l\x12\x14\n\x10USER_PREFERENCES\x10m\x12\x1c\n\x17USER_PREFERENCES_LOCALE\x10\xbe\x01\x12\x1e\n\x19USER_PREFERENCES_TIMEZONE\x10\xbf\x01\x12\x1d\n\x18USER_PREFERENCES_RUNTIME\x10\xc0\x01\x12\x1c\n\x18USER_EMAIL_SUBSCRIPTIONS\x10n\x12\x0e\n\tTEAM_NAME\x10\xc8\x01\x12\x0f\n\nGHOST_NAME\x10\xac\x02\x12\x0f\n\nATTRIBUTES\x10\x84\x07\x12\r\n\x08METADATA\x10\x85\x07\x1ai\n\x05Stats\x12\x0e\n\x06streak\x18\n \x01(\x05\x12\x17\n\x0fproblems_solved\x18\x14 \x01(\x05\x12\x1c\n\x14submissions_accepted\x18\x1e \x01(\x05\x12\x19\n\x11submissions_total\x18) \x01(\x05\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07\x61\x63\x63ountB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/member.proto\x12\x10\x65olymp.community\x1a eolymp/community/attribute.proto\x1a#eolymp/community/member_ghost.proto\x1a\"eolymp/community/member_team.proto\x1a\"eolymp/community/member_user.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfa\n\n\x06Member\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x14\n\x0c\x65xternal_ref\x18\x04 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0c\n\x04rank\x18\x46 \x01(\x05\x12\x12\n\nrank_lower\x18H \x01(\x05\x12\x0e\n\x06rating\x18G \x01(\x05\x12\r\n\x05level\x18O \x01(\r\x12\x10\n\x08inactive\x18\x0b \x01(\x08\x12\x12\n\nincomplete\x18\x14 \x01(\x08\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x0e\n\x06secret\x18( \x01(\x08\x12.\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tseated_at\x18= \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tactive_at\x18> \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12&\n\x04user\x18\x64 \x01(\x0b\x32\x16.eolymp.community.UserH\x00\x12&\n\x04team\x18\x65 \x01(\x0b\x32\x16.eolymp.community.TeamH\x00\x12(\n\x05ghost\x18\x66 \x01(\x0b\x32\x17.eolymp.community.GhostH\x00\x12.\n\x05stats\x18\xac\x02 \x01(\x0b\x32\x1e.eolymp.community.Member.Stats\x12\x0f\n\x06groups\x18\xc8\x01 \x03(\t\x12\x36\n\nattributes\x18\x84\x07 \x03(\x0b\x32!.eolymp.community.Attribute.Value\x12\x39\n\x08metadata\x18\x80\x08 \x03(\x0b\x32&.eolymp.community.Member.MetadataEntry\x1aS\n\x05\x45xtra\"J\n\x05\x46ield\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\t\n\x05STATS\x10\x02\x12\n\n\x06GROUPS\x10\x03\x12\x0e\n\nATTRIBUTES\x10\x04\x12\x0c\n\x08METADATA\x10\x05\x1a\xe7\x03\n\x05Patch\"\xdd\x03\n\x05\x46ield\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x10\n\x0c\x45XTERNAL_REF\x10\x06\x12\x0c\n\x08INACTIVE\x10\x01\x12\x0e\n\nUNOFFICIAL\x10\x02\x12\n\n\x06GROUPS\x10\x03\x12\x0e\n\nGROUPS_ADD\x10\x04\x12\x11\n\rGROUPS_REMOVE\x10\x05\x12\x0b\n\x07\x41\x43\x43OUNT\x10\x64\x12\x11\n\rUSER_NICKNAME\x10\x65\x12\x0e\n\nUSER_EMAIL\x10\x66\x12\x11\n\rUSER_PASSWORD\x10g\x12\r\n\tUSER_NAME\x10h\x12\x10\n\x0cUSER_PICTURE\x10i\x12\x11\n\rUSER_BIRTHDAY\x10j\x12\x10\n\x0cUSER_COUNTRY\x10k\x12\r\n\tUSER_CITY\x10l\x12\x14\n\x10USER_PREFERENCES\x10m\x12\x1c\n\x17USER_PREFERENCES_LOCALE\x10\xbe\x01\x12\x1e\n\x19USER_PREFERENCES_TIMEZONE\x10\xbf\x01\x12\x1d\n\x18USER_PREFERENCES_RUNTIME\x10\xc0\x01\x12\x1c\n\x18USER_EMAIL_SUBSCRIPTIONS\x10n\x12\x0e\n\tTEAM_NAME\x10\xc8\x01\x12\x0f\n\nGHOST_NAME\x10\xac\x02\x12\x0f\n\nATTRIBUTES\x10\x84\x07\x12\r\n\x08METADATA\x10\x85\x07\x1ai\n\x05Stats\x12\x0e\n\x06streak\x18\n \x01(\x05\x12\x17\n\x0fproblems_solved\x18\x14 \x01(\x05\x12\x1c\n\x14submissions_accepted\x18\x1e \x01(\x05\x12\x19\n\x11submissions_total\x18) \x01(\x05\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07\x61\x63\x63ountB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,18 +39,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _globals['_MEMBER_METADATAENTRY']._loaded_options = None
   _globals['_MEMBER_METADATAENTRY']._serialized_options = b'8\001'
-  _globals['_MEMBER']._serialized_start=258
-  _globals['_MEMBER']._serialized_end=1660
-  _globals['_MEMBER_EXTRA']._serialized_start=920
-  _globals['_MEMBER_EXTRA']._serialized_end=1003
-  _globals['_MEMBER_EXTRA_FIELD']._serialized_start=929
-  _globals['_MEMBER_EXTRA_FIELD']._serialized_end=1003
-  _globals['_MEMBER_PATCH']._serialized_start=1006
-  _globals['_MEMBER_PATCH']._serialized_end=1493
-  _globals['_MEMBER_PATCH_FIELD']._serialized_start=1016
-  _globals['_MEMBER_PATCH_FIELD']._serialized_end=1493
-  _globals['_MEMBER_STATS']._serialized_start=1495
-  _globals['_MEMBER_STATS']._serialized_end=1600
-  _globals['_MEMBER_METADATAENTRY']._serialized_start=1602
-  _globals['_MEMBER_METADATAENTRY']._serialized_end=1649
+  _globals['_MEMBER']._serialized_start=228
+  _globals['_MEMBER']._serialized_end=1630
+  _globals['_MEMBER_EXTRA']._serialized_start=890
+  _globals['_MEMBER_EXTRA']._serialized_end=973
+  _globals['_MEMBER_EXTRA_FIELD']._serialized_start=899
+  _globals['_MEMBER_EXTRA_FIELD']._serialized_end=973
+  _globals['_MEMBER_PATCH']._serialized_start=976
+  _globals['_MEMBER_PATCH']._serialized_end=1463
+  _globals['_MEMBER_PATCH_FIELD']._serialized_start=986
+  _globals['_MEMBER_PATCH_FIELD']._serialized_end=1463
+  _globals['_MEMBER_STATS']._serialized_start=1465
+  _globals['_MEMBER_STATS']._serialized_end=1570
+  _globals['_MEMBER_METADATAENTRY']._serialized_start=1572
+  _globals['_MEMBER_METADATAENTRY']._serialized_end=1619
 # @@protoc_insertion_point(module_scope)
