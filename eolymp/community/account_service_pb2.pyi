@@ -38,8 +38,8 @@ class DescribeAccountOutput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     member: _member_pb2.Member
     team: _member_pb2.Member
-    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra]
-    def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., team: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedCompositeFieldContainer[_member_pb2.Member.Extra]
+    def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., team: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, _Mapping]]] = ...) -> None: ...
 
 class UpdateAccountInput(_message.Message):
     __slots__ = ("patch", "current_password", "member")

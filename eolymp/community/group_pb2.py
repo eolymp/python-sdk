@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/community/group.proto\x12\x10\x65olymp.community\"\xe1\x01\n\x05Group\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05index\x18\x05 \x01(\r\x12\x0c\n\x04icon\x18\n \x01(\t\x12\r\n\x05\x62\x61\x64ge\x18\x0b \x01(\t\x12\r\n\x05\x63olor\x18\x0c \x01(\t\x1a\x61\n\x05Patch\"X\n\x05\x46ield\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x02\x12\x07\n\x03KEY\x10\x03\x12\x08\n\x04ICON\x10\x04\x12\t\n\x05\x42\x41\x44GE\x10\x05\x12\t\n\x05\x43OLOR\x10\x06\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/community/group.proto\x12\x10\x65olymp.community\"\xc6\x02\n\x05Group\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x14\n\x0c\x65xternal_ref\x18\x04 \x01(\t\x12\x0c\n\x04icon\x18\n \x01(\t\x12\r\n\x05\x62\x61\x64ge\x18\x0b \x01(\t\x12\r\n\x05\x63olor\x18\x0c \x01(\t\x12\x38\n\x08metadata\x18\x80\x08 \x03(\x0b\x32%.eolymp.community.Group.MetadataEntry\x1a\x61\n\x05Patch\"X\n\x05\x46ield\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x02\x12\x07\n\x03KEY\x10\x03\x12\x08\n\x04ICON\x10\x04\x12\t\n\x05\x42\x41\x44GE\x10\x05\x12\t\n\x05\x43OLOR\x10\x06\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,10 +32,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.group_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
+  _globals['_GROUP_METADATAENTRY']._loaded_options = None
+  _globals['_GROUP_METADATAENTRY']._serialized_options = b'8\001'
   _globals['_GROUP']._serialized_start=51
-  _globals['_GROUP']._serialized_end=276
-  _globals['_GROUP_PATCH']._serialized_start=179
-  _globals['_GROUP_PATCH']._serialized_end=276
-  _globals['_GROUP_PATCH_FIELD']._serialized_start=188
-  _globals['_GROUP_PATCH_FIELD']._serialized_end=276
+  _globals['_GROUP']._serialized_end=377
+  _globals['_GROUP_PATCH']._serialized_start=231
+  _globals['_GROUP_PATCH']._serialized_end=328
+  _globals['_GROUP_PATCH_FIELD']._serialized_start=240
+  _globals['_GROUP_PATCH_FIELD']._serialized_end=328
+  _globals['_GROUP_METADATAENTRY']._serialized_start=330
+  _globals['_GROUP_METADATAENTRY']._serialized_end=377
 # @@protoc_insertion_point(module_scope)
