@@ -5,7 +5,6 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import group_pb2 as _group_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -35,21 +34,13 @@ class CreateGroupOutput(_message.Message):
 
 class UpdateGroupInput(_message.Message):
     __slots__ = ("patch", "group_id", "group")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateGroupInput.Patch]
-        NAME: _ClassVar[UpdateGroupInput.Patch]
-        DESCRIPTION: _ClassVar[UpdateGroupInput.Patch]
-    ALL: UpdateGroupInput.Patch
-    NAME: UpdateGroupInput.Patch
-    DESCRIPTION: UpdateGroupInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateGroupInput.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_group_pb2.Group.Patch.Field]
     group_id: str
     group: _group_pb2.Group
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateGroupInput.Patch, str]]] = ..., group_id: _Optional[str] = ..., group: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_group_pb2.Group.Patch.Field, str]]] = ..., group_id: _Optional[str] = ..., group: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
 
 class UpdateGroupOutput(_message.Message):
     __slots__ = ()
@@ -80,14 +71,16 @@ class DescribeGroupOutput(_message.Message):
 class ListGroupsInput(_message.Message):
     __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ("query", "id", "name")
+        __slots__ = ("query", "id", "key", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
+        KEY_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         query: str
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        key: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., key: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]

@@ -19,12 +19,10 @@ class Member(_message.Message):
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NO_EXTRA: _ClassVar[Member.Extra]
-        TIER: _ClassVar[Member.Extra]
         STATS: _ClassVar[Member.Extra]
         GROUPS: _ClassVar[Member.Extra]
         ATTRIBUTES: _ClassVar[Member.Extra]
     NO_EXTRA: Member.Extra
-    TIER: Member.Extra
     STATS: Member.Extra
     GROUPS: Member.Extra
     ATTRIBUTES: Member.Extra
