@@ -16,17 +16,19 @@ class Group(_message.Message):
             UNKNOWN: _ClassVar[Group.Patch.Field]
             NAME: _ClassVar[Group.Patch.Field]
             DESCRIPTION: _ClassVar[Group.Patch.Field]
-            KEY: _ClassVar[Group.Patch.Field]
+            EXTERNAL_REF: _ClassVar[Group.Patch.Field]
             ICON: _ClassVar[Group.Patch.Field]
             BADGE: _ClassVar[Group.Patch.Field]
             COLOR: _ClassVar[Group.Patch.Field]
+            METADATA: _ClassVar[Group.Patch.Field]
         UNKNOWN: Group.Patch.Field
         NAME: Group.Patch.Field
         DESCRIPTION: Group.Patch.Field
-        KEY: Group.Patch.Field
+        EXTERNAL_REF: Group.Patch.Field
         ICON: Group.Patch.Field
         BADGE: Group.Patch.Field
         COLOR: Group.Patch.Field
+        METADATA: Group.Patch.Field
         def __init__(self) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ("key", "value")
