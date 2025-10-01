@@ -101,8 +101,8 @@ class DescribeMemberInput(_message.Message):
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     member_id: str
-    extra: _containers.RepeatedCompositeFieldContainer[_member_pb2.Member.Extra]
-    def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, _Mapping]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra.Field]
+    def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeMemberOutput(_message.Message):
     __slots__ = ("member",)
@@ -187,8 +187,8 @@ class ListMembersInput(_message.Message):
     search: str
     sort: ListMembersInput.Sortable
     order: _direction_pb2.Direction
-    extra: _containers.RepeatedCompositeFieldContainer[_member_pb2.Member.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMembersInput.Filter, _Mapping]] = ..., search: _Optional[str] = ..., sort: _Optional[_Union[ListMembersInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, _Mapping]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra.Field]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMembersInput.Filter, _Mapping]] = ..., search: _Optional[str] = ..., sort: _Optional[_Union[ListMembersInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra.Field, str]]] = ...) -> None: ...
 
 class ListMembersOutput(_message.Message):
     __slots__ = ("total", "items")
