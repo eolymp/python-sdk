@@ -23,13 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
-from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.community import access_key_pb2 as eolymp_dot_community_dot_access__key__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/community/access_key_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/community/access_key.proto\"G\n\x14\x43reateAccessKeyInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\r\"7\n\x15\x43reateAccessKeyOutput\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x0e\n\x06secret\x18\x02 \x01(\t\"&\n\x14\x44\x65leteAccessKeyInput\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"\x17\n\x15\x44\x65leteAccessKeyOutput\"3\n\x13ListAccessKeysInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"Q\n\x14ListAccessKeysOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.community.AccessKey2\xba\x04\n\x10\x41\x63\x63\x65ssKeyService\x12\xa9\x01\n\x0f\x43reateAccessKey\x12&.eolymp.community.CreateAccessKeyInput\x1a\'.eolymp.community.CreateAccessKeyOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1e\x8a\xe3\n\x1a\x63ommunity:access-key:write\x82\xd3\xe4\x93\x02\x0e\"\x0c/access-keys\x12\xb2\x01\n\x0f\x44\x65leteAccessKey\x12&.eolymp.community.DeleteAccessKeyInput\x1a\'.eolymp.community.DeleteAccessKeyOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1e\x8a\xe3\n\x1a\x63ommunity:access-key:write\x82\xd3\xe4\x93\x02\x17*\x15/access-keys/{key_id}\x12\xa5\x01\n\x0eListAccessKeys\x12%.eolymp.community.ListAccessKeysInput\x1a&.eolymp.community.ListAccessKeysOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1d\x8a\xe3\n\x19\x63ommunity:access-key:read\x82\xd3\xe4\x93\x02\x0e\x12\x0c/access-keys\x1a\x1d\x82\xf0\xf0\xe4\x01\x17\x65olymp.community.MemberB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/community/access_key_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/community/access_key.proto\"G\n\x14\x43reateAccessKeyInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\r\"7\n\x15\x43reateAccessKeyOutput\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x0e\n\x06secret\x18\x02 \x01(\t\"&\n\x14\x44\x65leteAccessKeyInput\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"\x17\n\x15\x44\x65leteAccessKeyOutput\"3\n\x13ListAccessKeysInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"Q\n\x14ListAccessKeysOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.community.AccessKey2\x9b\x04\n\x10\x41\x63\x63\x65ssKeyService\x12\xa9\x01\n\x0f\x43reateAccessKey\x12&.eolymp.community.CreateAccessKeyInput\x1a\'.eolymp.community.CreateAccessKeyOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x1e\x8a\xe3\n\x1a\x63ommunity:access-key:write\x82\xd3\xe4\x93\x02\x0e\"\x0c/access-keys\x12\xb2\x01\n\x0f\x44\x65leteAccessKey\x12&.eolymp.community.DeleteAccessKeyInput\x1a\'.eolymp.community.DeleteAccessKeyOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1e\x8a\xe3\n\x1a\x63ommunity:access-key:write\x82\xd3\xe4\x93\x02\x17*\x15/access-keys/{key_id}\x12\xa5\x01\n\x0eListAccessKeys\x12%.eolymp.community.ListAccessKeysInput\x1a&.eolymp.community.ListAccessKeysOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1d\x8a\xe3\n\x19\x63ommunity:access-key:read\x82\xd3\xe4\x93\x02\x0e\x12\x0c/access-keysB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,26 +36,24 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.access_key
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
-  _globals['_ACCESSKEYSERVICE']._loaded_options = None
-  _globals['_ACCESSKEYSERVICE']._serialized_options = b'\202\360\360\344\001\027eolymp.community.Member'
   _globals['_ACCESSKEYSERVICE'].methods_by_name['CreateAccessKey']._loaded_options = None
   _globals['_ACCESSKEYSERVICE'].methods_by_name['CreateAccessKey']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\036\212\343\n\032community:access-key:write\202\323\344\223\002\016\"\014/access-keys'
   _globals['_ACCESSKEYSERVICE'].methods_by_name['DeleteAccessKey']._loaded_options = None
   _globals['_ACCESSKEYSERVICE'].methods_by_name['DeleteAccessKey']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\036\212\343\n\032community:access-key:write\202\323\344\223\002\027*\025/access-keys/{key_id}'
   _globals['_ACCESSKEYSERVICE'].methods_by_name['ListAccessKeys']._loaded_options = None
   _globals['_ACCESSKEYSERVICE'].methods_by_name['ListAccessKeys']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\035\212\343\n\031community:access-key:read\202\323\344\223\002\016\022\014/access-keys'
-  _globals['_CREATEACCESSKEYINPUT']._serialized_start=233
-  _globals['_CREATEACCESSKEYINPUT']._serialized_end=304
-  _globals['_CREATEACCESSKEYOUTPUT']._serialized_start=306
-  _globals['_CREATEACCESSKEYOUTPUT']._serialized_end=361
-  _globals['_DELETEACCESSKEYINPUT']._serialized_start=363
-  _globals['_DELETEACCESSKEYINPUT']._serialized_end=401
-  _globals['_DELETEACCESSKEYOUTPUT']._serialized_start=403
-  _globals['_DELETEACCESSKEYOUTPUT']._serialized_end=426
-  _globals['_LISTACCESSKEYSINPUT']._serialized_start=428
-  _globals['_LISTACCESSKEYSINPUT']._serialized_end=479
-  _globals['_LISTACCESSKEYSOUTPUT']._serialized_start=481
-  _globals['_LISTACCESSKEYSOUTPUT']._serialized_end=562
-  _globals['_ACCESSKEYSERVICE']._serialized_start=565
-  _globals['_ACCESSKEYSERVICE']._serialized_end=1135
+  _globals['_CREATEACCESSKEYINPUT']._serialized_start=197
+  _globals['_CREATEACCESSKEYINPUT']._serialized_end=268
+  _globals['_CREATEACCESSKEYOUTPUT']._serialized_start=270
+  _globals['_CREATEACCESSKEYOUTPUT']._serialized_end=325
+  _globals['_DELETEACCESSKEYINPUT']._serialized_start=327
+  _globals['_DELETEACCESSKEYINPUT']._serialized_end=365
+  _globals['_DELETEACCESSKEYOUTPUT']._serialized_start=367
+  _globals['_DELETEACCESSKEYOUTPUT']._serialized_end=390
+  _globals['_LISTACCESSKEYSINPUT']._serialized_start=392
+  _globals['_LISTACCESSKEYSINPUT']._serialized_end=443
+  _globals['_LISTACCESSKEYSOUTPUT']._serialized_start=445
+  _globals['_LISTACCESSKEYSOUTPUT']._serialized_end=526
+  _globals['_ACCESSKEYSERVICE']._serialized_start=529
+  _globals['_ACCESSKEYSERVICE']._serialized_end=1068
 # @@protoc_insertion_point(module_scope)

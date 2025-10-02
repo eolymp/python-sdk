@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/cognito/user.proto\x12\x0e\x65olymp.cognito\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd7\x04\n\x04User\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x04 \x01(\x08\x12\x0e\n\x06rating\x18< \x01(\r\x12\x0c\n\x04name\x18\n \x01(\t\x12\x0f\n\x07picture\x18\x0b \x01(\t\x12\x0f\n\x07\x63ompany\x18\x0c \x01(\t\x12\x12\n\noccupation\x18\r \x01(\t\x12\x0f\n\x07\x63ountry\x18\x15 \x01(\t\x12\x0c\n\x04\x63ity\x18\x16 \x01(\t\x12\x14\n\x0c\x65mail_status\x18  \x01(\t\x12\x10\n\x08\x62irthday\x18! \x01(\t\x12\x31\n\rregistered_on\x18\" \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rlast_activity\x18# \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x13username_changed_on\x18$ \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x13password_changed_on\x18% \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06locale\x18( \x01(\t\x12+\n\x07\x61liases\x18\x0e \x03(\x0b\x32\x1a.eolymp.cognito.User.Alias\x12\x17\n\x0f\x64iscord_user_id\x18\x64 \x01(\t\x1aI\n\x05\x41lias\x12\x10\n\x08nickname\x18\x01 \x01(\t\x12.\n\nchanged_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB1Z/github.com/eolymp/go-sdk/eolymp/cognito;cognitob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/cognito/user.proto\x12\x0e\x65olymp.cognito\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc6\x03\n\x04User\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x04 \x01(\x08\x12\x0e\n\x06rating\x18< \x01(\r\x12\x0c\n\x04name\x18\n \x01(\t\x12\x0f\n\x07picture\x18\x0b \x01(\t\x12\x0f\n\x07\x63ompany\x18\x0c \x01(\t\x12\x12\n\noccupation\x18\r \x01(\t\x12\x0f\n\x07\x63ountry\x18\x15 \x01(\t\x12\x0c\n\x04\x63ity\x18\x16 \x01(\t\x12\x14\n\x0c\x65mail_status\x18  \x01(\t\x12\x10\n\x08\x62irthday\x18! \x01(\t\x12\x31\n\rregistered_on\x18\" \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rlast_activity\x18# \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x13username_changed_on\x18$ \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x13password_changed_on\x18% \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06locale\x18( \x01(\tB1Z/github.com/eolymp/go-sdk/eolymp/cognito;cognitob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,7 +34,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/cognito;cognito'
   _globals['_USER']._serialized_start=79
-  _globals['_USER']._serialized_end=678
-  _globals['_USER_ALIAS']._serialized_start=605
-  _globals['_USER_ALIAS']._serialized_end=678
+  _globals['_USER']._serialized_end=533
 # @@protoc_insertion_point(module_scope)

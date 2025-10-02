@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Product(_message.Message):
-    __slots__ = ("id", "name", "summary", "description", "images", "out_of_stock", "featured", "inactive", "backorder", "currency", "price", "regular_price", "attributes", "variants", "cursor")
+    __slots__ = ("id", "name", "summary", "description", "images", "out_of_stock", "featured", "inactive", "backorder", "currency", "unit_price", "attributes", "variants")
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -39,8 +39,7 @@ class Product(_message.Message):
             SUMMARY: _ClassVar[Product.Patch.Field]
             DESCRIPTION: _ClassVar[Product.Patch.Field]
             IMAGES: _ClassVar[Product.Patch.Field]
-            PRICE: _ClassVar[Product.Patch.Field]
-            REGULAR_PRICE: _ClassVar[Product.Patch.Field]
+            UNIT_PRICE: _ClassVar[Product.Patch.Field]
             ATTRIBUTES: _ClassVar[Product.Patch.Field]
             VARIANTS: _ClassVar[Product.Patch.Field]
             FEATURED: _ClassVar[Product.Patch.Field]
@@ -52,8 +51,7 @@ class Product(_message.Message):
         SUMMARY: Product.Patch.Field
         DESCRIPTION: Product.Patch.Field
         IMAGES: Product.Patch.Field
-        PRICE: Product.Patch.Field
-        REGULAR_PRICE: Product.Patch.Field
+        UNIT_PRICE: Product.Patch.Field
         ATTRIBUTES: Product.Patch.Field
         VARIANTS: Product.Patch.Field
         FEATURED: Product.Patch.Field
@@ -91,21 +89,6 @@ class Product(_message.Message):
         max_quantity: int
         available_quantity: int
         def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: bool = ..., max_quantity: _Optional[int] = ..., available_quantity: _Optional[int] = ...) -> None: ...
-    class Translation(_message.Message):
-        __slots__ = ("id", "locale", "name", "summary", "description", "attributes")
-        ID_FIELD_NUMBER: _ClassVar[int]
-        LOCALE_FIELD_NUMBER: _ClassVar[int]
-        NAME_FIELD_NUMBER: _ClassVar[int]
-        SUMMARY_FIELD_NUMBER: _ClassVar[int]
-        DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-        ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
-        id: str
-        locale: str
-        name: str
-        summary: _content_pb2.Content
-        description: _content_pb2.Content
-        attributes: _containers.RepeatedCompositeFieldContainer[Product.Attribute]
-        def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SUMMARY_FIELD_NUMBER: _ClassVar[int]
@@ -116,11 +99,9 @@ class Product(_message.Message):
     INACTIVE_FIELD_NUMBER: _ClassVar[int]
     BACKORDER_FIELD_NUMBER: _ClassVar[int]
     CURRENCY_FIELD_NUMBER: _ClassVar[int]
-    PRICE_FIELD_NUMBER: _ClassVar[int]
-    REGULAR_PRICE_FIELD_NUMBER: _ClassVar[int]
+    UNIT_PRICE_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     VARIANTS_FIELD_NUMBER: _ClassVar[int]
-    CURSOR_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     summary: _content_pb2.Content
@@ -131,9 +112,7 @@ class Product(_message.Message):
     inactive: bool
     backorder: bool
     currency: str
-    price: int
-    regular_price: int
+    unit_price: int
     attributes: _containers.RepeatedCompositeFieldContainer[Product.Attribute]
     variants: _containers.RepeatedCompositeFieldContainer[Product.Variant]
-    cursor: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: bool = ..., featured: bool = ..., inactive: bool = ..., backorder: bool = ..., currency: _Optional[str] = ..., price: _Optional[int] = ..., regular_price: _Optional[int] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ..., variants: _Optional[_Iterable[_Union[Product.Variant, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: bool = ..., featured: bool = ..., inactive: bool = ..., backorder: bool = ..., currency: _Optional[str] = ..., unit_price: _Optional[int] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ..., variants: _Optional[_Iterable[_Union[Product.Variant, _Mapping]]] = ...) -> None: ...

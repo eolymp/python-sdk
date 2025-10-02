@@ -15,77 +15,19 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ("id", "url", "external_ref", "display_name", "rank", "rank_lower", "rating", "level", "inactive", "incomplete", "unofficial", "secret", "created_at", "seated_at", "active_at", "user", "team", "ghost", "stats", "groups", "attributes", "metadata")
-    class Extra(_message.Message):
+    __slots__ = ("id", "display_name", "url", "rank", "rank_lower", "rating", "level", "inactive", "incomplete", "unofficial", "secret", "tier_id", "fallback_tier_id", "created_at", "seated_at", "active_at", "user", "team", "ghost", "stats", "groups", "attributes")
+    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            NO_EXTRA: _ClassVar[Member.Extra.Field]
-            STATS: _ClassVar[Member.Extra.Field]
-            GROUPS: _ClassVar[Member.Extra.Field]
-            ATTRIBUTES: _ClassVar[Member.Extra.Field]
-            METADATA: _ClassVar[Member.Extra.Field]
-        NO_EXTRA: Member.Extra.Field
-        STATS: Member.Extra.Field
-        GROUPS: Member.Extra.Field
-        ATTRIBUTES: Member.Extra.Field
-        METADATA: Member.Extra.Field
-        def __init__(self) -> None: ...
-    class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN: _ClassVar[Member.Patch.Field]
-            EXTERNAL_REF: _ClassVar[Member.Patch.Field]
-            INACTIVE: _ClassVar[Member.Patch.Field]
-            UNOFFICIAL: _ClassVar[Member.Patch.Field]
-            GROUPS: _ClassVar[Member.Patch.Field]
-            GROUPS_ADD: _ClassVar[Member.Patch.Field]
-            GROUPS_REMOVE: _ClassVar[Member.Patch.Field]
-            ACCOUNT: _ClassVar[Member.Patch.Field]
-            USER_NICKNAME: _ClassVar[Member.Patch.Field]
-            USER_EMAIL: _ClassVar[Member.Patch.Field]
-            USER_PASSWORD: _ClassVar[Member.Patch.Field]
-            USER_NAME: _ClassVar[Member.Patch.Field]
-            USER_PICTURE: _ClassVar[Member.Patch.Field]
-            USER_BIRTHDAY: _ClassVar[Member.Patch.Field]
-            USER_COUNTRY: _ClassVar[Member.Patch.Field]
-            USER_CITY: _ClassVar[Member.Patch.Field]
-            USER_PREFERENCES: _ClassVar[Member.Patch.Field]
-            USER_PREFERENCES_LOCALE: _ClassVar[Member.Patch.Field]
-            USER_PREFERENCES_TIMEZONE: _ClassVar[Member.Patch.Field]
-            USER_PREFERENCES_RUNTIME: _ClassVar[Member.Patch.Field]
-            USER_EMAIL_SUBSCRIPTIONS: _ClassVar[Member.Patch.Field]
-            TEAM_NAME: _ClassVar[Member.Patch.Field]
-            GHOST_NAME: _ClassVar[Member.Patch.Field]
-            ATTRIBUTES: _ClassVar[Member.Patch.Field]
-            METADATA: _ClassVar[Member.Patch.Field]
-        UNKNOWN: Member.Patch.Field
-        EXTERNAL_REF: Member.Patch.Field
-        INACTIVE: Member.Patch.Field
-        UNOFFICIAL: Member.Patch.Field
-        GROUPS: Member.Patch.Field
-        GROUPS_ADD: Member.Patch.Field
-        GROUPS_REMOVE: Member.Patch.Field
-        ACCOUNT: Member.Patch.Field
-        USER_NICKNAME: Member.Patch.Field
-        USER_EMAIL: Member.Patch.Field
-        USER_PASSWORD: Member.Patch.Field
-        USER_NAME: Member.Patch.Field
-        USER_PICTURE: Member.Patch.Field
-        USER_BIRTHDAY: Member.Patch.Field
-        USER_COUNTRY: Member.Patch.Field
-        USER_CITY: Member.Patch.Field
-        USER_PREFERENCES: Member.Patch.Field
-        USER_PREFERENCES_LOCALE: Member.Patch.Field
-        USER_PREFERENCES_TIMEZONE: Member.Patch.Field
-        USER_PREFERENCES_RUNTIME: Member.Patch.Field
-        USER_EMAIL_SUBSCRIPTIONS: Member.Patch.Field
-        TEAM_NAME: Member.Patch.Field
-        GHOST_NAME: Member.Patch.Field
-        ATTRIBUTES: Member.Patch.Field
-        METADATA: Member.Patch.Field
-        def __init__(self) -> None: ...
+        NO_EXTRA: _ClassVar[Member.Extra]
+        TIER: _ClassVar[Member.Extra]
+        STATS: _ClassVar[Member.Extra]
+        GROUPS: _ClassVar[Member.Extra]
+        ATTRIBUTES: _ClassVar[Member.Extra]
+    NO_EXTRA: Member.Extra
+    TIER: Member.Extra
+    STATS: Member.Extra
+    GROUPS: Member.Extra
+    ATTRIBUTES: Member.Extra
     class Stats(_message.Message):
         __slots__ = ("streak", "problems_solved", "submissions_accepted", "submissions_total")
         STREAK_FIELD_NUMBER: _ClassVar[int]
@@ -97,17 +39,9 @@ class Member(_message.Message):
         submissions_accepted: int
         submissions_total: int
         def __init__(self, streak: _Optional[int] = ..., problems_solved: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., submissions_total: _Optional[int] = ...) -> None: ...
-    class MetadataEntry(_message.Message):
-        __slots__ = ("key", "value")
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
-    URL_FIELD_NUMBER: _ClassVar[int]
-    EXTERNAL_REF_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+    URL_FIELD_NUMBER: _ClassVar[int]
     RANK_FIELD_NUMBER: _ClassVar[int]
     RANK_LOWER_FIELD_NUMBER: _ClassVar[int]
     RATING_FIELD_NUMBER: _ClassVar[int]
@@ -116,6 +50,8 @@ class Member(_message.Message):
     INCOMPLETE_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
+    TIER_ID_FIELD_NUMBER: _ClassVar[int]
+    FALLBACK_TIER_ID_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     SEATED_AT_FIELD_NUMBER: _ClassVar[int]
     ACTIVE_AT_FIELD_NUMBER: _ClassVar[int]
@@ -125,11 +61,9 @@ class Member(_message.Message):
     STATS_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
-    METADATA_FIELD_NUMBER: _ClassVar[int]
     id: str
-    url: str
-    external_ref: str
     display_name: str
+    url: str
     rank: int
     rank_lower: int
     rating: int
@@ -138,6 +72,8 @@ class Member(_message.Message):
     incomplete: bool
     unofficial: bool
     secret: bool
+    tier_id: str
+    fallback_tier_id: str
     created_at: _timestamp_pb2.Timestamp
     seated_at: _timestamp_pb2.Timestamp
     active_at: _timestamp_pb2.Timestamp
@@ -147,5 +83,4 @@ class Member(_message.Message):
     stats: Member.Stats
     groups: _containers.RepeatedScalarFieldContainer[str]
     attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
-    metadata: _containers.ScalarMap[str, str]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., external_ref: _Optional[str] = ..., display_name: _Optional[str] = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., rating: _Optional[int] = ..., level: _Optional[int] = ..., inactive: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., seated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., active_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., stats: _Optional[_Union[Member.Stats, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ..., metadata: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., display_name: _Optional[str] = ..., url: _Optional[str] = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., rating: _Optional[int] = ..., level: _Optional[int] = ..., inactive: bool = ..., incomplete: bool = ..., unofficial: bool = ..., secret: bool = ..., tier_id: _Optional[str] = ..., fallback_tier_id: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., seated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., active_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., stats: _Optional[_Union[Member.Stats, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ...) -> None: ...

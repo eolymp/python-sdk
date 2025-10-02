@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
-    __slots__ = ("id", "key", "url", "home_url", "issuer_url", "graphql_url", "name", "image", "visibility", "features", "status", "subscription", "affiliation", "discord_guild_id")
+    __slots__ = ("id", "key", "url", "home_url", "issuer_url", "graphql_url", "name", "image", "visibility", "features", "status", "subscription", "affiliation")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Space.Status]
@@ -43,12 +43,10 @@ class Space(_message.Message):
         PRINTERS: _ClassVar[Space.Feature]
         NEWSLETTERS: _ClassVar[Space.Feature]
         MEMBER_CREDITS: _ClassVar[Space.Feature]
-        MERCHANDISE_STORE: _ClassVar[Space.Feature]
     UNKNOWN_FEATURE: Space.Feature
     PRINTERS: Space.Feature
     NEWSLETTERS: Space.Feature
     MEMBER_CREDITS: Space.Feature
-    MERCHANDISE_STORE: Space.Feature
     class Subscription(_message.Message):
         __slots__ = ("plan", "seats", "quota", "billing_period_start", "billing_period_end", "quota_period_start", "quota_period_end")
         PLAN_FIELD_NUMBER: _ClassVar[int]
@@ -79,7 +77,6 @@ class Space(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
     AFFILIATION_FIELD_NUMBER: _ClassVar[int]
-    DISCORD_GUILD_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     key: str
     url: str
@@ -93,5 +90,4 @@ class Space(_message.Message):
     status: Space.Status
     subscription: Space.Subscription
     affiliation: str
-    discord_guild_id: str
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., features: _Optional[_Iterable[_Union[Space.Feature, str]]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., affiliation: _Optional[str] = ..., discord_guild_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., features: _Optional[_Iterable[_Union[Space.Feature, str]]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., affiliation: _Optional[str] = ...) -> None: ...

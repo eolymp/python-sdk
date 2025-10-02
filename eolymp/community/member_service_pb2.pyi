@@ -1,8 +1,6 @@
 import datetime
 
 from eolymp.annotations import http_pb2 as _http_pb2
-from eolymp.annotations import mcp_pb2 as _mcp_pb2
-from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import member_pb2 as _member_pb2
@@ -40,13 +38,61 @@ class CreateMemberOutput(_message.Message):
 
 class UpdateMemberInput(_message.Message):
     __slots__ = ("patch", "member_id", "member")
+    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        ALL: _ClassVar[UpdateMemberInput.Patch]
+        INACTIVE: _ClassVar[UpdateMemberInput.Patch]
+        UNOFFICIAL: _ClassVar[UpdateMemberInput.Patch]
+        GROUPS: _ClassVar[UpdateMemberInput.Patch]
+        GROUPS_ADD: _ClassVar[UpdateMemberInput.Patch]
+        GROUPS_REMOVE: _ClassVar[UpdateMemberInput.Patch]
+        ACCOUNT: _ClassVar[UpdateMemberInput.Patch]
+        USER_NICKNAME: _ClassVar[UpdateMemberInput.Patch]
+        USER_EMAIL: _ClassVar[UpdateMemberInput.Patch]
+        USER_PASSWORD: _ClassVar[UpdateMemberInput.Patch]
+        USER_NAME: _ClassVar[UpdateMemberInput.Patch]
+        USER_PICTURE: _ClassVar[UpdateMemberInput.Patch]
+        USER_BIRTHDAY: _ClassVar[UpdateMemberInput.Patch]
+        USER_COUNTRY: _ClassVar[UpdateMemberInput.Patch]
+        USER_CITY: _ClassVar[UpdateMemberInput.Patch]
+        USER_PREFERENCES: _ClassVar[UpdateMemberInput.Patch]
+        USER_PREFERENCES_LOCALE: _ClassVar[UpdateMemberInput.Patch]
+        USER_PREFERENCES_TIMEZONE: _ClassVar[UpdateMemberInput.Patch]
+        USER_PREFERENCES_RUNTIME: _ClassVar[UpdateMemberInput.Patch]
+        USER_EMAIL_SUBSCRIPTIONS: _ClassVar[UpdateMemberInput.Patch]
+        TEAM_NAME: _ClassVar[UpdateMemberInput.Patch]
+        GHOST_NAME: _ClassVar[UpdateMemberInput.Patch]
+        ATTRIBUTES: _ClassVar[UpdateMemberInput.Patch]
+    ALL: UpdateMemberInput.Patch
+    INACTIVE: UpdateMemberInput.Patch
+    UNOFFICIAL: UpdateMemberInput.Patch
+    GROUPS: UpdateMemberInput.Patch
+    GROUPS_ADD: UpdateMemberInput.Patch
+    GROUPS_REMOVE: UpdateMemberInput.Patch
+    ACCOUNT: UpdateMemberInput.Patch
+    USER_NICKNAME: UpdateMemberInput.Patch
+    USER_EMAIL: UpdateMemberInput.Patch
+    USER_PASSWORD: UpdateMemberInput.Patch
+    USER_NAME: UpdateMemberInput.Patch
+    USER_PICTURE: UpdateMemberInput.Patch
+    USER_BIRTHDAY: UpdateMemberInput.Patch
+    USER_COUNTRY: UpdateMemberInput.Patch
+    USER_CITY: UpdateMemberInput.Patch
+    USER_PREFERENCES: UpdateMemberInput.Patch
+    USER_PREFERENCES_LOCALE: UpdateMemberInput.Patch
+    USER_PREFERENCES_TIMEZONE: UpdateMemberInput.Patch
+    USER_PREFERENCES_RUNTIME: UpdateMemberInput.Patch
+    USER_EMAIL_SUBSCRIPTIONS: UpdateMemberInput.Patch
+    TEAM_NAME: UpdateMemberInput.Patch
+    GHOST_NAME: UpdateMemberInput.Patch
+    ATTRIBUTES: UpdateMemberInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Patch.Field]
+    patch: _containers.RepeatedScalarFieldContainer[UpdateMemberInput.Patch]
     member_id: str
     member: _member_pb2.Member
-    def __init__(self, patch: _Optional[_Iterable[_Union[_member_pb2.Member.Patch.Field, str]]] = ..., member_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMemberInput.Patch, str]]] = ..., member_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class UpdateMemberOutput(_message.Message):
     __slots__ = ()
@@ -101,8 +147,8 @@ class DescribeMemberInput(_message.Message):
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     member_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra.Field]
-    def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra.Field, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra]
+    def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
 class DescribeMemberOutput(_message.Message):
     __slots__ = ("member",)
@@ -134,9 +180,8 @@ class ListMembersInput(_message.Message):
         string: _expression_pb2.ExpressionString
         def __init__(self, attribute_key: _Optional[str] = ..., number: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ..., string: _Optional[_Union[_expression_pb2.ExpressionString, _Mapping]] = ...) -> None: ...
     class Filter(_message.Message):
-        __slots__ = ("id", "external_ref", "type", "display_name", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "user_issuer", "user_subject", "user_email", "user_name", "user_nickname", "birthday", "country", "score", "attribute")
+        __slots__ = ("id", "type", "display_name", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "user_issuer", "user_subject", "user_email", "user_name", "user_nickname", "birthday", "country", "score", "attribute")
         ID_FIELD_NUMBER: _ClassVar[int]
-        EXTERNAL_REF_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
         INACTIVE_FIELD_NUMBER: _ClassVar[int]
@@ -155,7 +200,6 @@ class ListMembersInput(_message.Message):
         SCORE_FIELD_NUMBER: _ClassVar[int]
         ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        external_ref: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         display_name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         inactive: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
@@ -173,7 +217,7 @@ class ListMembersInput(_message.Message):
         country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         attribute: _containers.RepeatedCompositeFieldContainer[ListMembersInput.ExpressionAttribute]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., display_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_nickname: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[ListMembersInput.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., display_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_nickname: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[ListMembersInput.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
@@ -187,8 +231,8 @@ class ListMembersInput(_message.Message):
     search: str
     sort: ListMembersInput.Sortable
     order: _direction_pb2.Direction
-    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMembersInput.Filter, _Mapping]] = ..., search: _Optional[str] = ..., sort: _Optional[_Union[ListMembersInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra.Field, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Extra]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMembersInput.Filter, _Mapping]] = ..., search: _Optional[str] = ..., sort: _Optional[_Union[ListMembersInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, str]]] = ...) -> None: ...
 
 class ListMembersOutput(_message.Message):
     __slots__ = ("total", "items")

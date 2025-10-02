@@ -1,12 +1,10 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.commerce import address_pb2 as _address_pb2
-from eolymp.commerce import shipping_method_pb2 as _shipping_method_pb2
 from eolymp.commerce import shopping_cart_pb2 as _shopping_cart_pb2
-from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from collections.abc import Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -80,26 +78,6 @@ class UpdateBillingAddressInput(_message.Message):
 class UpdateBillingAddressOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
-
-class UpdateShippingMethodInput(_message.Message):
-    __slots__ = ("shipping_method_id",)
-    SHIPPING_METHOD_ID_FIELD_NUMBER: _ClassVar[int]
-    shipping_method_id: str
-    def __init__(self, shipping_method_id: _Optional[str] = ...) -> None: ...
-
-class UpdateShippingMethodOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
-class ListShippingMethodsInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
-class ListShippingMethodsOutput(_message.Message):
-    __slots__ = ("items",)
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[_shipping_method_pb2.ShippingMethod]
-    def __init__(self, items: _Optional[_Iterable[_Union[_shipping_method_pb2.ShippingMethod, _Mapping]]] = ...) -> None: ...
 
 class PlaceOrderInput(_message.Message):
     __slots__ = ()

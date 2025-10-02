@@ -43,8 +43,6 @@ class Action(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     POST_LIST: _ClassVar[Action]
     POST_READ: _ClassVar[Action]
     POST_WRITE: _ClassVar[Action]
-    STORE_READ: _ClassVar[Action]
-    STORE_WRITE: _ClassVar[Action]
 UNKNOWN_ACTION: Action
 SPACE_LIST: Action
 SPACE_READ: Action
@@ -82,5 +80,3 @@ COURSE_ASSIGN: Action
 POST_LIST: Action
 POST_READ: Action
 POST_WRITE: Action
-STORE_READ: Action
-STORE_WRITE: Action
