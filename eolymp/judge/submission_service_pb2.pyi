@@ -1,7 +1,8 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.judge import submission_pb2 as _submission_pb2
+from eolymp.atlas import submission_pb2 as _submission_pb2
+from eolymp.judge import submission_pb2 as _submission_pb2_1
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -12,16 +13,18 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ("contest_id", "problem_id", "lang", "source")
+    __slots__ = ("contest_id", "problem_id", "lang", "source", "values")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
+    VALUES_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     problem_id: str
     lang: str
     source: str
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ...) -> None: ...
+    values: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission.Value]
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_submission_pb2.Submission.Value, _Mapping]]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)
@@ -63,8 +66,8 @@ class ListSubmissionsInput(_message.Message):
     offset: int
     size: int
     filters: ListSubmissionsInput.Filter
-    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
-    def __init__(self, contest_id: _Optional[str] = ..., after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2_1.Submission.Extra]
+    def __init__(self, contest_id: _Optional[str] = ..., after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2_1.Submission.Extra, str]]] = ...) -> None: ...
 
 class ListSubmissionsOutput(_message.Message):
     __slots__ = ("total", "items", "next_page_cursor")
@@ -72,9 +75,9 @@ class ListSubmissionsOutput(_message.Message):
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_CURSOR_FIELD_NUMBER: _ClassVar[int]
     total: int
-    items: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission]
+    items: _containers.RepeatedCompositeFieldContainer[_submission_pb2_1.Submission]
     next_page_cursor: str
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_submission_pb2_1.Submission, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class DescribeSubmissionInput(_message.Message):
     __slots__ = ("contest_id", "submission_id", "extra")
@@ -83,14 +86,14 @@ class DescribeSubmissionInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     submission_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
-    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2_1.Submission.Extra]
+    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2_1.Submission.Extra, str]]] = ...) -> None: ...
 
 class DescribeSubmissionOutput(_message.Message):
     __slots__ = ("submission",)
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
-    submission: _submission_pb2.Submission
-    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+    submission: _submission_pb2_1.Submission
+    def __init__(self, submission: _Optional[_Union[_submission_pb2_1.Submission, _Mapping]] = ...) -> None: ...
 
 class PrintSubmissionInput(_message.Message):
     __slots__ = ("contest_id", "submission_id")
@@ -111,14 +114,14 @@ class WatchSubmissionInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     submission_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
-    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2_1.Submission.Extra]
+    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2_1.Submission.Extra, str]]] = ...) -> None: ...
 
 class WatchSubmissionOutput(_message.Message):
     __slots__ = ("submission",)
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
-    submission: _submission_pb2.Submission
-    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+    submission: _submission_pb2_1.Submission
+    def __init__(self, submission: _Optional[_Union[_submission_pb2_1.Submission, _Mapping]] = ...) -> None: ...
 
 class RetestSubmissionInput(_message.Message):
     __slots__ = ("contest_id", "submission_id")

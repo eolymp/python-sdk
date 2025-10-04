@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ("id", "url", "contest_id", "problem_id", "participant_id", "submitted_at", "deleted", "lang", "source", "source_url", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "gen_ai_use_score", "groups", "cursor")
+    __slots__ = ("id", "url", "contest_id", "problem_id", "participant_id", "submitted_at", "deleted", "lang", "source", "source_url", "values", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "gen_ai_use_score", "groups", "cursor")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NO_EXTRA: _ClassVar[Submission.Extra]
@@ -87,6 +87,7 @@ class Submission(_message.Message):
     LANG_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
+    VALUES_FIELD_NUMBER: _ClassVar[int]
     SIGNATURE_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     VERDICT_FIELD_NUMBER: _ClassVar[int]
@@ -112,6 +113,7 @@ class Submission(_message.Message):
     lang: str
     source: str
     source_url: str
+    values: _submission_pb2.Submission.Value
     signature: str
     status: _submission_pb2.Submission.Status
     verdict: _submission_pb2.Submission.Verdict
@@ -127,4 +129,4 @@ class Submission(_message.Message):
     gen_ai_use_score: float
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., gen_ai_use_score: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: bool = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., values: _Optional[_Union[_submission_pb2.Submission.Value, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., gen_ai_use_score: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
