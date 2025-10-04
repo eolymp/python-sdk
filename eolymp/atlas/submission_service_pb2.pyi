@@ -31,14 +31,16 @@ class SubmissionCompleteEvent(_message.Message):
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., update: bool = ...) -> None: ...
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ("problem_id", "lang", "source")
+    __slots__ = ("problem_id", "lang", "source", "values")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
+    VALUES_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     lang: str
     source: str
-    def __init__(self, problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ...) -> None: ...
+    values: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission.Value]
+    def __init__(self, problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_submission_pb2.Submission.Value, _Mapping]]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)

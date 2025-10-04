@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -12,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Editor(_message.Message):
-    __slots__ = ("state", "features", "runtimes")
+    __slots__ = ("state", "features", "runtimes", "fields")
     class Feature(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_FEATURE: _ClassVar[Editor.Feature]
@@ -26,21 +27,42 @@ class Editor(_message.Message):
     UPLOAD_CODE: Editor.Feature
     EDIT_CODE: Editor.Feature
     class State(_message.Message):
-        __slots__ = ("runtime", "source_code", "input_data")
+        __slots__ = ("runtime", "source_code", "input_data", "values")
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
         SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
         INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
+        VALUES_FIELD_NUMBER: _ClassVar[int]
         runtime: str
         source_code: str
         input_data: str
-        def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ...) -> None: ...
+        values: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission.Value]
+        def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_submission_pb2.Submission.Value, _Mapping]]] = ...) -> None: ...
+    class Field(_message.Message):
+        __slots__ = ("name", "label", "type")
+        class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_TYPE: _ClassVar[Editor.Field.Type]
+            CODE: _ClassVar[Editor.Field.Type]
+            FILE: _ClassVar[Editor.Field.Type]
+        UNKNOWN_TYPE: Editor.Field.Type
+        CODE: Editor.Field.Type
+        FILE: Editor.Field.Type
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        LABEL_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        label: str
+        type: Editor.Field.Type
+        def __init__(self, name: _Optional[str] = ..., label: _Optional[str] = ..., type: _Optional[_Union[Editor.Field.Type, str]] = ...) -> None: ...
     STATE_FIELD_NUMBER: _ClassVar[int]
     FEATURES_FIELD_NUMBER: _ClassVar[int]
     RUNTIMES_FIELD_NUMBER: _ClassVar[int]
+    FIELDS_FIELD_NUMBER: _ClassVar[int]
     state: Editor.State
     features: _containers.RepeatedScalarFieldContainer[Editor.Feature]
     runtimes: _containers.RepeatedCompositeFieldContainer[_runtime_pb2.Runtime]
-    def __init__(self, state: _Optional[_Union[Editor.State, _Mapping]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ..., runtimes: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ...) -> None: ...
+    fields: _containers.RepeatedCompositeFieldContainer[Editor.Field]
+    def __init__(self, state: _Optional[_Union[Editor.State, _Mapping]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ..., runtimes: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ..., fields: _Optional[_Iterable[_Union[Editor.Field, _Mapping]]] = ...) -> None: ...
 
 class DescribeEditorInput(_message.Message):
     __slots__ = ()
@@ -57,26 +79,30 @@ class DescribeEditorStateInput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeEditorStateOutput(_message.Message):
-    __slots__ = ("runtime", "source_code", "input_data", "features")
+    __slots__ = ("runtime", "source_code", "input_data", "values", "features")
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
     INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
+    VALUES_FIELD_NUMBER: _ClassVar[int]
     FEATURES_FIELD_NUMBER: _ClassVar[int]
     runtime: str
     source_code: str
     input_data: str
+    values: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission.Value]
     features: _containers.RepeatedScalarFieldContainer[Editor.Feature]
-    def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ...) -> None: ...
+    def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_submission_pb2.Submission.Value, _Mapping]]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ...) -> None: ...
 
 class UpdateEditorStateInput(_message.Message):
-    __slots__ = ("runtime", "source_code", "input_data")
+    __slots__ = ("runtime", "source_code", "input_data", "values")
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
     INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
+    VALUES_FIELD_NUMBER: _ClassVar[int]
     runtime: str
     source_code: str
     input_data: str
-    def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ...) -> None: ...
+    values: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission.Value]
+    def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_submission_pb2.Submission.Value, _Mapping]]] = ...) -> None: ...
 
 class UpdateEditorStateOutput(_message.Message):
     __slots__ = ()
