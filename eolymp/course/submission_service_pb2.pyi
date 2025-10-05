@@ -12,14 +12,16 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ("material_id", "runtime", "source")
+    __slots__ = ("material_id", "runtime", "source", "values")
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
+    VALUES_FIELD_NUMBER: _ClassVar[int]
     material_id: str
     runtime: str
     source: str
-    def __init__(self, material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ...) -> None: ...
+    values: _submission_pb2.Submission.Value
+    def __init__(self, material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., values: _Optional[_Union[_submission_pb2.Submission.Value, _Mapping]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)
