@@ -140,3 +140,49 @@ class ListCertificatesOutput(_message.Message):
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_certificate_pb2.Certificate]
     def __init__(self, items: _Optional[_Iterable[_Union[_certificate_pb2.Certificate, _Mapping]]] = ...) -> None: ...
+
+class RegisterClientInput(_message.Message):
+    __slots__ = ("redirect_uris", "token_endpoint_auth_method", "grant_types", "response_types", "client_name", "client_uri", "logo_uri", "scope", "contacts", "tos_uri", "policy_uri", "jwks_uri", "software_id", "software_version", "software_statement")
+    REDIRECT_URIS_FIELD_NUMBER: _ClassVar[int]
+    TOKEN_ENDPOINT_AUTH_METHOD_FIELD_NUMBER: _ClassVar[int]
+    GRANT_TYPES_FIELD_NUMBER: _ClassVar[int]
+    RESPONSE_TYPES_FIELD_NUMBER: _ClassVar[int]
+    CLIENT_NAME_FIELD_NUMBER: _ClassVar[int]
+    CLIENT_URI_FIELD_NUMBER: _ClassVar[int]
+    LOGO_URI_FIELD_NUMBER: _ClassVar[int]
+    SCOPE_FIELD_NUMBER: _ClassVar[int]
+    CONTACTS_FIELD_NUMBER: _ClassVar[int]
+    TOS_URI_FIELD_NUMBER: _ClassVar[int]
+    POLICY_URI_FIELD_NUMBER: _ClassVar[int]
+    JWKS_URI_FIELD_NUMBER: _ClassVar[int]
+    SOFTWARE_ID_FIELD_NUMBER: _ClassVar[int]
+    SOFTWARE_VERSION_FIELD_NUMBER: _ClassVar[int]
+    SOFTWARE_STATEMENT_FIELD_NUMBER: _ClassVar[int]
+    redirect_uris: _containers.RepeatedScalarFieldContainer[str]
+    token_endpoint_auth_method: str
+    grant_types: _containers.RepeatedScalarFieldContainer[str]
+    response_types: _containers.RepeatedScalarFieldContainer[str]
+    client_name: str
+    client_uri: str
+    logo_uri: str
+    scope: str
+    contacts: _containers.RepeatedScalarFieldContainer[str]
+    tos_uri: str
+    policy_uri: str
+    jwks_uri: str
+    software_id: str
+    software_version: str
+    software_statement: str
+    def __init__(self, redirect_uris: _Optional[_Iterable[str]] = ..., token_endpoint_auth_method: _Optional[str] = ..., grant_types: _Optional[_Iterable[str]] = ..., response_types: _Optional[_Iterable[str]] = ..., client_name: _Optional[str] = ..., client_uri: _Optional[str] = ..., logo_uri: _Optional[str] = ..., scope: _Optional[str] = ..., contacts: _Optional[_Iterable[str]] = ..., tos_uri: _Optional[str] = ..., policy_uri: _Optional[str] = ..., jwks_uri: _Optional[str] = ..., software_id: _Optional[str] = ..., software_version: _Optional[str] = ..., software_statement: _Optional[str] = ...) -> None: ...
+
+class RegisterClientOutput(_message.Message):
+    __slots__ = ("client_id", "client_secret", "client_id_issued_at", "client_secret_expires_at")
+    CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
+    CLIENT_ID_ISSUED_AT_FIELD_NUMBER: _ClassVar[int]
+    CLIENT_SECRET_EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
+    client_id: str
+    client_secret: str
+    client_id_issued_at: _timestamp_pb2.Timestamp
+    client_secret_expires_at: _timestamp_pb2.Timestamp
+    def __init__(self, client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., client_id_issued_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., client_secret_expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
