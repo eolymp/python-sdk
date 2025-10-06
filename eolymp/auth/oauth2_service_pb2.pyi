@@ -1,12 +1,14 @@
 import datetime
 
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.auth import certificate_pb2 as _certificate_pb2
 from eolymp.auth import claims_pb2 as _claims_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Mapping as _Mapping
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -128,3 +130,13 @@ class UserInfoOutput(_message.Message):
     CLAIMS_FIELD_NUMBER: _ClassVar[int]
     claims: _claims_pb2.Claims
     def __init__(self, claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ...) -> None: ...
+
+class ListCertificatesInput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class ListCertificatesOutput(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_certificate_pb2.Certificate]
+    def __init__(self, items: _Optional[_Iterable[_Union[_certificate_pb2.Certificate, _Mapping]]] = ...) -> None: ...
