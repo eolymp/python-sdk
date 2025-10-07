@@ -23,12 +23,13 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.certificate import certificate_pb2 as eolymp_dot_certificate_dot_certificate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/certificate/certificate_service.proto\x12\x12\x65olymp.certificate\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a$eolymp/certificate/certificate.proto\"N\n\x16\x43reateCertificateInput\x12\x34\n\x0b\x63\x65rtificate\x18\x01 \x01(\x0b\x32\x1f.eolymp.certificate.Certificate\"G\n\x17\x43reateCertificateOutput\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64ownload_url\x18\x02 \x01(\t\".\n\x14VoidCertificateInput\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\x17\n\x15VoidCertificateOutput\"2\n\x18\x44\x65scribeCertificateInput\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"Q\n\x19\x44\x65scribeCertificateOutput\x12\x34\n\x0b\x63\x65rtificate\x18\x01 \x01(\x0b\x32\x1f.eolymp.certificate.Certificate\"H\n\x15ListCertificatesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x11\n\tmember_id\x18\x14 \x01(\t\"W\n\x16ListCertificatesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.eolymp.certificate.Certificate2\xad\x06\n\x12\x43\x65rtificateService\x12\xb7\x01\n\x11\x43reateCertificate\x12*.eolymp.certificate.CreateCertificateInput\x1a+.eolymp.certificate.CreateCertificateOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n!\x8a\xe3\n\x1d\x63\x65rtificate:certificate:write\x82\xd3\xe4\x93\x02\x0f\"\r/certificates\x12\xc2\x01\n\x0fVoidCertificate\x12(.eolymp.certificate.VoidCertificateInput\x1a).eolymp.certificate.VoidCertificateOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n!\x8a\xe3\n\x1d\x63\x65rtificate:certificate:write\x82\xd3\xe4\x93\x02 *\x1e/certificates/{certificate_id}\x12\xcd\x01\n\x13\x44\x65scribeCertificate\x12,.eolymp.certificate.DescribeCertificateInput\x1a-.eolymp.certificate.DescribeCertificateOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n \x8a\xe3\n\x1c\x63\x65rtificate:certificate:read\x82\xd3\xe4\x93\x02 \x12\x1e/certificates/{certificate_id}\x12\xc7\x01\n\x10ListCertificates\x12).eolymp.certificate.ListCertificatesInput\x1a*.eolymp.certificate.ListCertificatesOutput\"\\\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n \x8a\xe3\n\x1c\x63\x65rtificate:certificate:read\x82\xd3\xe4\x93\x02#\x12!/members/{member_id}/certificatesB9Z7github.com/eolymp/go-sdk/eolymp/certificate;certificateb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/certificate/certificate_service.proto\x12\x12\x65olymp.certificate\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a$eolymp/certificate/certificate.proto\"N\n\x16\x43reateCertificateInput\x12\x34\n\x0b\x63\x65rtificate\x18\x01 \x01(\x0b\x32\x1f.eolymp.certificate.Certificate\"G\n\x17\x43reateCertificateOutput\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64ownload_url\x18\x02 \x01(\t\".\n\x14VoidCertificateInput\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\x17\n\x15VoidCertificateOutput\"2\n\x18\x44\x65scribeCertificateInput\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"Q\n\x19\x44\x65scribeCertificateOutput\x12\x34\n\x0b\x63\x65rtificate\x18\x01 \x01(\x0b\x32\x1f.eolymp.certificate.Certificate\"H\n\x15ListCertificatesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x11\n\tmember_id\x18\x14 \x01(\t\"W\n\x16ListCertificatesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.eolymp.certificate.Certificate2\xca\x06\n\x12\x43\x65rtificateService\x12\xb7\x01\n\x11\x43reateCertificate\x12*.eolymp.certificate.CreateCertificateInput\x1a+.eolymp.certificate.CreateCertificateOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n!\x8a\xe3\n\x1d\x63\x65rtificate:certificate:write\x82\xd3\xe4\x93\x02\x0f\"\r/certificates\x12\xc2\x01\n\x0fVoidCertificate\x12(.eolymp.certificate.VoidCertificateInput\x1a).eolymp.certificate.VoidCertificateOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n!\x8a\xe3\n\x1d\x63\x65rtificate:certificate:write\x82\xd3\xe4\x93\x02 *\x1e/certificates/{certificate_id}\x12\xcd\x01\n\x13\x44\x65scribeCertificate\x12,.eolymp.certificate.DescribeCertificateInput\x1a-.eolymp.certificate.DescribeCertificateOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n \x8a\xe3\n\x1c\x63\x65rtificate:certificate:read\x82\xd3\xe4\x93\x02 \x12\x1e/certificates/{certificate_id}\x12\xc7\x01\n\x10ListCertificates\x12).eolymp.certificate.ListCertificatesInput\x1a*.eolymp.certificate.ListCertificatesOutput\"\\\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n \x8a\xe3\n\x1c\x63\x65rtificate:certificate:read\x82\xd3\xe4\x93\x02#\x12!/members/{member_id}/certificates\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB9Z7github.com/eolymp/go-sdk/eolymp/certificate;certificateb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +37,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.certificate.certific
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z7github.com/eolymp/go-sdk/eolymp/certificate;certificate'
+  _globals['_CERTIFICATESERVICE']._loaded_options = None
+  _globals['_CERTIFICATESERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_CERTIFICATESERVICE'].methods_by_name['CreateCertificate']._loaded_options = None
   _globals['_CERTIFICATESERVICE'].methods_by_name['CreateCertificate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n!\212\343\n\035certificate:certificate:write\202\323\344\223\002\017\"\r/certificates'
   _globals['_CERTIFICATESERVICE'].methods_by_name['VoidCertificate']._loaded_options = None
@@ -44,22 +47,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CERTIFICATESERVICE'].methods_by_name['DescribeCertificate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n \212\343\n\034certificate:certificate:read\202\323\344\223\002 \022\036/certificates/{certificate_id}'
   _globals['_CERTIFICATESERVICE'].methods_by_name['ListCertificates']._loaded_options = None
   _globals['_CERTIFICATESERVICE'].methods_by_name['ListCertificates']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n \212\343\n\034certificate:certificate:read\202\323\344\223\002#\022!/members/{member_id}/certificates'
-  _globals['_CREATECERTIFICATEINPUT']._serialized_start=205
-  _globals['_CREATECERTIFICATEINPUT']._serialized_end=283
-  _globals['_CREATECERTIFICATEOUTPUT']._serialized_start=285
-  _globals['_CREATECERTIFICATEOUTPUT']._serialized_end=356
-  _globals['_VOIDCERTIFICATEINPUT']._serialized_start=358
-  _globals['_VOIDCERTIFICATEINPUT']._serialized_end=404
-  _globals['_VOIDCERTIFICATEOUTPUT']._serialized_start=406
-  _globals['_VOIDCERTIFICATEOUTPUT']._serialized_end=429
-  _globals['_DESCRIBECERTIFICATEINPUT']._serialized_start=431
-  _globals['_DESCRIBECERTIFICATEINPUT']._serialized_end=481
-  _globals['_DESCRIBECERTIFICATEOUTPUT']._serialized_start=483
-  _globals['_DESCRIBECERTIFICATEOUTPUT']._serialized_end=564
-  _globals['_LISTCERTIFICATESINPUT']._serialized_start=566
-  _globals['_LISTCERTIFICATESINPUT']._serialized_end=638
-  _globals['_LISTCERTIFICATESOUTPUT']._serialized_start=640
-  _globals['_LISTCERTIFICATESOUTPUT']._serialized_end=727
-  _globals['_CERTIFICATESERVICE']._serialized_start=730
-  _globals['_CERTIFICATESERVICE']._serialized_end=1543
+  _globals['_CREATECERTIFICATEINPUT']._serialized_start=241
+  _globals['_CREATECERTIFICATEINPUT']._serialized_end=319
+  _globals['_CREATECERTIFICATEOUTPUT']._serialized_start=321
+  _globals['_CREATECERTIFICATEOUTPUT']._serialized_end=392
+  _globals['_VOIDCERTIFICATEINPUT']._serialized_start=394
+  _globals['_VOIDCERTIFICATEINPUT']._serialized_end=440
+  _globals['_VOIDCERTIFICATEOUTPUT']._serialized_start=442
+  _globals['_VOIDCERTIFICATEOUTPUT']._serialized_end=465
+  _globals['_DESCRIBECERTIFICATEINPUT']._serialized_start=467
+  _globals['_DESCRIBECERTIFICATEINPUT']._serialized_end=517
+  _globals['_DESCRIBECERTIFICATEOUTPUT']._serialized_start=519
+  _globals['_DESCRIBECERTIFICATEOUTPUT']._serialized_end=600
+  _globals['_LISTCERTIFICATESINPUT']._serialized_start=602
+  _globals['_LISTCERTIFICATESINPUT']._serialized_end=674
+  _globals['_LISTCERTIFICATESOUTPUT']._serialized_start=676
+  _globals['_LISTCERTIFICATESOUTPUT']._serialized_end=763
+  _globals['_CERTIFICATESERVICE']._serialized_start=766
+  _globals['_CERTIFICATESERVICE']._serialized_end=1608
 # @@protoc_insertion_point(module_scope)

@@ -23,13 +23,14 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/commerce/fulfillment_server.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"&\n\x12\x41llocateStockInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x15\n\x13\x41llocateStockOutput\"I\n\x10RejectOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12#\n\x06reason\x18\x02 \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x13\n\x11RejectOrderOutput\"b\n\x11ProcessOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12;\n\x17\x65stimated_shipping_date\x18- \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x14\n\x12ProcessOrderOutput\"R\n\x0eShipOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12\x15\n\rtracking_link\x18\x02 \x01(\t\x12\x17\n\x0ftracking_number\x18\x03 \x01(\t\"\x11\n\x0fShipOrderOutput\"&\n\x12\x43ompleteOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x15\n\x13\x43ompleteOrderOutput2\xfc\x06\n\x12\x46ulfillmentService\x12\xb1\x01\n\rAllocateStock\x12#.eolymp.commerce.AllocateStockInput\x1a$.eolymp.commerce.AllocateStockOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02#\"!/store/orders/{order_id}/allocate\x12\xa9\x01\n\x0bRejectOrder\x12!.eolymp.commerce.RejectOrderInput\x1a\".eolymp.commerce.RejectOrderOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02!\"\x1f/store/orders/{order_id}/reject\x12\xad\x01\n\x0cProcessOrder\x12\".eolymp.commerce.ProcessOrderInput\x1a#.eolymp.commerce.ProcessOrderOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02\"\" /store/orders/{order_id}/process\x12\xa1\x01\n\tShipOrder\x12\x1f.eolymp.commerce.ShipOrderInput\x1a .eolymp.commerce.ShipOrderOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02\x1f\"\x1d/store/orders/{order_id}/ship\x12\xb1\x01\n\rCompleteOrder\x12#.eolymp.commerce.CompleteOrderInput\x1a$.eolymp.commerce.CompleteOrderOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02#\"!/store/orders/{order_id}/completeB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/commerce/fulfillment_server.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"&\n\x12\x41llocateStockInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x15\n\x13\x41llocateStockOutput\"I\n\x10RejectOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12#\n\x06reason\x18\x02 \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x13\n\x11RejectOrderOutput\"b\n\x11ProcessOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12;\n\x17\x65stimated_shipping_date\x18- \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x14\n\x12ProcessOrderOutput\"R\n\x0eShipOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12\x15\n\rtracking_link\x18\x02 \x01(\t\x12\x17\n\x0ftracking_number\x18\x03 \x01(\t\"\x11\n\x0fShipOrderOutput\"&\n\x12\x43ompleteOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x15\n\x13\x43ompleteOrderOutput2\x99\x07\n\x12\x46ulfillmentService\x12\xb1\x01\n\rAllocateStock\x12#.eolymp.commerce.AllocateStockInput\x1a$.eolymp.commerce.AllocateStockOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02#\"!/store/orders/{order_id}/allocate\x12\xa9\x01\n\x0bRejectOrder\x12!.eolymp.commerce.RejectOrderInput\x1a\".eolymp.commerce.RejectOrderOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02!\"\x1f/store/orders/{order_id}/reject\x12\xad\x01\n\x0cProcessOrder\x12\".eolymp.commerce.ProcessOrderInput\x1a#.eolymp.commerce.ProcessOrderOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02\"\" /store/orders/{order_id}/process\x12\xa1\x01\n\tShipOrder\x12\x1f.eolymp.commerce.ShipOrderInput\x1a .eolymp.commerce.ShipOrderOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02\x1f\"\x1d/store/orders/{order_id}/ship\x12\xb1\x01\n\rCompleteOrder\x12#.eolymp.commerce.CompleteOrderInput\x1a$.eolymp.commerce.CompleteOrderOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:orders:write\x82\xd3\xe4\x93\x02#\"!/store/orders/{order_id}/complete\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,6 +38,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.fulfillment
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
+  _globals['_FULFILLMENTSERVICE']._loaded_options = None
+  _globals['_FULFILLMENTSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_FULFILLMENTSERVICE'].methods_by_name['AllocateStock']._loaded_options = None
   _globals['_FULFILLMENTSERVICE'].methods_by_name['AllocateStock']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025commerce:orders:write\202\323\344\223\002#\"!/store/orders/{order_id}/allocate'
   _globals['_FULFILLMENTSERVICE'].methods_by_name['RejectOrder']._loaded_options = None
@@ -47,26 +50,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FULFILLMENTSERVICE'].methods_by_name['ShipOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025commerce:orders:write\202\323\344\223\002\037\"\035/store/orders/{order_id}/ship'
   _globals['_FULFILLMENTSERVICE'].methods_by_name['CompleteOrder']._loaded_options = None
   _globals['_FULFILLMENTSERVICE'].methods_by_name['CompleteOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025commerce:orders:write\202\323\344\223\002#\"!/store/orders/{order_id}/complete'
-  _globals['_ALLOCATESTOCKINPUT']._serialized_start=219
-  _globals['_ALLOCATESTOCKINPUT']._serialized_end=257
-  _globals['_ALLOCATESTOCKOUTPUT']._serialized_start=259
-  _globals['_ALLOCATESTOCKOUTPUT']._serialized_end=280
-  _globals['_REJECTORDERINPUT']._serialized_start=282
-  _globals['_REJECTORDERINPUT']._serialized_end=355
-  _globals['_REJECTORDEROUTPUT']._serialized_start=357
-  _globals['_REJECTORDEROUTPUT']._serialized_end=376
-  _globals['_PROCESSORDERINPUT']._serialized_start=378
-  _globals['_PROCESSORDERINPUT']._serialized_end=476
-  _globals['_PROCESSORDEROUTPUT']._serialized_start=478
-  _globals['_PROCESSORDEROUTPUT']._serialized_end=498
-  _globals['_SHIPORDERINPUT']._serialized_start=500
-  _globals['_SHIPORDERINPUT']._serialized_end=582
-  _globals['_SHIPORDEROUTPUT']._serialized_start=584
-  _globals['_SHIPORDEROUTPUT']._serialized_end=601
-  _globals['_COMPLETEORDERINPUT']._serialized_start=603
-  _globals['_COMPLETEORDERINPUT']._serialized_end=641
-  _globals['_COMPLETEORDEROUTPUT']._serialized_start=643
-  _globals['_COMPLETEORDEROUTPUT']._serialized_end=664
-  _globals['_FULFILLMENTSERVICE']._serialized_start=667
-  _globals['_FULFILLMENTSERVICE']._serialized_end=1559
+  _globals['_ALLOCATESTOCKINPUT']._serialized_start=255
+  _globals['_ALLOCATESTOCKINPUT']._serialized_end=293
+  _globals['_ALLOCATESTOCKOUTPUT']._serialized_start=295
+  _globals['_ALLOCATESTOCKOUTPUT']._serialized_end=316
+  _globals['_REJECTORDERINPUT']._serialized_start=318
+  _globals['_REJECTORDERINPUT']._serialized_end=391
+  _globals['_REJECTORDEROUTPUT']._serialized_start=393
+  _globals['_REJECTORDEROUTPUT']._serialized_end=412
+  _globals['_PROCESSORDERINPUT']._serialized_start=414
+  _globals['_PROCESSORDERINPUT']._serialized_end=512
+  _globals['_PROCESSORDEROUTPUT']._serialized_start=514
+  _globals['_PROCESSORDEROUTPUT']._serialized_end=534
+  _globals['_SHIPORDERINPUT']._serialized_start=536
+  _globals['_SHIPORDERINPUT']._serialized_end=618
+  _globals['_SHIPORDEROUTPUT']._serialized_start=620
+  _globals['_SHIPORDEROUTPUT']._serialized_end=637
+  _globals['_COMPLETEORDERINPUT']._serialized_start=639
+  _globals['_COMPLETEORDERINPUT']._serialized_end=677
+  _globals['_COMPLETEORDEROUTPUT']._serialized_start=679
+  _globals['_COMPLETEORDEROUTPUT']._serialized_end=700
+  _globals['_FULFILLMENTSERVICE']._serialized_start=703
+  _globals['_FULFILLMENTSERVICE']._serialized_end=1624
 # @@protoc_insertion_point(module_scope)

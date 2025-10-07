@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.judge import activity_pb2 as eolymp_dot_judge_dot_activity__pb2
@@ -31,7 +32,7 @@ from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expressi
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/judge/contest_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/judge/activity.proto\x1a\x1a\x65olymp/judge/contest.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"b\n\x13\x43ontestChangedEvent\x12%\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Contest\x12$\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x15.eolymp.judge.Contest\"<\n\x12\x43reateContestInput\x12&\n\x07\x63ontest\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Contest\")\n\x13\x43reateContestOutput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"(\n\x12\x44\x65leteContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteContestOutput\"\x82\x01\n\x12UpdateContestInput\x12\x30\n\x05patch\x18\x03 \x03(\x0e\x32!.eolymp.judge.Contest.Patch.Field\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12&\n\x07\x63ontest\x18\x02 \x01(\x0b\x32\x15.eolymp.judge.Contest\"\x15\n\x13UpdateContestOutput\"\x84\x02\n\x10\x43opyContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x38\n\ncopy_scope\x18\x02 \x03(\x0e\x32$.eolymp.judge.CopyContestInput.Scope\x12\x11\n\tcopy_name\x18\x03 \x01(\t\x12\x39\n\x0f\x63opy_visibility\x18\x04 \x01(\x0e\x32 .eolymp.judge.Contest.Visibility\"T\n\x05Scope\x12\x07\n\x03\x41LL\x10\x00\x12\x11\n\rCONFIGURATION\x10\x01\x12\x0c\n\x08PROBLEMS\x10\x02\x12\x10\n\x0cPARTICIPANTS\x10\x03\x12\x0f\n\x0bPERMISSIONS\x10\x04\",\n\x11\x43opyContestOutput\x12\x17\n\x0f\x63opy_contest_id\x18\x01 \x01(\t\"]\n\x14\x44\x65scribeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.Contest.Extra.Field\"?\n\x15\x44\x65scribeContestOutput\x12&\n\x07\x63ontest\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Contest\"\xe6\x07\n\x11ListContestsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.judge.ListContestsInput.Filter\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.Contest.Extra.Field\x1a\xb6\x06\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x38\n\tstarts_at\x18\x04 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x36\n\x07\x65nds_at\x18\x05 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x30\n\x06public\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x34\n\nvisibility\x18\x07 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06\x66ormat\x18\x08 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06status\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x32\n\x08\x66\x65\x61tured\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12-\n\x04year\x18\x64 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12/\n\x05scale\x18\x65 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06series\x18\x66 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x33\n\ndifficulty\x18g \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x31\n\x07\x63ountry\x18h \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06region\x18i \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04\x63ity\x18j \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"I\n\x12ListContestsOutput\x12$\n\x05items\x18\x01 \x03(\x0b\x32\x15.eolymp.judge.Contest\x12\r\n\x05total\x18\x02 \x01(\x05\"&\n\x10OpenContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x13\n\x11OpenContestOutput\"\'\n\x11\x43loseContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x14\n\x12\x43loseContestOutput\")\n\x13SuspendContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x16\n\x14SuspendContestOutput\"(\n\x12\x46reezeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x15\n\x13\x46reezeContestOutput\"*\n\x14\x46inalizeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x17\n\x15\x46inalizeContestOutput\"(\n\x12ResumeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x15\n\x13ResumeContestOutput\")\n\x13\x41nalyzeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x16\n\x14\x41nalyzeContestOutput\"Z\n\x11WatchContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.Contest.Extra.Field\"<\n\x12WatchContestOutput\x12&\n\x07\x63ontest\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Contest\"G\n\x13ListActivitiesInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"L\n\x14ListActivitiesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.judge.Activity\"}\n\x19\x44\x65scribeContestUsageInput\x12\x30\n\x0cperiod_start\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nperiod_end\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"g\n\x1a\x44\x65scribeContestUsageOutput\x12\x16\n\x0etotal_contests\x18\x01 \x01(\r\x12\x17\n\x0f\x61\x63tive_contests\x18\x02 \x01(\r\x12\x18\n\x10monthly_contests\x18\x03 \x01(\r2\xd6\x13\n\x0e\x43ontestService\x12\x91\x01\n\rCreateContest\x12 .eolymp.judge.CreateContestInput\x1a!.eolymp.judge.CreateContestOutput\";\xea\xe2\n\x0b\xf5\xe2\n\n\xd7\xa3=\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x0b\"\t/contests\x12\x9e\x01\n\rDeleteContest\x12 .eolymp.judge.DeleteContestInput\x1a!.eolymp.judge.DeleteContestOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x18*\x16/contests/{contest_id}\x12\x9e\x01\n\rUpdateContest\x12 .eolymp.judge.UpdateContestInput\x1a!.eolymp.judge.UpdateContestOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x18\x1a\x16/contests/{contest_id}\x12\x9d\x01\n\x0b\x43opyContest\x12\x1e.eolymp.judge.CopyContestInput\x1a\x1f.eolymp.judge.CopyContestOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/contests/{contest_id}/copy\x12\x89\x01\n\x0f\x44\x65scribeContest\x12\".eolymp.judge.DescribeContestInput\x1a#.eolymp.judge.DescribeContestOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x18\x12\x16/contests/{contest_id}\x12s\n\x0cListContests\x12\x1f.eolymp.judge.ListContestsInput\x1a .eolymp.judge.ListContestsOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x0b\x12\t/contests\x12\x9d\x01\n\x0bOpenContest\x12\x1e.eolymp.judge.OpenContestInput\x1a\x1f.eolymp.judge.OpenContestOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/contests/{contest_id}/open\x12\xa1\x01\n\x0c\x43loseContest\x12\x1f.eolymp.judge.CloseContestInput\x1a .eolymp.judge.CloseContestOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1e\"\x1c/contests/{contest_id}/close\x12\xa9\x01\n\x0eSuspendContest\x12!.eolymp.judge.SuspendContestInput\x1a\".eolymp.judge.SuspendContestOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02 \"\x1e/contests/{contest_id}/suspend\x12\xa5\x01\n\rFreezeContest\x12 .eolymp.judge.FreezeContestInput\x1a!.eolymp.judge.FreezeContestOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1f\"\x1d/contests/{contest_id}/freeze\x12\xad\x01\n\x0f\x46inalizeContest\x12\".eolymp.judge.FinalizeContestInput\x1a#.eolymp.judge.FinalizeContestOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02!\"\x1f/contests/{contest_id}/finalize\x12\xa5\x01\n\rResumeContest\x12 .eolymp.judge.ResumeContestInput\x1a!.eolymp.judge.ResumeContestOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1f\"\x1d/contests/{contest_id}/resume\x12\xa9\x01\n\x0e\x41nalyzeContest\x12!.eolymp.judge.AnalyzeContestInput\x1a\".eolymp.judge.AnalyzeContestOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02 \"\x1e/contests/{contest_id}/analyze\x12o\n\x0cWatchContest\x12\x1f.eolymp.judge.WatchContestInput\x1a .eolymp.judge.WatchContestOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\xab\x01\n\x0eListActivities\x12!.eolymp.judge.ListActivitiesInput\x1a\".eolymp.judge.ListActivitiesOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02#\x12!/contests/{contest_id}/activities\x12\x91\x01\n\x14\x44\x65scribeContestUsage\x12\'.eolymp.judge.DescribeContestUsageInput\x1a(.eolymp.judge.DescribeContestUsageOutput\"&\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x11\x12\x0f/usage/contestsB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/judge/contest_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/judge/activity.proto\x1a\x1a\x65olymp/judge/contest.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"b\n\x13\x43ontestChangedEvent\x12%\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Contest\x12$\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x15.eolymp.judge.Contest\"<\n\x12\x43reateContestInput\x12&\n\x07\x63ontest\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Contest\")\n\x13\x43reateContestOutput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"(\n\x12\x44\x65leteContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteContestOutput\"\x82\x01\n\x12UpdateContestInput\x12\x30\n\x05patch\x18\x03 \x03(\x0e\x32!.eolymp.judge.Contest.Patch.Field\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12&\n\x07\x63ontest\x18\x02 \x01(\x0b\x32\x15.eolymp.judge.Contest\"\x15\n\x13UpdateContestOutput\"\x84\x02\n\x10\x43opyContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x38\n\ncopy_scope\x18\x02 \x03(\x0e\x32$.eolymp.judge.CopyContestInput.Scope\x12\x11\n\tcopy_name\x18\x03 \x01(\t\x12\x39\n\x0f\x63opy_visibility\x18\x04 \x01(\x0e\x32 .eolymp.judge.Contest.Visibility\"T\n\x05Scope\x12\x07\n\x03\x41LL\x10\x00\x12\x11\n\rCONFIGURATION\x10\x01\x12\x0c\n\x08PROBLEMS\x10\x02\x12\x10\n\x0cPARTICIPANTS\x10\x03\x12\x0f\n\x0bPERMISSIONS\x10\x04\",\n\x11\x43opyContestOutput\x12\x17\n\x0f\x63opy_contest_id\x18\x01 \x01(\t\"]\n\x14\x44\x65scribeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.Contest.Extra.Field\"?\n\x15\x44\x65scribeContestOutput\x12&\n\x07\x63ontest\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Contest\"\xe6\x07\n\x11ListContestsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.judge.ListContestsInput.Filter\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.Contest.Extra.Field\x1a\xb6\x06\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x38\n\tstarts_at\x18\x04 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x36\n\x07\x65nds_at\x18\x05 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x30\n\x06public\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x34\n\nvisibility\x18\x07 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06\x66ormat\x18\x08 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06status\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x32\n\x08\x66\x65\x61tured\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12-\n\x04year\x18\x64 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12/\n\x05scale\x18\x65 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06series\x18\x66 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x33\n\ndifficulty\x18g \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x31\n\x07\x63ountry\x18h \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06region\x18i \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04\x63ity\x18j \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"I\n\x12ListContestsOutput\x12$\n\x05items\x18\x01 \x03(\x0b\x32\x15.eolymp.judge.Contest\x12\r\n\x05total\x18\x02 \x01(\x05\"&\n\x10OpenContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x13\n\x11OpenContestOutput\"\'\n\x11\x43loseContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x14\n\x12\x43loseContestOutput\")\n\x13SuspendContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x16\n\x14SuspendContestOutput\"(\n\x12\x46reezeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x15\n\x13\x46reezeContestOutput\"*\n\x14\x46inalizeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x17\n\x15\x46inalizeContestOutput\"(\n\x12ResumeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x15\n\x13ResumeContestOutput\")\n\x13\x41nalyzeContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"\x16\n\x14\x41nalyzeContestOutput\"Z\n\x11WatchContestInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.Contest.Extra.Field\"<\n\x12WatchContestOutput\x12&\n\x07\x63ontest\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Contest\"G\n\x13ListActivitiesInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"L\n\x14ListActivitiesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.judge.Activity\"}\n\x19\x44\x65scribeContestUsageInput\x12\x30\n\x0cperiod_start\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nperiod_end\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"g\n\x1a\x44\x65scribeContestUsageOutput\x12\x16\n\x0etotal_contests\x18\x01 \x01(\r\x12\x17\n\x0f\x61\x63tive_contests\x18\x02 \x01(\r\x12\x18\n\x10monthly_contests\x18\x03 \x01(\r2\xf3\x13\n\x0e\x43ontestService\x12\x91\x01\n\rCreateContest\x12 .eolymp.judge.CreateContestInput\x1a!.eolymp.judge.CreateContestOutput\";\xea\xe2\n\x0b\xf5\xe2\n\n\xd7\xa3=\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x0b\"\t/contests\x12\x9e\x01\n\rDeleteContest\x12 .eolymp.judge.DeleteContestInput\x1a!.eolymp.judge.DeleteContestOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x18*\x16/contests/{contest_id}\x12\x9e\x01\n\rUpdateContest\x12 .eolymp.judge.UpdateContestInput\x1a!.eolymp.judge.UpdateContestOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x18\x1a\x16/contests/{contest_id}\x12\x9d\x01\n\x0b\x43opyContest\x12\x1e.eolymp.judge.CopyContestInput\x1a\x1f.eolymp.judge.CopyContestOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/contests/{contest_id}/copy\x12\x89\x01\n\x0f\x44\x65scribeContest\x12\".eolymp.judge.DescribeContestInput\x1a#.eolymp.judge.DescribeContestOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x18\x12\x16/contests/{contest_id}\x12s\n\x0cListContests\x12\x1f.eolymp.judge.ListContestsInput\x1a .eolymp.judge.ListContestsOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x0b\x12\t/contests\x12\x9d\x01\n\x0bOpenContest\x12\x1e.eolymp.judge.OpenContestInput\x1a\x1f.eolymp.judge.OpenContestOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/contests/{contest_id}/open\x12\xa1\x01\n\x0c\x43loseContest\x12\x1f.eolymp.judge.CloseContestInput\x1a .eolymp.judge.CloseContestOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1e\"\x1c/contests/{contest_id}/close\x12\xa9\x01\n\x0eSuspendContest\x12!.eolymp.judge.SuspendContestInput\x1a\".eolymp.judge.SuspendContestOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02 \"\x1e/contests/{contest_id}/suspend\x12\xa5\x01\n\rFreezeContest\x12 .eolymp.judge.FreezeContestInput\x1a!.eolymp.judge.FreezeContestOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1f\"\x1d/contests/{contest_id}/freeze\x12\xad\x01\n\x0f\x46inalizeContest\x12\".eolymp.judge.FinalizeContestInput\x1a#.eolymp.judge.FinalizeContestOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02!\"\x1f/contests/{contest_id}/finalize\x12\xa5\x01\n\rResumeContest\x12 .eolymp.judge.ResumeContestInput\x1a!.eolymp.judge.ResumeContestOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1f\"\x1d/contests/{contest_id}/resume\x12\xa9\x01\n\x0e\x41nalyzeContest\x12!.eolymp.judge.AnalyzeContestInput\x1a\".eolymp.judge.AnalyzeContestOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02 \"\x1e/contests/{contest_id}/analyze\x12o\n\x0cWatchContest\x12\x1f.eolymp.judge.WatchContestInput\x1a .eolymp.judge.WatchContestOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\xab\x01\n\x0eListActivities\x12!.eolymp.judge.ListActivitiesInput\x1a\".eolymp.judge.ListActivitiesOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02#\x12!/contests/{contest_id}/activities\x12\x91\x01\n\x14\x44\x65scribeContestUsage\x12\'.eolymp.judge.DescribeContestUsageInput\x1a(.eolymp.judge.DescribeContestUsageOutput\"&\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x11\x12\x0f/usage/contests\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,6 +40,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.contest_servic
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
+  _globals['_CONTESTSERVICE']._loaded_options = None
+  _globals['_CONTESTSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_CONTESTSERVICE'].methods_by_name['CreateContest']._loaded_options = None
   _globals['_CONTESTSERVICE'].methods_by_name['CreateContest']._serialized_options = b'\352\342\n\013\365\342\n\n\327\243=\370\342\n\005\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\013\"\t/contests'
   _globals['_CONTESTSERVICE'].methods_by_name['DeleteContest']._loaded_options = None
@@ -71,76 +74,76 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONTESTSERVICE'].methods_by_name['ListActivities']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\026\212\343\n\022judge:contest:read\202\323\344\223\002#\022!/contests/{contest_id}/activities'
   _globals['_CONTESTSERVICE'].methods_by_name['DescribeContestUsage']._loaded_options = None
   _globals['_CONTESTSERVICE'].methods_by_name['DescribeContestUsage']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\021\022\017/usage/contests'
-  _globals['_CONTESTCHANGEDEVENT']._serialized_start=276
-  _globals['_CONTESTCHANGEDEVENT']._serialized_end=374
-  _globals['_CREATECONTESTINPUT']._serialized_start=376
-  _globals['_CREATECONTESTINPUT']._serialized_end=436
-  _globals['_CREATECONTESTOUTPUT']._serialized_start=438
-  _globals['_CREATECONTESTOUTPUT']._serialized_end=479
-  _globals['_DELETECONTESTINPUT']._serialized_start=481
-  _globals['_DELETECONTESTINPUT']._serialized_end=521
-  _globals['_DELETECONTESTOUTPUT']._serialized_start=523
-  _globals['_DELETECONTESTOUTPUT']._serialized_end=544
-  _globals['_UPDATECONTESTINPUT']._serialized_start=547
-  _globals['_UPDATECONTESTINPUT']._serialized_end=677
-  _globals['_UPDATECONTESTOUTPUT']._serialized_start=679
-  _globals['_UPDATECONTESTOUTPUT']._serialized_end=700
-  _globals['_COPYCONTESTINPUT']._serialized_start=703
-  _globals['_COPYCONTESTINPUT']._serialized_end=963
-  _globals['_COPYCONTESTINPUT_SCOPE']._serialized_start=879
-  _globals['_COPYCONTESTINPUT_SCOPE']._serialized_end=963
-  _globals['_COPYCONTESTOUTPUT']._serialized_start=965
-  _globals['_COPYCONTESTOUTPUT']._serialized_end=1009
-  _globals['_DESCRIBECONTESTINPUT']._serialized_start=1011
-  _globals['_DESCRIBECONTESTINPUT']._serialized_end=1104
-  _globals['_DESCRIBECONTESTOUTPUT']._serialized_start=1106
-  _globals['_DESCRIBECONTESTOUTPUT']._serialized_end=1169
-  _globals['_LISTCONTESTSINPUT']._serialized_start=1172
-  _globals['_LISTCONTESTSINPUT']._serialized_end=2170
-  _globals['_LISTCONTESTSINPUT_FILTER']._serialized_start=1348
-  _globals['_LISTCONTESTSINPUT_FILTER']._serialized_end=2170
-  _globals['_LISTCONTESTSOUTPUT']._serialized_start=2172
-  _globals['_LISTCONTESTSOUTPUT']._serialized_end=2245
-  _globals['_OPENCONTESTINPUT']._serialized_start=2247
-  _globals['_OPENCONTESTINPUT']._serialized_end=2285
-  _globals['_OPENCONTESTOUTPUT']._serialized_start=2287
-  _globals['_OPENCONTESTOUTPUT']._serialized_end=2306
-  _globals['_CLOSECONTESTINPUT']._serialized_start=2308
-  _globals['_CLOSECONTESTINPUT']._serialized_end=2347
-  _globals['_CLOSECONTESTOUTPUT']._serialized_start=2349
-  _globals['_CLOSECONTESTOUTPUT']._serialized_end=2369
-  _globals['_SUSPENDCONTESTINPUT']._serialized_start=2371
-  _globals['_SUSPENDCONTESTINPUT']._serialized_end=2412
-  _globals['_SUSPENDCONTESTOUTPUT']._serialized_start=2414
-  _globals['_SUSPENDCONTESTOUTPUT']._serialized_end=2436
-  _globals['_FREEZECONTESTINPUT']._serialized_start=2438
-  _globals['_FREEZECONTESTINPUT']._serialized_end=2478
-  _globals['_FREEZECONTESTOUTPUT']._serialized_start=2480
-  _globals['_FREEZECONTESTOUTPUT']._serialized_end=2501
-  _globals['_FINALIZECONTESTINPUT']._serialized_start=2503
-  _globals['_FINALIZECONTESTINPUT']._serialized_end=2545
-  _globals['_FINALIZECONTESTOUTPUT']._serialized_start=2547
-  _globals['_FINALIZECONTESTOUTPUT']._serialized_end=2570
-  _globals['_RESUMECONTESTINPUT']._serialized_start=2572
-  _globals['_RESUMECONTESTINPUT']._serialized_end=2612
-  _globals['_RESUMECONTESTOUTPUT']._serialized_start=2614
-  _globals['_RESUMECONTESTOUTPUT']._serialized_end=2635
-  _globals['_ANALYZECONTESTINPUT']._serialized_start=2637
-  _globals['_ANALYZECONTESTINPUT']._serialized_end=2678
-  _globals['_ANALYZECONTESTOUTPUT']._serialized_start=2680
-  _globals['_ANALYZECONTESTOUTPUT']._serialized_end=2702
-  _globals['_WATCHCONTESTINPUT']._serialized_start=2704
-  _globals['_WATCHCONTESTINPUT']._serialized_end=2794
-  _globals['_WATCHCONTESTOUTPUT']._serialized_start=2796
-  _globals['_WATCHCONTESTOUTPUT']._serialized_end=2856
-  _globals['_LISTACTIVITIESINPUT']._serialized_start=2858
-  _globals['_LISTACTIVITIESINPUT']._serialized_end=2929
-  _globals['_LISTACTIVITIESOUTPUT']._serialized_start=2931
-  _globals['_LISTACTIVITIESOUTPUT']._serialized_end=3007
-  _globals['_DESCRIBECONTESTUSAGEINPUT']._serialized_start=3009
-  _globals['_DESCRIBECONTESTUSAGEINPUT']._serialized_end=3134
-  _globals['_DESCRIBECONTESTUSAGEOUTPUT']._serialized_start=3136
-  _globals['_DESCRIBECONTESTUSAGEOUTPUT']._serialized_end=3239
-  _globals['_CONTESTSERVICE']._serialized_start=3242
-  _globals['_CONTESTSERVICE']._serialized_end=5760
+  _globals['_CONTESTCHANGEDEVENT']._serialized_start=312
+  _globals['_CONTESTCHANGEDEVENT']._serialized_end=410
+  _globals['_CREATECONTESTINPUT']._serialized_start=412
+  _globals['_CREATECONTESTINPUT']._serialized_end=472
+  _globals['_CREATECONTESTOUTPUT']._serialized_start=474
+  _globals['_CREATECONTESTOUTPUT']._serialized_end=515
+  _globals['_DELETECONTESTINPUT']._serialized_start=517
+  _globals['_DELETECONTESTINPUT']._serialized_end=557
+  _globals['_DELETECONTESTOUTPUT']._serialized_start=559
+  _globals['_DELETECONTESTOUTPUT']._serialized_end=580
+  _globals['_UPDATECONTESTINPUT']._serialized_start=583
+  _globals['_UPDATECONTESTINPUT']._serialized_end=713
+  _globals['_UPDATECONTESTOUTPUT']._serialized_start=715
+  _globals['_UPDATECONTESTOUTPUT']._serialized_end=736
+  _globals['_COPYCONTESTINPUT']._serialized_start=739
+  _globals['_COPYCONTESTINPUT']._serialized_end=999
+  _globals['_COPYCONTESTINPUT_SCOPE']._serialized_start=915
+  _globals['_COPYCONTESTINPUT_SCOPE']._serialized_end=999
+  _globals['_COPYCONTESTOUTPUT']._serialized_start=1001
+  _globals['_COPYCONTESTOUTPUT']._serialized_end=1045
+  _globals['_DESCRIBECONTESTINPUT']._serialized_start=1047
+  _globals['_DESCRIBECONTESTINPUT']._serialized_end=1140
+  _globals['_DESCRIBECONTESTOUTPUT']._serialized_start=1142
+  _globals['_DESCRIBECONTESTOUTPUT']._serialized_end=1205
+  _globals['_LISTCONTESTSINPUT']._serialized_start=1208
+  _globals['_LISTCONTESTSINPUT']._serialized_end=2206
+  _globals['_LISTCONTESTSINPUT_FILTER']._serialized_start=1384
+  _globals['_LISTCONTESTSINPUT_FILTER']._serialized_end=2206
+  _globals['_LISTCONTESTSOUTPUT']._serialized_start=2208
+  _globals['_LISTCONTESTSOUTPUT']._serialized_end=2281
+  _globals['_OPENCONTESTINPUT']._serialized_start=2283
+  _globals['_OPENCONTESTINPUT']._serialized_end=2321
+  _globals['_OPENCONTESTOUTPUT']._serialized_start=2323
+  _globals['_OPENCONTESTOUTPUT']._serialized_end=2342
+  _globals['_CLOSECONTESTINPUT']._serialized_start=2344
+  _globals['_CLOSECONTESTINPUT']._serialized_end=2383
+  _globals['_CLOSECONTESTOUTPUT']._serialized_start=2385
+  _globals['_CLOSECONTESTOUTPUT']._serialized_end=2405
+  _globals['_SUSPENDCONTESTINPUT']._serialized_start=2407
+  _globals['_SUSPENDCONTESTINPUT']._serialized_end=2448
+  _globals['_SUSPENDCONTESTOUTPUT']._serialized_start=2450
+  _globals['_SUSPENDCONTESTOUTPUT']._serialized_end=2472
+  _globals['_FREEZECONTESTINPUT']._serialized_start=2474
+  _globals['_FREEZECONTESTINPUT']._serialized_end=2514
+  _globals['_FREEZECONTESTOUTPUT']._serialized_start=2516
+  _globals['_FREEZECONTESTOUTPUT']._serialized_end=2537
+  _globals['_FINALIZECONTESTINPUT']._serialized_start=2539
+  _globals['_FINALIZECONTESTINPUT']._serialized_end=2581
+  _globals['_FINALIZECONTESTOUTPUT']._serialized_start=2583
+  _globals['_FINALIZECONTESTOUTPUT']._serialized_end=2606
+  _globals['_RESUMECONTESTINPUT']._serialized_start=2608
+  _globals['_RESUMECONTESTINPUT']._serialized_end=2648
+  _globals['_RESUMECONTESTOUTPUT']._serialized_start=2650
+  _globals['_RESUMECONTESTOUTPUT']._serialized_end=2671
+  _globals['_ANALYZECONTESTINPUT']._serialized_start=2673
+  _globals['_ANALYZECONTESTINPUT']._serialized_end=2714
+  _globals['_ANALYZECONTESTOUTPUT']._serialized_start=2716
+  _globals['_ANALYZECONTESTOUTPUT']._serialized_end=2738
+  _globals['_WATCHCONTESTINPUT']._serialized_start=2740
+  _globals['_WATCHCONTESTINPUT']._serialized_end=2830
+  _globals['_WATCHCONTESTOUTPUT']._serialized_start=2832
+  _globals['_WATCHCONTESTOUTPUT']._serialized_end=2892
+  _globals['_LISTACTIVITIESINPUT']._serialized_start=2894
+  _globals['_LISTACTIVITIESINPUT']._serialized_end=2965
+  _globals['_LISTACTIVITIESOUTPUT']._serialized_start=2967
+  _globals['_LISTACTIVITIESOUTPUT']._serialized_end=3043
+  _globals['_DESCRIBECONTESTUSAGEINPUT']._serialized_start=3045
+  _globals['_DESCRIBECONTESTUSAGEINPUT']._serialized_end=3170
+  _globals['_DESCRIBECONTESTUSAGEOUTPUT']._serialized_start=3172
+  _globals['_DESCRIBECONTESTUSAGEOUTPUT']._serialized_end=3275
+  _globals['_CONTESTSERVICE']._serialized_start=3278
+  _globals['_CONTESTSERVICE']._serialized_end=5825
 # @@protoc_insertion_point(module_scope)

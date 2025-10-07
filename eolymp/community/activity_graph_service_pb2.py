@@ -23,12 +23,13 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-eolymp/community/activity_graph_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x83\x01\n\x1a\x44\x65scribeActivityGraphInput\x12)\n\x05\x61\x66ter\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06metric\x18\x03 \x01(\t\"@\n\x1b\x44\x65scribeActivityGraphOutput\x12\x0e\n\x06values\x18\x01 \x03(\x05\x12\x11\n\tmax_value\x18\n \x01(\x05\x32\xd2\x01\n\x14\x41\x63tivityGraphService\x12\xb9\x01\n\x15\x44\x65scribeActivityGraph\x12,.eolymp.community.DescribeActivityGraphInput\x1a-.eolymp.community.DescribeActivityGraphOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02\x11\x12\x0f/activity-graphB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-eolymp/community/activity_graph_service.proto\x12\x10\x65olymp.community\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x83\x01\n\x1a\x44\x65scribeActivityGraphInput\x12)\n\x05\x61\x66ter\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06metric\x18\x03 \x01(\t\"@\n\x1b\x44\x65scribeActivityGraphOutput\x12\x0e\n\x06values\x18\x01 \x03(\x05\x12\x11\n\tmax_value\x18\n \x01(\x05\x32\xf1\x01\n\x14\x41\x63tivityGraphService\x12\xb9\x01\n\x15\x44\x65scribeActivityGraph\x12,.eolymp.community.DescribeActivityGraphInput\x1a-.eolymp.community.DescribeActivityGraphOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02\x11\x12\x0f/activity-graph\x1a\x1d\x82\xf0\xf0\xe4\x01\x17\x65olymp.community.MemberB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,12 +37,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.activity_g
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
+  _globals['_ACTIVITYGRAPHSERVICE']._loaded_options = None
+  _globals['_ACTIVITYGRAPHSERVICE']._serialized_options = b'\202\360\360\344\001\027eolymp.community.Member'
   _globals['_ACTIVITYGRAPHSERVICE'].methods_by_name['DescribeActivityGraph']._loaded_options = None
   _globals['_ACTIVITYGRAPHSERVICE'].methods_by_name['DescribeActivityGraph']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025community:member:read\202\323\344\223\002\021\022\017/activity-graph'
-  _globals['_DESCRIBEACTIVITYGRAPHINPUT']._serialized_start=200
-  _globals['_DESCRIBEACTIVITYGRAPHINPUT']._serialized_end=331
-  _globals['_DESCRIBEACTIVITYGRAPHOUTPUT']._serialized_start=333
-  _globals['_DESCRIBEACTIVITYGRAPHOUTPUT']._serialized_end=397
-  _globals['_ACTIVITYGRAPHSERVICE']._serialized_start=400
-  _globals['_ACTIVITYGRAPHSERVICE']._serialized_end=610
+  _globals['_DESCRIBEACTIVITYGRAPHINPUT']._serialized_start=236
+  _globals['_DESCRIBEACTIVITYGRAPHINPUT']._serialized_end=367
+  _globals['_DESCRIBEACTIVITYGRAPHOUTPUT']._serialized_start=369
+  _globals['_DESCRIBEACTIVITYGRAPHOUTPUT']._serialized_end=433
+  _globals['_ACTIVITYGRAPHSERVICE']._serialized_start=436
+  _globals['_ACTIVITYGRAPHSERVICE']._serialized_end=677
 # @@protoc_insertion_point(module_scope)

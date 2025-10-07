@@ -23,12 +23,13 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.discussion import post_type_pb2 as eolymp_dot_discussion_dot_post__type__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/discussion/post_type_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/discussion/post_type.proto\"k\n\x15\x44\x65scribePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.discussion.PostType.Extra\"C\n\x16\x44\x65scribePostTypeOutput\x12)\n\x04type\x18\x01 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"u\n\x12ListPostTypesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x14 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.discussion.PostType.Extra\"P\n\x13ListPostTypesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.discussion.PostType\"@\n\x13\x43reatePostTypeInput\x12)\n\x04type\x18\x01 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"\'\n\x14\x43reatePostTypeOutput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\"Q\n\x13UpdatePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12)\n\x04type\x18\x02 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"\x16\n\x14UpdatePostTypeOutput\"&\n\x13\x44\x65letePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65letePostTypeOutput2\xc1\x06\n\x0fPostTypeService\x12\x96\x01\n\x10\x44\x65scribePostType\x12(.eolymp.discussion.DescribePostTypeInput\x1a).eolymp.discussion.DescribePostTypeOutput\"-\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x17\x12\x15/post-types/{type_id}\x12\x82\x01\n\rListPostTypes\x12%.eolymp.discussion.ListPostTypesInput\x1a&.eolymp.discussion.ListPostTypesOutput\"\"\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\r\x12\x0b/post-types\x12\xa7\x01\n\x0e\x43reatePostType\x12&.eolymp.discussion.CreatePostTypeInput\x1a\'.eolymp.discussion.CreatePostTypeOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\x82\xd3\xe4\x93\x02\r\"\x0b/post-types\x12\xb1\x01\n\x0eUpdatePostType\x12&.eolymp.discussion.UpdatePostTypeInput\x1a\'.eolymp.discussion.UpdatePostTypeOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\x82\xd3\xe4\x93\x02\x17\x1a\x15/post-types/{type_id}\x12\xb1\x01\n\x0e\x44\x65letePostType\x12&.eolymp.discussion.DeletePostTypeInput\x1a\'.eolymp.discussion.DeletePostTypeOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\x82\xd3\xe4\x93\x02\x17*\x15/post-types/{type_id}B7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/discussion/post_type_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/discussion/post_type.proto\"k\n\x15\x44\x65scribePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.discussion.PostType.Extra\"C\n\x16\x44\x65scribePostTypeOutput\x12)\n\x04type\x18\x01 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"u\n\x12ListPostTypesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x14 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.discussion.PostType.Extra\"P\n\x13ListPostTypesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.discussion.PostType\"@\n\x13\x43reatePostTypeInput\x12)\n\x04type\x18\x01 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"\'\n\x14\x43reatePostTypeOutput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\"Q\n\x13UpdatePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\x12)\n\x04type\x18\x02 \x01(\x0b\x32\x1b.eolymp.discussion.PostType\"\x16\n\x14UpdatePostTypeOutput\"&\n\x13\x44\x65letePostTypeInput\x12\x0f\n\x07type_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65letePostTypeOutput2\xde\x06\n\x0fPostTypeService\x12\x96\x01\n\x10\x44\x65scribePostType\x12(.eolymp.discussion.DescribePostTypeInput\x1a).eolymp.discussion.DescribePostTypeOutput\"-\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xd3\xe4\x93\x02\x17\x12\x15/post-types/{type_id}\x12\x82\x01\n\rListPostTypes\x12%.eolymp.discussion.ListPostTypesInput\x1a&.eolymp.discussion.ListPostTypesOutput\"\"\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\r\x12\x0b/post-types\x12\xa7\x01\n\x0e\x43reatePostType\x12&.eolymp.discussion.CreatePostTypeInput\x1a\'.eolymp.discussion.CreatePostTypeOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\x82\xd3\xe4\x93\x02\r\"\x0b/post-types\x12\xb1\x01\n\x0eUpdatePostType\x12&.eolymp.discussion.UpdatePostTypeInput\x1a\'.eolymp.discussion.UpdatePostTypeOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\x82\xd3\xe4\x93\x02\x17\x1a\x15/post-types/{type_id}\x12\xb1\x01\n\x0e\x44\x65letePostType\x12&.eolymp.discussion.DeletePostTypeInput\x1a\'.eolymp.discussion.DeletePostTypeOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1e\x8a\xe3\n\x1a\x64iscussion:post-type:write\x82\xd3\xe4\x93\x02\x17*\x15/post-types/{type_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +37,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.discussion.post_type
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/discussion;discussion'
+  _globals['_POSTTYPESERVICE']._loaded_options = None
+  _globals['_POSTTYPESERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_POSTTYPESERVICE'].methods_by_name['DescribePostType']._loaded_options = None
   _globals['_POSTTYPESERVICE'].methods_by_name['DescribePostType']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\323\344\223\002\027\022\025/post-types/{type_id}'
   _globals['_POSTTYPESERVICE'].methods_by_name['ListPostTypes']._loaded_options = None
@@ -46,26 +49,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_POSTTYPESERVICE'].methods_by_name['UpdatePostType']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\036\212\343\n\032discussion:post-type:write\202\323\344\223\002\027\032\025/post-types/{type_id}'
   _globals['_POSTTYPESERVICE'].methods_by_name['DeletePostType']._loaded_options = None
   _globals['_POSTTYPESERVICE'].methods_by_name['DeletePostType']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\036\212\343\n\032discussion:post-type:write\202\323\344\223\002\027*\025/post-types/{type_id}'
-  _globals['_DESCRIBEPOSTTYPEINPUT']._serialized_start=198
-  _globals['_DESCRIBEPOSTTYPEINPUT']._serialized_end=305
-  _globals['_DESCRIBEPOSTTYPEOUTPUT']._serialized_start=307
-  _globals['_DESCRIBEPOSTTYPEOUTPUT']._serialized_end=374
-  _globals['_LISTPOSTTYPESINPUT']._serialized_start=376
-  _globals['_LISTPOSTTYPESINPUT']._serialized_end=493
-  _globals['_LISTPOSTTYPESOUTPUT']._serialized_start=495
-  _globals['_LISTPOSTTYPESOUTPUT']._serialized_end=575
-  _globals['_CREATEPOSTTYPEINPUT']._serialized_start=577
-  _globals['_CREATEPOSTTYPEINPUT']._serialized_end=641
-  _globals['_CREATEPOSTTYPEOUTPUT']._serialized_start=643
-  _globals['_CREATEPOSTTYPEOUTPUT']._serialized_end=682
-  _globals['_UPDATEPOSTTYPEINPUT']._serialized_start=684
-  _globals['_UPDATEPOSTTYPEINPUT']._serialized_end=765
-  _globals['_UPDATEPOSTTYPEOUTPUT']._serialized_start=767
-  _globals['_UPDATEPOSTTYPEOUTPUT']._serialized_end=789
-  _globals['_DELETEPOSTTYPEINPUT']._serialized_start=791
-  _globals['_DELETEPOSTTYPEINPUT']._serialized_end=829
-  _globals['_DELETEPOSTTYPEOUTPUT']._serialized_start=831
-  _globals['_DELETEPOSTTYPEOUTPUT']._serialized_end=853
-  _globals['_POSTTYPESERVICE']._serialized_start=856
-  _globals['_POSTTYPESERVICE']._serialized_end=1689
+  _globals['_DESCRIBEPOSTTYPEINPUT']._serialized_start=234
+  _globals['_DESCRIBEPOSTTYPEINPUT']._serialized_end=341
+  _globals['_DESCRIBEPOSTTYPEOUTPUT']._serialized_start=343
+  _globals['_DESCRIBEPOSTTYPEOUTPUT']._serialized_end=410
+  _globals['_LISTPOSTTYPESINPUT']._serialized_start=412
+  _globals['_LISTPOSTTYPESINPUT']._serialized_end=529
+  _globals['_LISTPOSTTYPESOUTPUT']._serialized_start=531
+  _globals['_LISTPOSTTYPESOUTPUT']._serialized_end=611
+  _globals['_CREATEPOSTTYPEINPUT']._serialized_start=613
+  _globals['_CREATEPOSTTYPEINPUT']._serialized_end=677
+  _globals['_CREATEPOSTTYPEOUTPUT']._serialized_start=679
+  _globals['_CREATEPOSTTYPEOUTPUT']._serialized_end=718
+  _globals['_UPDATEPOSTTYPEINPUT']._serialized_start=720
+  _globals['_UPDATEPOSTTYPEINPUT']._serialized_end=801
+  _globals['_UPDATEPOSTTYPEOUTPUT']._serialized_start=803
+  _globals['_UPDATEPOSTTYPEOUTPUT']._serialized_end=825
+  _globals['_DELETEPOSTTYPEINPUT']._serialized_start=827
+  _globals['_DELETEPOSTTYPEINPUT']._serialized_end=865
+  _globals['_DELETEPOSTTYPEOUTPUT']._serialized_start=867
+  _globals['_DELETEPOSTTYPEOUTPUT']._serialized_end=889
+  _globals['_POSTTYPESERVICE']._serialized_start=892
+  _globals['_POSTTYPESERVICE']._serialized_end=1754
 # @@protoc_insertion_point(module_scope)

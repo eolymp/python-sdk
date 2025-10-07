@@ -23,11 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.discussion import configuration_pb2 as eolymp_dot_discussion_dot_configuration__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-eolymp/discussion/configuration_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a%eolymp/discussion/configuration.proto\"\x1f\n\x1d\x44\x65scribeDiscussionConfigInput\"R\n\x1e\x44\x65scribeDiscussionConfigOutput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.discussion.Configuration\"\xf4\x01\n\x1bUpdateDiscussionConfigInput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.discussion.Configuration\"\xa2\x01\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x1c\n\x18MEMBERS_CAN_CREATE_POSTS\x10\x01\x12 \n\x1cMEMBERS_CAN_COMMENT_ON_POSTS\x10\x02\x12#\n\x1fMEMBERS_CAN_COMMENT_ON_PROBLEMS\x10\x03\x12\x13\n\x0fPOST_MODERATION\x10\x04\x12\x16\n\x12\x43OMMENT_MODERATION\x10\x05\"\x1e\n\x1cUpdateDiscussionConfigOutput2\xee\x02\n\x14\x43onfigurationService\x12\xac\x01\n\x18\x44\x65scribeDiscussionConfig\x12\x30.eolymp.discussion.DescribeDiscussionConfigInput\x1a\x31.eolymp.discussion.DescribeDiscussionConfigOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x12\x14/configs/discussions\x12\xa6\x01\n\x16UpdateDiscussionConfig\x12..eolymp.discussion.UpdateDiscussionConfigInput\x1a/.eolymp.discussion.UpdateDiscussionConfigOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16\x1a\x14/configs/discussionsB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-eolymp/discussion/configuration_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a%eolymp/discussion/configuration.proto\"\x1f\n\x1d\x44\x65scribeDiscussionConfigInput\"R\n\x1e\x44\x65scribeDiscussionConfigOutput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.discussion.Configuration\"\xf4\x01\n\x1bUpdateDiscussionConfigInput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.discussion.Configuration\"\xa2\x01\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x1c\n\x18MEMBERS_CAN_CREATE_POSTS\x10\x01\x12 \n\x1cMEMBERS_CAN_COMMENT_ON_POSTS\x10\x02\x12#\n\x1fMEMBERS_CAN_COMMENT_ON_PROBLEMS\x10\x03\x12\x13\n\x0fPOST_MODERATION\x10\x04\x12\x16\n\x12\x43OMMENT_MODERATION\x10\x05\"\x1e\n\x1cUpdateDiscussionConfigOutput2\x8b\x03\n\x14\x43onfigurationService\x12\xac\x01\n\x18\x44\x65scribeDiscussionConfig\x12\x30.eolymp.discussion.DescribeDiscussionConfigInput\x1a\x31.eolymp.discussion.DescribeDiscussionConfigOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x12\x14/configs/discussions\x12\xa6\x01\n\x16UpdateDiscussionConfig\x12..eolymp.discussion.UpdateDiscussionConfigInput\x1a/.eolymp.discussion.UpdateDiscussionConfigOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x16\x1a\x14/configs/discussions\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,20 +36,22 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.discussion.configura
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/discussion;discussion'
+  _globals['_CONFIGURATIONSERVICE']._loaded_options = None
+  _globals['_CONFIGURATIONSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['DescribeDiscussionConfig']._loaded_options = None
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['DescribeDiscussionConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\026\022\024/configs/discussions'
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['UpdateDiscussionConfig']._loaded_options = None
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['UpdateDiscussionConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\323\344\223\002\026\032\024/configs/discussions'
-  _globals['_DESCRIBEDISCUSSIONCONFIGINPUT']._serialized_start=174
-  _globals['_DESCRIBEDISCUSSIONCONFIGINPUT']._serialized_end=205
-  _globals['_DESCRIBEDISCUSSIONCONFIGOUTPUT']._serialized_start=207
-  _globals['_DESCRIBEDISCUSSIONCONFIGOUTPUT']._serialized_end=289
-  _globals['_UPDATEDISCUSSIONCONFIGINPUT']._serialized_start=292
-  _globals['_UPDATEDISCUSSIONCONFIGINPUT']._serialized_end=536
-  _globals['_UPDATEDISCUSSIONCONFIGINPUT_PATCH']._serialized_start=374
-  _globals['_UPDATEDISCUSSIONCONFIGINPUT_PATCH']._serialized_end=536
-  _globals['_UPDATEDISCUSSIONCONFIGOUTPUT']._serialized_start=538
-  _globals['_UPDATEDISCUSSIONCONFIGOUTPUT']._serialized_end=568
-  _globals['_CONFIGURATIONSERVICE']._serialized_start=571
-  _globals['_CONFIGURATIONSERVICE']._serialized_end=937
+  _globals['_DESCRIBEDISCUSSIONCONFIGINPUT']._serialized_start=210
+  _globals['_DESCRIBEDISCUSSIONCONFIGINPUT']._serialized_end=241
+  _globals['_DESCRIBEDISCUSSIONCONFIGOUTPUT']._serialized_start=243
+  _globals['_DESCRIBEDISCUSSIONCONFIGOUTPUT']._serialized_end=325
+  _globals['_UPDATEDISCUSSIONCONFIGINPUT']._serialized_start=328
+  _globals['_UPDATEDISCUSSIONCONFIGINPUT']._serialized_end=572
+  _globals['_UPDATEDISCUSSIONCONFIGINPUT_PATCH']._serialized_start=410
+  _globals['_UPDATEDISCUSSIONCONFIGINPUT_PATCH']._serialized_end=572
+  _globals['_UPDATEDISCUSSIONCONFIGOUTPUT']._serialized_start=574
+  _globals['_UPDATEDISCUSSIONCONFIGOUTPUT']._serialized_end=604
+  _globals['_CONFIGURATIONSERVICE']._serialized_start=607
+  _globals['_CONFIGURATIONSERVICE']._serialized_end=1002
 # @@protoc_insertion_point(module_scope)

@@ -23,11 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.discussion import thread_pb2 as eolymp_dot_discussion_dot_thread__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/discussion/thread_endpoint.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/discussion/thread.proto\"%\n\x13\x44\x65scribeThreadInput\x12\x0e\n\x06locale\x18\n \x01(\t\"A\n\x14\x44\x65scribeThreadOutput\x12)\n\x06thread\x18\x01 \x01(\x0b\x32\x19.eolymp.discussion.Thread\"3\n\x0fVoteThreadInput\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12\x0c\n\x04vote\x18\x02 \x01(\x05\"&\n\x10VoteThreadOutput\x12\x12\n\nvote_count\x18\x01 \x01(\x05\x32\x81\x02\n\x0eThreadEndpoint\x12z\n\x0e\x44\x65scribeThread\x12&.eolymp.discussion.DescribeThreadInput\x1a\'.eolymp.discussion.DescribeThreadOutput\"\x17\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x02\x12\x00\x12s\n\nVoteThread\x12\".eolymp.discussion.VoteThreadInput\x1a#.eolymp.discussion.VoteThreadOutput\"\x1c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x07\"\x05/voteB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/discussion/thread_endpoint.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/discussion/thread.proto\"%\n\x13\x44\x65scribeThreadInput\x12\x0e\n\x06locale\x18\n \x01(\t\"A\n\x14\x44\x65scribeThreadOutput\x12)\n\x06thread\x18\x01 \x01(\x0b\x32\x19.eolymp.discussion.Thread\"3\n\x0fVoteThreadInput\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12\x0c\n\x04vote\x18\x02 \x01(\x05\"&\n\x10VoteThreadOutput\x12\x12\n\nvote_count\x18\x01 \x01(\x05\x32\xb9\x02\n\x0eThreadEndpoint\x12z\n\x0e\x44\x65scribeThread\x12&.eolymp.discussion.DescribeThreadInput\x1a\'.eolymp.discussion.DescribeThreadOutput\"\x17\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x02\x12\x00\x12s\n\nVoteThread\x12\".eolymp.discussion.VoteThreadInput\x1a#.eolymp.discussion.VoteThreadOutput\"\x1c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x07\"\x05/vote\x1a\x36\x82\xf0\xf0\xe4\x01\x16\x65olymp.discussion.Post\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.ProblemB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,18 +36,20 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.discussion.thread_en
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/discussion;discussion'
+  _globals['_THREADENDPOINT']._loaded_options = None
+  _globals['_THREADENDPOINT']._serialized_options = b'\202\360\360\344\001\026eolymp.discussion.Post\202\360\360\344\001\024eolymp.atlas.Problem'
   _globals['_THREADENDPOINT'].methods_by_name['DescribeThread']._loaded_options = None
   _globals['_THREADENDPOINT'].methods_by_name['DescribeThread']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\002\022\000'
   _globals['_THREADENDPOINT'].methods_by_name['VoteThread']._loaded_options = None
   _globals['_THREADENDPOINT'].methods_by_name['VoteThread']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\007\"\005/vote'
-  _globals['_DESCRIBETHREADINPUT']._serialized_start=161
-  _globals['_DESCRIBETHREADINPUT']._serialized_end=198
-  _globals['_DESCRIBETHREADOUTPUT']._serialized_start=200
-  _globals['_DESCRIBETHREADOUTPUT']._serialized_end=265
-  _globals['_VOTETHREADINPUT']._serialized_start=267
-  _globals['_VOTETHREADINPUT']._serialized_end=318
-  _globals['_VOTETHREADOUTPUT']._serialized_start=320
-  _globals['_VOTETHREADOUTPUT']._serialized_end=358
-  _globals['_THREADENDPOINT']._serialized_start=361
-  _globals['_THREADENDPOINT']._serialized_end=618
+  _globals['_DESCRIBETHREADINPUT']._serialized_start=197
+  _globals['_DESCRIBETHREADINPUT']._serialized_end=234
+  _globals['_DESCRIBETHREADOUTPUT']._serialized_start=236
+  _globals['_DESCRIBETHREADOUTPUT']._serialized_end=301
+  _globals['_VOTETHREADINPUT']._serialized_start=303
+  _globals['_VOTETHREADINPUT']._serialized_end=354
+  _globals['_VOTETHREADOUTPUT']._serialized_start=356
+  _globals['_VOTETHREADOUTPUT']._serialized_end=394
+  _globals['_THREADENDPOINT']._serialized_start=397
+  _globals['_THREADENDPOINT']._serialized_end=710
 # @@protoc_insertion_point(module_scope)

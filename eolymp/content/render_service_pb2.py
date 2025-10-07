@@ -23,12 +23,13 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/render_service.proto\x12\x0e\x65olymp.content\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\":\n\x12RenderContentInput\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\"7\n\x13RenderContentOutput\x12 \n\x06render\x18\x01 \x01(\x0b\x32\x10.eolymp.ecm.Node2\x9f\x01\n\rRenderService\x12\x8d\x01\n\rRenderContent\x12\".eolymp.content.RenderContentInput\x1a#.eolymp.content.RenderContentOutput\"3\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1e\"\x0f/content:renderZ\x0b\"\t/rendererB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/render_service.proto\x12\x0e\x65olymp.content\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\":\n\x12RenderContentInput\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\"7\n\x13RenderContentOutput\x12 \n\x06render\x18\x01 \x01(\x0b\x32\x10.eolymp.ecm.Node2\xbc\x01\n\rRenderService\x12\x8d\x01\n\rRenderContent\x12\".eolymp.content.RenderContentInput\x1a#.eolymp.content.RenderContentOutput\"3\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x1e\"\x0f/content:renderZ\x0b\"\t/renderer\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,12 +37,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.content.render_servi
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
+  _globals['_RENDERSERVICE']._loaded_options = None
+  _globals['_RENDERSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_RENDERSERVICE'].methods_by_name['RenderContent']._loaded_options = None
   _globals['_RENDERSERVICE'].methods_by_name['RenderContent']._serialized_options = b'\352\342\n\013\365\342\n\000\000\310A\370\342\nd\202\323\344\223\002\036\"\017/content:renderZ\013\"\t/renderer'
-  _globals['_RENDERCONTENTINPUT']._serialized_start=171
-  _globals['_RENDERCONTENTINPUT']._serialized_end=229
-  _globals['_RENDERCONTENTOUTPUT']._serialized_start=231
-  _globals['_RENDERCONTENTOUTPUT']._serialized_end=286
-  _globals['_RENDERSERVICE']._serialized_start=289
-  _globals['_RENDERSERVICE']._serialized_end=448
+  _globals['_RENDERCONTENTINPUT']._serialized_start=207
+  _globals['_RENDERCONTENTINPUT']._serialized_end=265
+  _globals['_RENDERCONTENTOUTPUT']._serialized_start=267
+  _globals['_RENDERCONTENTOUTPUT']._serialized_end=322
+  _globals['_RENDERSERVICE']._serialized_start=325
+  _globals['_RENDERSERVICE']._serialized_end=513
 # @@protoc_insertion_point(module_scope)

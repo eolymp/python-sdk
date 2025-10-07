@@ -23,13 +23,14 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.judge import announcement_pb2 as eolymp_dot_judge_dot_announcement__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/judge/announcement_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1f\x65olymp/judge/announcement.proto\x1a!eolymp/wellknown/expression.proto\"_\n\x17\x43reateAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x30\n\x0c\x61nnouncement\x18\x02 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"&\n\x18\x43reateAnnouncementOutput\x12\n\n\x02id\x18\x01 \x01(\t\"x\n\x17UpdateAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\x12\x30\n\x0c\x61nnouncement\x18\x03 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"\x1a\n\x18UpdateAnnouncementOutput\"F\n\x17\x44\x65leteAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteAnnouncementOutput\"D\n\x15ReadAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\"\x18\n\x16ReadAnnouncementOutput\"z\n\x19\x44\x65scribeAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.judge.Announcement.Extra\"N\n\x1a\x44\x65scribeAnnouncementOutput\x12\x30\n\x0c\x61nnouncement\x18\x01 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"N\n\x1f\x44\x65scribeAnnouncementStatusInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\"3\n DescribeAnnouncementStatusOutput\x12\x0f\n\x07is_read\x18\x01 \x01(\x08\"\xa3\x02\n\x16ListAnnouncementsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.judge.ListAnnouncementsInput.Filter\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.judge.Announcement.Extra\x1ag\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\x07is_read\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"S\n\x17ListAnnouncementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.judge.Announcement\"c\n\x16WatchAnnouncementInput\x12\x17\n\x0f\x61nnouncement_id\x18\x01 \x01(\t\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.judge.Announcement.Extra\"K\n\x17WatchAnnouncementOutput\x12\x30\n\x0c\x61nnouncement\x18\x01 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"K\n\x17WatchAnnouncementsInput\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.judge.Announcement.Extra\"\xcc\x01\n\x18WatchAnnouncementsOutput\x12;\n\x05\x65vent\x18\x01 \x01(\x0e\x32,.eolymp.judge.WatchAnnouncementsOutput.Event\x12\x30\n\x0c\x61nnouncement\x18\x02 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"A\n\x05\x45vent\x12\x11\n\rUNKNOWN_EVENT\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07UPDATED\x10\x02\x12\x0b\n\x07\x44\x45LETED\x10\x03\"\x1f\n\x1dWatchAnnouncementSummaryInput\"6\n\x1eWatchAnnouncementSummaryOutput\x12\x14\n\x0cunread_count\x18\x01 \x01(\r2\xbe\r\n\x13\x41nnouncementService\x12\xa5\x01\n\x12\x43reateAnnouncement\x12%.eolymp.judge.CreateAnnouncementInput\x1a&.eolymp.judge.CreateAnnouncementOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x10\"\x0e/announcements\x12\xb7\x01\n\x12UpdateAnnouncement\x12%.eolymp.judge.UpdateAnnouncementInput\x1a&.eolymp.judge.UpdateAnnouncementOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\"\" /announcements/{announcement_id}\x12\xb7\x01\n\x12\x44\x65leteAnnouncement\x12%.eolymp.judge.DeleteAnnouncementInput\x1a&.eolymp.judge.DeleteAnnouncementOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\"* /announcements/{announcement_id}\x12\xb5\x01\n\x10ReadAnnouncement\x12#.eolymp.judge.ReadAnnouncementInput\x1a$.eolymp.judge.ReadAnnouncementOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\'\"%/announcements/{announcement_id}/read\x12\xbc\x01\n\x14\x44\x65scribeAnnouncement\x12\'.eolymp.judge.DescribeAnnouncementInput\x1a(.eolymp.judge.DescribeAnnouncementOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\"\x12 /announcements/{announcement_id}\x12\xd5\x01\n\x1a\x44\x65scribeAnnouncementStatus\x12-.eolymp.judge.DescribeAnnouncementStatusInput\x1a..eolymp.judge.DescribeAnnouncementStatusOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02)\x12\'/announcements/{announcement_id}/status\x12\xa1\x01\n\x11ListAnnouncements\x12$.eolymp.judge.ListAnnouncementsInput\x1a%.eolymp.judge.ListAnnouncementsOutput\"?\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x10\x12\x0e/announcements\x12~\n\x11WatchAnnouncement\x12$.eolymp.judge.WatchAnnouncementInput\x1a%.eolymp.judge.WatchAnnouncementOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\x81\x01\n\x12WatchAnnouncements\x12%.eolymp.judge.WatchAnnouncementsInput\x1a&.eolymp.judge.WatchAnnouncementsOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\x93\x01\n\x18WatchAnnouncementSummary\x12+.eolymp.judge.WatchAnnouncementSummaryInput\x1a,.eolymp.judge.WatchAnnouncementSummaryOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/judge/announcement_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1f\x65olymp/judge/announcement.proto\x1a!eolymp/wellknown/expression.proto\"_\n\x17\x43reateAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x30\n\x0c\x61nnouncement\x18\x02 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"&\n\x18\x43reateAnnouncementOutput\x12\n\n\x02id\x18\x01 \x01(\t\"x\n\x17UpdateAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\x12\x30\n\x0c\x61nnouncement\x18\x03 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"\x1a\n\x18UpdateAnnouncementOutput\"F\n\x17\x44\x65leteAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteAnnouncementOutput\"D\n\x15ReadAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\"\x18\n\x16ReadAnnouncementOutput\"z\n\x19\x44\x65scribeAnnouncementInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.judge.Announcement.Extra\"N\n\x1a\x44\x65scribeAnnouncementOutput\x12\x30\n\x0c\x61nnouncement\x18\x01 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"N\n\x1f\x44\x65scribeAnnouncementStatusInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x17\n\x0f\x61nnouncement_id\x18\x02 \x01(\t\"3\n DescribeAnnouncementStatusOutput\x12\x0f\n\x07is_read\x18\x01 \x01(\x08\"\xa3\x02\n\x16ListAnnouncementsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.judge.ListAnnouncementsInput.Filter\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.judge.Announcement.Extra\x1ag\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\x07is_read\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"S\n\x17ListAnnouncementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.judge.Announcement\"c\n\x16WatchAnnouncementInput\x12\x17\n\x0f\x61nnouncement_id\x18\x01 \x01(\t\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.judge.Announcement.Extra\"K\n\x17WatchAnnouncementOutput\x12\x30\n\x0c\x61nnouncement\x18\x01 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"K\n\x17WatchAnnouncementsInput\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.judge.Announcement.Extra\"\xcc\x01\n\x18WatchAnnouncementsOutput\x12;\n\x05\x65vent\x18\x01 \x01(\x0e\x32,.eolymp.judge.WatchAnnouncementsOutput.Event\x12\x30\n\x0c\x61nnouncement\x18\x02 \x01(\x0b\x32\x1a.eolymp.judge.Announcement\"A\n\x05\x45vent\x12\x11\n\rUNKNOWN_EVENT\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07UPDATED\x10\x02\x12\x0b\n\x07\x44\x45LETED\x10\x03\"\x1f\n\x1dWatchAnnouncementSummaryInput\"6\n\x1eWatchAnnouncementSummaryOutput\x12\x14\n\x0cunread_count\x18\x01 \x01(\r2\xda\r\n\x13\x41nnouncementService\x12\xa5\x01\n\x12\x43reateAnnouncement\x12%.eolymp.judge.CreateAnnouncementInput\x1a&.eolymp.judge.CreateAnnouncementOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x10\"\x0e/announcements\x12\xb7\x01\n\x12UpdateAnnouncement\x12%.eolymp.judge.UpdateAnnouncementInput\x1a&.eolymp.judge.UpdateAnnouncementOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\"\" /announcements/{announcement_id}\x12\xb7\x01\n\x12\x44\x65leteAnnouncement\x12%.eolymp.judge.DeleteAnnouncementInput\x1a&.eolymp.judge.DeleteAnnouncementOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\"* /announcements/{announcement_id}\x12\xb5\x01\n\x10ReadAnnouncement\x12#.eolymp.judge.ReadAnnouncementInput\x1a$.eolymp.judge.ReadAnnouncementOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\'\"%/announcements/{announcement_id}/read\x12\xbc\x01\n\x14\x44\x65scribeAnnouncement\x12\'.eolymp.judge.DescribeAnnouncementInput\x1a(.eolymp.judge.DescribeAnnouncementOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\"\x12 /announcements/{announcement_id}\x12\xd5\x01\n\x1a\x44\x65scribeAnnouncementStatus\x12-.eolymp.judge.DescribeAnnouncementStatusInput\x1a..eolymp.judge.DescribeAnnouncementStatusOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02)\x12\'/announcements/{announcement_id}/status\x12\xa1\x01\n\x11ListAnnouncements\x12$.eolymp.judge.ListAnnouncementsInput\x1a%.eolymp.judge.ListAnnouncementsOutput\"?\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x10\x12\x0e/announcements\x12~\n\x11WatchAnnouncement\x12$.eolymp.judge.WatchAnnouncementInput\x1a%.eolymp.judge.WatchAnnouncementOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\x81\x01\n\x12WatchAnnouncements\x12%.eolymp.judge.WatchAnnouncementsInput\x1a&.eolymp.judge.WatchAnnouncementsOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\x93\x01\n\x18WatchAnnouncementSummary\x12+.eolymp.judge.WatchAnnouncementSummaryInput\x1a,.eolymp.judge.WatchAnnouncementSummaryOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,6 +38,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.announcement_s
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
+  _globals['_ANNOUNCEMENTSERVICE']._loaded_options = None
+  _globals['_ANNOUNCEMENTSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.judge.Contest'
   _globals['_ANNOUNCEMENTSERVICE'].methods_by_name['CreateAnnouncement']._loaded_options = None
   _globals['_ANNOUNCEMENTSERVICE'].methods_by_name['CreateAnnouncement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\020\"\016/announcements'
   _globals['_ANNOUNCEMENTSERVICE'].methods_by_name['UpdateAnnouncement']._loaded_options = None
@@ -57,50 +60,50 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ANNOUNCEMENTSERVICE'].methods_by_name['WatchAnnouncements']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read'
   _globals['_ANNOUNCEMENTSERVICE'].methods_by_name['WatchAnnouncementSummary']._loaded_options = None
   _globals['_ANNOUNCEMENTSERVICE'].methods_by_name['WatchAnnouncementSummary']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read'
-  _globals['_CREATEANNOUNCEMENTINPUT']._serialized_start=224
-  _globals['_CREATEANNOUNCEMENTINPUT']._serialized_end=319
-  _globals['_CREATEANNOUNCEMENTOUTPUT']._serialized_start=321
-  _globals['_CREATEANNOUNCEMENTOUTPUT']._serialized_end=359
-  _globals['_UPDATEANNOUNCEMENTINPUT']._serialized_start=361
-  _globals['_UPDATEANNOUNCEMENTINPUT']._serialized_end=481
-  _globals['_UPDATEANNOUNCEMENTOUTPUT']._serialized_start=483
-  _globals['_UPDATEANNOUNCEMENTOUTPUT']._serialized_end=509
-  _globals['_DELETEANNOUNCEMENTINPUT']._serialized_start=511
-  _globals['_DELETEANNOUNCEMENTINPUT']._serialized_end=581
-  _globals['_DELETEANNOUNCEMENTOUTPUT']._serialized_start=583
-  _globals['_DELETEANNOUNCEMENTOUTPUT']._serialized_end=609
-  _globals['_READANNOUNCEMENTINPUT']._serialized_start=611
-  _globals['_READANNOUNCEMENTINPUT']._serialized_end=679
-  _globals['_READANNOUNCEMENTOUTPUT']._serialized_start=681
-  _globals['_READANNOUNCEMENTOUTPUT']._serialized_end=705
-  _globals['_DESCRIBEANNOUNCEMENTINPUT']._serialized_start=707
-  _globals['_DESCRIBEANNOUNCEMENTINPUT']._serialized_end=829
-  _globals['_DESCRIBEANNOUNCEMENTOUTPUT']._serialized_start=831
-  _globals['_DESCRIBEANNOUNCEMENTOUTPUT']._serialized_end=909
-  _globals['_DESCRIBEANNOUNCEMENTSTATUSINPUT']._serialized_start=911
-  _globals['_DESCRIBEANNOUNCEMENTSTATUSINPUT']._serialized_end=989
-  _globals['_DESCRIBEANNOUNCEMENTSTATUSOUTPUT']._serialized_start=991
-  _globals['_DESCRIBEANNOUNCEMENTSTATUSOUTPUT']._serialized_end=1042
-  _globals['_LISTANNOUNCEMENTSINPUT']._serialized_start=1045
-  _globals['_LISTANNOUNCEMENTSINPUT']._serialized_end=1336
-  _globals['_LISTANNOUNCEMENTSINPUT_FILTER']._serialized_start=1233
-  _globals['_LISTANNOUNCEMENTSINPUT_FILTER']._serialized_end=1336
-  _globals['_LISTANNOUNCEMENTSOUTPUT']._serialized_start=1338
-  _globals['_LISTANNOUNCEMENTSOUTPUT']._serialized_end=1421
-  _globals['_WATCHANNOUNCEMENTINPUT']._serialized_start=1423
-  _globals['_WATCHANNOUNCEMENTINPUT']._serialized_end=1522
-  _globals['_WATCHANNOUNCEMENTOUTPUT']._serialized_start=1524
-  _globals['_WATCHANNOUNCEMENTOUTPUT']._serialized_end=1599
-  _globals['_WATCHANNOUNCEMENTSINPUT']._serialized_start=1601
-  _globals['_WATCHANNOUNCEMENTSINPUT']._serialized_end=1676
-  _globals['_WATCHANNOUNCEMENTSOUTPUT']._serialized_start=1679
-  _globals['_WATCHANNOUNCEMENTSOUTPUT']._serialized_end=1883
-  _globals['_WATCHANNOUNCEMENTSOUTPUT_EVENT']._serialized_start=1818
-  _globals['_WATCHANNOUNCEMENTSOUTPUT_EVENT']._serialized_end=1883
-  _globals['_WATCHANNOUNCEMENTSUMMARYINPUT']._serialized_start=1885
-  _globals['_WATCHANNOUNCEMENTSUMMARYINPUT']._serialized_end=1916
-  _globals['_WATCHANNOUNCEMENTSUMMARYOUTPUT']._serialized_start=1918
-  _globals['_WATCHANNOUNCEMENTSUMMARYOUTPUT']._serialized_end=1972
-  _globals['_ANNOUNCEMENTSERVICE']._serialized_start=1975
-  _globals['_ANNOUNCEMENTSERVICE']._serialized_end=3701
+  _globals['_CREATEANNOUNCEMENTINPUT']._serialized_start=260
+  _globals['_CREATEANNOUNCEMENTINPUT']._serialized_end=355
+  _globals['_CREATEANNOUNCEMENTOUTPUT']._serialized_start=357
+  _globals['_CREATEANNOUNCEMENTOUTPUT']._serialized_end=395
+  _globals['_UPDATEANNOUNCEMENTINPUT']._serialized_start=397
+  _globals['_UPDATEANNOUNCEMENTINPUT']._serialized_end=517
+  _globals['_UPDATEANNOUNCEMENTOUTPUT']._serialized_start=519
+  _globals['_UPDATEANNOUNCEMENTOUTPUT']._serialized_end=545
+  _globals['_DELETEANNOUNCEMENTINPUT']._serialized_start=547
+  _globals['_DELETEANNOUNCEMENTINPUT']._serialized_end=617
+  _globals['_DELETEANNOUNCEMENTOUTPUT']._serialized_start=619
+  _globals['_DELETEANNOUNCEMENTOUTPUT']._serialized_end=645
+  _globals['_READANNOUNCEMENTINPUT']._serialized_start=647
+  _globals['_READANNOUNCEMENTINPUT']._serialized_end=715
+  _globals['_READANNOUNCEMENTOUTPUT']._serialized_start=717
+  _globals['_READANNOUNCEMENTOUTPUT']._serialized_end=741
+  _globals['_DESCRIBEANNOUNCEMENTINPUT']._serialized_start=743
+  _globals['_DESCRIBEANNOUNCEMENTINPUT']._serialized_end=865
+  _globals['_DESCRIBEANNOUNCEMENTOUTPUT']._serialized_start=867
+  _globals['_DESCRIBEANNOUNCEMENTOUTPUT']._serialized_end=945
+  _globals['_DESCRIBEANNOUNCEMENTSTATUSINPUT']._serialized_start=947
+  _globals['_DESCRIBEANNOUNCEMENTSTATUSINPUT']._serialized_end=1025
+  _globals['_DESCRIBEANNOUNCEMENTSTATUSOUTPUT']._serialized_start=1027
+  _globals['_DESCRIBEANNOUNCEMENTSTATUSOUTPUT']._serialized_end=1078
+  _globals['_LISTANNOUNCEMENTSINPUT']._serialized_start=1081
+  _globals['_LISTANNOUNCEMENTSINPUT']._serialized_end=1372
+  _globals['_LISTANNOUNCEMENTSINPUT_FILTER']._serialized_start=1269
+  _globals['_LISTANNOUNCEMENTSINPUT_FILTER']._serialized_end=1372
+  _globals['_LISTANNOUNCEMENTSOUTPUT']._serialized_start=1374
+  _globals['_LISTANNOUNCEMENTSOUTPUT']._serialized_end=1457
+  _globals['_WATCHANNOUNCEMENTINPUT']._serialized_start=1459
+  _globals['_WATCHANNOUNCEMENTINPUT']._serialized_end=1558
+  _globals['_WATCHANNOUNCEMENTOUTPUT']._serialized_start=1560
+  _globals['_WATCHANNOUNCEMENTOUTPUT']._serialized_end=1635
+  _globals['_WATCHANNOUNCEMENTSINPUT']._serialized_start=1637
+  _globals['_WATCHANNOUNCEMENTSINPUT']._serialized_end=1712
+  _globals['_WATCHANNOUNCEMENTSOUTPUT']._serialized_start=1715
+  _globals['_WATCHANNOUNCEMENTSOUTPUT']._serialized_end=1919
+  _globals['_WATCHANNOUNCEMENTSOUTPUT_EVENT']._serialized_start=1854
+  _globals['_WATCHANNOUNCEMENTSOUTPUT_EVENT']._serialized_end=1919
+  _globals['_WATCHANNOUNCEMENTSUMMARYINPUT']._serialized_start=1921
+  _globals['_WATCHANNOUNCEMENTSUMMARYINPUT']._serialized_end=1952
+  _globals['_WATCHANNOUNCEMENTSUMMARYOUTPUT']._serialized_start=1954
+  _globals['_WATCHANNOUNCEMENTSUMMARYOUTPUT']._serialized_end=2008
+  _globals['_ANNOUNCEMENTSERVICE']._serialized_start=2011
+  _globals['_ANNOUNCEMENTSERVICE']._serialized_end=3765
 # @@protoc_insertion_point(module_scope)

@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.commerce import order_pb2 as eolymp_dot_commerce_dot_order__pb2
@@ -30,7 +31,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/commerce/order_service.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/commerce/order.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"b\n\x11OrderChangedEvent\x12&\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x16.eolymp.commerce.Order\x12%\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x16.eolymp.commerce.Order\"$\n\x10\x43\x61ncelOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x13\n\x11\x43\x61ncelOrderOutput\"&\n\x12\x44\x65scribeOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"<\n\x13\x44\x65scribeOrderOutput\x12%\n\x05order\x18\x01 \x01(\x0b\x32\x16.eolymp.commerce.Order\"\xc6\x03\n\x0fListOrdersInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.commerce.ListOrdersInput.Filter\x12\x37\n\x04sort\x18\x32 \x01(\x0e\x32).eolymp.commerce.ListOrdersInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xcc\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\treference\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"H\n\x10ListOrdersOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.commerce.Order2\x80\x04\n\x0cOrderService\x12\xab\x01\n\x0b\x43\x61ncelOrder\x12!.eolymp.commerce.CancelOrderInput\x1a\".eolymp.commerce.CancelOrderOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1b\x8a\xe3\n\x17\x63ommerce:shopping:write\x82\xd3\xe4\x93\x02!\"\x1f/store/orders/{order_id}/cancel\x12\xa9\x01\n\rDescribeOrder\x12#.eolymp.commerce.DescribeOrderInput\x1a$.eolymp.commerce.DescribeOrderOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:shopping:read\x82\xd3\xe4\x93\x02\x1a\"\x18/store/orders/{order_id}\x12\x95\x01\n\nListOrders\x12 .eolymp.commerce.ListOrdersInput\x1a!.eolymp.commerce.ListOrdersOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:shopping:read\x82\xd3\xe4\x93\x02\x0f\x12\r/store/ordersB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/commerce/order_service.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/commerce/order.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"b\n\x11OrderChangedEvent\x12&\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x16.eolymp.commerce.Order\x12%\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x16.eolymp.commerce.Order\"$\n\x10\x43\x61ncelOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"\x13\n\x11\x43\x61ncelOrderOutput\"&\n\x12\x44\x65scribeOrderInput\x12\x10\n\x08order_id\x18\x01 \x01(\t\"<\n\x13\x44\x65scribeOrderOutput\x12%\n\x05order\x18\x01 \x01(\x0b\x32\x16.eolymp.commerce.Order\"\xc6\x03\n\x0fListOrdersInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.commerce.ListOrdersInput.Filter\x12\x37\n\x04sort\x18\x32 \x01(\x0e\x32).eolymp.commerce.ListOrdersInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xcc\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\treference\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"H\n\x10ListOrdersOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.commerce.Order2\x9d\x04\n\x0cOrderService\x12\xab\x01\n\x0b\x43\x61ncelOrder\x12!.eolymp.commerce.CancelOrderInput\x1a\".eolymp.commerce.CancelOrderOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1b\x8a\xe3\n\x17\x63ommerce:shopping:write\x82\xd3\xe4\x93\x02!\"\x1f/store/orders/{order_id}/cancel\x12\xa9\x01\n\rDescribeOrder\x12#.eolymp.commerce.DescribeOrderInput\x1a$.eolymp.commerce.DescribeOrderOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:shopping:read\x82\xd3\xe4\x93\x02\x1a\"\x18/store/orders/{order_id}\x12\x95\x01\n\nListOrders\x12 .eolymp.commerce.ListOrdersInput\x1a!.eolymp.commerce.ListOrdersOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:shopping:read\x82\xd3\xe4\x93\x02\x0f\x12\r/store/orders\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,30 +39,32 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.order_servi
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
+  _globals['_ORDERSERVICE']._loaded_options = None
+  _globals['_ORDERSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_ORDERSERVICE'].methods_by_name['CancelOrder']._loaded_options = None
   _globals['_ORDERSERVICE'].methods_by_name['CancelOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\033\212\343\n\027commerce:shopping:write\202\323\344\223\002!\"\037/store/orders/{order_id}/cancel'
   _globals['_ORDERSERVICE'].methods_by_name['DescribeOrder']._loaded_options = None
   _globals['_ORDERSERVICE'].methods_by_name['DescribeOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\032\212\343\n\026commerce:shopping:read\202\323\344\223\002\032\"\030/store/orders/{order_id}'
   _globals['_ORDERSERVICE'].methods_by_name['ListOrders']._loaded_options = None
   _globals['_ORDERSERVICE'].methods_by_name['ListOrders']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\032\212\343\n\026commerce:shopping:read\202\323\344\223\002\017\022\r/store/orders'
-  _globals['_ORDERCHANGEDEVENT']._serialized_start=253
-  _globals['_ORDERCHANGEDEVENT']._serialized_end=351
-  _globals['_CANCELORDERINPUT']._serialized_start=353
-  _globals['_CANCELORDERINPUT']._serialized_end=389
-  _globals['_CANCELORDEROUTPUT']._serialized_start=391
-  _globals['_CANCELORDEROUTPUT']._serialized_end=410
-  _globals['_DESCRIBEORDERINPUT']._serialized_start=412
-  _globals['_DESCRIBEORDERINPUT']._serialized_end=450
-  _globals['_DESCRIBEORDEROUTPUT']._serialized_start=452
-  _globals['_DESCRIBEORDEROUTPUT']._serialized_end=512
-  _globals['_LISTORDERSINPUT']._serialized_start=515
-  _globals['_LISTORDERSINPUT']._serialized_end=969
-  _globals['_LISTORDERSINPUT_FILTER']._serialized_start=740
-  _globals['_LISTORDERSINPUT_FILTER']._serialized_end=944
-  _globals['_LISTORDERSINPUT_SORTABLE']._serialized_start=946
-  _globals['_LISTORDERSINPUT_SORTABLE']._serialized_end=969
-  _globals['_LISTORDERSOUTPUT']._serialized_start=971
-  _globals['_LISTORDERSOUTPUT']._serialized_end=1043
-  _globals['_ORDERSERVICE']._serialized_start=1046
-  _globals['_ORDERSERVICE']._serialized_end=1558
+  _globals['_ORDERCHANGEDEVENT']._serialized_start=289
+  _globals['_ORDERCHANGEDEVENT']._serialized_end=387
+  _globals['_CANCELORDERINPUT']._serialized_start=389
+  _globals['_CANCELORDERINPUT']._serialized_end=425
+  _globals['_CANCELORDEROUTPUT']._serialized_start=427
+  _globals['_CANCELORDEROUTPUT']._serialized_end=446
+  _globals['_DESCRIBEORDERINPUT']._serialized_start=448
+  _globals['_DESCRIBEORDERINPUT']._serialized_end=486
+  _globals['_DESCRIBEORDEROUTPUT']._serialized_start=488
+  _globals['_DESCRIBEORDEROUTPUT']._serialized_end=548
+  _globals['_LISTORDERSINPUT']._serialized_start=551
+  _globals['_LISTORDERSINPUT']._serialized_end=1005
+  _globals['_LISTORDERSINPUT_FILTER']._serialized_start=776
+  _globals['_LISTORDERSINPUT_FILTER']._serialized_end=980
+  _globals['_LISTORDERSINPUT_SORTABLE']._serialized_start=982
+  _globals['_LISTORDERSINPUT_SORTABLE']._serialized_end=1005
+  _globals['_LISTORDERSOUTPUT']._serialized_start=1007
+  _globals['_LISTORDERSOUTPUT']._serialized_end=1079
+  _globals['_ORDERSERVICE']._serialized_start=1082
+  _globals['_ORDERSERVICE']._serialized_end=1623
 # @@protoc_insertion_point(module_scope)
