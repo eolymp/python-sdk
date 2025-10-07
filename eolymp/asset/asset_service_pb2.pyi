@@ -199,3 +199,15 @@ class CloseStreamInput(_message.Message):
 class CloseStreamOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class UseAssetInput(_message.Message):
+    __slots__ = ("resource", "assets")
+    RESOURCE_FIELD_NUMBER: _ClassVar[int]
+    ASSETS_FIELD_NUMBER: _ClassVar[int]
+    resource: str
+    assets: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, resource: _Optional[str] = ..., assets: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class UseAssetOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
