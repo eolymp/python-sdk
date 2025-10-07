@@ -1,4 +1,4 @@
-from eolymp.content import fragment_pb2 as _fragment_pb2
+from eolymp.content import content_fragment_pb2 as _content_fragment_pb2
 from eolymp.content import variant_pb2 as _variant_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -13,9 +13,9 @@ class FragmentChangedEvent(_message.Message):
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     scope: str
-    before: _fragment_pb2.Fragment
-    after: _fragment_pb2.Fragment
-    def __init__(self, scope: _Optional[str] = ..., before: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ..., after: _Optional[_Union[_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
+    before: _content_fragment_pb2.Fragment
+    after: _content_fragment_pb2.Fragment
+    def __init__(self, scope: _Optional[str] = ..., before: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ..., after: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
 
 class VariantChangedEvent(_message.Message):
     __slots__ = ("fragment_id", "before", "after")

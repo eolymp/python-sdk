@@ -2,7 +2,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.discussion import post_pb2 as _post_pb2
+from eolymp.content import post_pb2 as _post_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2

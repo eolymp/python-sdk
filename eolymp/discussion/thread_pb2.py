@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.discussion import subscription_pb2 as eolymp_dot_discussion_dot_subscription__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/discussion/thread.proto\x12\x11\x65olymp.discussion\"f\n\x06Thread\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04vote\x18\x0c \x01(\x05\x12\x12\n\nvote_count\x18\n \x01(\x05\x12\x13\n\x0breply_count\x18\x0b \x01(\x05\x42\x37Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/discussion/thread.proto\x12\x11\x65olymp.discussion\x1a$eolymp/discussion/subscription.proto\"\x9d\x01\n\x06Thread\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04vote\x18\x0c \x01(\x05\x12\x12\n\nvote_count\x18\n \x01(\x05\x12\x13\n\x0breply_count\x18\x0b \x01(\x05\x12\x35\n\x0csubscription\x18\x64 \x01(\x0b\x32\x1f.eolymp.discussion.SubscriptionB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.discussion.thread_pb
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/discussion;discussion'
-  _globals['_THREAD']._serialized_start=53
-  _globals['_THREAD']._serialized_end=155
+  _globals['_THREAD']._serialized_start=92
+  _globals['_THREAD']._serialized_end=249
 # @@protoc_insertion_point(module_scope)

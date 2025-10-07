@@ -24,7 +24,7 @@ class PostServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.DescribePostOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DescribePostOutput"),
             **kwargs,
         )
 
@@ -35,7 +35,7 @@ class PostServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.ListPostsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.ListPostsOutput"),
             **kwargs,
         )
 
@@ -46,7 +46,7 @@ class PostServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.CreatePostOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.CreatePostOutput"),
             **kwargs,
         )
 
@@ -60,7 +60,7 @@ class PostServiceClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.UpdatePostOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.UpdatePostOutput"),
             **kwargs,
         )
 
@@ -74,7 +74,7 @@ class PostServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.PublishPostOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.PublishPostOutput"),
             **kwargs,
         )
 
@@ -88,7 +88,7 @@ class PostServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.UnpublishPostOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.UnpublishPostOutput"),
             **kwargs,
         )
 
@@ -102,7 +102,7 @@ class PostServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.ModeratePostOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.ModeratePostOutput"),
             **kwargs,
         )
 
@@ -116,7 +116,7 @@ class PostServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.DeletePostOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DeletePostOutput"),
             **kwargs,
         )
 
@@ -130,7 +130,7 @@ class PostServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.VotePostOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.VotePostOutput"),
             **kwargs,
         )
 
@@ -144,7 +144,7 @@ class PostServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.TranslatePostOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.TranslatePostOutput"),
             **kwargs,
         )
 
@@ -159,7 +159,7 @@ class PostServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.DescribePostTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DescribePostTranslationOutput"),
             **kwargs,
         )
 
@@ -173,7 +173,7 @@ class PostServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.ListPostTranslationsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.ListPostTranslationsOutput"),
             **kwargs,
         )
 
@@ -187,7 +187,7 @@ class PostServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.CreatePostTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.CreatePostTranslationOutput"),
             **kwargs,
         )
 
@@ -202,7 +202,7 @@ class PostServiceClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.UpdatePostTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.UpdatePostTranslationOutput"),
             **kwargs,
         )
 
@@ -217,7 +217,7 @@ class PostServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.DeletePostTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DeletePostTranslationOutput"),
             **kwargs,
         )
 

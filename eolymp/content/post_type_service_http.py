@@ -24,7 +24,7 @@ class PostTypeServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.DescribePostTypeOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DescribePostTypeOutput"),
             **kwargs,
         )
 
@@ -35,7 +35,7 @@ class PostTypeServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.ListPostTypesOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.ListPostTypesOutput"),
             **kwargs,
         )
 
@@ -46,7 +46,7 @@ class PostTypeServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.CreatePostTypeOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.CreatePostTypeOutput"),
             **kwargs,
         )
 
@@ -60,7 +60,7 @@ class PostTypeServiceClient:
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.UpdatePostTypeOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.UpdatePostTypeOutput"),
             **kwargs,
         )
 
@@ -74,7 +74,7 @@ class PostTypeServiceClient:
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.discussion.DeletePostTypeOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DeletePostTypeOutput"),
             **kwargs,
         )
 
