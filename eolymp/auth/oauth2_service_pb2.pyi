@@ -176,13 +176,41 @@ class RegisterClientInput(_message.Message):
     def __init__(self, redirect_uris: _Optional[_Iterable[str]] = ..., token_endpoint_auth_method: _Optional[str] = ..., grant_types: _Optional[_Iterable[str]] = ..., response_types: _Optional[_Iterable[str]] = ..., client_name: _Optional[str] = ..., client_uri: _Optional[str] = ..., logo_uri: _Optional[str] = ..., scope: _Optional[str] = ..., contacts: _Optional[_Iterable[str]] = ..., tos_uri: _Optional[str] = ..., policy_uri: _Optional[str] = ..., jwks_uri: _Optional[str] = ..., software_id: _Optional[str] = ..., software_version: _Optional[str] = ..., software_statement: _Optional[str] = ...) -> None: ...
 
 class RegisterClientOutput(_message.Message):
-    __slots__ = ("client_id", "client_secret", "client_id_issued_at", "client_secret_expires_at")
+    __slots__ = ("client_id", "client_secret", "client_id_issued_at", "client_secret_expires_at", "registration_access_token", "registration_client_uri", "token_endpoint_auth_method", "application_type", "redirect_uris", "client_name", "logo_uri", "subject_type", "sector_identifier_uri", "jwks_uri", "userinfo_encrypted_response_alg", "userinfo_encrypted_response_enc", "contacts", "request_uris")
     CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
     CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
     CLIENT_ID_ISSUED_AT_FIELD_NUMBER: _ClassVar[int]
     CLIENT_SECRET_EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
+    REGISTRATION_ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    REGISTRATION_CLIENT_URI_FIELD_NUMBER: _ClassVar[int]
+    TOKEN_ENDPOINT_AUTH_METHOD_FIELD_NUMBER: _ClassVar[int]
+    APPLICATION_TYPE_FIELD_NUMBER: _ClassVar[int]
+    REDIRECT_URIS_FIELD_NUMBER: _ClassVar[int]
+    CLIENT_NAME_FIELD_NUMBER: _ClassVar[int]
+    LOGO_URI_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_TYPE_FIELD_NUMBER: _ClassVar[int]
+    SECTOR_IDENTIFIER_URI_FIELD_NUMBER: _ClassVar[int]
+    JWKS_URI_FIELD_NUMBER: _ClassVar[int]
+    USERINFO_ENCRYPTED_RESPONSE_ALG_FIELD_NUMBER: _ClassVar[int]
+    USERINFO_ENCRYPTED_RESPONSE_ENC_FIELD_NUMBER: _ClassVar[int]
+    CONTACTS_FIELD_NUMBER: _ClassVar[int]
+    REQUEST_URIS_FIELD_NUMBER: _ClassVar[int]
     client_id: str
     client_secret: str
     client_id_issued_at: _timestamp_pb2.Timestamp
     client_secret_expires_at: _timestamp_pb2.Timestamp
-    def __init__(self, client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., client_id_issued_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., client_secret_expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    registration_access_token: str
+    registration_client_uri: str
+    token_endpoint_auth_method: str
+    application_type: str
+    redirect_uris: _containers.RepeatedScalarFieldContainer[str]
+    client_name: str
+    logo_uri: str
+    subject_type: str
+    sector_identifier_uri: str
+    jwks_uri: str
+    userinfo_encrypted_response_alg: str
+    userinfo_encrypted_response_enc: str
+    contacts: _containers.RepeatedScalarFieldContainer[str]
+    request_uris: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., client_id_issued_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., client_secret_expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., registration_access_token: _Optional[str] = ..., registration_client_uri: _Optional[str] = ..., token_endpoint_auth_method: _Optional[str] = ..., application_type: _Optional[str] = ..., redirect_uris: _Optional[_Iterable[str]] = ..., client_name: _Optional[str] = ..., logo_uri: _Optional[str] = ..., subject_type: _Optional[str] = ..., sector_identifier_uri: _Optional[str] = ..., jwks_uri: _Optional[str] = ..., userinfo_encrypted_response_alg: _Optional[str] = ..., userinfo_encrypted_response_enc: _Optional[str] = ..., contacts: _Optional[_Iterable[str]] = ..., request_uris: _Optional[_Iterable[str]] = ...) -> None: ...
