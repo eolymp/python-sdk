@@ -29,7 +29,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.discussion import subscription_pb2 as eolymp_dot_discussion_dot_subscription__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/discussion/subscription_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a$eolymp/discussion/subscription.proto\"\x1b\n\x19\x44\x65scribeSubscriptionInput\"S\n\x1a\x44\x65scribeSubscriptionOutput\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"P\n\x17UpdateSubscriptionInput\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"\x1a\n\x18UpdateSubscriptionOutput2\xc9\x03\n\x13SubscriptionService\x12\xbe\x01\n\x14\x44\x65scribeSubscription\x12,.eolymp.discussion.DescribeSubscriptionInput\x1a-.eolymp.discussion.DescribeSubscriptionOutput\"I\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n \x8a\xe3\n\x1c\x64iscussion:subscription:read\x82\xd3\xe4\x93\x02\x0f\x12\r/subscription\x12\xb8\x01\n\x12UpdateSubscription\x12*.eolymp.discussion.UpdateSubscriptionInput\x1a+.eolymp.discussion.UpdateSubscriptionOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n!\x8a\xe3\n\x1d\x64iscussion:subscription:write\x82\xd3\xe4\x93\x02\x0f\x1a\r/subscription\x1a\x36\x82\xf0\xf0\xe4\x01\x16\x65olymp.discussion.Post\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.ProblemB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/discussion/subscription_service.proto\x12\x11\x65olymp.discussion\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a$eolymp/discussion/subscription.proto\"\x1b\n\x19\x44\x65scribeSubscriptionInput\"S\n\x1a\x44\x65scribeSubscriptionOutput\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"P\n\x17UpdateSubscriptionInput\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"\x1a\n\x18UpdateSubscriptionOutput2\xc6\x03\n\x13SubscriptionService\x12\xbe\x01\n\x14\x44\x65scribeSubscription\x12,.eolymp.discussion.DescribeSubscriptionInput\x1a-.eolymp.discussion.DescribeSubscriptionOutput\"I\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n \x8a\xe3\n\x1c\x64iscussion:subscription:read\x82\xd3\xe4\x93\x02\x0f\x12\r/subscription\x12\xb8\x01\n\x12UpdateSubscription\x12*.eolymp.discussion.UpdateSubscriptionInput\x1a+.eolymp.discussion.UpdateSubscriptionOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n!\x8a\xe3\n\x1d\x64iscussion:subscription:write\x82\xd3\xe4\x93\x02\x0f\x1a\r/subscription\x1a\x33\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.Problem\x82\xf0\xf0\xe4\x01\x13\x65olymp.content.PostB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,7 +38,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/discussion;discussion'
   _globals['_SUBSCRIPTIONSERVICE']._loaded_options = None
-  _globals['_SUBSCRIPTIONSERVICE']._serialized_options = b'\202\360\360\344\001\026eolymp.discussion.Post\202\360\360\344\001\024eolymp.atlas.Problem'
+  _globals['_SUBSCRIPTIONSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.atlas.Problem\202\360\360\344\001\023eolymp.content.Post'
   _globals['_SUBSCRIPTIONSERVICE'].methods_by_name['DescribeSubscription']._loaded_options = None
   _globals['_SUBSCRIPTIONSERVICE'].methods_by_name['DescribeSubscription']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\343\n \212\343\n\034discussion:subscription:read\202\323\344\223\002\017\022\r/subscription'
   _globals['_SUBSCRIPTIONSERVICE'].methods_by_name['UpdateSubscription']._loaded_options = None
@@ -52,5 +52,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_start=436
   _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_end=462
   _globals['_SUBSCRIPTIONSERVICE']._serialized_start=465
-  _globals['_SUBSCRIPTIONSERVICE']._serialized_end=922
+  _globals['_SUBSCRIPTIONSERVICE']._serialized_end=919
 # @@protoc_insertion_point(module_scope)
