@@ -181,10 +181,9 @@ class TestingServiceClient:
         )
 
     def UpdateTest(self, request, **kwargs):
-        path = "/testsets/"+urllib.parse.quote(request.testset_id)+"/tests/"+urllib.parse.quote(request.test_id)
+        path = "/tests/"+urllib.parse.quote(request.test_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.testset_id = ""
         request.test_id = ""
 
         return self.transport.request(
@@ -196,10 +195,9 @@ class TestingServiceClient:
         )
 
     def DeleteTest(self, request, **kwargs):
-        path = "/testsets/"+urllib.parse.quote(request.testset_id)+"/tests/"+urllib.parse.quote(request.test_id)
+        path = "/tests/"+urllib.parse.quote(request.test_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.testset_id = ""
         request.test_id = ""
 
         return self.transport.request(
@@ -211,10 +209,9 @@ class TestingServiceClient:
         )
 
     def DescribeTest(self, request, **kwargs):
-        path = "/testsets/"+urllib.parse.quote(request.testset_id)+"/tests/"+urllib.parse.quote(request.test_id)
+        path = "/tests/"+urllib.parse.quote(request.test_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.testset_id = ""
         request.test_id = ""
 
         return self.transport.request(
@@ -226,10 +223,7 @@ class TestingServiceClient:
         )
 
     def ListTests(self, request, **kwargs):
-        path = "/testsets/"+urllib.parse.quote(request.testset_id)+"/tests"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.testset_id = ""
+        path = "/tests"
 
         return self.transport.request(
             method="GET",

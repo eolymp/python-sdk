@@ -1,5 +1,6 @@
 import datetime
 
+from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.atlas import testing_feedback_pb2 as _testing_feedback_pb2
 from eolymp.atlas import testing_scoring_pb2 as _testing_scoring_pb2
 from eolymp.executor import stats_pb2 as _stats_pb2
@@ -127,29 +128,6 @@ class Submission(_message.Message):
         resource_usage: float
         runs: _containers.RepeatedCompositeFieldContainer[Submission.Run]
         def __init__(self, index: _Optional[int] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., dependencies: _Optional[_Iterable[int]] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., scoring_mode: _Optional[_Union[_testing_scoring_pb2.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., runs: _Optional[_Iterable[_Union[Submission.Run, _Mapping]]] = ...) -> None: ...
-    class Value(_message.Message):
-        __slots__ = ("name", "code", "file")
-        class Code(_message.Message):
-            __slots__ = ("runtime", "source_url")
-            RUNTIME_FIELD_NUMBER: _ClassVar[int]
-            SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
-            runtime: str
-            source_url: str
-            def __init__(self, runtime: _Optional[str] = ..., source_url: _Optional[str] = ...) -> None: ...
-        class File(_message.Message):
-            __slots__ = ("filename", "data_url")
-            FILENAME_FIELD_NUMBER: _ClassVar[int]
-            DATA_URL_FIELD_NUMBER: _ClassVar[int]
-            filename: str
-            data_url: str
-            def __init__(self, filename: _Optional[str] = ..., data_url: _Optional[str] = ...) -> None: ...
-        NAME_FIELD_NUMBER: _ClassVar[int]
-        CODE_FIELD_NUMBER: _ClassVar[int]
-        FILE_FIELD_NUMBER: _ClassVar[int]
-        name: str
-        code: Submission.Value.Code
-        file: Submission.Value.File
-        def __init__(self, name: _Optional[str] = ..., code: _Optional[_Union[Submission.Value.Code, _Mapping]] = ..., file: _Optional[_Union[Submission.Value.File, _Mapping]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
@@ -186,7 +164,7 @@ class Submission(_message.Message):
     lang: str
     source: str
     source_url: str
-    values: _containers.RepeatedCompositeFieldContainer[Submission.Value]
+    values: _containers.RepeatedCompositeFieldContainer[_form_pb2.Form.Value]
     signature: str
     status: Submission.Status
     verdict: Submission.Verdict
@@ -202,4 +180,4 @@ class Submission(_message.Message):
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     assistant_available: bool
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., values: _Optional[_Iterable[_Union[Submission.Value, _Mapping]]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., assistant_available: bool = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_form_pb2.Form.Value, _Mapping]]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., assistant_available: bool = ..., cursor: _Optional[str] = ...) -> None: ...

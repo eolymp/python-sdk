@@ -1,3 +1,4 @@
+from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -9,19 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ("id", "url", "type", "links", "number", "visible", "origin", "title", "content", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "vote", "vote_count", "difficulty")
-    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        UNKNOWN_EXTRA: _ClassVar[Problem.Extra]
-        VOTE: _ClassVar[Problem.Extra]
-        TITLE: _ClassVar[Problem.Extra]
-        CONTENT_VALUE: _ClassVar[Problem.Extra]
-        CONTENT_RENDER: _ClassVar[Problem.Extra]
-    UNKNOWN_EXTRA: Problem.Extra
-    VOTE: Problem.Extra
-    TITLE: Problem.Extra
-    CONTENT_VALUE: Problem.Extra
-    CONTENT_RENDER: Problem.Extra
+    __slots__ = ("id", "url", "type", "number", "visible", "origin", "locale", "title", "content", "download_link", "author", "source", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "vote", "vote_count", "difficulty", "submission_form", "examples")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Problem.Type]
@@ -36,6 +25,46 @@ class Problem(_message.Message):
     OUTPUT: Problem.Type
     SQL: Problem.Type
     ML: Problem.Type
+    class Extra(_message.Message):
+        __slots__ = ()
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_EXTRA: _ClassVar[Problem.Extra.Field]
+            VOTE: _ClassVar[Problem.Extra.Field]
+            TITLE: _ClassVar[Problem.Extra.Field]
+            CONTENT_VALUE: _ClassVar[Problem.Extra.Field]
+            CONTENT_RENDER: _ClassVar[Problem.Extra.Field]
+            SUBMISSION_FORM: _ClassVar[Problem.Extra.Field]
+            EXAMPLES: _ClassVar[Problem.Extra.Field]
+        UNKNOWN_EXTRA: Problem.Extra.Field
+        VOTE: Problem.Extra.Field
+        TITLE: Problem.Extra.Field
+        CONTENT_VALUE: Problem.Extra.Field
+        CONTENT_RENDER: Problem.Extra.Field
+        SUBMISSION_FORM: Problem.Extra.Field
+        EXAMPLES: Problem.Extra.Field
+        def __init__(self) -> None: ...
+    class Patch(_message.Message):
+        __slots__ = ()
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_PATCH: _ClassVar[Problem.Patch.Field]
+            VISIBLE: _ClassVar[Problem.Patch.Field]
+            PRIVATE: _ClassVar[Problem.Patch.Field]
+            TOPICS: _ClassVar[Problem.Patch.Field]
+            DIFFICULTY: _ClassVar[Problem.Patch.Field]
+            ORIGIN: _ClassVar[Problem.Patch.Field]
+            TYPE: _ClassVar[Problem.Patch.Field]
+            NUMBER: _ClassVar[Problem.Patch.Field]
+        UNKNOWN_PATCH: Problem.Patch.Field
+        VISIBLE: Problem.Patch.Field
+        PRIVATE: Problem.Patch.Field
+        TOPICS: Problem.Patch.Field
+        DIFFICULTY: Problem.Patch.Field
+        ORIGIN: Problem.Patch.Field
+        TYPE: Problem.Patch.Field
+        NUMBER: Problem.Patch.Field
+        def __init__(self) -> None: ...
     class Constraints(_message.Message):
         __slots__ = ("time_limit_min", "time_limit_max", "cpu_limit_min", "cpu_limit_max", "memory_limit_min", "memory_limit_max")
         TIME_LIMIT_MIN_FIELD_NUMBER: _ClassVar[int]
@@ -51,22 +80,27 @@ class Problem(_message.Message):
         memory_limit_min: int
         memory_limit_max: int
         def __init__(self, time_limit_min: _Optional[int] = ..., time_limit_max: _Optional[int] = ..., cpu_limit_min: _Optional[int] = ..., cpu_limit_max: _Optional[int] = ..., memory_limit_min: _Optional[int] = ..., memory_limit_max: _Optional[int] = ...) -> None: ...
-    class LinksEntry(_message.Message):
-        __slots__ = ("key", "value")
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    class Example(_message.Message):
+        __slots__ = ("index", "input_url", "answer_url")
+        INDEX_FIELD_NUMBER: _ClassVar[int]
+        INPUT_URL_FIELD_NUMBER: _ClassVar[int]
+        ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
+        index: int
+        input_url: str
+        answer_url: str
+        def __init__(self, index: _Optional[int] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    LINKS_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
     VISIBLE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
+    DOWNLOAD_LINK_FIELD_NUMBER: _ClassVar[int]
+    AUTHOR_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
     SCORE_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
@@ -76,15 +110,20 @@ class Problem(_message.Message):
     VOTE_FIELD_NUMBER: _ClassVar[int]
     VOTE_COUNT_FIELD_NUMBER: _ClassVar[int]
     DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_FORM_FIELD_NUMBER: _ClassVar[int]
+    EXAMPLES_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
     type: Problem.Type
-    links: _containers.ScalarMap[str, str]
     number: int
     visible: bool
     origin: str
+    locale: str
     title: str
     content: _content_pb2.Content
+    download_link: str
+    author: str
+    source: str
     topics: _containers.RepeatedScalarFieldContainer[str]
     score: float
     constraints: Problem.Constraints
@@ -94,4 +133,6 @@ class Problem(_message.Message):
     vote: int
     vote_count: int
     difficulty: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[Problem.Type, str]] = ..., links: _Optional[_Mapping[str, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., origin: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ...) -> None: ...
+    submission_form: _form_pb2.Form
+    examples: _containers.RepeatedCompositeFieldContainer[Problem.Example]
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[Problem.Type, str]] = ..., number: _Optional[int] = ..., visible: bool = ..., origin: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., author: _Optional[str] = ..., source: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ..., submission_form: _Optional[_Union[_form_pb2.Form, _Mapping]] = ..., examples: _Optional[_Iterable[_Union[Problem.Example, _Mapping]]] = ...) -> None: ...

@@ -57,8 +57,8 @@ class DescribeProblemInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     locale: str
-    extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra]
-    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
+    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ("problem",)
@@ -112,8 +112,8 @@ class ListProblemsInput(_message.Message):
     sort: ListProblemsInput.Sortable
     order: _direction_pb2.Direction
     locale: str
-    extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
 
 class ListProblemsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -149,31 +149,13 @@ class UpdatePrivacyOutput(_message.Message):
 
 class UpdateProblemInput(_message.Message):
     __slots__ = ("patch", "problem_id", "problem")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateProblemInput.Patch]
-        VISIBLE: _ClassVar[UpdateProblemInput.Patch]
-        PRIVATE: _ClassVar[UpdateProblemInput.Patch]
-        TOPICS: _ClassVar[UpdateProblemInput.Patch]
-        DIFFICULTY: _ClassVar[UpdateProblemInput.Patch]
-        ORIGIN: _ClassVar[UpdateProblemInput.Patch]
-        TYPE: _ClassVar[UpdateProblemInput.Patch]
-        NUMBER: _ClassVar[UpdateProblemInput.Patch]
-    ALL: UpdateProblemInput.Patch
-    VISIBLE: UpdateProblemInput.Patch
-    PRIVATE: UpdateProblemInput.Patch
-    TOPICS: UpdateProblemInput.Patch
-    DIFFICULTY: UpdateProblemInput.Patch
-    ORIGIN: UpdateProblemInput.Patch
-    TYPE: UpdateProblemInput.Patch
-    NUMBER: UpdateProblemInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateProblemInput.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Patch.Field]
     problem_id: str
     problem: _problem_pb2.Problem
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProblemInput.Patch, str]]] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_problem_pb2.Problem.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
 
 class UpdateProblemOutput(_message.Message):
     __slots__ = ()

@@ -1,6 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
@@ -20,8 +21,8 @@ class CreateSubmissionInput(_message.Message):
     material_id: str
     runtime: str
     source: str
-    values: _submission_pb2.Submission.Value
-    def __init__(self, material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., values: _Optional[_Union[_submission_pb2.Submission.Value, _Mapping]] = ...) -> None: ...
+    values: _form_pb2.Form.Value
+    def __init__(self, material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., values: _Optional[_Union[_form_pb2.Form.Value, _Mapping]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)

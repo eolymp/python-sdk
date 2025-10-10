@@ -25,11 +25,12 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
+from eolymp.atlas import form_pb2 as eolymp_dot_atlas_dot_form__pb2
 from eolymp.atlas import submission_pb2 as eolymp_dot_atlas_dot_submission__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/course/submission_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/atlas/submission.proto\x1a!eolymp/wellknown/expression.proto\"}\n\x15\x43reateSubmissionInput\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\x12.\n\x06values\x18\x04 \x01(\x0b\x32\x1e.eolymp.atlas.Submission.Value\"/\n\x16\x43reateSubmissionOutput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"\xcd\x04\n\x14ListSubmissionsInput\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12;\n\x07\x66ilters\x18( \x01(\x0b\x32*.eolymp.course.ListSubmissionsInput.Filter\x1a\xda\x03\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\t \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x33\n\x0bmaterial_id\x18\x0b \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12;\n\x0csubmitted_at\x18\x04 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x31\n\x07runtime\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06status\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x31\n\x07verdict\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x05score\x18\x07 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\x12\x35\n\npercentage\x18\x08 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\"i\n\x15ListSubmissionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.atlas.Submission\x12\x18\n\x10next_page_cursor\x18\x04 \x01(\t\"0\n\x17\x44\x65scribeSubmissionInput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"H\n\x18\x44\x65scribeSubmissionOutput\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Submission\"-\n\x14WatchSubmissionInput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"E\n\x15WatchSubmissionOutput\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Submission2\x87\x05\n\x11SubmissionService\x12\xa0\x01\n\x10\x43reateSubmission\x12$.eolymp.course.CreateSubmissionInput\x1a%.eolymp.course.CreateSubmissionOutput\"?\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\n\x82\xe3\n\x18\x8a\xe3\n\x14\x63ourse:course:submit\x82\xd3\xe4\x93\x02\x0e\"\x0c/submissions\x12\x9b\x01\n\x0fListSubmissions\x12#.eolymp.course.ListSubmissionsInput\x1a$.eolymp.course.ListSubmissionsOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x0e\x12\x0c/submissions\x12\xb4\x01\n\x12\x44\x65scribeSubmission\x12&.eolymp.course.DescribeSubmissionInput\x1a\'.eolymp.course.DescribeSubmissionOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/submissions/{submission_id}\x12z\n\x0fWatchSubmission\x12#.eolymp.course.WatchSubmissionInput\x1a$.eolymp.course.WatchSubmissionOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read0\x01\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/course/submission_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x17\x65olymp/atlas/form.proto\x1a\x1d\x65olymp/atlas/submission.proto\x1a!eolymp/wellknown/expression.proto\"w\n\x15\x43reateSubmissionInput\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\x12(\n\x06values\x18\x04 \x01(\x0b\x32\x18.eolymp.atlas.Form.Value\"/\n\x16\x43reateSubmissionOutput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"\xcd\x04\n\x14ListSubmissionsInput\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12;\n\x07\x66ilters\x18( \x01(\x0b\x32*.eolymp.course.ListSubmissionsInput.Filter\x1a\xda\x03\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\t \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x33\n\x0bmaterial_id\x18\x0b \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12;\n\x0csubmitted_at\x18\x04 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x31\n\x07runtime\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06status\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x31\n\x07verdict\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x05score\x18\x07 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\x12\x35\n\npercentage\x18\x08 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\"i\n\x15ListSubmissionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.atlas.Submission\x12\x18\n\x10next_page_cursor\x18\x04 \x01(\t\"0\n\x17\x44\x65scribeSubmissionInput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"H\n\x18\x44\x65scribeSubmissionOutput\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Submission\"-\n\x14WatchSubmissionInput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"E\n\x15WatchSubmissionOutput\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Submission2\x87\x05\n\x11SubmissionService\x12\xa0\x01\n\x10\x43reateSubmission\x12$.eolymp.course.CreateSubmissionInput\x1a%.eolymp.course.CreateSubmissionOutput\"?\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\n\x82\xe3\n\x18\x8a\xe3\n\x14\x63ourse:course:submit\x82\xd3\xe4\x93\x02\x0e\"\x0c/submissions\x12\x9b\x01\n\x0fListSubmissions\x12#.eolymp.course.ListSubmissionsInput\x1a$.eolymp.course.ListSubmissionsOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x0e\x12\x0c/submissions\x12\xb4\x01\n\x12\x44\x65scribeSubmission\x12&.eolymp.course.DescribeSubmissionInput\x1a\'.eolymp.course.DescribeSubmissionOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/submissions/{submission_id}\x12z\n\x0fWatchSubmission\x12#.eolymp.course.WatchSubmissionInput\x1a$.eolymp.course.WatchSubmissionOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read0\x01\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,24 +46,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SUBMISSIONSERVICE'].methods_by_name['DescribeSubmission']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\026\212\343\n\022course:course:read\202\323\344\223\002\036\022\034/submissions/{submission_id}'
   _globals['_SUBMISSIONSERVICE'].methods_by_name['WatchSubmission']._loaded_options = None
   _globals['_SUBMISSIONSERVICE'].methods_by_name['WatchSubmission']._serialized_options = b'\202\343\n\026\212\343\n\022course:course:read'
-  _globals['_CREATESUBMISSIONINPUT']._serialized_start=222
-  _globals['_CREATESUBMISSIONINPUT']._serialized_end=347
-  _globals['_CREATESUBMISSIONOUTPUT']._serialized_start=349
-  _globals['_CREATESUBMISSIONOUTPUT']._serialized_end=396
-  _globals['_LISTSUBMISSIONSINPUT']._serialized_start=399
-  _globals['_LISTSUBMISSIONSINPUT']._serialized_end=988
-  _globals['_LISTSUBMISSIONSINPUT_FILTER']._serialized_start=514
-  _globals['_LISTSUBMISSIONSINPUT_FILTER']._serialized_end=988
-  _globals['_LISTSUBMISSIONSOUTPUT']._serialized_start=990
-  _globals['_LISTSUBMISSIONSOUTPUT']._serialized_end=1095
-  _globals['_DESCRIBESUBMISSIONINPUT']._serialized_start=1097
-  _globals['_DESCRIBESUBMISSIONINPUT']._serialized_end=1145
-  _globals['_DESCRIBESUBMISSIONOUTPUT']._serialized_start=1147
-  _globals['_DESCRIBESUBMISSIONOUTPUT']._serialized_end=1219
-  _globals['_WATCHSUBMISSIONINPUT']._serialized_start=1221
-  _globals['_WATCHSUBMISSIONINPUT']._serialized_end=1266
-  _globals['_WATCHSUBMISSIONOUTPUT']._serialized_start=1268
-  _globals['_WATCHSUBMISSIONOUTPUT']._serialized_end=1337
-  _globals['_SUBMISSIONSERVICE']._serialized_start=1340
-  _globals['_SUBMISSIONSERVICE']._serialized_end=1987
+  _globals['_CREATESUBMISSIONINPUT']._serialized_start=247
+  _globals['_CREATESUBMISSIONINPUT']._serialized_end=366
+  _globals['_CREATESUBMISSIONOUTPUT']._serialized_start=368
+  _globals['_CREATESUBMISSIONOUTPUT']._serialized_end=415
+  _globals['_LISTSUBMISSIONSINPUT']._serialized_start=418
+  _globals['_LISTSUBMISSIONSINPUT']._serialized_end=1007
+  _globals['_LISTSUBMISSIONSINPUT_FILTER']._serialized_start=533
+  _globals['_LISTSUBMISSIONSINPUT_FILTER']._serialized_end=1007
+  _globals['_LISTSUBMISSIONSOUTPUT']._serialized_start=1009
+  _globals['_LISTSUBMISSIONSOUTPUT']._serialized_end=1114
+  _globals['_DESCRIBESUBMISSIONINPUT']._serialized_start=1116
+  _globals['_DESCRIBESUBMISSIONINPUT']._serialized_end=1164
+  _globals['_DESCRIBESUBMISSIONOUTPUT']._serialized_start=1166
+  _globals['_DESCRIBESUBMISSIONOUTPUT']._serialized_end=1238
+  _globals['_WATCHSUBMISSIONINPUT']._serialized_start=1240
+  _globals['_WATCHSUBMISSIONINPUT']._serialized_end=1285
+  _globals['_WATCHSUBMISSIONOUTPUT']._serialized_start=1287
+  _globals['_WATCHSUBMISSIONOUTPUT']._serialized_end=1356
+  _globals['_SUBMISSIONSERVICE']._serialized_start=1359
+  _globals['_SUBMISSIONSERVICE']._serialized_end=2006
 # @@protoc_insertion_point(module_scope)
