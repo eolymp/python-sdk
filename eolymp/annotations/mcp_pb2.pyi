@@ -10,8 +10,8 @@ MCP_VALUE_DESC_FIELD_NUMBER: _ClassVar[int]
 mcp_value_desc: _descriptor.FieldDescriptor
 MCP_FIELD_DESC_FIELD_NUMBER: _ClassVar[int]
 mcp_field_desc: _descriptor.FieldDescriptor
-MCP_READ_ONLY_FIELD_NUMBER: _ClassVar[int]
-mcp_read_only: _descriptor.FieldDescriptor
+READ_ONLY_FIELD_NUMBER: _ClassVar[int]
+read_only: _descriptor.FieldDescriptor
 
 class MCP(_message.Message):
     __slots__ = ()
