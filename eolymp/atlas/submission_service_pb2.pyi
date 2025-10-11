@@ -60,16 +60,16 @@ class DescribeSubmissionOutput(_message.Message):
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
-    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
-    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra.Field]
+    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra.Field, str]]] = ...) -> None: ...
 
 class WatchSubmissionInput(_message.Message):
     __slots__ = ("submission_id", "extra")
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     submission_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
-    def __init__(self, submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra.Field]
+    def __init__(self, submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra.Field, str]]] = ...) -> None: ...
 
 class WatchSubmissionOutput(_message.Message):
     __slots__ = ("submission",)
@@ -123,8 +123,8 @@ class ListSubmissionsInput(_message.Message):
     offset: int
     size: int
     filters: ListSubmissionsInput.Filter
-    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
-    def __init__(self, after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra.Field]
+    def __init__(self, after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra.Field, str]]] = ...) -> None: ...
 
 class ListSubmissionsOutput(_message.Message):
     __slots__ = ("total", "items", "next_page_cursor")

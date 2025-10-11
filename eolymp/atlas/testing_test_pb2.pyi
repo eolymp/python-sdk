@@ -19,6 +19,31 @@ class Test(_message.Message):
     PENDING: Test.Status
     READY: Test.Status
     INVALID: Test.Status
+    class Patch(_message.Message):
+        __slots__ = ()
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_PATCH: _ClassVar[Test.Patch.Field]
+            EXAMPLE: _ClassVar[Test.Patch.Field]
+            INACTIVE: _ClassVar[Test.Patch.Field]
+            SCORE: _ClassVar[Test.Patch.Field]
+            INPUT: _ClassVar[Test.Patch.Field]
+            ANSWER: _ClassVar[Test.Patch.Field]
+            INDEX: _ClassVar[Test.Patch.Field]
+            SECRET: _ClassVar[Test.Patch.Field]
+            EXAMPLE_INPUT: _ClassVar[Test.Patch.Field]
+            EXAMPLE_ANSWER: _ClassVar[Test.Patch.Field]
+        UNKNOWN_PATCH: Test.Patch.Field
+        EXAMPLE: Test.Patch.Field
+        INACTIVE: Test.Patch.Field
+        SCORE: Test.Patch.Field
+        INPUT: Test.Patch.Field
+        ANSWER: Test.Patch.Field
+        INDEX: Test.Patch.Field
+        SECRET: Test.Patch.Field
+        EXAMPLE_INPUT: Test.Patch.Field
+        EXAMPLE_ANSWER: Test.Patch.Field
+        def __init__(self) -> None: ...
     class Generator(_message.Message):
         __slots__ = ("script_name", "arguments")
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]

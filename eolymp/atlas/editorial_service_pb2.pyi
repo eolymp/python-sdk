@@ -11,18 +11,16 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListEditorialsInput(_message.Message):
-    __slots__ = ("offset", "size", "version", "render", "extra")
+    __slots__ = ("offset", "size", "version", "extra")
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
     version: int
-    render: bool
-    extra: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Extra.Field]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Extra.Field, str]]] = ...) -> None: ...
 
 class ListEditorialsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -33,16 +31,14 @@ class ListEditorialsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_editorial_pb2.Editorial, _Mapping]]] = ...) -> None: ...
 
 class DescribeEditorialInput(_message.Message):
-    __slots__ = ("editorial_id", "version", "render", "extra")
+    __slots__ = ("editorial_id", "version", "extra")
     EDITORIAL_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     editorial_id: str
     version: int
-    render: bool
-    extra: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Extra]
-    def __init__(self, editorial_id: _Optional[str] = ..., version: _Optional[int] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Extra.Field]
+    def __init__(self, editorial_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeEditorialOutput(_message.Message):
     __slots__ = ("editorial",)
@@ -51,16 +47,14 @@ class DescribeEditorialOutput(_message.Message):
     def __init__(self, editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
 
 class LookupEditorialInput(_message.Message):
-    __slots__ = ("locale", "version", "render", "extra")
+    __slots__ = ("locale", "version", "extra")
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    RENDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     locale: str
     version: int
-    render: bool
-    extra: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Extra]
-    def __init__(self, locale: _Optional[str] = ..., version: _Optional[int] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Extra.Field]
+    def __init__(self, locale: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Extra.Field, str]]] = ...) -> None: ...
 
 class LookupEditorialOutput(_message.Message):
     __slots__ = ("editorial",)
@@ -97,10 +91,10 @@ class UpdateEditorialInput(_message.Message):
     PATCH_FIELD_NUMBER: _ClassVar[int]
     EDITORIAL_ID_FIELD_NUMBER: _ClassVar[int]
     EDITORIAL_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Patch.Field]
     editorial_id: str
     editorial: _editorial_pb2.Editorial
-    def __init__(self, patch: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Patch, str]]] = ..., editorial_id: _Optional[str] = ..., editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Patch.Field, str]]] = ..., editorial_id: _Optional[str] = ..., editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
 
 class UpdateEditorialOutput(_message.Message):
     __slots__ = ()

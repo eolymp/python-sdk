@@ -8,7 +8,6 @@ from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.atlas import testing_testset_pb2 as _testing_testset_pb2
 from eolymp.atlas import testing_validator_pb2 as _testing_validator_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -300,37 +299,15 @@ class CreateTestOutput(_message.Message):
 
 class UpdateTestInput(_message.Message):
     __slots__ = ("patch", "testset_id", "test_id", "test")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateTestInput.Patch]
-        EXAMPLE: _ClassVar[UpdateTestInput.Patch]
-        INACTIVE: _ClassVar[UpdateTestInput.Patch]
-        SCORE: _ClassVar[UpdateTestInput.Patch]
-        INPUT: _ClassVar[UpdateTestInput.Patch]
-        ANSWER: _ClassVar[UpdateTestInput.Patch]
-        INDEX: _ClassVar[UpdateTestInput.Patch]
-        SECRET: _ClassVar[UpdateTestInput.Patch]
-        EXAMPLE_INPUT: _ClassVar[UpdateTestInput.Patch]
-        EXAMPLE_ANSWER: _ClassVar[UpdateTestInput.Patch]
-    ALL: UpdateTestInput.Patch
-    EXAMPLE: UpdateTestInput.Patch
-    INACTIVE: UpdateTestInput.Patch
-    SCORE: UpdateTestInput.Patch
-    INPUT: UpdateTestInput.Patch
-    ANSWER: UpdateTestInput.Patch
-    INDEX: UpdateTestInput.Patch
-    SECRET: UpdateTestInput.Patch
-    EXAMPLE_INPUT: UpdateTestInput.Patch
-    EXAMPLE_ANSWER: UpdateTestInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateTestInput.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_testing_test_pb2.Test.Patch.Field]
     testset_id: str
     test_id: str
     test: _testing_test_pb2.Test
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateTestInput.Patch, str]]] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_testing_test_pb2.Test.Patch.Field, str]]] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
 
 class UpdateTestOutput(_message.Message):
     __slots__ = ()

@@ -37,27 +37,13 @@ class CreateScriptOutput(_message.Message):
 
 class UpdateScriptInput(_message.Message):
     __slots__ = ("patch", "script_id", "script")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateScriptInput.Patch]
-        NAME: _ClassVar[UpdateScriptInput.Patch]
-        SECRET: _ClassVar[UpdateScriptInput.Patch]
-        RUNTIME: _ClassVar[UpdateScriptInput.Patch]
-        SOURCE_URL: _ClassVar[UpdateScriptInput.Patch]
-        FILES: _ClassVar[UpdateScriptInput.Patch]
-    ALL: UpdateScriptInput.Patch
-    NAME: UpdateScriptInput.Patch
-    SECRET: UpdateScriptInput.Patch
-    RUNTIME: UpdateScriptInput.Patch
-    SOURCE_URL: UpdateScriptInput.Patch
-    FILES: UpdateScriptInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateScriptInput.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Patch.Field]
     script_id: str
     script: _script_pb2.Script
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateScriptInput.Patch, str]]] = ..., script_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_script_pb2.Script.Patch.Field, str]]] = ..., script_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class UpdateScriptOutput(_message.Message):
     __slots__ = ()
@@ -80,8 +66,8 @@ class DescribeScriptInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     script_id: str
     version: int
-    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra]
-    def __init__(self, script_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra.Field]
+    def __init__(self, script_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeScriptOutput(_message.Message):
     __slots__ = ("script",)
@@ -119,8 +105,8 @@ class ListScriptsInput(_message.Message):
     filters: ListScriptsInput.Filter
     sort: ListScriptsInput.Sortable
     order: _direction_pb2.Direction
-    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra]
-    def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListScriptsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListScriptsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra.Field]
+    def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListScriptsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListScriptsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra.Field, str]]] = ...) -> None: ...
 
 class ListScriptsOutput(_message.Message):
     __slots__ = ("total", "items")

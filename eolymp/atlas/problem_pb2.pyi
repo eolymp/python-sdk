@@ -1,3 +1,4 @@
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import containers as _containers

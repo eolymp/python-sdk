@@ -105,27 +105,13 @@ class CreateSolutionOutput(_message.Message):
 
 class UpdateSolutionInput(_message.Message):
     __slots__ = ("patch", "solution_id", "solution")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateSolutionInput.Patch]
-        NAME: _ClassVar[UpdateSolutionInput.Patch]
-        TYPE: _ClassVar[UpdateSolutionInput.Patch]
-        RUNTIME: _ClassVar[UpdateSolutionInput.Patch]
-        SOURCE: _ClassVar[UpdateSolutionInput.Patch]
-        SECRET: _ClassVar[UpdateSolutionInput.Patch]
-    ALL: UpdateSolutionInput.Patch
-    NAME: UpdateSolutionInput.Patch
-    TYPE: UpdateSolutionInput.Patch
-    RUNTIME: UpdateSolutionInput.Patch
-    SOURCE: UpdateSolutionInput.Patch
-    SECRET: UpdateSolutionInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateSolutionInput.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_solution_pb2.Solution.Patch.Field]
     solution_id: str
     solution: _solution_pb2.Solution
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateSolutionInput.Patch, str]]] = ..., solution_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_solution_pb2.Solution.Patch.Field, str]]] = ..., solution_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class UpdateSolutionOutput(_message.Message):
     __slots__ = ()

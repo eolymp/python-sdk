@@ -41,6 +41,23 @@ class Solution(_message.Message):
     PASS: Solution.Status
     FAIL: Solution.Status
     ERROR: Solution.Status
+    class Patch(_message.Message):
+        __slots__ = ()
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_PATCH: _ClassVar[Solution.Patch.Field]
+            NAME: _ClassVar[Solution.Patch.Field]
+            TYPE: _ClassVar[Solution.Patch.Field]
+            RUNTIME: _ClassVar[Solution.Patch.Field]
+            SOURCE: _ClassVar[Solution.Patch.Field]
+            SECRET: _ClassVar[Solution.Patch.Field]
+        UNKNOWN_PATCH: Solution.Patch.Field
+        NAME: Solution.Patch.Field
+        TYPE: Solution.Patch.Field
+        RUNTIME: Solution.Patch.Field
+        SOURCE: Solution.Patch.Field
+        SECRET: Solution.Patch.Field
+        def __init__(self) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]

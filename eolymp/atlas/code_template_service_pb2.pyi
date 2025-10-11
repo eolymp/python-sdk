@@ -3,7 +3,6 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import code_template_pb2 as _code_template_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -25,22 +24,6 @@ class CreateCodeTemplateOutput(_message.Message):
 
 class UpdateCodeTemplateInput(_message.Message):
     __slots__ = ("template_id", "template")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateCodeTemplateInput.Patch]
-        RUNTIME: _ClassVar[UpdateCodeTemplateInput.Patch]
-        SOURCE: _ClassVar[UpdateCodeTemplateInput.Patch]
-        HEADER: _ClassVar[UpdateCodeTemplateInput.Patch]
-        FOOTER: _ClassVar[UpdateCodeTemplateInput.Patch]
-        SECRET: _ClassVar[UpdateCodeTemplateInput.Patch]
-        FILES: _ClassVar[UpdateCodeTemplateInput.Patch]
-    ALL: UpdateCodeTemplateInput.Patch
-    RUNTIME: UpdateCodeTemplateInput.Patch
-    SOURCE: UpdateCodeTemplateInput.Patch
-    HEADER: UpdateCodeTemplateInput.Patch
-    FOOTER: UpdateCodeTemplateInput.Patch
-    SECRET: UpdateCodeTemplateInput.Patch
-    FILES: UpdateCodeTemplateInput.Patch
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     template_id: str

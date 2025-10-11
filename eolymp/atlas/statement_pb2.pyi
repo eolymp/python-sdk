@@ -9,38 +9,42 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Statement(_message.Message):
     __slots__ = ("id", "locale", "automatic", "draft", "title", "content", "download_link", "author", "source", "author_id")
-    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    class Extra(_message.Message):
         __slots__ = ()
-        UNKNOWN_EXTRA: _ClassVar[Statement.Extra]
-        CONTENT_RENDER: _ClassVar[Statement.Extra]
-        CONTENT_VALUE: _ClassVar[Statement.Extra]
-    UNKNOWN_EXTRA: Statement.Extra
-    CONTENT_RENDER: Statement.Extra
-    CONTENT_VALUE: Statement.Extra
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_EXTRA: _ClassVar[Statement.Extra.Field]
+            CONTENT_RENDER: _ClassVar[Statement.Extra.Field]
+            CONTENT_VALUE: _ClassVar[Statement.Extra.Field]
+        UNKNOWN_EXTRA: Statement.Extra.Field
+        CONTENT_RENDER: Statement.Extra.Field
+        CONTENT_VALUE: Statement.Extra.Field
+        def __init__(self) -> None: ...
+    class Patch(_message.Message):
         __slots__ = ()
-        UNKNOWN_PATCH: _ClassVar[Statement.Patch]
-        PATCH_ALL: _ClassVar[Statement.Patch]
-        PATCH_LOCALE: _ClassVar[Statement.Patch]
-        PATCH_AUTOMATIC: _ClassVar[Statement.Patch]
-        PATCH_DRAFT: _ClassVar[Statement.Patch]
-        PATCH_TITLE: _ClassVar[Statement.Patch]
-        PATCH_CONTENT: _ClassVar[Statement.Patch]
-        PATCH_DOWNLOAD_LINK: _ClassVar[Statement.Patch]
-        PATCH_AUTHOR: _ClassVar[Statement.Patch]
-        PATCH_SOURCE: _ClassVar[Statement.Patch]
-        PATCH_AUTHOR_ID: _ClassVar[Statement.Patch]
-    UNKNOWN_PATCH: Statement.Patch
-    PATCH_ALL: Statement.Patch
-    PATCH_LOCALE: Statement.Patch
-    PATCH_AUTOMATIC: Statement.Patch
-    PATCH_DRAFT: Statement.Patch
-    PATCH_TITLE: Statement.Patch
-    PATCH_CONTENT: Statement.Patch
-    PATCH_DOWNLOAD_LINK: Statement.Patch
-    PATCH_AUTHOR: Statement.Patch
-    PATCH_SOURCE: Statement.Patch
-    PATCH_AUTHOR_ID: Statement.Patch
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_PATCH: _ClassVar[Statement.Patch.Field]
+            LOCALE: _ClassVar[Statement.Patch.Field]
+            AUTOMATIC: _ClassVar[Statement.Patch.Field]
+            DRAFT: _ClassVar[Statement.Patch.Field]
+            TITLE: _ClassVar[Statement.Patch.Field]
+            CONTENT: _ClassVar[Statement.Patch.Field]
+            DOWNLOAD_LINK: _ClassVar[Statement.Patch.Field]
+            AUTHOR: _ClassVar[Statement.Patch.Field]
+            SOURCE: _ClassVar[Statement.Patch.Field]
+            AUTHOR_ID: _ClassVar[Statement.Patch.Field]
+        UNKNOWN_PATCH: Statement.Patch.Field
+        LOCALE: Statement.Patch.Field
+        AUTOMATIC: Statement.Patch.Field
+        DRAFT: Statement.Patch.Field
+        TITLE: Statement.Patch.Field
+        CONTENT: Statement.Patch.Field
+        DOWNLOAD_LINK: Statement.Patch.Field
+        AUTHOR: Statement.Patch.Field
+        SOURCE: Statement.Patch.Field
+        AUTHOR_ID: Statement.Patch.Field
+        def __init__(self) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     AUTOMATIC_FIELD_NUMBER: _ClassVar[int]

@@ -31,8 +31,8 @@ class ListStatementsInput(_message.Message):
     size: int
     render: bool
     version: int
-    extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra.Field]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
 
 class ListStatementsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -69,8 +69,8 @@ class DescribeStatementInput(_message.Message):
     statement_id: str
     render: bool
     version: int
-    extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra]
-    def __init__(self, statement_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra.Field]
+    def __init__(self, statement_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeStatementOutput(_message.Message):
     __slots__ = ("statement",)
@@ -87,8 +87,8 @@ class LookupStatementInput(_message.Message):
     locale: str
     render: bool
     version: int
-    extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra]
-    def __init__(self, locale: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra.Field]
+    def __init__(self, locale: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
 
 class LookupStatementOutput(_message.Message):
     __slots__ = ("statement",)
@@ -125,10 +125,10 @@ class UpdateStatementInput(_message.Message):
     PATCH_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Patch.Field]
     statement_id: str
     statement: _statement_pb2.Statement
-    def __init__(self, patch: _Optional[_Iterable[_Union[_statement_pb2.Statement.Patch, str]]] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_statement_pb2.Statement.Patch.Field, str]]] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class UpdateStatementOutput(_message.Message):
     __slots__ = ()

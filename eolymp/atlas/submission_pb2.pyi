@@ -16,14 +16,6 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
     __slots__ = ("id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "values", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "assistant_available", "cursor")
-    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        NO_EXTRA: _ClassVar[Submission.Extra]
-        GROUPS: _ClassVar[Submission.Extra]
-        RUNS: _ClassVar[Submission.Extra]
-    NO_EXTRA: Submission.Extra
-    GROUPS: Submission.Extra
-    RUNS: Submission.Extra
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Submission.Status]
@@ -64,6 +56,17 @@ class Submission(_message.Message):
     CPU_EXHAUSTED: Submission.Verdict
     MEMORY_OVERFLOW: Submission.Verdict
     RUNTIME_ERROR: Submission.Verdict
+    class Extra(_message.Message):
+        __slots__ = ()
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_EXTRA: _ClassVar[Submission.Extra.Field]
+            GROUPS: _ClassVar[Submission.Extra.Field]
+            RUNS: _ClassVar[Submission.Extra.Field]
+        UNKNOWN_EXTRA: Submission.Extra.Field
+        GROUPS: Submission.Extra.Field
+        RUNS: Submission.Extra.Field
+        def __init__(self) -> None: ...
     class Run(_message.Message):
         __slots__ = ("id", "index", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "input_url", "output_url", "answer_url", "cost", "score", "status", "verdict", "debug_stats", "checker_stats", "interactor_stats")
         ID_FIELD_NUMBER: _ClassVar[int]

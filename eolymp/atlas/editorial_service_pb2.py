@@ -28,7 +28,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.atlas import editorial_pb2 as eolymp_dot_atlas_dot_editorial__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/atlas/editorial_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/atlas/editorial.proto\"\x83\x01\n\x13ListEditorialsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x0e\n\x06render\x18\x01 \x01(\x08\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.atlas.Editorial.Extra\"M\n\x14ListEditorialsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.atlas.Editorial\"~\n\x16\x44\x65scribeEditorialInput\x12\x14\n\x0c\x65\x64itorial_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x0e\n\x06render\x18\x03 \x01(\x08\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.atlas.Editorial.Extra\"E\n\x17\x44\x65scribeEditorialOutput\x12*\n\teditorial\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"v\n\x14LookupEditorialInput\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x0e\n\x06render\x18\x03 \x01(\x08\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.atlas.Editorial.Extra\"C\n\x15LookupEditorialOutput\x12*\n\teditorial\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"C\n\x15PreviewEditorialInput\x12*\n\teditorial\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"D\n\x16PreviewEditorialOutput\x12*\n\teditorial\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"B\n\x14\x43reateEditorialInput\x12*\n\teditorial\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"-\n\x15\x43reateEditorialOutput\x12\x14\n\x0c\x65\x64itorial_id\x18\x01 \x01(\t\"\x86\x01\n\x14UpdateEditorialInput\x12,\n\x05patch\x18\n \x03(\x0e\x32\x1d.eolymp.atlas.Editorial.Patch\x12\x14\n\x0c\x65\x64itorial_id\x18\x02 \x01(\t\x12*\n\teditorial\x18\x03 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"\x17\n\x15UpdateEditorialOutput\",\n\x14\x44\x65leteEditorialInput\x12\x14\n\x0c\x65\x64itorial_id\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteEditorialOutput\"m\n\x18TranslateEditorialsInput\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x0e\n\x06target\x18\x02 \x03(\t\x12\x18\n\x10target_automatic\x18\x03 \x01(\x08\x12\x17\n\x0foverride_manual\x18\x04 \x01(\x08\"+\n\x19TranslateEditorialsOutput\x12\x0e\n\x06job_id\x18\x01 \x01(\t2\xbd\n\n\x10\x45\x64itorialService\x12\x99\x01\n\x0f\x43reateEditorial\x12\".eolymp.atlas.CreateEditorialInput\x1a#.eolymp.atlas.CreateEditorialOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\r\x1a\x0b/editorials\x12\xa8\x01\n\x0fUpdateEditorial\x12\".eolymp.atlas.UpdateEditorialInput\x1a#.eolymp.atlas.UpdateEditorialOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x1c\x1a\x1a/editorials/{editorial_id}\x12\xa8\x01\n\x0f\x44\x65leteEditorial\x12\".eolymp.atlas.DeleteEditorialInput\x1a#.eolymp.atlas.DeleteEditorialOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x1c*\x1a/editorials/{editorial_id}\x12\xad\x01\n\x11\x44\x65scribeEditorial\x12$.eolymp.atlas.DescribeEditorialInput\x1a%.eolymp.atlas.DescribeEditorialOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x1c\x12\x1a/editorials/{editorial_id}\x12\x97\x01\n\x0fLookupEditorial\x12\".eolymp.atlas.LookupEditorialInput\x1a#.eolymp.atlas.LookupEditorialOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x0c\x12\n/editorial\x12\xa2\x01\n\x10PreviewEditorial\x12#.eolymp.atlas.PreviewEditorialInput\x1a$.eolymp.atlas.PreviewEditorialOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x14\"\x12/editorial/preview\x12\x95\x01\n\x0eListEditorials\x12!.eolymp.atlas.ListEditorialsInput\x1a\".eolymp.atlas.ListEditorialsOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\r\x12\x0b/editorials\x12\xaf\x01\n\x13TranslateEditorials\x12&.eolymp.atlas.TranslateEditorialsInput\x1a\'.eolymp.atlas.TranslateEditorialsOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x17\"\x15/editorials:translateB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/atlas/editorial_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/atlas/editorial.proto\"y\n\x13ListEditorialsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x33\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32#.eolymp.atlas.Editorial.Extra.Field\"M\n\x14ListEditorialsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.atlas.Editorial\"t\n\x16\x44\x65scribeEditorialInput\x12\x14\n\x0c\x65\x64itorial_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x33\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32#.eolymp.atlas.Editorial.Extra.Field\"E\n\x17\x44\x65scribeEditorialOutput\x12*\n\teditorial\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"l\n\x14LookupEditorialInput\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x33\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32#.eolymp.atlas.Editorial.Extra.Field\"C\n\x15LookupEditorialOutput\x12*\n\teditorial\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"C\n\x15PreviewEditorialInput\x12*\n\teditorial\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"D\n\x16PreviewEditorialOutput\x12*\n\teditorial\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"B\n\x14\x43reateEditorialInput\x12*\n\teditorial\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"-\n\x15\x43reateEditorialOutput\x12\x14\n\x0c\x65\x64itorial_id\x18\x01 \x01(\t\"\x8c\x01\n\x14UpdateEditorialInput\x12\x32\n\x05patch\x18\n \x03(\x0e\x32#.eolymp.atlas.Editorial.Patch.Field\x12\x14\n\x0c\x65\x64itorial_id\x18\x02 \x01(\t\x12*\n\teditorial\x18\x03 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\"\x17\n\x15UpdateEditorialOutput\",\n\x14\x44\x65leteEditorialInput\x12\x14\n\x0c\x65\x64itorial_id\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteEditorialOutput\"m\n\x18TranslateEditorialsInput\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x0e\n\x06target\x18\x02 \x03(\t\x12\x18\n\x10target_automatic\x18\x03 \x01(\x08\x12\x17\n\x0foverride_manual\x18\x04 \x01(\x08\"+\n\x19TranslateEditorialsOutput\x12\x0e\n\x06job_id\x18\x01 \x01(\t2\xbd\n\n\x10\x45\x64itorialService\x12\x99\x01\n\x0f\x43reateEditorial\x12\".eolymp.atlas.CreateEditorialInput\x1a#.eolymp.atlas.CreateEditorialOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\r\x1a\x0b/editorials\x12\xa8\x01\n\x0fUpdateEditorial\x12\".eolymp.atlas.UpdateEditorialInput\x1a#.eolymp.atlas.UpdateEditorialOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x1c\x1a\x1a/editorials/{editorial_id}\x12\xa8\x01\n\x0f\x44\x65leteEditorial\x12\".eolymp.atlas.DeleteEditorialInput\x1a#.eolymp.atlas.DeleteEditorialOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x1c*\x1a/editorials/{editorial_id}\x12\xad\x01\n\x11\x44\x65scribeEditorial\x12$.eolymp.atlas.DescribeEditorialInput\x1a%.eolymp.atlas.DescribeEditorialOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x1c\x12\x1a/editorials/{editorial_id}\x12\x97\x01\n\x0fLookupEditorial\x12\".eolymp.atlas.LookupEditorialInput\x1a#.eolymp.atlas.LookupEditorialOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x0c\x12\n/editorial\x12\xa2\x01\n\x10PreviewEditorial\x12#.eolymp.atlas.PreviewEditorialInput\x1a$.eolymp.atlas.PreviewEditorialOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x14\"\x12/editorial/preview\x12\x95\x01\n\x0eListEditorials\x12!.eolymp.atlas.ListEditorialsInput\x1a\".eolymp.atlas.ListEditorialsOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\r\x12\x0b/editorials\x12\xaf\x01\n\x13TranslateEditorials\x12&.eolymp.atlas.TranslateEditorialsInput\x1a\'.eolymp.atlas.TranslateEditorialsOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x17\"\x15/editorials:translateB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -52,38 +52,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EDITORIALSERVICE'].methods_by_name['ListEditorials']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002\r\022\013/editorials'
   _globals['_EDITORIALSERVICE'].methods_by_name['TranslateEditorials']._loaded_options = None
   _globals['_EDITORIALSERVICE'].methods_by_name['TranslateEditorials']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002\027\"\025/editorials:translate'
-  _globals['_LISTEDITORIALSINPUT']._serialized_start=184
-  _globals['_LISTEDITORIALSINPUT']._serialized_end=315
-  _globals['_LISTEDITORIALSOUTPUT']._serialized_start=317
-  _globals['_LISTEDITORIALSOUTPUT']._serialized_end=394
-  _globals['_DESCRIBEEDITORIALINPUT']._serialized_start=396
-  _globals['_DESCRIBEEDITORIALINPUT']._serialized_end=522
-  _globals['_DESCRIBEEDITORIALOUTPUT']._serialized_start=524
-  _globals['_DESCRIBEEDITORIALOUTPUT']._serialized_end=593
-  _globals['_LOOKUPEDITORIALINPUT']._serialized_start=595
-  _globals['_LOOKUPEDITORIALINPUT']._serialized_end=713
-  _globals['_LOOKUPEDITORIALOUTPUT']._serialized_start=715
-  _globals['_LOOKUPEDITORIALOUTPUT']._serialized_end=782
-  _globals['_PREVIEWEDITORIALINPUT']._serialized_start=784
-  _globals['_PREVIEWEDITORIALINPUT']._serialized_end=851
-  _globals['_PREVIEWEDITORIALOUTPUT']._serialized_start=853
-  _globals['_PREVIEWEDITORIALOUTPUT']._serialized_end=921
-  _globals['_CREATEEDITORIALINPUT']._serialized_start=923
-  _globals['_CREATEEDITORIALINPUT']._serialized_end=989
-  _globals['_CREATEEDITORIALOUTPUT']._serialized_start=991
-  _globals['_CREATEEDITORIALOUTPUT']._serialized_end=1036
-  _globals['_UPDATEEDITORIALINPUT']._serialized_start=1039
-  _globals['_UPDATEEDITORIALINPUT']._serialized_end=1173
-  _globals['_UPDATEEDITORIALOUTPUT']._serialized_start=1175
-  _globals['_UPDATEEDITORIALOUTPUT']._serialized_end=1198
-  _globals['_DELETEEDITORIALINPUT']._serialized_start=1200
-  _globals['_DELETEEDITORIALINPUT']._serialized_end=1244
-  _globals['_DELETEEDITORIALOUTPUT']._serialized_start=1246
-  _globals['_DELETEEDITORIALOUTPUT']._serialized_end=1269
-  _globals['_TRANSLATEEDITORIALSINPUT']._serialized_start=1271
-  _globals['_TRANSLATEEDITORIALSINPUT']._serialized_end=1380
-  _globals['_TRANSLATEEDITORIALSOUTPUT']._serialized_start=1382
-  _globals['_TRANSLATEEDITORIALSOUTPUT']._serialized_end=1425
-  _globals['_EDITORIALSERVICE']._serialized_start=1428
-  _globals['_EDITORIALSERVICE']._serialized_end=2769
+  _globals['_LISTEDITORIALSINPUT']._serialized_start=183
+  _globals['_LISTEDITORIALSINPUT']._serialized_end=304
+  _globals['_LISTEDITORIALSOUTPUT']._serialized_start=306
+  _globals['_LISTEDITORIALSOUTPUT']._serialized_end=383
+  _globals['_DESCRIBEEDITORIALINPUT']._serialized_start=385
+  _globals['_DESCRIBEEDITORIALINPUT']._serialized_end=501
+  _globals['_DESCRIBEEDITORIALOUTPUT']._serialized_start=503
+  _globals['_DESCRIBEEDITORIALOUTPUT']._serialized_end=572
+  _globals['_LOOKUPEDITORIALINPUT']._serialized_start=574
+  _globals['_LOOKUPEDITORIALINPUT']._serialized_end=682
+  _globals['_LOOKUPEDITORIALOUTPUT']._serialized_start=684
+  _globals['_LOOKUPEDITORIALOUTPUT']._serialized_end=751
+  _globals['_PREVIEWEDITORIALINPUT']._serialized_start=753
+  _globals['_PREVIEWEDITORIALINPUT']._serialized_end=820
+  _globals['_PREVIEWEDITORIALOUTPUT']._serialized_start=822
+  _globals['_PREVIEWEDITORIALOUTPUT']._serialized_end=890
+  _globals['_CREATEEDITORIALINPUT']._serialized_start=892
+  _globals['_CREATEEDITORIALINPUT']._serialized_end=958
+  _globals['_CREATEEDITORIALOUTPUT']._serialized_start=960
+  _globals['_CREATEEDITORIALOUTPUT']._serialized_end=1005
+  _globals['_UPDATEEDITORIALINPUT']._serialized_start=1008
+  _globals['_UPDATEEDITORIALINPUT']._serialized_end=1148
+  _globals['_UPDATEEDITORIALOUTPUT']._serialized_start=1150
+  _globals['_UPDATEEDITORIALOUTPUT']._serialized_end=1173
+  _globals['_DELETEEDITORIALINPUT']._serialized_start=1175
+  _globals['_DELETEEDITORIALINPUT']._serialized_end=1219
+  _globals['_DELETEEDITORIALOUTPUT']._serialized_start=1221
+  _globals['_DELETEEDITORIALOUTPUT']._serialized_end=1244
+  _globals['_TRANSLATEEDITORIALSINPUT']._serialized_start=1246
+  _globals['_TRANSLATEEDITORIALSINPUT']._serialized_end=1355
+  _globals['_TRANSLATEEDITORIALSOUTPUT']._serialized_start=1357
+  _globals['_TRANSLATEEDITORIALSOUTPUT']._serialized_end=1400
+  _globals['_EDITORIALSERVICE']._serialized_start=1403
+  _globals['_EDITORIALSERVICE']._serialized_end=2744
 # @@protoc_insertion_point(module_scope)
