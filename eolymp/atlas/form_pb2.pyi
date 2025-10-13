@@ -20,18 +20,18 @@ class Form(_message.Message):
         CODE: Form.Field.Type
         FILE: Form.Field.Type
         class Code(_message.Message):
-            __slots__ = ("runtimes", "max_attachments", "max_attachment_size", "attachment_types", "attachment_extensions")
+            __slots__ = ("runtimes", "max_attachments", "attachment_max_size", "attachment_types", "attachment_extensions")
             RUNTIMES_FIELD_NUMBER: _ClassVar[int]
             MAX_ATTACHMENTS_FIELD_NUMBER: _ClassVar[int]
-            MAX_ATTACHMENT_SIZE_FIELD_NUMBER: _ClassVar[int]
+            ATTACHMENT_MAX_SIZE_FIELD_NUMBER: _ClassVar[int]
             ATTACHMENT_TYPES_FIELD_NUMBER: _ClassVar[int]
             ATTACHMENT_EXTENSIONS_FIELD_NUMBER: _ClassVar[int]
             runtimes: _containers.RepeatedScalarFieldContainer[str]
             max_attachments: int
-            max_attachment_size: int
+            attachment_max_size: int
             attachment_types: _containers.RepeatedScalarFieldContainer[str]
             attachment_extensions: _containers.RepeatedScalarFieldContainer[str]
-            def __init__(self, runtimes: _Optional[_Iterable[str]] = ..., max_attachments: _Optional[int] = ..., max_attachment_size: _Optional[int] = ..., attachment_types: _Optional[_Iterable[str]] = ..., attachment_extensions: _Optional[_Iterable[str]] = ...) -> None: ...
+            def __init__(self, runtimes: _Optional[_Iterable[str]] = ..., max_attachments: _Optional[int] = ..., attachment_max_size: _Optional[int] = ..., attachment_types: _Optional[_Iterable[str]] = ..., attachment_extensions: _Optional[_Iterable[str]] = ...) -> None: ...
         class File(_message.Message):
             __slots__ = ("types", "extensions", "max_size")
             TYPES_FIELD_NUMBER: _ClassVar[int]
