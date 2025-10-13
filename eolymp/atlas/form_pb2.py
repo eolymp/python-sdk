@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/atlas/form.proto\x12\x0c\x65olymp.atlas\"\x89\x03\n\x04\x46orm\x12(\n\x06\x66ields\x18\n \x03(\x0b\x32\x18.eolymp.atlas.Form.Field\x1a\x7f\n\x05\x46ield\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12+\n\x04type\x18\x03 \x01(\x0e\x32\x1d.eolymp.atlas.Form.Field.Type\",\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\x08\n\x04\x43ODE\x10\x01\x12\x08\n\x04\x46ILE\x10\x02\x1a\xd5\x01\n\x05Value\x12\x0c\n\x04name\x18\x01 \x01(\t\x12-\n\x04\x63ode\x18\n \x01(\x0b\x32\x1d.eolymp.atlas.Form.Value.CodeH\x00\x12-\n\x04\x66ile\x18\x0b \x01(\x0b\x32\x1d.eolymp.atlas.Form.Value.FileH\x00\x1a+\n\x04\x43ode\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x12\n\nsource_url\x18\x02 \x01(\t\x1a*\n\x04\x46ile\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61ta_url\x18\x02 \x01(\tB\x07\n\x05valueB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/atlas/form.proto\x12\x0c\x65olymp.atlas\"\xec\x05\n\x04\x46orm\x12(\n\x06\x66ields\x18\n \x03(\x0b\x32\x18.eolymp.atlas.Form.Field\x1a\xad\x03\n\x05\x46ield\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12+\n\x04type\x18\x03 \x01(\x0e\x32\x1d.eolymp.atlas.Form.Field.Type\x12-\n\x04\x63ode\x18\x65 \x01(\x0b\x32\x1d.eolymp.atlas.Form.Field.CodeH\x00\x12-\n\x04\x66ile\x18\x66 \x01(\x0b\x32\x1d.eolymp.atlas.Form.Field.FileH\x00\x1a\x87\x01\n\x04\x43ode\x12\x10\n\x08runtimes\x18\x01 \x03(\t\x12\x17\n\x0fmax_attachments\x18\x02 \x01(\r\x12\x1b\n\x13max_attachment_size\x18\x05 \x01(\r\x12\x18\n\x10\x61ttachment_types\x18\x03 \x03(\t\x12\x1d\n\x15\x61ttachment_extensions\x18\x04 \x03(\t\x1a;\n\x04\x46ile\x12\r\n\x05types\x18\x01 \x03(\t\x12\x12\n\nextensions\x18\x02 \x03(\t\x12\x10\n\x08max_size\x18\x03 \x01(\r\",\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\x08\n\x04\x43ODE\x10\x01\x12\x08\n\x04\x46ILE\x10\x02\x42\x07\n\x05input\x1a\x89\x02\n\x05Value\x12\x0c\n\x04name\x18\x01 \x01(\t\x12-\n\x04\x63ode\x18\n \x01(\x0b\x32\x1d.eolymp.atlas.Form.Value.CodeH\x00\x12-\n\x04\x66ile\x18\x0b \x01(\x0b\x32\x1d.eolymp.atlas.Form.Value.FileH\x00\x1a_\n\x04\x43ode\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x12\n\nsource_url\x18\x02 \x01(\t\x12\x32\n\x0b\x61ttachments\x18\x03 \x03(\x0b\x32\x1d.eolymp.atlas.Form.Value.File\x1a*\n\x04\x46ile\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61ta_url\x18\x02 \x01(\tB\x07\n\x05valueB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,15 +33,19 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_FORM']._serialized_start=42
-  _globals['_FORM']._serialized_end=435
-  _globals['_FORM_FIELD']._serialized_start=92
-  _globals['_FORM_FIELD']._serialized_end=219
-  _globals['_FORM_FIELD_TYPE']._serialized_start=175
-  _globals['_FORM_FIELD_TYPE']._serialized_end=219
-  _globals['_FORM_VALUE']._serialized_start=222
-  _globals['_FORM_VALUE']._serialized_end=435
-  _globals['_FORM_VALUE_CODE']._serialized_start=339
-  _globals['_FORM_VALUE_CODE']._serialized_end=382
-  _globals['_FORM_VALUE_FILE']._serialized_start=384
-  _globals['_FORM_VALUE_FILE']._serialized_end=426
+  _globals['_FORM']._serialized_end=790
+  _globals['_FORM_FIELD']._serialized_start=93
+  _globals['_FORM_FIELD']._serialized_end=522
+  _globals['_FORM_FIELD_CODE']._serialized_start=271
+  _globals['_FORM_FIELD_CODE']._serialized_end=406
+  _globals['_FORM_FIELD_FILE']._serialized_start=408
+  _globals['_FORM_FIELD_FILE']._serialized_end=467
+  _globals['_FORM_FIELD_TYPE']._serialized_start=469
+  _globals['_FORM_FIELD_TYPE']._serialized_end=513
+  _globals['_FORM_VALUE']._serialized_start=525
+  _globals['_FORM_VALUE']._serialized_end=790
+  _globals['_FORM_VALUE_CODE']._serialized_start=642
+  _globals['_FORM_VALUE_CODE']._serialized_end=737
+  _globals['_FORM_VALUE_FILE']._serialized_start=739
+  _globals['_FORM_VALUE_FILE']._serialized_end=781
 # @@protoc_insertion_point(module_scope)
