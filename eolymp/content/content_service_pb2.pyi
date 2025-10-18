@@ -3,7 +3,6 @@ from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.content import content_fragment_pb2 as _content_fragment_pb2
-from eolymp.content import variant_pb2 as _variant_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
@@ -15,13 +14,33 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class FragmentChangedEvent(_message.Message):
+    __slots__ = ("scope", "before", "after")
+    SCOPE_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    scope: str
+    before: _content_fragment_pb2.Fragment
+    after: _content_fragment_pb2.Fragment
+    def __init__(self, scope: _Optional[str] = ..., before: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ..., after: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
+
+class FragmentTranslationChangedEvent(_message.Message):
+    __slots__ = ("fragment_id", "before", "after")
+    FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    fragment_id: str
+    before: _content_fragment_pb2.Fragment.Translation
+    after: _content_fragment_pb2.Fragment.Translation
+    def __init__(self, fragment_id: _Optional[str] = ..., before: _Optional[_Union[_content_fragment_pb2.Fragment.Translation, _Mapping]] = ..., after: _Optional[_Union[_content_fragment_pb2.Fragment.Translation, _Mapping]] = ...) -> None: ...
+
 class DescribeFragmentInput(_message.Message):
     __slots__ = ("fragment_id", "extra")
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     fragment_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra]
-    def __init__(self, fragment_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra.Field]
+    def __init__(self, fragment_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeFragmentOutput(_message.Message):
     __slots__ = ("fragment",)
@@ -65,8 +84,8 @@ class ListFragmentsInput(_message.Message):
     sort: ListFragmentsInput.Sort
     order: _direction_pb2.Direction
     locale: str
-    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListFragmentsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra.Field]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListFragmentsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
 
 class ListFragmentsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -93,10 +112,10 @@ class UpdateFragmentInput(_message.Message):
     PATCH_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Patch.Field]
     fragment_id: str
     fragment: _content_fragment_pb2.Fragment
-    def __init__(self, patch: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Patch, str]]] = ..., fragment_id: _Optional[str] = ..., fragment: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Patch.Field, str]]] = ..., fragment_id: _Optional[str] = ..., fragment: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
 
 class UpdateFragmentOutput(_message.Message):
     __slots__ = ()
@@ -132,23 +151,23 @@ class TranslateFragmentOutput(_message.Message):
     job_id: str
     def __init__(self, job_id: _Optional[str] = ...) -> None: ...
 
-class DescribeVariantInput(_message.Message):
-    __slots__ = ("fragment_id", "variant_id", "extra")
+class DescribeFragmentTranslationInput(_message.Message):
+    __slots__ = ("fragment_id", "translation_id", "extra")
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     fragment_id: str
-    variant_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_variant_pb2.Variant.Extra]
-    def __init__(self, fragment_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_variant_pb2.Variant.Extra, str]]] = ...) -> None: ...
+    translation_id: str
+    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra.Field]
+    def __init__(self, fragment_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
 
-class DescribeVariantOutput(_message.Message):
-    __slots__ = ("variant",)
-    VARIANT_FIELD_NUMBER: _ClassVar[int]
-    variant: _variant_pb2.Variant
-    def __init__(self, variant: _Optional[_Union[_variant_pb2.Variant, _Mapping]] = ...) -> None: ...
+class DescribeFragmentTranslationOutput(_message.Message):
+    __slots__ = ("translation",)
+    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
+    translation: _content_fragment_pb2.Fragment.Translation
+    def __init__(self, translation: _Optional[_Union[_content_fragment_pb2.Fragment.Translation, _Mapping]] = ...) -> None: ...
 
-class ListVariantsInput(_message.Message):
+class ListFragmentTranslationsInput(_message.Message):
     __slots__ = ("fragment_id", "offset", "size", "filters", "extra")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "locale")
@@ -167,55 +186,55 @@ class ListVariantsInput(_message.Message):
     fragment_id: str
     offset: int
     size: int
-    filters: ListVariantsInput.Filter
-    extra: _containers.RepeatedScalarFieldContainer[_variant_pb2.Variant.Extra]
-    def __init__(self, fragment_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListVariantsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_variant_pb2.Variant.Extra, str]]] = ...) -> None: ...
+    filters: ListFragmentTranslationsInput.Filter
+    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra.Field]
+    def __init__(self, fragment_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentTranslationsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
 
-class ListVariantsOutput(_message.Message):
+class ListFragmentTranslationsOutput(_message.Message):
     __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
-    items: _containers.RepeatedCompositeFieldContainer[_variant_pb2.Variant]
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_variant_pb2.Variant, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[_content_fragment_pb2.Fragment.Translation]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Translation, _Mapping]]] = ...) -> None: ...
 
-class CreateVariantInput(_message.Message):
-    __slots__ = ("fragment_id", "variant")
+class CreateFragmentTranslationInput(_message.Message):
+    __slots__ = ("fragment_id", "translation")
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
     fragment_id: str
-    variant: _variant_pb2.Variant
-    def __init__(self, fragment_id: _Optional[str] = ..., variant: _Optional[_Union[_variant_pb2.Variant, _Mapping]] = ...) -> None: ...
+    translation: _content_fragment_pb2.Fragment.Translation
+    def __init__(self, fragment_id: _Optional[str] = ..., translation: _Optional[_Union[_content_fragment_pb2.Fragment.Translation, _Mapping]] = ...) -> None: ...
 
-class CreateVariantOutput(_message.Message):
-    __slots__ = ("variant_id",)
-    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
-    variant_id: str
-    def __init__(self, variant_id: _Optional[str] = ...) -> None: ...
+class CreateFragmentTranslationOutput(_message.Message):
+    __slots__ = ("translation_id",)
+    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
+    translation_id: str
+    def __init__(self, translation_id: _Optional[str] = ...) -> None: ...
 
-class UpdateVariantInput(_message.Message):
-    __slots__ = ("fragment_id", "variant_id", "variant")
+class UpdateFragmentTranslationInput(_message.Message):
+    __slots__ = ("fragment_id", "translation_id", "translation")
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
     fragment_id: str
-    variant_id: str
-    variant: _variant_pb2.Variant
-    def __init__(self, fragment_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., variant: _Optional[_Union[_variant_pb2.Variant, _Mapping]] = ...) -> None: ...
+    translation_id: str
+    translation: _content_fragment_pb2.Fragment.Translation
+    def __init__(self, fragment_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., translation: _Optional[_Union[_content_fragment_pb2.Fragment.Translation, _Mapping]] = ...) -> None: ...
 
-class UpdateVariantOutput(_message.Message):
+class UpdateFragmentTranslationOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
-class DeleteVariantInput(_message.Message):
-    __slots__ = ("fragment_id", "variant_id")
+class DeleteFragmentTranslationInput(_message.Message):
+    __slots__ = ("fragment_id", "translation_id")
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
-    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     fragment_id: str
-    variant_id: str
-    def __init__(self, fragment_id: _Optional[str] = ..., variant_id: _Optional[str] = ...) -> None: ...
+    translation_id: str
+    def __init__(self, fragment_id: _Optional[str] = ..., translation_id: _Optional[str] = ...) -> None: ...
 
-class DeleteVariantOutput(_message.Message):
+class DeleteFragmentTranslationOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
@@ -226,8 +245,8 @@ class DescribePathInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     path: str
     locale: str
-    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra]
-    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra.Field]
+    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribePathOutput(_message.Message):
     __slots__ = ("fragment",)
@@ -242,8 +261,8 @@ class ListParentsInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     path: str
     locale: str
-    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra]
-    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra.Field]
+    def __init__(self, path: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
 
 class ListParentsOutput(_message.Message):
     __slots__ = ("total", "items")

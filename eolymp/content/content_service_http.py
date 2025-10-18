@@ -92,23 +92,23 @@ class ContentServiceClient:
             **kwargs,
         )
 
-    def DescribeVariant(self, request, **kwargs):
-        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants/"+urllib.parse.quote(request.variant_id)
+    def DescribeFragmentTranslation(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/translations/"+urllib.parse.quote(request.translation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.fragment_id = ""
-        request.variant_id = ""
+        request.translation_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.DescribeVariantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DescribeFragmentTranslationOutput"),
             **kwargs,
         )
 
-    def ListVariants(self, request, **kwargs):
-        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants"
+    def ListFragmentTranslations(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/translations"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.fragment_id = ""
@@ -117,12 +117,12 @@ class ContentServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.ListVariantsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.ListFragmentTranslationsOutput"),
             **kwargs,
         )
 
-    def CreateVariant(self, request, **kwargs):
-        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants"
+    def CreateFragmentTranslation(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/translations"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.fragment_id = ""
@@ -131,37 +131,37 @@ class ContentServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.CreateVariantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.CreateFragmentTranslationOutput"),
             **kwargs,
         )
 
-    def UpdateVariant(self, request, **kwargs):
-        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants/"+urllib.parse.quote(request.variant_id)
+    def UpdateFragmentTranslation(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/translations/"+urllib.parse.quote(request.translation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.fragment_id = ""
-        request.variant_id = ""
+        request.translation_id = ""
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.UpdateVariantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.UpdateFragmentTranslationOutput"),
             **kwargs,
         )
 
-    def DeleteVariant(self, request, **kwargs):
-        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/variants/"+urllib.parse.quote(request.variant_id)
+    def DeleteFragmentTranslation(self, request, **kwargs):
+        path = "/content/fragments/"+urllib.parse.quote(request.fragment_id)+"/translations/"+urllib.parse.quote(request.translation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.fragment_id = ""
-        request.variant_id = ""
+        request.translation_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.DeleteVariantOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DeleteFragmentTranslationOutput"),
             **kwargs,
         )
 
