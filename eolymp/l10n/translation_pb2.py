@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/l10n/translation.proto\x12\x0b\x65olymp.l10n\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaf\x02\n\x0bTranslation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12/\n\x06status\x18\x04 \x01(\x0e\x32\x1f.eolymp.l10n.Translation.Status\x12\x14\n\x0cneeds_review\x18\x05 \x01(\x08\x12\x12\n\ncreated_by\x18\n \x01(\t\x12.\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x61pproved_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"7\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\n\n\x06UNUSED\x10\x04\x42+Z)github.com/eolymp/go-sdk/eolymp/l10n;l10nb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/l10n/translation.proto\x12\x0b\x65olymp.l10n\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd7\x02\n\x0bTranslation\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x37\n\x06status\x18\x04 \x01(\x0e\x32\x1f.eolymp.l10n.Translation.StatusB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x14\n\x0cneeds_review\x18\x05 \x01(\x08\x12\x1a\n\ncreated_by\x18\n \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x37\n\x0b\x61pproved_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\"7\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\n\n\x06UNUSED\x10\x04\x42+Z)github.com/eolymp/go-sdk/eolymp/l10n;l10nb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +34,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.l10n.translation_pb2
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z)github.com/eolymp/go-sdk/eolymp/l10n;l10n'
-  _globals['_TRANSLATION']._serialized_start=80
-  _globals['_TRANSLATION']._serialized_end=383
-  _globals['_TRANSLATION_STATUS']._serialized_start=328
-  _globals['_TRANSLATION_STATUS']._serialized_end=383
+  _globals['_TRANSLATION'].fields_by_name['id']._loaded_options = None
+  _globals['_TRANSLATION'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TRANSLATION'].fields_by_name['status']._loaded_options = None
+  _globals['_TRANSLATION'].fields_by_name['status']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TRANSLATION'].fields_by_name['created_by']._loaded_options = None
+  _globals['_TRANSLATION'].fields_by_name['created_by']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TRANSLATION'].fields_by_name['created_at']._loaded_options = None
+  _globals['_TRANSLATION'].fields_by_name['created_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TRANSLATION'].fields_by_name['approved_at']._loaded_options = None
+  _globals['_TRANSLATION'].fields_by_name['approved_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TRANSLATION']._serialized_start=110
+  _globals['_TRANSLATION']._serialized_end=453
+  _globals['_TRANSLATION_STATUS']._serialized_start=398
+  _globals['_TRANSLATION_STATUS']._serialized_end=453
 # @@protoc_insertion_point(module_scope)
