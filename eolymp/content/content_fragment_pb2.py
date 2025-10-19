@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/content/content_fragment.proto\x12\x0e\x65olymp.content\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x04\n\x08\x46ragment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\n \x01(\t\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\r\n\x05\x64raft\x18\r \x01(\x08\x12\r\n\x05title\x18\x0c \x01(\t\x12$\n\x07\x63ontent\x18\x33 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12.\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18= \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06labels\x18\x64 \x03(\t\x1aJ\n\x05\x45xtra\"A\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x12\n\x0e\x43ONTENT_RENDER\x10\x01\x12\x11\n\rCONTENT_VALUE\x10\x02\x1ah\n\x05Patch\"_\n\x05\x46ield\x12\x11\n\rUNKNOWN_PATCH\x10\x00\x12\x08\n\x04PATH\x10\x02\x12\n\n\x06LOCALE\x10\x03\x12\t\n\x05\x44RAFT\x10\x05\x12\t\n\x05TITLE\x10\x06\x12\x0b\n\x07\x43ONTENT\x10\x07\x12\n\n\x06LABELS\x10\x08\x1aq\n\x0bTranslation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\r\n\x05title\x18\x0c \x01(\t\x12$\n\x07\x63ontent\x18\x33 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x11\n\tautomatic\x18\x08 \x01(\x08\x42\x31Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/content/content_fragment.proto\x12\x0e\x65olymp.content\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb1\x04\n\x08\x46ragment\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0c\n\x04path\x18\n \x01(\t\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\r\n\x05\x64raft\x18\r \x01(\x08\x12\r\n\x05title\x18\x0c \x01(\t\x12$\n\x07\x63ontent\x18\x33 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x36\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\nupdated_at\x18= \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06labels\x18\x64 \x03(\t\x1aJ\n\x05\x45xtra\"A\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x12\n\x0e\x43ONTENT_RENDER\x10\x01\x12\x11\n\rCONTENT_VALUE\x10\x02\x1ah\n\x05Patch\"_\n\x05\x46ield\x12\x11\n\rUNKNOWN_PATCH\x10\x00\x12\x08\n\x04PATH\x10\x02\x12\n\n\x06LOCALE\x10\x03\x12\t\n\x05\x44RAFT\x10\x05\x12\t\n\x05TITLE\x10\x06\x12\x0b\n\x07\x43ONTENT\x10\x07\x12\n\n\x06LABELS\x10\x08\x1ay\n\x0bTranslation\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\r\n\x05title\x18\x0c \x01(\t\x12$\n\x07\x63ontent\x18\x33 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x11\n\tautomatic\x18\x08 \x01(\x08\x42\x31Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,16 +35,24 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.content.content_frag
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
-  _globals['_FRAGMENT']._serialized_start=117
-  _globals['_FRAGMENT']._serialized_end=646
-  _globals['_FRAGMENT_EXTRA']._serialized_start=351
-  _globals['_FRAGMENT_EXTRA']._serialized_end=425
-  _globals['_FRAGMENT_EXTRA_FIELD']._serialized_start=360
-  _globals['_FRAGMENT_EXTRA_FIELD']._serialized_end=425
-  _globals['_FRAGMENT_PATCH']._serialized_start=427
-  _globals['_FRAGMENT_PATCH']._serialized_end=531
-  _globals['_FRAGMENT_PATCH_FIELD']._serialized_start=436
-  _globals['_FRAGMENT_PATCH_FIELD']._serialized_end=531
-  _globals['_FRAGMENT_TRANSLATION']._serialized_start=533
-  _globals['_FRAGMENT_TRANSLATION']._serialized_end=646
+  _globals['_FRAGMENT_TRANSLATION'].fields_by_name['id']._loaded_options = None
+  _globals['_FRAGMENT_TRANSLATION'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_FRAGMENT'].fields_by_name['id']._loaded_options = None
+  _globals['_FRAGMENT'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_FRAGMENT'].fields_by_name['created_at']._loaded_options = None
+  _globals['_FRAGMENT'].fields_by_name['created_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_FRAGMENT'].fields_by_name['updated_at']._loaded_options = None
+  _globals['_FRAGMENT'].fields_by_name['updated_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_FRAGMENT']._serialized_start=147
+  _globals['_FRAGMENT']._serialized_end=708
+  _globals['_FRAGMENT_EXTRA']._serialized_start=405
+  _globals['_FRAGMENT_EXTRA']._serialized_end=479
+  _globals['_FRAGMENT_EXTRA_FIELD']._serialized_start=414
+  _globals['_FRAGMENT_EXTRA_FIELD']._serialized_end=479
+  _globals['_FRAGMENT_PATCH']._serialized_start=481
+  _globals['_FRAGMENT_PATCH']._serialized_end=585
+  _globals['_FRAGMENT_PATCH_FIELD']._serialized_start=490
+  _globals['_FRAGMENT_PATCH_FIELD']._serialized_end=585
+  _globals['_FRAGMENT_TRANSLATION']._serialized_start=587
+  _globals['_FRAGMENT_TRANSLATION']._serialized_end=708
 # @@protoc_insertion_point(module_scope)

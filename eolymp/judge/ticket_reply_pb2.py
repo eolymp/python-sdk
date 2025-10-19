@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/judge/ticket_reply.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xec\x01\n\x05Reply\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tticket_id\x18\x02 \x01(\t\x12\x11\n\x07user_id\x18\x03 \x01(\tH\x00\x12\x13\n\tmember_id\x18\x04 \x01(\tH\x00\x12$\n\x07message\x18\n \x01(\x0b\x32\x13.eolymp.ecm.Content\x12.\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x12\n\x0eMESSAGE_RENDER\x10\x01\x12\x11\n\rMESSAGE_VALUE\x10\x02\x42\x08\n\x06\x61uthorB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/judge/ticket_reply.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x94\x02\n\x05Reply\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x19\n\tticket_id\x18\x02 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x19\n\x07user_id\x18\x03 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01H\x00\x12\x1b\n\tmember_id\x18\x04 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01H\x00\x12$\n\x07message\x18\n \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x36\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x12\n\x0eMESSAGE_RENDER\x10\x01\x12\x11\n\rMESSAGE_VALUE\x10\x02\x42\x08\n\x06\x61uthorB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +35,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.ticket_reply_p
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _globals['_REPLY']._serialized_start=109
-  _globals['_REPLY']._serialized_end=345
-  _globals['_REPLY_EXTRA']._serialized_start=275
-  _globals['_REPLY_EXTRA']._serialized_end=335
+  _globals['_REPLY'].fields_by_name['id']._loaded_options = None
+  _globals['_REPLY'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_REPLY'].fields_by_name['ticket_id']._loaded_options = None
+  _globals['_REPLY'].fields_by_name['ticket_id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_REPLY'].fields_by_name['user_id']._loaded_options = None
+  _globals['_REPLY'].fields_by_name['user_id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_REPLY'].fields_by_name['member_id']._loaded_options = None
+  _globals['_REPLY'].fields_by_name['member_id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_REPLY'].fields_by_name['created_at']._loaded_options = None
+  _globals['_REPLY'].fields_by_name['created_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_REPLY']._serialized_start=139
+  _globals['_REPLY']._serialized_end=415
+  _globals['_REPLY_EXTRA']._serialized_start=345
+  _globals['_REPLY_EXTRA']._serialized_end=405
 # @@protoc_insertion_point(module_scope)

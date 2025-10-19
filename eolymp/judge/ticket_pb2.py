@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/ticket.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc6\x04\n\x06Ticket\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x03 \x01(\t\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12+\n\x06status\x18\x05 \x01(\x0e\x32\x1b.eolymp.judge.Ticket.Status\x12\x0f\n\x07subject\x18\n \x01(\t\x12$\n\x07message\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x13\n\x0braw_message\x18\x0b \x01(\t\x12\x0f\n\x07is_read\x18\x15 \x01(\x08\x12\x13\n\x0breply_count\x18\x1e \x01(\r\x12.\n\ncreated_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x18 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07read_at\x18\x19 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rlast_reply_at\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\t\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x12\n\x0eMESSAGE_RENDER\x10\x01\x12\x11\n\rMESSAGE_VALUE\x10\x02\"D\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0c\n\x08\x41WAITING\x10\x01\x12\x0c\n\x08RESOLVED\x10\x02\x12\n\n\x06\x43LOSED\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/judge/ticket.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xae\x05\n\x06Ticket\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1a\n\ncontest_id\x18\x02 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1e\n\x0eparticipant_id\x18\x03 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x19\n\tmember_id\x18\x04 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x33\n\x06status\x18\x05 \x01(\x0e\x32\x1b.eolymp.judge.Ticket.StatusB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0f\n\x07subject\x18\n \x01(\t\x12$\n\x07message\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x1b\n\x0braw_message\x18\x0b \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x17\n\x07is_read\x18\x15 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1b\n\x0breply_count\x18\x1e \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ncreated_at\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\nupdated_at\x18\x18 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x33\n\x07read_at\x18\x19 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x39\n\rlast_reply_at\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x16\n\x06\x63ursor\x18\x64 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x12\n\x0eMESSAGE_RENDER\x10\x01\x12\x11\n\rMESSAGE_VALUE\x10\x02\"D\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0c\n\x08\x41WAITING\x10\x01\x12\x0c\n\x08RESOLVED\x10\x02\x12\n\n\x06\x43LOSED\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,10 +35,36 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.ticket_pb2', _
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _globals['_TICKET']._serialized_start=103
-  _globals['_TICKET']._serialized_end=685
-  _globals['_TICKET_EXTRA']._serialized_start=555
-  _globals['_TICKET_EXTRA']._serialized_end=615
-  _globals['_TICKET_STATUS']._serialized_start=617
-  _globals['_TICKET_STATUS']._serialized_end=685
+  _globals['_TICKET'].fields_by_name['id']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['contest_id']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['contest_id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['participant_id']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['participant_id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['member_id']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['member_id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['status']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['status']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['raw_message']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['raw_message']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['is_read']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['is_read']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['reply_count']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['reply_count']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['created_at']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['created_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['updated_at']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['updated_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['read_at']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['read_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['last_reply_at']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['last_reply_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET'].fields_by_name['cursor']._loaded_options = None
+  _globals['_TICKET'].fields_by_name['cursor']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TICKET']._serialized_start=133
+  _globals['_TICKET']._serialized_end=819
+  _globals['_TICKET_EXTRA']._serialized_start=689
+  _globals['_TICKET_EXTRA']._serialized_end=749
+  _globals['_TICKET_STATUS']._serialized_start=751
+  _globals['_TICKET_STATUS']._serialized_end=819
 # @@protoc_insertion_point(module_scope)

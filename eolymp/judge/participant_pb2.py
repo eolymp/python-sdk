@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.judge import medal_pb2 as eolymp_dot_judge_dot_medal__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/judge/participant.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/judge/medal.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfa\x06\n\x0bParticipant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x05 \x01(\t\x12,\n\x04role\x18\x03 \x01(\x0e\x32\x1e.eolymp.judge.Participant.Role\x12\x12\n\nunofficial\x18\x06 \x01(\x08\x12\x10\n\x08inactive\x18\n \x01(\x08\x12\x14\n\x0c\x64isqualified\x18\x0b \x01(\x08\x12\r\n\x05ghost\x18\x08 \x01(\x08\x12\x11\n\tfinalized\x18\x0c \x01(\x08\x12\"\n\x05medal\x18\t \x01(\x0e\x32\x13.eolymp.judge.Medal\x12\x30\n\x06status\x18\x14 \x01(\x0e\x32 .eolymp.judge.Participant.Status\x12.\n\nstarted_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x06\x65nd_at\x18\x19 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nbonus_time\x18\x1b \x01(\r\x12\x17\n\x0fviolation_count\x18\x1c \x01(\r\x12\x10\n\x08passcode\x18\x1e \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18  \x01(\t\x12\x31\n\x07submits\x18( \x03(\x0b\x32 .eolymp.judge.Participant.Submit\x1a|\n\x05Patch\"s\n\x05\x46ield\x12\x07\n\x03\x41LL\x10\x00\x12\x10\n\x0c\x44ISPLAY_NAME\x10\x01\x12\x08\n\x04ROLE\x10\x08\x12\x0e\n\nBONUS_TIME\x10\x03\x12\x0e\n\nUNOFFICIAL\x10\x04\x12\t\n\x05MEDAL\x10\x05\x12\x0c\n\x08INACTIVE\x10\x06\x12\x0c\n\x08PASSCODE\x10\x07\x1a-\n\x06Submit\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63ounter\x18\x02 \x01(\r\"t\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07WAITING\x10\x05\x12\t\n\x05READY\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\x0b\n\x07UPSOLVE\x10\x07\x12\x0b\n\x07\x42LOCKED\x10\x08\x12\n\n\x06PAUSED\x10\t\"K\n\x04Role\x12\x0f\n\x0bPARTICIPANT\x10\x00\x12\t\n\x05STAFF\x10\x01\x12\n\n\x06TESTER\x10\x02\x12\n\n\x06\x41UTHOR\x10\x03\x12\x0f\n\x0b\x43OORDINATOR\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/judge/participant.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/judge/medal.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xba\x07\n\x0bParticipant\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12\x1c\n\x0c\x64isplay_name\x18\x05 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12,\n\x04role\x18\x03 \x01(\x0e\x32\x1e.eolymp.judge.Participant.Role\x12\x12\n\nunofficial\x18\x06 \x01(\x08\x12\x10\n\x08inactive\x18\n \x01(\x08\x12\x14\n\x0c\x64isqualified\x18\x0b \x01(\x08\x12\r\n\x05ghost\x18\x08 \x01(\x08\x12\x11\n\tfinalized\x18\x0c \x01(\x08\x12\"\n\x05medal\x18\t \x01(\x0e\x32\x13.eolymp.judge.Medal\x12\x30\n\x06status\x18\x14 \x01(\x0e\x32 .eolymp.judge.Participant.Status\x12\x36\n\nstarted_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x32\n\x06\x65nd_at\x18\x19 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x12\n\nbonus_time\x18\x1b \x01(\r\x12\x1f\n\x0fviolation_count\x18\x1c \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x18\n\x08passcode\x18\x1e \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1e\n\x0e\x63\x65rtificate_id\x18  \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x39\n\x07submits\x18( \x03(\x0b\x32 .eolymp.judge.Participant.SubmitB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a|\n\x05Patch\"s\n\x05\x46ield\x12\x07\n\x03\x41LL\x10\x00\x12\x10\n\x0c\x44ISPLAY_NAME\x10\x01\x12\x08\n\x04ROLE\x10\x08\x12\x0e\n\nBONUS_TIME\x10\x03\x12\x0e\n\nUNOFFICIAL\x10\x04\x12\t\n\x05MEDAL\x10\x05\x12\x0c\n\x08INACTIVE\x10\x06\x12\x0c\n\x08PASSCODE\x10\x07\x1a-\n\x06Submit\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63ounter\x18\x02 \x01(\r\"t\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07WAITING\x10\x05\x12\t\n\x05READY\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\x0b\n\x07UPSOLVE\x10\x07\x12\x0b\n\x07\x42LOCKED\x10\x08\x12\n\n\x06PAUSED\x10\t\"K\n\x04Role\x12\x0f\n\x0bPARTICIPANT\x10\x00\x12\t\n\x05STAFF\x10\x01\x12\n\n\x06TESTER\x10\x02\x12\n\n\x06\x41UTHOR\x10\x03\x12\x0f\n\x0b\x43OORDINATOR\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,16 +35,32 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.participant_pb
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _globals['_PARTICIPANT']._serialized_start=108
-  _globals['_PARTICIPANT']._serialized_end=998
-  _globals['_PARTICIPANT_PATCH']._serialized_start=632
-  _globals['_PARTICIPANT_PATCH']._serialized_end=756
-  _globals['_PARTICIPANT_PATCH_FIELD']._serialized_start=641
-  _globals['_PARTICIPANT_PATCH_FIELD']._serialized_end=756
-  _globals['_PARTICIPANT_SUBMIT']._serialized_start=758
-  _globals['_PARTICIPANT_SUBMIT']._serialized_end=803
-  _globals['_PARTICIPANT_STATUS']._serialized_start=805
-  _globals['_PARTICIPANT_STATUS']._serialized_end=921
-  _globals['_PARTICIPANT_ROLE']._serialized_start=923
-  _globals['_PARTICIPANT_ROLE']._serialized_end=998
+  _globals['_PARTICIPANT'].fields_by_name['id']._loaded_options = None
+  _globals['_PARTICIPANT'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PARTICIPANT'].fields_by_name['display_name']._loaded_options = None
+  _globals['_PARTICIPANT'].fields_by_name['display_name']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PARTICIPANT'].fields_by_name['started_at']._loaded_options = None
+  _globals['_PARTICIPANT'].fields_by_name['started_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PARTICIPANT'].fields_by_name['end_at']._loaded_options = None
+  _globals['_PARTICIPANT'].fields_by_name['end_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PARTICIPANT'].fields_by_name['violation_count']._loaded_options = None
+  _globals['_PARTICIPANT'].fields_by_name['violation_count']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PARTICIPANT'].fields_by_name['passcode']._loaded_options = None
+  _globals['_PARTICIPANT'].fields_by_name['passcode']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PARTICIPANT'].fields_by_name['certificate_id']._loaded_options = None
+  _globals['_PARTICIPANT'].fields_by_name['certificate_id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PARTICIPANT'].fields_by_name['submits']._loaded_options = None
+  _globals['_PARTICIPANT'].fields_by_name['submits']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PARTICIPANT']._serialized_start=138
+  _globals['_PARTICIPANT']._serialized_end=1092
+  _globals['_PARTICIPANT_PATCH']._serialized_start=726
+  _globals['_PARTICIPANT_PATCH']._serialized_end=850
+  _globals['_PARTICIPANT_PATCH_FIELD']._serialized_start=735
+  _globals['_PARTICIPANT_PATCH_FIELD']._serialized_end=850
+  _globals['_PARTICIPANT_SUBMIT']._serialized_start=852
+  _globals['_PARTICIPANT_SUBMIT']._serialized_end=897
+  _globals['_PARTICIPANT_STATUS']._serialized_start=899
+  _globals['_PARTICIPANT_STATUS']._serialized_end=1015
+  _globals['_PARTICIPANT_ROLE']._serialized_start=1017
+  _globals['_PARTICIPANT_ROLE']._serialized_end=1092
 # @@protoc_insertion_point(module_scope)

@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/achievement.proto\x12\x10\x65olymp.community\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8f\x02\n\x0b\x41\x63hievement\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r\x12\x0e\n\x06rarity\x18\x03 \x01(\r\x12\x10\n\x08quantity\x18\x04 \x01(\r\x12.\n\nawarded_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0c \x01(\t\x12$\n\x07summary\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\t\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x11\n\rSUMMARY_VALUE\x10\x01\x12\x12\n\x0eSUMMARY_RENDER\x10\x02\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/achievement.proto\x12\x10\x65olymp.community\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa7\x02\n\x0b\x41\x63hievement\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\r\n\x05value\x18\x02 \x01(\r\x12\x0e\n\x06rarity\x18\x03 \x01(\r\x12\x10\n\x08quantity\x18\x04 \x01(\r\x12\x36\n\nawarded_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0c \x01(\t\x12$\n\x07summary\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x16\n\x06\x63ursor\x18\x64 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x11\n\rSUMMARY_VALUE\x10\x01\x12\x12\n\x0eSUMMARY_RENDER\x10\x02\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +35,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.community.achievemen
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
-  _globals['_ACHIEVEMENT']._serialized_start=116
-  _globals['_ACHIEVEMENT']._serialized_end=387
-  _globals['_ACHIEVEMENT_EXTRA']._serialized_start=327
-  _globals['_ACHIEVEMENT_EXTRA']._serialized_end=387
+  _globals['_ACHIEVEMENT'].fields_by_name['id']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_ACHIEVEMENT'].fields_by_name['awarded_at']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['awarded_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_ACHIEVEMENT'].fields_by_name['cursor']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['cursor']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_ACHIEVEMENT']._serialized_start=146
+  _globals['_ACHIEVEMENT']._serialized_end=441
+  _globals['_ACHIEVEMENT_EXTRA']._serialized_start=381
+  _globals['_ACHIEVEMENT_EXTRA']._serialized_end=441
 # @@protoc_insertion_point(module_scope)
