@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import descriptor_pb2 as google_dot_protobuf_dot_descriptor__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/annotations/mcp.proto\x12\neolymp.api\x1a google/protobuf/descriptor.proto\"N\n\x03MCP\x1aG\n\x04Tool\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x1c\n\x14require_confirmation\x18\x03 \x01(\x08:I\n\x08mcp_tool\x12\x1e.google.protobuf.MethodOptions\x18\x81\x8e\xce\x1c \x01(\x0b\x32\x14.eolymp.api.MCP.Tool:<\n\x0emcp_value_desc\x12!.google.protobuf.EnumValueOptions\x18\x83\x8e\xce\x1c \x01(\t:8\n\x0emcp_field_desc\x12\x1d.google.protobuf.FieldOptions\x18\x84\x8e\xce\x1c \x01(\t:3\n\tread_only\x12\x1d.google.protobuf.FieldOptions\x18\x85\x8e\xce\x1c \x01(\x08\x42\x39Z7github.com/eolymp/go-sdk/eolymp/annotations;annotationsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/annotations/mcp.proto\x12\neolymp.api\x1a google/protobuf/descriptor.proto:<\n\x0emcp_value_desc\x12!.google.protobuf.EnumValueOptions\x18\x83\x8e\xce\x1c \x01(\t:8\n\x0emcp_field_desc\x12\x1d.google.protobuf.FieldOptions\x18\x84\x8e\xce\x1c \x01(\t:3\n\tread_only\x12\x1d.google.protobuf.FieldOptions\x18\x85\x8e\xce\x1c \x01(\x08:8\n\rmcp_tool_desc\x12\x1e.google.protobuf.MethodOptions\x18\x84\x8e\xce\x1c \x01(\tB9Z7github.com/eolymp/go-sdk/eolymp/annotations;annotationsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +33,4 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.annotations.mcp_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z7github.com/eolymp/go-sdk/eolymp/annotations;annotations'
-  _globals['_MCP']._serialized_start=78
-  _globals['_MCP']._serialized_end=156
-  _globals['_MCP_TOOL']._serialized_start=85
-  _globals['_MCP_TOOL']._serialized_end=156
 # @@protoc_insertion_point(module_scope)
