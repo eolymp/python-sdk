@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/score.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe9\x04\n\x05Score\x12\x13\n\x0bvalid_after\x18\x01 \x01(\r\x12\x13\n\x0bvalid_until\x18\x02 \x01(\r\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05score\x18\n \x01(\x02\x12\x0f\n\x07penalty\x18\x0b \x01(\x02\x12\x13\n\x0btie_breaker\x18\r \x01(\r\x12\x0f\n\x07upsolve\x18\x0c \x01(\x08\x12.\n\tbreakdown\x18\x14 \x03(\x0b\x32\x1b.eolymp.judge.Score.Problem\x1a\xf6\x01\n\x07Problem\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x0e\n\x06solved\x18\x04 \x01(\x08\x12\x12\n\npercentage\x18\x05 \x01(\x02\x12\x10\n\x08\x61ttempts\x18\x07 \x01(\r\x12-\n\tsolved_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tsolved_in\x18\t \x01(\r\x12\x0f\n\x07\x63hanged\x18\n \x01(\x08\x12.\n\tbreakdown\x18\x14 \x03(\x0b\x32\x1b.eolymp.judge.Score.Testset\x1aI\n\x07Testset\x12\x12\n\ntestset_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0c\n\x04\x63ost\x18\n \x01(\x02\x12\r\n\x05score\x18\x0b \x01(\x02\"M\n\x0c\x46\x65tchingMode\x12\n\n\x06\x41\x43TUAL\x10\x00\x12\x0c\n\x08PUNCTUAL\x10\x01\x12\n\n\x06LATEST\x10\x02\x12\n\n\x06\x46ROZEN\x10\x03\x12\x0b\n\x07UPSOLVE\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/score.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd2\x05\n\x05Score\x12\x13\n\x0bvalid_after\x18\x01 \x01(\r\x12\x13\n\x0bvalid_until\x18\x02 \x01(\r\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05score\x18\n \x01(\x02\x12\x0f\n\x07penalty\x18\x0b \x01(\x02\x12\x13\n\x0btie_breaker\x18\r \x01(\r\x12\x0f\n\x07upsolve\x18\x0c \x01(\x08\x12.\n\tbreakdown\x18\x14 \x03(\x0b\x32\x1b.eolymp.judge.Score.Problem\x1a\xf6\x01\n\x07Problem\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x0e\n\x06solved\x18\x04 \x01(\x08\x12\x12\n\npercentage\x18\x05 \x01(\x02\x12\x10\n\x08\x61ttempts\x18\x07 \x01(\r\x12-\n\tsolved_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tsolved_in\x18\t \x01(\r\x12\x0f\n\x07\x63hanged\x18\n \x01(\x08\x12.\n\tbreakdown\x18\x14 \x03(\x0b\x32\x1b.eolymp.judge.Score.Testset\x1aI\n\x07Testset\x12\x12\n\ntestset_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0c\n\x04\x63ost\x18\n \x01(\x02\x12\r\n\x05score\x18\x0b \x01(\x02\"\xb5\x01\n\x0c\x46\x65tchingMode\x12\x12\n\x06\x41\x43TUAL\x10\x00\x1a\x06\xb8\xf0\xf0\xe4\x01\x01\x12\x14\n\x08PUNCTUAL\x10\x01\x1a\x06\xb8\xf0\xf0\xe4\x01\x01\x12\x35\n\x06LATEST\x10\x02\x1a)\x9a\xf0\xf0\xe4\x01#score received during official time\x12\x12\n\x06\x46ROZEN\x10\x03\x1a\x06\xb8\xf0\xf0\xe4\x01\x01\x12\x30\n\x07UPSOLVE\x10\x04\x1a#\x9a\xf0\xf0\xe4\x01\x1dscore received during upsolveB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +34,22 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.score_pb2', _g
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _globals['_SCORE']._serialized_start=76
-  _globals['_SCORE']._serialized_end=693
-  _globals['_SCORE_PROBLEM']._serialized_start=293
-  _globals['_SCORE_PROBLEM']._serialized_end=539
-  _globals['_SCORE_TESTSET']._serialized_start=541
-  _globals['_SCORE_TESTSET']._serialized_end=614
-  _globals['_SCORE_FETCHINGMODE']._serialized_start=616
-  _globals['_SCORE_FETCHINGMODE']._serialized_end=693
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["ACTUAL"]._loaded_options = None
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["ACTUAL"]._serialized_options = b'\270\360\360\344\001\001'
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["PUNCTUAL"]._loaded_options = None
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["PUNCTUAL"]._serialized_options = b'\270\360\360\344\001\001'
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["LATEST"]._loaded_options = None
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["LATEST"]._serialized_options = b'\232\360\360\344\001#score received during official time'
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["FROZEN"]._loaded_options = None
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["FROZEN"]._serialized_options = b'\270\360\360\344\001\001'
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["UPSOLVE"]._loaded_options = None
+  _globals['_SCORE_FETCHINGMODE'].values_by_name["UPSOLVE"]._serialized_options = b'\232\360\360\344\001\035score received during upsolve'
+  _globals['_SCORE']._serialized_start=106
+  _globals['_SCORE']._serialized_end=828
+  _globals['_SCORE_PROBLEM']._serialized_start=323
+  _globals['_SCORE_PROBLEM']._serialized_end=569
+  _globals['_SCORE_TESTSET']._serialized_start=571
+  _globals['_SCORE_TESTSET']._serialized_end=644
+  _globals['_SCORE_FETCHINGMODE']._serialized_start=647
+  _globals['_SCORE_FETCHINGMODE']._serialized_end=828
 # @@protoc_insertion_point(module_scope)

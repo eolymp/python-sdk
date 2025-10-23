@@ -27,7 +27,7 @@ from eolymp.runtime import runtime_pb2 as eolymp_dot_runtime_dot_runtime__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/contest.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1c\x65olymp/runtime/runtime.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfa\x17\n\x07\x43ontest\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x13\n\x03url\x18\x02 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x11\n\timage_url\x18\x04 \x01(\t\x12-\n\tstarts_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x65nds_at\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64uration\x18\x0c \x01(\r\x12\x34\n\x06status\x18\x14 \x01(\x0e\x32\x1c.eolymp.judge.Contest.StatusB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x34\n\nvisibility\x18\x1e \x01(\x0e\x32 .eolymp.judge.Contest.Visibility\x12\x43\n\x12participation_mode\x18\x1f \x01(\x0e\x32\'.eolymp.judge.Contest.ParticipationMode\x12\x19\n\x11join_unofficially\x18! \x01(\x08\x12\x19\n\x11require_admission\x18# \x01(\x08\x12\x13\n\x0b\x61llow_pause\x18$ \x01(\x08\x12\x1a\n\x12\x61llow_finish_early\x18% \x01(\x08\x12\x15\n\rallow_upsolve\x18& \x01(\x08\x12\x16\n\x0e\x61llow_followup\x18\' \x01(\x08\x12,\n\x06\x66ormat\x18  \x01(\x0e\x32\x1c.eolymp.judge.Contest.Format\x12\x0b\n\x03key\x18( \x01(\t\x12\x1d\n\rproblem_count\x18< \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12$\n\x14problem_count_hidden\x18= \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12!\n\x11participant_count\x18> \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12(\n\x18participant_count_hidden\x18? \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x32\n\x0e\x66\x65\x61tured_until\x18\x32 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nprinter_id\x18G \x01(\t\x12<\n\x0e\x63lassification\x18n \x01(\x0b\x32$.eolymp.judge.Contest.Classification\x12\x41\n\x11scoreboard_config\x18i \x01(\x0b\x32&.eolymp.judge.Contest.ScoreboardConfig\x12\x43\n\x12\x65nvironment_config\x18o \x01(\x0b\x32\'.eolymp.judge.Contest.EnvironmentConfig\x12G\n\x14\x63\x65rtification_config\x18p \x01(\x0b\x32).eolymp.judge.Contest.CertificationConfig\x12\x41\n\x11plagiarism_config\x18q \x01(\x0b\x32&.eolymp.judge.Contest.PlagiarismConfig\x12\x32\n\x05staff\x18x \x03(\x0b\x32\x1b.eolymp.judge.Contest.StaffB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a\xed\x03\n\x05Patch\"\xe3\x03\n\x05\x46ield\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04NAME\x10\x02\x12\r\n\tIMAGE_URL\x10\x0e\x12\r\n\tSTARTS_AT\x10\x03\x12\x0b\n\x07\x45NDS_AT\x10\x04\x12\x0c\n\x08\x44URATION\x10\x05\x12\x0e\n\nVISIBILITY\x10\x06\x12\x15\n\x11JOIN_UNOFFICIALLY\x10\x07\x12\x16\n\x12PARTICIPATION_MODE\x10\x08\x12\x15\n\x11REQUIRE_ADMISSION\x10\x10\x12\x0f\n\x0b\x41LLOW_PAUSE\x10\x11\x12\x16\n\x12\x41LLOW_FINISH_EARLY\x10\x12\x12\x11\n\rALLOW_UPSOLVE\x10x\x12\x12\n\x0e\x41LLOW_FOLLOWUP\x10y\x12\n\n\x06\x46ORMAT\x10\n\x12\x07\n\x03KEY\x10\x0b\x12\x18\n\x14PROBLEM_COUNT_HIDDEN\x10\x0c\x12\x1c\n\x18PARTICIPANT_COUNT_HIDDEN\x10\r\x12\x12\n\x0e\x46\x45\x41TURED_UNTIL\x10\t\x12\x0b\n\x07PRINTER\x10\x0f\x12\x12\n\x0e\x43LASSIFICATION\x10\x64\x12\x16\n\x11SCOREBOARD_CONFIG\x10\x96\x01\x12\x19\n\x14\x43\x45RTIFICATION_CONFIG\x10\x97\x01\x12\x17\n\x12\x45NVIRONMENT_CONFIG\x10\x98\x01\x12\x16\n\x11PLAGIARISM_CONFIG\x10\x99\x01\x1a\x9d\x01\n\x05\x45xtra\"\x93\x01\n\x05\x46ield\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x12\n\x0e\x43LASSIFICATION\x10\x01\x12\x15\n\x11SCOREBOARD_CONFIG\x10\x02\x12\x18\n\x14\x43\x45RTIFICATION_CONFIG\x10\x03\x12\x16\n\x12\x45NVIRONMENT_CONFIG\x10\x04\x12\x15\n\x11PLAGIARISM_CONFIG\x10\x06\x12\t\n\x05STAFF\x10\x05\x1a\x82\x02\n\x0e\x43lassification\x12\x0c\n\x04year\x18\x01 \x01(\r\x12\x0e\n\x06series\x18\x02 \x01(\t\x12\x39\n\x05scale\x18\x03 \x01(\x0e\x32*.eolymp.judge.Contest.Classification.Scale\x12\x12\n\ndifficulty\x18\x04 \x01(\r\x12\x0f\n\x07\x63ountry\x18\x05 \x01(\t\x12\x0e\n\x06region\x18\x06 \x01(\t\x12\x0c\n\x04\x63ity\x18\x07 \x01(\t\"T\n\x05Scale\x12\x11\n\rUNKNOWN_SCALE\x10\x00\x12\t\n\x05LOCAL\x10\x01\x12\x0c\n\x08REGIONAL\x10\x02\x12\x0c\n\x08NATIONAL\x10\x03\x12\x11\n\rINTERNATIONAL\x10\x04\x1a\xaf\x02\n\x10ScoreboardConfig\x12\x45\n\nvisibility\x18\x01 \x01(\x0e\x32\x31.eolymp.judge.Contest.ScoreboardConfig.Visibility\x12\x15\n\rfreezing_time\x18\x02 \x01(\r\x12\x16\n\x0eunfreeze_delay\x18\x03 \x01(\x05\x12\x17\n\x0f\x61ttempt_penalty\x18\x04 \x01(\r\x12\x13\n\x0btie_breaker\x18\x05 \x01(\t\x12\x15\n\rno_spoiler_ui\x18\x06 \x01(\x08\x12\x11\n\tshare_key\x18\x07 \x01(\t\"M\n\nVisibility\x12\x16\n\x12UNKNOWN_VISIBILITY\x10\x00\x12\r\n\tINVISIBLE\x10\x01\x12\x0c\n\x08INTERNAL\x10\x02\x12\n\n\x06PUBLIC\x10\x03\x1a\xa5\x01\n\x13\x43\x65rtificationConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x13\n\x0b\x61\x66\x66iliation\x18\x02 \x01(\t\x12\x41\n\x07signers\x18\x03 \x03(\x0b\x32\x30.eolymp.judge.Contest.CertificationConfig.Signer\x1a%\n\x06Signer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x1a>\n\x11\x45nvironmentConfig\x12)\n\x08runtimes\x18\x02 \x03(\x0b\x32\x17.eolymp.runtime.Runtime\x1a+\n\x10PlagiarismConfig\x12\x17\n\x0f\x63heck_genai_use\x18\x01 \x01(\x08\x1a>\n\x05Staff\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0c\n\x04role\x18\x03 \x01(\t\"m\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\x08\n\x04OPEN\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\r\n\tSUSPENDED\x10\x04\x12\n\n\x06\x46ROZEN\x10\x05\x12\r\n\tFINALIZED\x10\x06\"K\n\nVisibility\x12\x16\n\x12VISIBILITY_UNKNOWN\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0c\n\x08UNLISTED\x10\x02\x12\x0b\n\x07PRIVATE\x10\x03\"L\n\x11ParticipationMode\x12\x1e\n\x1aPARTICIPATION_MODE_UNKNOWN\x10\x00\x12\n\n\x06ONLINE\x10\x01\x12\x0b\n\x07VIRTUAL\x10\x02\"/\n\x06\x46ormat\x12\x12\n\x0e\x46ORMAT_UNKNOWN\x10\x00\x12\x07\n\x03IOI\x10\x01\x12\x08\n\x04ICPC\x10\x02\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/contest.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1c\x65olymp/runtime/runtime.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xba\x1d\n\x07\x43ontest\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x13\n\x03url\x18\x02 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x11\n\timage_url\x18\x04 \x01(\t\x12-\n\tstarts_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x65nds_at\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64uration\x18\x0c \x01(\r\x12\x34\n\x06status\x18\x14 \x01(\x0e\x32\x1c.eolymp.judge.Contest.StatusB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x34\n\nvisibility\x18\x1e \x01(\x0e\x32 .eolymp.judge.Contest.Visibility\x12\x43\n\x12participation_mode\x18\x1f \x01(\x0e\x32\'.eolymp.judge.Contest.ParticipationMode\x12\x19\n\x11join_unofficially\x18! \x01(\x08\x12\x19\n\x11require_admission\x18# \x01(\x08\x12\x13\n\x0b\x61llow_pause\x18$ \x01(\x08\x12\x1a\n\x12\x61llow_finish_early\x18% \x01(\x08\x12\x15\n\rallow_upsolve\x18& \x01(\x08\x12\x16\n\x0e\x61llow_followup\x18\' \x01(\x08\x12,\n\x06\x66ormat\x18  \x01(\x0e\x32\x1c.eolymp.judge.Contest.Format\x12\x0b\n\x03key\x18( \x01(\t\x12\x1d\n\rproblem_count\x18< \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12$\n\x14problem_count_hidden\x18= \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12!\n\x11participant_count\x18> \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12(\n\x18participant_count_hidden\x18? \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x32\n\x0e\x66\x65\x61tured_until\x18\x32 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\nprinter_id\x18G \x01(\tB\x06\xb0\xf0\xf0\xe4\x01\x01\x12<\n\x0e\x63lassification\x18n \x01(\x0b\x32$.eolymp.judge.Contest.Classification\x12\x41\n\x11scoreboard_config\x18i \x01(\x0b\x32&.eolymp.judge.Contest.ScoreboardConfig\x12\x43\n\x12\x65nvironment_config\x18o \x01(\x0b\x32\'.eolymp.judge.Contest.EnvironmentConfig\x12G\n\x14\x63\x65rtification_config\x18p \x01(\x0b\x32).eolymp.judge.Contest.CertificationConfig\x12\x41\n\x11plagiarism_config\x18q \x01(\x0b\x32&.eolymp.judge.Contest.PlagiarismConfig\x12\x32\n\x05staff\x18x \x03(\x0b\x32\x1b.eolymp.judge.Contest.StaffB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a\xed\x03\n\x05Patch\"\xe3\x03\n\x05\x46ield\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04NAME\x10\x02\x12\r\n\tIMAGE_URL\x10\x0e\x12\r\n\tSTARTS_AT\x10\x03\x12\x0b\n\x07\x45NDS_AT\x10\x04\x12\x0c\n\x08\x44URATION\x10\x05\x12\x0e\n\nVISIBILITY\x10\x06\x12\x15\n\x11JOIN_UNOFFICIALLY\x10\x07\x12\x16\n\x12PARTICIPATION_MODE\x10\x08\x12\x15\n\x11REQUIRE_ADMISSION\x10\x10\x12\x0f\n\x0b\x41LLOW_PAUSE\x10\x11\x12\x16\n\x12\x41LLOW_FINISH_EARLY\x10\x12\x12\x11\n\rALLOW_UPSOLVE\x10x\x12\x12\n\x0e\x41LLOW_FOLLOWUP\x10y\x12\n\n\x06\x46ORMAT\x10\n\x12\x07\n\x03KEY\x10\x0b\x12\x18\n\x14PROBLEM_COUNT_HIDDEN\x10\x0c\x12\x1c\n\x18PARTICIPANT_COUNT_HIDDEN\x10\r\x12\x12\n\x0e\x46\x45\x41TURED_UNTIL\x10\t\x12\x0b\n\x07PRINTER\x10\x0f\x12\x12\n\x0e\x43LASSIFICATION\x10\x64\x12\x16\n\x11SCOREBOARD_CONFIG\x10\x96\x01\x12\x19\n\x14\x43\x45RTIFICATION_CONFIG\x10\x97\x01\x12\x17\n\x12\x45NVIRONMENT_CONFIG\x10\x98\x01\x12\x16\n\x11PLAGIARISM_CONFIG\x10\x99\x01\x1a\x9d\x01\n\x05\x45xtra\"\x93\x01\n\x05\x46ield\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x12\n\x0e\x43LASSIFICATION\x10\x01\x12\x15\n\x11SCOREBOARD_CONFIG\x10\x02\x12\x18\n\x14\x43\x45RTIFICATION_CONFIG\x10\x03\x12\x16\n\x12\x45NVIRONMENT_CONFIG\x10\x04\x12\x15\n\x11PLAGIARISM_CONFIG\x10\x06\x12\t\n\x05STAFF\x10\x05\x1a\x82\x02\n\x0e\x43lassification\x12\x0c\n\x04year\x18\x01 \x01(\r\x12\x0e\n\x06series\x18\x02 \x01(\t\x12\x39\n\x05scale\x18\x03 \x01(\x0e\x32*.eolymp.judge.Contest.Classification.Scale\x12\x12\n\ndifficulty\x18\x04 \x01(\r\x12\x0f\n\x07\x63ountry\x18\x05 \x01(\t\x12\x0e\n\x06region\x18\x06 \x01(\t\x12\x0c\n\x04\x63ity\x18\x07 \x01(\t\"T\n\x05Scale\x12\x11\n\rUNKNOWN_SCALE\x10\x00\x12\t\n\x05LOCAL\x10\x01\x12\x0c\n\x08REGIONAL\x10\x02\x12\x0c\n\x08NATIONAL\x10\x03\x12\x11\n\rINTERNATIONAL\x10\x04\x1a\x9b\x03\n\x10ScoreboardConfig\x12\x45\n\nvisibility\x18\x01 \x01(\x0e\x32\x31.eolymp.judge.Contest.ScoreboardConfig.Visibility\x12\x15\n\rfreezing_time\x18\x02 \x01(\r\x12\x16\n\x0eunfreeze_delay\x18\x03 \x01(\x05\x12\x17\n\x0f\x61ttempt_penalty\x18\x04 \x01(\r\x12\x13\n\x0btie_breaker\x18\x05 \x01(\t\x12\x15\n\rno_spoiler_ui\x18\x06 \x01(\x08\x12\x11\n\tshare_key\x18\x07 \x01(\t\"\xb8\x01\n\nVisibility\x12\x16\n\x12UNKNOWN_VISIBILITY\x10\x00\x12/\n\tINVISIBLE\x10\x01\x1a \x9a\xf0\xf0\xe4\x01\x1avisible only to organizers\x12:\n\x08INTERNAL\x10\x02\x1a,\x9a\xf0\xf0\xe4\x01&visible to participants and organizers\x12%\n\x06PUBLIC\x10\x03\x1a\x19\x9a\xf0\xf0\xe4\x01\x13visible to everyone\x1a\xa5\x01\n\x13\x43\x65rtificationConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x13\n\x0b\x61\x66\x66iliation\x18\x02 \x01(\t\x12\x41\n\x07signers\x18\x03 \x03(\x0b\x32\x30.eolymp.judge.Contest.CertificationConfig.Signer\x1a%\n\x06Signer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x1a>\n\x11\x45nvironmentConfig\x12)\n\x08runtimes\x18\x02 \x03(\x0b\x32\x17.eolymp.runtime.Runtime\x1a+\n\x10PlagiarismConfig\x12\x17\n\x0f\x63heck_genai_use\x18\x01 \x01(\x08\x1a>\n\x05Staff\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0c\n\x04role\x18\x03 \x01(\t\"\xaf\x03\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12/\n\tSCHEDULED\x10\x01\x1a \x9a\xf0\xf0\xe4\x01\x1a\x63ontest hasn\'t started yet\x12\x41\n\x04OPEN\x10\x02\x1a\x37\x9a\xf0\xf0\xe4\x01\x31\x63ontest has started, participants can participate\x12\'\n\x08\x43OMPLETE\x10\x03\x1a\x19\x9a\xf0\xf0\xe4\x01\x13\x63ontest is finished\x12K\n\tSUSPENDED\x10\x04\x1a<\x9a\xf0\xf0\xe4\x01\x36\x63ontest has been suspended, interface is not available\x12^\n\x06\x46ROZEN\x10\x05\x1aR\x9a\xf0\xf0\xe4\x01Lcontest has been frozen, interface is available but submission is restricted\x12G\n\tFINALIZED\x10\x06\x1a\x38\x9a\xf0\xf0\xe4\x01\x32\x63omplete, results are final and can not be changed\"\xf5\x01\n\nVisibility\x12\x16\n\x12VISIBILITY_UNKNOWN\x10\x00\x12>\n\x06PUBLIC\x10\x01\x1a\x32\x9a\xf0\xf0\xe4\x01,visible to everyone and shown on the website\x12H\n\x08UNLISTED\x10\x02\x1a:\x9a\xf0\xf0\xe4\x01\x34\x61nyone can participate, but not shown on the website\x12\x45\n\x07PRIVATE\x10\x03\x1a\x38\x9a\xf0\xf0\xe4\x01\x32only explicitly added participants can participate\"\xa9\x01\n\x11ParticipationMode\x12\x1e\n\x1aPARTICIPATION_MODE_UNKNOWN\x10\x00\x12\x34\n\x06ONLINE\x10\x01\x1a(\x9a\xf0\xf0\xe4\x01\"everyone start and finish together\x12>\n\x07VIRTUAL\x10\x02\x1a\x31\x9a\xf0\xf0\xe4\x01+participants can start contest individually\"/\n\x06\x46ormat\x12\x12\n\x0e\x46ORMAT_UNKNOWN\x10\x00\x12\x07\n\x03IOI\x10\x01\x12\x08\n\x04ICPC\x10\x02\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +35,34 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.contest_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
+  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY'].values_by_name["INVISIBLE"]._loaded_options = None
+  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY'].values_by_name["INVISIBLE"]._serialized_options = b'\232\360\360\344\001\032visible only to organizers'
+  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY'].values_by_name["INTERNAL"]._loaded_options = None
+  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY'].values_by_name["INTERNAL"]._serialized_options = b'\232\360\360\344\001&visible to participants and organizers'
+  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY'].values_by_name["PUBLIC"]._loaded_options = None
+  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY'].values_by_name["PUBLIC"]._serialized_options = b'\232\360\360\344\001\023visible to everyone'
+  _globals['_CONTEST_STATUS'].values_by_name["SCHEDULED"]._loaded_options = None
+  _globals['_CONTEST_STATUS'].values_by_name["SCHEDULED"]._serialized_options = b'\232\360\360\344\001\032contest hasn\'t started yet'
+  _globals['_CONTEST_STATUS'].values_by_name["OPEN"]._loaded_options = None
+  _globals['_CONTEST_STATUS'].values_by_name["OPEN"]._serialized_options = b'\232\360\360\344\0011contest has started, participants can participate'
+  _globals['_CONTEST_STATUS'].values_by_name["COMPLETE"]._loaded_options = None
+  _globals['_CONTEST_STATUS'].values_by_name["COMPLETE"]._serialized_options = b'\232\360\360\344\001\023contest is finished'
+  _globals['_CONTEST_STATUS'].values_by_name["SUSPENDED"]._loaded_options = None
+  _globals['_CONTEST_STATUS'].values_by_name["SUSPENDED"]._serialized_options = b'\232\360\360\344\0016contest has been suspended, interface is not available'
+  _globals['_CONTEST_STATUS'].values_by_name["FROZEN"]._loaded_options = None
+  _globals['_CONTEST_STATUS'].values_by_name["FROZEN"]._serialized_options = b'\232\360\360\344\001Lcontest has been frozen, interface is available but submission is restricted'
+  _globals['_CONTEST_STATUS'].values_by_name["FINALIZED"]._loaded_options = None
+  _globals['_CONTEST_STATUS'].values_by_name["FINALIZED"]._serialized_options = b'\232\360\360\344\0012complete, results are final and can not be changed'
+  _globals['_CONTEST_VISIBILITY'].values_by_name["PUBLIC"]._loaded_options = None
+  _globals['_CONTEST_VISIBILITY'].values_by_name["PUBLIC"]._serialized_options = b'\232\360\360\344\001,visible to everyone and shown on the website'
+  _globals['_CONTEST_VISIBILITY'].values_by_name["UNLISTED"]._loaded_options = None
+  _globals['_CONTEST_VISIBILITY'].values_by_name["UNLISTED"]._serialized_options = b'\232\360\360\344\0014anyone can participate, but not shown on the website'
+  _globals['_CONTEST_VISIBILITY'].values_by_name["PRIVATE"]._loaded_options = None
+  _globals['_CONTEST_VISIBILITY'].values_by_name["PRIVATE"]._serialized_options = b'\232\360\360\344\0012only explicitly added participants can participate'
+  _globals['_CONTEST_PARTICIPATIONMODE'].values_by_name["ONLINE"]._loaded_options = None
+  _globals['_CONTEST_PARTICIPATIONMODE'].values_by_name["ONLINE"]._serialized_options = b'\232\360\360\344\001\"everyone start and finish together'
+  _globals['_CONTEST_PARTICIPATIONMODE'].values_by_name["VIRTUAL"]._loaded_options = None
+  _globals['_CONTEST_PARTICIPATIONMODE'].values_by_name["VIRTUAL"]._serialized_options = b'\232\360\360\344\001+participants can start contest individually'
   _globals['_CONTEST'].fields_by_name['id']._loaded_options = None
   _globals['_CONTEST'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_CONTEST'].fields_by_name['url']._loaded_options = None
@@ -49,42 +77,44 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONTEST'].fields_by_name['participant_count']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_CONTEST'].fields_by_name['participant_count_hidden']._loaded_options = None
   _globals['_CONTEST'].fields_by_name['participant_count_hidden']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_CONTEST'].fields_by_name['printer_id']._loaded_options = None
+  _globals['_CONTEST'].fields_by_name['printer_id']._serialized_options = b'\260\360\360\344\001\001'
   _globals['_CONTEST'].fields_by_name['staff']._loaded_options = None
   _globals['_CONTEST'].fields_by_name['staff']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_CONTEST']._serialized_start=138
-  _globals['_CONTEST']._serialized_end=3204
-  _globals['_CONTEST_PATCH']._serialized_start=1328
-  _globals['_CONTEST_PATCH']._serialized_end=1821
-  _globals['_CONTEST_PATCH_FIELD']._serialized_start=1338
-  _globals['_CONTEST_PATCH_FIELD']._serialized_end=1821
-  _globals['_CONTEST_EXTRA']._serialized_start=1824
-  _globals['_CONTEST_EXTRA']._serialized_end=1981
-  _globals['_CONTEST_EXTRA_FIELD']._serialized_start=1834
-  _globals['_CONTEST_EXTRA_FIELD']._serialized_end=1981
-  _globals['_CONTEST_CLASSIFICATION']._serialized_start=1984
-  _globals['_CONTEST_CLASSIFICATION']._serialized_end=2242
-  _globals['_CONTEST_CLASSIFICATION_SCALE']._serialized_start=2158
-  _globals['_CONTEST_CLASSIFICATION_SCALE']._serialized_end=2242
-  _globals['_CONTEST_SCOREBOARDCONFIG']._serialized_start=2245
-  _globals['_CONTEST_SCOREBOARDCONFIG']._serialized_end=2548
-  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY']._serialized_start=2471
-  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY']._serialized_end=2548
-  _globals['_CONTEST_CERTIFICATIONCONFIG']._serialized_start=2551
-  _globals['_CONTEST_CERTIFICATIONCONFIG']._serialized_end=2716
-  _globals['_CONTEST_CERTIFICATIONCONFIG_SIGNER']._serialized_start=2679
-  _globals['_CONTEST_CERTIFICATIONCONFIG_SIGNER']._serialized_end=2716
-  _globals['_CONTEST_ENVIRONMENTCONFIG']._serialized_start=2718
-  _globals['_CONTEST_ENVIRONMENTCONFIG']._serialized_end=2780
-  _globals['_CONTEST_PLAGIARISMCONFIG']._serialized_start=2782
-  _globals['_CONTEST_PLAGIARISMCONFIG']._serialized_end=2825
-  _globals['_CONTEST_STAFF']._serialized_start=2827
-  _globals['_CONTEST_STAFF']._serialized_end=2889
-  _globals['_CONTEST_STATUS']._serialized_start=2891
-  _globals['_CONTEST_STATUS']._serialized_end=3000
-  _globals['_CONTEST_VISIBILITY']._serialized_start=3002
-  _globals['_CONTEST_VISIBILITY']._serialized_end=3077
-  _globals['_CONTEST_PARTICIPATIONMODE']._serialized_start=3079
-  _globals['_CONTEST_PARTICIPATIONMODE']._serialized_end=3155
-  _globals['_CONTEST_FORMAT']._serialized_start=3157
-  _globals['_CONTEST_FORMAT']._serialized_end=3204
+  _globals['_CONTEST']._serialized_end=3908
+  _globals['_CONTEST_PATCH']._serialized_start=1336
+  _globals['_CONTEST_PATCH']._serialized_end=1829
+  _globals['_CONTEST_PATCH_FIELD']._serialized_start=1346
+  _globals['_CONTEST_PATCH_FIELD']._serialized_end=1829
+  _globals['_CONTEST_EXTRA']._serialized_start=1832
+  _globals['_CONTEST_EXTRA']._serialized_end=1989
+  _globals['_CONTEST_EXTRA_FIELD']._serialized_start=1842
+  _globals['_CONTEST_EXTRA_FIELD']._serialized_end=1989
+  _globals['_CONTEST_CLASSIFICATION']._serialized_start=1992
+  _globals['_CONTEST_CLASSIFICATION']._serialized_end=2250
+  _globals['_CONTEST_CLASSIFICATION_SCALE']._serialized_start=2166
+  _globals['_CONTEST_CLASSIFICATION_SCALE']._serialized_end=2250
+  _globals['_CONTEST_SCOREBOARDCONFIG']._serialized_start=2253
+  _globals['_CONTEST_SCOREBOARDCONFIG']._serialized_end=2664
+  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY']._serialized_start=2480
+  _globals['_CONTEST_SCOREBOARDCONFIG_VISIBILITY']._serialized_end=2664
+  _globals['_CONTEST_CERTIFICATIONCONFIG']._serialized_start=2667
+  _globals['_CONTEST_CERTIFICATIONCONFIG']._serialized_end=2832
+  _globals['_CONTEST_CERTIFICATIONCONFIG_SIGNER']._serialized_start=2795
+  _globals['_CONTEST_CERTIFICATIONCONFIG_SIGNER']._serialized_end=2832
+  _globals['_CONTEST_ENVIRONMENTCONFIG']._serialized_start=2834
+  _globals['_CONTEST_ENVIRONMENTCONFIG']._serialized_end=2896
+  _globals['_CONTEST_PLAGIARISMCONFIG']._serialized_start=2898
+  _globals['_CONTEST_PLAGIARISMCONFIG']._serialized_end=2941
+  _globals['_CONTEST_STAFF']._serialized_start=2943
+  _globals['_CONTEST_STAFF']._serialized_end=3005
+  _globals['_CONTEST_STATUS']._serialized_start=3008
+  _globals['_CONTEST_STATUS']._serialized_end=3439
+  _globals['_CONTEST_VISIBILITY']._serialized_start=3442
+  _globals['_CONTEST_VISIBILITY']._serialized_end=3687
+  _globals['_CONTEST_PARTICIPATIONMODE']._serialized_start=3690
+  _globals['_CONTEST_PARTICIPATIONMODE']._serialized_end=3859
+  _globals['_CONTEST_FORMAT']._serialized_start=3861
+  _globals['_CONTEST_FORMAT']._serialized_end=3908
 # @@protoc_insertion_point(module_scope)

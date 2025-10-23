@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import descriptor_pb2 as google_dot_protobuf_dot_descriptor__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/annotations/mcp.proto\x12\neolymp.api\x1a google/protobuf/descriptor.proto:<\n\x0emcp_value_desc\x12!.google.protobuf.EnumValueOptions\x18\x83\x8e\xce\x1c \x01(\t:8\n\x0emcp_field_desc\x12\x1d.google.protobuf.FieldOptions\x18\x84\x8e\xce\x1c \x01(\t:3\n\tread_only\x12\x1d.google.protobuf.FieldOptions\x18\x85\x8e\xce\x1c \x01(\x08:8\n\rmcp_tool_desc\x12\x1e.google.protobuf.MethodOptions\x18\x84\x8e\xce\x1c \x01(\tB9Z7github.com/eolymp/go-sdk/eolymp/annotations;annotationsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/annotations/mcp.proto\x12\neolymp.api\x1a google/protobuf/descriptor.proto:<\n\x0emcp_value_desc\x12!.google.protobuf.EnumValueOptions\x18\x83\x8e\xce\x1c \x01(\t:>\n\x10mcp_value_ignore\x12!.google.protobuf.EnumValueOptions\x18\x87\x8e\xce\x1c \x01(\x08:8\n\x0emcp_field_desc\x12\x1d.google.protobuf.FieldOptions\x18\x84\x8e\xce\x1c \x01(\t::\n\x10mcp_field_ignore\x12\x1d.google.protobuf.FieldOptions\x18\x86\x8e\xce\x1c \x01(\x08:3\n\tread_only\x12\x1d.google.protobuf.FieldOptions\x18\x85\x8e\xce\x1c \x01(\x08:8\n\rmcp_tool_desc\x12\x1e.google.protobuf.MethodOptions\x18\x84\x8e\xce\x1c \x01(\tB9Z7github.com/eolymp/go-sdk/eolymp/annotations;annotationsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
