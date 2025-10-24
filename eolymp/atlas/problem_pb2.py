@@ -27,7 +27,7 @@ from eolymp.atlas import form_pb2 as eolymp_dot_atlas_dot_form__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x17\x65olymp/atlas/form.proto\x1a\x18\x65olymp/ecm/content.proto\"\xaf\x0c\n\x07Problem\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x14\n\x03url\x18\xaa\x05 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12(\n\x04type\x18\x17 \x01(\x0e\x32\x1a.eolymp.atlas.Problem.Type\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0e\n\x06origin\x18\r \x01(\t\x12\x16\n\x06locale\x18\x03 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x15\n\x05title\x18\x04 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12,\n\x07\x63ontent\x18\x06 \x01(\x0b\x32\x13.eolymp.ecm.ContentB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1d\n\rdownload_link\x18\x07 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x16\n\x06\x61uthor\x18\x65 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x16\n\x06source\x18\x66 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06topics\x18\x14 \x03(\t\x12\x15\n\x05score\x18\x1f \x01(\x02\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12>\n\x0b\x63onstraints\x18\x1e \x01(\x0b\x32!.eolymp.atlas.Problem.ConstraintsB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1f\n\x0f\x61\x63\x63\x65ptance_rate\x18( \x01(\x02\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12!\n\x11submissions_count\x18* \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12$\n\x14submissions_accepted\x18+ \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x14\n\x04vote\x18\x32 \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1a\n\nvote_count\x18\x33 \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x12\n\ndifficulty\x18\x15 \x01(\r\x12\x33\n\x0fsubmission_form\x18\x16 \x01(\x0b\x32\x12.eolymp.atlas.FormB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x37\n\x08\x65xamples\x18< \x03(\x0b\x32\x1d.eolymp.atlas.Problem.ExampleB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a\x93\x01\n\x05\x45xtra\"\x89\x01\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x10\n\x04VOTE\x10\x01\x1a\x06\xb8\xf0\xf0\xe4\x01\x01\x12\t\n\x05TITLE\x10\x02\x12\x11\n\rCONTENT_VALUE\x10\x03\x12\x1a\n\x0e\x43ONTENT_RENDER\x10\x04\x1a\x06\xb8\xf0\xf0\xe4\x01\x01\x12\x13\n\x0fSUBMISSION_FORM\x10\x05\x12\x0c\n\x08\x45XAMPLES\x10\x06\x1a{\n\x05Patch\"r\n\x05\x46ield\x12\x11\n\rUNKNOWN_PATCH\x10\x00\x12\x0b\n\x07VISIBLE\x10\x01\x12\x0b\n\x07PRIVATE\x10\x02\x12\n\n\x06TOPICS\x10\x03\x12\x0e\n\nDIFFICULTY\x10\x04\x12\n\n\x06ORIGIN\x10\x05\x12\x08\n\x04TYPE\x10\x06\x12\n\n\x06NUMBER\x10\x07\x1a\x9f\x01\n\x0b\x43onstraints\x12\x16\n\x0etime_limit_min\x18< \x01(\r\x12\x16\n\x0etime_limit_max\x18= \x01(\r\x12\x15\n\rcpu_limit_min\x18> \x01(\r\x12\x15\n\rcpu_limit_max\x18? \x01(\r\x12\x18\n\x10memory_limit_min\x18@ \x01(\x04\x12\x18\n\x10memory_limit_max\x18\x41 \x01(\x04\x1a?\n\x07\x45xample\x12\r\n\x05index\x18\x01 \x01(\r\x12\x11\n\tinput_url\x18\x02 \x01(\t\x12\x12\n\nanswer_url\x18\x03 \x01(\t\"\xf7\x02\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12K\n\x07PROGRAM\x10\x01\x1a>\x9a\xf0\xf0\xe4\x01\x38program problem, user should write a program to solve it\x12N\n\x08\x46UNCTION\x10\x02\x1a@\x9a\xf0\xf0\xe4\x01:function problem, user should write a function to solve it\x12Q\n\x06OUTPUT\x10\x03\x1a\x45\x9a\xf0\xf0\xe4\x01?output-only problem, user should upload answer file to solve it\x12\x45\n\x03SQL\x10\x04\x1a<\x9a\xf0\xf0\xe4\x01\x36SQL problem, user should write SQL queries to solve it\x12&\n\x02ML\x10\x05\x1a\x1e\x9a\xf0\xf0\xe4\x01\x18Machine learning problemB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/atlas/problem.proto\x12\x0c\x65olymp.atlas\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x17\x65olymp/atlas/form.proto\x1a\x18\x65olymp/ecm/content.proto\"\xbd\r\n\x07Problem\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x14\n\x03url\x18\xaa\x05 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12(\n\x04type\x18\x17 \x01(\x0e\x32\x1a.eolymp.atlas.Problem.Type\x12\x0e\n\x06number\x18\n \x01(\x05\x12\x0f\n\x07visible\x18\x0b \x01(\x08\x12\x0e\n\x06origin\x18\r \x01(\t\x12\x16\n\x06locale\x18\x03 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x15\n\x05title\x18\x04 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12,\n\x07\x63ontent\x18\x06 \x01(\x0b\x32\x13.eolymp.ecm.ContentB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1d\n\rdownload_link\x18\x07 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x16\n\x06\x61uthor\x18\x65 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x16\n\x06source\x18\x66 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06topics\x18\x14 \x03(\t\x12\x15\n\x05score\x18\x1f \x01(\x02\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12>\n\x0b\x63onstraints\x18\x1e \x01(\x0b\x32!.eolymp.atlas.Problem.ConstraintsB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1f\n\x0f\x61\x63\x63\x65ptance_rate\x18( \x01(\x02\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12!\n\x11submissions_count\x18* \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12$\n\x14submissions_accepted\x18+ \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x14\n\x04vote\x18\x32 \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1a\n\nvote_count\x18\x33 \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x12\n\ndifficulty\x18\x15 \x01(\r\x12\x33\n\x0fsubmission_form\x18\x16 \x01(\x0b\x32\x12.eolymp.atlas.FormB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x37\n\x08\x65xamples\x18< \x03(\x0b\x32\x1d.eolymp.atlas.Problem.ExampleB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a\xa1\x02\n\x05\x45xtra\"\x97\x02\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x10\n\x04VOTE\x10\x01\x1a\x06\xb8\xf0\xf0\xe4\x01\x01\x12&\n\x05TITLE\x10\x02\x1a\x1b\x9a\xf0\xf0\xe4\x01\x15include problem title\x12\x32\n\rCONTENT_VALUE\x10\x03\x1a\x1f\x9a\xf0\xf0\xe4\x01\x19include problem statement\x12\x1a\n\x0e\x43ONTENT_RENDER\x10\x04\x1a\x06\xb8\xf0\xf0\xe4\x01\x01\x12:\n\x0fSUBMISSION_FORM\x10\x05\x1a%\x9a\xf0\xf0\xe4\x01\x1finclude submission form details\x12\x35\n\x08\x45XAMPLES\x10\x06\x1a\'\x9a\xf0\xf0\xe4\x01!include input and answer examples\x1a{\n\x05Patch\"r\n\x05\x46ield\x12\x11\n\rUNKNOWN_PATCH\x10\x00\x12\x0b\n\x07VISIBLE\x10\x01\x12\x0b\n\x07PRIVATE\x10\x02\x12\n\n\x06TOPICS\x10\x03\x12\x0e\n\nDIFFICULTY\x10\x04\x12\n\n\x06ORIGIN\x10\x05\x12\x08\n\x04TYPE\x10\x06\x12\n\n\x06NUMBER\x10\x07\x1a\x9f\x01\n\x0b\x43onstraints\x12\x16\n\x0etime_limit_min\x18< \x01(\r\x12\x16\n\x0etime_limit_max\x18= \x01(\r\x12\x15\n\rcpu_limit_min\x18> \x01(\r\x12\x15\n\rcpu_limit_max\x18? \x01(\r\x12\x18\n\x10memory_limit_min\x18@ \x01(\x04\x12\x18\n\x10memory_limit_max\x18\x41 \x01(\x04\x1a?\n\x07\x45xample\x12\r\n\x05index\x18\x01 \x01(\r\x12\x11\n\tinput_url\x18\x02 \x01(\t\x12\x12\n\nanswer_url\x18\x03 \x01(\t\"\xf7\x02\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12K\n\x07PROGRAM\x10\x01\x1a>\x9a\xf0\xf0\xe4\x01\x38program problem, user should write a program to solve it\x12N\n\x08\x46UNCTION\x10\x02\x1a@\x9a\xf0\xf0\xe4\x01:function problem, user should write a function to solve it\x12Q\n\x06OUTPUT\x10\x03\x1a\x45\x9a\xf0\xf0\xe4\x01?output-only problem, user should upload answer file to solve it\x12\x45\n\x03SQL\x10\x04\x1a<\x9a\xf0\xf0\xe4\x01\x36SQL problem, user should write SQL queries to solve it\x12&\n\x02ML\x10\x05\x1a\x1e\x9a\xf0\xf0\xe4\x01\x18Machine learning problemB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,8 +37,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["VOTE"]._loaded_options = None
   _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["VOTE"]._serialized_options = b'\270\360\360\344\001\001'
+  _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["TITLE"]._loaded_options = None
+  _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["TITLE"]._serialized_options = b'\232\360\360\344\001\025include problem title'
+  _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["CONTENT_VALUE"]._loaded_options = None
+  _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["CONTENT_VALUE"]._serialized_options = b'\232\360\360\344\001\031include problem statement'
   _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["CONTENT_RENDER"]._loaded_options = None
   _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["CONTENT_RENDER"]._serialized_options = b'\270\360\360\344\001\001'
+  _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["SUBMISSION_FORM"]._loaded_options = None
+  _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["SUBMISSION_FORM"]._serialized_options = b'\232\360\360\344\001\037include submission form details'
+  _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["EXAMPLES"]._loaded_options = None
+  _globals['_PROBLEM_EXTRA_FIELD'].values_by_name["EXAMPLES"]._serialized_options = b'\232\360\360\344\001!include input and answer examples'
   _globals['_PROBLEM_TYPE'].values_by_name["PROGRAM"]._loaded_options = None
   _globals['_PROBLEM_TYPE'].values_by_name["PROGRAM"]._serialized_options = b'\232\360\360\344\0018program problem, user should write a program to solve it'
   _globals['_PROBLEM_TYPE'].values_by_name["FUNCTION"]._loaded_options = None
@@ -84,19 +92,19 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PROBLEM'].fields_by_name['examples']._loaded_options = None
   _globals['_PROBLEM'].fields_by_name['examples']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_PROBLEM']._serialized_start=126
-  _globals['_PROBLEM']._serialized_end=1709
+  _globals['_PROBLEM']._serialized_end=1851
   _globals['_PROBLEM_EXTRA']._serialized_start=832
-  _globals['_PROBLEM_EXTRA']._serialized_end=979
+  _globals['_PROBLEM_EXTRA']._serialized_end=1121
   _globals['_PROBLEM_EXTRA_FIELD']._serialized_start=842
-  _globals['_PROBLEM_EXTRA_FIELD']._serialized_end=979
-  _globals['_PROBLEM_PATCH']._serialized_start=981
-  _globals['_PROBLEM_PATCH']._serialized_end=1104
-  _globals['_PROBLEM_PATCH_FIELD']._serialized_start=990
-  _globals['_PROBLEM_PATCH_FIELD']._serialized_end=1104
-  _globals['_PROBLEM_CONSTRAINTS']._serialized_start=1107
-  _globals['_PROBLEM_CONSTRAINTS']._serialized_end=1266
-  _globals['_PROBLEM_EXAMPLE']._serialized_start=1268
-  _globals['_PROBLEM_EXAMPLE']._serialized_end=1331
-  _globals['_PROBLEM_TYPE']._serialized_start=1334
-  _globals['_PROBLEM_TYPE']._serialized_end=1709
+  _globals['_PROBLEM_EXTRA_FIELD']._serialized_end=1121
+  _globals['_PROBLEM_PATCH']._serialized_start=1123
+  _globals['_PROBLEM_PATCH']._serialized_end=1246
+  _globals['_PROBLEM_PATCH_FIELD']._serialized_start=1132
+  _globals['_PROBLEM_PATCH_FIELD']._serialized_end=1246
+  _globals['_PROBLEM_CONSTRAINTS']._serialized_start=1249
+  _globals['_PROBLEM_CONSTRAINTS']._serialized_end=1408
+  _globals['_PROBLEM_EXAMPLE']._serialized_start=1410
+  _globals['_PROBLEM_EXAMPLE']._serialized_end=1473
+  _globals['_PROBLEM_TYPE']._serialized_start=1476
+  _globals['_PROBLEM_TYPE']._serialized_end=1851
 # @@protoc_insertion_point(module_scope)
