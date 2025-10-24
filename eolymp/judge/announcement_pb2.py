@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/judge/announcement.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd3\x01\n\x0c\x41nnouncement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncontest_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07subject\x18\n \x01(\t\x12$\n\x07message\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x12\n\x0eMESSAGE_RENDER\x10\x01\x12\x11\n\rMESSAGE_VALUE\x10\x02\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/judge/announcement.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf3\x01\n\x0c\x41nnouncement\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1a\n\ncontest_id\x18\x02 \x01(\tB\x06\xb0\xf0\xf0\xe4\x01\x01\x12\x36\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0f\n\x07subject\x18\n \x01(\t\x12$\n\x07message\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"D\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x1a\n\x0eMESSAGE_RENDER\x10\x01\x1a\x06\xb8\xf0\xf0\xe4\x01\x01\x12\x11\n\rMESSAGE_VALUE\x10\x02\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +35,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.announcement_p
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _globals['_ANNOUNCEMENT']._serialized_start=109
-  _globals['_ANNOUNCEMENT']._serialized_end=320
-  _globals['_ANNOUNCEMENT_EXTRA']._serialized_start=260
-  _globals['_ANNOUNCEMENT_EXTRA']._serialized_end=320
+  _globals['_ANNOUNCEMENT_EXTRA'].values_by_name["MESSAGE_RENDER"]._loaded_options = None
+  _globals['_ANNOUNCEMENT_EXTRA'].values_by_name["MESSAGE_RENDER"]._serialized_options = b'\270\360\360\344\001\001'
+  _globals['_ANNOUNCEMENT'].fields_by_name['id']._loaded_options = None
+  _globals['_ANNOUNCEMENT'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_ANNOUNCEMENT'].fields_by_name['contest_id']._loaded_options = None
+  _globals['_ANNOUNCEMENT'].fields_by_name['contest_id']._serialized_options = b'\260\360\360\344\001\001'
+  _globals['_ANNOUNCEMENT'].fields_by_name['created_at']._loaded_options = None
+  _globals['_ANNOUNCEMENT'].fields_by_name['created_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_ANNOUNCEMENT']._serialized_start=139
+  _globals['_ANNOUNCEMENT']._serialized_end=382
+  _globals['_ANNOUNCEMENT_EXTRA']._serialized_start=314
+  _globals['_ANNOUNCEMENT_EXTRA']._serialized_end=382
 # @@protoc_insertion_point(module_scope)

@@ -26,7 +26,7 @@ from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/ecm/content.proto\x12\neolymp.ecm\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x15\x65olymp/ecm/node.proto\"q\n\x07\x43ontent\x12\x0e\n\x04html\x18\x01 \x01(\tH\x00\x12\x0f\n\x05latex\x18\x02 \x01(\tH\x00\x12\x12\n\x08markdown\x18\x03 \x01(\tH\x00\x12(\n\x06render\x18\x63 \x01(\x0b\x32\x10.eolymp.ecm.NodeB\x06\xa8\xf0\xf0\xe4\x01\x01\x42\x07\n\x05valueB)Z\'github.com/eolymp/go-sdk/eolymp/ecm;ecmb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/ecm/content.proto\x12\neolymp.ecm\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x15\x65olymp/ecm/node.proto\"y\n\x07\x43ontent\x12\x16\n\x04html\x18\x01 \x01(\tB\x06\xb0\xf0\xf0\xe4\x01\x01H\x00\x12\x0f\n\x05latex\x18\x02 \x01(\tH\x00\x12\x12\n\x08markdown\x18\x03 \x01(\tH\x00\x12(\n\x06render\x18\x63 \x01(\x0b\x32\x10.eolymp.ecm.NodeB\x06\xa8\xf0\xf0\xe4\x01\x01\x42\x07\n\x05valueB)Z\'github.com/eolymp/go-sdk/eolymp/ecm;ecmb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +34,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.ecm.content_pb2', _g
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z\'github.com/eolymp/go-sdk/eolymp/ecm;ecm'
+  _globals['_CONTENT'].fields_by_name['html']._loaded_options = None
+  _globals['_CONTENT'].fields_by_name['html']._serialized_options = b'\260\360\360\344\001\001'
   _globals['_CONTENT'].fields_by_name['render']._loaded_options = None
   _globals['_CONTENT'].fields_by_name['render']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_CONTENT']._serialized_start=93
-  _globals['_CONTENT']._serialized_end=206
+  _globals['_CONTENT']._serialized_end=214
 # @@protoc_insertion_point(module_scope)
