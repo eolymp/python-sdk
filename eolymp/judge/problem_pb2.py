@@ -22,12 +22,15 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
+from eolymp.atlas import form_pb2 as eolymp_dot_atlas_dot_form__pb2
 from eolymp.atlas import problem_pb2 as eolymp_dot_atlas_dot_problem__pb2
 from eolymp.atlas import testing_feedback_pb2 as eolymp_dot_atlas_dot_testing__feedback__pb2
+from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/problem.proto\x12\x0c\x65olymp.judge\x1a\x1a\x65olymp/atlas/problem.proto\x1a#eolymp/atlas/testing_feedback.proto\x1a\x15\x65olymp/ecm/node.proto\"\xfd\x04\n\x07Problem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\x12(\n\x04type\x18\x17 \x01(\x0e\x32\x1a.eolymp.atlas.Problem.Type\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05score\x18\x03 \x01(\x02\x12\x0f\n\x07\x62\x61se_id\x18\x04 \x01(\t\x12\x13\n\x0b\x62\x61se_number\x18- \x01(\r\x12\x15\n\rbase_space_id\x18( \x01(\t\x12\x12\n\ncontest_id\x18\x05 \x01(\t\x12\x35\n\x0f\x66\x65\x65\x64\x62\x61\x63k_policy\x18\n \x01(\x0e\x32\x1c.eolymp.atlas.FeedbackPolicy\x12\x13\n\ntime_limit\x18\xc8\x01 \x01(\r\x12\x12\n\tcpu_limit\x18\xcc\x01 \x01(\r\x12\x15\n\x0cmemory_limit\x18\xc9\x01 \x01(\x04\x12\x18\n\x0f\x66ile_size_limit\x18\xca\x01 \x01(\x04\x12\x15\n\x0csubmit_limit\x18\xcb\x01 \x01(\r\x12\x1e\n\x15score_by_best_testset\x18\xd2\x01 \x01(\x08\x1a\x64\n\tStatement\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12!\n\x07\x63ontent\x18\x04 \x01(\x0b\x32\x10.eolymp.ecm.Node\x12\x15\n\rdownload_link\x18\x06 \x01(\t\x1a\\\n\x04Test\x12\r\n\x05index\x18\x01 \x01(\r\x12\x0f\n\x07\x65xample\x18\x02 \x01(\x08\x12\x11\n\tinput_url\x18\r \x01(\t\x12\x12\n\nanswer_url\x18\x0e \x01(\t\x12\r\n\x05score\x18\x05 \x01(\x02\x1a\x34\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/judge/problem.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x17\x65olymp/atlas/form.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a#eolymp/atlas/testing_feedback.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\"\xb0\n\n\x07Problem\x12\x16\n\ncontest_id\x18\x05 \x01(\tB\x02\x18\x01\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x13\n\x03url\x18\x06 \x01(\tB\x06\xb0\xf0\xf0\xe4\x01\x01\x12(\n\x04type\x18\x17 \x01(\x0e\x32\x1a.eolymp.atlas.Problem.Type\x12\x30\n\x05index\x18\x02 \x01(\rB!\xa2\xf0\xf0\xe4\x01\x1bproblem position in contest\x12\x38\n\x07\x62\x61se_id\x18\x04 \x01(\tB\'\xa2\xf0\xf0\xe4\x01!problem ID in the problem archive\x12\x35\n\x0f\x66\x65\x65\x64\x62\x61\x63k_policy\x18\n \x01(\x0e\x32\x1c.eolymp.atlas.FeedbackPolicy\x12\x83\x01\n\x15score_by_best_testset\x18\xd2\x01 \x01(\x08\x42\x63\xa2\xf0\xf0\xe4\x01]problem score is calculated as sum of best score in each testset (best among all submissions)\x12:\n\ntime_limit\x18\xc8\x01 \x01(\rB%\xa2\xf0\xf0\xe4\x01\x1fwall-time limit in milliseconds\x12>\n\tcpu_limit\x18\xcc\x01 \x01(\rB*\xa2\xf0\xf0\xe4\x01$cpu usage time limit in milliseconds\x12:\n\x0cmemory_limit\x18\xc9\x01 \x01(\x04\x42#\xa2\xf0\xf0\xe4\x01\x1druntime memory limit in bytes\x12\x18\n\x0f\x66ile_size_limit\x18\xca\x01 \x01(\x04\x12K\n\x0csubmit_limit\x18\xcb\x01 \x01(\rB4\xa2\xf0\xf0\xe4\x01.limit in number of submissions per participant\x12\r\n\x05score\x18\x03 \x01(\x02\x12>\n\x0b\x63onstraints\x18\x1e \x01(\x0b\x32!.eolymp.atlas.Problem.ConstraintsB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06locale\x18\x14 \x01(\t\x12\r\n\x05title\x18\x15 \x01(\t\x12S\n\x07\x63ontent\x18\x16 \x01(\x0b\x32\x13.eolymp.ecm.ContentB-\xa2\xf0\xf0\xe4\x01\'problem statement in requested language\x12G\n\rdownload_link\x18\x18 \x01(\tB0\xa2\xf0\xf0\xe4\x01*a link to download statement in PDF format\x12\x33\n\x0fsubmission_form\x18= \x01(\x0b\x32\x12.eolymp.atlas.FormB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x37\n\x08\x65xamples\x18< \x03(\x0b\x32\x1d.eolymp.atlas.Problem.ExampleB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a\x64\n\tStatement\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12!\n\x07\x63ontent\x18\x04 \x01(\x0b\x32\x10.eolymp.ecm.Node\x12\x15\n\rdownload_link\x18\x06 \x01(\t\x1a\\\n\x04Test\x12\r\n\x05index\x18\x01 \x01(\r\x12\x0f\n\x07\x65xample\x18\x02 \x01(\x08\x12\x11\n\tinput_url\x18\r \x01(\t\x12\x12\n\nanswer_url\x18\x0e \x01(\t\x12\r\n\x05score\x18\x05 \x01(\x02\x1a\x34\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,12 +38,42 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.problem_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _globals['_PROBLEM']._serialized_start=133
-  _globals['_PROBLEM']._serialized_end=770
-  _globals['_PROBLEM_STATEMENT']._serialized_start=522
-  _globals['_PROBLEM_STATEMENT']._serialized_end=622
-  _globals['_PROBLEM_TEST']._serialized_start=624
-  _globals['_PROBLEM_TEST']._serialized_end=716
-  _globals['_PROBLEM_ATTACHMENT']._serialized_start=718
-  _globals['_PROBLEM_ATTACHMENT']._serialized_end=770
+  _globals['_PROBLEM'].fields_by_name['contest_id']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['contest_id']._serialized_options = b'\030\001'
+  _globals['_PROBLEM'].fields_by_name['id']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PROBLEM'].fields_by_name['url']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['url']._serialized_options = b'\260\360\360\344\001\001'
+  _globals['_PROBLEM'].fields_by_name['index']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['index']._serialized_options = b'\242\360\360\344\001\033problem position in contest'
+  _globals['_PROBLEM'].fields_by_name['base_id']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['base_id']._serialized_options = b'\242\360\360\344\001!problem ID in the problem archive'
+  _globals['_PROBLEM'].fields_by_name['score_by_best_testset']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['score_by_best_testset']._serialized_options = b'\242\360\360\344\001]problem score is calculated as sum of best score in each testset (best among all submissions)'
+  _globals['_PROBLEM'].fields_by_name['time_limit']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['time_limit']._serialized_options = b'\242\360\360\344\001\037wall-time limit in milliseconds'
+  _globals['_PROBLEM'].fields_by_name['cpu_limit']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['cpu_limit']._serialized_options = b'\242\360\360\344\001$cpu usage time limit in milliseconds'
+  _globals['_PROBLEM'].fields_by_name['memory_limit']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['memory_limit']._serialized_options = b'\242\360\360\344\001\035runtime memory limit in bytes'
+  _globals['_PROBLEM'].fields_by_name['submit_limit']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['submit_limit']._serialized_options = b'\242\360\360\344\001.limit in number of submissions per participant'
+  _globals['_PROBLEM'].fields_by_name['constraints']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['constraints']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PROBLEM'].fields_by_name['content']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['content']._serialized_options = b'\242\360\360\344\001\'problem statement in requested language'
+  _globals['_PROBLEM'].fields_by_name['download_link']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['download_link']._serialized_options = b'\242\360\360\344\001*a link to download statement in PDF format'
+  _globals['_PROBLEM'].fields_by_name['submission_form']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['submission_form']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PROBLEM'].fields_by_name['examples']._loaded_options = None
+  _globals['_PROBLEM'].fields_by_name['examples']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_PROBLEM']._serialized_start=214
+  _globals['_PROBLEM']._serialized_end=1542
+  _globals['_PROBLEM_STATEMENT']._serialized_start=1294
+  _globals['_PROBLEM_STATEMENT']._serialized_end=1394
+  _globals['_PROBLEM_TEST']._serialized_start=1396
+  _globals['_PROBLEM_TEST']._serialized_end=1488
+  _globals['_PROBLEM_ATTACHMENT']._serialized_start=1490
+  _globals['_PROBLEM_ATTACHMENT']._serialized_end=1542
 # @@protoc_insertion_point(module_scope)

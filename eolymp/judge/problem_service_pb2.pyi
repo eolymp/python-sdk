@@ -2,7 +2,8 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.judge import problem_pb2 as _problem_pb2
+from eolymp.atlas import problem_pb2 as _problem_pb2
+from eolymp.judge import problem_pb2 as _problem_pb2_1
 from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
 from google.protobuf.internal import containers as _containers
@@ -65,8 +66,8 @@ class UpdateProblemInput(_message.Message):
     patch: _containers.RepeatedScalarFieldContainer[UpdateProblemInput.Patch]
     contest_id: str
     problem_id: str
-    problem: _problem_pb2.Problem
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProblemInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
+    problem: _problem_pb2_1.Problem
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProblemInput.Patch, str]]] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2_1.Problem, _Mapping]] = ...) -> None: ...
 
 class UpdateProblemOutput(_message.Message):
     __slots__ = ()
@@ -85,36 +86,44 @@ class DeleteProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListProblemsInput(_message.Message):
-    __slots__ = ("contest_id", "offset", "size")
+    __slots__ = ("contest_id", "offset", "size", "locale", "extra")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     offset: int
     size: int
-    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+    locale: str
+    extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
+    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
 
 class ListProblemsOutput(_message.Message):
     __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
-    items: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem]
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[_problem_pb2_1.Problem]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem, _Mapping]]] = ...) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ("contest_id", "problem_id")
+    __slots__ = ("contest_id", "problem_id", "locale", "extra")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     problem_id: str
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
+    locale: str
+    extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ("problem",)
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
-    problem: _problem_pb2.Problem
-    def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
+    problem: _problem_pb2_1.Problem
+    def __init__(self, problem: _Optional[_Union[_problem_pb2_1.Problem, _Mapping]] = ...) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
     __slots__ = ("contest_id", "problem_id", "template_id")
@@ -161,8 +170,8 @@ class ListStatementsOutput(_message.Message):
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
-    items: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem.Statement]
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem.Statement, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[_problem_pb2_1.Problem.Statement]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem.Statement, _Mapping]]] = ...) -> None: ...
 
 class ListAttachmentsInput(_message.Message):
     __slots__ = ("contest_id", "problem_id")
@@ -177,8 +186,8 @@ class ListAttachmentsOutput(_message.Message):
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
-    items: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem.Attachment]
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem.Attachment, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[_problem_pb2_1.Problem.Attachment]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem.Attachment, _Mapping]]] = ...) -> None: ...
 
 class ListExamplesInput(_message.Message):
     __slots__ = ("contest_id", "problem_id")
@@ -193,8 +202,8 @@ class ListExamplesOutput(_message.Message):
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
-    items: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem.Test]
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2.Problem.Test, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[_problem_pb2_1.Problem.Test]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem.Test, _Mapping]]] = ...) -> None: ...
 
 class ListRuntimesInput(_message.Message):
     __slots__ = ("contest_id", "problem_id")
