@@ -165,3 +165,17 @@ class TicketServiceClient:
             **kwargs,
         )
 
+    def SuggestReply(self, request, **kwargs):
+        path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/replies:suggest"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.ticket_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.SuggestReplyOutput"),
+            **kwargs,
+        )
+

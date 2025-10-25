@@ -313,6 +313,18 @@ class UpdateReplyOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class SuggestReplyInput(_message.Message):
+    __slots__ = ("ticket_id",)
+    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
+    ticket_id: str
+    def __init__(self, ticket_id: _Optional[str] = ...) -> None: ...
+
+class SuggestReplyOutput(_message.Message):
+    __slots__ = ("suggestion",)
+    SUGGESTION_FIELD_NUMBER: _ClassVar[int]
+    suggestion: _content_pb2.Content
+    def __init__(self, suggestion: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+
 class WatchRepliesInput(_message.Message):
     __slots__ = ("ticket_id", "cursor", "extra")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
