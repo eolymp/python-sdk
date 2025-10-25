@@ -23,11 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*eolymp/runtime/configuration_service.proto\x12\x0e\x65olymp.runtime\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\x1c\n\x1a\x44\x65scribeRuntimeConfigInput\"6\n\x1b\x44\x65scribeRuntimeConfigOutput\x12\x17\n\x0f\x61llowed_runtime\x18\x01 \x03(\t\"6\n\x1b\x43onfigureRuntimeConfigInput\x12\x17\n\x0f\x61llowed_runtime\x18\x01 \x03(\t\"\x1e\n\x1c\x43onfigureRuntimeConfigOutput2\xee\x02\n\x14\x43onfigurationService\x12\x99\x01\n\x15\x44\x65scribeRuntimeConfig\x12*.eolymp.runtime.DescribeRuntimeConfigInput\x1a+.eolymp.runtime.DescribeRuntimeConfigOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x12\x12\x10/configs/runtime\x12\xb9\x01\n\x16\x43onfigureRuntimeConfig\x12+.eolymp.runtime.ConfigureRuntimeConfigInput\x1a,.eolymp.runtime.ConfigureRuntimeConfigOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x19\x8a\xe3\n\x15runtime:runtime:write\x82\xd3\xe4\x93\x02\x12\x1a\x10/configs/runtimeB1Z/github.com/eolymp/go-sdk/eolymp/runtime;runtimeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*eolymp/runtime/configuration_service.proto\x12\x0e\x65olymp.runtime\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\x1c\n\x1a\x44\x65scribeRuntimeConfigInput\"6\n\x1b\x44\x65scribeRuntimeConfigOutput\x12\x17\n\x0f\x61llowed_runtime\x18\x01 \x03(\t\"6\n\x1b\x43onfigureRuntimeConfigInput\x12\x17\n\x0f\x61llowed_runtime\x18\x01 \x03(\t\"\x1e\n\x1c\x43onfigureRuntimeConfigOutput2\x8b\x03\n\x14\x43onfigurationService\x12\x99\x01\n\x15\x44\x65scribeRuntimeConfig\x12*.eolymp.runtime.DescribeRuntimeConfigInput\x1a+.eolymp.runtime.DescribeRuntimeConfigOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x12\x12\x10/configs/runtime\x12\xb9\x01\n\x16\x43onfigureRuntimeConfig\x12+.eolymp.runtime.ConfigureRuntimeConfigInput\x1a,.eolymp.runtime.ConfigureRuntimeConfigOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x19\x8a\xe3\n\x15runtime:runtime:write\x82\xd3\xe4\x93\x02\x12\x1a\x10/configs/runtime\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/runtime;runtimeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,18 +36,20 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.runtime.configuratio
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/runtime;runtime'
+  _globals['_CONFIGURATIONSERVICE']._loaded_options = None
+  _globals['_CONFIGURATIONSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['DescribeRuntimeConfig']._loaded_options = None
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['DescribeRuntimeConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\323\344\223\002\022\022\020/configs/runtime'
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['ConfigureRuntimeConfig']._loaded_options = None
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['ConfigureRuntimeConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\031\212\343\n\025runtime:runtime:write\202\323\344\223\002\022\032\020/configs/runtime'
-  _globals['_DESCRIBERUNTIMECONFIGINPUT']._serialized_start=161
-  _globals['_DESCRIBERUNTIMECONFIGINPUT']._serialized_end=189
-  _globals['_DESCRIBERUNTIMECONFIGOUTPUT']._serialized_start=191
-  _globals['_DESCRIBERUNTIMECONFIGOUTPUT']._serialized_end=245
-  _globals['_CONFIGURERUNTIMECONFIGINPUT']._serialized_start=247
-  _globals['_CONFIGURERUNTIMECONFIGINPUT']._serialized_end=301
-  _globals['_CONFIGURERUNTIMECONFIGOUTPUT']._serialized_start=303
-  _globals['_CONFIGURERUNTIMECONFIGOUTPUT']._serialized_end=333
-  _globals['_CONFIGURATIONSERVICE']._serialized_start=336
-  _globals['_CONFIGURATIONSERVICE']._serialized_end=702
+  _globals['_DESCRIBERUNTIMECONFIGINPUT']._serialized_start=197
+  _globals['_DESCRIBERUNTIMECONFIGINPUT']._serialized_end=225
+  _globals['_DESCRIBERUNTIMECONFIGOUTPUT']._serialized_start=227
+  _globals['_DESCRIBERUNTIMECONFIGOUTPUT']._serialized_end=281
+  _globals['_CONFIGURERUNTIMECONFIGINPUT']._serialized_start=283
+  _globals['_CONFIGURERUNTIMECONFIGINPUT']._serialized_end=337
+  _globals['_CONFIGURERUNTIMECONFIGOUTPUT']._serialized_start=339
+  _globals['_CONFIGURERUNTIMECONFIGOUTPUT']._serialized_end=369
+  _globals['_CONFIGURATIONSERVICE']._serialized_start=372
+  _globals['_CONFIGURATIONSERVICE']._serialized_end=767
 # @@protoc_insertion_point(module_scope)

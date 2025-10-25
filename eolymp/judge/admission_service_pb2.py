@@ -23,12 +23,13 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.community import member_pb2 as eolymp_dot_community_dot_member__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/judge/admission_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/community/member.proto\"\x17\n\x15RequestAdmissionInput\"8\n\x16RequestAdmissionOutput\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"$\n\x14\x41\x63\x63\x65ptAdmissionInput\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"\x17\n\x15\x41\x63\x63\x65ptAdmissionOutput\"&\n\x16\x44\x65scribeAdmissionInput\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"o\n\x17\x44\x65scribeAdmissionOutput\x12\x16\n\x0eparticipant_id\x18\x01 \x01(\t\x12\x12\n\nsession_id\x18\x02 \x01(\t\x12(\n\x06member\x18\x03 \x01(\x0b\x32\x18.eolymp.community.Member\"#\n\x13WatchAdmissionInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\"\x8a\x01\n\x14WatchAdmissionOutput\x12\x39\n\x06status\x18\x01 \x01(\x0e\x32).eolymp.judge.WatchAdmissionOutput.Status\"7\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0c\n\x08\x41\x43\x43\x45PTED\x10\x01\x12\x0b\n\x07\x45XPIRED\x10\x02\x32\x87\x05\n\x10\x41\x64missionService\x12\xa9\x01\n\x10RequestAdmission\x12#.eolymp.judge.RequestAdmissionInput\x1a$.eolymp.judge.RequestAdmissionOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\x82\xd3\xe4\x93\x02\x14\"\x12/admission:request\x12|\n\x0eWatchAdmission\x12!.eolymp.judge.WatchAdmissionInput\x1a\".eolymp.judge.WatchAdmissionOutput\"!\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate0\x01\x12\xa6\x01\n\x11\x44\x65scribeAdmission\x12$.eolymp.judge.DescribeAdmissionInput\x1a%.eolymp.judge.DescribeAdmissionOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x14\x12\x12/admission:request\x12\x9f\x01\n\x0f\x41\x63\x63\x65ptAdmission\x12\".eolymp.judge.AcceptAdmissionInput\x1a#.eolymp.judge.AcceptAdmissionOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x13\"\x11/admission:acceptB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/judge/admission_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/community/member.proto\"\x17\n\x15RequestAdmissionInput\"8\n\x16RequestAdmissionOutput\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"$\n\x14\x41\x63\x63\x65ptAdmissionInput\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"\x17\n\x15\x41\x63\x63\x65ptAdmissionOutput\"&\n\x16\x44\x65scribeAdmissionInput\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"o\n\x17\x44\x65scribeAdmissionOutput\x12\x16\n\x0eparticipant_id\x18\x01 \x01(\t\x12\x12\n\nsession_id\x18\x02 \x01(\t\x12(\n\x06member\x18\x03 \x01(\x0b\x32\x18.eolymp.community.Member\"#\n\x13WatchAdmissionInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\"\x8a\x01\n\x14WatchAdmissionOutput\x12\x39\n\x06status\x18\x01 \x01(\x0e\x32).eolymp.judge.WatchAdmissionOutput.Status\"7\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0c\n\x08\x41\x43\x43\x45PTED\x10\x01\x12\x0b\n\x07\x45XPIRED\x10\x02\x32\xa3\x05\n\x10\x41\x64missionService\x12\xa9\x01\n\x10RequestAdmission\x12#.eolymp.judge.RequestAdmissionInput\x1a$.eolymp.judge.RequestAdmissionOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\x82\xd3\xe4\x93\x02\x14\"\x12/admission:request\x12|\n\x0eWatchAdmission\x12!.eolymp.judge.WatchAdmissionInput\x1a\".eolymp.judge.WatchAdmissionOutput\"!\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate0\x01\x12\xa6\x01\n\x11\x44\x65scribeAdmission\x12$.eolymp.judge.DescribeAdmissionInput\x1a%.eolymp.judge.DescribeAdmissionOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x14\x12\x12/admission:request\x12\x9f\x01\n\x0f\x41\x63\x63\x65ptAdmission\x12\".eolymp.judge.AcceptAdmissionInput\x1a#.eolymp.judge.AcceptAdmissionOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x13\"\x11/admission:accept\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +37,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.admission_serv
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
+  _globals['_ADMISSIONSERVICE']._loaded_options = None
+  _globals['_ADMISSIONSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.judge.Contest'
   _globals['_ADMISSIONSERVICE'].methods_by_name['RequestAdmission']._loaded_options = None
   _globals['_ADMISSIONSERVICE'].methods_by_name['RequestAdmission']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\035\212\343\n\031judge:contest:participate\202\323\344\223\002\024\"\022/admission:request'
   _globals['_ADMISSIONSERVICE'].methods_by_name['WatchAdmission']._loaded_options = None
@@ -44,24 +47,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ADMISSIONSERVICE'].methods_by_name['DescribeAdmission']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\024\022\022/admission:request'
   _globals['_ADMISSIONSERVICE'].methods_by_name['AcceptAdmission']._loaded_options = None
   _globals['_ADMISSIONSERVICE'].methods_by_name['AcceptAdmission']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\023\"\021/admission:accept'
-  _globals['_REQUESTADMISSIONINPUT']._serialized_start=184
-  _globals['_REQUESTADMISSIONINPUT']._serialized_end=207
-  _globals['_REQUESTADMISSIONOUTPUT']._serialized_start=209
-  _globals['_REQUESTADMISSIONOUTPUT']._serialized_end=265
-  _globals['_ACCEPTADMISSIONINPUT']._serialized_start=267
-  _globals['_ACCEPTADMISSIONINPUT']._serialized_end=303
-  _globals['_ACCEPTADMISSIONOUTPUT']._serialized_start=305
-  _globals['_ACCEPTADMISSIONOUTPUT']._serialized_end=328
-  _globals['_DESCRIBEADMISSIONINPUT']._serialized_start=330
-  _globals['_DESCRIBEADMISSIONINPUT']._serialized_end=368
-  _globals['_DESCRIBEADMISSIONOUTPUT']._serialized_start=370
-  _globals['_DESCRIBEADMISSIONOUTPUT']._serialized_end=481
-  _globals['_WATCHADMISSIONINPUT']._serialized_start=483
-  _globals['_WATCHADMISSIONINPUT']._serialized_end=518
-  _globals['_WATCHADMISSIONOUTPUT']._serialized_start=521
-  _globals['_WATCHADMISSIONOUTPUT']._serialized_end=659
-  _globals['_WATCHADMISSIONOUTPUT_STATUS']._serialized_start=604
-  _globals['_WATCHADMISSIONOUTPUT_STATUS']._serialized_end=659
-  _globals['_ADMISSIONSERVICE']._serialized_start=662
-  _globals['_ADMISSIONSERVICE']._serialized_end=1309
+  _globals['_REQUESTADMISSIONINPUT']._serialized_start=220
+  _globals['_REQUESTADMISSIONINPUT']._serialized_end=243
+  _globals['_REQUESTADMISSIONOUTPUT']._serialized_start=245
+  _globals['_REQUESTADMISSIONOUTPUT']._serialized_end=301
+  _globals['_ACCEPTADMISSIONINPUT']._serialized_start=303
+  _globals['_ACCEPTADMISSIONINPUT']._serialized_end=339
+  _globals['_ACCEPTADMISSIONOUTPUT']._serialized_start=341
+  _globals['_ACCEPTADMISSIONOUTPUT']._serialized_end=364
+  _globals['_DESCRIBEADMISSIONINPUT']._serialized_start=366
+  _globals['_DESCRIBEADMISSIONINPUT']._serialized_end=404
+  _globals['_DESCRIBEADMISSIONOUTPUT']._serialized_start=406
+  _globals['_DESCRIBEADMISSIONOUTPUT']._serialized_end=517
+  _globals['_WATCHADMISSIONINPUT']._serialized_start=519
+  _globals['_WATCHADMISSIONINPUT']._serialized_end=554
+  _globals['_WATCHADMISSIONOUTPUT']._serialized_start=557
+  _globals['_WATCHADMISSIONOUTPUT']._serialized_end=695
+  _globals['_WATCHADMISSIONOUTPUT_STATUS']._serialized_start=640
+  _globals['_WATCHADMISSIONOUTPUT_STATUS']._serialized_end=695
+  _globals['_ADMISSIONSERVICE']._serialized_start=698
+  _globals['_ADMISSIONSERVICE']._serialized_end=1373
 # @@protoc_insertion_point(module_scope)

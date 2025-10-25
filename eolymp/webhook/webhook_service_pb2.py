@@ -23,12 +23,13 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.webhook import webhook_pb2 as eolymp_dot_webhook_dot_webhook__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/webhook/webhook_service.proto\x12\x0e\x65olymp.webhook\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/webhook/webhook.proto\">\n\x12\x43reateWebhookInput\x12(\n\x07webhook\x18\x01 \x01(\x0b\x32\x17.eolymp.webhook.Webhook\")\n\x13\x43reateWebhookOutput\x12\x12\n\nwebhook_id\x18\x01 \x01(\t\"\x80\x01\n\x12UpdateWebhookInput\x12,\n\x05patch\x18\x01 \x03(\x0e\x32\x1d.eolymp.webhook.Webhook.Patch\x12\x12\n\nwebhook_id\x18\x02 \x01(\t\x12(\n\x07webhook\x18\x03 \x01(\x0b\x32\x17.eolymp.webhook.Webhook\"\x15\n\x13UpdateWebhookOutput\"(\n\x12\x44\x65leteWebhookInput\x12\x12\n\nwebhook_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteWebhookOutput\"*\n\x14\x44\x65scribeWebhookInput\x12\x12\n\nwebhook_id\x18\x01 \x01(\t\"A\n\x15\x44\x65scribeWebhookOutput\x12(\n\x07webhook\x18\x01 \x01(\x0b\x32\x17.eolymp.webhook.Webhook\"1\n\x11ListWebhooksInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\"K\n\x12ListWebhooksOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.webhook.Webhook\"&\n\x10TestWebhookInput\x12\x12\n\nwebhook_id\x18\x01 \x01(\t\"5\n\x11TestWebhookOutput\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x10\n\x08response\x18\x02 \x01(\t2\xe0\x07\n\x0eWebhookService\x12\x97\x01\n\rCreateWebhook\x12\".eolymp.webhook.CreateWebhookInput\x1a#.eolymp.webhook.CreateWebhookOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15webhook:webhook:write\x82\xd3\xe4\x93\x02\x0b\"\t/webhooks\x12\xa4\x01\n\rUpdateWebhook\x12\".eolymp.webhook.UpdateWebhookInput\x1a#.eolymp.webhook.UpdateWebhookOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15webhook:webhook:write\x82\xd3\xe4\x93\x02\x18\"\x16/webhooks/{webhook_id}\x12\xa4\x01\n\rDeleteWebhook\x12\".eolymp.webhook.DeleteWebhookInput\x1a#.eolymp.webhook.DeleteWebhookOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15webhook:webhook:write\x82\xd3\xe4\x93\x02\x18*\x16/webhooks/{webhook_id}\x12\xa9\x01\n\x0f\x44\x65scribeWebhook\x12$.eolymp.webhook.DescribeWebhookInput\x1a%.eolymp.webhook.DescribeWebhookOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14webhook:webhook:read\x82\xd3\xe4\x93\x02\x18\x12\x16/webhooks/{webhook_id}\x12\x93\x01\n\x0cListWebhooks\x12!.eolymp.webhook.ListWebhooksInput\x1a\".eolymp.webhook.ListWebhooksOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14webhook:webhook:read\x82\xd3\xe4\x93\x02\x0b\x12\t/webhooks\x12\xa3\x01\n\x0bTestWebhook\x12 .eolymp.webhook.TestWebhookInput\x1a!.eolymp.webhook.TestWebhookOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15webhook:webhook:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/webhooks/{webhook_id}/testB1Z/github.com/eolymp/go-sdk/eolymp/webhook;webhookb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/webhook/webhook_service.proto\x12\x0e\x65olymp.webhook\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/webhook/webhook.proto\">\n\x12\x43reateWebhookInput\x12(\n\x07webhook\x18\x01 \x01(\x0b\x32\x17.eolymp.webhook.Webhook\")\n\x13\x43reateWebhookOutput\x12\x12\n\nwebhook_id\x18\x01 \x01(\t\"\x80\x01\n\x12UpdateWebhookInput\x12,\n\x05patch\x18\x01 \x03(\x0e\x32\x1d.eolymp.webhook.Webhook.Patch\x12\x12\n\nwebhook_id\x18\x02 \x01(\t\x12(\n\x07webhook\x18\x03 \x01(\x0b\x32\x17.eolymp.webhook.Webhook\"\x15\n\x13UpdateWebhookOutput\"(\n\x12\x44\x65leteWebhookInput\x12\x12\n\nwebhook_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteWebhookOutput\"*\n\x14\x44\x65scribeWebhookInput\x12\x12\n\nwebhook_id\x18\x01 \x01(\t\"A\n\x15\x44\x65scribeWebhookOutput\x12(\n\x07webhook\x18\x01 \x01(\x0b\x32\x17.eolymp.webhook.Webhook\"1\n\x11ListWebhooksInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\"K\n\x12ListWebhooksOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.webhook.Webhook\"&\n\x10TestWebhookInput\x12\x12\n\nwebhook_id\x18\x01 \x01(\t\"5\n\x11TestWebhookOutput\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x10\n\x08response\x18\x02 \x01(\t2\xfd\x07\n\x0eWebhookService\x12\x97\x01\n\rCreateWebhook\x12\".eolymp.webhook.CreateWebhookInput\x1a#.eolymp.webhook.CreateWebhookOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15webhook:webhook:write\x82\xd3\xe4\x93\x02\x0b\"\t/webhooks\x12\xa4\x01\n\rUpdateWebhook\x12\".eolymp.webhook.UpdateWebhookInput\x1a#.eolymp.webhook.UpdateWebhookOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15webhook:webhook:write\x82\xd3\xe4\x93\x02\x18\"\x16/webhooks/{webhook_id}\x12\xa4\x01\n\rDeleteWebhook\x12\".eolymp.webhook.DeleteWebhookInput\x1a#.eolymp.webhook.DeleteWebhookOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15webhook:webhook:write\x82\xd3\xe4\x93\x02\x18*\x16/webhooks/{webhook_id}\x12\xa9\x01\n\x0f\x44\x65scribeWebhook\x12$.eolymp.webhook.DescribeWebhookInput\x1a%.eolymp.webhook.DescribeWebhookOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14webhook:webhook:read\x82\xd3\xe4\x93\x02\x18\x12\x16/webhooks/{webhook_id}\x12\x93\x01\n\x0cListWebhooks\x12!.eolymp.webhook.ListWebhooksInput\x1a\".eolymp.webhook.ListWebhooksOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14webhook:webhook:read\x82\xd3\xe4\x93\x02\x0b\x12\t/webhooks\x12\xa3\x01\n\x0bTestWebhook\x12 .eolymp.webhook.TestWebhookInput\x1a!.eolymp.webhook.TestWebhookOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15webhook:webhook:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/webhooks/{webhook_id}/test\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/webhook;webhookb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +37,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.webhook.webhook_serv
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/webhook;webhook'
+  _globals['_WEBHOOKSERVICE']._loaded_options = None
+  _globals['_WEBHOOKSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_WEBHOOKSERVICE'].methods_by_name['CreateWebhook']._loaded_options = None
   _globals['_WEBHOOKSERVICE'].methods_by_name['CreateWebhook']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\031\212\343\n\025webhook:webhook:write\202\323\344\223\002\013\"\t/webhooks'
   _globals['_WEBHOOKSERVICE'].methods_by_name['UpdateWebhook']._loaded_options = None
@@ -48,30 +51,30 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_WEBHOOKSERVICE'].methods_by_name['ListWebhooks']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024webhook:webhook:read\202\323\344\223\002\013\022\t/webhooks'
   _globals['_WEBHOOKSERVICE'].methods_by_name['TestWebhook']._loaded_options = None
   _globals['_WEBHOOKSERVICE'].methods_by_name['TestWebhook']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\031\212\343\n\025webhook:webhook:write\202\323\344\223\002\035\"\033/webhooks/{webhook_id}/test'
-  _globals['_CREATEWEBHOOKINPUT']._serialized_start=185
-  _globals['_CREATEWEBHOOKINPUT']._serialized_end=247
-  _globals['_CREATEWEBHOOKOUTPUT']._serialized_start=249
-  _globals['_CREATEWEBHOOKOUTPUT']._serialized_end=290
-  _globals['_UPDATEWEBHOOKINPUT']._serialized_start=293
-  _globals['_UPDATEWEBHOOKINPUT']._serialized_end=421
-  _globals['_UPDATEWEBHOOKOUTPUT']._serialized_start=423
-  _globals['_UPDATEWEBHOOKOUTPUT']._serialized_end=444
-  _globals['_DELETEWEBHOOKINPUT']._serialized_start=446
-  _globals['_DELETEWEBHOOKINPUT']._serialized_end=486
-  _globals['_DELETEWEBHOOKOUTPUT']._serialized_start=488
-  _globals['_DELETEWEBHOOKOUTPUT']._serialized_end=509
-  _globals['_DESCRIBEWEBHOOKINPUT']._serialized_start=511
-  _globals['_DESCRIBEWEBHOOKINPUT']._serialized_end=553
-  _globals['_DESCRIBEWEBHOOKOUTPUT']._serialized_start=555
-  _globals['_DESCRIBEWEBHOOKOUTPUT']._serialized_end=620
-  _globals['_LISTWEBHOOKSINPUT']._serialized_start=622
-  _globals['_LISTWEBHOOKSINPUT']._serialized_end=671
-  _globals['_LISTWEBHOOKSOUTPUT']._serialized_start=673
-  _globals['_LISTWEBHOOKSOUTPUT']._serialized_end=748
-  _globals['_TESTWEBHOOKINPUT']._serialized_start=750
-  _globals['_TESTWEBHOOKINPUT']._serialized_end=788
-  _globals['_TESTWEBHOOKOUTPUT']._serialized_start=790
-  _globals['_TESTWEBHOOKOUTPUT']._serialized_end=843
-  _globals['_WEBHOOKSERVICE']._serialized_start=846
-  _globals['_WEBHOOKSERVICE']._serialized_end=1838
+  _globals['_CREATEWEBHOOKINPUT']._serialized_start=221
+  _globals['_CREATEWEBHOOKINPUT']._serialized_end=283
+  _globals['_CREATEWEBHOOKOUTPUT']._serialized_start=285
+  _globals['_CREATEWEBHOOKOUTPUT']._serialized_end=326
+  _globals['_UPDATEWEBHOOKINPUT']._serialized_start=329
+  _globals['_UPDATEWEBHOOKINPUT']._serialized_end=457
+  _globals['_UPDATEWEBHOOKOUTPUT']._serialized_start=459
+  _globals['_UPDATEWEBHOOKOUTPUT']._serialized_end=480
+  _globals['_DELETEWEBHOOKINPUT']._serialized_start=482
+  _globals['_DELETEWEBHOOKINPUT']._serialized_end=522
+  _globals['_DELETEWEBHOOKOUTPUT']._serialized_start=524
+  _globals['_DELETEWEBHOOKOUTPUT']._serialized_end=545
+  _globals['_DESCRIBEWEBHOOKINPUT']._serialized_start=547
+  _globals['_DESCRIBEWEBHOOKINPUT']._serialized_end=589
+  _globals['_DESCRIBEWEBHOOKOUTPUT']._serialized_start=591
+  _globals['_DESCRIBEWEBHOOKOUTPUT']._serialized_end=656
+  _globals['_LISTWEBHOOKSINPUT']._serialized_start=658
+  _globals['_LISTWEBHOOKSINPUT']._serialized_end=707
+  _globals['_LISTWEBHOOKSOUTPUT']._serialized_start=709
+  _globals['_LISTWEBHOOKSOUTPUT']._serialized_end=784
+  _globals['_TESTWEBHOOKINPUT']._serialized_start=786
+  _globals['_TESTWEBHOOKINPUT']._serialized_end=824
+  _globals['_TESTWEBHOOKOUTPUT']._serialized_start=826
+  _globals['_TESTWEBHOOKOUTPUT']._serialized_end=879
+  _globals['_WEBHOOKSERVICE']._serialized_start=882
+  _globals['_WEBHOOKSERVICE']._serialized_end=1903
 # @@protoc_insertion_point(module_scope)

@@ -1,4 +1,5 @@
 from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.commerce import invoice_pb2 as _invoice_pb2
 from eolymp.universe import billing_pb2 as _billing_pb2

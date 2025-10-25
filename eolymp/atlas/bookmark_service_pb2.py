@@ -23,10 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/atlas/bookmark_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\"\\\n\x14\x42ookmarkChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x0e\n\x06\x62\x65\x66ore\x18\x03 \x01(\x08\x12\r\n\x05\x61\x66ter\x18\x04 \x01(\x08\"$\n\x10SetBookmarkInput\x12\x10\n\x08\x62ookmark\x18\x02 \x01(\x08\"\x13\n\x11SetBookmarkOutput\"\x12\n\x10GetBookmarkInput\"%\n\x11GetBookmarkOutput\x12\x10\n\x08\x62ookmark\x18\x01 \x01(\x08\x32\xf5\x01\n\x0f\x42ookmarkService\x12p\n\x0bGetBookmark\x12\x1e.eolymp.atlas.GetBookmarkInput\x1a\x1f.eolymp.atlas.GetBookmarkOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/bookmark\x12p\n\x0bSetBookmark\x12\x1e.eolymp.atlas.SetBookmarkInput\x1a\x1f.eolymp.atlas.SetBookmarkOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x0b\"\t/bookmarkB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/atlas/bookmark_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\"\\\n\x14\x42ookmarkChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x0e\n\x06\x62\x65\x66ore\x18\x03 \x01(\x08\x12\r\n\x05\x61\x66ter\x18\x04 \x01(\x08\"$\n\x10SetBookmarkInput\x12\x10\n\x08\x62ookmark\x18\x02 \x01(\x08\"\x13\n\x11SetBookmarkOutput\"\x12\n\x10GetBookmarkInput\"%\n\x11GetBookmarkOutput\x12\x10\n\x08\x62ookmark\x18\x01 \x01(\x08\x32\x91\x02\n\x0f\x42ookmarkService\x12p\n\x0bGetBookmark\x12\x1e.eolymp.atlas.GetBookmarkInput\x1a\x1f.eolymp.atlas.GetBookmarkOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0b\x12\t/bookmark\x12p\n\x0bSetBookmark\x12\x1e.eolymp.atlas.SetBookmarkInput\x1a\x1f.eolymp.atlas.SetBookmarkOutput\" \xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xd3\xe4\x93\x02\x0b\"\t/bookmark\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.ProblemB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,20 +35,22 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.bookmark_servi
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
+  _globals['_BOOKMARKSERVICE']._loaded_options = None
+  _globals['_BOOKMARKSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.atlas.Problem'
   _globals['_BOOKMARKSERVICE'].methods_by_name['GetBookmark']._loaded_options = None
   _globals['_BOOKMARKSERVICE'].methods_by_name['GetBookmark']._serialized_options = b'\352\342\n\013\365\342\n\000\000\310A\370\342\nd\202\323\344\223\002\013\022\t/bookmark'
   _globals['_BOOKMARKSERVICE'].methods_by_name['SetBookmark']._loaded_options = None
   _globals['_BOOKMARKSERVICE'].methods_by_name['SetBookmark']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\323\344\223\002\013\"\t/bookmark'
-  _globals['_BOOKMARKCHANGEDEVENT']._serialized_start=120
-  _globals['_BOOKMARKCHANGEDEVENT']._serialized_end=212
-  _globals['_SETBOOKMARKINPUT']._serialized_start=214
-  _globals['_SETBOOKMARKINPUT']._serialized_end=250
-  _globals['_SETBOOKMARKOUTPUT']._serialized_start=252
-  _globals['_SETBOOKMARKOUTPUT']._serialized_end=271
-  _globals['_GETBOOKMARKINPUT']._serialized_start=273
-  _globals['_GETBOOKMARKINPUT']._serialized_end=291
-  _globals['_GETBOOKMARKOUTPUT']._serialized_start=293
-  _globals['_GETBOOKMARKOUTPUT']._serialized_end=330
-  _globals['_BOOKMARKSERVICE']._serialized_start=333
-  _globals['_BOOKMARKSERVICE']._serialized_end=578
+  _globals['_BOOKMARKCHANGEDEVENT']._serialized_start=156
+  _globals['_BOOKMARKCHANGEDEVENT']._serialized_end=248
+  _globals['_SETBOOKMARKINPUT']._serialized_start=250
+  _globals['_SETBOOKMARKINPUT']._serialized_end=286
+  _globals['_SETBOOKMARKOUTPUT']._serialized_start=288
+  _globals['_SETBOOKMARKOUTPUT']._serialized_end=307
+  _globals['_GETBOOKMARKINPUT']._serialized_start=309
+  _globals['_GETBOOKMARKINPUT']._serialized_end=327
+  _globals['_GETBOOKMARKOUTPUT']._serialized_start=329
+  _globals['_GETBOOKMARKOUTPUT']._serialized_end=366
+  _globals['_BOOKMARKSERVICE']._serialized_start=369
+  _globals['_BOOKMARKSERVICE']._serialized_end=642
 # @@protoc_insertion_point(module_scope)

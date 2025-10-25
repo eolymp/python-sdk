@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.atlas import script_pb2 as eolymp_dot_atlas_dot_script__pb2
@@ -30,7 +31,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/script_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/atlas/script.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"s\n\x12ScriptChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12$\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x14.eolymp.atlas.Script\x12#\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x14.eolymp.atlas.Script\"9\n\x11\x43reateScriptInput\x12$\n\x06script\x18\x01 \x01(\x0b\x32\x14.eolymp.atlas.Script\"\'\n\x12\x43reateScriptOutput\x12\x11\n\tscript_id\x18\x01 \x01(\t\"}\n\x11UpdateScriptInput\x12/\n\x05patch\x18\x01 \x03(\x0e\x32 .eolymp.atlas.Script.Patch.Field\x12\x11\n\tscript_id\x18\x02 \x01(\t\x12$\n\x06script\x18\x03 \x01(\x0b\x32\x14.eolymp.atlas.Script\"\x14\n\x12UpdateScriptOutput\"&\n\x11\x44\x65leteScriptInput\x12\x11\n\tscript_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteScriptOutput\"k\n\x13\x44\x65scribeScriptInput\x12\x11\n\tscript_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.atlas.Script.Extra.Field\"<\n\x14\x44\x65scribeScriptOutput\x12$\n\x06script\x18\x01 \x01(\x0b\x32\x14.eolymp.atlas.Script\"\xd0\x03\n\x10ListScriptsInput\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.atlas.ListScriptsInput.Filter\x12\x35\n\x04sort\x18\x32 \x01(\x0e\x32\'.eolymp.atlas.ListScriptsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.atlas.Script.Extra.Field\x1a\x99\x01\n\x06\x46ilter\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x0b \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x31\n\x07runtime\x18\x0c \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x14\n\x08Sortable\x12\x08\n\x04NAME\x10\x00\"G\n\x11ListScriptsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.atlas.Script\".\n\x17\x45xecuteStressCheckInput\x12\x13\n\x0bscript_name\x18\x01 \x01(\t\"\x1a\n\x18\x45xecuteStressCheckOutput2\xb3\x07\n\rScriptService\x12\x8d\x01\n\x0c\x43reateScript\x12\x1f.eolymp.atlas.CreateScriptInput\x1a .eolymp.atlas.CreateScriptOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\n\x1a\x08/scripts\x12\x99\x01\n\x0cUpdateScript\x12\x1f.eolymp.atlas.UpdateScriptInput\x1a .eolymp.atlas.UpdateScriptOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x16\x1a\x14/scripts/{script_id}\x12\x99\x01\n\x0c\x44\x65leteScript\x12\x1f.eolymp.atlas.DeleteScriptInput\x1a .eolymp.atlas.DeleteScriptOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x16*\x14/scripts/{script_id}\x12\x9e\x01\n\x0e\x44\x65scribeScript\x12!.eolymp.atlas.DescribeScriptInput\x1a\".eolymp.atlas.DescribeScriptOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x16\x12\x14/scripts/{script_id}\x12\x89\x01\n\x0bListScripts\x12\x1e.eolymp.atlas.ListScriptsInput\x1a\x1f.eolymp.atlas.ListScriptsOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\n\x12\x08/scripts\x12\xac\x01\n\x12\x45xecuteStressCheck\x12%.eolymp.atlas.ExecuteStressCheckInput\x1a&.eolymp.atlas.ExecuteStressCheckOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x17\"\x15/scripts:stress-checkB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/script_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/atlas/script.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"s\n\x12ScriptChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12$\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x14.eolymp.atlas.Script\x12#\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x14.eolymp.atlas.Script\"9\n\x11\x43reateScriptInput\x12$\n\x06script\x18\x01 \x01(\x0b\x32\x14.eolymp.atlas.Script\"\'\n\x12\x43reateScriptOutput\x12\x11\n\tscript_id\x18\x01 \x01(\t\"}\n\x11UpdateScriptInput\x12/\n\x05patch\x18\x01 \x03(\x0e\x32 .eolymp.atlas.Script.Patch.Field\x12\x11\n\tscript_id\x18\x02 \x01(\t\x12$\n\x06script\x18\x03 \x01(\x0b\x32\x14.eolymp.atlas.Script\"\x14\n\x12UpdateScriptOutput\"&\n\x11\x44\x65leteScriptInput\x12\x11\n\tscript_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteScriptOutput\"k\n\x13\x44\x65scribeScriptInput\x12\x11\n\tscript_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.atlas.Script.Extra.Field\"<\n\x14\x44\x65scribeScriptOutput\x12$\n\x06script\x18\x01 \x01(\x0b\x32\x14.eolymp.atlas.Script\"\xd0\x03\n\x10ListScriptsInput\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.atlas.ListScriptsInput.Filter\x12\x35\n\x04sort\x18\x32 \x01(\x0e\x32\'.eolymp.atlas.ListScriptsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.atlas.Script.Extra.Field\x1a\x99\x01\n\x06\x46ilter\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x0b \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x31\n\x07runtime\x18\x0c \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x14\n\x08Sortable\x12\x08\n\x04NAME\x10\x00\"G\n\x11ListScriptsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.atlas.Script\".\n\x17\x45xecuteStressCheckInput\x12\x13\n\x0bscript_name\x18\x01 \x01(\t\"\x1a\n\x18\x45xecuteStressCheckOutput2\xcf\x07\n\rScriptService\x12\x8d\x01\n\x0c\x43reateScript\x12\x1f.eolymp.atlas.CreateScriptInput\x1a .eolymp.atlas.CreateScriptOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\n\x1a\x08/scripts\x12\x99\x01\n\x0cUpdateScript\x12\x1f.eolymp.atlas.UpdateScriptInput\x1a .eolymp.atlas.UpdateScriptOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x16\x1a\x14/scripts/{script_id}\x12\x99\x01\n\x0c\x44\x65leteScript\x12\x1f.eolymp.atlas.DeleteScriptInput\x1a .eolymp.atlas.DeleteScriptOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x16*\x14/scripts/{script_id}\x12\x9e\x01\n\x0e\x44\x65scribeScript\x12!.eolymp.atlas.DescribeScriptInput\x1a\".eolymp.atlas.DescribeScriptOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x16\x12\x14/scripts/{script_id}\x12\x89\x01\n\x0bListScripts\x12\x1e.eolymp.atlas.ListScriptsInput\x1a\x1f.eolymp.atlas.ListScriptsOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\n\x12\x08/scripts\x12\xac\x01\n\x12\x45xecuteStressCheck\x12%.eolymp.atlas.ExecuteStressCheckInput\x1a&.eolymp.atlas.ExecuteStressCheckOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x17\"\x15/scripts:stress-check\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.ProblemB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,6 +39,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.script_service
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
+  _globals['_SCRIPTSERVICE']._loaded_options = None
+  _globals['_SCRIPTSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.atlas.Problem'
   _globals['_SCRIPTSERVICE'].methods_by_name['CreateScript']._loaded_options = None
   _globals['_SCRIPTSERVICE'].methods_by_name['CreateScript']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002\n\032\010/scripts'
   _globals['_SCRIPTSERVICE'].methods_by_name['UpdateScript']._loaded_options = None
@@ -50,36 +53,36 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SCRIPTSERVICE'].methods_by_name['ListScripts']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002\n\022\010/scripts'
   _globals['_SCRIPTSERVICE'].methods_by_name['ExecuteStressCheck']._loaded_options = None
   _globals['_SCRIPTSERVICE'].methods_by_name['ExecuteStressCheck']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002\027\"\025/scripts:stress-check'
-  _globals['_SCRIPTCHANGEDEVENT']._serialized_start=246
-  _globals['_SCRIPTCHANGEDEVENT']._serialized_end=361
-  _globals['_CREATESCRIPTINPUT']._serialized_start=363
-  _globals['_CREATESCRIPTINPUT']._serialized_end=420
-  _globals['_CREATESCRIPTOUTPUT']._serialized_start=422
-  _globals['_CREATESCRIPTOUTPUT']._serialized_end=461
-  _globals['_UPDATESCRIPTINPUT']._serialized_start=463
-  _globals['_UPDATESCRIPTINPUT']._serialized_end=588
-  _globals['_UPDATESCRIPTOUTPUT']._serialized_start=590
-  _globals['_UPDATESCRIPTOUTPUT']._serialized_end=610
-  _globals['_DELETESCRIPTINPUT']._serialized_start=612
-  _globals['_DELETESCRIPTINPUT']._serialized_end=650
-  _globals['_DELETESCRIPTOUTPUT']._serialized_start=652
-  _globals['_DELETESCRIPTOUTPUT']._serialized_end=672
-  _globals['_DESCRIBESCRIPTINPUT']._serialized_start=674
-  _globals['_DESCRIBESCRIPTINPUT']._serialized_end=781
-  _globals['_DESCRIBESCRIPTOUTPUT']._serialized_start=783
-  _globals['_DESCRIBESCRIPTOUTPUT']._serialized_end=843
-  _globals['_LISTSCRIPTSINPUT']._serialized_start=846
-  _globals['_LISTSCRIPTSINPUT']._serialized_end=1310
-  _globals['_LISTSCRIPTSINPUT_FILTER']._serialized_start=1135
-  _globals['_LISTSCRIPTSINPUT_FILTER']._serialized_end=1288
-  _globals['_LISTSCRIPTSINPUT_SORTABLE']._serialized_start=1290
-  _globals['_LISTSCRIPTSINPUT_SORTABLE']._serialized_end=1310
-  _globals['_LISTSCRIPTSOUTPUT']._serialized_start=1312
-  _globals['_LISTSCRIPTSOUTPUT']._serialized_end=1383
-  _globals['_EXECUTESTRESSCHECKINPUT']._serialized_start=1385
-  _globals['_EXECUTESTRESSCHECKINPUT']._serialized_end=1431
-  _globals['_EXECUTESTRESSCHECKOUTPUT']._serialized_start=1433
-  _globals['_EXECUTESTRESSCHECKOUTPUT']._serialized_end=1459
-  _globals['_SCRIPTSERVICE']._serialized_start=1462
-  _globals['_SCRIPTSERVICE']._serialized_end=2409
+  _globals['_SCRIPTCHANGEDEVENT']._serialized_start=282
+  _globals['_SCRIPTCHANGEDEVENT']._serialized_end=397
+  _globals['_CREATESCRIPTINPUT']._serialized_start=399
+  _globals['_CREATESCRIPTINPUT']._serialized_end=456
+  _globals['_CREATESCRIPTOUTPUT']._serialized_start=458
+  _globals['_CREATESCRIPTOUTPUT']._serialized_end=497
+  _globals['_UPDATESCRIPTINPUT']._serialized_start=499
+  _globals['_UPDATESCRIPTINPUT']._serialized_end=624
+  _globals['_UPDATESCRIPTOUTPUT']._serialized_start=626
+  _globals['_UPDATESCRIPTOUTPUT']._serialized_end=646
+  _globals['_DELETESCRIPTINPUT']._serialized_start=648
+  _globals['_DELETESCRIPTINPUT']._serialized_end=686
+  _globals['_DELETESCRIPTOUTPUT']._serialized_start=688
+  _globals['_DELETESCRIPTOUTPUT']._serialized_end=708
+  _globals['_DESCRIBESCRIPTINPUT']._serialized_start=710
+  _globals['_DESCRIBESCRIPTINPUT']._serialized_end=817
+  _globals['_DESCRIBESCRIPTOUTPUT']._serialized_start=819
+  _globals['_DESCRIBESCRIPTOUTPUT']._serialized_end=879
+  _globals['_LISTSCRIPTSINPUT']._serialized_start=882
+  _globals['_LISTSCRIPTSINPUT']._serialized_end=1346
+  _globals['_LISTSCRIPTSINPUT_FILTER']._serialized_start=1171
+  _globals['_LISTSCRIPTSINPUT_FILTER']._serialized_end=1324
+  _globals['_LISTSCRIPTSINPUT_SORTABLE']._serialized_start=1326
+  _globals['_LISTSCRIPTSINPUT_SORTABLE']._serialized_end=1346
+  _globals['_LISTSCRIPTSOUTPUT']._serialized_start=1348
+  _globals['_LISTSCRIPTSOUTPUT']._serialized_end=1419
+  _globals['_EXECUTESTRESSCHECKINPUT']._serialized_start=1421
+  _globals['_EXECUTESTRESSCHECKINPUT']._serialized_end=1467
+  _globals['_EXECUTESTRESSCHECKOUTPUT']._serialized_start=1469
+  _globals['_EXECUTESTRESSCHECKOUTPUT']._serialized_end=1495
+  _globals['_SCRIPTSERVICE']._serialized_start=1498
+  _globals['_SCRIPTSERVICE']._serialized_end=2473
 # @@protoc_insertion_point(module_scope)

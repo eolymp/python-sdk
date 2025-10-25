@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.printer import printer_pb2 as eolymp_dot_printer_dot_printer__pb2
@@ -30,7 +31,7 @@ from eolymp.printer import printer_job_pb2 as eolymp_dot_printer_dot_printer__jo
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/printer/printer_service.proto\x12\x0e\x65olymp.printer\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/printer/printer.proto\x1a eolymp/printer/printer_job.proto\x1a!eolymp/wellknown/expression.proto\">\n\x12\x43reatePrinterInput\x12(\n\x07printer\x18\x01 \x01(\x0b\x32\x17.eolymp.printer.Printer\")\n\x13\x43reatePrinterOutput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\"R\n\x12UpdatePrinterInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12(\n\x07printer\x18\x02 \x01(\x0b\x32\x17.eolymp.printer.Printer\"\x15\n\x13UpdatePrinterOutput\"(\n\x12\x44\x65letePrinterInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65letePrinterOutput\"*\n\x14\x44\x65scribePrinterInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\"A\n\x15\x44\x65scribePrinterOutput\x12(\n\x07printer\x18\x01 \x01(\x0b\x32\x17.eolymp.printer.Printer\"\x97\x02\n\x11ListPrintersInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0e\n\x06search\x18\x1e \x01(\t\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.printer.ListPrintersInput.Filter\x1a\x98\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"K\n\x12ListPrintersOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.printer.Printer\"G\n\x15\x43reatePrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x04html\x18\x03 \x01(\tH\x00\x42\n\n\x08\x64ocument\"(\n\x16\x43reatePrinterJobOutput\x12\x0e\n\x06job_id\x18\x01 \x01(\t\"=\n\x17\x44\x65scribePrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\"<\n\x18\x44\x65scribePrinterJobOutput\x12 \n\x03job\x18\x01 \x01(\x0b\x32\x13.eolymp.printer.Job\"\xee\x01\n\x14ListPrinterJobsInput\x12\x12\n\nprinter_id\x18\x02 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.printer.ListPrinterJobsInput.Filter\x1a\x66\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"J\n\x15ListPrinterJobsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.eolymp.printer.Job\";\n\x15\x43\x61ncelPrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\"\x18\n\x16\x43\x61ncelPrinterJobOutput\"]\n\x15UpdatePrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\x12 \n\x03job\x18\x03 \x01(\x0b\x32\x13.eolymp.printer.Job\"\x18\n\x16UpdatePrinterJobOutput\";\n\x15\x44\x65letePrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\"\x18\n\x16\x44\x65letePrinterJobOutput2\xe0\r\n\x0ePrinterService\x12\x97\x01\n\rCreatePrinter\x12\".eolymp.printer.CreatePrinterInput\x1a#.eolymp.printer.CreatePrinterOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02\x0b\"\t/printers\x12\xa4\x01\n\rUpdatePrinter\x12\".eolymp.printer.UpdatePrinterInput\x1a#.eolymp.printer.UpdatePrinterOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02\x18\"\x16/printers/{printer_id}\x12\xa4\x01\n\rDeletePrinter\x12\".eolymp.printer.DeletePrinterInput\x1a#.eolymp.printer.DeletePrinterOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02\x18*\x16/printers/{printer_id}\x12\xa9\x01\n\x0f\x44\x65scribePrinter\x12$.eolymp.printer.DescribePrinterInput\x1a%.eolymp.printer.DescribePrinterOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14printer:printer:read\x82\xd3\xe4\x93\x02\x18\x12\x16/printers/{printer_id}\x12\x93\x01\n\x0cListPrinters\x12!.eolymp.printer.ListPrintersInput\x1a\".eolymp.printer.ListPrintersOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14printer:printer:read\x82\xd3\xe4\x93\x02\x0b\x12\t/printers\x12\xb2\x01\n\x10\x43reatePrinterJob\x12%.eolymp.printer.CreatePrinterJobInput\x1a&.eolymp.printer.CreatePrinterJobOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/printers/{printer_id}/jobs\x12\xc1\x01\n\x12\x44\x65scribePrinterJob\x12\'.eolymp.printer.DescribePrinterJobInput\x1a(.eolymp.printer.DescribePrinterJobOutput\"X\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x18\x8a\xe3\n\x14printer:printer:read\x82\xd3\xe4\x93\x02&\x12$/printers/{printer_id}/jobs/{job_id}\x12\xae\x01\n\x0fListPrinterJobs\x12$.eolymp.printer.ListPrinterJobsInput\x1a%.eolymp.printer.ListPrinterJobsOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x18\x8a\xe3\n\x14printer:printer:read\x82\xd3\xe4\x93\x02\x1d\x12\x1b/printers/{printer_id}/jobs\x12\xbb\x01\n\x10UpdatePrinterJob\x12%.eolymp.printer.UpdatePrinterJobInput\x1a&.eolymp.printer.UpdatePrinterJobOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02&\x1a$/printers/{printer_id}/jobs/{job_id}\x12\xbb\x01\n\x10\x44\x65letePrinterJob\x12%.eolymp.printer.DeletePrinterJobInput\x1a&.eolymp.printer.DeletePrinterJobOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02&*$/printers/{printer_id}/jobs/{job_id}B1Z/github.com/eolymp/go-sdk/eolymp/printer;printerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/printer/printer_service.proto\x12\x0e\x65olymp.printer\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/printer/printer.proto\x1a eolymp/printer/printer_job.proto\x1a!eolymp/wellknown/expression.proto\">\n\x12\x43reatePrinterInput\x12(\n\x07printer\x18\x01 \x01(\x0b\x32\x17.eolymp.printer.Printer\")\n\x13\x43reatePrinterOutput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\"R\n\x12UpdatePrinterInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12(\n\x07printer\x18\x02 \x01(\x0b\x32\x17.eolymp.printer.Printer\"\x15\n\x13UpdatePrinterOutput\"(\n\x12\x44\x65letePrinterInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65letePrinterOutput\"*\n\x14\x44\x65scribePrinterInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\"A\n\x15\x44\x65scribePrinterOutput\x12(\n\x07printer\x18\x01 \x01(\x0b\x32\x17.eolymp.printer.Printer\"\x97\x02\n\x11ListPrintersInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0e\n\x06search\x18\x1e \x01(\t\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.printer.ListPrintersInput.Filter\x1a\x98\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"K\n\x12ListPrintersOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.printer.Printer\"G\n\x15\x43reatePrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x04html\x18\x03 \x01(\tH\x00\x42\n\n\x08\x64ocument\"(\n\x16\x43reatePrinterJobOutput\x12\x0e\n\x06job_id\x18\x01 \x01(\t\"=\n\x17\x44\x65scribePrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\"<\n\x18\x44\x65scribePrinterJobOutput\x12 \n\x03job\x18\x01 \x01(\x0b\x32\x13.eolymp.printer.Job\"\xee\x01\n\x14ListPrinterJobsInput\x12\x12\n\nprinter_id\x18\x02 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.printer.ListPrinterJobsInput.Filter\x1a\x66\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"J\n\x15ListPrinterJobsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.eolymp.printer.Job\";\n\x15\x43\x61ncelPrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\"\x18\n\x16\x43\x61ncelPrinterJobOutput\"]\n\x15UpdatePrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\x12 \n\x03job\x18\x03 \x01(\x0b\x32\x13.eolymp.printer.Job\"\x18\n\x16UpdatePrinterJobOutput\";\n\x15\x44\x65letePrinterJobInput\x12\x12\n\nprinter_id\x18\x01 \x01(\t\x12\x0e\n\x06job_id\x18\x02 \x01(\t\"\x18\n\x16\x44\x65letePrinterJobOutput2\xfd\r\n\x0ePrinterService\x12\x97\x01\n\rCreatePrinter\x12\".eolymp.printer.CreatePrinterInput\x1a#.eolymp.printer.CreatePrinterOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02\x0b\"\t/printers\x12\xa4\x01\n\rUpdatePrinter\x12\".eolymp.printer.UpdatePrinterInput\x1a#.eolymp.printer.UpdatePrinterOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02\x18\"\x16/printers/{printer_id}\x12\xa4\x01\n\rDeletePrinter\x12\".eolymp.printer.DeletePrinterInput\x1a#.eolymp.printer.DeletePrinterOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02\x18*\x16/printers/{printer_id}\x12\xa9\x01\n\x0f\x44\x65scribePrinter\x12$.eolymp.printer.DescribePrinterInput\x1a%.eolymp.printer.DescribePrinterOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14printer:printer:read\x82\xd3\xe4\x93\x02\x18\x12\x16/printers/{printer_id}\x12\x93\x01\n\x0cListPrinters\x12!.eolymp.printer.ListPrintersInput\x1a\".eolymp.printer.ListPrintersOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14printer:printer:read\x82\xd3\xe4\x93\x02\x0b\x12\t/printers\x12\xb2\x01\n\x10\x43reatePrinterJob\x12%.eolymp.printer.CreatePrinterJobInput\x1a&.eolymp.printer.CreatePrinterJobOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/printers/{printer_id}/jobs\x12\xc1\x01\n\x12\x44\x65scribePrinterJob\x12\'.eolymp.printer.DescribePrinterJobInput\x1a(.eolymp.printer.DescribePrinterJobOutput\"X\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x18\x8a\xe3\n\x14printer:printer:read\x82\xd3\xe4\x93\x02&\x12$/printers/{printer_id}/jobs/{job_id}\x12\xae\x01\n\x0fListPrinterJobs\x12$.eolymp.printer.ListPrinterJobsInput\x1a%.eolymp.printer.ListPrinterJobsOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x18\x8a\xe3\n\x14printer:printer:read\x82\xd3\xe4\x93\x02\x1d\x12\x1b/printers/{printer_id}/jobs\x12\xbb\x01\n\x10UpdatePrinterJob\x12%.eolymp.printer.UpdatePrinterJobInput\x1a&.eolymp.printer.UpdatePrinterJobOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02&\x1a$/printers/{printer_id}/jobs/{job_id}\x12\xbb\x01\n\x10\x44\x65letePrinterJob\x12%.eolymp.printer.DeletePrinterJobInput\x1a&.eolymp.printer.DeletePrinterJobOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15printer:printer:write\x82\xd3\xe4\x93\x02&*$/printers/{printer_id}/jobs/{job_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/printer;printerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,6 +39,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.printer.printer_serv
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/printer;printer'
+  _globals['_PRINTERSERVICE']._loaded_options = None
+  _globals['_PRINTERSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_PRINTERSERVICE'].methods_by_name['CreatePrinter']._loaded_options = None
   _globals['_PRINTERSERVICE'].methods_by_name['CreatePrinter']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\031\212\343\n\025printer:printer:write\202\323\344\223\002\013\"\t/printers'
   _globals['_PRINTERSERVICE'].methods_by_name['UpdatePrinter']._loaded_options = None
@@ -58,54 +61,54 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRINTERSERVICE'].methods_by_name['UpdatePrinterJob']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025printer:printer:write\202\323\344\223\002&\032$/printers/{printer_id}/jobs/{job_id}'
   _globals['_PRINTERSERVICE'].methods_by_name['DeletePrinterJob']._loaded_options = None
   _globals['_PRINTERSERVICE'].methods_by_name['DeletePrinterJob']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025printer:printer:write\202\323\344\223\002&*$/printers/{printer_id}/jobs/{job_id}'
-  _globals['_CREATEPRINTERINPUT']._serialized_start=254
-  _globals['_CREATEPRINTERINPUT']._serialized_end=316
-  _globals['_CREATEPRINTEROUTPUT']._serialized_start=318
-  _globals['_CREATEPRINTEROUTPUT']._serialized_end=359
-  _globals['_UPDATEPRINTERINPUT']._serialized_start=361
-  _globals['_UPDATEPRINTERINPUT']._serialized_end=443
-  _globals['_UPDATEPRINTEROUTPUT']._serialized_start=445
-  _globals['_UPDATEPRINTEROUTPUT']._serialized_end=466
-  _globals['_DELETEPRINTERINPUT']._serialized_start=468
-  _globals['_DELETEPRINTERINPUT']._serialized_end=508
-  _globals['_DELETEPRINTEROUTPUT']._serialized_start=510
-  _globals['_DELETEPRINTEROUTPUT']._serialized_end=531
-  _globals['_DESCRIBEPRINTERINPUT']._serialized_start=533
-  _globals['_DESCRIBEPRINTERINPUT']._serialized_end=575
-  _globals['_DESCRIBEPRINTEROUTPUT']._serialized_start=577
-  _globals['_DESCRIBEPRINTEROUTPUT']._serialized_end=642
-  _globals['_LISTPRINTERSINPUT']._serialized_start=645
-  _globals['_LISTPRINTERSINPUT']._serialized_end=924
-  _globals['_LISTPRINTERSINPUT_FILTER']._serialized_start=772
-  _globals['_LISTPRINTERSINPUT_FILTER']._serialized_end=924
-  _globals['_LISTPRINTERSOUTPUT']._serialized_start=926
-  _globals['_LISTPRINTERSOUTPUT']._serialized_end=1001
-  _globals['_CREATEPRINTERJOBINPUT']._serialized_start=1003
-  _globals['_CREATEPRINTERJOBINPUT']._serialized_end=1074
-  _globals['_CREATEPRINTERJOBOUTPUT']._serialized_start=1076
-  _globals['_CREATEPRINTERJOBOUTPUT']._serialized_end=1116
-  _globals['_DESCRIBEPRINTERJOBINPUT']._serialized_start=1118
-  _globals['_DESCRIBEPRINTERJOBINPUT']._serialized_end=1179
-  _globals['_DESCRIBEPRINTERJOBOUTPUT']._serialized_start=1181
-  _globals['_DESCRIBEPRINTERJOBOUTPUT']._serialized_end=1241
-  _globals['_LISTPRINTERJOBSINPUT']._serialized_start=1244
-  _globals['_LISTPRINTERJOBSINPUT']._serialized_end=1482
-  _globals['_LISTPRINTERJOBSINPUT_FILTER']._serialized_start=772
-  _globals['_LISTPRINTERJOBSINPUT_FILTER']._serialized_end=874
-  _globals['_LISTPRINTERJOBSOUTPUT']._serialized_start=1484
-  _globals['_LISTPRINTERJOBSOUTPUT']._serialized_end=1558
-  _globals['_CANCELPRINTERJOBINPUT']._serialized_start=1560
-  _globals['_CANCELPRINTERJOBINPUT']._serialized_end=1619
-  _globals['_CANCELPRINTERJOBOUTPUT']._serialized_start=1621
-  _globals['_CANCELPRINTERJOBOUTPUT']._serialized_end=1645
-  _globals['_UPDATEPRINTERJOBINPUT']._serialized_start=1647
-  _globals['_UPDATEPRINTERJOBINPUT']._serialized_end=1740
-  _globals['_UPDATEPRINTERJOBOUTPUT']._serialized_start=1742
-  _globals['_UPDATEPRINTERJOBOUTPUT']._serialized_end=1766
-  _globals['_DELETEPRINTERJOBINPUT']._serialized_start=1768
-  _globals['_DELETEPRINTERJOBINPUT']._serialized_end=1827
-  _globals['_DELETEPRINTERJOBOUTPUT']._serialized_start=1829
-  _globals['_DELETEPRINTERJOBOUTPUT']._serialized_end=1853
-  _globals['_PRINTERSERVICE']._serialized_start=1856
-  _globals['_PRINTERSERVICE']._serialized_end=3616
+  _globals['_CREATEPRINTERINPUT']._serialized_start=290
+  _globals['_CREATEPRINTERINPUT']._serialized_end=352
+  _globals['_CREATEPRINTEROUTPUT']._serialized_start=354
+  _globals['_CREATEPRINTEROUTPUT']._serialized_end=395
+  _globals['_UPDATEPRINTERINPUT']._serialized_start=397
+  _globals['_UPDATEPRINTERINPUT']._serialized_end=479
+  _globals['_UPDATEPRINTEROUTPUT']._serialized_start=481
+  _globals['_UPDATEPRINTEROUTPUT']._serialized_end=502
+  _globals['_DELETEPRINTERINPUT']._serialized_start=504
+  _globals['_DELETEPRINTERINPUT']._serialized_end=544
+  _globals['_DELETEPRINTEROUTPUT']._serialized_start=546
+  _globals['_DELETEPRINTEROUTPUT']._serialized_end=567
+  _globals['_DESCRIBEPRINTERINPUT']._serialized_start=569
+  _globals['_DESCRIBEPRINTERINPUT']._serialized_end=611
+  _globals['_DESCRIBEPRINTEROUTPUT']._serialized_start=613
+  _globals['_DESCRIBEPRINTEROUTPUT']._serialized_end=678
+  _globals['_LISTPRINTERSINPUT']._serialized_start=681
+  _globals['_LISTPRINTERSINPUT']._serialized_end=960
+  _globals['_LISTPRINTERSINPUT_FILTER']._serialized_start=808
+  _globals['_LISTPRINTERSINPUT_FILTER']._serialized_end=960
+  _globals['_LISTPRINTERSOUTPUT']._serialized_start=962
+  _globals['_LISTPRINTERSOUTPUT']._serialized_end=1037
+  _globals['_CREATEPRINTERJOBINPUT']._serialized_start=1039
+  _globals['_CREATEPRINTERJOBINPUT']._serialized_end=1110
+  _globals['_CREATEPRINTERJOBOUTPUT']._serialized_start=1112
+  _globals['_CREATEPRINTERJOBOUTPUT']._serialized_end=1152
+  _globals['_DESCRIBEPRINTERJOBINPUT']._serialized_start=1154
+  _globals['_DESCRIBEPRINTERJOBINPUT']._serialized_end=1215
+  _globals['_DESCRIBEPRINTERJOBOUTPUT']._serialized_start=1217
+  _globals['_DESCRIBEPRINTERJOBOUTPUT']._serialized_end=1277
+  _globals['_LISTPRINTERJOBSINPUT']._serialized_start=1280
+  _globals['_LISTPRINTERJOBSINPUT']._serialized_end=1518
+  _globals['_LISTPRINTERJOBSINPUT_FILTER']._serialized_start=808
+  _globals['_LISTPRINTERJOBSINPUT_FILTER']._serialized_end=910
+  _globals['_LISTPRINTERJOBSOUTPUT']._serialized_start=1520
+  _globals['_LISTPRINTERJOBSOUTPUT']._serialized_end=1594
+  _globals['_CANCELPRINTERJOBINPUT']._serialized_start=1596
+  _globals['_CANCELPRINTERJOBINPUT']._serialized_end=1655
+  _globals['_CANCELPRINTERJOBOUTPUT']._serialized_start=1657
+  _globals['_CANCELPRINTERJOBOUTPUT']._serialized_end=1681
+  _globals['_UPDATEPRINTERJOBINPUT']._serialized_start=1683
+  _globals['_UPDATEPRINTERJOBINPUT']._serialized_end=1776
+  _globals['_UPDATEPRINTERJOBOUTPUT']._serialized_start=1778
+  _globals['_UPDATEPRINTERJOBOUTPUT']._serialized_end=1802
+  _globals['_DELETEPRINTERJOBINPUT']._serialized_start=1804
+  _globals['_DELETEPRINTERJOBINPUT']._serialized_end=1863
+  _globals['_DELETEPRINTERJOBOUTPUT']._serialized_start=1865
+  _globals['_DELETEPRINTERJOBOUTPUT']._serialized_end=1889
+  _globals['_PRINTERSERVICE']._serialized_start=1892
+  _globals['_PRINTERSERVICE']._serialized_end=3681
 # @@protoc_insertion_point(module_scope)

@@ -1,5 +1,6 @@
 import datetime
 
+from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.auth import certificate_pb2 as _certificate_pb2
 from eolymp.auth import claims_pb2 as _claims_pb2

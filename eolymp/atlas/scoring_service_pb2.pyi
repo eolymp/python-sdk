@@ -1,4 +1,5 @@
 from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import scoring_score_pb2 as _scoring_score_pb2
 from google.protobuf.internal import containers as _containers

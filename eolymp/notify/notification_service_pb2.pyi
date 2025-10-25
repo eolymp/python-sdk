@@ -1,4 +1,5 @@
 from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.notify import notification_pb2 as _notification_pb2
 from eolymp.notify import preferences_pb2 as _preferences_pb2

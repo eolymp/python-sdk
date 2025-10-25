@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.course import course_pb2 as eolymp_dot_course_dot_course__pb2
@@ -30,7 +31,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/course/course_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/course/course.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\xbe\x03\n\x10ListCoursesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.course.ListCoursesInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.course.ListCoursesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.course.Course.Extra\x1a\x98\x01\n\x06\x46ilter\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x08topic_id\x18\x0b \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06locale\x18\x0c \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"H\n\x11ListCoursesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.course.Course\"U\n\x13\x44\x65scribeCourseInput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.course.Course.Extra\"=\n\x14\x44\x65scribeCourseOutput\x12%\n\x06\x63ourse\x18\x01 \x01(\x0b\x32\x15.eolymp.course.Course\":\n\x11\x43reateCourseInput\x12%\n\x06\x63ourse\x18\x01 \x01(\x0b\x32\x15.eolymp.course.Course\"\'\n\x12\x43reateCourseOutput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\"\xf2\x01\n\x11UpdateCourseInput\x12\x35\n\x05patch\x18\x01 \x03(\x0e\x32&.eolymp.course.UpdateCourseInput.Patch\x12\x11\n\tcourse_id\x18\x02 \x01(\t\x12%\n\x06\x63ourse\x18\x03 \x01(\x0b\x32\x15.eolymp.course.Course\"l\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\n\n\x06LOCALE\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x03\x12\t\n\x05IMAGE\x10\x04\x12\x0e\n\nVISIBILITY\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\n\n\x06TOPICS\x10\x07\"\x14\n\x12UpdateCourseOutput\"&\n\x11\x44\x65leteCourseInput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteCourseOutput\"\xc0\x01\n\x0f\x43opyCourseInput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12\x38\n\ncopy_scope\x18\x02 \x03(\x0e\x32$.eolymp.course.CopyCourseInput.Scope\x12\x11\n\tcopy_name\x18\x03 \x01(\t\"M\n\x05Scope\x12\x07\n\x03\x41LL\x10\x00\x12\x0b\n\x07MODULES\x10\x01\x12\x0c\n\x08STUDENTS\x10\x02\x12\x0f\n\x0b\x41SSIGNMENTS\x10\x03\x12\x0f\n\x0bPERMISSIONS\x10\x04\"*\n\x10\x43opyCourseOutput\x12\x16\n\x0e\x63opy_course_id\x18\x01 \x01(\t2\xab\x07\n\rCourseService\x12\x8f\x01\n\x0c\x43reateCourse\x12 .eolymp.course.CreateCourseInput\x1a!.eolymp.course.CreateCourseOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\x82\xd3\xe4\x93\x02\n\x1a\x08/courses\x12\x9b\x01\n\x0cUpdateCourse\x12 .eolymp.course.UpdateCourseInput\x1a!.eolymp.course.UpdateCourseOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\x82\xd3\xe4\x93\x02\x16\x1a\x14/courses/{course_id}\x12\x9b\x01\n\x0c\x44\x65leteCourse\x12 .eolymp.course.DeleteCourseInput\x1a!.eolymp.course.DeleteCourseOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\x82\xd3\xe4\x93\x02\x16*\x14/courses/{course_id}\x12\xa0\x01\n\x0e\x44\x65scribeCourse\x12\".eolymp.course.DescribeCourseInput\x1a#.eolymp.course.DescribeCourseOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x16\x12\x14/courses/{course_id}\x12\x8b\x01\n\x0bListCourses\x12\x1f.eolymp.course.ListCoursesInput\x1a .eolymp.course.ListCoursesOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\n\x12\x08/courses\x12\x9a\x01\n\nCopyCourse\x12\x1e.eolymp.course.CopyCourseInput\x1a\x1f.eolymp.course.CopyCourseOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\x82\xd3\xe4\x93\x02\x1b\"\x19/courses/{course_id}/copyB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/course/course_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/course/course.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\xbe\x03\n\x10ListCoursesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.course.ListCoursesInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.course.ListCoursesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.course.Course.Extra\x1a\x98\x01\n\x06\x46ilter\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x08topic_id\x18\x0b \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06locale\x18\x0c \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"H\n\x11ListCoursesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.course.Course\"U\n\x13\x44\x65scribeCourseInput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.course.Course.Extra\"=\n\x14\x44\x65scribeCourseOutput\x12%\n\x06\x63ourse\x18\x01 \x01(\x0b\x32\x15.eolymp.course.Course\":\n\x11\x43reateCourseInput\x12%\n\x06\x63ourse\x18\x01 \x01(\x0b\x32\x15.eolymp.course.Course\"\'\n\x12\x43reateCourseOutput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\"\xf2\x01\n\x11UpdateCourseInput\x12\x35\n\x05patch\x18\x01 \x03(\x0e\x32&.eolymp.course.UpdateCourseInput.Patch\x12\x11\n\tcourse_id\x18\x02 \x01(\t\x12%\n\x06\x63ourse\x18\x03 \x01(\x0b\x32\x15.eolymp.course.Course\"l\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\n\n\x06LOCALE\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x03\x12\t\n\x05IMAGE\x10\x04\x12\x0e\n\nVISIBILITY\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\n\n\x06TOPICS\x10\x07\"\x14\n\x12UpdateCourseOutput\"&\n\x11\x44\x65leteCourseInput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteCourseOutput\"\xc0\x01\n\x0f\x43opyCourseInput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12\x38\n\ncopy_scope\x18\x02 \x03(\x0e\x32$.eolymp.course.CopyCourseInput.Scope\x12\x11\n\tcopy_name\x18\x03 \x01(\t\"M\n\x05Scope\x12\x07\n\x03\x41LL\x10\x00\x12\x0b\n\x07MODULES\x10\x01\x12\x0c\n\x08STUDENTS\x10\x02\x12\x0f\n\x0b\x41SSIGNMENTS\x10\x03\x12\x0f\n\x0bPERMISSIONS\x10\x04\"*\n\x10\x43opyCourseOutput\x12\x16\n\x0e\x63opy_course_id\x18\x01 \x01(\t2\xc8\x07\n\rCourseService\x12\x8f\x01\n\x0c\x43reateCourse\x12 .eolymp.course.CreateCourseInput\x1a!.eolymp.course.CreateCourseOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\x82\xd3\xe4\x93\x02\n\x1a\x08/courses\x12\x9b\x01\n\x0cUpdateCourse\x12 .eolymp.course.UpdateCourseInput\x1a!.eolymp.course.UpdateCourseOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\x82\xd3\xe4\x93\x02\x16\x1a\x14/courses/{course_id}\x12\x9b\x01\n\x0c\x44\x65leteCourse\x12 .eolymp.course.DeleteCourseInput\x1a!.eolymp.course.DeleteCourseOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\x82\xd3\xe4\x93\x02\x16*\x14/courses/{course_id}\x12\xa0\x01\n\x0e\x44\x65scribeCourse\x12\".eolymp.course.DescribeCourseInput\x1a#.eolymp.course.DescribeCourseOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x16\x12\x14/courses/{course_id}\x12\x8b\x01\n\x0bListCourses\x12\x1f.eolymp.course.ListCoursesInput\x1a .eolymp.course.ListCoursesOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\n\x12\x08/courses\x12\x9a\x01\n\nCopyCourse\x12\x1e.eolymp.course.CopyCourseInput\x1a\x1f.eolymp.course.CopyCourseOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\x82\xd3\xe4\x93\x02\x1b\"\x19/courses/{course_id}/copy\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,6 +39,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.course_servic
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
+  _globals['_COURSESERVICE']._loaded_options = None
+  _globals['_COURSESERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_COURSESERVICE'].methods_by_name['CreateCourse']._loaded_options = None
   _globals['_COURSESERVICE'].methods_by_name['CreateCourse']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023course:course:write\202\323\344\223\002\n\032\010/courses'
   _globals['_COURSESERVICE'].methods_by_name['UpdateCourse']._loaded_options = None
@@ -50,38 +53,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COURSESERVICE'].methods_by_name['ListCourses']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022course:course:read\202\323\344\223\002\n\022\010/courses'
   _globals['_COURSESERVICE'].methods_by_name['CopyCourse']._loaded_options = None
   _globals['_COURSESERVICE'].methods_by_name['CopyCourse']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023course:course:write\202\323\344\223\002\033\"\031/courses/{course_id}/copy'
-  _globals['_LISTCOURSESINPUT']._serialized_start=250
-  _globals['_LISTCOURSESINPUT']._serialized_end=696
-  _globals['_LISTCOURSESINPUT_FILTER']._serialized_start=519
-  _globals['_LISTCOURSESINPUT_FILTER']._serialized_end=671
-  _globals['_LISTCOURSESINPUT_SORTABLE']._serialized_start=673
-  _globals['_LISTCOURSESINPUT_SORTABLE']._serialized_end=696
-  _globals['_LISTCOURSESOUTPUT']._serialized_start=698
-  _globals['_LISTCOURSESOUTPUT']._serialized_end=770
-  _globals['_DESCRIBECOURSEINPUT']._serialized_start=772
-  _globals['_DESCRIBECOURSEINPUT']._serialized_end=857
-  _globals['_DESCRIBECOURSEOUTPUT']._serialized_start=859
-  _globals['_DESCRIBECOURSEOUTPUT']._serialized_end=920
-  _globals['_CREATECOURSEINPUT']._serialized_start=922
-  _globals['_CREATECOURSEINPUT']._serialized_end=980
-  _globals['_CREATECOURSEOUTPUT']._serialized_start=982
-  _globals['_CREATECOURSEOUTPUT']._serialized_end=1021
-  _globals['_UPDATECOURSEINPUT']._serialized_start=1024
-  _globals['_UPDATECOURSEINPUT']._serialized_end=1266
-  _globals['_UPDATECOURSEINPUT_PATCH']._serialized_start=1158
-  _globals['_UPDATECOURSEINPUT_PATCH']._serialized_end=1266
-  _globals['_UPDATECOURSEOUTPUT']._serialized_start=1268
-  _globals['_UPDATECOURSEOUTPUT']._serialized_end=1288
-  _globals['_DELETECOURSEINPUT']._serialized_start=1290
-  _globals['_DELETECOURSEINPUT']._serialized_end=1328
-  _globals['_DELETECOURSEOUTPUT']._serialized_start=1330
-  _globals['_DELETECOURSEOUTPUT']._serialized_end=1350
-  _globals['_COPYCOURSEINPUT']._serialized_start=1353
-  _globals['_COPYCOURSEINPUT']._serialized_end=1545
-  _globals['_COPYCOURSEINPUT_SCOPE']._serialized_start=1468
-  _globals['_COPYCOURSEINPUT_SCOPE']._serialized_end=1545
-  _globals['_COPYCOURSEOUTPUT']._serialized_start=1547
-  _globals['_COPYCOURSEOUTPUT']._serialized_end=1589
-  _globals['_COURSESERVICE']._serialized_start=1592
-  _globals['_COURSESERVICE']._serialized_end=2531
+  _globals['_LISTCOURSESINPUT']._serialized_start=286
+  _globals['_LISTCOURSESINPUT']._serialized_end=732
+  _globals['_LISTCOURSESINPUT_FILTER']._serialized_start=555
+  _globals['_LISTCOURSESINPUT_FILTER']._serialized_end=707
+  _globals['_LISTCOURSESINPUT_SORTABLE']._serialized_start=709
+  _globals['_LISTCOURSESINPUT_SORTABLE']._serialized_end=732
+  _globals['_LISTCOURSESOUTPUT']._serialized_start=734
+  _globals['_LISTCOURSESOUTPUT']._serialized_end=806
+  _globals['_DESCRIBECOURSEINPUT']._serialized_start=808
+  _globals['_DESCRIBECOURSEINPUT']._serialized_end=893
+  _globals['_DESCRIBECOURSEOUTPUT']._serialized_start=895
+  _globals['_DESCRIBECOURSEOUTPUT']._serialized_end=956
+  _globals['_CREATECOURSEINPUT']._serialized_start=958
+  _globals['_CREATECOURSEINPUT']._serialized_end=1016
+  _globals['_CREATECOURSEOUTPUT']._serialized_start=1018
+  _globals['_CREATECOURSEOUTPUT']._serialized_end=1057
+  _globals['_UPDATECOURSEINPUT']._serialized_start=1060
+  _globals['_UPDATECOURSEINPUT']._serialized_end=1302
+  _globals['_UPDATECOURSEINPUT_PATCH']._serialized_start=1194
+  _globals['_UPDATECOURSEINPUT_PATCH']._serialized_end=1302
+  _globals['_UPDATECOURSEOUTPUT']._serialized_start=1304
+  _globals['_UPDATECOURSEOUTPUT']._serialized_end=1324
+  _globals['_DELETECOURSEINPUT']._serialized_start=1326
+  _globals['_DELETECOURSEINPUT']._serialized_end=1364
+  _globals['_DELETECOURSEOUTPUT']._serialized_start=1366
+  _globals['_DELETECOURSEOUTPUT']._serialized_end=1386
+  _globals['_COPYCOURSEINPUT']._serialized_start=1389
+  _globals['_COPYCOURSEINPUT']._serialized_end=1581
+  _globals['_COPYCOURSEINPUT_SCOPE']._serialized_start=1504
+  _globals['_COPYCOURSEINPUT_SCOPE']._serialized_end=1581
+  _globals['_COPYCOURSEOUTPUT']._serialized_start=1583
+  _globals['_COPYCOURSEOUTPUT']._serialized_end=1625
+  _globals['_COURSESERVICE']._serialized_start=1628
+  _globals['_COURSESERVICE']._serialized_end=2596
 # @@protoc_insertion_point(module_scope)

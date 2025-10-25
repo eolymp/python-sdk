@@ -23,13 +23,14 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.commerce import invoice_pb2 as eolymp_dot_commerce_dot_invoice__pb2
 from eolymp.universe import billing_pb2 as eolymp_dot_universe_dot_billing__pb2
 from eolymp.universe import plan_pb2 as eolymp_dot_universe_dot_plan__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/universe/billing_service.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/commerce/invoice.proto\x1a\x1d\x65olymp/universe/billing.proto\x1a\x1a\x65olymp/universe/plan.proto\"!\n\x1f\x44\x65scribeBillingInformationInput\"V\n DescribeBillingInformationOutput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\"S\n\x1dUpdateBillingInformationInput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\" \n\x1eUpdateBillingInformationOutput\"\x1b\n\x19\x44\x65scribeSubscriptionInput\"\x8d\x01\n\x1a\x44\x65scribeSubscriptionOutput\x12\x36\n\x07\x63urrent\x18\x01 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\x12\x37\n\x08upcoming\x18\x02 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\"M\n\x17\x43reateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\"0\n\x18\x43reateSubscriptionOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"M\n\x17UpdateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\"\x1a\n\x18UpdateSubscriptionOutput\"\x19\n\x17\x43\x61ncelSubscriptionInput\"\x1a\n\x18\x43\x61ncelSubscriptionOutput\"B\n\x1bStartSubscriptionTrialInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"\x1e\n\x1cStartSubscriptionTrialOutput\"\x1b\n\x19\x45ndSubscriptionTrialInput\"\x1c\n\x1a\x45ndSubscriptionTrialOutput\"_\n\x19SimulateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\x12\x0e\n\x06\x63oupon\x18\n \x01(\t\"n\n\x1aSimulateSubscriptionOutput\x12%\n\x03\x64ue\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\x12)\n\x07invoice\x18\x02 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"K\n\x15\x43reatePortalLinkInput\x12\x0c\n\x04\x66low\x18\x01 \x01(\t\x12\x10\n\x08\x62\x61\x63k_url\x18\x02 \x01(\t\x12\x12\n\nreturn_url\x18\x03 \x01(\t\"-\n\x16\x43reatePortalLinkOutput\x12\x13\n\x0bportal_link\x18\x01 \x01(\t\"\x16\n\x14UpcomingInvoiceInput\"B\n\x15UpcomingInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"*\n\x14\x44\x65scribeInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"%\n\x0fPayInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"(\n\x10PayInvoiceOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"@\n\x11ListInvoicesInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06\x62\x65\x66ore\x18\r \x01(\t\"L\n\x12ListInvoicesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.commerce.Invoice\"\x86\x01\n\x17ListAvailablePlansInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x65 \x01(\t\x12\x10\n\x08\x63urrency\x18\x66 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.universe.Plan.Extra\"O\n\x18ListAvailablePlansOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.universe.Plan2\x95\x12\n\x0e\x42illingService\x12\xa7\x01\n\x1a\x44\x65scribeBillingInformation\x12\x30.eolymp.universe.DescribeBillingInformationInput\x1a\x31.eolymp.universe.DescribeBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x12\r/billing/info\x12\xa1\x01\n\x18UpdateBillingInformation\x12..eolymp.universe.UpdateBillingInformationInput\x1a/.eolymp.universe.UpdateBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x1a\r/billing/info\x12\x9d\x01\n\x14\x44\x65scribeSubscription\x12*.eolymp.universe.DescribeSubscriptionInput\x1a+.eolymp.universe.DescribeSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x12\x15/billing/subscription\x12\x97\x01\n\x12\x43reateSubscription\x12(.eolymp.universe.CreateSubscriptionInput\x1a).eolymp.universe.CreateSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\"\x15/billing/subscription\x12\x97\x01\n\x12UpdateSubscription\x12(.eolymp.universe.UpdateSubscriptionInput\x1a).eolymp.universe.UpdateSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x1a\x15/billing/subscription\x12\x97\x01\n\x12\x43\x61ncelSubscription\x12(.eolymp.universe.CancelSubscriptionInput\x1a).eolymp.universe.CancelSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17*\x15/billing/subscription\x12\xa2\x01\n\x16StartSubscriptionTrial\x12,.eolymp.universe.StartSubscriptionTrialInput\x1a-.eolymp.universe.StartSubscriptionTrialOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x16\"\x14/billing/trial/start\x12\x9a\x01\n\x14\x45ndSubscriptionTrial\x12*.eolymp.universe.EndSubscriptionTrialInput\x1a+.eolymp.universe.EndSubscriptionTrialOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\"\x12/billing/trial/end\x12\xa6\x01\n\x14SimulateSubscription\x12*.eolymp.universe.SimulateSubscriptionInput\x1a+.eolymp.universe.SimulateSubscriptionOutput\"5\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02 \"\x1e/billing/subscription/simulate\x12\x90\x01\n\x10\x43reatePortalLink\x12&.eolymp.universe.CreatePortalLinkInput\x1a\'.eolymp.universe.CreatePortalLinkOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x16\"\x14/billing/portal-link\x12\x8a\x01\n\x0fUpcomingInvoice\x12%.eolymp.universe.UpcomingInvoiceInput\x1a&.eolymp.universe.UpcomingInvoiceOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/upcoming\x12\x96\x01\n\x0f\x44\x65scribeInvoice\x12%.eolymp.universe.DescribeInvoiceInput\x1a&.eolymp.universe.DescribeInvoiceOutput\"4\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1f\"\x1d/billing/invoice/{invoice_id}\x12\x8b\x01\n\nPayInvoice\x12 .eolymp.universe.PayInvoiceInput\x1a!.eolymp.universe.PayInvoiceOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02#\"!/billing/invoice/{invoice_id}/pay\x12\x81\x01\n\x0cListInvoices\x12\".eolymp.universe.ListInvoicesInput\x1a#.eolymp.universe.ListInvoicesOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/invoices\x12\x90\x01\n\x12ListAvailablePlans\x12(.eolymp.universe.ListAvailablePlansInput\x1a).eolymp.universe.ListAvailablePlansOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x10\"\x0e/billing/plansB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/universe/billing_service.proto\x12\x0f\x65olymp.universe\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/commerce/invoice.proto\x1a\x1d\x65olymp/universe/billing.proto\x1a\x1a\x65olymp/universe/plan.proto\"!\n\x1f\x44\x65scribeBillingInformationInput\"V\n DescribeBillingInformationOutput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\"S\n\x1dUpdateBillingInformationInput\x12\x32\n\x04info\x18\x01 \x01(\x0b\x32$.eolymp.universe.Billing.Information\" \n\x1eUpdateBillingInformationOutput\"\x1b\n\x19\x44\x65scribeSubscriptionInput\"\x8d\x01\n\x1a\x44\x65scribeSubscriptionOutput\x12\x36\n\x07\x63urrent\x18\x01 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\x12\x37\n\x08upcoming\x18\x02 \x01(\x0b\x32%.eolymp.universe.Billing.Subscription\"M\n\x17\x43reateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\"0\n\x18\x43reateSubscriptionOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"M\n\x17UpdateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\"\x1a\n\x18UpdateSubscriptionOutput\"\x19\n\x17\x43\x61ncelSubscriptionInput\"\x1a\n\x18\x43\x61ncelSubscriptionOutput\"B\n\x1bStartSubscriptionTrialInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"\x1e\n\x1cStartSubscriptionTrialOutput\"\x1b\n\x19\x45ndSubscriptionTrialInput\"\x1c\n\x1a\x45ndSubscriptionTrialOutput\"_\n\x19SimulateSubscriptionInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\r\n\x05seats\x18\x03 \x01(\r\x12\x0e\n\x06\x63oupon\x18\n \x01(\t\"n\n\x1aSimulateSubscriptionOutput\x12%\n\x03\x64ue\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\x12)\n\x07invoice\x18\x02 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"K\n\x15\x43reatePortalLinkInput\x12\x0c\n\x04\x66low\x18\x01 \x01(\t\x12\x10\n\x08\x62\x61\x63k_url\x18\x02 \x01(\t\x12\x12\n\nreturn_url\x18\x03 \x01(\t\"-\n\x16\x43reatePortalLinkOutput\x12\x13\n\x0bportal_link\x18\x01 \x01(\t\"\x16\n\x14UpcomingInvoiceInput\"B\n\x15UpcomingInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"*\n\x14\x44\x65scribeInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeInvoiceOutput\x12)\n\x07invoice\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Invoice\"%\n\x0fPayInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"(\n\x10PayInvoiceOutput\x12\x14\n\x0c\x63heckout_url\x18\x01 \x01(\t\"@\n\x11ListInvoicesInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06\x62\x65\x66ore\x18\r \x01(\t\"L\n\x12ListInvoicesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.commerce.Invoice\"\x86\x01\n\x17ListAvailablePlansInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x65 \x01(\t\x12\x10\n\x08\x63urrency\x18\x66 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.universe.Plan.Extra\"O\n\x18ListAvailablePlansOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.universe.Plan2\xb2\x12\n\x0e\x42illingService\x12\xa7\x01\n\x1a\x44\x65scribeBillingInformation\x12\x30.eolymp.universe.DescribeBillingInformationInput\x1a\x31.eolymp.universe.DescribeBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x12\r/billing/info\x12\xa1\x01\n\x18UpdateBillingInformation\x12..eolymp.universe.UpdateBillingInformationInput\x1a/.eolymp.universe.UpdateBillingInformationOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\x1a\r/billing/info\x12\x9d\x01\n\x14\x44\x65scribeSubscription\x12*.eolymp.universe.DescribeSubscriptionInput\x1a+.eolymp.universe.DescribeSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x12\x15/billing/subscription\x12\x97\x01\n\x12\x43reateSubscription\x12(.eolymp.universe.CreateSubscriptionInput\x1a).eolymp.universe.CreateSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\"\x15/billing/subscription\x12\x97\x01\n\x12UpdateSubscription\x12(.eolymp.universe.UpdateSubscriptionInput\x1a).eolymp.universe.UpdateSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17\x1a\x15/billing/subscription\x12\x97\x01\n\x12\x43\x61ncelSubscription\x12(.eolymp.universe.CancelSubscriptionInput\x1a).eolymp.universe.CancelSubscriptionOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x17*\x15/billing/subscription\x12\xa2\x01\n\x16StartSubscriptionTrial\x12,.eolymp.universe.StartSubscriptionTrialInput\x1a-.eolymp.universe.StartSubscriptionTrialOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x16\"\x14/billing/trial/start\x12\x9a\x01\n\x14\x45ndSubscriptionTrial\x12*.eolymp.universe.EndSubscriptionTrialInput\x1a+.eolymp.universe.EndSubscriptionTrialOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x14\"\x12/billing/trial/end\x12\xa6\x01\n\x14SimulateSubscription\x12*.eolymp.universe.SimulateSubscriptionInput\x1a+.eolymp.universe.SimulateSubscriptionOutput\"5\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02 \"\x1e/billing/subscription/simulate\x12\x90\x01\n\x10\x43reatePortalLink\x12&.eolymp.universe.CreatePortalLinkInput\x1a\'.eolymp.universe.CreatePortalLinkOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x16\"\x14/billing/portal-link\x12\x8a\x01\n\x0fUpcomingInvoice\x12%.eolymp.universe.UpcomingInvoiceInput\x1a&.eolymp.universe.UpcomingInvoiceOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/upcoming\x12\x96\x01\n\x0f\x44\x65scribeInvoice\x12%.eolymp.universe.DescribeInvoiceInput\x1a&.eolymp.universe.DescribeInvoiceOutput\"4\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x1f\"\x1d/billing/invoice/{invoice_id}\x12\x8b\x01\n\nPayInvoice\x12 .eolymp.universe.PayInvoiceInput\x1a!.eolymp.universe.PayInvoiceOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\x82\xd3\xe4\x93\x02#\"!/billing/invoice/{invoice_id}/pay\x12\x81\x01\n\x0cListInvoices\x12\".eolymp.universe.ListInvoicesInput\x1a#.eolymp.universe.ListInvoicesOutput\"(\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x13\"\x11/billing/invoices\x12\x90\x01\n\x12ListAvailablePlans\x12(.eolymp.universe.ListAvailablePlansInput\x1a).eolymp.universe.ListAvailablePlansOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x10\"\x0e/billing/plans\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,6 +38,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.billing_ser
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/universe;universe'
+  _globals['_BILLINGSERVICE']._loaded_options = None
+  _globals['_BILLINGSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_BILLINGSERVICE'].methods_by_name['DescribeBillingInformation']._loaded_options = None
   _globals['_BILLINGSERVICE'].methods_by_name['DescribeBillingInformation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\017\022\r/billing/info'
   _globals['_BILLINGSERVICE'].methods_by_name['UpdateBillingInformation']._loaded_options = None
@@ -67,66 +70,66 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_BILLINGSERVICE'].methods_by_name['ListInvoices']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\023\"\021/billing/invoices'
   _globals['_BILLINGSERVICE'].methods_by_name['ListAvailablePlans']._loaded_options = None
   _globals['_BILLINGSERVICE'].methods_by_name['ListAvailablePlans']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\323\344\223\002\020\"\016/billing/plans'
-  _globals['_DESCRIBEBILLINGINFORMATIONINPUT']._serialized_start=215
-  _globals['_DESCRIBEBILLINGINFORMATIONINPUT']._serialized_end=248
-  _globals['_DESCRIBEBILLINGINFORMATIONOUTPUT']._serialized_start=250
-  _globals['_DESCRIBEBILLINGINFORMATIONOUTPUT']._serialized_end=336
-  _globals['_UPDATEBILLINGINFORMATIONINPUT']._serialized_start=338
-  _globals['_UPDATEBILLINGINFORMATIONINPUT']._serialized_end=421
-  _globals['_UPDATEBILLINGINFORMATIONOUTPUT']._serialized_start=423
-  _globals['_UPDATEBILLINGINFORMATIONOUTPUT']._serialized_end=455
-  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_start=457
-  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_end=484
-  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_start=487
-  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_end=628
-  _globals['_CREATESUBSCRIPTIONINPUT']._serialized_start=630
-  _globals['_CREATESUBSCRIPTIONINPUT']._serialized_end=707
-  _globals['_CREATESUBSCRIPTIONOUTPUT']._serialized_start=709
-  _globals['_CREATESUBSCRIPTIONOUTPUT']._serialized_end=757
-  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_start=759
-  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_end=836
-  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_start=838
-  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_end=864
-  _globals['_CANCELSUBSCRIPTIONINPUT']._serialized_start=866
-  _globals['_CANCELSUBSCRIPTIONINPUT']._serialized_end=891
-  _globals['_CANCELSUBSCRIPTIONOUTPUT']._serialized_start=893
-  _globals['_CANCELSUBSCRIPTIONOUTPUT']._serialized_end=919
-  _globals['_STARTSUBSCRIPTIONTRIALINPUT']._serialized_start=921
-  _globals['_STARTSUBSCRIPTIONTRIALINPUT']._serialized_end=987
-  _globals['_STARTSUBSCRIPTIONTRIALOUTPUT']._serialized_start=989
-  _globals['_STARTSUBSCRIPTIONTRIALOUTPUT']._serialized_end=1019
-  _globals['_ENDSUBSCRIPTIONTRIALINPUT']._serialized_start=1021
-  _globals['_ENDSUBSCRIPTIONTRIALINPUT']._serialized_end=1048
-  _globals['_ENDSUBSCRIPTIONTRIALOUTPUT']._serialized_start=1050
-  _globals['_ENDSUBSCRIPTIONTRIALOUTPUT']._serialized_end=1078
-  _globals['_SIMULATESUBSCRIPTIONINPUT']._serialized_start=1080
-  _globals['_SIMULATESUBSCRIPTIONINPUT']._serialized_end=1175
-  _globals['_SIMULATESUBSCRIPTIONOUTPUT']._serialized_start=1177
-  _globals['_SIMULATESUBSCRIPTIONOUTPUT']._serialized_end=1287
-  _globals['_CREATEPORTALLINKINPUT']._serialized_start=1289
-  _globals['_CREATEPORTALLINKINPUT']._serialized_end=1364
-  _globals['_CREATEPORTALLINKOUTPUT']._serialized_start=1366
-  _globals['_CREATEPORTALLINKOUTPUT']._serialized_end=1411
-  _globals['_UPCOMINGINVOICEINPUT']._serialized_start=1413
-  _globals['_UPCOMINGINVOICEINPUT']._serialized_end=1435
-  _globals['_UPCOMINGINVOICEOUTPUT']._serialized_start=1437
-  _globals['_UPCOMINGINVOICEOUTPUT']._serialized_end=1503
-  _globals['_DESCRIBEINVOICEINPUT']._serialized_start=1505
-  _globals['_DESCRIBEINVOICEINPUT']._serialized_end=1547
-  _globals['_DESCRIBEINVOICEOUTPUT']._serialized_start=1549
-  _globals['_DESCRIBEINVOICEOUTPUT']._serialized_end=1615
-  _globals['_PAYINVOICEINPUT']._serialized_start=1617
-  _globals['_PAYINVOICEINPUT']._serialized_end=1654
-  _globals['_PAYINVOICEOUTPUT']._serialized_start=1656
-  _globals['_PAYINVOICEOUTPUT']._serialized_end=1696
-  _globals['_LISTINVOICESINPUT']._serialized_start=1698
-  _globals['_LISTINVOICESINPUT']._serialized_end=1762
-  _globals['_LISTINVOICESOUTPUT']._serialized_start=1764
-  _globals['_LISTINVOICESOUTPUT']._serialized_end=1840
-  _globals['_LISTAVAILABLEPLANSINPUT']._serialized_start=1843
-  _globals['_LISTAVAILABLEPLANSINPUT']._serialized_end=1977
-  _globals['_LISTAVAILABLEPLANSOUTPUT']._serialized_start=1979
-  _globals['_LISTAVAILABLEPLANSOUTPUT']._serialized_end=2058
-  _globals['_BILLINGSERVICE']._serialized_start=2061
-  _globals['_BILLINGSERVICE']._serialized_end=4386
+  _globals['_DESCRIBEBILLINGINFORMATIONINPUT']._serialized_start=251
+  _globals['_DESCRIBEBILLINGINFORMATIONINPUT']._serialized_end=284
+  _globals['_DESCRIBEBILLINGINFORMATIONOUTPUT']._serialized_start=286
+  _globals['_DESCRIBEBILLINGINFORMATIONOUTPUT']._serialized_end=372
+  _globals['_UPDATEBILLINGINFORMATIONINPUT']._serialized_start=374
+  _globals['_UPDATEBILLINGINFORMATIONINPUT']._serialized_end=457
+  _globals['_UPDATEBILLINGINFORMATIONOUTPUT']._serialized_start=459
+  _globals['_UPDATEBILLINGINFORMATIONOUTPUT']._serialized_end=491
+  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_start=493
+  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_end=520
+  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_start=523
+  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_end=664
+  _globals['_CREATESUBSCRIPTIONINPUT']._serialized_start=666
+  _globals['_CREATESUBSCRIPTIONINPUT']._serialized_end=743
+  _globals['_CREATESUBSCRIPTIONOUTPUT']._serialized_start=745
+  _globals['_CREATESUBSCRIPTIONOUTPUT']._serialized_end=793
+  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_start=795
+  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_end=872
+  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_start=874
+  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_end=900
+  _globals['_CANCELSUBSCRIPTIONINPUT']._serialized_start=902
+  _globals['_CANCELSUBSCRIPTIONINPUT']._serialized_end=927
+  _globals['_CANCELSUBSCRIPTIONOUTPUT']._serialized_start=929
+  _globals['_CANCELSUBSCRIPTIONOUTPUT']._serialized_end=955
+  _globals['_STARTSUBSCRIPTIONTRIALINPUT']._serialized_start=957
+  _globals['_STARTSUBSCRIPTIONTRIALINPUT']._serialized_end=1023
+  _globals['_STARTSUBSCRIPTIONTRIALOUTPUT']._serialized_start=1025
+  _globals['_STARTSUBSCRIPTIONTRIALOUTPUT']._serialized_end=1055
+  _globals['_ENDSUBSCRIPTIONTRIALINPUT']._serialized_start=1057
+  _globals['_ENDSUBSCRIPTIONTRIALINPUT']._serialized_end=1084
+  _globals['_ENDSUBSCRIPTIONTRIALOUTPUT']._serialized_start=1086
+  _globals['_ENDSUBSCRIPTIONTRIALOUTPUT']._serialized_end=1114
+  _globals['_SIMULATESUBSCRIPTIONINPUT']._serialized_start=1116
+  _globals['_SIMULATESUBSCRIPTIONINPUT']._serialized_end=1211
+  _globals['_SIMULATESUBSCRIPTIONOUTPUT']._serialized_start=1213
+  _globals['_SIMULATESUBSCRIPTIONOUTPUT']._serialized_end=1323
+  _globals['_CREATEPORTALLINKINPUT']._serialized_start=1325
+  _globals['_CREATEPORTALLINKINPUT']._serialized_end=1400
+  _globals['_CREATEPORTALLINKOUTPUT']._serialized_start=1402
+  _globals['_CREATEPORTALLINKOUTPUT']._serialized_end=1447
+  _globals['_UPCOMINGINVOICEINPUT']._serialized_start=1449
+  _globals['_UPCOMINGINVOICEINPUT']._serialized_end=1471
+  _globals['_UPCOMINGINVOICEOUTPUT']._serialized_start=1473
+  _globals['_UPCOMINGINVOICEOUTPUT']._serialized_end=1539
+  _globals['_DESCRIBEINVOICEINPUT']._serialized_start=1541
+  _globals['_DESCRIBEINVOICEINPUT']._serialized_end=1583
+  _globals['_DESCRIBEINVOICEOUTPUT']._serialized_start=1585
+  _globals['_DESCRIBEINVOICEOUTPUT']._serialized_end=1651
+  _globals['_PAYINVOICEINPUT']._serialized_start=1653
+  _globals['_PAYINVOICEINPUT']._serialized_end=1690
+  _globals['_PAYINVOICEOUTPUT']._serialized_start=1692
+  _globals['_PAYINVOICEOUTPUT']._serialized_end=1732
+  _globals['_LISTINVOICESINPUT']._serialized_start=1734
+  _globals['_LISTINVOICESINPUT']._serialized_end=1798
+  _globals['_LISTINVOICESOUTPUT']._serialized_start=1800
+  _globals['_LISTINVOICESOUTPUT']._serialized_end=1876
+  _globals['_LISTAVAILABLEPLANSINPUT']._serialized_start=1879
+  _globals['_LISTAVAILABLEPLANSINPUT']._serialized_end=2013
+  _globals['_LISTAVAILABLEPLANSOUTPUT']._serialized_start=2015
+  _globals['_LISTAVAILABLEPLANSOUTPUT']._serialized_end=2094
+  _globals['_BILLINGSERVICE']._serialized_start=2097
+  _globals['_BILLINGSERVICE']._serialized_end=4451
 # @@protoc_insertion_point(module_scope)

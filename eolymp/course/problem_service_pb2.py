@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.atlas import code_template_pb2 as eolymp_dot_atlas_dot_code__template__pb2
@@ -33,7 +34,7 @@ from eolymp.playground import run_pb2 as eolymp_dot_playground_dot_run__pb2
 from eolymp.runtime import runtime_pb2 as eolymp_dot_runtime_dot_runtime__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/course/problem_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/atlas/code_template.proto\x1a\x1c\x65olymp/atlas/statement.proto\x1a\x1f\x65olymp/atlas/testing_test.proto\x1a&eolymp/course/submission_service.proto\x1a\x1b\x65olymp/playground/run.proto\x1a\x1c\x65olymp/runtime/runtime.proto\"\x15\n\x13ListStatementsInput\"M\n\x14ListStatementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.atlas.Statement\"&\n\x14LookupStatementInput\x12\x0e\n\x06locale\x18\x02 \x01(\t\"C\n\x15LookupStatementOutput\x12*\n\tstatement\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"\x13\n\x11ListExamplesInput\":\n\x12ListExamplesOutput\x12$\n\x08\x65xamples\x18\x02 \x03(\x0b\x32\x12.eolymp.atlas.Test\"*\n\x17LookupCodeTemplateInput\x12\x0f\n\x07runtime\x18\x01 \x01(\t\"D\n\x18LookupCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Template\"e\n\x0e\x43reateRunInput\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x64 \x01(\t\x12\x14\n\ninput_data\x18\x65 \x01(\x0cH\x00\x12\x13\n\tinput_ref\x18\x66 \x01(\tH\x00\x42\x07\n\x05input\"!\n\x0f\x43reateRunOutput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\"\n\x10\x44\x65scribeRunInput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"8\n\x11\x44\x65scribeRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run\"\x1f\n\rWatchRunInput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"5\n\x0eWatchRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run\"\x13\n\x11ListRuntimesInput\"K\n\x12ListRuntimesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.runtime.Runtime2\xb9\x0e\n\x0eProblemService\x12\x97\x01\n\x0eListStatements\x12\".eolymp.course.ListStatementsInput\x1a#.eolymp.course.ListStatementsOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\r\x12\x0b/statements\x12\xa1\x01\n\x0fLookupStatement\x12#.eolymp.course.LookupStatementInput\x1a$.eolymp.course.LookupStatementOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x14\x12\x12/statements:lookup\x12\x8f\x01\n\x0cListExamples\x12 .eolymp.course.ListExamplesInput\x1a!.eolymp.course.ListExamplesOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x0b\x12\t/examples\x12\xa0\x01\n\x10\x43reateSubmission\x12$.eolymp.course.CreateSubmissionInput\x1a%.eolymp.course.CreateSubmissionOutput\"?\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\n\x82\xe3\n\x18\x8a\xe3\n\x14\x63ourse:course:submit\x82\xd3\xe4\x93\x02\x0e\"\x0c/submissions\x12\x9b\x01\n\x0fListSubmissions\x12#.eolymp.course.ListSubmissionsInput\x1a$.eolymp.course.ListSubmissionsOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x0e\x12\x0c/submissions\x12\xb4\x01\n\x12\x44\x65scribeSubmission\x12&.eolymp.course.DescribeSubmissionInput\x1a\'.eolymp.course.DescribeSubmissionOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/submissions/{submission_id}\x12z\n\x0fWatchSubmission\x12#.eolymp.course.WatchSubmissionInput\x1a$.eolymp.course.WatchSubmissionOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read0\x01\x12\xa1\x01\n\x12LookupCodeTemplate\x12&.eolymp.course.LookupCodeTemplateInput\x1a\'.eolymp.course.LookupCodeTemplateOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x0b\x12\t/template\x12\x84\x01\n\tCreateRun\x12\x1d.eolymp.course.CreateRunInput\x1a\x1e.eolymp.course.CreateRunOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14playground:run:write\x82\xd3\xe4\x93\x02\x07\"\x05/runs\x12\x92\x01\n\x0b\x44\x65scribeRun\x12\x1f.eolymp.course.DescribeRunInput\x1a .eolymp.course.DescribeRunOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\x82\xd3\xe4\x93\x02\x10\x12\x0e/runs/{run_id}\x12\x91\x01\n\x08WatchRun\x12\x1c.eolymp.course.WatchRunInput\x1a\x1d.eolymp.course.WatchRunOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\x82\xd3\xe4\x93\x02\x16\x12\x14/runs/{run_id}/watch0\x01\x12\x8e\x01\n\x0cListRuntimes\x12 .eolymp.course.ListRuntimesInput\x1a!.eolymp.course.ListRuntimesOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x19\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\n\x12\x08/runtimeB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/course/problem_service.proto\x12\reolymp.course\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/atlas/code_template.proto\x1a\x1c\x65olymp/atlas/statement.proto\x1a\x1f\x65olymp/atlas/testing_test.proto\x1a&eolymp/course/submission_service.proto\x1a\x1b\x65olymp/playground/run.proto\x1a\x1c\x65olymp/runtime/runtime.proto\"\x15\n\x13ListStatementsInput\"M\n\x14ListStatementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.atlas.Statement\"&\n\x14LookupStatementInput\x12\x0e\n\x06locale\x18\x02 \x01(\t\"C\n\x15LookupStatementOutput\x12*\n\tstatement\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Statement\"\x13\n\x11ListExamplesInput\":\n\x12ListExamplesOutput\x12$\n\x08\x65xamples\x18\x02 \x03(\x0b\x32\x12.eolymp.atlas.Test\"*\n\x17LookupCodeTemplateInput\x12\x0f\n\x07runtime\x18\x01 \x01(\t\"D\n\x18LookupCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Template\"e\n\x0e\x43reateRunInput\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x64 \x01(\t\x12\x14\n\ninput_data\x18\x65 \x01(\x0cH\x00\x12\x13\n\tinput_ref\x18\x66 \x01(\tH\x00\x42\x07\n\x05input\"!\n\x0f\x43reateRunOutput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\"\n\x10\x44\x65scribeRunInput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"8\n\x11\x44\x65scribeRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run\"\x1f\n\rWatchRunInput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"5\n\x0eWatchRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run\"\x13\n\x11ListRuntimesInput\"K\n\x12ListRuntimesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.runtime.Runtime2\xd7\x0e\n\x0eProblemService\x12\x97\x01\n\x0eListStatements\x12\".eolymp.course.ListStatementsInput\x1a#.eolymp.course.ListStatementsOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\r\x12\x0b/statements\x12\xa1\x01\n\x0fLookupStatement\x12#.eolymp.course.LookupStatementInput\x1a$.eolymp.course.LookupStatementOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x14\x12\x12/statements:lookup\x12\x8f\x01\n\x0cListExamples\x12 .eolymp.course.ListExamplesInput\x1a!.eolymp.course.ListExamplesOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x0b\x12\t/examples\x12\xa0\x01\n\x10\x43reateSubmission\x12$.eolymp.course.CreateSubmissionInput\x1a%.eolymp.course.CreateSubmissionOutput\"?\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\n\x82\xe3\n\x18\x8a\xe3\n\x14\x63ourse:course:submit\x82\xd3\xe4\x93\x02\x0e\"\x0c/submissions\x12\x9b\x01\n\x0fListSubmissions\x12#.eolymp.course.ListSubmissionsInput\x1a$.eolymp.course.ListSubmissionsOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x0e\x12\x0c/submissions\x12\xb4\x01\n\x12\x44\x65scribeSubmission\x12&.eolymp.course.DescribeSubmissionInput\x1a\'.eolymp.course.DescribeSubmissionOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/submissions/{submission_id}\x12z\n\x0fWatchSubmission\x12#.eolymp.course.WatchSubmissionInput\x1a$.eolymp.course.WatchSubmissionOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read0\x01\x12\xa1\x01\n\x12LookupCodeTemplate\x12&.eolymp.course.LookupCodeTemplateInput\x1a\'.eolymp.course.LookupCodeTemplateOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\x0b\x12\t/template\x12\x84\x01\n\tCreateRun\x12\x1d.eolymp.course.CreateRunInput\x1a\x1e.eolymp.course.CreateRunOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14playground:run:write\x82\xd3\xe4\x93\x02\x07\"\x05/runs\x12\x92\x01\n\x0b\x44\x65scribeRun\x12\x1f.eolymp.course.DescribeRunInput\x1a .eolymp.course.DescribeRunOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\x82\xd3\xe4\x93\x02\x10\x12\x0e/runs/{run_id}\x12\x91\x01\n\x08WatchRun\x12\x1c.eolymp.course.WatchRunInput\x1a\x1d.eolymp.course.WatchRunOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\x82\xd3\xe4\x93\x02\x16\x12\x14/runs/{run_id}/watch0\x01\x12\x8e\x01\n\x0cListRuntimes\x12 .eolymp.course.ListRuntimesInput\x1a!.eolymp.course.ListRuntimesOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x19\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\x82\xd3\xe4\x93\x02\n\x12\x08/runtime\x1a\x1c\x82\xf0\xf0\xe4\x01\x16\x65olymp.course.MaterialB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,6 +42,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.problem_servi
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
+  _globals['_PROBLEMSERVICE']._loaded_options = None
+  _globals['_PROBLEMSERVICE']._serialized_options = b'\202\360\360\344\001\026eolymp.course.Material'
   _globals['_PROBLEMSERVICE'].methods_by_name['ListStatements']._loaded_options = None
   _globals['_PROBLEMSERVICE'].methods_by_name['ListStatements']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022course:course:read\202\323\344\223\002\r\022\013/statements'
   _globals['_PROBLEMSERVICE'].methods_by_name['LookupStatement']._loaded_options = None
@@ -65,38 +68,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PROBLEMSERVICE'].methods_by_name['WatchRun']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\027\212\343\n\023playground:run:read\202\323\344\223\002\026\022\024/runs/{run_id}/watch'
   _globals['_PROBLEMSERVICE'].methods_by_name['ListRuntimes']._loaded_options = None
   _globals['_PROBLEMSERVICE'].methods_by_name['ListRuntimes']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\031\202\343\n\026\212\343\n\022course:course:read\202\323\344\223\002\n\022\010/runtime'
-  _globals['_LISTSTATEMENTSINPUT']._serialized_start=349
-  _globals['_LISTSTATEMENTSINPUT']._serialized_end=370
-  _globals['_LISTSTATEMENTSOUTPUT']._serialized_start=372
-  _globals['_LISTSTATEMENTSOUTPUT']._serialized_end=449
-  _globals['_LOOKUPSTATEMENTINPUT']._serialized_start=451
-  _globals['_LOOKUPSTATEMENTINPUT']._serialized_end=489
-  _globals['_LOOKUPSTATEMENTOUTPUT']._serialized_start=491
-  _globals['_LOOKUPSTATEMENTOUTPUT']._serialized_end=558
-  _globals['_LISTEXAMPLESINPUT']._serialized_start=560
-  _globals['_LISTEXAMPLESINPUT']._serialized_end=579
-  _globals['_LISTEXAMPLESOUTPUT']._serialized_start=581
-  _globals['_LISTEXAMPLESOUTPUT']._serialized_end=639
-  _globals['_LOOKUPCODETEMPLATEINPUT']._serialized_start=641
-  _globals['_LOOKUPCODETEMPLATEINPUT']._serialized_end=683
-  _globals['_LOOKUPCODETEMPLATEOUTPUT']._serialized_start=685
-  _globals['_LOOKUPCODETEMPLATEOUTPUT']._serialized_end=753
-  _globals['_CREATERUNINPUT']._serialized_start=755
-  _globals['_CREATERUNINPUT']._serialized_end=856
-  _globals['_CREATERUNOUTPUT']._serialized_start=858
-  _globals['_CREATERUNOUTPUT']._serialized_end=891
-  _globals['_DESCRIBERUNINPUT']._serialized_start=893
-  _globals['_DESCRIBERUNINPUT']._serialized_end=927
-  _globals['_DESCRIBERUNOUTPUT']._serialized_start=929
-  _globals['_DESCRIBERUNOUTPUT']._serialized_end=985
-  _globals['_WATCHRUNINPUT']._serialized_start=987
-  _globals['_WATCHRUNINPUT']._serialized_end=1018
-  _globals['_WATCHRUNOUTPUT']._serialized_start=1020
-  _globals['_WATCHRUNOUTPUT']._serialized_end=1073
-  _globals['_LISTRUNTIMESINPUT']._serialized_start=1075
-  _globals['_LISTRUNTIMESINPUT']._serialized_end=1094
-  _globals['_LISTRUNTIMESOUTPUT']._serialized_start=1096
-  _globals['_LISTRUNTIMESOUTPUT']._serialized_end=1171
-  _globals['_PROBLEMSERVICE']._serialized_start=1174
-  _globals['_PROBLEMSERVICE']._serialized_end=3023
+  _globals['_LISTSTATEMENTSINPUT']._serialized_start=385
+  _globals['_LISTSTATEMENTSINPUT']._serialized_end=406
+  _globals['_LISTSTATEMENTSOUTPUT']._serialized_start=408
+  _globals['_LISTSTATEMENTSOUTPUT']._serialized_end=485
+  _globals['_LOOKUPSTATEMENTINPUT']._serialized_start=487
+  _globals['_LOOKUPSTATEMENTINPUT']._serialized_end=525
+  _globals['_LOOKUPSTATEMENTOUTPUT']._serialized_start=527
+  _globals['_LOOKUPSTATEMENTOUTPUT']._serialized_end=594
+  _globals['_LISTEXAMPLESINPUT']._serialized_start=596
+  _globals['_LISTEXAMPLESINPUT']._serialized_end=615
+  _globals['_LISTEXAMPLESOUTPUT']._serialized_start=617
+  _globals['_LISTEXAMPLESOUTPUT']._serialized_end=675
+  _globals['_LOOKUPCODETEMPLATEINPUT']._serialized_start=677
+  _globals['_LOOKUPCODETEMPLATEINPUT']._serialized_end=719
+  _globals['_LOOKUPCODETEMPLATEOUTPUT']._serialized_start=721
+  _globals['_LOOKUPCODETEMPLATEOUTPUT']._serialized_end=789
+  _globals['_CREATERUNINPUT']._serialized_start=791
+  _globals['_CREATERUNINPUT']._serialized_end=892
+  _globals['_CREATERUNOUTPUT']._serialized_start=894
+  _globals['_CREATERUNOUTPUT']._serialized_end=927
+  _globals['_DESCRIBERUNINPUT']._serialized_start=929
+  _globals['_DESCRIBERUNINPUT']._serialized_end=963
+  _globals['_DESCRIBERUNOUTPUT']._serialized_start=965
+  _globals['_DESCRIBERUNOUTPUT']._serialized_end=1021
+  _globals['_WATCHRUNINPUT']._serialized_start=1023
+  _globals['_WATCHRUNINPUT']._serialized_end=1054
+  _globals['_WATCHRUNOUTPUT']._serialized_start=1056
+  _globals['_WATCHRUNOUTPUT']._serialized_end=1109
+  _globals['_LISTRUNTIMESINPUT']._serialized_start=1111
+  _globals['_LISTRUNTIMESINPUT']._serialized_end=1130
+  _globals['_LISTRUNTIMESOUTPUT']._serialized_start=1132
+  _globals['_LISTRUNTIMESOUTPUT']._serialized_end=1207
+  _globals['_PROBLEMSERVICE']._serialized_start=1210
+  _globals['_PROBLEMSERVICE']._serialized_end=3089
 # @@protoc_insertion_point(module_scope)

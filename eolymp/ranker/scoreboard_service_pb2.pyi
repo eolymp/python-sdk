@@ -1,4 +1,5 @@
 from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.ranker import scoreboard_pb2 as _scoreboard_pb2

@@ -23,11 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.auth import linked_account_pb2 as eolymp_dot_auth_dot_linked__account__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/auth/sso_service.proto\x12\x0b\x65olymp.auth\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a eolymp/auth/linked_account.proto\"Y\n\x12SignonRequestInput\x12-\n\x04type\x18\x01 \x01(\x0e\x32\x1f.eolymp.auth.LinkedAccount.Type\x12\x14\n\x0c\x63\x61llback_uri\x18\x02 \x01(\t\"+\n\x13SignonRequestOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\"2\n\x13SignonExchangeInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"k\n\x14SignonExchangeOutput\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x12\n\ntoken_type\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\r\x12\x15\n\rrefresh_token\x18\x04 \x01(\t2\x82\x02\n\nSSOService\x12w\n\rSignonRequest\x12\x1f.eolymp.auth.SignonRequestInput\x1a .eolymp.auth.SignonRequestOutput\"#\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0e\"\x0c/sso:request\x12{\n\x0eSignonExchange\x12 .eolymp.auth.SignonExchangeInput\x1a!.eolymp.auth.SignonExchangeOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\"\r/sso:exchangeB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/auth/sso_service.proto\x12\x0b\x65olymp.auth\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a eolymp/auth/linked_account.proto\"Y\n\x12SignonRequestInput\x12-\n\x04type\x18\x01 \x01(\x0e\x32\x1f.eolymp.auth.LinkedAccount.Type\x12\x14\n\x0c\x63\x61llback_uri\x18\x02 \x01(\t\"+\n\x13SignonRequestOutput\x12\x14\n\x0credirect_uri\x18\x01 \x01(\t\"2\n\x13SignonExchangeInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"k\n\x14SignonExchangeOutput\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x12\n\ntoken_type\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\r\x12\x15\n\rrefresh_token\x18\x04 \x01(\t2\x9f\x02\n\nSSOService\x12w\n\rSignonRequest\x12\x1f.eolymp.auth.SignonRequestInput\x1a .eolymp.auth.SignonRequestOutput\"#\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0e\"\x0c/sso:request\x12{\n\x0eSignonExchange\x12 .eolymp.auth.SignonExchangeInput\x1a!.eolymp.auth.SignonExchangeOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xd3\xe4\x93\x02\x0f\"\r/sso:exchange\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB+Z)github.com/eolymp/go-sdk/eolymp/auth;authb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,18 +36,20 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.auth.sso_service_pb2
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z)github.com/eolymp/go-sdk/eolymp/auth;auth'
+  _globals['_SSOSERVICE']._loaded_options = None
+  _globals['_SSOSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_SSOSERVICE'].methods_by_name['SignonRequest']._loaded_options = None
   _globals['_SSOSERVICE'].methods_by_name['SignonRequest']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\016\"\014/sso:request'
   _globals['_SSOSERVICE'].methods_by_name['SignonExchange']._loaded_options = None
   _globals['_SSOSERVICE'].methods_by_name['SignonExchange']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\323\344\223\002\017\"\r/sso:exchange'
-  _globals['_SIGNONREQUESTINPUT']._serialized_start=147
-  _globals['_SIGNONREQUESTINPUT']._serialized_end=236
-  _globals['_SIGNONREQUESTOUTPUT']._serialized_start=238
-  _globals['_SIGNONREQUESTOUTPUT']._serialized_end=281
-  _globals['_SIGNONEXCHANGEINPUT']._serialized_start=283
-  _globals['_SIGNONEXCHANGEINPUT']._serialized_end=333
-  _globals['_SIGNONEXCHANGEOUTPUT']._serialized_start=335
-  _globals['_SIGNONEXCHANGEOUTPUT']._serialized_end=442
-  _globals['_SSOSERVICE']._serialized_start=445
-  _globals['_SSOSERVICE']._serialized_end=703
+  _globals['_SIGNONREQUESTINPUT']._serialized_start=183
+  _globals['_SIGNONREQUESTINPUT']._serialized_end=272
+  _globals['_SIGNONREQUESTOUTPUT']._serialized_start=274
+  _globals['_SIGNONREQUESTOUTPUT']._serialized_end=317
+  _globals['_SIGNONEXCHANGEINPUT']._serialized_start=319
+  _globals['_SIGNONEXCHANGEINPUT']._serialized_end=369
+  _globals['_SIGNONEXCHANGEOUTPUT']._serialized_start=371
+  _globals['_SIGNONEXCHANGEOUTPUT']._serialized_end=478
+  _globals['_SSOSERVICE']._serialized_start=481
+  _globals['_SSOSERVICE']._serialized_end=768
 # @@protoc_insertion_point(module_scope)
