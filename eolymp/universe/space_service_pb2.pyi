@@ -5,7 +5,6 @@ from eolymp.universe import quota_pb2 as _quota_pb2
 from eolymp.universe import space_pb2 as _space_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -27,27 +26,13 @@ class CreateSpaceOutput(_message.Message):
 
 class UpdateSpaceInput(_message.Message):
     __slots__ = ("patch", "space_id", "space")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateSpaceInput.Patch]
-        KEY: _ClassVar[UpdateSpaceInput.Patch]
-        NAME: _ClassVar[UpdateSpaceInput.Patch]
-        IMAGE: _ClassVar[UpdateSpaceInput.Patch]
-        TYPE: _ClassVar[UpdateSpaceInput.Patch]
-        VISIBILITY: _ClassVar[UpdateSpaceInput.Patch]
-    ALL: UpdateSpaceInput.Patch
-    KEY: UpdateSpaceInput.Patch
-    NAME: UpdateSpaceInput.Patch
-    IMAGE: UpdateSpaceInput.Patch
-    TYPE: UpdateSpaceInput.Patch
-    VISIBILITY: UpdateSpaceInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     SPACE_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateSpaceInput.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Patch.Field]
     space_id: str
     space: _space_pb2.Space
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateSpaceInput.Patch, str]]] = ..., space_id: _Optional[str] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_space_pb2.Space.Patch.Field, str]]] = ..., space_id: _Optional[str] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
 
 class UpdateSpaceOutput(_message.Message):
     __slots__ = ()
@@ -68,8 +53,8 @@ class LookupSpaceInput(_message.Message):
     KEY_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     key: str
-    extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra]
-    def __init__(self, key: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra.Field]
+    def __init__(self, key: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra.Field, str]]] = ...) -> None: ...
 
 class LookupSpaceOutput(_message.Message):
     __slots__ = ("space",)
@@ -82,8 +67,8 @@ class DescribeSpaceInput(_message.Message):
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     space_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra]
-    def __init__(self, space_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra.Field]
+    def __init__(self, space_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeSpaceOutput(_message.Message):
     __slots__ = ("space",)
@@ -137,8 +122,8 @@ class ListSpacesInput(_message.Message):
     offset: int
     size: int
     filters: ListSpacesInput.Filter
-    extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSpacesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra.Field]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSpacesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra.Field, str]]] = ...) -> None: ...
 
 class ListSpacesOutput(_message.Message):
     __slots__ = ("total", "items")

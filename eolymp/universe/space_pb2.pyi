@@ -1,5 +1,6 @@
 import datetime
 
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.universe import quota_pb2 as _quota_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
@@ -12,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
-    __slots__ = ("id", "key", "url", "home_url", "issuer_url", "graphql_url", "name", "image", "visibility", "features", "status", "subscription", "affiliation", "discord_guild_id")
+    __slots__ = ("id", "url", "home_url", "issuer_url", "graphql_url", "key", "name", "image", "visibility", "status", "features", "subscription", "affiliation", "discord_guild_id", "locales")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Space.Status]
@@ -31,12 +32,6 @@ class Space(_message.Message):
     UNKNOWN_VISIBILITY: Space.Visibility
     PUBLIC: Space.Visibility
     PRIVATE: Space.Visibility
-    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        UNKNOWN_EXTRA: _ClassVar[Space.Extra]
-        SUBSCRIPTION: _ClassVar[Space.Extra]
-    UNKNOWN_EXTRA: Space.Extra
-    SUBSCRIPTION: Space.Extra
     class Feature(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_FEATURE: _ClassVar[Space.Feature]
@@ -49,6 +44,32 @@ class Space(_message.Message):
     NEWSLETTERS: Space.Feature
     MEMBER_CREDITS: Space.Feature
     MERCHANDISE_STORE: Space.Feature
+    class Extra(_message.Message):
+        __slots__ = ()
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_EXTRA: _ClassVar[Space.Extra.Field]
+            SUBSCRIPTION: _ClassVar[Space.Extra.Field]
+        UNKNOWN_EXTRA: Space.Extra.Field
+        SUBSCRIPTION: Space.Extra.Field
+        def __init__(self) -> None: ...
+    class Patch(_message.Message):
+        __slots__ = ()
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_PATCH: _ClassVar[Space.Patch.Field]
+            KEY: _ClassVar[Space.Patch.Field]
+            NAME: _ClassVar[Space.Patch.Field]
+            IMAGE: _ClassVar[Space.Patch.Field]
+            VISIBILITY: _ClassVar[Space.Patch.Field]
+            LOCALES: _ClassVar[Space.Patch.Field]
+        UNKNOWN_PATCH: Space.Patch.Field
+        KEY: Space.Patch.Field
+        NAME: Space.Patch.Field
+        IMAGE: Space.Patch.Field
+        VISIBILITY: Space.Patch.Field
+        LOCALES: Space.Patch.Field
+        def __init__(self) -> None: ...
     class Subscription(_message.Message):
         __slots__ = ("plan", "seats", "quota", "billing_period_start", "billing_period_end", "quota_period_start", "quota_period_end")
         PLAN_FIELD_NUMBER: _ClassVar[int]
@@ -67,31 +88,33 @@ class Space(_message.Message):
         quota_period_end: _timestamp_pb2.Timestamp
         def __init__(self, plan: _Optional[str] = ..., seats: _Optional[int] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., billing_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., billing_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
-    KEY_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     HOME_URL_FIELD_NUMBER: _ClassVar[int]
     ISSUER_URL_FIELD_NUMBER: _ClassVar[int]
     GRAPHQL_URL_FIELD_NUMBER: _ClassVar[int]
+    KEY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
-    FEATURES_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
+    FEATURES_FIELD_NUMBER: _ClassVar[int]
     SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
     AFFILIATION_FIELD_NUMBER: _ClassVar[int]
     DISCORD_GUILD_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALES_FIELD_NUMBER: _ClassVar[int]
     id: str
-    key: str
     url: str
     home_url: str
     issuer_url: str
     graphql_url: str
+    key: str
     name: str
     image: str
     visibility: Space.Visibility
-    features: _containers.RepeatedScalarFieldContainer[Space.Feature]
     status: Space.Status
+    features: _containers.RepeatedScalarFieldContainer[Space.Feature]
     subscription: Space.Subscription
     affiliation: str
     discord_guild_id: str
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., features: _Optional[_Iterable[_Union[Space.Feature, str]]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., affiliation: _Optional[str] = ..., discord_guild_id: _Optional[str] = ...) -> None: ...
+    locales: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., features: _Optional[_Iterable[_Union[Space.Feature, str]]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., affiliation: _Optional[str] = ..., discord_guild_id: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ...) -> None: ...
