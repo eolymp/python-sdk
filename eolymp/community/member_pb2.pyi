@@ -22,12 +22,14 @@ class Member(_message.Message):
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             NO_EXTRA: _ClassVar[Member.Extra.Field]
+            RANK: _ClassVar[Member.Extra.Field]
             STATS: _ClassVar[Member.Extra.Field]
             GROUPS: _ClassVar[Member.Extra.Field]
             ATTRIBUTES: _ClassVar[Member.Extra.Field]
             METADATA: _ClassVar[Member.Extra.Field]
             RESTRICTIONS: _ClassVar[Member.Extra.Field]
         NO_EXTRA: Member.Extra.Field
+        RANK: Member.Extra.Field
         STATS: Member.Extra.Field
         GROUPS: Member.Extra.Field
         ATTRIBUTES: Member.Extra.Field
