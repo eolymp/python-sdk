@@ -21,14 +21,14 @@ class Member(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
-            NO_EXTRA: _ClassVar[Member.Extra.Field]
+            UNKNOWN_EXTRA: _ClassVar[Member.Extra.Field]
             RANK: _ClassVar[Member.Extra.Field]
             STATS: _ClassVar[Member.Extra.Field]
             GROUPS: _ClassVar[Member.Extra.Field]
             ATTRIBUTES: _ClassVar[Member.Extra.Field]
             METADATA: _ClassVar[Member.Extra.Field]
             RESTRICTIONS: _ClassVar[Member.Extra.Field]
-        NO_EXTRA: Member.Extra.Field
+        UNKNOWN_EXTRA: Member.Extra.Field
         RANK: Member.Extra.Field
         STATS: Member.Extra.Field
         GROUPS: Member.Extra.Field
@@ -40,7 +40,7 @@ class Member(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
-            UNKNOWN: _ClassVar[Member.Patch.Field]
+            UNKNOWN_PATCH: _ClassVar[Member.Patch.Field]
             EXTERNAL_REF: _ClassVar[Member.Patch.Field]
             INACTIVE: _ClassVar[Member.Patch.Field]
             UNOFFICIAL: _ClassVar[Member.Patch.Field]
@@ -65,7 +65,7 @@ class Member(_message.Message):
             GHOST_NAME: _ClassVar[Member.Patch.Field]
             ATTRIBUTES: _ClassVar[Member.Patch.Field]
             METADATA: _ClassVar[Member.Patch.Field]
-        UNKNOWN: Member.Patch.Field
+        UNKNOWN_PATCH: Member.Patch.Field
         EXTERNAL_REF: Member.Patch.Field
         INACTIVE: Member.Patch.Field
         UNOFFICIAL: Member.Patch.Field
