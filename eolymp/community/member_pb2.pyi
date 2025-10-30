@@ -28,6 +28,7 @@ class Member(_message.Message):
             ATTRIBUTES: _ClassVar[Member.Extra.Field]
             METADATA: _ClassVar[Member.Extra.Field]
             RESTRICTIONS: _ClassVar[Member.Extra.Field]
+            PRIVATE_DATA: _ClassVar[Member.Extra.Field]
         UNKNOWN_EXTRA: Member.Extra.Field
         RANK: Member.Extra.Field
         STATS: Member.Extra.Field
@@ -35,6 +36,7 @@ class Member(_message.Message):
         ATTRIBUTES: Member.Extra.Field
         METADATA: Member.Extra.Field
         RESTRICTIONS: Member.Extra.Field
+        PRIVATE_DATA: Member.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
         __slots__ = ()
