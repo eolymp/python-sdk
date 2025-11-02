@@ -57,14 +57,16 @@ class DeleteSuggestionOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ReviewSuggestionInput(_message.Message):
-    __slots__ = ("suggestion_id", "status", "comment")
+    __slots__ = ("suggestion_id", "status", "comment", "contribution")
     SUGGESTION_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     COMMENT_FIELD_NUMBER: _ClassVar[int]
+    CONTRIBUTION_FIELD_NUMBER: _ClassVar[int]
     suggestion_id: str
     status: _suggestion_pb2.Suggestion.Status
     comment: _content_pb2.Content
-    def __init__(self, suggestion_id: _Optional[str] = ..., status: _Optional[_Union[_suggestion_pb2.Suggestion.Status, str]] = ..., comment: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    contribution: int
+    def __init__(self, suggestion_id: _Optional[str] = ..., status: _Optional[_Union[_suggestion_pb2.Suggestion.Status, str]] = ..., comment: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., contribution: _Optional[int] = ...) -> None: ...
 
 class ReviewSuggestionOutput(_message.Message):
     __slots__ = ()

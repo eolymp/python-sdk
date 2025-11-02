@@ -63,18 +63,16 @@ class DescribeAttributeOutput(_message.Message):
 class ListAttributesInput(_message.Message):
     __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ("id", "key", "hidden", "required", "type")
+        __slots__ = ("id", "key", "required", "type")
         ID_FIELD_NUMBER: _ClassVar[int]
         KEY_FIELD_NUMBER: _ClassVar[int]
-        HIDDEN_FIELD_NUMBER: _ClassVar[int]
         REQUIRED_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         key: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        hidden: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         required: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., key: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., hidden: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., required: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., key: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., required: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
