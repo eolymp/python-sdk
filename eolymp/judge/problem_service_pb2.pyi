@@ -2,6 +2,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.atlas import editorial_pb2 as _editorial_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.judge import problem_pb2 as _problem_pb2_1
 from eolymp.judge import template_pb2 as _template_pb2
@@ -172,6 +173,22 @@ class ListStatementsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_problem_pb2_1.Problem.Statement]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem.Statement, _Mapping]]] = ...) -> None: ...
+
+class DescribeEditorialInput(_message.Message):
+    __slots__ = ("contest_id", "problem_id", "locale")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    problem_id: str
+    locale: str
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+
+class DescribeEditorialOutput(_message.Message):
+    __slots__ = ("editorial",)
+    EDITORIAL_FIELD_NUMBER: _ClassVar[int]
+    editorial: _editorial_pb2.Editorial
+    def __init__(self, editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
 
 class ListAttachmentsInput(_message.Message):
     __slots__ = ("contest_id", "problem_id")
