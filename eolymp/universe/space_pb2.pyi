@@ -39,11 +39,13 @@ class Space(_message.Message):
         NEWSLETTERS: _ClassVar[Space.Feature]
         MEMBER_CREDITS: _ClassVar[Space.Feature]
         MERCHANDISE_STORE: _ClassVar[Space.Feature]
+        RANKING: _ClassVar[Space.Feature]
     UNKNOWN_FEATURE: Space.Feature
     PRINTERS: Space.Feature
     NEWSLETTERS: Space.Feature
     MEMBER_CREDITS: Space.Feature
     MERCHANDISE_STORE: Space.Feature
+    RANKING: Space.Feature
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):

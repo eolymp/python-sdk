@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
-    __slots__ = ("id", "url", "name", "image_url", "starts_at", "ends_at", "duration", "status", "visibility", "participation_mode", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "classification", "scoreboard_config", "environment_config", "certification_config", "plagiarism_config", "staff")
+    __slots__ = ("id", "url", "name", "image_url", "starts_at", "ends_at", "duration", "status", "visibility", "participation_mode", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "classification", "scoreboard_config", "environment_config", "certification_config", "plagiarism_config", "rating_config", "staff")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATUS_UNKNOWN: _ClassVar[Contest.Status]
@@ -85,6 +85,7 @@ class Contest(_message.Message):
             CERTIFICATION_CONFIG: _ClassVar[Contest.Patch.Field]
             ENVIRONMENT_CONFIG: _ClassVar[Contest.Patch.Field]
             PLAGIARISM_CONFIG: _ClassVar[Contest.Patch.Field]
+            RATING_CONFIG: _ClassVar[Contest.Patch.Field]
         UNKNOWN: Contest.Patch.Field
         NAME: Contest.Patch.Field
         IMAGE_URL: Contest.Patch.Field
@@ -110,25 +111,28 @@ class Contest(_message.Message):
         CERTIFICATION_CONFIG: Contest.Patch.Field
         ENVIRONMENT_CONFIG: Contest.Patch.Field
         PLAGIARISM_CONFIG: Contest.Patch.Field
+        RATING_CONFIG: Contest.Patch.Field
         def __init__(self) -> None: ...
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             UNKNOWN: _ClassVar[Contest.Extra.Field]
+            STAFF: _ClassVar[Contest.Extra.Field]
             CLASSIFICATION: _ClassVar[Contest.Extra.Field]
             SCOREBOARD_CONFIG: _ClassVar[Contest.Extra.Field]
             CERTIFICATION_CONFIG: _ClassVar[Contest.Extra.Field]
             ENVIRONMENT_CONFIG: _ClassVar[Contest.Extra.Field]
             PLAGIARISM_CONFIG: _ClassVar[Contest.Extra.Field]
-            STAFF: _ClassVar[Contest.Extra.Field]
+            RATING_CONFIG: _ClassVar[Contest.Extra.Field]
         UNKNOWN: Contest.Extra.Field
+        STAFF: Contest.Extra.Field
         CLASSIFICATION: Contest.Extra.Field
         SCOREBOARD_CONFIG: Contest.Extra.Field
         CERTIFICATION_CONFIG: Contest.Extra.Field
         ENVIRONMENT_CONFIG: Contest.Extra.Field
         PLAGIARISM_CONFIG: Contest.Extra.Field
-        STAFF: Contest.Extra.Field
+        RATING_CONFIG: Contest.Extra.Field
         def __init__(self) -> None: ...
     class Classification(_message.Message):
         __slots__ = ("year", "series", "scale", "difficulty", "country", "region", "city")
@@ -186,6 +190,13 @@ class Contest(_message.Message):
         no_spoiler_ui: bool
         share_key: str
         def __init__(self, visibility: _Optional[_Union[Contest.ScoreboardConfig.Visibility, str]] = ..., freezing_time: _Optional[int] = ..., unfreeze_delay: _Optional[int] = ..., attempt_penalty: _Optional[int] = ..., tie_breaker: _Optional[str] = ..., no_spoiler_ui: bool = ..., share_key: _Optional[str] = ...) -> None: ...
+    class RatingConfig(_message.Message):
+        __slots__ = ("rated", "max_rating")
+        RATED_FIELD_NUMBER: _ClassVar[int]
+        MAX_RATING_FIELD_NUMBER: _ClassVar[int]
+        rated: bool
+        max_rating: int
+        def __init__(self, rated: bool = ..., max_rating: _Optional[int] = ...) -> None: ...
     class CertificationConfig(_message.Message):
         __slots__ = ("enabled", "affiliation", "signers")
         class Signer(_message.Message):
@@ -250,6 +261,7 @@ class Contest(_message.Message):
     ENVIRONMENT_CONFIG_FIELD_NUMBER: _ClassVar[int]
     CERTIFICATION_CONFIG_FIELD_NUMBER: _ClassVar[int]
     PLAGIARISM_CONFIG_FIELD_NUMBER: _ClassVar[int]
+    RATING_CONFIG_FIELD_NUMBER: _ClassVar[int]
     STAFF_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
@@ -280,5 +292,6 @@ class Contest(_message.Message):
     environment_config: Contest.EnvironmentConfig
     certification_config: Contest.CertificationConfig
     plagiarism_config: Contest.PlagiarismConfig
+    rating_config: Contest.RatingConfig
     staff: _containers.RepeatedCompositeFieldContainer[Contest.Staff]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., join_unofficially: bool = ..., require_admission: bool = ..., allow_pause: bool = ..., allow_finish_early: bool = ..., allow_upsolve: bool = ..., allow_followup: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ..., plagiarism_config: _Optional[_Union[Contest.PlagiarismConfig, _Mapping]] = ..., staff: _Optional[_Iterable[_Union[Contest.Staff, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., join_unofficially: bool = ..., require_admission: bool = ..., allow_pause: bool = ..., allow_finish_early: bool = ..., allow_upsolve: bool = ..., allow_followup: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ..., plagiarism_config: _Optional[_Union[Contest.PlagiarismConfig, _Mapping]] = ..., rating_config: _Optional[_Union[Contest.RatingConfig, _Mapping]] = ..., staff: _Optional[_Iterable[_Union[Contest.Staff, _Mapping]]] = ...) -> None: ...
