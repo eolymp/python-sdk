@@ -9,10 +9,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LookupAddressInput(_message.Message):
-    __slots__ = ("ip_address",)
+    __slots__ = ("ip_address", "secret")
     IP_ADDRESS_FIELD_NUMBER: _ClassVar[int]
+    SECRET_FIELD_NUMBER: _ClassVar[int]
     ip_address: str
-    def __init__(self, ip_address: _Optional[str] = ...) -> None: ...
+    secret: str
+    def __init__(self, ip_address: _Optional[str] = ..., secret: _Optional[str] = ...) -> None: ...
 
 class LookupAddressOutput(_message.Message):
     __slots__ = ("latitude", "longitude", "country", "timezone", "postcode", "city", "region")
