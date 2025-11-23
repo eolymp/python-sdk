@@ -8,7 +8,6 @@ from eolymp.atlas import version_pb2 as _version_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
-from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -53,16 +52,14 @@ class DeleteProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ("problem_id", "locale", "extra", "fields")
+    __slots__ = ("problem_id", "locale", "extra")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
-    FIELDS_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
-    fields: _field_mask_pb2.FieldMask
-    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ..., fields: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ("problem",)
@@ -71,7 +68,7 @@ class DescribeProblemOutput(_message.Message):
     def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
 
 class ListProblemsInput(_message.Message):
-    __slots__ = ("offset", "size", "search", "filters", "sort", "order", "locale", "extra", "fields")
+    __slots__ = ("offset", "size", "search", "filters", "sort", "order", "locale", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListProblemsInput.Sortable]
@@ -109,7 +106,6 @@ class ListProblemsInput(_message.Message):
     ORDER_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
-    FIELDS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
     search: str
@@ -118,8 +114,7 @@ class ListProblemsInput(_message.Message):
     order: _direction_pb2.Direction
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
-    fields: _field_mask_pb2.FieldMask
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ..., fields: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProblemsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProblemsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
 
 class ListProblemsOutput(_message.Message):
     __slots__ = ("total", "items")
