@@ -31,21 +31,11 @@ class Problem(_message.Message):
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             UNKNOWN_EXTRA: _ClassVar[Problem.Extra.Field]
-            VOTE: _ClassVar[Problem.Extra.Field]
-            TITLE: _ClassVar[Problem.Extra.Field]
             CONTENT_VALUE: _ClassVar[Problem.Extra.Field]
             CONTENT_RENDER: _ClassVar[Problem.Extra.Field]
-            SUBMISSION_FORM: _ClassVar[Problem.Extra.Field]
-            EXAMPLES: _ClassVar[Problem.Extra.Field]
-            CONSTRAINTS: _ClassVar[Problem.Extra.Field]
         UNKNOWN_EXTRA: Problem.Extra.Field
-        VOTE: Problem.Extra.Field
-        TITLE: Problem.Extra.Field
         CONTENT_VALUE: Problem.Extra.Field
         CONTENT_RENDER: Problem.Extra.Field
-        SUBMISSION_FORM: Problem.Extra.Field
-        EXAMPLES: Problem.Extra.Field
-        CONSTRAINTS: Problem.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
         __slots__ = ()
