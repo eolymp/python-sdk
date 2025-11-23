@@ -7,6 +7,7 @@ from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.judge import problem_pb2 as _problem_pb2_1
 from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
+from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -79,16 +80,18 @@ class DeleteProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListProblemsInput(_message.Message):
-    __slots__ = ("offset", "size", "locale", "extra")
+    __slots__ = ("offset", "size", "locale", "extra", "fields")
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    FIELDS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
+    fields: _field_mask_pb2.FieldMask
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ..., fields: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class ListProblemsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -99,14 +102,16 @@ class ListProblemsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem, _Mapping]]] = ...) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ("problem_id", "locale", "extra")
+    __slots__ = ("problem_id", "locale", "extra", "fields")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    FIELDS_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
-    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
+    fields: _field_mask_pb2.FieldMask
+    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ..., fields: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ("problem",)
