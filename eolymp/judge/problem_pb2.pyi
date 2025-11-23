@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ("contest_id", "id", "url", "type", "index", "base_id", "feedback_policy", "score_by_best_testset", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score", "constraints", "locale", "title", "content", "download_link", "submission_form", "examples")
+    __slots__ = ("contest_id", "id", "url", "type", "index", "base_id", "feedback_policy", "score_by_best_testset", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score", "constraints", "language", "title", "content", "download_link", "languages", "submission_form", "examples")
     class Statement(_message.Message):
         __slots__ = ("locale", "title", "content", "download_link")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -62,10 +62,11 @@ class Problem(_message.Message):
     SUBMIT_LIMIT_FIELD_NUMBER: _ClassVar[int]
     SCORE_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
-    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    LANGUAGE_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     DOWNLOAD_LINK_FIELD_NUMBER: _ClassVar[int]
+    LANGUAGES_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_FORM_FIELD_NUMBER: _ClassVar[int]
     EXAMPLES_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
@@ -83,10 +84,11 @@ class Problem(_message.Message):
     submit_limit: int
     score: float
     constraints: _problem_pb2.Problem.Constraints
-    locale: str
+    language: str
     title: str
     content: _content_pb2.Content
     download_link: str
+    languages: _containers.RepeatedScalarFieldContainer[str]
     submission_form: _form_pb2.Form
     examples: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem.Example]
-    def __init__(self, contest_id: _Optional[str] = ..., id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., index: _Optional[int] = ..., base_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., score_by_best_testset: bool = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[_problem_pb2.Problem.Constraints, _Mapping]] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., submission_form: _Optional[_Union[_form_pb2.Form, _Mapping]] = ..., examples: _Optional[_Iterable[_Union[_problem_pb2.Problem.Example, _Mapping]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., index: _Optional[int] = ..., base_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., score_by_best_testset: bool = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[_problem_pb2.Problem.Constraints, _Mapping]] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., submission_form: _Optional[_Union[_form_pb2.Form, _Mapping]] = ..., examples: _Optional[_Iterable[_Union[_problem_pb2.Problem.Example, _Mapping]]] = ...) -> None: ...
