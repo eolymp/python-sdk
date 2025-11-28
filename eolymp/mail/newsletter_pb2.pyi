@@ -13,28 +13,34 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Newsletter(_message.Message):
     __slots__ = ("id", "type", "created_at", "name", "subject", "content", "recipients_count", "pending_count", "sent_count", "error_count")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    class Patch(_message.Message):
         __slots__ = ()
-        ALL: _ClassVar[Newsletter.Patch]
-        TYPE: _ClassVar[Newsletter.Patch]
-        NAME: _ClassVar[Newsletter.Patch]
-        SUBJECT: _ClassVar[Newsletter.Patch]
-        CONTENT: _ClassVar[Newsletter.Patch]
-        LOCALE: _ClassVar[Newsletter.Patch]
-    ALL: Newsletter.Patch
-    TYPE: Newsletter.Patch
-    NAME: Newsletter.Patch
-    SUBJECT: Newsletter.Patch
-    CONTENT: Newsletter.Patch
-    LOCALE: Newsletter.Patch
-    class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN: _ClassVar[Newsletter.Patch.Field]
+            TYPE: _ClassVar[Newsletter.Patch.Field]
+            NAME: _ClassVar[Newsletter.Patch.Field]
+            SUBJECT: _ClassVar[Newsletter.Patch.Field]
+            CONTENT: _ClassVar[Newsletter.Patch.Field]
+            LOCALE: _ClassVar[Newsletter.Patch.Field]
+        UNKNOWN: Newsletter.Patch.Field
+        TYPE: Newsletter.Patch.Field
+        NAME: Newsletter.Patch.Field
+        SUBJECT: Newsletter.Patch.Field
+        CONTENT: Newsletter.Patch.Field
+        LOCALE: Newsletter.Patch.Field
+        def __init__(self) -> None: ...
+    class Extra(_message.Message):
         __slots__ = ()
-        UNKNOWN_EXTRA: _ClassVar[Newsletter.Extra]
-        CONTENT_VALUE: _ClassVar[Newsletter.Extra]
-        CONTENT_RENDER: _ClassVar[Newsletter.Extra]
-    UNKNOWN_EXTRA: Newsletter.Extra
-    CONTENT_VALUE: Newsletter.Extra
-    CONTENT_RENDER: Newsletter.Extra
+        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_EXTRA: _ClassVar[Newsletter.Extra.Field]
+            CONTENT_VALUE: _ClassVar[Newsletter.Extra.Field]
+            CONTENT_RENDER: _ClassVar[Newsletter.Extra.Field]
+        UNKNOWN_EXTRA: Newsletter.Extra.Field
+        CONTENT_VALUE: Newsletter.Extra.Field
+        CONTENT_RENDER: Newsletter.Extra.Field
+        def __init__(self) -> None: ...
     class Translation(_message.Message):
         __slots__ = ("id", "locale", "subject", "content", "automatic")
         ID_FIELD_NUMBER: _ClassVar[int]

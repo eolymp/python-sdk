@@ -32,10 +32,10 @@ class UpdateNewsletterInput(_message.Message):
     PATCH_FIELD_NUMBER: _ClassVar[int]
     NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
     NEWSLETTER_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Patch.Field]
     newsletter_id: str
     newsletter: _newsletter_pb2.Newsletter
-    def __init__(self, patch: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Patch, str]]] = ..., newsletter_id: _Optional[str] = ..., newsletter: _Optional[_Union[_newsletter_pb2.Newsletter, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Patch.Field, str]]] = ..., newsletter_id: _Optional[str] = ..., newsletter: _Optional[_Union[_newsletter_pb2.Newsletter, _Mapping]] = ...) -> None: ...
 
 class UpdateNewsletterOutput(_message.Message):
     __slots__ = ()
@@ -56,8 +56,8 @@ class DescribeNewsletterInput(_message.Message):
     NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     newsletter_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Extra]
-    def __init__(self, newsletter_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Extra.Field]
+    def __init__(self, newsletter_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeNewsletterOutput(_message.Message):
     __slots__ = ("newsletter",)
@@ -93,8 +93,8 @@ class ListNewslettersInput(_message.Message):
     sort: ListNewslettersInput.Sort
     order: _direction_pb2.Direction
     locale: str
-    extra: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListNewslettersInput.Filter, _Mapping]] = ..., search: _Optional[str] = ..., sort: _Optional[_Union[ListNewslettersInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra, str]]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Extra.Field]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListNewslettersInput.Filter, _Mapping]] = ..., search: _Optional[str] = ..., sort: _Optional[_Union[ListNewslettersInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra.Field, str]]] = ...) -> None: ...
 
 class ListNewslettersOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -181,11 +181,11 @@ class UpdateTranslationInput(_message.Message):
     NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Patch]
+    patch: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Patch.Field]
     newsletter_id: str
     translation_id: str
     translation: _newsletter_pb2.Newsletter.Translation
-    def __init__(self, patch: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Patch, str]]] = ..., newsletter_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., translation: _Optional[_Union[_newsletter_pb2.Newsletter.Translation, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Patch.Field, str]]] = ..., newsletter_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., translation: _Optional[_Union[_newsletter_pb2.Newsletter.Translation, _Mapping]] = ...) -> None: ...
 
 class UpdateTranslationOutput(_message.Message):
     __slots__ = ()

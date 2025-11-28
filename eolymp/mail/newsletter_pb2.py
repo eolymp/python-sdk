@@ -27,7 +27,7 @@ from eolymp.mail import email_type_pb2 as eolymp_dot_mail_dot_email__type__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/mail/newsletter.proto\x12\x0b\x65olymp.mail\x1a\x18\x65olymp/ecm/content.proto\x1a\x1c\x65olymp/mail/email_type.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x04\n\nNewsletter\x12\n\n\x02id\x18\x01 \x01(\t\x12$\n\x04type\x18\x02 \x01(\x0e\x32\x16.eolymp.mail.EmailType\x12.\n\ncreated_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\n \x01(\t\x12\x0f\n\x07subject\x18\x0b \x01(\t\x12$\n\x07\x63ontent\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x18\n\x10recipients_count\x18\x1e \x01(\r\x12\x15\n\rpending_count\x18\x1f \x01(\r\x12\x12\n\nsent_count\x18  \x01(\r\x12\x13\n\x0b\x65rror_count\x18! \x01(\r\x1as\n\x0bTranslation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x66 \x01(\t\x12\x0f\n\x07subject\x18g \x01(\t\x12$\n\x07\x63ontent\x18h \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x11\n\tautomatic\x18i \x01(\x08\"J\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x08\n\x04TYPE\x10\x01\x12\x08\n\x04NAME\x10\x05\x12\x0b\n\x07SUBJECT\x10\x02\x12\x0b\n\x07\x43ONTENT\x10\x03\x12\n\n\x06LOCALE\x10\x04\"A\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x11\n\rCONTENT_VALUE\x10\x01\x12\x12\n\x0e\x43ONTENT_RENDER\x10\x02\x42+Z)github.com/eolymp/go-sdk/eolymp/mail;mailb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/mail/newsletter.proto\x12\x0b\x65olymp.mail\x1a\x18\x65olymp/ecm/content.proto\x1a\x1c\x65olymp/mail/email_type.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa7\x04\n\nNewsletter\x12\n\n\x02id\x18\x01 \x01(\t\x12$\n\x04type\x18\x02 \x01(\x0e\x32\x16.eolymp.mail.EmailType\x12.\n\ncreated_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\n \x01(\t\x12\x0f\n\x07subject\x18\x0b \x01(\t\x12$\n\x07\x63ontent\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x18\n\x10recipients_count\x18\x1e \x01(\r\x12\x15\n\rpending_count\x18\x1f \x01(\r\x12\x12\n\nsent_count\x18  \x01(\r\x12\x13\n\x0b\x65rror_count\x18! \x01(\r\x1aW\n\x05Patch\"N\n\x05\x46ield\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04TYPE\x10\x01\x12\x08\n\x04NAME\x10\x05\x12\x0b\n\x07SUBJECT\x10\x02\x12\x0b\n\x07\x43ONTENT\x10\x03\x12\n\n\x06LOCALE\x10\x04\x1aJ\n\x05\x45xtra\"A\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x11\n\rCONTENT_VALUE\x10\x01\x12\x12\n\x0e\x43ONTENT_RENDER\x10\x02\x1as\n\x0bTranslation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x66 \x01(\t\x12\x0f\n\x07subject\x18g \x01(\t\x12$\n\x07\x63ontent\x18h \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x11\n\tautomatic\x18i \x01(\x08\x42+Z)github.com/eolymp/go-sdk/eolymp/mail;mailb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,11 +36,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z)github.com/eolymp/go-sdk/eolymp/mail;mail'
   _globals['_NEWSLETTER']._serialized_start=135
-  _globals['_NEWSLETTER']._serialized_end=664
-  _globals['_NEWSLETTER_TRANSLATION']._serialized_start=406
-  _globals['_NEWSLETTER_TRANSLATION']._serialized_end=521
-  _globals['_NEWSLETTER_PATCH']._serialized_start=523
-  _globals['_NEWSLETTER_PATCH']._serialized_end=597
-  _globals['_NEWSLETTER_EXTRA']._serialized_start=599
-  _globals['_NEWSLETTER_EXTRA']._serialized_end=664
+  _globals['_NEWSLETTER']._serialized_end=686
+  _globals['_NEWSLETTER_PATCH']._serialized_start=406
+  _globals['_NEWSLETTER_PATCH']._serialized_end=493
+  _globals['_NEWSLETTER_PATCH_FIELD']._serialized_start=415
+  _globals['_NEWSLETTER_PATCH_FIELD']._serialized_end=493
+  _globals['_NEWSLETTER_EXTRA']._serialized_start=495
+  _globals['_NEWSLETTER_EXTRA']._serialized_end=569
+  _globals['_NEWSLETTER_EXTRA_FIELD']._serialized_start=504
+  _globals['_NEWSLETTER_EXTRA_FIELD']._serialized_end=569
+  _globals['_NEWSLETTER_TRANSLATION']._serialized_start=571
+  _globals['_NEWSLETTER_TRANSLATION']._serialized_end=686
 # @@protoc_insertion_point(module_scope)
