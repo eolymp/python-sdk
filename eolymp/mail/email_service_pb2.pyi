@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SendEmailInput(_message.Message):
-    __slots__ = ("member_id", "deduplication_key", "dry_run", "bcc_me", "type", "campaign", "locale", "message", "template")
+    __slots__ = ("member_id", "email_ref", "dry_run", "bcc_me", "type", "locale", "message", "template")
     class Message(_message.Message):
         __slots__ = ("subject", "body", "data")
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
@@ -30,24 +30,22 @@ class SendEmailInput(_message.Message):
         data: _struct_pb2.Struct
         def __init__(self, path: _Optional[str] = ..., data: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    DEDUPLICATION_KEY_FIELD_NUMBER: _ClassVar[int]
+    EMAIL_REF_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     BCC_ME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    CAMPAIGN_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     member_id: str
-    deduplication_key: str
+    email_ref: str
     dry_run: bool
     bcc_me: bool
     type: _email_type_pb2.EmailType
-    campaign: str
     locale: str
     message: SendEmailInput.Message
     template: SendEmailInput.Template
-    def __init__(self, member_id: _Optional[str] = ..., deduplication_key: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., campaign: _Optional[str] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[SendEmailInput.Message, _Mapping]] = ..., template: _Optional[_Union[SendEmailInput.Template, _Mapping]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., email_ref: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[SendEmailInput.Message, _Mapping]] = ..., template: _Optional[_Union[SendEmailInput.Template, _Mapping]] = ...) -> None: ...
 
 class SendEmailOutput(_message.Message):
     __slots__ = ("message_id",)
