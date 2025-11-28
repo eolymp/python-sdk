@@ -24,7 +24,7 @@ class EmailServiceClient:
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.SendEmailOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.SendEmailOutput"),
             **kwargs,
         )
 
@@ -35,7 +35,7 @@ class EmailServiceClient:
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeEmailUsageOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.DescribeEmailUsageOutput"),
             **kwargs,
         )
 

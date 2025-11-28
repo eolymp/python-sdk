@@ -1,7 +1,7 @@
 import datetime
 
-from eolymp.community import email_type_pb2 as _email_type_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
+from eolymp.mail import email_type_pb2 as _email_type_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -11,30 +11,30 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class Campaign(_message.Message):
+class Newsletter(_message.Message):
     __slots__ = ("id", "type", "created_at", "name", "subject", "content", "recipients_count", "pending_count", "sent_count", "error_count")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
-        ALL: _ClassVar[Campaign.Patch]
-        TYPE: _ClassVar[Campaign.Patch]
-        NAME: _ClassVar[Campaign.Patch]
-        SUBJECT: _ClassVar[Campaign.Patch]
-        CONTENT: _ClassVar[Campaign.Patch]
-        LOCALE: _ClassVar[Campaign.Patch]
-    ALL: Campaign.Patch
-    TYPE: Campaign.Patch
-    NAME: Campaign.Patch
-    SUBJECT: Campaign.Patch
-    CONTENT: Campaign.Patch
-    LOCALE: Campaign.Patch
+        ALL: _ClassVar[Newsletter.Patch]
+        TYPE: _ClassVar[Newsletter.Patch]
+        NAME: _ClassVar[Newsletter.Patch]
+        SUBJECT: _ClassVar[Newsletter.Patch]
+        CONTENT: _ClassVar[Newsletter.Patch]
+        LOCALE: _ClassVar[Newsletter.Patch]
+    ALL: Newsletter.Patch
+    TYPE: Newsletter.Patch
+    NAME: Newsletter.Patch
+    SUBJECT: Newsletter.Patch
+    CONTENT: Newsletter.Patch
+    LOCALE: Newsletter.Patch
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
-        UNKNOWN_EXTRA: _ClassVar[Campaign.Extra]
-        CONTENT_VALUE: _ClassVar[Campaign.Extra]
-        CONTENT_RENDER: _ClassVar[Campaign.Extra]
-    UNKNOWN_EXTRA: Campaign.Extra
-    CONTENT_VALUE: Campaign.Extra
-    CONTENT_RENDER: Campaign.Extra
+        UNKNOWN_EXTRA: _ClassVar[Newsletter.Extra]
+        CONTENT_VALUE: _ClassVar[Newsletter.Extra]
+        CONTENT_RENDER: _ClassVar[Newsletter.Extra]
+    UNKNOWN_EXTRA: Newsletter.Extra
+    CONTENT_VALUE: Newsletter.Extra
+    CONTENT_RENDER: Newsletter.Extra
     class Translation(_message.Message):
         __slots__ = ("id", "locale", "subject", "content", "automatic")
         ID_FIELD_NUMBER: _ClassVar[int]

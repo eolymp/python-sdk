@@ -23,11 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
-from eolymp.community import email_type_pb2 as eolymp_dot_community_dot_email__type__pb2
+from eolymp.mail import email_type_pb2 as eolymp_dot_mail_dot_email__type__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/member_user.proto\x12\x10\x65olymp.community\x1a\x1c\x65olymp/annotations/mcp.proto\x1a!eolymp/community/email_type.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x98\x05\n\x04User\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x10\n\x08nickname\x18\n \x01(\t\x12\'\n\x17nickname_change_timeout\x18\x0b \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x35\n\x07\x61liases\x18\r \x03(\x0b\x32\x1c.eolymp.community.User.AliasB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\r\n\x05\x65mail\x18\x14 \x01(\t\x12\x1e\n\x0e\x65mail_verified\x18\x15 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12 \n\x10\x65mail_restricted\x18\x0c \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x38\n\x13\x65mail_subscriptions\x18\x16 \x03(\x0e\x32\x1b.eolymp.community.EmailType\x12\x10\n\x08password\x18\x1e \x01(\t\x12\x1c\n\x0cpassword_age\x18\x1f \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0c\n\x04name\x18( \x01(\t\x12\x0f\n\x07picture\x18\x32 \x01(\t\x12,\n\x08\x62irthday\x18< \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07\x63ountry\x18\x46 \x01(\t\x12\x0c\n\x04\x63ity\x18I \x01(\t\x12\x0f\n\x07team_id\x18\x64 \x01(\t\x12\x38\n\x0bpreferences\x18\xa0\x06 \x01(\x0b\x32\".eolymp.community.User.Preferences\x1a@\n\x0bPreferences\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x10\n\x08timezone\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\t\x1aI\n\x05\x41lias\x12\x10\n\x08nickname\x18\x01 \x01(\t\x12.\n\nchanged_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/member_user.proto\x12\x10\x65olymp.community\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1c\x65olymp/mail/email_type.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x93\x05\n\x04User\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x10\n\x08nickname\x18\n \x01(\t\x12\'\n\x17nickname_change_timeout\x18\x0b \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x35\n\x07\x61liases\x18\r \x03(\x0b\x32\x1c.eolymp.community.User.AliasB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\r\n\x05\x65mail\x18\x14 \x01(\t\x12\x1e\n\x0e\x65mail_verified\x18\x15 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12 \n\x10\x65mail_restricted\x18\x0c \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x33\n\x13\x65mail_subscriptions\x18\x16 \x03(\x0e\x32\x16.eolymp.mail.EmailType\x12\x10\n\x08password\x18\x1e \x01(\t\x12\x1c\n\x0cpassword_age\x18\x1f \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0c\n\x04name\x18( \x01(\t\x12\x0f\n\x07picture\x18\x32 \x01(\t\x12,\n\x08\x62irthday\x18< \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07\x63ountry\x18\x46 \x01(\t\x12\x0c\n\x04\x63ity\x18I \x01(\t\x12\x0f\n\x07team_id\x18\x64 \x01(\t\x12\x38\n\x0bpreferences\x18\xa0\x06 \x01(\x0b\x32\".eolymp.community.User.Preferences\x1a@\n\x0bPreferences\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x10\n\x08timezone\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\t\x1aI\n\x05\x41lias\x12\x10\n\x08nickname\x18\x01 \x01(\t\x12.\n\nchanged_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,10 +45,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USER'].fields_by_name['email_restricted']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_USER'].fields_by_name['password_age']._loaded_options = None
   _globals['_USER'].fields_by_name['password_age']._serialized_options = b'\250\360\360\344\001\001'
-  _globals['_USER']._serialized_start=155
-  _globals['_USER']._serialized_end=819
-  _globals['_USER_PREFERENCES']._serialized_start=680
-  _globals['_USER_PREFERENCES']._serialized_end=744
-  _globals['_USER_ALIAS']._serialized_start=746
-  _globals['_USER_ALIAS']._serialized_end=819
+  _globals['_USER']._serialized_start=150
+  _globals['_USER']._serialized_end=809
+  _globals['_USER_PREFERENCES']._serialized_start=670
+  _globals['_USER_PREFERENCES']._serialized_end=734
+  _globals['_USER_ALIAS']._serialized_start=736
+  _globals['_USER_ALIAS']._serialized_end=809
 # @@protoc_insertion_point(module_scope)

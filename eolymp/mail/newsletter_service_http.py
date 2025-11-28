@@ -9,259 +9,259 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-class CampaignServiceClient:
+class NewsletterServiceClient:
     def __init__(self, transport, url="https://api.eolymp.com"):
         self.transport = transport
         self.url = url
 
-    def CreateCampaign(self, request, **kwargs):
-        path = "/campaigns"
+    def CreateNewsletter(self, request, **kwargs):
+        path = "/newsletters"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.CreateCampaignOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.CreateNewsletterOutput"),
             **kwargs,
         )
 
-    def UpdateCampaign(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)
+    def UpdateNewsletter(self, request, **kwargs):
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.UpdateCampaignOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.UpdateNewsletterOutput"),
             **kwargs,
         )
 
-    def DeleteCampaign(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)
+    def DeleteNewsletter(self, request, **kwargs):
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.DeleteCampaignOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.DeleteNewsletterOutput"),
             **kwargs,
         )
 
-    def DescribeCampaign(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)
+    def DescribeNewsletter(self, request, **kwargs):
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.DescribeCampaignOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.DescribeNewsletterOutput"),
             **kwargs,
         )
 
-    def ListCampaigns(self, request, **kwargs):
-        path = "/campaigns"
+    def ListNewsletters(self, request, **kwargs):
+        path = "/newsletters"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.ListCampaignsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.ListNewslettersOutput"),
             **kwargs,
         )
 
-    def TestCampaign(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/test"
+    def TestNewsletter(self, request, **kwargs):
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/test"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.TestCampaignOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.TestNewsletterOutput"),
             **kwargs,
         )
 
-    def SendCampaign(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/send"
+    def SendNewsletter(self, request, **kwargs):
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/send"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.SendCampaignOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.SendNewsletterOutput"),
             **kwargs,
         )
 
-    def TranslateCampaign(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/translate"
+    def TranslateNewsletter(self, request, **kwargs):
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/translate"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.TranslateCampaignOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.TranslateNewsletterOutput"),
             **kwargs,
         )
 
     def CreateTranslation(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/translations"
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/translations"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.CreateTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.CreateTranslationOutput"),
             **kwargs,
         )
 
     def UpdateTranslation(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/translations/"+urllib.parse.quote(request.translation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
         request.translation_id = ""
 
         return self.transport.request(
             method="PUT",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.UpdateTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.UpdateTranslationOutput"),
             **kwargs,
         )
 
     def DeleteTranslation(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/translations/"+urllib.parse.quote(request.translation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
         request.translation_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.DeleteTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.DeleteTranslationOutput"),
             **kwargs,
         )
 
     def DescribeTranslation(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/translations/"+urllib.parse.quote(request.translation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
         request.translation_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.DescribeTranslationOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.DescribeTranslationOutput"),
             **kwargs,
         )
 
     def ListTranslations(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/translations"
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/translations"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.ListTranslationsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.ListTranslationsOutput"),
             **kwargs,
         )
 
     def CreateRecipient(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/recipients"
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/recipients"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.CreateRecipientOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.CreateRecipientOutput"),
             **kwargs,
         )
 
     def ImportRecipient(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/recipients:import"
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/recipients:import"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.ImportRecipientOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.ImportRecipientOutput"),
             **kwargs,
         )
 
     def DeleteRecipient(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/recipients/"+urllib.parse.quote(request.recipient_id)
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/recipients/"+urllib.parse.quote(request.recipient_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
         request.recipient_id = ""
 
         return self.transport.request(
             method="DELETE",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.DeleteRecipientOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.DeleteRecipientOutput"),
             **kwargs,
         )
 
     def ListRecipients(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/recipients"
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/recipients"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.ListRecipientsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.ListRecipientsOutput"),
             **kwargs,
         )
 
     def DescribeRecipient(self, request, **kwargs):
-        path = "/campaigns/"+urllib.parse.quote(request.campaign_id)+"/recipients/"+urllib.parse.quote(request.recipient_id)
+        path = "/newsletters/"+urllib.parse.quote(request.newsletter_id)+"/recipients/"+urllib.parse.quote(request.recipient_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.campaign_id = ""
+        request.newsletter_id = ""
         request.recipient_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.newsletter.DescribeRecipientOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.mail.DescribeRecipientOutput"),
             **kwargs,
         )
 

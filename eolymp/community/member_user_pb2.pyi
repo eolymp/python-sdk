@@ -1,7 +1,7 @@
 import datetime
 
 from eolymp.annotations import mcp_pb2 as _mcp_pb2
-from eolymp.community import email_type_pb2 as _email_type_pb2
+from eolymp.mail import email_type_pb2 as _email_type_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor

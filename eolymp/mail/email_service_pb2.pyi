@@ -1,9 +1,8 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
-from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.community import email_type_pb2 as _email_type_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
+from eolymp.mail import email_type_pb2 as _email_type_pb2
 from google.protobuf import struct_pb2 as _struct_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -13,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SendEmailInput(_message.Message):
-    __slots__ = ("member_id", "dry_run", "bcc_me", "type", "campaign", "locale", "message", "fragment")
+    __slots__ = ("member_id", "deduplication_key", "dry_run", "bcc_me", "type", "campaign", "locale", "message", "template")
     class Message(_message.Message):
         __slots__ = ("subject", "body", "data")
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
@@ -23,7 +22,7 @@ class SendEmailInput(_message.Message):
         body: _content_pb2.Content
         data: _struct_pb2.Struct
         def __init__(self, subject: _Optional[str] = ..., body: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., data: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
-    class Fragment(_message.Message):
+    class Template(_message.Message):
         __slots__ = ("path", "data")
         PATH_FIELD_NUMBER: _ClassVar[int]
         DATA_FIELD_NUMBER: _ClassVar[int]
@@ -31,22 +30,24 @@ class SendEmailInput(_message.Message):
         data: _struct_pb2.Struct
         def __init__(self, path: _Optional[str] = ..., data: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    DEDUPLICATION_KEY_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     BCC_ME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     CAMPAIGN_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    FRAGMENT_FIELD_NUMBER: _ClassVar[int]
+    TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     member_id: str
+    deduplication_key: str
     dry_run: bool
     bcc_me: bool
     type: _email_type_pb2.EmailType
     campaign: str
     locale: str
     message: SendEmailInput.Message
-    fragment: SendEmailInput.Fragment
-    def __init__(self, member_id: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., campaign: _Optional[str] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[SendEmailInput.Message, _Mapping]] = ..., fragment: _Optional[_Union[SendEmailInput.Fragment, _Mapping]] = ...) -> None: ...
+    template: SendEmailInput.Template
+    def __init__(self, member_id: _Optional[str] = ..., deduplication_key: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., campaign: _Optional[str] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[SendEmailInput.Message, _Mapping]] = ..., template: _Optional[_Union[SendEmailInput.Template, _Mapping]] = ...) -> None: ...
 
 class SendEmailOutput(_message.Message):
     __slots__ = ("message_id",)
