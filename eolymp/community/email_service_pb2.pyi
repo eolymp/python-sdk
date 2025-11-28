@@ -4,7 +4,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import email_type_pb2 as _email_type_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
-from google.protobuf.internal import containers as _containers
+from google.protobuf import struct_pb2 as _struct_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Mapping as _Mapping
@@ -16,34 +16,20 @@ class SendEmailInput(_message.Message):
     __slots__ = ("member_id", "dry_run", "bcc_me", "type", "campaign", "locale", "message", "fragment")
     class Message(_message.Message):
         __slots__ = ("subject", "body", "parameters")
-        class ParametersEntry(_message.Message):
-            __slots__ = ("key", "value")
-            KEY_FIELD_NUMBER: _ClassVar[int]
-            VALUE_FIELD_NUMBER: _ClassVar[int]
-            key: str
-            value: str
-            def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
         BODY_FIELD_NUMBER: _ClassVar[int]
         PARAMETERS_FIELD_NUMBER: _ClassVar[int]
         subject: str
         body: _content_pb2.Content
-        parameters: _containers.ScalarMap[str, str]
-        def __init__(self, subject: _Optional[str] = ..., body: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
+        parameters: _struct_pb2.Struct
+        def __init__(self, subject: _Optional[str] = ..., body: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., parameters: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
     class Fragment(_message.Message):
         __slots__ = ("path", "parameters")
-        class ParametersEntry(_message.Message):
-            __slots__ = ("key", "value")
-            KEY_FIELD_NUMBER: _ClassVar[int]
-            VALUE_FIELD_NUMBER: _ClassVar[int]
-            key: str
-            value: str
-            def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
         PATH_FIELD_NUMBER: _ClassVar[int]
         PARAMETERS_FIELD_NUMBER: _ClassVar[int]
         path: str
-        parameters: _containers.ScalarMap[str, str]
-        def __init__(self, path: _Optional[str] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
+        parameters: _struct_pb2.Struct
+        def __init__(self, path: _Optional[str] = ..., parameters: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     BCC_ME_FIELD_NUMBER: _ClassVar[int]
