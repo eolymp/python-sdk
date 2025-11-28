@@ -15,21 +15,21 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class SendEmailInput(_message.Message):
     __slots__ = ("member_id", "dry_run", "bcc_me", "type", "campaign", "locale", "message", "fragment")
     class Message(_message.Message):
-        __slots__ = ("subject", "body", "parameters")
+        __slots__ = ("subject", "body", "data")
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
         BODY_FIELD_NUMBER: _ClassVar[int]
-        PARAMETERS_FIELD_NUMBER: _ClassVar[int]
+        DATA_FIELD_NUMBER: _ClassVar[int]
         subject: str
         body: _content_pb2.Content
-        parameters: _struct_pb2.Struct
-        def __init__(self, subject: _Optional[str] = ..., body: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., parameters: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
+        data: _struct_pb2.Struct
+        def __init__(self, subject: _Optional[str] = ..., body: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., data: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
     class Fragment(_message.Message):
-        __slots__ = ("path", "parameters")
+        __slots__ = ("path", "data")
         PATH_FIELD_NUMBER: _ClassVar[int]
-        PARAMETERS_FIELD_NUMBER: _ClassVar[int]
+        DATA_FIELD_NUMBER: _ClassVar[int]
         path: str
-        parameters: _struct_pb2.Struct
-        def __init__(self, path: _Optional[str] = ..., parameters: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
+        data: _struct_pb2.Struct
+        def __init__(self, path: _Optional[str] = ..., data: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     BCC_ME_FIELD_NUMBER: _ClassVar[int]
