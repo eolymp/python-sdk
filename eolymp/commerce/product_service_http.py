@@ -60,7 +60,7 @@ class ProductServiceClient:
         request.product_id = ""
 
         return self.transport.request(
-            method="POST",
+            method="GET",
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.commerce.DescribeProductOutput"),
