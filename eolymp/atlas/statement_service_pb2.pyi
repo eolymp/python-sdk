@@ -156,3 +156,23 @@ class ExportStatementOutput(_message.Message):
     DOWNLOAD_URL_FIELD_NUMBER: _ClassVar[int]
     download_url: str
     def __init__(self, download_url: _Optional[str] = ...) -> None: ...
+
+class ListStatementVersionsInput(_message.Message):
+    __slots__ = ("statement_id", "offset", "size", "extra")
+    STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    statement_id: str
+    offset: int
+    size: int
+    extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra.Field]
+    def __init__(self, statement_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
+
+class ListStatementVersionsOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_statement_pb2.Statement]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
