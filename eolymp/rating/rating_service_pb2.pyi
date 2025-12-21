@@ -14,6 +14,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class RatingChangedEvent(_message.Message):
+    __slots__ = ("rating",)
+    RATING_FIELD_NUMBER: _ClassVar[int]
+    rating: _rating_pb2.Rating
+    def __init__(self, rating: _Optional[_Union[_rating_pb2.Rating, _Mapping]] = ...) -> None: ...
+
 class SetRatingInput(_message.Message):
     __slots__ = ("rating",)
     RATING_FIELD_NUMBER: _ClassVar[int]

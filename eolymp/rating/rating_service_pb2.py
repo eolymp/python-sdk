@@ -31,7 +31,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/rating/rating_service.proto\x12\reolymp.rating\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/rating/rating.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"7\n\x0eSetRatingInput\x12%\n\x06rating\x18\x01 \x01(\x0b\x32\x15.eolymp.rating.Rating\"$\n\x0fSetRatingOutput\x12\x11\n\trating_id\x18\x01 \x01(\t\"M\n\x11UpdateRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\x12%\n\x06rating\x18\x02 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\x14\n\x12UpdateRatingOutput\"M\n\x11\x44\x65leteRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\x12%\n\x06rating\x18\x02 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\x14\n\x12\x44\x65leteRatingOutput\"(\n\x13\x44\x65scribeRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\"=\n\x14\x44\x65scribeRatingOutput\x12%\n\x06rating\x18\x01 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\xac\x03\n\x0fListRatingInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.rating.ListRatingInput.Filter\x12\x35\n\x04sort\x18\x32 \x01(\x0e\x32\'.eolymp.rating.ListRatingInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xa2\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncontest_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x38\n\ttimestamp\x18\x03 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"\x19\n\x08Sortable\x12\r\n\tTIMESTAMP\x10\x00\"G\n\x10ListRatingOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.rating.Rating\"\x1f\n\x1d\x44\x65scribeRatingBoundariesInput\"\x99\x01\n\x1e\x44\x65scribeRatingBoundariesOutput\x12\x43\n\x06levels\x18\x01 \x03(\x0b\x32\x33.eolymp.rating.DescribeRatingBoundariesOutput.Level\x1a\x32\n\x05Level\x12\n\n\x02id\x18\x01 \x01(\r\x12\x0e\n\x06rating\x18\x02 \x01(\x05\x12\r\n\x05\x63ount\x18\x03 \x01(\r\"!\n\x1f\x44\x65scribeRatingDistributionInput\"\xac\x01\n DescribeRatingDistributionOutput\x12G\n\x07\x62uckets\x18\x01 \x03(\x0b\x32\x36.eolymp.rating.DescribeRatingDistributionOutput.Bucket\x1a?\n\x06\x42ucket\x12\x12\n\nmin_rating\x18\x01 \x01(\x05\x12\x12\n\nmax_rating\x18\x02 \x01(\x05\x12\r\n\x05\x63ount\x18\x03 \x01(\r2\x91\t\n\rRatingService\x12\x88\x01\n\tSetRating\x12\x1d.eolymp.rating.SetRatingInput\x1a\x1e.eolymp.rating.SetRatingOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02\t\"\x07/rating\x12\x9d\x01\n\x0cUpdateRating\x12 .eolymp.rating.UpdateRatingInput\x1a!.eolymp.rating.UpdateRatingOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02\x15\x1a\x13/rating/{rating_id}\x12\x9d\x01\n\x0c\x44\x65leteRating\x12 .eolymp.rating.DeleteRatingInput\x1a!.eolymp.rating.DeleteRatingOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02\x15*\x13/rating/{rating_id}\x12\xa2\x01\n\x0e\x44\x65scribeRating\x12\".eolymp.rating.DescribeRatingInput\x1a#.eolymp.rating.DescribeRatingOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02\x15\x12\x13/rating/{rating_id}\x12\x9e\x01\n\nListRating\x12\x1e.eolymp.rating.ListRatingInput\x1a\x1f.eolymp.rating.ListRatingOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02\x1d\x12\x1b/members/{member_id}/rating\x12\xa2\x01\n\x18\x44\x65scribeRatingBoundaries\x12,.eolymp.rating.DescribeRatingBoundariesInput\x1a-.eolymp.rating.DescribeRatingBoundariesOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/rating-boundaries\x12\xaa\x01\n\x1a\x44\x65scribeRatingDistribution\x12..eolymp.rating.DescribeRatingDistributionInput\x1a/.eolymp.rating.DescribeRatingDistributionOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x12\x14/rating-distribution\x1a\x1d\x82\xf0\xf0\xe4\x01\x17\x65olymp.community.MemberB/Z-github.com/eolymp/go-sdk/eolymp/rating;ratingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/rating/rating_service.proto\x12\reolymp.rating\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/rating/rating.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\";\n\x12RatingChangedEvent\x12%\n\x06rating\x18\x02 \x01(\x0b\x32\x15.eolymp.rating.Rating\"7\n\x0eSetRatingInput\x12%\n\x06rating\x18\x01 \x01(\x0b\x32\x15.eolymp.rating.Rating\"$\n\x0fSetRatingOutput\x12\x11\n\trating_id\x18\x01 \x01(\t\"M\n\x11UpdateRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\x12%\n\x06rating\x18\x02 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\x14\n\x12UpdateRatingOutput\"M\n\x11\x44\x65leteRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\x12%\n\x06rating\x18\x02 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\x14\n\x12\x44\x65leteRatingOutput\"(\n\x13\x44\x65scribeRatingInput\x12\x11\n\trating_id\x18\x01 \x01(\t\"=\n\x14\x44\x65scribeRatingOutput\x12%\n\x06rating\x18\x01 \x01(\x0b\x32\x15.eolymp.rating.Rating\"\xac\x03\n\x0fListRatingInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.rating.ListRatingInput.Filter\x12\x35\n\x04sort\x18\x32 \x01(\x0e\x32\'.eolymp.rating.ListRatingInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xa2\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncontest_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x38\n\ttimestamp\x18\x03 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"\x19\n\x08Sortable\x12\r\n\tTIMESTAMP\x10\x00\"G\n\x10ListRatingOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.rating.Rating\"\x1f\n\x1d\x44\x65scribeRatingBoundariesInput\"\x99\x01\n\x1e\x44\x65scribeRatingBoundariesOutput\x12\x43\n\x06levels\x18\x01 \x03(\x0b\x32\x33.eolymp.rating.DescribeRatingBoundariesOutput.Level\x1a\x32\n\x05Level\x12\n\n\x02id\x18\x01 \x01(\r\x12\x0e\n\x06rating\x18\x02 \x01(\x05\x12\r\n\x05\x63ount\x18\x03 \x01(\r\"!\n\x1f\x44\x65scribeRatingDistributionInput\"\xac\x01\n DescribeRatingDistributionOutput\x12G\n\x07\x62uckets\x18\x01 \x03(\x0b\x32\x36.eolymp.rating.DescribeRatingDistributionOutput.Bucket\x1a?\n\x06\x42ucket\x12\x12\n\nmin_rating\x18\x01 \x01(\x05\x12\x12\n\nmax_rating\x18\x02 \x01(\x05\x12\r\n\x05\x63ount\x18\x03 \x01(\r2\x90\t\n\rRatingService\x12\x88\x01\n\tSetRating\x12\x1d.eolymp.rating.SetRatingInput\x1a\x1e.eolymp.rating.SetRatingOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02\t\"\x07/rating\x12\x9d\x01\n\x0cUpdateRating\x12 .eolymp.rating.UpdateRatingInput\x1a!.eolymp.rating.UpdateRatingOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02\x15\x1a\x13/rating/{rating_id}\x12\x9d\x01\n\x0c\x44\x65leteRating\x12 .eolymp.rating.DeleteRatingInput\x1a!.eolymp.rating.DeleteRatingOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02\x15*\x13/rating/{rating_id}\x12\xa2\x01\n\x0e\x44\x65scribeRating\x12\".eolymp.rating.DescribeRatingInput\x1a#.eolymp.rating.DescribeRatingOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02\x15\x12\x13/rating/{rating_id}\x12\x9e\x01\n\nListRating\x12\x1e.eolymp.rating.ListRatingInput\x1a\x1f.eolymp.rating.ListRatingOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02\x1d\x12\x1b/members/{member_id}/rating\x12\xa2\x01\n\x18\x44\x65scribeRatingBoundaries\x12,.eolymp.rating.DescribeRatingBoundariesInput\x1a-.eolymp.rating.DescribeRatingBoundariesOutput\")\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x14\x12\x12/rating-boundaries\x12\xaa\x01\n\x1a\x44\x65scribeRatingDistribution\x12..eolymp.rating.DescribeRatingDistributionInput\x1a/.eolymp.rating.DescribeRatingDistributionOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x16\x12\x14/rating-distribution\x1a\x1c\x82\xf0\xf0\xe4\x01\x16\x65olymp.community.SpaceB/Z-github.com/eolymp/go-sdk/eolymp/rating;ratingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,7 +40,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/rating;rating'
   _globals['_RATINGSERVICE']._loaded_options = None
-  _globals['_RATINGSERVICE']._serialized_options = b'\202\360\360\344\001\027eolymp.community.Member'
+  _globals['_RATINGSERVICE']._serialized_options = b'\202\360\360\344\001\026eolymp.community.Space'
   _globals['_RATINGSERVICE'].methods_by_name['SetRating']._loaded_options = None
   _globals['_RATINGSERVICE'].methods_by_name['SetRating']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\343\n\032\212\343\n\026community:member:write\202\323\344\223\002\t\"\007/rating'
   _globals['_RATINGSERVICE'].methods_by_name['UpdateRating']._loaded_options = None
@@ -55,42 +55,44 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RATINGSERVICE'].methods_by_name['DescribeRatingBoundaries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\024\022\022/rating-boundaries'
   _globals['_RATINGSERVICE'].methods_by_name['DescribeRatingDistribution']._loaded_options = None
   _globals['_RATINGSERVICE'].methods_by_name['DescribeRatingDistribution']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002\026\022\024/rating-distribution'
-  _globals['_SETRATINGINPUT']._serialized_start=285
-  _globals['_SETRATINGINPUT']._serialized_end=340
-  _globals['_SETRATINGOUTPUT']._serialized_start=342
-  _globals['_SETRATINGOUTPUT']._serialized_end=378
-  _globals['_UPDATERATINGINPUT']._serialized_start=380
-  _globals['_UPDATERATINGINPUT']._serialized_end=457
-  _globals['_UPDATERATINGOUTPUT']._serialized_start=459
-  _globals['_UPDATERATINGOUTPUT']._serialized_end=479
-  _globals['_DELETERATINGINPUT']._serialized_start=481
-  _globals['_DELETERATINGINPUT']._serialized_end=558
-  _globals['_DELETERATINGOUTPUT']._serialized_start=560
-  _globals['_DELETERATINGOUTPUT']._serialized_end=580
-  _globals['_DESCRIBERATINGINPUT']._serialized_start=582
-  _globals['_DESCRIBERATINGINPUT']._serialized_end=622
-  _globals['_DESCRIBERATINGOUTPUT']._serialized_start=624
-  _globals['_DESCRIBERATINGOUTPUT']._serialized_end=685
-  _globals['_LISTRATINGINPUT']._serialized_start=688
-  _globals['_LISTRATINGINPUT']._serialized_end=1116
-  _globals['_LISTRATINGINPUT_FILTER']._serialized_start=927
-  _globals['_LISTRATINGINPUT_FILTER']._serialized_end=1089
-  _globals['_LISTRATINGINPUT_SORTABLE']._serialized_start=1091
-  _globals['_LISTRATINGINPUT_SORTABLE']._serialized_end=1116
-  _globals['_LISTRATINGOUTPUT']._serialized_start=1118
-  _globals['_LISTRATINGOUTPUT']._serialized_end=1189
-  _globals['_DESCRIBERATINGBOUNDARIESINPUT']._serialized_start=1191
-  _globals['_DESCRIBERATINGBOUNDARIESINPUT']._serialized_end=1222
-  _globals['_DESCRIBERATINGBOUNDARIESOUTPUT']._serialized_start=1225
-  _globals['_DESCRIBERATINGBOUNDARIESOUTPUT']._serialized_end=1378
-  _globals['_DESCRIBERATINGBOUNDARIESOUTPUT_LEVEL']._serialized_start=1328
-  _globals['_DESCRIBERATINGBOUNDARIESOUTPUT_LEVEL']._serialized_end=1378
-  _globals['_DESCRIBERATINGDISTRIBUTIONINPUT']._serialized_start=1380
-  _globals['_DESCRIBERATINGDISTRIBUTIONINPUT']._serialized_end=1413
-  _globals['_DESCRIBERATINGDISTRIBUTIONOUTPUT']._serialized_start=1416
-  _globals['_DESCRIBERATINGDISTRIBUTIONOUTPUT']._serialized_end=1588
-  _globals['_DESCRIBERATINGDISTRIBUTIONOUTPUT_BUCKET']._serialized_start=1525
-  _globals['_DESCRIBERATINGDISTRIBUTIONOUTPUT_BUCKET']._serialized_end=1588
-  _globals['_RATINGSERVICE']._serialized_start=1591
-  _globals['_RATINGSERVICE']._serialized_end=2760
+  _globals['_RATINGCHANGEDEVENT']._serialized_start=285
+  _globals['_RATINGCHANGEDEVENT']._serialized_end=344
+  _globals['_SETRATINGINPUT']._serialized_start=346
+  _globals['_SETRATINGINPUT']._serialized_end=401
+  _globals['_SETRATINGOUTPUT']._serialized_start=403
+  _globals['_SETRATINGOUTPUT']._serialized_end=439
+  _globals['_UPDATERATINGINPUT']._serialized_start=441
+  _globals['_UPDATERATINGINPUT']._serialized_end=518
+  _globals['_UPDATERATINGOUTPUT']._serialized_start=520
+  _globals['_UPDATERATINGOUTPUT']._serialized_end=540
+  _globals['_DELETERATINGINPUT']._serialized_start=542
+  _globals['_DELETERATINGINPUT']._serialized_end=619
+  _globals['_DELETERATINGOUTPUT']._serialized_start=621
+  _globals['_DELETERATINGOUTPUT']._serialized_end=641
+  _globals['_DESCRIBERATINGINPUT']._serialized_start=643
+  _globals['_DESCRIBERATINGINPUT']._serialized_end=683
+  _globals['_DESCRIBERATINGOUTPUT']._serialized_start=685
+  _globals['_DESCRIBERATINGOUTPUT']._serialized_end=746
+  _globals['_LISTRATINGINPUT']._serialized_start=749
+  _globals['_LISTRATINGINPUT']._serialized_end=1177
+  _globals['_LISTRATINGINPUT_FILTER']._serialized_start=988
+  _globals['_LISTRATINGINPUT_FILTER']._serialized_end=1150
+  _globals['_LISTRATINGINPUT_SORTABLE']._serialized_start=1152
+  _globals['_LISTRATINGINPUT_SORTABLE']._serialized_end=1177
+  _globals['_LISTRATINGOUTPUT']._serialized_start=1179
+  _globals['_LISTRATINGOUTPUT']._serialized_end=1250
+  _globals['_DESCRIBERATINGBOUNDARIESINPUT']._serialized_start=1252
+  _globals['_DESCRIBERATINGBOUNDARIESINPUT']._serialized_end=1283
+  _globals['_DESCRIBERATINGBOUNDARIESOUTPUT']._serialized_start=1286
+  _globals['_DESCRIBERATINGBOUNDARIESOUTPUT']._serialized_end=1439
+  _globals['_DESCRIBERATINGBOUNDARIESOUTPUT_LEVEL']._serialized_start=1389
+  _globals['_DESCRIBERATINGBOUNDARIESOUTPUT_LEVEL']._serialized_end=1439
+  _globals['_DESCRIBERATINGDISTRIBUTIONINPUT']._serialized_start=1441
+  _globals['_DESCRIBERATINGDISTRIBUTIONINPUT']._serialized_end=1474
+  _globals['_DESCRIBERATINGDISTRIBUTIONOUTPUT']._serialized_start=1477
+  _globals['_DESCRIBERATINGDISTRIBUTIONOUTPUT']._serialized_end=1649
+  _globals['_DESCRIBERATINGDISTRIBUTIONOUTPUT_BUCKET']._serialized_start=1586
+  _globals['_DESCRIBERATINGDISTRIBUTIONOUTPUT_BUCKET']._serialized_end=1649
+  _globals['_RATINGSERVICE']._serialized_start=1652
+  _globals['_RATINGSERVICE']._serialized_end=2820
 # @@protoc_insertion_point(module_scope)
