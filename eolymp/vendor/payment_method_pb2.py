@@ -22,11 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/vendor/payment_method.proto\x12\reolymp.vendor\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb8\x02\n\rPaymentMethod\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x03 \x01(\x08\x12\x0f\n\x07\x63ountry\x18\x04 \x01(\t\x12\x42\n\rsepa_transfer\x18\x65 \x01(\x0b\x32).eolymp.vendor.PaymentMethod.TransferSEPAH\x00\x12\x44\n\x0eswift_transfer\x18\x66 \x01(\x0b\x32*.eolymp.vendor.PaymentMethod.TransferSWIFTH\x00\x1a\x1c\n\x0cTransferSEPA\x12\x0c\n\x04iban\x18\x01 \x01(\t\x1a\x39\n\rTransferSWIFT\x12\x10\n\x08\x62ic_code\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x02 \x01(\tB\x08\n\x06methodB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/vendor/payment_method.proto\x12\reolymp.vendor\"\xb8\x02\n\rPaymentMethod\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x03 \x01(\x08\x12\x0f\n\x07\x63ountry\x18\x04 \x01(\t\x12\x42\n\rsepa_transfer\x18\x65 \x01(\x0b\x32).eolymp.vendor.PaymentMethod.TransferSEPAH\x00\x12\x44\n\x0eswift_transfer\x18\x66 \x01(\x0b\x32*.eolymp.vendor.PaymentMethod.TransferSWIFTH\x00\x1a\x1c\n\x0cTransferSEPA\x12\x0c\n\x04iban\x18\x01 \x01(\t\x1a\x39\n\rTransferSWIFT\x12\x10\n\x08\x62ic_code\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x02 \x01(\tB\x08\n\x06methodB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,10 +32,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.vendor.payment_metho
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/vendor;vendor'
-  _globals['_PAYMENTMETHOD']._serialized_start=113
-  _globals['_PAYMENTMETHOD']._serialized_end=425
-  _globals['_PAYMENTMETHOD_TRANSFERSEPA']._serialized_start=328
-  _globals['_PAYMENTMETHOD_TRANSFERSEPA']._serialized_end=356
-  _globals['_PAYMENTMETHOD_TRANSFERSWIFT']._serialized_start=358
-  _globals['_PAYMENTMETHOD_TRANSFERSWIFT']._serialized_end=415
+  _globals['_PAYMENTMETHOD']._serialized_start=54
+  _globals['_PAYMENTMETHOD']._serialized_end=366
+  _globals['_PAYMENTMETHOD_TRANSFERSEPA']._serialized_start=269
+  _globals['_PAYMENTMETHOD_TRANSFERSEPA']._serialized_end=297
+  _globals['_PAYMENTMETHOD_TRANSFERSWIFT']._serialized_start=299
+  _globals['_PAYMENTMETHOD_TRANSFERSWIFT']._serialized_end=356
 # @@protoc_insertion_point(module_scope)
