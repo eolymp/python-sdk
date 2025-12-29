@@ -118,6 +118,16 @@ class ApproveInvoiceOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class SubmitInvoiceInput(_message.Message):
+    __slots__ = ("invoice_id",)
+    INVOICE_ID_FIELD_NUMBER: _ClassVar[int]
+    invoice_id: str
+    def __init__(self, invoice_id: _Optional[str] = ...) -> None: ...
+
+class SubmitInvoiceOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class RejectInvoiceInput(_message.Message):
     __slots__ = ("invoice_id", "comment")
     INVOICE_ID_FIELD_NUMBER: _ClassVar[int]
