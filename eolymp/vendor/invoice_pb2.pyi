@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Invoice(_message.Message):
-    __slots__ = ("id", "number", "currency", "status", "status_reason", "vendor_id", "invoice_date", "due_date", "lines", "subtotal_amount", "tax_amount", "grand_total", "document_url", "created_at", "updated_at")
+    __slots__ = ("id", "number", "currency", "status", "status_reason", "vendor_id", "payment_method_id", "invoice_date", "due_date", "lines", "subtotal_amount", "tax_amount", "grand_total", "document_url", "created_at", "updated_at")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Invoice.Status]
@@ -47,12 +47,14 @@ class Invoice(_message.Message):
             INVOICE_DATE: _ClassVar[Invoice.Patch.Field]
             DUE_DATE: _ClassVar[Invoice.Patch.Field]
             LINES: _ClassVar[Invoice.Patch.Field]
+            PAYMENT_METHOD: _ClassVar[Invoice.Patch.Field]
         UNKNOWN_FIELD: Invoice.Patch.Field
         NUMBER: Invoice.Patch.Field
         CURRENCY: Invoice.Patch.Field
         INVOICE_DATE: Invoice.Patch.Field
         DUE_DATE: Invoice.Patch.Field
         LINES: Invoice.Patch.Field
+        PAYMENT_METHOD: Invoice.Patch.Field
         def __init__(self) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
@@ -60,6 +62,7 @@ class Invoice(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     STATUS_REASON_FIELD_NUMBER: _ClassVar[int]
     VENDOR_ID_FIELD_NUMBER: _ClassVar[int]
+    PAYMENT_METHOD_ID_FIELD_NUMBER: _ClassVar[int]
     INVOICE_DATE_FIELD_NUMBER: _ClassVar[int]
     DUE_DATE_FIELD_NUMBER: _ClassVar[int]
     LINES_FIELD_NUMBER: _ClassVar[int]
@@ -75,6 +78,7 @@ class Invoice(_message.Message):
     status: Invoice.Status
     status_reason: str
     vendor_id: str
+    payment_method_id: str
     invoice_date: _timestamp_pb2.Timestamp
     due_date: _timestamp_pb2.Timestamp
     lines: _containers.RepeatedCompositeFieldContainer[Invoice.Line]
@@ -84,4 +88,4 @@ class Invoice(_message.Message):
     document_url: str
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., number: _Optional[str] = ..., currency: _Optional[str] = ..., status: _Optional[_Union[Invoice.Status, str]] = ..., status_reason: _Optional[str] = ..., vendor_id: _Optional[str] = ..., invoice_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., due_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lines: _Optional[_Iterable[_Union[Invoice.Line, _Mapping]]] = ..., subtotal_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., grand_total: _Optional[int] = ..., document_url: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., number: _Optional[str] = ..., currency: _Optional[str] = ..., status: _Optional[_Union[Invoice.Status, str]] = ..., status_reason: _Optional[str] = ..., vendor_id: _Optional[str] = ..., payment_method_id: _Optional[str] = ..., invoice_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., due_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lines: _Optional[_Iterable[_Union[Invoice.Line, _Mapping]]] = ..., subtotal_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., grand_total: _Optional[int] = ..., document_url: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
