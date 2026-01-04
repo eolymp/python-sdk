@@ -58,7 +58,7 @@ class DescribePaymentMethodOutput(_message.Message):
     def __init__(self, method: _Optional[_Union[_payment_method_pb2.PaymentMethod, _Mapping]] = ...) -> None: ...
 
 class ListPaymentMethodsInput(_message.Message):
-    __slots__ = ("after", "size", "offset", "filters")
+    __slots__ = ("after", "size", "offset", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("id",)
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -67,12 +67,14 @@ class ListPaymentMethodsInput(_message.Message):
     AFTER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     after: str
     size: int
     offset: int
+    search: str
     filters: ListPaymentMethodsInput.Filter
-    def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListPaymentMethodsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListPaymentMethodsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListPaymentMethodsOutput(_message.Message):
     __slots__ = ("total", "items")
