@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
-    __slots__ = ("id", "url", "name", "image_url", "starts_at", "ends_at", "duration", "status", "visibility", "participation_mode", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "display_editorials", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "classification", "scoreboard_config", "environment_config", "certification_config", "plagiarism_config", "rating_config", "staff")
+    __slots__ = ("id", "url", "name", "image_url", "starts_at", "ends_at", "duration", "status", "visibility", "participation_mode", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "display_editorials", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "enable_reminder_notification", "reminder_notification_status", "enable_result_notification", "result_notification_status", "classification", "scoreboard_config", "environment_config", "certification_config", "plagiarism_config", "rating_config", "staff")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATUS_UNKNOWN: _ClassVar[Contest.Status]
@@ -48,6 +48,16 @@ class Contest(_message.Message):
     PARTICIPATION_MODE_UNKNOWN: Contest.ParticipationMode
     ONLINE: Contest.ParticipationMode
     VIRTUAL: Contest.ParticipationMode
+    class NotificationStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        NOTIFICATION_STATUS_UNKNOWN: _ClassVar[Contest.NotificationStatus]
+        PENDING: _ClassVar[Contest.NotificationStatus]
+        SENT: _ClassVar[Contest.NotificationStatus]
+        DISABLED: _ClassVar[Contest.NotificationStatus]
+    NOTIFICATION_STATUS_UNKNOWN: Contest.NotificationStatus
+    PENDING: Contest.NotificationStatus
+    SENT: Contest.NotificationStatus
+    DISABLED: Contest.NotificationStatus
     class Format(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         FORMAT_UNKNOWN: _ClassVar[Contest.Format]
@@ -80,6 +90,8 @@ class Contest(_message.Message):
             PROBLEM_COUNT_HIDDEN: _ClassVar[Contest.Patch.Field]
             PARTICIPANT_COUNT_HIDDEN: _ClassVar[Contest.Patch.Field]
             FEATURED_UNTIL: _ClassVar[Contest.Patch.Field]
+            REMINDER_NOTIFICATION: _ClassVar[Contest.Patch.Field]
+            RESULT_NOTIFICATION: _ClassVar[Contest.Patch.Field]
             PRINTER: _ClassVar[Contest.Patch.Field]
             CLASSIFICATION: _ClassVar[Contest.Patch.Field]
             SCOREBOARD_CONFIG: _ClassVar[Contest.Patch.Field]
@@ -107,6 +119,8 @@ class Contest(_message.Message):
         PROBLEM_COUNT_HIDDEN: Contest.Patch.Field
         PARTICIPANT_COUNT_HIDDEN: Contest.Patch.Field
         FEATURED_UNTIL: Contest.Patch.Field
+        REMINDER_NOTIFICATION: Contest.Patch.Field
+        RESULT_NOTIFICATION: Contest.Patch.Field
         PRINTER: Contest.Patch.Field
         CLASSIFICATION: Contest.Patch.Field
         SCOREBOARD_CONFIG: Contest.Patch.Field
@@ -259,6 +273,10 @@ class Contest(_message.Message):
     PARTICIPANT_COUNT_HIDDEN_FIELD_NUMBER: _ClassVar[int]
     FEATURED_UNTIL_FIELD_NUMBER: _ClassVar[int]
     PRINTER_ID_FIELD_NUMBER: _ClassVar[int]
+    ENABLE_REMINDER_NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
+    REMINDER_NOTIFICATION_STATUS_FIELD_NUMBER: _ClassVar[int]
+    ENABLE_RESULT_NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
+    RESULT_NOTIFICATION_STATUS_FIELD_NUMBER: _ClassVar[int]
     CLASSIFICATION_FIELD_NUMBER: _ClassVar[int]
     SCOREBOARD_CONFIG_FIELD_NUMBER: _ClassVar[int]
     ENVIRONMENT_CONFIG_FIELD_NUMBER: _ClassVar[int]
@@ -291,6 +309,10 @@ class Contest(_message.Message):
     participant_count_hidden: bool
     featured_until: _timestamp_pb2.Timestamp
     printer_id: str
+    enable_reminder_notification: bool
+    reminder_notification_status: Contest.NotificationStatus
+    enable_result_notification: bool
+    result_notification_status: Contest.NotificationStatus
     classification: Contest.Classification
     scoreboard_config: Contest.ScoreboardConfig
     environment_config: Contest.EnvironmentConfig
@@ -298,4 +320,4 @@ class Contest(_message.Message):
     plagiarism_config: Contest.PlagiarismConfig
     rating_config: Contest.RatingConfig
     staff: _containers.RepeatedCompositeFieldContainer[Contest.Staff]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., join_unofficially: bool = ..., require_admission: bool = ..., allow_pause: bool = ..., allow_finish_early: bool = ..., allow_upsolve: bool = ..., allow_followup: bool = ..., display_editorials: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ..., plagiarism_config: _Optional[_Union[Contest.PlagiarismConfig, _Mapping]] = ..., rating_config: _Optional[_Union[Contest.RatingConfig, _Mapping]] = ..., staff: _Optional[_Iterable[_Union[Contest.Staff, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., join_unofficially: bool = ..., require_admission: bool = ..., allow_pause: bool = ..., allow_finish_early: bool = ..., allow_upsolve: bool = ..., allow_followup: bool = ..., display_editorials: bool = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: bool = ..., participant_count: _Optional[int] = ..., participant_count_hidden: bool = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., enable_reminder_notification: bool = ..., reminder_notification_status: _Optional[_Union[Contest.NotificationStatus, str]] = ..., enable_result_notification: bool = ..., result_notification_status: _Optional[_Union[Contest.NotificationStatus, str]] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ..., plagiarism_config: _Optional[_Union[Contest.PlagiarismConfig, _Mapping]] = ..., rating_config: _Optional[_Union[Contest.RatingConfig, _Mapping]] = ..., staff: _Optional[_Iterable[_Union[Contest.Staff, _Mapping]]] = ...) -> None: ...
