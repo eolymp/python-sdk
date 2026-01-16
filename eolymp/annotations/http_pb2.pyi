@@ -18,7 +18,7 @@ class Http(_message.Message):
     def __init__(self, rules: _Optional[_Iterable[_Union[HttpRule, _Mapping]]] = ..., fully_decode_reserved_expansion: bool = ...) -> None: ...
 
 class HttpRule(_message.Message):
-    __slots__ = ("selector", "get", "put", "post", "delete", "patch", "custom", "body", "response_body", "additional_bindings")
+    __slots__ = ("selector", "get", "put", "post", "delete", "patch", "custom", "body", "response_body", "additional_bindings", "max_size")
     SELECTOR_FIELD_NUMBER: _ClassVar[int]
     GET_FIELD_NUMBER: _ClassVar[int]
     PUT_FIELD_NUMBER: _ClassVar[int]
@@ -29,6 +29,7 @@ class HttpRule(_message.Message):
     BODY_FIELD_NUMBER: _ClassVar[int]
     RESPONSE_BODY_FIELD_NUMBER: _ClassVar[int]
     ADDITIONAL_BINDINGS_FIELD_NUMBER: _ClassVar[int]
+    MAX_SIZE_FIELD_NUMBER: _ClassVar[int]
     selector: str
     get: str
     put: str
@@ -39,7 +40,8 @@ class HttpRule(_message.Message):
     body: str
     response_body: str
     additional_bindings: _containers.RepeatedCompositeFieldContainer[HttpRule]
-    def __init__(self, selector: _Optional[str] = ..., get: _Optional[str] = ..., put: _Optional[str] = ..., post: _Optional[str] = ..., delete: _Optional[str] = ..., patch: _Optional[str] = ..., custom: _Optional[_Union[CustomHttpPattern, _Mapping]] = ..., body: _Optional[str] = ..., response_body: _Optional[str] = ..., additional_bindings: _Optional[_Iterable[_Union[HttpRule, _Mapping]]] = ...) -> None: ...
+    max_size: int
+    def __init__(self, selector: _Optional[str] = ..., get: _Optional[str] = ..., put: _Optional[str] = ..., post: _Optional[str] = ..., delete: _Optional[str] = ..., patch: _Optional[str] = ..., custom: _Optional[_Union[CustomHttpPattern, _Mapping]] = ..., body: _Optional[str] = ..., response_body: _Optional[str] = ..., additional_bindings: _Optional[_Iterable[_Union[HttpRule, _Mapping]]] = ..., max_size: _Optional[int] = ...) -> None: ...
 
 class CustomHttpPattern(_message.Message):
     __slots__ = ("kind", "path")
