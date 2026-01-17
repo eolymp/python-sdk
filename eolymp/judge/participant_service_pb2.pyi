@@ -130,6 +130,16 @@ class DisqualifyParticipantOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class AnalyzeParticipantInput(_message.Message):
+    __slots__ = ("participant_id",)
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    participant_id: str
+    def __init__(self, participant_id: _Optional[str] = ...) -> None: ...
+
+class AnalyzeParticipantOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class DeleteParticipantInput(_message.Message):
     __slots__ = ("contest_id", "participant_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
