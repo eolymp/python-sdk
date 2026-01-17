@@ -23,10 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
+from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/judge/violation.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xed\x04\n\tViolation\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\x06status\x18\x07 \x01(\x0e\x32\x1e.eolymp.judge.Violation.StatusB\x06\xa8\xf0\xf0\xe4\x01\x01\x12*\n\x04type\x18\x08 \x01(\x0e\x32\x1c.eolymp.judge.Violation.Type\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x11\n\tautomatic\x18\x04 \x01(\x08\x12\x1e\n\x0eparticipant_id\x18\x05 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1d\n\rsubmission_id\x18\x06 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1a\n\ncreated_by\x18\n \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1c\n\x0c\x63onfirmed_by\x18\x0c \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x38\n\x0c\x63onfirmed_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x1aI\n\x05Patch\"@\n\x05\x46ield\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x0b\n\x07SUMMARY\x10\x01\x12\n\n\x06STATUS\x10\x02\x12\r\n\tAUTOMATIC\x10\x03\"G\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tCONFIRMED\x10\x02\x12\r\n\tCANCELLED\x10\x03\"E\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\t\n\x05OTHER\x10\x01\x12\x0e\n\nPLAGIARISM\x10\x02\x12\x10\n\x0cGEN_AI_USAGE\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/judge/violation.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xbb\x05\n\tViolation\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\x06status\x18\x07 \x01(\x0e\x32\x1e.eolymp.judge.Violation.StatusB\x06\xa8\xf0\xf0\xe4\x01\x01\x12*\n\x04type\x18\x08 \x01(\x0e\x32\x1c.eolymp.judge.Violation.Type\x12$\n\x07summary\x18\x0e \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x11\n\tautomatic\x18\x04 \x01(\x08\x12\x1e\n\x0eparticipant_id\x18\x05 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1f\n\rsubmission_id\x18\x06 \x01(\tB\x08\x18\x01\xa8\xf0\xf0\xe4\x01\x01\x12\x1b\n\x0bsubmissions\x18\t \x03(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x18\n\x0csummary_text\x18\x03 \x01(\tB\x02\x18\x01\x12\x1a\n\ncreated_by\x18\n \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1c\n\x0c\x63onfirmed_by\x18\x0c \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x38\n\x0c\x63onfirmed_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x1aI\n\x05Patch\"@\n\x05\x46ield\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x0b\n\x07SUMMARY\x10\x01\x12\n\n\x06STATUS\x10\x02\x12\r\n\tAUTOMATIC\x10\x03\"G\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tCONFIRMED\x10\x02\x12\r\n\tCANCELLED\x10\x03\"E\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\t\n\x05OTHER\x10\x01\x12\x0e\n\nPLAGIARISM\x10\x02\x12\x10\n\x0cGEN_AI_USAGE\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,7 +42,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VIOLATION'].fields_by_name['participant_id']._loaded_options = None
   _globals['_VIOLATION'].fields_by_name['participant_id']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_VIOLATION'].fields_by_name['submission_id']._loaded_options = None
-  _globals['_VIOLATION'].fields_by_name['submission_id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_VIOLATION'].fields_by_name['submission_id']._serialized_options = b'\030\001\250\360\360\344\001\001'
+  _globals['_VIOLATION'].fields_by_name['submissions']._loaded_options = None
+  _globals['_VIOLATION'].fields_by_name['submissions']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_VIOLATION'].fields_by_name['summary_text']._loaded_options = None
+  _globals['_VIOLATION'].fields_by_name['summary_text']._serialized_options = b'\030\001'
   _globals['_VIOLATION'].fields_by_name['created_by']._loaded_options = None
   _globals['_VIOLATION'].fields_by_name['created_by']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_VIOLATION'].fields_by_name['created_at']._loaded_options = None
@@ -50,14 +55,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VIOLATION'].fields_by_name['confirmed_by']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_VIOLATION'].fields_by_name['confirmed_at']._loaded_options = None
   _globals['_VIOLATION'].fields_by_name['confirmed_at']._serialized_options = b'\250\360\360\344\001\001'
-  _globals['_VIOLATION']._serialized_start=110
-  _globals['_VIOLATION']._serialized_end=731
-  _globals['_VIOLATION_PATCH']._serialized_start=514
-  _globals['_VIOLATION_PATCH']._serialized_end=587
-  _globals['_VIOLATION_PATCH_FIELD']._serialized_start=523
-  _globals['_VIOLATION_PATCH_FIELD']._serialized_end=587
-  _globals['_VIOLATION_STATUS']._serialized_start=589
-  _globals['_VIOLATION_STATUS']._serialized_end=660
-  _globals['_VIOLATION_TYPE']._serialized_start=662
-  _globals['_VIOLATION_TYPE']._serialized_end=731
+  _globals['_VIOLATION']._serialized_start=136
+  _globals['_VIOLATION']._serialized_end=835
+  _globals['_VIOLATION_PATCH']._serialized_start=618
+  _globals['_VIOLATION_PATCH']._serialized_end=691
+  _globals['_VIOLATION_PATCH_FIELD']._serialized_start=627
+  _globals['_VIOLATION_PATCH_FIELD']._serialized_end=691
+  _globals['_VIOLATION_STATUS']._serialized_start=693
+  _globals['_VIOLATION_STATUS']._serialized_end=764
+  _globals['_VIOLATION_TYPE']._serialized_start=766
+  _globals['_VIOLATION_TYPE']._serialized_end=835
 # @@protoc_insertion_point(module_scope)
