@@ -25,6 +25,12 @@ class MemberChangedEvent(_message.Message):
     after: _member_pb2.Member
     def __init__(self, before: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., after: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
+class MemberUsageEvent(_message.Message):
+    __slots__ = ("active_members",)
+    ACTIVE_MEMBERS_FIELD_NUMBER: _ClassVar[int]
+    active_members: int
+    def __init__(self, active_members: _Optional[int] = ...) -> None: ...
+
 class CreateMemberInput(_message.Message):
     __slots__ = ("member",)
     MEMBER_FIELD_NUMBER: _ClassVar[int]

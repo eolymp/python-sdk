@@ -73,9 +73,11 @@ class Space(_message.Message):
         LOCALES: Space.Patch.Field
         def __init__(self) -> None: ...
     class Subscription(_message.Message):
-        __slots__ = ("plan", "seats", "quota", "billing_period_start", "billing_period_end", "quota_period_start", "quota_period_end")
+        __slots__ = ("plan", "seats", "usage", "usage_based_billing", "quota", "billing_period_start", "billing_period_end", "quota_period_start", "quota_period_end")
         PLAN_FIELD_NUMBER: _ClassVar[int]
         SEATS_FIELD_NUMBER: _ClassVar[int]
+        USAGE_FIELD_NUMBER: _ClassVar[int]
+        USAGE_BASED_BILLING_FIELD_NUMBER: _ClassVar[int]
         QUOTA_FIELD_NUMBER: _ClassVar[int]
         BILLING_PERIOD_START_FIELD_NUMBER: _ClassVar[int]
         BILLING_PERIOD_END_FIELD_NUMBER: _ClassVar[int]
@@ -83,12 +85,14 @@ class Space(_message.Message):
         QUOTA_PERIOD_END_FIELD_NUMBER: _ClassVar[int]
         plan: str
         seats: int
+        usage: int
+        usage_based_billing: bool
         quota: _quota_pb2.Quota
         billing_period_start: _timestamp_pb2.Timestamp
         billing_period_end: _timestamp_pb2.Timestamp
         quota_period_start: _timestamp_pb2.Timestamp
         quota_period_end: _timestamp_pb2.Timestamp
-        def __init__(self, plan: _Optional[str] = ..., seats: _Optional[int] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., billing_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., billing_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+        def __init__(self, plan: _Optional[str] = ..., seats: _Optional[int] = ..., usage: _Optional[int] = ..., usage_based_billing: bool = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., billing_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., billing_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     HOME_URL_FIELD_NUMBER: _ClassVar[int]
