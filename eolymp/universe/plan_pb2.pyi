@@ -25,10 +25,12 @@ class Plan(_message.Message):
         ONETIME: _ClassVar[Plan.Recurrence]
         MONTHLY: _ClassVar[Plan.Recurrence]
         YEARLY: _ClassVar[Plan.Recurrence]
+        USAGE_BASED: _ClassVar[Plan.Recurrence]
     UNKNOWN_RECURRENCE: Plan.Recurrence
     ONETIME: Plan.Recurrence
     MONTHLY: Plan.Recurrence
     YEARLY: Plan.Recurrence
+    USAGE_BASED: Plan.Recurrence
     class Variant(_message.Message):
         __slots__ = ("id", "recurrence", "currency", "unit_amount")
         ID_FIELD_NUMBER: _ClassVar[int]
