@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class PaymentMethod(_message.Message):
-    __slots__ = ("id", "name", "default", "country", "sepa_transfer", "swift_transfer")
+    __slots__ = ("id", "name", "default", "country", "sepa_transfer", "swift_transfer", "crypto_transfer")
     class TransferSEPA(_message.Message):
         __slots__ = ("iban",)
         IBAN_FIELD_NUMBER: _ClassVar[int]
@@ -19,16 +19,27 @@ class PaymentMethod(_message.Message):
         bic_code: str
         account_number: str
         def __init__(self, bic_code: _Optional[str] = ..., account_number: _Optional[str] = ...) -> None: ...
+    class TransferCrypto(_message.Message):
+        __slots__ = ("token", "network", "address")
+        TOKEN_FIELD_NUMBER: _ClassVar[int]
+        NETWORK_FIELD_NUMBER: _ClassVar[int]
+        ADDRESS_FIELD_NUMBER: _ClassVar[int]
+        token: str
+        network: str
+        address: str
+        def __init__(self, token: _Optional[str] = ..., network: _Optional[str] = ..., address: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_FIELD_NUMBER: _ClassVar[int]
     COUNTRY_FIELD_NUMBER: _ClassVar[int]
     SEPA_TRANSFER_FIELD_NUMBER: _ClassVar[int]
     SWIFT_TRANSFER_FIELD_NUMBER: _ClassVar[int]
+    CRYPTO_TRANSFER_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     default: bool
     country: str
     sepa_transfer: PaymentMethod.TransferSEPA
     swift_transfer: PaymentMethod.TransferSWIFT
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., default: bool = ..., country: _Optional[str] = ..., sepa_transfer: _Optional[_Union[PaymentMethod.TransferSEPA, _Mapping]] = ..., swift_transfer: _Optional[_Union[PaymentMethod.TransferSWIFT, _Mapping]] = ...) -> None: ...
+    crypto_transfer: PaymentMethod.TransferCrypto
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., default: bool = ..., country: _Optional[str] = ..., sepa_transfer: _Optional[_Union[PaymentMethod.TransferSEPA, _Mapping]] = ..., swift_transfer: _Optional[_Union[PaymentMethod.TransferSWIFT, _Mapping]] = ..., crypto_transfer: _Optional[_Union[PaymentMethod.TransferCrypto, _Mapping]] = ...) -> None: ...

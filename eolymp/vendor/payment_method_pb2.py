@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/vendor/payment_method.proto\x12\reolymp.vendor\"\xb8\x02\n\rPaymentMethod\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x03 \x01(\x08\x12\x0f\n\x07\x63ountry\x18\x04 \x01(\t\x12\x42\n\rsepa_transfer\x18\x65 \x01(\x0b\x32).eolymp.vendor.PaymentMethod.TransferSEPAH\x00\x12\x44\n\x0eswift_transfer\x18\x66 \x01(\x0b\x32*.eolymp.vendor.PaymentMethod.TransferSWIFTH\x00\x1a\x1c\n\x0cTransferSEPA\x12\x0c\n\x04iban\x18\x01 \x01(\t\x1a\x39\n\rTransferSWIFT\x12\x10\n\x08\x62ic_code\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x02 \x01(\tB\x08\n\x06methodB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/vendor/payment_method.proto\x12\reolymp.vendor\"\xc3\x03\n\rPaymentMethod\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x03 \x01(\x08\x12\x0f\n\x07\x63ountry\x18\x04 \x01(\t\x12\x42\n\rsepa_transfer\x18\x65 \x01(\x0b\x32).eolymp.vendor.PaymentMethod.TransferSEPAH\x00\x12\x44\n\x0eswift_transfer\x18\x66 \x01(\x0b\x32*.eolymp.vendor.PaymentMethod.TransferSWIFTH\x00\x12\x46\n\x0f\x63rypto_transfer\x18g \x01(\x0b\x32+.eolymp.vendor.PaymentMethod.TransferCryptoH\x00\x1a\x1c\n\x0cTransferSEPA\x12\x0c\n\x04iban\x18\x01 \x01(\t\x1a\x39\n\rTransferSWIFT\x12\x10\n\x08\x62ic_code\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x02 \x01(\t\x1a\x41\n\x0eTransferCrypto\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0f\n\x07network\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\tB\x08\n\x06methodB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,9 +33,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/vendor;vendor'
   _globals['_PAYMENTMETHOD']._serialized_start=54
-  _globals['_PAYMENTMETHOD']._serialized_end=366
-  _globals['_PAYMENTMETHOD_TRANSFERSEPA']._serialized_start=269
-  _globals['_PAYMENTMETHOD_TRANSFERSEPA']._serialized_end=297
-  _globals['_PAYMENTMETHOD_TRANSFERSWIFT']._serialized_start=299
-  _globals['_PAYMENTMETHOD_TRANSFERSWIFT']._serialized_end=356
+  _globals['_PAYMENTMETHOD']._serialized_end=505
+  _globals['_PAYMENTMETHOD_TRANSFERSEPA']._serialized_start=341
+  _globals['_PAYMENTMETHOD_TRANSFERSEPA']._serialized_end=369
+  _globals['_PAYMENTMETHOD_TRANSFERSWIFT']._serialized_start=371
+  _globals['_PAYMENTMETHOD_TRANSFERSWIFT']._serialized_end=428
+  _globals['_PAYMENTMETHOD_TRANSFERCRYPTO']._serialized_start=430
+  _globals['_PAYMENTMETHOD_TRANSFERCRYPTO']._serialized_end=495
 # @@protoc_insertion_point(module_scope)
