@@ -17,11 +17,13 @@ class Profile(_message.Message):
         DRAFT: _ClassVar[Profile.Status]
         REVIEW: _ClassVar[Profile.Status]
         APPROVED: _ClassVar[Profile.Status]
+        ACTIVE: _ClassVar[Profile.Status]
         REJECTED: _ClassVar[Profile.Status]
     UNKNOWN_STATUS: Profile.Status
     DRAFT: Profile.Status
     REVIEW: Profile.Status
     APPROVED: Profile.Status
+    ACTIVE: Profile.Status
     REJECTED: Profile.Status
     class Patch(_message.Message):
         __slots__ = ()
