@@ -15,7 +15,10 @@ class PaymentMethodServiceClient:
         self.url = url
 
     def CreatePaymentMethod(self, request, **kwargs):
-        path = "/vendor/payment-methods"
+        path = "/vendors/"+urllib.parse.quote(request.vendor_id)+"/payment-methods"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.vendor_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class PaymentMethodServiceClient:
         )
 
     def UpdatePaymentMethod(self, request, **kwargs):
-        path = "/vendor/payment-methods/"+urllib.parse.quote(request.method_id)
+        path = "/vendors/"+urllib.parse.quote(request.vendor_id)+"/payment-methods/"+urllib.parse.quote(request.method_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.vendor_id = ""
         request.method_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class PaymentMethodServiceClient:
         )
 
     def DeletePaymentMethod(self, request, **kwargs):
-        path = "/vendor/payment-methods/"+urllib.parse.quote(request.method_id)
+        path = "/vendors/"+urllib.parse.quote(request.vendor_id)+"/payment-methods/"+urllib.parse.quote(request.method_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.vendor_id = ""
         request.method_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class PaymentMethodServiceClient:
         )
 
     def DescribePaymentMethod(self, request, **kwargs):
-        path = "/vendor/payment-methods/"+urllib.parse.quote(request.method_id)
+        path = "/vendors/"+urllib.parse.quote(request.vendor_id)+"/payment-methods/"+urllib.parse.quote(request.method_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.vendor_id = ""
         request.method_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class PaymentMethodServiceClient:
         )
 
     def ListPaymentMethods(self, request, **kwargs):
-        path = "/vendor/payment-methods"
+        path = "/vendors/"+urllib.parse.quote(request.vendor_id)+"/payment-methods"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.vendor_id = ""
 
         return self.transport.request(
             method="GET",

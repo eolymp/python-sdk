@@ -15,7 +15,7 @@ class InvoiceServiceClient:
         self.url = url
 
     def ListInvoices(self, request, **kwargs):
-        path = "/vendor/invoices"
+        path = "/vendor-invoices"
 
         return self.transport.request(
             method="GET",
@@ -26,7 +26,7 @@ class InvoiceServiceClient:
         )
 
     def DescribeInvoice(self, request, **kwargs):
-        path = "/vendor/invoices/"+urllib.parse.quote(request.invoice_id)
+        path = "/vendor-invoices/"+urllib.parse.quote(request.invoice_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.invoice_id = ""
@@ -40,7 +40,7 @@ class InvoiceServiceClient:
         )
 
     def CreateInvoice(self, request, **kwargs):
-        path = "/vendor/invoices"
+        path = "/vendor-invoices"
 
         return self.transport.request(
             method="POST",
@@ -51,7 +51,7 @@ class InvoiceServiceClient:
         )
 
     def UpdateInvoice(self, request, **kwargs):
-        path = "/vendor/invoices/"+urllib.parse.quote(request.invoice_id)
+        path = "/vendor-invoices/"+urllib.parse.quote(request.invoice_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.invoice_id = ""
@@ -65,7 +65,7 @@ class InvoiceServiceClient:
         )
 
     def DeleteInvoice(self, request, **kwargs):
-        path = "/vendor/invoices/"+urllib.parse.quote(request.invoice_id)
+        path = "/vendor-invoices/"+urllib.parse.quote(request.invoice_id)
 
         # Cleanup URL parameters to avoid any ambiguity
         request.invoice_id = ""
@@ -79,7 +79,7 @@ class InvoiceServiceClient:
         )
 
     def UploadInvoiceDocument(self, request, **kwargs):
-        path = "/vendor/invoices/"+urllib.parse.quote(request.invoice_id)+"/document"
+        path = "/vendor-invoices/"+urllib.parse.quote(request.invoice_id)+"/document"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.invoice_id = ""
@@ -93,7 +93,7 @@ class InvoiceServiceClient:
         )
 
     def SubmitInvoice(self, request, **kwargs):
-        path = "/vendor/invoices/"+urllib.parse.quote(request.invoice_id)+"/submit"
+        path = "/vendor-invoices/"+urllib.parse.quote(request.invoice_id)+"/submit"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.invoice_id = ""
@@ -107,7 +107,7 @@ class InvoiceServiceClient:
         )
 
     def ApproveInvoice(self, request, **kwargs):
-        path = "/vendor/invoices/"+urllib.parse.quote(request.invoice_id)+"/approve"
+        path = "/vendor-invoices/"+urllib.parse.quote(request.invoice_id)+"/approve"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.invoice_id = ""
@@ -121,7 +121,7 @@ class InvoiceServiceClient:
         )
 
     def RejectInvoice(self, request, **kwargs):
-        path = "/vendor/invoices/"+urllib.parse.quote(request.invoice_id)+"/reject"
+        path = "/vendor-invoices/"+urllib.parse.quote(request.invoice_id)+"/reject"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.invoice_id = ""

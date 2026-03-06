@@ -15,7 +15,7 @@ class ProfileServiceClient:
         self.url = url
 
     def DescribeProfile(self, request, **kwargs):
-        path = "/vendor/profiles"
+        path = "/vendor-profile"
 
         return self.transport.request(
             method="GET",
@@ -26,7 +26,7 @@ class ProfileServiceClient:
         )
 
     def UpdateProfile(self, request, **kwargs):
-        path = "/vendor/profiles"
+        path = "/vendor-profile"
 
         return self.transport.request(
             method="PUT",
@@ -37,7 +37,7 @@ class ProfileServiceClient:
         )
 
     def SubmitProfile(self, request, **kwargs):
-        path = "/vendor/profiles:submit"
+        path = "/vendor-profile:submit"
 
         return self.transport.request(
             method="POST",
