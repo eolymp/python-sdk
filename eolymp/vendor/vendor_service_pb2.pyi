@@ -1,7 +1,7 @@
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.vendor import profile_pb2 as _profile_pb2
+from eolymp.vendor import vendor_pb2 as _vendor_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -39,8 +39,8 @@ class ListVendorsOutput(_message.Message):
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
-    items: _containers.RepeatedCompositeFieldContainer[_profile_pb2.Profile]
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_profile_pb2.Profile, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[_vendor_pb2.Vendor]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_vendor_pb2.Vendor, _Mapping]]] = ...) -> None: ...
 
 class DescribeVendorInput(_message.Message):
     __slots__ = ("vendor_id",)
@@ -49,10 +49,10 @@ class DescribeVendorInput(_message.Message):
     def __init__(self, vendor_id: _Optional[str] = ...) -> None: ...
 
 class DescribeVendorOutput(_message.Message):
-    __slots__ = ("profile",)
-    PROFILE_FIELD_NUMBER: _ClassVar[int]
-    profile: _profile_pb2.Profile
-    def __init__(self, profile: _Optional[_Union[_profile_pb2.Profile, _Mapping]] = ...) -> None: ...
+    __slots__ = ("vendor",)
+    VENDOR_FIELD_NUMBER: _ClassVar[int]
+    vendor: _vendor_pb2.Vendor
+    def __init__(self, vendor: _Optional[_Union[_vendor_pb2.Vendor, _Mapping]] = ...) -> None: ...
 
 class ApproveVendorInput(_message.Message):
     __slots__ = ("vendor_id", "comment")

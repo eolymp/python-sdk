@@ -25,11 +25,11 @@ _sym_db = _symbol_database.Default()
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
-from eolymp.vendor import profile_pb2 as eolymp_dot_vendor_dot_profile__pb2
+from eolymp.vendor import vendor_pb2 as eolymp_dot_vendor_dot_vendor__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/vendor/vendor_service.proto\x12\reolymp.vendor\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/vendor/profile.proto\x1a!eolymp/wellknown/expression.proto\"\xe7\x02\n\x10ListVendorsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.vendor.ListVendorsInput.Filter\x1a\xfb\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x31\n\x05\x65mail\x18\x04 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12/\n\x07\x63ountry\x18\x05 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"I\n\x11ListVendorsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.vendor.Profile\"(\n\x13\x44\x65scribeVendorInput\x12\x11\n\tvendor_id\x18\x01 \x01(\t\"?\n\x14\x44\x65scribeVendorOutput\x12\'\n\x07profile\x18\x01 \x01(\x0b\x32\x16.eolymp.vendor.Profile\"8\n\x12\x41pproveVendorInput\x12\x11\n\tvendor_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x15\n\x13\x41pproveVendorOutput\"7\n\x11RejectVendorInput\x12\x11\n\tvendor_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x14\n\x12RejectVendorOutput2\x92\x05\n\rVendorService\x12\x8c\x01\n\x0bListVendors\x12\x1f.eolymp.vendor.ListVendorsInput\x1a .eolymp.vendor.ListVendorsOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02\n\x12\x08/vendors\x12\xa1\x01\n\x0e\x44\x65scribeVendor\x12\".eolymp.vendor.DescribeVendorInput\x1a#.eolymp.vendor.DescribeVendorOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02\x16\x12\x14/vendors/{vendor_id}\x12\xa7\x01\n\rApproveVendor\x12!.eolymp.vendor.ApproveVendorInput\x1a\".eolymp.vendor.ApproveVendorOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x1e\"\x1c/vendors/{vendor_id}/approve\x12\xa3\x01\n\x0cRejectVendor\x12 .eolymp.vendor.RejectVendorInput\x1a!.eolymp.vendor.RejectVendorOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/vendors/{vendor_id}/rejectB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/vendor/vendor_service.proto\x12\reolymp.vendor\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/vendor/vendor.proto\x1a!eolymp/wellknown/expression.proto\"\xe7\x02\n\x10ListVendorsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.vendor.ListVendorsInput.Filter\x1a\xfb\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x31\n\x05\x65mail\x18\x04 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12/\n\x07\x63ountry\x18\x05 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"H\n\x11ListVendorsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.vendor.Vendor\"(\n\x13\x44\x65scribeVendorInput\x12\x11\n\tvendor_id\x18\x01 \x01(\t\"=\n\x14\x44\x65scribeVendorOutput\x12%\n\x06vendor\x18\x01 \x01(\x0b\x32\x15.eolymp.vendor.Vendor\"8\n\x12\x41pproveVendorInput\x12\x11\n\tvendor_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x15\n\x13\x41pproveVendorOutput\"7\n\x11RejectVendorInput\x12\x11\n\tvendor_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x14\n\x12RejectVendorOutput2\x92\x05\n\rVendorService\x12\x8c\x01\n\x0bListVendors\x12\x1f.eolymp.vendor.ListVendorsInput\x1a .eolymp.vendor.ListVendorsOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02\n\x12\x08/vendors\x12\xa1\x01\n\x0e\x44\x65scribeVendor\x12\".eolymp.vendor.DescribeVendorInput\x1a#.eolymp.vendor.DescribeVendorOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02\x16\x12\x14/vendors/{vendor_id}\x12\xa7\x01\n\rApproveVendor\x12!.eolymp.vendor.ApproveVendorInput\x1a\".eolymp.vendor.ApproveVendorOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x1e\"\x1c/vendors/{vendor_id}/approve\x12\xa3\x01\n\x0cRejectVendor\x12 .eolymp.vendor.RejectVendorInput\x1a!.eolymp.vendor.RejectVendorOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/vendors/{vendor_id}/rejectB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,24 +45,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VENDORSERVICE'].methods_by_name['ApproveVendor']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002\036\"\034/vendors/{vendor_id}/approve'
   _globals['_VENDORSERVICE'].methods_by_name['RejectVendor']._loaded_options = None
   _globals['_VENDORSERVICE'].methods_by_name['RejectVendor']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002\035\"\033/vendors/{vendor_id}/reject'
-  _globals['_LISTVENDORSINPUT']._serialized_start=217
-  _globals['_LISTVENDORSINPUT']._serialized_end=576
-  _globals['_LISTVENDORSINPUT_FILTER']._serialized_start=325
-  _globals['_LISTVENDORSINPUT_FILTER']._serialized_end=576
-  _globals['_LISTVENDORSOUTPUT']._serialized_start=578
-  _globals['_LISTVENDORSOUTPUT']._serialized_end=651
-  _globals['_DESCRIBEVENDORINPUT']._serialized_start=653
-  _globals['_DESCRIBEVENDORINPUT']._serialized_end=693
-  _globals['_DESCRIBEVENDOROUTPUT']._serialized_start=695
-  _globals['_DESCRIBEVENDOROUTPUT']._serialized_end=758
-  _globals['_APPROVEVENDORINPUT']._serialized_start=760
-  _globals['_APPROVEVENDORINPUT']._serialized_end=816
-  _globals['_APPROVEVENDOROUTPUT']._serialized_start=818
-  _globals['_APPROVEVENDOROUTPUT']._serialized_end=839
-  _globals['_REJECTVENDORINPUT']._serialized_start=841
-  _globals['_REJECTVENDORINPUT']._serialized_end=896
-  _globals['_REJECTVENDOROUTPUT']._serialized_start=898
-  _globals['_REJECTVENDOROUTPUT']._serialized_end=918
-  _globals['_VENDORSERVICE']._serialized_start=921
-  _globals['_VENDORSERVICE']._serialized_end=1579
+  _globals['_LISTVENDORSINPUT']._serialized_start=216
+  _globals['_LISTVENDORSINPUT']._serialized_end=575
+  _globals['_LISTVENDORSINPUT_FILTER']._serialized_start=324
+  _globals['_LISTVENDORSINPUT_FILTER']._serialized_end=575
+  _globals['_LISTVENDORSOUTPUT']._serialized_start=577
+  _globals['_LISTVENDORSOUTPUT']._serialized_end=649
+  _globals['_DESCRIBEVENDORINPUT']._serialized_start=651
+  _globals['_DESCRIBEVENDORINPUT']._serialized_end=691
+  _globals['_DESCRIBEVENDOROUTPUT']._serialized_start=693
+  _globals['_DESCRIBEVENDOROUTPUT']._serialized_end=754
+  _globals['_APPROVEVENDORINPUT']._serialized_start=756
+  _globals['_APPROVEVENDORINPUT']._serialized_end=812
+  _globals['_APPROVEVENDOROUTPUT']._serialized_start=814
+  _globals['_APPROVEVENDOROUTPUT']._serialized_end=835
+  _globals['_REJECTVENDORINPUT']._serialized_start=837
+  _globals['_REJECTVENDORINPUT']._serialized_end=892
+  _globals['_REJECTVENDOROUTPUT']._serialized_start=894
+  _globals['_REJECTVENDOROUTPUT']._serialized_end=914
+  _globals['_VENDORSERVICE']._serialized_start=917
+  _globals['_VENDORSERVICE']._serialized_end=1575
 # @@protoc_insertion_point(module_scope)

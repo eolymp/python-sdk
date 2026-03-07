@@ -12,10 +12,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreatePaymentMethodInput(_message.Message):
-    __slots__ = ("method",)
+    __slots__ = ("vendor_id", "method")
+    VENDOR_ID_FIELD_NUMBER: _ClassVar[int]
     METHOD_FIELD_NUMBER: _ClassVar[int]
+    vendor_id: str
     method: _payment_method_pb2.PaymentMethod
-    def __init__(self, method: _Optional[_Union[_payment_method_pb2.PaymentMethod, _Mapping]] = ...) -> None: ...
+    def __init__(self, vendor_id: _Optional[str] = ..., method: _Optional[_Union[_payment_method_pb2.PaymentMethod, _Mapping]] = ...) -> None: ...
 
 class CreatePaymentMethodOutput(_message.Message):
     __slots__ = ("method_id",)
@@ -24,32 +26,38 @@ class CreatePaymentMethodOutput(_message.Message):
     def __init__(self, method_id: _Optional[str] = ...) -> None: ...
 
 class UpdatePaymentMethodInput(_message.Message):
-    __slots__ = ("method_id", "method")
+    __slots__ = ("vendor_id", "method_id", "method")
+    VENDOR_ID_FIELD_NUMBER: _ClassVar[int]
     METHOD_ID_FIELD_NUMBER: _ClassVar[int]
     METHOD_FIELD_NUMBER: _ClassVar[int]
+    vendor_id: str
     method_id: str
     method: _payment_method_pb2.PaymentMethod
-    def __init__(self, method_id: _Optional[str] = ..., method: _Optional[_Union[_payment_method_pb2.PaymentMethod, _Mapping]] = ...) -> None: ...
+    def __init__(self, vendor_id: _Optional[str] = ..., method_id: _Optional[str] = ..., method: _Optional[_Union[_payment_method_pb2.PaymentMethod, _Mapping]] = ...) -> None: ...
 
 class UpdatePaymentMethodOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeletePaymentMethodInput(_message.Message):
-    __slots__ = ("method_id",)
+    __slots__ = ("vendor_id", "method_id")
+    VENDOR_ID_FIELD_NUMBER: _ClassVar[int]
     METHOD_ID_FIELD_NUMBER: _ClassVar[int]
+    vendor_id: str
     method_id: str
-    def __init__(self, method_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, vendor_id: _Optional[str] = ..., method_id: _Optional[str] = ...) -> None: ...
 
 class DeletePaymentMethodOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribePaymentMethodInput(_message.Message):
-    __slots__ = ("method_id",)
+    __slots__ = ("vendor_id", "method_id")
+    VENDOR_ID_FIELD_NUMBER: _ClassVar[int]
     METHOD_ID_FIELD_NUMBER: _ClassVar[int]
+    vendor_id: str
     method_id: str
-    def __init__(self, method_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, vendor_id: _Optional[str] = ..., method_id: _Optional[str] = ...) -> None: ...
 
 class DescribePaymentMethodOutput(_message.Message):
     __slots__ = ("method",)
@@ -58,23 +66,25 @@ class DescribePaymentMethodOutput(_message.Message):
     def __init__(self, method: _Optional[_Union[_payment_method_pb2.PaymentMethod, _Mapping]] = ...) -> None: ...
 
 class ListPaymentMethodsInput(_message.Message):
-    __slots__ = ("after", "size", "offset", "search", "filters")
+    __slots__ = ("vendor_id", "after", "size", "offset", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("id",)
         ID_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+    VENDOR_ID_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    vendor_id: str
     after: str
     size: int
     offset: int
     search: str
     filters: ListPaymentMethodsInput.Filter
-    def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListPaymentMethodsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, vendor_id: _Optional[str] = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListPaymentMethodsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListPaymentMethodsOutput(_message.Message):
     __slots__ = ("total", "items")

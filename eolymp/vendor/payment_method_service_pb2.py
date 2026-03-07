@@ -29,7 +29,7 @@ from eolymp.vendor import payment_method_pb2 as eolymp_dot_vendor_dot_payment__m
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*eolymp/vendor/payment_method_service.proto\x12\reolymp.vendor\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\"eolymp/vendor/payment_method.proto\x1a!eolymp/wellknown/expression.proto\"H\n\x18\x43reatePaymentMethodInput\x12,\n\x06method\x18\x01 \x01(\x0b\x32\x1c.eolymp.vendor.PaymentMethod\".\n\x19\x43reatePaymentMethodOutput\x12\x11\n\tmethod_id\x18\x01 \x01(\t\"[\n\x18UpdatePaymentMethodInput\x12\x11\n\tmethod_id\x18\x01 \x01(\t\x12,\n\x06method\x18\x02 \x01(\x0b\x32\x1c.eolymp.vendor.PaymentMethod\"\x1b\n\x19UpdatePaymentMethodOutput\"-\n\x18\x44\x65letePaymentMethodInput\x12\x11\n\tmethod_id\x18\x01 \x01(\t\"\x1b\n\x19\x44\x65letePaymentMethodOutput\"/\n\x1a\x44\x65scribePaymentMethodInput\x12\x11\n\tmethod_id\x18\x01 \x01(\t\"K\n\x1b\x44\x65scribePaymentMethodOutput\x12,\n\x06method\x18\x01 \x01(\x0b\x32\x1c.eolymp.vendor.PaymentMethod\"\xcc\x01\n\x17ListPaymentMethodsInput\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12>\n\x07\x66ilters\x18( \x01(\x0b\x32-.eolymp.vendor.ListPaymentMethodsInput.Filter\x1a\x34\n\x06\x46ilter\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"V\n\x18ListPaymentMethodsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.eolymp.vendor.PaymentMethod2\x8f\x08\n\x14PaymentMethodService\x12\xc1\x01\n\x13\x43reatePaymentMethod\x12\'.eolymp.vendor.CreatePaymentMethodInput\x1a(.eolymp.vendor.CreatePaymentMethodOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02&\"$/vendors/{vendor_id}/payment-methods\x12\xcd\x01\n\x13UpdatePaymentMethod\x12\'.eolymp.vendor.UpdatePaymentMethodInput\x1a(.eolymp.vendor.UpdatePaymentMethodOutput\"c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x32\"0/vendors/{vendor_id}/payment-methods/{method_id}\x12\xcd\x01\n\x13\x44\x65letePaymentMethod\x12\'.eolymp.vendor.DeletePaymentMethodInput\x1a(.eolymp.vendor.DeletePaymentMethodOutput\"c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x32*0/vendors/{vendor_id}/payment-methods/{method_id}\x12\xd2\x01\n\x15\x44\x65scribePaymentMethod\x12).eolymp.vendor.DescribePaymentMethodInput\x1a*.eolymp.vendor.DescribePaymentMethodOutput\"b\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02\x32\x12\x30/vendors/{vendor_id}/payment-methods/{method_id}\x12\xbd\x01\n\x12ListPaymentMethods\x12&.eolymp.vendor.ListPaymentMethodsInput\x1a\'.eolymp.vendor.ListPaymentMethodsOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02&\x12$/vendors/{vendor_id}/payment-methodsB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*eolymp/vendor/payment_method_service.proto\x12\reolymp.vendor\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\"eolymp/vendor/payment_method.proto\x1a!eolymp/wellknown/expression.proto\"[\n\x18\x43reatePaymentMethodInput\x12\x11\n\tvendor_id\x18\x02 \x01(\t\x12,\n\x06method\x18\x01 \x01(\x0b\x32\x1c.eolymp.vendor.PaymentMethod\".\n\x19\x43reatePaymentMethodOutput\x12\x11\n\tmethod_id\x18\x01 \x01(\t\"n\n\x18UpdatePaymentMethodInput\x12\x11\n\tvendor_id\x18\x03 \x01(\t\x12\x11\n\tmethod_id\x18\x01 \x01(\t\x12,\n\x06method\x18\x02 \x01(\x0b\x32\x1c.eolymp.vendor.PaymentMethod\"\x1b\n\x19UpdatePaymentMethodOutput\"@\n\x18\x44\x65letePaymentMethodInput\x12\x11\n\tvendor_id\x18\x02 \x01(\t\x12\x11\n\tmethod_id\x18\x01 \x01(\t\"\x1b\n\x19\x44\x65letePaymentMethodOutput\"B\n\x1a\x44\x65scribePaymentMethodInput\x12\x11\n\tvendor_id\x18\x02 \x01(\t\x12\x11\n\tmethod_id\x18\x01 \x01(\t\"K\n\x1b\x44\x65scribePaymentMethodOutput\x12,\n\x06method\x18\x01 \x01(\x0b\x32\x1c.eolymp.vendor.PaymentMethod\"\xdf\x01\n\x17ListPaymentMethodsInput\x12\x11\n\tvendor_id\x18\x01 \x01(\t\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12>\n\x07\x66ilters\x18( \x01(\x0b\x32-.eolymp.vendor.ListPaymentMethodsInput.Filter\x1a\x34\n\x06\x46ilter\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"V\n\x18ListPaymentMethodsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.eolymp.vendor.PaymentMethod2\x8f\x08\n\x14PaymentMethodService\x12\xc1\x01\n\x13\x43reatePaymentMethod\x12\'.eolymp.vendor.CreatePaymentMethodInput\x1a(.eolymp.vendor.CreatePaymentMethodOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02&\"$/vendors/{vendor_id}/payment-methods\x12\xcd\x01\n\x13UpdatePaymentMethod\x12\'.eolymp.vendor.UpdatePaymentMethodInput\x1a(.eolymp.vendor.UpdatePaymentMethodOutput\"c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x32\"0/vendors/{vendor_id}/payment-methods/{method_id}\x12\xcd\x01\n\x13\x44\x65letePaymentMethod\x12\'.eolymp.vendor.DeletePaymentMethodInput\x1a(.eolymp.vendor.DeletePaymentMethodOutput\"c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x32*0/vendors/{vendor_id}/payment-methods/{method_id}\x12\xd2\x01\n\x15\x44\x65scribePaymentMethod\x12).eolymp.vendor.DescribePaymentMethodInput\x1a*.eolymp.vendor.DescribePaymentMethodOutput\"b\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02\x32\x12\x30/vendors/{vendor_id}/payment-methods/{method_id}\x12\xbd\x01\n\x12ListPaymentMethods\x12&.eolymp.vendor.ListPaymentMethodsInput\x1a\'.eolymp.vendor.ListPaymentMethodsOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02&\x12$/vendors/{vendor_id}/payment-methodsB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -48,27 +48,27 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PAYMENTMETHODSERVICE'].methods_by_name['ListPaymentMethods']._loaded_options = None
   _globals['_PAYMENTMETHODSERVICE'].methods_by_name['ListPaymentMethods']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023vendor:profile:read\202\323\344\223\002&\022$/vendors/{vendor_id}/payment-methods'
   _globals['_CREATEPAYMENTMETHODINPUT']._serialized_start=231
-  _globals['_CREATEPAYMENTMETHODINPUT']._serialized_end=303
-  _globals['_CREATEPAYMENTMETHODOUTPUT']._serialized_start=305
-  _globals['_CREATEPAYMENTMETHODOUTPUT']._serialized_end=351
-  _globals['_UPDATEPAYMENTMETHODINPUT']._serialized_start=353
-  _globals['_UPDATEPAYMENTMETHODINPUT']._serialized_end=444
-  _globals['_UPDATEPAYMENTMETHODOUTPUT']._serialized_start=446
-  _globals['_UPDATEPAYMENTMETHODOUTPUT']._serialized_end=473
-  _globals['_DELETEPAYMENTMETHODINPUT']._serialized_start=475
-  _globals['_DELETEPAYMENTMETHODINPUT']._serialized_end=520
-  _globals['_DELETEPAYMENTMETHODOUTPUT']._serialized_start=522
-  _globals['_DELETEPAYMENTMETHODOUTPUT']._serialized_end=549
-  _globals['_DESCRIBEPAYMENTMETHODINPUT']._serialized_start=551
-  _globals['_DESCRIBEPAYMENTMETHODINPUT']._serialized_end=598
-  _globals['_DESCRIBEPAYMENTMETHODOUTPUT']._serialized_start=600
-  _globals['_DESCRIBEPAYMENTMETHODOUTPUT']._serialized_end=675
-  _globals['_LISTPAYMENTMETHODSINPUT']._serialized_start=678
-  _globals['_LISTPAYMENTMETHODSINPUT']._serialized_end=882
-  _globals['_LISTPAYMENTMETHODSINPUT_FILTER']._serialized_start=830
-  _globals['_LISTPAYMENTMETHODSINPUT_FILTER']._serialized_end=882
-  _globals['_LISTPAYMENTMETHODSOUTPUT']._serialized_start=884
-  _globals['_LISTPAYMENTMETHODSOUTPUT']._serialized_end=970
-  _globals['_PAYMENTMETHODSERVICE']._serialized_start=973
-  _globals['_PAYMENTMETHODSERVICE']._serialized_end=2012
+  _globals['_CREATEPAYMENTMETHODINPUT']._serialized_end=322
+  _globals['_CREATEPAYMENTMETHODOUTPUT']._serialized_start=324
+  _globals['_CREATEPAYMENTMETHODOUTPUT']._serialized_end=370
+  _globals['_UPDATEPAYMENTMETHODINPUT']._serialized_start=372
+  _globals['_UPDATEPAYMENTMETHODINPUT']._serialized_end=482
+  _globals['_UPDATEPAYMENTMETHODOUTPUT']._serialized_start=484
+  _globals['_UPDATEPAYMENTMETHODOUTPUT']._serialized_end=511
+  _globals['_DELETEPAYMENTMETHODINPUT']._serialized_start=513
+  _globals['_DELETEPAYMENTMETHODINPUT']._serialized_end=577
+  _globals['_DELETEPAYMENTMETHODOUTPUT']._serialized_start=579
+  _globals['_DELETEPAYMENTMETHODOUTPUT']._serialized_end=606
+  _globals['_DESCRIBEPAYMENTMETHODINPUT']._serialized_start=608
+  _globals['_DESCRIBEPAYMENTMETHODINPUT']._serialized_end=674
+  _globals['_DESCRIBEPAYMENTMETHODOUTPUT']._serialized_start=676
+  _globals['_DESCRIBEPAYMENTMETHODOUTPUT']._serialized_end=751
+  _globals['_LISTPAYMENTMETHODSINPUT']._serialized_start=754
+  _globals['_LISTPAYMENTMETHODSINPUT']._serialized_end=977
+  _globals['_LISTPAYMENTMETHODSINPUT_FILTER']._serialized_start=925
+  _globals['_LISTPAYMENTMETHODSINPUT_FILTER']._serialized_end=977
+  _globals['_LISTPAYMENTMETHODSOUTPUT']._serialized_start=979
+  _globals['_LISTPAYMENTMETHODSOUTPUT']._serialized_end=1065
+  _globals['_PAYMENTMETHODSERVICE']._serialized_start=1068
+  _globals['_PAYMENTMETHODSERVICE']._serialized_end=2107
 # @@protoc_insertion_point(module_scope)
