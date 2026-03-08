@@ -9,16 +9,18 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SignonRequestInput(_message.Message):
-    __slots__ = ("type", "callback_uri", "code_challenge", "code_challenge_method")
+    __slots__ = ("provider_id", "client_id", "redirect_uri", "type", "callback_uri")
+    PROVIDER_ID_FIELD_NUMBER: _ClassVar[int]
+    CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
+    REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     CALLBACK_URI_FIELD_NUMBER: _ClassVar[int]
-    CODE_CHALLENGE_FIELD_NUMBER: _ClassVar[int]
-    CODE_CHALLENGE_METHOD_FIELD_NUMBER: _ClassVar[int]
+    provider_id: str
+    client_id: str
+    redirect_uri: str
     type: _linked_account_pb2.LinkedAccount.Type
     callback_uri: str
-    code_challenge: str
-    code_challenge_method: str
-    def __init__(self, type: _Optional[_Union[_linked_account_pb2.LinkedAccount.Type, str]] = ..., callback_uri: _Optional[str] = ..., code_challenge: _Optional[str] = ..., code_challenge_method: _Optional[str] = ...) -> None: ...
+    def __init__(self, provider_id: _Optional[str] = ..., client_id: _Optional[str] = ..., redirect_uri: _Optional[str] = ..., type: _Optional[_Union[_linked_account_pb2.LinkedAccount.Type, str]] = ..., callback_uri: _Optional[str] = ...) -> None: ...
 
 class SignonRequestOutput(_message.Message):
     __slots__ = ("redirect_uri",)
@@ -27,14 +29,16 @@ class SignonRequestOutput(_message.Message):
     def __init__(self, redirect_uri: _Optional[str] = ...) -> None: ...
 
 class SignonExchangeInput(_message.Message):
-    __slots__ = ("state", "code", "code_verifier")
-    STATE_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("code", "state", "client_id", "client_secret")
     CODE_FIELD_NUMBER: _ClassVar[int]
-    CODE_VERIFIER_FIELD_NUMBER: _ClassVar[int]
-    state: str
+    STATE_FIELD_NUMBER: _ClassVar[int]
+    CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
+    CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
     code: str
-    code_verifier: str
-    def __init__(self, state: _Optional[str] = ..., code: _Optional[str] = ..., code_verifier: _Optional[str] = ...) -> None: ...
+    state: str
+    client_id: str
+    client_secret: str
+    def __init__(self, code: _Optional[str] = ..., state: _Optional[str] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ...) -> None: ...
 
 class SignonExchangeOutput(_message.Message):
     __slots__ = ("access_token", "token_type", "expires_in", "refresh_token")
