@@ -22,12 +22,10 @@ class IssueTokenInput(_message.Message):
         PASSWORD: _ClassVar[IssueTokenInput.GrantType]
         AUTHORIZATION_CODE: _ClassVar[IssueTokenInput.GrantType]
         REFRESH_TOKEN: _ClassVar[IssueTokenInput.GrantType]
-        EOLYMP_SIGNIN: _ClassVar[IssueTokenInput.GrantType]
     NONE: IssueTokenInput.GrantType
     PASSWORD: IssueTokenInput.GrantType
     AUTHORIZATION_CODE: IssueTokenInput.GrantType
     REFRESH_TOKEN: IssueTokenInput.GrantType
-    EOLYMP_SIGNIN: IssueTokenInput.GrantType
     GRANT_TYPE_FIELD_NUMBER: _ClassVar[int]
     USERNAME_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
