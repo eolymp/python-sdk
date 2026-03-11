@@ -35,8 +35,8 @@ class Invoice(_message.Message):
         index: int
         name: str
         summary: str
-        total_price: int
-        def __init__(self, index: _Optional[int] = ..., name: _Optional[str] = ..., summary: _Optional[str] = ..., total_price: _Optional[int] = ...) -> None: ...
+        total_price: float
+        def __init__(self, index: _Optional[int] = ..., name: _Optional[str] = ..., summary: _Optional[str] = ..., total_price: _Optional[float] = ...) -> None: ...
     class Patch(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -82,10 +82,10 @@ class Invoice(_message.Message):
     invoice_date: _timestamp_pb2.Timestamp
     due_date: _timestamp_pb2.Timestamp
     lines: _containers.RepeatedCompositeFieldContainer[Invoice.Line]
-    subtotal_amount: int
-    tax_amount: int
-    grand_total: int
+    subtotal_amount: float
+    tax_amount: float
+    grand_total: float
     document_url: str
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., number: _Optional[str] = ..., currency: _Optional[str] = ..., status: _Optional[_Union[Invoice.Status, str]] = ..., status_reason: _Optional[str] = ..., vendor_id: _Optional[str] = ..., payment_method_id: _Optional[str] = ..., invoice_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., due_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lines: _Optional[_Iterable[_Union[Invoice.Line, _Mapping]]] = ..., subtotal_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., grand_total: _Optional[int] = ..., document_url: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., number: _Optional[str] = ..., currency: _Optional[str] = ..., status: _Optional[_Union[Invoice.Status, str]] = ..., status_reason: _Optional[str] = ..., vendor_id: _Optional[str] = ..., payment_method_id: _Optional[str] = ..., invoice_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., due_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lines: _Optional[_Iterable[_Union[Invoice.Line, _Mapping]]] = ..., subtotal_amount: _Optional[float] = ..., tax_amount: _Optional[float] = ..., grand_total: _Optional[float] = ..., document_url: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
