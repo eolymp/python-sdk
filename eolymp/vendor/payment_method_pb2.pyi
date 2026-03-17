@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class PaymentMethod(_message.Message):
-    __slots__ = ("id", "name", "default", "country", "sepa_transfer", "swift_transfer", "crypto_transfer", "neft_transfer", "ach_transfer")
+    __slots__ = ("id", "name", "default", "country", "sepa_transfer", "swift_transfer", "crypto_transfer", "neft_transfer", "ach_transfer", "paypal_transfer")
     class TransferSEPA(_message.Message):
         __slots__ = ("iban",)
         IBAN_FIELD_NUMBER: _ClassVar[int]
@@ -42,6 +42,11 @@ class PaymentMethod(_message.Message):
         network: str
         address: str
         def __init__(self, token: _Optional[str] = ..., network: _Optional[str] = ..., address: _Optional[str] = ...) -> None: ...
+    class TransferPayPal(_message.Message):
+        __slots__ = ("email",)
+        EMAIL_FIELD_NUMBER: _ClassVar[int]
+        email: str
+        def __init__(self, email: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_FIELD_NUMBER: _ClassVar[int]
@@ -51,6 +56,7 @@ class PaymentMethod(_message.Message):
     CRYPTO_TRANSFER_FIELD_NUMBER: _ClassVar[int]
     NEFT_TRANSFER_FIELD_NUMBER: _ClassVar[int]
     ACH_TRANSFER_FIELD_NUMBER: _ClassVar[int]
+    PAYPAL_TRANSFER_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     default: bool
@@ -60,4 +66,5 @@ class PaymentMethod(_message.Message):
     crypto_transfer: PaymentMethod.TransferCrypto
     neft_transfer: PaymentMethod.TransferNEFT
     ach_transfer: PaymentMethod.TransferACH
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., default: bool = ..., country: _Optional[str] = ..., sepa_transfer: _Optional[_Union[PaymentMethod.TransferSEPA, _Mapping]] = ..., swift_transfer: _Optional[_Union[PaymentMethod.TransferSWIFT, _Mapping]] = ..., crypto_transfer: _Optional[_Union[PaymentMethod.TransferCrypto, _Mapping]] = ..., neft_transfer: _Optional[_Union[PaymentMethod.TransferNEFT, _Mapping]] = ..., ach_transfer: _Optional[_Union[PaymentMethod.TransferACH, _Mapping]] = ...) -> None: ...
+    paypal_transfer: PaymentMethod.TransferPayPal
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., default: bool = ..., country: _Optional[str] = ..., sepa_transfer: _Optional[_Union[PaymentMethod.TransferSEPA, _Mapping]] = ..., swift_transfer: _Optional[_Union[PaymentMethod.TransferSWIFT, _Mapping]] = ..., crypto_transfer: _Optional[_Union[PaymentMethod.TransferCrypto, _Mapping]] = ..., neft_transfer: _Optional[_Union[PaymentMethod.TransferNEFT, _Mapping]] = ..., ach_transfer: _Optional[_Union[PaymentMethod.TransferACH, _Mapping]] = ..., paypal_transfer: _Optional[_Union[PaymentMethod.TransferPayPal, _Mapping]] = ...) -> None: ...
