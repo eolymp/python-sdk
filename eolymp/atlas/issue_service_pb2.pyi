@@ -19,18 +19,20 @@ class ListIssuesInput(_message.Message):
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListIssuesInput.Sortable]
+        CREATED_AT: _ClassVar[ListIssuesInput.Sortable]
         UPDATED_AT: _ClassVar[ListIssuesInput.Sortable]
     DEFAULT: ListIssuesInput.Sortable
+    CREATED_AT: ListIssuesInput.Sortable
     UPDATED_AT: ListIssuesInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ("id", "status", "member_id")
+        __slots__ = ("id", "status", "user_id")
         ID_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
-        MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+        USER_ID_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
