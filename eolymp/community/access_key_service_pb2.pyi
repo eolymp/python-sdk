@@ -29,6 +29,18 @@ class CreateAccessKeyOutput(_message.Message):
     secret: str
     def __init__(self, key_id: _Optional[str] = ..., secret: _Optional[str] = ...) -> None: ...
 
+class UpdateAccessKeyInput(_message.Message):
+    __slots__ = ("key_id", "key")
+    KEY_ID_FIELD_NUMBER: _ClassVar[int]
+    KEY_FIELD_NUMBER: _ClassVar[int]
+    key_id: str
+    key: _access_key_pb2.AccessKey
+    def __init__(self, key_id: _Optional[str] = ..., key: _Optional[_Union[_access_key_pb2.AccessKey, _Mapping]] = ...) -> None: ...
+
+class UpdateAccessKeyOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class DeleteAccessKeyInput(_message.Message):
     __slots__ = ("key_id",)
     KEY_ID_FIELD_NUMBER: _ClassVar[int]
