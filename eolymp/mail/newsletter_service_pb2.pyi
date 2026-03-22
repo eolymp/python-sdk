@@ -204,12 +204,14 @@ class DeleteTranslationOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeTranslationInput(_message.Message):
-    __slots__ = ("newsletter_id", "translation_id")
+    __slots__ = ("newsletter_id", "translation_id", "extra")
     NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
     TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     newsletter_id: str
     translation_id: str
-    def __init__(self, newsletter_id: _Optional[str] = ..., translation_id: _Optional[str] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Extra.Field]
+    def __init__(self, newsletter_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeTranslationOutput(_message.Message):
     __slots__ = ("translation",)
@@ -218,7 +220,7 @@ class DescribeTranslationOutput(_message.Message):
     def __init__(self, translation: _Optional[_Union[_newsletter_pb2.Newsletter.Translation, _Mapping]] = ...) -> None: ...
 
 class ListTranslationsInput(_message.Message):
-    __slots__ = ("newsletter_id", "offset", "size", "filters")
+    __slots__ = ("newsletter_id", "offset", "size", "filters", "extra")
     class Filter(_message.Message):
         __slots__ = ("id", "locale")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -230,11 +232,13 @@ class ListTranslationsInput(_message.Message):
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     newsletter_id: str
     offset: int
     size: int
     filters: ListTranslationsInput.Filter
-    def __init__(self, newsletter_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTranslationsInput.Filter, _Mapping]] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Extra.Field]
+    def __init__(self, newsletter_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTranslationsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra.Field, str]]] = ...) -> None: ...
 
 class ListTranslationsOutput(_message.Message):
     __slots__ = ("total", "items")
