@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Test(_message.Message):
-    __slots__ = ("id", "version_id", "testset_id", "index", "status", "status_message", "example", "inactive", "secret", "score", "example_input_url", "example_answer_url", "generated_input_url", "generated_answer_url", "input_url", "input_generator", "answer_url", "answer_generator")
+    __slots__ = ("id", "version_id", "testset_id", "index", "status", "status_message", "example", "inactive", "secret", "score", "generated_input_url", "generated_answer_url", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator", "example_input_url", "example_input_content", "example_answer_url", "example_answer_content")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Test.Status]
@@ -61,14 +61,18 @@ class Test(_message.Message):
     INACTIVE_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     SCORE_FIELD_NUMBER: _ClassVar[int]
-    EXAMPLE_INPUT_URL_FIELD_NUMBER: _ClassVar[int]
-    EXAMPLE_ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
     GENERATED_INPUT_URL_FIELD_NUMBER: _ClassVar[int]
     GENERATED_ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
     INPUT_URL_FIELD_NUMBER: _ClassVar[int]
+    INPUT_CONTENT_FIELD_NUMBER: _ClassVar[int]
     INPUT_GENERATOR_FIELD_NUMBER: _ClassVar[int]
     ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
+    ANSWER_CONTENT_FIELD_NUMBER: _ClassVar[int]
     ANSWER_GENERATOR_FIELD_NUMBER: _ClassVar[int]
+    EXAMPLE_INPUT_URL_FIELD_NUMBER: _ClassVar[int]
+    EXAMPLE_INPUT_CONTENT_FIELD_NUMBER: _ClassVar[int]
+    EXAMPLE_ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
+    EXAMPLE_ANSWER_CONTENT_FIELD_NUMBER: _ClassVar[int]
     id: str
     version_id: str
     testset_id: str
@@ -79,12 +83,16 @@ class Test(_message.Message):
     inactive: bool
     secret: bool
     score: float
-    example_input_url: str
-    example_answer_url: str
     generated_input_url: str
     generated_answer_url: str
     input_url: str
+    input_content: str
     input_generator: Test.Generator
     answer_url: str
+    answer_content: str
     answer_generator: Test.Generator
-    def __init__(self, id: _Optional[str] = ..., version_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., index: _Optional[int] = ..., status: _Optional[_Union[Test.Status, str]] = ..., status_message: _Optional[str] = ..., example: bool = ..., inactive: bool = ..., secret: bool = ..., score: _Optional[float] = ..., example_input_url: _Optional[str] = ..., example_answer_url: _Optional[str] = ..., generated_input_url: _Optional[str] = ..., generated_answer_url: _Optional[str] = ..., input_url: _Optional[str] = ..., input_generator: _Optional[_Union[Test.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_generator: _Optional[_Union[Test.Generator, _Mapping]] = ...) -> None: ...
+    example_input_url: str
+    example_input_content: str
+    example_answer_url: str
+    example_answer_content: str
+    def __init__(self, id: _Optional[str] = ..., version_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., index: _Optional[int] = ..., status: _Optional[_Union[Test.Status, str]] = ..., status_message: _Optional[str] = ..., example: bool = ..., inactive: bool = ..., secret: bool = ..., score: _Optional[float] = ..., generated_input_url: _Optional[str] = ..., generated_answer_url: _Optional[str] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[Test.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[Test.Generator, _Mapping]] = ..., example_input_url: _Optional[str] = ..., example_input_content: _Optional[str] = ..., example_answer_url: _Optional[str] = ..., example_answer_content: _Optional[str] = ...) -> None: ...
