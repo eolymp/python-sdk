@@ -11,6 +11,14 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class InvoiceChangedEvent(_message.Message):
+    __slots__ = ("before", "after")
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    before: _invoice_pb2.Invoice
+    after: _invoice_pb2.Invoice
+    def __init__(self, before: _Optional[_Union[_invoice_pb2.Invoice, _Mapping]] = ..., after: _Optional[_Union[_invoice_pb2.Invoice, _Mapping]] = ...) -> None: ...
+
 class ListInvoicesInput(_message.Message):
     __slots__ = ("offset", "size", "after", "filters")
     class Filter(_message.Message):
