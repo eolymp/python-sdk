@@ -147,3 +147,15 @@ class RejectInvoiceInput(_message.Message):
 class RejectInvoiceOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class PayInvoiceInput(_message.Message):
+    __slots__ = ("invoice_id", "comment")
+    INVOICE_ID_FIELD_NUMBER: _ClassVar[int]
+    COMMENT_FIELD_NUMBER: _ClassVar[int]
+    invoice_id: str
+    comment: str
+    def __init__(self, invoice_id: _Optional[str] = ..., comment: _Optional[str] = ...) -> None: ...
+
+class PayInvoiceOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

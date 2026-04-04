@@ -134,3 +134,17 @@ class InvoiceServiceClient:
             **kwargs,
         )
 
+    def PayInvoice(self, request, **kwargs):
+        path = "/vendor-invoices/"+urllib.parse.quote(request.invoice_id)+"/pay"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.invoice_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.vendor.PayInvoiceOutput"),
+            **kwargs,
+        )
+
