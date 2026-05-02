@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.community import configuration_idp_pb2 as eolymp_dot_community_dot_configuration__idp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-eolymp/community/configuration_identity.proto\x12\x10\x65olymp.community\x1a(eolymp/community/configuration_idp.proto\"\xc9\x03\n\x0eIdentityConfig\x12\x39\n\x05local\x18\x01 \x01(\x0b\x32(.eolymp.community.IdentityProvider.LocalH\x00\x12?\n\x08\x62\x61secamp\x18\x02 \x01(\x0b\x32+.eolymp.community.IdentityProvider.BasecampH\x00\x12\x37\n\x04oidc\x18\x03 \x01(\x0b\x32\'.eolymp.community.IdentityProvider.OIDCH\x00\x12K\n\x11\x64isplay_name_type\x18\x64 \x01(\x0e\x32\x30.eolymp.community.IdentityConfig.DisplayNameType\x12\x1e\n\x16\x64isplay_name_attribute\x18\x65 \x01(\t\x12\x15\n\rallow_sign_up\x18\x66 \x01(\x08\x12\x1e\n\x16require_email_verified\x18g \x01(\x08\"R\n\x0f\x44isplayNameType\x12\x18\n\x14UNKNOWN_DISPLAY_NAME\x10\x00\x12\x0c\n\x08NICKNAME\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\r\n\tATTRIBUTE\x10\x03\x42\n\n\x08providerB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-eolymp/community/configuration_identity.proto\x12\x10\x65olymp.community\x1a(eolymp/community/configuration_idp.proto\"\x99\x04\n\x0eIdentityConfig\x12\x39\n\x05local\x18\x01 \x01(\x0b\x32(.eolymp.community.IdentityProvider.LocalH\x00\x12?\n\x08\x62\x61secamp\x18\x02 \x01(\x0b\x32+.eolymp.community.IdentityProvider.BasecampH\x00\x12\x37\n\x04oidc\x18\x03 \x01(\x0b\x32\'.eolymp.community.IdentityProvider.OIDCH\x00\x12N\n\x10google_workspace\x18\x04 \x01(\x0b\x32\x32.eolymp.community.IdentityProvider.GoogleWorkspaceH\x00\x12K\n\x11\x64isplay_name_type\x18\x64 \x01(\x0e\x32\x30.eolymp.community.IdentityConfig.DisplayNameType\x12\x1e\n\x16\x64isplay_name_attribute\x18\x65 \x01(\t\x12\x15\n\rallow_sign_up\x18\x66 \x01(\x08\x12\x1e\n\x16require_email_verified\x18g \x01(\x08\"R\n\x0f\x44isplayNameType\x12\x18\n\x14UNKNOWN_DISPLAY_NAME\x10\x00\x12\x0c\n\x08NICKNAME\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\r\n\tATTRIBUTE\x10\x03\x42\n\n\x08providerB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,7 +34,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _globals['_IDENTITYCONFIG']._serialized_start=110
-  _globals['_IDENTITYCONFIG']._serialized_end=567
-  _globals['_IDENTITYCONFIG_DISPLAYNAMETYPE']._serialized_start=473
-  _globals['_IDENTITYCONFIG_DISPLAYNAMETYPE']._serialized_end=555
+  _globals['_IDENTITYCONFIG']._serialized_end=647
+  _globals['_IDENTITYCONFIG_DISPLAYNAMETYPE']._serialized_start=553
+  _globals['_IDENTITYCONFIG_DISPLAYNAMETYPE']._serialized_end=635
 # @@protoc_insertion_point(module_scope)

@@ -39,4 +39,13 @@ class IdentityProvider(_message.Message):
         userinfo_endpoint: str
         redirect_uri: str
         def __init__(self, client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., issuer: _Optional[str] = ..., authorize_endpoint: _Optional[str] = ..., token_endpoint: _Optional[str] = ..., keys_endpoint: _Optional[str] = ..., userinfo_endpoint: _Optional[str] = ..., redirect_uri: _Optional[str] = ...) -> None: ...
+    class GoogleWorkspace(_message.Message):
+        __slots__ = ("client_id", "client_secret", "domain")
+        CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
+        CLIENT_SECRET_FIELD_NUMBER: _ClassVar[int]
+        DOMAIN_FIELD_NUMBER: _ClassVar[int]
+        client_id: str
+        client_secret: str
+        domain: str
+        def __init__(self, client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., domain: _Optional[str] = ...) -> None: ...
     def __init__(self) -> None: ...
