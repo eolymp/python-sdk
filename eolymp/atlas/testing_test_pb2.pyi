@@ -33,6 +33,7 @@ class Test(_message.Message):
             SECRET: _ClassVar[Test.Patch.Field]
             EXAMPLE_INPUT: _ClassVar[Test.Patch.Field]
             EXAMPLE_ANSWER: _ClassVar[Test.Patch.Field]
+            TESTSET: _ClassVar[Test.Patch.Field]
         UNKNOWN_PATCH: Test.Patch.Field
         EXAMPLE: Test.Patch.Field
         INACTIVE: Test.Patch.Field
@@ -43,6 +44,7 @@ class Test(_message.Message):
         SECRET: Test.Patch.Field
         EXAMPLE_INPUT: Test.Patch.Field
         EXAMPLE_ANSWER: Test.Patch.Field
+        TESTSET: Test.Patch.Field
         def __init__(self) -> None: ...
     class Generator(_message.Message):
         __slots__ = ("script_name", "arguments")
