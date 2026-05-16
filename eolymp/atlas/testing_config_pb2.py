@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.atlas import problem_pb2 as eolymp_dot_atlas_dot_problem__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/testing_config.proto\x12\x0c\x65olymp.atlas\"@\n\rTestingConfig\x12\x11\n\trun_count\x18\x01 \x01(\r\x12\x1c\n\x14interactive_followup\x18\x02 \x01(\x08\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/testing_config.proto\x12\x0c\x65olymp.atlas\x1a\x1a\x65olymp/atlas/problem.proto\"j\n\rTestingConfig\x12\x11\n\trun_count\x18\x01 \x01(\r\x12\x1c\n\x14interactive_followup\x18\x02 \x01(\x08\x12(\n\x04type\x18\x03 \x01(\x0e\x32\x1a.eolymp.atlas.Problem.TypeB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.testing_config
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _globals['_TESTINGCONFIG']._serialized_start=51
-  _globals['_TESTINGCONFIG']._serialized_end=115
+  _globals['_TESTINGCONFIG']._serialized_start=79
+  _globals['_TESTINGCONFIG']._serialized_end=185
 # @@protoc_insertion_point(module_scope)
