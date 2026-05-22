@@ -213,3 +213,17 @@ class ListRuntimesOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_runtime_pb2.Runtime]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ...) -> None: ...
+
+class ExportProblemsInput(_message.Message):
+    __slots__ = ("problems", "locale")
+    PROBLEMS_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    problems: _containers.RepeatedScalarFieldContainer[str]
+    locale: str
+    def __init__(self, problems: _Optional[_Iterable[str]] = ..., locale: _Optional[str] = ...) -> None: ...
+
+class ExportProblemsOutput(_message.Message):
+    __slots__ = ("download_url",)
+    DOWNLOAD_URL_FIELD_NUMBER: _ClassVar[int]
+    download_url: str
+    def __init__(self, download_url: _Optional[str] = ...) -> None: ...

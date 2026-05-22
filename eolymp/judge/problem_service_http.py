@@ -191,3 +191,14 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def ExportProblems(self, request, **kwargs):
+        path = "/problems:export"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ExportProblemsOutput"),
+            **kwargs,
+        )
+
