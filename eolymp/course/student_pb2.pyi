@@ -30,7 +30,7 @@ class Student(_message.Message):
         grade_automatic: int
         grade_override: int
         excused: bool
-        def __init__(self, module_id: _Optional[str] = ..., grade: _Optional[int] = ..., grade_automatic: _Optional[int] = ..., grade_override: _Optional[int] = ..., excused: bool = ...) -> None: ...
+        def __init__(self, module_id: _Optional[str] = ..., grade: _Optional[int] = ..., grade_automatic: _Optional[int] = ..., grade_override: _Optional[int] = ..., excused: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -55,4 +55,4 @@ class Student(_message.Message):
     updated_at: _timestamp_pb2.Timestamp
     created_at: _timestamp_pb2.Timestamp
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., member_id: _Optional[str] = ..., inactive: bool = ..., assign_all: bool = ..., overall_progress: _Optional[float] = ..., overall_grade: _Optional[int] = ..., grades: _Optional[_Iterable[_Union[Student.Grade, _Mapping]]] = ..., graded_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., member_id: _Optional[str] = ..., inactive: _Optional[bool] = ..., assign_all: _Optional[bool] = ..., overall_progress: _Optional[float] = ..., overall_grade: _Optional[int] = ..., grades: _Optional[_Iterable[_Union[Student.Grade, _Mapping]]] = ..., graded_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., cursor: _Optional[str] = ...) -> None: ...

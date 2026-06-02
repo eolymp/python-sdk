@@ -26,7 +26,7 @@ class ImportProblemInput(_message.Message):
     index: int
     submit_limit: int
     score_by_best_testset: bool
-    def __init__(self, import_id: _Optional[str] = ..., index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: bool = ...) -> None: ...
+    def __init__(self, import_id: _Optional[str] = ..., index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ...) -> None: ...
 
 class ImportProblemOutput(_message.Message):
     __slots__ = ("problem_id",)

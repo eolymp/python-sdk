@@ -165,7 +165,7 @@ class GradeMaterialInput(_message.Message):
     member_id: str
     grade: int
     excused: bool
-    def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: bool = ...) -> None: ...
+    def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: _Optional[bool] = ...) -> None: ...
 
 class GradeMaterialOutput(_message.Message):
     __slots__ = ()

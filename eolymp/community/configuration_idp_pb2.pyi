@@ -19,7 +19,7 @@ class IdentityProvider(_message.Message):
         allow_modify_basics: bool
         allow_modify_email: bool
         allow_modify_password: bool
-        def __init__(self, allow_modify_nickname: bool = ..., allow_modify_basics: bool = ..., allow_modify_email: bool = ..., allow_modify_password: bool = ...) -> None: ...
+        def __init__(self, allow_modify_nickname: _Optional[bool] = ..., allow_modify_basics: _Optional[bool] = ..., allow_modify_email: _Optional[bool] = ..., allow_modify_password: _Optional[bool] = ...) -> None: ...
     class OIDC(_message.Message):
         __slots__ = ("client_id", "client_secret", "issuer", "authorize_endpoint", "token_endpoint", "keys_endpoint", "userinfo_endpoint", "redirect_uri")
         CLIENT_ID_FIELD_NUMBER: _ClassVar[int]

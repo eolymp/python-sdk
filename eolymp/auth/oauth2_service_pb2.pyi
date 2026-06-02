@@ -82,7 +82,7 @@ class IntrospectTokenOutput(_message.Message):
     scope: str
     expire: _timestamp_pb2.Timestamp
     claims: _claims_pb2.Claims
-    def __init__(self, active: bool = ..., scope: _Optional[str] = ..., expire: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ...) -> None: ...
+    def __init__(self, active: _Optional[bool] = ..., scope: _Optional[str] = ..., expire: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., claims: _Optional[_Union[_claims_pb2.Claims, _Mapping]] = ...) -> None: ...
 
 class RevokeTokenInput(_message.Message):
     __slots__ = ("token",)

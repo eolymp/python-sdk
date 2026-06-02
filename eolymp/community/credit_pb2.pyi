@@ -31,7 +31,7 @@ class Credit(_message.Message):
         redeemed_amount: int
         granted_at: _timestamp_pb2.Timestamp
         expires_at: _timestamp_pb2.Timestamp
-        def __init__(self, id: _Optional[str] = ..., reference: _Optional[str] = ..., note: _Optional[str] = ..., active: bool = ..., revoked: bool = ..., total_amount: _Optional[int] = ..., redeemed_amount: _Optional[int] = ..., granted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., reference: _Optional[str] = ..., note: _Optional[str] = ..., active: _Optional[bool] = ..., revoked: _Optional[bool] = ..., total_amount: _Optional[int] = ..., redeemed_amount: _Optional[int] = ..., granted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     class Transaction(_message.Message):
         __slots__ = ("id", "timestamp", "summary", "amount")
         ID_FIELD_NUMBER: _ClassVar[int]

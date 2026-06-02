@@ -38,7 +38,7 @@ class DescribeMessageInput(_message.Message):
     message_id: str
     render: bool
     extra: _containers.RepeatedScalarFieldContainer[_message_pb2.Message.Extra]
-    def __init__(self, message_id: _Optional[str] = ..., render: bool = ..., extra: _Optional[_Iterable[_Union[_message_pb2.Message.Extra, str]]] = ...) -> None: ...
+    def __init__(self, message_id: _Optional[str] = ..., render: _Optional[bool] = ..., extra: _Optional[_Iterable[_Union[_message_pb2.Message.Extra, str]]] = ...) -> None: ...
 
 class DescribeMessageOutput(_message.Message):
     __slots__ = ("message",)
@@ -91,7 +91,7 @@ class ListMessagesInput(_message.Message):
     order: _direction_pb2.Direction
     filters: ListMessagesInput.Filter
     extra: _containers.RepeatedScalarFieldContainer[_message_pb2.Message.Extra]
-    def __init__(self, render: bool = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., sort: _Optional[_Union[ListMessagesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListMessagesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_message_pb2.Message.Extra, str]]] = ...) -> None: ...
+    def __init__(self, render: _Optional[bool] = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., sort: _Optional[_Union[ListMessagesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListMessagesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_message_pb2.Message.Extra, str]]] = ...) -> None: ...
 
 class ListMessagesOutput(_message.Message):
     __slots__ = ("total", "items")

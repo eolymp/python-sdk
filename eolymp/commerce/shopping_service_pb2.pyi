@@ -76,7 +76,7 @@ class UpdateBillingAddressInput(_message.Message):
     SAME_AS_SHIPPING_FIELD_NUMBER: _ClassVar[int]
     address: _address_pb2.Address
     same_as_shipping: bool
-    def __init__(self, address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., same_as_shipping: bool = ...) -> None: ...
+    def __init__(self, address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., same_as_shipping: _Optional[bool] = ...) -> None: ...
 
 class UpdateBillingAddressOutput(_message.Message):
     __slots__ = ()

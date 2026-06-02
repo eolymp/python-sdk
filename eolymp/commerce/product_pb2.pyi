@@ -90,7 +90,7 @@ class Product(_message.Message):
         out_of_stock: bool
         max_quantity: int
         available_quantity: int
-        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: bool = ..., max_quantity: _Optional[int] = ..., available_quantity: _Optional[int] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: _Optional[bool] = ..., max_quantity: _Optional[int] = ..., available_quantity: _Optional[int] = ...) -> None: ...
     class Translation(_message.Message):
         __slots__ = ("id", "locale", "name", "summary", "description", "attributes")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -136,4 +136,4 @@ class Product(_message.Message):
     attributes: _containers.RepeatedCompositeFieldContainer[Product.Attribute]
     variants: _containers.RepeatedCompositeFieldContainer[Product.Variant]
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: bool = ..., featured: bool = ..., inactive: bool = ..., backorder: bool = ..., currency: _Optional[str] = ..., price: _Optional[int] = ..., regular_price: _Optional[int] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ..., variants: _Optional[_Iterable[_Union[Product.Variant, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: _Optional[bool] = ..., featured: _Optional[bool] = ..., inactive: _Optional[bool] = ..., backorder: _Optional[bool] = ..., currency: _Optional[str] = ..., price: _Optional[int] = ..., regular_price: _Optional[int] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ..., variants: _Optional[_Iterable[_Union[Product.Variant, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...

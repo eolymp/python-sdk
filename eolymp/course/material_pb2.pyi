@@ -54,7 +54,7 @@ class Material(_message.Message):
         grade_automatic: int
         grade_override: int
         excused: bool
-        def __init__(self, percentage: _Optional[float] = ..., grade: _Optional[int] = ..., grade_automatic: _Optional[int] = ..., grade_override: _Optional[int] = ..., excused: bool = ...) -> None: ...
+        def __init__(self, percentage: _Optional[float] = ..., grade: _Optional[int] = ..., grade_automatic: _Optional[int] = ..., grade_override: _Optional[int] = ..., excused: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     DRAFT_FIELD_NUMBER: _ClassVar[int]
@@ -83,4 +83,4 @@ class Material(_message.Message):
     percentage: float
     grade: int
     progress: Material.Progress
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: bool = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., module_id: _Optional[str] = ..., index: _Optional[int] = ..., depth: _Optional[int] = ..., grading: _Optional[_Union[Material.Grading, _Mapping]] = ..., document: _Optional[_Union[Material.Document, _Mapping]] = ..., task: _Optional[_Union[Material.Task, _Mapping]] = ..., percentage: _Optional[float] = ..., grade: _Optional[int] = ..., progress: _Optional[_Union[Material.Progress, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., draft: _Optional[bool] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., module_id: _Optional[str] = ..., index: _Optional[int] = ..., depth: _Optional[int] = ..., grading: _Optional[_Union[Material.Grading, _Mapping]] = ..., document: _Optional[_Union[Material.Document, _Mapping]] = ..., task: _Optional[_Union[Material.Task, _Mapping]] = ..., percentage: _Optional[float] = ..., grade: _Optional[int] = ..., progress: _Optional[_Union[Material.Progress, _Mapping]] = ...) -> None: ...

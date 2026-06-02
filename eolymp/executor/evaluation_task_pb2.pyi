@@ -65,7 +65,7 @@ class EvaluationTask(_message.Message):
         answer_url: str
         answer_content: str
         answer_generator: EvaluationTask.Generator
-        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., group: _Optional[int] = ..., debug: bool = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., labels: _Optional[_Iterable[str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ..., output_url: _Optional[str] = ..., output_content: _Optional[str] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., index: _Optional[int] = ..., group: _Optional[int] = ..., debug: _Optional[bool] = ..., cost: _Optional[float] = ..., env: _Optional[_Mapping[str, str]] = ..., labels: _Optional[_Iterable[str]] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ..., output_url: _Optional[str] = ..., output_content: _Optional[str] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[EvaluationTask.Generator, _Mapping]] = ...) -> None: ...
     class Precondition(_message.Message):
         __slots__ = ("selector", "depends_on", "dependency_mode", "stop_on_failure", "max_execution_time")
         SELECTOR_FIELD_NUMBER: _ClassVar[int]
@@ -78,7 +78,7 @@ class EvaluationTask(_message.Message):
         dependency_mode: EvaluationTask.DependencyMode
         stop_on_failure: bool
         max_execution_time: int
-        def __init__(self, selector: _Optional[_Iterable[str]] = ..., depends_on: _Optional[_Iterable[str]] = ..., dependency_mode: _Optional[_Union[EvaluationTask.DependencyMode, str]] = ..., stop_on_failure: bool = ..., max_execution_time: _Optional[int] = ...) -> None: ...
+        def __init__(self, selector: _Optional[_Iterable[str]] = ..., depends_on: _Optional[_Iterable[str]] = ..., dependency_mode: _Optional[_Union[EvaluationTask.DependencyMode, str]] = ..., stop_on_failure: _Optional[bool] = ..., max_execution_time: _Optional[int] = ...) -> None: ...
     class Constraint(_message.Message):
         __slots__ = ("selector", "actor", "wall_time_limit", "cpu_time_limit", "memory_limit", "file_size_limit")
         SELECTOR_FIELD_NUMBER: _ClassVar[int]
@@ -133,4 +133,4 @@ class EvaluationTask(_message.Message):
     checker: _checker_pb2.Checker
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     runs: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., priority: _Optional[int] = ..., redirect_stderr_to_stdout: bool = ..., time_coefficient_deviation: _Optional[float] = ..., run_count: _Optional[int] = ..., interactive_followup: bool = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., submission: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., priority: _Optional[int] = ..., redirect_stderr_to_stdout: _Optional[bool] = ..., time_coefficient_deviation: _Optional[float] = ..., run_count: _Optional[int] = ..., interactive_followup: _Optional[bool] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., submission: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...

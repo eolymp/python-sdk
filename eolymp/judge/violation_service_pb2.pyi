@@ -19,7 +19,7 @@ class CreateViolationInput(_message.Message):
     DONT_NOTIFY_FIELD_NUMBER: _ClassVar[int]
     violation: _violation_pb2.Violation
     dont_notify: bool
-    def __init__(self, violation: _Optional[_Union[_violation_pb2.Violation, _Mapping]] = ..., dont_notify: bool = ...) -> None: ...
+    def __init__(self, violation: _Optional[_Union[_violation_pb2.Violation, _Mapping]] = ..., dont_notify: _Optional[bool] = ...) -> None: ...
 
 class CreateViolationOutput(_message.Message):
     __slots__ = ("violation_id",)

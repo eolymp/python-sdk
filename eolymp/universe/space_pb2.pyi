@@ -92,7 +92,7 @@ class Space(_message.Message):
         billing_period_end: _timestamp_pb2.Timestamp
         quota_period_start: _timestamp_pb2.Timestamp
         quota_period_end: _timestamp_pb2.Timestamp
-        def __init__(self, plan: _Optional[str] = ..., seats: _Optional[int] = ..., usage: _Optional[int] = ..., usage_based_billing: bool = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., billing_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., billing_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+        def __init__(self, plan: _Optional[str] = ..., seats: _Optional[int] = ..., usage: _Optional[int] = ..., usage_based_billing: _Optional[bool] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., billing_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., billing_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., quota_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     HOME_URL_FIELD_NUMBER: _ClassVar[int]

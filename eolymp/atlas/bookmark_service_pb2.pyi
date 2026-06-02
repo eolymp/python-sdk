@@ -17,13 +17,13 @@ class BookmarkChangedEvent(_message.Message):
     member_id: str
     before: bool
     after: bool
-    def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ..., before: bool = ..., after: bool = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ..., before: _Optional[bool] = ..., after: _Optional[bool] = ...) -> None: ...
 
 class SetBookmarkInput(_message.Message):
     __slots__ = ("bookmark",)
     BOOKMARK_FIELD_NUMBER: _ClassVar[int]
     bookmark: bool
-    def __init__(self, bookmark: bool = ...) -> None: ...
+    def __init__(self, bookmark: _Optional[bool] = ...) -> None: ...
 
 class SetBookmarkOutput(_message.Message):
     __slots__ = ()
@@ -37,4 +37,4 @@ class GetBookmarkOutput(_message.Message):
     __slots__ = ("bookmark",)
     BOOKMARK_FIELD_NUMBER: _ClassVar[int]
     bookmark: bool
-    def __init__(self, bookmark: bool = ...) -> None: ...
+    def __init__(self, bookmark: _Optional[bool] = ...) -> None: ...

@@ -33,7 +33,7 @@ class ScoreChangedEvent(_message.Message):
     participant_id: str
     unofficial: bool
     score: _score_pb2.Score
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., unofficial: bool = ..., score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., unofficial: _Optional[bool] = ..., score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class RetestProblemEvent(_message.Message):
     __slots__ = ("contest_id", "problem_id", "activity_id")

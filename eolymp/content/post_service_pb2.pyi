@@ -33,7 +33,7 @@ class PostPublishedEvent(_message.Message):
     published: bool
     post: _post_pb2.Post
     reason: _content_pb2.Content
-    def __init__(self, published: bool = ..., post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, published: _Optional[bool] = ..., post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class PostTranslationChangedEvent(_message.Message):
     __slots__ = ("post_id", "before", "after", "reason")
@@ -268,7 +268,7 @@ class TranslatePostInput(_message.Message):
     target: _containers.RepeatedScalarFieldContainer[str]
     target_automatic: bool
     override_manual: bool
-    def __init__(self, post_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
+    def __init__(self, post_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: _Optional[bool] = ..., override_manual: _Optional[bool] = ...) -> None: ...
 
 class TranslatePostOutput(_message.Message):
     __slots__ = ("job_id",)

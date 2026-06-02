@@ -30,7 +30,7 @@ class SubmissionCompleteEvent(_message.Message):
     UPDATE_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
     update: bool
-    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., update: bool = ...) -> None: ...
+    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., update: _Optional[bool] = ...) -> None: ...
 
 class CreateSubmissionInput(_message.Message):
     __slots__ = ("problem_id", "lang", "source", "values")
@@ -84,7 +84,7 @@ class RetestSubmissionInput(_message.Message):
     DEBUG_FIELD_NUMBER: _ClassVar[int]
     submission_id: str
     debug: bool
-    def __init__(self, submission_id: _Optional[str] = ..., debug: bool = ...) -> None: ...
+    def __init__(self, submission_id: _Optional[str] = ..., debug: _Optional[bool] = ...) -> None: ...
 
 class RetestSubmissionOutput(_message.Message):
     __slots__ = ()

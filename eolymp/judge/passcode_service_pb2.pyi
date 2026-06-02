@@ -20,7 +20,7 @@ class VerifyPasscodeOutput(_message.Message):
     VALID_FIELD_NUMBER: _ClassVar[int]
     required: bool
     valid: bool
-    def __init__(self, required: bool = ..., valid: bool = ...) -> None: ...
+    def __init__(self, required: _Optional[bool] = ..., valid: _Optional[bool] = ...) -> None: ...
 
 class EnterPasscodeInput(_message.Message):
     __slots__ = ("contest_id", "passcode")

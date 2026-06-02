@@ -62,7 +62,7 @@ class Invoice(_message.Message):
         tax_rate: str
         taxability_reason: str
         taxable_amount: int
-        def __init__(self, amount: _Optional[int] = ..., inclusive: bool = ..., tax_rate: _Optional[str] = ..., taxability_reason: _Optional[str] = ..., taxable_amount: _Optional[int] = ...) -> None: ...
+        def __init__(self, amount: _Optional[int] = ..., inclusive: _Optional[bool] = ..., tax_rate: _Optional[str] = ..., taxability_reason: _Optional[str] = ..., taxable_amount: _Optional[int] = ...) -> None: ...
     class DiscountAmount(_message.Message):
         __slots__ = ("amount", "discount")
         AMOUNT_FIELD_NUMBER: _ClassVar[int]

@@ -151,7 +151,7 @@ class GradeModuleInput(_message.Message):
     member_id: str
     grade: int
     excused: bool
-    def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: bool = ...) -> None: ...
+    def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: _Optional[bool] = ...) -> None: ...
 
 class GradeModuleOutput(_message.Message):
     __slots__ = ()

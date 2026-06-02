@@ -37,7 +37,7 @@ class Problem(_message.Message):
         input_url: str
         answer_url: str
         score: float
-        def __init__(self, index: _Optional[int] = ..., example: bool = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., score: _Optional[float] = ...) -> None: ...
+        def __init__(self, index: _Optional[int] = ..., example: _Optional[bool] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., score: _Optional[float] = ...) -> None: ...
     class Attachment(_message.Message):
         __slots__ = ("id", "name", "link")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -91,4 +91,4 @@ class Problem(_message.Message):
     languages: _containers.RepeatedScalarFieldContainer[str]
     submission_form: _form_pb2.Form
     examples: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem.Example]
-    def __init__(self, contest_id: _Optional[str] = ..., id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., index: _Optional[int] = ..., base_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., score_by_best_testset: bool = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[_problem_pb2.Problem.Constraints, _Mapping]] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., submission_form: _Optional[_Union[_form_pb2.Form, _Mapping]] = ..., examples: _Optional[_Iterable[_Union[_problem_pb2.Problem.Example, _Mapping]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., index: _Optional[int] = ..., base_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., score_by_best_testset: _Optional[bool] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[_problem_pb2.Problem.Constraints, _Mapping]] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., submission_form: _Optional[_Union[_form_pb2.Form, _Mapping]] = ..., examples: _Optional[_Iterable[_Union[_problem_pb2.Problem.Example, _Mapping]]] = ...) -> None: ...

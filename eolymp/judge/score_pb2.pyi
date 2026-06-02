@@ -47,7 +47,7 @@ class Score(_message.Message):
         solved_in: int
         changed: bool
         breakdown: _containers.RepeatedCompositeFieldContainer[Score.Testset]
-        def __init__(self, problem_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., solved: bool = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., solved_in: _Optional[int] = ..., changed: bool = ..., breakdown: _Optional[_Iterable[_Union[Score.Testset, _Mapping]]] = ...) -> None: ...
+        def __init__(self, problem_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., solved: _Optional[bool] = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., solved_in: _Optional[int] = ..., changed: _Optional[bool] = ..., breakdown: _Optional[_Iterable[_Union[Score.Testset, _Mapping]]] = ...) -> None: ...
     class Testset(_message.Message):
         __slots__ = ("testset_id", "index", "cost", "score")
         TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -75,4 +75,4 @@ class Score(_message.Message):
     tie_breaker: int
     upsolve: bool
     breakdown: _containers.RepeatedCompositeFieldContainer[Score.Problem]
-    def __init__(self, valid_after: _Optional[int] = ..., valid_until: _Optional[int] = ..., timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., upsolve: bool = ..., breakdown: _Optional[_Iterable[_Union[Score.Problem, _Mapping]]] = ...) -> None: ...
+    def __init__(self, valid_after: _Optional[int] = ..., valid_until: _Optional[int] = ..., timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., upsolve: _Optional[bool] = ..., breakdown: _Optional[_Iterable[_Union[Score.Problem, _Mapping]]] = ...) -> None: ...

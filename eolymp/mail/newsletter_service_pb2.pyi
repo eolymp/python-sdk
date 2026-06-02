@@ -153,7 +153,7 @@ class TranslateNewsletterInput(_message.Message):
     target: _containers.RepeatedScalarFieldContainer[str]
     target_automatic: bool
     override_manual: bool
-    def __init__(self, newsletter_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
+    def __init__(self, newsletter_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: _Optional[bool] = ..., override_manual: _Optional[bool] = ...) -> None: ...
 
 class TranslateNewsletterOutput(_message.Message):
     __slots__ = ("job_id",)
@@ -290,7 +290,7 @@ class ImportRecipientInput(_message.Message):
     group_id: str
     contest_id: str
     parameters: _containers.ScalarMap[str, str]
-    def __init__(self, newsletter_id: _Optional[str] = ..., all_members: bool = ..., group_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, newsletter_id: _Optional[str] = ..., all_members: _Optional[bool] = ..., group_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ImportRecipientOutput(_message.Message):
     __slots__ = ()

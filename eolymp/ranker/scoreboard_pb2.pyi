@@ -58,7 +58,7 @@ class Scoreboard(_message.Message):
             upsolve: bool
             value_string: str
             value_number: int
-            def __init__(self, id: _Optional[str] = ..., column_id: _Optional[str] = ..., valid_after: _Optional[int] = ..., valid_until: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_in: _Optional[int] = ..., upsolve: bool = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
+            def __init__(self, id: _Optional[str] = ..., column_id: _Optional[str] = ..., valid_after: _Optional[int] = ..., valid_until: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., percentage: _Optional[float] = ..., attempts: _Optional[int] = ..., solved_in: _Optional[int] = ..., upsolve: _Optional[bool] = ..., value_string: _Optional[str] = ..., value_number: _Optional[int] = ...) -> None: ...
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -79,7 +79,7 @@ class Scoreboard(_message.Message):
         rank: int
         rank_lower: int
         values: _containers.RepeatedCompositeFieldContainer[Scoreboard.Row.Value]
-        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., member_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., ghost: bool = ..., unofficial: bool = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., member_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., ghost: _Optional[bool] = ..., unofficial: _Optional[bool] = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
     class Column(_message.Message):
         __slots__ = ("id", "parent_id", "key", "name", "short_name", "type", "index", "visible", "filterable", "sortable", "judge_contest_id", "judge_problem_id", "community_attribute_key", "community_attribute_type")
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -124,7 +124,7 @@ class Scoreboard(_message.Message):
         judge_problem_id: str
         community_attribute_key: str
         community_attribute_type: str
-        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: bool = ..., filterable: bool = ..., sortable: bool = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., short_name: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., index: _Optional[int] = ..., visible: _Optional[bool] = ..., filterable: _Optional[bool] = ..., sortable: _Optional[bool] = ..., judge_contest_id: _Optional[str] = ..., judge_problem_id: _Optional[str] = ..., community_attribute_key: _Optional[str] = ..., community_attribute_type: _Optional[str] = ...) -> None: ...
     class Action(_message.Message):
         __slots__ = ("id", "execute_at", "type")
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -179,4 +179,4 @@ class Scoreboard(_message.Message):
     default_sort_order: _direction_pb2.Direction
     format: _format_pb2.Format
     contests: _containers.RepeatedCompositeFieldContainer[Scoreboard.Contest]
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., historical: bool = ..., frozen: bool = ..., freeze_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., unfreeze_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., default_sort_column: _Optional[str] = ..., default_sort_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., historical: _Optional[bool] = ..., frozen: _Optional[bool] = ..., freeze_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., unfreeze_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., default_sort_column: _Optional[str] = ..., default_sort_order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., format: _Optional[_Union[_format_pb2.Format, str]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ...) -> None: ...

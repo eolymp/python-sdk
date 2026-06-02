@@ -33,7 +33,7 @@ class ListStatementsInput(_message.Message):
     render: bool
     version: int
     extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., render: _Optional[bool] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
 
 class ListStatementsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -53,7 +53,7 @@ class TranslateStatementsInput(_message.Message):
     target: _containers.RepeatedScalarFieldContainer[str]
     target_automatic: bool
     override_manual: bool
-    def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
+    def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: _Optional[bool] = ..., override_manual: _Optional[bool] = ...) -> None: ...
 
 class TranslateStatementsOutput(_message.Message):
     __slots__ = ("job_id",)
@@ -71,7 +71,7 @@ class DescribeStatementInput(_message.Message):
     render: bool
     version: int
     extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra.Field]
-    def __init__(self, statement_id: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, statement_id: _Optional[str] = ..., render: _Optional[bool] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeStatementOutput(_message.Message):
     __slots__ = ("statement",)
@@ -89,7 +89,7 @@ class LookupStatementInput(_message.Message):
     render: bool
     version: int
     extra: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Extra.Field]
-    def __init__(self, locale: _Optional[str] = ..., render: bool = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ..., render: _Optional[bool] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_statement_pb2.Statement.Extra.Field, str]]] = ...) -> None: ...
 
 class LookupStatementOutput(_message.Message):
     __slots__ = ("statement",)

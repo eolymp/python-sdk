@@ -130,7 +130,7 @@ class UpdateVisibilityInput(_message.Message):
     VISIBLE_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     visible: bool
-    def __init__(self, problem_id: _Optional[str] = ..., visible: bool = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., visible: _Optional[bool] = ...) -> None: ...
 
 class UpdateVisibilityOutput(_message.Message):
     __slots__ = ()
@@ -142,7 +142,7 @@ class UpdatePrivacyInput(_message.Message):
     PRIVATE_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     private: bool
-    def __init__(self, problem_id: _Optional[str] = ..., private: bool = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., private: _Optional[bool] = ...) -> None: ...
 
 class UpdatePrivacyOutput(_message.Message):
     __slots__ = ()

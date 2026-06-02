@@ -66,7 +66,7 @@ class AssignParticipantInput(_message.Message):
     unofficial: bool
     inactive: bool
     role: _participant_pb2.Participant.Role
-    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., ghost: _Optional[_Union[AssignParticipantInput.Ghost, _Mapping]] = ..., unofficial: bool = ..., inactive: bool = ..., role: _Optional[_Union[_participant_pb2.Participant.Role, str]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., group_id: _Optional[str] = ..., ghost: _Optional[_Union[AssignParticipantInput.Ghost, _Mapping]] = ..., unofficial: _Optional[bool] = ..., inactive: _Optional[bool] = ..., role: _Optional[_Union[_participant_pb2.Participant.Role, str]] = ...) -> None: ...
 
 class AssignParticipantOutput(_message.Message):
     __slots__ = ("participant_id",)
@@ -124,7 +124,7 @@ class DisqualifyParticipantInput(_message.Message):
     participant_id: str
     disqualify: bool
     reason: _content_pb2.Content
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., disqualify: bool = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., disqualify: _Optional[bool] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class DisqualifyParticipantOutput(_message.Message):
     __slots__ = ()

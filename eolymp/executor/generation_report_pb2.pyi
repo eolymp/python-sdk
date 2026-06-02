@@ -38,7 +38,7 @@ class GenerationReport(_message.Message):
         input_generator_stats: _stats_pb2.Stats
         answer_generator_stats: _stats_pb2.Stats
         error_message: str
-        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[GenerationReport.Run.Status, str]] = ..., valid: bool = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., input_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., answer_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., error_message: _Optional[str] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[GenerationReport.Run.Status, str]] = ..., valid: _Optional[bool] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., input_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., answer_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., error_message: _Optional[str] = ...) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]

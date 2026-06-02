@@ -115,7 +115,7 @@ class ExpressionBool(_message.Message):
     IS_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     value: bool
-    def __init__(self, value: bool = ..., **kwargs) -> None: ...
+    def __init__(self, value: _Optional[bool] = ..., **kwargs) -> None: ...
 
 class ExpressionTimestamp(_message.Message):
     __slots__ = ("value",)

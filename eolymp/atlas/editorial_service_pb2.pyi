@@ -121,7 +121,7 @@ class TranslateEditorialsInput(_message.Message):
     target: _containers.RepeatedScalarFieldContainer[str]
     target_automatic: bool
     override_manual: bool
-    def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: bool = ..., override_manual: bool = ...) -> None: ...
+    def __init__(self, source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: _Optional[bool] = ..., override_manual: _Optional[bool] = ...) -> None: ...
 
 class TranslateEditorialsOutput(_message.Message):
     __slots__ = ("job_id",)

@@ -22,7 +22,7 @@ class CreateScoreboardInput(_message.Message):
     scoreboard: _scoreboard_pb2.Scoreboard
     add_default_columns: bool
     duplicate_scoreboard_id: str
-    def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ..., add_default_columns: bool = ..., duplicate_scoreboard_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ..., add_default_columns: _Optional[bool] = ..., duplicate_scoreboard_id: _Optional[str] = ...) -> None: ...
 
 class CreateScoreboardOutput(_message.Message):
     __slots__ = ("scoreboard_id",)
@@ -151,7 +151,7 @@ class DescribeScoreboardRowOutput(_message.Message):
     FROZEN_FIELD_NUMBER: _ClassVar[int]
     row: _scoreboard_pb2.Scoreboard.Row
     frozen: bool
-    def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ..., frozen: bool = ...) -> None: ...
+    def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ..., frozen: _Optional[bool] = ...) -> None: ...
 
 class ListScoreboardRowsInput(_message.Message):
     __slots__ = ("scoreboard_id", "mode", "punctual_time", "offset", "size", "filters", "sort", "order")
@@ -199,7 +199,7 @@ class ListScoreboardRowsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Row]
     frozen: bool
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ..., frozen: bool = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ..., frozen: _Optional[bool] = ...) -> None: ...
 
 class AddScoreboardColumnInput(_message.Message):
     __slots__ = ("scoreboard_id", "column")

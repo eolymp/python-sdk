@@ -21,7 +21,7 @@ class RequestAdmissionOutput(_message.Message):
     CODE_FIELD_NUMBER: _ClassVar[int]
     required: bool
     code: str
-    def __init__(self, required: bool = ..., code: _Optional[str] = ...) -> None: ...
+    def __init__(self, required: _Optional[bool] = ..., code: _Optional[str] = ...) -> None: ...
 
 class AcceptAdmissionInput(_message.Message):
     __slots__ = ("code",)

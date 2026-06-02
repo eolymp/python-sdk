@@ -81,7 +81,7 @@ class DescribeAnnouncementStatusOutput(_message.Message):
     __slots__ = ("is_read",)
     IS_READ_FIELD_NUMBER: _ClassVar[int]
     is_read: bool
-    def __init__(self, is_read: bool = ...) -> None: ...
+    def __init__(self, is_read: _Optional[bool] = ...) -> None: ...
 
 class ListAnnouncementsInput(_message.Message):
     __slots__ = ("offset", "size", "filters", "extra")

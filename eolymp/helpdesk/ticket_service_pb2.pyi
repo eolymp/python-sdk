@@ -54,7 +54,7 @@ class DescribeTicketInput(_message.Message):
     RENDER_FIELD_NUMBER: _ClassVar[int]
     ticket_id: str
     render: bool
-    def __init__(self, ticket_id: _Optional[str] = ..., render: bool = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., render: _Optional[bool] = ...) -> None: ...
 
 class DescribeTicketOutput(_message.Message):
     __slots__ = ("ticket",)
@@ -93,7 +93,7 @@ class ListTicketsInput(_message.Message):
     offset: int
     size: int
     filters: ListTicketsInput.Filter
-    def __init__(self, render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTicketsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, render: _Optional[bool] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTicketsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListTicketsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -189,7 +189,7 @@ class ListCommentsInput(_message.Message):
     render: bool
     offset: int
     size: int
-    def __init__(self, ticket_id: _Optional[str] = ..., render: bool = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., render: _Optional[bool] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class ListCommentsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -207,7 +207,7 @@ class DescribeCommentInput(_message.Message):
     ticket_id: str
     comment_id: str
     render: bool
-    def __init__(self, ticket_id: _Optional[str] = ..., comment_id: _Optional[str] = ..., render: bool = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., comment_id: _Optional[str] = ..., render: _Optional[bool] = ...) -> None: ...
 
 class DescribeCommentOutput(_message.Message):
     __slots__ = ("comment",)

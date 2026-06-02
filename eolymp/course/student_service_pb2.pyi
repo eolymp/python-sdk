@@ -198,7 +198,7 @@ class UpdateStudentAssignmentInput(_message.Message):
     complete_before: _timestamp_pb2.Timestamp
     duration: int
     upsolve: bool
-    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: bool = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: _Optional[bool] = ...) -> None: ...
 
 class UpdateStudentAssignmentOutput(_message.Message):
     __slots__ = ()

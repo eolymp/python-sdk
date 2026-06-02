@@ -65,7 +65,7 @@ class Scoreboard(_message.Message):
         choices: _containers.RepeatedScalarFieldContainer[str]
         sortable: bool
         filterable: bool
-        def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., title: _Optional[str] = ..., choices: _Optional[_Iterable[str]] = ..., sortable: bool = ..., filterable: bool = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., title: _Optional[str] = ..., choices: _Optional[_Iterable[str]] = ..., sortable: _Optional[bool] = ..., filterable: _Optional[bool] = ...) -> None: ...
     class Row(_message.Message):
         __slots__ = ("id", "member_id", "index", "rank", "rank_length", "score", "penalty", "tie_breaker", "unofficial", "disqualified", "medal", "values")
         class Value(_message.Message):
@@ -95,7 +95,7 @@ class Scoreboard(_message.Message):
             unofficial: bool
             disqualified: bool
             medal: _medal_pb2.Medal
-            def __init__(self, score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: bool = ..., disqualified: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ...) -> None: ...
+            def __init__(self, score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ...) -> None: ...
         class ProblemScore(_message.Message):
             __slots__ = ("score", "penalty", "attempts", "percentage", "time")
             SCORE_FIELD_NUMBER: _ClassVar[int]
@@ -133,7 +133,7 @@ class Scoreboard(_message.Message):
         disqualified: bool
         medal: _medal_pb2.Medal
         values: _containers.RepeatedCompositeFieldContainer[Scoreboard.Row.Value]
-        def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., index: _Optional[int] = ..., rank: _Optional[int] = ..., rank_length: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: bool = ..., disqualified: bool = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., index: _Optional[int] = ..., rank: _Optional[int] = ..., rank_length: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
     MODES_FIELD_NUMBER: _ClassVar[int]
     ROUNDS_FIELD_NUMBER: _ClassVar[int]
     COLUMNS_FIELD_NUMBER: _ClassVar[int]

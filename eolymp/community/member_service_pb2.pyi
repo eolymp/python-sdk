@@ -85,7 +85,7 @@ class DeleteMemberInput(_message.Message):
     FORCE_DELETE_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     force_delete: bool
-    def __init__(self, member_id: _Optional[str] = ..., force_delete: bool = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., force_delete: _Optional[bool] = ...) -> None: ...
 
 class DeleteMemberOutput(_message.Message):
     __slots__ = ()

@@ -45,7 +45,7 @@ class SendEmailInput(_message.Message):
     locale: str
     message: SendEmailInput.Message
     template: SendEmailInput.Template
-    def __init__(self, member_id: _Optional[str] = ..., email_ref: _Optional[str] = ..., dry_run: bool = ..., bcc_me: bool = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[SendEmailInput.Message, _Mapping]] = ..., template: _Optional[_Union[SendEmailInput.Template, _Mapping]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., email_ref: _Optional[str] = ..., dry_run: _Optional[bool] = ..., bcc_me: _Optional[bool] = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[SendEmailInput.Message, _Mapping]] = ..., template: _Optional[_Union[SendEmailInput.Template, _Mapping]] = ...) -> None: ...
 
 class SendEmailOutput(_message.Message):
     __slots__ = ("message_id",)

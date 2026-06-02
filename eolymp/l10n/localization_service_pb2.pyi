@@ -188,7 +188,7 @@ class ListLocalesOutput(_message.Message):
         translated_terms: int
         missing_terms: int
         total_terms: int
-        def __init__(self, code: _Optional[str] = ..., ready: bool = ..., translated_terms: _Optional[int] = ..., missing_terms: _Optional[int] = ..., total_terms: _Optional[int] = ...) -> None: ...
+        def __init__(self, code: _Optional[str] = ..., ready: _Optional[bool] = ..., translated_terms: _Optional[int] = ..., missing_terms: _Optional[int] = ..., total_terms: _Optional[int] = ...) -> None: ...
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     total: int
@@ -397,4 +397,4 @@ class ListTranslationPairsOutput(_message.Message):
     total: int
     has_more: bool
     items: _containers.RepeatedCompositeFieldContainer[_translation_pair_pb2.TranslationPair]
-    def __init__(self, total: _Optional[int] = ..., has_more: bool = ..., items: _Optional[_Iterable[_Union[_translation_pair_pb2.TranslationPair, _Mapping]]] = ...) -> None: ...
+    def __init__(self, total: _Optional[int] = ..., has_more: _Optional[bool] = ..., items: _Optional[_Iterable[_Union[_translation_pair_pb2.TranslationPair, _Mapping]]] = ...) -> None: ...
