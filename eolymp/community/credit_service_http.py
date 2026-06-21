@@ -73,7 +73,7 @@ class CreditServiceClient:
         )
 
     def ListCreditTransactions(self, request, **kwargs):
-        path = "/credit/grants"
+        path = "/credit/transactions"
 
         return self.transport.request(
             method="GET",
