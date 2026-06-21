@@ -22,6 +22,7 @@ class Order(_message.Message):
         CANCELED: _ClassVar[Order.Status]
         SHIPPED: _ClassVar[Order.Status]
         COMPLETE: _ClassVar[Order.Status]
+        RETURNED: _ClassVar[Order.Status]
     UNSPECIFIED: Order.Status
     CREATED: Order.Status
     PENDING: Order.Status
@@ -29,6 +30,7 @@ class Order(_message.Message):
     CANCELED: Order.Status
     SHIPPED: Order.Status
     COMPLETE: Order.Status
+    RETURNED: Order.Status
     class Item(_message.Message):
         __slots__ = ("id", "name", "image_url", "product_id", "variant_id", "quantity_ordered", "quantity_cancelled", "quantity_shipped", "quantity_returned", "quantity_allocated", "unit_amount", "total_amount", "discount_amount")
         ID_FIELD_NUMBER: _ClassVar[int]
