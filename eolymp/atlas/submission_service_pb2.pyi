@@ -9,6 +9,7 @@ from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -168,3 +169,61 @@ class ListProblemTopOutput(_message.Message):
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[_submission_pb2.Submission]
     def __init__(self, items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ...) -> None: ...
+
+class AggregateSubmissionsInput(_message.Message):
+    __slots__ = ("metric", "filters", "group_by")
+    class Metric(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_METRIC: _ClassVar[AggregateSubmissionsInput.Metric]
+        COUNT: _ClassVar[AggregateSubmissionsInput.Metric]
+    UNKNOWN_METRIC: AggregateSubmissionsInput.Metric
+    COUNT: AggregateSubmissionsInput.Metric
+    class Dimension(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_DIMENSION: _ClassVar[AggregateSubmissionsInput.Dimension]
+        SUBMITTED_AT: _ClassVar[AggregateSubmissionsInput.Dimension]
+        VERDICT: _ClassVar[AggregateSubmissionsInput.Dimension]
+    UNKNOWN_DIMENSION: AggregateSubmissionsInput.Dimension
+    SUBMITTED_AT: AggregateSubmissionsInput.Dimension
+    VERDICT: AggregateSubmissionsInput.Dimension
+    class Filter(_message.Message):
+        __slots__ = ("problem_id", "member_id", "user_id", "submitted_at", "verdict", "runtime", "status", "score", "percentage")
+        PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+        MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+        USER_ID_FIELD_NUMBER: _ClassVar[int]
+        SUBMITTED_AT_FIELD_NUMBER: _ClassVar[int]
+        VERDICT_FIELD_NUMBER: _ClassVar[int]
+        RUNTIME_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        SCORE_FIELD_NUMBER: _ClassVar[int]
+        PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
+        problem_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        submitted_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        verdict: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
+        percentage: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
+        def __init__(self, problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., submitted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., verdict: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ...) -> None: ...
+    METRIC_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    GROUP_BY_FIELD_NUMBER: _ClassVar[int]
+    metric: AggregateSubmissionsInput.Metric
+    filters: AggregateSubmissionsInput.Filter
+    group_by: AggregateSubmissionsInput.Dimension
+    def __init__(self, metric: _Optional[_Union[AggregateSubmissionsInput.Metric, str]] = ..., filters: _Optional[_Union[AggregateSubmissionsInput.Filter, _Mapping]] = ..., group_by: _Optional[_Union[AggregateSubmissionsInput.Dimension, str]] = ...) -> None: ...
+
+class AggregateSubmissionsOutput(_message.Message):
+    __slots__ = ("buckets",)
+    class Bucket(_message.Message):
+        __slots__ = ("name", "count")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        COUNT_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        count: int
+        def __init__(self, name: _Optional[str] = ..., count: _Optional[int] = ...) -> None: ...
+    BUCKETS_FIELD_NUMBER: _ClassVar[int]
+    buckets: _containers.RepeatedCompositeFieldContainer[AggregateSubmissionsOutput.Bucket]
+    def __init__(self, buckets: _Optional[_Iterable[_Union[AggregateSubmissionsOutput.Bucket, _Mapping]]] = ...) -> None: ...
