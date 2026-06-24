@@ -88,3 +88,13 @@ class LookupCodeTemplateOutput(_message.Message):
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     template: _code_template_pb2.Template
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
+
+class GenerateCodeTemplatesInput(_message.Message):
+    __slots__ = ("language",)
+    LANGUAGE_FIELD_NUMBER: _ClassVar[int]
+    language: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, language: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class GenerateCodeTemplatesOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

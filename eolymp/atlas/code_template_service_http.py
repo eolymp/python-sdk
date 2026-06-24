@@ -89,3 +89,14 @@ class CodeTemplateServiceClient:
             **kwargs,
         )
 
+    def GenerateCodeTemplates(self, request, **kwargs):
+        path = "/templates:generate"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.GenerateCodeTemplatesOutput"),
+            **kwargs,
+        )
+
