@@ -41,6 +41,7 @@ class Space(_message.Message):
         MERCHANDISE_STORE: _ClassVar[Space.Feature]
         RATING: _ClassVar[Space.Feature]
         TEMPLATE_GENERATOR: _ClassVar[Space.Feature]
+        ACHIEVEMENTS: _ClassVar[Space.Feature]
     UNKNOWN_FEATURE: Space.Feature
     PRINTERS: Space.Feature
     NEWSLETTERS: Space.Feature
@@ -48,6 +49,7 @@ class Space(_message.Message):
     MERCHANDISE_STORE: Space.Feature
     RATING: Space.Feature
     TEMPLATE_GENERATOR: Space.Feature
+    ACHIEVEMENTS: Space.Feature
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
