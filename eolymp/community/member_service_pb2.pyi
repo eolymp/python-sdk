@@ -244,3 +244,55 @@ class DescribeMemberUsageOutput(_message.Message):
     active_members: int
     new_members: int
     def __init__(self, total_members: _Optional[int] = ..., active_members: _Optional[int] = ..., new_members: _Optional[int] = ...) -> None: ...
+
+class StreamMemberReferencesInput(_message.Message):
+    __slots__ = ("filters",)
+    class Filter(_message.Message):
+        __slots__ = ("id", "external_ref", "type", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "birthday", "country", "score", "created_at", "attribute")
+        class ExpressionAttribute(_message.Message):
+            __slots__ = ("attribute_key", "number", "string")
+            ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+            NUMBER_FIELD_NUMBER: _ClassVar[int]
+            STRING_FIELD_NUMBER: _ClassVar[int]
+            attribute_key: str
+            number: _expression_pb2.ExpressionInt
+            string: _expression_pb2.ExpressionString
+            def __init__(self, attribute_key: _Optional[str] = ..., number: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ..., string: _Optional[_Union[_expression_pb2.ExpressionString, _Mapping]] = ...) -> None: ...
+        ID_FIELD_NUMBER: _ClassVar[int]
+        EXTERNAL_REF_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        INACTIVE_FIELD_NUMBER: _ClassVar[int]
+        INCOMPLETE_FIELD_NUMBER: _ClassVar[int]
+        UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
+        SEATED_FIELD_NUMBER: _ClassVar[int]
+        TEAM_ID_FIELD_NUMBER: _ClassVar[int]
+        GROUP_ID_FIELD_NUMBER: _ClassVar[int]
+        BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
+        COUNTRY_FIELD_NUMBER: _ClassVar[int]
+        SCORE_FIELD_NUMBER: _ClassVar[int]
+        CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+        ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        external_ref: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        inactive: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        incomplete: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        unofficial: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        seated: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        team_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        group_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        birthday: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        created_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        attribute: _containers.RepeatedCompositeFieldContainer[StreamMemberReferencesInput.Filter.ExpressionAttribute]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[StreamMemberReferencesInput.Filter.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    filters: StreamMemberReferencesInput.Filter
+    def __init__(self, filters: _Optional[_Union[StreamMemberReferencesInput.Filter, _Mapping]] = ...) -> None: ...
+
+class StreamMemberReferencesOutput(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_member_pb2.Member.Reference]
+    def __init__(self, items: _Optional[_Iterable[_Union[_member_pb2.Member.Reference, _Mapping]]] = ...) -> None: ...

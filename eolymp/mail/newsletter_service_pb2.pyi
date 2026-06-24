@@ -272,7 +272,7 @@ class CreateRecipientOutput(_message.Message):
     def __init__(self, recipient_id: _Optional[str] = ...) -> None: ...
 
 class ImportRecipientInput(_message.Message):
-    __slots__ = ("newsletter_id", "all_members", "group_id", "contest_id", "parameters")
+    __slots__ = ("newsletter_id", "filters", "parameters")
     class ParametersEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -280,17 +280,53 @@ class ImportRecipientInput(_message.Message):
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    class Filter(_message.Message):
+        __slots__ = ("id", "external_ref", "type", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "birthday", "country", "score", "created_at", "attribute")
+        class ExpressionAttribute(_message.Message):
+            __slots__ = ("attribute_key", "number", "string")
+            ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+            NUMBER_FIELD_NUMBER: _ClassVar[int]
+            STRING_FIELD_NUMBER: _ClassVar[int]
+            attribute_key: str
+            number: _expression_pb2.ExpressionInt
+            string: _expression_pb2.ExpressionString
+            def __init__(self, attribute_key: _Optional[str] = ..., number: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ..., string: _Optional[_Union[_expression_pb2.ExpressionString, _Mapping]] = ...) -> None: ...
+        ID_FIELD_NUMBER: _ClassVar[int]
+        EXTERNAL_REF_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        INACTIVE_FIELD_NUMBER: _ClassVar[int]
+        INCOMPLETE_FIELD_NUMBER: _ClassVar[int]
+        UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
+        SEATED_FIELD_NUMBER: _ClassVar[int]
+        TEAM_ID_FIELD_NUMBER: _ClassVar[int]
+        GROUP_ID_FIELD_NUMBER: _ClassVar[int]
+        BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
+        COUNTRY_FIELD_NUMBER: _ClassVar[int]
+        SCORE_FIELD_NUMBER: _ClassVar[int]
+        CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+        ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        external_ref: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        inactive: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        incomplete: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        unofficial: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        seated: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        team_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        group_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        birthday: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        created_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        attribute: _containers.RepeatedCompositeFieldContainer[ImportRecipientInput.Filter.ExpressionAttribute]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[ImportRecipientInput.Filter.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
     NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
-    ALL_MEMBERS_FIELD_NUMBER: _ClassVar[int]
-    GROUP_ID_FIELD_NUMBER: _ClassVar[int]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
     PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     newsletter_id: str
-    all_members: bool
-    group_id: str
-    contest_id: str
+    filters: ImportRecipientInput.Filter
     parameters: _containers.ScalarMap[str, str]
-    def __init__(self, newsletter_id: _Optional[str] = ..., all_members: _Optional[bool] = ..., group_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, newsletter_id: _Optional[str] = ..., filters: _Optional[_Union[ImportRecipientInput.Filter, _Mapping]] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ImportRecipientOutput(_message.Message):
     __slots__ = ()

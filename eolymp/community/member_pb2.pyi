@@ -17,6 +17,15 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
     __slots__ = ("id", "url", "external_ref", "display_name", "rank", "rank_lower", "rating", "level", "inactive", "incomplete", "unofficial", "secret", "active_period_start", "active_period_end", "created_at", "seated_at", "active_at", "user", "team", "ghost", "restrictions", "stats", "groups", "attributes", "metadata")
+    class Reference(_message.Message):
+        __slots__ = ("id", "display_name", "email")
+        ID_FIELD_NUMBER: _ClassVar[int]
+        DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+        EMAIL_FIELD_NUMBER: _ClassVar[int]
+        id: str
+        display_name: str
+        email: str
+        def __init__(self, id: _Optional[str] = ..., display_name: _Optional[str] = ..., email: _Optional[str] = ...) -> None: ...
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
