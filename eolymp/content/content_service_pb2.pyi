@@ -35,12 +35,14 @@ class FragmentTranslationChangedEvent(_message.Message):
     def __init__(self, fragment_id: _Optional[str] = ..., before: _Optional[_Union[_content_fragment_pb2.Fragment.Translation, _Mapping]] = ..., after: _Optional[_Union[_content_fragment_pb2.Fragment.Translation, _Mapping]] = ...) -> None: ...
 
 class DescribeFragmentInput(_message.Message):
-    __slots__ = ("fragment_id", "extra")
+    __slots__ = ("locale", "fragment_id", "extra")
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    locale: str
     fragment_id: str
     extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra.Field]
-    def __init__(self, fragment_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, locale: _Optional[str] = ..., fragment_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeFragmentOutput(_message.Message):
     __slots__ = ("fragment",)
@@ -108,24 +110,30 @@ class CreateFragmentOutput(_message.Message):
     def __init__(self, fragment_id: _Optional[str] = ...) -> None: ...
 
 class UpdateFragmentInput(_message.Message):
-    __slots__ = ("patch", "fragment_id", "fragment")
+    __slots__ = ("patch", "fragment", "locale", "fragment_id", "fragment_patch")
     PATCH_FIELD_NUMBER: _ClassVar[int]
-    FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    FRAGMENT_PATCH_FIELD_NUMBER: _ClassVar[int]
     patch: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Patch.Field]
-    fragment_id: str
     fragment: _content_fragment_pb2.Fragment
-    def __init__(self, patch: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Patch.Field, str]]] = ..., fragment_id: _Optional[str] = ..., fragment: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
+    locale: str
+    fragment_id: str
+    fragment_patch: _content_fragment_pb2.Fragment.Patch
+    def __init__(self, patch: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Patch.Field, str]]] = ..., fragment: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ..., locale: _Optional[str] = ..., fragment_id: _Optional[str] = ..., fragment_patch: _Optional[_Union[_content_fragment_pb2.Fragment.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateFragmentOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteFragmentInput(_message.Message):
-    __slots__ = ("fragment_id",)
+    __slots__ = ("fragment_id", "locale")
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     fragment_id: str
-    def __init__(self, fragment_id: _Optional[str] = ...) -> None: ...
+    locale: str
+    def __init__(self, fragment_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class DeleteFragmentOutput(_message.Message):
     __slots__ = ()
