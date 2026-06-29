@@ -79,6 +79,30 @@ class WatchSubmissionOutput(_message.Message):
     submission: _submission_pb2.Submission
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
+class WatchSubmissionListInput(_message.Message):
+    __slots__ = ("extra",)
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra.Field]
+    def __init__(self, extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra.Field, str]]] = ...) -> None: ...
+
+class WatchSubmissionListOutput(_message.Message):
+    __slots__ = ("event", "submission")
+    class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_EVENT: _ClassVar[WatchSubmissionListOutput.Event]
+        CREATED: _ClassVar[WatchSubmissionListOutput.Event]
+        UPDATED: _ClassVar[WatchSubmissionListOutput.Event]
+        DELETED: _ClassVar[WatchSubmissionListOutput.Event]
+    UNKNOWN_EVENT: WatchSubmissionListOutput.Event
+    CREATED: WatchSubmissionListOutput.Event
+    UPDATED: WatchSubmissionListOutput.Event
+    DELETED: WatchSubmissionListOutput.Event
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+    event: WatchSubmissionListOutput.Event
+    submission: _submission_pb2.Submission
+    def __init__(self, event: _Optional[_Union[WatchSubmissionListOutput.Event, str]] = ..., submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+
 class RetestSubmissionInput(_message.Message):
     __slots__ = ("submission_id", "debug")
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
