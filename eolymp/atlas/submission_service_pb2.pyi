@@ -195,7 +195,7 @@ class ListProblemTopOutput(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ...) -> None: ...
 
 class AggregateSubmissionsInput(_message.Message):
-    __slots__ = ("metric", "filters", "group_by")
+    __slots__ = ("metric", "group_by", "range_start", "range_end", "filters")
     class Metric(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_METRIC: _ClassVar[AggregateSubmissionsInput.Metric]
@@ -207,15 +207,16 @@ class AggregateSubmissionsInput(_message.Message):
         UNKNOWN_DIMENSION: _ClassVar[AggregateSubmissionsInput.Dimension]
         SUBMITTED_AT: _ClassVar[AggregateSubmissionsInput.Dimension]
         VERDICT: _ClassVar[AggregateSubmissionsInput.Dimension]
+        STATUS: _ClassVar[AggregateSubmissionsInput.Dimension]
     UNKNOWN_DIMENSION: AggregateSubmissionsInput.Dimension
     SUBMITTED_AT: AggregateSubmissionsInput.Dimension
     VERDICT: AggregateSubmissionsInput.Dimension
+    STATUS: AggregateSubmissionsInput.Dimension
     class Filter(_message.Message):
-        __slots__ = ("problem_id", "member_id", "user_id", "submitted_at", "verdict", "runtime", "status", "score", "percentage")
+        __slots__ = ("problem_id", "member_id", "user_id", "verdict", "runtime", "status", "score", "percentage")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         USER_ID_FIELD_NUMBER: _ClassVar[int]
-        SUBMITTED_AT_FIELD_NUMBER: _ClassVar[int]
         VERDICT_FIELD_NUMBER: _ClassVar[int]
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -224,30 +225,33 @@ class AggregateSubmissionsInput(_message.Message):
         problem_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        submitted_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         verdict: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
         percentage: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
-        def __init__(self, problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., submitted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., verdict: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ...) -> None: ...
+        def __init__(self, problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., verdict: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ...) -> None: ...
     METRIC_FIELD_NUMBER: _ClassVar[int]
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
     GROUP_BY_FIELD_NUMBER: _ClassVar[int]
+    RANGE_START_FIELD_NUMBER: _ClassVar[int]
+    RANGE_END_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
     metric: AggregateSubmissionsInput.Metric
+    group_by: _containers.RepeatedScalarFieldContainer[AggregateSubmissionsInput.Dimension]
+    range_start: _timestamp_pb2.Timestamp
+    range_end: _timestamp_pb2.Timestamp
     filters: AggregateSubmissionsInput.Filter
-    group_by: AggregateSubmissionsInput.Dimension
-    def __init__(self, metric: _Optional[_Union[AggregateSubmissionsInput.Metric, str]] = ..., filters: _Optional[_Union[AggregateSubmissionsInput.Filter, _Mapping]] = ..., group_by: _Optional[_Union[AggregateSubmissionsInput.Dimension, str]] = ...) -> None: ...
+    def __init__(self, metric: _Optional[_Union[AggregateSubmissionsInput.Metric, str]] = ..., group_by: _Optional[_Iterable[_Union[AggregateSubmissionsInput.Dimension, str]]] = ..., range_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., range_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., filters: _Optional[_Union[AggregateSubmissionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class AggregateSubmissionsOutput(_message.Message):
     __slots__ = ("buckets",)
     class Bucket(_message.Message):
-        __slots__ = ("name", "count")
-        NAME_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ("dimensions", "count")
+        DIMENSIONS_FIELD_NUMBER: _ClassVar[int]
         COUNT_FIELD_NUMBER: _ClassVar[int]
-        name: str
+        dimensions: _containers.RepeatedScalarFieldContainer[str]
         count: int
-        def __init__(self, name: _Optional[str] = ..., count: _Optional[int] = ...) -> None: ...
+        def __init__(self, dimensions: _Optional[_Iterable[str]] = ..., count: _Optional[int] = ...) -> None: ...
     BUCKETS_FIELD_NUMBER: _ClassVar[int]
     buckets: _containers.RepeatedCompositeFieldContainer[AggregateSubmissionsOutput.Bucket]
     def __init__(self, buckets: _Optional[_Iterable[_Union[AggregateSubmissionsOutput.Bucket, _Mapping]]] = ...) -> None: ...
