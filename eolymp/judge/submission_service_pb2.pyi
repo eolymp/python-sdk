@@ -7,6 +7,7 @@ from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.judge import submission_pb2 as _submission_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -37,26 +38,28 @@ class CreateSubmissionOutput(_message.Message):
 class ListSubmissionsInput(_message.Message):
     __slots__ = ("contest_id", "after", "offset", "size", "filters", "extra")
     class Filter(_message.Message):
-        __slots__ = ("id", "participant_id", "problem_id", "status", "lang", "score", "percentage", "submitted_at", "signature")
+        __slots__ = ("id", "participant_id", "problem_id", "status", "runtime", "score", "percentage", "submitted_at", "signature", "verdict")
         ID_FIELD_NUMBER: _ClassVar[int]
         PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
-        LANG_FIELD_NUMBER: _ClassVar[int]
+        RUNTIME_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
         SUBMITTED_AT_FIELD_NUMBER: _ClassVar[int]
         SIGNATURE_FIELD_NUMBER: _ClassVar[int]
+        VERDICT_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         participant_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         problem_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        lang: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
         percentage: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
         submitted_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         signature: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., lang: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., submitted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., signature: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        verdict: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., submitted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., signature: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., verdict: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
@@ -124,6 +127,32 @@ class WatchSubmissionOutput(_message.Message):
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+
+class WatchSubmissionListInput(_message.Message):
+    __slots__ = ("contest_id", "extra")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra]
+    def __init__(self, contest_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra, str]]] = ...) -> None: ...
+
+class WatchSubmissionListOutput(_message.Message):
+    __slots__ = ("event", "submission")
+    class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_EVENT: _ClassVar[WatchSubmissionListOutput.Event]
+        CREATED: _ClassVar[WatchSubmissionListOutput.Event]
+        UPDATED: _ClassVar[WatchSubmissionListOutput.Event]
+        DELETED: _ClassVar[WatchSubmissionListOutput.Event]
+    UNKNOWN_EVENT: WatchSubmissionListOutput.Event
+    CREATED: WatchSubmissionListOutput.Event
+    UPDATED: WatchSubmissionListOutput.Event
+    DELETED: WatchSubmissionListOutput.Event
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+    event: WatchSubmissionListOutput.Event
+    submission: _submission_pb2.Submission
+    def __init__(self, event: _Optional[_Union[WatchSubmissionListOutput.Event, str]] = ..., submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class RetestSubmissionInput(_message.Message):
     __slots__ = ("contest_id", "submission_id")

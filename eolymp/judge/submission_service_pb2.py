@@ -32,7 +32,7 @@ from eolymp.judge import submission_pb2 as eolymp_dot_judge_dot_submission__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/judge/submission_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x17\x65olymp/atlas/form.proto\x1a\x1d\x65olymp/judge/submission.proto\x1a!eolymp/wellknown/expression.proto\"\x87\x01\n\x15\x43reateSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\x0e\n\x06source\x18\x04 \x01(\t\x12(\n\x06values\x18\x05 \x03(\x0b\x32\x18.eolymp.atlas.Form.Value\"/\n\x16\x43reateSubmissionOutput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"\x99\x07\n\x14ListSubmissionsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.judge.ListSubmissionsInput.Filter\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.judge.Submission.Extra\x1a\xd3\x05\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x36\n\x0eparticipant_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\nproblem_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\xf4\x01\n\x06status\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB\xc1\x01\xa2\xf0\xf0\xe4\x01\xba\x01valid values `PENDING`, `PROVISIONING`, `INITIALIZING`, `TESTING`, `COMPLETE` (testing complete), `TIMEOUT` (took too long to test), `ERROR` (compilation error), `FAILURE` (system error)\x12@\n\x04lang\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB\x10\xa2\xf0\xf0\xe4\x01\nruntime id\x12\x30\n\x05score\x18\x06 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\x12\x35\n\npercentage\x18\x07 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\x12;\n\x0csubmitted_at\x18\x08 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12R\n\tsignature\x18\t \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB\x1d\xa2\xf0\xf0\xe4\x01\x17source code fingerprint\"i\n\x15ListSubmissionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.judge.Submission\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\"t\n\x17\x44\x65scribeSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.judge.Submission.Extra\"H\n\x18\x44\x65scribeSubmissionOutput\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"A\n\x14PrintSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\"\x17\n\x15PrintSubmissionOutput\"q\n\x14WatchSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.judge.Submission.Extra\"E\n\x15WatchSubmissionOutput\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"B\n\x15RetestSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\"\x18\n\x16RetestSubmissionOutput\"B\n\x15\x44\x65leteSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteSubmissionOutput\"C\n\x16RestoreSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\"\x19\n\x17RestoreSubmissionOutput\"<\n\x12RetestProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"\x15\n\x13RetestProblemOutput\"/\n\x16\x41nalyzeSubmissionInput\x12\x15\n\rsubmission_id\x18\n \x01(\t\"\x19\n\x17\x41nalyzeSubmissionOutput2\xf4\r\n\x11SubmissionService\x12\xc0\x01\n\x10\x43reateSubmission\x12#.eolymp.judge.CreateSubmissionInput\x1a$.eolymp.judge.CreateSubmissionOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\n\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\x82\xd3\xe4\x93\x02+\"\"/problems/{problem_id}/submissions\x98\xe3\n\x80\x80\xc0\x02\x12\x99\x01\n\x0fListSubmissions\x12\".eolymp.judge.ListSubmissionsInput\x1a#.eolymp.judge.ListSubmissionsOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x0e\x12\x0c/submissions\x12\xb2\x01\n\x12\x44\x65scribeSubmission\x12%.eolymp.judge.DescribeSubmissionInput\x1a&.eolymp.judge.DescribeSubmissionOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/submissions/{submission_id}\x12\xaf\x01\n\x0fPrintSubmission\x12\".eolymp.judge.PrintSubmissionInput\x1a#.eolymp.judge.PrintSubmissionOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x02\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02$\"\"/submissions/{submission_id}/print\x12x\n\x0fWatchSubmission\x12\".eolymp.judge.WatchSubmissionInput\x1a#.eolymp.judge.WatchSubmissionOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\xb4\x01\n\x10RetestSubmission\x12#.eolymp.judge.RetestSubmissionInput\x1a$.eolymp.judge.RetestSubmissionOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02%\"#/submissions/{submission_id}/retest\x12\xad\x01\n\x10\x44\x65leteSubmission\x12#.eolymp.judge.DeleteSubmissionInput\x1a$.eolymp.judge.DeleteSubmissionOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1e*\x1c/submissions/{submission_id}\x12\xb8\x01\n\x11RestoreSubmission\x12$.eolymp.judge.RestoreSubmissionInput\x1a%.eolymp.judge.RestoreSubmissionOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02&\"$/submissions/{submission_id}/restore\x12\xa5\x01\n\rRetestProblem\x12 .eolymp.judge.RetestProblemInput\x1a!.eolymp.judge.RetestProblemOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1f\x12\x1d/problems/{problem_id}/retest\x12\xb8\x01\n\x11\x41nalyzeSubmission\x12$.eolymp.judge.AnalyzeSubmissionInput\x1a%.eolymp.judge.AnalyzeSubmissionOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02&\"$/submissions/{submission_id}/analyze\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/judge/submission_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x17\x65olymp/atlas/form.proto\x1a\x1d\x65olymp/judge/submission.proto\x1a!eolymp/wellknown/expression.proto\"\x87\x01\n\x15\x43reateSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\x0e\n\x06source\x18\x04 \x01(\t\x12(\n\x06values\x18\x05 \x03(\x0b\x32\x18.eolymp.atlas.Form.Value\"/\n\x16\x43reateSubmissionOutput\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\"\xcf\x07\n\x14ListSubmissionsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.judge.ListSubmissionsInput.Filter\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.judge.Submission.Extra\x1a\x89\x06\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x36\n\x0eparticipant_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\nproblem_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\xf4\x01\n\x06status\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB\xc1\x01\xa2\xf0\xf0\xe4\x01\xba\x01valid values `PENDING`, `PROVISIONING`, `INITIALIZING`, `TESTING`, `COMPLETE` (testing complete), `TIMEOUT` (took too long to test), `ERROR` (compilation error), `FAILURE` (system error)\x12\x43\n\x07runtime\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB\x10\xa2\xf0\xf0\xe4\x01\nruntime id\x12\x30\n\x05score\x18\x06 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\x12\x35\n\npercentage\x18\x07 \x03(\x0b\x32!.eolymp.wellknown.ExpressionFloat\x12;\n\x0csubmitted_at\x18\x08 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12R\n\tsignature\x18\t \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB\x1d\xa2\xf0\xf0\xe4\x01\x17source code fingerprint\x12\x31\n\x07verdict\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"i\n\x15ListSubmissionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.judge.Submission\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\"t\n\x17\x44\x65scribeSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.judge.Submission.Extra\"H\n\x18\x44\x65scribeSubmissionOutput\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"A\n\x14PrintSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\"\x17\n\x15PrintSubmissionOutput\"q\n\x14WatchSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.judge.Submission.Extra\"E\n\x15WatchSubmissionOutput\x12,\n\nsubmission\x18\x01 \x01(\x0b\x32\x18.eolymp.judge.Submission\"^\n\x18WatchSubmissionListInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1e.eolymp.judge.Submission.Extra\"\xca\x01\n\x19WatchSubmissionListOutput\x12<\n\x05\x65vent\x18\x01 \x01(\x0e\x32-.eolymp.judge.WatchSubmissionListOutput.Event\x12,\n\nsubmission\x18\x02 \x01(\x0b\x32\x18.eolymp.judge.Submission\"A\n\x05\x45vent\x12\x11\n\rUNKNOWN_EVENT\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07UPDATED\x10\x02\x12\x0b\n\x07\x44\x45LETED\x10\x03\"B\n\x15RetestSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\"\x18\n\x16RetestSubmissionOutput\"B\n\x15\x44\x65leteSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteSubmissionOutput\"C\n\x16RestoreSubmissionInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\rsubmission_id\x18\x02 \x01(\t\"\x19\n\x17RestoreSubmissionOutput\"<\n\x12RetestProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"\x15\n\x13RetestProblemOutput\"/\n\x16\x41nalyzeSubmissionInput\x12\x15\n\rsubmission_id\x18\n \x01(\t\"\x19\n\x17\x41nalyzeSubmissionOutput2\xfb\x0e\n\x11SubmissionService\x12\xc0\x01\n\x10\x43reateSubmission\x12#.eolymp.judge.CreateSubmissionInput\x1a$.eolymp.judge.CreateSubmissionOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\n\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\x82\xd3\xe4\x93\x02+\"\"/problems/{problem_id}/submissions\x98\xe3\n\x80\x80\xc0\x02\x12\x99\x01\n\x0fListSubmissions\x12\".eolymp.judge.ListSubmissionsInput\x1a#.eolymp.judge.ListSubmissionsOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x0e\x12\x0c/submissions\x12\xb2\x01\n\x12\x44\x65scribeSubmission\x12%.eolymp.judge.DescribeSubmissionInput\x1a&.eolymp.judge.DescribeSubmissionOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/submissions/{submission_id}\x12\xaf\x01\n\x0fPrintSubmission\x12\".eolymp.judge.PrintSubmissionInput\x1a#.eolymp.judge.PrintSubmissionOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x02\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02$\"\"/submissions/{submission_id}/print\x12x\n\x0fWatchSubmission\x12\".eolymp.judge.WatchSubmissionInput\x1a#.eolymp.judge.WatchSubmissionOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\x84\x01\n\x13WatchSubmissionList\x12&.eolymp.judge.WatchSubmissionListInput\x1a\'.eolymp.judge.WatchSubmissionListOutput\"\x1a\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read0\x01\x12\xb4\x01\n\x10RetestSubmission\x12#.eolymp.judge.RetestSubmissionInput\x1a$.eolymp.judge.RetestSubmissionOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02%\"#/submissions/{submission_id}/retest\x12\xad\x01\n\x10\x44\x65leteSubmission\x12#.eolymp.judge.DeleteSubmissionInput\x1a$.eolymp.judge.DeleteSubmissionOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1e*\x1c/submissions/{submission_id}\x12\xb8\x01\n\x11RestoreSubmission\x12$.eolymp.judge.RestoreSubmissionInput\x1a%.eolymp.judge.RestoreSubmissionOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02&\"$/submissions/{submission_id}/restore\x12\xa5\x01\n\rRetestProblem\x12 .eolymp.judge.RetestProblemInput\x1a!.eolymp.judge.RetestProblemOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1f\x12\x1d/problems/{problem_id}/retest\x12\xb8\x01\n\x11\x41nalyzeSubmission\x12$.eolymp.judge.AnalyzeSubmissionInput\x1a%.eolymp.judge.AnalyzeSubmissionOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02&\"$/submissions/{submission_id}/analyze\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,8 +42,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
   _globals['_LISTSUBMISSIONSINPUT_FILTER'].fields_by_name['status']._loaded_options = None
   _globals['_LISTSUBMISSIONSINPUT_FILTER'].fields_by_name['status']._serialized_options = b'\242\360\360\344\001\272\001valid values `PENDING`, `PROVISIONING`, `INITIALIZING`, `TESTING`, `COMPLETE` (testing complete), `TIMEOUT` (took too long to test), `ERROR` (compilation error), `FAILURE` (system error)'
-  _globals['_LISTSUBMISSIONSINPUT_FILTER'].fields_by_name['lang']._loaded_options = None
-  _globals['_LISTSUBMISSIONSINPUT_FILTER'].fields_by_name['lang']._serialized_options = b'\242\360\360\344\001\nruntime id'
+  _globals['_LISTSUBMISSIONSINPUT_FILTER'].fields_by_name['runtime']._loaded_options = None
+  _globals['_LISTSUBMISSIONSINPUT_FILTER'].fields_by_name['runtime']._serialized_options = b'\242\360\360\344\001\nruntime id'
   _globals['_LISTSUBMISSIONSINPUT_FILTER'].fields_by_name['signature']._loaded_options = None
   _globals['_LISTSUBMISSIONSINPUT_FILTER'].fields_by_name['signature']._serialized_options = b'\242\360\360\344\001\027source code fingerprint'
   _globals['_SUBMISSIONSERVICE']._loaded_options = None
@@ -58,6 +58,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SUBMISSIONSERVICE'].methods_by_name['PrintSubmission']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\002\202\343\n\026\212\343\n\022judge:contest:read\202\323\344\223\002$\"\"/submissions/{submission_id}/print'
   _globals['_SUBMISSIONSERVICE'].methods_by_name['WatchSubmission']._loaded_options = None
   _globals['_SUBMISSIONSERVICE'].methods_by_name['WatchSubmission']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read'
+  _globals['_SUBMISSIONSERVICE'].methods_by_name['WatchSubmissionList']._loaded_options = None
+  _globals['_SUBMISSIONSERVICE'].methods_by_name['WatchSubmissionList']._serialized_options = b'\202\343\n\026\212\343\n\022judge:contest:read'
   _globals['_SUBMISSIONSERVICE'].methods_by_name['RetestSubmission']._loaded_options = None
   _globals['_SUBMISSIONSERVICE'].methods_by_name['RetestSubmission']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002%\"#/submissions/{submission_id}/retest'
   _globals['_SUBMISSIONSERVICE'].methods_by_name['DeleteSubmission']._loaded_options = None
@@ -73,43 +75,49 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATESUBMISSIONOUTPUT']._serialized_start=449
   _globals['_CREATESUBMISSIONOUTPUT']._serialized_end=496
   _globals['_LISTSUBMISSIONSINPUT']._serialized_start=499
-  _globals['_LISTSUBMISSIONSINPUT']._serialized_end=1420
+  _globals['_LISTSUBMISSIONSINPUT']._serialized_end=1474
   _globals['_LISTSUBMISSIONSINPUT_FILTER']._serialized_start=697
-  _globals['_LISTSUBMISSIONSINPUT_FILTER']._serialized_end=1420
-  _globals['_LISTSUBMISSIONSOUTPUT']._serialized_start=1422
-  _globals['_LISTSUBMISSIONSOUTPUT']._serialized_end=1527
-  _globals['_DESCRIBESUBMISSIONINPUT']._serialized_start=1529
-  _globals['_DESCRIBESUBMISSIONINPUT']._serialized_end=1645
-  _globals['_DESCRIBESUBMISSIONOUTPUT']._serialized_start=1647
-  _globals['_DESCRIBESUBMISSIONOUTPUT']._serialized_end=1719
-  _globals['_PRINTSUBMISSIONINPUT']._serialized_start=1721
-  _globals['_PRINTSUBMISSIONINPUT']._serialized_end=1786
-  _globals['_PRINTSUBMISSIONOUTPUT']._serialized_start=1788
-  _globals['_PRINTSUBMISSIONOUTPUT']._serialized_end=1811
-  _globals['_WATCHSUBMISSIONINPUT']._serialized_start=1813
-  _globals['_WATCHSUBMISSIONINPUT']._serialized_end=1926
-  _globals['_WATCHSUBMISSIONOUTPUT']._serialized_start=1928
-  _globals['_WATCHSUBMISSIONOUTPUT']._serialized_end=1997
-  _globals['_RETESTSUBMISSIONINPUT']._serialized_start=1999
-  _globals['_RETESTSUBMISSIONINPUT']._serialized_end=2065
-  _globals['_RETESTSUBMISSIONOUTPUT']._serialized_start=2067
-  _globals['_RETESTSUBMISSIONOUTPUT']._serialized_end=2091
-  _globals['_DELETESUBMISSIONINPUT']._serialized_start=2093
-  _globals['_DELETESUBMISSIONINPUT']._serialized_end=2159
-  _globals['_DELETESUBMISSIONOUTPUT']._serialized_start=2161
-  _globals['_DELETESUBMISSIONOUTPUT']._serialized_end=2185
-  _globals['_RESTORESUBMISSIONINPUT']._serialized_start=2187
-  _globals['_RESTORESUBMISSIONINPUT']._serialized_end=2254
-  _globals['_RESTORESUBMISSIONOUTPUT']._serialized_start=2256
-  _globals['_RESTORESUBMISSIONOUTPUT']._serialized_end=2281
-  _globals['_RETESTPROBLEMINPUT']._serialized_start=2283
-  _globals['_RETESTPROBLEMINPUT']._serialized_end=2343
-  _globals['_RETESTPROBLEMOUTPUT']._serialized_start=2345
-  _globals['_RETESTPROBLEMOUTPUT']._serialized_end=2366
-  _globals['_ANALYZESUBMISSIONINPUT']._serialized_start=2368
-  _globals['_ANALYZESUBMISSIONINPUT']._serialized_end=2415
-  _globals['_ANALYZESUBMISSIONOUTPUT']._serialized_start=2417
-  _globals['_ANALYZESUBMISSIONOUTPUT']._serialized_end=2442
-  _globals['_SUBMISSIONSERVICE']._serialized_start=2445
-  _globals['_SUBMISSIONSERVICE']._serialized_end=4225
+  _globals['_LISTSUBMISSIONSINPUT_FILTER']._serialized_end=1474
+  _globals['_LISTSUBMISSIONSOUTPUT']._serialized_start=1476
+  _globals['_LISTSUBMISSIONSOUTPUT']._serialized_end=1581
+  _globals['_DESCRIBESUBMISSIONINPUT']._serialized_start=1583
+  _globals['_DESCRIBESUBMISSIONINPUT']._serialized_end=1699
+  _globals['_DESCRIBESUBMISSIONOUTPUT']._serialized_start=1701
+  _globals['_DESCRIBESUBMISSIONOUTPUT']._serialized_end=1773
+  _globals['_PRINTSUBMISSIONINPUT']._serialized_start=1775
+  _globals['_PRINTSUBMISSIONINPUT']._serialized_end=1840
+  _globals['_PRINTSUBMISSIONOUTPUT']._serialized_start=1842
+  _globals['_PRINTSUBMISSIONOUTPUT']._serialized_end=1865
+  _globals['_WATCHSUBMISSIONINPUT']._serialized_start=1867
+  _globals['_WATCHSUBMISSIONINPUT']._serialized_end=1980
+  _globals['_WATCHSUBMISSIONOUTPUT']._serialized_start=1982
+  _globals['_WATCHSUBMISSIONOUTPUT']._serialized_end=2051
+  _globals['_WATCHSUBMISSIONLISTINPUT']._serialized_start=2053
+  _globals['_WATCHSUBMISSIONLISTINPUT']._serialized_end=2147
+  _globals['_WATCHSUBMISSIONLISTOUTPUT']._serialized_start=2150
+  _globals['_WATCHSUBMISSIONLISTOUTPUT']._serialized_end=2352
+  _globals['_WATCHSUBMISSIONLISTOUTPUT_EVENT']._serialized_start=2287
+  _globals['_WATCHSUBMISSIONLISTOUTPUT_EVENT']._serialized_end=2352
+  _globals['_RETESTSUBMISSIONINPUT']._serialized_start=2354
+  _globals['_RETESTSUBMISSIONINPUT']._serialized_end=2420
+  _globals['_RETESTSUBMISSIONOUTPUT']._serialized_start=2422
+  _globals['_RETESTSUBMISSIONOUTPUT']._serialized_end=2446
+  _globals['_DELETESUBMISSIONINPUT']._serialized_start=2448
+  _globals['_DELETESUBMISSIONINPUT']._serialized_end=2514
+  _globals['_DELETESUBMISSIONOUTPUT']._serialized_start=2516
+  _globals['_DELETESUBMISSIONOUTPUT']._serialized_end=2540
+  _globals['_RESTORESUBMISSIONINPUT']._serialized_start=2542
+  _globals['_RESTORESUBMISSIONINPUT']._serialized_end=2609
+  _globals['_RESTORESUBMISSIONOUTPUT']._serialized_start=2611
+  _globals['_RESTORESUBMISSIONOUTPUT']._serialized_end=2636
+  _globals['_RETESTPROBLEMINPUT']._serialized_start=2638
+  _globals['_RETESTPROBLEMINPUT']._serialized_end=2698
+  _globals['_RETESTPROBLEMOUTPUT']._serialized_start=2700
+  _globals['_RETESTPROBLEMOUTPUT']._serialized_end=2721
+  _globals['_ANALYZESUBMISSIONINPUT']._serialized_start=2723
+  _globals['_ANALYZESUBMISSIONINPUT']._serialized_end=2770
+  _globals['_ANALYZESUBMISSIONOUTPUT']._serialized_start=2772
+  _globals['_ANALYZESUBMISSIONOUTPUT']._serialized_end=2797
+  _globals['_SUBMISSIONSERVICE']._serialized_start=2800
+  _globals['_SUBMISSIONSERVICE']._serialized_end=4715
 # @@protoc_insertion_point(module_scope)
