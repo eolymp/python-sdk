@@ -29,7 +29,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.judge import contest_series_pb2 as eolymp_dot_judge_dot_contest__series__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/judge/contest_series_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/judge/contest_series.proto\"r\n\x1a\x44\x65scribeContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.ContestSeries.Extra\"J\n\x1b\x44\x65scribeContestSeriesOutput\x12+\n\x06series\x18\x01 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\"y\n\x16ListContestSeriesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x15 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.ContestSeries.Extra\"T\n\x17ListContestSeriesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.judge.ContestSeries\"G\n\x18\x43reateContestSeriesInput\x12+\n\x06series\x18\x01 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\".\n\x19\x43reateContestSeriesOutput\x12\x11\n\tseries_id\x18\x01 \x01(\t\"Z\n\x18UpdateContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\x12+\n\x06series\x18\x02 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\"\x1b\n\x19UpdateContestSeriesOutput\"-\n\x18\x44\x65leteContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\"\x1b\n\x19\x44\x65leteContestSeriesOutput2\xb2\x07\n\x14\x43ontestSeriesService\x12\xbb\x01\n\x15\x44\x65scribeContestSeries\x12(.eolymp.judge.DescribeContestSeriesInput\x1a).eolymp.judge.DescribeContestSeriesOutput\"M\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x1d\x12\x1b/contest-series/{series_id}\x12\xa2\x01\n\x11ListContestSeries\x12$.eolymp.judge.ListContestSeriesInput\x1a%.eolymp.judge.ListContestSeriesOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x11\x12\x0f/contest-series\x12\xa9\x01\n\x13\x43reateContestSeries\x12&.eolymp.judge.CreateContestSeriesInput\x1a\'.eolymp.judge.CreateContestSeriesOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x11\"\x0f/contest-series\x12\xb5\x01\n\x13UpdateContestSeries\x12&.eolymp.judge.UpdateContestSeriesInput\x1a\'.eolymp.judge.UpdateContestSeriesOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/contest-series/{series_id}\x12\xb5\x01\n\x13\x44\x65leteContestSeries\x12&.eolymp.judge.DeleteContestSeriesInput\x1a\'.eolymp.judge.DeleteContestSeriesOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d*\x1b/contest-series/{series_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/judge/contest_series_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/judge/contest_series.proto\"r\n\x1a\x44\x65scribeContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.ContestSeries.Extra\"J\n\x1b\x44\x65scribeContestSeriesOutput\x12+\n\x06series\x18\x01 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\"\x89\x01\n\x16ListContestSeriesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x15 \x01(\t\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.ContestSeries.Extra\"T\n\x17ListContestSeriesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.judge.ContestSeries\"G\n\x18\x43reateContestSeriesInput\x12+\n\x06series\x18\x01 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\".\n\x19\x43reateContestSeriesOutput\x12\x11\n\tseries_id\x18\x01 \x01(\t\"Z\n\x18UpdateContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\x12+\n\x06series\x18\x02 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\"\x1b\n\x19UpdateContestSeriesOutput\"-\n\x18\x44\x65leteContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\"\x1b\n\x19\x44\x65leteContestSeriesOutput2\xb2\x07\n\x14\x43ontestSeriesService\x12\xbb\x01\n\x15\x44\x65scribeContestSeries\x12(.eolymp.judge.DescribeContestSeriesInput\x1a).eolymp.judge.DescribeContestSeriesOutput\"M\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x1d\x12\x1b/contest-series/{series_id}\x12\xa2\x01\n\x11ListContestSeries\x12$.eolymp.judge.ListContestSeriesInput\x1a%.eolymp.judge.ListContestSeriesOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x11\x12\x0f/contest-series\x12\xa9\x01\n\x13\x43reateContestSeries\x12&.eolymp.judge.CreateContestSeriesInput\x1a\'.eolymp.judge.CreateContestSeriesOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x11\"\x0f/contest-series\x12\xb5\x01\n\x13UpdateContestSeries\x12&.eolymp.judge.UpdateContestSeriesInput\x1a\'.eolymp.judge.UpdateContestSeriesOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/contest-series/{series_id}\x12\xb5\x01\n\x13\x44\x65leteContestSeries\x12&.eolymp.judge.DeleteContestSeriesInput\x1a\'.eolymp.judge.DeleteContestSeriesOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d*\x1b/contest-series/{series_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -53,22 +53,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DESCRIBECONTESTSERIESINPUT']._serialized_end=343
   _globals['_DESCRIBECONTESTSERIESOUTPUT']._serialized_start=345
   _globals['_DESCRIBECONTESTSERIESOUTPUT']._serialized_end=419
-  _globals['_LISTCONTESTSERIESINPUT']._serialized_start=421
-  _globals['_LISTCONTESTSERIESINPUT']._serialized_end=542
-  _globals['_LISTCONTESTSERIESOUTPUT']._serialized_start=544
-  _globals['_LISTCONTESTSERIESOUTPUT']._serialized_end=628
-  _globals['_CREATECONTESTSERIESINPUT']._serialized_start=630
-  _globals['_CREATECONTESTSERIESINPUT']._serialized_end=701
-  _globals['_CREATECONTESTSERIESOUTPUT']._serialized_start=703
-  _globals['_CREATECONTESTSERIESOUTPUT']._serialized_end=749
-  _globals['_UPDATECONTESTSERIESINPUT']._serialized_start=751
-  _globals['_UPDATECONTESTSERIESINPUT']._serialized_end=841
-  _globals['_UPDATECONTESTSERIESOUTPUT']._serialized_start=843
-  _globals['_UPDATECONTESTSERIESOUTPUT']._serialized_end=870
-  _globals['_DELETECONTESTSERIESINPUT']._serialized_start=872
-  _globals['_DELETECONTESTSERIESINPUT']._serialized_end=917
-  _globals['_DELETECONTESTSERIESOUTPUT']._serialized_start=919
-  _globals['_DELETECONTESTSERIESOUTPUT']._serialized_end=946
-  _globals['_CONTESTSERIESSERVICE']._serialized_start=949
-  _globals['_CONTESTSERIESSERVICE']._serialized_end=1895
+  _globals['_LISTCONTESTSERIESINPUT']._serialized_start=422
+  _globals['_LISTCONTESTSERIESINPUT']._serialized_end=559
+  _globals['_LISTCONTESTSERIESOUTPUT']._serialized_start=561
+  _globals['_LISTCONTESTSERIESOUTPUT']._serialized_end=645
+  _globals['_CREATECONTESTSERIESINPUT']._serialized_start=647
+  _globals['_CREATECONTESTSERIESINPUT']._serialized_end=718
+  _globals['_CREATECONTESTSERIESOUTPUT']._serialized_start=720
+  _globals['_CREATECONTESTSERIESOUTPUT']._serialized_end=766
+  _globals['_UPDATECONTESTSERIESINPUT']._serialized_start=768
+  _globals['_UPDATECONTESTSERIESINPUT']._serialized_end=858
+  _globals['_UPDATECONTESTSERIESOUTPUT']._serialized_start=860
+  _globals['_UPDATECONTESTSERIESOUTPUT']._serialized_end=887
+  _globals['_DELETECONTESTSERIESINPUT']._serialized_start=889
+  _globals['_DELETECONTESTSERIESINPUT']._serialized_end=934
+  _globals['_DELETECONTESTSERIESOUTPUT']._serialized_start=936
+  _globals['_DELETECONTESTSERIESOUTPUT']._serialized_end=963
+  _globals['_CONTESTSERIESSERVICE']._serialized_start=966
+  _globals['_CONTESTSERIESSERVICE']._serialized_end=1912
 # @@protoc_insertion_point(module_scope)

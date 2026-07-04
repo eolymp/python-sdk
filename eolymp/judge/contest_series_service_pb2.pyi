@@ -28,16 +28,18 @@ class DescribeContestSeriesOutput(_message.Message):
     def __init__(self, series: _Optional[_Union[_contest_series_pb2.ContestSeries, _Mapping]] = ...) -> None: ...
 
 class ListContestSeriesInput(_message.Message):
-    __slots__ = ("offset", "size", "locale", "extra")
+    __slots__ = ("offset", "size", "locale", "search", "extra")
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
     locale: str
+    search: str
     extra: _containers.RepeatedScalarFieldContainer[_contest_series_pb2.ContestSeries.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_contest_series_pb2.ContestSeries.Extra, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., search: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_contest_series_pb2.ContestSeries.Extra, str]]] = ...) -> None: ...
 
 class ListContestSeriesOutput(_message.Message):
     __slots__ = ("total", "items")
