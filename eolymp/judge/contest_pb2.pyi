@@ -182,7 +182,7 @@ class Contest(_message.Message):
         city: str
         def __init__(self, year: _Optional[int] = ..., series: _Optional[str] = ..., scale: _Optional[_Union[Contest.Classification.Scale, str]] = ..., difficulty: _Optional[int] = ..., country: _Optional[str] = ..., region: _Optional[str] = ..., city: _Optional[str] = ...) -> None: ...
     class ScoreboardConfig(_message.Message):
-        __slots__ = ("visibility", "freezing_time", "unfreeze_delay", "attempt_penalty", "tie_breaker", "no_spoiler_ui", "share_key")
+        __slots__ = ("visibility", "freezing_time", "unfreeze_delay", "attempt_penalty", "tie_breaker", "no_spoiler_ui", "share_key", "hide_disqualified")
         class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             UNKNOWN_VISIBILITY: _ClassVar[Contest.ScoreboardConfig.Visibility]
@@ -200,6 +200,7 @@ class Contest(_message.Message):
         TIE_BREAKER_FIELD_NUMBER: _ClassVar[int]
         NO_SPOILER_UI_FIELD_NUMBER: _ClassVar[int]
         SHARE_KEY_FIELD_NUMBER: _ClassVar[int]
+        HIDE_DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
         visibility: Contest.ScoreboardConfig.Visibility
         freezing_time: int
         unfreeze_delay: int
@@ -207,7 +208,8 @@ class Contest(_message.Message):
         tie_breaker: str
         no_spoiler_ui: bool
         share_key: str
-        def __init__(self, visibility: _Optional[_Union[Contest.ScoreboardConfig.Visibility, str]] = ..., freezing_time: _Optional[int] = ..., unfreeze_delay: _Optional[int] = ..., attempt_penalty: _Optional[int] = ..., tie_breaker: _Optional[str] = ..., no_spoiler_ui: _Optional[bool] = ..., share_key: _Optional[str] = ...) -> None: ...
+        hide_disqualified: bool
+        def __init__(self, visibility: _Optional[_Union[Contest.ScoreboardConfig.Visibility, str]] = ..., freezing_time: _Optional[int] = ..., unfreeze_delay: _Optional[int] = ..., attempt_penalty: _Optional[int] = ..., tie_breaker: _Optional[str] = ..., no_spoiler_ui: _Optional[bool] = ..., share_key: _Optional[str] = ..., hide_disqualified: _Optional[bool] = ...) -> None: ...
     class RatingConfig(_message.Message):
         __slots__ = ("rated", "max_rating")
         RATED_FIELD_NUMBER: _ClassVar[int]
