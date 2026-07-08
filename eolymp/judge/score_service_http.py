@@ -39,6 +39,20 @@ class ScoreServiceClient:
             **kwargs,
         )
 
+    def ListScoreTimeline(self, request, **kwargs):
+        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/score-timeline"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.participant_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListScoreTimelineOutput"),
+            **kwargs,
+        )
+
     def ImportScore(self, request, **kwargs):
         path = "/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
 

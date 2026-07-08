@@ -5,6 +5,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.judge import result_pb2 as _result_pb2
 from eolymp.judge import score_pb2 as _score_pb2
+from eolymp.judge import score_timeline_pb2 as _score_timeline_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -136,3 +137,19 @@ class ExportResultOutput(_message.Message):
     EXPORT_URL_FIELD_NUMBER: _ClassVar[int]
     export_url: str
     def __init__(self, export_url: _Optional[str] = ...) -> None: ...
+
+class ListScoreTimelineInput(_message.Message):
+    __slots__ = ("contest_id", "participant_id", "mode")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    participant_id: str
+    mode: _score_pb2.Score.FetchingMode
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ...) -> None: ...
+
+class ListScoreTimelineOutput(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_score_timeline_pb2.ScoreTimelinePoint]
+    def __init__(self, items: _Optional[_Iterable[_Union[_score_timeline_pb2.ScoreTimelinePoint, _Mapping]]] = ...) -> None: ...
