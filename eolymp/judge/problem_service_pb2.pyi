@@ -17,22 +17,26 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ImportProblemInput(_message.Message):
-    __slots__ = ("import_id", "index", "submit_limit", "score_by_best_testset")
+    __slots__ = ("import_id", "import_ids", "index", "submit_limit", "score_by_best_testset")
     IMPORT_ID_FIELD_NUMBER: _ClassVar[int]
+    IMPORT_IDS_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
     SUBMIT_LIMIT_FIELD_NUMBER: _ClassVar[int]
     SCORE_BY_BEST_TESTSET_FIELD_NUMBER: _ClassVar[int]
     import_id: str
+    import_ids: _containers.RepeatedScalarFieldContainer[str]
     index: int
     submit_limit: int
     score_by_best_testset: bool
-    def __init__(self, import_id: _Optional[str] = ..., index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ...) -> None: ...
+    def __init__(self, import_id: _Optional[str] = ..., import_ids: _Optional[_Iterable[str]] = ..., index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ...) -> None: ...
 
 class ImportProblemOutput(_message.Message):
-    __slots__ = ("problem_id",)
+    __slots__ = ("problem_id", "problem_ids")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_IDS_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    problem_ids: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, problem_id: _Optional[str] = ..., problem_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class SyncProblemInput(_message.Message):
     __slots__ = ("problem_id",)
