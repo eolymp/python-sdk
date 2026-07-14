@@ -109,7 +109,7 @@ class DescribeContestOutput(_message.Message):
 class ListContestsInput(_message.Message):
     __slots__ = ("offset", "size", "search", "filters", "extra")
     class Filter(_message.Message):
-        __slots__ = ("id", "name", "starts_at", "ends_at", "public", "visibility", "format", "status", "featured", "year", "scale", "series", "difficulty", "country", "region", "city")
+        __slots__ = ("id", "name", "starts_at", "ends_at", "public", "visibility", "format", "status", "featured", "year", "scale", "series", "difficulty", "country", "region", "city", "member_id")
         ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         STARTS_AT_FIELD_NUMBER: _ClassVar[int]
@@ -126,6 +126,7 @@ class ListContestsInput(_message.Message):
         COUNTRY_FIELD_NUMBER: _ClassVar[int]
         REGION_FIELD_NUMBER: _ClassVar[int]
         CITY_FIELD_NUMBER: _ClassVar[int]
+        MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         starts_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
@@ -142,7 +143,8 @@ class ListContestsInput(_message.Message):
         country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         region: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         city: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., starts_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., ends_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., visibility: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., format: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., featured: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., year: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., scale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., series: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., difficulty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., region: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., city: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
+        member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., starts_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., ends_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., visibility: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., format: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., featured: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., year: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., scale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., series: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., difficulty: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., region: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., city: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
