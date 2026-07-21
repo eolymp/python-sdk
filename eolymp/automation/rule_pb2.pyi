@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Rule(_message.Message):
-    __slots__ = ("id", "name", "trigger", "condition", "inactive", "dry_run", "trigger_count", "actions", "created_at", "updated_at")
+    __slots__ = ("id", "name", "trigger", "condition", "inactive", "dry_run", "debug", "trigger_count", "actions", "created_at", "updated_at")
     class Trigger(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TRIGGER: _ClassVar[Rule.Trigger]
@@ -48,6 +48,7 @@ class Rule(_message.Message):
             ACTIONS: _ClassVar[Rule.Patch.Field]
             INACTIVE: _ClassVar[Rule.Patch.Field]
             DRY_RUN: _ClassVar[Rule.Patch.Field]
+            DEBUG: _ClassVar[Rule.Patch.Field]
         UNKNOWN_FIELD: Rule.Patch.Field
         NAME: Rule.Patch.Field
         TRIGGER: Rule.Patch.Field
@@ -55,6 +56,7 @@ class Rule(_message.Message):
         ACTIONS: Rule.Patch.Field
         INACTIVE: Rule.Patch.Field
         DRY_RUN: Rule.Patch.Field
+        DEBUG: Rule.Patch.Field
         def __init__(self) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -62,6 +64,7 @@ class Rule(_message.Message):
     CONDITION_FIELD_NUMBER: _ClassVar[int]
     INACTIVE_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
+    DEBUG_FIELD_NUMBER: _ClassVar[int]
     TRIGGER_COUNT_FIELD_NUMBER: _ClassVar[int]
     ACTIONS_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -72,8 +75,9 @@ class Rule(_message.Message):
     condition: _condition_pb2.Condition
     inactive: bool
     dry_run: bool
+    debug: bool
     trigger_count: int
     actions: _containers.RepeatedCompositeFieldContainer[_action_pb2.Action]
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., trigger: _Optional[_Union[Rule.Trigger, str]] = ..., condition: _Optional[_Union[_condition_pb2.Condition, _Mapping]] = ..., inactive: _Optional[bool] = ..., dry_run: _Optional[bool] = ..., trigger_count: _Optional[int] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., trigger: _Optional[_Union[Rule.Trigger, str]] = ..., condition: _Optional[_Union[_condition_pb2.Condition, _Mapping]] = ..., inactive: _Optional[bool] = ..., dry_run: _Optional[bool] = ..., debug: _Optional[bool] = ..., trigger_count: _Optional[int] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
