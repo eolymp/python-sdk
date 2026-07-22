@@ -13,20 +13,24 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AssignAchievementInput(_message.Message):
-    __slots__ = ("achievement_id", "set_to", "inc_by")
+    __slots__ = ("achievement_id", "set_to", "inc_by", "reference")
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     SET_TO_FIELD_NUMBER: _ClassVar[int]
     INC_BY_FIELD_NUMBER: _ClassVar[int]
+    REFERENCE_FIELD_NUMBER: _ClassVar[int]
     achievement_id: str
     set_to: int
     inc_by: int
-    def __init__(self, achievement_id: _Optional[str] = ..., set_to: _Optional[int] = ..., inc_by: _Optional[int] = ...) -> None: ...
+    reference: str
+    def __init__(self, achievement_id: _Optional[str] = ..., set_to: _Optional[int] = ..., inc_by: _Optional[int] = ..., reference: _Optional[str] = ...) -> None: ...
 
 class AssignAchievementOutput(_message.Message):
-    __slots__ = ("quantity",)
+    __slots__ = ("quantity", "score")
     QUANTITY_FIELD_NUMBER: _ClassVar[int]
+    SCORE_FIELD_NUMBER: _ClassVar[int]
     quantity: int
-    def __init__(self, quantity: _Optional[int] = ...) -> None: ...
+    score: int
+    def __init__(self, quantity: _Optional[int] = ..., score: _Optional[int] = ...) -> None: ...
 
 class UnassignAchievementInput(_message.Message):
     __slots__ = ("achievement_id",)
