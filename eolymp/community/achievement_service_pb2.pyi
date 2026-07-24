@@ -1,9 +1,12 @@
+import datetime
+
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import achievement_pb2 as _achievement_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -11,6 +14,22 @@ from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class AchievementAssignedEvent(_message.Message):
+    __slots__ = ("space_id", "member_id", "achievement_id", "quantity", "previous_quantity", "awarded_at")
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    QUANTITY_FIELD_NUMBER: _ClassVar[int]
+    PREVIOUS_QUANTITY_FIELD_NUMBER: _ClassVar[int]
+    AWARDED_AT_FIELD_NUMBER: _ClassVar[int]
+    space_id: str
+    member_id: str
+    achievement_id: str
+    quantity: int
+    previous_quantity: int
+    awarded_at: _timestamp_pb2.Timestamp
+    def __init__(self, space_id: _Optional[str] = ..., member_id: _Optional[str] = ..., achievement_id: _Optional[str] = ..., quantity: _Optional[int] = ..., previous_quantity: _Optional[int] = ..., awarded_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class AssignAchievementInput(_message.Message):
     __slots__ = ("achievement_id", "set_to", "inc_by", "reference")
