@@ -78,3 +78,17 @@ class RuleServiceClient:
             **kwargs,
         )
 
+    def TriggerRule(self, request, **kwargs):
+        path = "/automation/rules/"+urllib.parse.quote(request.rule_id)+"/trigger"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.rule_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.automation.TriggerRuleOutput"),
+            **kwargs,
+        )
+

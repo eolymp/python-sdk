@@ -106,3 +106,26 @@ class DeleteRuleInput(_message.Message):
 class DeleteRuleOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class TriggerRuleInput(_message.Message):
+    __slots__ = ("rule_id", "references", "dry_run")
+    class ReferencesEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    RULE_ID_FIELD_NUMBER: _ClassVar[int]
+    REFERENCES_FIELD_NUMBER: _ClassVar[int]
+    DRY_RUN_FIELD_NUMBER: _ClassVar[int]
+    rule_id: str
+    references: _containers.ScalarMap[str, str]
+    dry_run: bool
+    def __init__(self, rule_id: _Optional[str] = ..., references: _Optional[_Mapping[str, str]] = ..., dry_run: _Optional[bool] = ...) -> None: ...
+
+class TriggerRuleOutput(_message.Message):
+    __slots__ = ("log_id",)
+    LOG_ID_FIELD_NUMBER: _ClassVar[int]
+    log_id: str
+    def __init__(self, log_id: _Optional[str] = ...) -> None: ...
