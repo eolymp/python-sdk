@@ -60,6 +60,7 @@ class UpdateAccountInput(_message.Message):
         USER_PREFERENCES_TIMEZONE: _ClassVar[UpdateAccountInput.Patch]
         USER_PREFERENCES_RUNTIME: _ClassVar[UpdateAccountInput.Patch]
         USER_EMAIL_SUBSCRIPTIONS: _ClassVar[UpdateAccountInput.Patch]
+        USER_PRONOUN: _ClassVar[UpdateAccountInput.Patch]
         ATTRIBUTES: _ClassVar[UpdateAccountInput.Patch]
     ALL: UpdateAccountInput.Patch
     USER_NICKNAME: UpdateAccountInput.Patch
@@ -75,6 +76,7 @@ class UpdateAccountInput(_message.Message):
     USER_PREFERENCES_TIMEZONE: UpdateAccountInput.Patch
     USER_PREFERENCES_RUNTIME: UpdateAccountInput.Patch
     USER_EMAIL_SUBSCRIPTIONS: UpdateAccountInput.Patch
+    USER_PRONOUN: UpdateAccountInput.Patch
     ATTRIBUTES: UpdateAccountInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
     CURRENT_PASSWORD_FIELD_NUMBER: _ClassVar[int]

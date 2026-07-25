@@ -74,6 +74,7 @@ class Member(_message.Message):
             USER_PREFERENCES_TIMEZONE: _ClassVar[Member.Patch.Field]
             USER_PREFERENCES_RUNTIME: _ClassVar[Member.Patch.Field]
             USER_EMAIL_SUBSCRIPTIONS: _ClassVar[Member.Patch.Field]
+            USER_PRONOUN: _ClassVar[Member.Patch.Field]
             TEAM_NAME: _ClassVar[Member.Patch.Field]
             GHOST_NAME: _ClassVar[Member.Patch.Field]
             ATTRIBUTES: _ClassVar[Member.Patch.Field]
@@ -101,6 +102,7 @@ class Member(_message.Message):
         USER_PREFERENCES_TIMEZONE: Member.Patch.Field
         USER_PREFERENCES_RUNTIME: Member.Patch.Field
         USER_EMAIL_SUBSCRIPTIONS: Member.Patch.Field
+        USER_PRONOUN: Member.Patch.Field
         TEAM_NAME: Member.Patch.Field
         GHOST_NAME: Member.Patch.Field
         ATTRIBUTES: Member.Patch.Field
