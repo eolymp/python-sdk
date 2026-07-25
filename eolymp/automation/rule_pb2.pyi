@@ -28,6 +28,7 @@ class Rule(_message.Message):
         STUDENT_CHANGED: _ClassVar[Rule.Trigger]
         ASSIGNMENT_CHANGED: _ClassVar[Rule.Trigger]
         PARTICIPANT_FINALIZED: _ClassVar[Rule.Trigger]
+        CONTEST_FINALIZED: _ClassVar[Rule.Trigger]
     UNKNOWN_TRIGGER: Rule.Trigger
     SUBMISSION_COMPLETED: Rule.Trigger
     SCORE_CHANGED: Rule.Trigger
@@ -39,6 +40,7 @@ class Rule(_message.Message):
     STUDENT_CHANGED: Rule.Trigger
     ASSIGNMENT_CHANGED: Rule.Trigger
     PARTICIPANT_FINALIZED: Rule.Trigger
+    CONTEST_FINALIZED: Rule.Trigger
     class Patch(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
