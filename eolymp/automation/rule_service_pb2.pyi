@@ -125,7 +125,5 @@ class TriggerRuleInput(_message.Message):
     def __init__(self, rule_id: _Optional[str] = ..., references: _Optional[_Mapping[str, str]] = ..., dry_run: _Optional[bool] = ...) -> None: ...
 
 class TriggerRuleOutput(_message.Message):
-    __slots__ = ("log_id",)
-    LOG_ID_FIELD_NUMBER: _ClassVar[int]
-    log_id: str
-    def __init__(self, log_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ()
+    def __init__(self) -> None: ...

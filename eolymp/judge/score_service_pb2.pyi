@@ -72,6 +72,22 @@ class DescribeScoreOutput(_message.Message):
     score: _score_pb2.Score
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
+class DescribeResultInput(_message.Message):
+    __slots__ = ("participant_id", "mode", "time_offset")
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    TIME_OFFSET_FIELD_NUMBER: _ClassVar[int]
+    participant_id: str
+    mode: _score_pb2.Score.FetchingMode
+    time_offset: int
+    def __init__(self, participant_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ...) -> None: ...
+
+class DescribeResultOutput(_message.Message):
+    __slots__ = ("result",)
+    RESULT_FIELD_NUMBER: _ClassVar[int]
+    result: _result_pb2.Result
+    def __init__(self, result: _Optional[_Union[_result_pb2.Result, _Mapping]] = ...) -> None: ...
+
 class ImportScoreInput(_message.Message):
     __slots__ = ("contest_id", "participant_id", "scores")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
