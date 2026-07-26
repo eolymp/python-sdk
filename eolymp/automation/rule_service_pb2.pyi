@@ -127,3 +127,22 @@ class TriggerRuleInput(_message.Message):
 class TriggerRuleOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class ListActionsInput(_message.Message):
+    __slots__ = ("references",)
+    class ReferencesEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    REFERENCES_FIELD_NUMBER: _ClassVar[int]
+    references: _containers.ScalarMap[str, str]
+    def __init__(self, references: _Optional[_Mapping[str, str]] = ...) -> None: ...
+
+class ListActionsOutput(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[_rule_pb2.Rule]
+    def __init__(self, items: _Optional[_Iterable[_Union[_rule_pb2.Rule, _Mapping]]] = ...) -> None: ...

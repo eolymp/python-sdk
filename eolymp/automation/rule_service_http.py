@@ -92,3 +92,14 @@ class RuleServiceClient:
             **kwargs,
         )
 
+    def ListActions(self, request, **kwargs):
+        path = "/automation/actions"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.automation.ListActionsOutput"),
+            **kwargs,
+        )
+
