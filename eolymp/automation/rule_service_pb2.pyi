@@ -129,7 +129,7 @@ class TriggerRuleOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListActionsInput(_message.Message):
-    __slots__ = ("references",)
+    __slots__ = ("references", "trigger")
     class ReferencesEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -138,8 +138,10 @@ class ListActionsInput(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     REFERENCES_FIELD_NUMBER: _ClassVar[int]
+    TRIGGER_FIELD_NUMBER: _ClassVar[int]
     references: _containers.ScalarMap[str, str]
-    def __init__(self, references: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    trigger: _rule_pb2.Rule.Trigger
+    def __init__(self, references: _Optional[_Mapping[str, str]] = ..., trigger: _Optional[_Union[_rule_pb2.Rule.Trigger, str]] = ...) -> None: ...
 
 class ListActionsOutput(_message.Message):
     __slots__ = ("items",)
