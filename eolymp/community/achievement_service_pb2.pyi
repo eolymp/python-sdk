@@ -64,12 +64,16 @@ class UnassignAchievementOutput(_message.Message):
 class ListAchievementsInput(_message.Message):
     __slots__ = ("locale", "after", "size", "offset", "filters", "extra")
     class Filter(_message.Message):
-        __slots__ = ("query", "id")
+        __slots__ = ("query", "id", "quantity", "score")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
+        QUANTITY_FIELD_NUMBER: _ClassVar[int]
+        SCORE_FIELD_NUMBER: _ClassVar[int]
         query: str
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        quantity: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., quantity: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
