@@ -21,18 +21,30 @@ class ListIssuesInput(_message.Message):
         DEFAULT: _ClassVar[ListIssuesInput.Sortable]
         CREATED_AT: _ClassVar[ListIssuesInput.Sortable]
         UPDATED_AT: _ClassVar[ListIssuesInput.Sortable]
+        NUMBER: _ClassVar[ListIssuesInput.Sortable]
     DEFAULT: ListIssuesInput.Sortable
     CREATED_AT: ListIssuesInput.Sortable
     UPDATED_AT: ListIssuesInput.Sortable
+    NUMBER: ListIssuesInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ("id", "status", "user_id")
+        __slots__ = ("id", "problem_id", "status", "number", "assignee_id", "reporter_id", "tester_id", "tags")
         ID_FIELD_NUMBER: _ClassVar[int]
+        PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
-        USER_ID_FIELD_NUMBER: _ClassVar[int]
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        ASSIGNEE_ID_FIELD_NUMBER: _ClassVar[int]
+        REPORTER_ID_FIELD_NUMBER: _ClassVar[int]
+        TESTER_ID_FIELD_NUMBER: _ClassVar[int]
+        TAGS_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        problem_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        number: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        assignee_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        reporter_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        tester_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        tags: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., assignee_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., reporter_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., tester_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., tags: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]

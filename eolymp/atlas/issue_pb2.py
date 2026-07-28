@@ -26,7 +26,7 @@ from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/atlas/issue.proto\x12\x0c\x65olymp.atlas\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa4\x03\n\x05Issue\x12\n\n\x02id\x18\x01 \x01(\t\x12*\n\x06status\x18\x02 \x01(\x0e\x32\x1a.eolymp.atlas.Issue.Status\x12(\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0f\n\x07user_id\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1aR\n\x05\x45xtra\"I\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\x1a@\n\x05Patch\"7\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\n\n\x06STATUS\x10\x01\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x02\"2\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\n\n\x06\x43LOSED\x10\x02\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/atlas/issue.proto\x12\x0c\x65olymp.atlas\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc1\x04\n\x05Issue\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x0c \x01(\t\x12\x0e\n\x06number\x18\x04 \x01(\x03\x12*\n\x06status\x18\x02 \x01(\x0e\x32\x1a.eolymp.atlas.Issue.Status\x12\r\n\x05title\x18\x06 \x01(\t\x12(\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x10\n\x08\x61ssignee\x18\x07 \x01(\t\x12\x15\n\x0breporter_id\x18\x05 \x01(\tH\x00\x12\x13\n\ttester_id\x18\x08 \x01(\tH\x00\x12\x0c\n\x04tags\x18\t \x03(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1aR\n\x05\x45xtra\"I\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\x1a\x63\n\x05Patch\"Z\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\n\n\x06STATUS\x10\x01\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x02\x12\t\n\x05TITLE\x10\x03\x12\x0c\n\x08\x41SSIGNEE\x10\x04\x12\x08\n\x04TAGS\x10\x05\"2\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\n\n\x06\x43LOSED\x10\x02\x42\n\n\x08reporterB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,15 +35,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_ISSUE']._serialized_start=102
-  _globals['_ISSUE']._serialized_end=522
-  _globals['_ISSUE_EXTRA']._serialized_start=322
-  _globals['_ISSUE_EXTRA']._serialized_end=404
-  _globals['_ISSUE_EXTRA_FIELD']._serialized_start=331
-  _globals['_ISSUE_EXTRA_FIELD']._serialized_end=404
-  _globals['_ISSUE_PATCH']._serialized_start=406
-  _globals['_ISSUE_PATCH']._serialized_end=470
-  _globals['_ISSUE_PATCH_FIELD']._serialized_start=415
-  _globals['_ISSUE_PATCH_FIELD']._serialized_end=470
-  _globals['_ISSUE_STATUS']._serialized_start=472
-  _globals['_ISSUE_STATUS']._serialized_end=522
+  _globals['_ISSUE']._serialized_end=679
+  _globals['_ISSUE_EXTRA']._serialized_start=432
+  _globals['_ISSUE_EXTRA']._serialized_end=514
+  _globals['_ISSUE_EXTRA_FIELD']._serialized_start=441
+  _globals['_ISSUE_EXTRA_FIELD']._serialized_end=514
+  _globals['_ISSUE_PATCH']._serialized_start=516
+  _globals['_ISSUE_PATCH']._serialized_end=615
+  _globals['_ISSUE_PATCH_FIELD']._serialized_start=525
+  _globals['_ISSUE_PATCH_FIELD']._serialized_end=615
+  _globals['_ISSUE_STATUS']._serialized_start=617
+  _globals['_ISSUE_STATUS']._serialized_end=667
 # @@protoc_insertion_point(module_scope)
