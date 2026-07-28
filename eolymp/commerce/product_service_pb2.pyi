@@ -110,3 +110,100 @@ class ListProductsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_product_pb2.Product]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_product_pb2.Product, _Mapping]]] = ...) -> None: ...
+
+class CreateProductVariantInput(_message.Message):
+    __slots__ = ("product_id", "variant")
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_FIELD_NUMBER: _ClassVar[int]
+    product_id: str
+    variant: _product_pb2.Product.Variant
+    def __init__(self, product_id: _Optional[str] = ..., variant: _Optional[_Union[_product_pb2.Product.Variant, _Mapping]] = ...) -> None: ...
+
+class CreateProductVariantOutput(_message.Message):
+    __slots__ = ("variant_id",)
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    variant_id: str
+    def __init__(self, variant_id: _Optional[str] = ...) -> None: ...
+
+class UpdateProductVariantInput(_message.Message):
+    __slots__ = ("patch", "product_id", "variant_id", "variant")
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_FIELD_NUMBER: _ClassVar[int]
+    patch: _containers.RepeatedScalarFieldContainer[_product_pb2.Product.Variant.Patch.Field]
+    product_id: str
+    variant_id: str
+    variant: _product_pb2.Product.Variant
+    def __init__(self, patch: _Optional[_Iterable[_Union[_product_pb2.Product.Variant.Patch.Field, str]]] = ..., product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., variant: _Optional[_Union[_product_pb2.Product.Variant, _Mapping]] = ...) -> None: ...
+
+class UpdateProductVariantOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DeleteProductVariantInput(_message.Message):
+    __slots__ = ("product_id", "variant_id")
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    product_id: str
+    variant_id: str
+    def __init__(self, product_id: _Optional[str] = ..., variant_id: _Optional[str] = ...) -> None: ...
+
+class DeleteProductVariantOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeProductVariantInput(_message.Message):
+    __slots__ = ("product_id", "variant_id")
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
+    product_id: str
+    variant_id: str
+    def __init__(self, product_id: _Optional[str] = ..., variant_id: _Optional[str] = ...) -> None: ...
+
+class DescribeProductVariantOutput(_message.Message):
+    __slots__ = ("variant",)
+    VARIANT_FIELD_NUMBER: _ClassVar[int]
+    variant: _product_pb2.Product.Variant
+    def __init__(self, variant: _Optional[_Union[_product_pb2.Product.Variant, _Mapping]] = ...) -> None: ...
+
+class ListProductVariantsInput(_message.Message):
+    __slots__ = ("product_id", "offset", "size", "search", "filters", "sort", "order")
+    class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        DEFAULT: _ClassVar[ListProductVariantsInput.Sortable]
+        NAME: _ClassVar[ListProductVariantsInput.Sortable]
+    DEFAULT: ListProductVariantsInput.Sortable
+    NAME: ListProductVariantsInput.Sortable
+    class Filter(_message.Message):
+        __slots__ = ("id", "name", "out_of_stock")
+        ID_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        OUT_OF_STOCK_FIELD_NUMBER: _ClassVar[int]
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        out_of_stock: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., out_of_stock: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+    PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    SORT_FIELD_NUMBER: _ClassVar[int]
+    ORDER_FIELD_NUMBER: _ClassVar[int]
+    product_id: str
+    offset: int
+    size: int
+    search: str
+    filters: ListProductVariantsInput.Filter
+    sort: ListProductVariantsInput.Sortable
+    order: _direction_pb2.Direction
+    def __init__(self, product_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListProductVariantsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListProductVariantsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+
+class ListProductVariantsOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_product_pb2.Product.Variant]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_product_pb2.Product.Variant, _Mapping]]] = ...) -> None: ...

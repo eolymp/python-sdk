@@ -78,3 +78,76 @@ class ProductServiceClient:
             **kwargs,
         )
 
+    def CreateProductVariant(self, request, **kwargs):
+        path = "/store/products/"+urllib.parse.quote(request.product_id)+"/variants"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.product_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.CreateProductVariantOutput"),
+            **kwargs,
+        )
+
+    def UpdateProductVariant(self, request, **kwargs):
+        path = "/store/products/"+urllib.parse.quote(request.product_id)+"/variants/"+urllib.parse.quote(request.variant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.product_id = ""
+        request.variant_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.UpdateProductVariantOutput"),
+            **kwargs,
+        )
+
+    def DeleteProductVariant(self, request, **kwargs):
+        path = "/store/products/"+urllib.parse.quote(request.product_id)+"/variants/"+urllib.parse.quote(request.variant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.product_id = ""
+        request.variant_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.DeleteProductVariantOutput"),
+            **kwargs,
+        )
+
+    def DescribeProductVariant(self, request, **kwargs):
+        path = "/store/products/"+urllib.parse.quote(request.product_id)+"/variants/"+urllib.parse.quote(request.variant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.product_id = ""
+        request.variant_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.DescribeProductVariantOutput"),
+            **kwargs,
+        )
+
+    def ListProductVariants(self, request, **kwargs):
+        path = "/store/products/"+urllib.parse.quote(request.product_id)+"/variants"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.product_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.ListProductVariantsOutput"),
+            **kwargs,
+        )
+

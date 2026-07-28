@@ -42,7 +42,6 @@ class Product(_message.Message):
             PRICE: _ClassVar[Product.Patch.Field]
             REGULAR_PRICE: _ClassVar[Product.Patch.Field]
             ATTRIBUTES: _ClassVar[Product.Patch.Field]
-            VARIANTS: _ClassVar[Product.Patch.Field]
             FEATURED: _ClassVar[Product.Patch.Field]
             INACTIVE: _ClassVar[Product.Patch.Field]
             BACKORDER: _ClassVar[Product.Patch.Field]
@@ -55,7 +54,6 @@ class Product(_message.Message):
         PRICE: Product.Patch.Field
         REGULAR_PRICE: Product.Patch.Field
         ATTRIBUTES: Product.Patch.Field
-        VARIANTS: Product.Patch.Field
         FEATURED: Product.Patch.Field
         INACTIVE: Product.Patch.Field
         BACKORDER: Product.Patch.Field
@@ -68,7 +66,24 @@ class Product(_message.Message):
         label: str
         def __init__(self, key: _Optional[str] = ..., label: _Optional[str] = ...) -> None: ...
     class Variant(_message.Message):
-        __slots__ = ("id", "name", "values", "images", "out_of_stock", "max_quantity", "available_quantity")
+        __slots__ = ("id", "product_id", "name", "values", "images", "out_of_stock", "max_quantity", "available_quantity")
+        class Patch(_message.Message):
+            __slots__ = ()
+            class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                __slots__ = ()
+                UNKNOWN_FIELD: _ClassVar[Product.Variant.Patch.Field]
+                ALL: _ClassVar[Product.Variant.Patch.Field]
+                NAME: _ClassVar[Product.Variant.Patch.Field]
+                VALUES: _ClassVar[Product.Variant.Patch.Field]
+                IMAGES: _ClassVar[Product.Variant.Patch.Field]
+                AVAILABLE_QUANTITY: _ClassVar[Product.Variant.Patch.Field]
+            UNKNOWN_FIELD: Product.Variant.Patch.Field
+            ALL: Product.Variant.Patch.Field
+            NAME: Product.Variant.Patch.Field
+            VALUES: Product.Variant.Patch.Field
+            IMAGES: Product.Variant.Patch.Field
+            AVAILABLE_QUANTITY: Product.Variant.Patch.Field
+            def __init__(self) -> None: ...
         class ValuesEntry(_message.Message):
             __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]
@@ -77,6 +92,7 @@ class Product(_message.Message):
             value: str
             def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
         ID_FIELD_NUMBER: _ClassVar[int]
+        PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         VALUES_FIELD_NUMBER: _ClassVar[int]
         IMAGES_FIELD_NUMBER: _ClassVar[int]
@@ -84,13 +100,14 @@ class Product(_message.Message):
         MAX_QUANTITY_FIELD_NUMBER: _ClassVar[int]
         AVAILABLE_QUANTITY_FIELD_NUMBER: _ClassVar[int]
         id: str
+        product_id: str
         name: str
         values: _containers.ScalarMap[str, str]
         images: _containers.RepeatedScalarFieldContainer[str]
         out_of_stock: bool
         max_quantity: int
         available_quantity: int
-        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: _Optional[bool] = ..., max_quantity: _Optional[int] = ..., available_quantity: _Optional[int] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., product_id: _Optional[str] = ..., name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: _Optional[bool] = ..., max_quantity: _Optional[int] = ..., available_quantity: _Optional[int] = ...) -> None: ...
     class Translation(_message.Message):
         __slots__ = ("id", "locale", "name", "summary", "description", "attributes")
         ID_FIELD_NUMBER: _ClassVar[int]
