@@ -29,6 +29,7 @@ class Rule(_message.Message):
         ASSIGNMENT_CHANGED: _ClassVar[Rule.Trigger]
         PARTICIPANT_FINALIZED: _ClassVar[Rule.Trigger]
         CONTEST_FINALIZED: _ClassVar[Rule.Trigger]
+        CONTEST_SUBMISSION_COMPLETED: _ClassVar[Rule.Trigger]
         CONTEST_ACTION: _ClassVar[Rule.Trigger]
         MEMBER_ACTION: _ClassVar[Rule.Trigger]
     UNKNOWN_TRIGGER: Rule.Trigger
@@ -43,6 +44,7 @@ class Rule(_message.Message):
     ASSIGNMENT_CHANGED: Rule.Trigger
     PARTICIPANT_FINALIZED: Rule.Trigger
     CONTEST_FINALIZED: Rule.Trigger
+    CONTEST_SUBMISSION_COMPLETED: Rule.Trigger
     CONTEST_ACTION: Rule.Trigger
     MEMBER_ACTION: Rule.Trigger
     class Patch(_message.Message):
