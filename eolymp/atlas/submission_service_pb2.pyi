@@ -208,10 +208,14 @@ class AggregateSubmissionsInput(_message.Message):
         SUBMITTED_AT: _ClassVar[AggregateSubmissionsInput.Dimension]
         VERDICT: _ClassVar[AggregateSubmissionsInput.Dimension]
         STATUS: _ClassVar[AggregateSubmissionsInput.Dimension]
+        LANGUAGE: _ClassVar[AggregateSubmissionsInput.Dimension]
+        RUNTIME: _ClassVar[AggregateSubmissionsInput.Dimension]
     UNKNOWN_DIMENSION: AggregateSubmissionsInput.Dimension
     SUBMITTED_AT: AggregateSubmissionsInput.Dimension
     VERDICT: AggregateSubmissionsInput.Dimension
     STATUS: AggregateSubmissionsInput.Dimension
+    LANGUAGE: AggregateSubmissionsInput.Dimension
+    RUNTIME: AggregateSubmissionsInput.Dimension
     class Filter(_message.Message):
         __slots__ = ("problem_id", "member_id", "user_id", "verdict", "runtime", "status", "score", "percentage")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
