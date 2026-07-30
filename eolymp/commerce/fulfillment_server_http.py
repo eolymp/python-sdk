@@ -98,3 +98,14 @@ class FulfillmentServiceClient:
             **kwargs,
         )
 
+    def ExportOrderLabels(self, request, **kwargs):
+        path = "/store/orders:export-labels"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.ExportOrderLabelsOutput"),
+            **kwargs,
+        )
+
