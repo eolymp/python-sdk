@@ -1,0 +1,50 @@
+from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import namespace_pb2 as _namespace_pb2
+from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.atlas import testing_validator_pb2 as _testing_validator_pb2
+from eolymp.atlas import validation_pb2 as _validation_pb2
+from google.protobuf import descriptor as _descriptor
+from google.protobuf import message as _message
+from collections.abc import Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
+
+DESCRIPTOR: _descriptor.FileDescriptor
+
+class RunValidationInput(_message.Message):
+    __slots__ = ("validator",)
+    VALIDATOR_FIELD_NUMBER: _ClassVar[int]
+    validator: _testing_validator_pb2.Validator
+    def __init__(self, validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
+
+class RunValidationOutput(_message.Message):
+    __slots__ = ("validation_id", "validation")
+    VALIDATION_ID_FIELD_NUMBER: _ClassVar[int]
+    VALIDATION_FIELD_NUMBER: _ClassVar[int]
+    validation_id: str
+    validation: _validation_pb2.Validation
+    def __init__(self, validation_id: _Optional[str] = ..., validation: _Optional[_Union[_validation_pb2.Validation, _Mapping]] = ...) -> None: ...
+
+class DescribeValidationInput(_message.Message):
+    __slots__ = ("validation_id",)
+    VALIDATION_ID_FIELD_NUMBER: _ClassVar[int]
+    validation_id: str
+    def __init__(self, validation_id: _Optional[str] = ...) -> None: ...
+
+class DescribeValidationOutput(_message.Message):
+    __slots__ = ("validation",)
+    VALIDATION_FIELD_NUMBER: _ClassVar[int]
+    validation: _validation_pb2.Validation
+    def __init__(self, validation: _Optional[_Union[_validation_pb2.Validation, _Mapping]] = ...) -> None: ...
+
+class WatchValidationInput(_message.Message):
+    __slots__ = ("validation_id",)
+    VALIDATION_ID_FIELD_NUMBER: _ClassVar[int]
+    validation_id: str
+    def __init__(self, validation_id: _Optional[str] = ...) -> None: ...
+
+class WatchValidationOutput(_message.Message):
+    __slots__ = ("validation",)
+    VALIDATION_FIELD_NUMBER: _ClassVar[int]
+    validation: _validation_pb2.Validation
+    def __init__(self, validation: _Optional[_Union[_validation_pb2.Validation, _Mapping]] = ...) -> None: ...
