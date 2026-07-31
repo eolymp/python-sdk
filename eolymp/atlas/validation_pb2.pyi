@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Validation(_message.Message):
-    __slots__ = ("id", "problem_id", "version", "status", "verdict", "error", "error_url", "total", "checked", "valid", "invalid", "groups")
+    __slots__ = ("id", "problem_id", "version", "status", "verdict", "error", "error_url", "groups")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Validation.Status]
@@ -72,10 +72,6 @@ class Validation(_message.Message):
     VERDICT_FIELD_NUMBER: _ClassVar[int]
     ERROR_FIELD_NUMBER: _ClassVar[int]
     ERROR_URL_FIELD_NUMBER: _ClassVar[int]
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    CHECKED_FIELD_NUMBER: _ClassVar[int]
-    VALID_FIELD_NUMBER: _ClassVar[int]
-    INVALID_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
     id: str
     problem_id: str
@@ -84,9 +80,5 @@ class Validation(_message.Message):
     verdict: Validation.Verdict
     error: str
     error_url: str
-    total: int
-    checked: int
-    valid: int
-    invalid: int
     groups: _containers.RepeatedCompositeFieldContainer[Validation.Group]
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., status: _Optional[_Union[Validation.Status, str]] = ..., verdict: _Optional[_Union[Validation.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., total: _Optional[int] = ..., checked: _Optional[int] = ..., valid: _Optional[int] = ..., invalid: _Optional[int] = ..., groups: _Optional[_Iterable[_Union[Validation.Group, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., status: _Optional[_Union[Validation.Status, str]] = ..., verdict: _Optional[_Union[Validation.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., groups: _Optional[_Iterable[_Union[Validation.Group, _Mapping]]] = ...) -> None: ...
