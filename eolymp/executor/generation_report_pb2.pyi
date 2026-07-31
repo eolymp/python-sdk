@@ -11,7 +11,7 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class GenerationReport(_message.Message):
     __slots__ = ("task_id", "reference", "origin", "metadata", "agent", "runs", "error_message")
     class Run(_message.Message):
-        __slots__ = ("reference", "status", "valid", "input_url", "answer_url", "input_generator_stats", "answer_generator_stats", "error_message")
+        __slots__ = ("reference", "status", "valid", "input_url", "answer_url", "input_generator_stats", "answer_generator_stats", "validator_stats", "error_message")
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             NONE: _ClassVar[GenerationReport.Run.Status]
@@ -29,6 +29,7 @@ class GenerationReport(_message.Message):
         ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
         INPUT_GENERATOR_STATS_FIELD_NUMBER: _ClassVar[int]
         ANSWER_GENERATOR_STATS_FIELD_NUMBER: _ClassVar[int]
+        VALIDATOR_STATS_FIELD_NUMBER: _ClassVar[int]
         ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
         reference: str
         status: GenerationReport.Run.Status
@@ -37,8 +38,9 @@ class GenerationReport(_message.Message):
         answer_url: str
         input_generator_stats: _stats_pb2.Stats
         answer_generator_stats: _stats_pb2.Stats
+        validator_stats: _stats_pb2.Stats
         error_message: str
-        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[GenerationReport.Run.Status, str]] = ..., valid: _Optional[bool] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., input_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., answer_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., error_message: _Optional[str] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[GenerationReport.Run.Status, str]] = ..., valid: _Optional[bool] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., input_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., answer_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., validator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., error_message: _Optional[str] = ...) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
