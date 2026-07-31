@@ -9,19 +9,27 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GenerationReport(_message.Message):
-    __slots__ = ("task_id", "reference", "origin", "metadata", "agent", "runs", "error_message")
+    __slots__ = ("task_id", "reference", "origin", "metadata", "agent", "status", "runs", "error_message")
+    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_STATUS: _ClassVar[GenerationReport.Status]
+        PENDING: _ClassVar[GenerationReport.Status]
+        COMPLETE: _ClassVar[GenerationReport.Status]
+        FAILED: _ClassVar[GenerationReport.Status]
+        PROVISIONING: _ClassVar[GenerationReport.Status]
+        INITIALIZING: _ClassVar[GenerationReport.Status]
+        EXECUTING: _ClassVar[GenerationReport.Status]
+        ERROR: _ClassVar[GenerationReport.Status]
+    UNKNOWN_STATUS: GenerationReport.Status
+    PENDING: GenerationReport.Status
+    COMPLETE: GenerationReport.Status
+    FAILED: GenerationReport.Status
+    PROVISIONING: GenerationReport.Status
+    INITIALIZING: GenerationReport.Status
+    EXECUTING: GenerationReport.Status
+    ERROR: GenerationReport.Status
     class Run(_message.Message):
         __slots__ = ("reference", "status", "valid", "input_url", "answer_url", "input_generator_stats", "answer_generator_stats", "validator_stats", "error_message")
-        class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            NONE: _ClassVar[GenerationReport.Run.Status]
-            PENDING: _ClassVar[GenerationReport.Run.Status]
-            COMPLETE: _ClassVar[GenerationReport.Run.Status]
-            FAILED: _ClassVar[GenerationReport.Run.Status]
-        NONE: GenerationReport.Run.Status
-        PENDING: GenerationReport.Run.Status
-        COMPLETE: GenerationReport.Run.Status
-        FAILED: GenerationReport.Run.Status
         REFERENCE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         VALID_FIELD_NUMBER: _ClassVar[int]
@@ -32,7 +40,7 @@ class GenerationReport(_message.Message):
         VALIDATOR_STATS_FIELD_NUMBER: _ClassVar[int]
         ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
         reference: str
-        status: GenerationReport.Run.Status
+        status: GenerationReport.Status
         valid: bool
         input_url: str
         answer_url: str
@@ -40,7 +48,7 @@ class GenerationReport(_message.Message):
         answer_generator_stats: _stats_pb2.Stats
         validator_stats: _stats_pb2.Stats
         error_message: str
-        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[GenerationReport.Run.Status, str]] = ..., valid: _Optional[bool] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., input_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., answer_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., validator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., error_message: _Optional[str] = ...) -> None: ...
+        def __init__(self, reference: _Optional[str] = ..., status: _Optional[_Union[GenerationReport.Status, str]] = ..., valid: _Optional[bool] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., input_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., answer_generator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., validator_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., error_message: _Optional[str] = ...) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -53,6 +61,7 @@ class GenerationReport(_message.Message):
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     METADATA_FIELD_NUMBER: _ClassVar[int]
     AGENT_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
     ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
     task_id: str
@@ -60,6 +69,7 @@ class GenerationReport(_message.Message):
     origin: str
     metadata: _containers.ScalarMap[str, str]
     agent: str
+    status: GenerationReport.Status
     runs: _containers.RepeatedCompositeFieldContainer[GenerationReport.Run]
     error_message: str
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., agent: _Optional[str] = ..., runs: _Optional[_Iterable[_Union[GenerationReport.Run, _Mapping]]] = ..., error_message: _Optional[str] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., agent: _Optional[str] = ..., status: _Optional[_Union[GenerationReport.Status, str]] = ..., runs: _Optional[_Iterable[_Union[GenerationReport.Run, _Mapping]]] = ..., error_message: _Optional[str] = ...) -> None: ...
