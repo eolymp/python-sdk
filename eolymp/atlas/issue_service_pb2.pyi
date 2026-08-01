@@ -15,14 +15,16 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IssueChangedEvent(_message.Message):
-    __slots__ = ("problem_id", "before", "after")
+    __slots__ = ("problem_id", "before", "after", "actor_id")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_ID_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     before: _issue_pb2.Issue
     after: _issue_pb2.Issue
-    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_issue_pb2.Issue, _Mapping]] = ..., after: _Optional[_Union[_issue_pb2.Issue, _Mapping]] = ...) -> None: ...
+    actor_id: str
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_issue_pb2.Issue, _Mapping]] = ..., after: _Optional[_Union[_issue_pb2.Issue, _Mapping]] = ..., actor_id: _Optional[str] = ...) -> None: ...
 
 class ListIssuesInput(_message.Message):
     __slots__ = ("offset", "size", "filters", "sort", "order", "extra")
