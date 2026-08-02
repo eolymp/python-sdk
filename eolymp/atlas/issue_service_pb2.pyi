@@ -3,6 +3,7 @@ from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import issue_pb2 as _issue_pb2
+from eolymp.atlas import issue_activity_pb2 as _issue_activity_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
@@ -126,5 +127,77 @@ class DeleteIssueInput(_message.Message):
     def __init__(self, issue_id: _Optional[str] = ...) -> None: ...
 
 class DeleteIssueOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class ListIssueActivitiesInput(_message.Message):
+    __slots__ = ("issue_id", "offset", "size", "sort", "order", "extra")
+    class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        DEFAULT: _ClassVar[ListIssueActivitiesInput.Sortable]
+        CREATED_AT: _ClassVar[ListIssueActivitiesInput.Sortable]
+    DEFAULT: ListIssueActivitiesInput.Sortable
+    CREATED_AT: ListIssueActivitiesInput.Sortable
+    ISSUE_ID_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    SORT_FIELD_NUMBER: _ClassVar[int]
+    ORDER_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    issue_id: str
+    offset: int
+    size: int
+    sort: ListIssueActivitiesInput.Sortable
+    order: _direction_pb2.Direction
+    extra: _containers.RepeatedScalarFieldContainer[_issue_activity_pb2.IssueActivity.Extra.Field]
+    def __init__(self, issue_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., sort: _Optional[_Union[ListIssueActivitiesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_issue_activity_pb2.IssueActivity.Extra.Field, str]]] = ...) -> None: ...
+
+class ListIssueActivitiesOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_issue_activity_pb2.IssueActivity]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_issue_activity_pb2.IssueActivity, _Mapping]]] = ...) -> None: ...
+
+class CreateIssueCommentInput(_message.Message):
+    __slots__ = ("issue_id", "comment")
+    ISSUE_ID_FIELD_NUMBER: _ClassVar[int]
+    COMMENT_FIELD_NUMBER: _ClassVar[int]
+    issue_id: str
+    comment: _issue_activity_pb2.IssueActivity.Comment
+    def __init__(self, issue_id: _Optional[str] = ..., comment: _Optional[_Union[_issue_activity_pb2.IssueActivity.Comment, _Mapping]] = ...) -> None: ...
+
+class CreateIssueCommentOutput(_message.Message):
+    __slots__ = ("comment_id",)
+    COMMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    comment_id: str
+    def __init__(self, comment_id: _Optional[str] = ...) -> None: ...
+
+class UpdateIssueCommentInput(_message.Message):
+    __slots__ = ("patch", "issue_id", "comment_id", "comment")
+    PATCH_FIELD_NUMBER: _ClassVar[int]
+    ISSUE_ID_FIELD_NUMBER: _ClassVar[int]
+    COMMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    COMMENT_FIELD_NUMBER: _ClassVar[int]
+    patch: _containers.RepeatedScalarFieldContainer[_issue_activity_pb2.IssueActivity.Patch.Field]
+    issue_id: str
+    comment_id: str
+    comment: _issue_activity_pb2.IssueActivity.Comment
+    def __init__(self, patch: _Optional[_Iterable[_Union[_issue_activity_pb2.IssueActivity.Patch.Field, str]]] = ..., issue_id: _Optional[str] = ..., comment_id: _Optional[str] = ..., comment: _Optional[_Union[_issue_activity_pb2.IssueActivity.Comment, _Mapping]] = ...) -> None: ...
+
+class UpdateIssueCommentOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DeleteIssueCommentInput(_message.Message):
+    __slots__ = ("issue_id", "comment_id")
+    ISSUE_ID_FIELD_NUMBER: _ClassVar[int]
+    COMMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    issue_id: str
+    comment_id: str
+    def __init__(self, issue_id: _Optional[str] = ..., comment_id: _Optional[str] = ...) -> None: ...
+
+class DeleteIssueCommentOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...

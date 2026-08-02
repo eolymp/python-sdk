@@ -78,3 +78,61 @@ class IssueServiceClient:
             **kwargs,
         )
 
+    def ListIssueActivities(self, request, **kwargs):
+        path = "/issues/"+urllib.parse.quote(request.issue_id)+"/activities"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.issue_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListIssueActivitiesOutput"),
+            **kwargs,
+        )
+
+    def CreateIssueComment(self, request, **kwargs):
+        path = "/issues/"+urllib.parse.quote(request.issue_id)+"/comments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.issue_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CreateIssueCommentOutput"),
+            **kwargs,
+        )
+
+    def UpdateIssueComment(self, request, **kwargs):
+        path = "/issues/"+urllib.parse.quote(request.issue_id)+"/comments/"+urllib.parse.quote(request.comment_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.issue_id = ""
+        request.comment_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateIssueCommentOutput"),
+            **kwargs,
+        )
+
+    def DeleteIssueComment(self, request, **kwargs):
+        path = "/issues/"+urllib.parse.quote(request.issue_id)+"/comments/"+urllib.parse.quote(request.comment_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.issue_id = ""
+        request.comment_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DeleteIssueCommentOutput"),
+            **kwargs,
+        )
+

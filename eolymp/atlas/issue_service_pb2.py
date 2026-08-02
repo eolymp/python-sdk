@@ -27,11 +27,12 @@ from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_names
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.atlas import issue_pb2 as eolymp_dot_atlas_dot_issue__pb2
+from eolymp.atlas import issue_activity_pb2 as eolymp_dot_atlas_dot_issue__activity__pb2
 from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/atlas/issue_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/atlas/issue.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\x82\x01\n\x11IssueChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12#\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.Issue\x12\"\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x13.eolymp.atlas.Issue\x12\x10\n\x08\x61\x63tor_id\x18\x04 \x01(\t\"\xd9\x05\n\x0fListIssuesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x35\n\x07\x66ilters\x18( \x01(\x0b\x32$.eolymp.atlas.ListIssuesInput.Filter\x12\x34\n\x04sort\x18\x32 \x01(\x0e\x32&.eolymp.atlas.ListIssuesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12/\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1f.eolymp.atlas.Issue.Extra.Field\x1a\x98\x03\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\nproblem_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12/\n\x06number\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x33\n\x0b\x61ssignee_id\x18\x05 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x33\n\x0breporter_id\x18\x06 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\ttester_id\x18\x07 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04tags\x18\x08 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"C\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nCREATED_AT\x10\x01\x12\x0e\n\nUPDATED_AT\x10\x02\x12\n\n\x06NUMBER\x10\x03\"E\n\x10ListIssuesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.eolymp.atlas.Issue\"W\n\x12\x44\x65scribeIssueInput\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12/\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1f.eolymp.atlas.Issue.Extra.Field\"9\n\x13\x44\x65scribeIssueOutput\x12\"\n\x05issue\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Issue\"6\n\x10\x43reateIssueInput\x12\"\n\x05issue\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.Issue\"%\n\x11\x43reateIssueOutput\x12\x10\n\x08issue_id\x18\x01 \x01(\t\"x\n\x10UpdateIssueInput\x12.\n\x05patch\x18\x01 \x03(\x0e\x32\x1f.eolymp.atlas.Issue.Patch.Field\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12\"\n\x05issue\x18\x03 \x01(\x0b\x32\x13.eolymp.atlas.Issue\"\x13\n\x11UpdateIssueOutput\"$\n\x10\x44\x65leteIssueInput\x12\x10\n\x08issue_id\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteIssueOutput2\x89\x06\n\x0cIssueService\x12\x85\x01\n\nListIssues\x12\x1d.eolymp.atlas.ListIssuesInput\x1a\x1e.eolymp.atlas.ListIssuesOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\t\x12\x07/issues\x12\x99\x01\n\rDescribeIssue\x12 .eolymp.atlas.DescribeIssueInput\x1a!.eolymp.atlas.DescribeIssueOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x14\x12\x12/issues/{issue_id}\x12\x89\x01\n\x0b\x43reateIssue\x12\x1e.eolymp.atlas.CreateIssueInput\x1a\x1f.eolymp.atlas.CreateIssueOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\t\"\x07/issues\x12\x94\x01\n\x0bUpdateIssue\x12\x1e.eolymp.atlas.UpdateIssueInput\x1a\x1f.eolymp.atlas.UpdateIssueOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x14\x1a\x12/issues/{issue_id}\x12\x94\x01\n\x0b\x44\x65leteIssue\x12\x1e.eolymp.atlas.DeleteIssueInput\x1a\x1f.eolymp.atlas.DeleteIssueOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x14*\x12/issues/{issue_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/atlas/issue_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/atlas/issue.proto\x1a!eolymp/atlas/issue_activity.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\x82\x01\n\x11IssueChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12#\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.Issue\x12\"\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x13.eolymp.atlas.Issue\x12\x10\n\x08\x61\x63tor_id\x18\x04 \x01(\t\"\xd9\x05\n\x0fListIssuesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x35\n\x07\x66ilters\x18( \x01(\x0b\x32$.eolymp.atlas.ListIssuesInput.Filter\x12\x34\n\x04sort\x18\x32 \x01(\x0e\x32&.eolymp.atlas.ListIssuesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12/\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1f.eolymp.atlas.Issue.Extra.Field\x1a\x98\x03\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\nproblem_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12/\n\x06number\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x33\n\x0b\x61ssignee_id\x18\x05 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x33\n\x0breporter_id\x18\x06 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\ttester_id\x18\x07 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04tags\x18\x08 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"C\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nCREATED_AT\x10\x01\x12\x0e\n\nUPDATED_AT\x10\x02\x12\n\n\x06NUMBER\x10\x03\"E\n\x10ListIssuesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.eolymp.atlas.Issue\"W\n\x12\x44\x65scribeIssueInput\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12/\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1f.eolymp.atlas.Issue.Extra.Field\"9\n\x13\x44\x65scribeIssueOutput\x12\"\n\x05issue\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Issue\"6\n\x10\x43reateIssueInput\x12\"\n\x05issue\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.Issue\"%\n\x11\x43reateIssueOutput\x12\x10\n\x08issue_id\x18\x01 \x01(\t\"x\n\x10UpdateIssueInput\x12.\n\x05patch\x18\x01 \x03(\x0e\x32\x1f.eolymp.atlas.Issue.Patch.Field\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12\"\n\x05issue\x18\x03 \x01(\x0b\x32\x13.eolymp.atlas.Issue\"\x13\n\x11UpdateIssueOutput\"$\n\x10\x44\x65leteIssueInput\x12\x10\n\x08issue_id\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteIssueOutput\"\x97\x02\n\x18ListIssueActivitiesInput\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12=\n\x04sort\x18\x32 \x01(\x0e\x32/.eolymp.atlas.ListIssueActivitiesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x37\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\'.eolymp.atlas.IssueActivity.Extra.Field\"\'\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nCREATED_AT\x10\x01\"V\n\x19ListIssueActivitiesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.atlas.IssueActivity\"a\n\x17\x43reateIssueCommentInput\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12\x34\n\x07\x63omment\x18\x03 \x01(\x0b\x32#.eolymp.atlas.IssueActivity.Comment\".\n\x18\x43reateIssueCommentOutput\x12\x12\n\ncomment_id\x18\x01 \x01(\t\"\xad\x01\n\x17UpdateIssueCommentInput\x12\x36\n\x05patch\x18\x01 \x03(\x0e\x32\'.eolymp.atlas.IssueActivity.Patch.Field\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12\x12\n\ncomment_id\x18\x03 \x01(\t\x12\x34\n\x07\x63omment\x18\x04 \x01(\x0b\x32#.eolymp.atlas.IssueActivity.Comment\"\x1a\n\x18UpdateIssueCommentOutput\"?\n\x17\x44\x65leteIssueCommentInput\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12\x12\n\ncomment_id\x18\x03 \x01(\t\"\x1a\n\x18\x44\x65leteIssueCommentOutput2\xfb\x0b\n\x0cIssueService\x12\x85\x01\n\nListIssues\x12\x1d.eolymp.atlas.ListIssuesInput\x1a\x1e.eolymp.atlas.ListIssuesOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\t\x12\x07/issues\x12\x99\x01\n\rDescribeIssue\x12 .eolymp.atlas.DescribeIssueInput\x1a!.eolymp.atlas.DescribeIssueOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x14\x12\x12/issues/{issue_id}\x12\x89\x01\n\x0b\x43reateIssue\x12\x1e.eolymp.atlas.CreateIssueInput\x1a\x1f.eolymp.atlas.CreateIssueOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\t\"\x07/issues\x12\x94\x01\n\x0bUpdateIssue\x12\x1e.eolymp.atlas.UpdateIssueInput\x1a\x1f.eolymp.atlas.UpdateIssueOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x14\x1a\x12/issues/{issue_id}\x12\x94\x01\n\x0b\x44\x65leteIssue\x12\x1e.eolymp.atlas.DeleteIssueInput\x1a\x1f.eolymp.atlas.DeleteIssueOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x14*\x12/issues/{issue_id}\x12\xb6\x01\n\x13ListIssueActivities\x12&.eolymp.atlas.ListIssueActivitiesInput\x1a\'.eolymp.atlas.ListIssueActivitiesOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x1f\x12\x1d/issues/{issue_id}/activities\x12\xb2\x01\n\x12\x43reateIssueComment\x12%.eolymp.atlas.CreateIssueCommentInput\x1a&.eolymp.atlas.CreateIssueCommentOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x1d\"\x1b/issues/{issue_id}/comments\x12\xbf\x01\n\x12UpdateIssueComment\x12%.eolymp.atlas.UpdateIssueCommentInput\x1a&.eolymp.atlas.UpdateIssueCommentOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02*\x1a(/issues/{issue_id}/comments/{comment_id}\x12\xbf\x01\n\x12\x44\x65leteIssueComment\x12%.eolymp.atlas.DeleteIssueCommentInput\x1a&.eolymp.atlas.DeleteIssueCommentOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02**(/issues/{issue_id}/comments/{comment_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -51,32 +52,58 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ISSUESERVICE'].methods_by_name['UpdateIssue']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002\024\032\022/issues/{issue_id}'
   _globals['_ISSUESERVICE'].methods_by_name['DeleteIssue']._loaded_options = None
   _globals['_ISSUESERVICE'].methods_by_name['DeleteIssue']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002\024*\022/issues/{issue_id}'
-  _globals['_ISSUECHANGEDEVENT']._serialized_start=281
-  _globals['_ISSUECHANGEDEVENT']._serialized_end=411
-  _globals['_LISTISSUESINPUT']._serialized_start=414
-  _globals['_LISTISSUESINPUT']._serialized_end=1143
-  _globals['_LISTISSUESINPUT_FILTER']._serialized_start=666
-  _globals['_LISTISSUESINPUT_FILTER']._serialized_end=1074
-  _globals['_LISTISSUESINPUT_SORTABLE']._serialized_start=1076
-  _globals['_LISTISSUESINPUT_SORTABLE']._serialized_end=1143
-  _globals['_LISTISSUESOUTPUT']._serialized_start=1145
-  _globals['_LISTISSUESOUTPUT']._serialized_end=1214
-  _globals['_DESCRIBEISSUEINPUT']._serialized_start=1216
-  _globals['_DESCRIBEISSUEINPUT']._serialized_end=1303
-  _globals['_DESCRIBEISSUEOUTPUT']._serialized_start=1305
-  _globals['_DESCRIBEISSUEOUTPUT']._serialized_end=1362
-  _globals['_CREATEISSUEINPUT']._serialized_start=1364
-  _globals['_CREATEISSUEINPUT']._serialized_end=1418
-  _globals['_CREATEISSUEOUTPUT']._serialized_start=1420
-  _globals['_CREATEISSUEOUTPUT']._serialized_end=1457
-  _globals['_UPDATEISSUEINPUT']._serialized_start=1459
-  _globals['_UPDATEISSUEINPUT']._serialized_end=1579
-  _globals['_UPDATEISSUEOUTPUT']._serialized_start=1581
-  _globals['_UPDATEISSUEOUTPUT']._serialized_end=1600
-  _globals['_DELETEISSUEINPUT']._serialized_start=1602
-  _globals['_DELETEISSUEINPUT']._serialized_end=1638
-  _globals['_DELETEISSUEOUTPUT']._serialized_start=1640
-  _globals['_DELETEISSUEOUTPUT']._serialized_end=1659
-  _globals['_ISSUESERVICE']._serialized_start=1662
-  _globals['_ISSUESERVICE']._serialized_end=2439
+  _globals['_ISSUESERVICE'].methods_by_name['ListIssueActivities']._loaded_options = None
+  _globals['_ISSUESERVICE'].methods_by_name['ListIssueActivities']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002\037\022\035/issues/{issue_id}/activities'
+  _globals['_ISSUESERVICE'].methods_by_name['CreateIssueComment']._loaded_options = None
+  _globals['_ISSUESERVICE'].methods_by_name['CreateIssueComment']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002\035\"\033/issues/{issue_id}/comments'
+  _globals['_ISSUESERVICE'].methods_by_name['UpdateIssueComment']._loaded_options = None
+  _globals['_ISSUESERVICE'].methods_by_name['UpdateIssueComment']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002*\032(/issues/{issue_id}/comments/{comment_id}'
+  _globals['_ISSUESERVICE'].methods_by_name['DeleteIssueComment']._loaded_options = None
+  _globals['_ISSUESERVICE'].methods_by_name['DeleteIssueComment']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002**(/issues/{issue_id}/comments/{comment_id}'
+  _globals['_ISSUECHANGEDEVENT']._serialized_start=316
+  _globals['_ISSUECHANGEDEVENT']._serialized_end=446
+  _globals['_LISTISSUESINPUT']._serialized_start=449
+  _globals['_LISTISSUESINPUT']._serialized_end=1178
+  _globals['_LISTISSUESINPUT_FILTER']._serialized_start=701
+  _globals['_LISTISSUESINPUT_FILTER']._serialized_end=1109
+  _globals['_LISTISSUESINPUT_SORTABLE']._serialized_start=1111
+  _globals['_LISTISSUESINPUT_SORTABLE']._serialized_end=1178
+  _globals['_LISTISSUESOUTPUT']._serialized_start=1180
+  _globals['_LISTISSUESOUTPUT']._serialized_end=1249
+  _globals['_DESCRIBEISSUEINPUT']._serialized_start=1251
+  _globals['_DESCRIBEISSUEINPUT']._serialized_end=1338
+  _globals['_DESCRIBEISSUEOUTPUT']._serialized_start=1340
+  _globals['_DESCRIBEISSUEOUTPUT']._serialized_end=1397
+  _globals['_CREATEISSUEINPUT']._serialized_start=1399
+  _globals['_CREATEISSUEINPUT']._serialized_end=1453
+  _globals['_CREATEISSUEOUTPUT']._serialized_start=1455
+  _globals['_CREATEISSUEOUTPUT']._serialized_end=1492
+  _globals['_UPDATEISSUEINPUT']._serialized_start=1494
+  _globals['_UPDATEISSUEINPUT']._serialized_end=1614
+  _globals['_UPDATEISSUEOUTPUT']._serialized_start=1616
+  _globals['_UPDATEISSUEOUTPUT']._serialized_end=1635
+  _globals['_DELETEISSUEINPUT']._serialized_start=1637
+  _globals['_DELETEISSUEINPUT']._serialized_end=1673
+  _globals['_DELETEISSUEOUTPUT']._serialized_start=1675
+  _globals['_DELETEISSUEOUTPUT']._serialized_end=1694
+  _globals['_LISTISSUEACTIVITIESINPUT']._serialized_start=1697
+  _globals['_LISTISSUEACTIVITIESINPUT']._serialized_end=1976
+  _globals['_LISTISSUEACTIVITIESINPUT_SORTABLE']._serialized_start=1111
+  _globals['_LISTISSUEACTIVITIESINPUT_SORTABLE']._serialized_end=1150
+  _globals['_LISTISSUEACTIVITIESOUTPUT']._serialized_start=1978
+  _globals['_LISTISSUEACTIVITIESOUTPUT']._serialized_end=2064
+  _globals['_CREATEISSUECOMMENTINPUT']._serialized_start=2066
+  _globals['_CREATEISSUECOMMENTINPUT']._serialized_end=2163
+  _globals['_CREATEISSUECOMMENTOUTPUT']._serialized_start=2165
+  _globals['_CREATEISSUECOMMENTOUTPUT']._serialized_end=2211
+  _globals['_UPDATEISSUECOMMENTINPUT']._serialized_start=2214
+  _globals['_UPDATEISSUECOMMENTINPUT']._serialized_end=2387
+  _globals['_UPDATEISSUECOMMENTOUTPUT']._serialized_start=2389
+  _globals['_UPDATEISSUECOMMENTOUTPUT']._serialized_end=2415
+  _globals['_DELETEISSUECOMMENTINPUT']._serialized_start=2417
+  _globals['_DELETEISSUECOMMENTINPUT']._serialized_end=2480
+  _globals['_DELETEISSUECOMMENTOUTPUT']._serialized_start=2482
+  _globals['_DELETEISSUECOMMENTOUTPUT']._serialized_end=2508
+  _globals['_ISSUESERVICE']._serialized_start=2511
+  _globals['_ISSUESERVICE']._serialized_end=4042
 # @@protoc_insertion_point(module_scope)
