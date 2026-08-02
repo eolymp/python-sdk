@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/atlas/tasks.proto\x12\x0c\x65olymp.atlas\"=\n\x11ImportProblemTask\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x14\n\x0cproblem_link\x18\x02 \x01(\t\"u\n\x17TranslateStatementsTask\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsource_locale\x18\x02 \x01(\t\x12\x16\n\x0etarget_locales\x18\x03 \x03(\t\x12\x17\n\x0foverride_manual\x18\x04 \x01(\x08\"u\n\x17TranslateEditorialsTask\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsource_locale\x18\x02 \x01(\t\x12\x16\n\x0etarget_locales\x18\x03 \x03(\t\x12\x17\n\x0foverride_manual\x18\x04 \x01(\x08\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/atlas/tasks.proto\x12\x0c\x65olymp.atlas\"=\n\x11ImportProblemTask\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x14\n\x0cproblem_link\x18\x02 \x01(\t\"u\n\x17TranslateStatementsTask\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsource_locale\x18\x02 \x01(\t\x12\x16\n\x0etarget_locales\x18\x03 \x03(\t\x12\x17\n\x0foverride_manual\x18\x04 \x01(\x08\"u\n\x17TranslateEditorialsTask\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsource_locale\x18\x02 \x01(\t\x12\x16\n\x0etarget_locales\x18\x03 \x03(\t\x12\x17\n\x0foverride_manual\x18\x04 \x01(\x08\"o\n\x11GenerateTestsTask\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x17\n\x0ftest_references\x18\x02 \x03(\t\x1a-\n\nCheckpoint\x12\x1f\n\x17pending_test_references\x18\x01 \x03(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,4 +38,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TRANSLATESTATEMENTSTASK']._serialized_end=222
   _globals['_TRANSLATEEDITORIALSTASK']._serialized_start=224
   _globals['_TRANSLATEEDITORIALSTASK']._serialized_end=341
+  _globals['_GENERATETESTSTASK']._serialized_start=343
+  _globals['_GENERATETESTSTASK']._serialized_end=454
+  _globals['_GENERATETESTSTASK_CHECKPOINT']._serialized_start=409
+  _globals['_GENERATETESTSTASK_CHECKPOINT']._serialized_end=454
 # @@protoc_insertion_point(module_scope)

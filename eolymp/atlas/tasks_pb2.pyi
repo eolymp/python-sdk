@@ -37,3 +37,16 @@ class TranslateEditorialsTask(_message.Message):
     target_locales: _containers.RepeatedScalarFieldContainer[str]
     override_manual: bool
     def __init__(self, problem_id: _Optional[str] = ..., source_locale: _Optional[str] = ..., target_locales: _Optional[_Iterable[str]] = ..., override_manual: _Optional[bool] = ...) -> None: ...
+
+class GenerateTestsTask(_message.Message):
+    __slots__ = ("problem_id", "test_references")
+    class Checkpoint(_message.Message):
+        __slots__ = ("pending_test_references",)
+        PENDING_TEST_REFERENCES_FIELD_NUMBER: _ClassVar[int]
+        pending_test_references: _containers.RepeatedScalarFieldContainer[str]
+        def __init__(self, pending_test_references: _Optional[_Iterable[str]] = ...) -> None: ...
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    TEST_REFERENCES_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    test_references: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, problem_id: _Optional[str] = ..., test_references: _Optional[_Iterable[str]] = ...) -> None: ...
