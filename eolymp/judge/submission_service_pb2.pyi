@@ -199,8 +199,10 @@ class RetestProblemInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
 
 class RetestProblemOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("task_id",)
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    task_id: str
+    def __init__(self, task_id: _Optional[str] = ...) -> None: ...
 
 class AnalyzeSubmissionInput(_message.Message):
     __slots__ = ("submission_id",)

@@ -21,10 +21,10 @@ class RebuildScoreInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class RebuildScoreOutput(_message.Message):
-    __slots__ = ("activity_id",)
-    ACTIVITY_ID_FIELD_NUMBER: _ClassVar[int]
-    activity_id: str
-    def __init__(self, activity_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ("task_id",)
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    task_id: str
+    def __init__(self, task_id: _Optional[str] = ...) -> None: ...
 
 class IntrospectScoreInput(_message.Message):
     __slots__ = ("contest_id",)
