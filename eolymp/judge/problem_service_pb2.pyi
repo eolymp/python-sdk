@@ -38,16 +38,6 @@ class ImportProblemOutput(_message.Message):
     problem_ids: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, problem_id: _Optional[str] = ..., problem_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
-class SyncProblemInput(_message.Message):
-    __slots__ = ("problem_id",)
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
-
-class SyncProblemOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
 class UpdateProblemInput(_message.Message):
     __slots__ = ("patch", "problem_id", "problem")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
