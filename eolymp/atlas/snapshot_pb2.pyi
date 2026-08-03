@@ -2,6 +2,7 @@ from eolymp.atlas import attachment_pb2 as _attachment_pb2
 from eolymp.atlas import code_template_pb2 as _code_template_pb2
 from eolymp.atlas import editorial_pb2 as _editorial_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
+from eolymp.atlas import question_pb2 as _question_pb2
 from eolymp.atlas import script_pb2 as _script_pb2
 from eolymp.atlas import solution_pb2 as _solution_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
@@ -20,7 +21,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Snapshot(_message.Message):
-    __slots__ = ("problem", "testing", "checker", "interactor", "validator", "statements", "templates", "attachments", "testsets", "tests", "editorials", "solutions", "scripts")
+    __slots__ = ("problem", "testing", "checker", "interactor", "validator", "statements", "templates", "attachments", "testsets", "tests", "editorials", "solutions", "scripts", "questions")
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
     TESTING_FIELD_NUMBER: _ClassVar[int]
     CHECKER_FIELD_NUMBER: _ClassVar[int]
@@ -34,6 +35,7 @@ class Snapshot(_message.Message):
     EDITORIALS_FIELD_NUMBER: _ClassVar[int]
     SOLUTIONS_FIELD_NUMBER: _ClassVar[int]
     SCRIPTS_FIELD_NUMBER: _ClassVar[int]
+    QUESTIONS_FIELD_NUMBER: _ClassVar[int]
     problem: _problem_pb2.Problem
     testing: _testing_config_pb2.TestingConfig
     checker: _testing_checker_pb2.Checker
@@ -47,4 +49,5 @@ class Snapshot(_message.Message):
     editorials: _containers.RepeatedCompositeFieldContainer[_editorial_pb2.Editorial]
     solutions: _containers.RepeatedCompositeFieldContainer[_solution_pb2.Solution]
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
-    def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., testing: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ..., checker: _Optional[_Union[_testing_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ..., validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ..., statements: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ..., templates: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ..., attachments: _Optional[_Iterable[_Union[_attachment_pb2.Attachment, _Mapping]]] = ..., testsets: _Optional[_Iterable[_Union[_testing_testset_pb2.Testset, _Mapping]]] = ..., tests: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ..., editorials: _Optional[_Iterable[_Union[_editorial_pb2.Editorial, _Mapping]]] = ..., solutions: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...
+    questions: _containers.RepeatedCompositeFieldContainer[_question_pb2.Question]
+    def __init__(self, problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ..., testing: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ..., checker: _Optional[_Union[_testing_checker_pb2.Checker, _Mapping]] = ..., interactor: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ..., validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ..., statements: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ..., templates: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ..., attachments: _Optional[_Iterable[_Union[_attachment_pb2.Attachment, _Mapping]]] = ..., testsets: _Optional[_Iterable[_Union[_testing_testset_pb2.Testset, _Mapping]]] = ..., tests: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ..., editorials: _Optional[_Iterable[_Union[_editorial_pb2.Editorial, _Mapping]]] = ..., solutions: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., questions: _Optional[_Iterable[_Union[_question_pb2.Question, _Mapping]]] = ...) -> None: ...

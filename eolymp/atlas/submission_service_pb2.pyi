@@ -34,16 +34,18 @@ class SubmissionCompleteEvent(_message.Message):
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., update: _Optional[bool] = ...) -> None: ...
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ("problem_id", "lang", "source", "values")
+    __slots__ = ("problem_id", "lang", "source", "values", "quiz")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     VALUES_FIELD_NUMBER: _ClassVar[int]
+    QUIZ_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     lang: str
     source: str
     values: _containers.RepeatedCompositeFieldContainer[_form_pb2.Form.Value]
-    def __init__(self, problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_form_pb2.Form.Value, _Mapping]]] = ...) -> None: ...
+    quiz: _submission_pb2.Submission.Quiz
+    def __init__(self, problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_form_pb2.Form.Value, _Mapping]]] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)

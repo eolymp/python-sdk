@@ -1,5 +1,6 @@
 import datetime
 
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.atlas import testing_feedback_pb2 as _testing_feedback_pb2
 from eolymp.atlas import testing_scoring_pb2 as _testing_scoring_pb2
@@ -15,7 +16,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ("id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "values", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "assistant_available", "cursor")
+    __slots__ = ("id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "values", "quiz", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "assistant_available", "cursor")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Submission.Status]
@@ -131,6 +132,29 @@ class Submission(_message.Message):
         resource_usage: float
         runs: _containers.RepeatedCompositeFieldContainer[Submission.Run]
         def __init__(self, index: _Optional[int] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., dependencies: _Optional[_Iterable[int]] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., scoring_mode: _Optional[_Union[_testing_scoring_pb2.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., runs: _Optional[_Iterable[_Union[Submission.Run, _Mapping]]] = ...) -> None: ...
+    class Quiz(_message.Message):
+        __slots__ = ("answers",)
+        class Choice(_message.Message):
+            __slots__ = ("id", "index")
+            ID_FIELD_NUMBER: _ClassVar[int]
+            INDEX_FIELD_NUMBER: _ClassVar[int]
+            id: str
+            index: int
+            def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ...) -> None: ...
+        class Answer(_message.Message):
+            __slots__ = ("question_id", "question_index", "choices", "text")
+            QUESTION_ID_FIELD_NUMBER: _ClassVar[int]
+            QUESTION_INDEX_FIELD_NUMBER: _ClassVar[int]
+            CHOICES_FIELD_NUMBER: _ClassVar[int]
+            TEXT_FIELD_NUMBER: _ClassVar[int]
+            question_id: str
+            question_index: int
+            choices: _containers.RepeatedCompositeFieldContainer[Submission.Quiz.Choice]
+            text: str
+            def __init__(self, question_id: _Optional[str] = ..., question_index: _Optional[int] = ..., choices: _Optional[_Iterable[_Union[Submission.Quiz.Choice, _Mapping]]] = ..., text: _Optional[str] = ...) -> None: ...
+        ANSWERS_FIELD_NUMBER: _ClassVar[int]
+        answers: _containers.RepeatedCompositeFieldContainer[Submission.Quiz.Answer]
+        def __init__(self, answers: _Optional[_Iterable[_Union[Submission.Quiz.Answer, _Mapping]]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
@@ -142,6 +166,7 @@ class Submission(_message.Message):
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
     VALUES_FIELD_NUMBER: _ClassVar[int]
+    QUIZ_FIELD_NUMBER: _ClassVar[int]
     SIGNATURE_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     VERDICT_FIELD_NUMBER: _ClassVar[int]
@@ -168,6 +193,7 @@ class Submission(_message.Message):
     source: str
     source_url: str
     values: _containers.RepeatedCompositeFieldContainer[_form_pb2.Form.Value]
+    quiz: Submission.Quiz
     signature: str
     status: Submission.Status
     verdict: Submission.Verdict
@@ -183,4 +209,4 @@ class Submission(_message.Message):
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     assistant_available: bool
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_form_pb2.Form.Value, _Mapping]]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., assistant_available: _Optional[bool] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_form_pb2.Form.Value, _Mapping]]] = ..., quiz: _Optional[_Union[Submission.Quiz, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., assistant_available: _Optional[bool] = ..., cursor: _Optional[str] = ...) -> None: ...

@@ -20,12 +20,14 @@ class Problem(_message.Message):
         OUTPUT: _ClassVar[Problem.Type]
         SQL: _ClassVar[Problem.Type]
         ML: _ClassVar[Problem.Type]
+        QUIZ: _ClassVar[Problem.Type]
     UNKNOWN_TYPE: Problem.Type
     PROGRAM: Problem.Type
     FUNCTION: Problem.Type
     OUTPUT: Problem.Type
     SQL: Problem.Type
     ML: Problem.Type
+    QUIZ: Problem.Type
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
