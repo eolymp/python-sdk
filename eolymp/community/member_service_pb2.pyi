@@ -80,24 +80,12 @@ class UpdateMemberPictureOutput(_message.Message):
     def __init__(self, picture_url: _Optional[str] = ...) -> None: ...
 
 class DeleteMemberInput(_message.Message):
-    __slots__ = ("member_id", "force_delete")
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    FORCE_DELETE_FIELD_NUMBER: _ClassVar[int]
-    member_id: str
-    force_delete: bool
-    def __init__(self, member_id: _Optional[str] = ..., force_delete: _Optional[bool] = ...) -> None: ...
-
-class DeleteMemberOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
-class RestoreMemberInput(_message.Message):
     __slots__ = ("member_id",)
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     def __init__(self, member_id: _Optional[str] = ...) -> None: ...
 
-class RestoreMemberOutput(_message.Message):
+class DeleteMemberOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
