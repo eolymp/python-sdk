@@ -271,10 +271,10 @@ class TranslatePostInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: _Optional[bool] = ..., override_manual: _Optional[bool] = ...) -> None: ...
 
 class TranslatePostOutput(_message.Message):
-    __slots__ = ("job_id",)
-    JOB_ID_FIELD_NUMBER: _ClassVar[int]
-    job_id: str
-    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ("task_id",)
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    task_id: str
+    def __init__(self, task_id: _Optional[str] = ...) -> None: ...
 
 class DescribePostTranslationInput(_message.Message):
     __slots__ = ("post_id", "translation_id", "extra")

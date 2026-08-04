@@ -154,10 +154,10 @@ class TranslateFragmentInput(_message.Message):
     def __init__(self, fragment_id: _Optional[str] = ..., source: _Optional[str] = ..., target: _Optional[_Iterable[str]] = ..., target_automatic: _Optional[bool] = ..., override_manual: _Optional[bool] = ...) -> None: ...
 
 class TranslateFragmentOutput(_message.Message):
-    __slots__ = ("job_id",)
-    JOB_ID_FIELD_NUMBER: _ClassVar[int]
-    job_id: str
-    def __init__(self, job_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ("task_id",)
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    task_id: str
+    def __init__(self, task_id: _Optional[str] = ...) -> None: ...
 
 class DescribeFragmentTranslationInput(_message.Message):
     __slots__ = ("fragment_id", "translation_id", "extra")
