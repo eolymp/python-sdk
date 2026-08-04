@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.universe import space_pb2 as eolymp_dot_universe_dot_space__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/universe/events.proto\x12\x0f\x65olymp.universe\x1a\x1b\x65olymp/universe/space.proto\"\xc8\x01\n\x11SpaceChangeRecord\x12\x38\n\x02op\x18\x01 \x01(\x0e\x32,.eolymp.universe.SpaceChangeRecord.Operation\x12%\n\x05space\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.Space\"R\n\tOperation\x12\x10\n\x0cNO_OPERATION\x10\x00\x12\n\n\x06\x43REATE\x10\x01\x12\n\n\x06UPDATE\x10\x02\x12\n\n\x06\x44\x45LETE\x10\x03\x12\x0f\n\x0bSOFT_DELETE\x10\x04\x42\x33Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/universe/events.proto\x12\x0f\x65olymp.universe\x1a\x1b\x65olymp/universe/space.proto\"b\n\x11SpaceChangedEvent\x12&\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\x12%\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +33,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.events_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/universe;universe'
-  _globals['_SPACECHANGERECORD']._serialized_start=79
-  _globals['_SPACECHANGERECORD']._serialized_end=279
-  _globals['_SPACECHANGERECORD_OPERATION']._serialized_start=197
-  _globals['_SPACECHANGERECORD_OPERATION']._serialized_end=279
+  _globals['_SPACECHANGEDEVENT']._serialized_start=78
+  _globals['_SPACECHANGEDEVENT']._serialized_end=176
 # @@protoc_insertion_point(module_scope)
