@@ -4,15 +4,16 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.mail import email_type_pb2 as _email_type_pb2
 from google.protobuf import struct_pb2 as _struct_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Mapping as _Mapping
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SendEmailInput(_message.Message):
-    __slots__ = ("member_id", "email_ref", "dry_run", "bcc_me", "type", "locale", "message", "template")
+    __slots__ = ("member_id", "email_ref", "attachments", "dry_run", "bcc_me", "type", "locale", "message", "template")
     class Message(_message.Message):
         __slots__ = ("subject", "body", "data")
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
@@ -29,8 +30,16 @@ class SendEmailInput(_message.Message):
         path: str
         data: _struct_pb2.Struct
         def __init__(self, path: _Optional[str] = ..., data: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
+    class Attachment(_message.Message):
+        __slots__ = ("name", "link")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        LINK_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        link: str
+        def __init__(self, name: _Optional[str] = ..., link: _Optional[str] = ...) -> None: ...
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     EMAIL_REF_FIELD_NUMBER: _ClassVar[int]
+    ATTACHMENTS_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     BCC_ME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -39,13 +48,14 @@ class SendEmailInput(_message.Message):
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     email_ref: str
+    attachments: _containers.RepeatedCompositeFieldContainer[SendEmailInput.Attachment]
     dry_run: bool
     bcc_me: bool
     type: _email_type_pb2.EmailType
     locale: str
     message: SendEmailInput.Message
     template: SendEmailInput.Template
-    def __init__(self, member_id: _Optional[str] = ..., email_ref: _Optional[str] = ..., dry_run: _Optional[bool] = ..., bcc_me: _Optional[bool] = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[SendEmailInput.Message, _Mapping]] = ..., template: _Optional[_Union[SendEmailInput.Template, _Mapping]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., email_ref: _Optional[str] = ..., attachments: _Optional[_Iterable[_Union[SendEmailInput.Attachment, _Mapping]]] = ..., dry_run: _Optional[bool] = ..., bcc_me: _Optional[bool] = ..., type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., locale: _Optional[str] = ..., message: _Optional[_Union[SendEmailInput.Message, _Mapping]] = ..., template: _Optional[_Union[SendEmailInput.Template, _Mapping]] = ...) -> None: ...
 
 class SendEmailOutput(_message.Message):
     __slots__ = ("message_id",)
