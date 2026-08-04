@@ -15,7 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Post(_message.Message):
-    __slots__ = ("id", "url", "source_id", "source_url", "draft", "public", "featured", "pinned", "moderation", "user_id", "member_id", "created_at", "published_at", "updated_at", "type_id", "locale", "title", "image_url", "content", "preview", "vote", "vote_count", "reply_count", "labels", "links")
+    __slots__ = ("id", "url", "source_id", "source_url", "draft", "public", "featured", "pinned", "moderation", "user_id", "member_id", "created_at", "published_at", "updated_at", "type_id", "locale", "locales", "automatic", "title", "image_url", "content", "preview", "vote", "vote_count", "reply_count", "labels", "links")
     class Moderation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_MODERATION: _ClassVar[Post.Moderation]
@@ -40,19 +40,23 @@ class Post(_message.Message):
     CONTENT_RENDER: Post.Extra
     PREVIEW: Post.Extra
     VOTE: Post.Extra
-    class Translation(_message.Message):
-        __slots__ = ("id", "locale", "content", "labels", "automatic")
-        ID_FIELD_NUMBER: _ClassVar[int]
-        LOCALE_FIELD_NUMBER: _ClassVar[int]
+    class Patch(_message.Message):
+        __slots__ = ("type_id", "featured", "pinned", "automatic", "content", "labels", "unlabel")
+        TYPE_ID_FIELD_NUMBER: _ClassVar[int]
+        FEATURED_FIELD_NUMBER: _ClassVar[int]
+        PINNED_FIELD_NUMBER: _ClassVar[int]
+        AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
         LABELS_FIELD_NUMBER: _ClassVar[int]
-        AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
-        id: str
-        locale: str
+        UNLABEL_FIELD_NUMBER: _ClassVar[int]
+        type_id: str
+        featured: bool
+        pinned: bool
+        automatic: bool
         content: _content_pb2.Content
         labels: _containers.RepeatedScalarFieldContainer[str]
-        automatic: bool
-        def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., automatic: _Optional[bool] = ...) -> None: ...
+        unlabel: bool
+        def __init__(self, type_id: _Optional[str] = ..., featured: _Optional[bool] = ..., pinned: _Optional[bool] = ..., automatic: _Optional[bool] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., unlabel: _Optional[bool] = ...) -> None: ...
     class Image(_message.Message):
         __slots__ = ("src", "width", "height")
         SRC_FIELD_NUMBER: _ClassVar[int]
@@ -88,6 +92,8 @@ class Post(_message.Message):
     UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
     TYPE_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
+    LOCALES_FIELD_NUMBER: _ClassVar[int]
+    AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
@@ -113,6 +119,8 @@ class Post(_message.Message):
     updated_at: _timestamp_pb2.Timestamp
     type_id: str
     locale: str
+    locales: _containers.RepeatedScalarFieldContainer[str]
+    automatic: bool
     title: str
     image_url: str
     content: _content_pb2.Content
@@ -122,4 +130,4 @@ class Post(_message.Message):
     reply_count: int
     labels: _containers.RepeatedScalarFieldContainer[str]
     links: _containers.RepeatedCompositeFieldContainer[_link_pb2.Link]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., source_id: _Optional[str] = ..., source_url: _Optional[str] = ..., draft: _Optional[bool] = ..., public: _Optional[bool] = ..., featured: _Optional[bool] = ..., pinned: _Optional[bool] = ..., moderation: _Optional[_Union[Post.Moderation, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., type_id: _Optional[str] = ..., locale: _Optional[str] = ..., title: _Optional[str] = ..., image_url: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., preview: _Optional[_Union[Post.Preview, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., source_id: _Optional[str] = ..., source_url: _Optional[str] = ..., draft: _Optional[bool] = ..., public: _Optional[bool] = ..., featured: _Optional[bool] = ..., pinned: _Optional[bool] = ..., moderation: _Optional[_Union[Post.Moderation, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., type_id: _Optional[str] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., image_url: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., preview: _Optional[_Union[Post.Preview, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
