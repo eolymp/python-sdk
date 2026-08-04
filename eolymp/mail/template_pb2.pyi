@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Template(_message.Message):
-    __slots__ = ("id", "created_at", "updated_at", "key", "draft", "subject", "automatic", "locale", "alternative_locales", "content")
+    __slots__ = ("id", "created_at", "updated_at", "key", "draft", "subject", "automatic", "locale", "locales", "content")
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -43,7 +43,7 @@ class Template(_message.Message):
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
     AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
-    ALTERNATIVE_LOCALES_FIELD_NUMBER: _ClassVar[int]
+    LOCALES_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     id: str
     created_at: _timestamp_pb2.Timestamp
@@ -53,6 +53,6 @@ class Template(_message.Message):
     subject: str
     automatic: bool
     locale: str
-    alternative_locales: _containers.RepeatedScalarFieldContainer[str]
+    locales: _containers.RepeatedScalarFieldContainer[str]
     content: str
-    def __init__(self, id: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., key: _Optional[str] = ..., draft: _Optional[bool] = ..., subject: _Optional[str] = ..., automatic: _Optional[bool] = ..., locale: _Optional[str] = ..., alternative_locales: _Optional[_Iterable[str]] = ..., content: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., key: _Optional[str] = ..., draft: _Optional[bool] = ..., subject: _Optional[str] = ..., automatic: _Optional[bool] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., content: _Optional[str] = ...) -> None: ...

@@ -26,7 +26,7 @@ from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/mail/template.proto\x12\x0b\x65olymp.mail\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfc\x03\n\x08Template\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\nupdated_at\x18= \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0b\n\x03key\x18\n \x01(\t\x12\r\n\x05\x64raft\x18\r \x01(\x08\x12\x0f\n\x07subject\x18\x0c \x01(\t\x12\x11\n\tautomatic\x18\x0f \x01(\x08\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\x1b\n\x13\x61lternative_locales\x18\x0e \x03(\t\x12\x0f\n\x07\x63ontent\x18\x34 \x01(\t\x1a\x36\n\x05\x45xtra\"-\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x0b\n\x07\x43ONTENT\x10\x01\"\x04\x08\x02\x10\x02\x1a\xaf\x01\n\x05Patch\x12\x10\n\x03key\x18\n \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05\x64raft\x18\r \x01(\x08H\x01\x88\x01\x01\x12\x14\n\x07subject\x18\x0c \x01(\tH\x02\x88\x01\x01\x12\x16\n\tautomatic\x18\x0f \x01(\x08H\x03\x88\x01\x01\x12\x14\n\x07\x63ontent\x18\x34 \x01(\tH\x04\x88\x01\x01\x42\x06\n\x04_keyB\x08\n\x06_draftB\n\n\x08_subjectB\x0c\n\n_automaticB\n\n\x08_contentJ\x04\x08\x33\x10\x34J\x04\x08\x33\x10\x34\x42+Z)github.com/eolymp/go-sdk/eolymp/mail;mailb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/mail/template.proto\x12\x0b\x65olymp.mail\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe4\x03\n\x08Template\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\nupdated_at\x18= \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0b\n\x03key\x18\n \x01(\t\x12\r\n\x05\x64raft\x18\r \x01(\x08\x12\x0f\n\x07subject\x18\x0c \x01(\t\x12\x11\n\tautomatic\x18\x0f \x01(\x08\x12\x0e\n\x06locale\x18\x0b \x01(\t\x12\x0f\n\x07locales\x18\x0e \x03(\t\x12\x0f\n\x07\x63ontent\x18\x34 \x01(\t\x1a\x36\n\x05\x45xtra\"-\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x0b\n\x07\x43ONTENT\x10\x01\"\x04\x08\x02\x10\x02\x1a\xa9\x01\n\x05Patch\x12\x10\n\x03key\x18\n \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05\x64raft\x18\r \x01(\x08H\x01\x88\x01\x01\x12\x14\n\x07subject\x18\x0c \x01(\tH\x02\x88\x01\x01\x12\x16\n\tautomatic\x18\x0f \x01(\x08H\x03\x88\x01\x01\x12\x14\n\x07\x63ontent\x18\x34 \x01(\tH\x04\x88\x01\x01\x42\x06\n\x04_keyB\x08\n\x06_draftB\n\n\x08_subjectB\x0c\n\n_automaticB\n\n\x08_contentB+Z)github.com/eolymp/go-sdk/eolymp/mail;mailb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,11 +41,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TEMPLATE'].fields_by_name['updated_at']._loaded_options = None
   _globals['_TEMPLATE'].fields_by_name['updated_at']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_TEMPLATE']._serialized_start=107
-  _globals['_TEMPLATE']._serialized_end=615
-  _globals['_TEMPLATE_EXTRA']._serialized_start=377
-  _globals['_TEMPLATE_EXTRA']._serialized_end=431
-  _globals['_TEMPLATE_EXTRA_FIELD']._serialized_start=386
-  _globals['_TEMPLATE_EXTRA_FIELD']._serialized_end=431
-  _globals['_TEMPLATE_PATCH']._serialized_start=434
-  _globals['_TEMPLATE_PATCH']._serialized_end=609
+  _globals['_TEMPLATE']._serialized_end=591
+  _globals['_TEMPLATE_EXTRA']._serialized_start=365
+  _globals['_TEMPLATE_EXTRA']._serialized_end=419
+  _globals['_TEMPLATE_EXTRA_FIELD']._serialized_start=374
+  _globals['_TEMPLATE_EXTRA_FIELD']._serialized_end=419
+  _globals['_TEMPLATE_PATCH']._serialized_start=422
+  _globals['_TEMPLATE_PATCH']._serialized_end=591
 # @@protoc_insertion_point(module_scope)
