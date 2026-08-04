@@ -28,36 +28,40 @@ class CreateNewsletterOutput(_message.Message):
     def __init__(self, newsletter_id: _Optional[str] = ...) -> None: ...
 
 class UpdateNewsletterInput(_message.Message):
-    __slots__ = ("patch", "newsletter_id", "newsletter")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("newsletter_id", "newsletter", "locale")
     NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
     NEWSLETTER_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Patch.Field]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     newsletter_id: str
-    newsletter: _newsletter_pb2.Newsletter
-    def __init__(self, patch: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Patch.Field, str]]] = ..., newsletter_id: _Optional[str] = ..., newsletter: _Optional[_Union[_newsletter_pb2.Newsletter, _Mapping]] = ...) -> None: ...
+    newsletter: _newsletter_pb2.Newsletter.Patch
+    locale: str
+    def __init__(self, newsletter_id: _Optional[str] = ..., newsletter: _Optional[_Union[_newsletter_pb2.Newsletter.Patch, _Mapping]] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class UpdateNewsletterOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteNewsletterInput(_message.Message):
-    __slots__ = ("newsletter_id",)
+    __slots__ = ("newsletter_id", "locale")
     NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     newsletter_id: str
-    def __init__(self, newsletter_id: _Optional[str] = ...) -> None: ...
+    locale: str
+    def __init__(self, newsletter_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class DeleteNewsletterOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeNewsletterInput(_message.Message):
-    __slots__ = ("newsletter_id", "extra")
+    __slots__ = ("newsletter_id", "locale", "extra")
     NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     newsletter_id: str
+    locale: str
     extra: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Extra.Field]
-    def __init__(self, newsletter_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, newsletter_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeNewsletterOutput(_message.Message):
     __slots__ = ("newsletter",)
@@ -160,93 +164,6 @@ class TranslateNewsletterOutput(_message.Message):
     TASK_ID_FIELD_NUMBER: _ClassVar[int]
     task_id: str
     def __init__(self, task_id: _Optional[str] = ...) -> None: ...
-
-class CreateTranslationInput(_message.Message):
-    __slots__ = ("newsletter_id", "translation")
-    NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
-    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
-    newsletter_id: str
-    translation: _newsletter_pb2.Newsletter.Translation
-    def __init__(self, newsletter_id: _Optional[str] = ..., translation: _Optional[_Union[_newsletter_pb2.Newsletter.Translation, _Mapping]] = ...) -> None: ...
-
-class CreateTranslationOutput(_message.Message):
-    __slots__ = ("translation_id",)
-    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
-    translation_id: str
-    def __init__(self, translation_id: _Optional[str] = ...) -> None: ...
-
-class UpdateTranslationInput(_message.Message):
-    __slots__ = ("patch", "newsletter_id", "translation_id", "translation")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
-    NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
-    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
-    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Patch.Field]
-    newsletter_id: str
-    translation_id: str
-    translation: _newsletter_pb2.Newsletter.Translation
-    def __init__(self, patch: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Patch.Field, str]]] = ..., newsletter_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., translation: _Optional[_Union[_newsletter_pb2.Newsletter.Translation, _Mapping]] = ...) -> None: ...
-
-class UpdateTranslationOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
-class DeleteTranslationInput(_message.Message):
-    __slots__ = ("newsletter_id", "translation_id")
-    NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
-    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
-    newsletter_id: str
-    translation_id: str
-    def __init__(self, newsletter_id: _Optional[str] = ..., translation_id: _Optional[str] = ...) -> None: ...
-
-class DeleteTranslationOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
-class DescribeTranslationInput(_message.Message):
-    __slots__ = ("newsletter_id", "translation_id", "extra")
-    NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
-    TRANSLATION_ID_FIELD_NUMBER: _ClassVar[int]
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
-    newsletter_id: str
-    translation_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Extra.Field]
-    def __init__(self, newsletter_id: _Optional[str] = ..., translation_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra.Field, str]]] = ...) -> None: ...
-
-class DescribeTranslationOutput(_message.Message):
-    __slots__ = ("translation",)
-    TRANSLATION_FIELD_NUMBER: _ClassVar[int]
-    translation: _newsletter_pb2.Newsletter.Translation
-    def __init__(self, translation: _Optional[_Union[_newsletter_pb2.Newsletter.Translation, _Mapping]] = ...) -> None: ...
-
-class ListTranslationsInput(_message.Message):
-    __slots__ = ("newsletter_id", "offset", "size", "filters", "extra")
-    class Filter(_message.Message):
-        __slots__ = ("id", "locale")
-        ID_FIELD_NUMBER: _ClassVar[int]
-        LOCALE_FIELD_NUMBER: _ClassVar[int]
-        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
-    NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
-    SIZE_FIELD_NUMBER: _ClassVar[int]
-    FILTERS_FIELD_NUMBER: _ClassVar[int]
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
-    newsletter_id: str
-    offset: int
-    size: int
-    filters: ListTranslationsInput.Filter
-    extra: _containers.RepeatedScalarFieldContainer[_newsletter_pb2.Newsletter.Extra.Field]
-    def __init__(self, newsletter_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTranslationsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Extra.Field, str]]] = ...) -> None: ...
-
-class ListTranslationsOutput(_message.Message):
-    __slots__ = ("total", "items")
-    TOTAL_FIELD_NUMBER: _ClassVar[int]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    total: int
-    items: _containers.RepeatedCompositeFieldContainer[_newsletter_pb2.Newsletter.Translation]
-    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_newsletter_pb2.Newsletter.Translation, _Mapping]]] = ...) -> None: ...
 
 class CreateRecipientInput(_message.Message):
     __slots__ = ("newsletter_id", "member_id", "parameters")
