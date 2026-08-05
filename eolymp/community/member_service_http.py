@@ -122,6 +122,20 @@ class MemberServiceClient:
             **kwargs,
         )
 
+    def CreateMemberLoginLink(self, request, **kwargs):
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/login-link"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.CreateMemberLoginLinkOutput"),
+            **kwargs,
+        )
+
     def DescribeMemberUsage(self, request, **kwargs):
         path = "/usage/members"
 

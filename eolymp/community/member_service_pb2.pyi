@@ -215,6 +215,22 @@ class UnassignMemberOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class CreateMemberLoginLinkInput(_message.Message):
+    __slots__ = ("member_id",)
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
+    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
+
+class CreateMemberLoginLinkOutput(_message.Message):
+    __slots__ = ("url", "token", "expires_at")
+    URL_FIELD_NUMBER: _ClassVar[int]
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
+    url: str
+    token: str
+    expires_at: _timestamp_pb2.Timestamp
+    def __init__(self, url: _Optional[str] = ..., token: _Optional[str] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
 class DescribeMemberUsageInput(_message.Message):
     __slots__ = ("period_start", "period_end")
     PERIOD_START_FIELD_NUMBER: _ClassVar[int]
