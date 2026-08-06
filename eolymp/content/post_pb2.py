@@ -29,7 +29,7 @@ from eolymp.wellknown import link_pb2 as eolymp_dot_wellknown_dot_link__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/content/post.proto\x12\x0e\x65olymp.content\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\x1a\x1b\x65olymp/wellknown/link.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfd\n\n\x04Post\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x13\n\x03url\x18\x02 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x19\n\tsource_id\x18\x07 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1a\n\nsource_url\x18\x08 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\r\n\x05\x64raft\x18\x03 \x01(\x08\x12\x16\n\x06public\x18\x04 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x10\n\x08\x66\x65\x61tured\x18\t \x01(\x08\x12\x0e\n\x06pinned\x18\r \x01(\x08\x12;\n\nmoderation\x18\x05 \x01(\x0e\x32\x1f.eolymp.content.Post.ModerationB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x19\n\x07user_id\x18\n \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01H\x00\x12\x1b\n\tmember_id\x18\x0b \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01H\x00\x12\x36\n\ncreated_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x38\n\x0cpublished_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\nupdated_at\x18\x16 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0f\n\x07type_id\x18\x06 \x01(\t\x12\x0e\n\x06locale\x18\x66 \x01(\t\x12\x0f\n\x07locales\x18\x0f \x03(\t\x12\x11\n\tautomatic\x18\x0e \x01(\x08\x12\r\n\x05title\x18g \x01(\t\x12\x11\n\timage_url\x18h \x01(\t\x12$\n\x07\x63ontent\x18\x65 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x35\n\x07preview\x18n \x01(\x0b\x32\x1c.eolymp.content.Post.PreviewB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x14\n\x04vote\x18\x0c \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1a\n\nvote_count\x18\x1e \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1b\n\x0breply_count\x18\x1f \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06labels\x18x \x03(\t\x12.\n\x05links\x18\xc8\x01 \x03(\x0b\x32\x16.eolymp.wellknown.LinkB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a\xeb\x01\n\x05Patch\x12\x14\n\x07type_id\x18\x06 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08\x66\x65\x61tured\x18\t \x01(\x08H\x01\x88\x01\x01\x12\x13\n\x06pinned\x18\r \x01(\x08H\x02\x88\x01\x01\x12\x16\n\tautomatic\x18\x0e \x01(\x08H\x03\x88\x01\x01\x12$\n\x07\x63ontent\x18\x65 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06labels\x18x \x03(\t\x12\x14\n\x07unlabel\x18y \x01(\x08H\x04\x88\x01\x01\x42\n\n\x08_type_idB\x0b\n\t_featuredB\t\n\x07_pinnedB\x0c\n\n_automaticB\n\n\x08_unlabel\x1a\x42\n\x05Image\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12\r\n\x05\x63lass\x18\x04 \x03(\t\x1a\x66\n\x07Preview\x12\r\n\x05title\x18\x01 \x01(\t\x12)\n\x05image\x18\x02 \x01(\x0b\x32\x1a.eolymp.content.Post.Image\x12!\n\x07\x63ontent\x18\x03 \x01(\x0b\x32\x10.eolymp.ecm.Node\"\\\n\nModeration\x12\x16\n\x12UNKNOWN_MODERATION\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tIN_REVIEW\x10\x02\x12\x0c\n\x08\x41PPROVED\x10\x03\x12\x0c\n\x08REJECTED\x10\x04\"X\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x11\n\rCONTENT_VALUE\x10\x01\x12\x12\n\x0e\x43ONTENT_RENDER\x10\x02\x12\x0b\n\x07PREVIEW\x10\x03\x12\x08\n\x04VOTE\x10\x04\x42\x08\n\x06\x61uthorB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/content/post.proto\x12\x0e\x65olymp.content\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\x1a\x1b\x65olymp/wellknown/link.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe5\n\n\x04Post\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x13\n\x03url\x18\x02 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x11\n\tsource_id\x18\x07 \x01(\t\x12\x1a\n\nsource_url\x18\x08 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\r\n\x05\x64raft\x18\x03 \x01(\x08\x12\x16\n\x06public\x18\x04 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x10\n\x08\x66\x65\x61tured\x18\t \x01(\x08\x12\x0e\n\x06pinned\x18\r \x01(\x08\x12;\n\nmoderation\x18\x05 \x01(\x0e\x32\x1f.eolymp.content.Post.ModerationB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x11\n\x07user_id\x18\n \x01(\tH\x00\x12\x13\n\tmember_id\x18\x0b \x01(\tH\x00\x12\x36\n\ncreated_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x38\n\x0cpublished_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\nupdated_at\x18\x16 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0f\n\x07type_id\x18\x06 \x01(\t\x12\x0e\n\x06locale\x18\x66 \x01(\t\x12\x0f\n\x07locales\x18\x0f \x03(\t\x12\x11\n\tautomatic\x18\x0e \x01(\x08\x12\r\n\x05title\x18g \x01(\t\x12\x11\n\timage_url\x18h \x01(\t\x12$\n\x07\x63ontent\x18\x65 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x35\n\x07preview\x18n \x01(\x0b\x32\x1c.eolymp.content.Post.PreviewB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x14\n\x04vote\x18\x0c \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1a\n\nvote_count\x18\x1e \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1b\n\x0breply_count\x18\x1f \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06labels\x18x \x03(\t\x12.\n\x05links\x18\xc8\x01 \x03(\x0b\x32\x16.eolymp.wellknown.LinkB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a\xeb\x01\n\x05Patch\x12\x14\n\x07type_id\x18\x06 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08\x66\x65\x61tured\x18\t \x01(\x08H\x01\x88\x01\x01\x12\x13\n\x06pinned\x18\r \x01(\x08H\x02\x88\x01\x01\x12\x16\n\tautomatic\x18\x0e \x01(\x08H\x03\x88\x01\x01\x12$\n\x07\x63ontent\x18\x65 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06labels\x18x \x03(\t\x12\x14\n\x07unlabel\x18y \x01(\x08H\x04\x88\x01\x01\x42\n\n\x08_type_idB\x0b\n\t_featuredB\t\n\x07_pinnedB\x0c\n\n_automaticB\n\n\x08_unlabel\x1a\x42\n\x05Image\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12\r\n\x05\x63lass\x18\x04 \x03(\t\x1a\x66\n\x07Preview\x12\r\n\x05title\x18\x01 \x01(\t\x12)\n\x05image\x18\x02 \x01(\x0b\x32\x1a.eolymp.content.Post.Image\x12!\n\x07\x63ontent\x18\x03 \x01(\x0b\x32\x10.eolymp.ecm.Node\"\\\n\nModeration\x12\x16\n\x12UNKNOWN_MODERATION\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tIN_REVIEW\x10\x02\x12\x0c\n\x08\x41PPROVED\x10\x03\x12\x0c\n\x08REJECTED\x10\x04\"X\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x11\n\rCONTENT_VALUE\x10\x01\x12\x12\n\x0e\x43ONTENT_RENDER\x10\x02\x12\x0b\n\x07PREVIEW\x10\x03\x12\x08\n\x04VOTE\x10\x04\x42\x08\n\x06\x61uthorB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,18 +41,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_POST'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_POST'].fields_by_name['url']._loaded_options = None
   _globals['_POST'].fields_by_name['url']._serialized_options = b'\250\360\360\344\001\001'
-  _globals['_POST'].fields_by_name['source_id']._loaded_options = None
-  _globals['_POST'].fields_by_name['source_id']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_POST'].fields_by_name['source_url']._loaded_options = None
   _globals['_POST'].fields_by_name['source_url']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_POST'].fields_by_name['public']._loaded_options = None
   _globals['_POST'].fields_by_name['public']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_POST'].fields_by_name['moderation']._loaded_options = None
   _globals['_POST'].fields_by_name['moderation']._serialized_options = b'\250\360\360\344\001\001'
-  _globals['_POST'].fields_by_name['user_id']._loaded_options = None
-  _globals['_POST'].fields_by_name['user_id']._serialized_options = b'\250\360\360\344\001\001'
-  _globals['_POST'].fields_by_name['member_id']._loaded_options = None
-  _globals['_POST'].fields_by_name['member_id']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_POST'].fields_by_name['created_at']._loaded_options = None
   _globals['_POST'].fields_by_name['created_at']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_POST'].fields_by_name['published_at']._loaded_options = None
@@ -70,15 +64,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_POST'].fields_by_name['links']._loaded_options = None
   _globals['_POST'].fields_by_name['links']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_POST']._serialized_start=187
-  _globals['_POST']._serialized_end=1592
-  _globals['_POST_PATCH']._serialized_start=991
-  _globals['_POST_PATCH']._serialized_end=1226
-  _globals['_POST_IMAGE']._serialized_start=1228
-  _globals['_POST_IMAGE']._serialized_end=1294
-  _globals['_POST_PREVIEW']._serialized_start=1296
-  _globals['_POST_PREVIEW']._serialized_end=1398
-  _globals['_POST_MODERATION']._serialized_start=1400
-  _globals['_POST_MODERATION']._serialized_end=1492
-  _globals['_POST_EXTRA']._serialized_start=1494
-  _globals['_POST_EXTRA']._serialized_end=1582
+  _globals['_POST']._serialized_end=1568
+  _globals['_POST_PATCH']._serialized_start=967
+  _globals['_POST_PATCH']._serialized_end=1202
+  _globals['_POST_IMAGE']._serialized_start=1204
+  _globals['_POST_IMAGE']._serialized_end=1270
+  _globals['_POST_PREVIEW']._serialized_start=1272
+  _globals['_POST_PREVIEW']._serialized_end=1374
+  _globals['_POST_MODERATION']._serialized_start=1376
+  _globals['_POST_MODERATION']._serialized_end=1468
+  _globals['_POST_EXTRA']._serialized_start=1470
+  _globals['_POST_EXTRA']._serialized_end=1558
 # @@protoc_insertion_point(module_scope)
