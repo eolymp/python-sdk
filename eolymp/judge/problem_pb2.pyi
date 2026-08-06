@@ -26,18 +26,20 @@ class Problem(_message.Message):
         download_link: str
         def __init__(self, locale: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., download_link: _Optional[str] = ...) -> None: ...
     class Test(_message.Message):
-        __slots__ = ("index", "example", "input_url", "answer_url", "score")
+        __slots__ = ("index", "example", "id", "input_url", "answer_url", "score")
         INDEX_FIELD_NUMBER: _ClassVar[int]
         EXAMPLE_FIELD_NUMBER: _ClassVar[int]
+        ID_FIELD_NUMBER: _ClassVar[int]
         INPUT_URL_FIELD_NUMBER: _ClassVar[int]
         ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         index: int
         example: bool
+        id: str
         input_url: str
         answer_url: str
         score: float
-        def __init__(self, index: _Optional[int] = ..., example: _Optional[bool] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., score: _Optional[float] = ...) -> None: ...
+        def __init__(self, index: _Optional[int] = ..., example: _Optional[bool] = ..., id: _Optional[str] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., score: _Optional[float] = ...) -> None: ...
     class Attachment(_message.Message):
         __slots__ = ("id", "name", "link")
         ID_FIELD_NUMBER: _ClassVar[int]

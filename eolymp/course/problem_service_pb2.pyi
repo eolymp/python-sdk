@@ -63,16 +63,18 @@ class LookupCodeTemplateOutput(_message.Message):
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class CreateRunInput(_message.Message):
-    __slots__ = ("runtime", "source", "input_data", "input_ref")
+    __slots__ = ("runtime", "source", "input_data", "input_ref", "example_id")
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
     INPUT_REF_FIELD_NUMBER: _ClassVar[int]
+    EXAMPLE_ID_FIELD_NUMBER: _ClassVar[int]
     runtime: str
     source: str
     input_data: bytes
     input_ref: str
-    def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_data: _Optional[bytes] = ..., input_ref: _Optional[str] = ...) -> None: ...
+    example_id: str
+    def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_data: _Optional[bytes] = ..., input_ref: _Optional[str] = ..., example_id: _Optional[str] = ...) -> None: ...
 
 class CreateRunOutput(_message.Message):
     __slots__ = ("run_id",)

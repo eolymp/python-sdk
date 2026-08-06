@@ -3,6 +3,7 @@ from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import form_pb2 as _form_pb2
+from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -14,7 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Editor(_message.Message):
-    __slots__ = ("state", "features", "runtimes", "fields")
+    __slots__ = ("state", "features", "runtimes", "fields", "type")
     class Feature(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_FEATURE: _ClassVar[Editor.Feature]
@@ -44,11 +45,13 @@ class Editor(_message.Message):
     FEATURES_FIELD_NUMBER: _ClassVar[int]
     RUNTIMES_FIELD_NUMBER: _ClassVar[int]
     FIELDS_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
     state: Editor.State
     features: _containers.RepeatedScalarFieldContainer[Editor.Feature]
     runtimes: _containers.RepeatedCompositeFieldContainer[_runtime_pb2.Runtime]
     fields: _containers.RepeatedCompositeFieldContainer[_form_pb2.Form.Field]
-    def __init__(self, state: _Optional[_Union[Editor.State, _Mapping]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ..., runtimes: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ..., fields: _Optional[_Iterable[_Union[_form_pb2.Form.Field, _Mapping]]] = ...) -> None: ...
+    type: _problem_pb2.Problem.Type
+    def __init__(self, state: _Optional[_Union[Editor.State, _Mapping]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ..., runtimes: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ..., fields: _Optional[_Iterable[_Union[_form_pb2.Form.Field, _Mapping]]] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ...) -> None: ...
 
 class DescribeEditorInput(_message.Message):
     __slots__ = ()
