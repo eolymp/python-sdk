@@ -12,12 +12,16 @@ class Scoreboard(_message.Message):
     __slots__ = ("modes", "rounds", "columns")
     class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
-        RESULT: _ClassVar[Scoreboard.Mode]
+        UNKNOWN_MODE: _ClassVar[Scoreboard.Mode]
         FROZEN: _ClassVar[Scoreboard.Mode]
         UPSOLVE: _ClassVar[Scoreboard.Mode]
-    RESULT: Scoreboard.Mode
+        VIRTUAL: _ClassVar[Scoreboard.Mode]
+        MAIN: _ClassVar[Scoreboard.Mode]
+    UNKNOWN_MODE: Scoreboard.Mode
     FROZEN: Scoreboard.Mode
     UPSOLVE: Scoreboard.Mode
+    VIRTUAL: Scoreboard.Mode
+    MAIN: Scoreboard.Mode
     class Round(_message.Message):
         __slots__ = ("id", "title")
         ID_FIELD_NUMBER: _ClassVar[int]
