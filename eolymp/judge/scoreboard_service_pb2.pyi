@@ -14,10 +14,8 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeScoreboardInput(_message.Message):
-    __slots__ = ("round_id",)
-    ROUND_ID_FIELD_NUMBER: _ClassVar[int]
-    round_id: str
-    def __init__(self, round_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ()
+    def __init__(self) -> None: ...
 
 class DescribeScoreboardOutput(_message.Message):
     __slots__ = ("scoreboard",)
@@ -26,7 +24,7 @@ class DescribeScoreboardOutput(_message.Message):
     def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
 
 class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ("mode", "round_id", "size", "offset", "filters", "sort", "order")
+    __slots__ = ("mode", "size", "offset", "filters", "sort", "order")
     class Filter(_message.Message):
         __slots__ = ("unofficial", "disqualified")
         UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
@@ -35,20 +33,18 @@ class ListScoreboardRowsInput(_message.Message):
         disqualified: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         def __init__(self, unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     MODE_FIELD_NUMBER: _ClassVar[int]
-    ROUND_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     mode: _scoreboard_pb2.Scoreboard.Mode
-    round_id: str
     size: int
     offset: int
     filters: ListScoreboardRowsInput.Filter
     sort: str
     order: _direction_pb2.Direction
-    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., round_id: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -57,3 +53,29 @@ class ListScoreboardRowsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Row]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ...) -> None: ...
+
+class DescribeScoreboardRowInput(_message.Message):
+    __slots__ = ("participant_id", "mode")
+    PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    participant_id: str
+    mode: _scoreboard_pb2.Scoreboard.Mode
+    def __init__(self, participant_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
+
+class DescribeScoreboardRowOutput(_message.Message):
+    __slots__ = ("row",)
+    ROW_FIELD_NUMBER: _ClassVar[int]
+    row: _scoreboard_pb2.Scoreboard.Row
+    def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ...) -> None: ...
+
+class ExportScoreboardInput(_message.Message):
+    __slots__ = ("mode",)
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    mode: _scoreboard_pb2.Scoreboard.Mode
+    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
+
+class ExportScoreboardOutput(_message.Message):
+    __slots__ = ("export_url",)
+    EXPORT_URL_FIELD_NUMBER: _ClassVar[int]
+    export_url: str
+    def __init__(self, export_url: _Optional[str] = ...) -> None: ...

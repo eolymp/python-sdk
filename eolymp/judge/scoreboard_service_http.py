@@ -36,3 +36,28 @@ class ScoreboardServiceClient:
             **kwargs,
         )
 
+    def DescribeScoreboardRow(self, request, **kwargs):
+        path = "/scoreboard/rows/"+urllib.parse.quote(request.participant_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.participant_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeScoreboardRowOutput"),
+            **kwargs,
+        )
+
+    def ExportScoreboard(self, request, **kwargs):
+        path = "/scoreboard/export"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ExportScoreboardOutput"),
+            **kwargs,
+        )
+

@@ -14,14 +14,14 @@ class ScoreServiceClient:
         self.transport = transport
         self.url = url
 
-    def IntrospectScore(self, request, **kwargs):
+    def DescribeViewerScore(self, request, **kwargs):
         path = "/introspect/score"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.IntrospectScoreOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeViewerScoreOutput"),
             **kwargs,
         )
 
@@ -36,20 +36,6 @@ class ScoreServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeScoreOutput"),
-            **kwargs,
-        )
-
-    def DescribeResult(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/result"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.participant_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeResultOutput"),
             **kwargs,
         )
 
@@ -92,28 +78,6 @@ class ScoreServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.judge.ExportScoreOutput"),
-            **kwargs,
-        )
-
-    def ListResult(self, request, **kwargs):
-        path = "/results"
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListResultOutput"),
-            **kwargs,
-        )
-
-    def ExportResult(self, request, **kwargs):
-        path = "/results-export"
-
-        return self.transport.request(
-            method="POST",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.judge.ExportResultOutput"),
             **kwargs,
         )
 

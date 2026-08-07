@@ -1,9 +1,7 @@
 import datetime
 
-from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -13,18 +11,6 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Score(_message.Message):
     __slots__ = ("valid_after", "valid_until", "timestamp", "score", "penalty", "tie_breaker", "upsolve", "breakdown")
-    class FetchingMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ACTUAL: _ClassVar[Score.FetchingMode]
-        PUNCTUAL: _ClassVar[Score.FetchingMode]
-        LATEST: _ClassVar[Score.FetchingMode]
-        FROZEN: _ClassVar[Score.FetchingMode]
-        UPSOLVE: _ClassVar[Score.FetchingMode]
-    ACTUAL: Score.FetchingMode
-    PUNCTUAL: Score.FetchingMode
-    LATEST: Score.FetchingMode
-    FROZEN: Score.FetchingMode
-    UPSOLVE: Score.FetchingMode
     class Problem(_message.Message):
         __slots__ = ("problem_id", "score", "penalty", "solved", "percentage", "attempts", "solved_at", "solved_in", "changed", "breakdown")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
