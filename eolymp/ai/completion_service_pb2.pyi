@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CompleteInput(_message.Message):
-    __slots__ = ("model", "messages", "tools", "tool_choice", "parallel_tool_calls", "max_tokens", "temperature", "top_p", "top_k", "use_cache", "container", "betas", "reasoning", "effort")
+    __slots__ = ("model", "messages", "tools", "tool_choice", "parallel_tool_calls", "max_tokens", "temperature", "top_p", "top_k", "use_cache", "container", "betas", "reasoning", "effort", "output_schema", "compaction")
     class ToolChoice(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TOOL_CHOICE: _ClassVar[CompleteInput.ToolChoice]
@@ -63,6 +63,13 @@ class CompleteInput(_message.Message):
         budget: int
         effort: str
         def __init__(self, enabled: _Optional[bool] = ..., budget: _Optional[int] = ..., effort: _Optional[str] = ...) -> None: ...
+    class Compaction(_message.Message):
+        __slots__ = ("trigger", "instructions")
+        TRIGGER_FIELD_NUMBER: _ClassVar[int]
+        INSTRUCTIONS_FIELD_NUMBER: _ClassVar[int]
+        trigger: int
+        instructions: str
+        def __init__(self, trigger: _Optional[int] = ..., instructions: _Optional[str] = ...) -> None: ...
     class Container(_message.Message):
         __slots__ = ("id", "skills")
         class Skill(_message.Message):
@@ -93,6 +100,8 @@ class CompleteInput(_message.Message):
     BETAS_FIELD_NUMBER: _ClassVar[int]
     REASONING_FIELD_NUMBER: _ClassVar[int]
     EFFORT_FIELD_NUMBER: _ClassVar[int]
+    OUTPUT_SCHEMA_FIELD_NUMBER: _ClassVar[int]
+    COMPACTION_FIELD_NUMBER: _ClassVar[int]
     model: str
     messages: _containers.RepeatedCompositeFieldContainer[_message_pb2.Message]
     tools: _containers.RepeatedCompositeFieldContainer[CompleteInput.Tool]
@@ -107,7 +116,9 @@ class CompleteInput(_message.Message):
     betas: _containers.RepeatedScalarFieldContainer[str]
     reasoning: CompleteInput.Reasoning
     effort: CompleteInput.Effort
-    def __init__(self, model: _Optional[str] = ..., messages: _Optional[_Iterable[_Union[_message_pb2.Message, _Mapping]]] = ..., tools: _Optional[_Iterable[_Union[CompleteInput.Tool, _Mapping]]] = ..., tool_choice: _Optional[_Union[CompleteInput.ToolChoice, str]] = ..., parallel_tool_calls: _Optional[bool] = ..., max_tokens: _Optional[int] = ..., temperature: _Optional[float] = ..., top_p: _Optional[float] = ..., top_k: _Optional[int] = ..., use_cache: _Optional[bool] = ..., container: _Optional[_Union[CompleteInput.Container, _Mapping]] = ..., betas: _Optional[_Iterable[str]] = ..., reasoning: _Optional[_Union[CompleteInput.Reasoning, _Mapping]] = ..., effort: _Optional[_Union[CompleteInput.Effort, str]] = ...) -> None: ...
+    output_schema: str
+    compaction: CompleteInput.Compaction
+    def __init__(self, model: _Optional[str] = ..., messages: _Optional[_Iterable[_Union[_message_pb2.Message, _Mapping]]] = ..., tools: _Optional[_Iterable[_Union[CompleteInput.Tool, _Mapping]]] = ..., tool_choice: _Optional[_Union[CompleteInput.ToolChoice, str]] = ..., parallel_tool_calls: _Optional[bool] = ..., max_tokens: _Optional[int] = ..., temperature: _Optional[float] = ..., top_p: _Optional[float] = ..., top_k: _Optional[int] = ..., use_cache: _Optional[bool] = ..., container: _Optional[_Union[CompleteInput.Container, _Mapping]] = ..., betas: _Optional[_Iterable[str]] = ..., reasoning: _Optional[_Union[CompleteInput.Reasoning, _Mapping]] = ..., effort: _Optional[_Union[CompleteInput.Effort, str]] = ..., output_schema: _Optional[str] = ..., compaction: _Optional[_Union[CompleteInput.Compaction, _Mapping]] = ...) -> None: ...
 
 class CompleteOutput(_message.Message):
     __slots__ = ("content", "finish_reason", "usage", "model")

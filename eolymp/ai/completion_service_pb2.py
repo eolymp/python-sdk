@@ -30,7 +30,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/ai/completion_service.proto\x12\teolymp.ai\x1a\x1d\x65olymp/ai/finish_reason.proto\x1a\x17\x65olymp/ai/message.proto\x1a\x15\x65olymp/ai/usage.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\x8e\x08\n\rCompleteInput\x12\r\n\x05model\x18\x01 \x01(\t\x12$\n\x08messages\x18\x02 \x03(\x0b\x32\x12.eolymp.ai.Message\x12,\n\x05tools\x18\x03 \x03(\x0b\x32\x1d.eolymp.ai.CompleteInput.Tool\x12\x38\n\x0btool_choice\x18\x04 \x01(\x0e\x32#.eolymp.ai.CompleteInput.ToolChoice\x12\x1b\n\x13parallel_tool_calls\x18\x05 \x01(\x08\x12\x17\n\nmax_tokens\x18\x06 \x01(\x03H\x00\x88\x01\x01\x12\x18\n\x0btemperature\x18\x07 \x01(\x02H\x01\x88\x01\x01\x12\x12\n\x05top_p\x18\x08 \x01(\x02H\x02\x88\x01\x01\x12\x12\n\x05top_k\x18\t \x01(\x05H\x03\x88\x01\x01\x12\x16\n\tuse_cache\x18\n \x01(\x08H\x04\x88\x01\x01\x12\x35\n\tcontainer\x18\x0b \x01(\x0b\x32\".eolymp.ai.CompleteInput.Container\x12\r\n\x05\x62\x65tas\x18\x0c \x03(\t\x12\x35\n\treasoning\x18\r \x01(\x0b\x32\".eolymp.ai.CompleteInput.Reasoning\x12/\n\x06\x65\x66\x66ort\x18\x0e \x01(\x0e\x32\x1f.eolymp.ai.CompleteInput.Effort\x1a{\n\x04Tool\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x14\n\x0cinput_schema\x18\x04 \x01(\t\x12\x15\n\routput_schema\x18\x05 \x01(\t\x12\x15\n\rdefer_loading\x18\x06 \x01(\x08\x1a<\n\tReasoning\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x0e\n\x06\x62udget\x18\x02 \x01(\x05\x12\x0e\n\x06\x65\x66\x66ort\x18\x03 \x01(\t\x1a\x8b\x01\n\tContainer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x38\n\x06skills\x18\x02 \x03(\x0b\x32(.eolymp.ai.CompleteInput.Container.Skill\x1a\x38\n\x05Skill\x12\x10\n\x08skill_id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\"G\n\nToolChoice\x12\x17\n\x13UNKNOWN_TOOL_CHOICE\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\x12\x0c\n\x08REQUIRED\x10\x02\x12\x08\n\x04NONE\x10\x03\"O\n\x06\x45\x66\x66ort\x12\x12\n\x0eUNKNOWN_EFFORT\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\n\n\x06MEDIUM\x10\x02\x12\x08\n\x04HIGH\x10\x03\x12\t\n\x05XHIGH\x10\x04\x12\x07\n\x03MAX\x10\x05\x42\r\n\x0b_max_tokensB\x0e\n\x0c_temperatureB\x08\n\x06_top_pB\x08\n\x06_top_kB\x0c\n\n_use_cache\"\xa2\x01\n\x0e\x43ompleteOutput\x12\x30\n\x07\x63ontent\x18\x01 \x03(\x0b\x32\x1f.eolymp.ai.Message.ContentBlock\x12.\n\rfinish_reason\x18\x02 \x01(\x0e\x32\x17.eolymp.ai.FinishReason\x12\x1f\n\x05usage\x18\x03 \x01(\x0b\x32\x10.eolymp.ai.Usage\x12\r\n\x05model\x18\x04 \x01(\t\"\xf4\x03\n\rCompleteChunk\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\".eolymp.ai.CompleteChunk.ChunkType\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0c\n\x04text\x18\x03 \x01(\t\x12)\n\x04\x63\x61ll\x18\x04 \x01(\x0b\x32\x1b.eolymp.ai.Message.ToolCall\x12\x11\n\tsignature\x18\x05 \x01(\t\x12-\n\x06result\x18\x06 \x01(\x0b\x32\x1d.eolymp.ai.Message.ToolResult\x12\x1f\n\x05usage\x18\x07 \x01(\x0b\x32\x10.eolymp.ai.Usage\x12.\n\rfinish_reason\x18\x08 \x01(\x0e\x32\x17.eolymp.ai.FinishReason\"\xd5\x01\n\tChunkType\x12\x16\n\x12UNKNOWN_CHUNK_TYPE\x10\x00\x12\x08\n\x04TEXT\x10\x01\x12\x13\n\x0fTOOL_CALL_START\x10\x02\x12\x13\n\x0fTOOL_CALL_DELTA\x10\x03\x12\r\n\tREASONING\x10\x04\x12\r\n\tSIGNATURE\x10\x05\x12\x1a\n\x16SERVER_TOOL_CALL_START\x10\x06\x12\x1a\n\x16SERVER_TOOL_CALL_DELTA\x10\x07\x12\x0f\n\x0bTOOL_RESULT\x10\x08\x12\t\n\x05USAGE\x10\t\x12\n\n\x06\x46INISH\x10\n2\x93\x02\n\x11\x43ompletionService\x12l\n\x08\x43omplete\x12\x18.eolymp.ai.CompleteInput\x1a\x19.eolymp.ai.CompleteOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61i:completion:create\x12s\n\x0e\x43ompleteStream\x12\x18.eolymp.ai.CompleteInput\x1a\x18.eolymp.ai.CompleteChunk\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61i:completion:create0\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB\'Z%github.com/eolymp/go-sdk/eolymp/ai;aib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/ai/completion_service.proto\x12\teolymp.ai\x1a\x1d\x65olymp/ai/finish_reason.proto\x1a\x17\x65olymp/ai/message.proto\x1a\x15\x65olymp/ai/usage.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\x93\t\n\rCompleteInput\x12\r\n\x05model\x18\x01 \x01(\t\x12$\n\x08messages\x18\x02 \x03(\x0b\x32\x12.eolymp.ai.Message\x12,\n\x05tools\x18\x03 \x03(\x0b\x32\x1d.eolymp.ai.CompleteInput.Tool\x12\x38\n\x0btool_choice\x18\x04 \x01(\x0e\x32#.eolymp.ai.CompleteInput.ToolChoice\x12\x1b\n\x13parallel_tool_calls\x18\x05 \x01(\x08\x12\x17\n\nmax_tokens\x18\x06 \x01(\x03H\x00\x88\x01\x01\x12\x18\n\x0btemperature\x18\x07 \x01(\x02H\x01\x88\x01\x01\x12\x12\n\x05top_p\x18\x08 \x01(\x02H\x02\x88\x01\x01\x12\x12\n\x05top_k\x18\t \x01(\x05H\x03\x88\x01\x01\x12\x16\n\tuse_cache\x18\n \x01(\x08H\x04\x88\x01\x01\x12\x35\n\tcontainer\x18\x0b \x01(\x0b\x32\".eolymp.ai.CompleteInput.Container\x12\r\n\x05\x62\x65tas\x18\x0c \x03(\t\x12\x35\n\treasoning\x18\r \x01(\x0b\x32\".eolymp.ai.CompleteInput.Reasoning\x12/\n\x06\x65\x66\x66ort\x18\x0e \x01(\x0e\x32\x1f.eolymp.ai.CompleteInput.Effort\x12\x15\n\routput_schema\x18\x0f \x01(\t\x12\x37\n\ncompaction\x18\x10 \x01(\x0b\x32#.eolymp.ai.CompleteInput.Compaction\x1a{\n\x04Tool\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x14\n\x0cinput_schema\x18\x04 \x01(\t\x12\x15\n\routput_schema\x18\x05 \x01(\t\x12\x15\n\rdefer_loading\x18\x06 \x01(\x08\x1a<\n\tReasoning\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x0e\n\x06\x62udget\x18\x02 \x01(\x05\x12\x0e\n\x06\x65\x66\x66ort\x18\x03 \x01(\t\x1a\x33\n\nCompaction\x12\x0f\n\x07trigger\x18\x01 \x01(\x03\x12\x14\n\x0cinstructions\x18\x02 \x01(\t\x1a\x8b\x01\n\tContainer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x38\n\x06skills\x18\x02 \x03(\x0b\x32(.eolymp.ai.CompleteInput.Container.Skill\x1a\x38\n\x05Skill\x12\x10\n\x08skill_id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\"G\n\nToolChoice\x12\x17\n\x13UNKNOWN_TOOL_CHOICE\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\x12\x0c\n\x08REQUIRED\x10\x02\x12\x08\n\x04NONE\x10\x03\"O\n\x06\x45\x66\x66ort\x12\x12\n\x0eUNKNOWN_EFFORT\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\n\n\x06MEDIUM\x10\x02\x12\x08\n\x04HIGH\x10\x03\x12\t\n\x05XHIGH\x10\x04\x12\x07\n\x03MAX\x10\x05\x42\r\n\x0b_max_tokensB\x0e\n\x0c_temperatureB\x08\n\x06_top_pB\x08\n\x06_top_kB\x0c\n\n_use_cache\"\xa2\x01\n\x0e\x43ompleteOutput\x12\x30\n\x07\x63ontent\x18\x01 \x03(\x0b\x32\x1f.eolymp.ai.Message.ContentBlock\x12.\n\rfinish_reason\x18\x02 \x01(\x0e\x32\x17.eolymp.ai.FinishReason\x12\x1f\n\x05usage\x18\x03 \x01(\x0b\x32\x10.eolymp.ai.Usage\x12\r\n\x05model\x18\x04 \x01(\t\"\xf4\x03\n\rCompleteChunk\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\".eolymp.ai.CompleteChunk.ChunkType\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0c\n\x04text\x18\x03 \x01(\t\x12)\n\x04\x63\x61ll\x18\x04 \x01(\x0b\x32\x1b.eolymp.ai.Message.ToolCall\x12\x11\n\tsignature\x18\x05 \x01(\t\x12-\n\x06result\x18\x06 \x01(\x0b\x32\x1d.eolymp.ai.Message.ToolResult\x12\x1f\n\x05usage\x18\x07 \x01(\x0b\x32\x10.eolymp.ai.Usage\x12.\n\rfinish_reason\x18\x08 \x01(\x0e\x32\x17.eolymp.ai.FinishReason\"\xd5\x01\n\tChunkType\x12\x16\n\x12UNKNOWN_CHUNK_TYPE\x10\x00\x12\x08\n\x04TEXT\x10\x01\x12\x13\n\x0fTOOL_CALL_START\x10\x02\x12\x13\n\x0fTOOL_CALL_DELTA\x10\x03\x12\r\n\tREASONING\x10\x04\x12\r\n\tSIGNATURE\x10\x05\x12\x1a\n\x16SERVER_TOOL_CALL_START\x10\x06\x12\x1a\n\x16SERVER_TOOL_CALL_DELTA\x10\x07\x12\x0f\n\x0bTOOL_RESULT\x10\x08\x12\t\n\x05USAGE\x10\t\x12\n\n\x06\x46INISH\x10\n2\x93\x02\n\x11\x43ompletionService\x12l\n\x08\x43omplete\x12\x18.eolymp.ai.CompleteInput\x1a\x19.eolymp.ai.CompleteOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61i:completion:create\x12s\n\x0e\x43ompleteStream\x12\x18.eolymp.ai.CompleteInput\x1a\x18.eolymp.ai.CompleteChunk\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61i:completion:create0\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB\'Z%github.com/eolymp/go-sdk/eolymp/ai;aib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,25 +45,27 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COMPLETIONSERVICE'].methods_by_name['CompleteStream']._loaded_options = None
   _globals['_COMPLETIONSERVICE'].methods_by_name['CompleteStream']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\030\212\343\n\024ai:completion:create'
   _globals['_COMPLETEINPUT']._serialized_start=233
-  _globals['_COMPLETEINPUT']._serialized_end=1271
-  _globals['_COMPLETEINPUT_TOOL']._serialized_start=725
-  _globals['_COMPLETEINPUT_TOOL']._serialized_end=848
-  _globals['_COMPLETEINPUT_REASONING']._serialized_start=850
-  _globals['_COMPLETEINPUT_REASONING']._serialized_end=910
-  _globals['_COMPLETEINPUT_CONTAINER']._serialized_start=913
-  _globals['_COMPLETEINPUT_CONTAINER']._serialized_end=1052
-  _globals['_COMPLETEINPUT_CONTAINER_SKILL']._serialized_start=996
-  _globals['_COMPLETEINPUT_CONTAINER_SKILL']._serialized_end=1052
-  _globals['_COMPLETEINPUT_TOOLCHOICE']._serialized_start=1054
-  _globals['_COMPLETEINPUT_TOOLCHOICE']._serialized_end=1125
-  _globals['_COMPLETEINPUT_EFFORT']._serialized_start=1127
-  _globals['_COMPLETEINPUT_EFFORT']._serialized_end=1206
-  _globals['_COMPLETEOUTPUT']._serialized_start=1274
-  _globals['_COMPLETEOUTPUT']._serialized_end=1436
-  _globals['_COMPLETECHUNK']._serialized_start=1439
-  _globals['_COMPLETECHUNK']._serialized_end=1939
-  _globals['_COMPLETECHUNK_CHUNKTYPE']._serialized_start=1726
-  _globals['_COMPLETECHUNK_CHUNKTYPE']._serialized_end=1939
-  _globals['_COMPLETIONSERVICE']._serialized_start=1942
-  _globals['_COMPLETIONSERVICE']._serialized_end=2217
+  _globals['_COMPLETEINPUT']._serialized_end=1404
+  _globals['_COMPLETEINPUT_TOOL']._serialized_start=805
+  _globals['_COMPLETEINPUT_TOOL']._serialized_end=928
+  _globals['_COMPLETEINPUT_REASONING']._serialized_start=930
+  _globals['_COMPLETEINPUT_REASONING']._serialized_end=990
+  _globals['_COMPLETEINPUT_COMPACTION']._serialized_start=992
+  _globals['_COMPLETEINPUT_COMPACTION']._serialized_end=1043
+  _globals['_COMPLETEINPUT_CONTAINER']._serialized_start=1046
+  _globals['_COMPLETEINPUT_CONTAINER']._serialized_end=1185
+  _globals['_COMPLETEINPUT_CONTAINER_SKILL']._serialized_start=1129
+  _globals['_COMPLETEINPUT_CONTAINER_SKILL']._serialized_end=1185
+  _globals['_COMPLETEINPUT_TOOLCHOICE']._serialized_start=1187
+  _globals['_COMPLETEINPUT_TOOLCHOICE']._serialized_end=1258
+  _globals['_COMPLETEINPUT_EFFORT']._serialized_start=1260
+  _globals['_COMPLETEINPUT_EFFORT']._serialized_end=1339
+  _globals['_COMPLETEOUTPUT']._serialized_start=1407
+  _globals['_COMPLETEOUTPUT']._serialized_end=1569
+  _globals['_COMPLETECHUNK']._serialized_start=1572
+  _globals['_COMPLETECHUNK']._serialized_end=2072
+  _globals['_COMPLETECHUNK_CHUNKTYPE']._serialized_start=1859
+  _globals['_COMPLETECHUNK_CHUNKTYPE']._serialized_end=2072
+  _globals['_COMPLETIONSERVICE']._serialized_start=2075
+  _globals['_COMPLETIONSERVICE']._serialized_end=2350
 # @@protoc_insertion_point(module_scope)

@@ -6,6 +6,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.judge import result_pb2 as _result_pb2
 from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import score_timeline_pb2 as _score_timeline_pb2
+from eolymp.judge import scoreboard_pb2 as _scoreboard_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -39,14 +40,16 @@ class IntrospectScoreOutput(_message.Message):
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class WatchScoreInput(_message.Message):
-    __slots__ = ("contest_id", "participant_id", "mode")
+    __slots__ = ("contest_id", "participant_id", "fetching_mode", "mode")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    FETCHING_MODE_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     participant_id: str
-    mode: _score_pb2.Score.FetchingMode
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ...) -> None: ...
+    fetching_mode: _score_pb2.Score.FetchingMode
+    mode: _scoreboard_pb2.Scoreboard.Mode
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., fetching_mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
 
 class WatchScoreOutput(_message.Message):
     __slots__ = ("score",)
@@ -55,16 +58,18 @@ class WatchScoreOutput(_message.Message):
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class DescribeScoreInput(_message.Message):
-    __slots__ = ("contest_id", "participant_id", "mode", "time_offset")
+    __slots__ = ("contest_id", "participant_id", "fetching_mode", "time_offset", "mode")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    MODE_FIELD_NUMBER: _ClassVar[int]
+    FETCHING_MODE_FIELD_NUMBER: _ClassVar[int]
     TIME_OFFSET_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     participant_id: str
-    mode: _score_pb2.Score.FetchingMode
+    fetching_mode: _score_pb2.Score.FetchingMode
     time_offset: int
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ...) -> None: ...
+    mode: _scoreboard_pb2.Scoreboard.Mode
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., fetching_mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
 
 class DescribeScoreOutput(_message.Message):
     __slots__ = ("score",)
@@ -73,14 +78,16 @@ class DescribeScoreOutput(_message.Message):
     def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class DescribeResultInput(_message.Message):
-    __slots__ = ("participant_id", "mode", "time_offset")
+    __slots__ = ("participant_id", "fetching_mode", "time_offset", "mode")
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-    MODE_FIELD_NUMBER: _ClassVar[int]
+    FETCHING_MODE_FIELD_NUMBER: _ClassVar[int]
     TIME_OFFSET_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
     participant_id: str
-    mode: _score_pb2.Score.FetchingMode
+    fetching_mode: _score_pb2.Score.FetchingMode
     time_offset: int
-    def __init__(self, participant_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ...) -> None: ...
+    mode: _scoreboard_pb2.Scoreboard.Mode
+    def __init__(self, participant_id: _Optional[str] = ..., fetching_mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
 
 class DescribeResultOutput(_message.Message):
     __slots__ = ("result",)
@@ -117,18 +124,20 @@ class ExportScoreOutput(_message.Message):
     def __init__(self, scores: _Optional[_Iterable[_Union[_score_pb2.Score, _Mapping]]] = ...) -> None: ...
 
 class ListResultInput(_message.Message):
-    __slots__ = ("contest_id", "mode", "time_offset", "offset", "size")
+    __slots__ = ("contest_id", "fetching_mode", "time_offset", "mode", "offset", "size")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    MODE_FIELD_NUMBER: _ClassVar[int]
+    FETCHING_MODE_FIELD_NUMBER: _ClassVar[int]
     TIME_OFFSET_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    mode: _score_pb2.Score.FetchingMode
+    fetching_mode: _score_pb2.Score.FetchingMode
     time_offset: int
+    mode: _scoreboard_pb2.Scoreboard.Mode
     offset: int
     size: int
-    def __init__(self, contest_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., fetching_mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class ListResultOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -139,14 +148,16 @@ class ListResultOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_result_pb2.Result, _Mapping]]] = ...) -> None: ...
 
 class ExportResultInput(_message.Message):
-    __slots__ = ("contest_id", "mode", "time_offset")
+    __slots__ = ("contest_id", "fetching_mode", "time_offset", "mode")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    MODE_FIELD_NUMBER: _ClassVar[int]
+    FETCHING_MODE_FIELD_NUMBER: _ClassVar[int]
     TIME_OFFSET_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    mode: _score_pb2.Score.FetchingMode
+    fetching_mode: _score_pb2.Score.FetchingMode
     time_offset: int
-    def __init__(self, contest_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ...) -> None: ...
+    mode: _scoreboard_pb2.Scoreboard.Mode
+    def __init__(self, contest_id: _Optional[str] = ..., fetching_mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., time_offset: _Optional[int] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
 
 class ExportResultOutput(_message.Message):
     __slots__ = ("export_url",)
@@ -155,14 +166,16 @@ class ExportResultOutput(_message.Message):
     def __init__(self, export_url: _Optional[str] = ...) -> None: ...
 
 class ListScoreTimelineInput(_message.Message):
-    __slots__ = ("contest_id", "participant_id", "mode")
+    __slots__ = ("contest_id", "participant_id", "fetching_mode", "mode")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    FETCHING_MODE_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     participant_id: str
-    mode: _score_pb2.Score.FetchingMode
-    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ...) -> None: ...
+    fetching_mode: _score_pb2.Score.FetchingMode
+    mode: _scoreboard_pb2.Scoreboard.Mode
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., fetching_mode: _Optional[_Union[_score_pb2.Score.FetchingMode, str]] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
 
 class ListScoreTimelineOutput(_message.Message):
     __slots__ = ("items",)

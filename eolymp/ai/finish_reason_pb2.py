@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/ai/finish_reason.proto\x12\teolymp.ai*c\n\x0c\x46inishReason\x12\x19\n\x15UNKNOWN_FINISH_REASON\x10\x00\x12\x08\n\x04STOP\x10\x01\x12\n\n\x06LENGTH\x10\x02\x12\x0e\n\nTOOL_CALLS\x10\x03\x12\x12\n\x0e\x43ONTENT_FILTER\x10\x04\x42\'Z%github.com/eolymp/go-sdk/eolymp/ai;aib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/ai/finish_reason.proto\x12\teolymp.ai*p\n\x0c\x46inishReason\x12\x19\n\x15UNKNOWN_FINISH_REASON\x10\x00\x12\x08\n\x04STOP\x10\x01\x12\n\n\x06LENGTH\x10\x02\x12\x0e\n\nTOOL_CALLS\x10\x03\x12\x12\n\x0e\x43ONTENT_FILTER\x10\x04\x12\x0b\n\x07REFUSAL\x10\x05\x42\'Z%github.com/eolymp/go-sdk/eolymp/ai;aib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z%github.com/eolymp/go-sdk/eolymp/ai;ai'
   _globals['_FINISHREASON']._serialized_start=44
-  _globals['_FINISHREASON']._serialized_end=143
+  _globals['_FINISHREASON']._serialized_end=156
 # @@protoc_insertion_point(module_scope)

@@ -11,8 +11,10 @@ class FinishReason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     LENGTH: _ClassVar[FinishReason]
     TOOL_CALLS: _ClassVar[FinishReason]
     CONTENT_FILTER: _ClassVar[FinishReason]
+    REFUSAL: _ClassVar[FinishReason]
 UNKNOWN_FINISH_REASON: FinishReason
 STOP: FinishReason
 LENGTH: FinishReason
 TOOL_CALLS: FinishReason
 CONTENT_FILTER: FinishReason
+REFUSAL: FinishReason
