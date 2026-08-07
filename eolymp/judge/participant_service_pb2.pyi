@@ -5,7 +5,8 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.judge import participant_pb2 as _participant_pb2
-from eolymp.judge import result_pb2 as _result_pb2
+from eolymp.judge import score_pb2 as _score_pb2
+from eolymp.judge import scoreboard_pb2 as _scoreboard_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
@@ -36,14 +37,16 @@ class ParticipantJoinedEvent(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class ParticipantFinalizedEvent(_message.Message):
-    __slots__ = ("contest_id", "participant", "result")
+    __slots__ = ("contest_id", "participant", "row", "score")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
-    RESULT_FIELD_NUMBER: _ClassVar[int]
+    ROW_FIELD_NUMBER: _ClassVar[int]
+    SCORE_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     participant: _participant_pb2.Participant
-    result: _result_pb2.Result
-    def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., result: _Optional[_Union[_result_pb2.Result, _Mapping]] = ...) -> None: ...
+    row: _scoreboard_pb2.Scoreboard.Row
+    score: _score_pb2.Score
+    def __init__(self, contest_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ..., score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class AssignParticipantInput(_message.Message):
     __slots__ = ("contest_id", "member_id", "group_id", "ghost", "unofficial", "inactive", "role")
