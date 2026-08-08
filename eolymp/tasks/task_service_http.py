@@ -39,20 +39,6 @@ class TaskServiceClient:
             **kwargs,
         )
 
-    def WatchTask(self, request, **kwargs):
-        path = "/tasks/"+urllib.parse.quote(request.task_id)+"/watch"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.task_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.tasks.WatchTaskOutput"),
-            **kwargs,
-        )
-
     def CancelTask(self, request, **kwargs):
         path = "/tasks/"+urllib.parse.quote(request.task_id)+"/cancel"
 
