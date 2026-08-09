@@ -69,7 +69,7 @@ class Submission(_message.Message):
         RUNS: Submission.Extra.Field
         def __init__(self) -> None: ...
     class Run(_message.Message):
-        __slots__ = ("id", "index", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "input_url", "output_url", "answer_url", "cost", "score", "status", "verdict", "debug_stats", "checker_stats", "interactor_stats")
+        __slots__ = ("id", "index", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "input_url", "output_url", "answer_url", "interaction_url", "cost", "score", "status", "verdict", "debug_stats", "checker_stats", "interactor_stats")
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
@@ -79,6 +79,7 @@ class Submission(_message.Message):
         INPUT_URL_FIELD_NUMBER: _ClassVar[int]
         OUTPUT_URL_FIELD_NUMBER: _ClassVar[int]
         ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
+        INTERACTION_URL_FIELD_NUMBER: _ClassVar[int]
         COST_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -95,6 +96,7 @@ class Submission(_message.Message):
         input_url: str
         output_url: str
         answer_url: str
+        interaction_url: str
         cost: float
         score: float
         status: Submission.Status
@@ -102,7 +104,7 @@ class Submission(_message.Message):
         debug_stats: _stats_pb2.Stats
         checker_stats: _stats_pb2.Stats
         interactor_stats: _stats_pb2.Stats
-        def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_url: _Optional[str] = ..., interaction_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., debug_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., checker_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ..., interactor_stats: _Optional[_Union[_stats_pb2.Stats, _Mapping]] = ...) -> None: ...
     class Group(_message.Message):
         __slots__ = ("index", "status", "verdict", "dependencies", "cost", "score", "scoring_mode", "feedback_policy", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "runs")
         INDEX_FIELD_NUMBER: _ClassVar[int]

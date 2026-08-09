@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Run(_message.Message):
-    __slots__ = ("id", "runtime", "source_url", "input_url", "status", "error", "exit_code", "signal", "wall_time_usage", "cpu_time_usage", "memory_usage", "resource_usage", "output_url", "trace_url")
+    __slots__ = ("id", "runtime", "source_url", "input_url", "status", "error", "exit_code", "signal", "wall_time_usage", "cpu_time_usage", "memory_usage", "resource_usage", "output_url", "trace_url", "interaction_url")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Run.Status]
@@ -47,6 +47,7 @@ class Run(_message.Message):
     RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_URL_FIELD_NUMBER: _ClassVar[int]
     TRACE_URL_FIELD_NUMBER: _ClassVar[int]
+    INTERACTION_URL_FIELD_NUMBER: _ClassVar[int]
     id: str
     runtime: str
     source_url: str
@@ -61,4 +62,5 @@ class Run(_message.Message):
     resource_usage: _usage_pb2.ResourceUsage
     output_url: str
     trace_url: str
-    def __init__(self, id: _Optional[str] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., input_url: _Optional[str] = ..., status: _Optional[_Union[Run.Status, str]] = ..., error: _Optional[str] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[_Union[_usage_pb2.ResourceUsage, _Mapping]] = ..., output_url: _Optional[str] = ..., trace_url: _Optional[str] = ...) -> None: ...
+    interaction_url: str
+    def __init__(self, id: _Optional[str] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., input_url: _Optional[str] = ..., status: _Optional[_Union[Run.Status, str]] = ..., error: _Optional[str] = ..., exit_code: _Optional[int] = ..., signal: _Optional[int] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[_Union[_usage_pb2.ResourceUsage, _Mapping]] = ..., output_url: _Optional[str] = ..., trace_url: _Optional[str] = ..., interaction_url: _Optional[str] = ...) -> None: ...
