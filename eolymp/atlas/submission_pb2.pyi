@@ -1,7 +1,6 @@
 import datetime
 
 from eolymp.annotations import mcp_pb2 as _mcp_pb2
-from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.atlas import testing_feedback_pb2 as _testing_feedback_pb2
 from eolymp.atlas import testing_scoring_pb2 as _testing_scoring_pb2
 from eolymp.executor import stats_pb2 as _stats_pb2
@@ -16,7 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ("id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "values", "quiz", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "fingerprint", "assistant_available", "cursor")
+    __slots__ = ("id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "quiz", "output", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "fingerprint", "assistant_available", "cursor")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Submission.Status]
@@ -159,6 +158,22 @@ class Submission(_message.Message):
         ANSWERS_FIELD_NUMBER: _ClassVar[int]
         answers: _containers.RepeatedCompositeFieldContainer[Submission.Quiz.Answer]
         def __init__(self, answers: _Optional[_Iterable[_Union[Submission.Quiz.Answer, _Mapping]]] = ...) -> None: ...
+    class Output(_message.Message):
+        __slots__ = ("answers",)
+        class Answer(_message.Message):
+            __slots__ = ("test_id", "index", "filename", "output_url")
+            TEST_ID_FIELD_NUMBER: _ClassVar[int]
+            INDEX_FIELD_NUMBER: _ClassVar[int]
+            FILENAME_FIELD_NUMBER: _ClassVar[int]
+            OUTPUT_URL_FIELD_NUMBER: _ClassVar[int]
+            test_id: str
+            index: int
+            filename: str
+            output_url: str
+            def __init__(self, test_id: _Optional[str] = ..., index: _Optional[int] = ..., filename: _Optional[str] = ..., output_url: _Optional[str] = ...) -> None: ...
+        ANSWERS_FIELD_NUMBER: _ClassVar[int]
+        answers: _containers.RepeatedCompositeFieldContainer[Submission.Output.Answer]
+        def __init__(self, answers: _Optional[_Iterable[_Union[Submission.Output.Answer, _Mapping]]] = ...) -> None: ...
     class Fingerprint(_message.Message):
         __slots__ = ("family", "tokens", "hashes")
         FAMILY_FIELD_NUMBER: _ClassVar[int]
@@ -178,8 +193,8 @@ class Submission(_message.Message):
     LANG_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
-    VALUES_FIELD_NUMBER: _ClassVar[int]
     QUIZ_FIELD_NUMBER: _ClassVar[int]
+    OUTPUT_FIELD_NUMBER: _ClassVar[int]
     SIGNATURE_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     VERDICT_FIELD_NUMBER: _ClassVar[int]
@@ -206,8 +221,8 @@ class Submission(_message.Message):
     lang: str
     source: str
     source_url: str
-    values: _containers.RepeatedCompositeFieldContainer[_form_pb2.Form.Value]
     quiz: Submission.Quiz
+    output: Submission.Output
     signature: str
     status: Submission.Status
     verdict: Submission.Verdict
@@ -224,4 +239,4 @@ class Submission(_message.Message):
     fingerprint: Submission.Fingerprint
     assistant_available: bool
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_form_pb2.Form.Value, _Mapping]]] = ..., quiz: _Optional[_Union[Submission.Quiz, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., fingerprint: _Optional[_Union[Submission.Fingerprint, _Mapping]] = ..., assistant_available: _Optional[bool] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., quiz: _Optional[_Union[Submission.Quiz, _Mapping]] = ..., output: _Optional[_Union[Submission.Output, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., fingerprint: _Optional[_Union[Submission.Fingerprint, _Mapping]] = ..., assistant_available: _Optional[bool] = ..., cursor: _Optional[str] = ...) -> None: ...

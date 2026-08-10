@@ -1,5 +1,4 @@
 from eolymp.annotations import mcp_pb2 as _mcp_pb2
-from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -11,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ("id", "url", "type", "number", "visible", "origin", "language", "title", "content", "download_link", "author", "source", "languages", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "vote", "vote_count", "difficulty", "submission_form", "examples")
+    __slots__ = ("id", "url", "type", "number", "visible", "origin", "language", "title", "content", "download_link", "author", "source", "languages", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "vote", "vote_count", "difficulty", "examples")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Problem.Type]
@@ -108,7 +107,6 @@ class Problem(_message.Message):
     VOTE_FIELD_NUMBER: _ClassVar[int]
     VOTE_COUNT_FIELD_NUMBER: _ClassVar[int]
     DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
-    SUBMISSION_FORM_FIELD_NUMBER: _ClassVar[int]
     EXAMPLES_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
@@ -132,6 +130,5 @@ class Problem(_message.Message):
     vote: int
     vote_count: int
     difficulty: int
-    submission_form: _form_pb2.Form
     examples: _containers.RepeatedCompositeFieldContainer[Problem.Example]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[Problem.Type, str]] = ..., number: _Optional[int] = ..., visible: _Optional[bool] = ..., origin: _Optional[str] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., author: _Optional[str] = ..., source: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ..., submission_form: _Optional[_Union[_form_pb2.Form, _Mapping]] = ..., examples: _Optional[_Iterable[_Union[Problem.Example, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[Problem.Type, str]] = ..., number: _Optional[int] = ..., visible: _Optional[bool] = ..., origin: _Optional[str] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., author: _Optional[str] = ..., source: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ..., examples: _Optional[_Iterable[_Union[Problem.Example, _Mapping]]] = ...) -> None: ...

@@ -47,6 +47,17 @@ class EditorServiceClient:
             **kwargs,
         )
 
+    def ListInputs(self, request, **kwargs):
+        path = "/inputs"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListInputsOutput"),
+            **kwargs,
+        )
+
     def PrintEditorCode(self, request, **kwargs):
         path = "/editor/print"
 

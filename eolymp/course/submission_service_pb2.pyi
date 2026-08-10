@@ -2,7 +2,6 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
-from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from eolymp.wellknown import watch_pb2 as _watch_pb2
@@ -15,16 +14,16 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ("material_id", "runtime", "source", "values")
+    __slots__ = ("material_id", "runtime", "source", "output")
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
-    VALUES_FIELD_NUMBER: _ClassVar[int]
+    OUTPUT_FIELD_NUMBER: _ClassVar[int]
     material_id: str
     runtime: str
     source: str
-    values: _form_pb2.Form.Value
-    def __init__(self, material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., values: _Optional[_Union[_form_pb2.Form.Value, _Mapping]] = ...) -> None: ...
+    output: _submission_pb2.Submission.Output
+    def __init__(self, material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)
