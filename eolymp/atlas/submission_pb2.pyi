@@ -16,7 +16,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ("id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "values", "quiz", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "assistant_available", "cursor")
+    __slots__ = ("id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "values", "quiz", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "fingerprint", "assistant_available", "cursor")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Submission.Status]
@@ -64,9 +64,11 @@ class Submission(_message.Message):
             UNKNOWN_EXTRA: _ClassVar[Submission.Extra.Field]
             GROUPS: _ClassVar[Submission.Extra.Field]
             RUNS: _ClassVar[Submission.Extra.Field]
+            FINGERPRINT: _ClassVar[Submission.Extra.Field]
         UNKNOWN_EXTRA: Submission.Extra.Field
         GROUPS: Submission.Extra.Field
         RUNS: Submission.Extra.Field
+        FINGERPRINT: Submission.Extra.Field
         def __init__(self) -> None: ...
     class Run(_message.Message):
         __slots__ = ("id", "index", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "input_url", "output_url", "answer_url", "interaction_url", "cost", "score", "status", "verdict", "debug_stats", "checker_stats", "interactor_stats")
@@ -157,6 +159,15 @@ class Submission(_message.Message):
         ANSWERS_FIELD_NUMBER: _ClassVar[int]
         answers: _containers.RepeatedCompositeFieldContainer[Submission.Quiz.Answer]
         def __init__(self, answers: _Optional[_Iterable[_Union[Submission.Quiz.Answer, _Mapping]]] = ...) -> None: ...
+    class Fingerprint(_message.Message):
+        __slots__ = ("family", "tokens", "hashes")
+        FAMILY_FIELD_NUMBER: _ClassVar[int]
+        TOKENS_FIELD_NUMBER: _ClassVar[int]
+        HASHES_FIELD_NUMBER: _ClassVar[int]
+        family: str
+        tokens: int
+        hashes: _containers.RepeatedScalarFieldContainer[int]
+        def __init__(self, family: _Optional[str] = ..., tokens: _Optional[int] = ..., hashes: _Optional[_Iterable[int]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
@@ -182,6 +193,7 @@ class Submission(_message.Message):
     MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
+    FINGERPRINT_FIELD_NUMBER: _ClassVar[int]
     ASSISTANT_AVAILABLE_FIELD_NUMBER: _ClassVar[int]
     CURSOR_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -209,6 +221,7 @@ class Submission(_message.Message):
     memory_usage: int
     resource_usage: float
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
+    fingerprint: Submission.Fingerprint
     assistant_available: bool
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_form_pb2.Form.Value, _Mapping]]] = ..., quiz: _Optional[_Union[Submission.Quiz, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., assistant_available: _Optional[bool] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., values: _Optional[_Iterable[_Union[_form_pb2.Form.Value, _Mapping]]] = ..., quiz: _Optional[_Union[Submission.Quiz, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., fingerprint: _Optional[_Union[Submission.Fingerprint, _Mapping]] = ..., assistant_available: _Optional[bool] = ..., cursor: _Optional[str] = ...) -> None: ...
