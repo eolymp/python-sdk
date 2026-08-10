@@ -28,9 +28,10 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.atlas import testing_validator_pb2 as eolymp_dot_atlas_dot_testing__validator__pb2
 from eolymp.atlas import validation_pb2 as eolymp_dot_atlas_dot_validation__pb2
+from eolymp.wellknown import watch_pb2 as eolymp_dot_wellknown_dot_watch__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/validation_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a$eolymp/atlas/testing_validator.proto\x1a\x1d\x65olymp/atlas/validation.proto\"@\n\x12RunValidationInput\x12*\n\tvalidator\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Validator\"Z\n\x13RunValidationOutput\x12\x15\n\rvalidation_id\x18\x01 \x01(\t\x12,\n\nvalidation\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Validation\"0\n\x17\x44\x65scribeValidationInput\x12\x15\n\rvalidation_id\x18\x01 \x01(\t\"H\n\x18\x44\x65scribeValidationOutput\x12,\n\nvalidation\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Validation\"-\n\x14WatchValidationInput\x12\x15\n\rvalidation_id\x18\x01 \x01(\t\"E\n\x15WatchValidationOutput\x12,\n\nvalidation\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Validation2\xaf\x04\n\x11ValidationService\x12\x94\x01\n\rRunValidation\x12 .eolymp.atlas.RunValidationInput\x1a!.eolymp.atlas.RunValidationOutput\">\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x0e\"\x0c/validations\x12\xb2\x01\n\x12\x44\x65scribeValidation\x12%.eolymp.atlas.DescribeValidationInput\x1a&.eolymp.atlas.DescribeValidationOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/validations/{validation_id}\x12\xb1\x01\n\x0fWatchValidation\x12\".eolymp.atlas.WatchValidationInput\x1a#.eolymp.atlas.WatchValidationOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02$\x12\"/validations/{validation_id}/watch0\x01\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.ProblemB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/validation_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a$eolymp/atlas/testing_validator.proto\x1a\x1d\x65olymp/atlas/validation.proto\x1a\x1c\x65olymp/wellknown/watch.proto\"@\n\x12RunValidationInput\x12*\n\tvalidator\x18\x01 \x01(\x0b\x32\x17.eolymp.atlas.Validator\"Z\n\x13RunValidationOutput\x12\x15\n\rvalidation_id\x18\x01 \x01(\t\x12,\n\nvalidation\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Validation\"0\n\x17\x44\x65scribeValidationInput\x12\x15\n\rvalidation_id\x18\x01 \x01(\t\"H\n\x18\x44\x65scribeValidationOutput\x12,\n\nvalidation\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Validation\"-\n\x14WatchValidationInput\x12\x15\n\rvalidation_id\x18\x01 \x01(\t\"v\n\x15WatchValidationOutput\x12,\n\nvalidation\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Validation\x12/\n\x05\x65vent\x18\x02 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType2\xaf\x04\n\x11ValidationService\x12\x94\x01\n\rRunValidation\x12 .eolymp.atlas.RunValidationInput\x1a!.eolymp.atlas.RunValidationOutput\">\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x0e\"\x0c/validations\x12\xb2\x01\n\x12\x44\x65scribeValidation\x12%.eolymp.atlas.DescribeValidationInput\x1a&.eolymp.atlas.DescribeValidationOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/validations/{validation_id}\x12\xb1\x01\n\x0fWatchValidation\x12\".eolymp.atlas.WatchValidationInput\x1a#.eolymp.atlas.WatchValidationOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02$\x12\"/validations/{validation_id}/watch0\x01\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.ProblemB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -46,18 +47,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VALIDATIONSERVICE'].methods_by_name['DescribeValidation']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002\036\022\034/validations/{validation_id}'
   _globals['_VALIDATIONSERVICE'].methods_by_name['WatchValidation']._loaded_options = None
   _globals['_VALIDATIONSERVICE'].methods_by_name['WatchValidation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002$\022\"/validations/{validation_id}/watch'
-  _globals['_RUNVALIDATIONINPUT']._serialized_start=259
-  _globals['_RUNVALIDATIONINPUT']._serialized_end=323
-  _globals['_RUNVALIDATIONOUTPUT']._serialized_start=325
-  _globals['_RUNVALIDATIONOUTPUT']._serialized_end=415
-  _globals['_DESCRIBEVALIDATIONINPUT']._serialized_start=417
-  _globals['_DESCRIBEVALIDATIONINPUT']._serialized_end=465
-  _globals['_DESCRIBEVALIDATIONOUTPUT']._serialized_start=467
-  _globals['_DESCRIBEVALIDATIONOUTPUT']._serialized_end=539
-  _globals['_WATCHVALIDATIONINPUT']._serialized_start=541
-  _globals['_WATCHVALIDATIONINPUT']._serialized_end=586
-  _globals['_WATCHVALIDATIONOUTPUT']._serialized_start=588
-  _globals['_WATCHVALIDATIONOUTPUT']._serialized_end=657
-  _globals['_VALIDATIONSERVICE']._serialized_start=660
-  _globals['_VALIDATIONSERVICE']._serialized_end=1219
+  _globals['_RUNVALIDATIONINPUT']._serialized_start=289
+  _globals['_RUNVALIDATIONINPUT']._serialized_end=353
+  _globals['_RUNVALIDATIONOUTPUT']._serialized_start=355
+  _globals['_RUNVALIDATIONOUTPUT']._serialized_end=445
+  _globals['_DESCRIBEVALIDATIONINPUT']._serialized_start=447
+  _globals['_DESCRIBEVALIDATIONINPUT']._serialized_end=495
+  _globals['_DESCRIBEVALIDATIONOUTPUT']._serialized_start=497
+  _globals['_DESCRIBEVALIDATIONOUTPUT']._serialized_end=569
+  _globals['_WATCHVALIDATIONINPUT']._serialized_start=571
+  _globals['_WATCHVALIDATIONINPUT']._serialized_end=616
+  _globals['_WATCHVALIDATIONOUTPUT']._serialized_start=618
+  _globals['_WATCHVALIDATIONOUTPUT']._serialized_end=736
+  _globals['_VALIDATIONSERVICE']._serialized_start=739
+  _globals['_VALIDATIONSERVICE']._serialized_end=1298
 # @@protoc_insertion_point(module_scope)

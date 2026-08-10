@@ -4,6 +4,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import testing_validator_pb2 as _testing_validator_pb2
 from eolymp.atlas import validation_pb2 as _validation_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Mapping as _Mapping
@@ -44,7 +45,9 @@ class WatchValidationInput(_message.Message):
     def __init__(self, validation_id: _Optional[str] = ...) -> None: ...
 
 class WatchValidationOutput(_message.Message):
-    __slots__ = ("validation",)
+    __slots__ = ("validation", "event")
     VALIDATION_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     validation: _validation_pb2.Validation
-    def __init__(self, validation: _Optional[_Union[_validation_pb2.Validation, _Mapping]] = ...) -> None: ...
+    event: _watch_pb2.WatchEventType
+    def __init__(self, validation: _Optional[_Union[_validation_pb2.Validation, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...

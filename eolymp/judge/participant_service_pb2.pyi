@@ -9,6 +9,7 @@ from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import scoreboard_pb2 as _scoreboard_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -237,10 +238,12 @@ class WatchParticipantInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ...) -> None: ...
 
 class WatchParticipantOutput(_message.Message):
-    __slots__ = ("participant",)
+    __slots__ = ("participant", "event")
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     participant: _participant_pb2.Participant
-    def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+    event: _watch_pb2.WatchEventType
+    def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
 class DescribeViewerInput(_message.Message):
     __slots__ = ("contest_id",)

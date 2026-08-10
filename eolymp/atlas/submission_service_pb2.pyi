@@ -7,6 +7,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import form_pb2 as _form_pb2
 from eolymp.atlas import submission_pb2 as _submission_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -54,18 +55,18 @@ class CreateSubmissionOutput(_message.Message):
     def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
 
 class DescribeSubmissionInput(_message.Message):
-    __slots__ = ("submission_id",)
+    __slots__ = ("submission_id", "extra")
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     submission_id: str
-    def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra.Field]
+    def __init__(self, submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeSubmissionOutput(_message.Message):
-    __slots__ = ("submission", "extra")
+    __slots__ = ("submission",)
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
-    extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra.Field]
-    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class WatchSubmissionInput(_message.Message):
     __slots__ = ("submission_id", "extra")
@@ -76,34 +77,26 @@ class WatchSubmissionInput(_message.Message):
     def __init__(self, submission_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra.Field, str]]] = ...) -> None: ...
 
 class WatchSubmissionOutput(_message.Message):
-    __slots__ = ("submission",)
+    __slots__ = ("submission", "event")
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     submission: _submission_pb2.Submission
-    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+    event: _watch_pb2.WatchEventType
+    def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
-class WatchSubmissionListInput(_message.Message):
+class WatchSubmissionsListInput(_message.Message):
     __slots__ = ("extra",)
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_submission_pb2.Submission.Extra.Field]
     def __init__(self, extra: _Optional[_Iterable[_Union[_submission_pb2.Submission.Extra.Field, str]]] = ...) -> None: ...
 
-class WatchSubmissionListOutput(_message.Message):
+class WatchSubmissionsListOutput(_message.Message):
     __slots__ = ("event", "submission")
-    class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        UNKNOWN_EVENT: _ClassVar[WatchSubmissionListOutput.Event]
-        CREATED: _ClassVar[WatchSubmissionListOutput.Event]
-        UPDATED: _ClassVar[WatchSubmissionListOutput.Event]
-        DELETED: _ClassVar[WatchSubmissionListOutput.Event]
-    UNKNOWN_EVENT: WatchSubmissionListOutput.Event
-    CREATED: WatchSubmissionListOutput.Event
-    UPDATED: WatchSubmissionListOutput.Event
-    DELETED: WatchSubmissionListOutput.Event
     EVENT_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
-    event: WatchSubmissionListOutput.Event
+    event: _watch_pb2.WatchEventType
     submission: _submission_pb2.Submission
-    def __init__(self, event: _Optional[_Union[WatchSubmissionListOutput.Event, str]] = ..., submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
+    def __init__(self, event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ..., submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class RetestSubmissionInput(_message.Message):
     __slots__ = ("submission_id", "debug")

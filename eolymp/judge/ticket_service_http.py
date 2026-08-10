@@ -106,6 +106,17 @@ class TicketServiceClient:
             **kwargs,
         )
 
+    def DescribeTicketSummary(self, request, **kwargs):
+        path = "/summary/tickets"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeTicketSummaryOutput"),
+            **kwargs,
+        )
+
     def ListReplies(self, request, **kwargs):
         path = "/tickets/"+urllib.parse.quote(request.ticket_id)+"/replies"
 

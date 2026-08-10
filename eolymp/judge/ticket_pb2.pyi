@@ -62,3 +62,11 @@ class Ticket(_message.Message):
     last_reply_at: _timestamp_pb2.Timestamp
     cursor: str
     def __init__(self, id: _Optional[str] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Ticket.Status, str]] = ..., subject: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., raw_message: _Optional[str] = ..., is_read: _Optional[bool] = ..., reply_count: _Optional[int] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., read_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., last_reply_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., cursor: _Optional[str] = ...) -> None: ...
+
+class TicketSummary(_message.Message):
+    __slots__ = ("unread_count", "unresolved_count")
+    UNREAD_COUNT_FIELD_NUMBER: _ClassVar[int]
+    UNRESOLVED_COUNT_FIELD_NUMBER: _ClassVar[int]
+    unread_count: int
+    unresolved_count: int
+    def __init__(self, unread_count: _Optional[int] = ..., unresolved_count: _Optional[int] = ...) -> None: ...

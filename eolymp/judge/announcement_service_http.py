@@ -106,3 +106,14 @@ class AnnouncementServiceClient:
             **kwargs,
         )
 
+    def DescribeAnnouncementSummary(self, request, **kwargs):
+        path = "/summary/announcements"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeAnnouncementSummaryOutput"),
+            **kwargs,
+        )
+

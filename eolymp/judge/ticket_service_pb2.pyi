@@ -10,6 +10,7 @@ from eolymp.judge import ticket_pb2 as _ticket_pb2
 from eolymp.judge import ticket_reply_pb2 as _ticket_reply_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -192,20 +193,26 @@ class ReplyTicketOutput(_message.Message):
     def __init__(self, reply_id: _Optional[str] = ...) -> None: ...
 
 class WatchTicketInput(_message.Message):
-    __slots__ = ("ticket_id", "extra")
+    __slots__ = ("ticket_id", "extra", "reply_extra")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    REPLY_EXTRA_FIELD_NUMBER: _ClassVar[int]
     ticket_id: str
     extra: _containers.RepeatedScalarFieldContainer[_ticket_pb2.Ticket.Extra]
-    def __init__(self, ticket_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
+    reply_extra: _containers.RepeatedScalarFieldContainer[_ticket_reply_pb2.Reply.Extra]
+    def __init__(self, ticket_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ..., reply_extra: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
 
 class WatchTicketOutput(_message.Message):
-    __slots__ = ("ticket",)
+    __slots__ = ("event", "ticket", "reply")
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     TICKET_FIELD_NUMBER: _ClassVar[int]
+    REPLY_FIELD_NUMBER: _ClassVar[int]
+    event: _watch_pb2.WatchEventType
     ticket: _ticket_pb2.Ticket
-    def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
+    reply: _ticket_reply_pb2.Reply
+    def __init__(self, event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ..., reply: _Optional[_Union[_ticket_reply_pb2.Reply, _Mapping]] = ...) -> None: ...
 
-class WatchTicketsInput(_message.Message):
+class WatchTicketsListInput(_message.Message):
     __slots__ = ("contest_id", "member_id", "status", "extra")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -217,23 +224,27 @@ class WatchTicketsInput(_message.Message):
     extra: _containers.RepeatedScalarFieldContainer[_ticket_pb2.Ticket.Extra]
     def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_pb2.Ticket.Extra, str]]] = ...) -> None: ...
 
-class WatchTicketsOutput(_message.Message):
+class WatchTicketsListOutput(_message.Message):
     __slots__ = ("event", "ticket")
-    class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        UNKNOWN_EVENT: _ClassVar[WatchTicketsOutput.Event]
-        CREATED: _ClassVar[WatchTicketsOutput.Event]
-        UPDATED: _ClassVar[WatchTicketsOutput.Event]
-        DELETED: _ClassVar[WatchTicketsOutput.Event]
-    UNKNOWN_EVENT: WatchTicketsOutput.Event
-    CREATED: WatchTicketsOutput.Event
-    UPDATED: WatchTicketsOutput.Event
-    DELETED: WatchTicketsOutput.Event
     EVENT_FIELD_NUMBER: _ClassVar[int]
     TICKET_FIELD_NUMBER: _ClassVar[int]
-    event: WatchTicketsOutput.Event
+    event: _watch_pb2.WatchEventType
     ticket: _ticket_pb2.Ticket
-    def __init__(self, event: _Optional[_Union[WatchTicketsOutput.Event, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
+    def __init__(self, event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
+
+class DescribeTicketSummaryInput(_message.Message):
+    __slots__ = ("contest_id", "member_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    member_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
+
+class DescribeTicketSummaryOutput(_message.Message):
+    __slots__ = ("summary",)
+    SUMMARY_FIELD_NUMBER: _ClassVar[int]
+    summary: _ticket_pb2.TicketSummary
+    def __init__(self, summary: _Optional[_Union[_ticket_pb2.TicketSummary, _Mapping]] = ...) -> None: ...
 
 class WatchTicketSummaryInput(_message.Message):
     __slots__ = ("contest_id", "member_id")
@@ -244,12 +255,12 @@ class WatchTicketSummaryInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class WatchTicketSummaryOutput(_message.Message):
-    __slots__ = ("unread_count", "unresolved_count")
-    UNREAD_COUNT_FIELD_NUMBER: _ClassVar[int]
-    UNRESOLVED_COUNT_FIELD_NUMBER: _ClassVar[int]
-    unread_count: int
-    unresolved_count: int
-    def __init__(self, unread_count: _Optional[int] = ..., unresolved_count: _Optional[int] = ...) -> None: ...
+    __slots__ = ("summary", "event")
+    SUMMARY_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    summary: _ticket_pb2.TicketSummary
+    event: _watch_pb2.WatchEventType
+    def __init__(self, summary: _Optional[_Union[_ticket_pb2.TicketSummary, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
 class ListRepliesInput(_message.Message):
     __slots__ = ("ticket_id", "offset", "size", "extra")
@@ -324,31 +335,3 @@ class SuggestReplyOutput(_message.Message):
     SUGGESTION_FIELD_NUMBER: _ClassVar[int]
     suggestion: _content_pb2.Content
     def __init__(self, suggestion: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
-
-class WatchRepliesInput(_message.Message):
-    __slots__ = ("ticket_id", "cursor", "extra")
-    TICKET_ID_FIELD_NUMBER: _ClassVar[int]
-    CURSOR_FIELD_NUMBER: _ClassVar[int]
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
-    ticket_id: str
-    cursor: str
-    extra: _containers.RepeatedScalarFieldContainer[_ticket_reply_pb2.Reply.Extra]
-    def __init__(self, ticket_id: _Optional[str] = ..., cursor: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_ticket_reply_pb2.Reply.Extra, str]]] = ...) -> None: ...
-
-class WatchRepliesOutput(_message.Message):
-    __slots__ = ("event", "reply")
-    class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        UNKNOWN_EVENT: _ClassVar[WatchRepliesOutput.Event]
-        CREATED: _ClassVar[WatchRepliesOutput.Event]
-        UPDATED: _ClassVar[WatchRepliesOutput.Event]
-        DELETED: _ClassVar[WatchRepliesOutput.Event]
-    UNKNOWN_EVENT: WatchRepliesOutput.Event
-    CREATED: WatchRepliesOutput.Event
-    UPDATED: WatchRepliesOutput.Event
-    DELETED: WatchRepliesOutput.Event
-    EVENT_FIELD_NUMBER: _ClassVar[int]
-    REPLY_FIELD_NUMBER: _ClassVar[int]
-    event: WatchRepliesOutput.Event
-    reply: _ticket_reply_pb2.Reply
-    def __init__(self, event: _Optional[_Union[WatchRepliesOutput.Event, str]] = ..., reply: _Optional[_Union[_ticket_reply_pb2.Reply, _Mapping]] = ...) -> None: ...

@@ -3,6 +3,7 @@ from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.playground import run_pb2 as _run_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Mapping as _Mapping
@@ -51,7 +52,9 @@ class WatchRunInput(_message.Message):
     def __init__(self, run_id: _Optional[str] = ...) -> None: ...
 
 class WatchRunOutput(_message.Message):
-    __slots__ = ("run",)
+    __slots__ = ("run", "event")
     RUN_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     run: _run_pb2.Run
-    def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ...) -> None: ...
+    event: _watch_pb2.WatchEventType
+    def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...

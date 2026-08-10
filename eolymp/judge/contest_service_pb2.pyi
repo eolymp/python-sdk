@@ -8,6 +8,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.judge import activity_pb2 as _activity_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -244,10 +245,12 @@ class WatchContestInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_contest_pb2.Contest.Extra.Field, str]]] = ...) -> None: ...
 
 class WatchContestOutput(_message.Message):
-    __slots__ = ("contest",)
+    __slots__ = ("contest", "event")
     CONTEST_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     contest: _contest_pb2.Contest
-    def __init__(self, contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
+    event: _watch_pb2.WatchEventType
+    def __init__(self, contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
 class ListActivitiesInput(_message.Message):
     __slots__ = ("contest_id", "offset", "size")

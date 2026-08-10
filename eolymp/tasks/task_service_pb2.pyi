@@ -4,6 +4,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.tasks import task_pb2 as _task_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -60,10 +61,12 @@ class WatchTaskInput(_message.Message):
     def __init__(self, task_id: _Optional[str] = ...) -> None: ...
 
 class WatchTaskOutput(_message.Message):
-    __slots__ = ("task",)
+    __slots__ = ("task", "event")
     TASK_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     task: _task_pb2.Task
-    def __init__(self, task: _Optional[_Union[_task_pb2.Task, _Mapping]] = ...) -> None: ...
+    event: _watch_pb2.WatchEventType
+    def __init__(self, task: _Optional[_Union[_task_pb2.Task, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
 class CancelTaskInput(_message.Message):
     __slots__ = ("task_id",)

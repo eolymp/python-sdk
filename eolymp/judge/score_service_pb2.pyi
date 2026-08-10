@@ -5,6 +5,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import score_timeline_pb2 as _score_timeline_pb2
 from eolymp.judge import scoreboard_pb2 as _scoreboard_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -48,10 +49,12 @@ class WatchScoreInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
 
 class WatchScoreOutput(_message.Message):
-    __slots__ = ("score",)
+    __slots__ = ("score", "event")
     SCORE_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     score: _score_pb2.Score
-    def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ...) -> None: ...
+    event: _watch_pb2.WatchEventType
+    def __init__(self, score: _Optional[_Union[_score_pb2.Score, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
 class DescribeScoreInput(_message.Message):
     __slots__ = ("contest_id", "participant_id", "mode")

@@ -4,8 +4,8 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.judge import announcement_pb2 as _announcement_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -119,41 +119,45 @@ class WatchAnnouncementInput(_message.Message):
     def __init__(self, announcement_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
 
 class WatchAnnouncementOutput(_message.Message):
-    __slots__ = ("announcement",)
+    __slots__ = ("announcement", "event")
     ANNOUNCEMENT_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     announcement: _announcement_pb2.Announcement
-    def __init__(self, announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
+    event: _watch_pb2.WatchEventType
+    def __init__(self, announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
-class WatchAnnouncementsInput(_message.Message):
+class WatchAnnouncementsListInput(_message.Message):
     __slots__ = ("extra",)
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     extra: _containers.RepeatedScalarFieldContainer[_announcement_pb2.Announcement.Extra]
     def __init__(self, extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
 
-class WatchAnnouncementsOutput(_message.Message):
+class WatchAnnouncementsListOutput(_message.Message):
     __slots__ = ("event", "announcement")
-    class Event(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        UNKNOWN_EVENT: _ClassVar[WatchAnnouncementsOutput.Event]
-        CREATED: _ClassVar[WatchAnnouncementsOutput.Event]
-        UPDATED: _ClassVar[WatchAnnouncementsOutput.Event]
-        DELETED: _ClassVar[WatchAnnouncementsOutput.Event]
-    UNKNOWN_EVENT: WatchAnnouncementsOutput.Event
-    CREATED: WatchAnnouncementsOutput.Event
-    UPDATED: WatchAnnouncementsOutput.Event
-    DELETED: WatchAnnouncementsOutput.Event
     EVENT_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_FIELD_NUMBER: _ClassVar[int]
-    event: WatchAnnouncementsOutput.Event
+    event: _watch_pb2.WatchEventType
     announcement: _announcement_pb2.Announcement
-    def __init__(self, event: _Optional[_Union[WatchAnnouncementsOutput.Event, str]] = ..., announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
+    def __init__(self, event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ..., announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
+
+class DescribeAnnouncementSummaryInput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeAnnouncementSummaryOutput(_message.Message):
+    __slots__ = ("summary",)
+    SUMMARY_FIELD_NUMBER: _ClassVar[int]
+    summary: _announcement_pb2.AnnouncementSummary
+    def __init__(self, summary: _Optional[_Union[_announcement_pb2.AnnouncementSummary, _Mapping]] = ...) -> None: ...
 
 class WatchAnnouncementSummaryInput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class WatchAnnouncementSummaryOutput(_message.Message):
-    __slots__ = ("unread_count",)
-    UNREAD_COUNT_FIELD_NUMBER: _ClassVar[int]
-    unread_count: int
-    def __init__(self, unread_count: _Optional[int] = ...) -> None: ...
+    __slots__ = ("summary", "event")
+    SUMMARY_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    summary: _announcement_pb2.AnnouncementSummary
+    event: _watch_pb2.WatchEventType
+    def __init__(self, summary: _Optional[_Union[_announcement_pb2.AnnouncementSummary, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...

@@ -3,7 +3,8 @@ from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import member_pb2 as _member_pb2
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
+from eolymp.judge import admission_pb2 as _admission_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Mapping as _Mapping
@@ -56,15 +57,9 @@ class WatchAdmissionInput(_message.Message):
     def __init__(self, code: _Optional[str] = ...) -> None: ...
 
 class WatchAdmissionOutput(_message.Message):
-    __slots__ = ("status",)
-    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        UNKNOWN_STATUS: _ClassVar[WatchAdmissionOutput.Status]
-        ACCEPTED: _ClassVar[WatchAdmissionOutput.Status]
-        EXPIRED: _ClassVar[WatchAdmissionOutput.Status]
-    UNKNOWN_STATUS: WatchAdmissionOutput.Status
-    ACCEPTED: WatchAdmissionOutput.Status
-    EXPIRED: WatchAdmissionOutput.Status
-    STATUS_FIELD_NUMBER: _ClassVar[int]
-    status: WatchAdmissionOutput.Status
-    def __init__(self, status: _Optional[_Union[WatchAdmissionOutput.Status, str]] = ...) -> None: ...
+    __slots__ = ("admission", "event")
+    ADMISSION_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    admission: _admission_pb2.Admission
+    event: _watch_pb2.WatchEventType
+    def __init__(self, admission: _Optional[_Union[_admission_pb2.Admission, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...

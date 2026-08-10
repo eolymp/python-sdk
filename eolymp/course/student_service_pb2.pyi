@@ -10,6 +10,7 @@ from eolymp.course import module_pb2 as _module_pb2
 from eolymp.course import student_pb2 as _student_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -130,10 +131,12 @@ class WatchStudentInput(_message.Message):
     def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
 
 class WatchStudentOutput(_message.Message):
-    __slots__ = ("student",)
+    __slots__ = ("student", "event")
     STUDENT_FIELD_NUMBER: _ClassVar[int]
+    EVENT_FIELD_NUMBER: _ClassVar[int]
     student: _student_pb2.Student
-    def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
+    event: _watch_pb2.WatchEventType
+    def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
 class JoinCourseInput(_message.Message):
     __slots__ = ()
