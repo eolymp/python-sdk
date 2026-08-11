@@ -69,8 +69,10 @@ class ListViolationsInput(_message.Message):
     __slots__ = ("offset", "size", "filters", "sort", "order")
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
+        DEFAULT: _ClassVar[ListViolationsInput.Sort]
         CREATED_AT: _ClassVar[ListViolationsInput.Sort]
         CONFIDENCE: _ClassVar[ListViolationsInput.Sort]
+    DEFAULT: ListViolationsInput.Sort
     CREATED_AT: ListViolationsInput.Sort
     CONFIDENCE: ListViolationsInput.Sort
     class Filter(_message.Message):
