@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Violation(_message.Message):
-    __slots__ = ("id", "status", "type", "summary", "automatic", "participant_id", "submission_id", "submissions", "summary_text", "created_by", "created_at", "confirmed_by", "confirmed_at")
+    __slots__ = ("id", "status", "type", "confidence", "summary", "automatic", "participant_id", "submission_id", "submissions", "summary_text", "created_by", "created_at", "confirmed_by", "confirmed_at")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Violation.Status]
@@ -24,6 +24,16 @@ class Violation(_message.Message):
     PENDING: Violation.Status
     CONFIRMED: Violation.Status
     CANCELLED: Violation.Status
+    class Confidence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_CONFIDENCE: _ClassVar[Violation.Confidence]
+        LOW: _ClassVar[Violation.Confidence]
+        MEDIUM: _ClassVar[Violation.Confidence]
+        HIGH: _ClassVar[Violation.Confidence]
+    UNKNOWN_CONFIDENCE: Violation.Confidence
+    LOW: Violation.Confidence
+    MEDIUM: Violation.Confidence
+    HIGH: Violation.Confidence
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Violation.Type]
@@ -50,6 +60,7 @@ class Violation(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    CONFIDENCE_FIELD_NUMBER: _ClassVar[int]
     SUMMARY_FIELD_NUMBER: _ClassVar[int]
     AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -63,6 +74,7 @@ class Violation(_message.Message):
     id: str
     status: Violation.Status
     type: Violation.Type
+    confidence: Violation.Confidence
     summary: _content_pb2.Content
     automatic: bool
     participant_id: str
@@ -73,4 +85,4 @@ class Violation(_message.Message):
     created_at: _timestamp_pb2.Timestamp
     confirmed_by: str
     confirmed_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Violation.Status, str]] = ..., type: _Optional[_Union[Violation.Type, str]] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., automatic: _Optional[bool] = ..., participant_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., submissions: _Optional[_Iterable[str]] = ..., summary_text: _Optional[str] = ..., created_by: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., confirmed_by: _Optional[str] = ..., confirmed_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Violation.Status, str]] = ..., type: _Optional[_Union[Violation.Type, str]] = ..., confidence: _Optional[_Union[Violation.Confidence, str]] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., automatic: _Optional[bool] = ..., participant_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., submissions: _Optional[_Iterable[str]] = ..., summary_text: _Optional[str] = ..., created_by: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., confirmed_by: _Optional[str] = ..., confirmed_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
