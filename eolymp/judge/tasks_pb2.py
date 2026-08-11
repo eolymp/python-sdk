@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/tasks.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x01\n\x11RetestProblemTask\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x1aT\n\nCheckpoint\x12\x34\n\x10submitted_before\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08retested\x18\x02 \x01(\r\"&\n\x10RebuildScoreTask\x12\x12\n\ncontest_id\x18\x01 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/judge/tasks.proto\x12\x0c\x65olymp.judge\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x01\n\x11RetestProblemTask\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x1aT\n\nCheckpoint\x12\x34\n\x10submitted_before\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08retested\x18\x02 \x01(\r\"&\n\x10RebuildScoreTask\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"(\n\x12\x41nalyzeContestTask\x12\x12\n\ncontest_id\x18\x01 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,4 +39,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RETESTPROBLEMTASK_CHECKPOINT']._serialized_end=221
   _globals['_REBUILDSCORETASK']._serialized_start=223
   _globals['_REBUILDSCORETASK']._serialized_end=261
+  _globals['_ANALYZECONTESTTASK']._serialized_start=263
+  _globals['_ANALYZECONTESTTASK']._serialized_end=303
 # @@protoc_insertion_point(module_scope)

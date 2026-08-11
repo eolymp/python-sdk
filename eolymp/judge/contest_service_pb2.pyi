@@ -233,8 +233,10 @@ class AnalyzeContestInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class AnalyzeContestOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("task_id",)
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    task_id: str
+    def __init__(self, task_id: _Optional[str] = ...) -> None: ...
 
 class WatchContestInput(_message.Message):
     __slots__ = ("contest_id", "extra")
