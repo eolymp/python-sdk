@@ -99,7 +99,6 @@ class Contest(_message.Message):
             SCOREBOARD_CONFIG: _ClassVar[Contest.Patch.Field]
             CERTIFICATION_CONFIG: _ClassVar[Contest.Patch.Field]
             ENVIRONMENT_CONFIG: _ClassVar[Contest.Patch.Field]
-            PLAGIARISM_CONFIG: _ClassVar[Contest.Patch.Field]
             RATING_CONFIG: _ClassVar[Contest.Patch.Field]
         UNKNOWN: Contest.Patch.Field
         NAME: Contest.Patch.Field
@@ -130,7 +129,6 @@ class Contest(_message.Message):
         SCOREBOARD_CONFIG: Contest.Patch.Field
         CERTIFICATION_CONFIG: Contest.Patch.Field
         ENVIRONMENT_CONFIG: Contest.Patch.Field
-        PLAGIARISM_CONFIG: Contest.Patch.Field
         RATING_CONFIG: Contest.Patch.Field
         def __init__(self) -> None: ...
     class Extra(_message.Message):
@@ -143,7 +141,6 @@ class Contest(_message.Message):
             SCOREBOARD_CONFIG: _ClassVar[Contest.Extra.Field]
             CERTIFICATION_CONFIG: _ClassVar[Contest.Extra.Field]
             ENVIRONMENT_CONFIG: _ClassVar[Contest.Extra.Field]
-            PLAGIARISM_CONFIG: _ClassVar[Contest.Extra.Field]
             RATING_CONFIG: _ClassVar[Contest.Extra.Field]
         UNKNOWN: Contest.Extra.Field
         STAFF: Contest.Extra.Field
@@ -151,7 +148,6 @@ class Contest(_message.Message):
         SCOREBOARD_CONFIG: Contest.Extra.Field
         CERTIFICATION_CONFIG: Contest.Extra.Field
         ENVIRONMENT_CONFIG: Contest.Extra.Field
-        PLAGIARISM_CONFIG: Contest.Extra.Field
         RATING_CONFIG: Contest.Extra.Field
         def __init__(self) -> None: ...
     class Classification(_message.Message):
