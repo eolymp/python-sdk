@@ -95,7 +95,7 @@ class ListViolationsInput(_message.Message):
     CREATED_AT: ListViolationsInput.Sort
     CONFIDENCE: ListViolationsInput.Sort
     class Filter(_message.Message):
-        __slots__ = ("id", "status", "type", "summary", "automatic", "confidence", "case_ref", "problem_id", "participant_id", "submission_id", "created_by", "confirmed_by")
+        __slots__ = ("id", "status", "type", "summary", "automatic", "confidence", "case_ref", "problem_id", "participant_id", "created_by", "confirmed_by")
         ID_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -105,7 +105,6 @@ class ListViolationsInput(_message.Message):
         CASE_REF_FIELD_NUMBER: _ClassVar[int]
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
-        SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
         CREATED_BY_FIELD_NUMBER: _ClassVar[int]
         CONFIRMED_BY_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -117,10 +116,9 @@ class ListViolationsInput(_message.Message):
         case_ref: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         problem_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         participant_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        submission_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         created_by: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         confirmed_by: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., summary: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., automatic: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., confidence: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., case_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., submission_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_by: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., confirmed_by: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., summary: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., automatic: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., confidence: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., case_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., problem_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., participant_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_by: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., confirmed_by: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]

@@ -50,11 +50,9 @@ class Violation(_message.Message):
             UNSPECIFIED: _ClassVar[Violation.Patch.Field]
             SUMMARY: _ClassVar[Violation.Patch.Field]
             STATUS: _ClassVar[Violation.Patch.Field]
-            AUTOMATIC: _ClassVar[Violation.Patch.Field]
         UNSPECIFIED: Violation.Patch.Field
         SUMMARY: Violation.Patch.Field
         STATUS: Violation.Patch.Field
-        AUTOMATIC: Violation.Patch.Field
         def __init__(self) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
