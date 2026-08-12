@@ -67,6 +67,20 @@ class ViolationServiceClient:
             **kwargs,
         )
 
+    def ListViolationEvidence(self, request, **kwargs):
+        path = "/violations/"+urllib.parse.quote(request.violation_id)+"/evidence"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.violation_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListViolationEvidenceOutput"),
+            **kwargs,
+        )
+
     def ListViolations(self, request, **kwargs):
         path = "/violations"
 
