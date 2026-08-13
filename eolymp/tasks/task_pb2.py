@@ -26,7 +26,7 @@ from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/tasks/task.proto\x12\x0c\x65olymp.tasks\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfe\x03\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x11\n\treference\x18\x03 \x01(\t\x12)\n\x06status\x18\x04 \x01(\x0e\x32\x19.eolymp.tasks.Task.Status\x12(\n\x07payload\x18\x05 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x10\n\x08progress\x18\x06 \x01(\r\x12\r\n\x05total\x18\x07 \x01(\r\x12\x16\n\x0estatus_message\x18\x08 \x01(\t\x12\r\n\x05\x65rror\x18\t \x01(\t\x12\x0f\n\x07log_url\x18\n \x01(\t\x12\x0f\n\x07\x61ttempt\x18\x0b \x01(\r\x12.\n\ncreated_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x0f \x01(\t\"e\n\x06Status\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\n\n\x06\x46\x41ILED\x10\x04\x12\x0b\n\x07\x45XPIRED\x10\x05\x12\r\n\tCANCELLED\x10\x06\x42-Z+github.com/eolymp/go-sdk/eolymp/tasks;tasksb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/tasks/task.proto\x12\x0c\x65olymp.tasks\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfd\x03\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08resource\x18\x03 \x01(\t\x12)\n\x06status\x18\x04 \x01(\x0e\x32\x19.eolymp.tasks.Task.Status\x12(\n\x07payload\x18\x05 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x10\n\x08progress\x18\x06 \x01(\r\x12\r\n\x05total\x18\x07 \x01(\r\x12\x16\n\x0estatus_message\x18\x08 \x01(\t\x12\r\n\x05\x65rror\x18\t \x01(\t\x12\x0f\n\x07log_url\x18\n \x01(\t\x12\x0f\n\x07\x61ttempt\x18\x0b \x01(\r\x12.\n\ncreated_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x0f \x01(\t\"e\n\x06Status\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\n\n\x06\x46\x41ILED\x10\x04\x12\x0b\n\x07\x45XPIRED\x10\x05\x12\r\n\tCANCELLED\x10\x06\x42-Z+github.com/eolymp/go-sdk/eolymp/tasks;tasksb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,7 +35,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/tasks;tasks'
   _globals['_TASK']._serialized_start=105
-  _globals['_TASK']._serialized_end=615
-  _globals['_TASK_STATUS']._serialized_start=514
-  _globals['_TASK_STATUS']._serialized_end=615
+  _globals['_TASK']._serialized_end=614
+  _globals['_TASK_STATUS']._serialized_start=513
+  _globals['_TASK_STATUS']._serialized_end=614
 # @@protoc_insertion_point(module_scope)

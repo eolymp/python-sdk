@@ -5,6 +5,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.tasks import task_pb2 as _task_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from eolymp.wellknown import watch_pb2 as _watch_pb2
+from google.protobuf import any_pb2 as _any_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -13,19 +14,39 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class CreateTaskInput(_message.Message):
+    __slots__ = ("task", "resource", "reference", "max_attempts", "total")
+    TASK_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_FIELD_NUMBER: _ClassVar[int]
+    REFERENCE_FIELD_NUMBER: _ClassVar[int]
+    MAX_ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    task: _any_pb2.Any
+    resource: str
+    reference: str
+    max_attempts: int
+    total: int
+    def __init__(self, task: _Optional[_Union[_any_pb2.Any, _Mapping]] = ..., resource: _Optional[str] = ..., reference: _Optional[str] = ..., max_attempts: _Optional[int] = ..., total: _Optional[int] = ...) -> None: ...
+
+class CreateTaskOutput(_message.Message):
+    __slots__ = ("task_id",)
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    task_id: str
+    def __init__(self, task_id: _Optional[str] = ...) -> None: ...
+
 class ListTasksInput(_message.Message):
     __slots__ = ("offset", "size", "filters")
     class Filter(_message.Message):
-        __slots__ = ("id", "reference", "type", "status")
+        __slots__ = ("id", "resource", "type", "status")
         ID_FIELD_NUMBER: _ClassVar[int]
-        REFERENCE_FIELD_NUMBER: _ClassVar[int]
+        RESOURCE_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        reference: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        resource: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., reference: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., resource: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
