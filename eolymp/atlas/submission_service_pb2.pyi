@@ -17,6 +17,49 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class CompareSubmissionsInput(_message.Message):
+    __slots__ = ("submission_id", "other_submission_id")
+    SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    OTHER_SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    submission_id: str
+    other_submission_id: str
+    def __init__(self, submission_id: _Optional[str] = ..., other_submission_id: _Optional[str] = ...) -> None: ...
+
+class CompareSubmissionsOutput(_message.Message):
+    __slots__ = ("submission", "other_submission", "matches")
+    class Source(_message.Message):
+        __slots__ = ("submission_id", "runtime", "source")
+        SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+        RUNTIME_FIELD_NUMBER: _ClassVar[int]
+        SOURCE_FIELD_NUMBER: _ClassVar[int]
+        submission_id: str
+        runtime: str
+        source: str
+        def __init__(self, submission_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ...) -> None: ...
+    class Span(_message.Message):
+        __slots__ = ("from_line", "to_line")
+        FROM_LINE_FIELD_NUMBER: _ClassVar[int]
+        TO_LINE_FIELD_NUMBER: _ClassVar[int]
+        from_line: int
+        to_line: int
+        def __init__(self, from_line: _Optional[int] = ..., to_line: _Optional[int] = ...) -> None: ...
+    class Match(_message.Message):
+        __slots__ = ("submission", "other_submission", "tokens")
+        SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+        OTHER_SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+        TOKENS_FIELD_NUMBER: _ClassVar[int]
+        submission: CompareSubmissionsOutput.Span
+        other_submission: CompareSubmissionsOutput.Span
+        tokens: int
+        def __init__(self, submission: _Optional[_Union[CompareSubmissionsOutput.Span, _Mapping]] = ..., other_submission: _Optional[_Union[CompareSubmissionsOutput.Span, _Mapping]] = ..., tokens: _Optional[int] = ...) -> None: ...
+    SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+    OTHER_SUBMISSION_FIELD_NUMBER: _ClassVar[int]
+    MATCHES_FIELD_NUMBER: _ClassVar[int]
+    submission: CompareSubmissionsOutput.Source
+    other_submission: CompareSubmissionsOutput.Source
+    matches: _containers.RepeatedCompositeFieldContainer[CompareSubmissionsOutput.Match]
+    def __init__(self, submission: _Optional[_Union[CompareSubmissionsOutput.Source, _Mapping]] = ..., other_submission: _Optional[_Union[CompareSubmissionsOutput.Source, _Mapping]] = ..., matches: _Optional[_Iterable[_Union[CompareSubmissionsOutput.Match, _Mapping]]] = ...) -> None: ...
+
 class SubmissionChangedEvent(_message.Message):
     __slots__ = ("before", "after")
     BEFORE_FIELD_NUMBER: _ClassVar[int]

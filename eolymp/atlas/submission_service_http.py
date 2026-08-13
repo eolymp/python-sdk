@@ -89,6 +89,20 @@ class SubmissionServiceClient:
             **kwargs,
         )
 
+    def CompareSubmissions(self, request, **kwargs):
+        path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/compare"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.submission_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.CompareSubmissionsOutput"),
+            **kwargs,
+        )
+
     def AggregateSubmissions(self, request, **kwargs):
         path = "/submissions:aggregate"
 
