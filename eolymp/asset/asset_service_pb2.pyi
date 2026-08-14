@@ -98,6 +98,16 @@ class LookupAssetOutput(_message.Message):
     asset_url: str
     def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
 
+class DeleteAssetInput(_message.Message):
+    __slots__ = ("asset_id",)
+    ASSET_ID_FIELD_NUMBER: _ClassVar[int]
+    asset_id: str
+    def __init__(self, asset_id: _Optional[str] = ...) -> None: ...
+
+class DeleteAssetOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class StartMultipartUploadInput(_message.Message):
     __slots__ = ("name", "type", "keys", "ttl")
     NAME_FIELD_NUMBER: _ClassVar[int]

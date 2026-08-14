@@ -58,6 +58,20 @@ class AssetServiceClient:
             **kwargs,
         )
 
+    def DeleteAsset(self, request, **kwargs):
+        path = "/assets/"+urllib.parse.quote(request.asset_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.asset_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.DeleteAssetOutput"),
+            **kwargs,
+        )
+
     def StartMultipartUpload(self, request, **kwargs):
         path = "/uploads"
 
