@@ -150,9 +150,9 @@ class ListScoreboardRowsInput(_message.Message):
         NUMBER_FIELD_NUMBER: _ClassVar[int]
         STRING_FIELD_NUMBER: _ClassVar[int]
         attribute_key: str
-        number: _expression_pb2.ExpressionInt
-        string: _expression_pb2.ExpressionString
-        def __init__(self, attribute_key: _Optional[str] = ..., number: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ..., string: _Optional[_Union[_expression_pb2.ExpressionString, _Mapping]] = ...) -> None: ...
+        number: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        string: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        def __init__(self, attribute_key: _Optional[str] = ..., number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., string: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     class Filter(_message.Message):
         __slots__ = ("unofficial", "disqualified", "attributes")
         UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
