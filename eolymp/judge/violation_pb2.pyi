@@ -39,10 +39,12 @@ class Violation(_message.Message):
         OTHER: _ClassVar[Violation.Type]
         PLAGIARISM: _ClassVar[Violation.Type]
         GEN_AI_USAGE: _ClassVar[Violation.Type]
+        BEHAVIOUR: _ClassVar[Violation.Type]
     UNKNOWN_TYPE: Violation.Type
     OTHER: Violation.Type
     PLAGIARISM: Violation.Type
     GEN_AI_USAGE: Violation.Type
+    BEHAVIOUR: Violation.Type
     class Patch(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
