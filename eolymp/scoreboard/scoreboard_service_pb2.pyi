@@ -143,7 +143,7 @@ class RemoveScoreboardAttributeOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ("scoreboard_id", "mode", "offset", "size", "filters", "sort_contest_id", "order", "sort_attribute_key")
+    __slots__ = ("scoreboard_id", "mode", "offset", "size", "filters", "order", "sort_contest_id", "sort_attribute_key")
     class ExpressionAttribute(_message.Message):
         __slots__ = ("attribute_key", "number", "string")
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -167,18 +167,18 @@ class ListScoreboardRowsInput(_message.Message):
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
-    SORT_CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SORT_CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SORT_ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
     scoreboard_id: str
     mode: _scoreboard_pb2.Scoreboard.Mode
     offset: int
     size: int
     filters: ListScoreboardRowsInput.Filter
-    sort_contest_id: str
     order: _direction_pb2.Direction
+    sort_contest_id: str
     sort_attribute_key: str
-    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort_contest_id: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., sort_attribute_key: _Optional[str] = ...) -> None: ...
+    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., sort_contest_id: _Optional[str] = ..., sort_attribute_key: _Optional[str] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
     __slots__ = ("total", "items")
