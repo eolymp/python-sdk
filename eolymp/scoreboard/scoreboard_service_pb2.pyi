@@ -114,15 +114,54 @@ class RemoveScoreboardContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class AddScoreboardAttributeInput(_message.Message):
+    __slots__ = ("scoreboard_id", "attribute_key", "index", "label")
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+    INDEX_FIELD_NUMBER: _ClassVar[int]
+    LABEL_FIELD_NUMBER: _ClassVar[int]
+    scoreboard_id: str
+    attribute_key: str
+    index: int
+    label: str
+    def __init__(self, scoreboard_id: _Optional[str] = ..., attribute_key: _Optional[str] = ..., index: _Optional[int] = ..., label: _Optional[str] = ...) -> None: ...
+
+class AddScoreboardAttributeOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class RemoveScoreboardAttributeInput(_message.Message):
+    __slots__ = ("scoreboard_id", "attribute_key")
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+    scoreboard_id: str
+    attribute_key: str
+    def __init__(self, scoreboard_id: _Optional[str] = ..., attribute_key: _Optional[str] = ...) -> None: ...
+
+class RemoveScoreboardAttributeOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ("scoreboard_id", "mode", "offset", "size", "filters", "sort_contest_id", "order")
+    __slots__ = ("scoreboard_id", "mode", "offset", "size", "filters", "sort_contest_id", "order", "sort_attribute_key")
+    class ExpressionAttribute(_message.Message):
+        __slots__ = ("attribute_key", "number", "string")
+        ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        STRING_FIELD_NUMBER: _ClassVar[int]
+        attribute_key: str
+        number: _expression_pb2.ExpressionInt
+        string: _expression_pb2.ExpressionString
+        def __init__(self, attribute_key: _Optional[str] = ..., number: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ..., string: _Optional[_Union[_expression_pb2.ExpressionString, _Mapping]] = ...) -> None: ...
     class Filter(_message.Message):
-        __slots__ = ("unofficial", "disqualified")
+        __slots__ = ("unofficial", "disqualified", "attributes")
         UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
         DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
+        ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
         unofficial: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         disqualified: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        def __init__(self, unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        attributes: _containers.RepeatedCompositeFieldContainer[ListScoreboardRowsInput.ExpressionAttribute]
+        def __init__(self, unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[ListScoreboardRowsInput.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
@@ -130,6 +169,7 @@ class ListScoreboardRowsInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SORT_ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
     scoreboard_id: str
     mode: _scoreboard_pb2.Scoreboard.Mode
     offset: int
@@ -137,7 +177,8 @@ class ListScoreboardRowsInput(_message.Message):
     filters: ListScoreboardRowsInput.Filter
     sort_contest_id: str
     order: _direction_pb2.Direction
-    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort_contest_id: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    sort_attribute_key: str
+    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort_contest_id: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., sort_attribute_key: _Optional[str] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
     __slots__ = ("total", "items")

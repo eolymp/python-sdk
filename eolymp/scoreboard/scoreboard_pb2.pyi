@@ -1,3 +1,4 @@
+from eolymp.community import attribute_pb2 as _attribute_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -8,7 +9,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ("id", "slug", "name", "best_of", "modes", "contests")
+    __slots__ = ("id", "slug", "name", "best_of", "modes", "contests", "attributes")
     class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_MODE: _ClassVar[Scoreboard.Mode]
@@ -41,6 +42,17 @@ class Scoreboard(_message.Message):
         index: int
         title: str
         def __init__(self, problem_id: _Optional[str] = ..., index: _Optional[int] = ..., title: _Optional[str] = ...) -> None: ...
+    class Attribute(_message.Message):
+        __slots__ = ("attribute_key", "index", "label", "type")
+        ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        INDEX_FIELD_NUMBER: _ClassVar[int]
+        LABEL_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        attribute_key: str
+        index: int
+        label: str
+        type: _attribute_pb2.Attribute.Type
+        def __init__(self, attribute_key: _Optional[str] = ..., index: _Optional[int] = ..., label: _Optional[str] = ..., type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ...) -> None: ...
     class Patch(_message.Message):
         __slots__ = ("slug", "name", "best_of")
         SLUG_FIELD_NUMBER: _ClassVar[int]
@@ -56,16 +68,18 @@ class Scoreboard(_message.Message):
     BEST_OF_FIELD_NUMBER: _ClassVar[int]
     MODES_FIELD_NUMBER: _ClassVar[int]
     CONTESTS_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     id: str
     slug: str
     name: str
     best_of: int
     modes: _containers.RepeatedScalarFieldContainer[Scoreboard.Mode]
     contests: _containers.RepeatedCompositeFieldContainer[Scoreboard.Contest]
-    def __init__(self, id: _Optional[str] = ..., slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ..., modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ...) -> None: ...
+    attributes: _containers.RepeatedCompositeFieldContainer[Scoreboard.Attribute]
+    def __init__(self, id: _Optional[str] = ..., slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ..., modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[Scoreboard.Attribute, _Mapping]]] = ...) -> None: ...
 
 class Row(_message.Message):
-    __slots__ = ("member_id", "display_name", "index", "rank", "rank_length", "rank_all", "rank_all_length", "score", "penalty", "unofficial", "disqualified", "contests")
+    __slots__ = ("member_id", "display_name", "index", "rank", "rank_length", "rank_all", "rank_all_length", "score", "penalty", "unofficial", "disqualified", "contests", "attributes")
     class ProblemScore(_message.Message):
         __slots__ = ("problem_id", "score", "penalty", "percentage", "attempts", "time", "pending", "changed", "first_to_solve")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -102,6 +116,15 @@ class Row(_message.Message):
         frozen: bool
         problems: _containers.RepeatedCompositeFieldContainer[Row.ProblemScore]
         def __init__(self, contest_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., counted: _Optional[bool] = ..., frozen: _Optional[bool] = ..., problems: _Optional[_Iterable[_Union[Row.ProblemScore, _Mapping]]] = ...) -> None: ...
+    class AttributeValue(_message.Message):
+        __slots__ = ("attribute_key", "string", "number")
+        ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        STRING_FIELD_NUMBER: _ClassVar[int]
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        attribute_key: str
+        string: str
+        number: int
+        def __init__(self, attribute_key: _Optional[str] = ..., string: _Optional[str] = ..., number: _Optional[int] = ...) -> None: ...
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
@@ -114,6 +137,7 @@ class Row(_message.Message):
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
     CONTESTS_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     display_name: str
     index: int
@@ -126,4 +150,5 @@ class Row(_message.Message):
     unofficial: bool
     disqualified: bool
     contests: _containers.RepeatedCompositeFieldContainer[Row.ContestScore]
-    def __init__(self, member_id: _Optional[str] = ..., display_name: _Optional[str] = ..., index: _Optional[int] = ..., rank: _Optional[int] = ..., rank_length: _Optional[int] = ..., rank_all: _Optional[int] = ..., rank_all_length: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., unofficial: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., contests: _Optional[_Iterable[_Union[Row.ContestScore, _Mapping]]] = ...) -> None: ...
+    attributes: _containers.RepeatedCompositeFieldContainer[Row.AttributeValue]
+    def __init__(self, member_id: _Optional[str] = ..., display_name: _Optional[str] = ..., index: _Optional[int] = ..., rank: _Optional[int] = ..., rank_length: _Optional[int] = ..., rank_all: _Optional[int] = ..., rank_all_length: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., unofficial: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., contests: _Optional[_Iterable[_Union[Row.ContestScore, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[Row.AttributeValue, _Mapping]]] = ...) -> None: ...

@@ -107,6 +107,35 @@ class ScoreboardServiceClient:
             **kwargs,
         )
 
+    def AddScoreboardAttribute(self, request, **kwargs):
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/attributes"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.scoreboard.AddScoreboardAttributeOutput"),
+            **kwargs,
+        )
+
+    def RemoveScoreboardAttribute(self, request, **kwargs):
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/attributes/"+urllib.parse.quote(request.attribute_key)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+        request.attribute_key = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.scoreboard.RemoveScoreboardAttributeOutput"),
+            **kwargs,
+        )
+
     def ListScoreboardRows(self, request, **kwargs):
         path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rows"
 
