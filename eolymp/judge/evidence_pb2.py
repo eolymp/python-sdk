@@ -27,7 +27,7 @@ from eolymp.atlas import submission_pb2 as eolymp_dot_atlas_dot_submission__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/judge/evidence.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1d\x65olymp/atlas/submission.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdd\x05\n\x08\x45vidence\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x37\n\nsubmission\x18\n \x01(\x0b\x32!.eolymp.judge.Evidence.SubmissionH\x00\x12+\n\x04pair\x18\x0b \x01(\x0b\x32\x1b.eolymp.judge.Evidence.PairH\x00\x12\x31\n\x07session\x18\x0c \x01(\x0b\x32\x1e.eolymp.judge.Evidence.SessionH\x00\x1aU\n\nSubmission\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\x12\x30\n\x0csubmitted_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1ax\n\x04Pair\x12/\n\x04left\x18\x01 \x01(\x0b\x32!.eolymp.judge.Evidence.Submission\x12\x30\n\x05right\x18\x02 \x01(\x0b\x32!.eolymp.judge.Evidence.Submission\x12\r\n\x05score\x18\x03 \x01(\x02\x1a\x99\x01\n\x07\x41ttempt\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x30\n\x0csubmitted_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x07verdict\x18\x04 \x01(\x0e\x32 .eolymp.atlas.Submission.Verdict\x1a\xad\x01\n\x07Session\x12(\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12&\n\x02to\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05value\x18\x03 \x01(\x02\x12\x0f\n\x07typical\x18\x04 \x01(\x02\x12\x30\n\x08\x61ttempts\x18\x05 \x03(\x0b\x32\x1e.eolymp.judge.Evidence.AttemptB\x07\n\x05valueB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/judge/evidence.proto\x12\x0c\x65olymp.judge\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1d\x65olymp/atlas/submission.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xeb\x05\n\x08\x45vidence\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x37\n\nsubmission\x18\n \x01(\x0b\x32!.eolymp.judge.Evidence.SubmissionH\x00\x12+\n\x04pair\x18\x0b \x01(\x0b\x32\x1b.eolymp.judge.Evidence.PairH\x00\x12\x31\n\x07session\x18\x0c \x01(\x0b\x32\x1e.eolymp.judge.Evidence.SessionH\x00\x1aU\n\nSubmission\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\x12\x30\n\x0csubmitted_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1ax\n\x04Pair\x12/\n\x04left\x18\x01 \x01(\x0b\x32!.eolymp.judge.Evidence.Submission\x12\x30\n\x05right\x18\x02 \x01(\x0b\x32!.eolymp.judge.Evidence.Submission\x12\r\n\x05score\x18\x03 \x01(\x02\x1a\x99\x01\n\x07\x41ttempt\x12\x15\n\rsubmission_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x30\n\x0csubmitted_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x07verdict\x18\x04 \x01(\x0e\x32 .eolymp.atlas.Submission.Verdict\x1a\xbb\x01\n\x07Session\x12\x0c\n\x04rule\x18\x06 \x01(\t\x12(\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12&\n\x02to\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05value\x18\x03 \x01(\x02\x12\x0f\n\x07typical\x18\x04 \x01(\x02\x12\x30\n\x08\x61ttempts\x18\x05 \x03(\x0b\x32\x1e.eolymp.judge.Evidence.AttemptB\x07\n\x05valueB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,7 +38,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EVIDENCE'].fields_by_name['id']._loaded_options = None
   _globals['_EVIDENCE'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_EVIDENCE']._serialized_start=140
-  _globals['_EVIDENCE']._serialized_end=873
+  _globals['_EVIDENCE']._serialized_end=887
   _globals['_EVIDENCE_SUBMISSION']._serialized_start=325
   _globals['_EVIDENCE_SUBMISSION']._serialized_end=410
   _globals['_EVIDENCE_PAIR']._serialized_start=412
@@ -46,5 +46,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EVIDENCE_ATTEMPT']._serialized_start=535
   _globals['_EVIDENCE_ATTEMPT']._serialized_end=688
   _globals['_EVIDENCE_SESSION']._serialized_start=691
-  _globals['_EVIDENCE_SESSION']._serialized_end=864
+  _globals['_EVIDENCE_SESSION']._serialized_end=878
 # @@protoc_insertion_point(module_scope)

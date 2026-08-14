@@ -41,17 +41,19 @@ class Evidence(_message.Message):
         verdict: _submission_pb2.Submission.Verdict
         def __init__(self, submission_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ...) -> None: ...
     class Session(_message.Message):
-        __slots__ = ("to", "value", "typical", "attempts")
+        __slots__ = ("rule", "to", "value", "typical", "attempts")
+        RULE_FIELD_NUMBER: _ClassVar[int]
         FROM_FIELD_NUMBER: _ClassVar[int]
         TO_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         TYPICAL_FIELD_NUMBER: _ClassVar[int]
         ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
+        rule: str
         to: _timestamp_pb2.Timestamp
         value: float
         typical: float
         attempts: _containers.RepeatedCompositeFieldContainer[Evidence.Attempt]
-        def __init__(self, to: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., value: _Optional[float] = ..., typical: _Optional[float] = ..., attempts: _Optional[_Iterable[_Union[Evidence.Attempt, _Mapping]]] = ..., **kwargs) -> None: ...
+        def __init__(self, rule: _Optional[str] = ..., to: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., value: _Optional[float] = ..., typical: _Optional[float] = ..., attempts: _Optional[_Iterable[_Union[Evidence.Attempt, _Mapping]]] = ..., **kwargs) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
     PAIR_FIELD_NUMBER: _ClassVar[int]
