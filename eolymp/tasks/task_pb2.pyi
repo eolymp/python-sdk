@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Task(_message.Message):
-    __slots__ = ("id", "type", "resource", "status", "payload", "progress", "total", "status_message", "error", "log_url", "attempt", "created_at", "started_at", "finished_at", "created_by")
+    __slots__ = ("id", "type", "resource", "status", "payload", "progress", "total", "status_message", "error", "log_url", "attempt", "created_at", "started_at", "finished_at", "created_by", "resource_link")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN: _ClassVar[Task.Status]
@@ -43,6 +43,7 @@ class Task(_message.Message):
     STARTED_AT_FIELD_NUMBER: _ClassVar[int]
     FINISHED_AT_FIELD_NUMBER: _ClassVar[int]
     CREATED_BY_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
     id: str
     type: str
     resource: str
@@ -58,4 +59,5 @@ class Task(_message.Message):
     started_at: _timestamp_pb2.Timestamp
     finished_at: _timestamp_pb2.Timestamp
     created_by: str
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[str] = ..., resource: _Optional[str] = ..., status: _Optional[_Union[Task.Status, str]] = ..., payload: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., progress: _Optional[int] = ..., total: _Optional[int] = ..., status_message: _Optional[str] = ..., error: _Optional[str] = ..., log_url: _Optional[str] = ..., attempt: _Optional[int] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., finished_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., created_by: _Optional[str] = ...) -> None: ...
+    resource_link: str
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[str] = ..., resource: _Optional[str] = ..., status: _Optional[_Union[Task.Status, str]] = ..., payload: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., progress: _Optional[int] = ..., total: _Optional[int] = ..., status_message: _Optional[str] = ..., error: _Optional[str] = ..., log_url: _Optional[str] = ..., attempt: _Optional[int] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., finished_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., created_by: _Optional[str] = ..., resource_link: _Optional[str] = ...) -> None: ...
