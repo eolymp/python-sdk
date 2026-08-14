@@ -7,12 +7,14 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ImportProblemTask(_message.Message):
-    __slots__ = ("problem_id", "problem_link")
+    __slots__ = ("problem_id", "problem_link", "secret")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_LINK_FIELD_NUMBER: _ClassVar[int]
+    SECRET_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     problem_link: str
-    def __init__(self, problem_id: _Optional[str] = ..., problem_link: _Optional[str] = ...) -> None: ...
+    secret: bool
+    def __init__(self, problem_id: _Optional[str] = ..., problem_link: _Optional[str] = ..., secret: _Optional[bool] = ...) -> None: ...
 
 class TranslateStatementsTask(_message.Message):
     __slots__ = ("problem_id", "source_locale", "target_locales", "override_manual")
