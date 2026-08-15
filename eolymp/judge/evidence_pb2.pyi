@@ -30,16 +30,18 @@ class Evidence(_message.Message):
         score: float
         def __init__(self, left: _Optional[_Union[Evidence.Submission, _Mapping]] = ..., right: _Optional[_Union[Evidence.Submission, _Mapping]] = ..., score: _Optional[float] = ...) -> None: ...
     class Attempt(_message.Message):
-        __slots__ = ("submission_id", "problem_id", "submitted_at", "verdict")
+        __slots__ = ("submission_id", "problem_id", "submitted_at", "verdict", "changed")
         SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
         SUBMITTED_AT_FIELD_NUMBER: _ClassVar[int]
         VERDICT_FIELD_NUMBER: _ClassVar[int]
+        CHANGED_FIELD_NUMBER: _ClassVar[int]
         submission_id: str
         problem_id: str
         submitted_at: _timestamp_pb2.Timestamp
         verdict: _submission_pb2.Submission.Verdict
-        def __init__(self, submission_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ...) -> None: ...
+        changed: float
+        def __init__(self, submission_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., changed: _Optional[float] = ...) -> None: ...
     class Session(_message.Message):
         __slots__ = ("rule", "to", "value", "typical", "attempts")
         RULE_FIELD_NUMBER: _ClassVar[int]
