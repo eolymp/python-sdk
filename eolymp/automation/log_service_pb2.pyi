@@ -5,6 +5,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.automation import log_pb2 as _log_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -23,18 +24,20 @@ class ListLogsInput(_message.Message):
     DEFAULT: ListLogsInput.Sortable
     CREATED_AT: ListLogsInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ("id", "rule_id", "trigger", "dry_run", "created_at")
+        __slots__ = ("id", "rule_id", "trigger", "dry_run", "created_at", "status")
         ID_FIELD_NUMBER: _ClassVar[int]
         RULE_ID_FIELD_NUMBER: _ClassVar[int]
         TRIGGER_FIELD_NUMBER: _ClassVar[int]
         DRY_RUN_FIELD_NUMBER: _ClassVar[int]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         rule_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         trigger: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         dry_run: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         created_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., rule_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., trigger: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., dry_run: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ...) -> None: ...
+        status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., rule_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., trigger: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., dry_run: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
@@ -66,3 +69,19 @@ class DescribeLogOutput(_message.Message):
     LOG_FIELD_NUMBER: _ClassVar[int]
     log: _log_pb2.Log
     def __init__(self, log: _Optional[_Union[_log_pb2.Log, _Mapping]] = ...) -> None: ...
+
+class WatchLogInput(_message.Message):
+    __slots__ = ("log_id",)
+    LOG_ID_FIELD_NUMBER: _ClassVar[int]
+    log_id: str
+    def __init__(self, log_id: _Optional[str] = ...) -> None: ...
+
+class WatchLogOutput(_message.Message):
+    __slots__ = ("event", "log", "message")
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    LOG_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    event: _watch_pb2.WatchEventType
+    log: _log_pb2.Log
+    message: _log_pb2.Log.Message
+    def __init__(self, event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ..., log: _Optional[_Union[_log_pb2.Log, _Mapping]] = ..., message: _Optional[_Union[_log_pb2.Log.Message, _Mapping]] = ...) -> None: ...

@@ -26,7 +26,7 @@ from eolymp.automation import rule_pb2 as eolymp_dot_automation_dot_rule__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/automation/log.proto\x12\x11\x65olymp.automation\x1a\x1c\x65olymp/automation/rule.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x97\x05\n\x03Log\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\x12\x30\n\x07trigger\x18\x04 \x01(\x0e\x32\x1f.eolymp.automation.Rule.Trigger\x12\x0f\n\x07\x64ry_run\x18\x05 \x01(\x08\x12\x34\n\x07\x63ontext\x18\x06 \x03(\x0b\x32#.eolymp.automation.Log.ContextEntry\x12\x30\n\x08messages\x18\x64 \x03(\x0b\x32\x1e.eolymp.automation.Log.Message\x12.\n\ncreated_at\x18Z \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\xd1\x01\n\x08ToolCall\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x36\n\x06status\x18\x03 \x01(\x0e\x32&.eolymp.automation.Log.ToolCall.Status\x12\x11\n\targuments\x18\x04 \x01(\t\x12\x0e\n\x06result\x18\x05 \x01(\t\x12\r\n\x05\x65rror\x18\x06 \x01(\t\"A\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\x0b\n\x07\x44RY_RUN\x10\x03\x1a\x93\x01\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x04text\x18\n \x01(\tH\x00\x12\x34\n\ttool_call\x18\x0b \x01(\x0b\x32\x1f.eolymp.automation.Log.ToolCallH\x00\x42\x07\n\x05\x62lock\x1a.\n\x0c\x43ontextEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x37Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/automation/log.proto\x12\x11\x65olymp.automation\x1a\x1c\x65olymp/automation/rule.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9f\x06\n\x03Log\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\x12\x30\n\x07trigger\x18\x04 \x01(\x0e\x32\x1f.eolymp.automation.Rule.Trigger\x12\x0f\n\x07\x64ry_run\x18\x05 \x01(\x08\x12\x34\n\x07\x63ontext\x18\x06 \x03(\x0b\x32#.eolymp.automation.Log.ContextEntry\x12-\n\x06status\x18\x07 \x01(\x0e\x32\x1d.eolymp.automation.Log.Status\x12\x30\n\x08messages\x18\x64 \x03(\x0b\x32\x1e.eolymp.automation.Log.Message\x12.\n\ncreated_at\x18Z \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\xd1\x01\n\x08ToolCall\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x36\n\x06status\x18\x03 \x01(\x0e\x32&.eolymp.automation.Log.ToolCall.Status\x12\x11\n\targuments\x18\x04 \x01(\t\x12\x0e\n\x06result\x18\x05 \x01(\t\x12\r\n\x05\x65rror\x18\x06 \x01(\t\"A\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\x0b\n\x07\x44RY_RUN\x10\x03\x1a\x93\x01\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x04text\x18\n \x01(\tH\x00\x12\x34\n\ttool_call\x18\x0b \x01(\x0b\x32\x1f.eolymp.automation.Log.ToolCallH\x00\x42\x07\n\x05\x62lock\x1a.\n\x0c\x43ontextEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Q\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tEXECUTING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\t\n\x05\x45RROR\x10\x04J\x04\x08\x03\x10\x04\x42\x37Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,13 +37,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOG_CONTEXTENTRY']._loaded_options = None
   _globals['_LOG_CONTEXTENTRY']._serialized_options = b'8\001'
   _globals['_LOG']._serialized_start=114
-  _globals['_LOG']._serialized_end=777
-  _globals['_LOG_TOOLCALL']._serialized_start=370
-  _globals['_LOG_TOOLCALL']._serialized_end=579
-  _globals['_LOG_TOOLCALL_STATUS']._serialized_start=514
-  _globals['_LOG_TOOLCALL_STATUS']._serialized_end=579
-  _globals['_LOG_MESSAGE']._serialized_start=582
-  _globals['_LOG_MESSAGE']._serialized_end=729
-  _globals['_LOG_CONTEXTENTRY']._serialized_start=731
-  _globals['_LOG_CONTEXTENTRY']._serialized_end=777
+  _globals['_LOG']._serialized_end=913
+  _globals['_LOG_TOOLCALL']._serialized_start=417
+  _globals['_LOG_TOOLCALL']._serialized_end=626
+  _globals['_LOG_TOOLCALL_STATUS']._serialized_start=561
+  _globals['_LOG_TOOLCALL_STATUS']._serialized_end=626
+  _globals['_LOG_MESSAGE']._serialized_start=629
+  _globals['_LOG_MESSAGE']._serialized_end=776
+  _globals['_LOG_CONTEXTENTRY']._serialized_start=778
+  _globals['_LOG_CONTEXTENTRY']._serialized_end=824
+  _globals['_LOG_STATUS']._serialized_start=826
+  _globals['_LOG_STATUS']._serialized_end=907
 # @@protoc_insertion_point(module_scope)

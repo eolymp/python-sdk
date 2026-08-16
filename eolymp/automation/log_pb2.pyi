@@ -12,7 +12,19 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Log(_message.Message):
-    __slots__ = ("id", "rule_id", "trigger", "dry_run", "context", "messages", "created_at")
+    __slots__ = ("id", "rule_id", "trigger", "dry_run", "context", "status", "messages", "created_at")
+    class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_STATUS: _ClassVar[Log.Status]
+        PENDING: _ClassVar[Log.Status]
+        EXECUTING: _ClassVar[Log.Status]
+        COMPLETE: _ClassVar[Log.Status]
+        ERROR: _ClassVar[Log.Status]
+    UNKNOWN_STATUS: Log.Status
+    PENDING: Log.Status
+    EXECUTING: Log.Status
+    COMPLETE: Log.Status
+    ERROR: Log.Status
     class ToolCall(_message.Message):
         __slots__ = ("id", "name", "status", "arguments", "result", "error")
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -61,6 +73,7 @@ class Log(_message.Message):
     TRIGGER_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     CONTEXT_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     MESSAGES_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -68,6 +81,7 @@ class Log(_message.Message):
     trigger: _rule_pb2.Rule.Trigger
     dry_run: bool
     context: _containers.ScalarMap[str, str]
+    status: Log.Status
     messages: _containers.RepeatedCompositeFieldContainer[Log.Message]
     created_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., rule_id: _Optional[str] = ..., trigger: _Optional[_Union[_rule_pb2.Rule.Trigger, str]] = ..., dry_run: _Optional[bool] = ..., context: _Optional[_Mapping[str, str]] = ..., messages: _Optional[_Iterable[_Union[Log.Message, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., rule_id: _Optional[str] = ..., trigger: _Optional[_Union[_rule_pb2.Rule.Trigger, str]] = ..., dry_run: _Optional[bool] = ..., context: _Optional[_Mapping[str, str]] = ..., status: _Optional[_Union[Log.Status, str]] = ..., messages: _Optional[_Iterable[_Union[Log.Message, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
