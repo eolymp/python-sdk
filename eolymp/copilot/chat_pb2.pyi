@@ -1,6 +1,5 @@
 import datetime
 
-from google.protobuf import struct_pb2 as _struct_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -69,10 +68,10 @@ class Message(_message.Message):
         id: str
         name: str
         status: Message.ToolCall.Status
-        arguments: _struct_pb2.Struct
-        result: _struct_pb2.Value
+        arguments: str
+        result: str
         error: str
-        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., status: _Optional[_Union[Message.ToolCall.Status, str]] = ..., arguments: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., result: _Optional[_Union[_struct_pb2.Value, _Mapping]] = ..., error: _Optional[str] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., status: _Optional[_Union[Message.ToolCall.Status, str]] = ..., arguments: _Optional[str] = ..., result: _Optional[str] = ..., error: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     USER_MESSAGE_FIELD_NUMBER: _ClassVar[int]
