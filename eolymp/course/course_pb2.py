@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/course/course.proto\x12\reolymp.course\x1a\x18\x65olymp/ecm/content.proto\"\xfe\x02\n\x06\x43ourse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x0c\n\x04name\x18\x0b \x01(\t\x12(\n\x0b\x64\x65scription\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x11\n\timage_url\x18\r \x01(\t\x12\x34\n\nvisibility\x18\x0e \x01(\x0e\x32 .eolymp.course.Course.Visibility\x12\x10\n\x08\x64uration\x18\x0f \x01(\r\x12\x0e\n\x06topics\x18\x10 \x03(\t\x12\x10\n\x08\x65stimate\x18\x14 \x01(\r\"I\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\"K\n\nVisibility\x12\x16\n\x12UNKNOWN_VISIBILITY\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0c\n\x08UNLISTED\x10\x02\x12\x0b\n\x07PRIVATE\x10\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/course/course.proto\x12\reolymp.course\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\"\xda\x03\n\x06\x43ourse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x1e\n\rresource_link\x18\xe9\x07 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1b\n\nspace_link\x18\xea\x07 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1d\n\x0c\x63onsole_link\x18\xeb\x07 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x0c\n\x04name\x18\x0b \x01(\t\x12(\n\x0b\x64\x65scription\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x11\n\timage_url\x18\r \x01(\t\x12\x34\n\nvisibility\x18\x0e \x01(\x0e\x32 .eolymp.course.Course.Visibility\x12\x10\n\x08\x64uration\x18\x0f \x01(\r\x12\x0e\n\x06topics\x18\x10 \x03(\t\x12\x10\n\x08\x65stimate\x18\x14 \x01(\r\"I\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\"K\n\nVisibility\x12\x16\n\x12UNKNOWN_VISIBILITY\x10\x00\x12\n\n\x06PUBLIC\x10\x01\x12\x0c\n\x08UNLISTED\x10\x02\x12\x0b\n\x07PRIVATE\x10\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,10 +34,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.course.course_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/course;course'
-  _globals['_COURSE']._serialized_start=72
-  _globals['_COURSE']._serialized_end=454
-  _globals['_COURSE_EXTRA']._serialized_start=304
-  _globals['_COURSE_EXTRA']._serialized_end=377
-  _globals['_COURSE_VISIBILITY']._serialized_start=379
-  _globals['_COURSE_VISIBILITY']._serialized_end=454
+  _globals['_COURSE'].fields_by_name['resource_link']._loaded_options = None
+  _globals['_COURSE'].fields_by_name['resource_link']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_COURSE'].fields_by_name['space_link']._loaded_options = None
+  _globals['_COURSE'].fields_by_name['space_link']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_COURSE'].fields_by_name['console_link']._loaded_options = None
+  _globals['_COURSE'].fields_by_name['console_link']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_COURSE']._serialized_start=102
+  _globals['_COURSE']._serialized_end=576
+  _globals['_COURSE_EXTRA']._serialized_start=426
+  _globals['_COURSE_EXTRA']._serialized_end=499
+  _globals['_COURSE_VISIBILITY']._serialized_start=501
+  _globals['_COURSE_VISIBILITY']._serialized_end=576
 # @@protoc_insertion_point(module_scope)

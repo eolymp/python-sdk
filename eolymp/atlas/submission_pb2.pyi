@@ -15,7 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ("id", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "quiz", "output", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "fingerprint", "assistant_available", "cursor")
+    __slots__ = ("id", "resource_link", "space_link", "console_link", "problem_id", "version", "user_id", "member_id", "submitted_at", "judged_at", "lang", "source", "source_url", "quiz", "output", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "fingerprint", "assistant_available", "cursor")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Submission.Status]
@@ -184,6 +184,9 @@ class Submission(_message.Message):
         hashes: _containers.RepeatedScalarFieldContainer[int]
         def __init__(self, family: _Optional[str] = ..., tokens: _Optional[int] = ..., hashes: _Optional[_Iterable[int]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
+    SPACE_LINK_FIELD_NUMBER: _ClassVar[int]
+    CONSOLE_LINK_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -212,6 +215,9 @@ class Submission(_message.Message):
     ASSISTANT_AVAILABLE_FIELD_NUMBER: _ClassVar[int]
     CURSOR_FIELD_NUMBER: _ClassVar[int]
     id: str
+    resource_link: str
+    space_link: str
+    console_link: str
     problem_id: str
     version: int
     user_id: str
@@ -239,4 +245,4 @@ class Submission(_message.Message):
     fingerprint: Submission.Fingerprint
     assistant_available: bool
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., quiz: _Optional[_Union[Submission.Quiz, _Mapping]] = ..., output: _Optional[_Union[Submission.Output, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., fingerprint: _Optional[_Union[Submission.Fingerprint, _Mapping]] = ..., assistant_available: _Optional[bool] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., judged_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., quiz: _Optional[_Union[Submission.Quiz, _Mapping]] = ..., output: _Optional[_Union[Submission.Output, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[Submission.Status, str]] = ..., verdict: _Optional[_Union[Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., fingerprint: _Optional[_Union[Submission.Fingerprint, _Mapping]] = ..., assistant_available: _Optional[bool] = ..., cursor: _Optional[str] = ...) -> None: ...

@@ -1,3 +1,4 @@
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -9,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Course(_message.Message):
-    __slots__ = ("id", "url", "locale", "name", "description", "image_url", "visibility", "duration", "topics", "estimate")
+    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "locale", "name", "description", "image_url", "visibility", "duration", "topics", "estimate")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Course.Extra]
@@ -30,6 +31,9 @@ class Course(_message.Message):
     PRIVATE: Course.Visibility
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
+    SPACE_LINK_FIELD_NUMBER: _ClassVar[int]
+    CONSOLE_LINK_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -40,6 +44,9 @@ class Course(_message.Message):
     ESTIMATE_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
+    resource_link: str
+    space_link: str
+    console_link: str
     locale: str
     name: str
     description: _content_pb2.Content
@@ -48,4 +55,4 @@ class Course(_message.Message):
     duration: int
     topics: _containers.RepeatedScalarFieldContainer[str]
     estimate: int
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image_url: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., topics: _Optional[_Iterable[str]] = ..., estimate: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image_url: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., topics: _Optional[_Iterable[str]] = ..., estimate: _Optional[int] = ...) -> None: ...

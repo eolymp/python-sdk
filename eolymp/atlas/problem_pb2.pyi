@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ("id", "url", "type", "number", "visible", "origin", "language", "title", "content", "download_link", "author", "source", "languages", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "vote", "vote_count", "difficulty", "examples")
+    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "type", "number", "visible", "origin", "language", "title", "content", "download_link", "author", "source", "languages", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "vote", "vote_count", "difficulty", "examples")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Problem.Type]
@@ -87,6 +87,9 @@ class Problem(_message.Message):
         def __init__(self, index: _Optional[int] = ..., input_url: _Optional[str] = ..., answer_url: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
+    SPACE_LINK_FIELD_NUMBER: _ClassVar[int]
+    CONSOLE_LINK_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
     VISIBLE_FIELD_NUMBER: _ClassVar[int]
@@ -110,6 +113,9 @@ class Problem(_message.Message):
     EXAMPLES_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
+    resource_link: str
+    space_link: str
+    console_link: str
     type: Problem.Type
     number: int
     visible: bool
@@ -131,4 +137,4 @@ class Problem(_message.Message):
     vote_count: int
     difficulty: int
     examples: _containers.RepeatedCompositeFieldContainer[Problem.Example]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[Problem.Type, str]] = ..., number: _Optional[int] = ..., visible: _Optional[bool] = ..., origin: _Optional[str] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., author: _Optional[str] = ..., source: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ..., examples: _Optional[_Iterable[_Union[Problem.Example, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., type: _Optional[_Union[Problem.Type, str]] = ..., number: _Optional[int] = ..., visible: _Optional[bool] = ..., origin: _Optional[str] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., author: _Optional[str] = ..., source: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., difficulty: _Optional[int] = ..., examples: _Optional[_Iterable[_Union[Problem.Example, _Mapping]]] = ...) -> None: ...

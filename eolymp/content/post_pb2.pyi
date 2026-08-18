@@ -15,7 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Post(_message.Message):
-    __slots__ = ("id", "url", "source_id", "source_url", "draft", "public", "featured", "pinned", "moderation", "user_id", "member_id", "created_at", "published_at", "updated_at", "type_id", "locale", "locales", "automatic", "title", "image_url", "content", "preview", "vote", "vote_count", "reply_count", "labels", "links")
+    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "source_id", "source_url", "draft", "public", "featured", "pinned", "moderation", "user_id", "member_id", "created_at", "published_at", "updated_at", "type_id", "locale", "locales", "automatic", "title", "image_url", "content", "preview", "vote", "vote_count", "reply_count", "labels", "links")
     class Moderation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_MODERATION: _ClassVar[Post.Moderation]
@@ -78,6 +78,9 @@ class Post(_message.Message):
         def __init__(self, title: _Optional[str] = ..., image: _Optional[_Union[Post.Image, _Mapping]] = ..., content: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
+    SPACE_LINK_FIELD_NUMBER: _ClassVar[int]
+    CONSOLE_LINK_FIELD_NUMBER: _ClassVar[int]
     SOURCE_ID_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
     DRAFT_FIELD_NUMBER: _ClassVar[int]
@@ -105,6 +108,9 @@ class Post(_message.Message):
     LINKS_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
+    resource_link: str
+    space_link: str
+    console_link: str
     source_id: str
     source_url: str
     draft: bool
@@ -130,4 +136,4 @@ class Post(_message.Message):
     reply_count: int
     labels: _containers.RepeatedScalarFieldContainer[str]
     links: _containers.RepeatedCompositeFieldContainer[_link_pb2.Link]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., source_id: _Optional[str] = ..., source_url: _Optional[str] = ..., draft: _Optional[bool] = ..., public: _Optional[bool] = ..., featured: _Optional[bool] = ..., pinned: _Optional[bool] = ..., moderation: _Optional[_Union[Post.Moderation, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., type_id: _Optional[str] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., image_url: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., preview: _Optional[_Union[Post.Preview, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., source_id: _Optional[str] = ..., source_url: _Optional[str] = ..., draft: _Optional[bool] = ..., public: _Optional[bool] = ..., featured: _Optional[bool] = ..., pinned: _Optional[bool] = ..., moderation: _Optional[_Union[Post.Moderation, str]] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., published_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., type_id: _Optional[str] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., image_url: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., preview: _Optional[_Union[Post.Preview, _Mapping]] = ..., vote: _Optional[int] = ..., vote_count: _Optional[int] = ..., reply_count: _Optional[int] = ..., labels: _Optional[_Iterable[str]] = ..., links: _Optional[_Iterable[_Union[_link_pb2.Link, _Mapping]]] = ...) -> None: ...

@@ -16,7 +16,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Member(_message.Message):
-    __slots__ = ("id", "url", "external_ref", "display_name", "rank", "rank_lower", "rating", "level", "inactive", "incomplete", "unofficial", "secret", "active_period_start", "active_period_end", "created_at", "seated_at", "active_at", "user", "team", "ghost", "restrictions", "stats", "groups", "attributes", "metadata")
+    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "external_ref", "display_name", "rank", "rank_lower", "rating", "level", "inactive", "incomplete", "unofficial", "secret", "active_period_start", "active_period_end", "created_at", "seated_at", "active_at", "user", "team", "ghost", "restrictions", "stats", "groups", "attributes", "metadata")
     class Reference(_message.Message):
         __slots__ = ("id", "display_name", "email")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -128,6 +128,9 @@ class Member(_message.Message):
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
+    SPACE_LINK_FIELD_NUMBER: _ClassVar[int]
+    CONSOLE_LINK_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REF_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     RANK_FIELD_NUMBER: _ClassVar[int]
@@ -153,6 +156,9 @@ class Member(_message.Message):
     METADATA_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
+    resource_link: str
+    space_link: str
+    console_link: str
     external_ref: str
     display_name: str
     rank: int
@@ -176,4 +182,4 @@ class Member(_message.Message):
     groups: _containers.RepeatedScalarFieldContainer[str]
     attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
     metadata: _containers.ScalarMap[str, str]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., external_ref: _Optional[str] = ..., display_name: _Optional[str] = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., rating: _Optional[int] = ..., level: _Optional[int] = ..., inactive: _Optional[bool] = ..., incomplete: _Optional[bool] = ..., unofficial: _Optional[bool] = ..., secret: _Optional[bool] = ..., active_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., active_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., seated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., active_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., restrictions: _Optional[_Iterable[str]] = ..., stats: _Optional[_Union[Member.Stats, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ..., metadata: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., external_ref: _Optional[str] = ..., display_name: _Optional[str] = ..., rank: _Optional[int] = ..., rank_lower: _Optional[int] = ..., rating: _Optional[int] = ..., level: _Optional[int] = ..., inactive: _Optional[bool] = ..., incomplete: _Optional[bool] = ..., unofficial: _Optional[bool] = ..., secret: _Optional[bool] = ..., active_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., active_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., seated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., active_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., user: _Optional[_Union[_member_user_pb2.User, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost, _Mapping]] = ..., restrictions: _Optional[_Iterable[str]] = ..., stats: _Optional[_Union[Member.Stats, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ..., metadata: _Optional[_Mapping[str, str]] = ...) -> None: ...

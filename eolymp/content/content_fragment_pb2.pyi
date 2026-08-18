@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Fragment(_message.Message):
-    __slots__ = ("id", "path", "locale", "locales", "draft", "automatic", "title", "content", "created_at", "updated_at", "labels")
+    __slots__ = ("id", "resource_link", "space_link", "console_link", "path", "locale", "locales", "draft", "automatic", "title", "content", "created_at", "updated_at", "labels")
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -43,6 +43,9 @@ class Fragment(_message.Message):
         unlabel: bool
         def __init__(self, path: _Optional[str] = ..., draft: _Optional[bool] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., unlabel: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
+    SPACE_LINK_FIELD_NUMBER: _ClassVar[int]
+    CONSOLE_LINK_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     LOCALES_FIELD_NUMBER: _ClassVar[int]
@@ -54,6 +57,9 @@ class Fragment(_message.Message):
     UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
     LABELS_FIELD_NUMBER: _ClassVar[int]
     id: str
+    resource_link: str
+    space_link: str
+    console_link: str
     path: str
     locale: str
     locales: _containers.RepeatedScalarFieldContainer[str]
@@ -64,4 +70,4 @@ class Fragment(_message.Message):
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
     labels: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, id: _Optional[str] = ..., path: _Optional[str] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., draft: _Optional[bool] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., path: _Optional[str] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., draft: _Optional[bool] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ...) -> None: ...
