@@ -22,13 +22,25 @@ class Chat(_message.Message):
     archived: bool
     def __init__(self, id: _Optional[str] = ..., title: _Optional[str] = ..., timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., archived: _Optional[bool] = ...) -> None: ...
 
+class Context(_message.Message):
+    __slots__ = ("url", "title", "description")
+    URL_FIELD_NUMBER: _ClassVar[int]
+    TITLE_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    url: str
+    title: str
+    description: str
+    def __init__(self, url: _Optional[str] = ..., title: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+
 class Message(_message.Message):
     __slots__ = ("id", "timestamp", "user_message", "assistant_message")
     class UserContent(_message.Message):
-        __slots__ = ("text",)
+        __slots__ = ("text", "context")
         TEXT_FIELD_NUMBER: _ClassVar[int]
+        CONTEXT_FIELD_NUMBER: _ClassVar[int]
         text: str
-        def __init__(self, text: _Optional[str] = ...) -> None: ...
+        context: Context
+        def __init__(self, text: _Optional[str] = ..., context: _Optional[_Union[Context, _Mapping]] = ...) -> None: ...
     class AssistantContent(_message.Message):
         __slots__ = ("content", "model")
         CONTENT_FIELD_NUMBER: _ClassVar[int]

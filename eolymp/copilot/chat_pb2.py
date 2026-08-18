@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/copilot/chat.proto\x12\x0e\x65olymp.copilot\x1a\x1fgoogle/protobuf/timestamp.proto\"b\n\x04\x43hat\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x61rchived\x18\x04 \x01(\x08\"\xa0\x05\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\x0cuser_message\x18\n \x01(\x0b\x32#.eolymp.copilot.Message.UserContentH\x00\x12\x45\n\x11\x61ssistant_message\x18\x0b \x01(\x0b\x32(.eolymp.copilot.Message.AssistantContentH\x00\x1a\x1b\n\x0bUserContent\x12\x0c\n\x04text\x18\x01 \x01(\t\x1aZ\n\x10\x41ssistantContent\x12\x37\n\x07\x63ontent\x18\x01 \x03(\x0b\x32&.eolymp.copilot.Message.AssistantBlock\x12\r\n\x05model\x18\x02 \x01(\t\x1a`\n\x0e\x41ssistantBlock\x12\x0e\n\x04text\x18\x01 \x01(\tH\x00\x12\x35\n\ttool_call\x18\x02 \x01(\x0b\x32 .eolymp.copilot.Message.ToolCallH\x00\x42\x07\n\x05\x62lock\x1a\xef\x01\n\x08ToolCall\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x37\n\x06status\x18\x03 \x01(\x0e\x32\'.eolymp.copilot.Message.ToolCall.Status\x12\x11\n\targuments\x18\x04 \x01(\t\x12\x0e\n\x06result\x18\x05 \x01(\t\x12\r\n\x05\x65rror\x18\x06 \x01(\t\"^\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tEXECUTING\x10\x02\x12\x0b\n\x07SUCCESS\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08REJECTED\x10\x05\x42\t\n\x07\x63ontentB1Z/github.com/eolymp/go-sdk/eolymp/copilot;copilotb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x65olymp/copilot/chat.proto\x12\x0e\x65olymp.copilot\x1a\x1fgoogle/protobuf/timestamp.proto\"b\n\x04\x43hat\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x61rchived\x18\x04 \x01(\x08\":\n\x07\x43ontext\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\"\xca\x05\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\x0cuser_message\x18\n \x01(\x0b\x32#.eolymp.copilot.Message.UserContentH\x00\x12\x45\n\x11\x61ssistant_message\x18\x0b \x01(\x0b\x32(.eolymp.copilot.Message.AssistantContentH\x00\x1a\x45\n\x0bUserContent\x12\x0c\n\x04text\x18\x01 \x01(\t\x12(\n\x07\x63ontext\x18\x02 \x01(\x0b\x32\x17.eolymp.copilot.Context\x1aZ\n\x10\x41ssistantContent\x12\x37\n\x07\x63ontent\x18\x01 \x03(\x0b\x32&.eolymp.copilot.Message.AssistantBlock\x12\r\n\x05model\x18\x02 \x01(\t\x1a`\n\x0e\x41ssistantBlock\x12\x0e\n\x04text\x18\x01 \x01(\tH\x00\x12\x35\n\ttool_call\x18\x02 \x01(\x0b\x32 .eolymp.copilot.Message.ToolCallH\x00\x42\x07\n\x05\x62lock\x1a\xef\x01\n\x08ToolCall\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x37\n\x06status\x18\x03 \x01(\x0e\x32\'.eolymp.copilot.Message.ToolCall.Status\x12\x11\n\targuments\x18\x04 \x01(\t\x12\x0e\n\x06result\x18\x05 \x01(\t\x12\r\n\x05\x65rror\x18\x06 \x01(\t\"^\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tEXECUTING\x10\x02\x12\x0b\n\x07SUCCESS\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08REJECTED\x10\x05\x42\t\n\x07\x63ontentB1Z/github.com/eolymp/go-sdk/eolymp/copilot;copilotb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,16 +35,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/copilot;copilot'
   _globals['_CHAT']._serialized_start=78
   _globals['_CHAT']._serialized_end=176
-  _globals['_MESSAGE']._serialized_start=179
-  _globals['_MESSAGE']._serialized_end=851
-  _globals['_MESSAGE_USERCONTENT']._serialized_start=381
-  _globals['_MESSAGE_USERCONTENT']._serialized_end=408
-  _globals['_MESSAGE_ASSISTANTCONTENT']._serialized_start=410
-  _globals['_MESSAGE_ASSISTANTCONTENT']._serialized_end=500
-  _globals['_MESSAGE_ASSISTANTBLOCK']._serialized_start=502
-  _globals['_MESSAGE_ASSISTANTBLOCK']._serialized_end=598
-  _globals['_MESSAGE_TOOLCALL']._serialized_start=601
-  _globals['_MESSAGE_TOOLCALL']._serialized_end=840
-  _globals['_MESSAGE_TOOLCALL_STATUS']._serialized_start=746
-  _globals['_MESSAGE_TOOLCALL_STATUS']._serialized_end=840
+  _globals['_CONTEXT']._serialized_start=178
+  _globals['_CONTEXT']._serialized_end=236
+  _globals['_MESSAGE']._serialized_start=239
+  _globals['_MESSAGE']._serialized_end=953
+  _globals['_MESSAGE_USERCONTENT']._serialized_start=441
+  _globals['_MESSAGE_USERCONTENT']._serialized_end=510
+  _globals['_MESSAGE_ASSISTANTCONTENT']._serialized_start=512
+  _globals['_MESSAGE_ASSISTANTCONTENT']._serialized_end=602
+  _globals['_MESSAGE_ASSISTANTBLOCK']._serialized_start=604
+  _globals['_MESSAGE_ASSISTANTBLOCK']._serialized_end=700
+  _globals['_MESSAGE_TOOLCALL']._serialized_start=703
+  _globals['_MESSAGE_TOOLCALL']._serialized_end=942
+  _globals['_MESSAGE_TOOLCALL_STATUS']._serialized_start=848
+  _globals['_MESSAGE_TOOLCALL_STATUS']._serialized_end=942
 # @@protoc_insertion_point(module_scope)

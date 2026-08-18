@@ -100,10 +100,12 @@ class DeleteChatOutput(_message.Message):
 class SendMessageInput(_message.Message):
     __slots__ = ("chat_id", "model", "message", "approval")
     class Message(_message.Message):
-        __slots__ = ("text",)
+        __slots__ = ("text", "context")
         TEXT_FIELD_NUMBER: _ClassVar[int]
+        CONTEXT_FIELD_NUMBER: _ClassVar[int]
         text: str
-        def __init__(self, text: _Optional[str] = ...) -> None: ...
+        context: _chat_pb2.Context
+        def __init__(self, text: _Optional[str] = ..., context: _Optional[_Union[_chat_pb2.Context, _Mapping]] = ...) -> None: ...
     class Approval(_message.Message):
         __slots__ = ("allow", "reject")
         ALLOW_FIELD_NUMBER: _ClassVar[int]
