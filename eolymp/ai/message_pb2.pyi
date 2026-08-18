@@ -32,6 +32,7 @@ class Message(_message.Message):
         SERVER_TOOL_CALL: _ClassVar[Message.BlockType]
         COMPACTION: _ClassVar[Message.BlockType]
         IMAGE: _ClassVar[Message.BlockType]
+        SERVER_TOOL_RESULT: _ClassVar[Message.BlockType]
     UNKNOWN_BLOCK_TYPE: Message.BlockType
     TEXT: Message.BlockType
     REASONING: Message.BlockType
@@ -41,21 +42,24 @@ class Message(_message.Message):
     SERVER_TOOL_CALL: Message.BlockType
     COMPACTION: Message.BlockType
     IMAGE: Message.BlockType
+    SERVER_TOOL_RESULT: Message.BlockType
     class ContentBlock(_message.Message):
-        __slots__ = ("type", "text", "signature", "tool_call", "tool_result", "image")
+        __slots__ = ("type", "text", "signature", "tool_call", "tool_result", "image", "server_tool_result")
         TYPE_FIELD_NUMBER: _ClassVar[int]
         TEXT_FIELD_NUMBER: _ClassVar[int]
         SIGNATURE_FIELD_NUMBER: _ClassVar[int]
         TOOL_CALL_FIELD_NUMBER: _ClassVar[int]
         TOOL_RESULT_FIELD_NUMBER: _ClassVar[int]
         IMAGE_FIELD_NUMBER: _ClassVar[int]
+        SERVER_TOOL_RESULT_FIELD_NUMBER: _ClassVar[int]
         type: Message.BlockType
         text: str
         signature: str
         tool_call: Message.ToolCall
         tool_result: Message.ToolResult
         image: Message.Image
-        def __init__(self, type: _Optional[_Union[Message.BlockType, str]] = ..., text: _Optional[str] = ..., signature: _Optional[str] = ..., tool_call: _Optional[_Union[Message.ToolCall, _Mapping]] = ..., tool_result: _Optional[_Union[Message.ToolResult, _Mapping]] = ..., image: _Optional[_Union[Message.Image, _Mapping]] = ...) -> None: ...
+        server_tool_result: Message.ServerToolResult
+        def __init__(self, type: _Optional[_Union[Message.BlockType, str]] = ..., text: _Optional[str] = ..., signature: _Optional[str] = ..., tool_call: _Optional[_Union[Message.ToolCall, _Mapping]] = ..., tool_result: _Optional[_Union[Message.ToolResult, _Mapping]] = ..., image: _Optional[_Union[Message.Image, _Mapping]] = ..., server_tool_result: _Optional[_Union[Message.ServerToolResult, _Mapping]] = ...) -> None: ...
     class Image(_message.Message):
         __slots__ = ("media_type", "data")
         MEDIA_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -85,6 +89,15 @@ class Message(_message.Message):
         error: str
         images: _containers.RepeatedCompositeFieldContainer[Message.Image]
         def __init__(self, call_id: _Optional[str] = ..., result: _Optional[str] = ..., is_error: _Optional[bool] = ..., error: _Optional[str] = ..., images: _Optional[_Iterable[_Union[Message.Image, _Mapping]]] = ...) -> None: ...
+    class ServerToolResult(_message.Message):
+        __slots__ = ("call_id", "type", "content")
+        CALL_ID_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        CONTENT_FIELD_NUMBER: _ClassVar[int]
+        call_id: str
+        type: str
+        content: str
+        def __init__(self, call_id: _Optional[str] = ..., type: _Optional[str] = ..., content: _Optional[str] = ...) -> None: ...
     ROLE_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     role: Message.Role

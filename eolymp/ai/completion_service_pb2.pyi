@@ -133,7 +133,7 @@ class CompleteOutput(_message.Message):
     def __init__(self, content: _Optional[_Iterable[_Union[_message_pb2.Message.ContentBlock, _Mapping]]] = ..., finish_reason: _Optional[_Union[_finish_reason_pb2.FinishReason, str]] = ..., usage: _Optional[_Union[_usage_pb2.Usage, _Mapping]] = ..., model: _Optional[str] = ...) -> None: ...
 
 class CompleteChunk(_message.Message):
-    __slots__ = ("type", "index", "text", "call", "signature", "result", "usage", "finish_reason")
+    __slots__ = ("type", "index", "text", "call", "signature", "result", "usage", "finish_reason", "server_tool_result")
     class ChunkType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_CHUNK_TYPE: _ClassVar[CompleteChunk.ChunkType]
@@ -147,6 +147,7 @@ class CompleteChunk(_message.Message):
         TOOL_RESULT: _ClassVar[CompleteChunk.ChunkType]
         USAGE: _ClassVar[CompleteChunk.ChunkType]
         FINISH: _ClassVar[CompleteChunk.ChunkType]
+        SERVER_TOOL_RESULT: _ClassVar[CompleteChunk.ChunkType]
     UNKNOWN_CHUNK_TYPE: CompleteChunk.ChunkType
     TEXT: CompleteChunk.ChunkType
     TOOL_CALL_START: CompleteChunk.ChunkType
@@ -158,6 +159,7 @@ class CompleteChunk(_message.Message):
     TOOL_RESULT: CompleteChunk.ChunkType
     USAGE: CompleteChunk.ChunkType
     FINISH: CompleteChunk.ChunkType
+    SERVER_TOOL_RESULT: CompleteChunk.ChunkType
     TYPE_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
     TEXT_FIELD_NUMBER: _ClassVar[int]
@@ -166,6 +168,7 @@ class CompleteChunk(_message.Message):
     RESULT_FIELD_NUMBER: _ClassVar[int]
     USAGE_FIELD_NUMBER: _ClassVar[int]
     FINISH_REASON_FIELD_NUMBER: _ClassVar[int]
+    SERVER_TOOL_RESULT_FIELD_NUMBER: _ClassVar[int]
     type: CompleteChunk.ChunkType
     index: int
     text: str
@@ -174,4 +177,5 @@ class CompleteChunk(_message.Message):
     result: _message_pb2.Message.ToolResult
     usage: _usage_pb2.Usage
     finish_reason: _finish_reason_pb2.FinishReason
-    def __init__(self, type: _Optional[_Union[CompleteChunk.ChunkType, str]] = ..., index: _Optional[int] = ..., text: _Optional[str] = ..., call: _Optional[_Union[_message_pb2.Message.ToolCall, _Mapping]] = ..., signature: _Optional[str] = ..., result: _Optional[_Union[_message_pb2.Message.ToolResult, _Mapping]] = ..., usage: _Optional[_Union[_usage_pb2.Usage, _Mapping]] = ..., finish_reason: _Optional[_Union[_finish_reason_pb2.FinishReason, str]] = ...) -> None: ...
+    server_tool_result: _message_pb2.Message.ServerToolResult
+    def __init__(self, type: _Optional[_Union[CompleteChunk.ChunkType, str]] = ..., index: _Optional[int] = ..., text: _Optional[str] = ..., call: _Optional[_Union[_message_pb2.Message.ToolCall, _Mapping]] = ..., signature: _Optional[str] = ..., result: _Optional[_Union[_message_pb2.Message.ToolResult, _Mapping]] = ..., usage: _Optional[_Union[_usage_pb2.Usage, _Mapping]] = ..., finish_reason: _Optional[_Union[_finish_reason_pb2.FinishReason, str]] = ..., server_tool_result: _Optional[_Union[_message_pb2.Message.ServerToolResult, _Mapping]] = ...) -> None: ...

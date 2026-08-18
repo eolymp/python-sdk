@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/ai/message.proto\x12\teolymp.ai\"\x93\x06\n\x07Message\x12%\n\x04role\x18\x01 \x01(\x0e\x32\x17.eolymp.ai.Message.Role\x12\x30\n\x07\x63ontent\x18\x02 \x03(\x0b\x32\x1f.eolymp.ai.Message.ContentBlock\x1a\xe8\x01\n\x0c\x43ontentBlock\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.eolymp.ai.Message.BlockType\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x11\n\tsignature\x18\x03 \x01(\t\x12.\n\ttool_call\x18\x04 \x01(\x0b\x32\x1b.eolymp.ai.Message.ToolCall\x12\x32\n\x0btool_result\x18\x05 \x01(\x0b\x32\x1d.eolymp.ai.Message.ToolResult\x12\'\n\x05image\x18\x06 \x01(\x0b\x32\x18.eolymp.ai.Message.Image\x1a)\n\x05Image\x12\x12\n\nmedia_type\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x1a\x37\n\x08ToolCall\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\targuments\x18\x03 \x01(\t\x1ax\n\nToolResult\x12\x0f\n\x07\x63\x61ll_id\x18\x01 \x01(\t\x12\x0e\n\x06result\x18\x02 \x01(\t\x12\x10\n\x08is_error\x18\x03 \x01(\x08\x12\r\n\x05\x65rror\x18\x04 \x01(\t\x12(\n\x06images\x18\x05 \x03(\x0b\x32\x18.eolymp.ai.Message.Image\"G\n\x04Role\x12\x10\n\x0cUNKNOWN_ROLE\x10\x00\x12\n\n\x06SYSTEM\x10\x01\x12\x08\n\x04USER\x10\x02\x12\r\n\tASSISTANT\x10\x03\x12\x08\n\x04TOOL\x10\x04\"\x9c\x01\n\tBlockType\x12\x16\n\x12UNKNOWN_BLOCK_TYPE\x10\x00\x12\x08\n\x04TEXT\x10\x01\x12\r\n\tREASONING\x10\x02\x12\r\n\tSIGNATURE\x10\x03\x12\r\n\tTOOL_CALL\x10\x04\x12\x0f\n\x0bTOOL_RESULT\x10\x05\x12\x14\n\x10SERVER_TOOL_CALL\x10\x06\x12\x0e\n\nCOMPACTION\x10\x07\x12\t\n\x05IMAGE\x10\x08\x42\'Z%github.com/eolymp/go-sdk/eolymp/ai;aib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/ai/message.proto\x12\teolymp.ai\"\xb0\x07\n\x07Message\x12%\n\x04role\x18\x01 \x01(\x0e\x32\x17.eolymp.ai.Message.Role\x12\x30\n\x07\x63ontent\x18\x02 \x03(\x0b\x32\x1f.eolymp.ai.Message.ContentBlock\x1a\xa9\x02\n\x0c\x43ontentBlock\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.eolymp.ai.Message.BlockType\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x11\n\tsignature\x18\x03 \x01(\t\x12.\n\ttool_call\x18\x04 \x01(\x0b\x32\x1b.eolymp.ai.Message.ToolCall\x12\x32\n\x0btool_result\x18\x05 \x01(\x0b\x32\x1d.eolymp.ai.Message.ToolResult\x12\'\n\x05image\x18\x06 \x01(\x0b\x32\x18.eolymp.ai.Message.Image\x12?\n\x12server_tool_result\x18\x07 \x01(\x0b\x32#.eolymp.ai.Message.ServerToolResult\x1a)\n\x05Image\x12\x12\n\nmedia_type\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x1a\x37\n\x08ToolCall\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\targuments\x18\x03 \x01(\t\x1ax\n\nToolResult\x12\x0f\n\x07\x63\x61ll_id\x18\x01 \x01(\t\x12\x0e\n\x06result\x18\x02 \x01(\t\x12\x10\n\x08is_error\x18\x03 \x01(\x08\x12\r\n\x05\x65rror\x18\x04 \x01(\t\x12(\n\x06images\x18\x05 \x03(\x0b\x32\x18.eolymp.ai.Message.Image\x1a\x42\n\x10ServerToolResult\x12\x0f\n\x07\x63\x61ll_id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\"G\n\x04Role\x12\x10\n\x0cUNKNOWN_ROLE\x10\x00\x12\n\n\x06SYSTEM\x10\x01\x12\x08\n\x04USER\x10\x02\x12\r\n\tASSISTANT\x10\x03\x12\x08\n\x04TOOL\x10\x04\"\xb4\x01\n\tBlockType\x12\x16\n\x12UNKNOWN_BLOCK_TYPE\x10\x00\x12\x08\n\x04TEXT\x10\x01\x12\r\n\tREASONING\x10\x02\x12\r\n\tSIGNATURE\x10\x03\x12\r\n\tTOOL_CALL\x10\x04\x12\x0f\n\x0bTOOL_RESULT\x10\x05\x12\x14\n\x10SERVER_TOOL_CALL\x10\x06\x12\x0e\n\nCOMPACTION\x10\x07\x12\t\n\x05IMAGE\x10\x08\x12\x16\n\x12SERVER_TOOL_RESULT\x10\tB\'Z%github.com/eolymp/go-sdk/eolymp/ai;aib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,17 +33,19 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z%github.com/eolymp/go-sdk/eolymp/ai;ai'
   _globals['_MESSAGE']._serialized_start=39
-  _globals['_MESSAGE']._serialized_end=826
+  _globals['_MESSAGE']._serialized_end=983
   _globals['_MESSAGE_CONTENTBLOCK']._serialized_start=140
-  _globals['_MESSAGE_CONTENTBLOCK']._serialized_end=372
-  _globals['_MESSAGE_IMAGE']._serialized_start=374
-  _globals['_MESSAGE_IMAGE']._serialized_end=415
-  _globals['_MESSAGE_TOOLCALL']._serialized_start=417
-  _globals['_MESSAGE_TOOLCALL']._serialized_end=472
-  _globals['_MESSAGE_TOOLRESULT']._serialized_start=474
-  _globals['_MESSAGE_TOOLRESULT']._serialized_end=594
-  _globals['_MESSAGE_ROLE']._serialized_start=596
-  _globals['_MESSAGE_ROLE']._serialized_end=667
-  _globals['_MESSAGE_BLOCKTYPE']._serialized_start=670
-  _globals['_MESSAGE_BLOCKTYPE']._serialized_end=826
+  _globals['_MESSAGE_CONTENTBLOCK']._serialized_end=437
+  _globals['_MESSAGE_IMAGE']._serialized_start=439
+  _globals['_MESSAGE_IMAGE']._serialized_end=480
+  _globals['_MESSAGE_TOOLCALL']._serialized_start=482
+  _globals['_MESSAGE_TOOLCALL']._serialized_end=537
+  _globals['_MESSAGE_TOOLRESULT']._serialized_start=539
+  _globals['_MESSAGE_TOOLRESULT']._serialized_end=659
+  _globals['_MESSAGE_SERVERTOOLRESULT']._serialized_start=661
+  _globals['_MESSAGE_SERVERTOOLRESULT']._serialized_end=727
+  _globals['_MESSAGE_ROLE']._serialized_start=729
+  _globals['_MESSAGE_ROLE']._serialized_end=800
+  _globals['_MESSAGE_BLOCKTYPE']._serialized_start=803
+  _globals['_MESSAGE_BLOCKTYPE']._serialized_end=983
 # @@protoc_insertion_point(module_scope)
