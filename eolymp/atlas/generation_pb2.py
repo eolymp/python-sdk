@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/atlas/generation.proto\x12\x0c\x65olymp.atlas\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc5\x02\n\nGeneration\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12/\n\x06status\x18\x03 \x01(\x0e\x32\x1f.eolymp.atlas.Generation.Status\x12\r\n\x05total\x18\x04 \x01(\r\x12\r\n\x05ready\x18\x05 \x01(\r\x12\x0f\n\x07invalid\x18\x06 \x01(\r\x12\r\n\x05\x65rror\x18\x07 \x01(\t\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"G\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\x0b\n\x07\x46\x41ILURE\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/atlas/generation.proto\x12\x0c\x65olymp.atlas\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9a\x07\n\nGeneration\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x9c\x02\n\x06status\x18\x03 \x01(\x0e\x32\x1f.eolymp.atlas.Generation.StatusB\xea\x01\xa2\xf0\xf0\xe4\x01\xe3\x01PENDING and RUNNING mean the run is still going and this should be read again; COMPLETE means every test was produced, valid or not; FAILURE means the run itself broke and the rest of its tests will never be produced, see error\x12-\n\x05total\x18\x04 \x01(\rB\x1e\xa2\xf0\xf0\xe4\x01\x18tests this run generates\x12V\n\x05ready\x18\x05 \x01(\rBG\xa2\xf0\xf0\xe4\x01\x41tests it has generated so far, whether they came out valid or not\x12`\n\x07invalid\x18\x06 \x01(\rBO\xa2\xf0\xf0\xe4\x01Itests which failed to generate; read the test\'s own statusMessage for why\x12\xb9\x01\n\x05\x65rror\x18\x07 \x01(\tB\xa9\x01\xa2\xf0\xf0\xe4\x01\xa2\x01why the run itself failed, set only when status is FAILURE; usually a compile error in the validator or a generator, in which case none of its tests were produced\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"G\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\x0b\n\x07\x46\x41ILURE\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +34,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.generation_pb2
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _globals['_GENERATION']._serialized_start=81
-  _globals['_GENERATION']._serialized_end=406
-  _globals['_GENERATION_STATUS']._serialized_start=335
-  _globals['_GENERATION_STATUS']._serialized_end=406
+  _globals['_GENERATION'].fields_by_name['status']._loaded_options = None
+  _globals['_GENERATION'].fields_by_name['status']._serialized_options = b'\242\360\360\344\001\343\001PENDING and RUNNING mean the run is still going and this should be read again; COMPLETE means every test was produced, valid or not; FAILURE means the run itself broke and the rest of its tests will never be produced, see error'
+  _globals['_GENERATION'].fields_by_name['total']._loaded_options = None
+  _globals['_GENERATION'].fields_by_name['total']._serialized_options = b'\242\360\360\344\001\030tests this run generates'
+  _globals['_GENERATION'].fields_by_name['ready']._loaded_options = None
+  _globals['_GENERATION'].fields_by_name['ready']._serialized_options = b'\242\360\360\344\001Atests it has generated so far, whether they came out valid or not'
+  _globals['_GENERATION'].fields_by_name['invalid']._loaded_options = None
+  _globals['_GENERATION'].fields_by_name['invalid']._serialized_options = b'\242\360\360\344\001Itests which failed to generate; read the test\'s own statusMessage for why'
+  _globals['_GENERATION'].fields_by_name['error']._loaded_options = None
+  _globals['_GENERATION'].fields_by_name['error']._serialized_options = b'\242\360\360\344\001\242\001why the run itself failed, set only when status is FAILURE; usually a compile error in the validator or a generator, in which case none of its tests were produced'
+  _globals['_GENERATION']._serialized_start=111
+  _globals['_GENERATION']._serialized_end=1033
+  _globals['_GENERATION_STATUS']._serialized_start=962
+  _globals['_GENERATION_STATUS']._serialized_end=1033
 # @@protoc_insertion_point(module_scope)
