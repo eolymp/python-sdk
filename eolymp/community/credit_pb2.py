@@ -26,7 +26,7 @@ from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/credit.proto\x12\x10\x65olymp.community\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8a\x03\n\x06\x43redit\x1a\x94\x02\n\x05Grant\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0c\n\x04note\x18\x03 \x01(\t\x12\x16\n\x06\x61\x63tive\x18\x14 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x17\n\x07revoked\x18\x15 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x14\n\x0ctotal_amount\x18\x04 \x01(\r\x12\x1f\n\x0fredeemed_amount\x18\x05 \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ngranted_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x1ai\n\x0bTransaction\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x0e\n\x06\x61mount\x18\x04 \x01(\x05\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/community/credit.proto\x12\x10\x65olymp.community\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x82\x03\n\x06\x43redit\x1a\x8c\x02\n\x05Grant\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0c\n\x04note\x18\x03 \x01(\t\x12\x16\n\x06\x61\x63tive\x18\x14 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x17\n\x07revoked\x18\x15 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x14\n\x0ctotal_amount\x18\x04 \x01(\r\x12\x1f\n\x0fredeemed_amount\x18\x05 \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ngranted_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12.\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1ai\n\x0bTransaction\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x0e\n\x06\x61mount\x18\x04 \x01(\x05\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,12 +44,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREDIT_GRANT'].fields_by_name['redeemed_amount']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_CREDIT_GRANT'].fields_by_name['granted_at']._loaded_options = None
   _globals['_CREDIT_GRANT'].fields_by_name['granted_at']._serialized_options = b'\250\360\360\344\001\001'
-  _globals['_CREDIT_GRANT'].fields_by_name['expires_at']._loaded_options = None
-  _globals['_CREDIT_GRANT'].fields_by_name['expires_at']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_CREDIT']._serialized_start=115
-  _globals['_CREDIT']._serialized_end=509
+  _globals['_CREDIT']._serialized_end=501
   _globals['_CREDIT_GRANT']._serialized_start=126
-  _globals['_CREDIT_GRANT']._serialized_end=402
-  _globals['_CREDIT_TRANSACTION']._serialized_start=404
-  _globals['_CREDIT_TRANSACTION']._serialized_end=509
+  _globals['_CREDIT_GRANT']._serialized_end=394
+  _globals['_CREDIT_TRANSACTION']._serialized_start=396
+  _globals['_CREDIT_TRANSACTION']._serialized_end=501
 # @@protoc_insertion_point(module_scope)
