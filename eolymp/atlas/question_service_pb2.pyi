@@ -22,10 +22,12 @@ class QuestionChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_question_pb2.Question, _Mapping]] = ..., after: _Optional[_Union[_question_pb2.Question, _Mapping]] = ...) -> None: ...
 
 class CreateQuestionInput(_message.Message):
-    __slots__ = ("question",)
+    __slots__ = ("problem_id", "question")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     QUESTION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     question: _question_pb2.Question
-    def __init__(self, question: _Optional[_Union[_question_pb2.Question, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., question: _Optional[_Union[_question_pb2.Question, _Mapping]] = ...) -> None: ...
 
 class CreateQuestionOutput(_message.Message):
     __slots__ = ("question_id",)
@@ -34,38 +36,44 @@ class CreateQuestionOutput(_message.Message):
     def __init__(self, question_id: _Optional[str] = ...) -> None: ...
 
 class UpdateQuestionInput(_message.Message):
-    __slots__ = ("patch", "question_id", "question")
+    __slots__ = ("patch", "problem_id", "question_id", "question")
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     QUESTION_ID_FIELD_NUMBER: _ClassVar[int]
     QUESTION_FIELD_NUMBER: _ClassVar[int]
     patch: _containers.RepeatedScalarFieldContainer[_question_pb2.Question.Patch.Field]
+    problem_id: str
     question_id: str
     question: _question_pb2.Question
-    def __init__(self, patch: _Optional[_Iterable[_Union[_question_pb2.Question.Patch.Field, str]]] = ..., question_id: _Optional[str] = ..., question: _Optional[_Union[_question_pb2.Question, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_question_pb2.Question.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., question_id: _Optional[str] = ..., question: _Optional[_Union[_question_pb2.Question, _Mapping]] = ...) -> None: ...
 
 class UpdateQuestionOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteQuestionInput(_message.Message):
-    __slots__ = ("question_id",)
+    __slots__ = ("problem_id", "question_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     QUESTION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     question_id: str
-    def __init__(self, question_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., question_id: _Optional[str] = ...) -> None: ...
 
 class DeleteQuestionOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeQuestionInput(_message.Message):
-    __slots__ = ("question_id", "version", "extra")
+    __slots__ = ("problem_id", "question_id", "version", "extra")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     QUESTION_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     question_id: str
     version: int
     extra: _containers.RepeatedScalarFieldContainer[_question_pb2.Question.Extra.Field]
-    def __init__(self, question_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_question_pb2.Question.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., question_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_question_pb2.Question.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeQuestionOutput(_message.Message):
     __slots__ = ("question",)
@@ -74,16 +82,18 @@ class DescribeQuestionOutput(_message.Message):
     def __init__(self, question: _Optional[_Union[_question_pb2.Question, _Mapping]] = ...) -> None: ...
 
 class ListQuestionsInput(_message.Message):
-    __slots__ = ("offset", "size", "version", "extra")
+    __slots__ = ("problem_id", "offset", "size", "version", "extra")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     offset: int
     size: int
     version: int
     extra: _containers.RepeatedScalarFieldContainer[_question_pb2.Question.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_question_pb2.Question.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_question_pb2.Question.Extra.Field, str]]] = ...) -> None: ...
 
 class ListQuestionsOutput(_message.Message):
     __slots__ = ("total", "items")

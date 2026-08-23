@@ -24,10 +24,12 @@ class ScoreChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ..., before: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ..., after: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class DescribeScoreInput(_message.Message):
-    __slots__ = ("member_id",)
+    __slots__ = ("problem_id", "member_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     member_id: str
-    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreOutput(_message.Message):
     __slots__ = ("score",)
@@ -36,8 +38,10 @@ class DescribeScoreOutput(_message.Message):
     def __init__(self, score: _Optional[_Union[_scoring_score_pb2.Score, _Mapping]] = ...) -> None: ...
 
 class DescribeProblemGradingInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("problem_id",)
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class DescribeProblemGradingOutput(_message.Message):
     __slots__ = ("ranges",)

@@ -29,7 +29,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.atlas import question_pb2 as eolymp_dot_atlas_dot_question__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/atlas/question_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/atlas/question.proto\"y\n\x14QuestionChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12&\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x16.eolymp.atlas.Question\x12%\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x16.eolymp.atlas.Question\"?\n\x13\x43reateQuestionInput\x12(\n\x08question\x18\x02 \x01(\x0b\x32\x16.eolymp.atlas.Question\"+\n\x14\x43reateQuestionOutput\x12\x13\n\x0bquestion_id\x18\x01 \x01(\t\"\x87\x01\n\x13UpdateQuestionInput\x12\x31\n\x05patch\x18\n \x03(\x0e\x32\".eolymp.atlas.Question.Patch.Field\x12\x13\n\x0bquestion_id\x18\x02 \x01(\t\x12(\n\x08question\x18\x03 \x01(\x0b\x32\x16.eolymp.atlas.Question\"\x16\n\x14UpdateQuestionOutput\"*\n\x13\x44\x65leteQuestionInput\x12\x13\n\x0bquestion_id\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteQuestionOutput\"q\n\x15\x44\x65scribeQuestionInput\x12\x13\n\x0bquestion_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x32\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\".eolymp.atlas.Question.Extra.Field\"B\n\x16\x44\x65scribeQuestionOutput\x12(\n\x08question\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Question\"w\n\x12ListQuestionsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x32\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\".eolymp.atlas.Question.Extra.Field\"K\n\x13ListQuestionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.atlas.Question2\xd0\x06\n\x0fQuestionService\x12\x95\x01\n\x0e\x43reateQuestion\x12!.eolymp.atlas.CreateQuestionInput\x1a\".eolymp.atlas.CreateQuestionOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x0c\"\n/questions\x12\xa3\x01\n\x0eUpdateQuestion\x12!.eolymp.atlas.UpdateQuestionInput\x1a\".eolymp.atlas.UpdateQuestionOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x1a\x1a\x18/questions/{question_id}\x12\xa3\x01\n\x0e\x44\x65leteQuestion\x12!.eolymp.atlas.DeleteQuestionInput\x1a\".eolymp.atlas.DeleteQuestionOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x1a*\x18/questions/{question_id}\x12\xa8\x01\n\x10\x44\x65scribeQuestion\x12#.eolymp.atlas.DescribeQuestionInput\x1a$.eolymp.atlas.DescribeQuestionOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x1a\x12\x18/questions/{question_id}\x12\x91\x01\n\rListQuestions\x12 .eolymp.atlas.ListQuestionsInput\x1a!.eolymp.atlas.ListQuestionsOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x0c\x12\n/questions\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.ProblemB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/atlas/question_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/atlas/question.proto\"y\n\x14QuestionChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12&\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x16.eolymp.atlas.Question\x12%\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x16.eolymp.atlas.Question\"S\n\x13\x43reateQuestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12(\n\x08question\x18\x02 \x01(\x0b\x32\x16.eolymp.atlas.Question\"+\n\x14\x43reateQuestionOutput\x12\x13\n\x0bquestion_id\x18\x01 \x01(\t\"\x9b\x01\n\x13UpdateQuestionInput\x12\x31\n\x05patch\x18\n \x03(\x0e\x32\".eolymp.atlas.Question.Patch.Field\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0bquestion_id\x18\x02 \x01(\t\x12(\n\x08question\x18\x03 \x01(\x0b\x32\x16.eolymp.atlas.Question\"\x16\n\x14UpdateQuestionOutput\">\n\x13\x44\x65leteQuestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0bquestion_id\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteQuestionOutput\"\x85\x01\n\x15\x44\x65scribeQuestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0bquestion_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x32\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\".eolymp.atlas.Question.Extra.Field\"B\n\x16\x44\x65scribeQuestionOutput\x12(\n\x08question\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Question\"\x8b\x01\n\x12ListQuestionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x32\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\".eolymp.atlas.Question.Extra.Field\"K\n\x13ListQuestionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.atlas.Question2\xeb\x06\n\x0fQuestionService\x12\x95\x01\n\x0e\x43reateQuestion\x12!.eolymp.atlas.CreateQuestionInput\x1a\".eolymp.atlas.CreateQuestionOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x0c\"\n/questions\x12\xa3\x01\n\x0eUpdateQuestion\x12!.eolymp.atlas.UpdateQuestionInput\x1a\".eolymp.atlas.UpdateQuestionOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x1a\x1a\x18/questions/{question_id}\x12\xa3\x01\n\x0e\x44\x65leteQuestion\x12!.eolymp.atlas.DeleteQuestionInput\x1a\".eolymp.atlas.DeleteQuestionOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x1a*\x18/questions/{question_id}\x12\xa8\x01\n\x10\x44\x65scribeQuestion\x12#.eolymp.atlas.DescribeQuestionInput\x1a$.eolymp.atlas.DescribeQuestionOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x1a\x12\x18/questions/{question_id}\x12\x91\x01\n\rListQuestions\x12 .eolymp.atlas.ListQuestionsInput\x1a!.eolymp.atlas.ListQuestionsOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x0c\x12\n/questions\x1a\x35\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.Problem\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,7 +38,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_QUESTIONSERVICE']._loaded_options = None
-  _globals['_QUESTIONSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.atlas.Problem'
+  _globals['_QUESTIONSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.atlas.Problem\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_QUESTIONSERVICE'].methods_by_name['CreateQuestion']._loaded_options = None
   _globals['_QUESTIONSERVICE'].methods_by_name['CreateQuestion']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002\014\"\n/questions'
   _globals['_QUESTIONSERVICE'].methods_by_name['UpdateQuestion']._loaded_options = None
@@ -52,25 +52,25 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_QUESTIONCHANGEDEVENT']._serialized_start=217
   _globals['_QUESTIONCHANGEDEVENT']._serialized_end=338
   _globals['_CREATEQUESTIONINPUT']._serialized_start=340
-  _globals['_CREATEQUESTIONINPUT']._serialized_end=403
-  _globals['_CREATEQUESTIONOUTPUT']._serialized_start=405
-  _globals['_CREATEQUESTIONOUTPUT']._serialized_end=448
-  _globals['_UPDATEQUESTIONINPUT']._serialized_start=451
-  _globals['_UPDATEQUESTIONINPUT']._serialized_end=586
-  _globals['_UPDATEQUESTIONOUTPUT']._serialized_start=588
-  _globals['_UPDATEQUESTIONOUTPUT']._serialized_end=610
-  _globals['_DELETEQUESTIONINPUT']._serialized_start=612
-  _globals['_DELETEQUESTIONINPUT']._serialized_end=654
-  _globals['_DELETEQUESTIONOUTPUT']._serialized_start=656
-  _globals['_DELETEQUESTIONOUTPUT']._serialized_end=678
-  _globals['_DESCRIBEQUESTIONINPUT']._serialized_start=680
-  _globals['_DESCRIBEQUESTIONINPUT']._serialized_end=793
-  _globals['_DESCRIBEQUESTIONOUTPUT']._serialized_start=795
-  _globals['_DESCRIBEQUESTIONOUTPUT']._serialized_end=861
-  _globals['_LISTQUESTIONSINPUT']._serialized_start=863
-  _globals['_LISTQUESTIONSINPUT']._serialized_end=982
-  _globals['_LISTQUESTIONSOUTPUT']._serialized_start=984
-  _globals['_LISTQUESTIONSOUTPUT']._serialized_end=1059
-  _globals['_QUESTIONSERVICE']._serialized_start=1062
-  _globals['_QUESTIONSERVICE']._serialized_end=1910
+  _globals['_CREATEQUESTIONINPUT']._serialized_end=423
+  _globals['_CREATEQUESTIONOUTPUT']._serialized_start=425
+  _globals['_CREATEQUESTIONOUTPUT']._serialized_end=468
+  _globals['_UPDATEQUESTIONINPUT']._serialized_start=471
+  _globals['_UPDATEQUESTIONINPUT']._serialized_end=626
+  _globals['_UPDATEQUESTIONOUTPUT']._serialized_start=628
+  _globals['_UPDATEQUESTIONOUTPUT']._serialized_end=650
+  _globals['_DELETEQUESTIONINPUT']._serialized_start=652
+  _globals['_DELETEQUESTIONINPUT']._serialized_end=714
+  _globals['_DELETEQUESTIONOUTPUT']._serialized_start=716
+  _globals['_DELETEQUESTIONOUTPUT']._serialized_end=738
+  _globals['_DESCRIBEQUESTIONINPUT']._serialized_start=741
+  _globals['_DESCRIBEQUESTIONINPUT']._serialized_end=874
+  _globals['_DESCRIBEQUESTIONOUTPUT']._serialized_start=876
+  _globals['_DESCRIBEQUESTIONOUTPUT']._serialized_end=942
+  _globals['_LISTQUESTIONSINPUT']._serialized_start=945
+  _globals['_LISTQUESTIONSINPUT']._serialized_end=1084
+  _globals['_LISTQUESTIONSOUTPUT']._serialized_start=1086
+  _globals['_LISTQUESTIONSOUTPUT']._serialized_end=1161
+  _globals['_QUESTIONSERVICE']._serialized_start=1164
+  _globals['_QUESTIONSERVICE']._serialized_end=2039
 # @@protoc_insertion_point(module_scope)

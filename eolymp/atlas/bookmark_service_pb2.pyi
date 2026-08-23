@@ -20,18 +20,22 @@ class BookmarkChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., member_id: _Optional[str] = ..., before: _Optional[bool] = ..., after: _Optional[bool] = ...) -> None: ...
 
 class SetBookmarkInput(_message.Message):
-    __slots__ = ("bookmark",)
+    __slots__ = ("problem_id", "bookmark")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     BOOKMARK_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     bookmark: bool
-    def __init__(self, bookmark: _Optional[bool] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., bookmark: _Optional[bool] = ...) -> None: ...
 
 class SetBookmarkOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetBookmarkInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("problem_id",)
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class GetBookmarkOutput(_message.Message):
     __slots__ = ("bookmark",)

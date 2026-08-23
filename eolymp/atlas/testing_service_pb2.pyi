@@ -87,20 +87,24 @@ class TestBatchChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ..., after: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
 
 class UpdateTestingConfigInput(_message.Message):
-    __slots__ = ("config",)
+    __slots__ = ("problem_id", "config")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     CONFIG_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     config: _testing_config_pb2.TestingConfig
-    def __init__(self, config: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., config: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ...) -> None: ...
 
 class UpdateTestingConfigOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeTestingConfigInput(_message.Message):
-    __slots__ = ("version",)
+    __slots__ = ("problem_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     version: int
-    def __init__(self, version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeTestingConfigOutput(_message.Message):
     __slots__ = ("config",)
@@ -109,20 +113,24 @@ class DescribeTestingConfigOutput(_message.Message):
     def __init__(self, config: _Optional[_Union[_testing_config_pb2.TestingConfig, _Mapping]] = ...) -> None: ...
 
 class UpdateCheckerInput(_message.Message):
-    __slots__ = ("checker",)
+    __slots__ = ("problem_id", "checker")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     CHECKER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     checker: _testing_checker_pb2.Checker
-    def __init__(self, checker: _Optional[_Union[_testing_checker_pb2.Checker, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., checker: _Optional[_Union[_testing_checker_pb2.Checker, _Mapping]] = ...) -> None: ...
 
 class UpdateCheckerOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeCheckerInput(_message.Message):
-    __slots__ = ("version",)
+    __slots__ = ("problem_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     version: int
-    def __init__(self, version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeCheckerOutput(_message.Message):
     __slots__ = ("checker",)
@@ -131,20 +139,24 @@ class DescribeCheckerOutput(_message.Message):
     def __init__(self, checker: _Optional[_Union[_testing_checker_pb2.Checker, _Mapping]] = ...) -> None: ...
 
 class UpdateInteractorInput(_message.Message):
-    __slots__ = ("interactor",)
+    __slots__ = ("problem_id", "interactor")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     INTERACTOR_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     interactor: _testing_interactor_pb2.Interactor
-    def __init__(self, interactor: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., interactor: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ...) -> None: ...
 
 class UpdateInteractorOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeInteractorInput(_message.Message):
-    __slots__ = ("version",)
+    __slots__ = ("problem_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     version: int
-    def __init__(self, version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeInteractorOutput(_message.Message):
     __slots__ = ("interactor",)
@@ -153,20 +165,24 @@ class DescribeInteractorOutput(_message.Message):
     def __init__(self, interactor: _Optional[_Union[_testing_interactor_pb2.Interactor, _Mapping]] = ...) -> None: ...
 
 class UpdateValidatorInput(_message.Message):
-    __slots__ = ("validator",)
+    __slots__ = ("problem_id", "validator")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VALIDATOR_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     validator: _testing_validator_pb2.Validator
-    def __init__(self, validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
 
 class UpdateValidatorOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeValidatorInput(_message.Message):
-    __slots__ = ("version",)
+    __slots__ = ("problem_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     version: int
-    def __init__(self, version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeValidatorOutput(_message.Message):
     __slots__ = ("validator",)
@@ -175,14 +191,16 @@ class DescribeValidatorOutput(_message.Message):
     def __init__(self, validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
 
 class ListTestsetsInput(_message.Message):
-    __slots__ = ("offset", "size", "version")
+    __slots__ = ("problem_id", "offset", "size", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     offset: int
     size: int
     version: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListTestsetsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -193,12 +211,14 @@ class ListTestsetsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_testing_testset_pb2.Testset, _Mapping]]] = ...) -> None: ...
 
 class DescribeTestsetInput(_message.Message):
-    __slots__ = ("testset_id", "version")
+    __slots__ = ("problem_id", "testset_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     testset_id: str
     version: int
-    def __init__(self, testset_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeTestsetOutput(_message.Message):
     __slots__ = ("testset",)
@@ -207,10 +227,12 @@ class DescribeTestsetOutput(_message.Message):
     def __init__(self, testset: _Optional[_Union[_testing_testset_pb2.Testset, _Mapping]] = ...) -> None: ...
 
 class CreateTestsetInput(_message.Message):
-    __slots__ = ("testset",)
+    __slots__ = ("problem_id", "testset")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     testset: _testing_testset_pb2.Testset
-    def __init__(self, testset: _Optional[_Union[_testing_testset_pb2.Testset, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., testset: _Optional[_Union[_testing_testset_pb2.Testset, _Mapping]] = ...) -> None: ...
 
 class CreateTestsetOutput(_message.Message):
     __slots__ = ("id",)
@@ -219,32 +241,38 @@ class CreateTestsetOutput(_message.Message):
     def __init__(self, id: _Optional[str] = ...) -> None: ...
 
 class UpdateTestsetInput(_message.Message):
-    __slots__ = ("testset_id", "testset")
+    __slots__ = ("problem_id", "testset_id", "testset")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     testset_id: str
     testset: _testing_testset_pb2.Testset
-    def __init__(self, testset_id: _Optional[str] = ..., testset: _Optional[_Union[_testing_testset_pb2.Testset, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., testset: _Optional[_Union[_testing_testset_pb2.Testset, _Mapping]] = ...) -> None: ...
 
 class UpdateTestsetOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteTestsetInput(_message.Message):
-    __slots__ = ("testset_id",)
+    __slots__ = ("problem_id", "testset_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     testset_id: str
-    def __init__(self, testset_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ...) -> None: ...
 
 class DeleteTestsetOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListExamplesInput(_message.Message):
-    __slots__ = ("version",)
+    __slots__ = ("problem_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     version: int
-    def __init__(self, version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListExamplesOutput(_message.Message):
     __slots__ = ("examples",)
@@ -253,12 +281,14 @@ class ListExamplesOutput(_message.Message):
     def __init__(self, examples: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
 
 class ListTestsInput(_message.Message):
-    __slots__ = ("testset_id", "version")
+    __slots__ = ("problem_id", "testset_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     testset_id: str
     version: int
-    def __init__(self, testset_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListTestsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -269,14 +299,16 @@ class ListTestsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
 
 class DescribeTestInput(_message.Message):
-    __slots__ = ("testset_id", "test_id", "version")
+    __slots__ = ("problem_id", "testset_id", "test_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     testset_id: str
     test_id: str
     version: int
-    def __init__(self, testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeTestOutput(_message.Message):
     __slots__ = ("test",)
@@ -285,12 +317,14 @@ class DescribeTestOutput(_message.Message):
     def __init__(self, test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
 
 class CreateTestInput(_message.Message):
-    __slots__ = ("testset_id", "test")
+    __slots__ = ("problem_id", "testset_id", "test")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     testset_id: str
     test: _testing_test_pb2.Test
-    def __init__(self, testset_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
 
 class CreateTestOutput(_message.Message):
     __slots__ = ("test_id",)
@@ -299,28 +333,32 @@ class CreateTestOutput(_message.Message):
     def __init__(self, test_id: _Optional[str] = ...) -> None: ...
 
 class UpdateTestInput(_message.Message):
-    __slots__ = ("patch", "testset_id", "test_id", "test")
+    __slots__ = ("patch", "problem_id", "testset_id", "test_id", "test")
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_FIELD_NUMBER: _ClassVar[int]
     patch: _containers.RepeatedScalarFieldContainer[_testing_test_pb2.Test.Patch.Field]
+    problem_id: str
     testset_id: str
     test_id: str
     test: _testing_test_pb2.Test
-    def __init__(self, patch: _Optional[_Iterable[_Union[_testing_test_pb2.Test.Patch.Field, str]]] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_testing_test_pb2.Test.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
 
 class UpdateTestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteTestInput(_message.Message):
-    __slots__ = ("testset_id", "test_id")
+    __slots__ = ("problem_id", "testset_id", "test_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     testset_id: str
     test_id: str
-    def __init__(self, testset_id: _Optional[str] = ..., test_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ...) -> None: ...
 
 class DeleteTestOutput(_message.Message):
     __slots__ = ()

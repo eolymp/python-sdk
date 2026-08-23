@@ -12,10 +12,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateCodeTemplateInput(_message.Message):
-    __slots__ = ("template",)
+    __slots__ = ("problem_id", "template")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     template: _code_template_pb2.Template
-    def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class CreateCodeTemplateOutput(_message.Message):
     __slots__ = ("template_id",)
@@ -24,36 +26,42 @@ class CreateCodeTemplateOutput(_message.Message):
     def __init__(self, template_id: _Optional[str] = ...) -> None: ...
 
 class UpdateCodeTemplateInput(_message.Message):
-    __slots__ = ("template_id", "template")
+    __slots__ = ("problem_id", "template_id", "template")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     template_id: str
     template: _code_template_pb2.Template
-    def __init__(self, template_id: _Optional[str] = ..., template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class UpdateCodeTemplateOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteCodeTemplateInput(_message.Message):
-    __slots__ = ("template_id",)
+    __slots__ = ("problem_id", "template_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     template_id: str
-    def __init__(self, template_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ...) -> None: ...
 
 class DeleteCodeTemplateOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListCodeTemplatesInput(_message.Message):
-    __slots__ = ("offset", "size", "version")
+    __slots__ = ("problem_id", "offset", "size", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     offset: int
     size: int
     version: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListCodeTemplatesOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -64,12 +72,14 @@ class ListCodeTemplatesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_code_template_pb2.Template, _Mapping]]] = ...) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ("template_id", "version")
+    __slots__ = ("problem_id", "template_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     template_id: str
     version: int
-    def __init__(self, template_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
     __slots__ = ("template",)
@@ -78,10 +88,12 @@ class DescribeCodeTemplateOutput(_message.Message):
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class LookupCodeTemplateInput(_message.Message):
-    __slots__ = ("runtime",)
+    __slots__ = ("problem_id", "runtime")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     runtime: str
-    def __init__(self, runtime: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
 
 class LookupCodeTemplateOutput(_message.Message):
     __slots__ = ("template",)
@@ -90,10 +102,12 @@ class LookupCodeTemplateOutput(_message.Message):
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class GenerateCodeTemplatesInput(_message.Message):
-    __slots__ = ("language",)
+    __slots__ = ("problem_id", "language")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LANGUAGE_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     language: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, language: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., language: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class GenerateCodeTemplatesOutput(_message.Message):
     __slots__ = ()

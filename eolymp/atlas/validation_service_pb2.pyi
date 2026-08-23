@@ -13,10 +13,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RunValidationInput(_message.Message):
-    __slots__ = ("validator",)
+    __slots__ = ("problem_id", "validator")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VALIDATOR_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     validator: _testing_validator_pb2.Validator
-    def __init__(self, validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
 
 class RunValidationOutput(_message.Message):
     __slots__ = ("validation_id", "validation")
@@ -27,10 +29,12 @@ class RunValidationOutput(_message.Message):
     def __init__(self, validation_id: _Optional[str] = ..., validation: _Optional[_Union[_validation_pb2.Validation, _Mapping]] = ...) -> None: ...
 
 class DescribeValidationInput(_message.Message):
-    __slots__ = ("validation_id",)
+    __slots__ = ("problem_id", "validation_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VALIDATION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     validation_id: str
-    def __init__(self, validation_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., validation_id: _Optional[str] = ...) -> None: ...
 
 class DescribeValidationOutput(_message.Message):
     __slots__ = ("validation",)
@@ -39,10 +43,12 @@ class DescribeValidationOutput(_message.Message):
     def __init__(self, validation: _Optional[_Union[_validation_pb2.Validation, _Mapping]] = ...) -> None: ...
 
 class WatchValidationInput(_message.Message):
-    __slots__ = ("validation_id",)
+    __slots__ = ("problem_id", "validation_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VALIDATION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     validation_id: str
-    def __init__(self, validation_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., validation_id: _Optional[str] = ...) -> None: ...
 
 class WatchValidationOutput(_message.Message):
     __slots__ = ("validation", "event")

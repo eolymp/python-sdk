@@ -23,10 +23,12 @@ class SuggestionChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_suggestion_pb2.Suggestion, _Mapping]] = ..., after: _Optional[_Union[_suggestion_pb2.Suggestion, _Mapping]] = ...) -> None: ...
 
 class CreateSuggestionInput(_message.Message):
-    __slots__ = ("suggestion",)
+    __slots__ = ("problem_id", "suggestion")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SUGGESTION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     suggestion: _suggestion_pb2.Suggestion
-    def __init__(self, suggestion: _Optional[_Union[_suggestion_pb2.Suggestion, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., suggestion: _Optional[_Union[_suggestion_pb2.Suggestion, _Mapping]] = ...) -> None: ...
 
 class CreateSuggestionOutput(_message.Message):
     __slots__ = ("suggestion_id",)
@@ -35,55 +37,63 @@ class CreateSuggestionOutput(_message.Message):
     def __init__(self, suggestion_id: _Optional[str] = ...) -> None: ...
 
 class UpdateSuggestionInput(_message.Message):
-    __slots__ = ("suggestion_id", "suggestion")
+    __slots__ = ("problem_id", "suggestion_id", "suggestion")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SUGGESTION_ID_FIELD_NUMBER: _ClassVar[int]
     SUGGESTION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     suggestion_id: str
     suggestion: _suggestion_pb2.Suggestion
-    def __init__(self, suggestion_id: _Optional[str] = ..., suggestion: _Optional[_Union[_suggestion_pb2.Suggestion, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., suggestion_id: _Optional[str] = ..., suggestion: _Optional[_Union[_suggestion_pb2.Suggestion, _Mapping]] = ...) -> None: ...
 
 class UpdateSuggestionOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteSuggestionInput(_message.Message):
-    __slots__ = ("suggestion_id",)
+    __slots__ = ("problem_id", "suggestion_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SUGGESTION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     suggestion_id: str
-    def __init__(self, suggestion_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., suggestion_id: _Optional[str] = ...) -> None: ...
 
 class DeleteSuggestionOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class ReviewSuggestionInput(_message.Message):
-    __slots__ = ("suggestion_id", "status", "comment", "contribution")
+    __slots__ = ("problem_id", "suggestion_id", "status", "comment", "contribution")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SUGGESTION_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     COMMENT_FIELD_NUMBER: _ClassVar[int]
     CONTRIBUTION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     suggestion_id: str
     status: _suggestion_pb2.Suggestion.Status
     comment: _content_pb2.Content
     contribution: int
-    def __init__(self, suggestion_id: _Optional[str] = ..., status: _Optional[_Union[_suggestion_pb2.Suggestion.Status, str]] = ..., comment: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., contribution: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., suggestion_id: _Optional[str] = ..., status: _Optional[_Union[_suggestion_pb2.Suggestion.Status, str]] = ..., comment: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., contribution: _Optional[int] = ...) -> None: ...
 
 class ReviewSuggestionOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class ResubmitSuggestionInput(_message.Message):
-    __slots__ = ("suggestion_id",)
+    __slots__ = ("problem_id", "suggestion_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SUGGESTION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     suggestion_id: str
-    def __init__(self, suggestion_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., suggestion_id: _Optional[str] = ...) -> None: ...
 
 class ResubmitSuggestionOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListSuggestionsInput(_message.Message):
-    __slots__ = ("offset", "size", "filters")
+    __slots__ = ("problem_id", "offset", "size", "filters")
     class Filter(_message.Message):
         __slots__ = ("id", "member_id", "status")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -93,13 +103,15 @@ class ListSuggestionsInput(_message.Message):
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     offset: int
     size: int
     filters: ListSuggestionsInput.Filter
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSuggestionsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSuggestionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListSuggestionsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -110,10 +122,12 @@ class ListSuggestionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_suggestion_pb2.Suggestion, _Mapping]]] = ...) -> None: ...
 
 class DescribeSuggestionInput(_message.Message):
-    __slots__ = ("suggestion_id",)
+    __slots__ = ("problem_id", "suggestion_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SUGGESTION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     suggestion_id: str
-    def __init__(self, suggestion_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., suggestion_id: _Optional[str] = ...) -> None: ...
 
 class DescribeSuggestionOutput(_message.Message):
     __slots__ = ("suggestion",)

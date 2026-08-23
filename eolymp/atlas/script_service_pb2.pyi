@@ -25,10 +25,12 @@ class ScriptChangedEvent(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., after: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class CreateScriptInput(_message.Message):
-    __slots__ = ("script",)
+    __slots__ = ("problem_id", "script")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     script: _script_pb2.Script
-    def __init__(self, script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class CreateScriptOutput(_message.Message):
     __slots__ = ("script_id",)
@@ -37,38 +39,44 @@ class CreateScriptOutput(_message.Message):
     def __init__(self, script_id: _Optional[str] = ...) -> None: ...
 
 class UpdateScriptInput(_message.Message):
-    __slots__ = ("patch", "script_id", "script")
+    __slots__ = ("patch", "problem_id", "script_id", "script")
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_FIELD_NUMBER: _ClassVar[int]
     patch: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Patch.Field]
+    problem_id: str
     script_id: str
     script: _script_pb2.Script
-    def __init__(self, patch: _Optional[_Iterable[_Union[_script_pb2.Script.Patch.Field, str]]] = ..., script_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_script_pb2.Script.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., script_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class UpdateScriptOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteScriptInput(_message.Message):
-    __slots__ = ("script_id",)
+    __slots__ = ("problem_id", "script_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     script_id: str
-    def __init__(self, script_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., script_id: _Optional[str] = ...) -> None: ...
 
 class DeleteScriptOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeScriptInput(_message.Message):
-    __slots__ = ("script_id", "version", "extra")
+    __slots__ = ("problem_id", "script_id", "version", "extra")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     script_id: str
     version: int
     extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra.Field]
-    def __init__(self, script_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., script_id: _Optional[str] = ..., version: _Optional[int] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeScriptOutput(_message.Message):
     __slots__ = ("script",)
@@ -77,7 +85,7 @@ class DescribeScriptOutput(_message.Message):
     def __init__(self, script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
 
 class ListScriptsInput(_message.Message):
-    __slots__ = ("version", "offset", "size", "search", "filters", "sort", "order", "extra")
+    __slots__ = ("problem_id", "version", "offset", "size", "search", "filters", "sort", "order", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NAME: _ClassVar[ListScriptsInput.Sortable]
@@ -91,6 +99,7 @@ class ListScriptsInput(_message.Message):
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -99,6 +108,7 @@ class ListScriptsInput(_message.Message):
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     version: int
     offset: int
     size: int
@@ -107,7 +117,7 @@ class ListScriptsInput(_message.Message):
     sort: ListScriptsInput.Sortable
     order: _direction_pb2.Direction
     extra: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Extra.Field]
-    def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListScriptsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListScriptsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListScriptsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListScriptsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_script_pb2.Script.Extra.Field, str]]] = ...) -> None: ...
 
 class ListScriptsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -118,10 +128,12 @@ class ListScriptsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...
 
 class ExecuteStressCheckInput(_message.Message):
-    __slots__ = ("script_name",)
+    __slots__ = ("problem_id", "script_name")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     script_name: str
-    def __init__(self, script_name: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., script_name: _Optional[str] = ...) -> None: ...
 
 class ExecuteStressCheckOutput(_message.Message):
     __slots__ = ()

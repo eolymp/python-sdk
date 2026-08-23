@@ -15,7 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListSolutionsInput(_message.Message):
-    __slots__ = ("version", "offset", "size", "search", "filters", "sort", "order")
+    __slots__ = ("problem_id", "version", "offset", "size", "search", "filters", "sort", "order")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NAME: _ClassVar[ListSolutionsInput.Sortable]
@@ -33,6 +33,7 @@ class ListSolutionsInput(_message.Message):
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -40,6 +41,7 @@ class ListSolutionsInput(_message.Message):
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     version: int
     offset: int
     size: int
@@ -47,7 +49,7 @@ class ListSolutionsInput(_message.Message):
     filters: ListSolutionsInput.Filter
     sort: ListSolutionsInput.Sortable
     order: _direction_pb2.Direction
-    def __init__(self, version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListSolutionsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListSolutionsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListSolutionsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListSolutionsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListSolutionsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -58,7 +60,7 @@ class ListSolutionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_solution_pb2.Solution, _Mapping]]] = ...) -> None: ...
 
 class CheckSolutionsInput(_message.Message):
-    __slots__ = ("filters",)
+    __slots__ = ("problem_id", "filters")
     class Filter(_message.Message):
         __slots__ = ("id", "type", "name", "runtime")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -70,21 +72,25 @@ class CheckSolutionsInput(_message.Message):
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         runtime: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     filters: CheckSolutionsInput.Filter
-    def __init__(self, filters: _Optional[_Union[CheckSolutionsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., filters: _Optional[_Union[CheckSolutionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class CheckSolutionsOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeSolutionInput(_message.Message):
-    __slots__ = ("solution_id", "version")
+    __slots__ = ("problem_id", "solution_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     solution_id: str
     version: int
-    def __init__(self, solution_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., solution_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeSolutionOutput(_message.Message):
     __slots__ = ("solution",)
@@ -93,10 +99,12 @@ class DescribeSolutionOutput(_message.Message):
     def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class CreateSolutionInput(_message.Message):
-    __slots__ = ("solution",)
+    __slots__ = ("problem_id", "solution")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     solution: _solution_pb2.Solution
-    def __init__(self, solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class CreateSolutionOutput(_message.Message):
     __slots__ = ("solution_id",)
@@ -105,24 +113,28 @@ class CreateSolutionOutput(_message.Message):
     def __init__(self, solution_id: _Optional[str] = ...) -> None: ...
 
 class UpdateSolutionInput(_message.Message):
-    __slots__ = ("patch", "solution_id", "solution")
+    __slots__ = ("patch", "problem_id", "solution_id", "solution")
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_FIELD_NUMBER: _ClassVar[int]
     patch: _containers.RepeatedScalarFieldContainer[_solution_pb2.Solution.Patch.Field]
+    problem_id: str
     solution_id: str
     solution: _solution_pb2.Solution
-    def __init__(self, patch: _Optional[_Iterable[_Union[_solution_pb2.Solution.Patch.Field, str]]] = ..., solution_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[_solution_pb2.Solution.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., solution_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
 
 class UpdateSolutionOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteSolutionInput(_message.Message):
-    __slots__ = ("solution_id",)
+    __slots__ = ("problem_id", "solution_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     solution_id: str
-    def __init__(self, solution_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., solution_id: _Optional[str] = ...) -> None: ...
 
 class DeleteSolutionOutput(_message.Message):
     __slots__ = ()

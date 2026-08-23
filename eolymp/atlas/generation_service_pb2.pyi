@@ -13,10 +13,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeGenerationInput(_message.Message):
-    __slots__ = ("generation_id",)
+    __slots__ = ("problem_id", "generation_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     GENERATION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     generation_id: str
-    def __init__(self, generation_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., generation_id: _Optional[str] = ...) -> None: ...
 
 class DescribeGenerationOutput(_message.Message):
     __slots__ = ("generation",)
@@ -25,12 +27,14 @@ class DescribeGenerationOutput(_message.Message):
     def __init__(self, generation: _Optional[_Union[_generation_pb2.Generation, _Mapping]] = ...) -> None: ...
 
 class ListGenerationsInput(_message.Message):
-    __slots__ = ("offset", "size")
+    __slots__ = ("problem_id", "offset", "size")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     offset: int
     size: int
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class ListGenerationsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -41,10 +45,12 @@ class ListGenerationsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_generation_pb2.Generation, _Mapping]]] = ...) -> None: ...
 
 class WatchGenerationInput(_message.Message):
-    __slots__ = ("generation_id",)
+    __slots__ = ("problem_id", "generation_id")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     GENERATION_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     generation_id: str
-    def __init__(self, generation_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., generation_id: _Optional[str] = ...) -> None: ...
 
 class WatchGenerationOutput(_message.Message):
     __slots__ = ("generation", "event")
