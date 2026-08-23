@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Log(_message.Message):
-    __slots__ = ("id", "timestamp", "actor", "ip_address", "user_agent", "method", "scope", "mutation", "payload")
+    __slots__ = ("timestamp", "actor", "ip_address", "user_agent", "method", "scope", "mutation", "payload")
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -39,7 +39,6 @@ class Log(_message.Message):
         id: str
         subject: str
         def __init__(self, type: _Optional[_Union[Log.Actor.Type, str]] = ..., id: _Optional[str] = ..., subject: _Optional[str] = ...) -> None: ...
-    ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     IP_ADDRESS_FIELD_NUMBER: _ClassVar[int]
@@ -48,7 +47,6 @@ class Log(_message.Message):
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     MUTATION_FIELD_NUMBER: _ClassVar[int]
     PAYLOAD_FIELD_NUMBER: _ClassVar[int]
-    id: str
     timestamp: _timestamp_pb2.Timestamp
     actor: Log.Actor
     ip_address: str
@@ -57,4 +55,4 @@ class Log(_message.Message):
     scope: str
     mutation: bool
     payload: str
-    def __init__(self, id: _Optional[str] = ..., timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., actor: _Optional[_Union[Log.Actor, _Mapping]] = ..., ip_address: _Optional[str] = ..., user_agent: _Optional[str] = ..., method: _Optional[str] = ..., scope: _Optional[str] = ..., mutation: _Optional[bool] = ..., payload: _Optional[str] = ...) -> None: ...
+    def __init__(self, timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., actor: _Optional[_Union[Log.Actor, _Mapping]] = ..., ip_address: _Optional[str] = ..., user_agent: _Optional[str] = ..., method: _Optional[str] = ..., scope: _Optional[str] = ..., mutation: _Optional[bool] = ..., payload: _Optional[str] = ...) -> None: ...

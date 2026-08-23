@@ -61,20 +61,6 @@ class ListLogsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_log_pb2.Log]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_log_pb2.Log, _Mapping]]] = ...) -> None: ...
 
-class DescribeLogInput(_message.Message):
-    __slots__ = ("log_id", "extra")
-    LOG_ID_FIELD_NUMBER: _ClassVar[int]
-    EXTRA_FIELD_NUMBER: _ClassVar[int]
-    log_id: str
-    extra: _containers.RepeatedScalarFieldContainer[_log_pb2.Log.Extra.Field]
-    def __init__(self, log_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_log_pb2.Log.Extra.Field, str]]] = ...) -> None: ...
-
-class DescribeLogOutput(_message.Message):
-    __slots__ = ("log",)
-    LOG_FIELD_NUMBER: _ClassVar[int]
-    log: _log_pb2.Log
-    def __init__(self, log: _Optional[_Union[_log_pb2.Log, _Mapping]] = ...) -> None: ...
-
 class ExportLogsInput(_message.Message):
     __slots__ = ("filters", "sort", "order", "extra")
     class Filter(_message.Message):

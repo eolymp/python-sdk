@@ -25,20 +25,6 @@ class LogServiceClient:
             **kwargs,
         )
 
-    def DescribeLog(self, request, **kwargs):
-        path = "/audit/logs/"+urllib.parse.quote(request.log_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.log_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.audit.DescribeLogOutput"),
-            **kwargs,
-        )
-
     def ExportLogs(self, request, **kwargs):
         path = "/audit/logs:export"
 
