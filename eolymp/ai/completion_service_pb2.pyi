@@ -1,6 +1,7 @@
 from eolymp.ai import finish_reason_pb2 as _finish_reason_pb2
 from eolymp.ai import message_pb2 as _message_pb2
 from eolymp.ai import usage_pb2 as _usage_pb2
+from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2

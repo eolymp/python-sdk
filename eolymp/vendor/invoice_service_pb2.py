@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
@@ -29,7 +30,7 @@ from eolymp.vendor import invoice_pb2 as eolymp_dot_vendor_dot_invoice__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/vendor/invoice_service.proto\x12\reolymp.vendor\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/vendor/invoice.proto\x1a!eolymp/wellknown/expression.proto\"d\n\x13InvoiceChangedEvent\x12&\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\x12%\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\"\xca\x02\n\x11ListInvoicesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.vendor.ListInvoicesInput.Filter\x1a\xcd\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\x06number\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x31\n\tvendor_id\x18\x04 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"J\n\x12ListInvoicesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.vendor.Invoice\"*\n\x14\x44\x65scribeInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"@\n\x15\x44\x65scribeInvoiceOutput\x12\'\n\x07invoice\x18\x01 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\"=\n\x12\x43reateInvoiceInput\x12\'\n\x07invoice\x18\x01 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\")\n\x13\x43reateInvoiceOutput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"\x84\x01\n\x12UpdateInvoiceInput\x12\x31\n\x05patch\x18\x01 \x03(\x0e\x32\".eolymp.vendor.Invoice.Patch.Field\x12\x12\n\ninvoice_id\x18\x02 \x01(\t\x12\'\n\x07invoice\x18\x03 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\"\x15\n\x13UpdateInvoiceOutput\"(\n\x12\x44\x65leteInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteInvoiceOutput\"P\n\x1aUploadInvoiceDocumentInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\x12\x10\n\x08\x66ilename\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"3\n\x1bUploadInvoiceDocumentOutput\x12\x14\n\x0c\x64ocument_url\x18\x01 \x01(\t\":\n\x13\x41pproveInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x16\n\x14\x41pproveInvoiceOutput\"(\n\x12SubmitInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"\x15\n\x13SubmitInvoiceOutput\"9\n\x12RejectInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x15\n\x13RejectInvoiceOutput\"6\n\x0fPayInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x12\n\x10PayInvoiceOutput2\xe1\r\n\x0eInvoiceService\x12\x97\x01\n\x0cListInvoices\x12 .eolymp.vendor.ListInvoicesInput\x1a!.eolymp.vendor.ListInvoicesOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02\x12\x12\x10/vendor-invoices\x12\xad\x01\n\x0f\x44\x65scribeInvoice\x12#.eolymp.vendor.DescribeInvoiceInput\x1a$.eolymp.vendor.DescribeInvoiceOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02\x1f\x12\x1d/vendor-invoices/{invoice_id}\x12\x9b\x01\n\rCreateInvoice\x12!.eolymp.vendor.CreateInvoiceInput\x1a\".eolymp.vendor.CreateInvoiceOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x12\"\x10/vendor-invoices\x12\xa8\x01\n\rUpdateInvoice\x12!.eolymp.vendor.UpdateInvoiceInput\x1a\".eolymp.vendor.UpdateInvoiceOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x1f\x1a\x1d/vendor-invoices/{invoice_id}\x12\xa8\x01\n\rDeleteInvoice\x12!.eolymp.vendor.DeleteInvoiceInput\x1a\".eolymp.vendor.DeleteInvoiceOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x1f*\x1d/vendor-invoices/{invoice_id}\x12\xd0\x01\n\x15UploadInvoiceDocument\x12).eolymp.vendor.UploadInvoiceDocumentInput\x1a*.eolymp.vendor.UploadInvoiceDocumentOutput\"`\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02/\"&/vendor-invoices/{invoice_id}/document\x98\xe3\n\x80\x80\x80\x01\x12\xaf\x01\n\rSubmitInvoice\x12!.eolymp.vendor.SubmitInvoiceInput\x1a\".eolymp.vendor.SubmitInvoiceOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02&\"$/vendor-invoices/{invoice_id}/submit\x12\xb3\x01\n\x0e\x41pproveInvoice\x12\".eolymp.vendor.ApproveInvoiceInput\x1a#.eolymp.vendor.ApproveInvoiceOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\'\"%/vendor-invoices/{invoice_id}/approve\x12\xaf\x01\n\rRejectInvoice\x12!.eolymp.vendor.RejectInvoiceInput\x1a\".eolymp.vendor.RejectInvoiceOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02&\"$/vendor-invoices/{invoice_id}/reject\x12\xa3\x01\n\nPayInvoice\x12\x1e.eolymp.vendor.PayInvoiceInput\x1a\x1f.eolymp.vendor.PayInvoiceOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02#\"!/vendor-invoices/{invoice_id}/payB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/vendor/invoice_service.proto\x12\reolymp.vendor\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/vendor/invoice.proto\x1a!eolymp/wellknown/expression.proto\"d\n\x13InvoiceChangedEvent\x12&\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\x12%\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\"\xca\x02\n\x11ListInvoicesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.vendor.ListInvoicesInput.Filter\x1a\xcd\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\x06number\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x31\n\tvendor_id\x18\x04 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"J\n\x12ListInvoicesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.vendor.Invoice\"*\n\x14\x44\x65scribeInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"@\n\x15\x44\x65scribeInvoiceOutput\x12\'\n\x07invoice\x18\x01 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\"=\n\x12\x43reateInvoiceInput\x12\'\n\x07invoice\x18\x01 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\")\n\x13\x43reateInvoiceOutput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"\x84\x01\n\x12UpdateInvoiceInput\x12\x31\n\x05patch\x18\x01 \x03(\x0e\x32\".eolymp.vendor.Invoice.Patch.Field\x12\x12\n\ninvoice_id\x18\x02 \x01(\t\x12\'\n\x07invoice\x18\x03 \x01(\x0b\x32\x16.eolymp.vendor.Invoice\"\x15\n\x13UpdateInvoiceOutput\"(\n\x12\x44\x65leteInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteInvoiceOutput\"P\n\x1aUploadInvoiceDocumentInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\x12\x10\n\x08\x66ilename\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"3\n\x1bUploadInvoiceDocumentOutput\x12\x14\n\x0c\x64ocument_url\x18\x01 \x01(\t\":\n\x13\x41pproveInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x16\n\x14\x41pproveInvoiceOutput\"(\n\x12SubmitInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\"\x15\n\x13SubmitInvoiceOutput\"9\n\x12RejectInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x15\n\x13RejectInvoiceOutput\"6\n\x0fPayInvoiceInput\x12\x12\n\ninvoice_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x12\n\x10PayInvoiceOutput2\xb1\x0e\n\x0eInvoiceService\x12\x9f\x01\n\x0cListInvoices\x12 .eolymp.vendor.ListInvoicesInput\x1a!.eolymp.vendor.ListInvoicesOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/vendor-invoices\x12\xb5\x01\n\x0f\x44\x65scribeInvoice\x12#.eolymp.vendor.DescribeInvoiceInput\x1a$.eolymp.vendor.DescribeInvoiceOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1f\x12\x1d/vendor-invoices/{invoice_id}\x12\xa3\x01\n\rCreateInvoice\x12!.eolymp.vendor.CreateInvoiceInput\x1a\".eolymp.vendor.CreateInvoiceOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x12\"\x10/vendor-invoices\x12\xb0\x01\n\rUpdateInvoice\x12!.eolymp.vendor.UpdateInvoiceInput\x1a\".eolymp.vendor.UpdateInvoiceOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1f\x1a\x1d/vendor-invoices/{invoice_id}\x12\xb0\x01\n\rDeleteInvoice\x12!.eolymp.vendor.DeleteInvoiceInput\x1a\".eolymp.vendor.DeleteInvoiceOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1f*\x1d/vendor-invoices/{invoice_id}\x12\xd8\x01\n\x15UploadInvoiceDocument\x12).eolymp.vendor.UploadInvoiceDocumentInput\x1a*.eolymp.vendor.UploadInvoiceDocumentOutput\"h\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02/\"&/vendor-invoices/{invoice_id}/document\x98\xe3\n\x80\x80\x80\x01\x12\xb7\x01\n\rSubmitInvoice\x12!.eolymp.vendor.SubmitInvoiceInput\x1a\".eolymp.vendor.SubmitInvoiceOutput\"_\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02&\"$/vendor-invoices/{invoice_id}/submit\x12\xbb\x01\n\x0e\x41pproveInvoice\x12\".eolymp.vendor.ApproveInvoiceInput\x1a#.eolymp.vendor.ApproveInvoiceOutput\"`\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\'\"%/vendor-invoices/{invoice_id}/approve\x12\xb7\x01\n\rRejectInvoice\x12!.eolymp.vendor.RejectInvoiceInput\x1a\".eolymp.vendor.RejectInvoiceOutput\"_\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02&\"$/vendor-invoices/{invoice_id}/reject\x12\xab\x01\n\nPayInvoice\x12\x1e.eolymp.vendor.PayInvoiceInput\x1a\x1f.eolymp.vendor.PayInvoiceOutput\"\\\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02#\"!/vendor-invoices/{invoice_id}/payB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,69 +39,69 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/vendor;vendor'
   _globals['_INVOICESERVICE'].methods_by_name['ListInvoices']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['ListInvoices']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023vendor:profile:read\202\323\344\223\002\022\022\020/vendor-invoices'
+  _globals['_INVOICESERVICE'].methods_by_name['ListInvoices']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023vendor:profile:read\242\343\n\004\250\343\n\001\202\323\344\223\002\022\022\020/vendor-invoices'
   _globals['_INVOICESERVICE'].methods_by_name['DescribeInvoice']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['DescribeInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023vendor:profile:read\202\323\344\223\002\037\022\035/vendor-invoices/{invoice_id}'
+  _globals['_INVOICESERVICE'].methods_by_name['DescribeInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023vendor:profile:read\242\343\n\004\250\343\n\001\202\323\344\223\002\037\022\035/vendor-invoices/{invoice_id}'
   _globals['_INVOICESERVICE'].methods_by_name['CreateInvoice']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['CreateInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002\022\"\020/vendor-invoices'
+  _globals['_INVOICESERVICE'].methods_by_name['CreateInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\002\202\323\344\223\002\022\"\020/vendor-invoices'
   _globals['_INVOICESERVICE'].methods_by_name['UpdateInvoice']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['UpdateInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002\037\032\035/vendor-invoices/{invoice_id}'
+  _globals['_INVOICESERVICE'].methods_by_name['UpdateInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\002\202\323\344\223\002\037\032\035/vendor-invoices/{invoice_id}'
   _globals['_INVOICESERVICE'].methods_by_name['DeleteInvoice']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['DeleteInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002\037*\035/vendor-invoices/{invoice_id}'
+  _globals['_INVOICESERVICE'].methods_by_name['DeleteInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\003\202\323\344\223\002\037*\035/vendor-invoices/{invoice_id}'
   _globals['_INVOICESERVICE'].methods_by_name['UploadInvoiceDocument']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['UploadInvoiceDocument']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002/\"&/vendor-invoices/{invoice_id}/document\230\343\n\200\200\200\001'
+  _globals['_INVOICESERVICE'].methods_by_name['UploadInvoiceDocument']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\002\202\323\344\223\002/\"&/vendor-invoices/{invoice_id}/document\230\343\n\200\200\200\001'
   _globals['_INVOICESERVICE'].methods_by_name['SubmitInvoice']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['SubmitInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002&\"$/vendor-invoices/{invoice_id}/submit'
+  _globals['_INVOICESERVICE'].methods_by_name['SubmitInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\002\202\323\344\223\002&\"$/vendor-invoices/{invoice_id}/submit'
   _globals['_INVOICESERVICE'].methods_by_name['ApproveInvoice']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['ApproveInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002\'\"%/vendor-invoices/{invoice_id}/approve'
+  _globals['_INVOICESERVICE'].methods_by_name['ApproveInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\002\202\323\344\223\002\'\"%/vendor-invoices/{invoice_id}/approve'
   _globals['_INVOICESERVICE'].methods_by_name['RejectInvoice']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['RejectInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002&\"$/vendor-invoices/{invoice_id}/reject'
+  _globals['_INVOICESERVICE'].methods_by_name['RejectInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\002\202\323\344\223\002&\"$/vendor-invoices/{invoice_id}/reject'
   _globals['_INVOICESERVICE'].methods_by_name['PayInvoice']._loaded_options = None
-  _globals['_INVOICESERVICE'].methods_by_name['PayInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002#\"!/vendor-invoices/{invoice_id}/pay'
-  _globals['_INVOICECHANGEDEVENT']._serialized_start=217
-  _globals['_INVOICECHANGEDEVENT']._serialized_end=317
-  _globals['_LISTINVOICESINPUT']._serialized_start=320
-  _globals['_LISTINVOICESINPUT']._serialized_end=650
-  _globals['_LISTINVOICESINPUT_FILTER']._serialized_start=445
-  _globals['_LISTINVOICESINPUT_FILTER']._serialized_end=650
-  _globals['_LISTINVOICESOUTPUT']._serialized_start=652
-  _globals['_LISTINVOICESOUTPUT']._serialized_end=726
-  _globals['_DESCRIBEINVOICEINPUT']._serialized_start=728
-  _globals['_DESCRIBEINVOICEINPUT']._serialized_end=770
-  _globals['_DESCRIBEINVOICEOUTPUT']._serialized_start=772
-  _globals['_DESCRIBEINVOICEOUTPUT']._serialized_end=836
-  _globals['_CREATEINVOICEINPUT']._serialized_start=838
-  _globals['_CREATEINVOICEINPUT']._serialized_end=899
-  _globals['_CREATEINVOICEOUTPUT']._serialized_start=901
-  _globals['_CREATEINVOICEOUTPUT']._serialized_end=942
-  _globals['_UPDATEINVOICEINPUT']._serialized_start=945
-  _globals['_UPDATEINVOICEINPUT']._serialized_end=1077
-  _globals['_UPDATEINVOICEOUTPUT']._serialized_start=1079
-  _globals['_UPDATEINVOICEOUTPUT']._serialized_end=1100
-  _globals['_DELETEINVOICEINPUT']._serialized_start=1102
-  _globals['_DELETEINVOICEINPUT']._serialized_end=1142
-  _globals['_DELETEINVOICEOUTPUT']._serialized_start=1144
-  _globals['_DELETEINVOICEOUTPUT']._serialized_end=1165
-  _globals['_UPLOADINVOICEDOCUMENTINPUT']._serialized_start=1167
-  _globals['_UPLOADINVOICEDOCUMENTINPUT']._serialized_end=1247
-  _globals['_UPLOADINVOICEDOCUMENTOUTPUT']._serialized_start=1249
-  _globals['_UPLOADINVOICEDOCUMENTOUTPUT']._serialized_end=1300
-  _globals['_APPROVEINVOICEINPUT']._serialized_start=1302
-  _globals['_APPROVEINVOICEINPUT']._serialized_end=1360
-  _globals['_APPROVEINVOICEOUTPUT']._serialized_start=1362
-  _globals['_APPROVEINVOICEOUTPUT']._serialized_end=1384
-  _globals['_SUBMITINVOICEINPUT']._serialized_start=1386
-  _globals['_SUBMITINVOICEINPUT']._serialized_end=1426
-  _globals['_SUBMITINVOICEOUTPUT']._serialized_start=1428
-  _globals['_SUBMITINVOICEOUTPUT']._serialized_end=1449
-  _globals['_REJECTINVOICEINPUT']._serialized_start=1451
-  _globals['_REJECTINVOICEINPUT']._serialized_end=1508
-  _globals['_REJECTINVOICEOUTPUT']._serialized_start=1510
-  _globals['_REJECTINVOICEOUTPUT']._serialized_end=1531
-  _globals['_PAYINVOICEINPUT']._serialized_start=1533
-  _globals['_PAYINVOICEINPUT']._serialized_end=1587
-  _globals['_PAYINVOICEOUTPUT']._serialized_start=1589
-  _globals['_PAYINVOICEOUTPUT']._serialized_end=1607
-  _globals['_INVOICESERVICE']._serialized_start=1610
-  _globals['_INVOICESERVICE']._serialized_end=3371
+  _globals['_INVOICESERVICE'].methods_by_name['PayInvoice']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\002\202\323\344\223\002#\"!/vendor-invoices/{invoice_id}/pay'
+  _globals['_INVOICECHANGEDEVENT']._serialized_start=249
+  _globals['_INVOICECHANGEDEVENT']._serialized_end=349
+  _globals['_LISTINVOICESINPUT']._serialized_start=352
+  _globals['_LISTINVOICESINPUT']._serialized_end=682
+  _globals['_LISTINVOICESINPUT_FILTER']._serialized_start=477
+  _globals['_LISTINVOICESINPUT_FILTER']._serialized_end=682
+  _globals['_LISTINVOICESOUTPUT']._serialized_start=684
+  _globals['_LISTINVOICESOUTPUT']._serialized_end=758
+  _globals['_DESCRIBEINVOICEINPUT']._serialized_start=760
+  _globals['_DESCRIBEINVOICEINPUT']._serialized_end=802
+  _globals['_DESCRIBEINVOICEOUTPUT']._serialized_start=804
+  _globals['_DESCRIBEINVOICEOUTPUT']._serialized_end=868
+  _globals['_CREATEINVOICEINPUT']._serialized_start=870
+  _globals['_CREATEINVOICEINPUT']._serialized_end=931
+  _globals['_CREATEINVOICEOUTPUT']._serialized_start=933
+  _globals['_CREATEINVOICEOUTPUT']._serialized_end=974
+  _globals['_UPDATEINVOICEINPUT']._serialized_start=977
+  _globals['_UPDATEINVOICEINPUT']._serialized_end=1109
+  _globals['_UPDATEINVOICEOUTPUT']._serialized_start=1111
+  _globals['_UPDATEINVOICEOUTPUT']._serialized_end=1132
+  _globals['_DELETEINVOICEINPUT']._serialized_start=1134
+  _globals['_DELETEINVOICEINPUT']._serialized_end=1174
+  _globals['_DELETEINVOICEOUTPUT']._serialized_start=1176
+  _globals['_DELETEINVOICEOUTPUT']._serialized_end=1197
+  _globals['_UPLOADINVOICEDOCUMENTINPUT']._serialized_start=1199
+  _globals['_UPLOADINVOICEDOCUMENTINPUT']._serialized_end=1279
+  _globals['_UPLOADINVOICEDOCUMENTOUTPUT']._serialized_start=1281
+  _globals['_UPLOADINVOICEDOCUMENTOUTPUT']._serialized_end=1332
+  _globals['_APPROVEINVOICEINPUT']._serialized_start=1334
+  _globals['_APPROVEINVOICEINPUT']._serialized_end=1392
+  _globals['_APPROVEINVOICEOUTPUT']._serialized_start=1394
+  _globals['_APPROVEINVOICEOUTPUT']._serialized_end=1416
+  _globals['_SUBMITINVOICEINPUT']._serialized_start=1418
+  _globals['_SUBMITINVOICEINPUT']._serialized_end=1458
+  _globals['_SUBMITINVOICEOUTPUT']._serialized_start=1460
+  _globals['_SUBMITINVOICEOUTPUT']._serialized_end=1481
+  _globals['_REJECTINVOICEINPUT']._serialized_start=1483
+  _globals['_REJECTINVOICEINPUT']._serialized_end=1540
+  _globals['_REJECTINVOICEOUTPUT']._serialized_start=1542
+  _globals['_REJECTINVOICEOUTPUT']._serialized_end=1563
+  _globals['_PAYINVOICEINPUT']._serialized_start=1565
+  _globals['_PAYINVOICEINPUT']._serialized_end=1619
+  _globals['_PAYINVOICEOUTPUT']._serialized_start=1621
+  _globals['_PAYINVOICEOUTPUT']._serialized_end=1639
+  _globals['_INVOICESERVICE']._serialized_start=1642
+  _globals['_INVOICESERVICE']._serialized_end=3483
 # @@protoc_insertion_point(module_scope)

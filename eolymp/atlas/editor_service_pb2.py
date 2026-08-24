@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -32,7 +33,7 @@ from eolymp.atlas import testing_test_pb2 as eolymp_dot_atlas_dot_testing__test_
 from eolymp.runtime import runtime_pb2 as eolymp_dot_runtime_dot_runtime__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/editor_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x1d\x65olymp/atlas/submission.proto\x1a\x1f\x65olymp/atlas/testing_test.proto\x1a\x1c\x65olymp/runtime/runtime.proto\"\xa7\x03\n\x06\x45\x64itor\x12)\n\x05state\x18\x01 \x01(\x0b\x32\x1a.eolymp.atlas.Editor.State\x12.\n\x08\x66\x65\x61tures\x18\n \x03(\x0e\x32\x1c.eolymp.atlas.Editor.Feature\x12)\n\x08runtimes\x18\x0b \x03(\x0b\x32\x17.eolymp.runtime.Runtime\x12(\n\x04type\x18\r \x01(\x0e\x32\x1a.eolymp.atlas.Problem.Type\x1a\x7f\n\x05State\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\x12\x31\n\x06output\x18\x0b \x01(\x0b\x32\x1f.eolymp.atlas.Submission.OutputH\x00\x42\t\n\x07payload\"l\n\x07\x46\x65\x61ture\x12\x13\n\x0fUNKNOWN_FEATURE\x10\x00\x12\x0e\n\nPRINT_CODE\x10\x01\x12\x0c\n\x08RUN_CODE\x10\x02\x12\x0f\n\x0bUPLOAD_CODE\x10\x03\x12\r\n\tEDIT_CODE\x10\x04\x12\x0e\n\nTRACE_CODE\x10\x05\")\n\x13\x44\x65scribeEditorInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"<\n\x14\x44\x65scribeEditorOutput\x12$\n\x06\x65\x64itor\x18\x01 \x01(\x0b\x32\x14.eolymp.atlas.Editor\".\n\x18\x44\x65scribeEditorStateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"\xc3\x01\n\x19\x44\x65scribeEditorStateOutput\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\x12\x31\n\x06output\x18\x05 \x01(\x0b\x32\x1f.eolymp.atlas.Submission.OutputH\x00\x12.\n\x08\x66\x65\x61tures\x18\n \x03(\x0e\x32\x1c.eolymp.atlas.Editor.FeatureB\t\n\x07payload\"\xa4\x01\n\x16UpdateEditorStateInput\x12\x12\n\nproblem_id\x18\x04 \x01(\t\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\x12\x31\n\x06output\x18\x05 \x01(\x0b\x32\x1f.eolymp.atlas.Submission.OutputH\x00\x42\t\n\x07payload\"6\n\x0fListInputsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"D\n\x10ListInputsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.atlas.Test\"\x19\n\x17UpdateEditorStateOutput\"P\n\x14PrintEditorCodeInput\x12\x12\n\nproblem_id\x18\x03 \x01(\t\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\"\x17\n\x15PrintEditorCodeOutput2\xdc\x06\n\rEditorService\x12\x94\x01\n\x0e\x44\x65scribeEditor\x12!.eolymp.atlas.DescribeEditorInput\x1a\".eolymp.atlas.DescribeEditorOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\t\x12\x07/editor\x12\xa9\x01\n\x13\x44\x65scribeEditorState\x12&.eolymp.atlas.DescribeEditorStateInput\x1a\'.eolymp.atlas.DescribeEditorStateOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\x0f\x12\r/editor/state\x12\xa4\x01\n\x11UpdateEditorState\x12$.eolymp.atlas.UpdateEditorStateInput\x1a%.eolymp.atlas.UpdateEditorStateOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\x82\xd3\xe4\x93\x02\x0f\"\r/editor/state\x12\x88\x01\n\nListInputs\x12\x1d.eolymp.atlas.ListInputsInput\x1a\x1e.eolymp.atlas.ListInputsOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02\t\x12\x07/inputs\x12\x9e\x01\n\x0fPrintEditorCode\x12\".eolymp.atlas.PrintEditorCodeInput\x1a#.eolymp.atlas.PrintEditorCodeOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x02\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\x82\xd3\xe4\x93\x02\x0f\"\r/editor/print\x1a\x35\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.Problem\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/editor_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x1d\x65olymp/atlas/submission.proto\x1a\x1f\x65olymp/atlas/testing_test.proto\x1a\x1c\x65olymp/runtime/runtime.proto\"\xa7\x03\n\x06\x45\x64itor\x12)\n\x05state\x18\x01 \x01(\x0b\x32\x1a.eolymp.atlas.Editor.State\x12.\n\x08\x66\x65\x61tures\x18\n \x03(\x0e\x32\x1c.eolymp.atlas.Editor.Feature\x12)\n\x08runtimes\x18\x0b \x03(\x0b\x32\x17.eolymp.runtime.Runtime\x12(\n\x04type\x18\r \x01(\x0e\x32\x1a.eolymp.atlas.Problem.Type\x1a\x7f\n\x05State\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\x12\x31\n\x06output\x18\x0b \x01(\x0b\x32\x1f.eolymp.atlas.Submission.OutputH\x00\x42\t\n\x07payload\"l\n\x07\x46\x65\x61ture\x12\x13\n\x0fUNKNOWN_FEATURE\x10\x00\x12\x0e\n\nPRINT_CODE\x10\x01\x12\x0c\n\x08RUN_CODE\x10\x02\x12\x0f\n\x0bUPLOAD_CODE\x10\x03\x12\r\n\tEDIT_CODE\x10\x04\x12\x0e\n\nTRACE_CODE\x10\x05\")\n\x13\x44\x65scribeEditorInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"<\n\x14\x44\x65scribeEditorOutput\x12$\n\x06\x65\x64itor\x18\x01 \x01(\x0b\x32\x14.eolymp.atlas.Editor\".\n\x18\x44\x65scribeEditorStateInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"\xc3\x01\n\x19\x44\x65scribeEditorStateOutput\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\x12\x31\n\x06output\x18\x05 \x01(\x0b\x32\x1f.eolymp.atlas.Submission.OutputH\x00\x12.\n\x08\x66\x65\x61tures\x18\n \x03(\x0e\x32\x1c.eolymp.atlas.Editor.FeatureB\t\n\x07payload\"\xa4\x01\n\x16UpdateEditorStateInput\x12\x12\n\nproblem_id\x18\x04 \x01(\t\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\x12\x12\n\ninput_data\x18\x03 \x01(\t\x12\x31\n\x06output\x18\x05 \x01(\x0b\x32\x1f.eolymp.atlas.Submission.OutputH\x00\x42\t\n\x07payload\"6\n\x0fListInputsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"D\n\x10ListInputsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.atlas.Test\"\x19\n\x17UpdateEditorStateOutput\"P\n\x14PrintEditorCodeInput\x12\x12\n\nproblem_id\x18\x03 \x01(\t\x12\x0f\n\x07runtime\x18\x01 \x01(\t\x12\x13\n\x0bsource_code\x18\x02 \x01(\t\"\x17\n\x15PrintEditorCodeOutput2\x84\x07\n\rEditorService\x12\x9c\x01\n\x0e\x44\x65scribeEditor\x12!.eolymp.atlas.DescribeEditorInput\x1a\".eolymp.atlas.DescribeEditorOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\t\x12\x07/editor\x12\xb1\x01\n\x13\x44\x65scribeEditorState\x12&.eolymp.atlas.DescribeEditorStateInput\x1a\'.eolymp.atlas.DescribeEditorStateOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0f\x12\r/editor/state\x12\xac\x01\n\x11UpdateEditorState\x12$.eolymp.atlas.UpdateEditorStateInput\x1a%.eolymp.atlas.UpdateEditorStateOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x0f\"\r/editor/state\x12\x90\x01\n\nListInputs\x12\x1d.eolymp.atlas.ListInputsInput\x1a\x1e.eolymp.atlas.ListInputsOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\t\x12\x07/inputs\x12\xa6\x01\n\x0fPrintEditorCode\x12\".eolymp.atlas.PrintEditorCodeInput\x1a#.eolymp.atlas.PrintEditorCodeOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x02\x82\xe3\n\x1a\x8a\xe3\n\x16\x61tlas:submission:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x0f\"\r/editor/print\x1a\x35\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.Problem\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,41 +44,41 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EDITORSERVICE']._loaded_options = None
   _globals['_EDITORSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.atlas.Problem\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_EDITORSERVICE'].methods_by_name['DescribeEditor']._loaded_options = None
-  _globals['_EDITORSERVICE'].methods_by_name['DescribeEditor']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025atlas:submission:read\202\323\344\223\002\t\022\007/editor'
+  _globals['_EDITORSERVICE'].methods_by_name['DescribeEditor']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025atlas:submission:read\242\343\n\004\250\343\n\001\202\323\344\223\002\t\022\007/editor'
   _globals['_EDITORSERVICE'].methods_by_name['DescribeEditorState']._loaded_options = None
-  _globals['_EDITORSERVICE'].methods_by_name['DescribeEditorState']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\n\202\343\n\031\212\343\n\025atlas:submission:read\202\323\344\223\002\017\022\r/editor/state'
+  _globals['_EDITORSERVICE'].methods_by_name['DescribeEditorState']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\n\202\343\n\031\212\343\n\025atlas:submission:read\242\343\n\004\250\343\n\001\202\323\344\223\002\017\022\r/editor/state'
   _globals['_EDITORSERVICE'].methods_by_name['UpdateEditorState']._loaded_options = None
-  _globals['_EDITORSERVICE'].methods_by_name['UpdateEditorState']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\032\212\343\n\026atlas:submission:write\202\323\344\223\002\017\"\r/editor/state'
+  _globals['_EDITORSERVICE'].methods_by_name['UpdateEditorState']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\032\212\343\n\026atlas:submission:write\242\343\n\004\250\343\n\002\202\323\344\223\002\017\"\r/editor/state'
   _globals['_EDITORSERVICE'].methods_by_name['ListInputs']._loaded_options = None
-  _globals['_EDITORSERVICE'].methods_by_name['ListInputs']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025atlas:submission:read\202\323\344\223\002\t\022\007/inputs'
+  _globals['_EDITORSERVICE'].methods_by_name['ListInputs']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025atlas:submission:read\242\343\n\004\250\343\n\001\202\323\344\223\002\t\022\007/inputs'
   _globals['_EDITORSERVICE'].methods_by_name['PrintEditorCode']._loaded_options = None
-  _globals['_EDITORSERVICE'].methods_by_name['PrintEditorCode']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\002\202\343\n\032\212\343\n\026atlas:submission:write\202\323\344\223\002\017\"\r/editor/print'
-  _globals['_EDITOR']._serialized_start=309
-  _globals['_EDITOR']._serialized_end=732
-  _globals['_EDITOR_STATE']._serialized_start=495
-  _globals['_EDITOR_STATE']._serialized_end=622
-  _globals['_EDITOR_FEATURE']._serialized_start=624
-  _globals['_EDITOR_FEATURE']._serialized_end=732
-  _globals['_DESCRIBEEDITORINPUT']._serialized_start=734
-  _globals['_DESCRIBEEDITORINPUT']._serialized_end=775
-  _globals['_DESCRIBEEDITOROUTPUT']._serialized_start=777
-  _globals['_DESCRIBEEDITOROUTPUT']._serialized_end=837
-  _globals['_DESCRIBEEDITORSTATEINPUT']._serialized_start=839
-  _globals['_DESCRIBEEDITORSTATEINPUT']._serialized_end=885
-  _globals['_DESCRIBEEDITORSTATEOUTPUT']._serialized_start=888
-  _globals['_DESCRIBEEDITORSTATEOUTPUT']._serialized_end=1083
-  _globals['_UPDATEEDITORSTATEINPUT']._serialized_start=1086
-  _globals['_UPDATEEDITORSTATEINPUT']._serialized_end=1250
-  _globals['_LISTINPUTSINPUT']._serialized_start=1252
-  _globals['_LISTINPUTSINPUT']._serialized_end=1306
-  _globals['_LISTINPUTSOUTPUT']._serialized_start=1308
-  _globals['_LISTINPUTSOUTPUT']._serialized_end=1376
-  _globals['_UPDATEEDITORSTATEOUTPUT']._serialized_start=1378
-  _globals['_UPDATEEDITORSTATEOUTPUT']._serialized_end=1403
-  _globals['_PRINTEDITORCODEINPUT']._serialized_start=1405
-  _globals['_PRINTEDITORCODEINPUT']._serialized_end=1485
-  _globals['_PRINTEDITORCODEOUTPUT']._serialized_start=1487
-  _globals['_PRINTEDITORCODEOUTPUT']._serialized_end=1510
-  _globals['_EDITORSERVICE']._serialized_start=1513
-  _globals['_EDITORSERVICE']._serialized_end=2373
+  _globals['_EDITORSERVICE'].methods_by_name['PrintEditorCode']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\002\202\343\n\032\212\343\n\026atlas:submission:write\242\343\n\004\250\343\n\002\202\323\344\223\002\017\"\r/editor/print'
+  _globals['_EDITOR']._serialized_start=341
+  _globals['_EDITOR']._serialized_end=764
+  _globals['_EDITOR_STATE']._serialized_start=527
+  _globals['_EDITOR_STATE']._serialized_end=654
+  _globals['_EDITOR_FEATURE']._serialized_start=656
+  _globals['_EDITOR_FEATURE']._serialized_end=764
+  _globals['_DESCRIBEEDITORINPUT']._serialized_start=766
+  _globals['_DESCRIBEEDITORINPUT']._serialized_end=807
+  _globals['_DESCRIBEEDITOROUTPUT']._serialized_start=809
+  _globals['_DESCRIBEEDITOROUTPUT']._serialized_end=869
+  _globals['_DESCRIBEEDITORSTATEINPUT']._serialized_start=871
+  _globals['_DESCRIBEEDITORSTATEINPUT']._serialized_end=917
+  _globals['_DESCRIBEEDITORSTATEOUTPUT']._serialized_start=920
+  _globals['_DESCRIBEEDITORSTATEOUTPUT']._serialized_end=1115
+  _globals['_UPDATEEDITORSTATEINPUT']._serialized_start=1118
+  _globals['_UPDATEEDITORSTATEINPUT']._serialized_end=1282
+  _globals['_LISTINPUTSINPUT']._serialized_start=1284
+  _globals['_LISTINPUTSINPUT']._serialized_end=1338
+  _globals['_LISTINPUTSOUTPUT']._serialized_start=1340
+  _globals['_LISTINPUTSOUTPUT']._serialized_end=1408
+  _globals['_UPDATEEDITORSTATEOUTPUT']._serialized_start=1410
+  _globals['_UPDATEEDITORSTATEOUTPUT']._serialized_end=1435
+  _globals['_PRINTEDITORCODEINPUT']._serialized_start=1437
+  _globals['_PRINTEDITORCODEINPUT']._serialized_end=1517
+  _globals['_PRINTEDITORCODEOUTPUT']._serialized_start=1519
+  _globals['_PRINTEDITORCODEOUTPUT']._serialized_end=1542
+  _globals['_EDITORSERVICE']._serialized_start=1545
+  _globals['_EDITORSERVICE']._serialized_end=2445
 # @@protoc_insertion_point(module_scope)

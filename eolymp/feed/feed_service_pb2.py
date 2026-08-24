@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -29,7 +30,7 @@ from eolymp.feed import entry_pb2 as eolymp_dot_feed_dot_entry__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/feed/feed_service.proto\x12\x0b\x65olymp.feed\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x17\x65olymp/feed/entry.proto\x1a!eolymp/wellknown/expression.proto\"\xd3\x01\n\x10ListEntriesInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x35\n\x07\x66ilters\x18( \x01(\x0b\x32$.eolymp.feed.ListEntriesInput.Filter\x1ak\n\x06\x46ilter\x12\x31\n\tmember_id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"_\n\x11ListEntriesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.feed.Entry\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t2\xb3\x01\n\x0b\x46\x65\x65\x64Service\x12j\n\x0bListEntries\x12\x1d.eolymp.feed.ListEntriesInput\x1a\x1e.eolymp.feed.ListEntriesOutput\"\x1c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xd3\xe4\x93\x02\x07\x12\x05/feed\x1a\x38\x82\xf0\xf0\xe4\x01\x17\x65olymp.community.Member\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB+Z)github.com/eolymp/go-sdk/eolymp/feed;feedb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/feed/feed_service.proto\x12\x0b\x65olymp.feed\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x17\x65olymp/feed/entry.proto\x1a!eolymp/wellknown/expression.proto\"\xd3\x01\n\x10ListEntriesInput\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x35\n\x07\x66ilters\x18( \x01(\x0b\x32$.eolymp.feed.ListEntriesInput.Filter\x1ak\n\x06\x46ilter\x12\x31\n\tmember_id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"_\n\x11ListEntriesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.feed.Entry\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t2\xbb\x01\n\x0b\x46\x65\x65\x64Service\x12r\n\x0bListEntries\x12\x1d.eolymp.feed.ListEntriesInput\x1a\x1e.eolymp.feed.ListEntriesOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x07\x12\x05/feed\x1a\x38\x82\xf0\xf0\xe4\x01\x17\x65olymp.community.Member\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB+Z)github.com/eolymp/go-sdk/eolymp/feed;feedb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,13 +41,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FEEDSERVICE']._loaded_options = None
   _globals['_FEEDSERVICE']._serialized_options = b'\202\360\360\344\001\027eolymp.community.Member\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_FEEDSERVICE'].methods_by_name['ListEntries']._loaded_options = None
-  _globals['_FEEDSERVICE'].methods_by_name['ListEntries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\323\344\223\002\007\022\005/feed'
-  _globals['_LISTENTRIESINPUT']._serialized_start=211
-  _globals['_LISTENTRIESINPUT']._serialized_end=422
-  _globals['_LISTENTRIESINPUT_FILTER']._serialized_start=315
-  _globals['_LISTENTRIESINPUT_FILTER']._serialized_end=422
-  _globals['_LISTENTRIESOUTPUT']._serialized_start=424
-  _globals['_LISTENTRIESOUTPUT']._serialized_end=519
-  _globals['_FEEDSERVICE']._serialized_start=522
-  _globals['_FEEDSERVICE']._serialized_end=701
+  _globals['_FEEDSERVICE'].methods_by_name['ListEntries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\242\343\n\004\250\343\n\001\202\323\344\223\002\007\022\005/feed'
+  _globals['_LISTENTRIESINPUT']._serialized_start=243
+  _globals['_LISTENTRIESINPUT']._serialized_end=454
+  _globals['_LISTENTRIESINPUT_FILTER']._serialized_start=347
+  _globals['_LISTENTRIESINPUT_FILTER']._serialized_end=454
+  _globals['_LISTENTRIESOUTPUT']._serialized_start=456
+  _globals['_LISTENTRIESOUTPUT']._serialized_end=551
+  _globals['_FEEDSERVICE']._serialized_start=554
+  _globals['_FEEDSERVICE']._serialized_end=741
 # @@protoc_insertion_point(module_scope)

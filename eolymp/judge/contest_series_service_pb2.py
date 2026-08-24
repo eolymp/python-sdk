@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -29,7 +30,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.judge import contest_series_pb2 as eolymp_dot_judge_dot_contest__series__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/judge/contest_series_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/judge/contest_series.proto\"r\n\x1a\x44\x65scribeContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.ContestSeries.Extra\"J\n\x1b\x44\x65scribeContestSeriesOutput\x12+\n\x06series\x18\x01 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\"\x89\x01\n\x16ListContestSeriesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x15 \x01(\t\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.ContestSeries.Extra\"T\n\x17ListContestSeriesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.judge.ContestSeries\"G\n\x18\x43reateContestSeriesInput\x12+\n\x06series\x18\x01 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\".\n\x19\x43reateContestSeriesOutput\x12\x11\n\tseries_id\x18\x01 \x01(\t\"Z\n\x18UpdateContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\x12+\n\x06series\x18\x02 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\"\x1b\n\x19UpdateContestSeriesOutput\"-\n\x18\x44\x65leteContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\"\x1b\n\x19\x44\x65leteContestSeriesOutput2\xb2\x07\n\x14\x43ontestSeriesService\x12\xbb\x01\n\x15\x44\x65scribeContestSeries\x12(.eolymp.judge.DescribeContestSeriesInput\x1a).eolymp.judge.DescribeContestSeriesOutput\"M\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x1d\x12\x1b/contest-series/{series_id}\x12\xa2\x01\n\x11ListContestSeries\x12$.eolymp.judge.ListContestSeriesInput\x1a%.eolymp.judge.ListContestSeriesOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x11\x12\x0f/contest-series\x12\xa9\x01\n\x13\x43reateContestSeries\x12&.eolymp.judge.CreateContestSeriesInput\x1a\'.eolymp.judge.CreateContestSeriesOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x11\"\x0f/contest-series\x12\xb5\x01\n\x13UpdateContestSeries\x12&.eolymp.judge.UpdateContestSeriesInput\x1a\'.eolymp.judge.UpdateContestSeriesOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/contest-series/{series_id}\x12\xb5\x01\n\x13\x44\x65leteContestSeries\x12&.eolymp.judge.DeleteContestSeriesInput\x1a\'.eolymp.judge.DeleteContestSeriesOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1d*\x1b/contest-series/{series_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/judge/contest_series_service.proto\x12\x0c\x65olymp.judge\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/judge/contest_series.proto\"r\n\x1a\x44\x65scribeContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.ContestSeries.Extra\"J\n\x1b\x44\x65scribeContestSeriesOutput\x12+\n\x06series\x18\x01 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\"\x89\x01\n\x16ListContestSeriesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x15 \x01(\t\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.judge.ContestSeries.Extra\"T\n\x17ListContestSeriesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.judge.ContestSeries\"G\n\x18\x43reateContestSeriesInput\x12+\n\x06series\x18\x01 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\".\n\x19\x43reateContestSeriesOutput\x12\x11\n\tseries_id\x18\x01 \x01(\t\"Z\n\x18UpdateContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\x12+\n\x06series\x18\x02 \x01(\x0b\x32\x1b.eolymp.judge.ContestSeries\"\x1b\n\x19UpdateContestSeriesOutput\"-\n\x18\x44\x65leteContestSeriesInput\x12\x11\n\tseries_id\x18\x01 \x01(\t\"\x1b\n\x19\x44\x65leteContestSeriesOutput2\xda\x07\n\x14\x43ontestSeriesService\x12\xc3\x01\n\x15\x44\x65scribeContestSeries\x12(.eolymp.judge.DescribeContestSeriesInput\x1a).eolymp.judge.DescribeContestSeriesOutput\"U\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1d\x12\x1b/contest-series/{series_id}\x12\xaa\x01\n\x11ListContestSeries\x12$.eolymp.judge.ListContestSeriesInput\x1a%.eolymp.judge.ListContestSeriesOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x11\x12\x0f/contest-series\x12\xb1\x01\n\x13\x43reateContestSeries\x12&.eolymp.judge.CreateContestSeriesInput\x1a\'.eolymp.judge.CreateContestSeriesOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x11\"\x0f/contest-series\x12\xbd\x01\n\x13UpdateContestSeries\x12&.eolymp.judge.UpdateContestSeriesInput\x1a\'.eolymp.judge.UpdateContestSeriesOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/contest-series/{series_id}\x12\xbd\x01\n\x13\x44\x65leteContestSeries\x12&.eolymp.judge.DeleteContestSeriesInput\x1a\'.eolymp.judge.DeleteContestSeriesOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1d*\x1b/contest-series/{series_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,35 +41,35 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONTESTSERIESSERVICE']._loaded_options = None
   _globals['_CONTESTSERIESSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_CONTESTSERIESSERVICE'].methods_by_name['DescribeContestSeries']._loaded_options = None
-  _globals['_CONTESTSERIESSERVICE'].methods_by_name['DescribeContestSeries']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\343\n\026\212\343\n\022judge:contest:read\202\323\344\223\002\035\022\033/contest-series/{series_id}'
+  _globals['_CONTESTSERIESSERVICE'].methods_by_name['DescribeContestSeries']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\002\035\022\033/contest-series/{series_id}'
   _globals['_CONTESTSERIESSERVICE'].methods_by_name['ListContestSeries']._loaded_options = None
-  _globals['_CONTESTSERIESSERVICE'].methods_by_name['ListContestSeries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022judge:contest:read\202\323\344\223\002\021\022\017/contest-series'
+  _globals['_CONTESTSERIESSERVICE'].methods_by_name['ListContestSeries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\002\021\022\017/contest-series'
   _globals['_CONTESTSERIESSERVICE'].methods_by_name['CreateContestSeries']._loaded_options = None
-  _globals['_CONTESTSERIESSERVICE'].methods_by_name['CreateContestSeries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\021\"\017/contest-series'
+  _globals['_CONTESTSERIESSERVICE'].methods_by_name['CreateContestSeries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\242\343\n\004\250\343\n\002\202\323\344\223\002\021\"\017/contest-series'
   _globals['_CONTESTSERIESSERVICE'].methods_by_name['UpdateContestSeries']._loaded_options = None
-  _globals['_CONTESTSERIESSERVICE'].methods_by_name['UpdateContestSeries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\035\032\033/contest-series/{series_id}'
+  _globals['_CONTESTSERIESSERVICE'].methods_by_name['UpdateContestSeries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\242\343\n\004\250\343\n\002\202\323\344\223\002\035\032\033/contest-series/{series_id}'
   _globals['_CONTESTSERIESSERVICE'].methods_by_name['DeleteContestSeries']._loaded_options = None
-  _globals['_CONTESTSERIESSERVICE'].methods_by_name['DeleteContestSeries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\035*\033/contest-series/{series_id}'
-  _globals['_DESCRIBECONTESTSERIESINPUT']._serialized_start=229
-  _globals['_DESCRIBECONTESTSERIESINPUT']._serialized_end=343
-  _globals['_DESCRIBECONTESTSERIESOUTPUT']._serialized_start=345
-  _globals['_DESCRIBECONTESTSERIESOUTPUT']._serialized_end=419
-  _globals['_LISTCONTESTSERIESINPUT']._serialized_start=422
-  _globals['_LISTCONTESTSERIESINPUT']._serialized_end=559
-  _globals['_LISTCONTESTSERIESOUTPUT']._serialized_start=561
-  _globals['_LISTCONTESTSERIESOUTPUT']._serialized_end=645
-  _globals['_CREATECONTESTSERIESINPUT']._serialized_start=647
-  _globals['_CREATECONTESTSERIESINPUT']._serialized_end=718
-  _globals['_CREATECONTESTSERIESOUTPUT']._serialized_start=720
-  _globals['_CREATECONTESTSERIESOUTPUT']._serialized_end=766
-  _globals['_UPDATECONTESTSERIESINPUT']._serialized_start=768
-  _globals['_UPDATECONTESTSERIESINPUT']._serialized_end=858
-  _globals['_UPDATECONTESTSERIESOUTPUT']._serialized_start=860
-  _globals['_UPDATECONTESTSERIESOUTPUT']._serialized_end=887
-  _globals['_DELETECONTESTSERIESINPUT']._serialized_start=889
-  _globals['_DELETECONTESTSERIESINPUT']._serialized_end=934
-  _globals['_DELETECONTESTSERIESOUTPUT']._serialized_start=936
-  _globals['_DELETECONTESTSERIESOUTPUT']._serialized_end=963
-  _globals['_CONTESTSERIESSERVICE']._serialized_start=966
-  _globals['_CONTESTSERIESSERVICE']._serialized_end=1912
+  _globals['_CONTESTSERIESSERVICE'].methods_by_name['DeleteContestSeries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\242\343\n\004\250\343\n\003\202\323\344\223\002\035*\033/contest-series/{series_id}'
+  _globals['_DESCRIBECONTESTSERIESINPUT']._serialized_start=261
+  _globals['_DESCRIBECONTESTSERIESINPUT']._serialized_end=375
+  _globals['_DESCRIBECONTESTSERIESOUTPUT']._serialized_start=377
+  _globals['_DESCRIBECONTESTSERIESOUTPUT']._serialized_end=451
+  _globals['_LISTCONTESTSERIESINPUT']._serialized_start=454
+  _globals['_LISTCONTESTSERIESINPUT']._serialized_end=591
+  _globals['_LISTCONTESTSERIESOUTPUT']._serialized_start=593
+  _globals['_LISTCONTESTSERIESOUTPUT']._serialized_end=677
+  _globals['_CREATECONTESTSERIESINPUT']._serialized_start=679
+  _globals['_CREATECONTESTSERIESINPUT']._serialized_end=750
+  _globals['_CREATECONTESTSERIESOUTPUT']._serialized_start=752
+  _globals['_CREATECONTESTSERIESOUTPUT']._serialized_end=798
+  _globals['_UPDATECONTESTSERIESINPUT']._serialized_start=800
+  _globals['_UPDATECONTESTSERIESINPUT']._serialized_end=890
+  _globals['_UPDATECONTESTSERIESOUTPUT']._serialized_start=892
+  _globals['_UPDATECONTESTSERIESOUTPUT']._serialized_end=919
+  _globals['_DELETECONTESTSERIESINPUT']._serialized_start=921
+  _globals['_DELETECONTESTSERIESINPUT']._serialized_end=966
+  _globals['_DELETECONTESTSERIESOUTPUT']._serialized_start=968
+  _globals['_DELETECONTESTSERIESOUTPUT']._serialized_end=995
+  _globals['_CONTESTSERIESSERVICE']._serialized_start=998
+  _globals['_CONTESTSERIESSERVICE']._serialized_end=1984
 # @@protoc_insertion_point(module_scope)

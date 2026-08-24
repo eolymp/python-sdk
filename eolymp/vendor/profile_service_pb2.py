@@ -22,13 +22,14 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.vendor import vendor_pb2 as eolymp_dot_vendor_dot_vendor__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/vendor/profile_service.proto\x12\reolymp.vendor\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/vendor/vendor.proto\"\x16\n\x14\x44\x65scribeProfileInput\"?\n\x15\x44\x65scribeProfileOutput\x12&\n\x07profile\x18\x01 \x01(\x0b\x32\x15.eolymp.vendor.Vendor\"n\n\x12UpdateProfileInput\x12\x30\n\x05patch\x18\x01 \x03(\x0e\x32!.eolymp.vendor.Vendor.Patch.Field\x12&\n\x07profile\x18\x02 \x01(\x0b\x32\x15.eolymp.vendor.Vendor\"\x15\n\x13UpdateProfileOutput\"\x14\n\x12SubmitProfileInput\"\x15\n\x13SubmitProfileOutput2\xf3\x03\n\x0eProfileService\x12\x9f\x01\n\x0f\x44\x65scribeProfile\x12#.eolymp.vendor.DescribeProfileInput\x1a$.eolymp.vendor.DescribeProfileOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\x82\xd3\xe4\x93\x02\x11\x12\x0f/vendor-profile\x12\x9a\x01\n\rUpdateProfile\x12!.eolymp.vendor.UpdateProfileInput\x1a\".eolymp.vendor.UpdateProfileOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x11\x1a\x0f/vendor-profile\x12\xa1\x01\n\rSubmitProfile\x12!.eolymp.vendor.SubmitProfileInput\x1a\".eolymp.vendor.SubmitProfileOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\x82\xd3\xe4\x93\x02\x18\"\x16/vendor-profile:submitB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/vendor/profile_service.proto\x12\reolymp.vendor\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/vendor/vendor.proto\"\x16\n\x14\x44\x65scribeProfileInput\"?\n\x15\x44\x65scribeProfileOutput\x12&\n\x07profile\x18\x01 \x01(\x0b\x32\x15.eolymp.vendor.Vendor\"n\n\x12UpdateProfileInput\x12\x30\n\x05patch\x18\x01 \x03(\x0e\x32!.eolymp.vendor.Vendor.Patch.Field\x12&\n\x07profile\x18\x02 \x01(\x0b\x32\x15.eolymp.vendor.Vendor\"\x15\n\x13UpdateProfileOutput\"\x14\n\x12SubmitProfileInput\"\x15\n\x13SubmitProfileOutput2\x8b\x04\n\x0eProfileService\x12\xa7\x01\n\x0f\x44\x65scribeProfile\x12#.eolymp.vendor.DescribeProfileInput\x1a$.eolymp.vendor.DescribeProfileOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13vendor:profile:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x11\x12\x0f/vendor-profile\x12\xa2\x01\n\rUpdateProfile\x12!.eolymp.vendor.UpdateProfileInput\x1a\".eolymp.vendor.UpdateProfileOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x11\x1a\x0f/vendor-profile\x12\xa9\x01\n\rSubmitProfile\x12!.eolymp.vendor.SubmitProfileInput\x1a\".eolymp.vendor.SubmitProfileOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14vendor:profile:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x18\"\x16/vendor-profile:submitB/Z-github.com/eolymp/go-sdk/eolymp/vendor;vendorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,23 +38,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/vendor;vendor'
   _globals['_PROFILESERVICE'].methods_by_name['DescribeProfile']._loaded_options = None
-  _globals['_PROFILESERVICE'].methods_by_name['DescribeProfile']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023vendor:profile:read\202\323\344\223\002\021\022\017/vendor-profile'
+  _globals['_PROFILESERVICE'].methods_by_name['DescribeProfile']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023vendor:profile:read\242\343\n\004\250\343\n\001\202\323\344\223\002\021\022\017/vendor-profile'
   _globals['_PROFILESERVICE'].methods_by_name['UpdateProfile']._loaded_options = None
-  _globals['_PROFILESERVICE'].methods_by_name['UpdateProfile']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002\021\032\017/vendor-profile'
+  _globals['_PROFILESERVICE'].methods_by_name['UpdateProfile']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\002\202\323\344\223\002\021\032\017/vendor-profile'
   _globals['_PROFILESERVICE'].methods_by_name['SubmitProfile']._loaded_options = None
-  _globals['_PROFILESERVICE'].methods_by_name['SubmitProfile']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\030\212\343\n\024vendor:profile:write\202\323\344\223\002\030\"\026/vendor-profile:submit'
-  _globals['_DESCRIBEPROFILEINPUT']._serialized_start=181
-  _globals['_DESCRIBEPROFILEINPUT']._serialized_end=203
-  _globals['_DESCRIBEPROFILEOUTPUT']._serialized_start=205
-  _globals['_DESCRIBEPROFILEOUTPUT']._serialized_end=268
-  _globals['_UPDATEPROFILEINPUT']._serialized_start=270
-  _globals['_UPDATEPROFILEINPUT']._serialized_end=380
-  _globals['_UPDATEPROFILEOUTPUT']._serialized_start=382
-  _globals['_UPDATEPROFILEOUTPUT']._serialized_end=403
-  _globals['_SUBMITPROFILEINPUT']._serialized_start=405
-  _globals['_SUBMITPROFILEINPUT']._serialized_end=425
-  _globals['_SUBMITPROFILEOUTPUT']._serialized_start=427
-  _globals['_SUBMITPROFILEOUTPUT']._serialized_end=448
-  _globals['_PROFILESERVICE']._serialized_start=451
-  _globals['_PROFILESERVICE']._serialized_end=950
+  _globals['_PROFILESERVICE'].methods_by_name['SubmitProfile']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\030\212\343\n\024vendor:profile:write\242\343\n\004\250\343\n\002\202\323\344\223\002\030\"\026/vendor-profile:submit'
+  _globals['_DESCRIBEPROFILEINPUT']._serialized_start=213
+  _globals['_DESCRIBEPROFILEINPUT']._serialized_end=235
+  _globals['_DESCRIBEPROFILEOUTPUT']._serialized_start=237
+  _globals['_DESCRIBEPROFILEOUTPUT']._serialized_end=300
+  _globals['_UPDATEPROFILEINPUT']._serialized_start=302
+  _globals['_UPDATEPROFILEINPUT']._serialized_end=412
+  _globals['_UPDATEPROFILEOUTPUT']._serialized_start=414
+  _globals['_UPDATEPROFILEOUTPUT']._serialized_end=435
+  _globals['_SUBMITPROFILEINPUT']._serialized_start=437
+  _globals['_SUBMITPROFILEINPUT']._serialized_end=457
+  _globals['_SUBMITPROFILEOUTPUT']._serialized_start=459
+  _globals['_SUBMITPROFILEOUTPUT']._serialized_end=480
+  _globals['_PROFILESERVICE']._serialized_start=483
+  _globals['_PROFILESERVICE']._serialized_end=1006
 # @@protoc_insertion_point(module_scope)

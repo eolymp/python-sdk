@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
@@ -33,7 +34,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/judge/violation_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/judge/evidence.proto\x1a\x1c\x65olymp/judge/violation.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"W\n\x14\x43reateViolationInput\x12*\n\tviolation\x18\x01 \x01(\x0b\x32\x17.eolymp.judge.Violation\x12\x13\n\x0b\x64ont_notify\x18\x02 \x01(\x08\"-\n\x15\x43reateViolationOutput\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\"\x8c\x01\n\x14UpdateViolationInput\x12\x32\n\x05patch\x18\x03 \x03(\x0e\x32#.eolymp.judge.Violation.Patch.Field\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\x12*\n\tviolation\x18\x02 \x01(\x0b\x32\x17.eolymp.judge.Violation\"\x17\n\x15UpdateViolationOutput\",\n\x14\x44\x65leteViolationInput\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\"\x17\n\x15\x44\x65leteViolationOutput\".\n\x16\x44\x65scribeViolationInput\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\"E\n\x17\x44\x65scribeViolationOutput\x12*\n\tviolation\x18\x01 \x01(\x0b\x32\x17.eolymp.judge.Violation\"P\n\x1aListViolationEvidenceInput\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"S\n\x1bListViolationEvidenceOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.judge.Evidence\"\xf5\x07\n\x13ListViolationsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.judge.ListViolationsInput.Filter\x12\x34\n\x04sort\x18\x32 \x01(\x0e\x32&.eolymp.judge.ListViolationsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xed\x05\n\x06\x46ilter\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12y\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumBG\xa2\xf0\xf0\xe4\x01\x41valid values `PENDING` (pending review), `CONFIRMED`, `CANCELLED`\x12h\n\x04type\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB8\xa2\xf0\xf0\xe4\x01\x32valid values `OTHER`, `PLAGIARISM`, `GEN_AI_USAGE`\x12\x33\n\x07summary\x18\x04 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x33\n\tautomatic\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12`\n\nconfidence\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB*\xa2\xf0\xf0\xe4\x01$valid values `LOW`, `MEDIUM`, `HIGH`\x12\x30\n\x08\x63\x61se_ref\x18\x0c \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\nproblem_id\x18\r \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x36\n\x0eparticipant_id\x18\x06 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncreated_by\x18\x07 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\x0c\x63onfirmed_by\x18\t \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"3\n\x04Sort\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nCREATED_AT\x10\x01\x12\x0e\n\nCONFIDENCE\x10\x02\"M\n\x14ListViolationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.judge.Violation2\xad\x08\n\x10ViolationService\x12\x99\x01\n\x0f\x43reateViolation\x12\".eolymp.judge.CreateViolationInput\x1a#.eolymp.judge.CreateViolationOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\r\"\x0b/violations\x12\xa8\x01\n\x0fUpdateViolation\x12\".eolymp.judge.UpdateViolationInput\x1a#.eolymp.judge.UpdateViolationOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1c\"\x1a/violations/{violation_id}\x12\xa8\x01\n\x0f\x44\x65leteViolation\x12\".eolymp.judge.DeleteViolationInput\x1a#.eolymp.judge.DeleteViolationOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02\x1c*\x1a/violations/{violation_id}\x12\xad\x01\n\x11\x44\x65scribeViolation\x12$.eolymp.judge.DescribeViolationInput\x1a%.eolymp.judge.DescribeViolationOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x1c\x12\x1a/violations/{violation_id}\x12\xc2\x01\n\x15ListViolationEvidence\x12(.eolymp.judge.ListViolationEvidenceInput\x1a).eolymp.judge.ListViolationEvidenceOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02%\x12#/violations/{violation_id}/evidence\x12\x95\x01\n\x0eListViolations\x12!.eolymp.judge.ListViolationsInput\x1a\".eolymp.judge.ListViolationsOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\r\x12\x0b/violations\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/judge/violation_service.proto\x12\x0c\x65olymp.judge\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/judge/evidence.proto\x1a\x1c\x65olymp/judge/violation.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"W\n\x14\x43reateViolationInput\x12*\n\tviolation\x18\x01 \x01(\x0b\x32\x17.eolymp.judge.Violation\x12\x13\n\x0b\x64ont_notify\x18\x02 \x01(\x08\"-\n\x15\x43reateViolationOutput\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\"\x8c\x01\n\x14UpdateViolationInput\x12\x32\n\x05patch\x18\x03 \x03(\x0e\x32#.eolymp.judge.Violation.Patch.Field\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\x12*\n\tviolation\x18\x02 \x01(\x0b\x32\x17.eolymp.judge.Violation\"\x17\n\x15UpdateViolationOutput\",\n\x14\x44\x65leteViolationInput\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\"\x17\n\x15\x44\x65leteViolationOutput\".\n\x16\x44\x65scribeViolationInput\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\"E\n\x17\x44\x65scribeViolationOutput\x12*\n\tviolation\x18\x01 \x01(\x0b\x32\x17.eolymp.judge.Violation\"P\n\x1aListViolationEvidenceInput\x12\x14\n\x0cviolation_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"S\n\x1bListViolationEvidenceOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.judge.Evidence\"\xf5\x07\n\x13ListViolationsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.judge.ListViolationsInput.Filter\x12\x34\n\x04sort\x18\x32 \x01(\x0e\x32&.eolymp.judge.ListViolationsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xed\x05\n\x06\x46ilter\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12y\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumBG\xa2\xf0\xf0\xe4\x01\x41valid values `PENDING` (pending review), `CONFIRMED`, `CANCELLED`\x12h\n\x04type\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB8\xa2\xf0\xf0\xe4\x01\x32valid values `OTHER`, `PLAGIARISM`, `GEN_AI_USAGE`\x12\x33\n\x07summary\x18\x04 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x33\n\tautomatic\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12`\n\nconfidence\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumB*\xa2\xf0\xf0\xe4\x01$valid values `LOW`, `MEDIUM`, `HIGH`\x12\x30\n\x08\x63\x61se_ref\x18\x0c \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\nproblem_id\x18\r \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x36\n\x0eparticipant_id\x18\x06 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncreated_by\x18\x07 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\x0c\x63onfirmed_by\x18\t \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"3\n\x04Sort\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nCREATED_AT\x10\x01\x12\x0e\n\nCONFIDENCE\x10\x02\"M\n\x14ListViolationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.judge.Violation2\xdd\x08\n\x10ViolationService\x12\xa1\x01\n\x0f\x43reateViolation\x12\".eolymp.judge.CreateViolationInput\x1a#.eolymp.judge.CreateViolationOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\r\"\x0b/violations\x12\xb0\x01\n\x0fUpdateViolation\x12\".eolymp.judge.UpdateViolationInput\x1a#.eolymp.judge.UpdateViolationOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1c\"\x1a/violations/{violation_id}\x12\xb0\x01\n\x0f\x44\x65leteViolation\x12\".eolymp.judge.DeleteViolationInput\x1a#.eolymp.judge.DeleteViolationOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1c*\x1a/violations/{violation_id}\x12\xb5\x01\n\x11\x44\x65scribeViolation\x12$.eolymp.judge.DescribeViolationInput\x1a%.eolymp.judge.DescribeViolationOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1c\x12\x1a/violations/{violation_id}\x12\xca\x01\n\x15ListViolationEvidence\x12(.eolymp.judge.ListViolationEvidenceInput\x1a).eolymp.judge.ListViolationEvidenceOutput\"\\\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02%\x12#/violations/{violation_id}/evidence\x12\x9d\x01\n\x0eListViolations\x12!.eolymp.judge.ListViolationsInput\x1a\".eolymp.judge.ListViolationsOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\r\x12\x0b/violations\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -50,45 +51,45 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VIOLATIONSERVICE']._loaded_options = None
   _globals['_VIOLATIONSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.judge.Contest'
   _globals['_VIOLATIONSERVICE'].methods_by_name['CreateViolation']._loaded_options = None
-  _globals['_VIOLATIONSERVICE'].methods_by_name['CreateViolation']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\r\"\013/violations'
+  _globals['_VIOLATIONSERVICE'].methods_by_name['CreateViolation']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\343\n\027\212\343\n\023judge:contest:write\242\343\n\004\250\343\n\002\202\323\344\223\002\r\"\013/violations'
   _globals['_VIOLATIONSERVICE'].methods_by_name['UpdateViolation']._loaded_options = None
-  _globals['_VIOLATIONSERVICE'].methods_by_name['UpdateViolation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\034\"\032/violations/{violation_id}'
+  _globals['_VIOLATIONSERVICE'].methods_by_name['UpdateViolation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023judge:contest:write\242\343\n\004\250\343\n\002\202\323\344\223\002\034\"\032/violations/{violation_id}'
   _globals['_VIOLATIONSERVICE'].methods_by_name['DeleteViolation']._loaded_options = None
-  _globals['_VIOLATIONSERVICE'].methods_by_name['DeleteViolation']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002\034*\032/violations/{violation_id}'
+  _globals['_VIOLATIONSERVICE'].methods_by_name['DeleteViolation']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\202\343\n\027\212\343\n\023judge:contest:write\242\343\n\004\250\343\n\003\202\323\344\223\002\034*\032/violations/{violation_id}'
   _globals['_VIOLATIONSERVICE'].methods_by_name['DescribeViolation']._loaded_options = None
-  _globals['_VIOLATIONSERVICE'].methods_by_name['DescribeViolation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\026\212\343\n\022judge:contest:read\202\323\344\223\002\034\022\032/violations/{violation_id}'
+  _globals['_VIOLATIONSERVICE'].methods_by_name['DescribeViolation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\002\034\022\032/violations/{violation_id}'
   _globals['_VIOLATIONSERVICE'].methods_by_name['ListViolationEvidence']._loaded_options = None
-  _globals['_VIOLATIONSERVICE'].methods_by_name['ListViolationEvidence']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\026\212\343\n\022judge:contest:read\202\323\344\223\002%\022#/violations/{violation_id}/evidence'
+  _globals['_VIOLATIONSERVICE'].methods_by_name['ListViolationEvidence']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\002%\022#/violations/{violation_id}/evidence'
   _globals['_VIOLATIONSERVICE'].methods_by_name['ListViolations']._loaded_options = None
-  _globals['_VIOLATIONSERVICE'].methods_by_name['ListViolations']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\026\212\343\n\022judge:contest:read\202\323\344\223\002\r\022\013/violations'
-  _globals['_CREATEVIOLATIONINPUT']._serialized_start=347
-  _globals['_CREATEVIOLATIONINPUT']._serialized_end=434
-  _globals['_CREATEVIOLATIONOUTPUT']._serialized_start=436
-  _globals['_CREATEVIOLATIONOUTPUT']._serialized_end=481
-  _globals['_UPDATEVIOLATIONINPUT']._serialized_start=484
-  _globals['_UPDATEVIOLATIONINPUT']._serialized_end=624
-  _globals['_UPDATEVIOLATIONOUTPUT']._serialized_start=626
-  _globals['_UPDATEVIOLATIONOUTPUT']._serialized_end=649
-  _globals['_DELETEVIOLATIONINPUT']._serialized_start=651
-  _globals['_DELETEVIOLATIONINPUT']._serialized_end=695
-  _globals['_DELETEVIOLATIONOUTPUT']._serialized_start=697
-  _globals['_DELETEVIOLATIONOUTPUT']._serialized_end=720
-  _globals['_DESCRIBEVIOLATIONINPUT']._serialized_start=722
-  _globals['_DESCRIBEVIOLATIONINPUT']._serialized_end=768
-  _globals['_DESCRIBEVIOLATIONOUTPUT']._serialized_start=770
-  _globals['_DESCRIBEVIOLATIONOUTPUT']._serialized_end=839
-  _globals['_LISTVIOLATIONEVIDENCEINPUT']._serialized_start=841
-  _globals['_LISTVIOLATIONEVIDENCEINPUT']._serialized_end=921
-  _globals['_LISTVIOLATIONEVIDENCEOUTPUT']._serialized_start=923
-  _globals['_LISTVIOLATIONEVIDENCEOUTPUT']._serialized_end=1006
-  _globals['_LISTVIOLATIONSINPUT']._serialized_start=1009
-  _globals['_LISTVIOLATIONSINPUT']._serialized_end=2022
-  _globals['_LISTVIOLATIONSINPUT_FILTER']._serialized_start=1220
-  _globals['_LISTVIOLATIONSINPUT_FILTER']._serialized_end=1969
-  _globals['_LISTVIOLATIONSINPUT_SORT']._serialized_start=1971
-  _globals['_LISTVIOLATIONSINPUT_SORT']._serialized_end=2022
-  _globals['_LISTVIOLATIONSOUTPUT']._serialized_start=2024
-  _globals['_LISTVIOLATIONSOUTPUT']._serialized_end=2101
-  _globals['_VIOLATIONSERVICE']._serialized_start=2104
-  _globals['_VIOLATIONSERVICE']._serialized_end=3173
+  _globals['_VIOLATIONSERVICE'].methods_by_name['ListViolations']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\002\r\022\013/violations'
+  _globals['_CREATEVIOLATIONINPUT']._serialized_start=379
+  _globals['_CREATEVIOLATIONINPUT']._serialized_end=466
+  _globals['_CREATEVIOLATIONOUTPUT']._serialized_start=468
+  _globals['_CREATEVIOLATIONOUTPUT']._serialized_end=513
+  _globals['_UPDATEVIOLATIONINPUT']._serialized_start=516
+  _globals['_UPDATEVIOLATIONINPUT']._serialized_end=656
+  _globals['_UPDATEVIOLATIONOUTPUT']._serialized_start=658
+  _globals['_UPDATEVIOLATIONOUTPUT']._serialized_end=681
+  _globals['_DELETEVIOLATIONINPUT']._serialized_start=683
+  _globals['_DELETEVIOLATIONINPUT']._serialized_end=727
+  _globals['_DELETEVIOLATIONOUTPUT']._serialized_start=729
+  _globals['_DELETEVIOLATIONOUTPUT']._serialized_end=752
+  _globals['_DESCRIBEVIOLATIONINPUT']._serialized_start=754
+  _globals['_DESCRIBEVIOLATIONINPUT']._serialized_end=800
+  _globals['_DESCRIBEVIOLATIONOUTPUT']._serialized_start=802
+  _globals['_DESCRIBEVIOLATIONOUTPUT']._serialized_end=871
+  _globals['_LISTVIOLATIONEVIDENCEINPUT']._serialized_start=873
+  _globals['_LISTVIOLATIONEVIDENCEINPUT']._serialized_end=953
+  _globals['_LISTVIOLATIONEVIDENCEOUTPUT']._serialized_start=955
+  _globals['_LISTVIOLATIONEVIDENCEOUTPUT']._serialized_end=1038
+  _globals['_LISTVIOLATIONSINPUT']._serialized_start=1041
+  _globals['_LISTVIOLATIONSINPUT']._serialized_end=2054
+  _globals['_LISTVIOLATIONSINPUT_FILTER']._serialized_start=1252
+  _globals['_LISTVIOLATIONSINPUT_FILTER']._serialized_end=2001
+  _globals['_LISTVIOLATIONSINPUT_SORT']._serialized_start=2003
+  _globals['_LISTVIOLATIONSINPUT_SORT']._serialized_end=2054
+  _globals['_LISTVIOLATIONSOUTPUT']._serialized_start=2056
+  _globals['_LISTVIOLATIONSOUTPUT']._serialized_end=2133
+  _globals['_VIOLATIONSERVICE']._serialized_start=2136
+  _globals['_VIOLATIONSERVICE']._serialized_end=3253
 # @@protoc_insertion_point(module_scope)

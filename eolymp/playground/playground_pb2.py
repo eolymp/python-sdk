@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -30,7 +31,7 @@ from eolymp.playground import run_pb2 as eolymp_dot_playground_dot_run__pb2
 from eolymp.wellknown import watch_pb2 as eolymp_dot_wellknown_dot_watch__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/playground/playground.proto\x12\x11\x65olymp.playground\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/playground/run.proto\x1a\x1c\x65olymp/wellknown/watch.proto\"\x9e\x01\n\x0e\x43reateRunInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\r\n\x05trace\x18\x03 \x01(\x08\x12\x0e\n\x06source\x18\x64 \x01(\t\x12\x14\n\ninput_data\x18\x65 \x01(\x0cH\x00\x12\x13\n\tinput_ref\x18\x66 \x01(\tH\x00\x12\x14\n\nexample_id\x18g \x01(\tH\x00\x42\x07\n\x05input\"!\n\x0f\x43reateRunOutput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"6\n\x10\x44\x65scribeRunInput\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"8\n\x11\x44\x65scribeRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run\"3\n\rWatchRunInput\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"f\n\x0eWatchRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run\x12/\n\x05\x65vent\x18\x02 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType2\x8b\x04\n\nPlayground\x12\x8c\x01\n\tCreateRun\x12!.eolymp.playground.CreateRunInput\x1a\".eolymp.playground.CreateRunOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14playground:run:write\x82\xd3\xe4\x93\x02\x07\"\x05/runs\x12\x9a\x01\n\x0b\x44\x65scribeRun\x12#.eolymp.playground.DescribeRunInput\x1a$.eolymp.playground.DescribeRunOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\x82\xd3\xe4\x93\x02\x10\x12\x0e/runs/{run_id}\x12\x99\x01\n\x08WatchRun\x12 .eolymp.playground.WatchRunInput\x1a!.eolymp.playground.WatchRunOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\x82\xd3\xe4\x93\x02\x16\x12\x14/runs/{run_id}/watch0\x01\x1a\x35\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.Problem\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/playground;playgroundb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/playground/playground.proto\x12\x11\x65olymp.playground\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/playground/run.proto\x1a\x1c\x65olymp/wellknown/watch.proto\"\x9e\x01\n\x0e\x43reateRunInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\r\n\x05trace\x18\x03 \x01(\x08\x12\x0e\n\x06source\x18\x64 \x01(\t\x12\x14\n\ninput_data\x18\x65 \x01(\x0cH\x00\x12\x13\n\tinput_ref\x18\x66 \x01(\tH\x00\x12\x14\n\nexample_id\x18g \x01(\tH\x00\x42\x07\n\x05input\"!\n\x0f\x43reateRunOutput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"6\n\x10\x44\x65scribeRunInput\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"8\n\x11\x44\x65scribeRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run\"3\n\rWatchRunInput\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"f\n\x0eWatchRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run\x12/\n\x05\x65vent\x18\x02 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType2\xa3\x04\n\nPlayground\x12\x94\x01\n\tCreateRun\x12!.eolymp.playground.CreateRunInput\x1a\".eolymp.playground.CreateRunOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14playground:run:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x07\"\x05/runs\x12\xa2\x01\n\x0b\x44\x65scribeRun\x12#.eolymp.playground.DescribeRunInput\x1a$.eolymp.playground.DescribeRunOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x10\x12\x0e/runs/{run_id}\x12\xa1\x01\n\x08WatchRun\x12 .eolymp.playground.WatchRunInput\x1a!.eolymp.playground.WatchRunOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x16\x12\x14/runs/{run_id}/watch0\x01\x1a\x35\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.Problem\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/playground;playgroundb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,23 +42,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PLAYGROUND']._loaded_options = None
   _globals['_PLAYGROUND']._serialized_options = b'\202\360\360\344\001\024eolymp.atlas.Problem\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_PLAYGROUND'].methods_by_name['CreateRun']._loaded_options = None
-  _globals['_PLAYGROUND'].methods_by_name['CreateRun']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\343\n\030\212\343\n\024playground:run:write\202\323\344\223\002\007\"\005/runs'
+  _globals['_PLAYGROUND'].methods_by_name['CreateRun']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\343\n\030\212\343\n\024playground:run:write\242\343\n\004\250\343\n\002\202\323\344\223\002\007\"\005/runs'
   _globals['_PLAYGROUND'].methods_by_name['DescribeRun']._loaded_options = None
-  _globals['_PLAYGROUND'].methods_by_name['DescribeRun']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\027\212\343\n\023playground:run:read\202\323\344\223\002\020\022\016/runs/{run_id}'
+  _globals['_PLAYGROUND'].methods_by_name['DescribeRun']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\027\212\343\n\023playground:run:read\242\343\n\004\250\343\n\001\202\323\344\223\002\020\022\016/runs/{run_id}'
   _globals['_PLAYGROUND'].methods_by_name['WatchRun']._loaded_options = None
-  _globals['_PLAYGROUND'].methods_by_name['WatchRun']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\027\212\343\n\023playground:run:read\202\323\344\223\002\026\022\024/runs/{run_id}/watch'
-  _globals['_CREATERUNINPUT']._serialized_start=252
-  _globals['_CREATERUNINPUT']._serialized_end=410
-  _globals['_CREATERUNOUTPUT']._serialized_start=412
-  _globals['_CREATERUNOUTPUT']._serialized_end=445
-  _globals['_DESCRIBERUNINPUT']._serialized_start=447
-  _globals['_DESCRIBERUNINPUT']._serialized_end=501
-  _globals['_DESCRIBERUNOUTPUT']._serialized_start=503
-  _globals['_DESCRIBERUNOUTPUT']._serialized_end=559
-  _globals['_WATCHRUNINPUT']._serialized_start=561
-  _globals['_WATCHRUNINPUT']._serialized_end=612
-  _globals['_WATCHRUNOUTPUT']._serialized_start=614
-  _globals['_WATCHRUNOUTPUT']._serialized_end=716
-  _globals['_PLAYGROUND']._serialized_start=719
-  _globals['_PLAYGROUND']._serialized_end=1242
+  _globals['_PLAYGROUND'].methods_by_name['WatchRun']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\027\212\343\n\023playground:run:read\242\343\n\004\250\343\n\001\202\323\344\223\002\026\022\024/runs/{run_id}/watch'
+  _globals['_CREATERUNINPUT']._serialized_start=284
+  _globals['_CREATERUNINPUT']._serialized_end=442
+  _globals['_CREATERUNOUTPUT']._serialized_start=444
+  _globals['_CREATERUNOUTPUT']._serialized_end=477
+  _globals['_DESCRIBERUNINPUT']._serialized_start=479
+  _globals['_DESCRIBERUNINPUT']._serialized_end=533
+  _globals['_DESCRIBERUNOUTPUT']._serialized_start=535
+  _globals['_DESCRIBERUNOUTPUT']._serialized_end=591
+  _globals['_WATCHRUNINPUT']._serialized_start=593
+  _globals['_WATCHRUNINPUT']._serialized_end=644
+  _globals['_WATCHRUNOUTPUT']._serialized_start=646
+  _globals['_WATCHRUNOUTPUT']._serialized_end=748
+  _globals['_PLAYGROUND']._serialized_start=751
+  _globals['_PLAYGROUND']._serialized_end=1298
 # @@protoc_insertion_point(module_scope)

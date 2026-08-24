@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.acl import principal_pb2 as eolymp_dot_acl_dot_principal__pb2
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -31,7 +32,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/acl/principal_service.proto\x12\neolymp.acl\x1a\x1a\x65olymp/acl/principal.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"@\n\x14\x43reatePrincipalInput\x12(\n\tprincipal\x18\x01 \x01(\x0b\x32\x15.eolymp.acl.Principal\"-\n\x15\x43reatePrincipalOutput\x12\x14\n\x0cprincipal_id\x18\x01 \x01(\t\"\x88\x01\n\x14UpdatePrincipalInput\x12\x30\n\x05patch\x18\n \x03(\x0e\x32!.eolymp.acl.Principal.Patch.Field\x12\x14\n\x0cprincipal_id\x18\x01 \x01(\t\x12(\n\tprincipal\x18\x02 \x01(\x0b\x32\x15.eolymp.acl.Principal\"\x17\n\x15UpdatePrincipalOutput\",\n\x14\x44\x65letePrincipalInput\x12\x14\n\x0cprincipal_id\x18\x01 \x01(\t\"\x17\n\x15\x44\x65letePrincipalOutput\".\n\x16\x44\x65scribePrincipalInput\x12\x14\n\x0cprincipal_id\x18\x01 \x01(\t\"C\n\x17\x44\x65scribePrincipalOutput\x12(\n\tprincipal\x18\x01 \x01(\x0b\x32\x15.eolymp.acl.Principal\"\x9c\x03\n\x13ListPrincipalsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.acl.ListPrincipalsInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.acl.ListPrincipalsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xa6\x01\n\x06\x46ilter\x12\r\n\x05query\x18\n \x01(\t\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"!\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x08\n\x04NAME\x10\x01\"K\n\x14ListPrincipalsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.acl.Principal2\xc6\x06\n\x10PrincipalService\x12\x92\x01\n\x0f\x43reatePrincipal\x12 .eolymp.acl.CreatePrincipalInput\x1a!.eolymp.acl.CreatePrincipalOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10\x61\x63l:policy:write\x82\xd3\xe4\x93\x02\r\"\x0b/principals\x12\xa1\x01\n\x0fUpdatePrincipal\x12 .eolymp.acl.UpdatePrincipalInput\x1a!.eolymp.acl.UpdatePrincipalOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10\x61\x63l:policy:write\x82\xd3\xe4\x93\x02\x1c\x1a\x1a/principals/{principal_id}\x12\xa1\x01\n\x0f\x44\x65letePrincipal\x12 .eolymp.acl.DeletePrincipalInput\x1a!.eolymp.acl.DeletePrincipalOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10\x61\x63l:policy:write\x82\xd3\xe4\x93\x02\x1c*\x1a/principals/{principal_id}\x12\xa6\x01\n\x11\x44\x65scribePrincipal\x12\".eolymp.acl.DescribePrincipalInput\x1a#.eolymp.acl.DescribePrincipalOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x13\x8a\xe3\n\x0f\x61\x63l:policy:read\x82\xd3\xe4\x93\x02\x1c\x12\x1a/principals/{principal_id}\x12\x8e\x01\n\x0eListPrincipals\x12\x1f.eolymp.acl.ListPrincipalsInput\x1a .eolymp.acl.ListPrincipalsOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x13\x8a\xe3\n\x0f\x61\x63l:policy:read\x82\xd3\xe4\x93\x02\r\x12\x0b/principals\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/acl/principal_service.proto\x12\neolymp.acl\x1a\x1a\x65olymp/acl/principal.proto\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"@\n\x14\x43reatePrincipalInput\x12(\n\tprincipal\x18\x01 \x01(\x0b\x32\x15.eolymp.acl.Principal\"-\n\x15\x43reatePrincipalOutput\x12\x14\n\x0cprincipal_id\x18\x01 \x01(\t\"\x88\x01\n\x14UpdatePrincipalInput\x12\x30\n\x05patch\x18\n \x03(\x0e\x32!.eolymp.acl.Principal.Patch.Field\x12\x14\n\x0cprincipal_id\x18\x01 \x01(\t\x12(\n\tprincipal\x18\x02 \x01(\x0b\x32\x15.eolymp.acl.Principal\"\x17\n\x15UpdatePrincipalOutput\",\n\x14\x44\x65letePrincipalInput\x12\x14\n\x0cprincipal_id\x18\x01 \x01(\t\"\x17\n\x15\x44\x65letePrincipalOutput\".\n\x16\x44\x65scribePrincipalInput\x12\x14\n\x0cprincipal_id\x18\x01 \x01(\t\"C\n\x17\x44\x65scribePrincipalOutput\x12(\n\tprincipal\x18\x01 \x01(\x0b\x32\x15.eolymp.acl.Principal\"\x9c\x03\n\x13ListPrincipalsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.acl.ListPrincipalsInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.acl.ListPrincipalsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xa6\x01\n\x06\x46ilter\x12\r\n\x05query\x18\n \x01(\t\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"!\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x08\n\x04NAME\x10\x01\"K\n\x14ListPrincipalsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.acl.Principal2\xee\x06\n\x10PrincipalService\x12\x9a\x01\n\x0f\x43reatePrincipal\x12 .eolymp.acl.CreatePrincipalInput\x1a!.eolymp.acl.CreatePrincipalOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10\x61\x63l:policy:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\r\"\x0b/principals\x12\xa9\x01\n\x0fUpdatePrincipal\x12 .eolymp.acl.UpdatePrincipalInput\x1a!.eolymp.acl.UpdatePrincipalOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10\x61\x63l:policy:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1c\x1a\x1a/principals/{principal_id}\x12\xa9\x01\n\x0f\x44\x65letePrincipal\x12 .eolymp.acl.DeletePrincipalInput\x1a!.eolymp.acl.DeletePrincipalOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10\x61\x63l:policy:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1c*\x1a/principals/{principal_id}\x12\xae\x01\n\x11\x44\x65scribePrincipal\x12\".eolymp.acl.DescribePrincipalInput\x1a#.eolymp.acl.DescribePrincipalOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x13\x8a\xe3\n\x0f\x61\x63l:policy:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1c\x12\x1a/principals/{principal_id}\x12\x96\x01\n\x0eListPrincipals\x12\x1f.eolymp.acl.ListPrincipalsInput\x1a .eolymp.acl.ListPrincipalsOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x13\x8a\xe3\n\x0f\x61\x63l:policy:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\r\x12\x0b/principals\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,39 +43,39 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRINCIPALSERVICE']._loaded_options = None
   _globals['_PRINCIPALSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_PRINCIPALSERVICE'].methods_by_name['CreatePrincipal']._loaded_options = None
-  _globals['_PRINCIPALSERVICE'].methods_by_name['CreatePrincipal']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020acl:policy:write\202\323\344\223\002\r\"\013/principals'
+  _globals['_PRINCIPALSERVICE'].methods_by_name['CreatePrincipal']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020acl:policy:write\242\343\n\004\250\343\n\002\202\323\344\223\002\r\"\013/principals'
   _globals['_PRINCIPALSERVICE'].methods_by_name['UpdatePrincipal']._loaded_options = None
-  _globals['_PRINCIPALSERVICE'].methods_by_name['UpdatePrincipal']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020acl:policy:write\202\323\344\223\002\034\032\032/principals/{principal_id}'
+  _globals['_PRINCIPALSERVICE'].methods_by_name['UpdatePrincipal']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020acl:policy:write\242\343\n\004\250\343\n\002\202\323\344\223\002\034\032\032/principals/{principal_id}'
   _globals['_PRINCIPALSERVICE'].methods_by_name['DeletePrincipal']._loaded_options = None
-  _globals['_PRINCIPALSERVICE'].methods_by_name['DeletePrincipal']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020acl:policy:write\202\323\344\223\002\034*\032/principals/{principal_id}'
+  _globals['_PRINCIPALSERVICE'].methods_by_name['DeletePrincipal']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020acl:policy:write\242\343\n\004\250\343\n\003\202\323\344\223\002\034*\032/principals/{principal_id}'
   _globals['_PRINCIPALSERVICE'].methods_by_name['DescribePrincipal']._loaded_options = None
-  _globals['_PRINCIPALSERVICE'].methods_by_name['DescribePrincipal']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\023\212\343\n\017acl:policy:read\202\323\344\223\002\034\022\032/principals/{principal_id}'
+  _globals['_PRINCIPALSERVICE'].methods_by_name['DescribePrincipal']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\023\212\343\n\017acl:policy:read\242\343\n\004\250\343\n\001\202\323\344\223\002\034\022\032/principals/{principal_id}'
   _globals['_PRINCIPALSERVICE'].methods_by_name['ListPrincipals']._loaded_options = None
-  _globals['_PRINCIPALSERVICE'].methods_by_name['ListPrincipals']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\023\212\343\n\017acl:policy:read\202\323\344\223\002\r\022\013/principals'
-  _globals['_CREATEPRINCIPALINPUT']._serialized_start=282
-  _globals['_CREATEPRINCIPALINPUT']._serialized_end=346
-  _globals['_CREATEPRINCIPALOUTPUT']._serialized_start=348
-  _globals['_CREATEPRINCIPALOUTPUT']._serialized_end=393
-  _globals['_UPDATEPRINCIPALINPUT']._serialized_start=396
-  _globals['_UPDATEPRINCIPALINPUT']._serialized_end=532
-  _globals['_UPDATEPRINCIPALOUTPUT']._serialized_start=534
-  _globals['_UPDATEPRINCIPALOUTPUT']._serialized_end=557
-  _globals['_DELETEPRINCIPALINPUT']._serialized_start=559
-  _globals['_DELETEPRINCIPALINPUT']._serialized_end=603
-  _globals['_DELETEPRINCIPALOUTPUT']._serialized_start=605
-  _globals['_DELETEPRINCIPALOUTPUT']._serialized_end=628
-  _globals['_DESCRIBEPRINCIPALINPUT']._serialized_start=630
-  _globals['_DESCRIBEPRINCIPALINPUT']._serialized_end=676
-  _globals['_DESCRIBEPRINCIPALOUTPUT']._serialized_start=678
-  _globals['_DESCRIBEPRINCIPALOUTPUT']._serialized_end=745
-  _globals['_LISTPRINCIPALSINPUT']._serialized_start=748
-  _globals['_LISTPRINCIPALSINPUT']._serialized_end=1160
-  _globals['_LISTPRINCIPALSINPUT_FILTER']._serialized_start=959
-  _globals['_LISTPRINCIPALSINPUT_FILTER']._serialized_end=1125
-  _globals['_LISTPRINCIPALSINPUT_SORTABLE']._serialized_start=1127
-  _globals['_LISTPRINCIPALSINPUT_SORTABLE']._serialized_end=1160
-  _globals['_LISTPRINCIPALSOUTPUT']._serialized_start=1162
-  _globals['_LISTPRINCIPALSOUTPUT']._serialized_end=1237
-  _globals['_PRINCIPALSERVICE']._serialized_start=1240
-  _globals['_PRINCIPALSERVICE']._serialized_end=2078
+  _globals['_PRINCIPALSERVICE'].methods_by_name['ListPrincipals']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\023\212\343\n\017acl:policy:read\242\343\n\004\250\343\n\001\202\323\344\223\002\r\022\013/principals'
+  _globals['_CREATEPRINCIPALINPUT']._serialized_start=314
+  _globals['_CREATEPRINCIPALINPUT']._serialized_end=378
+  _globals['_CREATEPRINCIPALOUTPUT']._serialized_start=380
+  _globals['_CREATEPRINCIPALOUTPUT']._serialized_end=425
+  _globals['_UPDATEPRINCIPALINPUT']._serialized_start=428
+  _globals['_UPDATEPRINCIPALINPUT']._serialized_end=564
+  _globals['_UPDATEPRINCIPALOUTPUT']._serialized_start=566
+  _globals['_UPDATEPRINCIPALOUTPUT']._serialized_end=589
+  _globals['_DELETEPRINCIPALINPUT']._serialized_start=591
+  _globals['_DELETEPRINCIPALINPUT']._serialized_end=635
+  _globals['_DELETEPRINCIPALOUTPUT']._serialized_start=637
+  _globals['_DELETEPRINCIPALOUTPUT']._serialized_end=660
+  _globals['_DESCRIBEPRINCIPALINPUT']._serialized_start=662
+  _globals['_DESCRIBEPRINCIPALINPUT']._serialized_end=708
+  _globals['_DESCRIBEPRINCIPALOUTPUT']._serialized_start=710
+  _globals['_DESCRIBEPRINCIPALOUTPUT']._serialized_end=777
+  _globals['_LISTPRINCIPALSINPUT']._serialized_start=780
+  _globals['_LISTPRINCIPALSINPUT']._serialized_end=1192
+  _globals['_LISTPRINCIPALSINPUT_FILTER']._serialized_start=991
+  _globals['_LISTPRINCIPALSINPUT_FILTER']._serialized_end=1157
+  _globals['_LISTPRINCIPALSINPUT_SORTABLE']._serialized_start=1159
+  _globals['_LISTPRINCIPALSINPUT_SORTABLE']._serialized_end=1192
+  _globals['_LISTPRINCIPALSOUTPUT']._serialized_start=1194
+  _globals['_LISTPRINCIPALSOUTPUT']._serialized_end=1269
+  _globals['_PRINCIPALSERVICE']._serialized_start=1272
+  _globals['_PRINCIPALSERVICE']._serialized_end=2150
 # @@protoc_insertion_point(module_scope)

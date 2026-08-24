@@ -1,3 +1,4 @@
+from eolymp.annotations import audit_pb2 as _audit_pb2
 from google.protobuf import any_pb2 as _any_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

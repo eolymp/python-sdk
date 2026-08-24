@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -32,7 +33,7 @@ from eolymp.wellknown import watch_pb2 as eolymp_dot_wellknown_dot_watch__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/tasks/task_service.proto\x12\x0c\x65olymp.tasks\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x17\x65olymp/tasks/task.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1c\x65olymp/wellknown/watch.proto\x1a\x19google/protobuf/any.proto\"\x7f\n\x0f\x43reateTaskInput\x12\"\n\x04task\x18\x01 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x10\n\x08resource\x18\x02 \x01(\t\x12\x11\n\treference\x18\x03 \x01(\t\x12\x14\n\x0cmax_attempts\x18\x04 \x01(\r\x12\r\n\x05total\x18\x05 \x01(\r\"#\n\x10\x43reateTaskOutput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"\xb5\x02\n\x0eListTasksInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x34\n\x07\x66ilters\x18( \x01(\x0b\x32#.eolymp.tasks.ListTasksInput.Filter\x1a\xce\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\x08resource\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x04type\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06status\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"C\n\x0fListTasksOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.tasks.Task\"$\n\x11\x44\x65scribeTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"6\n\x12\x44\x65scribeTaskOutput\x12 \n\x04task\x18\x01 \x01(\x0b\x32\x12.eolymp.tasks.Task\"!\n\x0eWatchTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"d\n\x0fWatchTaskOutput\x12 \n\x04task\x18\x01 \x01(\x0b\x32\x12.eolymp.tasks.Task\x12/\n\x05\x65vent\x18\x02 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType\"\"\n\x0f\x43\x61ncelTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"\x12\n\x10\x43\x61ncelTaskOutput\"!\n\x0eRetryTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"\x11\n\x0fRetryTaskOutput2\xd8\x06\n\x0bTaskService\x12]\n\nCreateTask\x12\x1d.eolymp.tasks.CreateTaskInput\x1a\x1e.eolymp.tasks.CreateTaskOutput\"\x10\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x12~\n\tListTasks\x12\x1c.eolymp.tasks.ListTasksInput\x1a\x1d.eolymp.tasks.ListTasksOutput\"4\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x13\x8a\xe3\n\x0ftasks:task:read\x82\xd3\xe4\x93\x02\x08\x12\x06/tasks\x12\x91\x01\n\x0c\x44\x65scribeTask\x12\x1f.eolymp.tasks.DescribeTaskInput\x1a .eolymp.tasks.DescribeTaskOutput\">\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x13\x8a\xe3\n\x0ftasks:task:read\x82\xd3\xe4\x93\x02\x12\x12\x10/tasks/{task_id}\x12\x90\x01\n\tWatchTask\x12\x1c.eolymp.tasks.WatchTaskInput\x1a\x1d.eolymp.tasks.WatchTaskOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x13\x8a\xe3\n\x0ftasks:task:read\x82\xd3\xe4\x93\x02\x18\x12\x16/tasks/{task_id}/watch0\x01\x12\x93\x01\n\nCancelTask\x12\x1d.eolymp.tasks.CancelTaskInput\x1a\x1e.eolymp.tasks.CancelTaskOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10tasks:task:write\x82\xd3\xe4\x93\x02\x19\"\x17/tasks/{task_id}/cancel\x12\x8f\x01\n\tRetryTask\x12\x1c.eolymp.tasks.RetryTaskInput\x1a\x1d.eolymp.tasks.RetryTaskOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10tasks:task:write\x82\xd3\xe4\x93\x02\x18\"\x16/tasks/{task_id}/retry\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/tasks;tasksb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/tasks/task_service.proto\x12\x0c\x65olymp.tasks\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x17\x65olymp/tasks/task.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1c\x65olymp/wellknown/watch.proto\x1a\x19google/protobuf/any.proto\"\x7f\n\x0f\x43reateTaskInput\x12\"\n\x04task\x18\x01 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x10\n\x08resource\x18\x02 \x01(\t\x12\x11\n\treference\x18\x03 \x01(\t\x12\x14\n\x0cmax_attempts\x18\x04 \x01(\r\x12\r\n\x05total\x18\x05 \x01(\r\"#\n\x10\x43reateTaskOutput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"\xb5\x02\n\x0eListTasksInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x34\n\x07\x66ilters\x18( \x01(\x0b\x32#.eolymp.tasks.ListTasksInput.Filter\x1a\xce\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\x08resource\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x04type\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x30\n\x06status\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"C\n\x0fListTasksOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12!\n\x05items\x18\x02 \x03(\x0b\x32\x12.eolymp.tasks.Task\"$\n\x11\x44\x65scribeTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"6\n\x12\x44\x65scribeTaskOutput\x12 \n\x04task\x18\x01 \x01(\x0b\x32\x12.eolymp.tasks.Task\"!\n\x0eWatchTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"d\n\x0fWatchTaskOutput\x12 \n\x04task\x18\x01 \x01(\x0b\x32\x12.eolymp.tasks.Task\x12/\n\x05\x65vent\x18\x02 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType\"\"\n\x0f\x43\x61ncelTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"\x12\n\x10\x43\x61ncelTaskOutput\"!\n\x0eRetryTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\"\x11\n\x0fRetryTaskOutput2\x89\x07\n\x0bTaskService\x12\x65\n\nCreateTask\x12\x1d.eolymp.tasks.CreateTaskInput\x1a\x1e.eolymp.tasks.CreateTaskOutput\"\x18\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\xa2\xe3\n\x04\xa8\xe3\n\x02\x12\x86\x01\n\tListTasks\x12\x1c.eolymp.tasks.ListTasksInput\x1a\x1d.eolymp.tasks.ListTasksOutput\"<\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x13\x8a\xe3\n\x0ftasks:task:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x08\x12\x06/tasks\x12\x99\x01\n\x0c\x44\x65scribeTask\x12\x1f.eolymp.tasks.DescribeTaskInput\x1a .eolymp.tasks.DescribeTaskOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x13\x8a\xe3\n\x0ftasks:task:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/tasks/{task_id}\x12\x98\x01\n\tWatchTask\x12\x1c.eolymp.tasks.WatchTaskInput\x1a\x1d.eolymp.tasks.WatchTaskOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x13\x8a\xe3\n\x0ftasks:task:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x18\x12\x16/tasks/{task_id}/watch0\x01\x12\x9b\x01\n\nCancelTask\x12\x1d.eolymp.tasks.CancelTaskInput\x1a\x1e.eolymp.tasks.CancelTaskOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10tasks:task:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x19\"\x17/tasks/{task_id}/cancel\x12\x97\x01\n\tRetryTask\x12\x1c.eolymp.tasks.RetryTaskInput\x1a\x1d.eolymp.tasks.RetryTaskOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x14\x8a\xe3\n\x10tasks:task:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x18\"\x16/tasks/{task_id}/retry\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/tasks;tasksb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,43 +44,43 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TASKSERVICE']._loaded_options = None
   _globals['_TASKSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_TASKSERVICE'].methods_by_name['CreateTask']._loaded_options = None
-  _globals['_TASKSERVICE'].methods_by_name['CreateTask']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\310\001'
+  _globals['_TASKSERVICE'].methods_by_name['CreateTask']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\310\001\242\343\n\004\250\343\n\002'
   _globals['_TASKSERVICE'].methods_by_name['ListTasks']._loaded_options = None
-  _globals['_TASKSERVICE'].methods_by_name['ListTasks']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\023\212\343\n\017tasks:task:read\202\323\344\223\002\010\022\006/tasks'
+  _globals['_TASKSERVICE'].methods_by_name['ListTasks']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\023\212\343\n\017tasks:task:read\242\343\n\004\250\343\n\001\202\323\344\223\002\010\022\006/tasks'
   _globals['_TASKSERVICE'].methods_by_name['DescribeTask']._loaded_options = None
-  _globals['_TASKSERVICE'].methods_by_name['DescribeTask']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\023\212\343\n\017tasks:task:read\202\323\344\223\002\022\022\020/tasks/{task_id}'
+  _globals['_TASKSERVICE'].methods_by_name['DescribeTask']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\023\212\343\n\017tasks:task:read\242\343\n\004\250\343\n\001\202\323\344\223\002\022\022\020/tasks/{task_id}'
   _globals['_TASKSERVICE'].methods_by_name['WatchTask']._loaded_options = None
-  _globals['_TASKSERVICE'].methods_by_name['WatchTask']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\023\212\343\n\017tasks:task:read\202\323\344\223\002\030\022\026/tasks/{task_id}/watch'
+  _globals['_TASKSERVICE'].methods_by_name['WatchTask']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\023\212\343\n\017tasks:task:read\242\343\n\004\250\343\n\001\202\323\344\223\002\030\022\026/tasks/{task_id}/watch'
   _globals['_TASKSERVICE'].methods_by_name['CancelTask']._loaded_options = None
-  _globals['_TASKSERVICE'].methods_by_name['CancelTask']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020tasks:task:write\202\323\344\223\002\031\"\027/tasks/{task_id}/cancel'
+  _globals['_TASKSERVICE'].methods_by_name['CancelTask']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020tasks:task:write\242\343\n\004\250\343\n\002\202\323\344\223\002\031\"\027/tasks/{task_id}/cancel'
   _globals['_TASKSERVICE'].methods_by_name['RetryTask']._loaded_options = None
-  _globals['_TASKSERVICE'].methods_by_name['RetryTask']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020tasks:task:write\202\323\344\223\002\030\"\026/tasks/{task_id}/retry'
-  _globals['_CREATETASKINPUT']._serialized_start=301
-  _globals['_CREATETASKINPUT']._serialized_end=428
-  _globals['_CREATETASKOUTPUT']._serialized_start=430
-  _globals['_CREATETASKOUTPUT']._serialized_end=465
-  _globals['_LISTTASKSINPUT']._serialized_start=468
-  _globals['_LISTTASKSINPUT']._serialized_end=777
-  _globals['_LISTTASKSINPUT_FILTER']._serialized_start=571
-  _globals['_LISTTASKSINPUT_FILTER']._serialized_end=777
-  _globals['_LISTTASKSOUTPUT']._serialized_start=779
-  _globals['_LISTTASKSOUTPUT']._serialized_end=846
-  _globals['_DESCRIBETASKINPUT']._serialized_start=848
-  _globals['_DESCRIBETASKINPUT']._serialized_end=884
-  _globals['_DESCRIBETASKOUTPUT']._serialized_start=886
-  _globals['_DESCRIBETASKOUTPUT']._serialized_end=940
-  _globals['_WATCHTASKINPUT']._serialized_start=942
-  _globals['_WATCHTASKINPUT']._serialized_end=975
-  _globals['_WATCHTASKOUTPUT']._serialized_start=977
-  _globals['_WATCHTASKOUTPUT']._serialized_end=1077
-  _globals['_CANCELTASKINPUT']._serialized_start=1079
-  _globals['_CANCELTASKINPUT']._serialized_end=1113
-  _globals['_CANCELTASKOUTPUT']._serialized_start=1115
-  _globals['_CANCELTASKOUTPUT']._serialized_end=1133
-  _globals['_RETRYTASKINPUT']._serialized_start=1135
-  _globals['_RETRYTASKINPUT']._serialized_end=1168
-  _globals['_RETRYTASKOUTPUT']._serialized_start=1170
-  _globals['_RETRYTASKOUTPUT']._serialized_end=1187
-  _globals['_TASKSERVICE']._serialized_start=1190
-  _globals['_TASKSERVICE']._serialized_end=2046
+  _globals['_TASKSERVICE'].methods_by_name['RetryTask']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\024\212\343\n\020tasks:task:write\242\343\n\004\250\343\n\002\202\323\344\223\002\030\"\026/tasks/{task_id}/retry'
+  _globals['_CREATETASKINPUT']._serialized_start=333
+  _globals['_CREATETASKINPUT']._serialized_end=460
+  _globals['_CREATETASKOUTPUT']._serialized_start=462
+  _globals['_CREATETASKOUTPUT']._serialized_end=497
+  _globals['_LISTTASKSINPUT']._serialized_start=500
+  _globals['_LISTTASKSINPUT']._serialized_end=809
+  _globals['_LISTTASKSINPUT_FILTER']._serialized_start=603
+  _globals['_LISTTASKSINPUT_FILTER']._serialized_end=809
+  _globals['_LISTTASKSOUTPUT']._serialized_start=811
+  _globals['_LISTTASKSOUTPUT']._serialized_end=878
+  _globals['_DESCRIBETASKINPUT']._serialized_start=880
+  _globals['_DESCRIBETASKINPUT']._serialized_end=916
+  _globals['_DESCRIBETASKOUTPUT']._serialized_start=918
+  _globals['_DESCRIBETASKOUTPUT']._serialized_end=972
+  _globals['_WATCHTASKINPUT']._serialized_start=974
+  _globals['_WATCHTASKINPUT']._serialized_end=1007
+  _globals['_WATCHTASKOUTPUT']._serialized_start=1009
+  _globals['_WATCHTASKOUTPUT']._serialized_end=1109
+  _globals['_CANCELTASKINPUT']._serialized_start=1111
+  _globals['_CANCELTASKINPUT']._serialized_end=1145
+  _globals['_CANCELTASKOUTPUT']._serialized_start=1147
+  _globals['_CANCELTASKOUTPUT']._serialized_end=1165
+  _globals['_RETRYTASKINPUT']._serialized_start=1167
+  _globals['_RETRYTASKINPUT']._serialized_end=1200
+  _globals['_RETRYTASKOUTPUT']._serialized_start=1202
+  _globals['_RETRYTASKOUTPUT']._serialized_end=1219
+  _globals['_TASKSERVICE']._serialized_start=1222
+  _globals['_TASKSERVICE']._serialized_end=2127
 # @@protoc_insertion_point(module_scope)

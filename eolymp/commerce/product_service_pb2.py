@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -31,7 +32,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/commerce/product_service.proto\x12\x0f\x65olymp.commerce\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/commerce/product.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"?\n\x12\x43reateProductInput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\")\n\x13\x43reateProductOutput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"\x88\x01\n\x12UpdateProductInput\x12\x33\n\x05patch\x18\x03 \x03(\x0e\x32$.eolymp.commerce.Product.Patch.Field\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12)\n\x07product\x18\x02 \x01(\x0b\x32\x18.eolymp.commerce.Product\"\x15\n\x13UpdateProductOutput\"(\n\x12\x44\x65leteProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteProductOutput\"q\n\x14\x44\x65scribeProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x34\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32$.eolymp.commerce.Product.Extra.Field\"B\n\x15\x44\x65scribeProductOutput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\"\xa4\x04\n\x11ListProductsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06search\x18\x14 \x01(\t\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.commerce.ListProductsInput.Filter\x12\x39\n\x04sort\x18\x32 \x01(\x0e\x32+.eolymp.commerce.ListProductsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x34\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32$.eolymp.commerce.Product.Extra.Field\x1a\xce\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x36\n\x0cout_of_stock\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12.\n\x05price\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"L\n\x12ListProductsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.commerce.Product\"b\n\x19\x43reateProductVariantInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x31\n\x07variant\x18\x02 \x01(\x0b\x32 .eolymp.commerce.Product.Variant\"0\n\x1a\x43reateProductVariantOutput\x12\x12\n\nvariant_id\x18\x01 \x01(\t\"\xb3\x01\n\x19UpdateProductVariantInput\x12;\n\x05patch\x18\x01 \x03(\x0e\x32,.eolymp.commerce.Product.Variant.Patch.Field\x12\x12\n\nproduct_id\x18\x02 \x01(\t\x12\x12\n\nvariant_id\x18\x03 \x01(\t\x12\x31\n\x07variant\x18\x04 \x01(\x0b\x32 .eolymp.commerce.Product.Variant\"\x1c\n\x1aUpdateProductVariantOutput\"C\n\x19\x44\x65leteProductVariantInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteProductVariantOutput\"E\n\x1b\x44\x65scribeProductVariantInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"Q\n\x1c\x44\x65scribeProductVariantOutput\x12\x31\n\x07variant\x18\x01 \x01(\x0b\x32 .eolymp.commerce.Product.Variant\"\xd1\x03\n\x18ListProductVariantsInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x41\n\x07\x66ilters\x18( \x01(\x0b\x32\x30.eolymp.commerce.ListProductVariantsInput.Filter\x12@\n\x04sort\x18\x32 \x01(\x0e\x32\x32.eolymp.commerce.ListProductVariantsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\x9e\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x36\n\x0cout_of_stock\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"!\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x08\n\x04NAME\x10\x01\"[\n\x19ListProductVariantsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12/\n\x05items\x18\x02 \x03(\x0b\x32 .eolymp.commerce.Product.Variant2\xb2\x0f\n\x0eProductService\x12\xa0\x01\n\rCreateProduct\x12#.eolymp.commerce.CreateProductInput\x1a$.eolymp.commerce.CreateProductOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\x82\xd3\xe4\x93\x02\x11\"\x0f/store/products\x12\xad\x01\n\rUpdateProduct\x12#.eolymp.commerce.UpdateProductInput\x1a$.eolymp.commerce.UpdateProductOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\x82\xd3\xe4\x93\x02\x1e\x1a\x1c/store/products/{product_id}\x12\xad\x01\n\rDeleteProduct\x12#.eolymp.commerce.DeleteProductInput\x1a$.eolymp.commerce.DeleteProductOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\x82\xd3\xe4\x93\x02\x1e*\x1c/store/products/{product_id}\x12\xb2\x01\n\x0f\x44\x65scribeProduct\x12%.eolymp.commerce.DescribeProductInput\x1a&.eolymp.commerce.DescribeProductOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\x82\xd3\xe4\x93\x02\x1e\x12\x1c/store/products/{product_id}\x12\x9c\x01\n\x0cListProducts\x12\".eolymp.commerce.ListProductsInput\x1a#.eolymp.commerce.ListProductsOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\x82\xd3\xe4\x93\x02\x11\x12\x0f/store/products\x12\xcb\x01\n\x14\x43reateProductVariant\x12*.eolymp.commerce.CreateProductVariantInput\x1a+.eolymp.commerce.CreateProductVariantOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\x82\xd3\xe4\x93\x02\'\"%/store/products/{product_id}/variants\x12\xd8\x01\n\x14UpdateProductVariant\x12*.eolymp.commerce.UpdateProductVariantInput\x1a+.eolymp.commerce.UpdateProductVariantOutput\"g\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\x82\xd3\xe4\x93\x02\x34\x1a\x32/store/products/{product_id}/variants/{variant_id}\x12\xd8\x01\n\x14\x44\x65leteProductVariant\x12*.eolymp.commerce.DeleteProductVariantInput\x1a+.eolymp.commerce.DeleteProductVariantOutput\"g\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\x82\xd3\xe4\x93\x02\x34*2/store/products/{product_id}/variants/{variant_id}\x12\xdd\x01\n\x16\x44\x65scribeProductVariant\x12,.eolymp.commerce.DescribeProductVariantInput\x1a-.eolymp.commerce.DescribeProductVariantOutput\"f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\x82\xd3\xe4\x93\x02\x34\x12\x32/store/products/{product_id}/variants/{variant_id}\x12\xc7\x01\n\x13ListProductVariants\x12).eolymp.commerce.ListProductVariantsInput\x1a*.eolymp.commerce.ListProductVariantsOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\x82\xd3\xe4\x93\x02\'\x12%/store/products/{product_id}/variants\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/commerce/product_service.proto\x12\x0f\x65olymp.commerce\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/commerce/product.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"?\n\x12\x43reateProductInput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\")\n\x13\x43reateProductOutput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"\x88\x01\n\x12UpdateProductInput\x12\x33\n\x05patch\x18\x03 \x03(\x0e\x32$.eolymp.commerce.Product.Patch.Field\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12)\n\x07product\x18\x02 \x01(\x0b\x32\x18.eolymp.commerce.Product\"\x15\n\x13UpdateProductOutput\"(\n\x12\x44\x65leteProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65leteProductOutput\"q\n\x14\x44\x65scribeProductInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x34\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32$.eolymp.commerce.Product.Extra.Field\"B\n\x15\x44\x65scribeProductOutput\x12)\n\x07product\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Product\"\xa4\x04\n\x11ListProductsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0e\n\x06search\x18\x14 \x01(\t\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.commerce.ListProductsInput.Filter\x12\x39\n\x04sort\x18\x32 \x01(\x0e\x32+.eolymp.commerce.ListProductsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x34\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32$.eolymp.commerce.Product.Extra.Field\x1a\xce\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x36\n\x0cout_of_stock\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12.\n\x05price\x18\x04 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\"\x17\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\"L\n\x12ListProductsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.commerce.Product\"b\n\x19\x43reateProductVariantInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x31\n\x07variant\x18\x02 \x01(\x0b\x32 .eolymp.commerce.Product.Variant\"0\n\x1a\x43reateProductVariantOutput\x12\x12\n\nvariant_id\x18\x01 \x01(\t\"\xb3\x01\n\x19UpdateProductVariantInput\x12;\n\x05patch\x18\x01 \x03(\x0e\x32,.eolymp.commerce.Product.Variant.Patch.Field\x12\x12\n\nproduct_id\x18\x02 \x01(\t\x12\x12\n\nvariant_id\x18\x03 \x01(\t\x12\x31\n\x07variant\x18\x04 \x01(\x0b\x32 .eolymp.commerce.Product.Variant\"\x1c\n\x1aUpdateProductVariantOutput\"C\n\x19\x44\x65leteProductVariantInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteProductVariantOutput\"E\n\x1b\x44\x65scribeProductVariantInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\"Q\n\x1c\x44\x65scribeProductVariantOutput\x12\x31\n\x07variant\x18\x01 \x01(\x0b\x32 .eolymp.commerce.Product.Variant\"\xd1\x03\n\x18ListProductVariantsInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x41\n\x07\x66ilters\x18( \x01(\x0b\x32\x30.eolymp.commerce.ListProductVariantsInput.Filter\x12@\n\x04sort\x18\x32 \x01(\x0e\x32\x32.eolymp.commerce.ListProductVariantsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\x9e\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x36\n\x0cout_of_stock\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"!\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x08\n\x04NAME\x10\x01\"[\n\x19ListProductVariantsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12/\n\x05items\x18\x02 \x03(\x0b\x32 .eolymp.commerce.Product.Variant2\x82\x10\n\x0eProductService\x12\xa8\x01\n\rCreateProduct\x12#.eolymp.commerce.CreateProductInput\x1a$.eolymp.commerce.CreateProductOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x11\"\x0f/store/products\x12\xb5\x01\n\rUpdateProduct\x12#.eolymp.commerce.UpdateProductInput\x1a$.eolymp.commerce.UpdateProductOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\x1a\x1c/store/products/{product_id}\x12\xb5\x01\n\rDeleteProduct\x12#.eolymp.commerce.DeleteProductInput\x1a$.eolymp.commerce.DeleteProductOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1e*\x1c/store/products/{product_id}\x12\xba\x01\n\x0f\x44\x65scribeProduct\x12%.eolymp.commerce.DescribeProductInput\x1a&.eolymp.commerce.DescribeProductOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1e\x12\x1c/store/products/{product_id}\x12\xa4\x01\n\x0cListProducts\x12\".eolymp.commerce.ListProductsInput\x1a#.eolymp.commerce.ListProductsOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x11\x12\x0f/store/products\x12\xd3\x01\n\x14\x43reateProductVariant\x12*.eolymp.commerce.CreateProductVariantInput\x1a+.eolymp.commerce.CreateProductVariantOutput\"b\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\'\"%/store/products/{product_id}/variants\x12\xe0\x01\n\x14UpdateProductVariant\x12*.eolymp.commerce.UpdateProductVariantInput\x1a+.eolymp.commerce.UpdateProductVariantOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x34\x1a\x32/store/products/{product_id}/variants/{variant_id}\x12\xe0\x01\n\x14\x44\x65leteProductVariant\x12*.eolymp.commerce.DeleteProductVariantInput\x1a+.eolymp.commerce.DeleteProductVariantOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x34*2/store/products/{product_id}/variants/{variant_id}\x12\xe5\x01\n\x16\x44\x65scribeProductVariant\x12,.eolymp.commerce.DescribeProductVariantInput\x1a-.eolymp.commerce.DescribeProductVariantOutput\"n\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x34\x12\x32/store/products/{product_id}/variants/{variant_id}\x12\xcf\x01\n\x13ListProductVariants\x12).eolymp.commerce.ListProductVariantsInput\x1a*.eolymp.commerce.ListProductVariantsOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\'\x12%/store/products/{product_id}/variants\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,73 +43,73 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRODUCTSERVICE']._loaded_options = None
   _globals['_PRODUCTSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_PRODUCTSERVICE'].methods_by_name['CreateProduct']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['CreateProduct']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\202\323\344\223\002\021\"\017/store/products'
+  _globals['_PRODUCTSERVICE'].methods_by_name['CreateProduct']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\242\343\n\004\250\343\n\002\202\323\344\223\002\021\"\017/store/products'
   _globals['_PRODUCTSERVICE'].methods_by_name['UpdateProduct']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['UpdateProduct']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\202\323\344\223\002\036\032\034/store/products/{product_id}'
+  _globals['_PRODUCTSERVICE'].methods_by_name['UpdateProduct']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\242\343\n\004\250\343\n\002\202\323\344\223\002\036\032\034/store/products/{product_id}'
   _globals['_PRODUCTSERVICE'].methods_by_name['DeleteProduct']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['DeleteProduct']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\202\323\344\223\002\036*\034/store/products/{product_id}'
+  _globals['_PRODUCTSERVICE'].methods_by_name['DeleteProduct']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\242\343\n\004\250\343\n\003\202\323\344\223\002\036*\034/store/products/{product_id}'
   _globals['_PRODUCTSERVICE'].methods_by_name['DescribeProduct']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['DescribeProduct']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025commerce:catalog:read\202\323\344\223\002\036\022\034/store/products/{product_id}'
+  _globals['_PRODUCTSERVICE'].methods_by_name['DescribeProduct']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025commerce:catalog:read\242\343\n\004\250\343\n\001\202\323\344\223\002\036\022\034/store/products/{product_id}'
   _globals['_PRODUCTSERVICE'].methods_by_name['ListProducts']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['ListProducts']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025commerce:catalog:read\202\323\344\223\002\021\022\017/store/products'
+  _globals['_PRODUCTSERVICE'].methods_by_name['ListProducts']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025commerce:catalog:read\242\343\n\004\250\343\n\001\202\323\344\223\002\021\022\017/store/products'
   _globals['_PRODUCTSERVICE'].methods_by_name['CreateProductVariant']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['CreateProductVariant']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\202\323\344\223\002\'\"%/store/products/{product_id}/variants'
+  _globals['_PRODUCTSERVICE'].methods_by_name['CreateProductVariant']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\242\343\n\004\250\343\n\002\202\323\344\223\002\'\"%/store/products/{product_id}/variants'
   _globals['_PRODUCTSERVICE'].methods_by_name['UpdateProductVariant']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['UpdateProductVariant']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\202\323\344\223\0024\0322/store/products/{product_id}/variants/{variant_id}'
+  _globals['_PRODUCTSERVICE'].methods_by_name['UpdateProductVariant']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\242\343\n\004\250\343\n\002\202\323\344\223\0024\0322/store/products/{product_id}/variants/{variant_id}'
   _globals['_PRODUCTSERVICE'].methods_by_name['DeleteProductVariant']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['DeleteProductVariant']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\202\323\344\223\0024*2/store/products/{product_id}/variants/{variant_id}'
+  _globals['_PRODUCTSERVICE'].methods_by_name['DeleteProductVariant']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\032\212\343\n\026commerce:catalog:write\242\343\n\004\250\343\n\003\202\323\344\223\0024*2/store/products/{product_id}/variants/{variant_id}'
   _globals['_PRODUCTSERVICE'].methods_by_name['DescribeProductVariant']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['DescribeProductVariant']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025commerce:catalog:read\202\323\344\223\0024\0222/store/products/{product_id}/variants/{variant_id}'
+  _globals['_PRODUCTSERVICE'].methods_by_name['DescribeProductVariant']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025commerce:catalog:read\242\343\n\004\250\343\n\001\202\323\344\223\0024\0222/store/products/{product_id}/variants/{variant_id}'
   _globals['_PRODUCTSERVICE'].methods_by_name['ListProductVariants']._loaded_options = None
-  _globals['_PRODUCTSERVICE'].methods_by_name['ListProductVariants']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025commerce:catalog:read\202\323\344\223\002\'\022%/store/products/{product_id}/variants'
-  _globals['_CREATEPRODUCTINPUT']._serialized_start=293
-  _globals['_CREATEPRODUCTINPUT']._serialized_end=356
-  _globals['_CREATEPRODUCTOUTPUT']._serialized_start=358
-  _globals['_CREATEPRODUCTOUTPUT']._serialized_end=399
-  _globals['_UPDATEPRODUCTINPUT']._serialized_start=402
-  _globals['_UPDATEPRODUCTINPUT']._serialized_end=538
-  _globals['_UPDATEPRODUCTOUTPUT']._serialized_start=540
-  _globals['_UPDATEPRODUCTOUTPUT']._serialized_end=561
-  _globals['_DELETEPRODUCTINPUT']._serialized_start=563
-  _globals['_DELETEPRODUCTINPUT']._serialized_end=603
-  _globals['_DELETEPRODUCTOUTPUT']._serialized_start=605
-  _globals['_DELETEPRODUCTOUTPUT']._serialized_end=626
-  _globals['_DESCRIBEPRODUCTINPUT']._serialized_start=628
-  _globals['_DESCRIBEPRODUCTINPUT']._serialized_end=741
-  _globals['_DESCRIBEPRODUCTOUTPUT']._serialized_start=743
-  _globals['_DESCRIBEPRODUCTOUTPUT']._serialized_end=809
-  _globals['_LISTPRODUCTSINPUT']._serialized_start=812
-  _globals['_LISTPRODUCTSINPUT']._serialized_end=1360
-  _globals['_LISTPRODUCTSINPUT_FILTER']._serialized_start=1129
-  _globals['_LISTPRODUCTSINPUT_FILTER']._serialized_end=1335
-  _globals['_LISTPRODUCTSINPUT_SORTABLE']._serialized_start=1337
-  _globals['_LISTPRODUCTSINPUT_SORTABLE']._serialized_end=1360
-  _globals['_LISTPRODUCTSOUTPUT']._serialized_start=1362
-  _globals['_LISTPRODUCTSOUTPUT']._serialized_end=1438
-  _globals['_CREATEPRODUCTVARIANTINPUT']._serialized_start=1440
-  _globals['_CREATEPRODUCTVARIANTINPUT']._serialized_end=1538
-  _globals['_CREATEPRODUCTVARIANTOUTPUT']._serialized_start=1540
-  _globals['_CREATEPRODUCTVARIANTOUTPUT']._serialized_end=1588
-  _globals['_UPDATEPRODUCTVARIANTINPUT']._serialized_start=1591
-  _globals['_UPDATEPRODUCTVARIANTINPUT']._serialized_end=1770
-  _globals['_UPDATEPRODUCTVARIANTOUTPUT']._serialized_start=1772
-  _globals['_UPDATEPRODUCTVARIANTOUTPUT']._serialized_end=1800
-  _globals['_DELETEPRODUCTVARIANTINPUT']._serialized_start=1802
-  _globals['_DELETEPRODUCTVARIANTINPUT']._serialized_end=1869
-  _globals['_DELETEPRODUCTVARIANTOUTPUT']._serialized_start=1871
-  _globals['_DELETEPRODUCTVARIANTOUTPUT']._serialized_end=1899
-  _globals['_DESCRIBEPRODUCTVARIANTINPUT']._serialized_start=1901
-  _globals['_DESCRIBEPRODUCTVARIANTINPUT']._serialized_end=1970
-  _globals['_DESCRIBEPRODUCTVARIANTOUTPUT']._serialized_start=1972
-  _globals['_DESCRIBEPRODUCTVARIANTOUTPUT']._serialized_end=2053
-  _globals['_LISTPRODUCTVARIANTSINPUT']._serialized_start=2056
-  _globals['_LISTPRODUCTVARIANTSINPUT']._serialized_end=2521
-  _globals['_LISTPRODUCTVARIANTSINPUT_FILTER']._serialized_start=1129
-  _globals['_LISTPRODUCTVARIANTSINPUT_FILTER']._serialized_end=1287
-  _globals['_LISTPRODUCTVARIANTSINPUT_SORTABLE']._serialized_start=2488
-  _globals['_LISTPRODUCTVARIANTSINPUT_SORTABLE']._serialized_end=2521
-  _globals['_LISTPRODUCTVARIANTSOUTPUT']._serialized_start=2523
-  _globals['_LISTPRODUCTVARIANTSOUTPUT']._serialized_end=2614
-  _globals['_PRODUCTSERVICE']._serialized_start=2617
-  _globals['_PRODUCTSERVICE']._serialized_end=4587
+  _globals['_PRODUCTSERVICE'].methods_by_name['ListProductVariants']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025commerce:catalog:read\242\343\n\004\250\343\n\001\202\323\344\223\002\'\022%/store/products/{product_id}/variants'
+  _globals['_CREATEPRODUCTINPUT']._serialized_start=325
+  _globals['_CREATEPRODUCTINPUT']._serialized_end=388
+  _globals['_CREATEPRODUCTOUTPUT']._serialized_start=390
+  _globals['_CREATEPRODUCTOUTPUT']._serialized_end=431
+  _globals['_UPDATEPRODUCTINPUT']._serialized_start=434
+  _globals['_UPDATEPRODUCTINPUT']._serialized_end=570
+  _globals['_UPDATEPRODUCTOUTPUT']._serialized_start=572
+  _globals['_UPDATEPRODUCTOUTPUT']._serialized_end=593
+  _globals['_DELETEPRODUCTINPUT']._serialized_start=595
+  _globals['_DELETEPRODUCTINPUT']._serialized_end=635
+  _globals['_DELETEPRODUCTOUTPUT']._serialized_start=637
+  _globals['_DELETEPRODUCTOUTPUT']._serialized_end=658
+  _globals['_DESCRIBEPRODUCTINPUT']._serialized_start=660
+  _globals['_DESCRIBEPRODUCTINPUT']._serialized_end=773
+  _globals['_DESCRIBEPRODUCTOUTPUT']._serialized_start=775
+  _globals['_DESCRIBEPRODUCTOUTPUT']._serialized_end=841
+  _globals['_LISTPRODUCTSINPUT']._serialized_start=844
+  _globals['_LISTPRODUCTSINPUT']._serialized_end=1392
+  _globals['_LISTPRODUCTSINPUT_FILTER']._serialized_start=1161
+  _globals['_LISTPRODUCTSINPUT_FILTER']._serialized_end=1367
+  _globals['_LISTPRODUCTSINPUT_SORTABLE']._serialized_start=1369
+  _globals['_LISTPRODUCTSINPUT_SORTABLE']._serialized_end=1392
+  _globals['_LISTPRODUCTSOUTPUT']._serialized_start=1394
+  _globals['_LISTPRODUCTSOUTPUT']._serialized_end=1470
+  _globals['_CREATEPRODUCTVARIANTINPUT']._serialized_start=1472
+  _globals['_CREATEPRODUCTVARIANTINPUT']._serialized_end=1570
+  _globals['_CREATEPRODUCTVARIANTOUTPUT']._serialized_start=1572
+  _globals['_CREATEPRODUCTVARIANTOUTPUT']._serialized_end=1620
+  _globals['_UPDATEPRODUCTVARIANTINPUT']._serialized_start=1623
+  _globals['_UPDATEPRODUCTVARIANTINPUT']._serialized_end=1802
+  _globals['_UPDATEPRODUCTVARIANTOUTPUT']._serialized_start=1804
+  _globals['_UPDATEPRODUCTVARIANTOUTPUT']._serialized_end=1832
+  _globals['_DELETEPRODUCTVARIANTINPUT']._serialized_start=1834
+  _globals['_DELETEPRODUCTVARIANTINPUT']._serialized_end=1901
+  _globals['_DELETEPRODUCTVARIANTOUTPUT']._serialized_start=1903
+  _globals['_DELETEPRODUCTVARIANTOUTPUT']._serialized_end=1931
+  _globals['_DESCRIBEPRODUCTVARIANTINPUT']._serialized_start=1933
+  _globals['_DESCRIBEPRODUCTVARIANTINPUT']._serialized_end=2002
+  _globals['_DESCRIBEPRODUCTVARIANTOUTPUT']._serialized_start=2004
+  _globals['_DESCRIBEPRODUCTVARIANTOUTPUT']._serialized_end=2085
+  _globals['_LISTPRODUCTVARIANTSINPUT']._serialized_start=2088
+  _globals['_LISTPRODUCTVARIANTSINPUT']._serialized_end=2553
+  _globals['_LISTPRODUCTVARIANTSINPUT_FILTER']._serialized_start=1161
+  _globals['_LISTPRODUCTVARIANTSINPUT_FILTER']._serialized_end=1319
+  _globals['_LISTPRODUCTVARIANTSINPUT_SORTABLE']._serialized_start=2520
+  _globals['_LISTPRODUCTVARIANTSINPUT_SORTABLE']._serialized_end=2553
+  _globals['_LISTPRODUCTVARIANTSOUTPUT']._serialized_start=2555
+  _globals['_LISTPRODUCTVARIANTSOUTPUT']._serialized_end=2646
+  _globals['_PRODUCTSERVICE']._serialized_start=2649
+  _globals['_PRODUCTSERVICE']._serialized_end=4699
 # @@protoc_insertion_point(module_scope)

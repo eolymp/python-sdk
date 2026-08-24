@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -31,7 +32,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/automation/rule_service.proto\x12\x11\x65olymp.automation\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/automation/rule.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\xf5\x03\n\x0eListRulesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.automation.ListRulesInput.Filter\x12\x38\n\x04sort\x18\x32 \x01(\x0e\x32*.eolymp.automation.ListRulesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xcd\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x31\n\x07trigger\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x32\n\x08inactive\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"D\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\x12\x11\n\rTRIGGER_COUNT\x10\x03\"H\n\x0fListRulesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.automation.Rule\"8\n\x0f\x43reateRuleInput\x12%\n\x04rule\x18\x01 \x01(\x0b\x32\x17.eolymp.automation.Rule\"#\n\x10\x43reateRuleOutput\x12\x0f\n\x07rule_id\x18\x01 \x01(\t\"$\n\x11\x44\x65scribeRuleInput\x12\x0f\n\x07rule_id\x18\x01 \x01(\t\";\n\x12\x44\x65scribeRuleOutput\x12%\n\x04rule\x18\x01 \x01(\x0b\x32\x17.eolymp.automation.Rule\"}\n\x0fUpdateRuleInput\x12\x32\n\x05patch\x18\x01 \x03(\x0e\x32#.eolymp.automation.Rule.Patch.Field\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\x12%\n\x04rule\x18\x03 \x01(\x0b\x32\x17.eolymp.automation.Rule\"\x12\n\x10UpdateRuleOutput\"\"\n\x0f\x44\x65leteRuleInput\x12\x0f\n\x07rule_id\x18\x01 \x01(\t\"\x12\n\x10\x44\x65leteRuleOutput\"\xc0\x01\n\x10TriggerRuleInput\x12\x0f\n\x07rule_id\x18\x01 \x01(\t\x12G\n\nreferences\x18\x02 \x03(\x0b\x32\x33.eolymp.automation.TriggerRuleInput.ReferencesEntry\x12\x0f\n\x07\x64ry_run\x18\x03 \x01(\x08\x12\x0e\n\x06log_id\x18\x04 \x01(\t\x1a\x31\n\x0fReferencesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"#\n\x11TriggerRuleOutput\x12\x0e\n\x06log_id\x18\x01 \x01(\t\"\xc0\x01\n\x10ListActionsInput\x12G\n\nreferences\x18\x01 \x03(\x0b\x32\x33.eolymp.automation.ListActionsInput.ReferencesEntry\x12\x30\n\x07trigger\x18\x02 \x01(\x0e\x32\x1f.eolymp.automation.Rule.Trigger\x1a\x31\n\x0fReferencesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\";\n\x11ListActionsOutput\x12&\n\x05items\x18\x01 \x03(\x0b\x32\x17.eolymp.automation.Rule2\xbb\t\n\x0bRuleService\x12\x98\x01\n\tListRules\x12!.eolymp.automation.ListRulesInput\x1a\".eolymp.automation.ListRulesOutput\"D\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61utomation:rule:read\x82\xd3\xe4\x93\x02\x13\x12\x11/automation/rules\x12\x9c\x01\n\nCreateRule\x12\".eolymp.automation.CreateRuleInput\x1a#.eolymp.automation.CreateRuleOutput\"E\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61utomation:rule:write\x82\xd3\xe4\x93\x02\x13\"\x11/automation/rules\x12\xab\x01\n\x0c\x44\x65scribeRule\x12$.eolymp.automation.DescribeRuleInput\x1a%.eolymp.automation.DescribeRuleOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61utomation:rule:read\x82\xd3\xe4\x93\x02\x1d\x12\x1b/automation/rules/{rule_id}\x12\xa6\x01\n\nUpdateRule\x12\".eolymp.automation.UpdateRuleInput\x1a#.eolymp.automation.UpdateRuleOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61utomation:rule:write\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/automation/rules/{rule_id}\x12\xa6\x01\n\nDeleteRule\x12\".eolymp.automation.DeleteRuleInput\x1a#.eolymp.automation.DeleteRuleOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61utomation:rule:write\x82\xd3\xe4\x93\x02\x1d*\x1b/automation/rules/{rule_id}\x12\xb1\x01\n\x0bTriggerRule\x12#.eolymp.automation.TriggerRuleInput\x1a$.eolymp.automation.TriggerRuleOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61utomation:rule:write\x82\xd3\xe4\x93\x02%\"#/automation/rules/{rule_id}/trigger\x12\xa0\x01\n\x0bListActions\x12#.eolymp.automation.ListActionsInput\x1a$.eolymp.automation.ListActionsOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61utomation:rule:read\x82\xd3\xe4\x93\x02\x15\x12\x13/automation/actions\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/automation/rule_service.proto\x12\x11\x65olymp.automation\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/automation/rule.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\xf5\x03\n\x0eListRulesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.automation.ListRulesInput.Filter\x12\x38\n\x04sort\x18\x32 \x01(\x0e\x32*.eolymp.automation.ListRulesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xcd\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x31\n\x07trigger\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x32\n\x08inactive\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"D\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\x12\x11\n\rTRIGGER_COUNT\x10\x03\"H\n\x0fListRulesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.automation.Rule\"8\n\x0f\x43reateRuleInput\x12%\n\x04rule\x18\x01 \x01(\x0b\x32\x17.eolymp.automation.Rule\"#\n\x10\x43reateRuleOutput\x12\x0f\n\x07rule_id\x18\x01 \x01(\t\"$\n\x11\x44\x65scribeRuleInput\x12\x0f\n\x07rule_id\x18\x01 \x01(\t\";\n\x12\x44\x65scribeRuleOutput\x12%\n\x04rule\x18\x01 \x01(\x0b\x32\x17.eolymp.automation.Rule\"}\n\x0fUpdateRuleInput\x12\x32\n\x05patch\x18\x01 \x03(\x0e\x32#.eolymp.automation.Rule.Patch.Field\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\x12%\n\x04rule\x18\x03 \x01(\x0b\x32\x17.eolymp.automation.Rule\"\x12\n\x10UpdateRuleOutput\"\"\n\x0f\x44\x65leteRuleInput\x12\x0f\n\x07rule_id\x18\x01 \x01(\t\"\x12\n\x10\x44\x65leteRuleOutput\"\xc0\x01\n\x10TriggerRuleInput\x12\x0f\n\x07rule_id\x18\x01 \x01(\t\x12G\n\nreferences\x18\x02 \x03(\x0b\x32\x33.eolymp.automation.TriggerRuleInput.ReferencesEntry\x12\x0f\n\x07\x64ry_run\x18\x03 \x01(\x08\x12\x0e\n\x06log_id\x18\x04 \x01(\t\x1a\x31\n\x0fReferencesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"#\n\x11TriggerRuleOutput\x12\x0e\n\x06log_id\x18\x01 \x01(\t\"\xc0\x01\n\x10ListActionsInput\x12G\n\nreferences\x18\x01 \x03(\x0b\x32\x33.eolymp.automation.ListActionsInput.ReferencesEntry\x12\x30\n\x07trigger\x18\x02 \x01(\x0e\x32\x1f.eolymp.automation.Rule.Trigger\x1a\x31\n\x0fReferencesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\";\n\x11ListActionsOutput\x12&\n\x05items\x18\x01 \x03(\x0b\x32\x17.eolymp.automation.Rule2\xf3\t\n\x0bRuleService\x12\xa0\x01\n\tListRules\x12!.eolymp.automation.ListRulesInput\x1a\".eolymp.automation.ListRulesOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61utomation:rule:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x13\x12\x11/automation/rules\x12\xa4\x01\n\nCreateRule\x12\".eolymp.automation.CreateRuleInput\x1a#.eolymp.automation.CreateRuleOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61utomation:rule:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\"\x11/automation/rules\x12\xb3\x01\n\x0c\x44\x65scribeRule\x12$.eolymp.automation.DescribeRuleInput\x1a%.eolymp.automation.DescribeRuleOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61utomation:rule:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1d\x12\x1b/automation/rules/{rule_id}\x12\xae\x01\n\nUpdateRule\x12\".eolymp.automation.UpdateRuleInput\x1a#.eolymp.automation.UpdateRuleOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61utomation:rule:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/automation/rules/{rule_id}\x12\xae\x01\n\nDeleteRule\x12\".eolymp.automation.DeleteRuleInput\x1a#.eolymp.automation.DeleteRuleOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61utomation:rule:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1d*\x1b/automation/rules/{rule_id}\x12\xb9\x01\n\x0bTriggerRule\x12#.eolymp.automation.TriggerRuleInput\x1a$.eolymp.automation.TriggerRuleOutput\"_\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x61utomation:rule:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02%\"#/automation/rules/{rule_id}/trigger\x12\xa8\x01\n\x0bListActions\x12#.eolymp.automation.ListActionsInput\x1a$.eolymp.automation.ListActionsOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14\x61utomation:rule:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x15\x12\x13/automation/actions\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -46,55 +47,55 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RULESERVICE']._loaded_options = None
   _globals['_RULESERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_RULESERVICE'].methods_by_name['ListRules']._loaded_options = None
-  _globals['_RULESERVICE'].methods_by_name['ListRules']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\030\212\343\n\024automation:rule:read\202\323\344\223\002\023\022\021/automation/rules'
+  _globals['_RULESERVICE'].methods_by_name['ListRules']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\030\212\343\n\024automation:rule:read\242\343\n\004\250\343\n\001\202\323\344\223\002\023\022\021/automation/rules'
   _globals['_RULESERVICE'].methods_by_name['CreateRule']._loaded_options = None
-  _globals['_RULESERVICE'].methods_by_name['CreateRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025automation:rule:write\202\323\344\223\002\023\"\021/automation/rules'
+  _globals['_RULESERVICE'].methods_by_name['CreateRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025automation:rule:write\242\343\n\004\250\343\n\002\202\323\344\223\002\023\"\021/automation/rules'
   _globals['_RULESERVICE'].methods_by_name['DescribeRule']._loaded_options = None
-  _globals['_RULESERVICE'].methods_by_name['DescribeRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\030\212\343\n\024automation:rule:read\202\323\344\223\002\035\022\033/automation/rules/{rule_id}'
+  _globals['_RULESERVICE'].methods_by_name['DescribeRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\030\212\343\n\024automation:rule:read\242\343\n\004\250\343\n\001\202\323\344\223\002\035\022\033/automation/rules/{rule_id}'
   _globals['_RULESERVICE'].methods_by_name['UpdateRule']._loaded_options = None
-  _globals['_RULESERVICE'].methods_by_name['UpdateRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025automation:rule:write\202\323\344\223\002\035\032\033/automation/rules/{rule_id}'
+  _globals['_RULESERVICE'].methods_by_name['UpdateRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025automation:rule:write\242\343\n\004\250\343\n\002\202\323\344\223\002\035\032\033/automation/rules/{rule_id}'
   _globals['_RULESERVICE'].methods_by_name['DeleteRule']._loaded_options = None
-  _globals['_RULESERVICE'].methods_by_name['DeleteRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025automation:rule:write\202\323\344\223\002\035*\033/automation/rules/{rule_id}'
+  _globals['_RULESERVICE'].methods_by_name['DeleteRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025automation:rule:write\242\343\n\004\250\343\n\003\202\323\344\223\002\035*\033/automation/rules/{rule_id}'
   _globals['_RULESERVICE'].methods_by_name['TriggerRule']._loaded_options = None
-  _globals['_RULESERVICE'].methods_by_name['TriggerRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025automation:rule:write\202\323\344\223\002%\"#/automation/rules/{rule_id}/trigger'
+  _globals['_RULESERVICE'].methods_by_name['TriggerRule']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025automation:rule:write\242\343\n\004\250\343\n\002\202\323\344\223\002%\"#/automation/rules/{rule_id}/trigger'
   _globals['_RULESERVICE'].methods_by_name['ListActions']._loaded_options = None
-  _globals['_RULESERVICE'].methods_by_name['ListActions']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\030\212\343\n\024automation:rule:read\202\323\344\223\002\025\022\023/automation/actions'
-  _globals['_LISTRULESINPUT']._serialized_start=294
-  _globals['_LISTRULESINPUT']._serialized_end=795
-  _globals['_LISTRULESINPUT_FILTER']._serialized_start=520
-  _globals['_LISTRULESINPUT_FILTER']._serialized_end=725
-  _globals['_LISTRULESINPUT_SORTABLE']._serialized_start=727
-  _globals['_LISTRULESINPUT_SORTABLE']._serialized_end=795
-  _globals['_LISTRULESOUTPUT']._serialized_start=797
-  _globals['_LISTRULESOUTPUT']._serialized_end=869
-  _globals['_CREATERULEINPUT']._serialized_start=871
-  _globals['_CREATERULEINPUT']._serialized_end=927
-  _globals['_CREATERULEOUTPUT']._serialized_start=929
-  _globals['_CREATERULEOUTPUT']._serialized_end=964
-  _globals['_DESCRIBERULEINPUT']._serialized_start=966
-  _globals['_DESCRIBERULEINPUT']._serialized_end=1002
-  _globals['_DESCRIBERULEOUTPUT']._serialized_start=1004
-  _globals['_DESCRIBERULEOUTPUT']._serialized_end=1063
-  _globals['_UPDATERULEINPUT']._serialized_start=1065
-  _globals['_UPDATERULEINPUT']._serialized_end=1190
-  _globals['_UPDATERULEOUTPUT']._serialized_start=1192
-  _globals['_UPDATERULEOUTPUT']._serialized_end=1210
-  _globals['_DELETERULEINPUT']._serialized_start=1212
-  _globals['_DELETERULEINPUT']._serialized_end=1246
-  _globals['_DELETERULEOUTPUT']._serialized_start=1248
-  _globals['_DELETERULEOUTPUT']._serialized_end=1266
-  _globals['_TRIGGERRULEINPUT']._serialized_start=1269
-  _globals['_TRIGGERRULEINPUT']._serialized_end=1461
-  _globals['_TRIGGERRULEINPUT_REFERENCESENTRY']._serialized_start=1412
-  _globals['_TRIGGERRULEINPUT_REFERENCESENTRY']._serialized_end=1461
-  _globals['_TRIGGERRULEOUTPUT']._serialized_start=1463
-  _globals['_TRIGGERRULEOUTPUT']._serialized_end=1498
-  _globals['_LISTACTIONSINPUT']._serialized_start=1501
-  _globals['_LISTACTIONSINPUT']._serialized_end=1693
-  _globals['_LISTACTIONSINPUT_REFERENCESENTRY']._serialized_start=1412
-  _globals['_LISTACTIONSINPUT_REFERENCESENTRY']._serialized_end=1461
-  _globals['_LISTACTIONSOUTPUT']._serialized_start=1695
-  _globals['_LISTACTIONSOUTPUT']._serialized_end=1754
-  _globals['_RULESERVICE']._serialized_start=1757
-  _globals['_RULESERVICE']._serialized_end=2968
+  _globals['_RULESERVICE'].methods_by_name['ListActions']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\030\212\343\n\024automation:rule:read\242\343\n\004\250\343\n\001\202\323\344\223\002\025\022\023/automation/actions'
+  _globals['_LISTRULESINPUT']._serialized_start=326
+  _globals['_LISTRULESINPUT']._serialized_end=827
+  _globals['_LISTRULESINPUT_FILTER']._serialized_start=552
+  _globals['_LISTRULESINPUT_FILTER']._serialized_end=757
+  _globals['_LISTRULESINPUT_SORTABLE']._serialized_start=759
+  _globals['_LISTRULESINPUT_SORTABLE']._serialized_end=827
+  _globals['_LISTRULESOUTPUT']._serialized_start=829
+  _globals['_LISTRULESOUTPUT']._serialized_end=901
+  _globals['_CREATERULEINPUT']._serialized_start=903
+  _globals['_CREATERULEINPUT']._serialized_end=959
+  _globals['_CREATERULEOUTPUT']._serialized_start=961
+  _globals['_CREATERULEOUTPUT']._serialized_end=996
+  _globals['_DESCRIBERULEINPUT']._serialized_start=998
+  _globals['_DESCRIBERULEINPUT']._serialized_end=1034
+  _globals['_DESCRIBERULEOUTPUT']._serialized_start=1036
+  _globals['_DESCRIBERULEOUTPUT']._serialized_end=1095
+  _globals['_UPDATERULEINPUT']._serialized_start=1097
+  _globals['_UPDATERULEINPUT']._serialized_end=1222
+  _globals['_UPDATERULEOUTPUT']._serialized_start=1224
+  _globals['_UPDATERULEOUTPUT']._serialized_end=1242
+  _globals['_DELETERULEINPUT']._serialized_start=1244
+  _globals['_DELETERULEINPUT']._serialized_end=1278
+  _globals['_DELETERULEOUTPUT']._serialized_start=1280
+  _globals['_DELETERULEOUTPUT']._serialized_end=1298
+  _globals['_TRIGGERRULEINPUT']._serialized_start=1301
+  _globals['_TRIGGERRULEINPUT']._serialized_end=1493
+  _globals['_TRIGGERRULEINPUT_REFERENCESENTRY']._serialized_start=1444
+  _globals['_TRIGGERRULEINPUT_REFERENCESENTRY']._serialized_end=1493
+  _globals['_TRIGGERRULEOUTPUT']._serialized_start=1495
+  _globals['_TRIGGERRULEOUTPUT']._serialized_end=1530
+  _globals['_LISTACTIONSINPUT']._serialized_start=1533
+  _globals['_LISTACTIONSINPUT']._serialized_end=1725
+  _globals['_LISTACTIONSINPUT_REFERENCESENTRY']._serialized_start=1444
+  _globals['_LISTACTIONSINPUT_REFERENCESENTRY']._serialized_end=1493
+  _globals['_LISTACTIONSOUTPUT']._serialized_start=1727
+  _globals['_LISTACTIONSOUTPUT']._serialized_end=1786
+  _globals['_RULESERVICE']._serialized_start=1789
+  _globals['_RULESERVICE']._serialized_end=3056
 # @@protoc_insertion_point(module_scope)

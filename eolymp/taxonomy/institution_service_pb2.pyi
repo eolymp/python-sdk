@@ -1,3 +1,4 @@
+from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.taxonomy import institution_pb2 as _institution_pb2

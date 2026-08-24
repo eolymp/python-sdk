@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.judge import contest_pb2 as eolymp_dot_judge_dot_contest__pb2
@@ -29,7 +30,7 @@ from eolymp.ranker import scoreboard_pb2 as eolymp_dot_ranker_dot_scoreboard__pb
 from eolymp.universe import space_pb2 as eolymp_dot_universe_dot_space__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/resolver/resolver.proto\x12\x0f\x65olymp.resolver\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1a\x65olymp/judge/contest.proto\x1a\x1e\x65olymp/ranker/scoreboard.proto\x1a\x1b\x65olymp/universe/space.proto\"\x96\x01\n\rAuthorization\x1a\x84\x01\n\x06OAuth2\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x02 \x01(\t\x12\x1a\n\x12\x61uthorize_endpoint\x18\x03 \x01(\t\x12\x19\n\x11userinfo_endpoint\x18\x04 \x01(\t\x12\x18\n\x10signout_endpoint\x18\x05 \x01(\t\"\xbc\x01\n\x06Record\x12.\n\x06target\x18\x14 \x01(\x0b\x32\x1e.eolymp.resolver.Record.Target\x1a\x41\n\x06Target\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.eolymp.resolver.Record.Type\x12\x0b\n\x03url\x18\x02 \x01(\t\"?\n\x04Type\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\t\n\x05SPACE\x10\x01\x12\x0b\n\x07\x43ONTEST\x10\x02\x12\x0e\n\nSCOREBOARD\x10\x03\" \n\x10ResolveNameInput\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x93\x02\n\x11ResolveNameOutput\x12.\n\x06target\x18\x01 \x01(\x0b\x32\x1e.eolymp.resolver.Record.Target\x12\'\n\x05space\x18\n \x01(\x0b\x32\x16.eolymp.universe.SpaceH\x00\x12(\n\x07\x63ontest\x18\x0b \x01(\x0b\x32\x15.eolymp.judge.ContestH\x00\x12/\n\nscoreboard\x18\x0c \x01(\x0b\x32\x19.eolymp.ranker.ScoreboardH\x00\x12\x37\n\x06oauth2\x18\x14 \x01(\x0b\x32%.eolymp.resolver.Authorization.OAuth2H\x01\x42\t\n\x07targetxB\x06\n\x04\x61uth2\x86\x01\n\x08Resolver\x12z\n\x0bResolveName\x12!.eolymp.resolver.ResolveNameInput\x1a\".eolymp.resolver.ResolveNameOutput\"$\xea\xe2\n\x0b\xf5\xe2\n\x00\x00HB\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x0f\x12\r/names/{name}B3Z1github.com/eolymp/go-sdk/eolymp/resolver;resolverb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/resolver/resolver.proto\x12\x0f\x65olymp.resolver\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1a\x65olymp/judge/contest.proto\x1a\x1e\x65olymp/ranker/scoreboard.proto\x1a\x1b\x65olymp/universe/space.proto\"\x96\x01\n\rAuthorization\x1a\x84\x01\n\x06OAuth2\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x02 \x01(\t\x12\x1a\n\x12\x61uthorize_endpoint\x18\x03 \x01(\t\x12\x19\n\x11userinfo_endpoint\x18\x04 \x01(\t\x12\x18\n\x10signout_endpoint\x18\x05 \x01(\t\"\xbc\x01\n\x06Record\x12.\n\x06target\x18\x14 \x01(\x0b\x32\x1e.eolymp.resolver.Record.Target\x1a\x41\n\x06Target\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.eolymp.resolver.Record.Type\x12\x0b\n\x03url\x18\x02 \x01(\t\"?\n\x04Type\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\t\n\x05SPACE\x10\x01\x12\x0b\n\x07\x43ONTEST\x10\x02\x12\x0e\n\nSCOREBOARD\x10\x03\" \n\x10ResolveNameInput\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x93\x02\n\x11ResolveNameOutput\x12.\n\x06target\x18\x01 \x01(\x0b\x32\x1e.eolymp.resolver.Record.Target\x12\'\n\x05space\x18\n \x01(\x0b\x32\x16.eolymp.universe.SpaceH\x00\x12(\n\x07\x63ontest\x18\x0b \x01(\x0b\x32\x15.eolymp.judge.ContestH\x00\x12/\n\nscoreboard\x18\x0c \x01(\x0b\x32\x19.eolymp.ranker.ScoreboardH\x00\x12\x37\n\x06oauth2\x18\x14 \x01(\x0b\x32%.eolymp.resolver.Authorization.OAuth2H\x01\x42\t\n\x07targetxB\x06\n\x04\x61uth2\x8f\x01\n\x08Resolver\x12\x82\x01\n\x0bResolveName\x12!.eolymp.resolver.ResolveNameInput\x1a\".eolymp.resolver.ResolveNameOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00HB\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0f\x12\r/names/{name}B3Z1github.com/eolymp/go-sdk/eolymp/resolver;resolverb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,21 +39,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/resolver;resolver'
   _globals['_RESOLVER'].methods_by_name['ResolveName']._loaded_options = None
-  _globals['_RESOLVER'].methods_by_name['ResolveName']._serialized_options = b'\352\342\n\013\365\342\n\000\000HB\370\342\nd\202\323\344\223\002\017\022\r/names/{name}'
-  _globals['_AUTHORIZATION']._serialized_start=208
-  _globals['_AUTHORIZATION']._serialized_end=358
-  _globals['_AUTHORIZATION_OAUTH2']._serialized_start=226
-  _globals['_AUTHORIZATION_OAUTH2']._serialized_end=358
-  _globals['_RECORD']._serialized_start=361
-  _globals['_RECORD']._serialized_end=549
-  _globals['_RECORD_TARGET']._serialized_start=419
-  _globals['_RECORD_TARGET']._serialized_end=484
-  _globals['_RECORD_TYPE']._serialized_start=486
-  _globals['_RECORD_TYPE']._serialized_end=549
-  _globals['_RESOLVENAMEINPUT']._serialized_start=551
-  _globals['_RESOLVENAMEINPUT']._serialized_end=583
-  _globals['_RESOLVENAMEOUTPUT']._serialized_start=586
-  _globals['_RESOLVENAMEOUTPUT']._serialized_end=861
-  _globals['_RESOLVER']._serialized_start=864
-  _globals['_RESOLVER']._serialized_end=998
+  _globals['_RESOLVER'].methods_by_name['ResolveName']._serialized_options = b'\352\342\n\013\365\342\n\000\000HB\370\342\nd\242\343\n\004\250\343\n\001\202\323\344\223\002\017\022\r/names/{name}'
+  _globals['_AUTHORIZATION']._serialized_start=240
+  _globals['_AUTHORIZATION']._serialized_end=390
+  _globals['_AUTHORIZATION_OAUTH2']._serialized_start=258
+  _globals['_AUTHORIZATION_OAUTH2']._serialized_end=390
+  _globals['_RECORD']._serialized_start=393
+  _globals['_RECORD']._serialized_end=581
+  _globals['_RECORD_TARGET']._serialized_start=451
+  _globals['_RECORD_TARGET']._serialized_end=516
+  _globals['_RECORD_TYPE']._serialized_start=518
+  _globals['_RECORD_TYPE']._serialized_end=581
+  _globals['_RESOLVENAMEINPUT']._serialized_start=583
+  _globals['_RESOLVENAMEINPUT']._serialized_end=615
+  _globals['_RESOLVENAMEOUTPUT']._serialized_start=618
+  _globals['_RESOLVENAMEOUTPUT']._serialized_end=893
+  _globals['_RESOLVER']._serialized_start=896
+  _globals['_RESOLVER']._serialized_end=1039
 # @@protoc_insertion_point(module_scope)

@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -30,7 +31,7 @@ from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/suggestion_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/atlas/suggestion.proto\x1a\x18\x65olymp/ecm/content.proto\x1a!eolymp/wellknown/expression.proto\"\x7f\n\x16SuggestionChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12(\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion\x12\'\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion\"Y\n\x15\x43reateSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12,\n\nsuggestion\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion\"/\n\x16\x43reateSuggestionOutput\x12\x15\n\rsuggestion_id\x18\x01 \x01(\t\"p\n\x15UpdateSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\x12,\n\nsuggestion\x18\x03 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion\"\x18\n\x16UpdateSuggestionOutput\"B\n\x15\x44\x65leteSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteSuggestionOutput\"\xaf\x01\n\x15ReviewSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\x12/\n\x06status\x18\x03 \x01(\x0e\x32\x1f.eolymp.atlas.Suggestion.Status\x12$\n\x07\x63omment\x18\x04 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x14\n\x0c\x63ontribution\x18\x05 \x01(\r\"\x18\n\x16ReviewSuggestionOutput\"D\n\x17ResubmitSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\"\x1a\n\x18ResubmitSuggestionOutput\"\xa0\x02\n\x14ListSuggestionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.atlas.ListSuggestionsInput.Filter\x1a\x99\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"O\n\x15ListSuggestionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.atlas.Suggestion\"D\n\x17\x44\x65scribeSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\"H\n\x18\x44\x65scribeSuggestionOutput\x12,\n\nsuggestion\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion2\xd6\t\n\x11SuggestionService\x12\x98\x01\n\x10\x43reateSuggestion\x12#.eolymp.atlas.CreateSuggestionInput\x1a$.eolymp.atlas.CreateSuggestionOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02$\"\"/problems/{problem_id}/suggestions\x12\xa8\x01\n\x10UpdateSuggestion\x12#.eolymp.atlas.UpdateSuggestionInput\x1a$.eolymp.atlas.UpdateSuggestionOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x34\"2/problems/{problem_id}/suggestions/{suggestion_id}\x12\xaf\x01\n\x10ReviewSuggestion\x12#.eolymp.atlas.ReviewSuggestionInput\x1a$.eolymp.atlas.ReviewSuggestionOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02;\"9/problems/{problem_id}/suggestions/{suggestion_id}/review\x12\xb7\x01\n\x12ResubmitSuggestion\x12%.eolymp.atlas.ResubmitSuggestionInput\x1a&.eolymp.atlas.ResubmitSuggestionOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02=\";/problems/{problem_id}/suggestions/{suggestion_id}/resubmit\x12\xa8\x01\n\x10\x44\x65leteSuggestion\x12#.eolymp.atlas.DeleteSuggestionInput\x1a$.eolymp.atlas.DeleteSuggestionOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xd3\xe4\x93\x02\x34*2/problems/{problem_id}/suggestions/{suggestion_id}\x12\x95\x01\n\x0fListSuggestions\x12\".eolymp.atlas.ListSuggestionsInput\x1a#.eolymp.atlas.ListSuggestionsOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02$\x12\"/problems/{problem_id}/suggestions\x12\xae\x01\n\x12\x44\x65scribeSuggestion\x12%.eolymp.atlas.DescribeSuggestionInput\x1a&.eolymp.atlas.DescribeSuggestionOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xd3\xe4\x93\x02\x34\x12\x32/problems/{problem_id}/suggestions/{suggestion_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/suggestion_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/atlas/suggestion.proto\x1a\x18\x65olymp/ecm/content.proto\x1a!eolymp/wellknown/expression.proto\"\x7f\n\x16SuggestionChangedEvent\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12(\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion\x12\'\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion\"Y\n\x15\x43reateSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12,\n\nsuggestion\x18\x02 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion\"/\n\x16\x43reateSuggestionOutput\x12\x15\n\rsuggestion_id\x18\x01 \x01(\t\"p\n\x15UpdateSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\x12,\n\nsuggestion\x18\x03 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion\"\x18\n\x16UpdateSuggestionOutput\"B\n\x15\x44\x65leteSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteSuggestionOutput\"\xaf\x01\n\x15ReviewSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\x12/\n\x06status\x18\x03 \x01(\x0e\x32\x1f.eolymp.atlas.Suggestion.Status\x12$\n\x07\x63omment\x18\x04 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x14\n\x0c\x63ontribution\x18\x05 \x01(\r\"\x18\n\x16ReviewSuggestionOutput\"D\n\x17ResubmitSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\"\x1a\n\x18ResubmitSuggestionOutput\"\xa0\x02\n\x14ListSuggestionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12:\n\x07\x66ilters\x18( \x01(\x0b\x32).eolymp.atlas.ListSuggestionsInput.Filter\x1a\x99\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"O\n\x15ListSuggestionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.atlas.Suggestion\"D\n\x17\x44\x65scribeSuggestionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x15\n\rsuggestion_id\x18\x02 \x01(\t\"H\n\x18\x44\x65scribeSuggestionOutput\x12,\n\nsuggestion\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Suggestion2\x8e\n\n\x11SuggestionService\x12\xa0\x01\n\x10\x43reateSuggestion\x12#.eolymp.atlas.CreateSuggestionInput\x1a$.eolymp.atlas.CreateSuggestionOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02$\"\"/problems/{problem_id}/suggestions\x12\xb0\x01\n\x10UpdateSuggestion\x12#.eolymp.atlas.UpdateSuggestionInput\x1a$.eolymp.atlas.UpdateSuggestionOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x34\"2/problems/{problem_id}/suggestions/{suggestion_id}\x12\xb7\x01\n\x10ReviewSuggestion\x12#.eolymp.atlas.ReviewSuggestionInput\x1a$.eolymp.atlas.ReviewSuggestionOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02;\"9/problems/{problem_id}/suggestions/{suggestion_id}/review\x12\xbf\x01\n\x12ResubmitSuggestion\x12%.eolymp.atlas.ResubmitSuggestionInput\x1a&.eolymp.atlas.ResubmitSuggestionOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02=\";/problems/{problem_id}/suggestions/{suggestion_id}/resubmit\x12\xb0\x01\n\x10\x44\x65leteSuggestion\x12#.eolymp.atlas.DeleteSuggestionInput\x1a$.eolymp.atlas.DeleteSuggestionOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x34*2/problems/{problem_id}/suggestions/{suggestion_id}\x12\x9d\x01\n\x0fListSuggestions\x12\".eolymp.atlas.ListSuggestionsInput\x1a#.eolymp.atlas.ListSuggestionsOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02$\x12\"/problems/{problem_id}/suggestions\x12\xb6\x01\n\x12\x44\x65scribeSuggestion\x12%.eolymp.atlas.DescribeSuggestionInput\x1a&.eolymp.atlas.DescribeSuggestionOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x34\x12\x32/problems/{problem_id}/suggestions/{suggestion_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,51 +42,51 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SUGGESTIONSERVICE']._loaded_options = None
   _globals['_SUGGESTIONSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_SUGGESTIONSERVICE'].methods_by_name['CreateSuggestion']._loaded_options = None
-  _globals['_SUGGESTIONSERVICE'].methods_by_name['CreateSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002$\"\"/problems/{problem_id}/suggestions'
+  _globals['_SUGGESTIONSERVICE'].methods_by_name['CreateSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\242\343\n\004\250\343\n\002\202\323\344\223\002$\"\"/problems/{problem_id}/suggestions'
   _globals['_SUGGESTIONSERVICE'].methods_by_name['UpdateSuggestion']._loaded_options = None
-  _globals['_SUGGESTIONSERVICE'].methods_by_name['UpdateSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\0024\"2/problems/{problem_id}/suggestions/{suggestion_id}'
+  _globals['_SUGGESTIONSERVICE'].methods_by_name['UpdateSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\242\343\n\004\250\343\n\002\202\323\344\223\0024\"2/problems/{problem_id}/suggestions/{suggestion_id}'
   _globals['_SUGGESTIONSERVICE'].methods_by_name['ReviewSuggestion']._loaded_options = None
-  _globals['_SUGGESTIONSERVICE'].methods_by_name['ReviewSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002;\"9/problems/{problem_id}/suggestions/{suggestion_id}/review'
+  _globals['_SUGGESTIONSERVICE'].methods_by_name['ReviewSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\242\343\n\004\250\343\n\002\202\323\344\223\002;\"9/problems/{problem_id}/suggestions/{suggestion_id}/review'
   _globals['_SUGGESTIONSERVICE'].methods_by_name['ResubmitSuggestion']._loaded_options = None
-  _globals['_SUGGESTIONSERVICE'].methods_by_name['ResubmitSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\002=\";/problems/{problem_id}/suggestions/{suggestion_id}/resubmit'
+  _globals['_SUGGESTIONSERVICE'].methods_by_name['ResubmitSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\242\343\n\004\250\343\n\002\202\323\344\223\002=\";/problems/{problem_id}/suggestions/{suggestion_id}/resubmit'
   _globals['_SUGGESTIONSERVICE'].methods_by_name['DeleteSuggestion']._loaded_options = None
-  _globals['_SUGGESTIONSERVICE'].methods_by_name['DeleteSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\323\344\223\0024*2/problems/{problem_id}/suggestions/{suggestion_id}'
+  _globals['_SUGGESTIONSERVICE'].methods_by_name['DeleteSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\242\343\n\004\250\343\n\003\202\323\344\223\0024*2/problems/{problem_id}/suggestions/{suggestion_id}'
   _globals['_SUGGESTIONSERVICE'].methods_by_name['ListSuggestions']._loaded_options = None
-  _globals['_SUGGESTIONSERVICE'].methods_by_name['ListSuggestions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\002$\022\"/problems/{problem_id}/suggestions'
+  _globals['_SUGGESTIONSERVICE'].methods_by_name['ListSuggestions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\242\343\n\004\250\343\n\001\202\323\344\223\002$\022\"/problems/{problem_id}/suggestions'
   _globals['_SUGGESTIONSERVICE'].methods_by_name['DescribeSuggestion']._loaded_options = None
-  _globals['_SUGGESTIONSERVICE'].methods_by_name['DescribeSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\323\344\223\0024\0222/problems/{problem_id}/suggestions/{suggestion_id}'
-  _globals['_SUGGESTIONCHANGEDEVENT']._serialized_start=250
-  _globals['_SUGGESTIONCHANGEDEVENT']._serialized_end=377
-  _globals['_CREATESUGGESTIONINPUT']._serialized_start=379
-  _globals['_CREATESUGGESTIONINPUT']._serialized_end=468
-  _globals['_CREATESUGGESTIONOUTPUT']._serialized_start=470
-  _globals['_CREATESUGGESTIONOUTPUT']._serialized_end=517
-  _globals['_UPDATESUGGESTIONINPUT']._serialized_start=519
-  _globals['_UPDATESUGGESTIONINPUT']._serialized_end=631
-  _globals['_UPDATESUGGESTIONOUTPUT']._serialized_start=633
-  _globals['_UPDATESUGGESTIONOUTPUT']._serialized_end=657
-  _globals['_DELETESUGGESTIONINPUT']._serialized_start=659
-  _globals['_DELETESUGGESTIONINPUT']._serialized_end=725
-  _globals['_DELETESUGGESTIONOUTPUT']._serialized_start=727
-  _globals['_DELETESUGGESTIONOUTPUT']._serialized_end=751
-  _globals['_REVIEWSUGGESTIONINPUT']._serialized_start=754
-  _globals['_REVIEWSUGGESTIONINPUT']._serialized_end=929
-  _globals['_REVIEWSUGGESTIONOUTPUT']._serialized_start=931
-  _globals['_REVIEWSUGGESTIONOUTPUT']._serialized_end=955
-  _globals['_RESUBMITSUGGESTIONINPUT']._serialized_start=957
-  _globals['_RESUBMITSUGGESTIONINPUT']._serialized_end=1025
-  _globals['_RESUBMITSUGGESTIONOUTPUT']._serialized_start=1027
-  _globals['_RESUBMITSUGGESTIONOUTPUT']._serialized_end=1053
-  _globals['_LISTSUGGESTIONSINPUT']._serialized_start=1056
-  _globals['_LISTSUGGESTIONSINPUT']._serialized_end=1344
-  _globals['_LISTSUGGESTIONSINPUT_FILTER']._serialized_start=1191
-  _globals['_LISTSUGGESTIONSINPUT_FILTER']._serialized_end=1344
-  _globals['_LISTSUGGESTIONSOUTPUT']._serialized_start=1346
-  _globals['_LISTSUGGESTIONSOUTPUT']._serialized_end=1425
-  _globals['_DESCRIBESUGGESTIONINPUT']._serialized_start=1427
-  _globals['_DESCRIBESUGGESTIONINPUT']._serialized_end=1495
-  _globals['_DESCRIBESUGGESTIONOUTPUT']._serialized_start=1497
-  _globals['_DESCRIBESUGGESTIONOUTPUT']._serialized_end=1569
-  _globals['_SUGGESTIONSERVICE']._serialized_start=1572
-  _globals['_SUGGESTIONSERVICE']._serialized_end=2810
+  _globals['_SUGGESTIONSERVICE'].methods_by_name['DescribeSuggestion']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\242\343\n\004\250\343\n\001\202\323\344\223\0024\0222/problems/{problem_id}/suggestions/{suggestion_id}'
+  _globals['_SUGGESTIONCHANGEDEVENT']._serialized_start=282
+  _globals['_SUGGESTIONCHANGEDEVENT']._serialized_end=409
+  _globals['_CREATESUGGESTIONINPUT']._serialized_start=411
+  _globals['_CREATESUGGESTIONINPUT']._serialized_end=500
+  _globals['_CREATESUGGESTIONOUTPUT']._serialized_start=502
+  _globals['_CREATESUGGESTIONOUTPUT']._serialized_end=549
+  _globals['_UPDATESUGGESTIONINPUT']._serialized_start=551
+  _globals['_UPDATESUGGESTIONINPUT']._serialized_end=663
+  _globals['_UPDATESUGGESTIONOUTPUT']._serialized_start=665
+  _globals['_UPDATESUGGESTIONOUTPUT']._serialized_end=689
+  _globals['_DELETESUGGESTIONINPUT']._serialized_start=691
+  _globals['_DELETESUGGESTIONINPUT']._serialized_end=757
+  _globals['_DELETESUGGESTIONOUTPUT']._serialized_start=759
+  _globals['_DELETESUGGESTIONOUTPUT']._serialized_end=783
+  _globals['_REVIEWSUGGESTIONINPUT']._serialized_start=786
+  _globals['_REVIEWSUGGESTIONINPUT']._serialized_end=961
+  _globals['_REVIEWSUGGESTIONOUTPUT']._serialized_start=963
+  _globals['_REVIEWSUGGESTIONOUTPUT']._serialized_end=987
+  _globals['_RESUBMITSUGGESTIONINPUT']._serialized_start=989
+  _globals['_RESUBMITSUGGESTIONINPUT']._serialized_end=1057
+  _globals['_RESUBMITSUGGESTIONOUTPUT']._serialized_start=1059
+  _globals['_RESUBMITSUGGESTIONOUTPUT']._serialized_end=1085
+  _globals['_LISTSUGGESTIONSINPUT']._serialized_start=1088
+  _globals['_LISTSUGGESTIONSINPUT']._serialized_end=1376
+  _globals['_LISTSUGGESTIONSINPUT_FILTER']._serialized_start=1223
+  _globals['_LISTSUGGESTIONSINPUT_FILTER']._serialized_end=1376
+  _globals['_LISTSUGGESTIONSOUTPUT']._serialized_start=1378
+  _globals['_LISTSUGGESTIONSOUTPUT']._serialized_end=1457
+  _globals['_DESCRIBESUGGESTIONINPUT']._serialized_start=1459
+  _globals['_DESCRIBESUGGESTIONINPUT']._serialized_end=1527
+  _globals['_DESCRIBESUGGESTIONOUTPUT']._serialized_start=1529
+  _globals['_DESCRIBESUGGESTIONOUTPUT']._serialized_end=1601
+  _globals['_SUGGESTIONSERVICE']._serialized_start=1604
+  _globals['_SUGGESTIONSERVICE']._serialized_end=2898
 # @@protoc_insertion_point(module_scope)

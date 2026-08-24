@@ -22,13 +22,14 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/judge/passcode_service.proto\x12\x0c\x65olymp.judge\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\")\n\x13VerifyPasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"7\n\x14VerifyPasscodeOutput\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\r\n\x05valid\x18\x02 \x01(\x08\":\n\x12\x45nterPasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x10\n\x08passcode\x18\x02 \x01(\t\"\x15\n\x13\x45nterPasscodeOutput\"@\n\x12ResetPasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\"\'\n\x13ResetPasscodeOutput\x12\x10\n\x08passcode\x18\x01 \x01(\t\"P\n\x10SetPasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12\x10\n\x08passcode\x18\x03 \x01(\t\"\x13\n\x11SetPasscodeOutput\"A\n\x13RemovePasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\"\x16\n\x14RemovePasscodeOutput2\xfd\x06\n\x0fPasscodeService\x12\x9a\x01\n\x0eVerifyPasscode\x12!.eolymp.judge.VerifyPasscodeInput\x1a\".eolymp.judge.VerifyPasscodeOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\x82\xd3\xe4\x93\x02\x12\"\x10/verify-passcode\x12\x9d\x01\n\rEnterPasscode\x12 .eolymp.judge.EnterPasscodeInput\x1a!.eolymp.judge.EnterPasscodeOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\x82\xd3\xe4\x93\x02\x11\"\x0f/enter-passcode\x12\xaf\x01\n\rResetPasscode\x12 .eolymp.judge.ResetPasscodeInput\x1a!.eolymp.judge.ResetPasscodeOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02)\"\'/participants/{participant_id}/passcode\x12\xa9\x01\n\x0bSetPasscode\x12\x1e.eolymp.judge.SetPasscodeInput\x1a\x1f.eolymp.judge.SetPasscodeOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02)\x1a\'/participants/{participant_id}/passcode\x12\xb2\x01\n\x0eRemovePasscode\x12!.eolymp.judge.RemovePasscodeInput\x1a\".eolymp.judge.RemovePasscodeOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\x82\xd3\xe4\x93\x02)*\'/participants/{participant_id}/passcode\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/judge/passcode_service.proto\x12\x0c\x65olymp.judge\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\")\n\x13VerifyPasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\"7\n\x14VerifyPasscodeOutput\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\r\n\x05valid\x18\x02 \x01(\x08\":\n\x12\x45nterPasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x10\n\x08passcode\x18\x02 \x01(\t\"\x15\n\x13\x45nterPasscodeOutput\"@\n\x12ResetPasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\"\'\n\x13ResetPasscodeOutput\x12\x10\n\x08passcode\x18\x01 \x01(\t\"P\n\x10SetPasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\x12\x10\n\x08passcode\x18\x03 \x01(\t\"\x13\n\x11SetPasscodeOutput\"A\n\x13RemovePasscodeInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x16\n\x0eparticipant_id\x18\x02 \x01(\t\"\x16\n\x14RemovePasscodeOutput2\xa5\x07\n\x0fPasscodeService\x12\xa2\x01\n\x0eVerifyPasscode\x12!.eolymp.judge.VerifyPasscodeInput\x1a\".eolymp.judge.VerifyPasscodeOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x12\"\x10/verify-passcode\x12\xa5\x01\n\rEnterPasscode\x12 .eolymp.judge.EnterPasscodeInput\x1a!.eolymp.judge.EnterPasscodeOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19judge:contest:participate\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x11\"\x0f/enter-passcode\x12\xb7\x01\n\rResetPasscode\x12 .eolymp.judge.ResetPasscodeInput\x1a!.eolymp.judge.ResetPasscodeOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02)\"\'/participants/{participant_id}/passcode\x12\xb1\x01\n\x0bSetPasscode\x12\x1e.eolymp.judge.SetPasscodeInput\x1a\x1f.eolymp.judge.SetPasscodeOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02)\x1a\'/participants/{participant_id}/passcode\x12\xba\x01\n\x0eRemovePasscode\x12!.eolymp.judge.RemovePasscodeInput\x1a\".eolymp.judge.RemovePasscodeOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02)*\'/participants/{participant_id}/passcode\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.ContestB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,35 +40,35 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PASSCODESERVICE']._loaded_options = None
   _globals['_PASSCODESERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.judge.Contest'
   _globals['_PASSCODESERVICE'].methods_by_name['VerifyPasscode']._loaded_options = None
-  _globals['_PASSCODESERVICE'].methods_by_name['VerifyPasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\026\212\343\n\022judge:contest:read\202\323\344\223\002\022\"\020/verify-passcode'
+  _globals['_PASSCODESERVICE'].methods_by_name['VerifyPasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\002\202\323\344\223\002\022\"\020/verify-passcode'
   _globals['_PASSCODESERVICE'].methods_by_name['EnterPasscode']._loaded_options = None
-  _globals['_PASSCODESERVICE'].methods_by_name['EnterPasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\035\212\343\n\031judge:contest:participate\202\323\344\223\002\021\"\017/enter-passcode'
+  _globals['_PASSCODESERVICE'].methods_by_name['EnterPasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\035\212\343\n\031judge:contest:participate\242\343\n\004\250\343\n\002\202\323\344\223\002\021\"\017/enter-passcode'
   _globals['_PASSCODESERVICE'].methods_by_name['ResetPasscode']._loaded_options = None
-  _globals['_PASSCODESERVICE'].methods_by_name['ResetPasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002)\"\'/participants/{participant_id}/passcode'
+  _globals['_PASSCODESERVICE'].methods_by_name['ResetPasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\242\343\n\004\250\343\n\002\202\323\344\223\002)\"\'/participants/{participant_id}/passcode'
   _globals['_PASSCODESERVICE'].methods_by_name['SetPasscode']._loaded_options = None
-  _globals['_PASSCODESERVICE'].methods_by_name['SetPasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002)\032\'/participants/{participant_id}/passcode'
+  _globals['_PASSCODESERVICE'].methods_by_name['SetPasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\242\343\n\004\250\343\n\002\202\323\344\223\002)\032\'/participants/{participant_id}/passcode'
   _globals['_PASSCODESERVICE'].methods_by_name['RemovePasscode']._loaded_options = None
-  _globals['_PASSCODESERVICE'].methods_by_name['RemovePasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\202\323\344\223\002)*\'/participants/{participant_id}/passcode'
-  _globals['_VERIFYPASSCODEINPUT']._serialized_start=188
-  _globals['_VERIFYPASSCODEINPUT']._serialized_end=229
-  _globals['_VERIFYPASSCODEOUTPUT']._serialized_start=231
-  _globals['_VERIFYPASSCODEOUTPUT']._serialized_end=286
-  _globals['_ENTERPASSCODEINPUT']._serialized_start=288
-  _globals['_ENTERPASSCODEINPUT']._serialized_end=346
-  _globals['_ENTERPASSCODEOUTPUT']._serialized_start=348
-  _globals['_ENTERPASSCODEOUTPUT']._serialized_end=369
-  _globals['_RESETPASSCODEINPUT']._serialized_start=371
-  _globals['_RESETPASSCODEINPUT']._serialized_end=435
-  _globals['_RESETPASSCODEOUTPUT']._serialized_start=437
-  _globals['_RESETPASSCODEOUTPUT']._serialized_end=476
-  _globals['_SETPASSCODEINPUT']._serialized_start=478
-  _globals['_SETPASSCODEINPUT']._serialized_end=558
-  _globals['_SETPASSCODEOUTPUT']._serialized_start=560
-  _globals['_SETPASSCODEOUTPUT']._serialized_end=579
-  _globals['_REMOVEPASSCODEINPUT']._serialized_start=581
-  _globals['_REMOVEPASSCODEINPUT']._serialized_end=646
-  _globals['_REMOVEPASSCODEOUTPUT']._serialized_start=648
-  _globals['_REMOVEPASSCODEOUTPUT']._serialized_end=670
-  _globals['_PASSCODESERVICE']._serialized_start=673
-  _globals['_PASSCODESERVICE']._serialized_end=1566
+  _globals['_PASSCODESERVICE'].methods_by_name['RemovePasscode']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023judge:contest:write\242\343\n\004\250\343\n\003\202\323\344\223\002)*\'/participants/{participant_id}/passcode'
+  _globals['_VERIFYPASSCODEINPUT']._serialized_start=220
+  _globals['_VERIFYPASSCODEINPUT']._serialized_end=261
+  _globals['_VERIFYPASSCODEOUTPUT']._serialized_start=263
+  _globals['_VERIFYPASSCODEOUTPUT']._serialized_end=318
+  _globals['_ENTERPASSCODEINPUT']._serialized_start=320
+  _globals['_ENTERPASSCODEINPUT']._serialized_end=378
+  _globals['_ENTERPASSCODEOUTPUT']._serialized_start=380
+  _globals['_ENTERPASSCODEOUTPUT']._serialized_end=401
+  _globals['_RESETPASSCODEINPUT']._serialized_start=403
+  _globals['_RESETPASSCODEINPUT']._serialized_end=467
+  _globals['_RESETPASSCODEOUTPUT']._serialized_start=469
+  _globals['_RESETPASSCODEOUTPUT']._serialized_end=508
+  _globals['_SETPASSCODEINPUT']._serialized_start=510
+  _globals['_SETPASSCODEINPUT']._serialized_end=590
+  _globals['_SETPASSCODEOUTPUT']._serialized_start=592
+  _globals['_SETPASSCODEOUTPUT']._serialized_end=611
+  _globals['_REMOVEPASSCODEINPUT']._serialized_start=613
+  _globals['_REMOVEPASSCODEINPUT']._serialized_end=678
+  _globals['_REMOVEPASSCODEOUTPUT']._serialized_start=680
+  _globals['_REMOVEPASSCODEOUTPUT']._serialized_end=702
+  _globals['_PASSCODESERVICE']._serialized_start=705
+  _globals['_PASSCODESERVICE']._serialized_end=1638
 # @@protoc_insertion_point(module_scope)

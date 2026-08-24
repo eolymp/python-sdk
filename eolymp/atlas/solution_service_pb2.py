@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -31,7 +32,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/atlas/solution_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/atlas/solution.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\xf2\x03\n\x12ListSolutionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.atlas.ListSolutionsInput.Filter\x12\x37\n\x04sort\x18\x32 \x01(\x0e\x32).eolymp.atlas.ListSolutionsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xc9\x01\n\x06\x46ilter\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04name\x18\x0c \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x31\n\x07runtime\x18\r \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x1e\n\x08Sortable\x12\x08\n\x04NAME\x10\x00\x12\x08\n\x04TYPE\x10\x01\"K\n\x13ListSolutionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.atlas.Solution\"\xb0\x02\n\x13\x43heckSolutionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.atlas.CheckSolutionsInput.Filter\x1a\xc9\x01\n\x06\x46ilter\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04name\x18\x0c \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x31\n\x07runtime\x18\r \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x16\n\x14\x43heckSolutionsOutput\"Q\n\x15\x44\x65scribeSolutionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0bsolution_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"B\n\x16\x44\x65scribeSolutionOutput\x12(\n\x08solution\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Solution\"S\n\x13\x43reateSolutionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12(\n\x08solution\x18\x02 \x01(\x0b\x32\x16.eolymp.atlas.Solution\"+\n\x14\x43reateSolutionOutput\x12\x13\n\x0bsolution_id\x18\x01 \x01(\t\"\x9b\x01\n\x13UpdateSolutionInput\x12\x31\n\x05patch\x18\x01 \x03(\x0e\x32\".eolymp.atlas.Solution.Patch.Field\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x13\n\x0bsolution_id\x18\x03 \x01(\t\x12(\n\x08solution\x18\x04 \x01(\x0b\x32\x16.eolymp.atlas.Solution\"\x16\n\x14UpdateSolutionOutput\">\n\x13\x44\x65leteSolutionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0bsolution_id\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteSolutionOutput2\xf2\x08\n\x0fSolutionService\x12\xab\x01\n\x0e\x43reateSolution\x12!.eolymp.atlas.CreateSolutionInput\x1a\".eolymp.atlas.CreateSolutionOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\"\x1a /problems/{problem_id}/solutions\x12\xb9\x01\n\x0eUpdateSolution\x12!.eolymp.atlas.UpdateSolutionInput\x1a\".eolymp.atlas.UpdateSolutionOutput\"`\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x30\x1a./problems/{problem_id}/solutions/{solution_id}\x12\xb9\x01\n\x0e\x44\x65leteSolution\x12!.eolymp.atlas.DeleteSolutionInput\x1a\".eolymp.atlas.DeleteSolutionOutput\"`\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x30*./problems/{problem_id}/solutions/{solution_id}\x12\xbe\x01\n\x10\x44\x65scribeSolution\x12#.eolymp.atlas.DescribeSolutionInput\x1a$.eolymp.atlas.DescribeSolutionOutput\"_\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\x30\x12./problems/{problem_id}/solutions/{solution_id}\x12\xa7\x01\n\rListSolutions\x12 .eolymp.atlas.ListSolutionsInput\x1a!.eolymp.atlas.ListSolutionsOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02\"\x12 /problems/{problem_id}/solutions\x12\xb0\x01\n\x0e\x43heckSolutions\x12!.eolymp.atlas.CheckSolutionsInput\x1a\".eolymp.atlas.CheckSolutionsOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02(\"&/problems/{problem_id}/solutions:check\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/atlas/solution_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/atlas/solution.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\xf2\x03\n\x12ListSolutionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.atlas.ListSolutionsInput.Filter\x12\x37\n\x04sort\x18\x32 \x01(\x0e\x32).eolymp.atlas.ListSolutionsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xc9\x01\n\x06\x46ilter\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04name\x18\x0c \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x31\n\x07runtime\x18\r \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x1e\n\x08Sortable\x12\x08\n\x04NAME\x10\x00\x12\x08\n\x04TYPE\x10\x01\"K\n\x13ListSolutionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.atlas.Solution\"\xb0\x02\n\x13\x43heckSolutionsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.atlas.CheckSolutionsInput.Filter\x1a\xc9\x01\n\x06\x46ilter\x12*\n\x02id\x18\n \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12.\n\x04type\x18\x0b \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x04name\x18\x0c \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x31\n\x07runtime\x18\r \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\x16\n\x14\x43heckSolutionsOutput\"Q\n\x15\x44\x65scribeSolutionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0bsolution_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x64 \x01(\r\"B\n\x16\x44\x65scribeSolutionOutput\x12(\n\x08solution\x18\x01 \x01(\x0b\x32\x16.eolymp.atlas.Solution\"S\n\x13\x43reateSolutionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12(\n\x08solution\x18\x02 \x01(\x0b\x32\x16.eolymp.atlas.Solution\"+\n\x14\x43reateSolutionOutput\x12\x13\n\x0bsolution_id\x18\x01 \x01(\t\"\x9b\x01\n\x13UpdateSolutionInput\x12\x31\n\x05patch\x18\x01 \x03(\x0e\x32\".eolymp.atlas.Solution.Patch.Field\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x13\n\x0bsolution_id\x18\x03 \x01(\t\x12(\n\x08solution\x18\x04 \x01(\x0b\x32\x16.eolymp.atlas.Solution\"\x16\n\x14UpdateSolutionOutput\">\n\x13\x44\x65leteSolutionInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x13\n\x0bsolution_id\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteSolutionOutput2\xa2\t\n\x0fSolutionService\x12\xb3\x01\n\x0e\x43reateSolution\x12!.eolymp.atlas.CreateSolutionInput\x1a\".eolymp.atlas.CreateSolutionOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\"\x1a /problems/{problem_id}/solutions\x12\xc1\x01\n\x0eUpdateSolution\x12!.eolymp.atlas.UpdateSolutionInput\x1a\".eolymp.atlas.UpdateSolutionOutput\"h\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x30\x1a./problems/{problem_id}/solutions/{solution_id}\x12\xc1\x01\n\x0e\x44\x65leteSolution\x12!.eolymp.atlas.DeleteSolutionInput\x1a\".eolymp.atlas.DeleteSolutionOutput\"h\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x30*./problems/{problem_id}/solutions/{solution_id}\x12\xc6\x01\n\x10\x44\x65scribeSolution\x12#.eolymp.atlas.DescribeSolutionInput\x1a$.eolymp.atlas.DescribeSolutionOutput\"g\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x30\x12./problems/{problem_id}/solutions/{solution_id}\x12\xaf\x01\n\rListSolutions\x12 .eolymp.atlas.ListSolutionsInput\x1a!.eolymp.atlas.ListSolutionsOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\"\x12 /problems/{problem_id}/solutions\x12\xb8\x01\n\x0e\x43heckSolutions\x12!.eolymp.atlas.CheckSolutionsInput\x1a\".eolymp.atlas.CheckSolutionsOutput\"_\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02(\"&/problems/{problem_id}/solutions:check\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,47 +43,47 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SOLUTIONSERVICE']._loaded_options = None
   _globals['_SOLUTIONSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_SOLUTIONSERVICE'].methods_by_name['CreateSolution']._loaded_options = None
-  _globals['_SOLUTIONSERVICE'].methods_by_name['CreateSolution']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002\"\032 /problems/{problem_id}/solutions'
+  _globals['_SOLUTIONSERVICE'].methods_by_name['CreateSolution']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023atlas:problem:write\242\343\n\004\250\343\n\002\202\323\344\223\002\"\032 /problems/{problem_id}/solutions'
   _globals['_SOLUTIONSERVICE'].methods_by_name['UpdateSolution']._loaded_options = None
-  _globals['_SOLUTIONSERVICE'].methods_by_name['UpdateSolution']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\0020\032./problems/{problem_id}/solutions/{solution_id}'
+  _globals['_SOLUTIONSERVICE'].methods_by_name['UpdateSolution']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023atlas:problem:write\242\343\n\004\250\343\n\002\202\323\344\223\0020\032./problems/{problem_id}/solutions/{solution_id}'
   _globals['_SOLUTIONSERVICE'].methods_by_name['DeleteSolution']._loaded_options = None
-  _globals['_SOLUTIONSERVICE'].methods_by_name['DeleteSolution']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\0020*./problems/{problem_id}/solutions/{solution_id}'
+  _globals['_SOLUTIONSERVICE'].methods_by_name['DeleteSolution']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\027\212\343\n\023atlas:problem:write\242\343\n\004\250\343\n\003\202\323\344\223\0020*./problems/{problem_id}/solutions/{solution_id}'
   _globals['_SOLUTIONSERVICE'].methods_by_name['DescribeSolution']._loaded_options = None
-  _globals['_SOLUTIONSERVICE'].methods_by_name['DescribeSolution']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\0020\022./problems/{problem_id}/solutions/{solution_id}'
+  _globals['_SOLUTIONSERVICE'].methods_by_name['DescribeSolution']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\242\343\n\004\250\343\n\001\202\323\344\223\0020\022./problems/{problem_id}/solutions/{solution_id}'
   _globals['_SOLUTIONSERVICE'].methods_by_name['ListSolutions']._loaded_options = None
-  _globals['_SOLUTIONSERVICE'].methods_by_name['ListSolutions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002\"\022 /problems/{problem_id}/solutions'
+  _globals['_SOLUTIONSERVICE'].methods_by_name['ListSolutions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\242\343\n\004\250\343\n\001\202\323\344\223\002\"\022 /problems/{problem_id}/solutions'
   _globals['_SOLUTIONSERVICE'].methods_by_name['CheckSolutions']._loaded_options = None
-  _globals['_SOLUTIONSERVICE'].methods_by_name['CheckSolutions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002(\"&/problems/{problem_id}/solutions:check'
-  _globals['_LISTSOLUTIONSINPUT']._serialized_start=287
-  _globals['_LISTSOLUTIONSINPUT']._serialized_end=785
-  _globals['_LISTSOLUTIONSINPUT_FILTER']._serialized_start=552
-  _globals['_LISTSOLUTIONSINPUT_FILTER']._serialized_end=753
-  _globals['_LISTSOLUTIONSINPUT_SORTABLE']._serialized_start=755
-  _globals['_LISTSOLUTIONSINPUT_SORTABLE']._serialized_end=785
-  _globals['_LISTSOLUTIONSOUTPUT']._serialized_start=787
-  _globals['_LISTSOLUTIONSOUTPUT']._serialized_end=862
-  _globals['_CHECKSOLUTIONSINPUT']._serialized_start=865
-  _globals['_CHECKSOLUTIONSINPUT']._serialized_end=1169
-  _globals['_CHECKSOLUTIONSINPUT_FILTER']._serialized_start=552
-  _globals['_CHECKSOLUTIONSINPUT_FILTER']._serialized_end=753
-  _globals['_CHECKSOLUTIONSOUTPUT']._serialized_start=1171
-  _globals['_CHECKSOLUTIONSOUTPUT']._serialized_end=1193
-  _globals['_DESCRIBESOLUTIONINPUT']._serialized_start=1195
-  _globals['_DESCRIBESOLUTIONINPUT']._serialized_end=1276
-  _globals['_DESCRIBESOLUTIONOUTPUT']._serialized_start=1278
-  _globals['_DESCRIBESOLUTIONOUTPUT']._serialized_end=1344
-  _globals['_CREATESOLUTIONINPUT']._serialized_start=1346
-  _globals['_CREATESOLUTIONINPUT']._serialized_end=1429
-  _globals['_CREATESOLUTIONOUTPUT']._serialized_start=1431
-  _globals['_CREATESOLUTIONOUTPUT']._serialized_end=1474
-  _globals['_UPDATESOLUTIONINPUT']._serialized_start=1477
-  _globals['_UPDATESOLUTIONINPUT']._serialized_end=1632
-  _globals['_UPDATESOLUTIONOUTPUT']._serialized_start=1634
-  _globals['_UPDATESOLUTIONOUTPUT']._serialized_end=1656
-  _globals['_DELETESOLUTIONINPUT']._serialized_start=1658
-  _globals['_DELETESOLUTIONINPUT']._serialized_end=1720
-  _globals['_DELETESOLUTIONOUTPUT']._serialized_start=1722
-  _globals['_DELETESOLUTIONOUTPUT']._serialized_end=1744
-  _globals['_SOLUTIONSERVICE']._serialized_start=1747
-  _globals['_SOLUTIONSERVICE']._serialized_end=2885
+  _globals['_SOLUTIONSERVICE'].methods_by_name['CheckSolutions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\242\343\n\004\250\343\n\002\202\323\344\223\002(\"&/problems/{problem_id}/solutions:check'
+  _globals['_LISTSOLUTIONSINPUT']._serialized_start=319
+  _globals['_LISTSOLUTIONSINPUT']._serialized_end=817
+  _globals['_LISTSOLUTIONSINPUT_FILTER']._serialized_start=584
+  _globals['_LISTSOLUTIONSINPUT_FILTER']._serialized_end=785
+  _globals['_LISTSOLUTIONSINPUT_SORTABLE']._serialized_start=787
+  _globals['_LISTSOLUTIONSINPUT_SORTABLE']._serialized_end=817
+  _globals['_LISTSOLUTIONSOUTPUT']._serialized_start=819
+  _globals['_LISTSOLUTIONSOUTPUT']._serialized_end=894
+  _globals['_CHECKSOLUTIONSINPUT']._serialized_start=897
+  _globals['_CHECKSOLUTIONSINPUT']._serialized_end=1201
+  _globals['_CHECKSOLUTIONSINPUT_FILTER']._serialized_start=584
+  _globals['_CHECKSOLUTIONSINPUT_FILTER']._serialized_end=785
+  _globals['_CHECKSOLUTIONSOUTPUT']._serialized_start=1203
+  _globals['_CHECKSOLUTIONSOUTPUT']._serialized_end=1225
+  _globals['_DESCRIBESOLUTIONINPUT']._serialized_start=1227
+  _globals['_DESCRIBESOLUTIONINPUT']._serialized_end=1308
+  _globals['_DESCRIBESOLUTIONOUTPUT']._serialized_start=1310
+  _globals['_DESCRIBESOLUTIONOUTPUT']._serialized_end=1376
+  _globals['_CREATESOLUTIONINPUT']._serialized_start=1378
+  _globals['_CREATESOLUTIONINPUT']._serialized_end=1461
+  _globals['_CREATESOLUTIONOUTPUT']._serialized_start=1463
+  _globals['_CREATESOLUTIONOUTPUT']._serialized_end=1506
+  _globals['_UPDATESOLUTIONINPUT']._serialized_start=1509
+  _globals['_UPDATESOLUTIONINPUT']._serialized_end=1664
+  _globals['_UPDATESOLUTIONOUTPUT']._serialized_start=1666
+  _globals['_UPDATESOLUTIONOUTPUT']._serialized_end=1688
+  _globals['_DELETESOLUTIONINPUT']._serialized_start=1690
+  _globals['_DELETESOLUTIONINPUT']._serialized_end=1752
+  _globals['_DELETESOLUTIONOUTPUT']._serialized_start=1754
+  _globals['_DELETESOLUTIONOUTPUT']._serialized_end=1776
+  _globals['_SOLUTIONSERVICE']._serialized_start=1779
+  _globals['_SOLUTIONSERVICE']._serialized_end=2965
 # @@protoc_insertion_point(module_scope)

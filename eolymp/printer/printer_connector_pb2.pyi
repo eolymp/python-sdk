@@ -1,3 +1,4 @@
+from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.printer import printer_pb2 as _printer_pb2
 from eolymp.printer import printer_job_pb2 as _printer_job_pb2

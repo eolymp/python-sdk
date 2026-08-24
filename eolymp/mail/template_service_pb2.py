@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -31,7 +32,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/mail/template_service.proto\x12\x0b\x65olymp.mail\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/mail/template.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\">\n\x13\x43reateTemplateInput\x12\'\n\x08template\x18\x01 \x01(\x0b\x32\x15.eolymp.mail.Template\"+\n\x14\x43reateTemplateOutput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\"i\n\x13UpdateTemplateInput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12-\n\x08template\x18\x03 \x01(\x0b\x32\x1b.eolymp.mail.Template.Patch\"\x16\n\x14UpdateTemplateOutput\":\n\x13\x44\x65leteTemplateInput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteTemplateOutput\"p\n\x15\x44\x65scribeTemplateInput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.mail.Template.Extra.Field\"A\n\x16\x44\x65scribeTemplateOutput\x12\'\n\x08template\x18\x01 \x01(\x0b\x32\x15.eolymp.mail.Template\"\xac\x03\n\x12ListTemplatesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.mail.ListTemplatesInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.mail.ListTemplatesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.mail.Template.Extra.Field\x1a\x65\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x03key\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"0\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x07\n\x03KEY\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\"J\n\x13ListTemplatesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.mail.Template2\xe5\x06\n\x0fTemplateService\x12\x99\x01\n\x0e\x43reateTemplate\x12 .eolymp.mail.CreateTemplateInput\x1a!.eolymp.mail.CreateTemplateOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13mail:template:write\x82\xd3\xe4\x93\x02\x12\"\x10/email-templates\x12\xa7\x01\n\x0eUpdateTemplate\x12 .eolymp.mail.UpdateTemplateInput\x1a!.eolymp.mail.UpdateTemplateOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13mail:template:write\x82\xd3\xe4\x93\x02 \x1a\x1e/email-templates/{template_id}\x12\xa7\x01\n\x0e\x44\x65leteTemplate\x12 .eolymp.mail.DeleteTemplateInput\x1a!.eolymp.mail.DeleteTemplateOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13mail:template:write\x82\xd3\xe4\x93\x02 *\x1e/email-templates/{template_id}\x12\xac\x01\n\x10\x44\x65scribeTemplate\x12\".eolymp.mail.DescribeTemplateInput\x1a#.eolymp.mail.DescribeTemplateOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12mail:template:read\x82\xd3\xe4\x93\x02 \x12\x1e/email-templates/{template_id}\x12\x95\x01\n\rListTemplates\x12\x1f.eolymp.mail.ListTemplatesInput\x1a .eolymp.mail.ListTemplatesOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12mail:template:read\x82\xd3\xe4\x93\x02\x12\x12\x10/email-templates\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB+Z)github.com/eolymp/go-sdk/eolymp/mail;mailb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/mail/template_service.proto\x12\x0b\x65olymp.mail\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/mail/template.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\">\n\x13\x43reateTemplateInput\x12\'\n\x08template\x18\x01 \x01(\x0b\x32\x15.eolymp.mail.Template\"+\n\x14\x43reateTemplateOutput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\"i\n\x13UpdateTemplateInput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12-\n\x08template\x18\x03 \x01(\x0b\x32\x1b.eolymp.mail.Template.Patch\"\x16\n\x14UpdateTemplateOutput\":\n\x13\x44\x65leteTemplateInput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteTemplateOutput\"p\n\x15\x44\x65scribeTemplateInput\x12\x13\n\x0btemplate_id\x18\x01 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.mail.Template.Extra.Field\"A\n\x16\x44\x65scribeTemplateOutput\x12\'\n\x08template\x18\x01 \x01(\x0b\x32\x15.eolymp.mail.Template\"\xac\x03\n\x12ListTemplatesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x37\n\x07\x66ilters\x18( \x01(\x0b\x32&.eolymp.mail.ListTemplatesInput.Filter\x12\x36\n\x04sort\x18\x32 \x01(\x0e\x32(.eolymp.mail.ListTemplatesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.mail.Template.Extra.Field\x1a\x65\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x03key\x18\x02 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"0\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x07\n\x03KEY\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\"J\n\x13ListTemplatesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.mail.Template2\x8d\x07\n\x0fTemplateService\x12\xa1\x01\n\x0e\x43reateTemplate\x12 .eolymp.mail.CreateTemplateInput\x1a!.eolymp.mail.CreateTemplateOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13mail:template:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x12\"\x10/email-templates\x12\xaf\x01\n\x0eUpdateTemplate\x12 .eolymp.mail.UpdateTemplateInput\x1a!.eolymp.mail.UpdateTemplateOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13mail:template:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02 \x1a\x1e/email-templates/{template_id}\x12\xaf\x01\n\x0e\x44\x65leteTemplate\x12 .eolymp.mail.DeleteTemplateInput\x1a!.eolymp.mail.DeleteTemplateOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13mail:template:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02 *\x1e/email-templates/{template_id}\x12\xb4\x01\n\x10\x44\x65scribeTemplate\x12\".eolymp.mail.DescribeTemplateInput\x1a#.eolymp.mail.DescribeTemplateOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12mail:template:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02 \x12\x1e/email-templates/{template_id}\x12\x9d\x01\n\rListTemplates\x12\x1f.eolymp.mail.ListTemplatesInput\x1a .eolymp.mail.ListTemplatesOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12mail:template:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/email-templates\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB+Z)github.com/eolymp/go-sdk/eolymp/mail;mailb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,39 +43,39 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TEMPLATESERVICE']._loaded_options = None
   _globals['_TEMPLATESERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_TEMPLATESERVICE'].methods_by_name['CreateTemplate']._loaded_options = None
-  _globals['_TEMPLATESERVICE'].methods_by_name['CreateTemplate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023mail:template:write\202\323\344\223\002\022\"\020/email-templates'
+  _globals['_TEMPLATESERVICE'].methods_by_name['CreateTemplate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023mail:template:write\242\343\n\004\250\343\n\002\202\323\344\223\002\022\"\020/email-templates'
   _globals['_TEMPLATESERVICE'].methods_by_name['UpdateTemplate']._loaded_options = None
-  _globals['_TEMPLATESERVICE'].methods_by_name['UpdateTemplate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023mail:template:write\202\323\344\223\002 \032\036/email-templates/{template_id}'
+  _globals['_TEMPLATESERVICE'].methods_by_name['UpdateTemplate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023mail:template:write\242\343\n\004\250\343\n\002\202\323\344\223\002 \032\036/email-templates/{template_id}'
   _globals['_TEMPLATESERVICE'].methods_by_name['DeleteTemplate']._loaded_options = None
-  _globals['_TEMPLATESERVICE'].methods_by_name['DeleteTemplate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023mail:template:write\202\323\344\223\002 *\036/email-templates/{template_id}'
+  _globals['_TEMPLATESERVICE'].methods_by_name['DeleteTemplate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023mail:template:write\242\343\n\004\250\343\n\003\202\323\344\223\002 *\036/email-templates/{template_id}'
   _globals['_TEMPLATESERVICE'].methods_by_name['DescribeTemplate']._loaded_options = None
-  _globals['_TEMPLATESERVICE'].methods_by_name['DescribeTemplate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022mail:template:read\202\323\344\223\002 \022\036/email-templates/{template_id}'
+  _globals['_TEMPLATESERVICE'].methods_by_name['DescribeTemplate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022mail:template:read\242\343\n\004\250\343\n\001\202\323\344\223\002 \022\036/email-templates/{template_id}'
   _globals['_TEMPLATESERVICE'].methods_by_name['ListTemplates']._loaded_options = None
-  _globals['_TEMPLATESERVICE'].methods_by_name['ListTemplates']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022mail:template:read\202\323\344\223\002\022\022\020/email-templates'
-  _globals['_CREATETEMPLATEINPUT']._serialized_start=283
-  _globals['_CREATETEMPLATEINPUT']._serialized_end=345
-  _globals['_CREATETEMPLATEOUTPUT']._serialized_start=347
-  _globals['_CREATETEMPLATEOUTPUT']._serialized_end=390
-  _globals['_UPDATETEMPLATEINPUT']._serialized_start=392
-  _globals['_UPDATETEMPLATEINPUT']._serialized_end=497
-  _globals['_UPDATETEMPLATEOUTPUT']._serialized_start=499
-  _globals['_UPDATETEMPLATEOUTPUT']._serialized_end=521
-  _globals['_DELETETEMPLATEINPUT']._serialized_start=523
-  _globals['_DELETETEMPLATEINPUT']._serialized_end=581
-  _globals['_DELETETEMPLATEOUTPUT']._serialized_start=583
-  _globals['_DELETETEMPLATEOUTPUT']._serialized_end=605
-  _globals['_DESCRIBETEMPLATEINPUT']._serialized_start=607
-  _globals['_DESCRIBETEMPLATEINPUT']._serialized_end=719
-  _globals['_DESCRIBETEMPLATEOUTPUT']._serialized_start=721
-  _globals['_DESCRIBETEMPLATEOUTPUT']._serialized_end=786
-  _globals['_LISTTEMPLATESINPUT']._serialized_start=789
-  _globals['_LISTTEMPLATESINPUT']._serialized_end=1217
-  _globals['_LISTTEMPLATESINPUT_FILTER']._serialized_start=1066
-  _globals['_LISTTEMPLATESINPUT_FILTER']._serialized_end=1167
-  _globals['_LISTTEMPLATESINPUT_SORTABLE']._serialized_start=1169
-  _globals['_LISTTEMPLATESINPUT_SORTABLE']._serialized_end=1217
-  _globals['_LISTTEMPLATESOUTPUT']._serialized_start=1219
-  _globals['_LISTTEMPLATESOUTPUT']._serialized_end=1293
-  _globals['_TEMPLATESERVICE']._serialized_start=1296
-  _globals['_TEMPLATESERVICE']._serialized_end=2165
+  _globals['_TEMPLATESERVICE'].methods_by_name['ListTemplates']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022mail:template:read\242\343\n\004\250\343\n\001\202\323\344\223\002\022\022\020/email-templates'
+  _globals['_CREATETEMPLATEINPUT']._serialized_start=315
+  _globals['_CREATETEMPLATEINPUT']._serialized_end=377
+  _globals['_CREATETEMPLATEOUTPUT']._serialized_start=379
+  _globals['_CREATETEMPLATEOUTPUT']._serialized_end=422
+  _globals['_UPDATETEMPLATEINPUT']._serialized_start=424
+  _globals['_UPDATETEMPLATEINPUT']._serialized_end=529
+  _globals['_UPDATETEMPLATEOUTPUT']._serialized_start=531
+  _globals['_UPDATETEMPLATEOUTPUT']._serialized_end=553
+  _globals['_DELETETEMPLATEINPUT']._serialized_start=555
+  _globals['_DELETETEMPLATEINPUT']._serialized_end=613
+  _globals['_DELETETEMPLATEOUTPUT']._serialized_start=615
+  _globals['_DELETETEMPLATEOUTPUT']._serialized_end=637
+  _globals['_DESCRIBETEMPLATEINPUT']._serialized_start=639
+  _globals['_DESCRIBETEMPLATEINPUT']._serialized_end=751
+  _globals['_DESCRIBETEMPLATEOUTPUT']._serialized_start=753
+  _globals['_DESCRIBETEMPLATEOUTPUT']._serialized_end=818
+  _globals['_LISTTEMPLATESINPUT']._serialized_start=821
+  _globals['_LISTTEMPLATESINPUT']._serialized_end=1249
+  _globals['_LISTTEMPLATESINPUT_FILTER']._serialized_start=1098
+  _globals['_LISTTEMPLATESINPUT_FILTER']._serialized_end=1199
+  _globals['_LISTTEMPLATESINPUT_SORTABLE']._serialized_start=1201
+  _globals['_LISTTEMPLATESINPUT_SORTABLE']._serialized_end=1249
+  _globals['_LISTTEMPLATESOUTPUT']._serialized_start=1251
+  _globals['_LISTTEMPLATESOUTPUT']._serialized_end=1325
+  _globals['_TEMPLATESERVICE']._serialized_start=1328
+  _globals['_TEMPLATESERVICE']._serialized_end=2237
 # @@protoc_insertion_point(module_scope)

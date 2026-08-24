@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -31,7 +32,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/copilot/chat_service.proto\x12\x0e\x65olymp.copilot\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/copilot/chat.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\x10\n\x0eStartChatInput\"\"\n\x0fStartChatOutput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\"$\n\x11\x44\x65scribeChatInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\"8\n\x12\x44\x65scribeChatOutput\x12\"\n\x04\x63hat\x18\x01 \x01(\x0b\x32\x14.eolymp.copilot.Chat\"\xfb\x02\n\x0eListChatsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05query\x18\x1e \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.copilot.ListChatsInput.Filter\x12\x35\n\x04sort\x18\x32 \x01(\x0e\x32\'.eolymp.copilot.ListChatsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1ah\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\x08\x61rchived\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"7\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nCREATED_AT\x10\x01\x12\x0e\n\nUPDATED_AT\x10\x02\"E\n\x0fListChatsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.copilot.Chat\"6\n\x10\x41rchiveChatInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\x12\x11\n\tunarchive\x18\x02 \x01(\x08\"\x13\n\x11\x41rchiveChatOutput\"\"\n\x0f\x44\x65leteChatInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\"\x12\n\x10\x44\x65leteChatOutput\"\xa7\x02\n\x10SendMessageInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\x12\r\n\x05model\x18\x02 \x01(\t\x12;\n\x07message\x18\n \x01(\x0b\x32(.eolymp.copilot.SendMessageInput.MessageH\x00\x12=\n\x08\x61pproval\x18\x0b \x01(\x0b\x32).eolymp.copilot.SendMessageInput.ApprovalH\x00\x1a\x41\n\x07Message\x12\x0c\n\x04text\x18\x01 \x01(\t\x12(\n\x07\x63ontext\x18\x02 \x01(\x0b\x32\x17.eolymp.copilot.Context\x1a)\n\x08\x41pproval\x12\r\n\x05\x61llow\x18\x01 \x03(\t\x12\x0e\n\x06reject\x18\x02 \x03(\tB\t\n\x07\x63ontent\"\xf3\x01\n\x11SendMessageOutput\x12$\n\x04\x63hat\x18\n \x01(\x0b\x32\x14.eolymp.copilot.ChatH\x00\x12*\n\x07message\x18\x0b \x01(\x0b\x32\x17.eolymp.copilot.MessageH\x00\x12:\n\x06status\x18\x0c \x01(\x0e\x32(.eolymp.copilot.SendMessageOutput.StatusH\x00\"F\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0c\n\x08THINKING\x10\x01\x12\r\n\tSTREAMING\x10\x02\x12\x0b\n\x07\x43\x41LLING\x10\x03\x42\x08\n\x06update\"\xc1\x02\n\x11ListMessagesInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.copilot.ListMessagesInput.Filter\x12\x38\n\x04sort\x18\x32 \x01(\x0e\x32*.eolymp.copilot.ListMessagesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\x34\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"&\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\r\n\tTIMESTAMP\x10\x01\"K\n\x12ListMessagesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.copilot.Message\"\x1a\n\x18\x44\x65scribeChatOptionsInput\"\x7f\n\x19\x44\x65scribeChatOptionsOutput\x12?\n\x06models\x18\x01 \x03(\x0b\x32/.eolymp.copilot.DescribeChatOptionsOutput.Model\x1a!\n\x05Model\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xb5\n\n\x0b\x43hatService\x12\x8d\x01\n\tStartChat\x12\x1e.eolymp.copilot.StartChatInput\x1a\x1f.eolymp.copilot.StartChatOutput\"?\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63opilot:chat:write\x82\xd3\xe4\x93\x02\x10\"\x0e/copilot/chats\x12\x9f\x01\n\x0c\x44\x65scribeChat\x12!.eolymp.copilot.DescribeChatInput\x1a\".eolymp.copilot.DescribeChatOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x15\x8a\xe3\n\x11\x63opilot:chat:read\x82\xd3\xe4\x93\x02\x1a\x12\x18/copilot/chats/{chat_id}\x12\x8c\x01\n\tListChats\x12\x1e.eolymp.copilot.ListChatsInput\x1a\x1f.eolymp.copilot.ListChatsOutput\">\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x15\x8a\xe3\n\x11\x63opilot:chat:read\x82\xd3\xe4\x93\x02\x10\x12\x0e/copilot/chats\x12\xa5\x01\n\x0b\x41rchiveChat\x12 .eolymp.copilot.ArchiveChatInput\x1a!.eolymp.copilot.ArchiveChatOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63opilot:chat:write\x82\xd3\xe4\x93\x02\"\" /copilot/chats/{chat_id}/archive\x12\x9a\x01\n\nDeleteChat\x12\x1f.eolymp.copilot.DeleteChatInput\x1a .eolymp.copilot.DeleteChatOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63opilot:chat:write\x82\xd3\xe4\x93\x02\x1a*\x18/copilot/chats/{chat_id}\x12\xa8\x01\n\x0bSendMessage\x12 .eolymp.copilot.SendMessageInput\x1a!.eolymp.copilot.SendMessageOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63opilot:chat:write\x82\xd3\xe4\x93\x02#\"!/copilot/chats/{chat_id}/messages0\x01\x12\xa8\x01\n\x0cListMessages\x12!.eolymp.copilot.ListMessagesInput\x1a\".eolymp.copilot.ListMessagesOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x15\x8a\xe3\n\x11\x63opilot:chat:read\x82\xd3\xe4\x93\x02#\x12!/copilot/chats/{chat_id}/messages\x12\xac\x01\n\x13\x44\x65scribeChatOptions\x12(.eolymp.copilot.DescribeChatOptionsInput\x1a).eolymp.copilot.DescribeChatOptionsOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x15\x8a\xe3\n\x11\x63opilot:chat:read\x82\xd3\xe4\x93\x02\x12\x12\x10/copilot/options\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/copilot;copilotb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/copilot/chat_service.proto\x12\x0e\x65olymp.copilot\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/copilot/chat.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\x10\n\x0eStartChatInput\"\"\n\x0fStartChatOutput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\"$\n\x11\x44\x65scribeChatInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\"8\n\x12\x44\x65scribeChatOutput\x12\"\n\x04\x63hat\x18\x01 \x01(\x0b\x32\x14.eolymp.copilot.Chat\"\xfb\x02\n\x0eListChatsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\r\n\x05query\x18\x1e \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.copilot.ListChatsInput.Filter\x12\x35\n\x04sort\x18\x32 \x01(\x0e\x32\'.eolymp.copilot.ListChatsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1ah\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\x08\x61rchived\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\"7\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nCREATED_AT\x10\x01\x12\x0e\n\nUPDATED_AT\x10\x02\"E\n\x0fListChatsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.copilot.Chat\"6\n\x10\x41rchiveChatInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\x12\x11\n\tunarchive\x18\x02 \x01(\x08\"\x13\n\x11\x41rchiveChatOutput\"\"\n\x0f\x44\x65leteChatInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\"\x12\n\x10\x44\x65leteChatOutput\"\xa7\x02\n\x10SendMessageInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\x12\r\n\x05model\x18\x02 \x01(\t\x12;\n\x07message\x18\n \x01(\x0b\x32(.eolymp.copilot.SendMessageInput.MessageH\x00\x12=\n\x08\x61pproval\x18\x0b \x01(\x0b\x32).eolymp.copilot.SendMessageInput.ApprovalH\x00\x1a\x41\n\x07Message\x12\x0c\n\x04text\x18\x01 \x01(\t\x12(\n\x07\x63ontext\x18\x02 \x01(\x0b\x32\x17.eolymp.copilot.Context\x1a)\n\x08\x41pproval\x12\r\n\x05\x61llow\x18\x01 \x03(\t\x12\x0e\n\x06reject\x18\x02 \x03(\tB\t\n\x07\x63ontent\"\xf3\x01\n\x11SendMessageOutput\x12$\n\x04\x63hat\x18\n \x01(\x0b\x32\x14.eolymp.copilot.ChatH\x00\x12*\n\x07message\x18\x0b \x01(\x0b\x32\x17.eolymp.copilot.MessageH\x00\x12:\n\x06status\x18\x0c \x01(\x0e\x32(.eolymp.copilot.SendMessageOutput.StatusH\x00\"F\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0c\n\x08THINKING\x10\x01\x12\r\n\tSTREAMING\x10\x02\x12\x0b\n\x07\x43\x41LLING\x10\x03\x42\x08\n\x06update\"\xc1\x02\n\x11ListMessagesInput\x12\x0f\n\x07\x63hat_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.copilot.ListMessagesInput.Filter\x12\x38\n\x04sort\x18\x32 \x01(\x0e\x32*.eolymp.copilot.ListMessagesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\x34\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"&\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\r\n\tTIMESTAMP\x10\x01\"K\n\x12ListMessagesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.copilot.Message\"\x1a\n\x18\x44\x65scribeChatOptionsInput\"\x7f\n\x19\x44\x65scribeChatOptionsOutput\x12?\n\x06models\x18\x01 \x03(\x0b\x32/.eolymp.copilot.DescribeChatOptionsOutput.Model\x1a!\n\x05Model\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xf5\n\n\x0b\x43hatService\x12\x95\x01\n\tStartChat\x12\x1e.eolymp.copilot.StartChatInput\x1a\x1f.eolymp.copilot.StartChatOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63opilot:chat:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x10\"\x0e/copilot/chats\x12\xa7\x01\n\x0c\x44\x65scribeChat\x12!.eolymp.copilot.DescribeChatInput\x1a\".eolymp.copilot.DescribeChatOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x15\x8a\xe3\n\x11\x63opilot:chat:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1a\x12\x18/copilot/chats/{chat_id}\x12\x94\x01\n\tListChats\x12\x1e.eolymp.copilot.ListChatsInput\x1a\x1f.eolymp.copilot.ListChatsOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x15\x8a\xe3\n\x11\x63opilot:chat:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x10\x12\x0e/copilot/chats\x12\xad\x01\n\x0b\x41rchiveChat\x12 .eolymp.copilot.ArchiveChatInput\x1a!.eolymp.copilot.ArchiveChatOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63opilot:chat:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\"\" /copilot/chats/{chat_id}/archive\x12\xa2\x01\n\nDeleteChat\x12\x1f.eolymp.copilot.DeleteChatInput\x1a .eolymp.copilot.DeleteChatOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63opilot:chat:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1a*\x18/copilot/chats/{chat_id}\x12\xb0\x01\n\x0bSendMessage\x12 .eolymp.copilot.SendMessageInput\x1a!.eolymp.copilot.SendMessageOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x16\x8a\xe3\n\x12\x63opilot:chat:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02#\"!/copilot/chats/{chat_id}/messages0\x01\x12\xb0\x01\n\x0cListMessages\x12!.eolymp.copilot.ListMessagesInput\x1a\".eolymp.copilot.ListMessagesOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x15\x8a\xe3\n\x11\x63opilot:chat:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02#\x12!/copilot/chats/{chat_id}/messages\x12\xb4\x01\n\x13\x44\x65scribeChatOptions\x12(.eolymp.copilot.DescribeChatOptionsInput\x1a).eolymp.copilot.DescribeChatOptionsOutput\"H\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x15\x8a\xe3\n\x11\x63opilot:chat:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/copilot/options\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/copilot;copilotb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,69 +43,69 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CHATSERVICE']._loaded_options = None
   _globals['_CHATSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_CHATSERVICE'].methods_by_name['StartChat']._loaded_options = None
-  _globals['_CHATSERVICE'].methods_by_name['StartChat']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\026\212\343\n\022copilot:chat:write\202\323\344\223\002\020\"\016/copilot/chats'
+  _globals['_CHATSERVICE'].methods_by_name['StartChat']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\026\212\343\n\022copilot:chat:write\242\343\n\004\250\343\n\002\202\323\344\223\002\020\"\016/copilot/chats'
   _globals['_CHATSERVICE'].methods_by_name['DescribeChat']._loaded_options = None
-  _globals['_CHATSERVICE'].methods_by_name['DescribeChat']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\025\212\343\n\021copilot:chat:read\202\323\344\223\002\032\022\030/copilot/chats/{chat_id}'
+  _globals['_CHATSERVICE'].methods_by_name['DescribeChat']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\025\212\343\n\021copilot:chat:read\242\343\n\004\250\343\n\001\202\323\344\223\002\032\022\030/copilot/chats/{chat_id}'
   _globals['_CHATSERVICE'].methods_by_name['ListChats']._loaded_options = None
-  _globals['_CHATSERVICE'].methods_by_name['ListChats']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\025\212\343\n\021copilot:chat:read\202\323\344\223\002\020\022\016/copilot/chats'
+  _globals['_CHATSERVICE'].methods_by_name['ListChats']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\025\212\343\n\021copilot:chat:read\242\343\n\004\250\343\n\001\202\323\344\223\002\020\022\016/copilot/chats'
   _globals['_CHATSERVICE'].methods_by_name['ArchiveChat']._loaded_options = None
-  _globals['_CHATSERVICE'].methods_by_name['ArchiveChat']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\026\212\343\n\022copilot:chat:write\202\323\344\223\002\"\" /copilot/chats/{chat_id}/archive'
+  _globals['_CHATSERVICE'].methods_by_name['ArchiveChat']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\026\212\343\n\022copilot:chat:write\242\343\n\004\250\343\n\002\202\323\344\223\002\"\" /copilot/chats/{chat_id}/archive'
   _globals['_CHATSERVICE'].methods_by_name['DeleteChat']._loaded_options = None
-  _globals['_CHATSERVICE'].methods_by_name['DeleteChat']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\026\212\343\n\022copilot:chat:write\202\323\344\223\002\032*\030/copilot/chats/{chat_id}'
+  _globals['_CHATSERVICE'].methods_by_name['DeleteChat']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\026\212\343\n\022copilot:chat:write\242\343\n\004\250\343\n\003\202\323\344\223\002\032*\030/copilot/chats/{chat_id}'
   _globals['_CHATSERVICE'].methods_by_name['SendMessage']._loaded_options = None
-  _globals['_CHATSERVICE'].methods_by_name['SendMessage']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\026\212\343\n\022copilot:chat:write\202\323\344\223\002#\"!/copilot/chats/{chat_id}/messages'
+  _globals['_CHATSERVICE'].methods_by_name['SendMessage']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\026\212\343\n\022copilot:chat:write\242\343\n\004\250\343\n\002\202\323\344\223\002#\"!/copilot/chats/{chat_id}/messages'
   _globals['_CHATSERVICE'].methods_by_name['ListMessages']._loaded_options = None
-  _globals['_CHATSERVICE'].methods_by_name['ListMessages']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\025\212\343\n\021copilot:chat:read\202\323\344\223\002#\022!/copilot/chats/{chat_id}/messages'
+  _globals['_CHATSERVICE'].methods_by_name['ListMessages']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\025\212\343\n\021copilot:chat:read\242\343\n\004\250\343\n\001\202\323\344\223\002#\022!/copilot/chats/{chat_id}/messages'
   _globals['_CHATSERVICE'].methods_by_name['DescribeChatOptions']._loaded_options = None
-  _globals['_CHATSERVICE'].methods_by_name['DescribeChatOptions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\025\212\343\n\021copilot:chat:read\202\323\344\223\002\022\022\020/copilot/options'
-  _globals['_STARTCHATINPUT']._serialized_start=284
-  _globals['_STARTCHATINPUT']._serialized_end=300
-  _globals['_STARTCHATOUTPUT']._serialized_start=302
-  _globals['_STARTCHATOUTPUT']._serialized_end=336
-  _globals['_DESCRIBECHATINPUT']._serialized_start=338
-  _globals['_DESCRIBECHATINPUT']._serialized_end=374
-  _globals['_DESCRIBECHATOUTPUT']._serialized_start=376
-  _globals['_DESCRIBECHATOUTPUT']._serialized_end=432
-  _globals['_LISTCHATSINPUT']._serialized_start=435
-  _globals['_LISTCHATSINPUT']._serialized_end=814
-  _globals['_LISTCHATSINPUT_FILTER']._serialized_start=653
-  _globals['_LISTCHATSINPUT_FILTER']._serialized_end=757
-  _globals['_LISTCHATSINPUT_SORTABLE']._serialized_start=759
-  _globals['_LISTCHATSINPUT_SORTABLE']._serialized_end=814
-  _globals['_LISTCHATSOUTPUT']._serialized_start=816
-  _globals['_LISTCHATSOUTPUT']._serialized_end=885
-  _globals['_ARCHIVECHATINPUT']._serialized_start=887
-  _globals['_ARCHIVECHATINPUT']._serialized_end=941
-  _globals['_ARCHIVECHATOUTPUT']._serialized_start=943
-  _globals['_ARCHIVECHATOUTPUT']._serialized_end=962
-  _globals['_DELETECHATINPUT']._serialized_start=964
-  _globals['_DELETECHATINPUT']._serialized_end=998
-  _globals['_DELETECHATOUTPUT']._serialized_start=1000
-  _globals['_DELETECHATOUTPUT']._serialized_end=1018
-  _globals['_SENDMESSAGEINPUT']._serialized_start=1021
-  _globals['_SENDMESSAGEINPUT']._serialized_end=1316
-  _globals['_SENDMESSAGEINPUT_MESSAGE']._serialized_start=1197
-  _globals['_SENDMESSAGEINPUT_MESSAGE']._serialized_end=1262
-  _globals['_SENDMESSAGEINPUT_APPROVAL']._serialized_start=1264
-  _globals['_SENDMESSAGEINPUT_APPROVAL']._serialized_end=1305
-  _globals['_SENDMESSAGEOUTPUT']._serialized_start=1319
-  _globals['_SENDMESSAGEOUTPUT']._serialized_end=1562
-  _globals['_SENDMESSAGEOUTPUT_STATUS']._serialized_start=1482
-  _globals['_SENDMESSAGEOUTPUT_STATUS']._serialized_end=1552
-  _globals['_LISTMESSAGESINPUT']._serialized_start=1565
-  _globals['_LISTMESSAGESINPUT']._serialized_end=1886
-  _globals['_LISTMESSAGESINPUT_FILTER']._serialized_start=653
-  _globals['_LISTMESSAGESINPUT_FILTER']._serialized_end=705
-  _globals['_LISTMESSAGESINPUT_SORTABLE']._serialized_start=1848
-  _globals['_LISTMESSAGESINPUT_SORTABLE']._serialized_end=1886
-  _globals['_LISTMESSAGESOUTPUT']._serialized_start=1888
-  _globals['_LISTMESSAGESOUTPUT']._serialized_end=1963
-  _globals['_DESCRIBECHATOPTIONSINPUT']._serialized_start=1965
-  _globals['_DESCRIBECHATOPTIONSINPUT']._serialized_end=1991
-  _globals['_DESCRIBECHATOPTIONSOUTPUT']._serialized_start=1993
-  _globals['_DESCRIBECHATOPTIONSOUTPUT']._serialized_end=2120
-  _globals['_DESCRIBECHATOPTIONSOUTPUT_MODEL']._serialized_start=2087
-  _globals['_DESCRIBECHATOPTIONSOUTPUT_MODEL']._serialized_end=2120
-  _globals['_CHATSERVICE']._serialized_start=2123
-  _globals['_CHATSERVICE']._serialized_end=3456
+  _globals['_CHATSERVICE'].methods_by_name['DescribeChatOptions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\025\212\343\n\021copilot:chat:read\242\343\n\004\250\343\n\001\202\323\344\223\002\022\022\020/copilot/options'
+  _globals['_STARTCHATINPUT']._serialized_start=316
+  _globals['_STARTCHATINPUT']._serialized_end=332
+  _globals['_STARTCHATOUTPUT']._serialized_start=334
+  _globals['_STARTCHATOUTPUT']._serialized_end=368
+  _globals['_DESCRIBECHATINPUT']._serialized_start=370
+  _globals['_DESCRIBECHATINPUT']._serialized_end=406
+  _globals['_DESCRIBECHATOUTPUT']._serialized_start=408
+  _globals['_DESCRIBECHATOUTPUT']._serialized_end=464
+  _globals['_LISTCHATSINPUT']._serialized_start=467
+  _globals['_LISTCHATSINPUT']._serialized_end=846
+  _globals['_LISTCHATSINPUT_FILTER']._serialized_start=685
+  _globals['_LISTCHATSINPUT_FILTER']._serialized_end=789
+  _globals['_LISTCHATSINPUT_SORTABLE']._serialized_start=791
+  _globals['_LISTCHATSINPUT_SORTABLE']._serialized_end=846
+  _globals['_LISTCHATSOUTPUT']._serialized_start=848
+  _globals['_LISTCHATSOUTPUT']._serialized_end=917
+  _globals['_ARCHIVECHATINPUT']._serialized_start=919
+  _globals['_ARCHIVECHATINPUT']._serialized_end=973
+  _globals['_ARCHIVECHATOUTPUT']._serialized_start=975
+  _globals['_ARCHIVECHATOUTPUT']._serialized_end=994
+  _globals['_DELETECHATINPUT']._serialized_start=996
+  _globals['_DELETECHATINPUT']._serialized_end=1030
+  _globals['_DELETECHATOUTPUT']._serialized_start=1032
+  _globals['_DELETECHATOUTPUT']._serialized_end=1050
+  _globals['_SENDMESSAGEINPUT']._serialized_start=1053
+  _globals['_SENDMESSAGEINPUT']._serialized_end=1348
+  _globals['_SENDMESSAGEINPUT_MESSAGE']._serialized_start=1229
+  _globals['_SENDMESSAGEINPUT_MESSAGE']._serialized_end=1294
+  _globals['_SENDMESSAGEINPUT_APPROVAL']._serialized_start=1296
+  _globals['_SENDMESSAGEINPUT_APPROVAL']._serialized_end=1337
+  _globals['_SENDMESSAGEOUTPUT']._serialized_start=1351
+  _globals['_SENDMESSAGEOUTPUT']._serialized_end=1594
+  _globals['_SENDMESSAGEOUTPUT_STATUS']._serialized_start=1514
+  _globals['_SENDMESSAGEOUTPUT_STATUS']._serialized_end=1584
+  _globals['_LISTMESSAGESINPUT']._serialized_start=1597
+  _globals['_LISTMESSAGESINPUT']._serialized_end=1918
+  _globals['_LISTMESSAGESINPUT_FILTER']._serialized_start=685
+  _globals['_LISTMESSAGESINPUT_FILTER']._serialized_end=737
+  _globals['_LISTMESSAGESINPUT_SORTABLE']._serialized_start=1880
+  _globals['_LISTMESSAGESINPUT_SORTABLE']._serialized_end=1918
+  _globals['_LISTMESSAGESOUTPUT']._serialized_start=1920
+  _globals['_LISTMESSAGESOUTPUT']._serialized_end=1995
+  _globals['_DESCRIBECHATOPTIONSINPUT']._serialized_start=1997
+  _globals['_DESCRIBECHATOPTIONSINPUT']._serialized_end=2023
+  _globals['_DESCRIBECHATOPTIONSOUTPUT']._serialized_start=2025
+  _globals['_DESCRIBECHATOPTIONSOUTPUT']._serialized_end=2152
+  _globals['_DESCRIBECHATOPTIONSOUTPUT_MODEL']._serialized_start=2119
+  _globals['_DESCRIBECHATOPTIONSOUTPUT_MODEL']._serialized_end=2152
+  _globals['_CHATSERVICE']._serialized_start=2155
+  _globals['_CHATSERVICE']._serialized_end=3552
 # @@protoc_insertion_point(module_scope)

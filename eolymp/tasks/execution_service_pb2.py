@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/tasks/execution_service.proto\x12\x0c\x65olymp.tasks\x1a\x19google/protobuf/any.proto\"\x82\x01\n\x10\x45xecuteTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\"\n\x04task\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\x12(\n\ncheckpoint\x18\x03 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x0f\n\x07\x61ttempt\x18\x04 \x01(\r\"\xed\x02\n\x11\x45xecuteTaskOutput\x12<\n\x08progress\x18\x01 \x01(\x0b\x32(.eolymp.tasks.ExecuteTaskOutput.ProgressH\x00\x12@\n\ncheckpoint\x18\x02 \x01(\x0b\x32*.eolymp.tasks.ExecuteTaskOutput.CheckpointH\x00\x12\x38\n\x06record\x18\x03 \x01(\x0b\x32&.eolymp.tasks.ExecuteTaskOutput.RecordH\x00\x1a\x43\n\x08Progress\x12\x10\n\x08progress\x18\x01 \x01(\r\x12\r\n\x05total\x18\x02 \x01(\r\x12\x16\n\x0estatus_message\x18\x03 \x01(\t\x1a\x36\n\nCheckpoint\x12(\n\ncheckpoint\x18\x01 \x01(\x0b\x32\x14.google.protobuf.Any\x1a\x16\n\x06Record\x12\x0c\n\x04line\x18\x01 \x01(\tB\t\n\x07message2d\n\x10\x45xecutionService\x12P\n\x0b\x45xecuteTask\x12\x1e.eolymp.tasks.ExecuteTaskInput\x1a\x1f.eolymp.tasks.ExecuteTaskOutput0\x01\x42-Z+github.com/eolymp/go-sdk/eolymp/tasks;tasksb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/tasks/execution_service.proto\x12\x0c\x65olymp.tasks\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x19google/protobuf/any.proto\"\x82\x01\n\x10\x45xecuteTaskInput\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\"\n\x04task\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\x12(\n\ncheckpoint\x18\x03 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x0f\n\x07\x61ttempt\x18\x04 \x01(\r\"\xed\x02\n\x11\x45xecuteTaskOutput\x12<\n\x08progress\x18\x01 \x01(\x0b\x32(.eolymp.tasks.ExecuteTaskOutput.ProgressH\x00\x12@\n\ncheckpoint\x18\x02 \x01(\x0b\x32*.eolymp.tasks.ExecuteTaskOutput.CheckpointH\x00\x12\x38\n\x06record\x18\x03 \x01(\x0b\x32&.eolymp.tasks.ExecuteTaskOutput.RecordH\x00\x1a\x43\n\x08Progress\x12\x10\n\x08progress\x18\x01 \x01(\r\x12\r\n\x05total\x18\x02 \x01(\r\x12\x16\n\x0estatus_message\x18\x03 \x01(\t\x1a\x36\n\nCheckpoint\x12(\n\ncheckpoint\x18\x01 \x01(\x0b\x32\x14.google.protobuf.Any\x1a\x16\n\x06Record\x12\x0c\n\x04line\x18\x01 \x01(\tB\t\n\x07message2n\n\x10\x45xecutionService\x12Z\n\x0b\x45xecuteTask\x12\x1e.eolymp.tasks.ExecuteTaskInput\x1a\x1f.eolymp.tasks.ExecuteTaskOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x02\x30\x01\x42-Z+github.com/eolymp/go-sdk/eolymp/tasks;tasksb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,16 +34,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.tasks.execution_serv
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/tasks;tasks'
-  _globals['_EXECUTETASKINPUT']._serialized_start=82
-  _globals['_EXECUTETASKINPUT']._serialized_end=212
-  _globals['_EXECUTETASKOUTPUT']._serialized_start=215
-  _globals['_EXECUTETASKOUTPUT']._serialized_end=580
-  _globals['_EXECUTETASKOUTPUT_PROGRESS']._serialized_start=422
-  _globals['_EXECUTETASKOUTPUT_PROGRESS']._serialized_end=489
-  _globals['_EXECUTETASKOUTPUT_CHECKPOINT']._serialized_start=491
-  _globals['_EXECUTETASKOUTPUT_CHECKPOINT']._serialized_end=545
-  _globals['_EXECUTETASKOUTPUT_RECORD']._serialized_start=547
-  _globals['_EXECUTETASKOUTPUT_RECORD']._serialized_end=569
-  _globals['_EXECUTIONSERVICE']._serialized_start=582
-  _globals['_EXECUTIONSERVICE']._serialized_end=682
+  _globals['_EXECUTIONSERVICE'].methods_by_name['ExecuteTask']._loaded_options = None
+  _globals['_EXECUTIONSERVICE'].methods_by_name['ExecuteTask']._serialized_options = b'\242\343\n\004\250\343\n\002'
+  _globals['_EXECUTETASKINPUT']._serialized_start=114
+  _globals['_EXECUTETASKINPUT']._serialized_end=244
+  _globals['_EXECUTETASKOUTPUT']._serialized_start=247
+  _globals['_EXECUTETASKOUTPUT']._serialized_end=612
+  _globals['_EXECUTETASKOUTPUT_PROGRESS']._serialized_start=454
+  _globals['_EXECUTETASKOUTPUT_PROGRESS']._serialized_end=521
+  _globals['_EXECUTETASKOUTPUT_CHECKPOINT']._serialized_start=523
+  _globals['_EXECUTETASKOUTPUT_CHECKPOINT']._serialized_end=577
+  _globals['_EXECUTETASKOUTPUT_RECORD']._serialized_start=579
+  _globals['_EXECUTETASKOUTPUT_RECORD']._serialized_end=601
+  _globals['_EXECUTIONSERVICE']._serialized_start=614
+  _globals['_EXECUTIONSERVICE']._serialized_end=724
 # @@protoc_insertion_point(module_scope)

@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -30,7 +31,7 @@ from eolymp.atlas import generation_pb2 as eolymp_dot_atlas_dot_generation__pb2
 from eolymp.wellknown import watch_pb2 as eolymp_dot_wellknown_dot_watch__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/generation_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/atlas/generation.proto\x1a\x1c\x65olymp/wellknown/watch.proto\"D\n\x17\x44\x65scribeGenerationInput\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x15\n\rgeneration_id\x18\x01 \x01(\t\"H\n\x18\x44\x65scribeGenerationOutput\x12,\n\ngeneration\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Generation\"H\n\x14ListGenerationsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"O\n\x15ListGenerationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.atlas.Generation\"A\n\x14WatchGenerationInput\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x15\n\rgeneration_id\x18\x01 \x01(\t\"v\n\x15WatchGenerationOutput\x12,\n\ngeneration\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Generation\x12/\n\x05\x65vent\x18\x02 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType2\xfa\x04\n\x11GenerationService\x12\xc9\x01\n\x12\x44\x65scribeGeneration\x12%.eolymp.atlas.DescribeGenerationInput\x1a&.eolymp.atlas.DescribeGenerationOutput\"d\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02\x34\x12\x32/problems/{problem_id}/generations/{generation_id}\x12\xb0\x01\n\x0fListGenerations\x12\".eolymp.atlas.ListGenerationsInput\x1a#.eolymp.atlas.ListGenerationsOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02$\x12\"/problems/{problem_id}/generations\x12\xc8\x01\n\x0fWatchGeneration\x12\".eolymp.atlas.WatchGenerationInput\x1a#.eolymp.atlas.WatchGenerationOutput\"j\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\x82\xd3\xe4\x93\x02:\x12\x38/problems/{problem_id}/generations/{generation_id}/watch0\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/atlas/generation_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1d\x65olymp/atlas/generation.proto\x1a\x1c\x65olymp/wellknown/watch.proto\"D\n\x17\x44\x65scribeGenerationInput\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x15\n\rgeneration_id\x18\x01 \x01(\t\"H\n\x18\x44\x65scribeGenerationOutput\x12,\n\ngeneration\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Generation\"H\n\x14ListGenerationsInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"O\n\x15ListGenerationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.eolymp.atlas.Generation\"A\n\x14WatchGenerationInput\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x15\n\rgeneration_id\x18\x01 \x01(\t\"v\n\x15WatchGenerationOutput\x12,\n\ngeneration\x18\x01 \x01(\x0b\x32\x18.eolymp.atlas.Generation\x12/\n\x05\x65vent\x18\x02 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType2\x92\x05\n\x11GenerationService\x12\xd1\x01\n\x12\x44\x65scribeGeneration\x12%.eolymp.atlas.DescribeGenerationInput\x1a&.eolymp.atlas.DescribeGenerationOutput\"l\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x34\x12\x32/problems/{problem_id}/generations/{generation_id}\x12\xb8\x01\n\x0fListGenerations\x12\".eolymp.atlas.ListGenerationsInput\x1a#.eolymp.atlas.ListGenerationsOutput\"\\\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02$\x12\"/problems/{problem_id}/generations\x12\xd0\x01\n\x0fWatchGeneration\x12\".eolymp.atlas.WatchGenerationInput\x1a#.eolymp.atlas.WatchGenerationOutput\"r\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02:\x12\x38/problems/{problem_id}/generations/{generation_id}/watch0\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,23 +42,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GENERATIONSERVICE']._loaded_options = None
   _globals['_GENERATIONSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_GENERATIONSERVICE'].methods_by_name['DescribeGeneration']._loaded_options = None
-  _globals['_GENERATIONSERVICE'].methods_by_name['DescribeGeneration']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\0024\0222/problems/{problem_id}/generations/{generation_id}'
+  _globals['_GENERATIONSERVICE'].methods_by_name['DescribeGeneration']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023atlas:problem:write\242\343\n\004\250\343\n\001\202\323\344\223\0024\0222/problems/{problem_id}/generations/{generation_id}'
   _globals['_GENERATIONSERVICE'].methods_by_name['ListGenerations']._loaded_options = None
-  _globals['_GENERATIONSERVICE'].methods_by_name['ListGenerations']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002$\022\"/problems/{problem_id}/generations'
+  _globals['_GENERATIONSERVICE'].methods_by_name['ListGenerations']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n2\202\343\n\027\212\343\n\023atlas:problem:write\242\343\n\004\250\343\n\001\202\323\344\223\002$\022\"/problems/{problem_id}/generations'
   _globals['_GENERATIONSERVICE'].methods_by_name['WatchGeneration']._loaded_options = None
-  _globals['_GENERATIONSERVICE'].methods_by_name['WatchGeneration']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023atlas:problem:write\202\323\344\223\002:\0228/problems/{problem_id}/generations/{generation_id}/watch'
-  _globals['_DESCRIBEGENERATIONINPUT']._serialized_start=251
-  _globals['_DESCRIBEGENERATIONINPUT']._serialized_end=319
-  _globals['_DESCRIBEGENERATIONOUTPUT']._serialized_start=321
-  _globals['_DESCRIBEGENERATIONOUTPUT']._serialized_end=393
-  _globals['_LISTGENERATIONSINPUT']._serialized_start=395
-  _globals['_LISTGENERATIONSINPUT']._serialized_end=467
-  _globals['_LISTGENERATIONSOUTPUT']._serialized_start=469
-  _globals['_LISTGENERATIONSOUTPUT']._serialized_end=548
-  _globals['_WATCHGENERATIONINPUT']._serialized_start=550
-  _globals['_WATCHGENERATIONINPUT']._serialized_end=615
-  _globals['_WATCHGENERATIONOUTPUT']._serialized_start=617
-  _globals['_WATCHGENERATIONOUTPUT']._serialized_end=735
-  _globals['_GENERATIONSERVICE']._serialized_start=738
-  _globals['_GENERATIONSERVICE']._serialized_end=1372
+  _globals['_GENERATIONSERVICE'].methods_by_name['WatchGeneration']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023atlas:problem:write\242\343\n\004\250\343\n\001\202\323\344\223\002:\0228/problems/{problem_id}/generations/{generation_id}/watch'
+  _globals['_DESCRIBEGENERATIONINPUT']._serialized_start=283
+  _globals['_DESCRIBEGENERATIONINPUT']._serialized_end=351
+  _globals['_DESCRIBEGENERATIONOUTPUT']._serialized_start=353
+  _globals['_DESCRIBEGENERATIONOUTPUT']._serialized_end=425
+  _globals['_LISTGENERATIONSINPUT']._serialized_start=427
+  _globals['_LISTGENERATIONSINPUT']._serialized_end=499
+  _globals['_LISTGENERATIONSOUTPUT']._serialized_start=501
+  _globals['_LISTGENERATIONSOUTPUT']._serialized_end=580
+  _globals['_WATCHGENERATIONINPUT']._serialized_start=582
+  _globals['_WATCHGENERATIONINPUT']._serialized_end=647
+  _globals['_WATCHGENERATIONOUTPUT']._serialized_start=649
+  _globals['_WATCHGENERATIONOUTPUT']._serialized_end=767
+  _globals['_GENERATIONSERVICE']._serialized_start=770
+  _globals['_GENERATIONSERVICE']._serialized_end=1428
 # @@protoc_insertion_point(module_scope)

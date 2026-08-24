@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -29,7 +30,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.atlas import scoring_score_pb2 as eolymp_dot_atlas_dot_scoring__score__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/scoring_service.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/atlas/scoring_score.proto\"\x83\x01\n\x11ScoreChangedEvent\x12\x12\n\nproblem_id\x18\x03 \x01(\t\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12#\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Score\x12\"\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.Score\";\n\x12\x44\x65scribeScoreInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"9\n\x13\x44\x65scribeScoreOutput\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Score\"1\n\x1b\x44\x65scribeProblemGradingInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"\x8d\x01\n\x1c\x44\x65scribeProblemGradingOutput\x12@\n\x06ranges\x18\x02 \x03(\x0b\x32\x30.eolymp.atlas.DescribeProblemGradingOutput.Range\x1a+\n\x05Range\x12\r\n\x05grade\x18\x01 \x01(\r\x12\x13\n\x0bupper_bound\x18\x02 \x01(\x02\x32\xa6\x03\n\x0eScoringService\x12\xb3\x01\n\rDescribeScore\x12 .eolymp.atlas.DescribeScoreInput\x1a!.eolymp.atlas.DescribeScoreOutput\"]\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\x82\xd3\xe4\x93\x02+\x12)/problems/{problem_id}/scores/{member_id}\x12\xc0\x01\n\x16\x44\x65scribeProblemGrading\x12).eolymp.atlas.DescribeProblemGradingInput\x1a*.eolymp.atlas.DescribeProblemGradingOutput\"O\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\x82\xd3\xe4\x93\x02 \x12\x1e/problems/{problem_id}/grading\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/atlas/scoring_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/atlas/scoring_score.proto\"\x83\x01\n\x11ScoreChangedEvent\x12\x12\n\nproblem_id\x18\x03 \x01(\t\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12#\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Score\x12\"\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.Score\";\n\x12\x44\x65scribeScoreInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"9\n\x13\x44\x65scribeScoreOutput\x12\"\n\x05score\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Score\"1\n\x1b\x44\x65scribeProblemGradingInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\"\x8d\x01\n\x1c\x44\x65scribeProblemGradingOutput\x12@\n\x06ranges\x18\x02 \x03(\x0b\x32\x30.eolymp.atlas.DescribeProblemGradingOutput.Range\x1a+\n\x05Range\x12\r\n\x05grade\x18\x01 \x01(\r\x12\x13\n\x0bupper_bound\x18\x02 \x01(\x02\x32\xb6\x03\n\x0eScoringService\x12\xbb\x01\n\rDescribeScore\x12 .eolymp.atlas.DescribeScoreInput\x1a!.eolymp.atlas.DescribeScoreOutput\"e\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x61tlas:submission:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02+\x12)/problems/{problem_id}/scores/{member_id}\x12\xc8\x01\n\x16\x44\x65scribeProblemGrading\x12).eolymp.atlas.DescribeProblemGradingInput\x1a*.eolymp.atlas.DescribeProblemGradingOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02 \x12\x1e/problems/{problem_id}/grading\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,21 +41,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SCORINGSERVICE']._loaded_options = None
   _globals['_SCORINGSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_SCORINGSERVICE'].methods_by_name['DescribeScore']._loaded_options = None
-  _globals['_SCORINGSERVICE'].methods_by_name['DescribeScore']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025atlas:submission:read\202\323\344\223\002+\022)/problems/{problem_id}/scores/{member_id}'
+  _globals['_SCORINGSERVICE'].methods_by_name['DescribeScore']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025atlas:submission:read\242\343\n\004\250\343\n\001\202\323\344\223\002+\022)/problems/{problem_id}/scores/{member_id}'
   _globals['_SCORINGSERVICE'].methods_by_name['DescribeProblemGrading']._loaded_options = None
-  _globals['_SCORINGSERVICE'].methods_by_name['DescribeProblemGrading']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\202\323\344\223\002 \022\036/problems/{problem_id}/grading'
-  _globals['_SCORECHANGEDEVENT']._serialized_start=222
-  _globals['_SCORECHANGEDEVENT']._serialized_end=353
-  _globals['_DESCRIBESCOREINPUT']._serialized_start=355
-  _globals['_DESCRIBESCOREINPUT']._serialized_end=414
-  _globals['_DESCRIBESCOREOUTPUT']._serialized_start=416
-  _globals['_DESCRIBESCOREOUTPUT']._serialized_end=473
-  _globals['_DESCRIBEPROBLEMGRADINGINPUT']._serialized_start=475
-  _globals['_DESCRIBEPROBLEMGRADINGINPUT']._serialized_end=524
-  _globals['_DESCRIBEPROBLEMGRADINGOUTPUT']._serialized_start=527
-  _globals['_DESCRIBEPROBLEMGRADINGOUTPUT']._serialized_end=668
-  _globals['_DESCRIBEPROBLEMGRADINGOUTPUT_RANGE']._serialized_start=625
-  _globals['_DESCRIBEPROBLEMGRADINGOUTPUT_RANGE']._serialized_end=668
-  _globals['_SCORINGSERVICE']._serialized_start=671
-  _globals['_SCORINGSERVICE']._serialized_end=1093
+  _globals['_SCORINGSERVICE'].methods_by_name['DescribeProblemGrading']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022atlas:problem:read\242\343\n\004\250\343\n\001\202\323\344\223\002 \022\036/problems/{problem_id}/grading'
+  _globals['_SCORECHANGEDEVENT']._serialized_start=254
+  _globals['_SCORECHANGEDEVENT']._serialized_end=385
+  _globals['_DESCRIBESCOREINPUT']._serialized_start=387
+  _globals['_DESCRIBESCOREINPUT']._serialized_end=446
+  _globals['_DESCRIBESCOREOUTPUT']._serialized_start=448
+  _globals['_DESCRIBESCOREOUTPUT']._serialized_end=505
+  _globals['_DESCRIBEPROBLEMGRADINGINPUT']._serialized_start=507
+  _globals['_DESCRIBEPROBLEMGRADINGINPUT']._serialized_end=556
+  _globals['_DESCRIBEPROBLEMGRADINGOUTPUT']._serialized_start=559
+  _globals['_DESCRIBEPROBLEMGRADINGOUTPUT']._serialized_end=700
+  _globals['_DESCRIBEPROBLEMGRADINGOUTPUT_RANGE']._serialized_start=657
+  _globals['_DESCRIBEPROBLEMGRADINGOUTPUT_RANGE']._serialized_end=700
+  _globals['_SCORINGSERVICE']._serialized_start=703
+  _globals['_SCORINGSERVICE']._serialized_end=1141
 # @@protoc_insertion_point(module_scope)

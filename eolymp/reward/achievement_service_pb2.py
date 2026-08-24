@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -30,7 +31,7 @@ from eolymp.reward import achievement_pb2 as eolymp_dot_reward_dot_achievement__
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/reward/achievement_service.proto\x12\reolymp.reward\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1f\x65olymp/reward/achievement.proto\x1a!eolymp/wellknown/expression.proto\"I\n\x16\x43reateAchievementInput\x12/\n\x0b\x61\x63hievement\x18\x01 \x01(\x0b\x32\x1a.eolymp.reward.Achievement\"1\n\x17\x43reateAchievementOutput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\"a\n\x16UpdateAchievementInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12/\n\x0b\x61\x63hievement\x18\x02 \x01(\x0b\x32\x1a.eolymp.reward.Achievement\"\x19\n\x17UpdateAchievementOutput\"0\n\x16\x44\x65leteAchievementInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\"\x19\n\x17\x44\x65leteAchievementOutput\"d\n\x18\x44\x65scribeAchievementInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.reward.Achievement.Extra\"L\n\x19\x44\x65scribeAchievementOutput\x12/\n\x0b\x61\x63hievement\x18\x01 \x01(\x0b\x32\x1a.eolymp.reward.Achievement\"\xf9\x01\n\x15ListAchievementsInput\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.reward.ListAchievementsInput.Filter\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.reward.Achievement.Extra\x1a\x43\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"l\n\x16ListAchievementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.reward.Achievement\"\x87\x01\n#DescribeAchievementTranslationInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12\x16\n\x0etranslation_id\x18\x02 \x01(\t\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.reward.Achievement.Extra\"c\n$DescribeAchievementTranslationOutput\x12;\n\x0btranslation\x18\x01 \x01(\x0b\x32&.eolymp.reward.Achievement.Translation\"\xca\x02\n ListAchievementTranslationsInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x02 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12G\n\x07\x66ilters\x18( \x01(\x0b\x32\x36.eolymp.reward.ListAchievementTranslationsInput.Filter\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.reward.Achievement.Extra\x1au\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06locale\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"i\n!ListAchievementTranslationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x35\n\x05items\x18\x02 \x03(\x0b\x32&.eolymp.reward.Achievement.Translation\"x\n!CreateAchievementTranslationInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12;\n\x0btranslation\x18\x02 \x01(\x0b\x32&.eolymp.reward.Achievement.Translation\"<\n\"CreateAchievementTranslationOutput\x12\x16\n\x0etranslation_id\x18\x01 \x01(\t\"\x8c\x02\n!UpdateAchievementTranslationInput\x12\x45\n\x05patch\x18\x01 \x03(\x0e\x32\x36.eolymp.reward.UpdateAchievementTranslationInput.Patch\x12\x16\n\x0e\x61\x63hievement_id\x18\x02 \x01(\t\x12\x16\n\x0etranslation_id\x18\x03 \x01(\t\x12;\n\x0btranslation\x18\x04 \x01(\x0b\x32&.eolymp.reward.Achievement.Translation\"3\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0b\n\x07SUMMARY\x10\x02\x12\n\n\x06LOCALE\x10\x03\"$\n\"UpdateAchievementTranslationOutput\"S\n!DeleteAchievementTranslationInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12\x16\n\x0etranslation_id\x18\x02 \x01(\t\"$\n\"DeleteAchievementTranslationOutput2\xfe\x10\n\x12\x41\x63hievementService\x12\xa6\x01\n\x11\x43reateAchievement\x12%.eolymp.reward.CreateAchievementInput\x1a&.eolymp.reward.CreateAchievementOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02\x0f\"\r/achievements\x12\xb7\x01\n\x11UpdateAchievement\x12%.eolymp.reward.UpdateAchievementInput\x1a&.eolymp.reward.UpdateAchievementOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02 \"\x1e/achievements/{achievement_id}\x12\xb7\x01\n\x11\x44\x65leteAchievement\x12%.eolymp.reward.DeleteAchievementInput\x1a&.eolymp.reward.DeleteAchievementOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\x82\xd3\xe4\x93\x02 *\x1e/achievements/{achievement_id}\x12\xbc\x01\n\x13\x44\x65scribeAchievement\x12\'.eolymp.reward.DescribeAchievementInput\x1a(.eolymp.reward.DescribeAchievementOutput\"R\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02 \x12\x1e/achievements/{achievement_id}\x12\xa2\x01\n\x10ListAchievements\x12$.eolymp.reward.ListAchievementsInput\x1a%.eolymp.reward.ListAchievementsOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\x82\xd3\xe4\x93\x02\x0f\x12\r/achievements\x12\xff\x01\n\x1e\x44\x65scribeAchievementTranslation\x12\x32.eolymp.reward.DescribeAchievementTranslationInput\x1a\x33.eolymp.reward.DescribeAchievementTranslationOutput\"t\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\x82\xd3\xe4\x93\x02>\x12</achievements/{achievement_id}/translations/{translation_id}\x12\xe4\x01\n\x1bListAchievementTranslations\x12/.eolymp.reward.ListAchievementTranslationsInput\x1a\x30.eolymp.reward.ListAchievementTranslationsOutput\"b\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\x82\xd3\xe4\x93\x02-\x12+/achievements/{achievement_id}/translations\x12\xe8\x01\n\x1c\x43reateAchievementTranslation\x12\x30.eolymp.reward.CreateAchievementTranslationInput\x1a\x31.eolymp.reward.CreateAchievementTranslationOutput\"c\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\x82\xd3\xe4\x93\x02-\"+/achievements/{achievement_id}/translations\x12\xf9\x01\n\x1cUpdateAchievementTranslation\x12\x30.eolymp.reward.UpdateAchievementTranslationInput\x1a\x31.eolymp.reward.UpdateAchievementTranslationOutput\"t\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\x82\xd3\xe4\x93\x02>\x1a</achievements/{achievement_id}/translations/{translation_id}\x12\xf9\x01\n\x1c\x44\x65leteAchievementTranslation\x12\x30.eolymp.reward.DeleteAchievementTranslationInput\x1a\x31.eolymp.reward.DeleteAchievementTranslationOutput\"t\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\x82\xd3\xe4\x93\x02>*</achievements/{achievement_id}/translations/{translation_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB/Z-github.com/eolymp/go-sdk/eolymp/reward;rewardb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/reward/achievement_service.proto\x12\reolymp.reward\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1f\x65olymp/reward/achievement.proto\x1a!eolymp/wellknown/expression.proto\"I\n\x16\x43reateAchievementInput\x12/\n\x0b\x61\x63hievement\x18\x01 \x01(\x0b\x32\x1a.eolymp.reward.Achievement\"1\n\x17\x43reateAchievementOutput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\"a\n\x16UpdateAchievementInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12/\n\x0b\x61\x63hievement\x18\x02 \x01(\x0b\x32\x1a.eolymp.reward.Achievement\"\x19\n\x17UpdateAchievementOutput\"0\n\x16\x44\x65leteAchievementInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\"\x19\n\x17\x44\x65leteAchievementOutput\"d\n\x18\x44\x65scribeAchievementInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.reward.Achievement.Extra\"L\n\x19\x44\x65scribeAchievementOutput\x12/\n\x0b\x61\x63hievement\x18\x01 \x01(\x0b\x32\x1a.eolymp.reward.Achievement\"\xf9\x01\n\x15ListAchievementsInput\x12\r\n\x05\x61\x66ter\x18\x0c \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\n \x01(\x05\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.reward.ListAchievementsInput.Filter\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.reward.Achievement.Extra\x1a\x43\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\"l\n\x16ListAchievementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.reward.Achievement\"\x87\x01\n#DescribeAchievementTranslationInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12\x16\n\x0etranslation_id\x18\x02 \x01(\t\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.reward.Achievement.Extra\"c\n$DescribeAchievementTranslationOutput\x12;\n\x0btranslation\x18\x01 \x01(\x0b\x32&.eolymp.reward.Achievement.Translation\"\xca\x02\n ListAchievementTranslationsInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x02 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12G\n\x07\x66ilters\x18( \x01(\x0b\x32\x36.eolymp.reward.ListAchievementTranslationsInput.Filter\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.reward.Achievement.Extra\x1au\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06locale\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"i\n!ListAchievementTranslationsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x35\n\x05items\x18\x02 \x03(\x0b\x32&.eolymp.reward.Achievement.Translation\"x\n!CreateAchievementTranslationInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12;\n\x0btranslation\x18\x02 \x01(\x0b\x32&.eolymp.reward.Achievement.Translation\"<\n\"CreateAchievementTranslationOutput\x12\x16\n\x0etranslation_id\x18\x01 \x01(\t\"\x8c\x02\n!UpdateAchievementTranslationInput\x12\x45\n\x05patch\x18\x01 \x03(\x0e\x32\x36.eolymp.reward.UpdateAchievementTranslationInput.Patch\x12\x16\n\x0e\x61\x63hievement_id\x18\x02 \x01(\t\x12\x16\n\x0etranslation_id\x18\x03 \x01(\t\x12;\n\x0btranslation\x18\x04 \x01(\x0b\x32&.eolymp.reward.Achievement.Translation\"3\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0b\n\x07SUMMARY\x10\x02\x12\n\n\x06LOCALE\x10\x03\"$\n\"UpdateAchievementTranslationOutput\"S\n!DeleteAchievementTranslationInput\x12\x16\n\x0e\x61\x63hievement_id\x18\x01 \x01(\t\x12\x16\n\x0etranslation_id\x18\x02 \x01(\t\"$\n\"DeleteAchievementTranslationOutput2\xce\x11\n\x12\x41\x63hievementService\x12\xae\x01\n\x11\x43reateAchievement\x12%.eolymp.reward.CreateAchievementInput\x1a&.eolymp.reward.CreateAchievementOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x0f\"\r/achievements\x12\xbf\x01\n\x11UpdateAchievement\x12%.eolymp.reward.UpdateAchievementInput\x1a&.eolymp.reward.UpdateAchievementOutput\"[\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02 \"\x1e/achievements/{achievement_id}\x12\xbf\x01\n\x11\x44\x65leteAchievement\x12%.eolymp.reward.DeleteAchievementInput\x1a&.eolymp.reward.DeleteAchievementOutput\"[\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02 *\x1e/achievements/{achievement_id}\x12\xc4\x01\n\x13\x44\x65scribeAchievement\x12\'.eolymp.reward.DescribeAchievementInput\x1a(.eolymp.reward.DescribeAchievementOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02 \x12\x1e/achievements/{achievement_id}\x12\xaa\x01\n\x10ListAchievements\x12$.eolymp.reward.ListAchievementsInput\x1a%.eolymp.reward.ListAchievementsOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0f\x12\r/achievements\x12\x87\x02\n\x1e\x44\x65scribeAchievementTranslation\x12\x32.eolymp.reward.DescribeAchievementTranslationInput\x1a\x33.eolymp.reward.DescribeAchievementTranslationOutput\"|\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02>\x12</achievements/{achievement_id}/translations/{translation_id}\x12\xec\x01\n\x1bListAchievementTranslations\x12/.eolymp.reward.ListAchievementTranslationsInput\x1a\x30.eolymp.reward.ListAchievementTranslationsOutput\"j\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1c\x8a\xe3\n\x18typewriter:fragment:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02-\x12+/achievements/{achievement_id}/translations\x12\xf0\x01\n\x1c\x43reateAchievementTranslation\x12\x30.eolymp.reward.CreateAchievementTranslationInput\x1a\x31.eolymp.reward.CreateAchievementTranslationOutput\"k\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02-\"+/achievements/{achievement_id}/translations\x12\x81\x02\n\x1cUpdateAchievementTranslation\x12\x30.eolymp.reward.UpdateAchievementTranslationInput\x1a\x31.eolymp.reward.UpdateAchievementTranslationOutput\"|\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02>\x1a</achievements/{achievement_id}/translations/{translation_id}\x12\x81\x02\n\x1c\x44\x65leteAchievementTranslation\x12\x30.eolymp.reward.DeleteAchievementTranslationInput\x1a\x31.eolymp.reward.DeleteAchievementTranslationOutput\"|\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1d\x8a\xe3\n\x19typewriter:fragment:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02>*</achievements/{achievement_id}/translations/{translation_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB/Z-github.com/eolymp/go-sdk/eolymp/reward;rewardb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,71 +42,71 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ACHIEVEMENTSERVICE']._loaded_options = None
   _globals['_ACHIEVEMENTSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['CreateAchievement']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['CreateAchievement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\032\212\343\n\026community:member:write\202\323\344\223\002\017\"\r/achievements'
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['CreateAchievement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\032\212\343\n\026community:member:write\242\343\n\004\250\343\n\002\202\323\344\223\002\017\"\r/achievements'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['UpdateAchievement']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['UpdateAchievement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\032\212\343\n\026community:member:write\202\323\344\223\002 \"\036/achievements/{achievement_id}'
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['UpdateAchievement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\032\212\343\n\026community:member:write\242\343\n\004\250\343\n\002\202\323\344\223\002 \"\036/achievements/{achievement_id}'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DeleteAchievement']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DeleteAchievement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\032\212\343\n\026community:member:write\202\323\344\223\002 *\036/achievements/{achievement_id}'
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DeleteAchievement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\032\212\343\n\026community:member:write\242\343\n\004\250\343\n\003\202\323\344\223\002 *\036/achievements/{achievement_id}'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DescribeAchievement']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DescribeAchievement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:member:read\202\323\344\223\002 \022\036/achievements/{achievement_id}'
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DescribeAchievement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:member:read\242\343\n\004\250\343\n\001\202\323\344\223\002 \022\036/achievements/{achievement_id}'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['ListAchievements']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['ListAchievements']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:member:read\202\323\344\223\002\017\022\r/achievements'
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['ListAchievements']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:member:read\242\343\n\004\250\343\n\001\202\323\344\223\002\017\022\r/achievements'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DescribeAchievementTranslation']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DescribeAchievementTranslation']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\343\n\034\212\343\n\030typewriter:fragment:read\202\323\344\223\002>\022</achievements/{achievement_id}/translations/{translation_id}'
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DescribeAchievementTranslation']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\364\003\202\343\n\034\212\343\n\030typewriter:fragment:read\242\343\n\004\250\343\n\001\202\323\344\223\002>\022</achievements/{achievement_id}/translations/{translation_id}'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['ListAchievementTranslations']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['ListAchievementTranslations']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\034\212\343\n\030typewriter:fragment:read\202\323\344\223\002-\022+/achievements/{achievement_id}/translations'
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['ListAchievementTranslations']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\034\212\343\n\030typewriter:fragment:read\242\343\n\004\250\343\n\001\202\323\344\223\002-\022+/achievements/{achievement_id}/translations'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['CreateAchievementTranslation']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['CreateAchievementTranslation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\035\212\343\n\031typewriter:fragment:write\202\323\344\223\002-\"+/achievements/{achievement_id}/translations'
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['CreateAchievementTranslation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\035\212\343\n\031typewriter:fragment:write\242\343\n\004\250\343\n\002\202\323\344\223\002-\"+/achievements/{achievement_id}/translations'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['UpdateAchievementTranslation']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['UpdateAchievementTranslation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\035\212\343\n\031typewriter:fragment:write\202\323\344\223\002>\032</achievements/{achievement_id}/translations/{translation_id}'
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['UpdateAchievementTranslation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\035\212\343\n\031typewriter:fragment:write\242\343\n\004\250\343\n\002\202\323\344\223\002>\032</achievements/{achievement_id}/translations/{translation_id}'
   _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DeleteAchievementTranslation']._loaded_options = None
-  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DeleteAchievementTranslation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\035\212\343\n\031typewriter:fragment:write\202\323\344\223\002>*</achievements/{achievement_id}/translations/{translation_id}'
-  _globals['_CREATEACHIEVEMENTINPUT']._serialized_start=261
-  _globals['_CREATEACHIEVEMENTINPUT']._serialized_end=334
-  _globals['_CREATEACHIEVEMENTOUTPUT']._serialized_start=336
-  _globals['_CREATEACHIEVEMENTOUTPUT']._serialized_end=385
-  _globals['_UPDATEACHIEVEMENTINPUT']._serialized_start=387
-  _globals['_UPDATEACHIEVEMENTINPUT']._serialized_end=484
-  _globals['_UPDATEACHIEVEMENTOUTPUT']._serialized_start=486
-  _globals['_UPDATEACHIEVEMENTOUTPUT']._serialized_end=511
-  _globals['_DELETEACHIEVEMENTINPUT']._serialized_start=513
-  _globals['_DELETEACHIEVEMENTINPUT']._serialized_end=561
-  _globals['_DELETEACHIEVEMENTOUTPUT']._serialized_start=563
-  _globals['_DELETEACHIEVEMENTOUTPUT']._serialized_end=588
-  _globals['_DESCRIBEACHIEVEMENTINPUT']._serialized_start=590
-  _globals['_DESCRIBEACHIEVEMENTINPUT']._serialized_end=690
-  _globals['_DESCRIBEACHIEVEMENTOUTPUT']._serialized_start=692
-  _globals['_DESCRIBEACHIEVEMENTOUTPUT']._serialized_end=768
-  _globals['_LISTACHIEVEMENTSINPUT']._serialized_start=771
-  _globals['_LISTACHIEVEMENTSINPUT']._serialized_end=1020
-  _globals['_LISTACHIEVEMENTSINPUT_FILTER']._serialized_start=953
-  _globals['_LISTACHIEVEMENTSINPUT_FILTER']._serialized_end=1020
-  _globals['_LISTACHIEVEMENTSOUTPUT']._serialized_start=1022
-  _globals['_LISTACHIEVEMENTSOUTPUT']._serialized_end=1130
-  _globals['_DESCRIBEACHIEVEMENTTRANSLATIONINPUT']._serialized_start=1133
-  _globals['_DESCRIBEACHIEVEMENTTRANSLATIONINPUT']._serialized_end=1268
-  _globals['_DESCRIBEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_start=1270
-  _globals['_DESCRIBEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_end=1369
-  _globals['_LISTACHIEVEMENTTRANSLATIONSINPUT']._serialized_start=1372
-  _globals['_LISTACHIEVEMENTTRANSLATIONSINPUT']._serialized_end=1702
-  _globals['_LISTACHIEVEMENTTRANSLATIONSINPUT_FILTER']._serialized_start=1585
-  _globals['_LISTACHIEVEMENTTRANSLATIONSINPUT_FILTER']._serialized_end=1702
-  _globals['_LISTACHIEVEMENTTRANSLATIONSOUTPUT']._serialized_start=1704
-  _globals['_LISTACHIEVEMENTTRANSLATIONSOUTPUT']._serialized_end=1809
-  _globals['_CREATEACHIEVEMENTTRANSLATIONINPUT']._serialized_start=1811
-  _globals['_CREATEACHIEVEMENTTRANSLATIONINPUT']._serialized_end=1931
-  _globals['_CREATEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_start=1933
-  _globals['_CREATEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_end=1993
-  _globals['_UPDATEACHIEVEMENTTRANSLATIONINPUT']._serialized_start=1996
-  _globals['_UPDATEACHIEVEMENTTRANSLATIONINPUT']._serialized_end=2264
-  _globals['_UPDATEACHIEVEMENTTRANSLATIONINPUT_PATCH']._serialized_start=2213
-  _globals['_UPDATEACHIEVEMENTTRANSLATIONINPUT_PATCH']._serialized_end=2264
-  _globals['_UPDATEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_start=2266
-  _globals['_UPDATEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_end=2302
-  _globals['_DELETEACHIEVEMENTTRANSLATIONINPUT']._serialized_start=2304
-  _globals['_DELETEACHIEVEMENTTRANSLATIONINPUT']._serialized_end=2387
-  _globals['_DELETEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_start=2389
-  _globals['_DELETEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_end=2425
-  _globals['_ACHIEVEMENTSERVICE']._serialized_start=2428
-  _globals['_ACHIEVEMENTSERVICE']._serialized_end=4602
+  _globals['_ACHIEVEMENTSERVICE'].methods_by_name['DeleteAchievementTranslation']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\035\212\343\n\031typewriter:fragment:write\242\343\n\004\250\343\n\003\202\323\344\223\002>*</achievements/{achievement_id}/translations/{translation_id}'
+  _globals['_CREATEACHIEVEMENTINPUT']._serialized_start=293
+  _globals['_CREATEACHIEVEMENTINPUT']._serialized_end=366
+  _globals['_CREATEACHIEVEMENTOUTPUT']._serialized_start=368
+  _globals['_CREATEACHIEVEMENTOUTPUT']._serialized_end=417
+  _globals['_UPDATEACHIEVEMENTINPUT']._serialized_start=419
+  _globals['_UPDATEACHIEVEMENTINPUT']._serialized_end=516
+  _globals['_UPDATEACHIEVEMENTOUTPUT']._serialized_start=518
+  _globals['_UPDATEACHIEVEMENTOUTPUT']._serialized_end=543
+  _globals['_DELETEACHIEVEMENTINPUT']._serialized_start=545
+  _globals['_DELETEACHIEVEMENTINPUT']._serialized_end=593
+  _globals['_DELETEACHIEVEMENTOUTPUT']._serialized_start=595
+  _globals['_DELETEACHIEVEMENTOUTPUT']._serialized_end=620
+  _globals['_DESCRIBEACHIEVEMENTINPUT']._serialized_start=622
+  _globals['_DESCRIBEACHIEVEMENTINPUT']._serialized_end=722
+  _globals['_DESCRIBEACHIEVEMENTOUTPUT']._serialized_start=724
+  _globals['_DESCRIBEACHIEVEMENTOUTPUT']._serialized_end=800
+  _globals['_LISTACHIEVEMENTSINPUT']._serialized_start=803
+  _globals['_LISTACHIEVEMENTSINPUT']._serialized_end=1052
+  _globals['_LISTACHIEVEMENTSINPUT_FILTER']._serialized_start=985
+  _globals['_LISTACHIEVEMENTSINPUT_FILTER']._serialized_end=1052
+  _globals['_LISTACHIEVEMENTSOUTPUT']._serialized_start=1054
+  _globals['_LISTACHIEVEMENTSOUTPUT']._serialized_end=1162
+  _globals['_DESCRIBEACHIEVEMENTTRANSLATIONINPUT']._serialized_start=1165
+  _globals['_DESCRIBEACHIEVEMENTTRANSLATIONINPUT']._serialized_end=1300
+  _globals['_DESCRIBEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_start=1302
+  _globals['_DESCRIBEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_end=1401
+  _globals['_LISTACHIEVEMENTTRANSLATIONSINPUT']._serialized_start=1404
+  _globals['_LISTACHIEVEMENTTRANSLATIONSINPUT']._serialized_end=1734
+  _globals['_LISTACHIEVEMENTTRANSLATIONSINPUT_FILTER']._serialized_start=1617
+  _globals['_LISTACHIEVEMENTTRANSLATIONSINPUT_FILTER']._serialized_end=1734
+  _globals['_LISTACHIEVEMENTTRANSLATIONSOUTPUT']._serialized_start=1736
+  _globals['_LISTACHIEVEMENTTRANSLATIONSOUTPUT']._serialized_end=1841
+  _globals['_CREATEACHIEVEMENTTRANSLATIONINPUT']._serialized_start=1843
+  _globals['_CREATEACHIEVEMENTTRANSLATIONINPUT']._serialized_end=1963
+  _globals['_CREATEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_start=1965
+  _globals['_CREATEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_end=2025
+  _globals['_UPDATEACHIEVEMENTTRANSLATIONINPUT']._serialized_start=2028
+  _globals['_UPDATEACHIEVEMENTTRANSLATIONINPUT']._serialized_end=2296
+  _globals['_UPDATEACHIEVEMENTTRANSLATIONINPUT_PATCH']._serialized_start=2245
+  _globals['_UPDATEACHIEVEMENTTRANSLATIONINPUT_PATCH']._serialized_end=2296
+  _globals['_UPDATEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_start=2298
+  _globals['_UPDATEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_end=2334
+  _globals['_DELETEACHIEVEMENTTRANSLATIONINPUT']._serialized_start=2336
+  _globals['_DELETEACHIEVEMENTTRANSLATIONINPUT']._serialized_end=2419
+  _globals['_DELETEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_start=2421
+  _globals['_DELETEACHIEVEMENTTRANSLATIONOUTPUT']._serialized_end=2457
+  _globals['_ACHIEVEMENTSERVICE']._serialized_start=2460
+  _globals['_ACHIEVEMENTSERVICE']._serialized_end=4714
 # @@protoc_insertion_point(module_scope)

@@ -1,3 +1,4 @@
+from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.executor import evaluation_task_pb2 as _evaluation_task_pb2
 from eolymp.executor import generation_task_pb2 as _generation_task_pb2

@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
@@ -32,7 +33,7 @@ from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expressi
 from eolymp.wellknown import watch_pb2 as eolymp_dot_wellknown_dot_watch__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/automation/log_service.proto\x12\x11\x65olymp.automation\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/automation/log.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1c\x65olymp/wellknown/watch.proto\"\xb0\x04\n\rListLogsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.automation.ListLogsInput.Filter\x12\x37\n\x04sort\x18\x32 \x01(\x0e\x32).eolymp.automation.ListLogsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xb8\x02\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07rule_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\x07trigger\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x31\n\x07\x64ry_run\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x39\n\ncreated_at\x18\x05 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x30\n\x06status\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\'\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nCREATED_AT\x10\x01\"F\n\x0eListLogsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.automation.Log\"\"\n\x10\x44\x65scribeLogInput\x12\x0e\n\x06log_id\x18\x01 \x01(\t\"8\n\x11\x44\x65scribeLogOutput\x12#\n\x03log\x18\x01 \x01(\x0b\x32\x16.eolymp.automation.Log\"\x1f\n\rWatchLogInput\x12\x0e\n\x06log_id\x18\x01 \x01(\t\"\xa4\x01\n\x0eWatchLogOutput\x12/\n\x05\x65vent\x18\x01 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType\x12%\n\x03log\x18\x02 \x01(\x0b\x32\x16.eolymp.automation.LogH\x00\x12\x31\n\x07message\x18\x03 \x01(\x0b\x32\x1e.eolymp.automation.Log.MessageH\x00\x42\x07\n\x05value2\x8e\x04\n\nLogService\x12\x93\x01\n\x08ListLogs\x12 .eolymp.automation.ListLogsInput\x1a!.eolymp.automation.ListLogsOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61utomation:log:read\x82\xd3\xe4\x93\x02\x12\x12\x10/automation/logs\x12\xa5\x01\n\x0b\x44\x65scribeLog\x12#.eolymp.automation.DescribeLogInput\x1a$.eolymp.automation.DescribeLogOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61utomation:log:read\x82\xd3\xe4\x93\x02\x1b\x12\x19/automation/logs/{log_id}\x12\xa4\x01\n\x08WatchLog\x12 .eolymp.automation.WatchLogInput\x1a!.eolymp.automation.WatchLogOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61utomation:log:read\x82\xd3\xe4\x93\x02!\x12\x1f/automation/logs/{log_id}/watch0\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/automation/log_service.proto\x12\x11\x65olymp.automation\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/automation/log.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1c\x65olymp/wellknown/watch.proto\"\xb0\x04\n\rListLogsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x38\n\x07\x66ilters\x18( \x01(\x0b\x32\'.eolymp.automation.ListLogsInput.Filter\x12\x37\n\x04sort\x18\x32 \x01(\x0e\x32).eolymp.automation.ListLogsInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x1a\xb8\x02\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07rule_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\x07trigger\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x31\n\x07\x64ry_run\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x39\n\ncreated_at\x18\x05 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x30\n\x06status\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"\'\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0e\n\nCREATED_AT\x10\x01\"F\n\x0eListLogsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.automation.Log\"\"\n\x10\x44\x65scribeLogInput\x12\x0e\n\x06log_id\x18\x01 \x01(\t\"8\n\x11\x44\x65scribeLogOutput\x12#\n\x03log\x18\x01 \x01(\x0b\x32\x16.eolymp.automation.Log\"\x1f\n\rWatchLogInput\x12\x0e\n\x06log_id\x18\x01 \x01(\t\"\xa4\x01\n\x0eWatchLogOutput\x12/\n\x05\x65vent\x18\x01 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType\x12%\n\x03log\x18\x02 \x01(\x0b\x32\x16.eolymp.automation.LogH\x00\x12\x31\n\x07message\x18\x03 \x01(\x0b\x32\x1e.eolymp.automation.Log.MessageH\x00\x42\x07\n\x05value2\xa6\x04\n\nLogService\x12\x9b\x01\n\x08ListLogs\x12 .eolymp.automation.ListLogsInput\x1a!.eolymp.automation.ListLogsOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61utomation:log:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/automation/logs\x12\xad\x01\n\x0b\x44\x65scribeLog\x12#.eolymp.automation.DescribeLogInput\x1a$.eolymp.automation.DescribeLogOutput\"S\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61utomation:log:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1b\x12\x19/automation/logs/{log_id}\x12\xac\x01\n\x08WatchLog\x12 .eolymp.automation.WatchLogInput\x1a!.eolymp.automation.WatchLogOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x17\x8a\xe3\n\x13\x61utomation:log:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02!\x12\x1f/automation/logs/{log_id}/watch0\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,27 +44,27 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOGSERVICE']._loaded_options = None
   _globals['_LOGSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_LOGSERVICE'].methods_by_name['ListLogs']._loaded_options = None
-  _globals['_LOGSERVICE'].methods_by_name['ListLogs']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\027\212\343\n\023automation:log:read\202\323\344\223\002\022\022\020/automation/logs'
+  _globals['_LOGSERVICE'].methods_by_name['ListLogs']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\027\212\343\n\023automation:log:read\242\343\n\004\250\343\n\001\202\323\344\223\002\022\022\020/automation/logs'
   _globals['_LOGSERVICE'].methods_by_name['DescribeLog']._loaded_options = None
-  _globals['_LOGSERVICE'].methods_by_name['DescribeLog']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\027\212\343\n\023automation:log:read\202\323\344\223\002\033\022\031/automation/logs/{log_id}'
+  _globals['_LOGSERVICE'].methods_by_name['DescribeLog']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\202\343\n\027\212\343\n\023automation:log:read\242\343\n\004\250\343\n\001\202\323\344\223\002\033\022\031/automation/logs/{log_id}'
   _globals['_LOGSERVICE'].methods_by_name['WatchLog']._loaded_options = None
-  _globals['_LOGSERVICE'].methods_by_name['WatchLog']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023automation:log:read\202\323\344\223\002!\022\037/automation/logs/{log_id}/watch'
-  _globals['_LISTLOGSINPUT']._serialized_start=322
-  _globals['_LISTLOGSINPUT']._serialized_end=882
-  _globals['_LISTLOGSINPUT_FILTER']._serialized_start=529
-  _globals['_LISTLOGSINPUT_FILTER']._serialized_end=841
-  _globals['_LISTLOGSINPUT_SORTABLE']._serialized_start=843
-  _globals['_LISTLOGSINPUT_SORTABLE']._serialized_end=882
-  _globals['_LISTLOGSOUTPUT']._serialized_start=884
-  _globals['_LISTLOGSOUTPUT']._serialized_end=954
-  _globals['_DESCRIBELOGINPUT']._serialized_start=956
-  _globals['_DESCRIBELOGINPUT']._serialized_end=990
-  _globals['_DESCRIBELOGOUTPUT']._serialized_start=992
-  _globals['_DESCRIBELOGOUTPUT']._serialized_end=1048
-  _globals['_WATCHLOGINPUT']._serialized_start=1050
-  _globals['_WATCHLOGINPUT']._serialized_end=1081
-  _globals['_WATCHLOGOUTPUT']._serialized_start=1084
-  _globals['_WATCHLOGOUTPUT']._serialized_end=1248
-  _globals['_LOGSERVICE']._serialized_start=1251
-  _globals['_LOGSERVICE']._serialized_end=1777
+  _globals['_LOGSERVICE'].methods_by_name['WatchLog']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\027\212\343\n\023automation:log:read\242\343\n\004\250\343\n\001\202\323\344\223\002!\022\037/automation/logs/{log_id}/watch'
+  _globals['_LISTLOGSINPUT']._serialized_start=354
+  _globals['_LISTLOGSINPUT']._serialized_end=914
+  _globals['_LISTLOGSINPUT_FILTER']._serialized_start=561
+  _globals['_LISTLOGSINPUT_FILTER']._serialized_end=873
+  _globals['_LISTLOGSINPUT_SORTABLE']._serialized_start=875
+  _globals['_LISTLOGSINPUT_SORTABLE']._serialized_end=914
+  _globals['_LISTLOGSOUTPUT']._serialized_start=916
+  _globals['_LISTLOGSOUTPUT']._serialized_end=986
+  _globals['_DESCRIBELOGINPUT']._serialized_start=988
+  _globals['_DESCRIBELOGINPUT']._serialized_end=1022
+  _globals['_DESCRIBELOGOUTPUT']._serialized_start=1024
+  _globals['_DESCRIBELOGOUTPUT']._serialized_end=1080
+  _globals['_WATCHLOGINPUT']._serialized_start=1082
+  _globals['_WATCHLOGINPUT']._serialized_end=1113
+  _globals['_WATCHLOGOUTPUT']._serialized_start=1116
+  _globals['_WATCHLOGOUTPUT']._serialized_end=1280
+  _globals['_LOGSERVICE']._serialized_start=1283
+  _globals['_LOGSERVICE']._serialized_end=1833
 # @@protoc_insertion_point(module_scope)
