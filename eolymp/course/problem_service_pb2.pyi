@@ -5,10 +5,9 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import code_template_pb2 as _code_template_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
+from eolymp.course import run_service_pb2 as _run_service_pb2
 from eolymp.course import submission_service_pb2 as _submission_service_pb2
-from eolymp.playground import run_pb2 as _run_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
-from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -62,52 +61,6 @@ class LookupCodeTemplateOutput(_message.Message):
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
     template: _code_template_pb2.Template
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
-
-class CreateRunInput(_message.Message):
-    __slots__ = ("runtime", "source", "input_data", "input_ref", "example_id")
-    RUNTIME_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_FIELD_NUMBER: _ClassVar[int]
-    INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
-    INPUT_REF_FIELD_NUMBER: _ClassVar[int]
-    EXAMPLE_ID_FIELD_NUMBER: _ClassVar[int]
-    runtime: str
-    source: str
-    input_data: bytes
-    input_ref: str
-    example_id: str
-    def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., input_data: _Optional[bytes] = ..., input_ref: _Optional[str] = ..., example_id: _Optional[str] = ...) -> None: ...
-
-class CreateRunOutput(_message.Message):
-    __slots__ = ("run_id",)
-    RUN_ID_FIELD_NUMBER: _ClassVar[int]
-    run_id: str
-    def __init__(self, run_id: _Optional[str] = ...) -> None: ...
-
-class DescribeRunInput(_message.Message):
-    __slots__ = ("run_id",)
-    RUN_ID_FIELD_NUMBER: _ClassVar[int]
-    run_id: str
-    def __init__(self, run_id: _Optional[str] = ...) -> None: ...
-
-class DescribeRunOutput(_message.Message):
-    __slots__ = ("run",)
-    RUN_FIELD_NUMBER: _ClassVar[int]
-    run: _run_pb2.Run
-    def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ...) -> None: ...
-
-class WatchRunInput(_message.Message):
-    __slots__ = ("run_id",)
-    RUN_ID_FIELD_NUMBER: _ClassVar[int]
-    run_id: str
-    def __init__(self, run_id: _Optional[str] = ...) -> None: ...
-
-class WatchRunOutput(_message.Message):
-    __slots__ = ("run", "event")
-    RUN_FIELD_NUMBER: _ClassVar[int]
-    EVENT_FIELD_NUMBER: _ClassVar[int]
-    run: _run_pb2.Run
-    event: _watch_pb2.WatchEventType
-    def __init__(self, run: _Optional[_Union[_run_pb2.Run, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
 class ListRuntimesInput(_message.Message):
     __slots__ = ()
