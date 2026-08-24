@@ -15,7 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListLogsInput(_message.Message):
-    __slots__ = ("offset", "size", "filters", "sort", "order", "extra")
+    __slots__ = ("date", "offset", "size", "filters", "sort", "order", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListLogsInput.Sortable]
@@ -23,35 +23,35 @@ class ListLogsInput(_message.Message):
     DEFAULT: ListLogsInput.Sortable
     TIMESTAMP: ListLogsInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ("timestamp", "actor", "method", "scope", "ip_address", "user_agent", "mutation")
-        TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ("actor", "method", "scope", "ip_address", "user_agent", "mutation")
         ACTOR_FIELD_NUMBER: _ClassVar[int]
         METHOD_FIELD_NUMBER: _ClassVar[int]
         SCOPE_FIELD_NUMBER: _ClassVar[int]
         IP_ADDRESS_FIELD_NUMBER: _ClassVar[int]
         USER_AGENT_FIELD_NUMBER: _ClassVar[int]
         MUTATION_FIELD_NUMBER: _ClassVar[int]
-        timestamp: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         actor: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         method: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         scope: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         ip_address: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_agent: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         mutation: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        def __init__(self, timestamp: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., actor: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., method: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., scope: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., ip_address: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_agent: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., mutation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        def __init__(self, actor: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., method: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., scope: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., ip_address: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_agent: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., mutation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+    DATE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    date: str
     offset: int
     size: int
     filters: ListLogsInput.Filter
     sort: ListLogsInput.Sortable
     order: _direction_pb2.Direction
     extra: _containers.RepeatedScalarFieldContainer[_log_pb2.Log.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListLogsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListLogsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_log_pb2.Log.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, date: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListLogsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListLogsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_log_pb2.Log.Extra.Field, str]]] = ...) -> None: ...
 
 class ListLogsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -62,33 +62,33 @@ class ListLogsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_log_pb2.Log, _Mapping]]] = ...) -> None: ...
 
 class ExportLogsInput(_message.Message):
-    __slots__ = ("filters", "sort", "order", "extra")
+    __slots__ = ("date", "filters", "sort", "order", "extra")
     class Filter(_message.Message):
-        __slots__ = ("timestamp", "actor", "method", "scope", "ip_address", "user_agent", "mutation")
-        TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+        __slots__ = ("actor", "method", "scope", "ip_address", "user_agent", "mutation")
         ACTOR_FIELD_NUMBER: _ClassVar[int]
         METHOD_FIELD_NUMBER: _ClassVar[int]
         SCOPE_FIELD_NUMBER: _ClassVar[int]
         IP_ADDRESS_FIELD_NUMBER: _ClassVar[int]
         USER_AGENT_FIELD_NUMBER: _ClassVar[int]
         MUTATION_FIELD_NUMBER: _ClassVar[int]
-        timestamp: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         actor: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         method: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         scope: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         ip_address: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_agent: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         mutation: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        def __init__(self, timestamp: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., actor: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., method: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., scope: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., ip_address: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_agent: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., mutation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        def __init__(self, actor: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., method: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., scope: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., ip_address: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_agent: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., mutation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+    DATE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    date: str
     filters: ExportLogsInput.Filter
     sort: ListLogsInput.Sortable
     order: _direction_pb2.Direction
     extra: _containers.RepeatedScalarFieldContainer[_log_pb2.Log.Extra.Field]
-    def __init__(self, filters: _Optional[_Union[ExportLogsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListLogsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_log_pb2.Log.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, date: _Optional[str] = ..., filters: _Optional[_Union[ExportLogsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListLogsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_log_pb2.Log.Extra.Field, str]]] = ...) -> None: ...
 
 class ExportLogsOutput(_message.Message):
     __slots__ = ("export_url", "total", "truncated")
