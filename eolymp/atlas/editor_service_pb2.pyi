@@ -53,8 +53,10 @@ class Editor(_message.Message):
     def __init__(self, state: _Optional[_Union[Editor.State, _Mapping]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ..., runtimes: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ...) -> None: ...
 
 class DescribeEditorInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("problem_id",)
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class DescribeEditorOutput(_message.Message):
     __slots__ = ("editor",)
@@ -63,8 +65,10 @@ class DescribeEditorOutput(_message.Message):
     def __init__(self, editor: _Optional[_Union[Editor, _Mapping]] = ...) -> None: ...
 
 class DescribeEditorStateInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("problem_id",)
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
 
 class DescribeEditorStateOutput(_message.Message):
     __slots__ = ("runtime", "source_code", "input_data", "output", "features")
@@ -81,22 +85,26 @@ class DescribeEditorStateOutput(_message.Message):
     def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ...) -> None: ...
 
 class UpdateEditorStateInput(_message.Message):
-    __slots__ = ("runtime", "source_code", "input_data", "output")
+    __slots__ = ("problem_id", "runtime", "source_code", "input_data", "output")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
     INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     runtime: str
     source_code: str
     input_data: str
     output: _submission_pb2.Submission.Output
-    def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ...) -> None: ...
 
 class ListInputsInput(_message.Message):
-    __slots__ = ("version",)
+    __slots__ = ("problem_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     version: int
-    def __init__(self, version: _Optional[int] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListInputsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -111,12 +119,14 @@ class UpdateEditorStateOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class PrintEditorCodeInput(_message.Message):
-    __slots__ = ("runtime", "source_code")
+    __slots__ = ("problem_id", "runtime", "source_code")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
     runtime: str
     source_code: str
-    def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ...) -> None: ...
+    def __init__(self, problem_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source_code: _Optional[str] = ...) -> None: ...
 
 class PrintEditorCodeOutput(_message.Message):
     __slots__ = ()
