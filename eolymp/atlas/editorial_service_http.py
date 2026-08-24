@@ -15,7 +15,10 @@ class EditorialServiceClient:
         self.url = url
 
     def CreateEditorial(self, request, **kwargs):
-        path = "/editorials"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editorials"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -26,9 +29,10 @@ class EditorialServiceClient:
         )
 
     def UpdateEditorial(self, request, **kwargs):
-        path = "/editorials/"+urllib.parse.quote(request.editorial_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editorials/"+urllib.parse.quote(request.editorial_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.editorial_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class EditorialServiceClient:
         )
 
     def DeleteEditorial(self, request, **kwargs):
-        path = "/editorials/"+urllib.parse.quote(request.editorial_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editorials/"+urllib.parse.quote(request.editorial_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.editorial_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class EditorialServiceClient:
         )
 
     def DescribeEditorial(self, request, **kwargs):
-        path = "/editorials/"+urllib.parse.quote(request.editorial_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editorials/"+urllib.parse.quote(request.editorial_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.editorial_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class EditorialServiceClient:
         )
 
     def LookupEditorial(self, request, **kwargs):
-        path = "/editorial"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editorial"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -79,7 +88,10 @@ class EditorialServiceClient:
         )
 
     def PreviewEditorial(self, request, **kwargs):
-        path = "/editorial/preview"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editorial/preview"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",
@@ -90,7 +102,10 @@ class EditorialServiceClient:
         )
 
     def ListEditorials(self, request, **kwargs):
-        path = "/editorials"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editorials"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -101,7 +116,10 @@ class EditorialServiceClient:
         )
 
     def TranslateEditorials(self, request, **kwargs):
-        path = "/editorials:translate"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editorials:translate"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",

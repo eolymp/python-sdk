@@ -15,9 +15,10 @@ class ScoringServiceClient:
         self.url = url
 
     def DescribeScore(self, request, **kwargs):
-        path = "/scores/"+urllib.parse.quote(request.member_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scores/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.member_id = ""
 
         return self.transport.request(
@@ -29,7 +30,10 @@ class ScoringServiceClient:
         )
 
     def DescribeProblemGrading(self, request, **kwargs):
-        path = "/grading"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/grading"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",

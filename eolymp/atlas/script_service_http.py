@@ -15,7 +15,10 @@ class ScriptServiceClient:
         self.url = url
 
     def CreateScript(self, request, **kwargs):
-        path = "/scripts"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scripts"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -26,9 +29,10 @@ class ScriptServiceClient:
         )
 
     def UpdateScript(self, request, **kwargs):
-        path = "/scripts/"+urllib.parse.quote(request.script_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scripts/"+urllib.parse.quote(request.script_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.script_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class ScriptServiceClient:
         )
 
     def DeleteScript(self, request, **kwargs):
-        path = "/scripts/"+urllib.parse.quote(request.script_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scripts/"+urllib.parse.quote(request.script_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.script_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class ScriptServiceClient:
         )
 
     def DescribeScript(self, request, **kwargs):
-        path = "/scripts/"+urllib.parse.quote(request.script_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scripts/"+urllib.parse.quote(request.script_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.script_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class ScriptServiceClient:
         )
 
     def ListScripts(self, request, **kwargs):
-        path = "/scripts"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scripts"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -79,7 +88,10 @@ class ScriptServiceClient:
         )
 
     def ExecuteStressCheck(self, request, **kwargs):
-        path = "/scripts:stress-check"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/scripts:stress-check"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",

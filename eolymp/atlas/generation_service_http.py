@@ -15,9 +15,10 @@ class GenerationServiceClient:
         self.url = url
 
     def DescribeGeneration(self, request, **kwargs):
-        path = "/generations/"+urllib.parse.quote(request.generation_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/generations/"+urllib.parse.quote(request.generation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.generation_id = ""
 
         return self.transport.request(
@@ -29,7 +30,10 @@ class GenerationServiceClient:
         )
 
     def ListGenerations(self, request, **kwargs):
-        path = "/generations"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/generations"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",

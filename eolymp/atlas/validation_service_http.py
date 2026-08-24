@@ -15,7 +15,10 @@ class ValidationServiceClient:
         self.url = url
 
     def RunValidation(self, request, **kwargs):
-        path = "/validations"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/validations"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class ValidationServiceClient:
         )
 
     def DescribeValidation(self, request, **kwargs):
-        path = "/validations/"+urllib.parse.quote(request.validation_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/validations/"+urllib.parse.quote(request.validation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.validation_id = ""
 
         return self.transport.request(

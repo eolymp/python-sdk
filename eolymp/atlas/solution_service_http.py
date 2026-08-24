@@ -15,7 +15,10 @@ class SolutionServiceClient:
         self.url = url
 
     def CreateSolution(self, request, **kwargs):
-        path = "/solutions"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -26,9 +29,10 @@ class SolutionServiceClient:
         )
 
     def UpdateSolution(self, request, **kwargs):
-        path = "/solutions/"+urllib.parse.quote(request.solution_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.solution_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class SolutionServiceClient:
         )
 
     def DeleteSolution(self, request, **kwargs):
-        path = "/solutions/"+urllib.parse.quote(request.solution_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.solution_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class SolutionServiceClient:
         )
 
     def DescribeSolution(self, request, **kwargs):
-        path = "/solutions/"+urllib.parse.quote(request.solution_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions/"+urllib.parse.quote(request.solution_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.solution_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class SolutionServiceClient:
         )
 
     def ListSolutions(self, request, **kwargs):
-        path = "/solutions"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -79,7 +88,10 @@ class SolutionServiceClient:
         )
 
     def CheckSolutions(self, request, **kwargs):
-        path = "/solutions:check"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/solutions:check"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",

@@ -15,7 +15,10 @@ class CodeTemplateServiceClient:
         self.url = url
 
     def CreateCodeTemplate(self, request, **kwargs):
-        path = "/templates"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class CodeTemplateServiceClient:
         )
 
     def UpdateCodeTemplate(self, request, **kwargs):
-        path = "/templates/"+urllib.parse.quote(request.template_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates/"+urllib.parse.quote(request.template_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.template_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class CodeTemplateServiceClient:
         )
 
     def DeleteCodeTemplate(self, request, **kwargs):
-        path = "/templates/"+urllib.parse.quote(request.template_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates/"+urllib.parse.quote(request.template_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.template_id = ""
 
         return self.transport.request(
@@ -54,7 +59,10 @@ class CodeTemplateServiceClient:
         )
 
     def ListCodeTemplates(self, request, **kwargs):
-        path = "/templates"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -65,9 +73,10 @@ class CodeTemplateServiceClient:
         )
 
     def DescribeCodeTemplate(self, request, **kwargs):
-        path = "/templates/"+urllib.parse.quote(request.template_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates/"+urllib.parse.quote(request.template_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.template_id = ""
 
         return self.transport.request(
@@ -79,7 +88,10 @@ class CodeTemplateServiceClient:
         )
 
     def LookupCodeTemplate(self, request, **kwargs):
-        path = "/template"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/template"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -90,7 +102,10 @@ class CodeTemplateServiceClient:
         )
 
     def GenerateCodeTemplates(self, request, **kwargs):
-        path = "/templates:generate"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates:generate"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",

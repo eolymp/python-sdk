@@ -15,7 +15,10 @@ class QuestionServiceClient:
         self.url = url
 
     def CreateQuestion(self, request, **kwargs):
-        path = "/questions"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/questions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class QuestionServiceClient:
         )
 
     def UpdateQuestion(self, request, **kwargs):
-        path = "/questions/"+urllib.parse.quote(request.question_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/questions/"+urllib.parse.quote(request.question_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.question_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class QuestionServiceClient:
         )
 
     def DeleteQuestion(self, request, **kwargs):
-        path = "/questions/"+urllib.parse.quote(request.question_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/questions/"+urllib.parse.quote(request.question_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.question_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class QuestionServiceClient:
         )
 
     def DescribeQuestion(self, request, **kwargs):
-        path = "/questions/"+urllib.parse.quote(request.question_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/questions/"+urllib.parse.quote(request.question_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.question_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class QuestionServiceClient:
         )
 
     def ListQuestions(self, request, **kwargs):
-        path = "/questions"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/questions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",

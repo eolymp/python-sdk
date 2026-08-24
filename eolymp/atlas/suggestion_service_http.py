@@ -15,7 +15,10 @@ class SuggestionServiceClient:
         self.url = url
 
     def CreateSuggestion(self, request, **kwargs):
-        path = "/suggestions"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/suggestions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class SuggestionServiceClient:
         )
 
     def UpdateSuggestion(self, request, **kwargs):
-        path = "/suggestions/"+urllib.parse.quote(request.suggestion_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/suggestions/"+urllib.parse.quote(request.suggestion_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.suggestion_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class SuggestionServiceClient:
         )
 
     def ReviewSuggestion(self, request, **kwargs):
-        path = "/suggestions/"+urllib.parse.quote(request.suggestion_id)+"/review"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/suggestions/"+urllib.parse.quote(request.suggestion_id)+"/review"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.suggestion_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class SuggestionServiceClient:
         )
 
     def ResubmitSuggestion(self, request, **kwargs):
-        path = "/suggestions/"+urllib.parse.quote(request.suggestion_id)+"/resubmit"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/suggestions/"+urllib.parse.quote(request.suggestion_id)+"/resubmit"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.suggestion_id = ""
 
         return self.transport.request(
@@ -68,9 +74,10 @@ class SuggestionServiceClient:
         )
 
     def DeleteSuggestion(self, request, **kwargs):
-        path = "/suggestions/"+urllib.parse.quote(request.suggestion_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/suggestions/"+urllib.parse.quote(request.suggestion_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.suggestion_id = ""
 
         return self.transport.request(
@@ -82,7 +89,10 @@ class SuggestionServiceClient:
         )
 
     def ListSuggestions(self, request, **kwargs):
-        path = "/suggestions"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/suggestions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -93,9 +103,10 @@ class SuggestionServiceClient:
         )
 
     def DescribeSuggestion(self, request, **kwargs):
-        path = "/suggestions/"+urllib.parse.quote(request.suggestion_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/suggestions/"+urllib.parse.quote(request.suggestion_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.suggestion_id = ""
 
         return self.transport.request(

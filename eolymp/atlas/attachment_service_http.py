@@ -15,7 +15,10 @@ class AttachmentServiceClient:
         self.url = url
 
     def CreateAttachment(self, request, **kwargs):
-        path = "/attachments"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/attachments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class AttachmentServiceClient:
         )
 
     def UpdateAttachment(self, request, **kwargs):
-        path = "/attachments/"+urllib.parse.quote(request.attachment_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/attachments/"+urllib.parse.quote(request.attachment_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.attachment_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class AttachmentServiceClient:
         )
 
     def DeleteAttachment(self, request, **kwargs):
-        path = "/attachments/"+urllib.parse.quote(request.attachment_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/attachments/"+urllib.parse.quote(request.attachment_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.attachment_id = ""
 
         return self.transport.request(
@@ -54,7 +59,10 @@ class AttachmentServiceClient:
         )
 
     def ListAttachments(self, request, **kwargs):
-        path = "/attachments"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/attachments"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -65,9 +73,10 @@ class AttachmentServiceClient:
         )
 
     def DescribeAttachment(self, request, **kwargs):
-        path = "/attachments/"+urllib.parse.quote(request.attachment_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/attachments/"+urllib.parse.quote(request.attachment_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.attachment_id = ""
 
         return self.transport.request(

@@ -15,7 +15,10 @@ class BookmarkServiceClient:
         self.url = url
 
     def GetBookmark(self, request, **kwargs):
-        path = "/bookmark"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/bookmark"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -26,7 +29,10 @@ class BookmarkServiceClient:
         )
 
     def SetBookmark(self, request, **kwargs):
-        path = "/bookmark"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/bookmark"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",

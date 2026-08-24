@@ -15,7 +15,10 @@ class StatementServiceClient:
         self.url = url
 
     def CreateStatement(self, request, **kwargs):
-        path = "/statements"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -26,9 +29,10 @@ class StatementServiceClient:
         )
 
     def UpdateStatement(self, request, **kwargs):
-        path = "/statements/"+urllib.parse.quote(request.statement_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements/"+urllib.parse.quote(request.statement_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.statement_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class StatementServiceClient:
         )
 
     def DeleteStatement(self, request, **kwargs):
-        path = "/statements/"+urllib.parse.quote(request.statement_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements/"+urllib.parse.quote(request.statement_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.statement_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class StatementServiceClient:
         )
 
     def DescribeStatement(self, request, **kwargs):
-        path = "/statements/"+urllib.parse.quote(request.statement_id)
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements/"+urllib.parse.quote(request.statement_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.statement_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class StatementServiceClient:
         )
 
     def LookupStatement(self, request, **kwargs):
-        path = "/translate"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/translate"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -79,7 +88,10 @@ class StatementServiceClient:
         )
 
     def PreviewStatement(self, request, **kwargs):
-        path = "/renders"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/renders"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",
@@ -90,7 +102,10 @@ class StatementServiceClient:
         )
 
     def ListStatements(self, request, **kwargs):
-        path = "/statements"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="GET",
@@ -101,7 +116,10 @@ class StatementServiceClient:
         )
 
     def TranslateStatements(self, request, **kwargs):
-        path = "/statements:translate"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements:translate"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
 
         return self.transport.request(
             method="POST",
@@ -112,9 +130,10 @@ class StatementServiceClient:
         )
 
     def ExportStatement(self, request, **kwargs):
-        path = "/statements/"+urllib.parse.quote(request.statement_id)+"/export"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements/"+urllib.parse.quote(request.statement_id)+"/export"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.statement_id = ""
 
         return self.transport.request(
@@ -126,9 +145,10 @@ class StatementServiceClient:
         )
 
     def ListStatementVersions(self, request, **kwargs):
-        path = "/statements/"+urllib.parse.quote(request.statement_id)+"/versions"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements/"+urllib.parse.quote(request.statement_id)+"/versions"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
         request.statement_id = ""
 
         return self.transport.request(
