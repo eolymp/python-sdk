@@ -27,11 +27,11 @@ from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
-from eolymp.playground import run_pb2 as eolymp_dot_playground_dot_run__pb2
+from eolymp.atlas import run_pb2 as eolymp_dot_atlas_dot_run__pb2
 from eolymp.wellknown import watch_pb2 as eolymp_dot_wellknown_dot_watch__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/atlas/run_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/playground/run.proto\x1a\x1c\x65olymp/wellknown/watch.proto\"\x9e\x01\n\x0e\x43reateRunInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\r\n\x05trace\x18\x03 \x01(\x08\x12\x0e\n\x06source\x18\x64 \x01(\t\x12\x14\n\ninput_data\x18\x65 \x01(\x0cH\x00\x12\x13\n\tinput_ref\x18\x66 \x01(\tH\x00\x12\x14\n\nexample_id\x18g \x01(\tH\x00\x42\x07\n\x05input\"!\n\x0f\x43reateRunOutput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"6\n\x10\x44\x65scribeRunInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\"8\n\x11\x44\x65scribeRunOutput\x12#\n\x03run\x18\x01 \x01(\x0b\x32\x16.eolymp.playground.Run\"3\n\rWatchRunInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\"f\n\x0eWatchRunOutput\x12/\n\x05\x65vent\x18\x01 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType\x12#\n\x03run\x18\x02 \x01(\x0b\x32\x16.eolymp.playground.Run2\xad\x04\n\nRunService\x12\xa0\x01\n\tCreateRun\x12\x1c.eolymp.atlas.CreateRunInput\x1a\x1d.eolymp.atlas.CreateRunOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14playground:run:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/problems/{problem_id}/runs\x12\xae\x01\n\x0b\x44\x65scribeRun\x12\x1e.eolymp.atlas.DescribeRunInput\x1a\x1f.eolymp.atlas.DescribeRunOutput\"^\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02&\x12$/problems/{problem_id}/runs/{run_id}\x12\xad\x01\n\x08WatchRun\x12\x1b.eolymp.atlas.WatchRunInput\x1a\x1c.eolymp.atlas.WatchRunOutput\"d\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02,\x12*/problems/{problem_id}/runs/{run_id}/watch0\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/atlas/run_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x16\x65olymp/atlas/run.proto\x1a\x1c\x65olymp/wellknown/watch.proto\"\x9e\x01\n\x0e\x43reateRunInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\r\n\x05trace\x18\x03 \x01(\x08\x12\x0e\n\x06source\x18\x64 \x01(\t\x12\x14\n\ninput_data\x18\x65 \x01(\x0cH\x00\x12\x13\n\tinput_ref\x18\x66 \x01(\tH\x00\x12\x14\n\nexample_id\x18g \x01(\tH\x00\x42\x07\n\x05input\"!\n\x0f\x43reateRunOutput\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"6\n\x10\x44\x65scribeRunInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\"3\n\x11\x44\x65scribeRunOutput\x12\x1e\n\x03run\x18\x01 \x01(\x0b\x32\x11.eolymp.atlas.Run\"3\n\rWatchRunInput\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\"a\n\x0eWatchRunOutput\x12/\n\x05\x65vent\x18\x01 \x01(\x0e\x32 .eolymp.wellknown.WatchEventType\x12\x1e\n\x03run\x18\x02 \x01(\x0b\x32\x11.eolymp.atlas.Run2\xad\x04\n\nRunService\x12\xa0\x01\n\tCreateRun\x12\x1c.eolymp.atlas.CreateRunInput\x1a\x1d.eolymp.atlas.CreateRunOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14playground:run:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/problems/{problem_id}/runs\x12\xae\x01\n\x0b\x44\x65scribeRun\x12\x1e.eolymp.atlas.DescribeRunInput\x1a\x1f.eolymp.atlas.DescribeRunOutput\"^\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02&\x12$/problems/{problem_id}/runs/{run_id}\x12\xad\x01\n\x08WatchRun\x12\x1b.eolymp.atlas.WatchRunInput\x1a\x1c.eolymp.atlas.WatchRunOutput\"d\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x17\x8a\xe3\n\x13playground:run:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02,\x12*/problems/{problem_id}/runs/{run_id}/watch0\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,18 +47,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RUNSERVICE'].methods_by_name['DescribeRun']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\027\212\343\n\023playground:run:read\242\343\n\004\250\343\n\001\202\323\344\223\002&\022$/problems/{problem_id}/runs/{run_id}'
   _globals['_RUNSERVICE'].methods_by_name['WatchRun']._loaded_options = None
   _globals['_RUNSERVICE'].methods_by_name['WatchRun']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\027\212\343\n\023playground:run:read\242\343\n\004\250\343\n\001\202\323\344\223\002,\022*/problems/{problem_id}/runs/{run_id}/watch'
-  _globals['_CREATERUNINPUT']._serialized_start=275
-  _globals['_CREATERUNINPUT']._serialized_end=433
-  _globals['_CREATERUNOUTPUT']._serialized_start=435
-  _globals['_CREATERUNOUTPUT']._serialized_end=468
-  _globals['_DESCRIBERUNINPUT']._serialized_start=470
-  _globals['_DESCRIBERUNINPUT']._serialized_end=524
-  _globals['_DESCRIBERUNOUTPUT']._serialized_start=526
-  _globals['_DESCRIBERUNOUTPUT']._serialized_end=582
-  _globals['_WATCHRUNINPUT']._serialized_start=584
-  _globals['_WATCHRUNINPUT']._serialized_end=635
-  _globals['_WATCHRUNOUTPUT']._serialized_start=637
-  _globals['_WATCHRUNOUTPUT']._serialized_end=739
-  _globals['_RUNSERVICE']._serialized_start=742
-  _globals['_RUNSERVICE']._serialized_end=1299
+  _globals['_CREATERUNINPUT']._serialized_start=270
+  _globals['_CREATERUNINPUT']._serialized_end=428
+  _globals['_CREATERUNOUTPUT']._serialized_start=430
+  _globals['_CREATERUNOUTPUT']._serialized_end=463
+  _globals['_DESCRIBERUNINPUT']._serialized_start=465
+  _globals['_DESCRIBERUNINPUT']._serialized_end=519
+  _globals['_DESCRIBERUNOUTPUT']._serialized_start=521
+  _globals['_DESCRIBERUNOUTPUT']._serialized_end=572
+  _globals['_WATCHRUNINPUT']._serialized_start=574
+  _globals['_WATCHRUNINPUT']._serialized_end=625
+  _globals['_WATCHRUNOUTPUT']._serialized_start=627
+  _globals['_WATCHRUNOUTPUT']._serialized_end=724
+  _globals['_RUNSERVICE']._serialized_start=727
+  _globals['_RUNSERVICE']._serialized_end=1284
 # @@protoc_insertion_point(module_scope)
