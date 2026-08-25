@@ -21,6 +21,7 @@ class Problem(_message.Message):
         ML: _ClassVar[Problem.Type]
         QUIZ: _ClassVar[Problem.Type]
         INTERACTIVE: _ClassVar[Problem.Type]
+        COMMUNICATION: _ClassVar[Problem.Type]
     UNKNOWN_TYPE: Problem.Type
     PROGRAM: Problem.Type
     FUNCTION: Problem.Type
@@ -29,6 +30,7 @@ class Problem(_message.Message):
     ML: Problem.Type
     QUIZ: Problem.Type
     INTERACTIVE: Problem.Type
+    COMMUNICATION: Problem.Type
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
