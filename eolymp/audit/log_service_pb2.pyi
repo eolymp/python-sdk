@@ -24,20 +24,20 @@ class ListLogsInput(_message.Message):
     DEFAULT: ListLogsInput.Sortable
     TIMESTAMP: ListLogsInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ("actor", "method", "scope", "ip_address", "user_agent", "mutation")
+        __slots__ = ("actor", "method", "scope", "ip_address", "user_agent", "operation")
         ACTOR_FIELD_NUMBER: _ClassVar[int]
         METHOD_FIELD_NUMBER: _ClassVar[int]
         SCOPE_FIELD_NUMBER: _ClassVar[int]
         IP_ADDRESS_FIELD_NUMBER: _ClassVar[int]
         USER_AGENT_FIELD_NUMBER: _ClassVar[int]
-        MUTATION_FIELD_NUMBER: _ClassVar[int]
-        actor: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        OPERATION_FIELD_NUMBER: _ClassVar[int]
+        actor: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         method: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         scope: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         ip_address: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_agent: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        mutation: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        def __init__(self, actor: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., method: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., scope: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., ip_address: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_agent: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., mutation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        operation: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, actor: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., method: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., scope: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., ip_address: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_agent: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., operation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     DATE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -65,20 +65,20 @@ class ListLogsOutput(_message.Message):
 class ExportLogsInput(_message.Message):
     __slots__ = ("date", "filters", "sort", "order", "extra")
     class Filter(_message.Message):
-        __slots__ = ("actor", "method", "scope", "ip_address", "user_agent", "mutation")
+        __slots__ = ("actor", "method", "scope", "ip_address", "user_agent", "operation")
         ACTOR_FIELD_NUMBER: _ClassVar[int]
         METHOD_FIELD_NUMBER: _ClassVar[int]
         SCOPE_FIELD_NUMBER: _ClassVar[int]
         IP_ADDRESS_FIELD_NUMBER: _ClassVar[int]
         USER_AGENT_FIELD_NUMBER: _ClassVar[int]
-        MUTATION_FIELD_NUMBER: _ClassVar[int]
-        actor: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        OPERATION_FIELD_NUMBER: _ClassVar[int]
+        actor: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         method: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         scope: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         ip_address: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         user_agent: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
-        mutation: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        def __init__(self, actor: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., method: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., scope: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., ip_address: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_agent: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., mutation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        operation: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, actor: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., method: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., scope: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., ip_address: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_agent: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., operation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     DATE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
