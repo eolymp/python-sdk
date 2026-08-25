@@ -54,10 +54,12 @@ class Editor(_message.Message):
     def __init__(self, state: _Optional[_Union[Editor.State, _Mapping]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ..., runtimes: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ...) -> None: ...
 
 class DescribeEditorInput(_message.Message):
-    __slots__ = ("problem_id",)
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ("course_id", "material_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    material_id: str
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ...) -> None: ...
 
 class DescribeEditorOutput(_message.Message):
     __slots__ = ("editor",)
@@ -66,10 +68,12 @@ class DescribeEditorOutput(_message.Message):
     def __init__(self, editor: _Optional[_Union[Editor, _Mapping]] = ...) -> None: ...
 
 class DescribeEditorStateInput(_message.Message):
-    __slots__ = ("problem_id",)
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ("course_id", "material_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    material_id: str
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ...) -> None: ...
 
 class DescribeEditorStateOutput(_message.Message):
     __slots__ = ("runtime", "source_code", "input_data", "output", "features")
@@ -86,26 +90,34 @@ class DescribeEditorStateOutput(_message.Message):
     def __init__(self, runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., features: _Optional[_Iterable[_Union[Editor.Feature, str]]] = ...) -> None: ...
 
 class UpdateEditorStateInput(_message.Message):
-    __slots__ = ("problem_id", "runtime", "source_code", "input_data", "output")
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("course_id", "material_id", "runtime", "source_code", "input_data", "output")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_CODE_FIELD_NUMBER: _ClassVar[int]
     INPUT_DATA_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
+    course_id: str
+    material_id: str
     runtime: str
     source_code: str
     input_data: str
     output: _submission_pb2.Submission.Output
-    def __init__(self, problem_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source_code: _Optional[str] = ..., input_data: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ...) -> None: ...
+
+class UpdateEditorStateOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
 
 class ListInputsInput(_message.Message):
-    __slots__ = ("problem_id", "version")
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("course_id", "material_id", "version")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
+    course_id: str
+    material_id: str
     version: int
-    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class ListInputsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -114,7 +126,3 @@ class ListInputsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_testing_test_pb2.Test]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
-
-class UpdateEditorStateOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...

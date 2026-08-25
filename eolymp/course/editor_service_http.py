@@ -15,58 +15,62 @@ class EditorServiceClient:
         self.url = url
 
     def DescribeEditor(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editor"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/editor"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeEditorOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeEditorOutput"),
             **kwargs,
         )
 
     def DescribeEditorState(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editor/state"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/editor/state"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeEditorStateOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeEditorStateOutput"),
             **kwargs,
         )
 
     def UpdateEditorState(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editor/state"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/editor/state"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateEditorStateOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.UpdateEditorStateOutput"),
             **kwargs,
         )
 
     def ListInputs(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/inputs"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/inputs"
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.problem_id = ""
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListInputsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.course.ListInputsOutput"),
             **kwargs,
         )
 

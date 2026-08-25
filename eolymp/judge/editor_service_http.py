@@ -15,58 +15,77 @@ class EditorServiceClient:
         self.url = url
 
     def DescribeEditor(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editor"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/editor"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeEditorOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeEditorOutput"),
             **kwargs,
         )
 
     def DescribeEditorState(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editor/state"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/editor/state"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeEditorStateOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeEditorStateOutput"),
             **kwargs,
         )
 
     def UpdateEditorState(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editor/state"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/editor/state"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.UpdateEditorStateOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.UpdateEditorStateOutput"),
             **kwargs,
         )
 
     def ListInputs(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/inputs"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/inputs"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ListInputsOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListInputsOutput"),
+            **kwargs,
+        )
+
+    def PrintEditorCode(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/editor/print"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.PrintEditorCodeOutput"),
             **kwargs,
         )
 
