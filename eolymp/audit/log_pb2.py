@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x65olymp/audit/log.proto\x12\x0c\x65olymp.audit\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfd\x03\n\x03Log\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12&\n\x05\x61\x63tor\x18\x03 \x01(\x0b\x32\x17.eolymp.audit.Log.Actor\x12\x12\n\nip_address\x18\x04 \x01(\t\x12\x12\n\nuser_agent\x18\x05 \x01(\t\x12\x0e\n\x06method\x18\x06 \x01(\t\x12\r\n\x05scope\x18\x07 \x01(\t\x12\x10\n\x08mutation\x18\x08 \x01(\x08\x12.\n\toperation\x18\x0b \x01(\x0e\x32\x1b.eolymp.audit.Log.Operation\x12\x0f\n\x07payload\x18\n \x01(\t\x1a\x30\n\x05\x45xtra\"\'\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x0b\n\x07PAYLOAD\x10\x01\x1a\x8d\x01\n\x05\x41\x63tor\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.eolymp.audit.Log.Actor.Type\x12\n\n\x02id\x18\x02 \x01(\t\x12\x0f\n\x07subject\x18\x03 \x01(\t\";\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\n\n\x06MEMBER\x10\x01\x12\x08\n\x04USER\x10\x02\x12\x0b\n\x07SERVICE\x10\x03\"C\n\tOperation\x12\x15\n\x11UNKNOWN_OPERATION\x10\x00\x12\x08\n\x04READ\x10\x01\x12\t\n\x05WRITE\x10\x02\x12\n\n\x06\x44\x45LETE\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/audit;auditb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x65olymp/audit/log.proto\x12\x0c\x65olymp.audit\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd6\x02\n\x03Log\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07subject\x18\x0c \x01(\t\x12\x12\n\nip_address\x18\x04 \x01(\t\x12\x12\n\nuser_agent\x18\x05 \x01(\t\x12\x0e\n\x06method\x18\x06 \x01(\t\x12\r\n\x05scope\x18\x07 \x01(\t\x12\x10\n\x08mutation\x18\x08 \x01(\x08\x12.\n\toperation\x18\x0b \x01(\x0e\x32\x1b.eolymp.audit.Log.Operation\x12\x0f\n\x07payload\x18\n \x01(\t\x1a\x30\n\x05\x45xtra\"\'\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x0b\n\x07PAYLOAD\x10\x01\"C\n\tOperation\x12\x15\n\x11UNKNOWN_OPERATION\x10\x00\x12\x08\n\x04READ\x10\x01\x12\t\n\x05WRITE\x10\x02\x12\n\n\x06\x44\x45LETE\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/audit;auditb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,15 +34,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/audit;audit'
   _globals['_LOG']._serialized_start=74
-  _globals['_LOG']._serialized_end=583
-  _globals['_LOG_EXTRA']._serialized_start=322
-  _globals['_LOG_EXTRA']._serialized_end=370
-  _globals['_LOG_EXTRA_FIELD']._serialized_start=331
-  _globals['_LOG_EXTRA_FIELD']._serialized_end=370
-  _globals['_LOG_ACTOR']._serialized_start=373
-  _globals['_LOG_ACTOR']._serialized_end=514
-  _globals['_LOG_ACTOR_TYPE']._serialized_start=455
-  _globals['_LOG_ACTOR_TYPE']._serialized_end=514
-  _globals['_LOG_OPERATION']._serialized_start=516
-  _globals['_LOG_OPERATION']._serialized_end=583
+  _globals['_LOG']._serialized_end=416
+  _globals['_LOG_EXTRA']._serialized_start=299
+  _globals['_LOG_EXTRA']._serialized_end=347
+  _globals['_LOG_EXTRA_FIELD']._serialized_start=308
+  _globals['_LOG_EXTRA_FIELD']._serialized_end=347
+  _globals['_LOG_OPERATION']._serialized_start=349
+  _globals['_LOG_OPERATION']._serialized_end=416
 # @@protoc_insertion_point(module_scope)
