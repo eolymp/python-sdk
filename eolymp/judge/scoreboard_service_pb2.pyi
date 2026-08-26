@@ -15,8 +15,10 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeScoreboardInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class DescribeScoreboardOutput(_message.Message):
     __slots__ = ("scoreboard",)
@@ -25,7 +27,7 @@ class DescribeScoreboardOutput(_message.Message):
     def __init__(self, scoreboard: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
 
 class ListScoreboardRowsInput(_message.Message):
-    __slots__ = ("mode", "size", "offset", "filters", "sort", "order")
+    __slots__ = ("contest_id", "mode", "size", "offset", "filters", "sort", "order")
     class Filter(_message.Message):
         __slots__ = ("unofficial", "disqualified")
         UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
@@ -33,19 +35,21 @@ class ListScoreboardRowsInput(_message.Message):
         unofficial: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         disqualified: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         def __init__(self, unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     mode: _scoreboard_pb2.Scoreboard.Mode
     size: int
     offset: int
     filters: ListScoreboardRowsInput.Filter
     sort: str
     order: _direction_pb2.Direction
-    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListScoreboardRowsInput.Filter, _Mapping]] = ..., sort: _Optional[str] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListScoreboardRowsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -56,12 +60,14 @@ class ListScoreboardRowsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ...) -> None: ...
 
 class DescribeScoreboardRowInput(_message.Message):
-    __slots__ = ("participant_id", "mode")
+    __slots__ = ("contest_id", "participant_id", "mode")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     participant_id: str
     mode: _scoreboard_pb2.Scoreboard.Mode
-    def __init__(self, participant_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
 
 class DescribeScoreboardRowOutput(_message.Message):
     __slots__ = ("row",)
@@ -70,10 +76,12 @@ class DescribeScoreboardRowOutput(_message.Message):
     def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]] = ...) -> None: ...
 
 class ExportScoreboardInput(_message.Message):
-    __slots__ = ("mode",)
+    __slots__ = ("contest_id", "mode")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     mode: _scoreboard_pb2.Scoreboard.Mode
-    def __init__(self, mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
 
 class ExportScoreboardOutput(_message.Message):
     __slots__ = ("export_url",)

@@ -14,8 +14,10 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RequestAdmissionInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class RequestAdmissionOutput(_message.Message):
     __slots__ = ("required", "code")
@@ -26,20 +28,24 @@ class RequestAdmissionOutput(_message.Message):
     def __init__(self, required: _Optional[bool] = ..., code: _Optional[str] = ...) -> None: ...
 
 class AcceptAdmissionInput(_message.Message):
-    __slots__ = ("code",)
+    __slots__ = ("contest_id", "code")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CODE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     code: str
-    def __init__(self, code: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., code: _Optional[str] = ...) -> None: ...
 
 class AcceptAdmissionOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeAdmissionInput(_message.Message):
-    __slots__ = ("code",)
+    __slots__ = ("contest_id", "code")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CODE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     code: str
-    def __init__(self, code: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., code: _Optional[str] = ...) -> None: ...
 
 class DescribeAdmissionOutput(_message.Message):
     __slots__ = ("participant_id", "session_id", "member")
@@ -52,10 +58,12 @@ class DescribeAdmissionOutput(_message.Message):
     def __init__(self, participant_id: _Optional[str] = ..., session_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
 
 class WatchAdmissionInput(_message.Message):
-    __slots__ = ("code",)
+    __slots__ = ("contest_id", "code")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CODE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     code: str
-    def __init__(self, code: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., code: _Optional[str] = ...) -> None: ...
 
 class WatchAdmissionOutput(_message.Message):
     __slots__ = ("admission", "event")

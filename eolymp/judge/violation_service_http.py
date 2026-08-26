@@ -15,7 +15,10 @@ class ViolationServiceClient:
         self.url = url
 
     def CreateViolation(self, request, **kwargs):
-        path = "/violations"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/violations"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class ViolationServiceClient:
         )
 
     def UpdateViolation(self, request, **kwargs):
-        path = "/violations/"+urllib.parse.quote(request.violation_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/violations/"+urllib.parse.quote(request.violation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.violation_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class ViolationServiceClient:
         )
 
     def DeleteViolation(self, request, **kwargs):
-        path = "/violations/"+urllib.parse.quote(request.violation_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/violations/"+urllib.parse.quote(request.violation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.violation_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class ViolationServiceClient:
         )
 
     def DescribeViolation(self, request, **kwargs):
-        path = "/violations/"+urllib.parse.quote(request.violation_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/violations/"+urllib.parse.quote(request.violation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.violation_id = ""
 
         return self.transport.request(
@@ -68,9 +74,10 @@ class ViolationServiceClient:
         )
 
     def ListViolationEvidence(self, request, **kwargs):
-        path = "/violations/"+urllib.parse.quote(request.violation_id)+"/evidence"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/violations/"+urllib.parse.quote(request.violation_id)+"/evidence"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.violation_id = ""
 
         return self.transport.request(
@@ -82,7 +89,10 @@ class ViolationServiceClient:
         )
 
     def ListViolations(self, request, **kwargs):
-        path = "/violations"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/violations"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",

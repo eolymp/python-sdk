@@ -15,7 +15,10 @@ class ScoreboardServiceClient:
         self.url = url
 
     def DescribeScoreboard(self, request, **kwargs):
-        path = "/scoreboard"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoreboard"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -26,7 +29,10 @@ class ScoreboardServiceClient:
         )
 
     def ListScoreboardRows(self, request, **kwargs):
-        path = "/scoreboard/rows"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoreboard/rows"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -37,9 +43,10 @@ class ScoreboardServiceClient:
         )
 
     def DescribeScoreboardRow(self, request, **kwargs):
-        path = "/scoreboard/rows/"+urllib.parse.quote(request.participant_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoreboard/rows/"+urllib.parse.quote(request.participant_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -51,7 +58,10 @@ class ScoreboardServiceClient:
         )
 
     def ExportScoreboard(self, request, **kwargs):
-        path = "/scoreboard/export"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoreboard/export"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",

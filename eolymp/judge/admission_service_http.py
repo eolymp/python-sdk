@@ -15,7 +15,10 @@ class AdmissionServiceClient:
         self.url = url
 
     def RequestAdmission(self, request, **kwargs):
-        path = "/admission:request"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/admission:request"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,7 +29,10 @@ class AdmissionServiceClient:
         )
 
     def DescribeAdmission(self, request, **kwargs):
-        path = "/admission:request"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/admission:request"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -37,7 +43,10 @@ class AdmissionServiceClient:
         )
 
     def AcceptAdmission(self, request, **kwargs):
-        path = "/admission:accept"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/admission:accept"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",

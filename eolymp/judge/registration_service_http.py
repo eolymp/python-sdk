@@ -15,7 +15,10 @@ class RegistrationServiceClient:
         self.url = url
 
     def DescribeRegistration(self, request, **kwargs):
-        path = "/registration"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/registration"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -26,7 +29,10 @@ class RegistrationServiceClient:
         )
 
     def SubmitRegistration(self, request, **kwargs):
-        path = "/registration"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/registration"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
