@@ -15,7 +15,10 @@ class ActivityGraphServiceClient:
         self.url = url
 
     def DescribeActivityGraph(self, request, **kwargs):
-        path = "/activity-graph"
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/activity-graph"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
 
         return self.transport.request(
             method="GET",

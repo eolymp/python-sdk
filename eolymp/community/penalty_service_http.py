@@ -15,7 +15,10 @@ class PenaltyServiceClient:
         self.url = url
 
     def CreatePenalty(self, request, **kwargs):
-        path = "/penalties"
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/penalties"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class PenaltyServiceClient:
         )
 
     def UpdatePenalty(self, request, **kwargs):
-        path = "/penalties/"+urllib.parse.quote(request.penalty_id)
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/penalties/"+urllib.parse.quote(request.penalty_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
         request.penalty_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class PenaltyServiceClient:
         )
 
     def DeletePenalty(self, request, **kwargs):
-        path = "/penalties/"+urllib.parse.quote(request.penalty_id)
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/penalties/"+urllib.parse.quote(request.penalty_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
         request.penalty_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class PenaltyServiceClient:
         )
 
     def DescribePenalty(self, request, **kwargs):
-        path = "/penalties/"+urllib.parse.quote(request.penalty_id)
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/penalties/"+urllib.parse.quote(request.penalty_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
         request.penalty_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class PenaltyServiceClient:
         )
 
     def ListPenalties(self, request, **kwargs):
-        path = "/penalties"
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/penalties"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
 
         return self.transport.request(
             method="GET",

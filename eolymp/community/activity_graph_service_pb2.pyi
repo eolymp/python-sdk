@@ -15,14 +15,16 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeActivityGraphInput(_message.Message):
-    __slots__ = ("after", "before", "metric")
+    __slots__ = ("member_id", "after", "before", "metric")
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
     METRIC_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
     after: _timestamp_pb2.Timestamp
     before: _timestamp_pb2.Timestamp
     metric: str
-    def __init__(self, after: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., before: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., metric: _Optional[str] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., after: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., before: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., metric: _Optional[str] = ...) -> None: ...
 
 class DescribeActivityGraphOutput(_message.Message):
     __slots__ = ("values", "max_value")
