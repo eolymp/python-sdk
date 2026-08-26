@@ -15,7 +15,10 @@ class ModuleServiceClient:
         self.url = url
 
     def CreateModule(self, request, **kwargs):
-        path = "/modules"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/modules"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -26,9 +29,10 @@ class ModuleServiceClient:
         )
 
     def UpdateModule(self, request, **kwargs):
-        path = "/modules/"+urllib.parse.quote(request.module_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/modules/"+urllib.parse.quote(request.module_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.module_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class ModuleServiceClient:
         )
 
     def DeleteModule(self, request, **kwargs):
-        path = "/modules/"+urllib.parse.quote(request.module_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/modules/"+urllib.parse.quote(request.module_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.module_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class ModuleServiceClient:
         )
 
     def DescribeModule(self, request, **kwargs):
-        path = "/modules/"+urllib.parse.quote(request.module_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/modules/"+urllib.parse.quote(request.module_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.module_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class ModuleServiceClient:
         )
 
     def ListModules(self, request, **kwargs):
-        path = "/modules"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/modules"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="GET",
@@ -79,9 +88,10 @@ class ModuleServiceClient:
         )
 
     def StartModule(self, request, **kwargs):
-        path = "/modules/"+urllib.parse.quote(request.module_id)+"/start"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/modules/"+urllib.parse.quote(request.module_id)+"/start"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.module_id = ""
 
         return self.transport.request(
@@ -93,9 +103,10 @@ class ModuleServiceClient:
         )
 
     def GradeModule(self, request, **kwargs):
-        path = "/modules/"+urllib.parse.quote(request.module_id)+"/grade"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/modules/"+urllib.parse.quote(request.module_id)+"/grade"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.module_id = ""
 
         return self.transport.request(

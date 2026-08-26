@@ -16,12 +16,14 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateMaterialInput(_message.Message):
-    __slots__ = ("material", "module_id")
+    __slots__ = ("course_id", "material", "module_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     material: _material_pb2.Material
     module_id: str
-    def __init__(self, material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ..., module_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ..., module_id: _Optional[str] = ...) -> None: ...
 
 class CreateMaterialOutput(_message.Message):
     __slots__ = ("material_id",)
@@ -30,7 +32,7 @@ class CreateMaterialOutput(_message.Message):
     def __init__(self, material_id: _Optional[str] = ...) -> None: ...
 
 class UpdateMaterialInput(_message.Message):
-    __slots__ = ("patch", "material_id", "material")
+    __slots__ = ("patch", "course_id", "material_id", "material")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         ALL: _ClassVar[UpdateMaterialInput.Patch]
@@ -50,52 +52,60 @@ class UpdateMaterialInput(_message.Message):
     CONTENT: UpdateMaterialInput.Patch
     GRADING: UpdateMaterialInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_FIELD_NUMBER: _ClassVar[int]
     patch: _containers.RepeatedScalarFieldContainer[UpdateMaterialInput.Patch]
+    course_id: str
     material_id: str
     material: _material_pb2.Material
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMaterialInput.Patch, str]]] = ..., material_id: _Optional[str] = ..., material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMaterialInput.Patch, str]]] = ..., course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
 
 class UpdateMaterialOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class MoveMaterialInput(_message.Message):
-    __slots__ = ("material_id", "new_module_id", "new_index", "new_depth")
+    __slots__ = ("course_id", "material_id", "new_module_id", "new_index", "new_depth")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     NEW_MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     NEW_INDEX_FIELD_NUMBER: _ClassVar[int]
     NEW_DEPTH_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     material_id: str
     new_module_id: str
     new_index: int
     new_depth: int
-    def __init__(self, material_id: _Optional[str] = ..., new_module_id: _Optional[str] = ..., new_index: _Optional[int] = ..., new_depth: _Optional[int] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., new_module_id: _Optional[str] = ..., new_index: _Optional[int] = ..., new_depth: _Optional[int] = ...) -> None: ...
 
 class MoveMaterialOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteMaterialInput(_message.Message):
-    __slots__ = ("material_id",)
+    __slots__ = ("course_id", "material_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     material_id: str
-    def __init__(self, material_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ...) -> None: ...
 
 class DeleteMaterialOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeMaterialInput(_message.Message):
-    __slots__ = ("material_id", "member_id", "extra")
+    __slots__ = ("course_id", "material_id", "member_id", "extra")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     material_id: str
     member_id: str
     extra: _containers.RepeatedScalarFieldContainer[_material_pb2.Material.Extra]
-    def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_material_pb2.Material.Extra, str]]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_material_pb2.Material.Extra, str]]] = ...) -> None: ...
 
 class DescribeMaterialOutput(_message.Message):
     __slots__ = ("material",)
@@ -104,7 +114,7 @@ class DescribeMaterialOutput(_message.Message):
     def __init__(self, material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
 
 class ListMaterialsInput(_message.Message):
-    __slots__ = ("module_id", "member_id", "search", "offset", "size", "filters", "sort", "order", "extra")
+    __slots__ = ("course_id", "module_id", "member_id", "search", "offset", "size", "filters", "sort", "order", "extra")
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         INDEX: _ClassVar[ListMaterialsInput.Sort]
@@ -116,6 +126,7 @@ class ListMaterialsInput(_message.Message):
         graded: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         weight: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         def __init__(self, graded: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., weight: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
@@ -125,6 +136,7 @@ class ListMaterialsInput(_message.Message):
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     module_id: str
     member_id: str
     search: str
@@ -134,7 +146,7 @@ class ListMaterialsInput(_message.Message):
     sort: ListMaterialsInput.Sort
     order: _direction_pb2.Direction
     extra: _containers.RepeatedScalarFieldContainer[_material_pb2.Material.Extra]
-    def __init__(self, module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., search: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMaterialsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListMaterialsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_material_pb2.Material.Extra, str]]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., module_id: _Optional[str] = ..., member_id: _Optional[str] = ..., search: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListMaterialsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListMaterialsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_material_pb2.Material.Extra, str]]] = ...) -> None: ...
 
 class ListMaterialsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -145,28 +157,32 @@ class ListMaterialsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_material_pb2.Material, _Mapping]]] = ...) -> None: ...
 
 class ReportProgressInput(_message.Message):
-    __slots__ = ("material_id", "progress")
+    __slots__ = ("course_id", "material_id", "progress")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     material_id: str
     progress: float
-    def __init__(self, material_id: _Optional[str] = ..., progress: _Optional[float] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., progress: _Optional[float] = ...) -> None: ...
 
 class ReportProgressOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class GradeMaterialInput(_message.Message):
-    __slots__ = ("material_id", "member_id", "grade", "excused")
+    __slots__ = ("course_id", "material_id", "member_id", "grade", "excused")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     GRADE_FIELD_NUMBER: _ClassVar[int]
     EXCUSED_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     material_id: str
     member_id: str
     grade: int
     excused: bool
-    def __init__(self, material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: _Optional[bool] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., member_id: _Optional[str] = ..., grade: _Optional[int] = ..., excused: _Optional[bool] = ...) -> None: ...
 
 class GradeMaterialOutput(_message.Message):
     __slots__ = ()

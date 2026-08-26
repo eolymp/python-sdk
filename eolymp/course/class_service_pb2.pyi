@@ -20,9 +20,11 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateClassInput(_message.Message):
-    __slots__ = ()
+    __slots__ = ("course_id",)
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     CLASS_FIELD_NUMBER: _ClassVar[int]
-    def __init__(self, **kwargs) -> None: ...
+    course_id: str
+    def __init__(self, course_id: _Optional[str] = ..., **kwargs) -> None: ...
 
 class CreateClassOutput(_message.Message):
     __slots__ = ("class_id",)
@@ -31,7 +33,7 @@ class CreateClassOutput(_message.Message):
     def __init__(self, class_id: _Optional[str] = ...) -> None: ...
 
 class UpdateClassInput(_message.Message):
-    __slots__ = ("patch", "group_id")
+    __slots__ = ("patch", "course_id", "group_id")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         ALL: _ClassVar[UpdateClassInput.Patch]
@@ -41,31 +43,37 @@ class UpdateClassInput(_message.Message):
     INACTIVE: UpdateClassInput.Patch
     ASSIGN_ALL: UpdateClassInput.Patch
     PATCH_FIELD_NUMBER: _ClassVar[int]
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     CLASS_FIELD_NUMBER: _ClassVar[int]
     patch: _containers.RepeatedScalarFieldContainer[UpdateClassInput.Patch]
+    course_id: str
     group_id: str
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateClassInput.Patch, str]]] = ..., group_id: _Optional[str] = ..., **kwargs) -> None: ...
+    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateClassInput.Patch, str]]] = ..., course_id: _Optional[str] = ..., group_id: _Optional[str] = ..., **kwargs) -> None: ...
 
 class UpdateClassOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteClassInput(_message.Message):
-    __slots__ = ("group_id",)
+    __slots__ = ("course_id", "group_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     group_id: str
-    def __init__(self, group_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., group_id: _Optional[str] = ...) -> None: ...
 
 class DeleteClassOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeClassInput(_message.Message):
-    __slots__ = ("group_id",)
+    __slots__ = ("course_id", "group_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     group_id: str
-    def __init__(self, group_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., group_id: _Optional[str] = ...) -> None: ...
 
 class DescribeClassOutput(_message.Message):
     __slots__ = ()
@@ -73,7 +81,7 @@ class DescribeClassOutput(_message.Message):
     def __init__(self, **kwargs) -> None: ...
 
 class ListClassesInput(_message.Message):
-    __slots__ = ("offset", "size", "search", "filters", "sort", "order")
+    __slots__ = ("course_id", "offset", "size", "search", "filters", "sort", "order")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListClassesInput.Sortable]
@@ -87,19 +95,21 @@ class ListClassesInput(_message.Message):
         group_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     offset: int
     size: int
     search: str
     filters: ListClassesInput.Filter
     sort: ListClassesInput.Sortable
     order: _direction_pb2.Direction
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListClassesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListClassesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListClassesInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListClassesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListClassesOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -110,7 +120,7 @@ class ListClassesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_class_pb2.Class, _Mapping]]] = ...) -> None: ...
 
 class ListClassAssignmentsInput(_message.Message):
-    __slots__ = ("group_id", "offset", "size", "search", "filters")
+    __slots__ = ("course_id", "group_id", "offset", "size", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("id", "module_id")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -118,17 +128,19 @@ class ListClassAssignmentsInput(_message.Message):
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         module_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., module_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     group_id: str
     offset: int
     size: int
     search: str
     filters: ListClassAssignmentsInput.Filter
-    def __init__(self, group_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListClassAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., group_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListClassAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListClassAssignmentsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -139,32 +151,36 @@ class ListClassAssignmentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_assignment_pb2.Assignment, _Mapping]]] = ...) -> None: ...
 
 class UpdateClassAssignmentInput(_message.Message):
-    __slots__ = ("group_id", "module_id", "start_after", "complete_before", "duration", "upsolve")
+    __slots__ = ("course_id", "group_id", "module_id", "start_after", "complete_before", "duration", "upsolve")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     START_AFTER_FIELD_NUMBER: _ClassVar[int]
     COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
     DURATION_FIELD_NUMBER: _ClassVar[int]
     UPSOLVE_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     group_id: str
     module_id: str
     start_after: _timestamp_pb2.Timestamp
     complete_before: _timestamp_pb2.Timestamp
     duration: int
     upsolve: bool
-    def __init__(self, group_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: _Optional[bool] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., group_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: _Optional[bool] = ...) -> None: ...
 
 class UpdateClassAssignmentOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteClassAssignmentInput(_message.Message):
-    __slots__ = ("group_id", "module_id")
+    __slots__ = ("course_id", "group_id", "module_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     group_id: str
     module_id: str
-    def __init__(self, group_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., group_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
 
 class DeleteClassAssignmentOutput(_message.Message):
     __slots__ = ()

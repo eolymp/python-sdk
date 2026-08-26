@@ -15,7 +15,10 @@ class MaterialServiceClient:
         self.url = url
 
     def CreateMaterial(self, request, **kwargs):
-        path = "/materials"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class MaterialServiceClient:
         )
 
     def UpdateMaterial(self, request, **kwargs):
-        path = "/materials/"+urllib.parse.quote(request.material_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.material_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class MaterialServiceClient:
         )
 
     def MoveMaterial(self, request, **kwargs):
-        path = "/materials/"+urllib.parse.quote(request.material_id)+"/move"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/move"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.material_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class MaterialServiceClient:
         )
 
     def DeleteMaterial(self, request, **kwargs):
-        path = "/materials/"+urllib.parse.quote(request.material_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.material_id = ""
 
         return self.transport.request(
@@ -68,9 +74,10 @@ class MaterialServiceClient:
         )
 
     def DescribeMaterial(self, request, **kwargs):
-        path = "/materials/"+urllib.parse.quote(request.material_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.material_id = ""
 
         return self.transport.request(
@@ -82,7 +89,10 @@ class MaterialServiceClient:
         )
 
     def ListMaterials(self, request, **kwargs):
-        path = "/materials"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="GET",
@@ -93,9 +103,10 @@ class MaterialServiceClient:
         )
 
     def ReportProgress(self, request, **kwargs):
-        path = "/materials/"+urllib.parse.quote(request.material_id)+"/progress"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/progress"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.material_id = ""
 
         return self.transport.request(
@@ -107,9 +118,10 @@ class MaterialServiceClient:
         )
 
     def GradeMaterial(self, request, **kwargs):
-        path = "/materials/"+urllib.parse.quote(request.material_id)+"/grade"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/grade"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.material_id = ""
 
         return self.transport.request(

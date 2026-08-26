@@ -15,7 +15,10 @@ class ClassServiceClient:
         self.url = url
 
     def CreateClass(self, request, **kwargs):
-        path = "/classes"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/classes"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class ClassServiceClient:
         )
 
     def UpdateClass(self, request, **kwargs):
-        path = "/classes/"+urllib.parse.quote(request.group_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/classes/"+urllib.parse.quote(request.group_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.group_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class ClassServiceClient:
         )
 
     def DeleteClass(self, request, **kwargs):
-        path = "/classes/"+urllib.parse.quote(request.group_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/classes/"+urllib.parse.quote(request.group_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.group_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class ClassServiceClient:
         )
 
     def DescribeClass(self, request, **kwargs):
-        path = "/classes/"+urllib.parse.quote(request.group_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/classes/"+urllib.parse.quote(request.group_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.group_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class ClassServiceClient:
         )
 
     def ListClasses(self, request, **kwargs):
-        path = "/classes"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/classes"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="GET",
@@ -79,9 +88,10 @@ class ClassServiceClient:
         )
 
     def ListClassAssignments(self, request, **kwargs):
-        path = "/classes/"+urllib.parse.quote(request.group_id)+"/assignments"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/classes/"+urllib.parse.quote(request.group_id)+"/assignments"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.group_id = ""
 
         return self.transport.request(
@@ -93,9 +103,10 @@ class ClassServiceClient:
         )
 
     def UpdateClassAssignment(self, request, **kwargs):
-        path = "/classes/"+urllib.parse.quote(request.group_id)+"/assignments"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/classes/"+urllib.parse.quote(request.group_id)+"/assignments"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.group_id = ""
 
         return self.transport.request(
@@ -107,9 +118,10 @@ class ClassServiceClient:
         )
 
     def DeleteClassAssignment(self, request, **kwargs):
-        path = "/classes/"+urllib.parse.quote(request.group_id)+"/assignments"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/classes/"+urllib.parse.quote(request.group_id)+"/assignments"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.group_id = ""
 
         return self.transport.request(
