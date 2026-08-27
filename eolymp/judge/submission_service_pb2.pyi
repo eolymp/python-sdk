@@ -17,12 +17,14 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CompareSubmissionsInput(_message.Message):
-    __slots__ = ("submission_id", "other_submission_id")
+    __slots__ = ("contest_id", "submission_id", "other_submission_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
     OTHER_SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     submission_id: str
     other_submission_id: str
-    def __init__(self, submission_id: _Optional[str] = ..., other_submission_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., submission_id: _Optional[str] = ..., other_submission_id: _Optional[str] = ...) -> None: ...
 
 class CompareSubmissionsOutput(_message.Message):
     __slots__ = ("submission", "other_submission", "matches")

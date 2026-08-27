@@ -15,9 +15,10 @@ class SubmissionServiceClient:
         self.url = url
 
     def CreateSubmission(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/submissions"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/submissions"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -29,7 +30,10 @@ class SubmissionServiceClient:
         )
 
     def ListSubmissions(self, request, **kwargs):
-        path = "/submissions"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -40,9 +44,10 @@ class SubmissionServiceClient:
         )
 
     def DescribeSubmission(self, request, **kwargs):
-        path = "/submissions/"+urllib.parse.quote(request.submission_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.submission_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class SubmissionServiceClient:
         )
 
     def PrintSubmission(self, request, **kwargs):
-        path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/print"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)+"/print"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.submission_id = ""
 
         return self.transport.request(
@@ -68,9 +74,10 @@ class SubmissionServiceClient:
         )
 
     def CompareSubmissions(self, request, **kwargs):
-        path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/compare"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)+"/compare"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.submission_id = ""
 
         return self.transport.request(
@@ -82,9 +89,10 @@ class SubmissionServiceClient:
         )
 
     def RetestSubmission(self, request, **kwargs):
-        path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/retest"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)+"/retest"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.submission_id = ""
 
         return self.transport.request(
@@ -96,9 +104,10 @@ class SubmissionServiceClient:
         )
 
     def DeleteSubmission(self, request, **kwargs):
-        path = "/submissions/"+urllib.parse.quote(request.submission_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.submission_id = ""
 
         return self.transport.request(
@@ -110,9 +119,10 @@ class SubmissionServiceClient:
         )
 
     def RestoreSubmission(self, request, **kwargs):
-        path = "/submissions/"+urllib.parse.quote(request.submission_id)+"/restore"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/submissions/"+urllib.parse.quote(request.submission_id)+"/restore"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.submission_id = ""
 
         return self.transport.request(
@@ -124,9 +134,10 @@ class SubmissionServiceClient:
         )
 
     def RetestProblem(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/retest"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/retest"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
