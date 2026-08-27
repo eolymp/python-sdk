@@ -15,7 +15,10 @@ class ScoreServiceClient:
         self.url = url
 
     def DescribeViewerScore(self, request, **kwargs):
-        path = "/introspect/score"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/introspect/score"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -26,9 +29,10 @@ class ScoreServiceClient:
         )
 
     def DescribeScore(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/score"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/score"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class ScoreServiceClient:
         )
 
     def ListScoreTimeline(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/score-timeline"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/score-timeline"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class ScoreServiceClient:
         )
 
     def ImportScore(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -68,9 +74,10 @@ class ScoreServiceClient:
         )
 
     def ExportScore(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/scores"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -82,7 +89,10 @@ class ScoreServiceClient:
         )
 
     def RebuildScore(self, request, **kwargs):
-        path = "/rebuild"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/rebuild"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
