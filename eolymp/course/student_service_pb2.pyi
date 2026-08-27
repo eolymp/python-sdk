@@ -23,10 +23,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateStudentInput(_message.Message):
-    __slots__ = ("student",)
+    __slots__ = ("course_id", "student")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     STUDENT_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     student: _student_pb2.Student
-    def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
 class CreateStudentOutput(_message.Message):
     __slots__ = ("student_id",)
@@ -35,7 +37,7 @@ class CreateStudentOutput(_message.Message):
     def __init__(self, student_id: _Optional[str] = ...) -> None: ...
 
 class UpdateStudentInput(_message.Message):
-    __slots__ = ("patch", "member_id", "student")
+    __slots__ = ("course_id", "patch", "member_id", "student")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         ALL: _ClassVar[UpdateStudentInput.Patch]
@@ -44,35 +46,41 @@ class UpdateStudentInput(_message.Message):
     ALL: UpdateStudentInput.Patch
     INACTIVE: UpdateStudentInput.Patch
     ASSIGN_ALL: UpdateStudentInput.Patch
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     STUDENT_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateStudentInput.Patch]
     member_id: str
     student: _student_pb2.Student
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateStudentInput.Patch, str]]] = ..., member_id: _Optional[str] = ..., student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., patch: _Optional[_Iterable[_Union[UpdateStudentInput.Patch, str]]] = ..., member_id: _Optional[str] = ..., student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
 class UpdateStudentOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteStudentInput(_message.Message):
-    __slots__ = ("member_id",)
+    __slots__ = ("course_id", "member_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     member_id: str
-    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class DeleteStudentOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeStudentInput(_message.Message):
-    __slots__ = ("member_id", "extra")
+    __slots__ = ("course_id", "member_id", "extra")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     member_id: str
     extra: _containers.RepeatedScalarFieldContainer[_student_pb2.Student.Extra]
-    def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
 
 class DescribeStudentOutput(_message.Message):
     __slots__ = ("student",)
@@ -81,7 +89,7 @@ class DescribeStudentOutput(_message.Message):
     def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
 class ListStudentsInput(_message.Message):
-    __slots__ = ("after", "offset", "size", "search", "filters", "sort", "order", "extra")
+    __slots__ = ("course_id", "after", "offset", "size", "search", "filters", "sort", "order", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListStudentsInput.Sortable]
@@ -95,6 +103,7 @@ class ListStudentsInput(_message.Message):
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         group_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -103,6 +112,7 @@ class ListStudentsInput(_message.Message):
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     after: str
     offset: int
     size: int
@@ -111,7 +121,7 @@ class ListStudentsInput(_message.Message):
     sort: ListStudentsInput.Sortable
     order: _direction_pb2.Direction
     extra: _containers.RepeatedScalarFieldContainer[_student_pb2.Student.Extra]
-    def __init__(self, after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListStudentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListStudentsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., after: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListStudentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListStudentsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
 
 class ListStudentsOutput(_message.Message):
     __slots__ = ("total", "items", "next_page_cursor")
@@ -124,12 +134,14 @@ class ListStudentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_student_pb2.Student, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class WatchStudentInput(_message.Message):
-    __slots__ = ("member_id", "extra")
+    __slots__ = ("course_id", "member_id", "extra")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     member_id: str
     extra: _containers.RepeatedScalarFieldContainer[_student_pb2.Student.Extra]
-    def __init__(self, member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., member_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
 
 class WatchStudentOutput(_message.Message):
     __slots__ = ("student", "event")
@@ -140,18 +152,22 @@ class WatchStudentOutput(_message.Message):
     def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
 class JoinCourseInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("course_id",)
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    def __init__(self, course_id: _Optional[str] = ...) -> None: ...
 
 class JoinCourseOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeViewerInput(_message.Message):
-    __slots__ = ("extra",)
+    __slots__ = ("course_id", "extra")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     extra: _containers.RepeatedScalarFieldContainer[_student_pb2.Student.Extra]
-    def __init__(self, extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_student_pb2.Student.Extra, str]]] = ...) -> None: ...
 
 class DescribeViewerOutput(_message.Message):
     __slots__ = ("student",)
@@ -160,7 +176,7 @@ class DescribeViewerOutput(_message.Message):
     def __init__(self, student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
 
 class ListStudentAssignmentsInput(_message.Message):
-    __slots__ = ("member_id", "offset", "size", "search", "filters")
+    __slots__ = ("course_id", "member_id", "offset", "size", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("id", "module_id")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -168,17 +184,19 @@ class ListStudentAssignmentsInput(_message.Message):
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         module_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., module_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     member_id: str
     offset: int
     size: int
     search: str
     filters: ListStudentAssignmentsInput.Filter
-    def __init__(self, member_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListStudentAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., member_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListStudentAssignmentsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListStudentAssignmentsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -189,42 +207,48 @@ class ListStudentAssignmentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_assignment_pb2.Assignment, _Mapping]]] = ...) -> None: ...
 
 class UpdateStudentAssignmentInput(_message.Message):
-    __slots__ = ("member_id", "module_id", "start_after", "complete_before", "duration", "upsolve")
+    __slots__ = ("course_id", "member_id", "module_id", "start_after", "complete_before", "duration", "upsolve")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     START_AFTER_FIELD_NUMBER: _ClassVar[int]
     COMPLETE_BEFORE_FIELD_NUMBER: _ClassVar[int]
     DURATION_FIELD_NUMBER: _ClassVar[int]
     UPSOLVE_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     member_id: str
     module_id: str
     start_after: _timestamp_pb2.Timestamp
     complete_before: _timestamp_pb2.Timestamp
     duration: int
     upsolve: bool
-    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: _Optional[bool] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., member_id: _Optional[str] = ..., module_id: _Optional[str] = ..., start_after: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., complete_before: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., upsolve: _Optional[bool] = ...) -> None: ...
 
 class UpdateStudentAssignmentOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteStudentAssignmentInput(_message.Message):
-    __slots__ = ("member_id", "module_id")
+    __slots__ = ("course_id", "member_id", "module_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     member_id: str
     module_id: str
-    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., member_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
 
 class DeleteStudentAssignmentOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListStudentGradesInput(_message.Message):
-    __slots__ = ("member_id",)
+    __slots__ = ("course_id", "member_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     member_id: str
-    def __init__(self, member_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., member_id: _Optional[str] = ...) -> None: ...
 
 class ListStudentGradesOutput(_message.Message):
     __slots__ = ("items",)
@@ -233,12 +257,14 @@ class ListStudentGradesOutput(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[_module_pb2.Module.Progress, _Mapping]]] = ...) -> None: ...
 
 class ListModuleGradesInput(_message.Message):
-    __slots__ = ("member_id", "module_id")
+    __slots__ = ("course_id", "member_id", "module_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     member_id: str
     module_id: str
-    def __init__(self, member_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., member_id: _Optional[str] = ..., module_id: _Optional[str] = ...) -> None: ...
 
 class ListModuleGradesOutput(_message.Message):
     __slots__ = ("items",)

@@ -15,7 +15,10 @@ class StudentServiceClient:
         self.url = url
 
     def CreateStudent(self, request, **kwargs):
-        path = "/students"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class StudentServiceClient:
         )
 
     def UpdateStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.member_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class StudentServiceClient:
         )
 
     def DeleteStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.member_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class StudentServiceClient:
         )
 
     def DescribeStudent(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students/"+urllib.parse.quote(request.member_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.member_id = ""
 
         return self.transport.request(
@@ -68,7 +74,10 @@ class StudentServiceClient:
         )
 
     def ListStudents(self, request, **kwargs):
-        path = "/students"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="GET",
@@ -79,7 +88,10 @@ class StudentServiceClient:
         )
 
     def JoinCourse(self, request, **kwargs):
-        path = "/join"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/join"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="POST",
@@ -90,7 +102,10 @@ class StudentServiceClient:
         )
 
     def DescribeViewer(self, request, **kwargs):
-        path = "/viewer/student"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/viewer/student"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="GET",
@@ -101,9 +116,10 @@ class StudentServiceClient:
         )
 
     def ListStudentAssignments(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students/"+urllib.parse.quote(request.member_id)+"/assignments"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.member_id = ""
 
         return self.transport.request(
@@ -115,9 +131,10 @@ class StudentServiceClient:
         )
 
     def UpdateStudentAssignment(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students/"+urllib.parse.quote(request.member_id)+"/assignments"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.member_id = ""
 
         return self.transport.request(
@@ -129,9 +146,10 @@ class StudentServiceClient:
         )
 
     def DeleteStudentAssignment(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)+"/assignments"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students/"+urllib.parse.quote(request.member_id)+"/assignments"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.member_id = ""
 
         return self.transport.request(
@@ -143,9 +161,10 @@ class StudentServiceClient:
         )
 
     def ListStudentGrades(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)+"/grades"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students/"+urllib.parse.quote(request.member_id)+"/grades"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.member_id = ""
 
         return self.transport.request(
@@ -157,9 +176,10 @@ class StudentServiceClient:
         )
 
     def ListModuleGrades(self, request, **kwargs):
-        path = "/students/"+urllib.parse.quote(request.member_id)+"/grades/"+urllib.parse.quote(request.module_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/students/"+urllib.parse.quote(request.member_id)+"/grades/"+urllib.parse.quote(request.module_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.member_id = ""
         request.module_id = ""
 
