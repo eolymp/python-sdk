@@ -15,16 +15,18 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ("material_id", "runtime", "source", "output")
+    __slots__ = ("course_id", "material_id", "runtime", "source", "output")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     material_id: str
     runtime: str
     source: str
     output: _submission_pb2.Submission.Output
-    def __init__(self, material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)
@@ -33,7 +35,7 @@ class CreateSubmissionOutput(_message.Message):
     def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
 
 class ListSubmissionsInput(_message.Message):
-    __slots__ = ("after", "size", "filters")
+    __slots__ = ("course_id", "after", "size", "filters")
     class Filter(_message.Message):
         __slots__ = ("id", "member_id", "material_id", "submitted_at", "runtime", "status", "verdict", "score", "percentage")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -55,13 +57,15 @@ class ListSubmissionsInput(_message.Message):
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
         percentage: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionFloat]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., material_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., submitted_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., runtime: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., verdict: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ..., percentage: _Optional[_Iterable[_Union[_expression_pb2.ExpressionFloat, _Mapping]]] = ...) -> None: ...
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     after: str
     size: int
     filters: ListSubmissionsInput.Filter
-    def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSubmissionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListSubmissionsOutput(_message.Message):
     __slots__ = ("total", "items", "next_page_cursor")
@@ -74,10 +78,12 @@ class ListSubmissionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_submission_pb2.Submission, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class DescribeSubmissionInput(_message.Message):
-    __slots__ = ("submission_id",)
+    __slots__ = ("course_id", "submission_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     submission_id: str
-    def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
 
 class DescribeSubmissionOutput(_message.Message):
     __slots__ = ("submission",)
@@ -86,10 +92,12 @@ class DescribeSubmissionOutput(_message.Message):
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ...) -> None: ...
 
 class WatchSubmissionInput(_message.Message):
-    __slots__ = ("submission_id",)
+    __slots__ = ("course_id", "submission_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
     submission_id: str
-    def __init__(self, submission_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., submission_id: _Optional[str] = ...) -> None: ...
 
 class WatchSubmissionOutput(_message.Message):
     __slots__ = ("submission", "event")

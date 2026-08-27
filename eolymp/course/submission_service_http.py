@@ -15,7 +15,10 @@ class SubmissionServiceClient:
         self.url = url
 
     def CreateSubmission(self, request, **kwargs):
-        path = "/submissions"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/submissions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,7 +29,10 @@ class SubmissionServiceClient:
         )
 
     def ListSubmissions(self, request, **kwargs):
-        path = "/submissions"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/submissions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
 
         return self.transport.request(
             method="GET",
@@ -37,9 +43,10 @@ class SubmissionServiceClient:
         )
 
     def DescribeSubmission(self, request, **kwargs):
-        path = "/submissions/"+urllib.parse.quote(request.submission_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/submissions/"+urllib.parse.quote(request.submission_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
         request.submission_id = ""
 
         return self.transport.request(
