@@ -24,14 +24,13 @@ _sym_db = _symbol_database.Default()
 
 from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
-from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.helpdesk import ticket_pb2 as eolymp_dot_helpdesk_dot_ticket__pb2
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/helpdesk/ticket_service.proto\x12\x0f\x65olymp.helpdesk\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/helpdesk/ticket.proto\x1a!eolymp/wellknown/expression.proto\"M\n\x11\x43reateTicketInput\x12\'\n\x06ticket\x18\x01 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\x12\x0f\n\x07\x63\x61ptcha\x18\x02 \x01(\t\"\'\n\x12\x43reateTicketOutput\x12\x11\n\tticket_id\x18\x01 \x01(\t\"O\n\x11UpdateTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\'\n\x06ticket\x18\x02 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\"\x14\n\x12UpdateTicketOutput\"&\n\x11\x44\x65leteTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteTicketOutput\"8\n\x13\x44\x65scribeTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0e\n\x06render\x18\x02 \x01(\x08\"?\n\x14\x44\x65scribeTicketOutput\x12\'\n\x06ticket\x18\x01 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\"\xb2\x04\n\x10ListTicketsInput\x12\x0e\n\x06render\x18\x01 \x01(\x08\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.helpdesk.ListTicketsInput.Filter\x1a\xb4\x03\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\nuser_email\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06status\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12.\n\x04type\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x39\n\ncreated_at\x18\x07 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x39\n\nupdated_at\x18\x08 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x30\n\x06locale\x18\t \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"J\n\x11ListTicketsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.helpdesk.Ticket\"8\n\x12\x41pproveTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x15\n\x13\x41pproveTicketOutput\"7\n\x11RejectTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x14\n\x12RejectTicketOutput\"6\n\x10\x43loseTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x13\n\x11\x43loseTicketOutput\"V\n\x0f\x41\x64\x64\x43ommentInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x30\n\x07\x63omment\x18\x02 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\"&\n\x10\x41\x64\x64\x43ommentOutput\x12\x12\n\ncomment_id\x18\x01 \x01(\t\"m\n\x12UpdateCommentInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x12\n\ncomment_id\x18\x02 \x01(\t\x12\x30\n\x07\x63omment\x18\x03 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\"\x15\n\x13UpdateCommentOutput\";\n\x12\x44\x65leteCommentInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x12\n\ncomment_id\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteCommentOutput\"T\n\x11ListCommentsInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0e\n\x06render\x18\x02 \x01(\x08\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"S\n\x12ListCommentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\"M\n\x14\x44\x65scribeCommentInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x12\n\ncomment_id\x18\x02 \x01(\t\x12\x0e\n\x06render\x18\x03 \x01(\x08\"I\n\x15\x44\x65scribeCommentOutput\x12\x30\n\x07\x63omment\x18\x01 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\"A\n\x15UploadAttachmentInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"0\n\x16UploadAttachmentOutput\x12\x16\n\x0e\x61ttachment_url\x18\x01 \x01(\t2\xf6\x14\n\rTicketService\x12\xa6\x01\n\x0c\x43reateTicket\x12\".eolymp.helpdesk.CreateTicketInput\x1a#.eolymp.helpdesk.CreateTicketOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\"\x11/helpdesk/tickets\x12\xb2\x01\n\x0cUpdateTicket\x12\".eolymp.helpdesk.UpdateTicketInput\x1a#.eolymp.helpdesk.UpdateTicketOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1f\x1a\x1d/helpdesk/tickets/{ticket_id}\x12\xb2\x01\n\x0c\x44\x65leteTicket\x12\".eolymp.helpdesk.DeleteTicketInput\x1a#.eolymp.helpdesk.DeleteTicketOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1f*\x1d/helpdesk/tickets/{ticket_id}\x12\xb7\x01\n\x0e\x44\x65scribeTicket\x12$.eolymp.helpdesk.DescribeTicketInput\x1a%.eolymp.helpdesk.DescribeTicketOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x18\x8a\xe3\n\x14helpdesk:ticket:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1f\x12\x1d/helpdesk/tickets/{ticket_id}\x12\xa2\x01\n\x0bListTickets\x12!.eolymp.helpdesk.ListTicketsInput\x1a\".eolymp.helpdesk.ListTicketsOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x18\x8a\xe3\n\x14helpdesk:ticket:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x13\x12\x11/helpdesk/tickets\x12\xbd\x01\n\rApproveTicket\x12#.eolymp.helpdesk.ApproveTicketInput\x1a$.eolymp.helpdesk.ApproveTicketOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\'\"%/helpdesk/tickets/{ticket_id}/approve\x12\xb9\x01\n\x0cRejectTicket\x12\".eolymp.helpdesk.RejectTicketInput\x1a#.eolymp.helpdesk.RejectTicketOutput\"`\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02&\"$/helpdesk/tickets/{ticket_id}/reject\x12\xb5\x01\n\x0b\x43loseTicket\x12!.eolymp.helpdesk.CloseTicketInput\x1a\".eolymp.helpdesk.CloseTicketOutput\"_\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02%\"#/helpdesk/tickets/{ticket_id}/close\x12\xb5\x01\n\nAddComment\x12 .eolymp.helpdesk.AddCommentInput\x1a!.eolymp.helpdesk.AddCommentOutput\"b\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02(\"&/helpdesk/tickets/{ticket_id}/comments\x12\xcb\x01\n\rUpdateComment\x12#.eolymp.helpdesk.UpdateCommentInput\x1a$.eolymp.helpdesk.UpdateCommentOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x35\x1a\x33/helpdesk/tickets/{ticket_id}/comments/{comment_id}\x12\xcb\x01\n\rDeleteComment\x12#.eolymp.helpdesk.DeleteCommentInput\x1a$.eolymp.helpdesk.DeleteCommentOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x35*3/helpdesk/tickets/{ticket_id}/comments/{comment_id}\x12\xba\x01\n\x0cListComments\x12\".eolymp.helpdesk.ListCommentsInput\x1a#.eolymp.helpdesk.ListCommentsOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14helpdesk:ticket:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02(\x12&/helpdesk/tickets/{ticket_id}/comments\x12\xd1\x01\n\x0f\x44\x65scribeComment\x12%.eolymp.helpdesk.DescribeCommentInput\x1a&.eolymp.helpdesk.DescribeCommentOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x35\x12\x33/helpdesk/tickets/{ticket_id}/comments/{comment_id}\x12\xbd\x01\n\x10UploadAttachment\x12&.eolymp.helpdesk.UploadAttachmentInput\x1a\'.eolymp.helpdesk.UploadAttachmentOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x15/helpdesk/attachments\x98\xe3\n\x80\x80\x80\x01\x1a\x1a\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.ContestB3Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdeskb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/helpdesk/ticket_service.proto\x12\x0f\x65olymp.helpdesk\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/helpdesk/ticket.proto\x1a!eolymp/wellknown/expression.proto\"M\n\x11\x43reateTicketInput\x12\'\n\x06ticket\x18\x01 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\x12\x0f\n\x07\x63\x61ptcha\x18\x02 \x01(\t\"\'\n\x12\x43reateTicketOutput\x12\x11\n\tticket_id\x18\x01 \x01(\t\"O\n\x11UpdateTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\'\n\x06ticket\x18\x02 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\"\x14\n\x12UpdateTicketOutput\"&\n\x11\x44\x65leteTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteTicketOutput\"8\n\x13\x44\x65scribeTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0e\n\x06render\x18\x02 \x01(\x08\"?\n\x14\x44\x65scribeTicketOutput\x12\'\n\x06ticket\x18\x01 \x01(\x0b\x32\x17.eolymp.helpdesk.Ticket\"\xb2\x04\n\x10ListTicketsInput\x12\x0e\n\x06render\x18\x01 \x01(\x08\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.helpdesk.ListTicketsInput.Filter\x1a\xb4\x03\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x34\n\nuser_email\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x30\n\x06status\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12.\n\x04type\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x39\n\ncreated_at\x18\x07 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x39\n\nupdated_at\x18\x08 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x30\n\x06locale\x18\t \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"J\n\x11ListTicketsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.helpdesk.Ticket\"8\n\x12\x41pproveTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x15\n\x13\x41pproveTicketOutput\"7\n\x11RejectTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x14\n\x12RejectTicketOutput\"6\n\x10\x43loseTicketInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"\x13\n\x11\x43loseTicketOutput\"V\n\x0f\x41\x64\x64\x43ommentInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x30\n\x07\x63omment\x18\x02 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\"&\n\x10\x41\x64\x64\x43ommentOutput\x12\x12\n\ncomment_id\x18\x01 \x01(\t\"m\n\x12UpdateCommentInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x12\n\ncomment_id\x18\x02 \x01(\t\x12\x30\n\x07\x63omment\x18\x03 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\"\x15\n\x13UpdateCommentOutput\";\n\x12\x44\x65leteCommentInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x12\n\ncomment_id\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteCommentOutput\"T\n\x11ListCommentsInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x0e\n\x06render\x18\x02 \x01(\x08\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"S\n\x12ListCommentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\"M\n\x14\x44\x65scribeCommentInput\x12\x11\n\tticket_id\x18\x01 \x01(\t\x12\x12\n\ncomment_id\x18\x02 \x01(\t\x12\x0e\n\x06render\x18\x03 \x01(\x08\"I\n\x15\x44\x65scribeCommentOutput\x12\x30\n\x07\x63omment\x18\x01 \x01(\x0b\x32\x1f.eolymp.helpdesk.Ticket.Comment\"A\n\x15UploadAttachmentInput\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"0\n\x16UploadAttachmentOutput\x12\x16\n\x0e\x61ttachment_url\x18\x01 \x01(\t2\xda\x14\n\rTicketService\x12\xa6\x01\n\x0c\x43reateTicket\x12\".eolymp.helpdesk.CreateTicketInput\x1a#.eolymp.helpdesk.CreateTicketOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\"\x11/helpdesk/tickets\x12\xb2\x01\n\x0cUpdateTicket\x12\".eolymp.helpdesk.UpdateTicketInput\x1a#.eolymp.helpdesk.UpdateTicketOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1f\x1a\x1d/helpdesk/tickets/{ticket_id}\x12\xb2\x01\n\x0c\x44\x65leteTicket\x12\".eolymp.helpdesk.DeleteTicketInput\x1a#.eolymp.helpdesk.DeleteTicketOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1f*\x1d/helpdesk/tickets/{ticket_id}\x12\xb7\x01\n\x0e\x44\x65scribeTicket\x12$.eolymp.helpdesk.DescribeTicketInput\x1a%.eolymp.helpdesk.DescribeTicketOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x18\x8a\xe3\n\x14helpdesk:ticket:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1f\x12\x1d/helpdesk/tickets/{ticket_id}\x12\xa2\x01\n\x0bListTickets\x12!.eolymp.helpdesk.ListTicketsInput\x1a\".eolymp.helpdesk.ListTicketsOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x18\x8a\xe3\n\x14helpdesk:ticket:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x13\x12\x11/helpdesk/tickets\x12\xbd\x01\n\rApproveTicket\x12#.eolymp.helpdesk.ApproveTicketInput\x1a$.eolymp.helpdesk.ApproveTicketOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\'\"%/helpdesk/tickets/{ticket_id}/approve\x12\xb9\x01\n\x0cRejectTicket\x12\".eolymp.helpdesk.RejectTicketInput\x1a#.eolymp.helpdesk.RejectTicketOutput\"`\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02&\"$/helpdesk/tickets/{ticket_id}/reject\x12\xb5\x01\n\x0b\x43loseTicket\x12!.eolymp.helpdesk.CloseTicketInput\x1a\".eolymp.helpdesk.CloseTicketOutput\"_\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02%\"#/helpdesk/tickets/{ticket_id}/close\x12\xb5\x01\n\nAddComment\x12 .eolymp.helpdesk.AddCommentInput\x1a!.eolymp.helpdesk.AddCommentOutput\"b\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02(\"&/helpdesk/tickets/{ticket_id}/comments\x12\xcb\x01\n\rUpdateComment\x12#.eolymp.helpdesk.UpdateCommentInput\x1a$.eolymp.helpdesk.UpdateCommentOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x35\x1a\x33/helpdesk/tickets/{ticket_id}/comments/{comment_id}\x12\xcb\x01\n\rDeleteComment\x12#.eolymp.helpdesk.DeleteCommentInput\x1a$.eolymp.helpdesk.DeleteCommentOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x35*3/helpdesk/tickets/{ticket_id}/comments/{comment_id}\x12\xba\x01\n\x0cListComments\x12\".eolymp.helpdesk.ListCommentsInput\x1a#.eolymp.helpdesk.ListCommentsOutput\"a\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14helpdesk:ticket:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02(\x12&/helpdesk/tickets/{ticket_id}/comments\x12\xd1\x01\n\x0f\x44\x65scribeComment\x12%.eolymp.helpdesk.DescribeCommentInput\x1a&.eolymp.helpdesk.DescribeCommentOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x35\x12\x33/helpdesk/tickets/{ticket_id}/comments/{comment_id}\x12\xbd\x01\n\x10UploadAttachment\x12&.eolymp.helpdesk.UploadAttachmentInput\x1a\'.eolymp.helpdesk.UploadAttachmentOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15helpdesk:ticket:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x15/helpdesk/attachments\x98\xe3\n\x80\x80\x80\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdeskb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,8 +38,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.helpdesk.ticket_serv
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdesk'
-  _globals['_TICKETSERVICE']._loaded_options = None
-  _globals['_TICKETSERVICE']._serialized_options = b'\202\360\360\344\001\024eolymp.judge.Contest'
   _globals['_TICKETSERVICE'].methods_by_name['CreateTicket']._loaded_options = None
   _globals['_TICKETSERVICE'].methods_by_name['CreateTicket']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025helpdesk:ticket:write\242\343\n\004\250\343\n\002\202\323\344\223\002\023\"\021/helpdesk/tickets'
   _globals['_TICKETSERVICE'].methods_by_name['UpdateTicket']._loaded_options = None
@@ -69,64 +66,64 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TICKETSERVICE'].methods_by_name['DescribeComment']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025helpdesk:ticket:write\242\343\n\004\250\343\n\001\202\323\344\223\0025\0223/helpdesk/tickets/{ticket_id}/comments/{comment_id}'
   _globals['_TICKETSERVICE'].methods_by_name['UploadAttachment']._loaded_options = None
   _globals['_TICKETSERVICE'].methods_by_name['UploadAttachment']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025helpdesk:ticket:write\242\343\n\004\250\343\n\002\202\323\344\223\002\036\"\025/helpdesk/attachments\230\343\n\200\200\200\001'
-  _globals['_CREATETICKETINPUT']._serialized_start=289
-  _globals['_CREATETICKETINPUT']._serialized_end=366
-  _globals['_CREATETICKETOUTPUT']._serialized_start=368
-  _globals['_CREATETICKETOUTPUT']._serialized_end=407
-  _globals['_UPDATETICKETINPUT']._serialized_start=409
-  _globals['_UPDATETICKETINPUT']._serialized_end=488
-  _globals['_UPDATETICKETOUTPUT']._serialized_start=490
-  _globals['_UPDATETICKETOUTPUT']._serialized_end=510
-  _globals['_DELETETICKETINPUT']._serialized_start=512
-  _globals['_DELETETICKETINPUT']._serialized_end=550
-  _globals['_DELETETICKETOUTPUT']._serialized_start=552
-  _globals['_DELETETICKETOUTPUT']._serialized_end=572
-  _globals['_DESCRIBETICKETINPUT']._serialized_start=574
-  _globals['_DESCRIBETICKETINPUT']._serialized_end=630
-  _globals['_DESCRIBETICKETOUTPUT']._serialized_start=632
-  _globals['_DESCRIBETICKETOUTPUT']._serialized_end=695
-  _globals['_LISTTICKETSINPUT']._serialized_start=698
-  _globals['_LISTTICKETSINPUT']._serialized_end=1260
-  _globals['_LISTTICKETSINPUT_FILTER']._serialized_start=824
-  _globals['_LISTTICKETSINPUT_FILTER']._serialized_end=1260
-  _globals['_LISTTICKETSOUTPUT']._serialized_start=1262
-  _globals['_LISTTICKETSOUTPUT']._serialized_end=1336
-  _globals['_APPROVETICKETINPUT']._serialized_start=1338
-  _globals['_APPROVETICKETINPUT']._serialized_end=1394
-  _globals['_APPROVETICKETOUTPUT']._serialized_start=1396
-  _globals['_APPROVETICKETOUTPUT']._serialized_end=1417
-  _globals['_REJECTTICKETINPUT']._serialized_start=1419
-  _globals['_REJECTTICKETINPUT']._serialized_end=1474
-  _globals['_REJECTTICKETOUTPUT']._serialized_start=1476
-  _globals['_REJECTTICKETOUTPUT']._serialized_end=1496
-  _globals['_CLOSETICKETINPUT']._serialized_start=1498
-  _globals['_CLOSETICKETINPUT']._serialized_end=1552
-  _globals['_CLOSETICKETOUTPUT']._serialized_start=1554
-  _globals['_CLOSETICKETOUTPUT']._serialized_end=1573
-  _globals['_ADDCOMMENTINPUT']._serialized_start=1575
-  _globals['_ADDCOMMENTINPUT']._serialized_end=1661
-  _globals['_ADDCOMMENTOUTPUT']._serialized_start=1663
-  _globals['_ADDCOMMENTOUTPUT']._serialized_end=1701
-  _globals['_UPDATECOMMENTINPUT']._serialized_start=1703
-  _globals['_UPDATECOMMENTINPUT']._serialized_end=1812
-  _globals['_UPDATECOMMENTOUTPUT']._serialized_start=1814
-  _globals['_UPDATECOMMENTOUTPUT']._serialized_end=1835
-  _globals['_DELETECOMMENTINPUT']._serialized_start=1837
-  _globals['_DELETECOMMENTINPUT']._serialized_end=1896
-  _globals['_DELETECOMMENTOUTPUT']._serialized_start=1898
-  _globals['_DELETECOMMENTOUTPUT']._serialized_end=1919
-  _globals['_LISTCOMMENTSINPUT']._serialized_start=1921
-  _globals['_LISTCOMMENTSINPUT']._serialized_end=2005
-  _globals['_LISTCOMMENTSOUTPUT']._serialized_start=2007
-  _globals['_LISTCOMMENTSOUTPUT']._serialized_end=2090
-  _globals['_DESCRIBECOMMENTINPUT']._serialized_start=2092
-  _globals['_DESCRIBECOMMENTINPUT']._serialized_end=2169
-  _globals['_DESCRIBECOMMENTOUTPUT']._serialized_start=2171
-  _globals['_DESCRIBECOMMENTOUTPUT']._serialized_end=2244
-  _globals['_UPLOADATTACHMENTINPUT']._serialized_start=2246
-  _globals['_UPLOADATTACHMENTINPUT']._serialized_end=2311
-  _globals['_UPLOADATTACHMENTOUTPUT']._serialized_start=2313
-  _globals['_UPLOADATTACHMENTOUTPUT']._serialized_end=2361
-  _globals['_TICKETSERVICE']._serialized_start=2364
-  _globals['_TICKETSERVICE']._serialized_end=5042
+  _globals['_CREATETICKETINPUT']._serialized_start=253
+  _globals['_CREATETICKETINPUT']._serialized_end=330
+  _globals['_CREATETICKETOUTPUT']._serialized_start=332
+  _globals['_CREATETICKETOUTPUT']._serialized_end=371
+  _globals['_UPDATETICKETINPUT']._serialized_start=373
+  _globals['_UPDATETICKETINPUT']._serialized_end=452
+  _globals['_UPDATETICKETOUTPUT']._serialized_start=454
+  _globals['_UPDATETICKETOUTPUT']._serialized_end=474
+  _globals['_DELETETICKETINPUT']._serialized_start=476
+  _globals['_DELETETICKETINPUT']._serialized_end=514
+  _globals['_DELETETICKETOUTPUT']._serialized_start=516
+  _globals['_DELETETICKETOUTPUT']._serialized_end=536
+  _globals['_DESCRIBETICKETINPUT']._serialized_start=538
+  _globals['_DESCRIBETICKETINPUT']._serialized_end=594
+  _globals['_DESCRIBETICKETOUTPUT']._serialized_start=596
+  _globals['_DESCRIBETICKETOUTPUT']._serialized_end=659
+  _globals['_LISTTICKETSINPUT']._serialized_start=662
+  _globals['_LISTTICKETSINPUT']._serialized_end=1224
+  _globals['_LISTTICKETSINPUT_FILTER']._serialized_start=788
+  _globals['_LISTTICKETSINPUT_FILTER']._serialized_end=1224
+  _globals['_LISTTICKETSOUTPUT']._serialized_start=1226
+  _globals['_LISTTICKETSOUTPUT']._serialized_end=1300
+  _globals['_APPROVETICKETINPUT']._serialized_start=1302
+  _globals['_APPROVETICKETINPUT']._serialized_end=1358
+  _globals['_APPROVETICKETOUTPUT']._serialized_start=1360
+  _globals['_APPROVETICKETOUTPUT']._serialized_end=1381
+  _globals['_REJECTTICKETINPUT']._serialized_start=1383
+  _globals['_REJECTTICKETINPUT']._serialized_end=1438
+  _globals['_REJECTTICKETOUTPUT']._serialized_start=1440
+  _globals['_REJECTTICKETOUTPUT']._serialized_end=1460
+  _globals['_CLOSETICKETINPUT']._serialized_start=1462
+  _globals['_CLOSETICKETINPUT']._serialized_end=1516
+  _globals['_CLOSETICKETOUTPUT']._serialized_start=1518
+  _globals['_CLOSETICKETOUTPUT']._serialized_end=1537
+  _globals['_ADDCOMMENTINPUT']._serialized_start=1539
+  _globals['_ADDCOMMENTINPUT']._serialized_end=1625
+  _globals['_ADDCOMMENTOUTPUT']._serialized_start=1627
+  _globals['_ADDCOMMENTOUTPUT']._serialized_end=1665
+  _globals['_UPDATECOMMENTINPUT']._serialized_start=1667
+  _globals['_UPDATECOMMENTINPUT']._serialized_end=1776
+  _globals['_UPDATECOMMENTOUTPUT']._serialized_start=1778
+  _globals['_UPDATECOMMENTOUTPUT']._serialized_end=1799
+  _globals['_DELETECOMMENTINPUT']._serialized_start=1801
+  _globals['_DELETECOMMENTINPUT']._serialized_end=1860
+  _globals['_DELETECOMMENTOUTPUT']._serialized_start=1862
+  _globals['_DELETECOMMENTOUTPUT']._serialized_end=1883
+  _globals['_LISTCOMMENTSINPUT']._serialized_start=1885
+  _globals['_LISTCOMMENTSINPUT']._serialized_end=1969
+  _globals['_LISTCOMMENTSOUTPUT']._serialized_start=1971
+  _globals['_LISTCOMMENTSOUTPUT']._serialized_end=2054
+  _globals['_DESCRIBECOMMENTINPUT']._serialized_start=2056
+  _globals['_DESCRIBECOMMENTINPUT']._serialized_end=2133
+  _globals['_DESCRIBECOMMENTOUTPUT']._serialized_start=2135
+  _globals['_DESCRIBECOMMENTOUTPUT']._serialized_end=2208
+  _globals['_UPLOADATTACHMENTINPUT']._serialized_start=2210
+  _globals['_UPLOADATTACHMENTINPUT']._serialized_end=2275
+  _globals['_UPLOADATTACHMENTOUTPUT']._serialized_start=2277
+  _globals['_UPLOADATTACHMENTOUTPUT']._serialized_end=2325
+  _globals['_TICKETSERVICE']._serialized_start=2328
+  _globals['_TICKETSERVICE']._serialized_end=4978
 # @@protoc_insertion_point(module_scope)
