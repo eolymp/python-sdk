@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TestingConfig(_message.Message):
-    __slots__ = ("run_count", "interactive_followup", "type", "time_limit", "cpu_limit", "memory_limit", "instance_limit")
+    __slots__ = ("run_count", "interactive_followup", "type", "time_limit", "cpu_limit", "memory_limit", "instance_limit", "interactor_time_limit")
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
     INTERACTIVE_FOLLOWUP_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -14,6 +14,7 @@ class TestingConfig(_message.Message):
     CPU_LIMIT_FIELD_NUMBER: _ClassVar[int]
     MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
     INSTANCE_LIMIT_FIELD_NUMBER: _ClassVar[int]
+    INTERACTOR_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
     run_count: int
     interactive_followup: bool
     type: _problem_pb2.Problem.Type
@@ -21,4 +22,5 @@ class TestingConfig(_message.Message):
     cpu_limit: int
     memory_limit: int
     instance_limit: int
-    def __init__(self, run_count: _Optional[int] = ..., interactive_followup: _Optional[bool] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., instance_limit: _Optional[int] = ...) -> None: ...
+    interactor_time_limit: int
+    def __init__(self, run_count: _Optional[int] = ..., interactive_followup: _Optional[bool] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., instance_limit: _Optional[int] = ..., interactor_time_limit: _Optional[int] = ...) -> None: ...

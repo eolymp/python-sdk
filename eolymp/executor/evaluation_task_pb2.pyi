@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationTask(_message.Message):
-    __slots__ = ("task_id", "reference", "origin", "metadata", "priority", "redirect_stderr_to_stdout", "trace", "time_coefficient_deviation", "run_count", "interactive_followup", "instance_limit", "preconditions", "constraints", "submission", "interactor", "checker", "scripts", "runs")
+    __slots__ = ("task_id", "reference", "origin", "metadata", "priority", "redirect_stderr_to_stdout", "trace", "time_coefficient_deviation", "run_count", "interactive_followup", "instance_limit", "interactor_time_limit", "preconditions", "constraints", "submission", "interactor", "checker", "scripts", "runs")
     class DependencyMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_DEPENDENCY_MODE: _ClassVar[EvaluationTask.DependencyMode]
@@ -112,6 +112,7 @@ class EvaluationTask(_message.Message):
     RUN_COUNT_FIELD_NUMBER: _ClassVar[int]
     INTERACTIVE_FOLLOWUP_FIELD_NUMBER: _ClassVar[int]
     INSTANCE_LIMIT_FIELD_NUMBER: _ClassVar[int]
+    INTERACTOR_TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     SUBMISSION_FIELD_NUMBER: _ClassVar[int]
@@ -130,6 +131,7 @@ class EvaluationTask(_message.Message):
     run_count: int
     interactive_followup: bool
     instance_limit: int
+    interactor_time_limit: int
     preconditions: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Precondition]
     constraints: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Constraint]
     submission: _script_pb2.Script
@@ -137,4 +139,4 @@ class EvaluationTask(_message.Message):
     checker: _checker_pb2.Checker
     scripts: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     runs: _containers.RepeatedCompositeFieldContainer[EvaluationTask.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., priority: _Optional[int] = ..., redirect_stderr_to_stdout: _Optional[bool] = ..., trace: _Optional[bool] = ..., time_coefficient_deviation: _Optional[float] = ..., run_count: _Optional[int] = ..., interactive_followup: _Optional[bool] = ..., instance_limit: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., submission: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., priority: _Optional[int] = ..., redirect_stderr_to_stdout: _Optional[bool] = ..., trace: _Optional[bool] = ..., time_coefficient_deviation: _Optional[float] = ..., run_count: _Optional[int] = ..., interactive_followup: _Optional[bool] = ..., instance_limit: _Optional[int] = ..., interactor_time_limit: _Optional[int] = ..., preconditions: _Optional[_Iterable[_Union[EvaluationTask.Precondition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[EvaluationTask.Constraint, _Mapping]]] = ..., submission: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., interactor: _Optional[_Union[_script_pb2.Script, _Mapping]] = ..., checker: _Optional[_Union[_checker_pb2.Checker, _Mapping]] = ..., scripts: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ..., runs: _Optional[_Iterable[_Union[EvaluationTask.Run, _Mapping]]] = ...) -> None: ...
