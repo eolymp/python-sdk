@@ -15,7 +15,10 @@ class PasscodeServiceClient:
         self.url = url
 
     def VerifyPasscode(self, request, **kwargs):
-        path = "/verify-passcode"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/verify-passcode"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,7 +29,10 @@ class PasscodeServiceClient:
         )
 
     def EnterPasscode(self, request, **kwargs):
-        path = "/enter-passcode"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/enter-passcode"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -37,9 +43,10 @@ class PasscodeServiceClient:
         )
 
     def ResetPasscode(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -51,9 +58,10 @@ class PasscodeServiceClient:
         )
 
     def SetPasscode(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -65,9 +73,10 @@ class PasscodeServiceClient:
         )
 
     def RemovePasscode(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/passcode"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
