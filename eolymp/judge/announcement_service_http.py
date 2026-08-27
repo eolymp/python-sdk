@@ -15,7 +15,10 @@ class AnnouncementServiceClient:
         self.url = url
 
     def CreateAnnouncement(self, request, **kwargs):
-        path = "/announcements"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class AnnouncementServiceClient:
         )
 
     def UpdateAnnouncement(self, request, **kwargs):
-        path = "/announcements/"+urllib.parse.quote(request.announcement_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.announcement_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class AnnouncementServiceClient:
         )
 
     def DeleteAnnouncement(self, request, **kwargs):
-        path = "/announcements/"+urllib.parse.quote(request.announcement_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.announcement_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class AnnouncementServiceClient:
         )
 
     def ReadAnnouncement(self, request, **kwargs):
-        path = "/announcements/"+urllib.parse.quote(request.announcement_id)+"/read"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)+"/read"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.announcement_id = ""
 
         return self.transport.request(
@@ -68,9 +74,10 @@ class AnnouncementServiceClient:
         )
 
     def DescribeAnnouncement(self, request, **kwargs):
-        path = "/announcements/"+urllib.parse.quote(request.announcement_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.announcement_id = ""
 
         return self.transport.request(
@@ -82,9 +89,10 @@ class AnnouncementServiceClient:
         )
 
     def DescribeAnnouncementStatus(self, request, **kwargs):
-        path = "/announcements/"+urllib.parse.quote(request.announcement_id)+"/status"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements/"+urllib.parse.quote(request.announcement_id)+"/status"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.announcement_id = ""
 
         return self.transport.request(
@@ -96,7 +104,10 @@ class AnnouncementServiceClient:
         )
 
     def ListAnnouncements(self, request, **kwargs):
-        path = "/announcements"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/announcements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -107,7 +118,10 @@ class AnnouncementServiceClient:
         )
 
     def DescribeAnnouncementSummary(self, request, **kwargs):
-        path = "/summary/announcements"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/summary/announcements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",

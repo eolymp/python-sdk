@@ -15,10 +15,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateAnnouncementInput(_message.Message):
-    __slots__ = ("announcement",)
+    __slots__ = ("contest_id", "announcement")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     announcement: _announcement_pb2.Announcement
-    def __init__(self, announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
 
 class CreateAnnouncementOutput(_message.Message):
     __slots__ = ("id",)
@@ -27,44 +29,52 @@ class CreateAnnouncementOutput(_message.Message):
     def __init__(self, id: _Optional[str] = ...) -> None: ...
 
 class UpdateAnnouncementInput(_message.Message):
-    __slots__ = ("announcement_id", "announcement")
+    __slots__ = ("contest_id", "announcement_id", "announcement")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     announcement_id: str
     announcement: _announcement_pb2.Announcement
-    def __init__(self, announcement_id: _Optional[str] = ..., announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ..., announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
 
 class UpdateAnnouncementOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteAnnouncementInput(_message.Message):
-    __slots__ = ("announcement_id",)
+    __slots__ = ("contest_id", "announcement_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     announcement_id: str
-    def __init__(self, announcement_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ...) -> None: ...
 
 class DeleteAnnouncementOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class ReadAnnouncementInput(_message.Message):
-    __slots__ = ("announcement_id",)
+    __slots__ = ("contest_id", "announcement_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     announcement_id: str
-    def __init__(self, announcement_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ...) -> None: ...
 
 class ReadAnnouncementOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeAnnouncementInput(_message.Message):
-    __slots__ = ("announcement_id", "extra")
+    __slots__ = ("contest_id", "announcement_id", "extra")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     announcement_id: str
     extra: _containers.RepeatedScalarFieldContainer[_announcement_pb2.Announcement.Extra]
-    def __init__(self, announcement_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
 
 class DescribeAnnouncementOutput(_message.Message):
     __slots__ = ("announcement",)
@@ -73,10 +83,12 @@ class DescribeAnnouncementOutput(_message.Message):
     def __init__(self, announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
 
 class DescribeAnnouncementStatusInput(_message.Message):
-    __slots__ = ("announcement_id",)
+    __slots__ = ("contest_id", "announcement_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     announcement_id: str
-    def __init__(self, announcement_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ...) -> None: ...
 
 class DescribeAnnouncementStatusOutput(_message.Message):
     __slots__ = ("is_read",)
@@ -85,7 +97,7 @@ class DescribeAnnouncementStatusOutput(_message.Message):
     def __init__(self, is_read: _Optional[bool] = ...) -> None: ...
 
 class ListAnnouncementsInput(_message.Message):
-    __slots__ = ("offset", "size", "filters", "extra")
+    __slots__ = ("contest_id", "offset", "size", "filters", "extra")
     class Filter(_message.Message):
         __slots__ = ("id", "is_read")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -93,15 +105,17 @@ class ListAnnouncementsInput(_message.Message):
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         is_read: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., is_read: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     offset: int
     size: int
     filters: ListAnnouncementsInput.Filter
     extra: _containers.RepeatedScalarFieldContainer[_announcement_pb2.Announcement.Extra]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAnnouncementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListAnnouncementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
 
 class ListAnnouncementsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -112,12 +126,14 @@ class ListAnnouncementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_announcement_pb2.Announcement, _Mapping]]] = ...) -> None: ...
 
 class WatchAnnouncementInput(_message.Message):
-    __slots__ = ("announcement_id", "extra")
+    __slots__ = ("contest_id", "announcement_id", "extra")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     ANNOUNCEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     announcement_id: str
     extra: _containers.RepeatedScalarFieldContainer[_announcement_pb2.Announcement.Extra]
-    def __init__(self, announcement_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., announcement_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
 
 class WatchAnnouncementOutput(_message.Message):
     __slots__ = ("announcement", "event")
@@ -128,10 +144,12 @@ class WatchAnnouncementOutput(_message.Message):
     def __init__(self, announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ..., event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ...) -> None: ...
 
 class WatchAnnouncementsListInput(_message.Message):
-    __slots__ = ("extra",)
+    __slots__ = ("contest_id", "extra")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     extra: _containers.RepeatedScalarFieldContainer[_announcement_pb2.Announcement.Extra]
-    def __init__(self, extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_announcement_pb2.Announcement.Extra, str]]] = ...) -> None: ...
 
 class WatchAnnouncementsListOutput(_message.Message):
     __slots__ = ("event", "announcement")
@@ -142,8 +160,10 @@ class WatchAnnouncementsListOutput(_message.Message):
     def __init__(self, event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ..., announcement: _Optional[_Union[_announcement_pb2.Announcement, _Mapping]] = ...) -> None: ...
 
 class DescribeAnnouncementSummaryInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class DescribeAnnouncementSummaryOutput(_message.Message):
     __slots__ = ("summary",)
@@ -152,8 +172,10 @@ class DescribeAnnouncementSummaryOutput(_message.Message):
     def __init__(self, summary: _Optional[_Union[_announcement_pb2.AnnouncementSummary, _Mapping]] = ...) -> None: ...
 
 class WatchAnnouncementSummaryInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class WatchAnnouncementSummaryOutput(_message.Message):
     __slots__ = ("summary", "event")
