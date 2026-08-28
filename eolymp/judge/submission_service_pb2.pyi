@@ -62,18 +62,20 @@ class CompareSubmissionsOutput(_message.Message):
     def __init__(self, submission: _Optional[_Union[CompareSubmissionsOutput.Source, _Mapping]] = ..., other_submission: _Optional[_Union[CompareSubmissionsOutput.Source, _Mapping]] = ..., matches: _Optional[_Iterable[_Union[CompareSubmissionsOutput.Match, _Mapping]]] = ...) -> None: ...
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ("contest_id", "problem_id", "lang", "source", "output")
+    __slots__ = ("contest_id", "problem_id", "lang", "source", "output", "quiz")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_FIELD_NUMBER: _ClassVar[int]
+    QUIZ_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     problem_id: str
     lang: str
     source: str
     output: _submission_pb2.Submission.Output
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ...) -> None: ...
+    quiz: _submission_pb2.Submission.Quiz
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)

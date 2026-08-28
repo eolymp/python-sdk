@@ -29,12 +29,13 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.atlas import editorial_pb2 as eolymp_dot_atlas_dot_editorial__pb2
 from eolymp.atlas import problem_pb2 as eolymp_dot_atlas_dot_problem__pb2
+from eolymp.atlas import question_pb2 as eolymp_dot_atlas_dot_question__pb2
 from eolymp.judge import problem_pb2 as eolymp_dot_judge_dot_problem__pb2
 from eolymp.judge import template_pb2 as eolymp_dot_judge_dot_template__pb2
 from eolymp.runtime import runtime_pb2 as eolymp_dot_runtime_dot_runtime__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/judge/problem_service.proto\x12\x0c\x65olymp.judge\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/atlas/editorial.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x1a\x65olymp/judge/problem.proto\x1a\x1b\x65olymp/judge/template.proto\x1a\x1c\x65olymp/runtime/runtime.proto\"\x97\x01\n\x12ImportProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\timport_id\x18\x02 \x01(\tB\x02\x18\x01\x12\x12\n\nimport_ids\x18\x03 \x03(\t\x12\r\n\x05index\x18\n \x01(\r\x12\x14\n\x0csubmit_limit\x18\x0b \x01(\r\x12\x1d\n\x15score_by_best_testset\x18\x0c \x01(\x08\"B\n\x13ImportProblemOutput\x12\x16\n\nproblem_id\x18\x02 \x01(\tB\x02\x18\x01\x12\x13\n\x0bproblem_ids\x18\x03 \x03(\t\"\xe5\x01\n\x12UpdateProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x35\n\x05patch\x18\x03 \x03(\x0e\x32&.eolymp.judge.UpdateProblemInput.Patch\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12&\n\x07problem\x18\x04 \x01(\x0b\x32\x15.eolymp.judge.Problem\"H\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05INDEX\x10\x01\x12\x10\n\x0cSUBMIT_LIMIT\x10\x02\x12\x19\n\x15SCORE_BY_BEST_TESTSET\x10\x03\"\x15\n\x13UpdateProblemOutput\"<\n\x12\x44\x65leteProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteProblemOutput\"\x89\x01\n\x11ListProblemsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.atlas.Problem.Extra.Field\"I\n\x12ListProblemsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.judge.Problem\"\x82\x01\n\x14\x44\x65scribeProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.atlas.Problem.Extra.Field\"?\n\x15\x44\x65scribeProblemOutput\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Problem\"X\n\x19\x44\x65scribeCodeTemplateInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x13\n\x0btemplate_id\x18\x03 \x01(\t\"F\n\x1a\x44\x65scribeCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.judge.Template\"R\n\x17LookupCodeTemplateInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\t\"D\n\x18LookupCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.judge.Template\"=\n\x13ListStatementsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"U\n\x14ListStatementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.eolymp.judge.Problem.Statement\"\x85\x01\n\x16\x44\x65scribeEditorialInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x33\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32#.eolymp.atlas.Editorial.Extra.Field\"E\n\x17\x44\x65scribeEditorialOutput\x12*\n\teditorial\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\">\n\x14ListAttachmentsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"W\n\x15ListAttachmentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12/\n\x05items\x18\x02 \x03(\x0b\x32 .eolymp.judge.Problem.Attachment\";\n\x11ListExamplesInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"N\n\x12ListExamplesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.judge.Problem.Test\";\n\x11ListRuntimesInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"K\n\x12ListRuntimesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.runtime.Runtime\"K\n\x13\x45xportProblemsInput\x12\x12\n\ncontest_id\x18\x03 \x01(\t\x12\x10\n\x08problems\x18\x01 \x03(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\",\n\x14\x45xportProblemsOutput\x12\x14\n\x0c\x64ownload_url\x18\x01 \x01(\t2\xca\x14\n\x0eProblemService\x12\xaf\x01\n\rImportProblem\x12 .eolymp.judge.ImportProblemInput\x1a!.eolymp.judge.ImportProblemOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02!\"\x1f/contests/{contest_id}/problems\x12\xbc\x01\n\rUpdateProblem\x12 .eolymp.judge.UpdateProblemInput\x1a!.eolymp.judge.UpdateProblemOutput\"f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02.\",/contests/{contest_id}/problems/{problem_id}\x12\xab\x01\n\x0cListProblems\x12\x1f.eolymp.judge.ListProblemsInput\x1a .eolymp.judge.ListProblemsOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02!\x12\x1f/contests/{contest_id}/problems\x12\xc2\x01\n\x0f\x44\x65scribeProblem\x12\".eolymp.judge.DescribeProblemInput\x1a#.eolymp.judge.DescribeProblemOutput\"f\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xfa\x01\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02.\x12,/contests/{contest_id}/problems/{problem_id}\x12\xbc\x01\n\rDeleteProblem\x12 .eolymp.judge.DeleteProblemInput\x1a!.eolymp.judge.DeleteProblemOutput\"f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02.*,/contests/{contest_id}/problems/{problem_id}\x12\xda\x01\n\x12LookupCodeTemplate\x12%.eolymp.judge.LookupCodeTemplateInput\x1a&.eolymp.judge.LookupCodeTemplateOutput\"u\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02>\x12</contests/{contest_id}/problems/{problem_id}/lookup-template\x12\xe8\x01\n\x14\x44\x65scribeCodeTemplate\x12\'.eolymp.judge.DescribeCodeTemplateInput\x1a(.eolymp.judge.DescribeCodeTemplateOutput\"}\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x46\x12\x44/contests/{contest_id}/problems/{problem_id}/templates/{template_id}\x12\xc9\x01\n\x0eListStatements\x12!.eolymp.judge.ListStatementsInput\x1a\".eolymp.judge.ListStatementsOutput\"p\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x39\x12\x37/contests/{contest_id}/problems/{problem_id}/statements\x12\xd1\x01\n\x11\x44\x65scribeEditorial\x12$.eolymp.judge.DescribeEditorialInput\x1a%.eolymp.judge.DescribeEditorialOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x38\x12\x36/contests/{contest_id}/problems/{problem_id}/editorial\x12\xcd\x01\n\x0fListAttachments\x12\".eolymp.judge.ListAttachmentsInput\x1a#.eolymp.judge.ListAttachmentsOutput\"q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02:\x12\x38/contests/{contest_id}/problems/{problem_id}/attachments\x12\xc1\x01\n\x0cListExamples\x12\x1f.eolymp.judge.ListExamplesInput\x1a .eolymp.judge.ListExamplesOutput\"n\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x37\x12\x35/contests/{contest_id}/problems/{problem_id}/examples\x12\xc0\x01\n\x0cListRuntimes\x12\x1f.eolymp.judge.ListRuntimesInput\x1a .eolymp.judge.ListRuntimesOutput\"m\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x19\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x36\x12\x34/contests/{contest_id}/problems/{problem_id}/runtime\x12\xb8\x01\n\x0e\x45xportProblems\x12!.eolymp.judge.ExportProblemsInput\x1a\".eolymp.judge.ExportProblemsOutput\"_\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02(\"&/contests/{contest_id}/problems:export\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/judge/problem_service.proto\x12\x0c\x65olymp.judge\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/atlas/editorial.proto\x1a\x1a\x65olymp/atlas/problem.proto\x1a\x1b\x65olymp/atlas/question.proto\x1a\x1a\x65olymp/judge/problem.proto\x1a\x1b\x65olymp/judge/template.proto\x1a\x1c\x65olymp/runtime/runtime.proto\"\x97\x01\n\x12ImportProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x15\n\timport_id\x18\x02 \x01(\tB\x02\x18\x01\x12\x12\n\nimport_ids\x18\x03 \x03(\t\x12\r\n\x05index\x18\n \x01(\r\x12\x14\n\x0csubmit_limit\x18\x0b \x01(\r\x12\x1d\n\x15score_by_best_testset\x18\x0c \x01(\x08\"B\n\x13ImportProblemOutput\x12\x16\n\nproblem_id\x18\x02 \x01(\tB\x02\x18\x01\x12\x13\n\x0bproblem_ids\x18\x03 \x03(\t\"\xe5\x01\n\x12UpdateProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x35\n\x05patch\x18\x03 \x03(\x0e\x32&.eolymp.judge.UpdateProblemInput.Patch\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12&\n\x07problem\x18\x04 \x01(\x0b\x32\x15.eolymp.judge.Problem\"H\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05INDEX\x10\x01\x12\x10\n\x0cSUBMIT_LIMIT\x10\x02\x12\x19\n\x15SCORE_BY_BEST_TESTSET\x10\x03\"\x15\n\x13UpdateProblemOutput\"<\n\x12\x44\x65leteProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteProblemOutput\"\x89\x01\n\x11ListProblemsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.atlas.Problem.Extra.Field\"I\n\x12ListProblemsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.judge.Problem\"\x82\x01\n\x14\x44\x65scribeProblemInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x06locale\x18\xe2\x08 \x01(\t\x12\x31\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32!.eolymp.atlas.Problem.Extra.Field\"?\n\x15\x44\x65scribeProblemOutput\x12&\n\x07problem\x18\x01 \x01(\x0b\x32\x15.eolymp.judge.Problem\"X\n\x19\x44\x65scribeCodeTemplateInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x13\n\x0btemplate_id\x18\x03 \x01(\t\"F\n\x1a\x44\x65scribeCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.judge.Template\"R\n\x17LookupCodeTemplateInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x07runtime\x18\n \x01(\t\"D\n\x18LookupCodeTemplateOutput\x12(\n\x08template\x18\x01 \x01(\x0b\x32\x16.eolymp.judge.Template\"=\n\x13ListStatementsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"U\n\x14ListStatementsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.eolymp.judge.Problem.Statement\"<\n\x12ListQuestionsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"K\n\x13ListQuestionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12%\n\x05items\x18\x02 \x03(\x0b\x32\x16.eolymp.atlas.Question\"\x85\x01\n\x16\x44\x65scribeEditorialInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x33\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32#.eolymp.atlas.Editorial.Extra.Field\"E\n\x17\x44\x65scribeEditorialOutput\x12*\n\teditorial\x18\x02 \x01(\x0b\x32\x17.eolymp.atlas.Editorial\">\n\x14ListAttachmentsInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"W\n\x15ListAttachmentsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12/\n\x05items\x18\x02 \x03(\x0b\x32 .eolymp.judge.Problem.Attachment\";\n\x11ListExamplesInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"N\n\x12ListExamplesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.judge.Problem.Test\";\n\x11ListRuntimesInput\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\"K\n\x12ListRuntimesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.runtime.Runtime\"K\n\x13\x45xportProblemsInput\x12\x12\n\ncontest_id\x18\x03 \x01(\t\x12\x10\n\x08problems\x18\x01 \x03(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\",\n\x14\x45xportProblemsOutput\x12\x14\n\x0c\x64ownload_url\x18\x01 \x01(\t2\x92\x16\n\x0eProblemService\x12\xaf\x01\n\rImportProblem\x12 .eolymp.judge.ImportProblemInput\x1a!.eolymp.judge.ImportProblemOutput\"Y\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02!\"\x1f/contests/{contest_id}/problems\x12\xbc\x01\n\rUpdateProblem\x12 .eolymp.judge.UpdateProblemInput\x1a!.eolymp.judge.UpdateProblemOutput\"f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02.\",/contests/{contest_id}/problems/{problem_id}\x12\xab\x01\n\x0cListProblems\x12\x1f.eolymp.judge.ListProblemsInput\x1a .eolymp.judge.ListProblemsOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02!\x12\x1f/contests/{contest_id}/problems\x12\xc2\x01\n\x0f\x44\x65scribeProblem\x12\".eolymp.judge.DescribeProblemInput\x1a#.eolymp.judge.DescribeProblemOutput\"f\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xfa\x01\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02.\x12,/contests/{contest_id}/problems/{problem_id}\x12\xbc\x01\n\rDeleteProblem\x12 .eolymp.judge.DeleteProblemInput\x1a!.eolymp.judge.DeleteProblemOutput\"f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13judge:contest:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02.*,/contests/{contest_id}/problems/{problem_id}\x12\xda\x01\n\x12LookupCodeTemplate\x12%.eolymp.judge.LookupCodeTemplateInput\x1a&.eolymp.judge.LookupCodeTemplateOutput\"u\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02>\x12</contests/{contest_id}/problems/{problem_id}/lookup-template\x12\xe8\x01\n\x14\x44\x65scribeCodeTemplate\x12\'.eolymp.judge.DescribeCodeTemplateInput\x1a(.eolymp.judge.DescribeCodeTemplateOutput\"}\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x46\x12\x44/contests/{contest_id}/problems/{problem_id}/templates/{template_id}\x12\xc9\x01\n\x0eListStatements\x12!.eolymp.judge.ListStatementsInput\x1a\".eolymp.judge.ListStatementsOutput\"p\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x39\x12\x37/contests/{contest_id}/problems/{problem_id}/statements\x12\xc5\x01\n\rListQuestions\x12 .eolymp.judge.ListQuestionsInput\x1a!.eolymp.judge.ListQuestionsOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x38\x12\x36/contests/{contest_id}/problems/{problem_id}/questions\x12\xd1\x01\n\x11\x44\x65scribeEditorial\x12$.eolymp.judge.DescribeEditorialInput\x1a%.eolymp.judge.DescribeEditorialOutput\"o\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x38\x12\x36/contests/{contest_id}/problems/{problem_id}/editorial\x12\xcd\x01\n\x0fListAttachments\x12\".eolymp.judge.ListAttachmentsInput\x1a#.eolymp.judge.ListAttachmentsOutput\"q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02:\x12\x38/contests/{contest_id}/problems/{problem_id}/attachments\x12\xc1\x01\n\x0cListExamples\x12\x1f.eolymp.judge.ListExamplesInput\x1a .eolymp.judge.ListExamplesOutput\"n\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x37\x12\x35/contests/{contest_id}/problems/{problem_id}/examples\x12\xc0\x01\n\x0cListRuntimes\x12\x1f.eolymp.judge.ListRuntimesInput\x1a .eolymp.judge.ListRuntimesOutput\"m\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x19\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x36\x12\x34/contests/{contest_id}/problems/{problem_id}/runtime\x12\xb8\x01\n\x0e\x45xportProblems\x12!.eolymp.judge.ExportProblemsInput\x1a\".eolymp.judge.ExportProblemsOutput\"_\xea\xe2\n\x0b\xf5\xe2\n\n\xd7#>\xf8\xe2\n\x05\x82\xe3\n\x16\x8a\xe3\n\x12judge:contest:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02(\"&/contests/{contest_id}/problems:export\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -64,6 +65,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PROBLEMSERVICE'].methods_by_name['DescribeCodeTemplate']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\002F\022D/contests/{contest_id}/problems/{problem_id}/templates/{template_id}'
   _globals['_PROBLEMSERVICE'].methods_by_name['ListStatements']._loaded_options = None
   _globals['_PROBLEMSERVICE'].methods_by_name['ListStatements']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\0029\0227/contests/{contest_id}/problems/{problem_id}/statements'
+  _globals['_PROBLEMSERVICE'].methods_by_name['ListQuestions']._loaded_options = None
+  _globals['_PROBLEMSERVICE'].methods_by_name['ListQuestions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\0028\0226/contests/{contest_id}/problems/{problem_id}/questions'
   _globals['_PROBLEMSERVICE'].methods_by_name['DescribeEditorial']._loaded_options = None
   _globals['_PROBLEMSERVICE'].methods_by_name['DescribeEditorial']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\0028\0226/contests/{contest_id}/problems/{problem_id}/editorial'
   _globals['_PROBLEMSERVICE'].methods_by_name['ListAttachments']._loaded_options = None
@@ -74,60 +77,64 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PROBLEMSERVICE'].methods_by_name['ListRuntimes']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\031\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\0026\0224/contests/{contest_id}/problems/{problem_id}/runtime'
   _globals['_PROBLEMSERVICE'].methods_by_name['ExportProblems']._loaded_options = None
   _globals['_PROBLEMSERVICE'].methods_by_name['ExportProblems']._serialized_options = b'\352\342\n\013\365\342\n\n\327#>\370\342\n\005\202\343\n\026\212\343\n\022judge:contest:read\242\343\n\004\250\343\n\001\202\323\344\223\002(\"&/contests/{contest_id}/problems:export'
-  _globals['_IMPORTPROBLEMINPUT']._serialized_start=365
-  _globals['_IMPORTPROBLEMINPUT']._serialized_end=516
-  _globals['_IMPORTPROBLEMOUTPUT']._serialized_start=518
-  _globals['_IMPORTPROBLEMOUTPUT']._serialized_end=584
-  _globals['_UPDATEPROBLEMINPUT']._serialized_start=587
-  _globals['_UPDATEPROBLEMINPUT']._serialized_end=816
-  _globals['_UPDATEPROBLEMINPUT_PATCH']._serialized_start=744
-  _globals['_UPDATEPROBLEMINPUT_PATCH']._serialized_end=816
-  _globals['_UPDATEPROBLEMOUTPUT']._serialized_start=818
-  _globals['_UPDATEPROBLEMOUTPUT']._serialized_end=839
-  _globals['_DELETEPROBLEMINPUT']._serialized_start=841
-  _globals['_DELETEPROBLEMINPUT']._serialized_end=901
-  _globals['_DELETEPROBLEMOUTPUT']._serialized_start=903
-  _globals['_DELETEPROBLEMOUTPUT']._serialized_end=924
-  _globals['_LISTPROBLEMSINPUT']._serialized_start=927
-  _globals['_LISTPROBLEMSINPUT']._serialized_end=1064
-  _globals['_LISTPROBLEMSOUTPUT']._serialized_start=1066
-  _globals['_LISTPROBLEMSOUTPUT']._serialized_end=1139
-  _globals['_DESCRIBEPROBLEMINPUT']._serialized_start=1142
-  _globals['_DESCRIBEPROBLEMINPUT']._serialized_end=1272
-  _globals['_DESCRIBEPROBLEMOUTPUT']._serialized_start=1274
-  _globals['_DESCRIBEPROBLEMOUTPUT']._serialized_end=1337
-  _globals['_DESCRIBECODETEMPLATEINPUT']._serialized_start=1339
-  _globals['_DESCRIBECODETEMPLATEINPUT']._serialized_end=1427
-  _globals['_DESCRIBECODETEMPLATEOUTPUT']._serialized_start=1429
-  _globals['_DESCRIBECODETEMPLATEOUTPUT']._serialized_end=1499
-  _globals['_LOOKUPCODETEMPLATEINPUT']._serialized_start=1501
-  _globals['_LOOKUPCODETEMPLATEINPUT']._serialized_end=1583
-  _globals['_LOOKUPCODETEMPLATEOUTPUT']._serialized_start=1585
-  _globals['_LOOKUPCODETEMPLATEOUTPUT']._serialized_end=1653
-  _globals['_LISTSTATEMENTSINPUT']._serialized_start=1655
-  _globals['_LISTSTATEMENTSINPUT']._serialized_end=1716
-  _globals['_LISTSTATEMENTSOUTPUT']._serialized_start=1718
-  _globals['_LISTSTATEMENTSOUTPUT']._serialized_end=1803
-  _globals['_DESCRIBEEDITORIALINPUT']._serialized_start=1806
-  _globals['_DESCRIBEEDITORIALINPUT']._serialized_end=1939
-  _globals['_DESCRIBEEDITORIALOUTPUT']._serialized_start=1941
-  _globals['_DESCRIBEEDITORIALOUTPUT']._serialized_end=2010
-  _globals['_LISTATTACHMENTSINPUT']._serialized_start=2012
-  _globals['_LISTATTACHMENTSINPUT']._serialized_end=2074
-  _globals['_LISTATTACHMENTSOUTPUT']._serialized_start=2076
-  _globals['_LISTATTACHMENTSOUTPUT']._serialized_end=2163
-  _globals['_LISTEXAMPLESINPUT']._serialized_start=2165
-  _globals['_LISTEXAMPLESINPUT']._serialized_end=2224
-  _globals['_LISTEXAMPLESOUTPUT']._serialized_start=2226
-  _globals['_LISTEXAMPLESOUTPUT']._serialized_end=2304
-  _globals['_LISTRUNTIMESINPUT']._serialized_start=2306
-  _globals['_LISTRUNTIMESINPUT']._serialized_end=2365
-  _globals['_LISTRUNTIMESOUTPUT']._serialized_start=2367
-  _globals['_LISTRUNTIMESOUTPUT']._serialized_end=2442
-  _globals['_EXPORTPROBLEMSINPUT']._serialized_start=2444
-  _globals['_EXPORTPROBLEMSINPUT']._serialized_end=2519
-  _globals['_EXPORTPROBLEMSOUTPUT']._serialized_start=2521
-  _globals['_EXPORTPROBLEMSOUTPUT']._serialized_end=2565
-  _globals['_PROBLEMSERVICE']._serialized_start=2568
-  _globals['_PROBLEMSERVICE']._serialized_end=5202
+  _globals['_IMPORTPROBLEMINPUT']._serialized_start=394
+  _globals['_IMPORTPROBLEMINPUT']._serialized_end=545
+  _globals['_IMPORTPROBLEMOUTPUT']._serialized_start=547
+  _globals['_IMPORTPROBLEMOUTPUT']._serialized_end=613
+  _globals['_UPDATEPROBLEMINPUT']._serialized_start=616
+  _globals['_UPDATEPROBLEMINPUT']._serialized_end=845
+  _globals['_UPDATEPROBLEMINPUT_PATCH']._serialized_start=773
+  _globals['_UPDATEPROBLEMINPUT_PATCH']._serialized_end=845
+  _globals['_UPDATEPROBLEMOUTPUT']._serialized_start=847
+  _globals['_UPDATEPROBLEMOUTPUT']._serialized_end=868
+  _globals['_DELETEPROBLEMINPUT']._serialized_start=870
+  _globals['_DELETEPROBLEMINPUT']._serialized_end=930
+  _globals['_DELETEPROBLEMOUTPUT']._serialized_start=932
+  _globals['_DELETEPROBLEMOUTPUT']._serialized_end=953
+  _globals['_LISTPROBLEMSINPUT']._serialized_start=956
+  _globals['_LISTPROBLEMSINPUT']._serialized_end=1093
+  _globals['_LISTPROBLEMSOUTPUT']._serialized_start=1095
+  _globals['_LISTPROBLEMSOUTPUT']._serialized_end=1168
+  _globals['_DESCRIBEPROBLEMINPUT']._serialized_start=1171
+  _globals['_DESCRIBEPROBLEMINPUT']._serialized_end=1301
+  _globals['_DESCRIBEPROBLEMOUTPUT']._serialized_start=1303
+  _globals['_DESCRIBEPROBLEMOUTPUT']._serialized_end=1366
+  _globals['_DESCRIBECODETEMPLATEINPUT']._serialized_start=1368
+  _globals['_DESCRIBECODETEMPLATEINPUT']._serialized_end=1456
+  _globals['_DESCRIBECODETEMPLATEOUTPUT']._serialized_start=1458
+  _globals['_DESCRIBECODETEMPLATEOUTPUT']._serialized_end=1528
+  _globals['_LOOKUPCODETEMPLATEINPUT']._serialized_start=1530
+  _globals['_LOOKUPCODETEMPLATEINPUT']._serialized_end=1612
+  _globals['_LOOKUPCODETEMPLATEOUTPUT']._serialized_start=1614
+  _globals['_LOOKUPCODETEMPLATEOUTPUT']._serialized_end=1682
+  _globals['_LISTSTATEMENTSINPUT']._serialized_start=1684
+  _globals['_LISTSTATEMENTSINPUT']._serialized_end=1745
+  _globals['_LISTSTATEMENTSOUTPUT']._serialized_start=1747
+  _globals['_LISTSTATEMENTSOUTPUT']._serialized_end=1832
+  _globals['_LISTQUESTIONSINPUT']._serialized_start=1834
+  _globals['_LISTQUESTIONSINPUT']._serialized_end=1894
+  _globals['_LISTQUESTIONSOUTPUT']._serialized_start=1896
+  _globals['_LISTQUESTIONSOUTPUT']._serialized_end=1971
+  _globals['_DESCRIBEEDITORIALINPUT']._serialized_start=1974
+  _globals['_DESCRIBEEDITORIALINPUT']._serialized_end=2107
+  _globals['_DESCRIBEEDITORIALOUTPUT']._serialized_start=2109
+  _globals['_DESCRIBEEDITORIALOUTPUT']._serialized_end=2178
+  _globals['_LISTATTACHMENTSINPUT']._serialized_start=2180
+  _globals['_LISTATTACHMENTSINPUT']._serialized_end=2242
+  _globals['_LISTATTACHMENTSOUTPUT']._serialized_start=2244
+  _globals['_LISTATTACHMENTSOUTPUT']._serialized_end=2331
+  _globals['_LISTEXAMPLESINPUT']._serialized_start=2333
+  _globals['_LISTEXAMPLESINPUT']._serialized_end=2392
+  _globals['_LISTEXAMPLESOUTPUT']._serialized_start=2394
+  _globals['_LISTEXAMPLESOUTPUT']._serialized_end=2472
+  _globals['_LISTRUNTIMESINPUT']._serialized_start=2474
+  _globals['_LISTRUNTIMESINPUT']._serialized_end=2533
+  _globals['_LISTRUNTIMESOUTPUT']._serialized_start=2535
+  _globals['_LISTRUNTIMESOUTPUT']._serialized_end=2610
+  _globals['_EXPORTPROBLEMSINPUT']._serialized_start=2612
+  _globals['_EXPORTPROBLEMSINPUT']._serialized_end=2687
+  _globals['_EXPORTPROBLEMSOUTPUT']._serialized_start=2689
+  _globals['_EXPORTPROBLEMSOUTPUT']._serialized_end=2733
+  _globals['_PROBLEMSERVICE']._serialized_start=2736
+  _globals['_PROBLEMSERVICE']._serialized_end=5570
 # @@protoc_insertion_point(module_scope)

@@ -4,6 +4,7 @@ from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import code_template_pb2 as _code_template_pb2
+from eolymp.atlas import question_pb2 as _question_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.course import run_service_pb2 as _run_service_pb2
@@ -28,6 +29,18 @@ class ListStatementsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_statement_pb2.Statement]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
+
+class ListQuestionsInput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class ListQuestionsOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_question_pb2.Question]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_question_pb2.Question, _Mapping]]] = ...) -> None: ...
 
 class LookupStatementInput(_message.Message):
     __slots__ = ("locale",)

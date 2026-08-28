@@ -5,6 +5,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.atlas import editorial_pb2 as _editorial_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
+from eolymp.atlas import question_pb2 as _question_pb2
 from eolymp.judge import problem_pb2 as _problem_pb2_1
 from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
@@ -166,6 +167,22 @@ class ListStatementsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_problem_pb2_1.Problem.Statement]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem.Statement, _Mapping]]] = ...) -> None: ...
+
+class ListQuestionsInput(_message.Message):
+    __slots__ = ("contest_id", "problem_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    problem_id: str
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
+
+class ListQuestionsOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_question_pb2.Question]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_question_pb2.Question, _Mapping]]] = ...) -> None: ...
 
 class DescribeEditorialInput(_message.Message):
     __slots__ = ("contest_id", "problem_id", "locale", "extra")
