@@ -18,18 +18,20 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ImportProblemInput(_message.Message):
-    __slots__ = ("import_id", "import_ids", "index", "submit_limit", "score_by_best_testset")
+    __slots__ = ("contest_id", "import_id", "import_ids", "index", "submit_limit", "score_by_best_testset")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     IMPORT_ID_FIELD_NUMBER: _ClassVar[int]
     IMPORT_IDS_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
     SUBMIT_LIMIT_FIELD_NUMBER: _ClassVar[int]
     SCORE_BY_BEST_TESTSET_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     import_id: str
     import_ids: _containers.RepeatedScalarFieldContainer[str]
     index: int
     submit_limit: int
     score_by_best_testset: bool
-    def __init__(self, import_id: _Optional[str] = ..., import_ids: _Optional[_Iterable[str]] = ..., index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., import_id: _Optional[str] = ..., import_ids: _Optional[_Iterable[str]] = ..., index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ...) -> None: ...
 
 class ImportProblemOutput(_message.Message):
     __slots__ = ("problem_id", "problem_ids")
@@ -40,7 +42,7 @@ class ImportProblemOutput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., problem_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class UpdateProblemInput(_message.Message):
-    __slots__ = ("patch", "problem_id", "problem")
+    __slots__ = ("contest_id", "patch", "problem_id", "problem")
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         ALL: _ClassVar[UpdateProblemInput.Patch]
@@ -51,39 +53,45 @@ class UpdateProblemInput(_message.Message):
     INDEX: UpdateProblemInput.Patch
     SUBMIT_LIMIT: UpdateProblemInput.Patch
     SCORE_BY_BEST_TESTSET: UpdateProblemInput.Patch
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PATCH_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     patch: _containers.RepeatedScalarFieldContainer[UpdateProblemInput.Patch]
     problem_id: str
     problem: _problem_pb2_1.Problem
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateProblemInput.Patch, str]]] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2_1.Problem, _Mapping]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., patch: _Optional[_Iterable[_Union[UpdateProblemInput.Patch, str]]] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2_1.Problem, _Mapping]] = ...) -> None: ...
 
 class UpdateProblemOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteProblemInput(_message.Message):
-    __slots__ = ("problem_id",)
+    __slots__ = ("contest_id", "problem_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
 
 class DeleteProblemOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListProblemsInput(_message.Message):
-    __slots__ = ("offset", "size", "locale", "extra")
+    __slots__ = ("contest_id", "offset", "size", "locale", "extra")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     offset: int
     size: int
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
 
 class ListProblemsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -94,14 +102,16 @@ class ListProblemsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem, _Mapping]]] = ...) -> None: ...
 
 class DescribeProblemInput(_message.Message):
-    __slots__ = ("problem_id", "locale", "extra")
+    __slots__ = ("contest_id", "problem_id", "locale", "extra")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problem_id: str
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Extra.Field]
-    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_problem_pb2.Problem.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeProblemOutput(_message.Message):
     __slots__ = ("problem",)
@@ -110,12 +120,14 @@ class DescribeProblemOutput(_message.Message):
     def __init__(self, problem: _Optional[_Union[_problem_pb2_1.Problem, _Mapping]] = ...) -> None: ...
 
 class DescribeCodeTemplateInput(_message.Message):
-    __slots__ = ("problem_id", "template_id")
+    __slots__ = ("contest_id", "problem_id", "template_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problem_id: str
     template_id: str
-    def __init__(self, problem_id: _Optional[str] = ..., template_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., template_id: _Optional[str] = ...) -> None: ...
 
 class DescribeCodeTemplateOutput(_message.Message):
     __slots__ = ("template",)
@@ -124,12 +136,14 @@ class DescribeCodeTemplateOutput(_message.Message):
     def __init__(self, template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class LookupCodeTemplateInput(_message.Message):
-    __slots__ = ("problem_id", "runtime")
+    __slots__ = ("contest_id", "problem_id", "runtime")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problem_id: str
     runtime: str
-    def __init__(self, problem_id: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
 
 class LookupCodeTemplateOutput(_message.Message):
     __slots__ = ("template",)
@@ -138,10 +152,12 @@ class LookupCodeTemplateOutput(_message.Message):
     def __init__(self, template: _Optional[_Union[_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class ListStatementsInput(_message.Message):
-    __slots__ = ("problem_id",)
+    __slots__ = ("contest_id", "problem_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
 
 class ListStatementsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -152,14 +168,16 @@ class ListStatementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem.Statement, _Mapping]]] = ...) -> None: ...
 
 class DescribeEditorialInput(_message.Message):
-    __slots__ = ("problem_id", "locale", "extra")
+    __slots__ = ("contest_id", "problem_id", "locale", "extra")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problem_id: str
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Extra.Field]
-    def __init__(self, problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeEditorialOutput(_message.Message):
     __slots__ = ("editorial",)
@@ -168,10 +186,12 @@ class DescribeEditorialOutput(_message.Message):
     def __init__(self, editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
 
 class ListAttachmentsInput(_message.Message):
-    __slots__ = ("problem_id",)
+    __slots__ = ("contest_id", "problem_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
 
 class ListAttachmentsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -182,10 +202,12 @@ class ListAttachmentsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem.Attachment, _Mapping]]] = ...) -> None: ...
 
 class ListExamplesInput(_message.Message):
-    __slots__ = ("problem_id",)
+    __slots__ = ("contest_id", "problem_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
 
 class ListExamplesOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -196,10 +218,12 @@ class ListExamplesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_problem_pb2_1.Problem.Test, _Mapping]]] = ...) -> None: ...
 
 class ListRuntimesInput(_message.Message):
-    __slots__ = ("problem_id",)
+    __slots__ = ("contest_id", "problem_id")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problem_id: str
-    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ...) -> None: ...
 
 class ListRuntimesOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -210,12 +234,14 @@ class ListRuntimesOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_runtime_pb2.Runtime, _Mapping]]] = ...) -> None: ...
 
 class ExportProblemsInput(_message.Message):
-    __slots__ = ("problems", "locale")
+    __slots__ = ("contest_id", "problems", "locale")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEMS_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
     problems: _containers.RepeatedScalarFieldContainer[str]
     locale: str
-    def __init__(self, problems: _Optional[_Iterable[str]] = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., problems: _Optional[_Iterable[str]] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class ExportProblemsOutput(_message.Message):
     __slots__ = ("download_url",)

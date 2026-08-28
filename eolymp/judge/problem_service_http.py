@@ -15,7 +15,10 @@ class ProblemServiceClient:
         self.url = url
 
     def ImportProblem(self, request, **kwargs):
-        path = "/problems"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class ProblemServiceClient:
         )
 
     def UpdateProblem(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -40,7 +44,10 @@ class ProblemServiceClient:
         )
 
     def ListProblems(self, request, **kwargs):
-        path = "/problems"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -51,9 +58,10 @@ class ProblemServiceClient:
         )
 
     def DescribeProblem(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -65,9 +73,10 @@ class ProblemServiceClient:
         )
 
     def DeleteProblem(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -79,9 +88,10 @@ class ProblemServiceClient:
         )
 
     def LookupCodeTemplate(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/lookup-template"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/lookup-template"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -93,9 +103,10 @@ class ProblemServiceClient:
         )
 
     def DescribeCodeTemplate(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/templates/"+urllib.parse.quote(request.template_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/templates/"+urllib.parse.quote(request.template_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
         request.template_id = ""
 
@@ -108,9 +119,10 @@ class ProblemServiceClient:
         )
 
     def ListStatements(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/statements"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/statements"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -122,9 +134,10 @@ class ProblemServiceClient:
         )
 
     def DescribeEditorial(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/editorial"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/editorial"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -136,9 +149,10 @@ class ProblemServiceClient:
         )
 
     def ListAttachments(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/attachments"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/attachments"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -150,9 +164,10 @@ class ProblemServiceClient:
         )
 
     def ListExamples(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/examples"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/examples"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -164,9 +179,10 @@ class ProblemServiceClient:
         )
 
     def ListRuntimes(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/runtime"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/runtime"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.problem_id = ""
 
         return self.transport.request(
@@ -178,7 +194,10 @@ class ProblemServiceClient:
         )
 
     def ExportProblems(self, request, **kwargs):
-        path = "/problems:export"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems:export"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
