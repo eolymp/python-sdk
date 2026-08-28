@@ -33,16 +33,18 @@ class AchievementAssignedEvent(_message.Message):
     def __init__(self, space_id: _Optional[str] = ..., member_id: _Optional[str] = ..., achievement_id: _Optional[str] = ..., quantity: _Optional[int] = ..., previous_quantity: _Optional[int] = ..., awarded_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class AssignAchievementInput(_message.Message):
-    __slots__ = ("achievement_id", "set_to", "inc_by", "reference")
+    __slots__ = ("member_id", "achievement_id", "set_to", "inc_by", "reference")
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     SET_TO_FIELD_NUMBER: _ClassVar[int]
     INC_BY_FIELD_NUMBER: _ClassVar[int]
     REFERENCE_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
     achievement_id: str
     set_to: int
     inc_by: int
     reference: str
-    def __init__(self, achievement_id: _Optional[str] = ..., set_to: _Optional[int] = ..., inc_by: _Optional[int] = ..., reference: _Optional[str] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., achievement_id: _Optional[str] = ..., set_to: _Optional[int] = ..., inc_by: _Optional[int] = ..., reference: _Optional[str] = ...) -> None: ...
 
 class AssignAchievementOutput(_message.Message):
     __slots__ = ("quantity", "score")
@@ -53,17 +55,19 @@ class AssignAchievementOutput(_message.Message):
     def __init__(self, quantity: _Optional[int] = ..., score: _Optional[int] = ...) -> None: ...
 
 class UnassignAchievementInput(_message.Message):
-    __slots__ = ("achievement_id",)
+    __slots__ = ("member_id", "achievement_id")
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     ACHIEVEMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
     achievement_id: str
-    def __init__(self, achievement_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., achievement_id: _Optional[str] = ...) -> None: ...
 
 class UnassignAchievementOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListAchievementsInput(_message.Message):
-    __slots__ = ("locale", "after", "size", "offset", "filters", "extra")
+    __slots__ = ("member_id", "locale", "after", "size", "offset", "filters", "extra")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "quantity", "score")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -75,19 +79,21 @@ class ListAchievementsInput(_message.Message):
         quantity: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., quantity: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ...) -> None: ...
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
     locale: str
     after: str
     size: int
     offset: int
     filters: ListAchievementsInput.Filter
     extra: _containers.RepeatedScalarFieldContainer[_achievement_pb2.Achievement.Extra]
-    def __init__(self, locale: _Optional[str] = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., locale: _Optional[str] = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., filters: _Optional[_Union[ListAchievementsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_achievement_pb2.Achievement.Extra, str]]] = ...) -> None: ...
 
 class ListAchievementsOutput(_message.Message):
     __slots__ = ("total", "next_page_cursor", "items")

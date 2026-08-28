@@ -15,9 +15,10 @@ class AchievementServiceClient:
         self.url = url
 
     def AssignAchievement(self, request, **kwargs):
-        path = "/achievements/"+urllib.parse.quote(request.achievement_id)
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/achievements/"+urllib.parse.quote(request.achievement_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
         request.achievement_id = ""
 
         return self.transport.request(
@@ -29,9 +30,10 @@ class AchievementServiceClient:
         )
 
     def UnassignAchievement(self, request, **kwargs):
-        path = "/achievements/"+urllib.parse.quote(request.achievement_id)
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/achievements/"+urllib.parse.quote(request.achievement_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
         request.achievement_id = ""
 
         return self.transport.request(
@@ -43,7 +45,10 @@ class AchievementServiceClient:
         )
 
     def ListAchievements(self, request, **kwargs):
-        path = "/achievements"
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/achievements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
 
         return self.transport.request(
             method="GET",
