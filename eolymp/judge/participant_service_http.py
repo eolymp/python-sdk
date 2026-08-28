@@ -15,7 +15,10 @@ class ParticipantServiceClient:
         self.url = url
 
     def AssignParticipant(self, request, **kwargs):
-        path = "/participants"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,9 +29,10 @@ class ParticipantServiceClient:
         )
 
     def EnableParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/enable"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/enable"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -40,9 +44,10 @@ class ParticipantServiceClient:
         )
 
     def DisableParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/disable"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/disable"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -54,9 +59,10 @@ class ParticipantServiceClient:
         )
 
     def UpdateParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -68,9 +74,10 @@ class ParticipantServiceClient:
         )
 
     def DisqualifyParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)+"/disqualify"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/disqualify"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -82,9 +89,10 @@ class ParticipantServiceClient:
         )
 
     def DeleteParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -96,9 +104,10 @@ class ParticipantServiceClient:
         )
 
     def DescribeParticipant(self, request, **kwargs):
-        path = "/participants/"+urllib.parse.quote(request.participant_id)
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
         request.participant_id = ""
 
         return self.transport.request(
@@ -110,7 +119,10 @@ class ParticipantServiceClient:
         )
 
     def ListParticipants(self, request, **kwargs):
-        path = "/participants"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -121,7 +133,10 @@ class ParticipantServiceClient:
         )
 
     def JoinContest(self, request, **kwargs):
-        path = "/join"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/join"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -132,7 +147,10 @@ class ParticipantServiceClient:
         )
 
     def DescribeViewer(self, request, **kwargs):
-        path = "/introspect"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/introspect"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
@@ -143,7 +161,10 @@ class ParticipantServiceClient:
         )
 
     def StartContest(self, request, **kwargs):
-        path = "/start"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/start"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -154,7 +175,10 @@ class ParticipantServiceClient:
         )
 
     def PauseContest(self, request, **kwargs):
-        path = "/pause"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/pause"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="POST",
@@ -165,7 +189,10 @@ class ParticipantServiceClient:
         )
 
     def FinishContest(self, request, **kwargs):
-        path = "/finish"
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/finish"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
 
         return self.transport.request(
             method="GET",
