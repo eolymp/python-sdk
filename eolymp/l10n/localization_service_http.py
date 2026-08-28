@@ -15,7 +15,10 @@ class LocalizationServiceClient:
         self.url = url
 
     def CreateTerm(self, request, **kwargs):
-        path = "/terms"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
 
         return self.transport.request(
             method="POST",
@@ -26,7 +29,10 @@ class LocalizationServiceClient:
         )
 
     def ListTerms(self, request, **kwargs):
-        path = "/terms"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
 
         return self.transport.request(
             method="GET",
@@ -37,9 +43,10 @@ class LocalizationServiceClient:
         )
 
     def UpdateTerm(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
 
         return self.transport.request(
@@ -51,9 +58,10 @@ class LocalizationServiceClient:
         )
 
     def RestoreTerm(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/restore"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)+"/restore"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
 
         return self.transport.request(
@@ -65,9 +73,10 @@ class LocalizationServiceClient:
         )
 
     def DeprecateTerm(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/deprecate"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)+"/deprecate"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
 
         return self.transport.request(
@@ -79,9 +88,10 @@ class LocalizationServiceClient:
         )
 
     def DeleteTerm(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
 
         return self.transport.request(
@@ -93,9 +103,10 @@ class LocalizationServiceClient:
         )
 
     def DescribeTerm(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
 
         return self.transport.request(
@@ -107,7 +118,10 @@ class LocalizationServiceClient:
         )
 
     def ImportTerms(self, request, **kwargs):
-        path = "/terms"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
 
         return self.transport.request(
             method="PUT",
@@ -118,9 +132,10 @@ class LocalizationServiceClient:
         )
 
     def AddLocale(self, request, **kwargs):
-        path = "/locales/"+urllib.parse.quote(request.locale_code)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/locales/"+urllib.parse.quote(request.locale_code)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.locale_code = ""
 
         return self.transport.request(
@@ -132,9 +147,10 @@ class LocalizationServiceClient:
         )
 
     def RemoveLocale(self, request, **kwargs):
-        path = "/locales/"+urllib.parse.quote(request.locale_code)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/locales/"+urllib.parse.quote(request.locale_code)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.locale_code = ""
 
         return self.transport.request(
@@ -146,7 +162,10 @@ class LocalizationServiceClient:
         )
 
     def ListLocales(self, request, **kwargs):
-        path = "/locales"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/locales"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
 
         return self.transport.request(
             method="GET",
@@ -157,9 +176,10 @@ class LocalizationServiceClient:
         )
 
     def TranslateTerm(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/translations"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)+"/translations"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
 
         return self.transport.request(
@@ -171,9 +191,10 @@ class LocalizationServiceClient:
         )
 
     def ListTranslations(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/translations"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)+"/translations"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
 
         return self.transport.request(
@@ -185,9 +206,10 @@ class LocalizationServiceClient:
         )
 
     def DeleteTranslation(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)+"/translations/"+urllib.parse.quote(request.translation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
         request.translation_id = ""
 
@@ -200,9 +222,10 @@ class LocalizationServiceClient:
         )
 
     def SuggestTranslation(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/suggestions/"+urllib.parse.quote(request.locale)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)+"/suggestions/"+urllib.parse.quote(request.locale)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
         request.locale = ""
 
@@ -215,9 +238,10 @@ class LocalizationServiceClient:
         )
 
     def UpdateTranslation(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/translations/"+urllib.parse.quote(request.translation_id)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)+"/translations/"+urllib.parse.quote(request.translation_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
         request.translation_id = ""
 
@@ -230,9 +254,10 @@ class LocalizationServiceClient:
         )
 
     def ApproveTranslation(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/translations/"+urllib.parse.quote(request.translation_id)+"/approve"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)+"/translations/"+urllib.parse.quote(request.translation_id)+"/approve"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
         request.translation_id = ""
 
@@ -245,9 +270,10 @@ class LocalizationServiceClient:
         )
 
     def RejectTranslation(self, request, **kwargs):
-        path = "/terms/"+urllib.parse.quote(request.term_id)+"/translations/"+urllib.parse.quote(request.translation_id)+"/reject"
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/terms/"+urllib.parse.quote(request.term_id)+"/translations/"+urllib.parse.quote(request.translation_id)+"/reject"
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.term_id = ""
         request.translation_id = ""
 
@@ -260,9 +286,10 @@ class LocalizationServiceClient:
         )
 
     def ImportTranslations(self, request, **kwargs):
-        path = "/translations/"+urllib.parse.quote(request.locale)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/translations/"+urllib.parse.quote(request.locale)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.locale = ""
 
         return self.transport.request(
@@ -274,9 +301,10 @@ class LocalizationServiceClient:
         )
 
     def ExportTranslations(self, request, **kwargs):
-        path = "/translations/"+urllib.parse.quote(request.locale)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/translations/"+urllib.parse.quote(request.locale)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.locale = ""
 
         return self.transport.request(
@@ -288,9 +316,10 @@ class LocalizationServiceClient:
         )
 
     def ListTranslationPairs(self, request, **kwargs):
-        path = "/translate/"+urllib.parse.quote(request.locale)
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/translate/"+urllib.parse.quote(request.locale)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
         request.locale = ""
 
         return self.transport.request(
