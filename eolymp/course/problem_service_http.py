@@ -15,7 +15,11 @@ class ProblemServiceClient:
         self.url = url
 
     def ListStatements(self, request, **kwargs):
-        path = "/statements"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/statements"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
@@ -26,7 +30,11 @@ class ProblemServiceClient:
         )
 
     def ListQuestions(self, request, **kwargs):
-        path = "/questions"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/questions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
@@ -37,7 +45,11 @@ class ProblemServiceClient:
         )
 
     def LookupStatement(self, request, **kwargs):
-        path = "/statements:lookup"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/statements:lookup"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
@@ -48,7 +60,11 @@ class ProblemServiceClient:
         )
 
     def ListExamples(self, request, **kwargs):
-        path = "/examples"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/examples"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
@@ -59,7 +75,11 @@ class ProblemServiceClient:
         )
 
     def CreateSubmission(self, request, **kwargs):
-        path = "/submissions"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/submissions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="POST",
@@ -70,7 +90,11 @@ class ProblemServiceClient:
         )
 
     def ListSubmissions(self, request, **kwargs):
-        path = "/submissions"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/submissions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
@@ -81,9 +105,11 @@ class ProblemServiceClient:
         )
 
     def DescribeSubmission(self, request, **kwargs):
-        path = "/submissions/"+urllib.parse.quote(request.submission_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/submissions/"+urllib.parse.quote(request.submission_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
         request.submission_id = ""
 
         return self.transport.request(
@@ -95,7 +121,11 @@ class ProblemServiceClient:
         )
 
     def LookupCodeTemplate(self, request, **kwargs):
-        path = "/template"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/template"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",
@@ -106,7 +136,11 @@ class ProblemServiceClient:
         )
 
     def CreateRun(self, request, **kwargs):
-        path = "/runs"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/runs"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="POST",
@@ -117,9 +151,11 @@ class ProblemServiceClient:
         )
 
     def DescribeRun(self, request, **kwargs):
-        path = "/runs/"+urllib.parse.quote(request.run_id)
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/runs/"+urllib.parse.quote(request.run_id)
 
         # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
         request.run_id = ""
 
         return self.transport.request(
@@ -131,7 +167,11 @@ class ProblemServiceClient:
         )
 
     def ListRuntimes(self, request, **kwargs):
-        path = "/runtime"
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/runtime"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
 
         return self.transport.request(
             method="GET",

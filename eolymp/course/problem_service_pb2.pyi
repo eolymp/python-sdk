@@ -19,8 +19,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListStatementsInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("course_id", "material_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    material_id: str
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ...) -> None: ...
 
 class ListStatementsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -31,8 +35,12 @@ class ListStatementsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_statement_pb2.Statement, _Mapping]]] = ...) -> None: ...
 
 class ListQuestionsInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("course_id", "material_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    material_id: str
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ...) -> None: ...
 
 class ListQuestionsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -43,10 +51,14 @@ class ListQuestionsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_question_pb2.Question, _Mapping]]] = ...) -> None: ...
 
 class LookupStatementInput(_message.Message):
-    __slots__ = ("locale",)
+    __slots__ = ("course_id", "material_id", "locale")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    material_id: str
     locale: str
-    def __init__(self, locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class LookupStatementOutput(_message.Message):
     __slots__ = ("statement",)
@@ -55,8 +67,12 @@ class LookupStatementOutput(_message.Message):
     def __init__(self, statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
 
 class ListExamplesInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("course_id", "material_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    material_id: str
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ...) -> None: ...
 
 class ListExamplesOutput(_message.Message):
     __slots__ = ("examples",)
@@ -65,10 +81,14 @@ class ListExamplesOutput(_message.Message):
     def __init__(self, examples: _Optional[_Iterable[_Union[_testing_test_pb2.Test, _Mapping]]] = ...) -> None: ...
 
 class LookupCodeTemplateInput(_message.Message):
-    __slots__ = ("runtime",)
+    __slots__ = ("course_id", "material_id", "runtime")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    material_id: str
     runtime: str
-    def __init__(self, runtime: _Optional[str] = ...) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
 
 class LookupCodeTemplateOutput(_message.Message):
     __slots__ = ("template",)
@@ -77,8 +97,12 @@ class LookupCodeTemplateOutput(_message.Message):
     def __init__(self, template: _Optional[_Union[_code_template_pb2.Template, _Mapping]] = ...) -> None: ...
 
 class ListRuntimesInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("course_id", "material_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    material_id: str
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ...) -> None: ...
 
 class ListRuntimesOutput(_message.Message):
     __slots__ = ("total", "items")
