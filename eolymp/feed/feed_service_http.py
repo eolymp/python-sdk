@@ -15,7 +15,10 @@ class FeedServiceClient:
         self.url = url
 
     def ListEntries(self, request, **kwargs):
-        path = "/feed"
+        path = "/members/"+urllib.parse.quote(request.member_id)+"/feed"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.member_id = ""
 
         return self.transport.request(
             method="GET",

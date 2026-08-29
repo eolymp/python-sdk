@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListEntriesInput(_message.Message):
-    __slots__ = ("size", "after", "filters")
+    __slots__ = ("member_id", "size", "after", "filters")
     class Filter(_message.Message):
         __slots__ = ("member_id", "type")
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -21,13 +21,15 @@ class ListEntriesInput(_message.Message):
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         type: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    member_id: str
     size: int
     after: str
     filters: ListEntriesInput.Filter
-    def __init__(self, size: _Optional[int] = ..., after: _Optional[str] = ..., filters: _Optional[_Union[ListEntriesInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., size: _Optional[int] = ..., after: _Optional[str] = ..., filters: _Optional[_Union[ListEntriesInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListEntriesOutput(_message.Message):
     __slots__ = ("total", "items", "next_page_cursor")

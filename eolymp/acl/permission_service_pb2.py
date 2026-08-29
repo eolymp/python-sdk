@@ -29,7 +29,7 @@ from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_names
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/acl/permission_service.proto\x12\neolymp.acl\x1a\x17\x65olymp/acl/action.proto\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\".\n\x1aIntrospectPermissionsInput\x12\x10\n\x08resource\x18\x01 \x01(\t\"B\n\x1bIntrospectPermissionsOutput\x12#\n\x07\x61\x63tions\x18\x01 \x03(\x0e\x32\x12.eolymp.acl.Action2\xfc\x01\n\x11PermissionService\x12\x95\x01\n\x15IntrospectPermissions\x12&.eolymp.acl.IntrospectPermissionsInput\x1a\'.eolymp.acl.IntrospectPermissionsOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0e\"\x0c/permissions\x1aO\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.Space\x82\xf0\xf0\xe4\x01\x14\x65olymp.judge.Contest\x82\xf0\xf0\xe4\x01\x14\x65olymp.course.CourseB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/acl/permission_service.proto\x12\neolymp.acl\x1a\x17\x65olymp/acl/action.proto\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\".\n\x1aIntrospectPermissionsInput\x12\x10\n\x08resource\x18\x01 \x01(\t\"B\n\x1bIntrospectPermissionsOutput\x12#\n\x07\x61\x63tions\x18\x01 \x03(\x0e\x32\x12.eolymp.acl.Action2\xc8\x01\n\x11PermissionService\x12\x95\x01\n\x15IntrospectPermissions\x12&.eolymp.acl.IntrospectPermissionsInput\x1a\'.eolymp.acl.IntrospectPermissionsOutput\"+\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0e\"\x0c/permissions\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,7 +38,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z\'github.com/eolymp/go-sdk/eolymp/acl;acl'
   _globals['_PERMISSIONSERVICE']._loaded_options = None
-  _globals['_PERMISSIONSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space\202\360\360\344\001\024eolymp.judge.Contest\202\360\360\344\001\024eolymp.course.Course'
+  _globals['_PERMISSIONSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_PERMISSIONSERVICE'].methods_by_name['IntrospectPermissions']._loaded_options = None
   _globals['_PERMISSIONSERVICE'].methods_by_name['IntrospectPermissions']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\n\024\242\343\n\004\250\343\n\001\202\323\344\223\002\016\"\014/permissions'
   _globals['_INTROSPECTPERMISSIONSINPUT']._serialized_start=211
@@ -46,5 +46,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_INTROSPECTPERMISSIONSOUTPUT']._serialized_start=259
   _globals['_INTROSPECTPERMISSIONSOUTPUT']._serialized_end=325
   _globals['_PERMISSIONSERVICE']._serialized_start=328
-  _globals['_PERMISSIONSERVICE']._serialized_end=580
+  _globals['_PERMISSIONSERVICE']._serialized_end=528
 # @@protoc_insertion_point(module_scope)
