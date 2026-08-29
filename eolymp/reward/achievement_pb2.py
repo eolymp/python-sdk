@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/reward/achievement.proto\x12\reolymp.reward\x1a\x18\x65olymp/ecm/content.proto\"\xd4\x02\n\x0b\x41\x63hievement\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r\x12\x0e\n\x06rarity\x18\x03 \x01(\r\x12\x11\n\tthreshold\x18\x04 \x01(\r\x12\x13\n\x0bmulti_award\x18\x05 \x01(\x08\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0c \x01(\t\x12$\n\x07summary\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\t\x1a]\n\x0bTranslation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x66 \x01(\t\x12\x0c\n\x04name\x18g \x01(\t\x12$\n\x07summary\x18h \x01(\x0b\x32\x13.eolymp.ecm.Content\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x11\n\rSUMMARY_VALUE\x10\x01\x12\x12\n\x0eSUMMARY_RENDER\x10\x02\x42/Z-github.com/eolymp/go-sdk/eolymp/reward;rewardb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/reward/achievement.proto\x12\reolymp.reward\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\"\xae\n\n\x0b\x41\x63hievement\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12g\n\x05value\x18\x02 \x01(\rBX\xa2\xf0\xf0\xe4\x01Rhow prestigious the achievement is; the list is ordered by it, most valuable first\x12\x16\n\x06rarity\x18\x03 \x01(\rB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\xa1\x01\n\tthreshold\x18\x04 \x01(\rB\x8d\x01\xa2\xf0\xf0\xe4\x01\x86\x01score a member must accumulate to earn the achievement once: 1 for a one-off badge, 50 for a \"solve 50 problems\" award (defaults to 1)\x12\xbc\x01\n\x0bmulti_award\x18\x05 \x01(\x08\x42\xa6\x01\xa2\xf0\xf0\xe4\x01\x9f\x01whether the achievement can be earned more than once: true awards it once per threshold reached, false caps it at a single award however much score accumulates\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0c \x01(\t\x12$\n\x07summary\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06locale\x18\r \x01(\t\x12\x17\n\x07locales\x18\x0e \x03(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x16\n\x06\x63ursor\x18\x64 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a\xe0\x04\n\x05Patch\x12l\n\x05value\x18\x02 \x01(\rBX\xa2\xf0\xf0\xe4\x01Rhow prestigious the achievement is; the list is ordered by it, most valuable firstH\x00\x88\x01\x01\x12\x94\x01\n\tthreshold\x18\x04 \x01(\rB|\xa2\xf0\xf0\xe4\x01vscore a member must accumulate to earn the achievement once: 1 for a one-off badge, 50 for a \"solve 50 problems\" awardH\x01\x88\x01\x01\x12\xc1\x01\n\x0bmulti_award\x18\x05 \x01(\x08\x42\xa6\x01\xa2\xf0\xf0\xe4\x01\x9f\x01whether the achievement can be earned more than once: true awards it once per threshold reached, false caps it at a single award however much score accumulatesH\x02\x88\x01\x01\x12\x11\n\x04name\x18\n \x01(\tH\x03\x88\x01\x01\x12\x16\n\timage_url\x18\x0c \x01(\tH\x04\x88\x01\x01\x12$\n\x07summary\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.ContentB\x08\n\x06_valueB\x0c\n\n_thresholdB\x0e\n\x0c_multi_awardB\x07\n\x05_nameB\x0c\n\n_image_url\"<\n\x05\x45xtra\x12\x0c\n\x08NO_EXTRA\x10\x00\x12\x11\n\rSUMMARY_VALUE\x10\x01\x12\x12\n\x0eSUMMARY_RENDER\x10\x02\x42/Z-github.com/eolymp/go-sdk/eolymp/reward;rewardb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,10 +34,30 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.reward.achievement_p
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/reward;reward'
-  _globals['_ACHIEVEMENT']._serialized_start=77
-  _globals['_ACHIEVEMENT']._serialized_end=417
-  _globals['_ACHIEVEMENT_TRANSLATION']._serialized_start=262
-  _globals['_ACHIEVEMENT_TRANSLATION']._serialized_end=355
-  _globals['_ACHIEVEMENT_EXTRA']._serialized_start=357
-  _globals['_ACHIEVEMENT_EXTRA']._serialized_end=417
+  _globals['_ACHIEVEMENT_PATCH'].fields_by_name['value']._loaded_options = None
+  _globals['_ACHIEVEMENT_PATCH'].fields_by_name['value']._serialized_options = b'\242\360\360\344\001Rhow prestigious the achievement is; the list is ordered by it, most valuable first'
+  _globals['_ACHIEVEMENT_PATCH'].fields_by_name['threshold']._loaded_options = None
+  _globals['_ACHIEVEMENT_PATCH'].fields_by_name['threshold']._serialized_options = b'\242\360\360\344\001vscore a member must accumulate to earn the achievement once: 1 for a one-off badge, 50 for a \"solve 50 problems\" award'
+  _globals['_ACHIEVEMENT_PATCH'].fields_by_name['multi_award']._loaded_options = None
+  _globals['_ACHIEVEMENT_PATCH'].fields_by_name['multi_award']._serialized_options = b'\242\360\360\344\001\237\001whether the achievement can be earned more than once: true awards it once per threshold reached, false caps it at a single award however much score accumulates'
+  _globals['_ACHIEVEMENT'].fields_by_name['id']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_ACHIEVEMENT'].fields_by_name['value']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['value']._serialized_options = b'\242\360\360\344\001Rhow prestigious the achievement is; the list is ordered by it, most valuable first'
+  _globals['_ACHIEVEMENT'].fields_by_name['rarity']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['rarity']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_ACHIEVEMENT'].fields_by_name['threshold']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['threshold']._serialized_options = b'\242\360\360\344\001\206\001score a member must accumulate to earn the achievement once: 1 for a one-off badge, 50 for a \"solve 50 problems\" award (defaults to 1)'
+  _globals['_ACHIEVEMENT'].fields_by_name['multi_award']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['multi_award']._serialized_options = b'\242\360\360\344\001\237\001whether the achievement can be earned more than once: true awards it once per threshold reached, false caps it at a single award however much score accumulates'
+  _globals['_ACHIEVEMENT'].fields_by_name['locales']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['locales']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_ACHIEVEMENT'].fields_by_name['cursor']._loaded_options = None
+  _globals['_ACHIEVEMENT'].fields_by_name['cursor']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_ACHIEVEMENT']._serialized_start=107
+  _globals['_ACHIEVEMENT']._serialized_end=1433
+  _globals['_ACHIEVEMENT_PATCH']._serialized_start=763
+  _globals['_ACHIEVEMENT_PATCH']._serialized_end=1371
+  _globals['_ACHIEVEMENT_EXTRA']._serialized_start=1373
+  _globals['_ACHIEVEMENT_EXTRA']._serialized_end=1433
 # @@protoc_insertion_point(module_scope)
