@@ -12,8 +12,10 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeSubscriptionInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("thread_id",)
+    THREAD_ID_FIELD_NUMBER: _ClassVar[int]
+    thread_id: str
+    def __init__(self, thread_id: _Optional[str] = ...) -> None: ...
 
 class DescribeSubscriptionOutput(_message.Message):
     __slots__ = ("subscription",)
@@ -22,10 +24,12 @@ class DescribeSubscriptionOutput(_message.Message):
     def __init__(self, subscription: _Optional[_Union[_subscription_pb2.Subscription, _Mapping]] = ...) -> None: ...
 
 class UpdateSubscriptionInput(_message.Message):
-    __slots__ = ("subscription",)
+    __slots__ = ("thread_id", "subscription")
+    THREAD_ID_FIELD_NUMBER: _ClassVar[int]
     SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    thread_id: str
     subscription: _subscription_pb2.Subscription
-    def __init__(self, subscription: _Optional[_Union[_subscription_pb2.Subscription, _Mapping]] = ...) -> None: ...
+    def __init__(self, thread_id: _Optional[str] = ..., subscription: _Optional[_Union[_subscription_pb2.Subscription, _Mapping]] = ...) -> None: ...
 
 class UpdateSubscriptionOutput(_message.Message):
     __slots__ = ()

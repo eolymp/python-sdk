@@ -30,7 +30,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.discussion import subscription_pb2 as eolymp_dot_discussion_dot_subscription__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/discussion/subscription_service.proto\x12\x11\x65olymp.discussion\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a$eolymp/discussion/subscription.proto\"\x1b\n\x19\x44\x65scribeSubscriptionInput\"S\n\x1a\x44\x65scribeSubscriptionOutput\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"P\n\x17UpdateSubscriptionInput\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"\x1a\n\x18UpdateSubscriptionOutput2\xd6\x03\n\x13SubscriptionService\x12\xc6\x01\n\x14\x44\x65scribeSubscription\x12,.eolymp.discussion.DescribeSubscriptionInput\x1a-.eolymp.discussion.DescribeSubscriptionOutput\"Q\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n \x8a\xe3\n\x1c\x64iscussion:subscription:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0f\x12\r/subscription\x12\xc0\x01\n\x12UpdateSubscription\x12*.eolymp.discussion.UpdateSubscriptionInput\x1a+.eolymp.discussion.UpdateSubscriptionOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n!\x8a\xe3\n\x1d\x64iscussion:subscription:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x0f\x1a\r/subscription\x1a\x33\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.Problem\x82\xf0\xf0\xe4\x01\x13\x65olymp.content.PostB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/discussion/subscription_service.proto\x12\x11\x65olymp.discussion\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a$eolymp/discussion/subscription.proto\".\n\x19\x44\x65scribeSubscriptionInput\x12\x11\n\tthread_id\x18\x01 \x01(\t\"S\n\x1a\x44\x65scribeSubscriptionOutput\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"c\n\x17UpdateSubscriptionInput\x12\x11\n\tthread_id\x18\x02 \x01(\t\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"\x1a\n\x18UpdateSubscriptionOutput2\xd6\x03\n\x13SubscriptionService\x12\xc6\x01\n\x14\x44\x65scribeSubscription\x12,.eolymp.discussion.DescribeSubscriptionInput\x1a-.eolymp.discussion.DescribeSubscriptionOutput\"Q\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n \x8a\xe3\n\x1c\x64iscussion:subscription:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0f\x12\r/subscription\x12\xc0\x01\n\x12UpdateSubscription\x12*.eolymp.discussion.UpdateSubscriptionInput\x1a+.eolymp.discussion.UpdateSubscriptionOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n!\x8a\xe3\n\x1d\x64iscussion:subscription:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x0f\x1a\r/subscription\x1a\x33\x82\xf0\xf0\xe4\x01\x14\x65olymp.atlas.Problem\x82\xf0\xf0\xe4\x01\x13\x65olymp.content.PostB7Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,13 +45,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SUBSCRIPTIONSERVICE'].methods_by_name['UpdateSubscription']._loaded_options = None
   _globals['_SUBSCRIPTIONSERVICE'].methods_by_name['UpdateSubscription']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n!\212\343\n\035discussion:subscription:write\242\343\n\004\250\343\n\002\202\323\344\223\002\017\032\r/subscription'
   _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_start=272
-  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_end=299
-  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_start=301
-  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_end=384
-  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_start=386
-  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_end=466
-  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_start=468
-  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_end=494
-  _globals['_SUBSCRIPTIONSERVICE']._serialized_start=497
-  _globals['_SUBSCRIPTIONSERVICE']._serialized_end=967
+  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_end=318
+  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_start=320
+  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_end=403
+  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_start=405
+  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_end=504
+  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_start=506
+  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_end=532
+  _globals['_SUBSCRIPTIONSERVICE']._serialized_start=535
+  _globals['_SUBSCRIPTIONSERVICE']._serialized_end=1005
 # @@protoc_insertion_point(module_scope)
