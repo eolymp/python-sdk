@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.universe import quota_pb2 as eolymp_dot_universe_dot_quota__pb2
 from eolymp.universe import space_pb2 as eolymp_dot_universe_dot_space__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/universe/events.proto\x12\x0f\x65olymp.universe\x1a\x1b\x65olymp/universe/space.proto\"b\n\x11SpaceChangedEvent\x12&\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\x12%\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/universe/events.proto\x12\x0f\x65olymp.universe\x1a\x1b\x65olymp/universe/quota.proto\x1a\x1b\x65olymp/universe/space.proto\"b\n\x11SpaceChangedEvent\x12&\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x16.eolymp.universe.Space\x12%\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.Space\"t\n\x11QuotaChangedEvent\x12\x10\n\x08space_id\x18\x01 \x01(\t\x12&\n\x06\x62\x65\x66ore\x18\x02 \x01(\x0b\x32\x16.eolymp.universe.Quota\x12%\n\x05\x61\x66ter\x18\x03 \x01(\x0b\x32\x16.eolymp.universe.QuotaB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,6 +34,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.universe.events_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/universe;universe'
-  _globals['_SPACECHANGEDEVENT']._serialized_start=78
-  _globals['_SPACECHANGEDEVENT']._serialized_end=176
+  _globals['_SPACECHANGEDEVENT']._serialized_start=107
+  _globals['_SPACECHANGEDEVENT']._serialized_end=205
+  _globals['_QUOTACHANGEDEVENT']._serialized_start=207
+  _globals['_QUOTACHANGEDEVENT']._serialized_end=323
 # @@protoc_insertion_point(module_scope)
