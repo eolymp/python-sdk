@@ -39,3 +39,17 @@ class LogServiceClient:
             **kwargs,
         )
 
+    def InterruptLog(self, request, **kwargs):
+        path = "/automation/logs/"+urllib.parse.quote(request.log_id)+"/interrupt"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.log_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.automation.InterruptLogOutput"),
+            **kwargs,
+        )
+

@@ -86,3 +86,13 @@ class WatchLogOutput(_message.Message):
     log: _log_pb2.Log
     message: _log_pb2.Log.Message
     def __init__(self, event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ..., log: _Optional[_Union[_log_pb2.Log, _Mapping]] = ..., message: _Optional[_Union[_log_pb2.Log.Message, _Mapping]] = ...) -> None: ...
+
+class InterruptLogInput(_message.Message):
+    __slots__ = ("log_id",)
+    LOG_ID_FIELD_NUMBER: _ClassVar[int]
+    log_id: str
+    def __init__(self, log_id: _Optional[str] = ...) -> None: ...
+
+class InterruptLogOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

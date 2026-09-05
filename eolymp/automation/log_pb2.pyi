@@ -20,11 +20,13 @@ class Log(_message.Message):
         EXECUTING: _ClassVar[Log.Status]
         COMPLETE: _ClassVar[Log.Status]
         ERROR: _ClassVar[Log.Status]
+        INTERRUPTED: _ClassVar[Log.Status]
     UNKNOWN_STATUS: Log.Status
     PENDING: Log.Status
     EXECUTING: Log.Status
     COMPLETE: Log.Status
     ERROR: Log.Status
+    INTERRUPTED: Log.Status
     class ToolCall(_message.Message):
         __slots__ = ("id", "name", "status", "arguments", "result", "error")
         class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
