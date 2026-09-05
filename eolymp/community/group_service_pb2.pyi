@@ -70,7 +70,7 @@ class DescribeGroupOutput(_message.Message):
     def __init__(self, group: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
 
 class ListGroupsInput(_message.Message):
-    __slots__ = ("offset", "size", "filters")
+    __slots__ = ("offset", "size", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "external_ref", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -84,11 +84,13 @@ class ListGroupsInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    search: str
     filters: ListGroupsInput.Filter
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListGroupsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListGroupsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListGroupsOutput(_message.Message):
     __slots__ = ("total", "items")

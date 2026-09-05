@@ -25,7 +25,7 @@ class DescribeCountryOutput(_message.Message):
     def __init__(self, country: _Optional[_Union[_geography_country_pb2.Country, _Mapping]] = ...) -> None: ...
 
 class ListCountriesInput(_message.Message):
-    __slots__ = ("offset", "size", "filters")
+    __slots__ = ("offset", "size", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -37,11 +37,13 @@ class ListCountriesInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    search: str
     filters: ListCountriesInput.Filter
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListCountriesInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListCountriesInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListCountriesOutput(_message.Message):
     __slots__ = ("items", "total")
@@ -64,7 +66,7 @@ class DescribeRegionOutput(_message.Message):
     def __init__(self, region: _Optional[_Union[_geography_region_pb2.Region, _Mapping]] = ...) -> None: ...
 
 class ListRegionsInput(_message.Message):
-    __slots__ = ("offset", "size", "filters")
+    __slots__ = ("offset", "size", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "country_id", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -78,11 +80,13 @@ class ListRegionsInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., country_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    search: str
     filters: ListRegionsInput.Filter
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListRegionsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListRegionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListRegionsOutput(_message.Message):
     __slots__ = ("items", "total")

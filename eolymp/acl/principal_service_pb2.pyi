@@ -64,7 +64,7 @@ class DescribePrincipalOutput(_message.Message):
     def __init__(self, principal: _Optional[_Union[_principal_pb2.Principal, _Mapping]] = ...) -> None: ...
 
 class ListPrincipalsInput(_message.Message):
-    __slots__ = ("offset", "size", "filters", "sort", "order")
+    __slots__ = ("offset", "size", "search", "filters", "sort", "order")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListPrincipalsInput.Sortable]
@@ -84,15 +84,17 @@ class ListPrincipalsInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    search: str
     filters: ListPrincipalsInput.Filter
     sort: ListPrincipalsInput.Sortable
     order: _direction_pb2.Direction
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListPrincipalsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListPrincipalsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListPrincipalsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListPrincipalsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListPrincipalsOutput(_message.Message):
     __slots__ = ("total", "items")

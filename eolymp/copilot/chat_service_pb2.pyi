@@ -38,7 +38,7 @@ class DescribeChatOutput(_message.Message):
     def __init__(self, chat: _Optional[_Union[_chat_pb2.Chat, _Mapping]] = ...) -> None: ...
 
 class ListChatsInput(_message.Message):
-    __slots__ = ("offset", "size", "query", "filters", "sort", "order")
+    __slots__ = ("offset", "size", "search", "query", "filters", "sort", "order")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListChatsInput.Sortable]
@@ -56,17 +56,19 @@ class ListChatsInput(_message.Message):
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., archived: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     QUERY_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    search: str
     query: str
     filters: ListChatsInput.Filter
     sort: ListChatsInput.Sortable
     order: _direction_pb2.Direction
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., query: _Optional[str] = ..., filters: _Optional[_Union[ListChatsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListChatsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., query: _Optional[str] = ..., filters: _Optional[_Union[ListChatsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListChatsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ...) -> None: ...
 
 class ListChatsOutput(_message.Message):
     __slots__ = ("total", "items")

@@ -47,7 +47,7 @@ class DescribeMessageOutput(_message.Message):
     def __init__(self, message: _Optional[_Union[_message_pb2.Message, _Mapping]] = ...) -> None: ...
 
 class ListMessagesInput(_message.Message):
-    __slots__ = ("thread_id", "render", "after", "size", "sort", "order", "filters", "extra")
+    __slots__ = ("thread_id", "render", "after", "size", "sort", "order", "search", "filters", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListMessagesInput.Sortable]
@@ -83,6 +83,7 @@ class ListMessagesInput(_message.Message):
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     thread_id: str
@@ -91,9 +92,10 @@ class ListMessagesInput(_message.Message):
     size: int
     sort: ListMessagesInput.Sortable
     order: _direction_pb2.Direction
+    search: str
     filters: ListMessagesInput.Filter
     extra: _containers.RepeatedScalarFieldContainer[_message_pb2.Message.Extra]
-    def __init__(self, thread_id: _Optional[str] = ..., render: _Optional[bool] = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., sort: _Optional[_Union[ListMessagesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListMessagesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_message_pb2.Message.Extra, str]]] = ...) -> None: ...
+    def __init__(self, thread_id: _Optional[str] = ..., render: _Optional[bool] = ..., after: _Optional[str] = ..., size: _Optional[int] = ..., sort: _Optional[_Union[ListMessagesInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListMessagesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_message_pb2.Message.Extra, str]]] = ...) -> None: ...
 
 class ListMessagesOutput(_message.Message):
     __slots__ = ("total", "items")

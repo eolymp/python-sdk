@@ -48,7 +48,7 @@ class ImportTermsOutput(_message.Message):
     def __init__(self, created_count: _Optional[int] = ..., updated_count: _Optional[int] = ..., deprecated_count: _Optional[int] = ...) -> None: ...
 
 class ListTermsInput(_message.Message):
-    __slots__ = ("project_id", "offset", "size", "filters")
+    __slots__ = ("project_id", "offset", "size", "search", "filters")
     class ExpressionTranslation(_message.Message):
         __slots__ = ("locale", "status")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -74,12 +74,14 @@ class ListTermsInput(_message.Message):
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     project_id: str
     offset: int
     size: int
+    search: str
     filters: ListTermsInput.Filter
-    def __init__(self, project_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTermsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, project_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListTermsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListTermsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -399,7 +401,7 @@ class ExportTranslationsOutput(_message.Message):
     def __init__(self, translations: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListTranslationPairsInput(_message.Message):
-    __slots__ = ("project_id", "locale", "source", "size", "offset", "after", "before", "filters")
+    __slots__ = ("project_id", "locale", "source", "size", "offset", "after", "before", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("query", "term_key", "term_status", "source_message", "translation_status", "translation_message")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -422,6 +424,7 @@ class ListTranslationPairsInput(_message.Message):
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     AFTER_FIELD_NUMBER: _ClassVar[int]
     BEFORE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     project_id: str
     locale: str
@@ -430,8 +433,9 @@ class ListTranslationPairsInput(_message.Message):
     offset: int
     after: str
     before: str
+    search: str
     filters: ListTranslationPairsInput.Filter
-    def __init__(self, project_id: _Optional[str] = ..., locale: _Optional[str] = ..., source: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., after: _Optional[str] = ..., before: _Optional[str] = ..., filters: _Optional[_Union[ListTranslationPairsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, project_id: _Optional[str] = ..., locale: _Optional[str] = ..., source: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., after: _Optional[str] = ..., before: _Optional[str] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListTranslationPairsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListTranslationPairsOutput(_message.Message):
     __slots__ = ("total", "has_more", "items")

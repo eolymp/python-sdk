@@ -24,7 +24,7 @@ class DescribeInstitutionOutput(_message.Message):
     def __init__(self, institution: _Optional[_Union[_institution_pb2.Institution, _Mapping]] = ...) -> None: ...
 
 class ListInstitutionsInput(_message.Message):
-    __slots__ = ("offset", "size", "filters")
+    __slots__ = ("offset", "size", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "name", "acronym", "country_id", "region_id", "level", "type", "governance")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -48,11 +48,13 @@ class ListInstitutionsInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., acronym: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., country_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., region_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., level: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., governance: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    search: str
     filters: ListInstitutionsInput.Filter
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListInstitutionsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListInstitutionsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListInstitutionsOutput(_message.Message):
     __slots__ = ("total", "items")

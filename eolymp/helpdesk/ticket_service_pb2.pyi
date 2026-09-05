@@ -63,7 +63,7 @@ class DescribeTicketOutput(_message.Message):
     def __init__(self, ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
 
 class ListTicketsInput(_message.Message):
-    __slots__ = ("render", "offset", "size", "filters")
+    __slots__ = ("render", "offset", "size", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "user_id", "user_email", "status", "type", "created_at", "updated_at", "locale")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -88,12 +88,14 @@ class ListTicketsInput(_message.Message):
     RENDER_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     render: bool
     offset: int
     size: int
+    search: str
     filters: ListTicketsInput.Filter
-    def __init__(self, render: _Optional[bool] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListTicketsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, render: _Optional[bool] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListTicketsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListTicketsOutput(_message.Message):
     __slots__ = ("total", "items")

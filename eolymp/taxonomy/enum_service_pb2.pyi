@@ -69,7 +69,7 @@ class DescribeEnumOutput(_message.Message):
     def __init__(self, enum: _Optional[_Union[_enum_pb2.Enum, _Mapping]] = ...) -> None: ...
 
 class ListEnumsInput(_message.Message):
-    __slots__ = ("offset", "size", "filters")
+    __slots__ = ("offset", "size", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -81,11 +81,13 @@ class ListEnumsInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    search: str
     filters: ListEnumsInput.Filter
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListEnumsInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListEnumsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListEnumsOutput(_message.Message):
     __slots__ = ("total", "items")
@@ -168,7 +170,7 @@ class DescribeValueOutput(_message.Message):
     def __init__(self, value: _Optional[_Union[_enum_value_pb2.Value, _Mapping]] = ...) -> None: ...
 
 class ListValuesInput(_message.Message):
-    __slots__ = ("enum_id", "offset", "size", "filters", "locale")
+    __slots__ = ("enum_id", "offset", "size", "search", "filters", "locale")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "name")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -181,14 +183,16 @@ class ListValuesInput(_message.Message):
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     enum_id: str
     offset: int
     size: int
+    search: str
     filters: ListValuesInput.Filter
     locale: str
-    def __init__(self, enum_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListValuesInput.Filter, _Mapping]] = ..., locale: _Optional[str] = ...) -> None: ...
+    def __init__(self, enum_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListValuesInput.Filter, _Mapping]] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class ListValuesOutput(_message.Message):
     __slots__ = ("total", "items")

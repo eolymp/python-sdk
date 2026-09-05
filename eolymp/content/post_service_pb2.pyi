@@ -53,7 +53,7 @@ class DescribePostOutput(_message.Message):
     def __init__(self, post: _Optional[_Union[_post_pb2.Post, _Mapping]] = ...) -> None: ...
 
 class ListPostsInput(_message.Message):
-    __slots__ = ("after", "size", "offset", "sort", "order", "filters", "locale", "extra")
+    __slots__ = ("after", "size", "offset", "sort", "order", "search", "filters", "locale", "extra")
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_SORT: _ClassVar[ListPostsInput.Sort]
@@ -102,6 +102,7 @@ class ListPostsInput(_message.Message):
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
@@ -110,10 +111,11 @@ class ListPostsInput(_message.Message):
     offset: int
     sort: ListPostsInput.Sort
     order: _direction_pb2.Direction
+    search: str
     filters: ListPostsInput.Filter
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_post_pb2.Post.Extra]
-    def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., sort: _Optional[_Union[ListPostsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., filters: _Optional[_Union[ListPostsInput.Filter, _Mapping]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
+    def __init__(self, after: _Optional[str] = ..., size: _Optional[int] = ..., offset: _Optional[int] = ..., sort: _Optional[_Union[ListPostsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListPostsInput.Filter, _Mapping]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_post_pb2.Post.Extra, str]]] = ...) -> None: ...
 
 class ListPostsOutput(_message.Message):
     __slots__ = ("total", "items", "next_page_cursor")

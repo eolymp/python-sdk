@@ -29,7 +29,7 @@ from eolymp.taxonomy import institution_pb2 as eolymp_dot_taxonomy_dot_instituti
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/taxonomy/institution_service.proto\x12\x0f\x65olymp.taxonomy\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a!eolymp/taxonomy/institution.proto\x1a!eolymp/wellknown/expression.proto\"2\n\x18\x44\x65scribeInstitutionInput\x12\x16\n\x0einstitution_id\x18\x01 \x01(\t\"N\n\x19\x44\x65scribeInstitutionOutput\x12\x31\n\x0binstitution\x18\x01 \x01(\x0b\x32\x1c.eolymp.taxonomy.Institution\"\xa0\x04\n\x15ListInstitutionsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12>\n\x07\x66ilters\x18( \x01(\x0b\x32-.eolymp.taxonomy.ListInstitutionsInput.Filter\x1a\xa8\x03\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x33\n\x07\x61\x63ronym\x18\t \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x32\n\ncountry_id\x18\x04 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tregion_id\x18\x05 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x05level\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12.\n\x04type\x18\x07 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x34\n\ngovernance\x18\x08 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"T\n\x16ListInstitutionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.eolymp.taxonomy.Institution2\xd6\x02\n\x12InstitutionService\x12\x91\x01\n\x10ListInstitutions\x12&.eolymp.taxonomy.ListInstitutionsInput\x1a\'.eolymp.taxonomy.ListInstitutionsOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0f\x12\r/institutions\x12\xab\x01\n\x13\x44\x65scribeInstitution\x12).eolymp.taxonomy.DescribeInstitutionInput\x1a*.eolymp.taxonomy.DescribeInstitutionOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02 \x12\x1e/institutions/{institution_id}B3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/taxonomy/institution_service.proto\x12\x0f\x65olymp.taxonomy\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a!eolymp/taxonomy/institution.proto\x1a!eolymp/wellknown/expression.proto\"2\n\x18\x44\x65scribeInstitutionInput\x12\x16\n\x0einstitution_id\x18\x01 \x01(\t\"N\n\x19\x44\x65scribeInstitutionOutput\x12\x31\n\x0binstitution\x18\x01 \x01(\x0b\x32\x1c.eolymp.taxonomy.Institution\"\xb4\x04\n\x15ListInstitutionsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12>\n\x07\x66ilters\x18( \x01(\x0b\x32-.eolymp.taxonomy.ListInstitutionsInput.Filter\x1a\xac\x03\n\x06\x46ilter\x12\x11\n\x05query\x18\x01 \x01(\tB\x02\x18\x01\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x33\n\x07\x61\x63ronym\x18\t \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\x12\x32\n\ncountry_id\x18\x04 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tregion_id\x18\x05 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x05level\x18\x06 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12.\n\x04type\x18\x07 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x34\n\ngovernance\x18\x08 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"T\n\x16ListInstitutionsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.eolymp.taxonomy.Institution2\xd6\x02\n\x12InstitutionService\x12\x91\x01\n\x10ListInstitutions\x12&.eolymp.taxonomy.ListInstitutionsInput\x1a\'.eolymp.taxonomy.ListInstitutionsOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0f\x12\r/institutions\x12\xab\x01\n\x13\x44\x65scribeInstitution\x12).eolymp.taxonomy.DescribeInstitutionInput\x1a*.eolymp.taxonomy.DescribeInstitutionOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02 \x12\x1e/institutions/{institution_id}B3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,6 +37,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.taxonomy.institution
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomy'
+  _globals['_LISTINSTITUTIONSINPUT_FILTER'].fields_by_name['query']._loaded_options = None
+  _globals['_LISTINSTITUTIONSINPUT_FILTER'].fields_by_name['query']._serialized_options = b'\030\001'
   _globals['_INSTITUTIONSERVICE'].methods_by_name['ListInstitutions']._loaded_options = None
   _globals['_INSTITUTIONSERVICE'].methods_by_name['ListInstitutions']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\242\343\n\004\250\343\n\001\202\323\344\223\002\017\022\r/institutions'
   _globals['_INSTITUTIONSERVICE'].methods_by_name['DescribeInstitution']._loaded_options = None
@@ -46,11 +48,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DESCRIBEINSTITUTIONOUTPUT']._serialized_start=283
   _globals['_DESCRIBEINSTITUTIONOUTPUT']._serialized_end=361
   _globals['_LISTINSTITUTIONSINPUT']._serialized_start=364
-  _globals['_LISTINSTITUTIONSINPUT']._serialized_end=908
-  _globals['_LISTINSTITUTIONSINPUT_FILTER']._serialized_start=484
-  _globals['_LISTINSTITUTIONSINPUT_FILTER']._serialized_end=908
-  _globals['_LISTINSTITUTIONSOUTPUT']._serialized_start=910
-  _globals['_LISTINSTITUTIONSOUTPUT']._serialized_end=994
-  _globals['_INSTITUTIONSERVICE']._serialized_start=997
-  _globals['_INSTITUTIONSERVICE']._serialized_end=1339
+  _globals['_LISTINSTITUTIONSINPUT']._serialized_end=928
+  _globals['_LISTINSTITUTIONSINPUT_FILTER']._serialized_start=500
+  _globals['_LISTINSTITUTIONSINPUT_FILTER']._serialized_end=928
+  _globals['_LISTINSTITUTIONSOUTPUT']._serialized_start=930
+  _globals['_LISTINSTITUTIONSOUTPUT']._serialized_end=1014
+  _globals['_INSTITUTIONSERVICE']._serialized_start=1017
+  _globals['_INSTITUTIONSERVICE']._serialized_end=1359
 # @@protoc_insertion_point(module_scope)

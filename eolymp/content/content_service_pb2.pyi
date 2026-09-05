@@ -42,7 +42,7 @@ class DescribeFragmentOutput(_message.Message):
     def __init__(self, fragment: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
 
 class ListFragmentsInput(_message.Message):
-    __slots__ = ("offset", "size", "filters", "sort", "order", "locale", "extra")
+    __slots__ = ("offset", "size", "search", "filters", "sort", "order", "locale", "extra")
     class Sort(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DEFAULT: _ClassVar[ListFragmentsInput.Sort]
@@ -64,6 +64,7 @@ class ListFragmentsInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SORT_FIELD_NUMBER: _ClassVar[int]
     ORDER_FIELD_NUMBER: _ClassVar[int]
@@ -71,12 +72,13 @@ class ListFragmentsInput(_message.Message):
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    search: str
     filters: ListFragmentsInput.Filter
     sort: ListFragmentsInput.Sort
     order: _direction_pb2.Direction
     locale: str
     extra: _containers.RepeatedScalarFieldContainer[_content_fragment_pb2.Fragment.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListFragmentsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListFragmentsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListFragmentsInput.Sort, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment.Extra.Field, str]]] = ...) -> None: ...
 
 class ListFragmentsOutput(_message.Message):
     __slots__ = ("total", "items")

@@ -102,7 +102,7 @@ class UpdateQuotaOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListSpacesInput(_message.Message):
-    __slots__ = ("offset", "size", "filters", "extra")
+    __slots__ = ("offset", "size", "search", "filters", "extra")
     class Filter(_message.Message):
         __slots__ = ("query", "id", "key", "name", "own")
         QUERY_FIELD_NUMBER: _ClassVar[int]
@@ -118,13 +118,15 @@ class ListSpacesInput(_message.Message):
         def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., key: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., own: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
+    search: str
     filters: ListSpacesInput.Filter
     extra: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., filters: _Optional[_Union[ListSpacesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListSpacesInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_space_pb2.Space.Extra.Field, str]]] = ...) -> None: ...
 
 class ListSpacesOutput(_message.Message):
     __slots__ = ("total", "items")

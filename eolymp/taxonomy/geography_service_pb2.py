@@ -30,7 +30,7 @@ from eolymp.taxonomy import geography_region_pb2 as eolymp_dot_taxonomy_dot_geog
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/taxonomy/geography_service.proto\x12\x0f\x65olymp.taxonomy\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\'eolymp/taxonomy/geography_country.proto\x1a&eolymp/taxonomy/geography_region.proto\x1a!eolymp/wellknown/expression.proto\"*\n\x14\x44\x65scribeCountryInput\x12\x12\n\ncountry_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeCountryOutput\x12)\n\x07\x63ountry\x18\x01 \x01(\x0b\x32\x18.eolymp.taxonomy.Country\"\xe6\x01\n\x12ListCountriesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12;\n\x07\x66ilters\x18( \x01(\x0b\x32*.eolymp.taxonomy.ListCountriesInput.Filter\x1au\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"M\n\x13ListCountriesOutput\x12\'\n\x05items\x18\x01 \x03(\x0b\x32\x18.eolymp.taxonomy.Country\x12\r\n\x05total\x18\x02 \x01(\x05\"(\n\x13\x44\x65scribeRegionInput\x12\x11\n\tregion_id\x18\x01 \x01(\t\"?\n\x14\x44\x65scribeRegionOutput\x12\'\n\x06region\x18\x01 \x01(\x0b\x32\x17.eolymp.taxonomy.Region\"\x97\x02\n\x10ListRegionsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.taxonomy.ListRegionsInput.Filter\x1a\xa9\x01\n\x06\x46ilter\x12\r\n\x05query\x18\x01 \x01(\t\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncountry_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x04 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"J\n\x11ListRegionsOutput\x12&\n\x05items\x18\x01 \x03(\x0b\x32\x17.eolymp.taxonomy.Region\x12\r\n\x05total\x18\x02 \x01(\x05\x32\xcd\x04\n\x10GeographyService\x12\x86\x01\n\rListCountries\x12#.eolymp.taxonomy.ListCountriesInput\x1a$.eolymp.taxonomy.ListCountriesOutput\"*\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0c\x12\n/countries\x12\x99\x01\n\x0f\x44\x65scribeCountry\x12%.eolymp.taxonomy.DescribeCountryInput\x1a&.eolymp.taxonomy.DescribeCountryOutput\"7\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x19\x12\x17/countries/{country_id}\x12~\n\x0bListRegions\x12!.eolymp.taxonomy.ListRegionsInput\x1a\".eolymp.taxonomy.ListRegionsOutput\"(\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\n\x12\x08/regions\x12\x93\x01\n\x0e\x44\x65scribeRegion\x12$.eolymp.taxonomy.DescribeRegionInput\x1a%.eolymp.taxonomy.DescribeRegionOutput\"4\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x16\x12\x14/regions/{region_id}B3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/taxonomy/geography_service.proto\x12\x0f\x65olymp.taxonomy\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\'eolymp/taxonomy/geography_country.proto\x1a&eolymp/taxonomy/geography_region.proto\x1a!eolymp/wellknown/expression.proto\"*\n\x14\x44\x65scribeCountryInput\x12\x12\n\ncountry_id\x18\x01 \x01(\t\"B\n\x15\x44\x65scribeCountryOutput\x12)\n\x07\x63ountry\x18\x01 \x01(\x0b\x32\x18.eolymp.taxonomy.Country\"\xfa\x01\n\x12ListCountriesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12;\n\x07\x66ilters\x18( \x01(\x0b\x32*.eolymp.taxonomy.ListCountriesInput.Filter\x1ay\n\x06\x46ilter\x12\x11\n\x05query\x18\x01 \x01(\tB\x02\x18\x01\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x03 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"M\n\x13ListCountriesOutput\x12\'\n\x05items\x18\x01 \x03(\x0b\x32\x18.eolymp.taxonomy.Country\x12\r\n\x05total\x18\x02 \x01(\x05\"(\n\x13\x44\x65scribeRegionInput\x12\x11\n\tregion_id\x18\x01 \x01(\t\"?\n\x14\x44\x65scribeRegionOutput\x12\'\n\x06region\x18\x01 \x01(\x0b\x32\x17.eolymp.taxonomy.Region\"\xab\x02\n\x10ListRegionsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.taxonomy.ListRegionsInput.Filter\x1a\xad\x01\n\x06\x46ilter\x12\x11\n\x05query\x18\x01 \x01(\tB\x02\x18\x01\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x32\n\ncountry_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x04name\x18\x04 \x03(\x0b\x32\".eolymp.wellknown.ExpressionString\"J\n\x11ListRegionsOutput\x12&\n\x05items\x18\x01 \x03(\x0b\x32\x17.eolymp.taxonomy.Region\x12\r\n\x05total\x18\x02 \x01(\x05\x32\xcd\x04\n\x10GeographyService\x12\x86\x01\n\rListCountries\x12#.eolymp.taxonomy.ListCountriesInput\x1a$.eolymp.taxonomy.ListCountriesOutput\"*\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0c\x12\n/countries\x12\x99\x01\n\x0f\x44\x65scribeCountry\x12%.eolymp.taxonomy.DescribeCountryInput\x1a&.eolymp.taxonomy.DescribeCountryOutput\"7\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x19\x12\x17/countries/{country_id}\x12~\n\x0bListRegions\x12!.eolymp.taxonomy.ListRegionsInput\x1a\".eolymp.taxonomy.ListRegionsOutput\"(\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\n\x12\x08/regions\x12\x93\x01\n\x0e\x44\x65scribeRegion\x12$.eolymp.taxonomy.DescribeRegionInput\x1a%.eolymp.taxonomy.DescribeRegionOutput\"4\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xf4\x03\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x16\x12\x14/regions/{region_id}B3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,6 +38,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.taxonomy.geography_s
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomy'
+  _globals['_LISTCOUNTRIESINPUT_FILTER'].fields_by_name['query']._loaded_options = None
+  _globals['_LISTCOUNTRIESINPUT_FILTER'].fields_by_name['query']._serialized_options = b'\030\001'
+  _globals['_LISTREGIONSINPUT_FILTER'].fields_by_name['query']._loaded_options = None
+  _globals['_LISTREGIONSINPUT_FILTER'].fields_by_name['query']._serialized_options = b'\030\001'
   _globals['_GEOGRAPHYSERVICE'].methods_by_name['ListCountries']._loaded_options = None
   _globals['_GEOGRAPHYSERVICE'].methods_by_name['ListCountries']._serialized_options = b'\352\342\n\014\365\342\n\000\000HB\370\342\n\364\003\242\343\n\004\250\343\n\001\202\323\344\223\002\014\022\n/countries'
   _globals['_GEOGRAPHYSERVICE'].methods_by_name['DescribeCountry']._loaded_options = None
@@ -51,21 +55,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DESCRIBECOUNTRYOUTPUT']._serialized_start=319
   _globals['_DESCRIBECOUNTRYOUTPUT']._serialized_end=385
   _globals['_LISTCOUNTRIESINPUT']._serialized_start=388
-  _globals['_LISTCOUNTRIESINPUT']._serialized_end=618
-  _globals['_LISTCOUNTRIESINPUT_FILTER']._serialized_start=501
-  _globals['_LISTCOUNTRIESINPUT_FILTER']._serialized_end=618
-  _globals['_LISTCOUNTRIESOUTPUT']._serialized_start=620
-  _globals['_LISTCOUNTRIESOUTPUT']._serialized_end=697
-  _globals['_DESCRIBEREGIONINPUT']._serialized_start=699
-  _globals['_DESCRIBEREGIONINPUT']._serialized_end=739
-  _globals['_DESCRIBEREGIONOUTPUT']._serialized_start=741
-  _globals['_DESCRIBEREGIONOUTPUT']._serialized_end=804
-  _globals['_LISTREGIONSINPUT']._serialized_start=807
-  _globals['_LISTREGIONSINPUT']._serialized_end=1086
-  _globals['_LISTREGIONSINPUT_FILTER']._serialized_start=917
-  _globals['_LISTREGIONSINPUT_FILTER']._serialized_end=1086
-  _globals['_LISTREGIONSOUTPUT']._serialized_start=1088
-  _globals['_LISTREGIONSOUTPUT']._serialized_end=1162
-  _globals['_GEOGRAPHYSERVICE']._serialized_start=1165
-  _globals['_GEOGRAPHYSERVICE']._serialized_end=1754
+  _globals['_LISTCOUNTRIESINPUT']._serialized_end=638
+  _globals['_LISTCOUNTRIESINPUT_FILTER']._serialized_start=517
+  _globals['_LISTCOUNTRIESINPUT_FILTER']._serialized_end=638
+  _globals['_LISTCOUNTRIESOUTPUT']._serialized_start=640
+  _globals['_LISTCOUNTRIESOUTPUT']._serialized_end=717
+  _globals['_DESCRIBEREGIONINPUT']._serialized_start=719
+  _globals['_DESCRIBEREGIONINPUT']._serialized_end=759
+  _globals['_DESCRIBEREGIONOUTPUT']._serialized_start=761
+  _globals['_DESCRIBEREGIONOUTPUT']._serialized_end=824
+  _globals['_LISTREGIONSINPUT']._serialized_start=827
+  _globals['_LISTREGIONSINPUT']._serialized_end=1126
+  _globals['_LISTREGIONSINPUT_FILTER']._serialized_start=953
+  _globals['_LISTREGIONSINPUT_FILTER']._serialized_end=1126
+  _globals['_LISTREGIONSOUTPUT']._serialized_start=1128
+  _globals['_LISTREGIONSOUTPUT']._serialized_end=1202
+  _globals['_GEOGRAPHYSERVICE']._serialized_start=1205
+  _globals['_GEOGRAPHYSERVICE']._serialized_end=1794
 # @@protoc_insertion_point(module_scope)
