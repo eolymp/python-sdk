@@ -71,3 +71,32 @@ class ScoreboardServiceClient:
             **kwargs,
         )
 
+    def AddContestAttribute(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoreboard/attributes"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.AddContestAttributeOutput"),
+            **kwargs,
+        )
+
+    def RemoveContestAttribute(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoreboard/attributes/"+urllib.parse.quote(request.attribute_key)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.attribute_key = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.RemoveContestAttributeOutput"),
+            **kwargs,
+        )
+

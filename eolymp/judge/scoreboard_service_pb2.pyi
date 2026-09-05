@@ -88,3 +88,31 @@ class ExportScoreboardOutput(_message.Message):
     EXPORT_URL_FIELD_NUMBER: _ClassVar[int]
     export_url: str
     def __init__(self, export_url: _Optional[str] = ...) -> None: ...
+
+class AddContestAttributeInput(_message.Message):
+    __slots__ = ("contest_id", "attribute_key", "index", "label")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+    INDEX_FIELD_NUMBER: _ClassVar[int]
+    LABEL_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    attribute_key: str
+    index: int
+    label: str
+    def __init__(self, contest_id: _Optional[str] = ..., attribute_key: _Optional[str] = ..., index: _Optional[int] = ..., label: _Optional[str] = ...) -> None: ...
+
+class AddContestAttributeOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class RemoveContestAttributeInput(_message.Message):
+    __slots__ = ("contest_id", "attribute_key")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    attribute_key: str
+    def __init__(self, contest_id: _Optional[str] = ..., attribute_key: _Optional[str] = ...) -> None: ...
+
+class RemoveContestAttributeOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
