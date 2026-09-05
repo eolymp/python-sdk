@@ -28,13 +28,24 @@ class DescribeScoreboardOutput(_message.Message):
 
 class ListScoreboardRowsInput(_message.Message):
     __slots__ = ("contest_id", "mode", "size", "offset", "filters", "sort", "order")
+    class ExpressionAttribute(_message.Message):
+        __slots__ = ("attribute_key", "number", "string")
+        ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        STRING_FIELD_NUMBER: _ClassVar[int]
+        attribute_key: str
+        number: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        string: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        def __init__(self, attribute_key: _Optional[str] = ..., number: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., string: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ...) -> None: ...
     class Filter(_message.Message):
-        __slots__ = ("unofficial", "disqualified")
+        __slots__ = ("unofficial", "disqualified", "attributes")
         UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
         DISQUALIFIED_FIELD_NUMBER: _ClassVar[int]
+        ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
         unofficial: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         disqualified: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        def __init__(self, unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        attributes: _containers.RepeatedCompositeFieldContainer[ListScoreboardRowsInput.ExpressionAttribute]
+        def __init__(self, unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[ListScoreboardRowsInput.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
