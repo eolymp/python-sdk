@@ -126,6 +126,34 @@ class TestingServiceClient:
             **kwargs,
         )
 
+    def DescribeTestScript(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/test-script"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.DescribeTestScriptOutput"),
+            **kwargs,
+        )
+
+    def RunTestScript(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/test-script"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.RunTestScriptOutput"),
+            **kwargs,
+        )
+
     def CreateTestset(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/testsets"
 

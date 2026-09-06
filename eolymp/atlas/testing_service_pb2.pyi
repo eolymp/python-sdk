@@ -1,5 +1,6 @@
 from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
@@ -10,6 +11,7 @@ from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
 from eolymp.atlas import testing_testset_pb2 as _testing_testset_pb2
 from eolymp.atlas import testing_validator_pb2 as _testing_validator_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -190,6 +192,57 @@ class DescribeValidatorOutput(_message.Message):
     VALIDATOR_FIELD_NUMBER: _ClassVar[int]
     validator: _testing_validator_pb2.Validator
     def __init__(self, validator: _Optional[_Union[_testing_validator_pb2.Validator, _Mapping]] = ...) -> None: ...
+
+class DescribeTestScriptInput(_message.Message):
+    __slots__ = ("problem_id", "version")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    version: int
+    def __init__(self, problem_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+
+class DescribeTestScriptOutput(_message.Message):
+    __slots__ = ("source",)
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    source: str
+    def __init__(self, source: _Optional[str] = ...) -> None: ...
+
+class RunTestScriptInput(_message.Message):
+    __slots__ = ("problem_id", "source", "dry_run")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    DRY_RUN_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    source: str
+    dry_run: bool
+    def __init__(self, problem_id: _Optional[str] = ..., source: _Optional[str] = ..., dry_run: _Optional[bool] = ...) -> None: ...
+
+class RunTestScriptOutput(_message.Message):
+    __slots__ = ("changes", "output")
+    class Change(_message.Message):
+        __slots__ = ("operation", "test")
+        class Operation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_OPERATION: _ClassVar[RunTestScriptOutput.Change.Operation]
+            CREATE: _ClassVar[RunTestScriptOutput.Change.Operation]
+            UPDATE: _ClassVar[RunTestScriptOutput.Change.Operation]
+            DELETE: _ClassVar[RunTestScriptOutput.Change.Operation]
+            KEEP: _ClassVar[RunTestScriptOutput.Change.Operation]
+        UNKNOWN_OPERATION: RunTestScriptOutput.Change.Operation
+        CREATE: RunTestScriptOutput.Change.Operation
+        UPDATE: RunTestScriptOutput.Change.Operation
+        DELETE: RunTestScriptOutput.Change.Operation
+        KEEP: RunTestScriptOutput.Change.Operation
+        OPERATION_FIELD_NUMBER: _ClassVar[int]
+        TEST_FIELD_NUMBER: _ClassVar[int]
+        operation: RunTestScriptOutput.Change.Operation
+        test: _testing_test_pb2.Test
+        def __init__(self, operation: _Optional[_Union[RunTestScriptOutput.Change.Operation, str]] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
+    CHANGES_FIELD_NUMBER: _ClassVar[int]
+    OUTPUT_FIELD_NUMBER: _ClassVar[int]
+    changes: _containers.RepeatedCompositeFieldContainer[RunTestScriptOutput.Change]
+    output: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, changes: _Optional[_Iterable[_Union[RunTestScriptOutput.Change, _Mapping]]] = ..., output: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ListTestsetsInput(_message.Message):
     __slots__ = ("problem_id", "offset", "size", "version")
