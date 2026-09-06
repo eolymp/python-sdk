@@ -72,6 +72,17 @@ class AssetServiceClient:
             **kwargs,
         )
 
+    def UploadBundle(self, request, **kwargs):
+        path = "/assets/bundles"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.asset.UploadBundleOutput"),
+            **kwargs,
+        )
+
     def StartMultipartUpload(self, request, **kwargs):
         path = "/uploads"
 

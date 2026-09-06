@@ -44,6 +44,21 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def DescribeWidget(self, request, **kwargs):
+        path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/widget"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.course_id = ""
+        request.material_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.course.DescribeWidgetOutput"),
+            **kwargs,
+        )
+
     def LookupStatement(self, request, **kwargs):
         path = "/courses/"+urllib.parse.quote(request.course_id)+"/materials/"+urllib.parse.quote(request.material_id)+"/statements:lookup"
 

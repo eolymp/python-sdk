@@ -212,6 +212,26 @@ class CloseStreamOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class UploadBundleInput(_message.Message):
+    __slots__ = ("name", "entrypoint", "data")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ENTRYPOINT_FIELD_NUMBER: _ClassVar[int]
+    DATA_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    entrypoint: str
+    data: bytes
+    def __init__(self, name: _Optional[str] = ..., entrypoint: _Optional[str] = ..., data: _Optional[bytes] = ...) -> None: ...
+
+class UploadBundleOutput(_message.Message):
+    __slots__ = ("bundle_url", "size", "files")
+    BUNDLE_URL_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    FILES_FIELD_NUMBER: _ClassVar[int]
+    bundle_url: str
+    size: int
+    files: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, bundle_url: _Optional[str] = ..., size: _Optional[int] = ..., files: _Optional[_Iterable[str]] = ...) -> None: ...
+
 class UseAssetInput(_message.Message):
     __slots__ = ("resource", "assets")
     RESOURCE_FIELD_NUMBER: _ClassVar[int]

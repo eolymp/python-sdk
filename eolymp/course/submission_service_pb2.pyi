@@ -15,20 +15,22 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ("course_id", "material_id", "runtime", "source", "output", "quiz")
+    __slots__ = ("course_id", "material_id", "runtime", "source", "output", "quiz", "widget")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_FIELD_NUMBER: _ClassVar[int]
     QUIZ_FIELD_NUMBER: _ClassVar[int]
+    WIDGET_FIELD_NUMBER: _ClassVar[int]
     course_id: str
     material_id: str
     runtime: str
     source: str
     output: _submission_pb2.Submission.Output
     quiz: _submission_pb2.Submission.Quiz
-    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ...) -> None: ...
+    widget: _submission_pb2.Submission.Widget
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ..., widget: _Optional[_Union[_submission_pb2.Submission.Widget, _Mapping]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)

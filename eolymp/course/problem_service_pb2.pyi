@@ -7,6 +7,7 @@ from eolymp.atlas import code_template_pb2 as _code_template_pb2
 from eolymp.atlas import question_pb2 as _question_pb2
 from eolymp.atlas import statement_pb2 as _statement_pb2
 from eolymp.atlas import testing_test_pb2 as _testing_test_pb2
+from eolymp.atlas import widget_pb2 as _widget_pb2
 from eolymp.course import run_service_pb2 as _run_service_pb2
 from eolymp.course import submission_service_pb2 as _submission_service_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
@@ -49,6 +50,20 @@ class ListQuestionsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_question_pb2.Question]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_question_pb2.Question, _Mapping]]] = ...) -> None: ...
+
+class DescribeWidgetInput(_message.Message):
+    __slots__ = ("course_id", "material_id")
+    COURSE_ID_FIELD_NUMBER: _ClassVar[int]
+    MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
+    course_id: str
+    material_id: str
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ...) -> None: ...
+
+class DescribeWidgetOutput(_message.Message):
+    __slots__ = ("widget",)
+    WIDGET_FIELD_NUMBER: _ClassVar[int]
+    widget: _widget_pb2.Widget
+    def __init__(self, widget: _Optional[_Union[_widget_pb2.Widget, _Mapping]] = ...) -> None: ...
 
 class LookupStatementInput(_message.Message):
     __slots__ = ("course_id", "material_id", "locale")

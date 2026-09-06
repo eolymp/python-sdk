@@ -78,18 +78,20 @@ class SubmissionCompleteEvent(_message.Message):
     def __init__(self, submission: _Optional[_Union[_submission_pb2.Submission, _Mapping]] = ..., update: _Optional[bool] = ...) -> None: ...
 
 class CreateSubmissionInput(_message.Message):
-    __slots__ = ("problem_id", "lang", "source", "quiz", "output")
+    __slots__ = ("problem_id", "lang", "source", "quiz", "output", "widget")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     QUIZ_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_FIELD_NUMBER: _ClassVar[int]
+    WIDGET_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     lang: str
     source: str
     quiz: _submission_pb2.Submission.Quiz
     output: _submission_pb2.Submission.Output
-    def __init__(self, problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ...) -> None: ...
+    widget: _submission_pb2.Submission.Widget
+    def __init__(self, problem_id: _Optional[str] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., widget: _Optional[_Union[_submission_pb2.Submission.Widget, _Mapping]] = ...) -> None: ...
 
 class CreateSubmissionOutput(_message.Message):
     __slots__ = ("submission_id",)

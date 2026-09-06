@@ -148,6 +148,21 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def DescribeWidget(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/widget"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeWidgetOutput"),
+            **kwargs,
+        )
+
     def DescribeEditorial(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/editorial"
 
