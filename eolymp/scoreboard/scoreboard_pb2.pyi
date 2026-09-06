@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ("id", "slug", "name", "best_of", "modes", "contests", "attributes")
+    __slots__ = ("id", "slug", "name", "best_of", "modes", "contests", "attributes", "filters")
     class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_MODE: _ClassVar[Scoreboard.Mode]
@@ -42,6 +42,19 @@ class Scoreboard(_message.Message):
         index: int
         title: str
         def __init__(self, problem_id: _Optional[str] = ..., index: _Optional[int] = ..., title: _Optional[str] = ...) -> None: ...
+    class Filter(_message.Message):
+        __slots__ = ("attribute_key", "label", "type", "choices", "constraints")
+        ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        LABEL_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        CHOICES_FIELD_NUMBER: _ClassVar[int]
+        CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
+        attribute_key: str
+        label: str
+        type: _attribute_pb2.Attribute.Type
+        choices: _containers.RepeatedScalarFieldContainer[str]
+        constraints: _containers.RepeatedScalarFieldContainer[str]
+        def __init__(self, attribute_key: _Optional[str] = ..., label: _Optional[str] = ..., type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ..., choices: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[str]] = ...) -> None: ...
     class Attribute(_message.Message):
         __slots__ = ("attribute_key", "index", "label", "type")
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -69,6 +82,7 @@ class Scoreboard(_message.Message):
     MODES_FIELD_NUMBER: _ClassVar[int]
     CONTESTS_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
     id: str
     slug: str
     name: str
@@ -76,7 +90,8 @@ class Scoreboard(_message.Message):
     modes: _containers.RepeatedScalarFieldContainer[Scoreboard.Mode]
     contests: _containers.RepeatedCompositeFieldContainer[Scoreboard.Contest]
     attributes: _containers.RepeatedCompositeFieldContainer[Scoreboard.Attribute]
-    def __init__(self, id: _Optional[str] = ..., slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ..., modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[Scoreboard.Attribute, _Mapping]]] = ...) -> None: ...
+    filters: _containers.RepeatedCompositeFieldContainer[Scoreboard.Filter]
+    def __init__(self, id: _Optional[str] = ..., slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ..., modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[Scoreboard.Attribute, _Mapping]]] = ..., filters: _Optional[_Iterable[_Union[Scoreboard.Filter, _Mapping]]] = ...) -> None: ...
 
 class Row(_message.Message):
     __slots__ = ("member_id", "display_name", "index", "rank", "rank_length", "rank_all", "rank_all_length", "score", "penalty", "unofficial", "disqualified", "contests", "attributes")
