@@ -127,15 +127,3 @@ class ListScriptsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_script_pb2.Script]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_script_pb2.Script, _Mapping]]] = ...) -> None: ...
-
-class ExecuteStressCheckInput(_message.Message):
-    __slots__ = ("problem_id", "script_name")
-    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
-    SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
-    problem_id: str
-    script_name: str
-    def __init__(self, problem_id: _Optional[str] = ..., script_name: _Optional[str] = ...) -> None: ...
-
-class ExecuteStressCheckOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...

@@ -22,10 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.executor import checker_pb2 as eolymp_dot_executor_dot_checker__pb2
+from eolymp.executor import evaluation_report_pb2 as eolymp_dot_executor_dot_evaluation__report__pb2
 from eolymp.executor import script_pb2 as eolymp_dot_executor_dot_script__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/executor/stress_task.proto\x12\x0f\x65olymp.executor\x1a\x1c\x65olymp/executor/script.proto\"\xef\x03\n\nStressTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0e\n\x06origin\x18\x03 \x01(\t\x12;\n\x08metadata\x18\x05 \x03(\x0b\x32).eolymp.executor.StressTask.MetadataEntry\x12\x17\n\x0fwall_time_limit\x18\n \x01(\r\x12\x16\n\x0e\x63pu_time_limit\x18\x0b \x01(\r\x12\x14\n\x0cmemory_limit\x18\x0c \x01(\x04\x12\x17\n\x0fiteration_count\x18\x0f \x01(\r\x12\x11\n\trun_count\x18\x10 \x01(\r\x12\x1c\n\x14interactive_followup\x18\x11 \x01(\x08\x12+\n\ninteractor\x18\x19 \x01(\x0b\x32\x17.eolymp.executor.Script\x12*\n\tvalidator\x18\x1a \x01(\x0b\x32\x17.eolymp.executor.Script\x12*\n\tgenerator\x18\x1b \x01(\x0b\x32\x17.eolymp.executor.Script\x12)\n\x08solution\x18\x1c \x01(\x0b\x32\x17.eolymp.executor.Script\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/executor/stress_task.proto\x12\x0f\x65olymp.executor\x1a\x1d\x65olymp/executor/checker.proto\x1a\'eolymp/executor/evaluation_report.proto\x1a\x1c\x65olymp/executor/script.proto\"\xb7\x06\n\nStressTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0e\n\x06origin\x18\x03 \x01(\t\x12;\n\x08metadata\x18\x05 \x03(\x0b\x32).eolymp.executor.StressTask.MetadataEntry\x12\x17\n\x0fwall_time_limit\x18\n \x01(\r\x12\x16\n\x0e\x63pu_time_limit\x18\x0b \x01(\r\x12\x14\n\x0cmemory_limit\x18\x0c \x01(\x04\x12\x1d\n\x15interactor_time_limit\x18\r \x01(\r\x12\x12\n\niterations\x18\x0f \x01(\r\x12\x10\n\x08\x64\x65\x61\x64line\x18\x10 \x01(\r\x12\x1b\n\x13\x63ontinue_on_failure\x18\x11 \x01(\x08\x12\x11\n\trun_count\x18\x14 \x01(\r\x12\x1c\n\x14interactive_followup\x18\x15 \x01(\x08\x12)\n\x07\x63hecker\x18\x18 \x01(\x0b\x32\x18.eolymp.executor.Checker\x12+\n\ninteractor\x18\x19 \x01(\x0b\x32\x17.eolymp.executor.Script\x12*\n\tvalidator\x18\x1a \x01(\x0b\x32\x17.eolymp.executor.Script\x12*\n\tgenerator\x18\x1b \x01(\x0b\x32\x17.eolymp.executor.Script\x12\x11\n\targuments\x18\x1c \x03(\t\x12\x33\n\x12reference_solution\x18\x1d \x01(\x0b\x32\x17.eolymp.executor.Script\x12@\n\x12\x63ompared_solutions\x18\x1e \x03(\x0b\x32$.eolymp.executor.StressTask.Solution\x1as\n\x08Solution\x12\'\n\x06script\x18\x01 \x01(\x0b\x32\x17.eolymp.executor.Script\x12>\n\x08\x65xpected\x18\x02 \x03(\x0e\x32,.eolymp.executor.EvaluationReport.Run.Status\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,8 +37,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
   _globals['_STRESSTASK_METADATAENTRY']._loaded_options = None
   _globals['_STRESSTASK_METADATAENTRY']._serialized_options = b'8\001'
-  _globals['_STRESSTASK']._serialized_start=85
-  _globals['_STRESSTASK']._serialized_end=580
-  _globals['_STRESSTASK_METADATAENTRY']._serialized_start=533
-  _globals['_STRESSTASK_METADATAENTRY']._serialized_end=580
+  _globals['_STRESSTASK']._serialized_start=157
+  _globals['_STRESSTASK']._serialized_end=980
+  _globals['_STRESSTASK_SOLUTION']._serialized_start=816
+  _globals['_STRESSTASK_SOLUTION']._serialized_end=931
+  _globals['_STRESSTASK_METADATAENTRY']._serialized_start=933
+  _globals['_STRESSTASK_METADATAENTRY']._serialized_end=980
 # @@protoc_insertion_point(module_scope)
