@@ -1,5 +1,6 @@
 import datetime
 
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.community import attribute_pb2 as _attribute_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -13,7 +14,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ("id", "slug", "name", "best_of", "modes", "contests", "attributes", "filters")
+    __slots__ = ("id", "slug", "name", "best_of", "visibility", "modes", "contests", "attributes", "filters")
     class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_MODE: _ClassVar[Scoreboard.Mode]
@@ -24,6 +25,14 @@ class Scoreboard(_message.Message):
     MAIN: Scoreboard.Mode
     FROZEN: Scoreboard.Mode
     UPSOLVE: Scoreboard.Mode
+    class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_VISIBILITY: _ClassVar[Scoreboard.Visibility]
+        PUBLIC: _ClassVar[Scoreboard.Visibility]
+        PRIVATE: _ClassVar[Scoreboard.Visibility]
+    UNKNOWN_VISIBILITY: Scoreboard.Visibility
+    PUBLIC: Scoreboard.Visibility
+    PRIVATE: Scoreboard.Visibility
     class Contest(_message.Message):
         __slots__ = ("contest_id", "index", "name", "image_url", "status", "starts_at", "ends_at", "problems")
         CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
@@ -77,18 +86,21 @@ class Scoreboard(_message.Message):
         type: _attribute_pb2.Attribute.Type
         def __init__(self, attribute_key: _Optional[str] = ..., index: _Optional[int] = ..., label: _Optional[str] = ..., type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ...) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("slug", "name", "best_of")
+        __slots__ = ("slug", "name", "best_of", "visibility")
         SLUG_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         BEST_OF_FIELD_NUMBER: _ClassVar[int]
+        VISIBILITY_FIELD_NUMBER: _ClassVar[int]
         slug: str
         name: str
         best_of: int
-        def __init__(self, slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ...) -> None: ...
+        visibility: Scoreboard.Visibility
+        def __init__(self, slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ..., visibility: _Optional[_Union[Scoreboard.Visibility, str]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     SLUG_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     BEST_OF_FIELD_NUMBER: _ClassVar[int]
+    VISIBILITY_FIELD_NUMBER: _ClassVar[int]
     MODES_FIELD_NUMBER: _ClassVar[int]
     CONTESTS_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
@@ -97,11 +109,12 @@ class Scoreboard(_message.Message):
     slug: str
     name: str
     best_of: int
+    visibility: Scoreboard.Visibility
     modes: _containers.RepeatedScalarFieldContainer[Scoreboard.Mode]
     contests: _containers.RepeatedCompositeFieldContainer[Scoreboard.Contest]
     attributes: _containers.RepeatedCompositeFieldContainer[Scoreboard.Attribute]
     filters: _containers.RepeatedCompositeFieldContainer[Scoreboard.Filter]
-    def __init__(self, id: _Optional[str] = ..., slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ..., modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[Scoreboard.Attribute, _Mapping]]] = ..., filters: _Optional[_Iterable[_Union[Scoreboard.Filter, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ..., visibility: _Optional[_Union[Scoreboard.Visibility, str]] = ..., modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[Scoreboard.Attribute, _Mapping]]] = ..., filters: _Optional[_Iterable[_Union[Scoreboard.Filter, _Mapping]]] = ...) -> None: ...
 
 class Row(_message.Message):
     __slots__ = ("member_id", "display_name", "index", "rank", "rank_length", "rank_all", "rank_all_length", "score", "penalty", "unofficial", "disqualified", "contests", "attributes")
