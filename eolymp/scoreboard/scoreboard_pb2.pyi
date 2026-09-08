@@ -142,14 +142,16 @@ class Row(_message.Message):
         problems: _containers.RepeatedCompositeFieldContainer[Row.ProblemScore]
         def __init__(self, contest_id: _Optional[str] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., counted: _Optional[bool] = ..., frozen: _Optional[bool] = ..., problems: _Optional[_Iterable[_Union[Row.ProblemScore, _Mapping]]] = ...) -> None: ...
     class AttributeValue(_message.Message):
-        __slots__ = ("attribute_key", "string", "number")
+        __slots__ = ("attribute_key", "type", "string", "number")
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
         STRING_FIELD_NUMBER: _ClassVar[int]
         NUMBER_FIELD_NUMBER: _ClassVar[int]
         attribute_key: str
+        type: _attribute_pb2.Attribute.Type
         string: str
         number: int
-        def __init__(self, attribute_key: _Optional[str] = ..., string: _Optional[str] = ..., number: _Optional[int] = ...) -> None: ...
+        def __init__(self, attribute_key: _Optional[str] = ..., type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ..., string: _Optional[str] = ..., number: _Optional[int] = ...) -> None: ...
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
