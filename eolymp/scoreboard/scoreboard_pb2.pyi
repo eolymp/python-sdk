@@ -1,4 +1,8 @@
+import datetime
+
 from eolymp.community import attribute_pb2 as _attribute_pb2
+from eolymp.judge import contest_pb2 as _contest_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -21,18 +25,24 @@ class Scoreboard(_message.Message):
     FROZEN: Scoreboard.Mode
     UPSOLVE: Scoreboard.Mode
     class Contest(_message.Message):
-        __slots__ = ("contest_id", "index", "name", "image_url", "problems")
+        __slots__ = ("contest_id", "index", "name", "image_url", "status", "starts_at", "ends_at", "problems")
         CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        STARTS_AT_FIELD_NUMBER: _ClassVar[int]
+        ENDS_AT_FIELD_NUMBER: _ClassVar[int]
         PROBLEMS_FIELD_NUMBER: _ClassVar[int]
         contest_id: str
         index: int
         name: str
         image_url: str
+        status: _contest_pb2.Contest.Status
+        starts_at: _timestamp_pb2.Timestamp
+        ends_at: _timestamp_pb2.Timestamp
         problems: _containers.RepeatedCompositeFieldContainer[Scoreboard.Problem]
-        def __init__(self, contest_id: _Optional[str] = ..., index: _Optional[int] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., problems: _Optional[_Iterable[_Union[Scoreboard.Problem, _Mapping]]] = ...) -> None: ...
+        def __init__(self, contest_id: _Optional[str] = ..., index: _Optional[int] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., status: _Optional[_Union[_contest_pb2.Contest.Status, str]] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., problems: _Optional[_Iterable[_Union[Scoreboard.Problem, _Mapping]]] = ...) -> None: ...
     class Problem(_message.Message):
         __slots__ = ("problem_id", "index", "title")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
