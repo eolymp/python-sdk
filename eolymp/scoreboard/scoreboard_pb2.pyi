@@ -35,6 +35,11 @@ class Scoreboard(_message.Message):
     PRIVATE: Scoreboard.Visibility
     class Contest(_message.Message):
         __slots__ = ("contest_id", "index", "name", "image_url", "status", "starts_at", "ends_at", "problems")
+        class Patch(_message.Message):
+            __slots__ = ("index",)
+            INDEX_FIELD_NUMBER: _ClassVar[int]
+            index: int
+            def __init__(self, index: _Optional[int] = ...) -> None: ...
         CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
@@ -76,6 +81,13 @@ class Scoreboard(_message.Message):
         def __init__(self, attribute_key: _Optional[str] = ..., label: _Optional[str] = ..., type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ..., choices: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[str]] = ...) -> None: ...
     class Attribute(_message.Message):
         __slots__ = ("attribute_key", "index", "label", "type")
+        class Patch(_message.Message):
+            __slots__ = ("index", "label")
+            INDEX_FIELD_NUMBER: _ClassVar[int]
+            LABEL_FIELD_NUMBER: _ClassVar[int]
+            index: int
+            label: str
+            def __init__(self, index: _Optional[int] = ..., label: _Optional[str] = ...) -> None: ...
         ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         LABEL_FIELD_NUMBER: _ClassVar[int]

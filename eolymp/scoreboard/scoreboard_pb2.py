@@ -28,7 +28,7 @@ from eolymp.judge import contest_pb2 as eolymp_dot_judge_dot_contest__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/scoreboard/scoreboard.proto\x12\x11\x65olymp.scoreboard\x1a\x1c\x65olymp/annotations/mcp.proto\x1a eolymp/community/attribute.proto\x1a\x1a\x65olymp/judge/contest.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf3\n\n\nScoreboard\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04slug\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07\x62\x65st_of\x18\x04 \x01(\r\x12<\n\nvisibility\x18\x05 \x01(\x0e\x32(.eolymp.scoreboard.Scoreboard.Visibility\x12\x31\n\x05modes\x18\x07 \x03(\x0e\x32\".eolymp.scoreboard.Scoreboard.Mode\x12\x37\n\x08\x63ontests\x18\n \x03(\x0b\x32%.eolymp.scoreboard.Scoreboard.Contest\x12;\n\nattributes\x18\x0b \x03(\x0b\x32\'.eolymp.scoreboard.Scoreboard.Attribute\x12\x35\n\x07\x66ilters\x18\x0c \x03(\x0b\x32$.eolymp.scoreboard.Scoreboard.Filter\x1a\x90\x02\n\x07\x43ontest\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0b \x01(\t\x12,\n\x06status\x18\x0c \x01(\x0e\x32\x1c.eolymp.judge.Contest.Status\x12-\n\tstarts_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x65nds_at\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x08problems\x18\x14 \x03(\x0b\x32%.eolymp.scoreboard.Scoreboard.Problem\x1a;\n\x07Problem\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05title\x18\x03 \x01(\t\x1a\x84\x01\n\x06\x46ilter\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12.\n\x04type\x18\x03 \x01(\x0e\x32 .eolymp.community.Attribute.Type\x12\x0f\n\x07\x63hoices\x18\n \x03(\t\x12\x13\n\x0b\x63onstraints\x18\x0b \x03(\t\x1ap\n\tAttribute\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05label\x18\x03 \x01(\t\x12.\n\x04type\x18\n \x01(\x0e\x32 .eolymp.community.Attribute.Type\x1a\xb3\x01\n\x05Patch\x12\x11\n\x04slug\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x14\n\x07\x62\x65st_of\x18\x04 \x01(\rH\x02\x88\x01\x01\x12\x41\n\nvisibility\x18\x05 \x01(\x0e\x32(.eolymp.scoreboard.Scoreboard.VisibilityH\x03\x88\x01\x01\x42\x07\n\x05_slugB\x07\n\x05_nameB\n\n\x08_best_ofB\r\n\x0b_visibility\";\n\x04Mode\x12\x10\n\x0cUNKNOWN_MODE\x10\x00\x12\x08\n\x04MAIN\x10\x01\x12\n\n\x06\x46ROZEN\x10\x02\x12\x0b\n\x07UPSOLVE\x10\x03\"\xd1\x01\n\nVisibility\x12\x16\n\x12UNKNOWN_VISIBILITY\x10\x00\x12\x66\n\x06PUBLIC\x10\x01\x1aZ\x9a\xf0\xf0\xe4\x01Tanyone with the link can read the standing, including a visitor who is not signed in\x12\x43\n\x07PRIVATE\x10\x02\x1a\x36\x9a\xf0\xf0\xe4\x01\x30only a member of the space can read the standing\"\x9e\x06\n\x03Row\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\r\n\x05index\x18\n \x01(\r\x12\x0c\n\x04rank\x18\x0b \x01(\r\x12\x13\n\x0brank_length\x18\x0c \x01(\r\x12\x10\n\x08rank_all\x18\r \x01(\r\x12\x17\n\x0frank_all_length\x18\x0e \x01(\r\x12\r\n\x05score\x18\x14 \x01(\x02\x12\x0f\n\x07penalty\x18\x15 \x01(\x02\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x14\n\x0c\x64isqualified\x18\x1f \x01(\x08\x12\x35\n\x08\x63ontests\x18\x32 \x03(\x0b\x32#.eolymp.scoreboard.Row.ContestScore\x12\x39\n\nattributes\x18\x33 \x03(\x0b\x32%.eolymp.scoreboard.Row.AttributeValue\x1a\xb0\x01\n\x0cProblemScore\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x12\n\npercentage\x18\x04 \x01(\x02\x12\x10\n\x08\x61ttempts\x18\x05 \x01(\r\x12\x0c\n\x04time\x18\x06 \x01(\r\x12\x0f\n\x07pending\x18\x07 \x01(\r\x12\x0f\n\x07\x63hanged\x18\x08 \x01(\x08\x12\x16\n\x0e\x66irst_to_solve\x18\t \x01(\x08\x1a\x9a\x01\n\x0c\x43ontestScore\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x0f\n\x07\x63ounted\x18\x04 \x01(\x08\x12\x0e\n\x06\x66rozen\x18\x05 \x01(\x08\x12\x35\n\x08problems\x18\x14 \x03(\x0b\x32#.eolymp.scoreboard.Row.ProblemScore\x1a\x84\x01\n\x0e\x41ttributeValue\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12.\n\x04type\x18\x02 \x01(\x0e\x32 .eolymp.community.Attribute.Type\x12\x10\n\x06string\x18\n \x01(\tH\x00\x12\x10\n\x06number\x18\x0b \x01(\x05H\x00\x42\x07\n\x05valueB7Z5github.com/eolymp/go-sdk/eolymp/scoreboard;scoreboardb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/scoreboard/scoreboard.proto\x12\x11\x65olymp.scoreboard\x1a\x1c\x65olymp/annotations/mcp.proto\x1a eolymp/community/attribute.proto\x1a\x1a\x65olymp/judge/contest.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe0\x0b\n\nScoreboard\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04slug\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07\x62\x65st_of\x18\x04 \x01(\r\x12<\n\nvisibility\x18\x05 \x01(\x0e\x32(.eolymp.scoreboard.Scoreboard.Visibility\x12\x31\n\x05modes\x18\x07 \x03(\x0e\x32\".eolymp.scoreboard.Scoreboard.Mode\x12\x37\n\x08\x63ontests\x18\n \x03(\x0b\x32%.eolymp.scoreboard.Scoreboard.Contest\x12;\n\nattributes\x18\x0b \x03(\x0b\x32\'.eolymp.scoreboard.Scoreboard.Attribute\x12\x35\n\x07\x66ilters\x18\x0c \x03(\x0b\x32$.eolymp.scoreboard.Scoreboard.Filter\x1a\xb7\x02\n\x07\x43ontest\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0c\n\x04name\x18\n \x01(\t\x12\x11\n\timage_url\x18\x0b \x01(\t\x12,\n\x06status\x18\x0c \x01(\x0e\x32\x1c.eolymp.judge.Contest.Status\x12-\n\tstarts_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x65nds_at\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x37\n\x08problems\x18\x14 \x03(\x0b\x32%.eolymp.scoreboard.Scoreboard.Problem\x1a%\n\x05Patch\x12\x12\n\x05index\x18\x02 \x01(\rH\x00\x88\x01\x01\x42\x08\n\x06_index\x1a;\n\x07Problem\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05title\x18\x03 \x01(\t\x1a\x84\x01\n\x06\x46ilter\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x12.\n\x04type\x18\x03 \x01(\x0e\x32 .eolymp.community.Attribute.Type\x12\x0f\n\x07\x63hoices\x18\n \x03(\t\x12\x13\n\x0b\x63onstraints\x18\x0b \x03(\t\x1a\xb5\x01\n\tAttribute\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05label\x18\x03 \x01(\t\x12.\n\x04type\x18\n \x01(\x0e\x32 .eolymp.community.Attribute.Type\x1a\x43\n\x05Patch\x12\x12\n\x05index\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x12\n\x05label\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x08\n\x06_indexB\x08\n\x06_label\x1a\xb3\x01\n\x05Patch\x12\x11\n\x04slug\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x14\n\x07\x62\x65st_of\x18\x04 \x01(\rH\x02\x88\x01\x01\x12\x41\n\nvisibility\x18\x05 \x01(\x0e\x32(.eolymp.scoreboard.Scoreboard.VisibilityH\x03\x88\x01\x01\x42\x07\n\x05_slugB\x07\n\x05_nameB\n\n\x08_best_ofB\r\n\x0b_visibility\";\n\x04Mode\x12\x10\n\x0cUNKNOWN_MODE\x10\x00\x12\x08\n\x04MAIN\x10\x01\x12\n\n\x06\x46ROZEN\x10\x02\x12\x0b\n\x07UPSOLVE\x10\x03\"\xd1\x01\n\nVisibility\x12\x16\n\x12UNKNOWN_VISIBILITY\x10\x00\x12\x66\n\x06PUBLIC\x10\x01\x1aZ\x9a\xf0\xf0\xe4\x01Tanyone with the link can read the standing, including a visitor who is not signed in\x12\x43\n\x07PRIVATE\x10\x02\x1a\x36\x9a\xf0\xf0\xe4\x01\x30only a member of the space can read the standing\"\x9e\x06\n\x03Row\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\r\n\x05index\x18\n \x01(\r\x12\x0c\n\x04rank\x18\x0b \x01(\r\x12\x13\n\x0brank_length\x18\x0c \x01(\r\x12\x10\n\x08rank_all\x18\r \x01(\r\x12\x17\n\x0frank_all_length\x18\x0e \x01(\r\x12\r\n\x05score\x18\x14 \x01(\x02\x12\x0f\n\x07penalty\x18\x15 \x01(\x02\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x14\n\x0c\x64isqualified\x18\x1f \x01(\x08\x12\x35\n\x08\x63ontests\x18\x32 \x03(\x0b\x32#.eolymp.scoreboard.Row.ContestScore\x12\x39\n\nattributes\x18\x33 \x03(\x0b\x32%.eolymp.scoreboard.Row.AttributeValue\x1a\xb0\x01\n\x0cProblemScore\x12\x12\n\nproblem_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x12\n\npercentage\x18\x04 \x01(\x02\x12\x10\n\x08\x61ttempts\x18\x05 \x01(\r\x12\x0c\n\x04time\x18\x06 \x01(\r\x12\x0f\n\x07pending\x18\x07 \x01(\r\x12\x0f\n\x07\x63hanged\x18\x08 \x01(\x08\x12\x16\n\x0e\x66irst_to_solve\x18\t \x01(\x08\x1a\x9a\x01\n\x0c\x43ontestScore\x12\x12\n\ncontest_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x0f\n\x07penalty\x18\x03 \x01(\x02\x12\x0f\n\x07\x63ounted\x18\x04 \x01(\x08\x12\x0e\n\x06\x66rozen\x18\x05 \x01(\x08\x12\x35\n\x08problems\x18\x14 \x03(\x0b\x32#.eolymp.scoreboard.Row.ProblemScore\x1a\x84\x01\n\x0e\x41ttributeValue\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12.\n\x04type\x18\x02 \x01(\x0e\x32 .eolymp.community.Attribute.Type\x12\x10\n\x06string\x18\n \x01(\tH\x00\x12\x10\n\x06number\x18\x0b \x01(\x05H\x00\x42\x07\n\x05valueB7Z5github.com/eolymp/go-sdk/eolymp/scoreboard;scoreboardb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,27 +41,31 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SCOREBOARD_VISIBILITY'].values_by_name["PRIVATE"]._loaded_options = None
   _globals['_SCOREBOARD_VISIBILITY'].values_by_name["PRIVATE"]._serialized_options = b'\232\360\360\344\0010only a member of the space can read the standing'
   _globals['_SCOREBOARD']._serialized_start=183
-  _globals['_SCOREBOARD']._serialized_end=1578
+  _globals['_SCOREBOARD']._serialized_end=1687
   _globals['_SCOREBOARD_CONTEST']._serialized_start=541
-  _globals['_SCOREBOARD_CONTEST']._serialized_end=813
-  _globals['_SCOREBOARD_PROBLEM']._serialized_start=815
-  _globals['_SCOREBOARD_PROBLEM']._serialized_end=874
-  _globals['_SCOREBOARD_FILTER']._serialized_start=877
-  _globals['_SCOREBOARD_FILTER']._serialized_end=1009
-  _globals['_SCOREBOARD_ATTRIBUTE']._serialized_start=1011
-  _globals['_SCOREBOARD_ATTRIBUTE']._serialized_end=1123
-  _globals['_SCOREBOARD_PATCH']._serialized_start=1126
-  _globals['_SCOREBOARD_PATCH']._serialized_end=1305
-  _globals['_SCOREBOARD_MODE']._serialized_start=1307
-  _globals['_SCOREBOARD_MODE']._serialized_end=1366
-  _globals['_SCOREBOARD_VISIBILITY']._serialized_start=1369
-  _globals['_SCOREBOARD_VISIBILITY']._serialized_end=1578
-  _globals['_ROW']._serialized_start=1581
-  _globals['_ROW']._serialized_end=2379
-  _globals['_ROW_PROBLEMSCORE']._serialized_start=1911
-  _globals['_ROW_PROBLEMSCORE']._serialized_end=2087
-  _globals['_ROW_CONTESTSCORE']._serialized_start=2090
-  _globals['_ROW_CONTESTSCORE']._serialized_end=2244
-  _globals['_ROW_ATTRIBUTEVALUE']._serialized_start=2247
-  _globals['_ROW_ATTRIBUTEVALUE']._serialized_end=2379
+  _globals['_SCOREBOARD_CONTEST']._serialized_end=852
+  _globals['_SCOREBOARD_CONTEST_PATCH']._serialized_start=815
+  _globals['_SCOREBOARD_CONTEST_PATCH']._serialized_end=852
+  _globals['_SCOREBOARD_PROBLEM']._serialized_start=854
+  _globals['_SCOREBOARD_PROBLEM']._serialized_end=913
+  _globals['_SCOREBOARD_FILTER']._serialized_start=916
+  _globals['_SCOREBOARD_FILTER']._serialized_end=1048
+  _globals['_SCOREBOARD_ATTRIBUTE']._serialized_start=1051
+  _globals['_SCOREBOARD_ATTRIBUTE']._serialized_end=1232
+  _globals['_SCOREBOARD_ATTRIBUTE_PATCH']._serialized_start=1165
+  _globals['_SCOREBOARD_ATTRIBUTE_PATCH']._serialized_end=1232
+  _globals['_SCOREBOARD_PATCH']._serialized_start=1235
+  _globals['_SCOREBOARD_PATCH']._serialized_end=1414
+  _globals['_SCOREBOARD_MODE']._serialized_start=1416
+  _globals['_SCOREBOARD_MODE']._serialized_end=1475
+  _globals['_SCOREBOARD_VISIBILITY']._serialized_start=1478
+  _globals['_SCOREBOARD_VISIBILITY']._serialized_end=1687
+  _globals['_ROW']._serialized_start=1690
+  _globals['_ROW']._serialized_end=2488
+  _globals['_ROW_PROBLEMSCORE']._serialized_start=2020
+  _globals['_ROW_PROBLEMSCORE']._serialized_end=2196
+  _globals['_ROW_CONTESTSCORE']._serialized_start=2199
+  _globals['_ROW_CONTESTSCORE']._serialized_end=2353
+  _globals['_ROW_ATTRIBUTEVALUE']._serialized_start=2356
+  _globals['_ROW_ATTRIBUTEVALUE']._serialized_end=2488
 # @@protoc_insertion_point(module_scope)

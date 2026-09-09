@@ -103,6 +103,20 @@ class AddScoreboardContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class UpdateScoreboardContestInput(_message.Message):
+    __slots__ = ("scoreboard_id", "contest_id", "contest")
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_FIELD_NUMBER: _ClassVar[int]
+    scoreboard_id: str
+    contest_id: str
+    contest: _scoreboard_pb2.Scoreboard.Contest.Patch
+    def __init__(self, scoreboard_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., contest: _Optional[_Union[_scoreboard_pb2.Scoreboard.Contest.Patch, _Mapping]] = ...) -> None: ...
+
+class UpdateScoreboardContestOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class RemoveScoreboardContestInput(_message.Message):
     __slots__ = ("scoreboard_id", "contest_id")
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
@@ -128,6 +142,20 @@ class AddScoreboardAttributeInput(_message.Message):
     def __init__(self, scoreboard_id: _Optional[str] = ..., attribute_key: _Optional[str] = ..., index: _Optional[int] = ..., label: _Optional[str] = ...) -> None: ...
 
 class AddScoreboardAttributeOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class UpdateScoreboardAttributeInput(_message.Message):
+    __slots__ = ("scoreboard_id", "attribute_key", "attribute")
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
+    scoreboard_id: str
+    attribute_key: str
+    attribute: _scoreboard_pb2.Scoreboard.Attribute.Patch
+    def __init__(self, scoreboard_id: _Optional[str] = ..., attribute_key: _Optional[str] = ..., attribute: _Optional[_Union[_scoreboard_pb2.Scoreboard.Attribute.Patch, _Mapping]] = ...) -> None: ...
+
+class UpdateScoreboardAttributeOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
