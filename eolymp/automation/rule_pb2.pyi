@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Rule(_message.Message):
-    __slots__ = ("id", "name", "trigger", "conditions", "inactive", "dry_run", "label", "trigger_count", "actions", "created_at", "updated_at")
+    __slots__ = ("id", "name", "trigger", "conditions", "inactive", "dry_run", "label", "schedule", "trigger_count", "actions", "created_at", "updated_at")
     class Trigger(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TRIGGER: _ClassVar[Rule.Trigger]
@@ -33,6 +33,7 @@ class Rule(_message.Message):
         SUGGESTION_CHANGED: _ClassVar[Rule.Trigger]
         CONTEST_ACTION: _ClassVar[Rule.Trigger]
         MEMBER_ACTION: _ClassVar[Rule.Trigger]
+        SCHEDULED: _ClassVar[Rule.Trigger]
     UNKNOWN_TRIGGER: Rule.Trigger
     SUBMISSION_COMPLETED: Rule.Trigger
     SCORE_CHANGED: Rule.Trigger
@@ -49,6 +50,15 @@ class Rule(_message.Message):
     SUGGESTION_CHANGED: Rule.Trigger
     CONTEST_ACTION: Rule.Trigger
     MEMBER_ACTION: Rule.Trigger
+    SCHEDULED: Rule.Trigger
+    class Schedule(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_SCHEDULE: _ClassVar[Rule.Schedule]
+        HOURLY: _ClassVar[Rule.Schedule]
+        DAILY: _ClassVar[Rule.Schedule]
+    UNKNOWN_SCHEDULE: Rule.Schedule
+    HOURLY: Rule.Schedule
+    DAILY: Rule.Schedule
     class Patch(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -61,6 +71,7 @@ class Rule(_message.Message):
             INACTIVE: _ClassVar[Rule.Patch.Field]
             DRY_RUN: _ClassVar[Rule.Patch.Field]
             LABEL: _ClassVar[Rule.Patch.Field]
+            SCHEDULE: _ClassVar[Rule.Patch.Field]
         UNKNOWN_FIELD: Rule.Patch.Field
         NAME: Rule.Patch.Field
         TRIGGER: Rule.Patch.Field
@@ -69,6 +80,7 @@ class Rule(_message.Message):
         INACTIVE: Rule.Patch.Field
         DRY_RUN: Rule.Patch.Field
         LABEL: Rule.Patch.Field
+        SCHEDULE: Rule.Patch.Field
         def __init__(self) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -77,6 +89,7 @@ class Rule(_message.Message):
     INACTIVE_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     LABEL_FIELD_NUMBER: _ClassVar[int]
+    SCHEDULE_FIELD_NUMBER: _ClassVar[int]
     TRIGGER_COUNT_FIELD_NUMBER: _ClassVar[int]
     ACTIONS_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -88,8 +101,9 @@ class Rule(_message.Message):
     inactive: bool
     dry_run: bool
     label: str
+    schedule: Rule.Schedule
     trigger_count: int
     actions: _containers.RepeatedCompositeFieldContainer[_action_pb2.Action]
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., trigger: _Optional[_Union[Rule.Trigger, str]] = ..., conditions: _Optional[_Iterable[_Union[_condition_pb2.Condition, _Mapping]]] = ..., inactive: _Optional[bool] = ..., dry_run: _Optional[bool] = ..., label: _Optional[str] = ..., trigger_count: _Optional[int] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., trigger: _Optional[_Union[Rule.Trigger, str]] = ..., conditions: _Optional[_Iterable[_Union[_condition_pb2.Condition, _Mapping]]] = ..., inactive: _Optional[bool] = ..., dry_run: _Optional[bool] = ..., label: _Optional[str] = ..., schedule: _Optional[_Union[Rule.Schedule, str]] = ..., trigger_count: _Optional[int] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

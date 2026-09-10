@@ -28,7 +28,7 @@ from eolymp.automation import condition_pb2 as eolymp_dot_automation_dot_conditi
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/automation/rule.proto\x12\x11\x65olymp.automation\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1e\x65olymp/automation/action.proto\x1a!eolymp/automation/condition.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xde\x06\n\x04Rule\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x30\n\x07trigger\x18\x03 \x01(\x0e\x32\x1f.eolymp.automation.Rule.Trigger\x12\x30\n\nconditions\x18\x04 \x03(\x0b\x32\x1c.eolymp.automation.Condition\x12\x10\n\x08inactive\x18\x05 \x01(\x08\x12\x0f\n\x07\x64ry_run\x18\x06 \x01(\x08\x12\r\n\x05label\x18\t \x01(\t\x12\x1d\n\rtrigger_count\x18\x07 \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12*\n\x07\x61\x63tions\x18\x64 \x03(\x0b\x32\x19.eolymp.automation.Action\x12.\n\ncreated_at\x18Z \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18[ \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a}\n\x05Patch\"t\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x08\n\x04NAME\x10\x02\x12\x0b\n\x07TRIGGER\x10\x03\x12\x0e\n\nCONDITIONS\x10\x04\x12\x0b\n\x07\x41\x43TIONS\x10\x05\x12\x0c\n\x08INACTIVE\x10\x06\x12\x0b\n\x07\x44RY_RUN\x10\x07\x12\t\n\x05LABEL\x10\t\"\xfb\x02\n\x07Trigger\x12\x13\n\x0fUNKNOWN_TRIGGER\x10\x00\x12\x18\n\x14SUBMISSION_COMPLETED\x10\x01\x12\x11\n\rSCORE_CHANGED\x10\x02\x12\x1a\n\x16PARTICIPANT_REGISTERED\x10\x03\x12\x17\n\x13PARTICIPANT_CHANGED\x10\x04\x12\x12\n\x0eTICKET_CHANGED\x10\x05\x12\x11\n\rCOMMENT_ADDED\x10\x06\x12\x12\n\x0eMEMBER_CHANGED\x10\x07\x12\x13\n\x0fSTUDENT_CHANGED\x10\x08\x12\x16\n\x12\x41SSIGNMENT_CHANGED\x10\t\x12\x19\n\x15PARTICIPANT_FINALIZED\x10\n\x12\x15\n\x11\x43ONTEST_FINALIZED\x10\x0b\x12 \n\x1c\x43ONTEST_SUBMISSION_COMPLETED\x10\x0e\x12\x16\n\x12SUGGESTION_CHANGED\x10\x0f\x12\x12\n\x0e\x43ONTEST_ACTION\x10\x0c\x12\x11\n\rMEMBER_ACTION\x10\rB7Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/automation/rule.proto\x12\x11\x65olymp.automation\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1e\x65olymp/automation/action.proto\x1a!eolymp/automation/condition.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf9\x08\n\x04Rule\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x30\n\x07trigger\x18\x03 \x01(\x0e\x32\x1f.eolymp.automation.Rule.Trigger\x12\x30\n\nconditions\x18\x04 \x03(\x0b\x32\x1c.eolymp.automation.Condition\x12\x10\n\x08inactive\x18\x05 \x01(\x08\x12\x0f\n\x07\x64ry_run\x18\x06 \x01(\x08\x12\r\n\x05label\x18\t \x01(\t\x12\xc0\x01\n\x08schedule\x18\n \x01(\x0e\x32 .eolymp.automation.Rule.ScheduleB\x8b\x01\xa2\xf0\xf0\xe4\x01\x84\x01how often a `SCHEDULED` rule runs: `HOURLY` or `DAILY`; the hour a daily rule runs at is picked by the platform and cannot be chosen\x12\x1d\n\rtrigger_count\x18\x07 \x01(\x05\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12*\n\x07\x61\x63tions\x18\x64 \x03(\x0b\x32\x19.eolymp.automation.Action\x12.\n\ncreated_at\x18Z \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18[ \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x8c\x01\n\x05Patch\"\x82\x01\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x08\n\x04NAME\x10\x02\x12\x0b\n\x07TRIGGER\x10\x03\x12\x0e\n\nCONDITIONS\x10\x04\x12\x0b\n\x07\x41\x43TIONS\x10\x05\x12\x0c\n\x08INACTIVE\x10\x06\x12\x0b\n\x07\x44RY_RUN\x10\x07\x12\t\n\x05LABEL\x10\t\x12\x0c\n\x08SCHEDULE\x10\n\"\x8a\x03\n\x07Trigger\x12\x13\n\x0fUNKNOWN_TRIGGER\x10\x00\x12\x18\n\x14SUBMISSION_COMPLETED\x10\x01\x12\x11\n\rSCORE_CHANGED\x10\x02\x12\x1a\n\x16PARTICIPANT_REGISTERED\x10\x03\x12\x17\n\x13PARTICIPANT_CHANGED\x10\x04\x12\x12\n\x0eTICKET_CHANGED\x10\x05\x12\x11\n\rCOMMENT_ADDED\x10\x06\x12\x12\n\x0eMEMBER_CHANGED\x10\x07\x12\x13\n\x0fSTUDENT_CHANGED\x10\x08\x12\x16\n\x12\x41SSIGNMENT_CHANGED\x10\t\x12\x19\n\x15PARTICIPANT_FINALIZED\x10\n\x12\x15\n\x11\x43ONTEST_FINALIZED\x10\x0b\x12 \n\x1c\x43ONTEST_SUBMISSION_COMPLETED\x10\x0e\x12\x16\n\x12SUGGESTION_CHANGED\x10\x0f\x12\x12\n\x0e\x43ONTEST_ACTION\x10\x0c\x12\x11\n\rMEMBER_ACTION\x10\r\x12\r\n\tSCHEDULED\x10\x10\"7\n\x08Schedule\x12\x14\n\x10UNKNOWN_SCHEDULE\x10\x00\x12\n\n\x06HOURLY\x10\x01\x12\t\n\x05\x44\x41ILY\x10\x02\x42\x37Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,14 +36,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.automation.rule_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/automation;automation'
+  _globals['_RULE'].fields_by_name['schedule']._loaded_options = None
+  _globals['_RULE'].fields_by_name['schedule']._serialized_options = b'\242\360\360\344\001\204\001how often a `SCHEDULED` rule runs: `HOURLY` or `DAILY`; the hour a daily rule runs at is picked by the platform and cannot be chosen'
   _globals['_RULE'].fields_by_name['trigger_count']._loaded_options = None
   _globals['_RULE'].fields_by_name['trigger_count']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_RULE']._serialized_start=182
-  _globals['_RULE']._serialized_end=1044
-  _globals['_RULE_PATCH']._serialized_start=537
-  _globals['_RULE_PATCH']._serialized_end=662
-  _globals['_RULE_PATCH_FIELD']._serialized_start=546
-  _globals['_RULE_PATCH_FIELD']._serialized_end=662
-  _globals['_RULE_TRIGGER']._serialized_start=665
-  _globals['_RULE_TRIGGER']._serialized_end=1044
+  _globals['_RULE']._serialized_end=1327
+  _globals['_RULE_PATCH']._serialized_start=733
+  _globals['_RULE_PATCH']._serialized_end=873
+  _globals['_RULE_PATCH_FIELD']._serialized_start=743
+  _globals['_RULE_PATCH_FIELD']._serialized_end=873
+  _globals['_RULE_TRIGGER']._serialized_start=876
+  _globals['_RULE_TRIGGER']._serialized_end=1270
+  _globals['_RULE_SCHEDULE']._serialized_start=1272
+  _globals['_RULE_SCHEDULE']._serialized_end=1327
 # @@protoc_insertion_point(module_scope)
