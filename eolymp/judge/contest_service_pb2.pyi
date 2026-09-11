@@ -8,6 +8,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.judge import activity_pb2 as _activity_pb2
 from eolymp.judge import contest_pb2 as _contest_pb2
+from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -109,7 +110,17 @@ class DescribeContestOutput(_message.Message):
     def __init__(self, contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
 
 class ListContestsInput(_message.Message):
-    __slots__ = ("offset", "size", "search", "filters", "extra")
+    __slots__ = ("offset", "size", "search", "filters", "sort", "order", "extra")
+    class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        DEFAULT: _ClassVar[ListContestsInput.Sortable]
+        STARTS_AT: _ClassVar[ListContestsInput.Sortable]
+        CREATED_AT: _ClassVar[ListContestsInput.Sortable]
+        NAME: _ClassVar[ListContestsInput.Sortable]
+    DEFAULT: ListContestsInput.Sortable
+    STARTS_AT: ListContestsInput.Sortable
+    CREATED_AT: ListContestsInput.Sortable
+    NAME: ListContestsInput.Sortable
     class Filter(_message.Message):
         __slots__ = ("id", "name", "starts_at", "ends_at", "public", "visibility", "format", "status", "featured", "year", "scale", "series", "difficulty", "country", "region", "city", "member_id")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -151,13 +162,17 @@ class ListContestsInput(_message.Message):
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
+    SORT_FIELD_NUMBER: _ClassVar[int]
+    ORDER_FIELD_NUMBER: _ClassVar[int]
     EXTRA_FIELD_NUMBER: _ClassVar[int]
     offset: int
     size: int
     search: str
     filters: ListContestsInput.Filter
+    sort: ListContestsInput.Sortable
+    order: _direction_pb2.Direction
     extra: _containers.RepeatedScalarFieldContainer[_contest_pb2.Contest.Extra.Field]
-    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListContestsInput.Filter, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_contest_pb2.Contest.Extra.Field, str]]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListContestsInput.Filter, _Mapping]] = ..., sort: _Optional[_Union[ListContestsInput.Sortable, str]] = ..., order: _Optional[_Union[_direction_pb2.Direction, str]] = ..., extra: _Optional[_Iterable[_Union[_contest_pb2.Contest.Extra.Field, str]]] = ...) -> None: ...
 
 class ListContestsOutput(_message.Message):
     __slots__ = ("items", "total")
