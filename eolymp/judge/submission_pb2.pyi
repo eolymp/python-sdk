@@ -15,7 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "contest_id", "problem_id", "participant_id", "submitted_at", "deleted", "lang", "source", "source_url", "output", "quiz", "widget", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "cpu_usage", "memory_usage", "resource_usage", "groups", "cursor")
+    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "contest_id", "problem_id", "participant_id", "submitted_at", "deleted", "lang", "source", "source_url", "output", "quiz", "widget", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "time_limit", "cpu_usage", "memory_usage", "resource_usage", "groups", "cursor")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NO_EXTRA: _ClassVar[Submission.Extra]
@@ -27,12 +27,14 @@ class Submission(_message.Message):
     GROUPS: Submission.Extra
     RUNS: Submission.Extra
     class Run(_message.Message):
-        __slots__ = ("id", "index", "test_id", "cost", "score", "wall_time_usage", "cpu_time_usage", "memory_usage", "status", "verdict")
+        __slots__ = ("id", "index", "test_id", "cost", "score", "time_usage", "time_limit", "wall_time_usage", "cpu_time_usage", "memory_usage", "status", "verdict")
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         TEST_ID_FIELD_NUMBER: _ClassVar[int]
         COST_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
+        TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
+        TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
         WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
         CPU_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
         MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
@@ -43,14 +45,16 @@ class Submission(_message.Message):
         test_id: str
         cost: float
         score: float
+        time_usage: int
+        time_limit: int
         wall_time_usage: int
         cpu_time_usage: int
         memory_usage: int
         status: _submission_pb2.Submission.Status
         verdict: _submission_pb2.Submission.Verdict
-        def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., test_id: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., time_usage: _Optional[int] = ..., time_limit: _Optional[int] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ...) -> None: ...
     class Group(_message.Message):
-        __slots__ = ("index", "testset_id", "status", "verdict", "dependencies", "cost", "score", "scoring_mode", "feedback_policy", "wall_time_usage", "cpu_time_usage", "memory_usage", "runs")
+        __slots__ = ("index", "testset_id", "status", "verdict", "dependencies", "cost", "score", "scoring_mode", "feedback_policy", "time_usage", "time_limit", "wall_time_usage", "cpu_time_usage", "memory_usage", "runs")
         INDEX_FIELD_NUMBER: _ClassVar[int]
         TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -60,6 +64,8 @@ class Submission(_message.Message):
         SCORE_FIELD_NUMBER: _ClassVar[int]
         SCORING_MODE_FIELD_NUMBER: _ClassVar[int]
         FEEDBACK_POLICY_FIELD_NUMBER: _ClassVar[int]
+        TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
+        TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
         WALL_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
         CPU_TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
         MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
@@ -73,11 +79,13 @@ class Submission(_message.Message):
         score: float
         scoring_mode: _testing_scoring_pb2.ScoringMode
         feedback_policy: _testing_feedback_pb2.FeedbackPolicy
+        time_usage: int
+        time_limit: int
         wall_time_usage: int
         cpu_time_usage: int
         memory_usage: int
         runs: _containers.RepeatedCompositeFieldContainer[Submission.Run]
-        def __init__(self, index: _Optional[int] = ..., testset_id: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., dependencies: _Optional[_Iterable[int]] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., scoring_mode: _Optional[_Union[_testing_scoring_pb2.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., runs: _Optional[_Iterable[_Union[Submission.Run, _Mapping]]] = ...) -> None: ...
+        def __init__(self, index: _Optional[int] = ..., testset_id: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., dependencies: _Optional[_Iterable[int]] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., scoring_mode: _Optional[_Union[_testing_scoring_pb2.ScoringMode, str]] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., time_usage: _Optional[int] = ..., time_limit: _Optional[int] = ..., wall_time_usage: _Optional[int] = ..., cpu_time_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., runs: _Optional[_Iterable[_Union[Submission.Run, _Mapping]]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
@@ -103,6 +111,7 @@ class Submission(_message.Message):
     SCORE_FIELD_NUMBER: _ClassVar[int]
     PERCENTAGE_FIELD_NUMBER: _ClassVar[int]
     TIME_USAGE_FIELD_NUMBER: _ClassVar[int]
+    TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
     CPU_USAGE_FIELD_NUMBER: _ClassVar[int]
     MEMORY_USAGE_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_USAGE_FIELD_NUMBER: _ClassVar[int]
@@ -133,9 +142,10 @@ class Submission(_message.Message):
     score: float
     percentage: float
     time_usage: int
+    time_limit: int
     cpu_usage: int
     memory_usage: int
     resource_usage: float
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: _Optional[bool] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ..., widget: _Optional[_Union[_submission_pb2.Submission.Widget, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: _Optional[bool] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ..., widget: _Optional[_Union[_submission_pb2.Submission.Widget, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., time_limit: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
