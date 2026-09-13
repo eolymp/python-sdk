@@ -56,6 +56,7 @@ class EvaluationReport(_message.Message):
             SKIPPED: _ClassVar[EvaluationReport.Run.Status]
             INTERACTION_FAILURE: _ClassVar[EvaluationReport.Run.Status]
             BLOCKED: _ClassVar[EvaluationReport.Run.Status]
+            IDLENESS_LIMIT_EXCEEDED: _ClassVar[EvaluationReport.Run.Status]
         NONE: EvaluationReport.Run.Status
         PENDING: EvaluationReport.Run.Status
         EXECUTING: EvaluationReport.Run.Status
@@ -70,6 +71,7 @@ class EvaluationReport(_message.Message):
         SKIPPED: EvaluationReport.Run.Status
         INTERACTION_FAILURE: EvaluationReport.Run.Status
         BLOCKED: EvaluationReport.Run.Status
+        IDLENESS_LIMIT_EXCEEDED: EvaluationReport.Run.Status
         REFERENCE_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]

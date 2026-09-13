@@ -22,6 +22,7 @@ class Run(_message.Message):
         MEMORY_OVERFLOW: _ClassVar[Run.Status]
         ERROR: _ClassVar[Run.Status]
         FAILURE: _ClassVar[Run.Status]
+        IDLENESS_LIMIT_EXCEEDED: _ClassVar[Run.Status]
     UNKNOWN_STATUS: Run.Status
     PENDING: Run.Status
     PROVISIONING: Run.Status
@@ -33,6 +34,7 @@ class Run(_message.Message):
     MEMORY_OVERFLOW: Run.Status
     ERROR: Run.Status
     FAILURE: Run.Status
+    IDLENESS_LIMIT_EXCEEDED: Run.Status
     ID_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
