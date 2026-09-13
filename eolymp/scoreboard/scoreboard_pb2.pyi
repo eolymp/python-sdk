@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Scoreboard(_message.Message):
-    __slots__ = ("id", "slug", "name", "best_of", "visibility", "modes", "contests", "attributes", "filters")
+    __slots__ = ("id", "slug", "name", "best_of", "visibility", "format", "modes", "contests", "attributes", "filters")
     class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_MODE: _ClassVar[Scoreboard.Mode]
@@ -113,6 +113,7 @@ class Scoreboard(_message.Message):
     NAME_FIELD_NUMBER: _ClassVar[int]
     BEST_OF_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
+    FORMAT_FIELD_NUMBER: _ClassVar[int]
     MODES_FIELD_NUMBER: _ClassVar[int]
     CONTESTS_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
@@ -122,11 +123,12 @@ class Scoreboard(_message.Message):
     name: str
     best_of: int
     visibility: Scoreboard.Visibility
+    format: _contest_pb2.Contest.Format
     modes: _containers.RepeatedScalarFieldContainer[Scoreboard.Mode]
     contests: _containers.RepeatedCompositeFieldContainer[Scoreboard.Contest]
     attributes: _containers.RepeatedCompositeFieldContainer[Scoreboard.Attribute]
     filters: _containers.RepeatedCompositeFieldContainer[Scoreboard.Filter]
-    def __init__(self, id: _Optional[str] = ..., slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ..., visibility: _Optional[_Union[Scoreboard.Visibility, str]] = ..., modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[Scoreboard.Attribute, _Mapping]]] = ..., filters: _Optional[_Iterable[_Union[Scoreboard.Filter, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., slug: _Optional[str] = ..., name: _Optional[str] = ..., best_of: _Optional[int] = ..., visibility: _Optional[_Union[Scoreboard.Visibility, str]] = ..., format: _Optional[_Union[_contest_pb2.Contest.Format, str]] = ..., modes: _Optional[_Iterable[_Union[Scoreboard.Mode, str]]] = ..., contests: _Optional[_Iterable[_Union[Scoreboard.Contest, _Mapping]]] = ..., attributes: _Optional[_Iterable[_Union[Scoreboard.Attribute, _Mapping]]] = ..., filters: _Optional[_Iterable[_Union[Scoreboard.Filter, _Mapping]]] = ...) -> None: ...
 
 class Row(_message.Message):
     __slots__ = ("member_id", "display_name", "index", "rank", "rank_length", "rank_all", "rank_all_length", "score", "penalty", "unofficial", "disqualified", "contests", "attributes")
