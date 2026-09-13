@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ShoppingCart(_message.Message):
-    __slots__ = ("id", "items", "billing_address", "shipping_address", "billing_same_as_shipping", "currency", "shipping_method_id", "total_amount", "shipping_amount", "discount_amount", "tax_amount", "tax_rate", "tax_note", "grand_total")
+    __slots__ = ("id", "items", "billing_address", "shipping_address", "billing_same_as_shipping", "currency", "shipping_method_id", "total_amount", "shipping_amount", "discount_amount", "tax_amount", "tax_rate", "tax_note", "grand_total", "credit_amount", "credit_discount", "payable_amount")
     class Item(_message.Message):
         __slots__ = ("id", "product_id", "variant_id", "quantity", "unit_amount", "total_amount", "discount_amount")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -40,6 +40,9 @@ class ShoppingCart(_message.Message):
     TAX_RATE_FIELD_NUMBER: _ClassVar[int]
     TAX_NOTE_FIELD_NUMBER: _ClassVar[int]
     GRAND_TOTAL_FIELD_NUMBER: _ClassVar[int]
+    CREDIT_AMOUNT_FIELD_NUMBER: _ClassVar[int]
+    CREDIT_DISCOUNT_FIELD_NUMBER: _ClassVar[int]
+    PAYABLE_AMOUNT_FIELD_NUMBER: _ClassVar[int]
     id: str
     items: _containers.RepeatedCompositeFieldContainer[ShoppingCart.Item]
     billing_address: _address_pb2.Address
@@ -54,4 +57,7 @@ class ShoppingCart(_message.Message):
     tax_rate: int
     tax_note: str
     grand_total: int
-    def __init__(self, id: _Optional[str] = ..., items: _Optional[_Iterable[_Union[ShoppingCart.Item, _Mapping]]] = ..., billing_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., shipping_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., billing_same_as_shipping: _Optional[bool] = ..., currency: _Optional[str] = ..., shipping_method_id: _Optional[str] = ..., total_amount: _Optional[int] = ..., shipping_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., tax_rate: _Optional[int] = ..., tax_note: _Optional[str] = ..., grand_total: _Optional[int] = ...) -> None: ...
+    credit_amount: int
+    credit_discount: int
+    payable_amount: int
+    def __init__(self, id: _Optional[str] = ..., items: _Optional[_Iterable[_Union[ShoppingCart.Item, _Mapping]]] = ..., billing_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., shipping_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., billing_same_as_shipping: _Optional[bool] = ..., currency: _Optional[str] = ..., shipping_method_id: _Optional[str] = ..., total_amount: _Optional[int] = ..., shipping_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., tax_rate: _Optional[int] = ..., tax_note: _Optional[str] = ..., grand_total: _Optional[int] = ..., credit_amount: _Optional[int] = ..., credit_discount: _Optional[int] = ..., payable_amount: _Optional[int] = ...) -> None: ...

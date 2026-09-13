@@ -108,9 +108,11 @@ class PlaceOrderInput(_message.Message):
     def __init__(self) -> None: ...
 
 class PlaceOrderOutput(_message.Message):
-    __slots__ = ("order_id", "order_number")
+    __slots__ = ("order_id", "order_number", "checkout_url")
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]
     ORDER_NUMBER_FIELD_NUMBER: _ClassVar[int]
+    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
     order_id: str
     order_number: str
-    def __init__(self, order_id: _Optional[str] = ..., order_number: _Optional[str] = ...) -> None: ...
+    checkout_url: str
+    def __init__(self, order_id: _Optional[str] = ..., order_number: _Optional[str] = ..., checkout_url: _Optional[str] = ...) -> None: ...
