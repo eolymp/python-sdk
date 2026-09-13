@@ -107,6 +107,20 @@ class ScoreboardServiceClient:
             **kwargs,
         )
 
+    def ListScoreboardContests(self, request, **kwargs):
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/contests"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.scoreboard.ListScoreboardContestsOutput"),
+            **kwargs,
+        )
+
     def RemoveScoreboardContest(self, request, **kwargs):
         path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/contests/"+urllib.parse.quote(request.contest_id)
 
@@ -148,6 +162,20 @@ class ScoreboardServiceClient:
             url=self.url+path,
             request_data=request,
             response_symbol=_sym_db.GetSymbol("eolymp.scoreboard.UpdateScoreboardAttributeOutput"),
+            **kwargs,
+        )
+
+    def ListScoreboardAttributes(self, request, **kwargs):
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/attributes"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.scoreboard.ListScoreboardAttributesOutput"),
             **kwargs,
         )
 

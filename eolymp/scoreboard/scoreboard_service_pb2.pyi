@@ -117,6 +117,24 @@ class UpdateScoreboardContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class ListScoreboardContestsInput(_message.Message):
+    __slots__ = ("scoreboard_id", "offset", "size")
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    scoreboard_id: str
+    offset: int
+    size: int
+    def __init__(self, scoreboard_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+
+class ListScoreboardContestsOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Contest]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Contest, _Mapping]]] = ...) -> None: ...
+
 class RemoveScoreboardContestInput(_message.Message):
     __slots__ = ("scoreboard_id", "contest_id")
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
@@ -158,6 +176,24 @@ class UpdateScoreboardAttributeInput(_message.Message):
 class UpdateScoreboardAttributeOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class ListScoreboardAttributesInput(_message.Message):
+    __slots__ = ("scoreboard_id", "offset", "size")
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    scoreboard_id: str
+    offset: int
+    size: int
+    def __init__(self, scoreboard_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+
+class ListScoreboardAttributesOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Attribute]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Attribute, _Mapping]]] = ...) -> None: ...
 
 class RemoveScoreboardAttributeInput(_message.Message):
     __slots__ = ("scoreboard_id", "attribute_key")
