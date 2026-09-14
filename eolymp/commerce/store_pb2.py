@@ -22,9 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/commerce/store.proto\x12\x0f\x65olymp.commerce\"\x88\x01\n\x05Store\x12\x10\n\x08\x63urrency\x18\x01 \x01(\t\x12\x14\n\x0c\x63redit_value\x18\x02 \x01(\r\x1aW\n\x05Patch\x12\x15\n\x08\x63urrency\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x19\n\x0c\x63redit_value\x18\x02 \x01(\rH\x01\x88\x01\x01\x42\x0b\n\t_currencyB\x0f\n\r_credit_valueB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x65olymp/commerce/store.proto\x12\x0f\x65olymp.commerce\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd5\x04\n\x05Store\x12\x10\n\x08\x63urrency\x18\x01 \x01(\t\x12\x14\n\x0c\x63redit_value\x18\x02 \x01(\r\x12\x18\n\x10stripe_live_mode\x18\n \x01(\x08\x12\x32\n\x0bstripe_live\x18\x0b \x01(\x0b\x32\x1d.eolymp.commerce.Store.Stripe\x12\x32\n\x0bstripe_test\x18\x0c \x01(\x0b\x32\x1d.eolymp.commerce.Store.Stripe\x12=\n\x11\x63\x61talog_synced_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x1a\xf3\x01\n\x05Patch\x12\x15\n\x08\x63urrency\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x19\n\x0c\x63redit_value\x18\x02 \x01(\rH\x01\x88\x01\x01\x12\x1d\n\x10stripe_live_mode\x18\n \x01(\x08H\x02\x88\x01\x01\x12\x32\n\x0bstripe_live\x18\x0b \x01(\x0b\x32\x1d.eolymp.commerce.Store.Stripe\x12\x32\n\x0bstripe_test\x18\x0c \x01(\x0b\x32\x1d.eolymp.commerce.Store.StripeB\x0b\n\t_currencyB\x0f\n\r_credit_valueB\x13\n\x11_stripe_live_mode\x1am\n\x06Stripe\x12\x12\n\nsecret_key\x18\x01 \x01(\t\x12\x16\n\x0ewebhook_secret\x18\x02 \x01(\t\x12\x1a\n\nconfigured\x18\x03 \x01(\x08\x42\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1b\n\x0bwebhook_url\x18\x04 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x42\x33Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +34,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.store_pb2',
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
-  _globals['_STORE']._serialized_start=49
-  _globals['_STORE']._serialized_end=185
-  _globals['_STORE_PATCH']._serialized_start=98
-  _globals['_STORE_PATCH']._serialized_end=185
+  _globals['_STORE_STRIPE'].fields_by_name['configured']._loaded_options = None
+  _globals['_STORE_STRIPE'].fields_by_name['configured']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_STORE_STRIPE'].fields_by_name['webhook_url']._loaded_options = None
+  _globals['_STORE_STRIPE'].fields_by_name['webhook_url']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_STORE'].fields_by_name['catalog_synced_at']._loaded_options = None
+  _globals['_STORE'].fields_by_name['catalog_synced_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_STORE']._serialized_start=112
+  _globals['_STORE']._serialized_end=709
+  _globals['_STORE_PATCH']._serialized_start=355
+  _globals['_STORE_PATCH']._serialized_end=598
+  _globals['_STORE_STRIPE']._serialized_start=600
+  _globals['_STORE_STRIPE']._serialized_end=709
 # @@protoc_insertion_point(module_scope)

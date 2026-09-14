@@ -30,3 +30,13 @@ class UpdateStoreInput(_message.Message):
 class UpdateStoreOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class SyncCatalogInput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class SyncCatalogOutput(_message.Message):
+    __slots__ = ("synced",)
+    SYNCED_FIELD_NUMBER: _ClassVar[int]
+    synced: int
+    def __init__(self, synced: _Optional[int] = ...) -> None: ...

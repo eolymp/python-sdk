@@ -30,7 +30,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.commerce import store_pb2 as eolymp_dot_commerce_dot_store__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/commerce/store_service.proto\x12\x0f\x65olymp.commerce\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/commerce/store.proto\"\x14\n\x12\x44\x65scribeStoreInput\"<\n\x13\x44\x65scribeStoreOutput\x12%\n\x05store\x18\x01 \x01(\x0b\x32\x16.eolymp.commerce.Store\"?\n\x10UpdateStoreInput\x12+\n\x05store\x18\x01 \x01(\x0b\x32\x1c.eolymp.commerce.Store.Patch\"\x13\n\x11UpdateStoreOutput2\xe8\x02\n\x0cStoreService\x12\x9e\x01\n\rDescribeStore\x12#.eolymp.commerce.DescribeStoreInput\x1a$.eolymp.commerce.DescribeStoreOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x08\x12\x06/store\x12\x99\x01\n\x0bUpdateStore\x12!.eolymp.commerce.UpdateStoreInput\x1a\".eolymp.commerce.UpdateStoreOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x08\x1a\x06/store\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/commerce/store_service.proto\x12\x0f\x65olymp.commerce\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1b\x65olymp/commerce/store.proto\"\x14\n\x12\x44\x65scribeStoreInput\"<\n\x13\x44\x65scribeStoreOutput\x12%\n\x05store\x18\x01 \x01(\x0b\x32\x16.eolymp.commerce.Store\"?\n\x10UpdateStoreInput\x12+\n\x05store\x18\x01 \x01(\x0b\x32\x1c.eolymp.commerce.Store.Patch\"\x13\n\x11UpdateStoreOutput\"\x12\n\x10SyncCatalogInput\"#\n\x11SyncCatalogOutput\x12\x0e\n\x06synced\x18\x01 \x01(\x05\x32\x91\x04\n\x0cStoreService\x12\x9e\x01\n\rDescribeStore\x12#.eolymp.commerce.DescribeStoreInput\x1a$.eolymp.commerce.DescribeStoreOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommerce:catalog:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x08\x12\x06/store\x12\x99\x01\n\x0bUpdateStore\x12!.eolymp.commerce.UpdateStoreInput\x1a\".eolymp.commerce.UpdateStoreOutput\"C\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x08\x1a\x06/store\x12\xa6\x01\n\x0bSyncCatalog\x12!.eolymp.commerce.SyncCatalogInput\x1a\".eolymp.commerce.SyncCatalogOutput\"P\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x02\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommerce:catalog:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x15\"\x13/store/catalog:sync\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,6 +44,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_STORESERVICE'].methods_by_name['DescribeStore']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025commerce:catalog:read\242\343\n\004\250\343\n\001\202\323\344\223\002\010\022\006/store'
   _globals['_STORESERVICE'].methods_by_name['UpdateStore']._loaded_options = None
   _globals['_STORESERVICE'].methods_by_name['UpdateStore']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\032\212\343\n\026commerce:catalog:write\242\343\n\004\250\343\n\002\202\323\344\223\002\010\032\006/store'
+  _globals['_STORESERVICE'].methods_by_name['SyncCatalog']._loaded_options = None
+  _globals['_STORESERVICE'].methods_by_name['SyncCatalog']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\002\202\343\n\032\212\343\n\026commerce:catalog:write\242\343\n\004\250\343\n\002\202\323\344\223\002\025\"\023/store/catalog:sync'
   _globals['_DESCRIBESTOREINPUT']._serialized_start=252
   _globals['_DESCRIBESTOREINPUT']._serialized_end=272
   _globals['_DESCRIBESTOREOUTPUT']._serialized_start=274
@@ -52,6 +54,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATESTOREINPUT']._serialized_end=399
   _globals['_UPDATESTOREOUTPUT']._serialized_start=401
   _globals['_UPDATESTOREOUTPUT']._serialized_end=420
-  _globals['_STORESERVICE']._serialized_start=423
-  _globals['_STORESERVICE']._serialized_end=783
+  _globals['_SYNCCATALOGINPUT']._serialized_start=422
+  _globals['_SYNCCATALOGINPUT']._serialized_end=440
+  _globals['_SYNCCATALOGOUTPUT']._serialized_start=442
+  _globals['_SYNCCATALOGOUTPUT']._serialized_end=477
+  _globals['_STORESERVICE']._serialized_start=480
+  _globals['_STORESERVICE']._serialized_end=1009
 # @@protoc_insertion_point(module_scope)

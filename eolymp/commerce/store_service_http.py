@@ -36,3 +36,14 @@ class StoreServiceClient:
             **kwargs,
         )
 
+    def SyncCatalog(self, request, **kwargs):
+        path = "/store/catalog:sync"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.SyncCatalogOutput"),
+            **kwargs,
+        )
+
