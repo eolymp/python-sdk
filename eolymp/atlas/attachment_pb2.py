@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/atlas/attachment.proto\x12\x0c\x65olymp.atlas\"H\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04link\x18\x04 \x01(\tB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/atlas/attachment.proto\x12\x0c\x65olymp.atlas\"e\n\nAttachment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0e\n\x04link\x18\x04 \x01(\tH\x00\x12\x11\n\x07\x63ontent\x18\x05 \x01(\tH\x00\x42\x06\n\x04\x66ileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_ATTACHMENT']._serialized_start=47
-  _globals['_ATTACHMENT']._serialized_end=119
+  _globals['_ATTACHMENT']._serialized_end=148
 # @@protoc_insertion_point(module_scope)
