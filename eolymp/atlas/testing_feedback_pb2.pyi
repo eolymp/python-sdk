@@ -6,9 +6,11 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class FeedbackPolicy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
-    COMPLETE: _ClassVar[FeedbackPolicy]
+    UNKNOWN_FEEDBACK_POLICY: _ClassVar[FeedbackPolicy]
     ICPC: _ClassVar[FeedbackPolicy]
     ICPC_EXPANDED: _ClassVar[FeedbackPolicy]
-COMPLETE: FeedbackPolicy
+    COMPLETE: _ClassVar[FeedbackPolicy]
+UNKNOWN_FEEDBACK_POLICY: FeedbackPolicy
 ICPC: FeedbackPolicy
 ICPC_EXPANDED: FeedbackPolicy
+COMPLETE: FeedbackPolicy
