@@ -83,16 +83,18 @@ class Scoreboard(_message.Message):
     class Row(_message.Message):
         __slots__ = ("id", "member_id", "index", "rank", "rank_length", "rank_all", "rank_all_length", "score", "penalty", "tie_breaker", "unofficial", "disqualified", "medal", "values")
         class Value(_message.Message):
-            __slots__ = ("column_id", "problem_score", "string", "number")
+            __slots__ = ("column_id", "type", "problem_score", "string", "number")
             COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
+            TYPE_FIELD_NUMBER: _ClassVar[int]
             PROBLEM_SCORE_FIELD_NUMBER: _ClassVar[int]
             STRING_FIELD_NUMBER: _ClassVar[int]
             NUMBER_FIELD_NUMBER: _ClassVar[int]
             column_id: str
+            type: Scoreboard.Column.Type
             problem_score: Scoreboard.Row.ProblemScore
             string: str
             number: str
-            def __init__(self, column_id: _Optional[str] = ..., problem_score: _Optional[_Union[Scoreboard.Row.ProblemScore, _Mapping]] = ..., string: _Optional[str] = ..., number: _Optional[str] = ...) -> None: ...
+            def __init__(self, column_id: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., problem_score: _Optional[_Union[Scoreboard.Row.ProblemScore, _Mapping]] = ..., string: _Optional[str] = ..., number: _Optional[str] = ...) -> None: ...
         class ProblemScore(_message.Message):
             __slots__ = ("score", "penalty", "attempts", "percentage", "time", "pending", "changed", "first_to_solve")
             SCORE_FIELD_NUMBER: _ClassVar[int]
