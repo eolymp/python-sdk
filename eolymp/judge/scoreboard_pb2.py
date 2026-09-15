@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.community import attribute_pb2 as eolymp_dot_community_dot_attribute__pb2
 from eolymp.judge import medal_pb2 as eolymp_dot_judge_dot_medal__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/judge/scoreboard.proto\x12\x0c\x65olymp.judge\x1a\x18\x65olymp/judge/medal.proto\"\xce\x08\n\nScoreboard\x12,\n\x05modes\x18\n \x03(\x0e\x32\x1d.eolymp.judge.Scoreboard.Mode\x12\x30\n\x07\x63olumns\x18\x0b \x03(\x0b\x32\x1f.eolymp.judge.Scoreboard.Column\x1a\xad\x02\n\x06\x43olumn\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\x04type\x18\x02 \x01(\x0e\x32$.eolymp.judge.Scoreboard.Column.Type\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0f\n\x07\x63hoices\x18\n \x03(\t\x12\x10\n\x08sortable\x18\x14 \x01(\x08\x12\x12\n\nfilterable\x18\x15 \x01(\x08\"\x9c\x01\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\x11\n\rPROBLEM_SCORE\x10\x03\x12\n\n\x06STRING\x10\n\x12\n\n\x06NUMBER\x10\x0b\x12\n\n\x06\x43HOICE\x10\x0c\x12\x08\n\x04\x44\x41TE\x10\r\x12\t\n\x05\x45MAIL\x10\x0e\x12\x0c\n\x08\x43HECKBOX\x10\x0f\x12\x0b\n\x07\x43OUNTRY\x10\x10\x12\n\n\x06REGION\x10\x11\x12\x0f\n\x0bINSTITUTION\x10\x12\x1a\xe5\x04\n\x03Row\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\n \x01(\r\x12\x0c\n\x04rank\x18\x0b \x01(\r\x12\x13\n\x0brank_length\x18\x0c \x01(\r\x12\x10\n\x08rank_all\x18\r \x01(\r\x12\x17\n\x0frank_all_length\x18\x0e \x01(\r\x12\r\n\x05score\x18\x14 \x01(\x02\x12\x0f\n\x07penalty\x18\x15 \x01(\x02\x12\x13\n\x0btie_breaker\x18\x16 \x01(\r\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x14\n\x0c\x64isqualified\x18\x1f \x01(\x08\x12\"\n\x05medal\x18  \x01(\x0e\x32\x13.eolymp.judge.Medal\x12\x32\n\x06values\x18\x32 \x03(\x0b\x32\".eolymp.judge.Scoreboard.Row.Value\x1a\x8b\x01\n\x05Value\x12\x11\n\tcolumn_id\x18\x01 \x01(\t\x12\x42\n\rproblem_score\x18\x0c \x01(\x0b\x32).eolymp.judge.Scoreboard.Row.ProblemScoreH\x00\x12\x10\n\x06string\x18\r \x01(\tH\x00\x12\x10\n\x06number\x18\x0e \x01(\tH\x00\x42\x07\n\x05value\x1a\x9c\x01\n\x0cProblemScore\x12\r\n\x05score\x18\x01 \x01(\x02\x12\x0f\n\x07penalty\x18\x02 \x01(\x02\x12\x10\n\x08\x61ttempts\x18\x03 \x01(\r\x12\x12\n\npercentage\x18\x04 \x01(\x02\x12\x0c\n\x04time\x18\x05 \x01(\r\x12\x0f\n\x07pending\x18\x06 \x01(\r\x12\x0f\n\x07\x63hanged\x18\x07 \x01(\x08\x12\x16\n\x0e\x66irst_to_solve\x18\x08 \x01(\x08\"H\n\x04Mode\x12\x10\n\x0cUNKNOWN_MODE\x10\x00\x12\n\n\x06\x46ROZEN\x10\x01\x12\x0b\n\x07UPSOLVE\x10\x02\x12\x0b\n\x07VIRTUAL\x10\x03\x12\x08\n\x04MAIN\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/judge/scoreboard.proto\x12\x0c\x65olymp.judge\x1a eolymp/community/attribute.proto\x1a\x18\x65olymp/judge/medal.proto\"\x86\n\n\nScoreboard\x12,\n\x05modes\x18\n \x03(\x0e\x32\x1d.eolymp.judge.Scoreboard.Mode\x12\x30\n\x07\x63olumns\x18\x0b \x03(\x0b\x32\x1f.eolymp.judge.Scoreboard.Column\x1a\xad\x02\n\x06\x43olumn\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\x04type\x18\x02 \x01(\x0e\x32$.eolymp.judge.Scoreboard.Column.Type\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0f\n\x07\x63hoices\x18\n \x03(\t\x12\x10\n\x08sortable\x18\x14 \x01(\x08\x12\x12\n\nfilterable\x18\x15 \x01(\x08\"\x9c\x01\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\x11\n\rPROBLEM_SCORE\x10\x03\x12\n\n\x06STRING\x10\n\x12\n\n\x06NUMBER\x10\x0b\x12\n\n\x06\x43HOICE\x10\x0c\x12\x08\n\x04\x44\x41TE\x10\r\x12\t\n\x05\x45MAIL\x10\x0e\x12\x0c\n\x08\x43HECKBOX\x10\x0f\x12\x0b\n\x07\x43OUNTRY\x10\x10\x12\n\n\x06REGION\x10\x11\x12\x0f\n\x0bINSTITUTION\x10\x12\x1a\xb5\x01\n\tAttribute\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\r\n\x05label\x18\x03 \x01(\t\x12.\n\x04type\x18\n \x01(\x0e\x32 .eolymp.community.Attribute.Type\x1a\x43\n\x05Patch\x12\x12\n\x05index\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x12\n\x05label\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x08\n\x06_indexB\x08\n\x06_label\x1a\xe5\x04\n\x03Row\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\r\n\x05index\x18\n \x01(\r\x12\x0c\n\x04rank\x18\x0b \x01(\r\x12\x13\n\x0brank_length\x18\x0c \x01(\r\x12\x10\n\x08rank_all\x18\r \x01(\r\x12\x17\n\x0frank_all_length\x18\x0e \x01(\r\x12\r\n\x05score\x18\x14 \x01(\x02\x12\x0f\n\x07penalty\x18\x15 \x01(\x02\x12\x13\n\x0btie_breaker\x18\x16 \x01(\r\x12\x12\n\nunofficial\x18\x1e \x01(\x08\x12\x14\n\x0c\x64isqualified\x18\x1f \x01(\x08\x12\"\n\x05medal\x18  \x01(\x0e\x32\x13.eolymp.judge.Medal\x12\x32\n\x06values\x18\x32 \x03(\x0b\x32\".eolymp.judge.Scoreboard.Row.Value\x1a\x8b\x01\n\x05Value\x12\x11\n\tcolumn_id\x18\x01 \x01(\t\x12\x42\n\rproblem_score\x18\x0c \x01(\x0b\x32).eolymp.judge.Scoreboard.Row.ProblemScoreH\x00\x12\x10\n\x06string\x18\r \x01(\tH\x00\x12\x10\n\x06number\x18\x0e \x01(\tH\x00\x42\x07\n\x05value\x1a\x9c\x01\n\x0cProblemScore\x12\r\n\x05score\x18\x01 \x01(\x02\x12\x0f\n\x07penalty\x18\x02 \x01(\x02\x12\x10\n\x08\x61ttempts\x18\x03 \x01(\r\x12\x12\n\npercentage\x18\x04 \x01(\x02\x12\x0c\n\x04time\x18\x05 \x01(\r\x12\x0f\n\x07pending\x18\x06 \x01(\r\x12\x0f\n\x07\x63hanged\x18\x07 \x01(\x08\x12\x16\n\x0e\x66irst_to_solve\x18\x08 \x01(\x08\"H\n\x04Mode\x12\x10\n\x0cUNKNOWN_MODE\x10\x00\x12\n\n\x06\x46ROZEN\x10\x01\x12\x0b\n\x07UPSOLVE\x10\x02\x12\x0b\n\x07VIRTUAL\x10\x03\x12\x08\n\x04MAIN\x10\x04\x42-Z+github.com/eolymp/go-sdk/eolymp/judge;judgeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,18 +34,22 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.judge.scoreboard_pb2
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/judge;judge'
-  _globals['_SCOREBOARD']._serialized_start=74
-  _globals['_SCOREBOARD']._serialized_end=1176
-  _globals['_SCOREBOARD_COLUMN']._serialized_start=185
-  _globals['_SCOREBOARD_COLUMN']._serialized_end=486
-  _globals['_SCOREBOARD_COLUMN_TYPE']._serialized_start=330
-  _globals['_SCOREBOARD_COLUMN_TYPE']._serialized_end=486
-  _globals['_SCOREBOARD_ROW']._serialized_start=489
-  _globals['_SCOREBOARD_ROW']._serialized_end=1102
-  _globals['_SCOREBOARD_ROW_VALUE']._serialized_start=804
-  _globals['_SCOREBOARD_ROW_VALUE']._serialized_end=943
-  _globals['_SCOREBOARD_ROW_PROBLEMSCORE']._serialized_start=946
-  _globals['_SCOREBOARD_ROW_PROBLEMSCORE']._serialized_end=1102
-  _globals['_SCOREBOARD_MODE']._serialized_start=1104
-  _globals['_SCOREBOARD_MODE']._serialized_end=1176
+  _globals['_SCOREBOARD']._serialized_start=108
+  _globals['_SCOREBOARD']._serialized_end=1394
+  _globals['_SCOREBOARD_COLUMN']._serialized_start=219
+  _globals['_SCOREBOARD_COLUMN']._serialized_end=520
+  _globals['_SCOREBOARD_COLUMN_TYPE']._serialized_start=364
+  _globals['_SCOREBOARD_COLUMN_TYPE']._serialized_end=520
+  _globals['_SCOREBOARD_ATTRIBUTE']._serialized_start=523
+  _globals['_SCOREBOARD_ATTRIBUTE']._serialized_end=704
+  _globals['_SCOREBOARD_ATTRIBUTE_PATCH']._serialized_start=637
+  _globals['_SCOREBOARD_ATTRIBUTE_PATCH']._serialized_end=704
+  _globals['_SCOREBOARD_ROW']._serialized_start=707
+  _globals['_SCOREBOARD_ROW']._serialized_end=1320
+  _globals['_SCOREBOARD_ROW_VALUE']._serialized_start=1022
+  _globals['_SCOREBOARD_ROW_VALUE']._serialized_end=1161
+  _globals['_SCOREBOARD_ROW_PROBLEMSCORE']._serialized_start=1164
+  _globals['_SCOREBOARD_ROW_PROBLEMSCORE']._serialized_end=1320
+  _globals['_SCOREBOARD_MODE']._serialized_start=1322
+  _globals['_SCOREBOARD_MODE']._serialized_end=1394
 # @@protoc_insertion_point(module_scope)

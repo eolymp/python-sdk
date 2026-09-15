@@ -1,3 +1,4 @@
+from eolymp.community import attribute_pb2 as _attribute_pb2
 from eolymp.judge import medal_pb2 as _medal_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -61,6 +62,24 @@ class Scoreboard(_message.Message):
         sortable: bool
         filterable: bool
         def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[Scoreboard.Column.Type, str]] = ..., title: _Optional[str] = ..., choices: _Optional[_Iterable[str]] = ..., sortable: _Optional[bool] = ..., filterable: _Optional[bool] = ...) -> None: ...
+    class Attribute(_message.Message):
+        __slots__ = ("attribute_key", "index", "label", "type")
+        class Patch(_message.Message):
+            __slots__ = ("index", "label")
+            INDEX_FIELD_NUMBER: _ClassVar[int]
+            LABEL_FIELD_NUMBER: _ClassVar[int]
+            index: int
+            label: str
+            def __init__(self, index: _Optional[int] = ..., label: _Optional[str] = ...) -> None: ...
+        ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+        INDEX_FIELD_NUMBER: _ClassVar[int]
+        LABEL_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        attribute_key: str
+        index: int
+        label: str
+        type: _attribute_pb2.Attribute.Type
+        def __init__(self, attribute_key: _Optional[str] = ..., index: _Optional[int] = ..., label: _Optional[str] = ..., type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ...) -> None: ...
     class Row(_message.Message):
         __slots__ = ("id", "member_id", "index", "rank", "rank_length", "rank_all", "rank_all_length", "score", "penalty", "tie_breaker", "unofficial", "disqualified", "medal", "values")
         class Value(_message.Message):

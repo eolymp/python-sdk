@@ -116,6 +116,38 @@ class AddContestAttributeOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class UpdateContestAttributeInput(_message.Message):
+    __slots__ = ("contest_id", "attribute_key", "attribute")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    attribute_key: str
+    attribute: _scoreboard_pb2.Scoreboard.Attribute.Patch
+    def __init__(self, contest_id: _Optional[str] = ..., attribute_key: _Optional[str] = ..., attribute: _Optional[_Union[_scoreboard_pb2.Scoreboard.Attribute.Patch, _Mapping]] = ...) -> None: ...
+
+class UpdateContestAttributeOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class ListContestAttributesInput(_message.Message):
+    __slots__ = ("contest_id", "offset", "size")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    offset: int
+    size: int
+    def __init__(self, contest_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+
+class ListContestAttributesOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Attribute]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Attribute, _Mapping]]] = ...) -> None: ...
+
 class RemoveContestAttributeInput(_message.Message):
     __slots__ = ("contest_id", "attribute_key")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
