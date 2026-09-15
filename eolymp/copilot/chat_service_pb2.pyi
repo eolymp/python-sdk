@@ -101,7 +101,7 @@ class DeleteChatOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class SendMessageInput(_message.Message):
-    __slots__ = ("chat_id", "model", "message", "approval")
+    __slots__ = ("chat_id", "model", "approve_all", "message", "approval")
     class Message(_message.Message):
         __slots__ = ("text", "context")
         TEXT_FIELD_NUMBER: _ClassVar[int]
@@ -118,13 +118,15 @@ class SendMessageInput(_message.Message):
         def __init__(self, allow: _Optional[_Iterable[str]] = ..., reject: _Optional[_Iterable[str]] = ...) -> None: ...
     CHAT_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
+    APPROVE_ALL_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     APPROVAL_FIELD_NUMBER: _ClassVar[int]
     chat_id: str
     model: str
+    approve_all: bool
     message: SendMessageInput.Message
     approval: SendMessageInput.Approval
-    def __init__(self, chat_id: _Optional[str] = ..., model: _Optional[str] = ..., message: _Optional[_Union[SendMessageInput.Message, _Mapping]] = ..., approval: _Optional[_Union[SendMessageInput.Approval, _Mapping]] = ...) -> None: ...
+    def __init__(self, chat_id: _Optional[str] = ..., model: _Optional[str] = ..., approve_all: _Optional[bool] = ..., message: _Optional[_Union[SendMessageInput.Message, _Mapping]] = ..., approval: _Optional[_Union[SendMessageInput.Approval, _Mapping]] = ...) -> None: ...
 
 class SendMessageOutput(_message.Message):
     __slots__ = ("chat", "message", "status")
