@@ -90,14 +90,16 @@ class ListScoreboardsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard, _Mapping]]] = ...) -> None: ...
 
 class AddScoreboardContestInput(_message.Message):
-    __slots__ = ("scoreboard_id", "contest_id", "index")
+    __slots__ = ("scoreboard_id", "contest_id", "index", "label")
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
+    LABEL_FIELD_NUMBER: _ClassVar[int]
     scoreboard_id: str
     contest_id: str
     index: int
-    def __init__(self, scoreboard_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., index: _Optional[int] = ...) -> None: ...
+    label: str
+    def __init__(self, scoreboard_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., index: _Optional[int] = ..., label: _Optional[str] = ...) -> None: ...
 
 class AddScoreboardContestOutput(_message.Message):
     __slots__ = ()

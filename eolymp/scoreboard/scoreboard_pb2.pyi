@@ -34,14 +34,17 @@ class Scoreboard(_message.Message):
     PUBLIC: Scoreboard.Visibility
     PRIVATE: Scoreboard.Visibility
     class Contest(_message.Message):
-        __slots__ = ("contest_id", "index", "name", "image_url", "status", "starts_at", "ends_at", "problems")
+        __slots__ = ("contest_id", "index", "label", "name", "image_url", "status", "starts_at", "ends_at", "problems")
         class Patch(_message.Message):
-            __slots__ = ("index",)
+            __slots__ = ("index", "label")
             INDEX_FIELD_NUMBER: _ClassVar[int]
+            LABEL_FIELD_NUMBER: _ClassVar[int]
             index: int
-            def __init__(self, index: _Optional[int] = ...) -> None: ...
+            label: str
+            def __init__(self, index: _Optional[int] = ..., label: _Optional[str] = ...) -> None: ...
         CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
+        LABEL_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -50,13 +53,14 @@ class Scoreboard(_message.Message):
         PROBLEMS_FIELD_NUMBER: _ClassVar[int]
         contest_id: str
         index: int
+        label: str
         name: str
         image_url: str
         status: _contest_pb2.Contest.Status
         starts_at: _timestamp_pb2.Timestamp
         ends_at: _timestamp_pb2.Timestamp
         problems: _containers.RepeatedCompositeFieldContainer[Scoreboard.Problem]
-        def __init__(self, contest_id: _Optional[str] = ..., index: _Optional[int] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., status: _Optional[_Union[_contest_pb2.Contest.Status, str]] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., problems: _Optional[_Iterable[_Union[Scoreboard.Problem, _Mapping]]] = ...) -> None: ...
+        def __init__(self, contest_id: _Optional[str] = ..., index: _Optional[int] = ..., label: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., status: _Optional[_Union[_contest_pb2.Contest.Status, str]] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., problems: _Optional[_Iterable[_Union[Scoreboard.Problem, _Mapping]]] = ...) -> None: ...
     class Problem(_message.Message):
         __slots__ = ("problem_id", "index", "title")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
