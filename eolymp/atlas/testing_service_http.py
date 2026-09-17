@@ -228,11 +228,10 @@ class TestingServiceClient:
         )
 
     def CreateTest(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/testsets/"+urllib.parse.quote(request.testset_id)+"/tests"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/tests"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.problem_id = ""
-        request.testset_id = ""
 
         return self.transport.request(
             method="POST",
