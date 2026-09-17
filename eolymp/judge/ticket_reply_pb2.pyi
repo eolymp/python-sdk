@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Reply(_message.Message):
-    __slots__ = ("id", "ticket_id", "user_id", "member_id", "message", "created_at")
+    __slots__ = ("id", "ticket_id", "user_id", "member_id", "canned", "message", "created_at")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NO_EXTRA: _ClassVar[Reply.Extra]
@@ -21,16 +21,30 @@ class Reply(_message.Message):
     NO_EXTRA: Reply.Extra
     MESSAGE_RENDER: Reply.Extra
     MESSAGE_VALUE: Reply.Extra
+    class Canned(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_CANNED: _ClassVar[Reply.Canned]
+        YES: _ClassVar[Reply.Canned]
+        NO: _ClassVar[Reply.Canned]
+        NO_COMMENTS: _ClassVar[Reply.Canned]
+        READ_PROBLEM_STATEMENT: _ClassVar[Reply.Canned]
+    UNKNOWN_CANNED: Reply.Canned
+    YES: Reply.Canned
+    NO: Reply.Canned
+    NO_COMMENTS: Reply.Canned
+    READ_PROBLEM_STATEMENT: Reply.Canned
     ID_FIELD_NUMBER: _ClassVar[int]
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    CANNED_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     id: str
     ticket_id: str
     user_id: str
     member_id: str
+    canned: Reply.Canned
     message: _content_pb2.Content
     created_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., ticket_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., ticket_id: _Optional[str] = ..., user_id: _Optional[str] = ..., member_id: _Optional[str] = ..., canned: _Optional[_Union[Reply.Canned, str]] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

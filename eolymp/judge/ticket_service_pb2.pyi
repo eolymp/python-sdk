@@ -178,14 +178,16 @@ class ListTicketsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_ticket_pb2.Ticket, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
 class ReplyTicketInput(_message.Message):
-    __slots__ = ("ticket_id", "message", "change_status_to")
+    __slots__ = ("ticket_id", "message", "canned", "change_status_to")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    CANNED_FIELD_NUMBER: _ClassVar[int]
     CHANGE_STATUS_TO_FIELD_NUMBER: _ClassVar[int]
     ticket_id: str
     message: _content_pb2.Content
+    canned: _ticket_reply_pb2.Reply.Canned
     change_status_to: _ticket_pb2.Ticket.Status
-    def __init__(self, ticket_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., change_status_to: _Optional[_Union[_ticket_pb2.Ticket.Status, str]] = ...) -> None: ...
+    def __init__(self, ticket_id: _Optional[str] = ..., message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., canned: _Optional[_Union[_ticket_reply_pb2.Reply.Canned, str]] = ..., change_status_to: _Optional[_Union[_ticket_pb2.Ticket.Status, str]] = ...) -> None: ...
 
 class ReplyTicketOutput(_message.Message):
     __slots__ = ("reply_id",)
