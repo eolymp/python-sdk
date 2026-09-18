@@ -387,18 +387,16 @@ class CreateTestOutput(_message.Message):
     def __init__(self, test_id: _Optional[str] = ...) -> None: ...
 
 class UpdateTestInput(_message.Message):
-    __slots__ = ("patch", "problem_id", "testset_id", "test_id", "test")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("problem_id", "testset_id", "test_id", "test")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_ID_FIELD_NUMBER: _ClassVar[int]
     TEST_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_testing_test_pb2.Test.Patch.Field]
     problem_id: str
     testset_id: str
     test_id: str
-    test: _testing_test_pb2.Test
-    def __init__(self, patch: _Optional[_Iterable[_Union[_testing_test_pb2.Test.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test, _Mapping]] = ...) -> None: ...
+    test: _testing_test_pb2.Test.Patch
+    def __init__(self, problem_id: _Optional[str] = ..., testset_id: _Optional[str] = ..., test_id: _Optional[str] = ..., test: _Optional[_Union[_testing_test_pb2.Test.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateTestOutput(_message.Message):
     __slots__ = ()

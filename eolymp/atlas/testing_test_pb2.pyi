@@ -21,32 +21,42 @@ class Test(_message.Message):
     READY: Test.Status
     INVALID: Test.Status
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_PATCH: _ClassVar[Test.Patch.Field]
-            EXAMPLE: _ClassVar[Test.Patch.Field]
-            INACTIVE: _ClassVar[Test.Patch.Field]
-            SCORE: _ClassVar[Test.Patch.Field]
-            INPUT: _ClassVar[Test.Patch.Field]
-            ANSWER: _ClassVar[Test.Patch.Field]
-            INDEX: _ClassVar[Test.Patch.Field]
-            SECRET: _ClassVar[Test.Patch.Field]
-            EXAMPLE_INPUT: _ClassVar[Test.Patch.Field]
-            EXAMPLE_ANSWER: _ClassVar[Test.Patch.Field]
-            TESTSET: _ClassVar[Test.Patch.Field]
-        UNKNOWN_PATCH: Test.Patch.Field
-        EXAMPLE: Test.Patch.Field
-        INACTIVE: Test.Patch.Field
-        SCORE: Test.Patch.Field
-        INPUT: Test.Patch.Field
-        ANSWER: Test.Patch.Field
-        INDEX: Test.Patch.Field
-        SECRET: Test.Patch.Field
-        EXAMPLE_INPUT: Test.Patch.Field
-        EXAMPLE_ANSWER: Test.Patch.Field
-        TESTSET: Test.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("testset_id", "index", "example", "score", "secret", "input_url", "input_generator", "input_content", "answer_url", "answer_generator", "answer_content", "example_input_url", "example_input_content", "example_answer_url", "example_answer_content", "unset_example_input", "unset_example_answer")
+        TESTSET_ID_FIELD_NUMBER: _ClassVar[int]
+        INDEX_FIELD_NUMBER: _ClassVar[int]
+        EXAMPLE_FIELD_NUMBER: _ClassVar[int]
+        SCORE_FIELD_NUMBER: _ClassVar[int]
+        SECRET_FIELD_NUMBER: _ClassVar[int]
+        INPUT_URL_FIELD_NUMBER: _ClassVar[int]
+        INPUT_GENERATOR_FIELD_NUMBER: _ClassVar[int]
+        INPUT_CONTENT_FIELD_NUMBER: _ClassVar[int]
+        ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
+        ANSWER_GENERATOR_FIELD_NUMBER: _ClassVar[int]
+        ANSWER_CONTENT_FIELD_NUMBER: _ClassVar[int]
+        EXAMPLE_INPUT_URL_FIELD_NUMBER: _ClassVar[int]
+        EXAMPLE_INPUT_CONTENT_FIELD_NUMBER: _ClassVar[int]
+        EXAMPLE_ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
+        EXAMPLE_ANSWER_CONTENT_FIELD_NUMBER: _ClassVar[int]
+        UNSET_EXAMPLE_INPUT_FIELD_NUMBER: _ClassVar[int]
+        UNSET_EXAMPLE_ANSWER_FIELD_NUMBER: _ClassVar[int]
+        testset_id: str
+        index: int
+        example: bool
+        score: float
+        secret: bool
+        input_url: str
+        input_generator: Test.Generator
+        input_content: str
+        answer_url: str
+        answer_generator: Test.Generator
+        answer_content: str
+        example_input_url: str
+        example_input_content: str
+        example_answer_url: str
+        example_answer_content: str
+        unset_example_input: bool
+        unset_example_answer: bool
+        def __init__(self, testset_id: _Optional[str] = ..., index: _Optional[int] = ..., example: _Optional[bool] = ..., score: _Optional[float] = ..., secret: _Optional[bool] = ..., input_url: _Optional[str] = ..., input_generator: _Optional[_Union[Test.Generator, _Mapping]] = ..., input_content: _Optional[str] = ..., answer_url: _Optional[str] = ..., answer_generator: _Optional[_Union[Test.Generator, _Mapping]] = ..., answer_content: _Optional[str] = ..., example_input_url: _Optional[str] = ..., example_input_content: _Optional[str] = ..., example_answer_url: _Optional[str] = ..., example_answer_content: _Optional[str] = ..., unset_example_input: _Optional[bool] = ..., unset_example_answer: _Optional[bool] = ...) -> None: ...
     class Generator(_message.Message):
         __slots__ = ("script_name", "arguments")
         SCRIPT_NAME_FIELD_NUMBER: _ClassVar[int]
