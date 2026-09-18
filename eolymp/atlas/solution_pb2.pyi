@@ -42,22 +42,18 @@ class Solution(_message.Message):
     FAIL: Solution.Status
     ERROR: Solution.Status
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_PATCH: _ClassVar[Solution.Patch.Field]
-            NAME: _ClassVar[Solution.Patch.Field]
-            TYPE: _ClassVar[Solution.Patch.Field]
-            RUNTIME: _ClassVar[Solution.Patch.Field]
-            SOURCE: _ClassVar[Solution.Patch.Field]
-            SECRET: _ClassVar[Solution.Patch.Field]
-        UNKNOWN_PATCH: Solution.Patch.Field
-        NAME: Solution.Patch.Field
-        TYPE: Solution.Patch.Field
-        RUNTIME: Solution.Patch.Field
-        SOURCE: Solution.Patch.Field
-        SECRET: Solution.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("name", "secret", "runtime", "source", "type")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        SECRET_FIELD_NUMBER: _ClassVar[int]
+        RUNTIME_FIELD_NUMBER: _ClassVar[int]
+        SOURCE_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        secret: bool
+        runtime: str
+        source: str
+        type: Solution.Type
+        def __init__(self, name: _Optional[str] = ..., secret: _Optional[bool] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., type: _Optional[_Union[Solution.Type, str]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]

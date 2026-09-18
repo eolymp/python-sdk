@@ -27,7 +27,7 @@ from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/issue_activity.proto\x12\x0c\x65olymp.atlas\x1a\x18\x65olymp/atlas/issue.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb8\x04\n\rIssueActivity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12\x11\n\x07user_id\x18\x03 \x01(\tH\x00\x12\x13\n\tmember_id\x18\x04 \x01(\tH\x00\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x07\x63omment\x18\x14 \x01(\x0b\x32#.eolymp.atlas.IssueActivity.CommentH\x01\x12\x34\n\x06\x63hange\x18\x15 \x01(\x0b\x32\".eolymp.atlas.IssueActivity.ChangeH\x01\x1aJ\n\x05\x45xtra\"A\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x11\n\rMESSAGE_VALUE\x10\x01\x12\x12\n\x0eMESSAGE_RENDER\x10\x02\x1a\x30\n\x05Patch\"\'\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x0b\n\x07MESSAGE\x10\x01\x1a/\n\x07\x43omment\x12$\n\x07message\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\x1aQ\n\x06\x43hange\x12#\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Issue\x12\"\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.IssueB\x08\n\x06\x61uthorB\x07\n\x05shapeB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/atlas/issue_activity.proto\x12\x0c\x65olymp.atlas\x1a\x18\x65olymp/atlas/issue.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb5\x04\n\rIssueActivity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08issue_id\x18\x02 \x01(\t\x12\x11\n\x07user_id\x18\x03 \x01(\tH\x00\x12\x13\n\tmember_id\x18\x04 \x01(\tH\x00\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x07\x63omment\x18\x14 \x01(\x0b\x32#.eolymp.atlas.IssueActivity.CommentH\x01\x12\x34\n\x06\x63hange\x18\x15 \x01(\x0b\x32\".eolymp.atlas.IssueActivity.ChangeH\x01\x1aJ\n\x05\x45xtra\"A\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x11\n\rMESSAGE_VALUE\x10\x01\x12\x12\n\x0eMESSAGE_RENDER\x10\x02\x1a-\n\x05Patch\x12$\n\x07message\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\x1a/\n\x07\x43omment\x12$\n\x07message\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\x1aQ\n\x06\x43hange\x12#\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Issue\x12\"\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.IssueB\x08\n\x06\x61uthorB\x07\n\x05shapeB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,17 +36,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_ISSUEACTIVITY']._serialized_start=137
-  _globals['_ISSUEACTIVITY']._serialized_end=705
+  _globals['_ISSUEACTIVITY']._serialized_end=702
   _globals['_ISSUEACTIVITY_EXTRA']._serialized_start=430
   _globals['_ISSUEACTIVITY_EXTRA']._serialized_end=504
   _globals['_ISSUEACTIVITY_EXTRA_FIELD']._serialized_start=439
   _globals['_ISSUEACTIVITY_EXTRA_FIELD']._serialized_end=504
   _globals['_ISSUEACTIVITY_PATCH']._serialized_start=506
-  _globals['_ISSUEACTIVITY_PATCH']._serialized_end=554
-  _globals['_ISSUEACTIVITY_PATCH_FIELD']._serialized_start=515
-  _globals['_ISSUEACTIVITY_PATCH_FIELD']._serialized_end=554
-  _globals['_ISSUEACTIVITY_COMMENT']._serialized_start=556
-  _globals['_ISSUEACTIVITY_COMMENT']._serialized_end=603
-  _globals['_ISSUEACTIVITY_CHANGE']._serialized_start=605
-  _globals['_ISSUEACTIVITY_CHANGE']._serialized_end=686
+  _globals['_ISSUEACTIVITY_PATCH']._serialized_end=551
+  _globals['_ISSUEACTIVITY_COMMENT']._serialized_start=553
+  _globals['_ISSUEACTIVITY_COMMENT']._serialized_end=600
+  _globals['_ISSUEACTIVITY_CHANGE']._serialized_start=602
+  _globals['_ISSUEACTIVITY_CHANGE']._serialized_end=683
 # @@protoc_insertion_point(module_scope)

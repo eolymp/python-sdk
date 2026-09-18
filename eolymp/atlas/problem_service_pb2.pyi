@@ -151,14 +151,12 @@ class UpdatePrivacyOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateProblemInput(_message.Message):
-    __slots__ = ("patch", "problem_id", "problem")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("problem_id", "problem")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_problem_pb2.Problem.Patch.Field]
     problem_id: str
-    problem: _problem_pb2.Problem
-    def __init__(self, patch: _Optional[_Iterable[_Union[_problem_pb2.Problem.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2.Problem, _Mapping]] = ...) -> None: ...
+    problem: _problem_pb2.Problem.Patch
+    def __init__(self, problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2.Problem.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateProblemOutput(_message.Message):
     __slots__ = ()

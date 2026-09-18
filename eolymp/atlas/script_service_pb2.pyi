@@ -40,16 +40,14 @@ class CreateScriptOutput(_message.Message):
     def __init__(self, script_id: _Optional[str] = ...) -> None: ...
 
 class UpdateScriptInput(_message.Message):
-    __slots__ = ("patch", "problem_id", "script_id", "script")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("problem_id", "script_id", "script")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_ID_FIELD_NUMBER: _ClassVar[int]
     SCRIPT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_script_pb2.Script.Patch.Field]
     problem_id: str
     script_id: str
-    script: _script_pb2.Script
-    def __init__(self, patch: _Optional[_Iterable[_Union[_script_pb2.Script.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., script_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script, _Mapping]] = ...) -> None: ...
+    script: _script_pb2.Script.Patch
+    def __init__(self, problem_id: _Optional[str] = ..., script_id: _Optional[str] = ..., script: _Optional[_Union[_script_pb2.Script.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateScriptOutput(_message.Message):
     __slots__ = ()

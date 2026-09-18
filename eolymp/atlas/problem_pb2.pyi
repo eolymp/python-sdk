@@ -45,26 +45,22 @@ class Problem(_message.Message):
         CONTENT_RENDER: Problem.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_PATCH: _ClassVar[Problem.Patch.Field]
-            VISIBLE: _ClassVar[Problem.Patch.Field]
-            PRIVATE: _ClassVar[Problem.Patch.Field]
-            TOPICS: _ClassVar[Problem.Patch.Field]
-            DIFFICULTY: _ClassVar[Problem.Patch.Field]
-            ORIGIN: _ClassVar[Problem.Patch.Field]
-            TYPE: _ClassVar[Problem.Patch.Field]
-            NUMBER: _ClassVar[Problem.Patch.Field]
-        UNKNOWN_PATCH: Problem.Patch.Field
-        VISIBLE: Problem.Patch.Field
-        PRIVATE: Problem.Patch.Field
-        TOPICS: Problem.Patch.Field
-        DIFFICULTY: Problem.Patch.Field
-        ORIGIN: Problem.Patch.Field
-        TYPE: Problem.Patch.Field
-        NUMBER: Problem.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("number", "visible", "origin", "topics", "difficulty", "untopic", "type")
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        VISIBLE_FIELD_NUMBER: _ClassVar[int]
+        ORIGIN_FIELD_NUMBER: _ClassVar[int]
+        TOPICS_FIELD_NUMBER: _ClassVar[int]
+        DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
+        UNTOPIC_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        number: int
+        visible: bool
+        origin: str
+        topics: _containers.RepeatedScalarFieldContainer[str]
+        difficulty: int
+        untopic: bool
+        type: Problem.Type
+        def __init__(self, number: _Optional[int] = ..., visible: _Optional[bool] = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., difficulty: _Optional[int] = ..., untopic: _Optional[bool] = ..., type: _Optional[_Union[Problem.Type, str]] = ...) -> None: ...
     class Constraints(_message.Message):
         __slots__ = ("time_limit_min", "time_limit_max", "cpu_limit_min", "cpu_limit_max", "memory_limit_min", "memory_limit_max")
         TIME_LIMIT_MIN_FIELD_NUMBER: _ClassVar[int]

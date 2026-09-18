@@ -135,16 +135,14 @@ class CreateStatementOutput(_message.Message):
     def __init__(self, statement_id: _Optional[str] = ...) -> None: ...
 
 class UpdateStatementInput(_message.Message):
-    __slots__ = ("patch", "problem_id", "statement_id", "statement")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("problem_id", "statement_id", "statement")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_statement_pb2.Statement.Patch.Field]
     problem_id: str
     statement_id: str
-    statement: _statement_pb2.Statement
-    def __init__(self, patch: _Optional[_Iterable[_Union[_statement_pb2.Statement.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement, _Mapping]] = ...) -> None: ...
+    statement: _statement_pb2.Statement.Patch
+    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateStatementOutput(_message.Message):
     __slots__ = ()

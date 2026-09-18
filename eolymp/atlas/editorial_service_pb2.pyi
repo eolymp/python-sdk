@@ -99,16 +99,14 @@ class CreateEditorialOutput(_message.Message):
     def __init__(self, editorial_id: _Optional[str] = ...) -> None: ...
 
 class UpdateEditorialInput(_message.Message):
-    __slots__ = ("patch", "problem_id", "editorial_id", "editorial")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("problem_id", "editorial_id", "editorial")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     EDITORIAL_ID_FIELD_NUMBER: _ClassVar[int]
     EDITORIAL_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_editorial_pb2.Editorial.Patch.Field]
     problem_id: str
     editorial_id: str
-    editorial: _editorial_pb2.Editorial
-    def __init__(self, patch: _Optional[_Iterable[_Union[_editorial_pb2.Editorial.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., editorial_id: _Optional[str] = ..., editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
+    editorial: _editorial_pb2.Editorial.Patch
+    def __init__(self, problem_id: _Optional[str] = ..., editorial_id: _Optional[str] = ..., editorial: _Optional[_Union[_editorial_pb2.Editorial.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateEditorialOutput(_message.Message):
     __slots__ = ()

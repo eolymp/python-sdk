@@ -108,14 +108,12 @@ class CreateIssueOutput(_message.Message):
     def __init__(self, issue_id: _Optional[str] = ...) -> None: ...
 
 class UpdateIssueInput(_message.Message):
-    __slots__ = ("patch", "issue_id", "issue")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("issue_id", "issue")
     ISSUE_ID_FIELD_NUMBER: _ClassVar[int]
     ISSUE_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_issue_pb2.Issue.Patch.Field]
     issue_id: str
-    issue: _issue_pb2.Issue
-    def __init__(self, patch: _Optional[_Iterable[_Union[_issue_pb2.Issue.Patch.Field, str]]] = ..., issue_id: _Optional[str] = ..., issue: _Optional[_Union[_issue_pb2.Issue, _Mapping]] = ...) -> None: ...
+    issue: _issue_pb2.Issue.Patch
+    def __init__(self, issue_id: _Optional[str] = ..., issue: _Optional[_Union[_issue_pb2.Issue.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateIssueOutput(_message.Message):
     __slots__ = ()
@@ -176,16 +174,14 @@ class CreateIssueCommentOutput(_message.Message):
     def __init__(self, comment_id: _Optional[str] = ...) -> None: ...
 
 class UpdateIssueCommentInput(_message.Message):
-    __slots__ = ("patch", "issue_id", "comment_id", "comment")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("issue_id", "comment_id", "comment")
     ISSUE_ID_FIELD_NUMBER: _ClassVar[int]
     COMMENT_ID_FIELD_NUMBER: _ClassVar[int]
     COMMENT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_issue_activity_pb2.IssueActivity.Patch.Field]
     issue_id: str
     comment_id: str
-    comment: _issue_activity_pb2.IssueActivity.Comment
-    def __init__(self, patch: _Optional[_Iterable[_Union[_issue_activity_pb2.IssueActivity.Patch.Field, str]]] = ..., issue_id: _Optional[str] = ..., comment_id: _Optional[str] = ..., comment: _Optional[_Union[_issue_activity_pb2.IssueActivity.Comment, _Mapping]] = ...) -> None: ...
+    comment: _issue_activity_pb2.IssueActivity.Patch
+    def __init__(self, issue_id: _Optional[str] = ..., comment_id: _Optional[str] = ..., comment: _Optional[_Union[_issue_activity_pb2.IssueActivity.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateIssueCommentOutput(_message.Message):
     __slots__ = ()

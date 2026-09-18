@@ -30,7 +30,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.atlas import configuration_pb2 as eolymp_dot_atlas_dot_configuration__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/atlas/configuration_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/atlas/configuration.proto\"\x15\n\x13\x44\x65scribeConfigInput\"<\n\x14\x44\x65scribeConfigOutput\x12$\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x14.eolymp.atlas.Config\"j\n\x11UpdateConfigInput\x12/\n\x05patch\x18\x01 \x03(\x0e\x32 .eolymp.atlas.Config.Patch.Field\x12$\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x14.eolymp.atlas.Config\"\x14\n\x12UpdateConfigOutput2\xdb\x02\n\x14\x43onfigurationService\x12\x86\x01\n\x0e\x44\x65scribeConfig\x12!.eolymp.atlas.DescribeConfigInput\x1a\".eolymp.atlas.DescribeConfigOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x10\x12\x0e/configs/atlas\x12\x9c\x01\n\x0cUpdateConfig\x12\x1f.eolymp.atlas.UpdateConfigInput\x1a .eolymp.atlas.UpdateConfigOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x10\x1a\x0e/configs/atlas\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/atlas/configuration_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/atlas/configuration.proto\"\x15\n\x13\x44\x65scribeConfigInput\"<\n\x14\x44\x65scribeConfigOutput\x12$\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x14.eolymp.atlas.Config\"K\n\x11UpdateConfigInput\x12*\n\x06\x63onfig\x18\x03 \x01(\x0b\x32\x1a.eolymp.atlas.Config.PatchJ\x04\x08\x01\x10\x02J\x04\x08\x02\x10\x03\"\x14\n\x12UpdateConfigOutput2\xdb\x02\n\x14\x43onfigurationService\x12\x86\x01\n\x0e\x44\x65scribeConfig\x12!.eolymp.atlas.DescribeConfigInput\x1a\".eolymp.atlas.DescribeConfigOutput\"-\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x10\x12\x0e/configs/atlas\x12\x9c\x01\n\x0cUpdateConfig\x12\x1f.eolymp.atlas.UpdateConfigInput\x1a .eolymp.atlas.UpdateConfigOutput\"I\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x10\x1a\x0e/configs/atlas\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -49,9 +49,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DESCRIBECONFIGOUTPUT']._serialized_start=282
   _globals['_DESCRIBECONFIGOUTPUT']._serialized_end=342
   _globals['_UPDATECONFIGINPUT']._serialized_start=344
-  _globals['_UPDATECONFIGINPUT']._serialized_end=450
-  _globals['_UPDATECONFIGOUTPUT']._serialized_start=452
-  _globals['_UPDATECONFIGOUTPUT']._serialized_end=472
-  _globals['_CONFIGURATIONSERVICE']._serialized_start=475
-  _globals['_CONFIGURATIONSERVICE']._serialized_end=822
+  _globals['_UPDATECONFIGINPUT']._serialized_end=419
+  _globals['_UPDATECONFIGOUTPUT']._serialized_start=421
+  _globals['_UPDATECONFIGOUTPUT']._serialized_end=441
+  _globals['_CONFIGURATIONSERVICE']._serialized_start=444
+  _globals['_CONFIGURATIONSERVICE']._serialized_end=791
 # @@protoc_insertion_point(module_scope)

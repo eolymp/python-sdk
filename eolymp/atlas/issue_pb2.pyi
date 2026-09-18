@@ -33,22 +33,20 @@ class Issue(_message.Message):
         DESCRIPTION_RENDER: Issue.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_FIELD: _ClassVar[Issue.Patch.Field]
-            STATUS: _ClassVar[Issue.Patch.Field]
-            DESCRIPTION: _ClassVar[Issue.Patch.Field]
-            TITLE: _ClassVar[Issue.Patch.Field]
-            ASSIGNEE: _ClassVar[Issue.Patch.Field]
-            TAGS: _ClassVar[Issue.Patch.Field]
-        UNKNOWN_FIELD: Issue.Patch.Field
-        STATUS: Issue.Patch.Field
-        DESCRIPTION: Issue.Patch.Field
-        TITLE: Issue.Patch.Field
-        ASSIGNEE: Issue.Patch.Field
-        TAGS: Issue.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("status", "description", "title", "assignee", "tags", "untag")
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+        TITLE_FIELD_NUMBER: _ClassVar[int]
+        ASSIGNEE_FIELD_NUMBER: _ClassVar[int]
+        TAGS_FIELD_NUMBER: _ClassVar[int]
+        UNTAG_FIELD_NUMBER: _ClassVar[int]
+        status: Issue.Status
+        description: _content_pb2.Content
+        title: str
+        assignee: str
+        tags: _containers.RepeatedScalarFieldContainer[str]
+        untag: bool
+        def __init__(self, status: _Optional[_Union[Issue.Status, str]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., title: _Optional[str] = ..., assignee: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ..., untag: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]

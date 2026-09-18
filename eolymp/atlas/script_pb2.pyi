@@ -20,22 +20,20 @@ class Script(_message.Message):
         SOURCE: Script.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_PATCH: _ClassVar[Script.Patch.Field]
-            NAME: _ClassVar[Script.Patch.Field]
-            SECRET: _ClassVar[Script.Patch.Field]
-            RUNTIME: _ClassVar[Script.Patch.Field]
-            SOURCE_URL: _ClassVar[Script.Patch.Field]
-            FILES: _ClassVar[Script.Patch.Field]
-        UNKNOWN_PATCH: Script.Patch.Field
-        NAME: Script.Patch.Field
-        SECRET: Script.Patch.Field
-        RUNTIME: Script.Patch.Field
-        SOURCE_URL: Script.Patch.Field
-        FILES: Script.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("name", "secret", "runtime", "source", "files", "unset_files")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        SECRET_FIELD_NUMBER: _ClassVar[int]
+        RUNTIME_FIELD_NUMBER: _ClassVar[int]
+        SOURCE_FIELD_NUMBER: _ClassVar[int]
+        FILES_FIELD_NUMBER: _ClassVar[int]
+        UNSET_FILES_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        secret: bool
+        runtime: str
+        source: str
+        files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
+        unset_files: bool
+        def __init__(self, name: _Optional[str] = ..., secret: _Optional[bool] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ..., unset_files: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]

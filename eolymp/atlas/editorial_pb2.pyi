@@ -21,26 +21,20 @@ class Editorial(_message.Message):
         CONTENT_VALUE: Editorial.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_PATCH: _ClassVar[Editorial.Patch.Field]
-            ALL: _ClassVar[Editorial.Patch.Field]
-            LOCALE: _ClassVar[Editorial.Patch.Field]
-            AUTOMATIC: _ClassVar[Editorial.Patch.Field]
-            DRAFT: _ClassVar[Editorial.Patch.Field]
-            CONTENT: _ClassVar[Editorial.Patch.Field]
-            DOWNLOAD_LINK: _ClassVar[Editorial.Patch.Field]
-            AUTHOR_ID: _ClassVar[Editorial.Patch.Field]
-        UNKNOWN_PATCH: Editorial.Patch.Field
-        ALL: Editorial.Patch.Field
-        LOCALE: Editorial.Patch.Field
-        AUTOMATIC: Editorial.Patch.Field
-        DRAFT: Editorial.Patch.Field
-        CONTENT: Editorial.Patch.Field
-        DOWNLOAD_LINK: Editorial.Patch.Field
-        AUTHOR_ID: Editorial.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("locale", "content", "download_link", "automatic", "draft", "author_id")
+        LOCALE_FIELD_NUMBER: _ClassVar[int]
+        CONTENT_FIELD_NUMBER: _ClassVar[int]
+        DOWNLOAD_LINK_FIELD_NUMBER: _ClassVar[int]
+        AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
+        DRAFT_FIELD_NUMBER: _ClassVar[int]
+        AUTHOR_ID_FIELD_NUMBER: _ClassVar[int]
+        locale: str
+        content: _content_pb2.Content
+        download_link: str
+        automatic: bool
+        draft: bool
+        author_id: str
+        def __init__(self, locale: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., automatic: _Optional[bool] = ..., draft: _Optional[bool] = ..., author_id: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     AUTOMATIC_FIELD_NUMBER: _ClassVar[int]

@@ -30,26 +30,22 @@ class Question(_message.Message):
         CONTENT_VALUE: Question.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_FIELD: _ClassVar[Question.Patch.Field]
-            INDEX: _ClassVar[Question.Patch.Field]
-            TYPE: _ClassVar[Question.Patch.Field]
-            CONTENT: _ClassVar[Question.Patch.Field]
-            SCORE: _ClassVar[Question.Patch.Field]
-            MULTIPLE: _ClassVar[Question.Patch.Field]
-            OPTIONS: _ClassVar[Question.Patch.Field]
-            ANSWERS: _ClassVar[Question.Patch.Field]
-        UNKNOWN_FIELD: Question.Patch.Field
-        INDEX: Question.Patch.Field
-        TYPE: Question.Patch.Field
-        CONTENT: Question.Patch.Field
-        SCORE: Question.Patch.Field
-        MULTIPLE: Question.Patch.Field
-        OPTIONS: Question.Patch.Field
-        ANSWERS: Question.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("index", "type", "content", "score", "multiple", "options", "answers")
+        INDEX_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
+        CONTENT_FIELD_NUMBER: _ClassVar[int]
+        SCORE_FIELD_NUMBER: _ClassVar[int]
+        MULTIPLE_FIELD_NUMBER: _ClassVar[int]
+        OPTIONS_FIELD_NUMBER: _ClassVar[int]
+        ANSWERS_FIELD_NUMBER: _ClassVar[int]
+        index: int
+        type: Question.Type
+        content: _content_pb2.Content
+        score: float
+        multiple: bool
+        options: _containers.RepeatedCompositeFieldContainer[Question.Option]
+        answers: _containers.RepeatedScalarFieldContainer[str]
+        def __init__(self, index: _Optional[int] = ..., type: _Optional[_Union[Question.Type, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., score: _Optional[float] = ..., multiple: _Optional[bool] = ..., options: _Optional[_Iterable[_Union[Question.Option, _Mapping]]] = ..., answers: _Optional[_Iterable[str]] = ...) -> None: ...
     class Option(_message.Message):
         __slots__ = ("id", "index", "content", "correct")
         ID_FIELD_NUMBER: _ClassVar[int]

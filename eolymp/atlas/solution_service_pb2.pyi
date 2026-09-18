@@ -114,16 +114,14 @@ class CreateSolutionOutput(_message.Message):
     def __init__(self, solution_id: _Optional[str] = ...) -> None: ...
 
 class UpdateSolutionInput(_message.Message):
-    __slots__ = ("patch", "problem_id", "solution_id", "solution")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("problem_id", "solution_id", "solution")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_ID_FIELD_NUMBER: _ClassVar[int]
     SOLUTION_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_solution_pb2.Solution.Patch.Field]
     problem_id: str
     solution_id: str
-    solution: _solution_pb2.Solution
-    def __init__(self, patch: _Optional[_Iterable[_Union[_solution_pb2.Solution.Patch.Field, str]]] = ..., problem_id: _Optional[str] = ..., solution_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution, _Mapping]] = ...) -> None: ...
+    solution: _solution_pb2.Solution.Patch
+    def __init__(self, problem_id: _Optional[str] = ..., solution_id: _Optional[str] = ..., solution: _Optional[_Union[_solution_pb2.Solution.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateSolutionOutput(_message.Message):
     __slots__ = ()
