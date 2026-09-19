@@ -6,6 +6,11 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Ghost(_message.Message):
     __slots__ = ("name",)
+    class Patch(_message.Message):
+        __slots__ = ("name",)
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        def __init__(self, name: _Optional[str] = ...) -> None: ...
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...

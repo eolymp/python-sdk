@@ -5,7 +5,6 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.community import member_pb2 as _member_pb2
 from eolymp.mail import email_type_pb2 as _email_type_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -44,48 +43,12 @@ class DescribeAccountOutput(_message.Message):
     def __init__(self, member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., team: _Optional[_Union[_member_pb2.Member, _Mapping]] = ..., extra: _Optional[_Iterable[_Union[_member_pb2.Member.Extra, _Mapping]]] = ...) -> None: ...
 
 class UpdateAccountInput(_message.Message):
-    __slots__ = ("patch", "current_password", "member")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateAccountInput.Patch]
-        USER_NICKNAME: _ClassVar[UpdateAccountInput.Patch]
-        USER_EMAIL: _ClassVar[UpdateAccountInput.Patch]
-        USER_PASSWORD: _ClassVar[UpdateAccountInput.Patch]
-        USER_NAME: _ClassVar[UpdateAccountInput.Patch]
-        USER_PICTURE: _ClassVar[UpdateAccountInput.Patch]
-        USER_BIRTHDAY: _ClassVar[UpdateAccountInput.Patch]
-        USER_COUNTRY: _ClassVar[UpdateAccountInput.Patch]
-        USER_CITY: _ClassVar[UpdateAccountInput.Patch]
-        USER_PREFERENCES: _ClassVar[UpdateAccountInput.Patch]
-        USER_PREFERENCES_LOCALE: _ClassVar[UpdateAccountInput.Patch]
-        USER_PREFERENCES_TIMEZONE: _ClassVar[UpdateAccountInput.Patch]
-        USER_PREFERENCES_RUNTIME: _ClassVar[UpdateAccountInput.Patch]
-        USER_EMAIL_SUBSCRIPTIONS: _ClassVar[UpdateAccountInput.Patch]
-        USER_PRONOUN: _ClassVar[UpdateAccountInput.Patch]
-        ATTRIBUTES: _ClassVar[UpdateAccountInput.Patch]
-    ALL: UpdateAccountInput.Patch
-    USER_NICKNAME: UpdateAccountInput.Patch
-    USER_EMAIL: UpdateAccountInput.Patch
-    USER_PASSWORD: UpdateAccountInput.Patch
-    USER_NAME: UpdateAccountInput.Patch
-    USER_PICTURE: UpdateAccountInput.Patch
-    USER_BIRTHDAY: UpdateAccountInput.Patch
-    USER_COUNTRY: UpdateAccountInput.Patch
-    USER_CITY: UpdateAccountInput.Patch
-    USER_PREFERENCES: UpdateAccountInput.Patch
-    USER_PREFERENCES_LOCALE: UpdateAccountInput.Patch
-    USER_PREFERENCES_TIMEZONE: UpdateAccountInput.Patch
-    USER_PREFERENCES_RUNTIME: UpdateAccountInput.Patch
-    USER_EMAIL_SUBSCRIPTIONS: UpdateAccountInput.Patch
-    USER_PRONOUN: UpdateAccountInput.Patch
-    ATTRIBUTES: UpdateAccountInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("current_password", "member")
     CURRENT_PASSWORD_FIELD_NUMBER: _ClassVar[int]
     MEMBER_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateAccountInput.Patch]
     current_password: str
-    member: _member_pb2.Member
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateAccountInput.Patch, str]]] = ..., current_password: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
+    member: _member_pb2.Member.Patch
+    def __init__(self, current_password: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateAccountOutput(_message.Message):
     __slots__ = ("hint",)

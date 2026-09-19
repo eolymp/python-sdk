@@ -15,6 +15,15 @@ class User(_message.Message):
     __slots__ = ("issuer", "subject", "nickname", "nickname_change_timeout", "aliases", "email", "email_verified", "email_restricted", "email_subscriptions", "password", "password_age", "name", "picture", "birthday", "country", "city", "pronoun", "team_id", "preferences")
     class Preferences(_message.Message):
         __slots__ = ("locale", "timezone", "runtime")
+        class Patch(_message.Message):
+            __slots__ = ("locale", "timezone", "runtime")
+            LOCALE_FIELD_NUMBER: _ClassVar[int]
+            TIMEZONE_FIELD_NUMBER: _ClassVar[int]
+            RUNTIME_FIELD_NUMBER: _ClassVar[int]
+            locale: str
+            timezone: str
+            runtime: str
+            def __init__(self, locale: _Optional[str] = ..., timezone: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         TIMEZONE_FIELD_NUMBER: _ClassVar[int]
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
@@ -22,6 +31,31 @@ class User(_message.Message):
         timezone: str
         runtime: str
         def __init__(self, locale: _Optional[str] = ..., timezone: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
+    class Patch(_message.Message):
+        __slots__ = ("nickname", "email", "email_subscriptions", "unsubscribe", "password", "name", "birthday", "country", "city", "pronoun", "preferences")
+        NICKNAME_FIELD_NUMBER: _ClassVar[int]
+        EMAIL_FIELD_NUMBER: _ClassVar[int]
+        EMAIL_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+        UNSUBSCRIBE_FIELD_NUMBER: _ClassVar[int]
+        PASSWORD_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
+        COUNTRY_FIELD_NUMBER: _ClassVar[int]
+        CITY_FIELD_NUMBER: _ClassVar[int]
+        PRONOUN_FIELD_NUMBER: _ClassVar[int]
+        PREFERENCES_FIELD_NUMBER: _ClassVar[int]
+        nickname: str
+        email: str
+        email_subscriptions: _containers.RepeatedScalarFieldContainer[_email_type_pb2.EmailType]
+        unsubscribe: bool
+        password: str
+        name: str
+        birthday: _timestamp_pb2.Timestamp
+        country: str
+        city: str
+        pronoun: str
+        preferences: User.Preferences.Patch
+        def __init__(self, nickname: _Optional[str] = ..., email: _Optional[str] = ..., email_subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ..., unsubscribe: _Optional[bool] = ..., password: _Optional[str] = ..., name: _Optional[str] = ..., birthday: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., pronoun: _Optional[str] = ..., preferences: _Optional[_Union[User.Preferences.Patch, _Mapping]] = ...) -> None: ...
     class Alias(_message.Message):
         __slots__ = ("nickname", "changed_at")
         NICKNAME_FIELD_NUMBER: _ClassVar[int]

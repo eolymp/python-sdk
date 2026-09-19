@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/member_team.proto\x12\x10\x65olymp.community\"%\n\x04Team\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07staffed\x18\x02 \x01(\x08\x42\x35Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/community/member_team.proto\x12\x10\x65olymp.community\"J\n\x04Team\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07staffed\x18\x02 \x01(\x08\x1a#\n\x05Patch\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\x07\n\x05_nameB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/eolymp/go-sdk/eolymp/community;community'
   _globals['_TEAM']._serialized_start=56
-  _globals['_TEAM']._serialized_end=93
+  _globals['_TEAM']._serialized_end=130
+  _globals['_TEAM_PATCH']._serialized_start=95
+  _globals['_TEAM_PATCH']._serialized_end=130
 # @@protoc_insertion_point(module_scope)

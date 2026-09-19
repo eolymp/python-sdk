@@ -34,14 +34,12 @@ class CreateGroupOutput(_message.Message):
     def __init__(self, group_id: _Optional[str] = ...) -> None: ...
 
 class UpdateGroupInput(_message.Message):
-    __slots__ = ("patch", "group_id", "group")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("group_id", "group")
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_group_pb2.Group.Patch.Field]
     group_id: str
-    group: _group_pb2.Group
-    def __init__(self, patch: _Optional[_Iterable[_Union[_group_pb2.Group.Patch.Field, str]]] = ..., group_id: _Optional[str] = ..., group: _Optional[_Union[_group_pb2.Group, _Mapping]] = ...) -> None: ...
+    group: _group_pb2.Group.Patch
+    def __init__(self, group_id: _Optional[str] = ..., group: _Optional[_Union[_group_pb2.Group.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateGroupOutput(_message.Message):
     __slots__ = ()

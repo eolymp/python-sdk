@@ -30,7 +30,7 @@ from eolymp.community import member_pb2 as eolymp_dot_community_dot_member__pb2
 from eolymp.mail import email_type_pb2 as eolymp_dot_mail_dot_email__type__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/community/account_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/community/member.proto\x1a\x1c\x65olymp/mail/email_type.proto\"O\n\x12\x43reateAccountInput\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"6\n\x13\x43reateAccountOutput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0c\n\x04hint\x18\x64 \x01(\t\"\x16\n\x14\x44\x65scribeAccountInput\"\x99\x01\n\x15\x44\x65scribeAccountOutput\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\x12&\n\x04team\x18\x02 \x01(\x0b\x32\x18.eolymp.community.Member\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0b\x32\x1e.eolymp.community.Member.Extra\"\xe5\x03\n\x12UpdateAccountInput\x12\x39\n\x05patch\x18\x01 \x03(\x0e\x32*.eolymp.community.UpdateAccountInput.Patch\x12\x18\n\x10\x63urrent_password\x18\x02 \x01(\t\x12(\n\x06member\x18\n \x01(\x0b\x32\x18.eolymp.community.Member\"\xcf\x02\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x11\n\rUSER_NICKNAME\x10\x65\x12\x0e\n\nUSER_EMAIL\x10\x66\x12\x11\n\rUSER_PASSWORD\x10g\x12\r\n\tUSER_NAME\x10h\x12\x10\n\x0cUSER_PICTURE\x10i\x12\x11\n\rUSER_BIRTHDAY\x10j\x12\x10\n\x0cUSER_COUNTRY\x10k\x12\r\n\tUSER_CITY\x10l\x12\x14\n\x10USER_PREFERENCES\x10m\x12\x1c\n\x17USER_PREFERENCES_LOCALE\x10\xbe\x01\x12\x1e\n\x19USER_PREFERENCES_TIMEZONE\x10\xbf\x01\x12\x1d\n\x18USER_PREFERENCES_RUNTIME\x10\xc0\x01\x12\x1c\n\x18USER_EMAIL_SUBSCRIPTIONS\x10n\x12\x10\n\x0cUSER_PRONOUN\x10o\x12\x0f\n\nATTRIBUTES\x10\x84\x07\"#\n\x13UpdateAccountOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"f\n\x12UploadPictureInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08offset_x\x18\n \x01(\r\x12\x10\n\x08offset_y\x18\x0b \x01(\r\x12\x0c\n\x04size\x18\x0c \x01(\r\"*\n\x13UploadPictureOutput\x12\x13\n\x0bpicture_url\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteAccountInput\"\x15\n\x13\x44\x65leteAccountOutput\"\x19\n\x17ResendVerificationInput\"\x1a\n\x18ResendVerificationOutput\"<\n\x19\x43ompleteVerificationInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"\x1c\n\x1a\x43ompleteVerificationOutput\"D\n\x12StartRecoveryInput\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"6\n\x13StartRecoveryOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"I\n\x14\x43ompleteRecoverInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x11\n\tmember_id\x18\x03 \x01(\t\"\x17\n\x15\x43ompleteRecoverOutput\"/\n\x1e\x44\x65scribeEmailSubscriptionInput\x12\r\n\x05token\x18\x01 \x01(\t\"_\n\x1f\x44\x65scribeEmailSubscriptionOutput\x12-\n\rsubscriptions\x18\x01 \x03(\x0e\x32\x16.eolymp.mail.EmailType\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"\\\n\x1cUpdateEmailSubscriptionInput\x12\r\n\x05token\x18\x01 \x01(\t\x12-\n\rsubscriptions\x18\x02 \x03(\x0e\x32\x16.eolymp.mail.EmailType\"\x1f\n\x1dUpdateEmailSubscriptionOutput2\xf8\r\n\x0e\x41\x63\x63ountService\x12\x85\x01\n\rCreateAccount\x12$.eolymp.community.CreateAccountInput\x1a%.eolymp.community.CreateAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\n\"\x08/account\x12\x8b\x01\n\x0f\x44\x65scribeAccount\x12&.eolymp.community.DescribeAccountInput\x1a\'.eolymp.community.DescribeAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\n\x12\x08/account\x12\x85\x01\n\rUpdateAccount\x12$.eolymp.community.UpdateAccountInput\x1a%.eolymp.community.UpdateAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\n\x1a\x08/account\x12\x94\x01\n\rUploadPicture\x12$.eolymp.community.UploadPictureInput\x1a%.eolymp.community.UploadPictureOutput\"6\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x19\"\x10/account/picture\x98\xe3\n\x80\x80\x80\x01\x12\x85\x01\n\rDeleteAccount\x12$.eolymp.community.DeleteAccountInput\x1a%.eolymp.community.DeleteAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\n*\x08/account\x12\xa8\x01\n\x12ResendVerification\x12).eolymp.community.ResendVerificationInput\x1a*.eolymp.community.ResendVerificationOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x1c/account/verification/resend\x12\xb0\x01\n\x14\x43ompleteVerification\x12+.eolymp.community.CompleteVerificationInput\x1a,.eolymp.community.CompleteVerificationOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x01\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02 \"\x1e/account/verification/complete\x12\x94\x01\n\rStartRecovery\x12$.eolymp.community.StartRecoveryInput\x1a%.eolymp.community.StartRecoveryOutput\"6\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x19\"\x17/account/recovery/start\x12\x9e\x01\n\x10\x43ompleteRecovery\x12&.eolymp.community.CompleteRecoverInput\x1a\'.eolymp.community.CompleteRecoverOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1c\"\x1a/account/recovery/complete\x12\xbc\x01\n\x19\x44\x65scribeEmailSubscription\x12\x30.eolymp.community.DescribeEmailSubscriptionInput\x1a\x31.eolymp.community.DescribeEmailSubscriptionOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1d\x12\x1b/account/email-subscription\x12\xb6\x01\n\x17UpdateEmailSubscription\x12..eolymp.community.UpdateEmailSubscriptionInput\x1a/.eolymp.community.UpdateEmailSubscriptionOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/account/email-subscription\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/community/account_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/community/member.proto\x1a\x1c\x65olymp/mail/email_type.proto\"O\n\x12\x43reateAccountInput\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"6\n\x13\x43reateAccountOutput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0c\n\x04hint\x18\x64 \x01(\t\"\x16\n\x14\x44\x65scribeAccountInput\"\x99\x01\n\x15\x44\x65scribeAccountOutput\x12(\n\x06member\x18\x01 \x01(\x0b\x32\x18.eolymp.community.Member\x12&\n\x04team\x18\x02 \x01(\x0b\x32\x18.eolymp.community.Member\x12.\n\x05\x65xtra\x18\xe3\x08 \x03(\x0b\x32\x1e.eolymp.community.Member.Extra\"j\n\x12UpdateAccountInput\x12\x18\n\x10\x63urrent_password\x18\x02 \x01(\t\x12.\n\x06member\x18\x0b \x01(\x0b\x32\x1e.eolymp.community.Member.PatchJ\x04\x08\x01\x10\x02J\x04\x08\n\x10\x0b\"#\n\x13UpdateAccountOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\"f\n\x12UploadPictureInput\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08offset_x\x18\n \x01(\r\x12\x10\n\x08offset_y\x18\x0b \x01(\r\x12\x0c\n\x04size\x18\x0c \x01(\r\"*\n\x13UploadPictureOutput\x12\x13\n\x0bpicture_url\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteAccountInput\"\x15\n\x13\x44\x65leteAccountOutput\"\x19\n\x17ResendVerificationInput\"\x1a\n\x18ResendVerificationOutput\"<\n\x19\x43ompleteVerificationInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"\x1c\n\x1a\x43ompleteVerificationOutput\"D\n\x12StartRecoveryInput\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61ptcha\x18\x64 \x01(\t\"6\n\x13StartRecoveryOutput\x12\x0c\n\x04hint\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\"I\n\x14\x43ompleteRecoverInput\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x11\n\tmember_id\x18\x03 \x01(\t\"\x17\n\x15\x43ompleteRecoverOutput\"/\n\x1e\x44\x65scribeEmailSubscriptionInput\x12\r\n\x05token\x18\x01 \x01(\t\"_\n\x1f\x44\x65scribeEmailSubscriptionOutput\x12-\n\rsubscriptions\x18\x01 \x03(\x0e\x32\x16.eolymp.mail.EmailType\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"\\\n\x1cUpdateEmailSubscriptionInput\x12\r\n\x05token\x18\x01 \x01(\t\x12-\n\rsubscriptions\x18\x02 \x03(\x0e\x32\x16.eolymp.mail.EmailType\"\x1f\n\x1dUpdateEmailSubscriptionOutput2\xf8\r\n\x0e\x41\x63\x63ountService\x12\x85\x01\n\rCreateAccount\x12$.eolymp.community.CreateAccountInput\x1a%.eolymp.community.CreateAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\n\"\x08/account\x12\x8b\x01\n\x0f\x44\x65scribeAccount\x12&.eolymp.community.DescribeAccountInput\x1a\'.eolymp.community.DescribeAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\n\x12\x08/account\x12\x85\x01\n\rUpdateAccount\x12$.eolymp.community.UpdateAccountInput\x1a%.eolymp.community.UpdateAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\n\x1a\x08/account\x12\x94\x01\n\rUploadPicture\x12$.eolymp.community.UploadPictureInput\x1a%.eolymp.community.UploadPictureOutput\"6\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x19\"\x10/account/picture\x98\xe3\n\x80\x80\x80\x01\x12\x85\x01\n\rDeleteAccount\x12$.eolymp.community.DeleteAccountInput\x1a%.eolymp.community.DeleteAccountOutput\"\'\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\n*\x08/account\x12\xa8\x01\n\x12ResendVerification\x12).eolymp.community.ResendVerificationInput\x1a*.eolymp.community.ResendVerificationOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x1c/account/verification/resend\x12\xb0\x01\n\x14\x43ompleteVerification\x12+.eolymp.community.CompleteVerificationInput\x1a,.eolymp.community.CompleteVerificationOutput\"=\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x01\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02 \"\x1e/account/verification/complete\x12\x94\x01\n\rStartRecovery\x12$.eolymp.community.StartRecoveryInput\x1a%.eolymp.community.StartRecoveryOutput\"6\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x19\"\x17/account/recovery/start\x12\x9e\x01\n\x10\x43ompleteRecovery\x12&.eolymp.community.CompleteRecoverInput\x1a\'.eolymp.community.CompleteRecoverOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\n2\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1c\"\x1a/account/recovery/complete\x12\xbc\x01\n\x19\x44\x65scribeEmailSubscription\x12\x30.eolymp.community.DescribeEmailSubscriptionInput\x1a\x31.eolymp.community.DescribeEmailSubscriptionOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1d\x12\x1b/account/email-subscription\x12\xb6\x01\n\x17UpdateEmailSubscription\x12..eolymp.community.UpdateEmailSubscriptionInput\x1a/.eolymp.community.UpdateEmailSubscriptionOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/account/email-subscription\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -70,44 +70,42 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DESCRIBEACCOUNTINPUT']._serialized_end=415
   _globals['_DESCRIBEACCOUNTOUTPUT']._serialized_start=418
   _globals['_DESCRIBEACCOUNTOUTPUT']._serialized_end=571
-  _globals['_UPDATEACCOUNTINPUT']._serialized_start=574
-  _globals['_UPDATEACCOUNTINPUT']._serialized_end=1059
-  _globals['_UPDATEACCOUNTINPUT_PATCH']._serialized_start=724
-  _globals['_UPDATEACCOUNTINPUT_PATCH']._serialized_end=1059
-  _globals['_UPDATEACCOUNTOUTPUT']._serialized_start=1061
-  _globals['_UPDATEACCOUNTOUTPUT']._serialized_end=1096
-  _globals['_UPLOADPICTUREINPUT']._serialized_start=1098
-  _globals['_UPLOADPICTUREINPUT']._serialized_end=1200
-  _globals['_UPLOADPICTUREOUTPUT']._serialized_start=1202
-  _globals['_UPLOADPICTUREOUTPUT']._serialized_end=1244
-  _globals['_DELETEACCOUNTINPUT']._serialized_start=1246
-  _globals['_DELETEACCOUNTINPUT']._serialized_end=1266
-  _globals['_DELETEACCOUNTOUTPUT']._serialized_start=1268
-  _globals['_DELETEACCOUNTOUTPUT']._serialized_end=1289
-  _globals['_RESENDVERIFICATIONINPUT']._serialized_start=1291
-  _globals['_RESENDVERIFICATIONINPUT']._serialized_end=1316
-  _globals['_RESENDVERIFICATIONOUTPUT']._serialized_start=1318
-  _globals['_RESENDVERIFICATIONOUTPUT']._serialized_end=1344
-  _globals['_COMPLETEVERIFICATIONINPUT']._serialized_start=1346
-  _globals['_COMPLETEVERIFICATIONINPUT']._serialized_end=1406
-  _globals['_COMPLETEVERIFICATIONOUTPUT']._serialized_start=1408
-  _globals['_COMPLETEVERIFICATIONOUTPUT']._serialized_end=1436
-  _globals['_STARTRECOVERYINPUT']._serialized_start=1438
-  _globals['_STARTRECOVERYINPUT']._serialized_end=1506
-  _globals['_STARTRECOVERYOUTPUT']._serialized_start=1508
-  _globals['_STARTRECOVERYOUTPUT']._serialized_end=1562
-  _globals['_COMPLETERECOVERINPUT']._serialized_start=1564
-  _globals['_COMPLETERECOVERINPUT']._serialized_end=1637
-  _globals['_COMPLETERECOVEROUTPUT']._serialized_start=1639
-  _globals['_COMPLETERECOVEROUTPUT']._serialized_end=1662
-  _globals['_DESCRIBEEMAILSUBSCRIPTIONINPUT']._serialized_start=1664
-  _globals['_DESCRIBEEMAILSUBSCRIPTIONINPUT']._serialized_end=1711
-  _globals['_DESCRIBEEMAILSUBSCRIPTIONOUTPUT']._serialized_start=1713
-  _globals['_DESCRIBEEMAILSUBSCRIPTIONOUTPUT']._serialized_end=1808
-  _globals['_UPDATEEMAILSUBSCRIPTIONINPUT']._serialized_start=1810
-  _globals['_UPDATEEMAILSUBSCRIPTIONINPUT']._serialized_end=1902
-  _globals['_UPDATEEMAILSUBSCRIPTIONOUTPUT']._serialized_start=1904
-  _globals['_UPDATEEMAILSUBSCRIPTIONOUTPUT']._serialized_end=1935
-  _globals['_ACCOUNTSERVICE']._serialized_start=1938
-  _globals['_ACCOUNTSERVICE']._serialized_end=3722
+  _globals['_UPDATEACCOUNTINPUT']._serialized_start=573
+  _globals['_UPDATEACCOUNTINPUT']._serialized_end=679
+  _globals['_UPDATEACCOUNTOUTPUT']._serialized_start=681
+  _globals['_UPDATEACCOUNTOUTPUT']._serialized_end=716
+  _globals['_UPLOADPICTUREINPUT']._serialized_start=718
+  _globals['_UPLOADPICTUREINPUT']._serialized_end=820
+  _globals['_UPLOADPICTUREOUTPUT']._serialized_start=822
+  _globals['_UPLOADPICTUREOUTPUT']._serialized_end=864
+  _globals['_DELETEACCOUNTINPUT']._serialized_start=866
+  _globals['_DELETEACCOUNTINPUT']._serialized_end=886
+  _globals['_DELETEACCOUNTOUTPUT']._serialized_start=888
+  _globals['_DELETEACCOUNTOUTPUT']._serialized_end=909
+  _globals['_RESENDVERIFICATIONINPUT']._serialized_start=911
+  _globals['_RESENDVERIFICATIONINPUT']._serialized_end=936
+  _globals['_RESENDVERIFICATIONOUTPUT']._serialized_start=938
+  _globals['_RESENDVERIFICATIONOUTPUT']._serialized_end=964
+  _globals['_COMPLETEVERIFICATIONINPUT']._serialized_start=966
+  _globals['_COMPLETEVERIFICATIONINPUT']._serialized_end=1026
+  _globals['_COMPLETEVERIFICATIONOUTPUT']._serialized_start=1028
+  _globals['_COMPLETEVERIFICATIONOUTPUT']._serialized_end=1056
+  _globals['_STARTRECOVERYINPUT']._serialized_start=1058
+  _globals['_STARTRECOVERYINPUT']._serialized_end=1126
+  _globals['_STARTRECOVERYOUTPUT']._serialized_start=1128
+  _globals['_STARTRECOVERYOUTPUT']._serialized_end=1182
+  _globals['_COMPLETERECOVERINPUT']._serialized_start=1184
+  _globals['_COMPLETERECOVERINPUT']._serialized_end=1257
+  _globals['_COMPLETERECOVEROUTPUT']._serialized_start=1259
+  _globals['_COMPLETERECOVEROUTPUT']._serialized_end=1282
+  _globals['_DESCRIBEEMAILSUBSCRIPTIONINPUT']._serialized_start=1284
+  _globals['_DESCRIBEEMAILSUBSCRIPTIONINPUT']._serialized_end=1331
+  _globals['_DESCRIBEEMAILSUBSCRIPTIONOUTPUT']._serialized_start=1333
+  _globals['_DESCRIBEEMAILSUBSCRIPTIONOUTPUT']._serialized_end=1428
+  _globals['_UPDATEEMAILSUBSCRIPTIONINPUT']._serialized_start=1430
+  _globals['_UPDATEEMAILSUBSCRIPTIONINPUT']._serialized_end=1522
+  _globals['_UPDATEEMAILSUBSCRIPTIONOUTPUT']._serialized_start=1524
+  _globals['_UPDATEEMAILSUBSCRIPTIONOUTPUT']._serialized_end=1555
+  _globals['_ACCOUNTSERVICE']._serialized_start=1558
+  _globals['_ACCOUNTSERVICE']._serialized_end=3342
 # @@protoc_insertion_point(module_scope)

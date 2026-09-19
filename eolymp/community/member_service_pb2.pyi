@@ -45,14 +45,12 @@ class CreateMemberOutput(_message.Message):
     def __init__(self, member_id: _Optional[str] = ...) -> None: ...
 
 class UpdateMemberInput(_message.Message):
-    __slots__ = ("patch", "member_id", "member")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("member_id", "member")
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_member_pb2.Member.Patch.Field]
     member_id: str
-    member: _member_pb2.Member
-    def __init__(self, patch: _Optional[_Iterable[_Union[_member_pb2.Member.Patch.Field, str]]] = ..., member_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member, _Mapping]] = ...) -> None: ...
+    member: _member_pb2.Member.Patch
+    def __init__(self, member_id: _Optional[str] = ..., member: _Optional[_Union[_member_pb2.Member.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateMemberOutput(_message.Message):
     __slots__ = ()
