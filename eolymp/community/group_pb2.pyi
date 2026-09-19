@@ -9,20 +9,31 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class Group(_message.Message):
     __slots__ = ("id", "name", "description", "external_ref", "icon", "badge", "color", "metadata")
     class Patch(_message.Message):
-        __slots__ = ("name", "description", "external_ref", "icon", "badge", "color")
+        __slots__ = ("name", "description", "external_ref", "icon", "badge", "color", "metadata", "unset_metadata")
+        class MetadataEntry(_message.Message):
+            __slots__ = ("key", "value")
+            KEY_FIELD_NUMBER: _ClassVar[int]
+            VALUE_FIELD_NUMBER: _ClassVar[int]
+            key: str
+            value: str
+            def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
         NAME_FIELD_NUMBER: _ClassVar[int]
         DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
         EXTERNAL_REF_FIELD_NUMBER: _ClassVar[int]
         ICON_FIELD_NUMBER: _ClassVar[int]
         BADGE_FIELD_NUMBER: _ClassVar[int]
         COLOR_FIELD_NUMBER: _ClassVar[int]
+        METADATA_FIELD_NUMBER: _ClassVar[int]
+        UNSET_METADATA_FIELD_NUMBER: _ClassVar[int]
         name: str
         description: str
         external_ref: str
         icon: str
         badge: str
         color: str
-        def __init__(self, name: _Optional[str] = ..., description: _Optional[str] = ..., external_ref: _Optional[str] = ..., icon: _Optional[str] = ..., badge: _Optional[str] = ..., color: _Optional[str] = ...) -> None: ...
+        metadata: _containers.ScalarMap[str, str]
+        unset_metadata: bool
+        def __init__(self, name: _Optional[str] = ..., description: _Optional[str] = ..., external_ref: _Optional[str] = ..., icon: _Optional[str] = ..., badge: _Optional[str] = ..., color: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., unset_metadata: _Optional[bool] = ...) -> None: ...
     class MetadataEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
