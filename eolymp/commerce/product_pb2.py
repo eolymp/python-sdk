@@ -26,7 +26,7 @@ from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/product.proto\x12\x0f\x65olymp.commerce\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\"\xf2\n\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12$\n\x07summary\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12(\n\x0b\x64\x65scription\x18\x04 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x0cout_of_stock\x18\x1e \x01(\x08\x12\x10\n\x08\x66\x65\x61tured\x18\x1f \x01(\x08\x12\x10\n\x08inactive\x18  \x01(\x08\x12\x11\n\tbackorder\x18! \x01(\x08\x12\x10\n\x08\x63urrency\x18\x14 \x01(\t\x12\r\n\x05price\x18\x15 \x01(\r\x12\x15\n\rregular_price\x18\x16 \x01(\r\x12\x36\n\nattributes\x18( \x03(\x0b\x32\".eolymp.commerce.Product.Attribute\x12\x32\n\x08variants\x18\x32 \x03(\x0b\x32 .eolymp.commerce.Product.Variant\x12!\n\x11stripe_product_id\x18< \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1f\n\x0fstripe_price_id\x18= \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\t\x1a\x98\x01\n\x05\x45xtra\"\x8e\x01\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x11\n\rSUMMARY_VALUE\x10\x05\x12\x12\n\x0eSUMMARY_RENDER\x10\x06\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\x12\x0e\n\nATTRIBUTES\x10\x03\x12\x0c\n\x08VARIANTS\x10\x04\x1a\xba\x01\n\x05Patch\"\xb0\x01\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x07\n\x03\x41LL\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\x0b\n\x07SUMMARY\x10\x0b\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x03\x12\n\n\x06IMAGES\x10\x04\x12\t\n\x05PRICE\x10\x05\x12\x11\n\rREGULAR_PRICE\x10\x06\x12\x0e\n\nATTRIBUTES\x10\x07\x12\x0c\n\x08\x46\x45\x41TURED\x10\t\x12\x0c\n\x08INACTIVE\x10\n\x12\r\n\tBACKORDER\x10\x0c\x1a\'\n\tAttribute\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x1a\xe4\x02\n\x07Variant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproduct_id\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12<\n\x06values\x18\x02 \x03(\x0b\x32,.eolymp.commerce.Product.Variant.ValuesEntry\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x0cout_of_stock\x18\x1e \x01(\x08\x12\x14\n\x0cmax_quantity\x18\" \x01(\x05\x12\x1a\n\x12\x61vailable_quantity\x18! \x01(\x05\x1a\x66\n\x05Patch\"]\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x07\n\x03\x41LL\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\n\n\x06VALUES\x10\x03\x12\n\n\x06IMAGES\x10\x04\x12\x16\n\x12\x41VAILABLE_QUANTITY\x10\x05\x1a-\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xbf\x01\n\x0bTranslation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x0c\n\x04name\x18\x0b \x01(\t\x12$\n\x07summary\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12(\n\x0b\x64\x65scription\x18\r \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x36\n\nattributes\x18\x14 \x03(\x0b\x32\".eolymp.commerce.Product.AttributeB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/commerce/product.proto\x12\x0f\x65olymp.commerce\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\"\xea\r\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12$\n\x07summary\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12(\n\x0b\x64\x65scription\x18\x04 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x0cout_of_stock\x18\x1e \x01(\x08\x12\x10\n\x08\x66\x65\x61tured\x18\x1f \x01(\x08\x12\x10\n\x08inactive\x18  \x01(\x08\x12\x11\n\tbackorder\x18! \x01(\x08\x12\x10\n\x08\x63urrency\x18\x14 \x01(\t\x12\r\n\x05price\x18\x15 \x01(\r\x12\x15\n\rregular_price\x18\x16 \x01(\r\x12\x36\n\nattributes\x18( \x03(\x0b\x32\".eolymp.commerce.Product.Attribute\x12\x32\n\x08variants\x18\x32 \x03(\x0b\x32 .eolymp.commerce.Product.Variant\x12!\n\x11stripe_product_id\x18< \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1f\n\x0fstripe_price_id\x18= \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0e\n\x06\x63ursor\x18\x64 \x01(\t\x1a\x98\x01\n\x05\x45xtra\"\x8e\x01\n\x05\x46ield\x12\x11\n\rUNKNOWN_FIELD\x10\x00\x12\x11\n\rSUMMARY_VALUE\x10\x05\x12\x12\n\x0eSUMMARY_RENDER\x10\x06\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x01\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x02\x12\x0e\n\nATTRIBUTES\x10\x03\x12\x0c\n\x08VARIANTS\x10\x04\x1a\x97\x03\n\x05Patch\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12$\n\x07summary\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12(\n\x0b\x64\x65scription\x18\x04 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x07unimage\x18\x0b \x01(\x08H\x01\x88\x01\x01\x12\x12\n\x05price\x18\x15 \x01(\rH\x02\x88\x01\x01\x12\x1a\n\rregular_price\x18\x16 \x01(\rH\x03\x88\x01\x01\x12\x15\n\x08\x66\x65\x61tured\x18\x1f \x01(\x08H\x04\x88\x01\x01\x12\x15\n\x08inactive\x18  \x01(\x08H\x05\x88\x01\x01\x12\x16\n\tbackorder\x18! \x01(\x08H\x06\x88\x01\x01\x12\x36\n\nattributes\x18( \x03(\x0b\x32\".eolymp.commerce.Product.AttributeB\x07\n\x05_nameB\n\n\x08_unimageB\x08\n\x06_priceB\x10\n\x0e_regular_priceB\x0b\n\t_featuredB\x0b\n\t_inactiveB\x0c\n\n_backorder\x1a\'\n\tAttribute\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t\x1a\xff\x03\n\x07Variant\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproduct_id\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12<\n\x06values\x18\x02 \x03(\x0b\x32,.eolymp.commerce.Product.Variant.ValuesEntry\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x0cout_of_stock\x18\x1e \x01(\x08\x12\x14\n\x0cmax_quantity\x18\" \x01(\x05\x12\x1a\n\x12\x61vailable_quantity\x18! \x01(\x05\x1a\x80\x02\n\x05Patch\x12\x11\n\x04name\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x42\n\x06values\x18\x02 \x03(\x0b\x32\x32.eolymp.commerce.Product.Variant.Patch.ValuesEntry\x12\x0e\n\x06images\x18\n \x03(\t\x12\x14\n\x07unimage\x18\x0b \x01(\x08H\x01\x88\x01\x01\x12\x1f\n\x12\x61vailable_quantity\x18! \x01(\x05H\x02\x88\x01\x01\x1a-\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x07\n\x05_nameB\n\n\x08_unimageB\x15\n\x13_available_quantity\x1a-\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xbf\x01\n\x0bTranslation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12\x0c\n\x04name\x18\x0b \x01(\t\x12$\n\x07summary\x18\x0c \x01(\x0b\x32\x13.eolymp.ecm.Content\x12(\n\x0b\x64\x65scription\x18\r \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x36\n\nattributes\x18\x14 \x03(\x0b\x32\".eolymp.commerce.Product.AttributeB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,6 +34,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.commerce.product_pb2
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/commerce;commerce'
+  _globals['_PRODUCT_VARIANT_PATCH_VALUESENTRY']._loaded_options = None
+  _globals['_PRODUCT_VARIANT_PATCH_VALUESENTRY']._serialized_options = b'8\001'
   _globals['_PRODUCT_VARIANT_VALUESENTRY']._loaded_options = None
   _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_options = b'8\001'
   _globals['_PRODUCT'].fields_by_name['stripe_product_id']._loaded_options = None
@@ -41,25 +43,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRODUCT'].fields_by_name['stripe_price_id']._loaded_options = None
   _globals['_PRODUCT'].fields_by_name['stripe_price_id']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_PRODUCT']._serialized_start=107
-  _globals['_PRODUCT']._serialized_end=1501
+  _globals['_PRODUCT']._serialized_end=1877
   _globals['_PRODUCT_EXTRA']._serialized_start=566
   _globals['_PRODUCT_EXTRA']._serialized_end=718
   _globals['_PRODUCT_EXTRA_FIELD']._serialized_start=576
   _globals['_PRODUCT_EXTRA_FIELD']._serialized_end=718
   _globals['_PRODUCT_PATCH']._serialized_start=721
-  _globals['_PRODUCT_PATCH']._serialized_end=907
-  _globals['_PRODUCT_PATCH_FIELD']._serialized_start=731
-  _globals['_PRODUCT_PATCH_FIELD']._serialized_end=907
-  _globals['_PRODUCT_ATTRIBUTE']._serialized_start=909
-  _globals['_PRODUCT_ATTRIBUTE']._serialized_end=948
-  _globals['_PRODUCT_VARIANT']._serialized_start=951
-  _globals['_PRODUCT_VARIANT']._serialized_end=1307
-  _globals['_PRODUCT_VARIANT_PATCH']._serialized_start=1158
-  _globals['_PRODUCT_VARIANT_PATCH']._serialized_end=1260
-  _globals['_PRODUCT_VARIANT_PATCH_FIELD']._serialized_start=1167
-  _globals['_PRODUCT_VARIANT_PATCH_FIELD']._serialized_end=1260
-  _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_start=1262
-  _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_end=1307
-  _globals['_PRODUCT_TRANSLATION']._serialized_start=1310
-  _globals['_PRODUCT_TRANSLATION']._serialized_end=1501
+  _globals['_PRODUCT_PATCH']._serialized_end=1128
+  _globals['_PRODUCT_ATTRIBUTE']._serialized_start=1130
+  _globals['_PRODUCT_ATTRIBUTE']._serialized_end=1169
+  _globals['_PRODUCT_VARIANT']._serialized_start=1172
+  _globals['_PRODUCT_VARIANT']._serialized_end=1683
+  _globals['_PRODUCT_VARIANT_PATCH']._serialized_start=1380
+  _globals['_PRODUCT_VARIANT_PATCH']._serialized_end=1636
+  _globals['_PRODUCT_VARIANT_PATCH_VALUESENTRY']._serialized_start=1547
+  _globals['_PRODUCT_VARIANT_PATCH_VALUESENTRY']._serialized_end=1592
+  _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_start=1547
+  _globals['_PRODUCT_VARIANT_VALUESENTRY']._serialized_end=1592
+  _globals['_PRODUCT_TRANSLATION']._serialized_start=1686
+  _globals['_PRODUCT_TRANSLATION']._serialized_end=1877
 # @@protoc_insertion_point(module_scope)

@@ -38,24 +38,24 @@ class Invoice(_message.Message):
         total_price: float
         def __init__(self, index: _Optional[int] = ..., name: _Optional[str] = ..., summary: _Optional[str] = ..., total_price: _Optional[float] = ...) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_FIELD: _ClassVar[Invoice.Patch.Field]
-            NUMBER: _ClassVar[Invoice.Patch.Field]
-            CURRENCY: _ClassVar[Invoice.Patch.Field]
-            INVOICE_DATE: _ClassVar[Invoice.Patch.Field]
-            DUE_DATE: _ClassVar[Invoice.Patch.Field]
-            LINES: _ClassVar[Invoice.Patch.Field]
-            PAYMENT_METHOD: _ClassVar[Invoice.Patch.Field]
-        UNKNOWN_FIELD: Invoice.Patch.Field
-        NUMBER: Invoice.Patch.Field
-        CURRENCY: Invoice.Patch.Field
-        INVOICE_DATE: Invoice.Patch.Field
-        DUE_DATE: Invoice.Patch.Field
-        LINES: Invoice.Patch.Field
-        PAYMENT_METHOD: Invoice.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("number", "invoice_date", "due_date", "lines", "tax_amount", "currency", "status_reason", "payment_method_id")
+        NUMBER_FIELD_NUMBER: _ClassVar[int]
+        INVOICE_DATE_FIELD_NUMBER: _ClassVar[int]
+        DUE_DATE_FIELD_NUMBER: _ClassVar[int]
+        LINES_FIELD_NUMBER: _ClassVar[int]
+        TAX_AMOUNT_FIELD_NUMBER: _ClassVar[int]
+        CURRENCY_FIELD_NUMBER: _ClassVar[int]
+        STATUS_REASON_FIELD_NUMBER: _ClassVar[int]
+        PAYMENT_METHOD_ID_FIELD_NUMBER: _ClassVar[int]
+        number: str
+        invoice_date: _timestamp_pb2.Timestamp
+        due_date: _timestamp_pb2.Timestamp
+        lines: _containers.RepeatedCompositeFieldContainer[Invoice.Line]
+        tax_amount: float
+        currency: str
+        status_reason: str
+        payment_method_id: str
+        def __init__(self, number: _Optional[str] = ..., invoice_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., due_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., lines: _Optional[_Iterable[_Union[Invoice.Line, _Mapping]]] = ..., tax_amount: _Optional[float] = ..., currency: _Optional[str] = ..., status_reason: _Optional[str] = ..., payment_method_id: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
     CURRENCY_FIELD_NUMBER: _ClassVar[int]

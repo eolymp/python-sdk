@@ -26,14 +26,12 @@ class CreateSpaceOutput(_message.Message):
     def __init__(self, space_id: _Optional[str] = ...) -> None: ...
 
 class UpdateSpaceInput(_message.Message):
-    __slots__ = ("patch", "space_id", "space")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("space_id", "space")
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     SPACE_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_space_pb2.Space.Patch.Field]
     space_id: str
-    space: _space_pb2.Space
-    def __init__(self, patch: _Optional[_Iterable[_Union[_space_pb2.Space.Patch.Field, str]]] = ..., space_id: _Optional[str] = ..., space: _Optional[_Union[_space_pb2.Space, _Mapping]] = ...) -> None: ...
+    space: _space_pb2.Space.Patch
+    def __init__(self, space_id: _Optional[str] = ..., space: _Optional[_Union[_space_pb2.Space.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateSpaceOutput(_message.Message):
     __slots__ = ()

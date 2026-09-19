@@ -28,14 +28,12 @@ class CreateProductOutput(_message.Message):
     def __init__(self, product_id: _Optional[str] = ...) -> None: ...
 
 class UpdateProductInput(_message.Message):
-    __slots__ = ("patch", "product_id", "product")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("product_id", "product")
     PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_product_pb2.Product.Patch.Field]
     product_id: str
-    product: _product_pb2.Product
-    def __init__(self, patch: _Optional[_Iterable[_Union[_product_pb2.Product.Patch.Field, str]]] = ..., product_id: _Optional[str] = ..., product: _Optional[_Union[_product_pb2.Product, _Mapping]] = ...) -> None: ...
+    product: _product_pb2.Product.Patch
+    def __init__(self, product_id: _Optional[str] = ..., product: _Optional[_Union[_product_pb2.Product.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateProductOutput(_message.Message):
     __slots__ = ()
@@ -127,16 +125,14 @@ class CreateProductVariantOutput(_message.Message):
     def __init__(self, variant_id: _Optional[str] = ...) -> None: ...
 
 class UpdateProductVariantInput(_message.Message):
-    __slots__ = ("patch", "product_id", "variant_id", "variant")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("product_id", "variant_id", "variant")
     PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
     VARIANT_ID_FIELD_NUMBER: _ClassVar[int]
     VARIANT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_product_pb2.Product.Variant.Patch.Field]
     product_id: str
     variant_id: str
-    variant: _product_pb2.Product.Variant
-    def __init__(self, patch: _Optional[_Iterable[_Union[_product_pb2.Product.Variant.Patch.Field, str]]] = ..., product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., variant: _Optional[_Union[_product_pb2.Product.Variant, _Mapping]] = ...) -> None: ...
+    variant: _product_pb2.Product.Variant.Patch
+    def __init__(self, product_id: _Optional[str] = ..., variant_id: _Optional[str] = ..., variant: _Optional[_Union[_product_pb2.Product.Variant.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateProductVariantOutput(_message.Message):
     __slots__ = ()

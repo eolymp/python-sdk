@@ -26,28 +26,34 @@ class Vendor(_message.Message):
     ACTIVE: Vendor.Status
     REJECTED: Vendor.Status
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNONWN_FIELD: _ClassVar[Vendor.Patch.Field]
-            FIRST_NAME: _ClassVar[Vendor.Patch.Field]
-            LAST_NAME: _ClassVar[Vendor.Patch.Field]
-            COMPANY_NAME: _ClassVar[Vendor.Patch.Field]
-            BIRTHDAY: _ClassVar[Vendor.Patch.Field]
-            EMAIL: _ClassVar[Vendor.Patch.Field]
-            PHONE: _ClassVar[Vendor.Patch.Field]
-            TAX_ID: _ClassVar[Vendor.Patch.Field]
-            ADDRESS: _ClassVar[Vendor.Patch.Field]
-        UNKNONWN_FIELD: Vendor.Patch.Field
-        FIRST_NAME: Vendor.Patch.Field
-        LAST_NAME: Vendor.Patch.Field
-        COMPANY_NAME: Vendor.Patch.Field
-        BIRTHDAY: Vendor.Patch.Field
-        EMAIL: Vendor.Patch.Field
-        PHONE: Vendor.Patch.Field
-        TAX_ID: Vendor.Patch.Field
-        ADDRESS: Vendor.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("first_name", "last_name", "birthday", "email", "phone", "tax_id", "company_name", "country", "state", "postal_code", "city", "line1", "line2")
+        FIRST_NAME_FIELD_NUMBER: _ClassVar[int]
+        LAST_NAME_FIELD_NUMBER: _ClassVar[int]
+        BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
+        EMAIL_FIELD_NUMBER: _ClassVar[int]
+        PHONE_FIELD_NUMBER: _ClassVar[int]
+        TAX_ID_FIELD_NUMBER: _ClassVar[int]
+        COMPANY_NAME_FIELD_NUMBER: _ClassVar[int]
+        COUNTRY_FIELD_NUMBER: _ClassVar[int]
+        STATE_FIELD_NUMBER: _ClassVar[int]
+        POSTAL_CODE_FIELD_NUMBER: _ClassVar[int]
+        CITY_FIELD_NUMBER: _ClassVar[int]
+        LINE1_FIELD_NUMBER: _ClassVar[int]
+        LINE2_FIELD_NUMBER: _ClassVar[int]
+        first_name: str
+        last_name: str
+        birthday: _timestamp_pb2.Timestamp
+        email: str
+        phone: str
+        tax_id: str
+        company_name: str
+        country: str
+        state: str
+        postal_code: str
+        city: str
+        line1: str
+        line2: str
+        def __init__(self, first_name: _Optional[str] = ..., last_name: _Optional[str] = ..., birthday: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., email: _Optional[str] = ..., phone: _Optional[str] = ..., tax_id: _Optional[str] = ..., company_name: _Optional[str] = ..., country: _Optional[str] = ..., state: _Optional[str] = ..., postal_code: _Optional[str] = ..., city: _Optional[str] = ..., line1: _Optional[str] = ..., line2: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     STATUS_REASON_FIELD_NUMBER: _ClassVar[int]

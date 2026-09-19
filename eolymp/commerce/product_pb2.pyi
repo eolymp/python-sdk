@@ -31,34 +31,30 @@ class Product(_message.Message):
         VARIANTS: Product.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_FIELD: _ClassVar[Product.Patch.Field]
-            ALL: _ClassVar[Product.Patch.Field]
-            NAME: _ClassVar[Product.Patch.Field]
-            SUMMARY: _ClassVar[Product.Patch.Field]
-            DESCRIPTION: _ClassVar[Product.Patch.Field]
-            IMAGES: _ClassVar[Product.Patch.Field]
-            PRICE: _ClassVar[Product.Patch.Field]
-            REGULAR_PRICE: _ClassVar[Product.Patch.Field]
-            ATTRIBUTES: _ClassVar[Product.Patch.Field]
-            FEATURED: _ClassVar[Product.Patch.Field]
-            INACTIVE: _ClassVar[Product.Patch.Field]
-            BACKORDER: _ClassVar[Product.Patch.Field]
-        UNKNOWN_FIELD: Product.Patch.Field
-        ALL: Product.Patch.Field
-        NAME: Product.Patch.Field
-        SUMMARY: Product.Patch.Field
-        DESCRIPTION: Product.Patch.Field
-        IMAGES: Product.Patch.Field
-        PRICE: Product.Patch.Field
-        REGULAR_PRICE: Product.Patch.Field
-        ATTRIBUTES: Product.Patch.Field
-        FEATURED: Product.Patch.Field
-        INACTIVE: Product.Patch.Field
-        BACKORDER: Product.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("name", "summary", "description", "images", "unimage", "price", "regular_price", "featured", "inactive", "backorder", "attributes")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        SUMMARY_FIELD_NUMBER: _ClassVar[int]
+        DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+        IMAGES_FIELD_NUMBER: _ClassVar[int]
+        UNIMAGE_FIELD_NUMBER: _ClassVar[int]
+        PRICE_FIELD_NUMBER: _ClassVar[int]
+        REGULAR_PRICE_FIELD_NUMBER: _ClassVar[int]
+        FEATURED_FIELD_NUMBER: _ClassVar[int]
+        INACTIVE_FIELD_NUMBER: _ClassVar[int]
+        BACKORDER_FIELD_NUMBER: _ClassVar[int]
+        ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        summary: _content_pb2.Content
+        description: _content_pb2.Content
+        images: _containers.RepeatedScalarFieldContainer[str]
+        unimage: bool
+        price: int
+        regular_price: int
+        featured: bool
+        inactive: bool
+        backorder: bool
+        attributes: _containers.RepeatedCompositeFieldContainer[Product.Attribute]
+        def __init__(self, name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., unimage: _Optional[bool] = ..., price: _Optional[int] = ..., regular_price: _Optional[int] = ..., featured: _Optional[bool] = ..., inactive: _Optional[bool] = ..., backorder: _Optional[bool] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ...) -> None: ...
     class Attribute(_message.Message):
         __slots__ = ("key", "label")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -69,22 +65,25 @@ class Product(_message.Message):
     class Variant(_message.Message):
         __slots__ = ("id", "product_id", "name", "values", "images", "out_of_stock", "max_quantity", "available_quantity")
         class Patch(_message.Message):
-            __slots__ = ()
-            class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-                __slots__ = ()
-                UNKNOWN_FIELD: _ClassVar[Product.Variant.Patch.Field]
-                ALL: _ClassVar[Product.Variant.Patch.Field]
-                NAME: _ClassVar[Product.Variant.Patch.Field]
-                VALUES: _ClassVar[Product.Variant.Patch.Field]
-                IMAGES: _ClassVar[Product.Variant.Patch.Field]
-                AVAILABLE_QUANTITY: _ClassVar[Product.Variant.Patch.Field]
-            UNKNOWN_FIELD: Product.Variant.Patch.Field
-            ALL: Product.Variant.Patch.Field
-            NAME: Product.Variant.Patch.Field
-            VALUES: Product.Variant.Patch.Field
-            IMAGES: Product.Variant.Patch.Field
-            AVAILABLE_QUANTITY: Product.Variant.Patch.Field
-            def __init__(self) -> None: ...
+            __slots__ = ("name", "values", "images", "unimage", "available_quantity")
+            class ValuesEntry(_message.Message):
+                __slots__ = ("key", "value")
+                KEY_FIELD_NUMBER: _ClassVar[int]
+                VALUE_FIELD_NUMBER: _ClassVar[int]
+                key: str
+                value: str
+                def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+            NAME_FIELD_NUMBER: _ClassVar[int]
+            VALUES_FIELD_NUMBER: _ClassVar[int]
+            IMAGES_FIELD_NUMBER: _ClassVar[int]
+            UNIMAGE_FIELD_NUMBER: _ClassVar[int]
+            AVAILABLE_QUANTITY_FIELD_NUMBER: _ClassVar[int]
+            name: str
+            values: _containers.ScalarMap[str, str]
+            images: _containers.RepeatedScalarFieldContainer[str]
+            unimage: bool
+            available_quantity: int
+            def __init__(self, name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., unimage: _Optional[bool] = ..., available_quantity: _Optional[int] = ...) -> None: ...
         class ValuesEntry(_message.Message):
             __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]

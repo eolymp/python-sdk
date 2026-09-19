@@ -76,14 +76,12 @@ class CreateInvoiceOutput(_message.Message):
     def __init__(self, invoice_id: _Optional[str] = ...) -> None: ...
 
 class UpdateInvoiceInput(_message.Message):
-    __slots__ = ("patch", "invoice_id", "invoice")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("invoice_id", "invoice")
     INVOICE_ID_FIELD_NUMBER: _ClassVar[int]
     INVOICE_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_invoice_pb2.Invoice.Patch.Field]
     invoice_id: str
-    invoice: _invoice_pb2.Invoice
-    def __init__(self, patch: _Optional[_Iterable[_Union[_invoice_pb2.Invoice.Patch.Field, str]]] = ..., invoice_id: _Optional[str] = ..., invoice: _Optional[_Union[_invoice_pb2.Invoice, _Mapping]] = ...) -> None: ...
+    invoice: _invoice_pb2.Invoice.Patch
+    def __init__(self, invoice_id: _Optional[str] = ..., invoice: _Optional[_Union[_invoice_pb2.Invoice.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateInvoiceOutput(_message.Message):
     __slots__ = ()

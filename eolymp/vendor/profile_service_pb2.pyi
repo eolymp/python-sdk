@@ -3,10 +3,9 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.vendor import vendor_pb2 as _vendor_pb2
-from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from collections.abc import Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -22,12 +21,10 @@ class DescribeProfileOutput(_message.Message):
     def __init__(self, profile: _Optional[_Union[_vendor_pb2.Vendor, _Mapping]] = ...) -> None: ...
 
 class UpdateProfileInput(_message.Message):
-    __slots__ = ("patch", "profile")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("profile",)
     PROFILE_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_vendor_pb2.Vendor.Patch.Field]
-    profile: _vendor_pb2.Vendor
-    def __init__(self, patch: _Optional[_Iterable[_Union[_vendor_pb2.Vendor.Patch.Field, str]]] = ..., profile: _Optional[_Union[_vendor_pb2.Vendor, _Mapping]] = ...) -> None: ...
+    profile: _vendor_pb2.Vendor.Patch
+    def __init__(self, profile: _Optional[_Union[_vendor_pb2.Vendor.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateProfileOutput(_message.Message):
     __slots__ = ()
