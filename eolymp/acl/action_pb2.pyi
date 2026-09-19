@@ -52,6 +52,10 @@ class Action(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     AUTOMATION_READ: _ClassVar[Action]
     AUTOMATION_WRITE: _ClassVar[Action]
     AUDIT_READ: _ClassVar[Action]
+    INTEGRATION_READ: _ClassVar[Action]
+    INTEGRATION_WRITE: _ClassVar[Action]
+    NOTIFICATION_READ: _ClassVar[Action]
+    NOTIFICATION_WRITE: _ClassVar[Action]
 UNKNOWN_ACTION: Action
 SPACE_LIST: Action
 SPACE_READ: Action
@@ -98,3 +102,7 @@ AUTOMATION_LIST: Action
 AUTOMATION_READ: Action
 AUTOMATION_WRITE: Action
 AUDIT_READ: Action
+INTEGRATION_READ: Action
+INTEGRATION_WRITE: Action
+NOTIFICATION_READ: Action
+NOTIFICATION_WRITE: Action
