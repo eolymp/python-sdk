@@ -48,20 +48,24 @@ class ListFragmentsInput(_message.Message):
         DEFAULT: _ClassVar[ListFragmentsInput.Sort]
         PATH: _ClassVar[ListFragmentsInput.Sort]
         CREATED_AT: _ClassVar[ListFragmentsInput.Sort]
+        POSITION: _ClassVar[ListFragmentsInput.Sort]
     DEFAULT: ListFragmentsInput.Sort
     PATH: ListFragmentsInput.Sort
     CREATED_AT: ListFragmentsInput.Sort
+    POSITION: ListFragmentsInput.Sort
     class Filter(_message.Message):
-        __slots__ = ("query", "id", "path", "label")
+        __slots__ = ("query", "id", "path", "label", "parent")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         PATH_FIELD_NUMBER: _ClassVar[int]
         LABEL_FIELD_NUMBER: _ClassVar[int]
+        PARENT_FIELD_NUMBER: _ClassVar[int]
         query: str
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         path: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         label: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        parent: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., parent: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
@@ -115,12 +119,14 @@ class UpdateFragmentOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DeleteFragmentInput(_message.Message):
-    __slots__ = ("fragment_id", "locale")
+    __slots__ = ("fragment_id", "locale", "recursive")
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
+    RECURSIVE_FIELD_NUMBER: _ClassVar[int]
     fragment_id: str
     locale: str
-    def __init__(self, fragment_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
+    recursive: bool
+    def __init__(self, fragment_id: _Optional[str] = ..., locale: _Optional[str] = ..., recursive: _Optional[bool] = ...) -> None: ...
 
 class DeleteFragmentOutput(_message.Message):
     __slots__ = ()
