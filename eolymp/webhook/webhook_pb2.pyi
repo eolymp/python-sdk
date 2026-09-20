@@ -58,20 +58,19 @@ class Webhook(_message.Message):
     CONTEST_SCORE_CHANGED: Webhook.Event
     CONTEST_PARTICIPANT_CHANGED: Webhook.Event
     CONTEST_PARTICIPANT_JOINED: Webhook.Event
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        PATCH_UNKNOWN: _ClassVar[Webhook.Patch]
-        PATCH_ALL: _ClassVar[Webhook.Patch]
-        PATCH_NAME: _ClassVar[Webhook.Patch]
-        PATCH_ENDPOINT: _ClassVar[Webhook.Patch]
-        PATCH_INACTIVE: _ClassVar[Webhook.Patch]
-        PATCH_EVENTS: _ClassVar[Webhook.Patch]
-    PATCH_UNKNOWN: Webhook.Patch
-    PATCH_ALL: Webhook.Patch
-    PATCH_NAME: Webhook.Patch
-    PATCH_ENDPOINT: Webhook.Patch
-    PATCH_INACTIVE: Webhook.Patch
-    PATCH_EVENTS: Webhook.Patch
+    class Patch(_message.Message):
+        __slots__ = ("name", "endpoint", "inactive", "events", "unsubscribe")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        ENDPOINT_FIELD_NUMBER: _ClassVar[int]
+        INACTIVE_FIELD_NUMBER: _ClassVar[int]
+        EVENTS_FIELD_NUMBER: _ClassVar[int]
+        UNSUBSCRIBE_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        endpoint: str
+        inactive: bool
+        events: _containers.RepeatedScalarFieldContainer[Webhook.Event]
+        unsubscribe: bool
+        def __init__(self, name: _Optional[str] = ..., endpoint: _Optional[str] = ..., inactive: _Optional[bool] = ..., events: _Optional[_Iterable[_Union[Webhook.Event, str]]] = ..., unsubscribe: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]

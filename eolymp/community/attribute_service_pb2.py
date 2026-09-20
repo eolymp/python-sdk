@@ -31,7 +31,7 @@ from eolymp.community import attribute_pb2 as eolymp_dot_community_dot_attribute
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/community/attribute_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/community/attribute.proto\x1a!eolymp/wellknown/expression.proto\"]\n\x14\x43reateAttributeInput\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12.\n\tattribute\x18\x02 \x01(\x0b\x32\x1b.eolymp.community.Attribute\"\x17\n\x15\x43reateAttributeOutput\"\x8f\x01\n\x14UpdateAttributeInput\x12\x30\n\x05patch\x18\x03 \x03(\x0e\x32!.eolymp.community.Attribute.Patch\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12.\n\tattribute\x18\x02 \x01(\x0b\x32\x1b.eolymp.community.Attribute\"\x17\n\x15UpdateAttributeOutput\"-\n\x14RemoveAttributeInput\x12\x15\n\rattribute_key\x18\x01 \x01(\t\"\x17\n\x15RemoveAttributeOutput\"/\n\x16\x44\x65scribeAttributeInput\x12\x15\n\rattribute_key\x18\x01 \x01(\t\"I\n\x17\x44\x65scribeAttributeOutput\x12.\n\tattribute\x18\x01 \x01(\x0b\x32\x1b.eolymp.community.Attribute\"\xbc\x02\n\x13ListAttributesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12=\n\x07\x66ilters\x18( \x01(\x0b\x32,.eolymp.community.ListAttributesInput.Filter\x1a\xc7\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12-\n\x03key\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x32\n\x08required\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12.\n\x04type\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"Q\n\x14ListAttributesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.community.Attribute2\xda\x07\n\x10\x41ttributeService\x12\xaf\x01\n\x0f\x43reateAttribute\x12&.eolymp.community.CreateAttributeInput\x1a\'.eolymp.community.CreateAttributeOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1d\x8a\xe3\n\x19\x63ommunity:attribute:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\r\"\x0b/attributes\x12\xbf\x01\n\x0fUpdateAttribute\x12&.eolymp.community.UpdateAttributeInput\x1a\'.eolymp.community.UpdateAttributeOutput\"[\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1d\x8a\xe3\n\x19\x63ommunity:attribute:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/attributes/{attribute_key}\x12\xbf\x01\n\x0fRemoveAttribute\x12&.eolymp.community.RemoveAttributeInput\x1a\'.eolymp.community.RemoveAttributeOutput\"[\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1d\x8a\xe3\n\x19\x63ommunity:attribute:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1d*\x1b/attributes/{attribute_key}\x12\xc4\x01\n\x11\x44\x65scribeAttribute\x12(.eolymp.community.DescribeAttributeInput\x1a).eolymp.community.DescribeAttributeOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1c\x8a\xe3\n\x18\x63ommunity:attribute:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1d\x12\x1b/attributes/{attribute_key}\x12\xab\x01\n\x0eListAttributes\x12%.eolymp.community.ListAttributesInput\x1a&.eolymp.community.ListAttributesOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1c\x8a\xe3\n\x18\x63ommunity:attribute:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\r\x12\x0b/attributes\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(eolymp/community/attribute_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a eolymp/community/attribute.proto\x1a!eolymp/wellknown/expression.proto\"]\n\x14\x43reateAttributeInput\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12.\n\tattribute\x18\x02 \x01(\x0b\x32\x1b.eolymp.community.Attribute\"\x17\n\x15\x43reateAttributeOutput\"o\n\x14UpdateAttributeInput\x12\x15\n\rattribute_key\x18\x01 \x01(\t\x12\x34\n\tattribute\x18\x04 \x01(\x0b\x32!.eolymp.community.Attribute.PatchJ\x04\x08\x02\x10\x03J\x04\x08\x03\x10\x04\"\x17\n\x15UpdateAttributeOutput\"-\n\x14RemoveAttributeInput\x12\x15\n\rattribute_key\x18\x01 \x01(\t\"\x17\n\x15RemoveAttributeOutput\"/\n\x16\x44\x65scribeAttributeInput\x12\x15\n\rattribute_key\x18\x01 \x01(\t\"I\n\x17\x44\x65scribeAttributeOutput\x12.\n\tattribute\x18\x01 \x01(\x0b\x32\x1b.eolymp.community.Attribute\"\xbc\x02\n\x13ListAttributesInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12=\n\x07\x66ilters\x18( \x01(\x0b\x32,.eolymp.community.ListAttributesInput.Filter\x1a\xc7\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12-\n\x03key\x18\x02 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x32\n\x08required\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12.\n\x04type\x18\x05 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"Q\n\x14ListAttributesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.eolymp.community.Attribute2\xda\x07\n\x10\x41ttributeService\x12\xaf\x01\n\x0f\x43reateAttribute\x12&.eolymp.community.CreateAttributeInput\x1a\'.eolymp.community.CreateAttributeOutput\"K\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1d\x8a\xe3\n\x19\x63ommunity:attribute:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\r\"\x0b/attributes\x12\xbf\x01\n\x0fUpdateAttribute\x12&.eolymp.community.UpdateAttributeInput\x1a\'.eolymp.community.UpdateAttributeOutput\"[\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1d\x8a\xe3\n\x19\x63ommunity:attribute:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/attributes/{attribute_key}\x12\xbf\x01\n\x0fRemoveAttribute\x12&.eolymp.community.RemoveAttributeInput\x1a\'.eolymp.community.RemoveAttributeOutput\"[\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1d\x8a\xe3\n\x19\x63ommunity:attribute:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1d*\x1b/attributes/{attribute_key}\x12\xc4\x01\n\x11\x44\x65scribeAttribute\x12(.eolymp.community.DescribeAttributeInput\x1a).eolymp.community.DescribeAttributeOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1c\x8a\xe3\n\x18\x63ommunity:attribute:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1d\x12\x1b/attributes/{attribute_key}\x12\xab\x01\n\x0eListAttributes\x12%.eolymp.community.ListAttributesInput\x1a&.eolymp.community.ListAttributesOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1c\x8a\xe3\n\x18\x63ommunity:attribute:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\r\x12\x0b/attributes\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -55,24 +55,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEATTRIBUTEINPUT']._serialized_end=391
   _globals['_CREATEATTRIBUTEOUTPUT']._serialized_start=393
   _globals['_CREATEATTRIBUTEOUTPUT']._serialized_end=416
-  _globals['_UPDATEATTRIBUTEINPUT']._serialized_start=419
-  _globals['_UPDATEATTRIBUTEINPUT']._serialized_end=562
-  _globals['_UPDATEATTRIBUTEOUTPUT']._serialized_start=564
-  _globals['_UPDATEATTRIBUTEOUTPUT']._serialized_end=587
-  _globals['_REMOVEATTRIBUTEINPUT']._serialized_start=589
-  _globals['_REMOVEATTRIBUTEINPUT']._serialized_end=634
-  _globals['_REMOVEATTRIBUTEOUTPUT']._serialized_start=636
-  _globals['_REMOVEATTRIBUTEOUTPUT']._serialized_end=659
-  _globals['_DESCRIBEATTRIBUTEINPUT']._serialized_start=661
-  _globals['_DESCRIBEATTRIBUTEINPUT']._serialized_end=708
-  _globals['_DESCRIBEATTRIBUTEOUTPUT']._serialized_start=710
-  _globals['_DESCRIBEATTRIBUTEOUTPUT']._serialized_end=783
-  _globals['_LISTATTRIBUTESINPUT']._serialized_start=786
-  _globals['_LISTATTRIBUTESINPUT']._serialized_end=1102
-  _globals['_LISTATTRIBUTESINPUT_FILTER']._serialized_start=903
-  _globals['_LISTATTRIBUTESINPUT_FILTER']._serialized_end=1102
-  _globals['_LISTATTRIBUTESOUTPUT']._serialized_start=1104
-  _globals['_LISTATTRIBUTESOUTPUT']._serialized_end=1185
-  _globals['_ATTRIBUTESERVICE']._serialized_start=1188
-  _globals['_ATTRIBUTESERVICE']._serialized_end=2174
+  _globals['_UPDATEATTRIBUTEINPUT']._serialized_start=418
+  _globals['_UPDATEATTRIBUTEINPUT']._serialized_end=529
+  _globals['_UPDATEATTRIBUTEOUTPUT']._serialized_start=531
+  _globals['_UPDATEATTRIBUTEOUTPUT']._serialized_end=554
+  _globals['_REMOVEATTRIBUTEINPUT']._serialized_start=556
+  _globals['_REMOVEATTRIBUTEINPUT']._serialized_end=601
+  _globals['_REMOVEATTRIBUTEOUTPUT']._serialized_start=603
+  _globals['_REMOVEATTRIBUTEOUTPUT']._serialized_end=626
+  _globals['_DESCRIBEATTRIBUTEINPUT']._serialized_start=628
+  _globals['_DESCRIBEATTRIBUTEINPUT']._serialized_end=675
+  _globals['_DESCRIBEATTRIBUTEOUTPUT']._serialized_start=677
+  _globals['_DESCRIBEATTRIBUTEOUTPUT']._serialized_end=750
+  _globals['_LISTATTRIBUTESINPUT']._serialized_start=753
+  _globals['_LISTATTRIBUTESINPUT']._serialized_end=1069
+  _globals['_LISTATTRIBUTESINPUT_FILTER']._serialized_start=870
+  _globals['_LISTATTRIBUTESINPUT_FILTER']._serialized_end=1069
+  _globals['_LISTATTRIBUTESOUTPUT']._serialized_start=1071
+  _globals['_LISTATTRIBUTESOUTPUT']._serialized_end=1152
+  _globals['_ATTRIBUTESERVICE']._serialized_start=1155
+  _globals['_ATTRIBUTESERVICE']._serialized_end=2141
 # @@protoc_insertion_point(module_scope)

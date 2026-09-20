@@ -25,14 +25,12 @@ class CreateWebhookOutput(_message.Message):
     def __init__(self, webhook_id: _Optional[str] = ...) -> None: ...
 
 class UpdateWebhookInput(_message.Message):
-    __slots__ = ("patch", "webhook_id", "webhook")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("webhook_id", "webhook")
     WEBHOOK_ID_FIELD_NUMBER: _ClassVar[int]
     WEBHOOK_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_webhook_pb2.Webhook.Patch]
     webhook_id: str
-    webhook: _webhook_pb2.Webhook
-    def __init__(self, patch: _Optional[_Iterable[_Union[_webhook_pb2.Webhook.Patch, str]]] = ..., webhook_id: _Optional[str] = ..., webhook: _Optional[_Union[_webhook_pb2.Webhook, _Mapping]] = ...) -> None: ...
+    webhook: _webhook_pb2.Webhook.Patch
+    def __init__(self, webhook_id: _Optional[str] = ..., webhook: _Optional[_Union[_webhook_pb2.Webhook.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateWebhookOutput(_message.Message):
     __slots__ = ()
