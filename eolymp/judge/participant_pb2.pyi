@@ -45,26 +45,22 @@ class Participant(_message.Message):
     AUTHOR: Participant.Role
     COORDINATOR: Participant.Role
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            ALL: _ClassVar[Participant.Patch.Field]
-            DISPLAY_NAME: _ClassVar[Participant.Patch.Field]
-            ROLE: _ClassVar[Participant.Patch.Field]
-            BONUS_TIME: _ClassVar[Participant.Patch.Field]
-            UNOFFICIAL: _ClassVar[Participant.Patch.Field]
-            MEDAL: _ClassVar[Participant.Patch.Field]
-            INACTIVE: _ClassVar[Participant.Patch.Field]
-            PASSCODE: _ClassVar[Participant.Patch.Field]
-        ALL: Participant.Patch.Field
-        DISPLAY_NAME: Participant.Patch.Field
-        ROLE: Participant.Patch.Field
-        BONUS_TIME: Participant.Patch.Field
-        UNOFFICIAL: Participant.Patch.Field
-        MEDAL: Participant.Patch.Field
-        INACTIVE: Participant.Patch.Field
-        PASSCODE: Participant.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("display_name", "bonus_time", "unofficial", "medal", "inactive", "passcode", "role")
+        DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+        BONUS_TIME_FIELD_NUMBER: _ClassVar[int]
+        UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
+        MEDAL_FIELD_NUMBER: _ClassVar[int]
+        INACTIVE_FIELD_NUMBER: _ClassVar[int]
+        PASSCODE_FIELD_NUMBER: _ClassVar[int]
+        ROLE_FIELD_NUMBER: _ClassVar[int]
+        display_name: str
+        bonus_time: int
+        unofficial: bool
+        medal: _medal_pb2.Medal
+        inactive: bool
+        passcode: str
+        role: Participant.Role
+        def __init__(self, display_name: _Optional[str] = ..., bonus_time: _Optional[int] = ..., unofficial: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., inactive: _Optional[bool] = ..., passcode: _Optional[str] = ..., role: _Optional[_Union[Participant.Role, str]] = ...) -> None: ...
     class Submit(_message.Message):
         __slots__ = ("problem_id", "counter")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]

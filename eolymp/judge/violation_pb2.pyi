@@ -46,16 +46,12 @@ class Violation(_message.Message):
     GEN_AI_USAGE: Violation.Type
     BEHAVIOUR: Violation.Type
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNSPECIFIED: _ClassVar[Violation.Patch.Field]
-            SUMMARY: _ClassVar[Violation.Patch.Field]
-            STATUS: _ClassVar[Violation.Patch.Field]
-        UNSPECIFIED: Violation.Patch.Field
-        SUMMARY: Violation.Patch.Field
-        STATUS: Violation.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("summary", "status")
+        SUMMARY_FIELD_NUMBER: _ClassVar[int]
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        summary: _content_pb2.Content
+        status: Violation.Status
+        def __init__(self, summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., status: _Optional[_Union[Violation.Status, str]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]

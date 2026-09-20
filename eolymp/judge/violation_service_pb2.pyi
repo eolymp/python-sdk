@@ -34,16 +34,14 @@ class CreateViolationOutput(_message.Message):
     def __init__(self, violation_id: _Optional[str] = ...) -> None: ...
 
 class UpdateViolationInput(_message.Message):
-    __slots__ = ("patch", "contest_id", "violation_id", "violation")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("violation_id", "contest_id", "violation")
     VIOLATION_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     VIOLATION_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_violation_pb2.Violation.Patch.Field]
-    contest_id: str
     violation_id: str
-    violation: _violation_pb2.Violation
-    def __init__(self, patch: _Optional[_Iterable[_Union[_violation_pb2.Violation.Patch.Field, str]]] = ..., contest_id: _Optional[str] = ..., violation_id: _Optional[str] = ..., violation: _Optional[_Union[_violation_pb2.Violation, _Mapping]] = ...) -> None: ...
+    contest_id: str
+    violation: _violation_pb2.Violation.Patch
+    def __init__(self, violation_id: _Optional[str] = ..., contest_id: _Optional[str] = ..., violation: _Optional[_Union[_violation_pb2.Violation.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateViolationOutput(_message.Message):
     __slots__ = ()

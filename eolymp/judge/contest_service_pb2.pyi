@@ -52,14 +52,12 @@ class DeleteContestOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateContestInput(_message.Message):
-    __slots__ = ("patch", "contest_id", "contest")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("contest_id", "contest")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     CONTEST_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_contest_pb2.Contest.Patch.Field]
     contest_id: str
-    contest: _contest_pb2.Contest
-    def __init__(self, patch: _Optional[_Iterable[_Union[_contest_pb2.Contest.Patch.Field, str]]] = ..., contest_id: _Optional[str] = ..., contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
+    contest: _contest_pb2.Contest.Patch
+    def __init__(self, contest_id: _Optional[str] = ..., contest: _Optional[_Union[_contest_pb2.Contest.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateContestOutput(_message.Message):
     __slots__ = ()

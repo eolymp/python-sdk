@@ -104,16 +104,14 @@ class DisableParticipantOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateParticipantInput(_message.Message):
-    __slots__ = ("patch", "contest_id", "participant_id", "participant")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("contest_id", "participant_id", "participant")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_participant_pb2.Participant.Patch.Field]
     contest_id: str
     participant_id: str
-    participant: _participant_pb2.Participant
-    def __init__(self, patch: _Optional[_Iterable[_Union[_participant_pb2.Participant.Patch.Field, str]]] = ..., contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
+    participant: _participant_pb2.Participant.Patch
+    def __init__(self, contest_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., participant: _Optional[_Union[_participant_pb2.Participant.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateParticipantOutput(_message.Message):
     __slots__ = ()
