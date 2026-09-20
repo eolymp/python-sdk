@@ -57,14 +57,12 @@ class CreateClientOutput(_message.Message):
     def __init__(self, client_id: _Optional[str] = ..., secret: _Optional[str] = ...) -> None: ...
 
 class UpdateClientInput(_message.Message):
-    __slots__ = ("patch", "client_id", "client")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("client_id", "client")
     CLIENT_ID_FIELD_NUMBER: _ClassVar[int]
     CLIENT_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_client_pb2.Client.Patch.Field]
     client_id: str
-    client: _client_pb2.Client
-    def __init__(self, patch: _Optional[_Iterable[_Union[_client_pb2.Client.Patch.Field, str]]] = ..., client_id: _Optional[str] = ..., client: _Optional[_Union[_client_pb2.Client, _Mapping]] = ...) -> None: ...
+    client: _client_pb2.Client.Patch
+    def __init__(self, client_id: _Optional[str] = ..., client: _Optional[_Union[_client_pb2.Client.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateClientOutput(_message.Message):
     __slots__ = ()
