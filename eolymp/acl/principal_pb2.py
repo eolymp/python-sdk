@@ -26,7 +26,7 @@ from eolymp.acl import action_pb2 as eolymp_dot_acl_dot_action__pb2
 from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/acl/principal.proto\x12\neolymp.acl\x1a\x17\x65olymp/acl/action.proto\x1a\x1c\x65olymp/annotations/mcp.proto\"\xff\x01\n\tPrincipal\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12(\n\x04role\x18\n \x01(\x0e\x32\x1a.eolymp.acl.Principal.Role\x12\"\n\x06\x61llows\x18\x0b \x03(\x0e\x32\x12.eolymp.acl.Action\x1aL\n\x05Patch\"C\n\x05\x46ield\x12\x11\n\rUNKNOWN_PATCH\x10\x00\x12\x07\n\x03\x41LL\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\x08\n\x04ROLE\x10\x03\x12\n\n\x06\x41LLOWS\x10\x04\"#\n\x04Role\x12\x10\n\x0cUNKNOWN_ROLE\x10\x00\x12\t\n\x05OWNER\x10\x01\x42)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/acl/principal.proto\x12\neolymp.acl\x1a\x17\x65olymp/acl/action.proto\x1a\x1c\x65olymp/annotations/mcp.proto\"\xd7\x02\n\tPrincipal\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12(\n\x04role\x18\n \x01(\x0e\x32\x1a.eolymp.acl.Principal.Role\x12\"\n\x06\x61llows\x18\x0b \x03(\x0e\x32\x12.eolymp.acl.Action\x1a\xa3\x01\n\x05Patch\x12\x11\n\x04name\x18\x03 \x01(\tH\x00\x88\x01\x01\x12-\n\x04role\x18\n \x01(\x0e\x32\x1a.eolymp.acl.Principal.RoleH\x01\x88\x01\x01\x12\"\n\x06\x61llows\x18\x0b \x03(\x0e\x32\x12.eolymp.acl.Action\x12\x15\n\x08\x64isallow\x18\x0c \x01(\x08H\x02\x88\x01\x01\x42\x07\n\x05_nameB\x07\n\x05_roleB\x0b\n\t_disallow\"#\n\x04Role\x12\x10\n\x0cUNKNOWN_ROLE\x10\x00\x12\t\n\x05OWNER\x10\x01\x42)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,11 +37,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRINCIPAL'].fields_by_name['id']._loaded_options = None
   _globals['_PRINCIPAL'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_PRINCIPAL']._serialized_start=98
-  _globals['_PRINCIPAL']._serialized_end=353
-  _globals['_PRINCIPAL_PATCH']._serialized_start=240
-  _globals['_PRINCIPAL_PATCH']._serialized_end=316
-  _globals['_PRINCIPAL_PATCH_FIELD']._serialized_start=249
-  _globals['_PRINCIPAL_PATCH_FIELD']._serialized_end=316
-  _globals['_PRINCIPAL_ROLE']._serialized_start=318
-  _globals['_PRINCIPAL_ROLE']._serialized_end=353
+  _globals['_PRINCIPAL']._serialized_end=441
+  _globals['_PRINCIPAL_PATCH']._serialized_start=241
+  _globals['_PRINCIPAL_PATCH']._serialized_end=404
+  _globals['_PRINCIPAL_ROLE']._serialized_start=406
+  _globals['_PRINCIPAL_ROLE']._serialized_end=441
 # @@protoc_insertion_point(module_scope)

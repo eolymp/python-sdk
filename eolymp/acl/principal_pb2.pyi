@@ -18,20 +18,16 @@ class Principal(_message.Message):
     UNKNOWN_ROLE: Principal.Role
     OWNER: Principal.Role
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_PATCH: _ClassVar[Principal.Patch.Field]
-            ALL: _ClassVar[Principal.Patch.Field]
-            NAME: _ClassVar[Principal.Patch.Field]
-            ROLE: _ClassVar[Principal.Patch.Field]
-            ALLOWS: _ClassVar[Principal.Patch.Field]
-        UNKNOWN_PATCH: Principal.Patch.Field
-        ALL: Principal.Patch.Field
-        NAME: Principal.Patch.Field
-        ROLE: Principal.Patch.Field
-        ALLOWS: Principal.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("name", "role", "allows", "disallow")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        ROLE_FIELD_NUMBER: _ClassVar[int]
+        ALLOWS_FIELD_NUMBER: _ClassVar[int]
+        DISALLOW_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        role: Principal.Role
+        allows: _containers.RepeatedScalarFieldContainer[_action_pb2.Action]
+        disallow: bool
+        def __init__(self, name: _Optional[str] = ..., role: _Optional[_Union[Principal.Role, str]] = ..., allows: _Optional[_Iterable[_Union[_action_pb2.Action, str]]] = ..., disallow: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     USER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]

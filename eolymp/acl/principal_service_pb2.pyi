@@ -28,14 +28,12 @@ class CreatePrincipalOutput(_message.Message):
     def __init__(self, principal_id: _Optional[str] = ...) -> None: ...
 
 class UpdatePrincipalInput(_message.Message):
-    __slots__ = ("patch", "principal_id", "principal")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("principal_id", "principal")
     PRINCIPAL_ID_FIELD_NUMBER: _ClassVar[int]
     PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_principal_pb2.Principal.Patch.Field]
     principal_id: str
-    principal: _principal_pb2.Principal
-    def __init__(self, patch: _Optional[_Iterable[_Union[_principal_pb2.Principal.Patch.Field, str]]] = ..., principal_id: _Optional[str] = ..., principal: _Optional[_Union[_principal_pb2.Principal, _Mapping]] = ...) -> None: ...
+    principal: _principal_pb2.Principal.Patch
+    def __init__(self, principal_id: _Optional[str] = ..., principal: _Optional[_Union[_principal_pb2.Principal.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdatePrincipalOutput(_message.Message):
     __slots__ = ()
