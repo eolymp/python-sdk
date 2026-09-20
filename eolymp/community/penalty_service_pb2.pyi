@@ -5,7 +5,6 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import penalty_pb2 as _penalty_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -28,28 +27,14 @@ class CreatePenaltyOutput(_message.Message):
     def __init__(self, penalty_id: _Optional[str] = ...) -> None: ...
 
 class UpdatePenaltyInput(_message.Message):
-    __slots__ = ("patch", "member_id", "penalty_id", "penalty")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdatePenaltyInput.Patch]
-        SUMMARY: _ClassVar[UpdatePenaltyInput.Patch]
-        DESCRIPTION: _ClassVar[UpdatePenaltyInput.Patch]
-        SCOPE: _ClassVar[UpdatePenaltyInput.Patch]
-        EXPIRES_AT: _ClassVar[UpdatePenaltyInput.Patch]
-    ALL: UpdatePenaltyInput.Patch
-    SUMMARY: UpdatePenaltyInput.Patch
-    DESCRIPTION: UpdatePenaltyInput.Patch
-    SCOPE: UpdatePenaltyInput.Patch
-    EXPIRES_AT: UpdatePenaltyInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("penalty_id", "member_id", "penalty")
     PENALTY_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     PENALTY_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdatePenaltyInput.Patch]
-    member_id: str
     penalty_id: str
-    penalty: _penalty_pb2.Penalty
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdatePenaltyInput.Patch, str]]] = ..., member_id: _Optional[str] = ..., penalty_id: _Optional[str] = ..., penalty: _Optional[_Union[_penalty_pb2.Penalty, _Mapping]] = ...) -> None: ...
+    member_id: str
+    penalty: _penalty_pb2.Penalty.Patch
+    def __init__(self, penalty_id: _Optional[str] = ..., member_id: _Optional[str] = ..., penalty: _Optional[_Union[_penalty_pb2.Penalty.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdatePenaltyOutput(_message.Message):
     __slots__ = ()

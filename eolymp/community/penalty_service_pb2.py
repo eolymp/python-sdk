@@ -30,7 +30,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.community import penalty_pb2 as eolymp_dot_community_dot_penalty__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/community/penalty_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1e\x65olymp/community/penalty.proto\"S\n\x12\x43reatePenaltyInput\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12*\n\x07penalty\x18\x01 \x01(\x0b\x32\x19.eolymp.community.Penalty\")\n\x13\x43reatePenaltyOutput\x12\x12\n\npenalty_id\x18\x01 \x01(\t\"\xed\x01\n\x12UpdatePenaltyInput\x12\x39\n\x05patch\x18\x03 \x03(\x0e\x32*.eolymp.community.UpdatePenaltyInput.Patch\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12\x12\n\npenalty_id\x18\x01 \x01(\t\x12*\n\x07penalty\x18\x02 \x01(\x0b\x32\x19.eolymp.community.Penalty\"I\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\x0b\n\x07SUMMARY\x10\x01\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x02\x12\t\n\x05SCOPE\x10\x03\x12\x0e\n\nEXPIRES_AT\x10\x04\"\x15\n\x13UpdatePenaltyOutput\";\n\x12\x44\x65letePenaltyInput\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x12\n\npenalty_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65letePenaltyOutput\"n\n\x14\x44\x65scribePenaltyInput\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x12\n\npenalty_id\x18\x01 \x01(\t\x12/\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1f.eolymp.community.Penalty.Extra\"C\n\x15\x44\x65scribePenaltyOutput\x12*\n\x07penalty\x18\x01 \x01(\x0b\x32\x19.eolymp.community.Penalty\"v\n\x12ListPenaltiesInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12/\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1f.eolymp.community.Penalty.Extra\"N\n\x13ListPenaltiesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12(\n\x05items\x18\x02 \x03(\x0b\x32\x19.eolymp.community.Penalty2\x84\x08\n\x0ePenaltyService\x12\xb9\x01\n\rCreatePenalty\x12$.eolymp.community.CreatePenaltyInput\x1a%.eolymp.community.CreatePenaltyOutput\"[\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02 \"\x1e/members/{member_id}/penalties\x12\xc6\x01\n\rUpdatePenalty\x12$.eolymp.community.UpdatePenaltyInput\x1a%.eolymp.community.UpdatePenaltyOutput\"h\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02-\"+/members/{member_id}/penalties/{penalty_id}\x12\xc6\x01\n\rDeletePenalty\x12$.eolymp.community.DeletePenaltyInput\x1a%.eolymp.community.DeletePenaltyOutput\"h\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02-*+/members/{member_id}/penalties/{penalty_id}\x12\xcb\x01\n\x0f\x44\x65scribePenalty\x12&.eolymp.community.DescribePenaltyInput\x1a\'.eolymp.community.DescribePenaltyOutput\"g\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02-\x12+/members/{member_id}/penalties/{penalty_id}\x12\xb8\x01\n\rListPenalties\x12$.eolymp.community.ListPenaltiesInput\x1a%.eolymp.community.ListPenaltiesOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02 \x12\x1e/members/{member_id}/penalties\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/community/penalty_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1e\x65olymp/community/penalty.proto\"S\n\x12\x43reatePenaltyInput\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12*\n\x07penalty\x18\x01 \x01(\x0b\x32\x19.eolymp.community.Penalty\")\n\x13\x43reatePenaltyOutput\x12\x12\n\npenalty_id\x18\x01 \x01(\t\"y\n\x12UpdatePenaltyInput\x12\x12\n\npenalty_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x04 \x01(\t\x12\x30\n\x07penalty\x18\x05 \x01(\x0b\x32\x1f.eolymp.community.Penalty.PatchJ\x04\x08\x02\x10\x03J\x04\x08\x03\x10\x04\"\x15\n\x13UpdatePenaltyOutput\";\n\x12\x44\x65letePenaltyInput\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x12\n\npenalty_id\x18\x01 \x01(\t\"\x15\n\x13\x44\x65letePenaltyOutput\"n\n\x14\x44\x65scribePenaltyInput\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x12\n\npenalty_id\x18\x01 \x01(\t\x12/\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1f.eolymp.community.Penalty.Extra\"C\n\x15\x44\x65scribePenaltyOutput\x12*\n\x07penalty\x18\x01 \x01(\x0b\x32\x19.eolymp.community.Penalty\"v\n\x12ListPenaltiesInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12/\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1f.eolymp.community.Penalty.Extra\"N\n\x13ListPenaltiesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12(\n\x05items\x18\x02 \x03(\x0b\x32\x19.eolymp.community.Penalty2\x84\x08\n\x0ePenaltyService\x12\xb9\x01\n\rCreatePenalty\x12$.eolymp.community.CreatePenaltyInput\x1a%.eolymp.community.CreatePenaltyOutput\"[\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02 \"\x1e/members/{member_id}/penalties\x12\xc6\x01\n\rUpdatePenalty\x12$.eolymp.community.UpdatePenaltyInput\x1a%.eolymp.community.UpdatePenaltyOutput\"h\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02-\"+/members/{member_id}/penalties/{penalty_id}\x12\xc6\x01\n\rDeletePenalty\x12$.eolymp.community.DeletePenaltyInput\x1a%.eolymp.community.DeletePenaltyOutput\"h\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02-*+/members/{member_id}/penalties/{penalty_id}\x12\xcb\x01\n\x0f\x44\x65scribePenalty\x12&.eolymp.community.DescribePenaltyInput\x1a\'.eolymp.community.DescribePenaltyOutput\"g\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02-\x12+/members/{member_id}/penalties/{penalty_id}\x12\xb8\x01\n\rListPenalties\x12$.eolymp.community.ListPenaltiesInput\x1a%.eolymp.community.ListPenaltiesOutput\"Z\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02 \x12\x1e/members/{member_id}/penalties\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -54,24 +54,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEPENALTYINPUT']._serialized_end=342
   _globals['_CREATEPENALTYOUTPUT']._serialized_start=344
   _globals['_CREATEPENALTYOUTPUT']._serialized_end=385
-  _globals['_UPDATEPENALTYINPUT']._serialized_start=388
-  _globals['_UPDATEPENALTYINPUT']._serialized_end=625
-  _globals['_UPDATEPENALTYINPUT_PATCH']._serialized_start=552
-  _globals['_UPDATEPENALTYINPUT_PATCH']._serialized_end=625
-  _globals['_UPDATEPENALTYOUTPUT']._serialized_start=627
-  _globals['_UPDATEPENALTYOUTPUT']._serialized_end=648
-  _globals['_DELETEPENALTYINPUT']._serialized_start=650
-  _globals['_DELETEPENALTYINPUT']._serialized_end=709
-  _globals['_DELETEPENALTYOUTPUT']._serialized_start=711
-  _globals['_DELETEPENALTYOUTPUT']._serialized_end=732
-  _globals['_DESCRIBEPENALTYINPUT']._serialized_start=734
-  _globals['_DESCRIBEPENALTYINPUT']._serialized_end=844
-  _globals['_DESCRIBEPENALTYOUTPUT']._serialized_start=846
-  _globals['_DESCRIBEPENALTYOUTPUT']._serialized_end=913
-  _globals['_LISTPENALTIESINPUT']._serialized_start=915
-  _globals['_LISTPENALTIESINPUT']._serialized_end=1033
-  _globals['_LISTPENALTIESOUTPUT']._serialized_start=1035
-  _globals['_LISTPENALTIESOUTPUT']._serialized_end=1113
-  _globals['_PENALTYSERVICE']._serialized_start=1116
-  _globals['_PENALTYSERVICE']._serialized_end=2144
+  _globals['_UPDATEPENALTYINPUT']._serialized_start=387
+  _globals['_UPDATEPENALTYINPUT']._serialized_end=508
+  _globals['_UPDATEPENALTYOUTPUT']._serialized_start=510
+  _globals['_UPDATEPENALTYOUTPUT']._serialized_end=531
+  _globals['_DELETEPENALTYINPUT']._serialized_start=533
+  _globals['_DELETEPENALTYINPUT']._serialized_end=592
+  _globals['_DELETEPENALTYOUTPUT']._serialized_start=594
+  _globals['_DELETEPENALTYOUTPUT']._serialized_end=615
+  _globals['_DESCRIBEPENALTYINPUT']._serialized_start=617
+  _globals['_DESCRIBEPENALTYINPUT']._serialized_end=727
+  _globals['_DESCRIBEPENALTYOUTPUT']._serialized_start=729
+  _globals['_DESCRIBEPENALTYOUTPUT']._serialized_end=796
+  _globals['_LISTPENALTIESINPUT']._serialized_start=798
+  _globals['_LISTPENALTIESINPUT']._serialized_end=916
+  _globals['_LISTPENALTIESOUTPUT']._serialized_start=918
+  _globals['_LISTPENALTIESOUTPUT']._serialized_end=996
+  _globals['_PENALTYSERVICE']._serialized_start=999
+  _globals['_PENALTYSERVICE']._serialized_end=2027
 # @@protoc_insertion_point(module_scope)
