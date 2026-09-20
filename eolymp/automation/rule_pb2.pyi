@@ -60,28 +60,26 @@ class Rule(_message.Message):
     HOURLY: Rule.Schedule
     DAILY: Rule.Schedule
     class Patch(_message.Message):
-        __slots__ = ()
-        class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-            __slots__ = ()
-            UNKNOWN_FIELD: _ClassVar[Rule.Patch.Field]
-            NAME: _ClassVar[Rule.Patch.Field]
-            TRIGGER: _ClassVar[Rule.Patch.Field]
-            CONDITIONS: _ClassVar[Rule.Patch.Field]
-            ACTIONS: _ClassVar[Rule.Patch.Field]
-            INACTIVE: _ClassVar[Rule.Patch.Field]
-            DRY_RUN: _ClassVar[Rule.Patch.Field]
-            LABEL: _ClassVar[Rule.Patch.Field]
-            SCHEDULE: _ClassVar[Rule.Patch.Field]
-        UNKNOWN_FIELD: Rule.Patch.Field
-        NAME: Rule.Patch.Field
-        TRIGGER: Rule.Patch.Field
-        CONDITIONS: Rule.Patch.Field
-        ACTIONS: Rule.Patch.Field
-        INACTIVE: Rule.Patch.Field
-        DRY_RUN: Rule.Patch.Field
-        LABEL: Rule.Patch.Field
-        SCHEDULE: Rule.Patch.Field
-        def __init__(self) -> None: ...
+        __slots__ = ("name", "trigger", "conditions", "uncondition", "inactive", "dry_run", "label", "schedule", "actions")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        TRIGGER_FIELD_NUMBER: _ClassVar[int]
+        CONDITIONS_FIELD_NUMBER: _ClassVar[int]
+        UNCONDITION_FIELD_NUMBER: _ClassVar[int]
+        INACTIVE_FIELD_NUMBER: _ClassVar[int]
+        DRY_RUN_FIELD_NUMBER: _ClassVar[int]
+        LABEL_FIELD_NUMBER: _ClassVar[int]
+        SCHEDULE_FIELD_NUMBER: _ClassVar[int]
+        ACTIONS_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        trigger: Rule.Trigger
+        conditions: _containers.RepeatedCompositeFieldContainer[_condition_pb2.Condition]
+        uncondition: bool
+        inactive: bool
+        dry_run: bool
+        label: str
+        schedule: Rule.Schedule
+        actions: _containers.RepeatedCompositeFieldContainer[_action_pb2.Action]
+        def __init__(self, name: _Optional[str] = ..., trigger: _Optional[_Union[Rule.Trigger, str]] = ..., conditions: _Optional[_Iterable[_Union[_condition_pb2.Condition, _Mapping]]] = ..., uncondition: _Optional[bool] = ..., inactive: _Optional[bool] = ..., dry_run: _Optional[bool] = ..., label: _Optional[str] = ..., schedule: _Optional[_Union[Rule.Schedule, str]] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, _Mapping]]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     TRIGGER_FIELD_NUMBER: _ClassVar[int]

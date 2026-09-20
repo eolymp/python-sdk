@@ -85,14 +85,12 @@ class DescribeRuleOutput(_message.Message):
     def __init__(self, rule: _Optional[_Union[_rule_pb2.Rule, _Mapping]] = ...) -> None: ...
 
 class UpdateRuleInput(_message.Message):
-    __slots__ = ("patch", "rule_id", "rule")
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("rule_id", "rule")
     RULE_ID_FIELD_NUMBER: _ClassVar[int]
     RULE_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[_rule_pb2.Rule.Patch.Field]
     rule_id: str
-    rule: _rule_pb2.Rule
-    def __init__(self, patch: _Optional[_Iterable[_Union[_rule_pb2.Rule.Patch.Field, str]]] = ..., rule_id: _Optional[str] = ..., rule: _Optional[_Union[_rule_pb2.Rule, _Mapping]] = ...) -> None: ...
+    rule: _rule_pb2.Rule.Patch
+    def __init__(self, rule_id: _Optional[str] = ..., rule: _Optional[_Union[_rule_pb2.Rule.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateRuleOutput(_message.Message):
     __slots__ = ()
