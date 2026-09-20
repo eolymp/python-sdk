@@ -5,7 +5,6 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.notify import notification_pb2 as _notification_pb2
 from eolymp.notify import preferences_pb2 as _preferences_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -90,24 +89,12 @@ class DescribePreferencesOutput(_message.Message):
     def __init__(self, preferences: _Optional[_Union[_preferences_pb2.Preferences, _Mapping]] = ...) -> None: ...
 
 class UpdatePreferencesInput(_message.Message):
-    __slots__ = ("patch", "space_id", "preferences")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdatePreferencesInput.Patch]
-        SUBSCRIPTIONS: _ClassVar[UpdatePreferencesInput.Patch]
-        SUBSCRIPTIONS_ADD: _ClassVar[UpdatePreferencesInput.Patch]
-        SUBSCRIPTIONS_REMOVE: _ClassVar[UpdatePreferencesInput.Patch]
-    ALL: UpdatePreferencesInput.Patch
-    SUBSCRIPTIONS: UpdatePreferencesInput.Patch
-    SUBSCRIPTIONS_ADD: UpdatePreferencesInput.Patch
-    SUBSCRIPTIONS_REMOVE: UpdatePreferencesInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("space_id", "preferences")
     SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     PREFERENCES_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdatePreferencesInput.Patch]
     space_id: str
-    preferences: _preferences_pb2.Preferences
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdatePreferencesInput.Patch, str]]] = ..., space_id: _Optional[str] = ..., preferences: _Optional[_Union[_preferences_pb2.Preferences, _Mapping]] = ...) -> None: ...
+    preferences: _preferences_pb2.Preferences.Patch
+    def __init__(self, space_id: _Optional[str] = ..., preferences: _Optional[_Union[_preferences_pb2.Preferences.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdatePreferencesOutput(_message.Message):
     __slots__ = ()

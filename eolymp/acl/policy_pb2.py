@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.acl import action_pb2 as eolymp_dot_acl_dot_action__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/acl/policy.proto\x12\neolymp.acl\x1a\x17\x65olymp/acl/action.proto\"\x94\x01\n\x06Policy\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tprincipal\x18\x03 \x01(\t\x12\x14\n\x0cprincipal_id\x18\x04 \x01(\t\x12\x10\n\x08resource\x18\n \x01(\t\x12\x11\n\tallow_all\x18\x0c \x01(\x08\x12\"\n\x06\x61llows\x18\x0b \x03(\x0e\x32\x12.eolymp.acl.ActionB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x65olymp/acl/policy.proto\x12\neolymp.acl\x1a\x17\x65olymp/acl/action.proto\"\xf2\x02\n\x06Policy\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tprincipal\x18\x03 \x01(\t\x12\x14\n\x0cprincipal_id\x18\x04 \x01(\t\x12\x10\n\x08resource\x18\n \x01(\t\x12\x11\n\tallow_all\x18\x0c \x01(\x08\x12\"\n\x06\x61llows\x18\x0b \x03(\x0e\x32\x12.eolymp.acl.Action\x1a\xdb\x01\n\x05Patch\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x16\n\tprincipal\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x15\n\x08resource\x18\n \x01(\tH\x02\x88\x01\x01\x12\x16\n\tallow_all\x18\x0c \x01(\x08H\x03\x88\x01\x01\x12\"\n\x06\x61llows\x18\x0b \x03(\x0e\x32\x12.eolymp.acl.Action\x12\x15\n\x08\x64isallow\x18\r \x01(\x08H\x04\x88\x01\x01\x42\x07\n\x05_nameB\x0c\n\n_principalB\x0b\n\t_resourceB\x0c\n\n_allow_allB\x0b\n\t_disallowB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,5 +34,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z\'github.com/eolymp/go-sdk/eolymp/acl;acl'
   _globals['_POLICY']._serialized_start=65
-  _globals['_POLICY']._serialized_end=213
+  _globals['_POLICY']._serialized_end=435
+  _globals['_POLICY_PATCH']._serialized_start=216
+  _globals['_POLICY_PATCH']._serialized_end=435
 # @@protoc_insertion_point(module_scope)

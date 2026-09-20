@@ -6,7 +6,6 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -27,22 +26,12 @@ class CreatePolicyOutput(_message.Message):
     def __init__(self, policy_id: _Optional[str] = ...) -> None: ...
 
 class UpdatePolicyInput(_message.Message):
-    __slots__ = ("patch", "policy_id", "policy")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdatePolicyInput.Patch]
-        NAME: _ClassVar[UpdatePolicyInput.Patch]
-        ALLOWS: _ClassVar[UpdatePolicyInput.Patch]
-    ALL: UpdatePolicyInput.Patch
-    NAME: UpdatePolicyInput.Patch
-    ALLOWS: UpdatePolicyInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("policy_id", "policy")
     POLICY_ID_FIELD_NUMBER: _ClassVar[int]
     POLICY_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdatePolicyInput.Patch]
     policy_id: str
-    policy: _policy_pb2.Policy
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdatePolicyInput.Patch, str]]] = ..., policy_id: _Optional[str] = ..., policy: _Optional[_Union[_policy_pb2.Policy, _Mapping]] = ...) -> None: ...
+    policy: _policy_pb2.Policy.Patch
+    def __init__(self, policy_id: _Optional[str] = ..., policy: _Optional[_Union[_policy_pb2.Policy.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdatePolicyOutput(_message.Message):
     __slots__ = ()

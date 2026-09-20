@@ -19,6 +19,17 @@ class Preferences(_message.Message):
     IMMEDIATE: Preferences.Digest
     HOURLY: Preferences.Digest
     DAILY: Preferences.Digest
+    class Patch(_message.Message):
+        __slots__ = ("subscriptions", "add_subscriptions", "remove_subscriptions", "unsubscribe")
+        SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+        ADD_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+        REMOVE_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+        UNSUBSCRIBE_FIELD_NUMBER: _ClassVar[int]
+        subscriptions: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
+        add_subscriptions: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
+        remove_subscriptions: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
+        unsubscribe: bool
+        def __init__(self, subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ..., add_subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ..., remove_subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ..., unsubscribe: _Optional[bool] = ...) -> None: ...
     class Subscription(_message.Message):
         __slots__ = ("topic", "digest")
         TOPIC_FIELD_NUMBER: _ClassVar[int]

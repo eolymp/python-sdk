@@ -9,6 +9,21 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Policy(_message.Message):
     __slots__ = ("id", "name", "principal", "principal_id", "resource", "allow_all", "allows")
+    class Patch(_message.Message):
+        __slots__ = ("name", "principal", "resource", "allow_all", "allows", "disallow")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
+        RESOURCE_FIELD_NUMBER: _ClassVar[int]
+        ALLOW_ALL_FIELD_NUMBER: _ClassVar[int]
+        ALLOWS_FIELD_NUMBER: _ClassVar[int]
+        DISALLOW_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        principal: str
+        resource: str
+        allow_all: bool
+        allows: _containers.RepeatedScalarFieldContainer[_action_pb2.Action]
+        disallow: bool
+        def __init__(self, name: _Optional[str] = ..., principal: _Optional[str] = ..., resource: _Optional[str] = ..., allow_all: _Optional[bool] = ..., allows: _Optional[_Iterable[_Union[_action_pb2.Action, str]]] = ..., disallow: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     PRINCIPAL_FIELD_NUMBER: _ClassVar[int]
