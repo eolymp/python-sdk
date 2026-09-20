@@ -28,6 +28,20 @@ class OrderServiceClient:
             **kwargs,
         )
 
+    def PayOrder(self, request, **kwargs):
+        path = "/store/orders/"+urllib.parse.quote(request.order_id)+"/pay"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.order_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.commerce.PayOrderOutput"),
+            **kwargs,
+        )
+
     def DescribeOrder(self, request, **kwargs):
         path = "/store/orders/"+urllib.parse.quote(request.order_id)
 

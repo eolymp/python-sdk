@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Order(_message.Message):
-    __slots__ = ("id", "reference", "member_id", "status", "items", "billing_address", "shipping_address", "billing_same_as_shipping", "estimated_shipping_date", "currency", "total_amount", "shipping_amount", "discount_amount", "tax_amount", "tax_rate", "tax_note", "grand_total", "credit_amount", "credit_discount", "payable_amount", "payment_status", "checkout_url", "payment_id", "tracking_link", "tracking_number", "created_at", "updated_at")
+    __slots__ = ("id", "reference", "member_id", "status", "items", "billing_address", "shipping_address", "billing_same_as_shipping", "estimated_shipping_date", "currency", "total_amount", "shipping_amount", "discount_amount", "tax_amount", "tax_rate", "tax_note", "grand_total", "credit_amount", "credit_discount", "payable_amount", "payment_status", "payment_id", "tracking_link", "tracking_number", "created_at", "updated_at")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNSPECIFIED: _ClassVar[Order.Status]
@@ -98,7 +98,6 @@ class Order(_message.Message):
     CREDIT_DISCOUNT_FIELD_NUMBER: _ClassVar[int]
     PAYABLE_AMOUNT_FIELD_NUMBER: _ClassVar[int]
     PAYMENT_STATUS_FIELD_NUMBER: _ClassVar[int]
-    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
     PAYMENT_ID_FIELD_NUMBER: _ClassVar[int]
     TRACKING_LINK_FIELD_NUMBER: _ClassVar[int]
     TRACKING_NUMBER_FIELD_NUMBER: _ClassVar[int]
@@ -125,10 +124,9 @@ class Order(_message.Message):
     credit_discount: int
     payable_amount: int
     payment_status: Order.Payment.Status
-    checkout_url: str
     payment_id: str
     tracking_link: str
     tracking_number: str
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., reference: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Order.Status, str]] = ..., items: _Optional[_Iterable[_Union[Order.Item, _Mapping]]] = ..., billing_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., shipping_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., billing_same_as_shipping: _Optional[bool] = ..., estimated_shipping_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., currency: _Optional[str] = ..., total_amount: _Optional[int] = ..., shipping_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., tax_rate: _Optional[int] = ..., tax_note: _Optional[str] = ..., grand_total: _Optional[int] = ..., credit_amount: _Optional[int] = ..., credit_discount: _Optional[int] = ..., payable_amount: _Optional[int] = ..., payment_status: _Optional[_Union[Order.Payment.Status, str]] = ..., checkout_url: _Optional[str] = ..., payment_id: _Optional[str] = ..., tracking_link: _Optional[str] = ..., tracking_number: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., reference: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Order.Status, str]] = ..., items: _Optional[_Iterable[_Union[Order.Item, _Mapping]]] = ..., billing_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., shipping_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., billing_same_as_shipping: _Optional[bool] = ..., estimated_shipping_date: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., currency: _Optional[str] = ..., total_amount: _Optional[int] = ..., shipping_amount: _Optional[int] = ..., discount_amount: _Optional[int] = ..., tax_amount: _Optional[int] = ..., tax_rate: _Optional[int] = ..., tax_note: _Optional[str] = ..., grand_total: _Optional[int] = ..., credit_amount: _Optional[int] = ..., credit_discount: _Optional[int] = ..., payable_amount: _Optional[int] = ..., payment_status: _Optional[_Union[Order.Payment.Status, str]] = ..., payment_id: _Optional[str] = ..., tracking_link: _Optional[str] = ..., tracking_number: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

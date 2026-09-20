@@ -33,6 +33,18 @@ class CancelOrderOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class PayOrderInput(_message.Message):
+    __slots__ = ("order_id",)
+    ORDER_ID_FIELD_NUMBER: _ClassVar[int]
+    order_id: str
+    def __init__(self, order_id: _Optional[str] = ...) -> None: ...
+
+class PayOrderOutput(_message.Message):
+    __slots__ = ("checkout_url",)
+    CHECKOUT_URL_FIELD_NUMBER: _ClassVar[int]
+    checkout_url: str
+    def __init__(self, checkout_url: _Optional[str] = ...) -> None: ...
+
 class DescribeOrderInput(_message.Message):
     __slots__ = ("order_id",)
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]
