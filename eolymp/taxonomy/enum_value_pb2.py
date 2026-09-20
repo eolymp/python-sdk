@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/taxonomy/enum_value.proto\x12\x0f\x65olymp.taxonomy\"\xbf\x01\n\x05Value\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x0c\n\x04\x61\x62\x62r\x18\x05 \x01(\t\x12\r\n\x05image\x18\x06 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\t\x1a\\\n\x0bTranslation\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x61\x62\x62r\x18\x05 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\tB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/taxonomy/enum_value.proto\x12\x0f\x65olymp.taxonomy\"\x83\x03\n\x05Value\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x0c\n\x04\x61\x62\x62r\x18\x05 \x01(\t\x12\r\n\x05image\x18\x06 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\t\x1a\xc1\x01\n\x05Patch\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x14\n\x07summary\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x11\n\x04\x61\x62\x62r\x18\x05 \x01(\tH\x02\x88\x01\x01\x12\x12\n\x05image\x18\x06 \x01(\tH\x03\x88\x01\x01\x12\x10\n\x08keywords\x18\x04 \x03(\t\x12\x1b\n\x0eunset_keywords\x18\x07 \x01(\x08H\x04\x88\x01\x01\x42\x07\n\x05_nameB\n\n\x08_summaryB\x07\n\x05_abbrB\x08\n\x06_imageB\x11\n\x0f_unset_keywords\x1a\\\n\x0bTranslation\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x61\x62\x62r\x18\x05 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\tB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,7 +33,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomy'
   _globals['_VALUE']._serialized_start=54
-  _globals['_VALUE']._serialized_end=245
-  _globals['_VALUE_TRANSLATION']._serialized_start=153
-  _globals['_VALUE_TRANSLATION']._serialized_end=245
+  _globals['_VALUE']._serialized_end=441
+  _globals['_VALUE_PATCH']._serialized_start=154
+  _globals['_VALUE_PATCH']._serialized_end=347
+  _globals['_VALUE_TRANSLATION']._serialized_start=349
+  _globals['_VALUE_TRANSLATION']._serialized_end=441
 # @@protoc_insertion_point(module_scope)

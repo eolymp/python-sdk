@@ -6,7 +6,6 @@ from eolymp.taxonomy import enum_pb2 as _enum_pb2
 from eolymp.taxonomy import enum_value_pb2 as _enum_value_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -37,20 +36,12 @@ class DeleteEnumOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateEnumInput(_message.Message):
-    __slots__ = ("patch", "enum_id", "enum")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateEnumInput.Patch]
-        NAME: _ClassVar[UpdateEnumInput.Patch]
-    ALL: UpdateEnumInput.Patch
-    NAME: UpdateEnumInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("enum_id", "enum")
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     ENUM_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateEnumInput.Patch]
     enum_id: str
-    enum: _enum_pb2.Enum
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateEnumInput.Patch, str]]] = ..., enum_id: _Optional[str] = ..., enum: _Optional[_Union[_enum_pb2.Enum, _Mapping]] = ...) -> None: ...
+    enum: _enum_pb2.Enum.Patch
+    def __init__(self, enum_id: _Optional[str] = ..., enum: _Optional[_Union[_enum_pb2.Enum.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateEnumOutput(_message.Message):
     __slots__ = ()
@@ -124,30 +115,14 @@ class DeleteValueOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateValueInput(_message.Message):
-    __slots__ = ("patch", "enum_id", "value_id", "value")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateValueInput.Patch]
-        NAME: _ClassVar[UpdateValueInput.Patch]
-        ABBR: _ClassVar[UpdateValueInput.Patch]
-        SUMMARY: _ClassVar[UpdateValueInput.Patch]
-        IMAGE: _ClassVar[UpdateValueInput.Patch]
-        KEYWORDS: _ClassVar[UpdateValueInput.Patch]
-    ALL: UpdateValueInput.Patch
-    NAME: UpdateValueInput.Patch
-    ABBR: UpdateValueInput.Patch
-    SUMMARY: UpdateValueInput.Patch
-    IMAGE: UpdateValueInput.Patch
-    KEYWORDS: UpdateValueInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("enum_id", "value_id", "value")
     ENUM_ID_FIELD_NUMBER: _ClassVar[int]
     VALUE_ID_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateValueInput.Patch]
     enum_id: str
     value_id: str
-    value: _enum_value_pb2.Value
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateValueInput.Patch, str]]] = ..., enum_id: _Optional[str] = ..., value_id: _Optional[str] = ..., value: _Optional[_Union[_enum_value_pb2.Value, _Mapping]] = ...) -> None: ...
+    value: _enum_value_pb2.Value.Patch
+    def __init__(self, enum_id: _Optional[str] = ..., value_id: _Optional[str] = ..., value: _Optional[_Union[_enum_value_pb2.Value.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateValueOutput(_message.Message):
     __slots__ = ()

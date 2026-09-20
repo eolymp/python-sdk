@@ -8,6 +8,21 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Value(_message.Message):
     __slots__ = ("id", "name", "summary", "abbr", "image", "keywords")
+    class Patch(_message.Message):
+        __slots__ = ("name", "summary", "abbr", "image", "keywords", "unset_keywords")
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        SUMMARY_FIELD_NUMBER: _ClassVar[int]
+        ABBR_FIELD_NUMBER: _ClassVar[int]
+        IMAGE_FIELD_NUMBER: _ClassVar[int]
+        KEYWORDS_FIELD_NUMBER: _ClassVar[int]
+        UNSET_KEYWORDS_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        summary: str
+        abbr: str
+        image: str
+        keywords: _containers.RepeatedScalarFieldContainer[str]
+        unset_keywords: bool
+        def __init__(self, name: _Optional[str] = ..., summary: _Optional[str] = ..., abbr: _Optional[str] = ..., image: _Optional[str] = ..., keywords: _Optional[_Iterable[str]] = ..., unset_keywords: _Optional[bool] = ...) -> None: ...
     class Translation(_message.Message):
         __slots__ = ("locale", "name", "abbr", "summary", "keywords")
         LOCALE_FIELD_NUMBER: _ClassVar[int]

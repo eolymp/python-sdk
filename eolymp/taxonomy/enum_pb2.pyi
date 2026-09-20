@@ -6,6 +6,11 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Enum(_message.Message):
     __slots__ = ("id", "name")
+    class Patch(_message.Message):
+        __slots__ = ("name",)
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        name: str
+        def __init__(self, name: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     id: str

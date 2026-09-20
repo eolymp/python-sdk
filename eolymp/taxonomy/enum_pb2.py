@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/taxonomy/enum.proto\x12\x0f\x65olymp.taxonomy\" \n\x04\x45num\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\tB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/taxonomy/enum.proto\x12\x0f\x65olymp.taxonomy\"E\n\x04\x45num\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x1a#\n\x05Patch\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x07\n\x05_nameB3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomyb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomy'
   _globals['_ENUM']._serialized_start=47
-  _globals['_ENUM']._serialized_end=79
+  _globals['_ENUM']._serialized_end=116
+  _globals['_ENUM_PATCH']._serialized_start=81
+  _globals['_ENUM_PATCH']._serialized_end=116
 # @@protoc_insertion_point(module_scope)
