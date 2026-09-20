@@ -33,23 +33,12 @@ class CreateClassOutput(_message.Message):
     def __init__(self, class_id: _Optional[str] = ...) -> None: ...
 
 class UpdateClassInput(_message.Message):
-    __slots__ = ("patch", "course_id", "group_id")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateClassInput.Patch]
-        INACTIVE: _ClassVar[UpdateClassInput.Patch]
-        ASSIGN_ALL: _ClassVar[UpdateClassInput.Patch]
-    ALL: UpdateClassInput.Patch
-    INACTIVE: UpdateClassInput.Patch
-    ASSIGN_ALL: UpdateClassInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("course_id", "group_id")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     GROUP_ID_FIELD_NUMBER: _ClassVar[int]
-    CLASS_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateClassInput.Patch]
     course_id: str
     group_id: str
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateClassInput.Patch, str]]] = ..., course_id: _Optional[str] = ..., group_id: _Optional[str] = ..., **kwargs) -> None: ...
+    def __init__(self, course_id: _Optional[str] = ..., group_id: _Optional[str] = ...) -> None: ...
 
 class UpdateClassOutput(_message.Message):
     __slots__ = ()

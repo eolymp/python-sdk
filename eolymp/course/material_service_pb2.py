@@ -32,7 +32,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/course/material_service.proto\x12\reolymp.course\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/course/material.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"f\n\x13\x43reateMaterialInput\x12\x11\n\tcourse_id\x18\x03 \x01(\t\x12)\n\x08material\x18\x01 \x01(\x0b\x32\x17.eolymp.course.Material\x12\x11\n\tmodule_id\x18\x02 \x01(\t\"+\n\x14\x43reateMaterialOutput\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\"\x87\x02\n\x13UpdateMaterialInput\x12\x37\n\x05patch\x18\x01 \x03(\x0e\x32(.eolymp.course.UpdateMaterialInput.Patch\x12\x11\n\tcourse_id\x18\x04 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x02 \x01(\t\x12)\n\x08material\x18\x03 \x01(\x0b\x32\x17.eolymp.course.Material\"d\n\x05Patch\x12\x07\n\x03\x41LL\x10\x00\x12\t\n\x05\x44RAFT\x10\x01\x12\x08\n\x04NAME\x10\x02\x12\r\n\tIMAGE_URL\x10\x03\x12\t\n\x05INDEX\x10\x04\x12\t\n\x05\x44\x45PTH\x10\x05\x12\x0b\n\x07\x43ONTENT\x10\x06\x12\x0b\n\x07GRADING\x10\x07\"\x16\n\x14UpdateMaterialOutput\"x\n\x11MoveMaterialInput\x12\x11\n\tcourse_id\x18\x05 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x15\n\rnew_module_id\x18\x02 \x01(\t\x12\x11\n\tnew_index\x18\x03 \x01(\r\x12\x11\n\tnew_depth\x18\x04 \x01(\r\"\x14\n\x12MoveMaterialOutput\"=\n\x13\x44\x65leteMaterialInput\x12\x11\n\tcourse_id\x18\x02 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65leteMaterialOutput\"\x81\x01\n\x15\x44\x65scribeMaterialInput\x12\x11\n\tcourse_id\x18\x03 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.course.Material.Extra\"C\n\x16\x44\x65scribeMaterialOutput\x12)\n\x08material\x18\x01 \x01(\x0b\x32\x17.eolymp.course.Material\"\xc7\x03\n\x12ListMaterialsInput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12\x11\n\tmodule_id\x18\x02 \x01(\t\x12\x11\n\tmember_id\x18\x05 \x01(\t\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.course.ListMaterialsInput.Filter\x12\x34\n\x04sort\x18\x32 \x01(\x0e\x32&.eolymp.course.ListMaterialsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.course.Material.Extra\x1ak\n\x06\x46ilter\x12\x30\n\x06graded\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x06weight\x18\x05 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\"\x11\n\x04Sort\x12\t\n\x05INDEX\x10\x00\"L\n\x13ListMaterialsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.course.Material\"O\n\x13ReportProgressInput\x12\x11\n\tcourse_id\x18\x03 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x10\n\x08progress\x18\x02 \x01(\x02\"\x16\n\x14ReportProgressOutput\"|\n\x12GradeMaterialInput\x12\x11\n\tcourse_id\x18\x05 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x0f\n\x05grade\x18\x03 \x01(\rH\x00\x12\x11\n\x07\x65xcused\x18\x04 \x01(\x08H\x00\x42\x07\n\x05value\"\x15\n\x13GradeMaterialOutput2\xbc\x0c\n\x0fMaterialService\x12\xb3\x01\n\x0e\x43reateMaterial\x12\".eolymp.course.CreateMaterialInput\x1a#.eolymp.course.CreateMaterialOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02 \"\x1e/courses/{course_id}/materials\x12\xc1\x01\n\x0eUpdateMaterial\x12\".eolymp.course.UpdateMaterialInput\x1a#.eolymp.course.UpdateMaterialOutput\"f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02.\x1a,/courses/{course_id}/materials/{material_id}\x12\xc0\x01\n\x0cMoveMaterial\x12 .eolymp.course.MoveMaterialInput\x1a!.eolymp.course.MoveMaterialOutput\"k\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x33\"1/courses/{course_id}/materials/{material_id}/move\x12\xc1\x01\n\x0e\x44\x65leteMaterial\x12\".eolymp.course.DeleteMaterialInput\x1a#.eolymp.course.DeleteMaterialOutput\"f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02.*,/courses/{course_id}/materials/{material_id}\x12\xc6\x01\n\x10\x44\x65scribeMaterial\x12$.eolymp.course.DescribeMaterialInput\x1a%.eolymp.course.DescribeMaterialOutput\"e\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02.\x12,/courses/{course_id}/materials/{material_id}\x12\xaf\x01\n\rListMaterials\x12!.eolymp.course.ListMaterialsInput\x1a\".eolymp.course.ListMaterialsOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02 \x12\x1e/courses/{course_id}/materials\x12\xc9\x01\n\x0eReportProgress\x12\".eolymp.course.ReportProgressInput\x1a#.eolymp.course.ReportProgressOutput\"n\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x37\"5/courses/{course_id}/materials/{material_id}/progress\x12\xc3\x01\n\rGradeMaterial\x12!.eolymp.course.GradeMaterialInput\x1a\".eolymp.course.GradeMaterialOutput\"k\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x34\"2/courses/{course_id}/materials/{material_id}/grade\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/course/material_service.proto\x12\reolymp.course\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/course/material.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"f\n\x13\x43reateMaterialInput\x12\x11\n\tcourse_id\x18\x03 \x01(\t\x12)\n\x08material\x18\x01 \x01(\x0b\x32\x17.eolymp.course.Material\x12\x11\n\tmodule_id\x18\x02 \x01(\t\"+\n\x14\x43reateMaterialOutput\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\"z\n\x13UpdateMaterialInput\x12\x11\n\tcourse_id\x18\x04 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x02 \x01(\t\x12/\n\x08material\x18\x05 \x01(\x0b\x32\x1d.eolymp.course.Material.PatchJ\x04\x08\x01\x10\x02J\x04\x08\x03\x10\x04\"\x16\n\x14UpdateMaterialOutput\"x\n\x11MoveMaterialInput\x12\x11\n\tcourse_id\x18\x05 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x15\n\rnew_module_id\x18\x02 \x01(\t\x12\x11\n\tnew_index\x18\x03 \x01(\r\x12\x11\n\tnew_depth\x18\x04 \x01(\r\"\x14\n\x12MoveMaterialOutput\"=\n\x13\x44\x65leteMaterialInput\x12\x11\n\tcourse_id\x18\x02 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65leteMaterialOutput\"\x81\x01\n\x15\x44\x65scribeMaterialInput\x12\x11\n\tcourse_id\x18\x03 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.course.Material.Extra\"C\n\x16\x44\x65scribeMaterialOutput\x12)\n\x08material\x18\x01 \x01(\x0b\x32\x17.eolymp.course.Material\"\xc7\x03\n\x12ListMaterialsInput\x12\x11\n\tcourse_id\x18\x01 \x01(\t\x12\x11\n\tmodule_id\x18\x02 \x01(\t\x12\x11\n\tmember_id\x18\x05 \x01(\t\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x39\n\x07\x66ilters\x18( \x01(\x0b\x32(.eolymp.course.ListMaterialsInput.Filter\x12\x34\n\x04sort\x18\x32 \x01(\x0e\x32&.eolymp.course.ListMaterialsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12-\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1d.eolymp.course.Material.Extra\x1ak\n\x06\x46ilter\x12\x30\n\x06graded\x18\x04 \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x06weight\x18\x05 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\"\x11\n\x04Sort\x12\t\n\x05INDEX\x10\x00\"L\n\x13ListMaterialsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.eolymp.course.Material\"O\n\x13ReportProgressInput\x12\x11\n\tcourse_id\x18\x03 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x10\n\x08progress\x18\x02 \x01(\x02\"\x16\n\x14ReportProgressOutput\"|\n\x12GradeMaterialInput\x12\x11\n\tcourse_id\x18\x05 \x01(\t\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x0f\n\x05grade\x18\x03 \x01(\rH\x00\x12\x11\n\x07\x65xcused\x18\x04 \x01(\x08H\x00\x42\x07\n\x05value\"\x15\n\x13GradeMaterialOutput2\xbc\x0c\n\x0fMaterialService\x12\xb3\x01\n\x0e\x43reateMaterial\x12\".eolymp.course.CreateMaterialInput\x1a#.eolymp.course.CreateMaterialOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02 \"\x1e/courses/{course_id}/materials\x12\xc1\x01\n\x0eUpdateMaterial\x12\".eolymp.course.UpdateMaterialInput\x1a#.eolymp.course.UpdateMaterialOutput\"f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02.\x1a,/courses/{course_id}/materials/{material_id}\x12\xc0\x01\n\x0cMoveMaterial\x12 .eolymp.course.MoveMaterialInput\x1a!.eolymp.course.MoveMaterialOutput\"k\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x33\"1/courses/{course_id}/materials/{material_id}/move\x12\xc1\x01\n\x0e\x44\x65leteMaterial\x12\".eolymp.course.DeleteMaterialInput\x1a#.eolymp.course.DeleteMaterialOutput\"f\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x17\x8a\xe3\n\x13\x63ourse:course:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02.*,/courses/{course_id}/materials/{material_id}\x12\xc6\x01\n\x10\x44\x65scribeMaterial\x12$.eolymp.course.DescribeMaterialInput\x1a%.eolymp.course.DescribeMaterialOutput\"e\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02.\x12,/courses/{course_id}/materials/{material_id}\x12\xaf\x01\n\rListMaterials\x12!.eolymp.course.ListMaterialsInput\x1a\".eolymp.course.ListMaterialsOutput\"W\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02 \x12\x1e/courses/{course_id}/materials\x12\xc9\x01\n\x0eReportProgress\x12\".eolymp.course.ReportProgressInput\x1a#.eolymp.course.ReportProgressOutput\"n\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x37\"5/courses/{course_id}/materials/{material_id}/progress\x12\xc3\x01\n\rGradeMaterial\x12!.eolymp.course.GradeMaterialInput\x1a\".eolymp.course.GradeMaterialOutput\"k\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x63ourse:course:read\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x34\"2/courses/{course_id}/materials/{material_id}/grade\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB/Z-github.com/eolymp/go-sdk/eolymp/course;courseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -62,40 +62,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEMATERIALINPUT']._serialized_end=423
   _globals['_CREATEMATERIALOUTPUT']._serialized_start=425
   _globals['_CREATEMATERIALOUTPUT']._serialized_end=468
-  _globals['_UPDATEMATERIALINPUT']._serialized_start=471
-  _globals['_UPDATEMATERIALINPUT']._serialized_end=734
-  _globals['_UPDATEMATERIALINPUT_PATCH']._serialized_start=634
-  _globals['_UPDATEMATERIALINPUT_PATCH']._serialized_end=734
-  _globals['_UPDATEMATERIALOUTPUT']._serialized_start=736
-  _globals['_UPDATEMATERIALOUTPUT']._serialized_end=758
-  _globals['_MOVEMATERIALINPUT']._serialized_start=760
-  _globals['_MOVEMATERIALINPUT']._serialized_end=880
-  _globals['_MOVEMATERIALOUTPUT']._serialized_start=882
-  _globals['_MOVEMATERIALOUTPUT']._serialized_end=902
-  _globals['_DELETEMATERIALINPUT']._serialized_start=904
-  _globals['_DELETEMATERIALINPUT']._serialized_end=965
-  _globals['_DELETEMATERIALOUTPUT']._serialized_start=967
-  _globals['_DELETEMATERIALOUTPUT']._serialized_end=989
-  _globals['_DESCRIBEMATERIALINPUT']._serialized_start=992
-  _globals['_DESCRIBEMATERIALINPUT']._serialized_end=1121
-  _globals['_DESCRIBEMATERIALOUTPUT']._serialized_start=1123
-  _globals['_DESCRIBEMATERIALOUTPUT']._serialized_end=1190
-  _globals['_LISTMATERIALSINPUT']._serialized_start=1193
-  _globals['_LISTMATERIALSINPUT']._serialized_end=1648
-  _globals['_LISTMATERIALSINPUT_FILTER']._serialized_start=1522
-  _globals['_LISTMATERIALSINPUT_FILTER']._serialized_end=1629
-  _globals['_LISTMATERIALSINPUT_SORT']._serialized_start=1631
-  _globals['_LISTMATERIALSINPUT_SORT']._serialized_end=1648
-  _globals['_LISTMATERIALSOUTPUT']._serialized_start=1650
-  _globals['_LISTMATERIALSOUTPUT']._serialized_end=1726
-  _globals['_REPORTPROGRESSINPUT']._serialized_start=1728
-  _globals['_REPORTPROGRESSINPUT']._serialized_end=1807
-  _globals['_REPORTPROGRESSOUTPUT']._serialized_start=1809
-  _globals['_REPORTPROGRESSOUTPUT']._serialized_end=1831
-  _globals['_GRADEMATERIALINPUT']._serialized_start=1833
-  _globals['_GRADEMATERIALINPUT']._serialized_end=1957
-  _globals['_GRADEMATERIALOUTPUT']._serialized_start=1959
-  _globals['_GRADEMATERIALOUTPUT']._serialized_end=1980
-  _globals['_MATERIALSERVICE']._serialized_start=1983
-  _globals['_MATERIALSERVICE']._serialized_end=3579
+  _globals['_UPDATEMATERIALINPUT']._serialized_start=470
+  _globals['_UPDATEMATERIALINPUT']._serialized_end=592
+  _globals['_UPDATEMATERIALOUTPUT']._serialized_start=594
+  _globals['_UPDATEMATERIALOUTPUT']._serialized_end=616
+  _globals['_MOVEMATERIALINPUT']._serialized_start=618
+  _globals['_MOVEMATERIALINPUT']._serialized_end=738
+  _globals['_MOVEMATERIALOUTPUT']._serialized_start=740
+  _globals['_MOVEMATERIALOUTPUT']._serialized_end=760
+  _globals['_DELETEMATERIALINPUT']._serialized_start=762
+  _globals['_DELETEMATERIALINPUT']._serialized_end=823
+  _globals['_DELETEMATERIALOUTPUT']._serialized_start=825
+  _globals['_DELETEMATERIALOUTPUT']._serialized_end=847
+  _globals['_DESCRIBEMATERIALINPUT']._serialized_start=850
+  _globals['_DESCRIBEMATERIALINPUT']._serialized_end=979
+  _globals['_DESCRIBEMATERIALOUTPUT']._serialized_start=981
+  _globals['_DESCRIBEMATERIALOUTPUT']._serialized_end=1048
+  _globals['_LISTMATERIALSINPUT']._serialized_start=1051
+  _globals['_LISTMATERIALSINPUT']._serialized_end=1506
+  _globals['_LISTMATERIALSINPUT_FILTER']._serialized_start=1380
+  _globals['_LISTMATERIALSINPUT_FILTER']._serialized_end=1487
+  _globals['_LISTMATERIALSINPUT_SORT']._serialized_start=1489
+  _globals['_LISTMATERIALSINPUT_SORT']._serialized_end=1506
+  _globals['_LISTMATERIALSOUTPUT']._serialized_start=1508
+  _globals['_LISTMATERIALSOUTPUT']._serialized_end=1584
+  _globals['_REPORTPROGRESSINPUT']._serialized_start=1586
+  _globals['_REPORTPROGRESSINPUT']._serialized_end=1665
+  _globals['_REPORTPROGRESSOUTPUT']._serialized_start=1667
+  _globals['_REPORTPROGRESSOUTPUT']._serialized_end=1689
+  _globals['_GRADEMATERIALINPUT']._serialized_start=1691
+  _globals['_GRADEMATERIALINPUT']._serialized_end=1815
+  _globals['_GRADEMATERIALOUTPUT']._serialized_start=1817
+  _globals['_GRADEMATERIALOUTPUT']._serialized_end=1838
+  _globals['_MATERIALSERVICE']._serialized_start=1841
+  _globals['_MATERIALSERVICE']._serialized_end=3437
 # @@protoc_insertion_point(module_scope)

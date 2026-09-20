@@ -25,6 +25,25 @@ class Material(_message.Message):
     PERCENTAGE: Material.Extra
     GRADE: Material.Extra
     PROGRESS: Material.Extra
+    class Patch(_message.Message):
+        __slots__ = ("draft", "name", "image_url", "index", "depth", "grading", "document", "task")
+        DRAFT_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
+        INDEX_FIELD_NUMBER: _ClassVar[int]
+        DEPTH_FIELD_NUMBER: _ClassVar[int]
+        GRADING_FIELD_NUMBER: _ClassVar[int]
+        DOCUMENT_FIELD_NUMBER: _ClassVar[int]
+        TASK_FIELD_NUMBER: _ClassVar[int]
+        draft: bool
+        name: str
+        image_url: str
+        index: int
+        depth: int
+        grading: Material.Grading
+        document: Material.Document
+        task: Material.Task
+        def __init__(self, draft: _Optional[bool] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., depth: _Optional[int] = ..., grading: _Optional[_Union[Material.Grading, _Mapping]] = ..., document: _Optional[_Union[Material.Document, _Mapping]] = ..., task: _Optional[_Union[Material.Task, _Mapping]] = ...) -> None: ...
     class Document(_message.Message):
         __slots__ = ("content",)
         CONTENT_FIELD_NUMBER: _ClassVar[int]

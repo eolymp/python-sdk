@@ -30,34 +30,14 @@ class CreateModuleOutput(_message.Message):
     def __init__(self, module_id: _Optional[str] = ...) -> None: ...
 
 class UpdateModuleInput(_message.Message):
-    __slots__ = ("patch", "course_id", "module_id", "module")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateModuleInput.Patch]
-        DRAFT: _ClassVar[UpdateModuleInput.Patch]
-        EXTRA: _ClassVar[UpdateModuleInput.Patch]
-        NAME: _ClassVar[UpdateModuleInput.Patch]
-        IMAGE_URL: _ClassVar[UpdateModuleInput.Patch]
-        INDEX: _ClassVar[UpdateModuleInput.Patch]
-        DESCRIPTION: _ClassVar[UpdateModuleInput.Patch]
-        WEIGHT: _ClassVar[UpdateModuleInput.Patch]
-    ALL: UpdateModuleInput.Patch
-    DRAFT: UpdateModuleInput.Patch
-    EXTRA: UpdateModuleInput.Patch
-    NAME: UpdateModuleInput.Patch
-    IMAGE_URL: UpdateModuleInput.Patch
-    INDEX: UpdateModuleInput.Patch
-    DESCRIPTION: UpdateModuleInput.Patch
-    WEIGHT: UpdateModuleInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("course_id", "module_id", "module")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_ID_FIELD_NUMBER: _ClassVar[int]
     MODULE_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateModuleInput.Patch]
     course_id: str
     module_id: str
-    module: _module_pb2.Module
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateModuleInput.Patch, str]]] = ..., course_id: _Optional[str] = ..., module_id: _Optional[str] = ..., module: _Optional[_Union[_module_pb2.Module, _Mapping]] = ...) -> None: ...
+    module: _module_pb2.Module.Patch
+    def __init__(self, course_id: _Optional[str] = ..., module_id: _Optional[str] = ..., module: _Optional[_Union[_module_pb2.Module.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateModuleOutput(_message.Message):
     __slots__ = ()

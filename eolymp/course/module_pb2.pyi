@@ -25,6 +25,23 @@ class Module(_message.Message):
     DESCRIPTION_RENDER: Module.Extra
     PROGRESS: Module.Extra
     ASSIGNMENT: Module.Extra
+    class Patch(_message.Message):
+        __slots__ = ("draft", "name", "image_url", "index", "extra", "weight", "description")
+        DRAFT_FIELD_NUMBER: _ClassVar[int]
+        NAME_FIELD_NUMBER: _ClassVar[int]
+        IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
+        INDEX_FIELD_NUMBER: _ClassVar[int]
+        EXTRA_FIELD_NUMBER: _ClassVar[int]
+        WEIGHT_FIELD_NUMBER: _ClassVar[int]
+        DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+        draft: bool
+        name: str
+        image_url: str
+        index: int
+        extra: bool
+        weight: float
+        description: _content_pb2.Content
+        def __init__(self, draft: _Optional[bool] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., index: _Optional[int] = ..., extra: _Optional[bool] = ..., weight: _Optional[float] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
     class Progress(_message.Message):
         __slots__ = ("status", "percentage", "grade", "grade_automatic", "grade_override", "excused", "start_after", "complete_before", "duration", "upsolve", "assigned_at", "started_at", "completed_at")
         STATUS_FIELD_NUMBER: _ClassVar[int]

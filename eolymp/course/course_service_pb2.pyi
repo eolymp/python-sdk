@@ -81,32 +81,12 @@ class CreateCourseOutput(_message.Message):
     def __init__(self, course_id: _Optional[str] = ...) -> None: ...
 
 class UpdateCourseInput(_message.Message):
-    __slots__ = ("patch", "course_id", "course")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateCourseInput.Patch]
-        LOCALE: _ClassVar[UpdateCourseInput.Patch]
-        NAME: _ClassVar[UpdateCourseInput.Patch]
-        DESCRIPTION: _ClassVar[UpdateCourseInput.Patch]
-        IMAGE: _ClassVar[UpdateCourseInput.Patch]
-        VISIBILITY: _ClassVar[UpdateCourseInput.Patch]
-        DURATION: _ClassVar[UpdateCourseInput.Patch]
-        TOPICS: _ClassVar[UpdateCourseInput.Patch]
-    ALL: UpdateCourseInput.Patch
-    LOCALE: UpdateCourseInput.Patch
-    NAME: UpdateCourseInput.Patch
-    DESCRIPTION: UpdateCourseInput.Patch
-    IMAGE: UpdateCourseInput.Patch
-    VISIBILITY: UpdateCourseInput.Patch
-    DURATION: UpdateCourseInput.Patch
-    TOPICS: UpdateCourseInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("course_id", "course")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     COURSE_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateCourseInput.Patch]
     course_id: str
-    course: _course_pb2.Course
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateCourseInput.Patch, str]]] = ..., course_id: _Optional[str] = ..., course: _Optional[_Union[_course_pb2.Course, _Mapping]] = ...) -> None: ...
+    course: _course_pb2.Course.Patch
+    def __init__(self, course_id: _Optional[str] = ..., course: _Optional[_Union[_course_pb2.Course.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateCourseOutput(_message.Message):
     __slots__ = ()

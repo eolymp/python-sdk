@@ -37,24 +37,14 @@ class CreateStudentOutput(_message.Message):
     def __init__(self, student_id: _Optional[str] = ...) -> None: ...
 
 class UpdateStudentInput(_message.Message):
-    __slots__ = ("course_id", "patch", "member_id", "student")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateStudentInput.Patch]
-        INACTIVE: _ClassVar[UpdateStudentInput.Patch]
-        ASSIGN_ALL: _ClassVar[UpdateStudentInput.Patch]
-    ALL: UpdateStudentInput.Patch
-    INACTIVE: UpdateStudentInput.Patch
-    ASSIGN_ALL: UpdateStudentInput.Patch
+    __slots__ = ("course_id", "member_id", "student")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
-    PATCH_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     STUDENT_FIELD_NUMBER: _ClassVar[int]
     course_id: str
-    patch: _containers.RepeatedScalarFieldContainer[UpdateStudentInput.Patch]
     member_id: str
-    student: _student_pb2.Student
-    def __init__(self, course_id: _Optional[str] = ..., patch: _Optional[_Iterable[_Union[UpdateStudentInput.Patch, str]]] = ..., member_id: _Optional[str] = ..., student: _Optional[_Union[_student_pb2.Student, _Mapping]] = ...) -> None: ...
+    student: _student_pb2.Student.Patch
+    def __init__(self, course_id: _Optional[str] = ..., member_id: _Optional[str] = ..., student: _Optional[_Union[_student_pb2.Student.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateStudentOutput(_message.Message):
     __slots__ = ()

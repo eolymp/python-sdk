@@ -18,6 +18,13 @@ class Student(_message.Message):
         GRADES: _ClassVar[Student.Extra]
     UNKNOWN_EXTRA: Student.Extra
     GRADES: Student.Extra
+    class Patch(_message.Message):
+        __slots__ = ("inactive", "assign_all")
+        INACTIVE_FIELD_NUMBER: _ClassVar[int]
+        ASSIGN_ALL_FIELD_NUMBER: _ClassVar[int]
+        inactive: bool
+        assign_all: bool
+        def __init__(self, inactive: _Optional[bool] = ..., assign_all: _Optional[bool] = ...) -> None: ...
     class Grade(_message.Message):
         __slots__ = ("module_id", "grade", "grade_automatic", "grade_override", "excused")
         MODULE_ID_FIELD_NUMBER: _ClassVar[int]

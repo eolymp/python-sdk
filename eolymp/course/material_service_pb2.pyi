@@ -32,34 +32,14 @@ class CreateMaterialOutput(_message.Message):
     def __init__(self, material_id: _Optional[str] = ...) -> None: ...
 
 class UpdateMaterialInput(_message.Message):
-    __slots__ = ("patch", "course_id", "material_id", "material")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateMaterialInput.Patch]
-        DRAFT: _ClassVar[UpdateMaterialInput.Patch]
-        NAME: _ClassVar[UpdateMaterialInput.Patch]
-        IMAGE_URL: _ClassVar[UpdateMaterialInput.Patch]
-        INDEX: _ClassVar[UpdateMaterialInput.Patch]
-        DEPTH: _ClassVar[UpdateMaterialInput.Patch]
-        CONTENT: _ClassVar[UpdateMaterialInput.Patch]
-        GRADING: _ClassVar[UpdateMaterialInput.Patch]
-    ALL: UpdateMaterialInput.Patch
-    DRAFT: UpdateMaterialInput.Patch
-    NAME: UpdateMaterialInput.Patch
-    IMAGE_URL: UpdateMaterialInput.Patch
-    INDEX: UpdateMaterialInput.Patch
-    DEPTH: UpdateMaterialInput.Patch
-    CONTENT: UpdateMaterialInput.Patch
-    GRADING: UpdateMaterialInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("course_id", "material_id", "material")
     COURSE_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_ID_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateMaterialInput.Patch]
     course_id: str
     material_id: str
-    material: _material_pb2.Material
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateMaterialInput.Patch, str]]] = ..., course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., material: _Optional[_Union[_material_pb2.Material, _Mapping]] = ...) -> None: ...
+    material: _material_pb2.Material.Patch
+    def __init__(self, course_id: _Optional[str] = ..., material_id: _Optional[str] = ..., material: _Optional[_Union[_material_pb2.Material.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateMaterialOutput(_message.Message):
     __slots__ = ()
