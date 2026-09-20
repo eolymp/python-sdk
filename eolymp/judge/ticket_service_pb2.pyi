@@ -61,22 +61,12 @@ class CreateTicketOutput(_message.Message):
     def __init__(self, ticket_id: _Optional[str] = ...) -> None: ...
 
 class UpdateTicketInput(_message.Message):
-    __slots__ = ("patch", "ticket_id", "ticket")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateTicketInput.Patch]
-        STATUS: _ClassVar[UpdateTicketInput.Patch]
-        SUBJECT: _ClassVar[UpdateTicketInput.Patch]
-    ALL: UpdateTicketInput.Patch
-    STATUS: UpdateTicketInput.Patch
-    SUBJECT: UpdateTicketInput.Patch
-    PATCH_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("ticket_id", "ticket")
     TICKET_ID_FIELD_NUMBER: _ClassVar[int]
     TICKET_FIELD_NUMBER: _ClassVar[int]
-    patch: _containers.RepeatedScalarFieldContainer[UpdateTicketInput.Patch]
     ticket_id: str
-    ticket: _ticket_pb2.Ticket
-    def __init__(self, patch: _Optional[_Iterable[_Union[UpdateTicketInput.Patch, str]]] = ..., ticket_id: _Optional[str] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket, _Mapping]] = ...) -> None: ...
+    ticket: _ticket_pb2.Ticket.Patch
+    def __init__(self, ticket_id: _Optional[str] = ..., ticket: _Optional[_Union[_ticket_pb2.Ticket.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateTicketOutput(_message.Message):
     __slots__ = ()

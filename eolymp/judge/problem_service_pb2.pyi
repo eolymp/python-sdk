@@ -11,7 +11,6 @@ from eolymp.judge import problem_pb2 as _problem_pb2_1
 from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -44,26 +43,14 @@ class ImportProblemOutput(_message.Message):
     def __init__(self, problem_id: _Optional[str] = ..., problem_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class UpdateProblemInput(_message.Message):
-    __slots__ = ("contest_id", "patch", "problem_id", "problem")
-    class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        ALL: _ClassVar[UpdateProblemInput.Patch]
-        INDEX: _ClassVar[UpdateProblemInput.Patch]
-        SUBMIT_LIMIT: _ClassVar[UpdateProblemInput.Patch]
-        SCORE_BY_BEST_TESTSET: _ClassVar[UpdateProblemInput.Patch]
-    ALL: UpdateProblemInput.Patch
-    INDEX: UpdateProblemInput.Patch
-    SUBMIT_LIMIT: UpdateProblemInput.Patch
-    SCORE_BY_BEST_TESTSET: UpdateProblemInput.Patch
+    __slots__ = ("contest_id", "problem_id", "problem")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    PATCH_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
-    patch: _containers.RepeatedScalarFieldContainer[UpdateProblemInput.Patch]
     problem_id: str
-    problem: _problem_pb2_1.Problem
-    def __init__(self, contest_id: _Optional[str] = ..., patch: _Optional[_Iterable[_Union[UpdateProblemInput.Patch, str]]] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2_1.Problem, _Mapping]] = ...) -> None: ...
+    problem: _problem_pb2_1.Problem.Patch
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., problem: _Optional[_Union[_problem_pb2_1.Problem.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateProblemOutput(_message.Message):
     __slots__ = ()

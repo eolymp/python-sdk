@@ -13,6 +13,15 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
     __slots__ = ("contest_id", "id", "url", "type", "index", "base_id", "feedback_policy", "score_by_best_testset", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score", "constraints", "language", "title", "content", "download_link", "languages", "examples")
+    class Patch(_message.Message):
+        __slots__ = ("index", "submit_limit", "score_by_best_testset")
+        INDEX_FIELD_NUMBER: _ClassVar[int]
+        SUBMIT_LIMIT_FIELD_NUMBER: _ClassVar[int]
+        SCORE_BY_BEST_TESTSET_FIELD_NUMBER: _ClassVar[int]
+        index: int
+        submit_limit: int
+        score_by_best_testset: bool
+        def __init__(self, index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ...) -> None: ...
     class Statement(_message.Message):
         __slots__ = ("locale", "title", "content", "download_link")
         LOCALE_FIELD_NUMBER: _ClassVar[int]

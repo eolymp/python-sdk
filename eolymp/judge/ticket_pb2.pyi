@@ -31,6 +31,13 @@ class Ticket(_message.Message):
     AWAITING: Ticket.Status
     RESOLVED: Ticket.Status
     CLOSED: Ticket.Status
+    class Patch(_message.Message):
+        __slots__ = ("status", "subject")
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        SUBJECT_FIELD_NUMBER: _ClassVar[int]
+        status: Ticket.Status
+        subject: str
+        def __init__(self, status: _Optional[_Union[Ticket.Status, str]] = ..., subject: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
