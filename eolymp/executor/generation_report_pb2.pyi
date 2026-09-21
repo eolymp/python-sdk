@@ -1,4 +1,5 @@
 from eolymp.executor import stats_pb2 as _stats_pb2
+from eolymp.executor import warning_pb2 as _warning_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -9,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GenerationReport(_message.Message):
-    __slots__ = ("task_id", "reference", "origin", "metadata", "agent", "status", "runs", "error_message")
+    __slots__ = ("task_id", "reference", "origin", "metadata", "agent", "status", "runs", "error_message", "warnings")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[GenerationReport.Status]
@@ -64,6 +65,7 @@ class GenerationReport(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
     ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    WARNINGS_FIELD_NUMBER: _ClassVar[int]
     task_id: str
     reference: str
     origin: str
@@ -72,4 +74,5 @@ class GenerationReport(_message.Message):
     status: GenerationReport.Status
     runs: _containers.RepeatedCompositeFieldContainer[GenerationReport.Run]
     error_message: str
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., agent: _Optional[str] = ..., status: _Optional[_Union[GenerationReport.Status, str]] = ..., runs: _Optional[_Iterable[_Union[GenerationReport.Run, _Mapping]]] = ..., error_message: _Optional[str] = ...) -> None: ...
+    warnings: _containers.RepeatedCompositeFieldContainer[_warning_pb2.Warning]
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., agent: _Optional[str] = ..., status: _Optional[_Union[GenerationReport.Status, str]] = ..., runs: _Optional[_Iterable[_Union[GenerationReport.Run, _Mapping]]] = ..., error_message: _Optional[str] = ..., warnings: _Optional[_Iterable[_Union[_warning_pb2.Warning, _Mapping]]] = ...) -> None: ...

@@ -1,4 +1,5 @@
 from eolymp.executor import stats_pb2 as _stats_pb2
+from eolymp.executor import warning_pb2 as _warning_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -9,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EvaluationReport(_message.Message):
-    __slots__ = ("task_id", "reference", "origin", "metadata", "agent", "signature", "version", "type", "status", "error_message", "runs")
+    __slots__ = ("task_id", "reference", "origin", "metadata", "agent", "signature", "version", "type", "status", "error_message", "runs", "warnings")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[EvaluationReport.Status]
@@ -131,6 +132,7 @@ class EvaluationReport(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
     RUNS_FIELD_NUMBER: _ClassVar[int]
+    WARNINGS_FIELD_NUMBER: _ClassVar[int]
     task_id: str
     reference: str
     origin: str
@@ -142,4 +144,5 @@ class EvaluationReport(_message.Message):
     status: EvaluationReport.Status
     error_message: str
     runs: _containers.RepeatedCompositeFieldContainer[EvaluationReport.Run]
-    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., agent: _Optional[str] = ..., signature: _Optional[str] = ..., version: _Optional[int] = ..., type: _Optional[_Union[EvaluationReport.Type, str]] = ..., status: _Optional[_Union[EvaluationReport.Status, str]] = ..., error_message: _Optional[str] = ..., runs: _Optional[_Iterable[_Union[EvaluationReport.Run, _Mapping]]] = ...) -> None: ...
+    warnings: _containers.RepeatedCompositeFieldContainer[_warning_pb2.Warning]
+    def __init__(self, task_id: _Optional[str] = ..., reference: _Optional[str] = ..., origin: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., agent: _Optional[str] = ..., signature: _Optional[str] = ..., version: _Optional[int] = ..., type: _Optional[_Union[EvaluationReport.Type, str]] = ..., status: _Optional[_Union[EvaluationReport.Status, str]] = ..., error_message: _Optional[str] = ..., runs: _Optional[_Iterable[_Union[EvaluationReport.Run, _Mapping]]] = ..., warnings: _Optional[_Iterable[_Union[_warning_pb2.Warning, _Mapping]]] = ...) -> None: ...

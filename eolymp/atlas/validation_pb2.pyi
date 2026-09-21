@@ -1,3 +1,4 @@
+from eolymp.executor import warning_pb2 as _warning_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -8,7 +9,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Validation(_message.Message):
-    __slots__ = ("id", "problem_id", "version", "status", "verdict", "error", "error_url", "groups")
+    __slots__ = ("id", "problem_id", "version", "status", "verdict", "error", "error_url", "groups", "warnings")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Validation.Status]
@@ -73,6 +74,7 @@ class Validation(_message.Message):
     ERROR_FIELD_NUMBER: _ClassVar[int]
     ERROR_URL_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
+    WARNINGS_FIELD_NUMBER: _ClassVar[int]
     id: str
     problem_id: str
     version: int
@@ -81,4 +83,5 @@ class Validation(_message.Message):
     error: str
     error_url: str
     groups: _containers.RepeatedCompositeFieldContainer[Validation.Group]
-    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., status: _Optional[_Union[Validation.Status, str]] = ..., verdict: _Optional[_Union[Validation.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., groups: _Optional[_Iterable[_Union[Validation.Group, _Mapping]]] = ...) -> None: ...
+    warnings: _containers.RepeatedCompositeFieldContainer[_warning_pb2.Warning]
+    def __init__(self, id: _Optional[str] = ..., problem_id: _Optional[str] = ..., version: _Optional[int] = ..., status: _Optional[_Union[Validation.Status, str]] = ..., verdict: _Optional[_Union[Validation.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., groups: _Optional[_Iterable[_Union[Validation.Group, _Mapping]]] = ..., warnings: _Optional[_Iterable[_Union[_warning_pb2.Warning, _Mapping]]] = ...) -> None: ...

@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.executor import warning_pb2 as eolymp_dot_executor_dot_warning__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/atlas/validation.proto\x12\x0c\x65olymp.atlas\"\xd3\x05\n\nValidation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x63 \x01(\r\x12/\n\x06status\x18\x14 \x01(\x0e\x32\x1f.eolymp.atlas.Validation.Status\x12\x31\n\x07verdict\x18\x16 \x01(\x0e\x32 .eolymp.atlas.Validation.Verdict\x12\r\n\x05\x65rror\x18\x15 \x01(\t\x12\x11\n\terror_url\x18\x17 \x01(\t\x12.\n\x06groups\x18\x32 \x03(\x0b\x32\x1e.eolymp.atlas.Validation.Group\x1a\xab\x01\n\x03Run\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05index\x18\n \x01(\r\x12/\n\x06status\x18\x14 \x01(\x0e\x32\x1f.eolymp.atlas.Validation.Status\x12\x31\n\x07verdict\x18\x15 \x01(\x0e\x32 .eolymp.atlas.Validation.Verdict\x12\x11\n\tinput_url\x18\x08 \x01(\t\x12\x12\n\noutput_url\x18\x06 \x01(\t\x1aV\n\x05Group\x12\r\n\x05index\x18\x01 \x01(\r\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12*\n\x04runs\x18\x64 \x03(\x0b\x32\x1c.eolymp.atlas.Validation.Run\"\x92\x01\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0b\n\x07TESTING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\x0b\n\x07\x46\x41ILURE\x10\x06\x12\x0b\n\x07SKIPPED\x10\x07\x12\x10\n\x0cPROVISIONING\x10\t\x12\x10\n\x0cINITIALIZING\x10\n\x12\r\n\tCANCELLED\x10\x0b\"=\n\x07Verdict\x12\x0e\n\nNO_VERDICT\x10\x00\x12\t\n\x05VALID\x10\x01\x12\x0b\n\x07INVALID\x10\x02\x12\n\n\x06\x42ROKEN\x10\x03J\x04\x08\x1e\x10\"B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/atlas/validation.proto\x12\x0c\x65olymp.atlas\x1a\x1d\x65olymp/executor/warning.proto\"\xff\x05\n\nValidation\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nproblem_id\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x63 \x01(\r\x12/\n\x06status\x18\x14 \x01(\x0e\x32\x1f.eolymp.atlas.Validation.Status\x12\x31\n\x07verdict\x18\x16 \x01(\x0e\x32 .eolymp.atlas.Validation.Verdict\x12\r\n\x05\x65rror\x18\x15 \x01(\t\x12\x11\n\terror_url\x18\x17 \x01(\t\x12.\n\x06groups\x18\x32 \x03(\x0b\x32\x1e.eolymp.atlas.Validation.Group\x12*\n\x08warnings\x18< \x03(\x0b\x32\x18.eolymp.executor.Warning\x1a\xab\x01\n\x03Run\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05index\x18\n \x01(\r\x12/\n\x06status\x18\x14 \x01(\x0e\x32\x1f.eolymp.atlas.Validation.Status\x12\x31\n\x07verdict\x18\x15 \x01(\x0e\x32 .eolymp.atlas.Validation.Verdict\x12\x11\n\tinput_url\x18\x08 \x01(\t\x12\x12\n\noutput_url\x18\x06 \x01(\t\x1aV\n\x05Group\x12\r\n\x05index\x18\x01 \x01(\r\x12\x12\n\ntestset_id\x18\x02 \x01(\t\x12*\n\x04runs\x18\x64 \x03(\x0b\x32\x1c.eolymp.atlas.Validation.Run\"\x92\x01\n\x06Status\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0b\n\x07TESTING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\x0b\n\x07\x46\x41ILURE\x10\x06\x12\x0b\n\x07SKIPPED\x10\x07\x12\x10\n\x0cPROVISIONING\x10\t\x12\x10\n\x0cINITIALIZING\x10\n\x12\r\n\tCANCELLED\x10\x0b\"=\n\x07Verdict\x12\x0e\n\nNO_VERDICT\x10\x00\x12\t\n\x05VALID\x10\x01\x12\x0b\n\x07INVALID\x10\x02\x12\n\n\x06\x42ROKEN\x10\x03J\x04\x08\x1e\x10\"B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,14 +33,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.validation_pb2
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _globals['_VALIDATION']._serialized_start=48
-  _globals['_VALIDATION']._serialized_end=771
-  _globals['_VALIDATION_RUN']._serialized_start=294
-  _globals['_VALIDATION_RUN']._serialized_end=465
-  _globals['_VALIDATION_GROUP']._serialized_start=467
-  _globals['_VALIDATION_GROUP']._serialized_end=553
-  _globals['_VALIDATION_STATUS']._serialized_start=556
-  _globals['_VALIDATION_STATUS']._serialized_end=702
-  _globals['_VALIDATION_VERDICT']._serialized_start=704
-  _globals['_VALIDATION_VERDICT']._serialized_end=765
+  _globals['_VALIDATION']._serialized_start=79
+  _globals['_VALIDATION']._serialized_end=846
+  _globals['_VALIDATION_RUN']._serialized_start=369
+  _globals['_VALIDATION_RUN']._serialized_end=540
+  _globals['_VALIDATION_GROUP']._serialized_start=542
+  _globals['_VALIDATION_GROUP']._serialized_end=628
+  _globals['_VALIDATION_STATUS']._serialized_start=631
+  _globals['_VALIDATION_STATUS']._serialized_end=777
+  _globals['_VALIDATION_VERDICT']._serialized_start=779
+  _globals['_VALIDATION_VERDICT']._serialized_end=840
 # @@protoc_insertion_point(module_scope)

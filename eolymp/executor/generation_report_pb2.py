@@ -23,9 +23,10 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.executor import stats_pb2 as eolymp_dot_executor_dot_stats__pb2
+from eolymp.executor import warning_pb2 as eolymp_dot_executor_dot_warning__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/executor/generation_report.proto\x12\x0f\x65olymp.executor\x1a\x1b\x65olymp/executor/stats.proto\"\x95\x06\n\x10GenerationReport\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0e\n\x06origin\x18\x03 \x01(\t\x12\x41\n\x08metadata\x18\x05 \x03(\x0b\x32/.eolymp.executor.GenerationReport.MetadataEntry\x12\r\n\x05\x61gent\x18\x04 \x01(\t\x12\x38\n\x06status\x18\x0b \x01(\x0e\x32(.eolymp.executor.GenerationReport.Status\x12\x33\n\x04runs\x18( \x03(\x0b\x32%.eolymp.executor.GenerationReport.Run\x12\x15\n\rerror_message\x18\x32 \x01(\t\x1a\xbf\x02\n\x03Run\x12\x11\n\treference\x18\x01 \x01(\t\x12\x38\n\x06status\x18\x02 \x01(\x0e\x32(.eolymp.executor.GenerationReport.Status\x12\r\n\x05valid\x18\x1f \x01(\x08\x12\x11\n\tinput_url\x18\n \x01(\t\x12\x12\n\nanswer_url\x18\x0b \x01(\t\x12\x35\n\x15input_generator_stats\x18\x14 \x01(\x0b\x32\x16.eolymp.executor.Stats\x12\x36\n\x16\x61nswer_generator_stats\x18\x1e \x01(\x0b\x32\x16.eolymp.executor.Stats\x12/\n\x0fvalidator_stats\x18# \x01(\x0b\x32\x16.eolymp.executor.Stats\x12\x15\n\rerror_message\x18( \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x81\x01\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0c\n\x08\x43OMPLETE\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\x10\n\x0cPROVISIONING\x10\x04\x12\x10\n\x0cINITIALIZING\x10\x05\x12\r\n\tEXECUTING\x10\x06\x12\t\n\x05\x45RROR\x10\x07\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/executor/generation_report.proto\x12\x0f\x65olymp.executor\x1a\x1b\x65olymp/executor/stats.proto\x1a\x1d\x65olymp/executor/warning.proto\"\xc1\x06\n\x10GenerationReport\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x0e\n\x06origin\x18\x03 \x01(\t\x12\x41\n\x08metadata\x18\x05 \x03(\x0b\x32/.eolymp.executor.GenerationReport.MetadataEntry\x12\r\n\x05\x61gent\x18\x04 \x01(\t\x12\x38\n\x06status\x18\x0b \x01(\x0e\x32(.eolymp.executor.GenerationReport.Status\x12\x33\n\x04runs\x18( \x03(\x0b\x32%.eolymp.executor.GenerationReport.Run\x12\x15\n\rerror_message\x18\x32 \x01(\t\x12*\n\x08warnings\x18< \x03(\x0b\x32\x18.eolymp.executor.Warning\x1a\xbf\x02\n\x03Run\x12\x11\n\treference\x18\x01 \x01(\t\x12\x38\n\x06status\x18\x02 \x01(\x0e\x32(.eolymp.executor.GenerationReport.Status\x12\r\n\x05valid\x18\x1f \x01(\x08\x12\x11\n\tinput_url\x18\n \x01(\t\x12\x12\n\nanswer_url\x18\x0b \x01(\t\x12\x35\n\x15input_generator_stats\x18\x14 \x01(\x0b\x32\x16.eolymp.executor.Stats\x12\x36\n\x16\x61nswer_generator_stats\x18\x1e \x01(\x0b\x32\x16.eolymp.executor.Stats\x12/\n\x0fvalidator_stats\x18# \x01(\x0b\x32\x16.eolymp.executor.Stats\x12\x15\n\rerror_message\x18( \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x81\x01\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0c\n\x08\x43OMPLETE\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\x10\n\x0cPROVISIONING\x10\x04\x12\x10\n\x0cINITIALIZING\x10\x05\x12\r\n\tEXECUTING\x10\x06\x12\t\n\x05\x45RROR\x10\x07\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,12 +36,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
   _globals['_GENERATIONREPORT_METADATAENTRY']._loaded_options = None
   _globals['_GENERATIONREPORT_METADATAENTRY']._serialized_options = b'8\001'
-  _globals['_GENERATIONREPORT']._serialized_start=90
-  _globals['_GENERATIONREPORT']._serialized_end=879
-  _globals['_GENERATIONREPORT_RUN']._serialized_start=379
-  _globals['_GENERATIONREPORT_RUN']._serialized_end=698
-  _globals['_GENERATIONREPORT_METADATAENTRY']._serialized_start=700
-  _globals['_GENERATIONREPORT_METADATAENTRY']._serialized_end=747
-  _globals['_GENERATIONREPORT_STATUS']._serialized_start=750
-  _globals['_GENERATIONREPORT_STATUS']._serialized_end=879
+  _globals['_GENERATIONREPORT']._serialized_start=121
+  _globals['_GENERATIONREPORT']._serialized_end=954
+  _globals['_GENERATIONREPORT_RUN']._serialized_start=454
+  _globals['_GENERATIONREPORT_RUN']._serialized_end=773
+  _globals['_GENERATIONREPORT_METADATAENTRY']._serialized_start=775
+  _globals['_GENERATIONREPORT_METADATAENTRY']._serialized_end=822
+  _globals['_GENERATIONREPORT_STATUS']._serialized_start=825
+  _globals['_GENERATIONREPORT_STATUS']._serialized_end=954
 # @@protoc_insertion_point(module_scope)
