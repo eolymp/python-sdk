@@ -30,7 +30,7 @@ class Course(_message.Message):
     UNLISTED: Course.Visibility
     PRIVATE: Course.Visibility
     class Patch(_message.Message):
-        __slots__ = ("locale", "name", "description", "image_url", "visibility", "duration", "topics", "untopic")
+        __slots__ = ("locale", "name", "description", "image_url", "visibility", "duration", "topics", "unset_topics")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -38,7 +38,7 @@ class Course(_message.Message):
         VISIBILITY_FIELD_NUMBER: _ClassVar[int]
         DURATION_FIELD_NUMBER: _ClassVar[int]
         TOPICS_FIELD_NUMBER: _ClassVar[int]
-        UNTOPIC_FIELD_NUMBER: _ClassVar[int]
+        UNSET_TOPICS_FIELD_NUMBER: _ClassVar[int]
         locale: str
         name: str
         description: _content_pb2.Content
@@ -46,8 +46,8 @@ class Course(_message.Message):
         visibility: Course.Visibility
         duration: int
         topics: _containers.RepeatedScalarFieldContainer[str]
-        untopic: bool
-        def __init__(self, locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image_url: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., topics: _Optional[_Iterable[str]] = ..., untopic: _Optional[bool] = ...) -> None: ...
+        unset_topics: bool
+        def __init__(self, locale: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., image_url: _Optional[str] = ..., visibility: _Optional[_Union[Course.Visibility, str]] = ..., duration: _Optional[int] = ..., topics: _Optional[_Iterable[str]] = ..., unset_topics: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]

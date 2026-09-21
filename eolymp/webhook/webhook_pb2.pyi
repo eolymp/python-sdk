@@ -59,18 +59,18 @@ class Webhook(_message.Message):
     CONTEST_PARTICIPANT_CHANGED: Webhook.Event
     CONTEST_PARTICIPANT_JOINED: Webhook.Event
     class Patch(_message.Message):
-        __slots__ = ("name", "endpoint", "inactive", "events", "unsubscribe")
+        __slots__ = ("name", "endpoint", "inactive", "events", "unset_events")
         NAME_FIELD_NUMBER: _ClassVar[int]
         ENDPOINT_FIELD_NUMBER: _ClassVar[int]
         INACTIVE_FIELD_NUMBER: _ClassVar[int]
         EVENTS_FIELD_NUMBER: _ClassVar[int]
-        UNSUBSCRIBE_FIELD_NUMBER: _ClassVar[int]
+        UNSET_EVENTS_FIELD_NUMBER: _ClassVar[int]
         name: str
         endpoint: str
         inactive: bool
         events: _containers.RepeatedScalarFieldContainer[Webhook.Event]
-        unsubscribe: bool
-        def __init__(self, name: _Optional[str] = ..., endpoint: _Optional[str] = ..., inactive: _Optional[bool] = ..., events: _Optional[_Iterable[_Union[Webhook.Event, str]]] = ..., unsubscribe: _Optional[bool] = ...) -> None: ...
+        unset_events: bool
+        def __init__(self, name: _Optional[str] = ..., endpoint: _Optional[str] = ..., inactive: _Optional[bool] = ..., events: _Optional[_Iterable[_Union[Webhook.Event, str]]] = ..., unset_events: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]

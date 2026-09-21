@@ -65,22 +65,22 @@ class Message(_message.Message):
         delivered_at: _timestamp_pb2.Timestamp
         def __init__(self, channel_id: _Optional[str] = ..., channel_name: _Optional[str] = ..., status: _Optional[_Union[Message.Delivery.Status, str]] = ..., error: _Optional[str] = ..., url: _Optional[str] = ..., delivered_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("title", "content", "channel_ids", "unset_channel_ids", "scheduled_at", "unschedule", "reference")
+        __slots__ = ("title", "content", "channel_ids", "unset_channel_ids", "scheduled_at", "unset_scheduled_at", "reference")
         TITLE_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
         CHANNEL_IDS_FIELD_NUMBER: _ClassVar[int]
         UNSET_CHANNEL_IDS_FIELD_NUMBER: _ClassVar[int]
         SCHEDULED_AT_FIELD_NUMBER: _ClassVar[int]
-        UNSCHEDULE_FIELD_NUMBER: _ClassVar[int]
+        UNSET_SCHEDULED_AT_FIELD_NUMBER: _ClassVar[int]
         REFERENCE_FIELD_NUMBER: _ClassVar[int]
         title: str
         content: _content_pb2.Content
         channel_ids: _containers.RepeatedScalarFieldContainer[str]
         unset_channel_ids: bool
         scheduled_at: _timestamp_pb2.Timestamp
-        unschedule: bool
+        unset_scheduled_at: bool
         reference: str
-        def __init__(self, title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., channel_ids: _Optional[_Iterable[str]] = ..., unset_channel_ids: _Optional[bool] = ..., scheduled_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., unschedule: _Optional[bool] = ..., reference: _Optional[str] = ...) -> None: ...
+        def __init__(self, title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., channel_ids: _Optional[_Iterable[str]] = ..., unset_channel_ids: _Optional[bool] = ..., scheduled_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., unset_scheduled_at: _Optional[bool] = ..., reference: _Optional[str] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]

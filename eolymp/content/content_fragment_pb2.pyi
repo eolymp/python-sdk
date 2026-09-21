@@ -34,7 +34,7 @@ class Fragment(_message.Message):
         CONTENT_VALUE: Fragment.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("path", "parent_id", "slug", "position", "draft", "automatic", "title", "visibility", "content", "labels", "unlabel")
+        __slots__ = ("path", "parent_id", "slug", "position", "draft", "automatic", "title", "visibility", "content", "labels", "unset_labels")
         PATH_FIELD_NUMBER: _ClassVar[int]
         PARENT_ID_FIELD_NUMBER: _ClassVar[int]
         SLUG_FIELD_NUMBER: _ClassVar[int]
@@ -45,7 +45,7 @@ class Fragment(_message.Message):
         VISIBILITY_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
         LABELS_FIELD_NUMBER: _ClassVar[int]
-        UNLABEL_FIELD_NUMBER: _ClassVar[int]
+        UNSET_LABELS_FIELD_NUMBER: _ClassVar[int]
         path: str
         parent_id: str
         slug: str
@@ -56,8 +56,8 @@ class Fragment(_message.Message):
         visibility: Fragment.Visibility
         content: _content_pb2.Content
         labels: _containers.RepeatedScalarFieldContainer[str]
-        unlabel: bool
-        def __init__(self, path: _Optional[str] = ..., parent_id: _Optional[str] = ..., slug: _Optional[str] = ..., position: _Optional[int] = ..., draft: _Optional[bool] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., visibility: _Optional[_Union[Fragment.Visibility, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., unlabel: _Optional[bool] = ...) -> None: ...
+        unset_labels: bool
+        def __init__(self, path: _Optional[str] = ..., parent_id: _Optional[str] = ..., slug: _Optional[str] = ..., position: _Optional[int] = ..., draft: _Optional[bool] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., visibility: _Optional[_Union[Fragment.Visibility, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., unset_labels: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
     SPACE_LINK_FIELD_NUMBER: _ClassVar[int]

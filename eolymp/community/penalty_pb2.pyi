@@ -23,18 +23,18 @@ class Penalty(_message.Message):
     DESCRIPTION_VALUE: Penalty.Extra
     DESCRIPTION_RENDER: Penalty.Extra
     class Patch(_message.Message):
-        __slots__ = ("summary", "description", "scope", "unscope", "expires_at")
+        __slots__ = ("summary", "description", "scope", "unset_scope", "expires_at")
         SUMMARY_FIELD_NUMBER: _ClassVar[int]
         DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
         SCOPE_FIELD_NUMBER: _ClassVar[int]
-        UNSCOPE_FIELD_NUMBER: _ClassVar[int]
+        UNSET_SCOPE_FIELD_NUMBER: _ClassVar[int]
         EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
         summary: str
         description: _content_pb2.Content
         scope: _containers.RepeatedScalarFieldContainer[str]
-        unscope: bool
+        unset_scope: bool
         expires_at: _timestamp_pb2.Timestamp
-        def __init__(self, summary: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., scope: _Optional[_Iterable[str]] = ..., unscope: _Optional[bool] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+        def __init__(self, summary: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., scope: _Optional[_Iterable[str]] = ..., unset_scope: _Optional[bool] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     SUMMARY_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]

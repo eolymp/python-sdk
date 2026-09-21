@@ -41,22 +41,22 @@ class Post(_message.Message):
     PREVIEW: Post.Extra
     VOTE: Post.Extra
     class Patch(_message.Message):
-        __slots__ = ("type_id", "featured", "pinned", "automatic", "content", "labels", "unlabel")
+        __slots__ = ("type_id", "featured", "pinned", "automatic", "content", "labels", "unset_labels")
         TYPE_ID_FIELD_NUMBER: _ClassVar[int]
         FEATURED_FIELD_NUMBER: _ClassVar[int]
         PINNED_FIELD_NUMBER: _ClassVar[int]
         AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
         LABELS_FIELD_NUMBER: _ClassVar[int]
-        UNLABEL_FIELD_NUMBER: _ClassVar[int]
+        UNSET_LABELS_FIELD_NUMBER: _ClassVar[int]
         type_id: str
         featured: bool
         pinned: bool
         automatic: bool
         content: _content_pb2.Content
         labels: _containers.RepeatedScalarFieldContainer[str]
-        unlabel: bool
-        def __init__(self, type_id: _Optional[str] = ..., featured: _Optional[bool] = ..., pinned: _Optional[bool] = ..., automatic: _Optional[bool] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., unlabel: _Optional[bool] = ...) -> None: ...
+        unset_labels: bool
+        def __init__(self, type_id: _Optional[str] = ..., featured: _Optional[bool] = ..., pinned: _Optional[bool] = ..., automatic: _Optional[bool] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., unset_labels: _Optional[bool] = ...) -> None: ...
     class Image(_message.Message):
         __slots__ = ("src", "width", "height")
         SRC_FIELD_NUMBER: _ClassVar[int]

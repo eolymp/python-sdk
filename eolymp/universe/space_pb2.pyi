@@ -60,20 +60,20 @@ class Space(_message.Message):
         SUBSCRIPTION: Space.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("key", "name", "image", "visibility", "locales", "unlocalise")
+        __slots__ = ("key", "name", "image", "visibility", "locales", "unset_locales")
         KEY_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         IMAGE_FIELD_NUMBER: _ClassVar[int]
         VISIBILITY_FIELD_NUMBER: _ClassVar[int]
         LOCALES_FIELD_NUMBER: _ClassVar[int]
-        UNLOCALISE_FIELD_NUMBER: _ClassVar[int]
+        UNSET_LOCALES_FIELD_NUMBER: _ClassVar[int]
         key: str
         name: str
         image: str
         visibility: Space.Visibility
         locales: _containers.RepeatedScalarFieldContainer[str]
-        unlocalise: bool
-        def __init__(self, key: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., locales: _Optional[_Iterable[str]] = ..., unlocalise: _Optional[bool] = ...) -> None: ...
+        unset_locales: bool
+        def __init__(self, key: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., locales: _Optional[_Iterable[str]] = ..., unset_locales: _Optional[bool] = ...) -> None: ...
     class Subscription(_message.Message):
         __slots__ = ("plan", "seats", "usage", "usage_based_billing", "quota", "billing_period_start", "billing_period_end", "quota_period_start", "quota_period_end")
         PLAN_FIELD_NUMBER: _ClassVar[int]

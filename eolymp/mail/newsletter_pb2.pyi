@@ -26,22 +26,22 @@ class Newsletter(_message.Message):
         CONTENT_RENDER: Newsletter.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("type", "name", "subject", "content", "automatic", "scheduled_at", "unschedule")
+        __slots__ = ("type", "name", "subject", "content", "automatic", "scheduled_at", "unset_scheduled_at")
         TYPE_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         SUBJECT_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
         AUTOMATIC_FIELD_NUMBER: _ClassVar[int]
         SCHEDULED_AT_FIELD_NUMBER: _ClassVar[int]
-        UNSCHEDULE_FIELD_NUMBER: _ClassVar[int]
+        UNSET_SCHEDULED_AT_FIELD_NUMBER: _ClassVar[int]
         type: _email_type_pb2.EmailType
         name: str
         subject: str
         content: _content_pb2.Content
         automatic: bool
         scheduled_at: _timestamp_pb2.Timestamp
-        unschedule: bool
-        def __init__(self, type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., name: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., automatic: _Optional[bool] = ..., scheduled_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., unschedule: _Optional[bool] = ...) -> None: ...
+        unset_scheduled_at: bool
+        def __init__(self, type: _Optional[_Union[_email_type_pb2.EmailType, str]] = ..., name: _Optional[str] = ..., subject: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., automatic: _Optional[bool] = ..., scheduled_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., unset_scheduled_at: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]

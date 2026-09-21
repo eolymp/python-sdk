@@ -32,11 +32,11 @@ class User(_message.Message):
         runtime: str
         def __init__(self, locale: _Optional[str] = ..., timezone: _Optional[str] = ..., runtime: _Optional[str] = ...) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("nickname", "email", "email_subscriptions", "unsubscribe", "password", "name", "birthday", "country", "city", "pronoun", "preferences")
+        __slots__ = ("nickname", "email", "email_subscriptions", "unset_email_subscriptions", "password", "name", "birthday", "country", "city", "pronoun", "preferences")
         NICKNAME_FIELD_NUMBER: _ClassVar[int]
         EMAIL_FIELD_NUMBER: _ClassVar[int]
         EMAIL_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
-        UNSUBSCRIBE_FIELD_NUMBER: _ClassVar[int]
+        UNSET_EMAIL_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
         PASSWORD_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
@@ -47,7 +47,7 @@ class User(_message.Message):
         nickname: str
         email: str
         email_subscriptions: _containers.RepeatedScalarFieldContainer[_email_type_pb2.EmailType]
-        unsubscribe: bool
+        unset_email_subscriptions: bool
         password: str
         name: str
         birthday: _timestamp_pb2.Timestamp
@@ -55,7 +55,7 @@ class User(_message.Message):
         city: str
         pronoun: str
         preferences: User.Preferences.Patch
-        def __init__(self, nickname: _Optional[str] = ..., email: _Optional[str] = ..., email_subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ..., unsubscribe: _Optional[bool] = ..., password: _Optional[str] = ..., name: _Optional[str] = ..., birthday: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., pronoun: _Optional[str] = ..., preferences: _Optional[_Union[User.Preferences.Patch, _Mapping]] = ...) -> None: ...
+        def __init__(self, nickname: _Optional[str] = ..., email: _Optional[str] = ..., email_subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ..., unset_email_subscriptions: _Optional[bool] = ..., password: _Optional[str] = ..., name: _Optional[str] = ..., birthday: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., pronoun: _Optional[str] = ..., preferences: _Optional[_Union[User.Preferences.Patch, _Mapping]] = ...) -> None: ...
     class Alias(_message.Message):
         __slots__ = ("nickname", "changed_at")
         NICKNAME_FIELD_NUMBER: _ClassVar[int]

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/notify/preferences.proto\x12\reolymp.notify\"\xe2\x03\n\x0bPreferences\x12>\n\rsubscriptions\x18\n \x03(\x0b\x32\'.eolymp.notify.Preferences.Subscription\x1a\xfc\x01\n\x05Patch\x12>\n\rsubscriptions\x18\n \x03(\x0b\x32\'.eolymp.notify.Preferences.Subscription\x12\x42\n\x11\x61\x64\x64_subscriptions\x18\x0b \x03(\x0b\x32\'.eolymp.notify.Preferences.Subscription\x12\x45\n\x14remove_subscriptions\x18\x0c \x03(\x0b\x32\'.eolymp.notify.Preferences.Subscription\x12\x18\n\x0bunsubscribe\x18\r \x01(\x08H\x00\x88\x01\x01\x42\x0e\n\x0c_unsubscribe\x1aP\n\x0cSubscription\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x31\n\x06\x64igest\x18\x02 \x01(\x0e\x32!.eolymp.notify.Preferences.Digest\"B\n\x06\x44igest\x12\x12\n\x0eUNKNOWN_DIGEST\x10\x00\x12\r\n\tIMMEDIATE\x10\x01\x12\n\n\x06HOURLY\x10\x02\x12\t\n\x05\x44\x41ILY\x10\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/notify;notifyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x65olymp/notify/preferences.proto\x12\reolymp.notify\"\xf2\x03\n\x0bPreferences\x12>\n\rsubscriptions\x18\n \x03(\x0b\x32\'.eolymp.notify.Preferences.Subscription\x1a\x8c\x02\n\x05Patch\x12>\n\rsubscriptions\x18\n \x03(\x0b\x32\'.eolymp.notify.Preferences.Subscription\x12 \n\x13unset_subscriptions\x18\r \x01(\x08H\x00\x88\x01\x01\x12\x45\n\x14remove_subscriptions\x18\x0c \x03(\x0b\x32\'.eolymp.notify.Preferences.Subscription\x12\x42\n\x11\x61\x64\x64_subscriptions\x18\x0b \x03(\x0b\x32\'.eolymp.notify.Preferences.SubscriptionB\x16\n\x14_unset_subscriptions\x1aP\n\x0cSubscription\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x31\n\x06\x64igest\x18\x02 \x01(\x0e\x32!.eolymp.notify.Preferences.Digest\"B\n\x06\x44igest\x12\x12\n\x0eUNKNOWN_DIGEST\x10\x00\x12\r\n\tIMMEDIATE\x10\x01\x12\n\n\x06HOURLY\x10\x02\x12\t\n\x05\x44\x41ILY\x10\x03\x42/Z-github.com/eolymp/go-sdk/eolymp/notify;notifyb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,11 +33,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z-github.com/eolymp/go-sdk/eolymp/notify;notify'
   _globals['_PREFERENCES']._serialized_start=51
-  _globals['_PREFERENCES']._serialized_end=533
+  _globals['_PREFERENCES']._serialized_end=549
   _globals['_PREFERENCES_PATCH']._serialized_start=131
-  _globals['_PREFERENCES_PATCH']._serialized_end=383
-  _globals['_PREFERENCES_SUBSCRIPTION']._serialized_start=385
-  _globals['_PREFERENCES_SUBSCRIPTION']._serialized_end=465
-  _globals['_PREFERENCES_DIGEST']._serialized_start=467
-  _globals['_PREFERENCES_DIGEST']._serialized_end=533
+  _globals['_PREFERENCES_PATCH']._serialized_end=399
+  _globals['_PREFERENCES_SUBSCRIPTION']._serialized_start=401
+  _globals['_PREFERENCES_SUBSCRIPTION']._serialized_end=481
+  _globals['_PREFERENCES_DIGEST']._serialized_start=483
+  _globals['_PREFERENCES_DIGEST']._serialized_end=549
 # @@protoc_insertion_point(module_scope)

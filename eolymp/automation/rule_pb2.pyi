@@ -60,11 +60,11 @@ class Rule(_message.Message):
     HOURLY: Rule.Schedule
     DAILY: Rule.Schedule
     class Patch(_message.Message):
-        __slots__ = ("name", "trigger", "conditions", "uncondition", "inactive", "dry_run", "label", "schedule", "actions")
+        __slots__ = ("name", "trigger", "conditions", "unset_conditions", "inactive", "dry_run", "label", "schedule", "actions")
         NAME_FIELD_NUMBER: _ClassVar[int]
         TRIGGER_FIELD_NUMBER: _ClassVar[int]
         CONDITIONS_FIELD_NUMBER: _ClassVar[int]
-        UNCONDITION_FIELD_NUMBER: _ClassVar[int]
+        UNSET_CONDITIONS_FIELD_NUMBER: _ClassVar[int]
         INACTIVE_FIELD_NUMBER: _ClassVar[int]
         DRY_RUN_FIELD_NUMBER: _ClassVar[int]
         LABEL_FIELD_NUMBER: _ClassVar[int]
@@ -73,13 +73,13 @@ class Rule(_message.Message):
         name: str
         trigger: Rule.Trigger
         conditions: _containers.RepeatedCompositeFieldContainer[_condition_pb2.Condition]
-        uncondition: bool
+        unset_conditions: bool
         inactive: bool
         dry_run: bool
         label: str
         schedule: Rule.Schedule
         actions: _containers.RepeatedCompositeFieldContainer[_action_pb2.Action]
-        def __init__(self, name: _Optional[str] = ..., trigger: _Optional[_Union[Rule.Trigger, str]] = ..., conditions: _Optional[_Iterable[_Union[_condition_pb2.Condition, _Mapping]]] = ..., uncondition: _Optional[bool] = ..., inactive: _Optional[bool] = ..., dry_run: _Optional[bool] = ..., label: _Optional[str] = ..., schedule: _Optional[_Union[Rule.Schedule, str]] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, _Mapping]]] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., trigger: _Optional[_Union[Rule.Trigger, str]] = ..., conditions: _Optional[_Iterable[_Union[_condition_pb2.Condition, _Mapping]]] = ..., unset_conditions: _Optional[bool] = ..., inactive: _Optional[bool] = ..., dry_run: _Optional[bool] = ..., label: _Optional[str] = ..., schedule: _Optional[_Union[Rule.Schedule, str]] = ..., actions: _Optional[_Iterable[_Union[_action_pb2.Action, _Mapping]]] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     TRIGGER_FIELD_NUMBER: _ClassVar[int]

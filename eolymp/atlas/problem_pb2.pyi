@@ -45,22 +45,22 @@ class Problem(_message.Message):
         CONTENT_RENDER: Problem.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("number", "visible", "origin", "topics", "difficulty", "untopic", "type")
+        __slots__ = ("number", "visible", "origin", "topics", "difficulty", "unset_topics", "type")
         NUMBER_FIELD_NUMBER: _ClassVar[int]
         VISIBLE_FIELD_NUMBER: _ClassVar[int]
         ORIGIN_FIELD_NUMBER: _ClassVar[int]
         TOPICS_FIELD_NUMBER: _ClassVar[int]
         DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
-        UNTOPIC_FIELD_NUMBER: _ClassVar[int]
+        UNSET_TOPICS_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         number: int
         visible: bool
         origin: str
         topics: _containers.RepeatedScalarFieldContainer[str]
         difficulty: int
-        untopic: bool
+        unset_topics: bool
         type: Problem.Type
-        def __init__(self, number: _Optional[int] = ..., visible: _Optional[bool] = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., difficulty: _Optional[int] = ..., untopic: _Optional[bool] = ..., type: _Optional[_Union[Problem.Type, str]] = ...) -> None: ...
+        def __init__(self, number: _Optional[int] = ..., visible: _Optional[bool] = ..., origin: _Optional[str] = ..., topics: _Optional[_Iterable[str]] = ..., difficulty: _Optional[int] = ..., unset_topics: _Optional[bool] = ..., type: _Optional[_Union[Problem.Type, str]] = ...) -> None: ...
     class Constraints(_message.Message):
         __slots__ = ("time_limit_min", "time_limit_max", "cpu_limit_min", "cpu_limit_max", "memory_limit_min", "memory_limit_max")
         TIME_LIMIT_MIN_FIELD_NUMBER: _ClassVar[int]

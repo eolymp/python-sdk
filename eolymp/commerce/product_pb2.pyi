@@ -31,12 +31,12 @@ class Product(_message.Message):
         VARIANTS: Product.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("name", "summary", "description", "images", "unimage", "price", "regular_price", "featured", "inactive", "backorder", "attributes")
+        __slots__ = ("name", "summary", "description", "images", "unset_images", "price", "regular_price", "featured", "inactive", "backorder", "attributes")
         NAME_FIELD_NUMBER: _ClassVar[int]
         SUMMARY_FIELD_NUMBER: _ClassVar[int]
         DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
         IMAGES_FIELD_NUMBER: _ClassVar[int]
-        UNIMAGE_FIELD_NUMBER: _ClassVar[int]
+        UNSET_IMAGES_FIELD_NUMBER: _ClassVar[int]
         PRICE_FIELD_NUMBER: _ClassVar[int]
         REGULAR_PRICE_FIELD_NUMBER: _ClassVar[int]
         FEATURED_FIELD_NUMBER: _ClassVar[int]
@@ -47,14 +47,14 @@ class Product(_message.Message):
         summary: _content_pb2.Content
         description: _content_pb2.Content
         images: _containers.RepeatedScalarFieldContainer[str]
-        unimage: bool
+        unset_images: bool
         price: int
         regular_price: int
         featured: bool
         inactive: bool
         backorder: bool
         attributes: _containers.RepeatedCompositeFieldContainer[Product.Attribute]
-        def __init__(self, name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., unimage: _Optional[bool] = ..., price: _Optional[int] = ..., regular_price: _Optional[int] = ..., featured: _Optional[bool] = ..., inactive: _Optional[bool] = ..., backorder: _Optional[bool] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., unset_images: _Optional[bool] = ..., price: _Optional[int] = ..., regular_price: _Optional[int] = ..., featured: _Optional[bool] = ..., inactive: _Optional[bool] = ..., backorder: _Optional[bool] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ...) -> None: ...
     class Attribute(_message.Message):
         __slots__ = ("key", "label")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -65,7 +65,7 @@ class Product(_message.Message):
     class Variant(_message.Message):
         __slots__ = ("id", "product_id", "name", "values", "images", "out_of_stock", "max_quantity", "available_quantity")
         class Patch(_message.Message):
-            __slots__ = ("name", "values", "images", "unimage", "available_quantity")
+            __slots__ = ("name", "values", "images", "unset_images", "available_quantity")
             class ValuesEntry(_message.Message):
                 __slots__ = ("key", "value")
                 KEY_FIELD_NUMBER: _ClassVar[int]
@@ -76,14 +76,14 @@ class Product(_message.Message):
             NAME_FIELD_NUMBER: _ClassVar[int]
             VALUES_FIELD_NUMBER: _ClassVar[int]
             IMAGES_FIELD_NUMBER: _ClassVar[int]
-            UNIMAGE_FIELD_NUMBER: _ClassVar[int]
+            UNSET_IMAGES_FIELD_NUMBER: _ClassVar[int]
             AVAILABLE_QUANTITY_FIELD_NUMBER: _ClassVar[int]
             name: str
             values: _containers.ScalarMap[str, str]
             images: _containers.RepeatedScalarFieldContainer[str]
-            unimage: bool
+            unset_images: bool
             available_quantity: int
-            def __init__(self, name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., unimage: _Optional[bool] = ..., available_quantity: _Optional[int] = ...) -> None: ...
+            def __init__(self, name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., unset_images: _Optional[bool] = ..., available_quantity: _Optional[int] = ...) -> None: ...
         class ValuesEntry(_message.Message):
             __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]

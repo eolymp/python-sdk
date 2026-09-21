@@ -48,15 +48,15 @@ class Member(_message.Message):
         PRIVATE_DATA: Member.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("inactive", "unofficial", "active_period_start", "active_period_end", "groups", "add_groups", "remove_groups", "ungroup", "attributes", "user", "team", "ghost")
+        __slots__ = ("inactive", "unofficial", "active_period_start", "active_period_end", "groups", "unset_groups", "remove_groups", "add_groups", "attributes", "user", "team", "ghost")
         INACTIVE_FIELD_NUMBER: _ClassVar[int]
         UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
         ACTIVE_PERIOD_START_FIELD_NUMBER: _ClassVar[int]
         ACTIVE_PERIOD_END_FIELD_NUMBER: _ClassVar[int]
         GROUPS_FIELD_NUMBER: _ClassVar[int]
-        ADD_GROUPS_FIELD_NUMBER: _ClassVar[int]
+        UNSET_GROUPS_FIELD_NUMBER: _ClassVar[int]
         REMOVE_GROUPS_FIELD_NUMBER: _ClassVar[int]
-        UNGROUP_FIELD_NUMBER: _ClassVar[int]
+        ADD_GROUPS_FIELD_NUMBER: _ClassVar[int]
         ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
         USER_FIELD_NUMBER: _ClassVar[int]
         TEAM_FIELD_NUMBER: _ClassVar[int]
@@ -66,14 +66,14 @@ class Member(_message.Message):
         active_period_start: _timestamp_pb2.Timestamp
         active_period_end: _timestamp_pb2.Timestamp
         groups: _containers.RepeatedScalarFieldContainer[str]
-        add_groups: _containers.RepeatedScalarFieldContainer[str]
+        unset_groups: bool
         remove_groups: _containers.RepeatedScalarFieldContainer[str]
-        ungroup: bool
+        add_groups: _containers.RepeatedScalarFieldContainer[str]
         attributes: _containers.RepeatedCompositeFieldContainer[_attribute_pb2.Attribute.Value]
         user: _member_user_pb2.User.Patch
         team: _member_team_pb2.Team.Patch
         ghost: _member_ghost_pb2.Ghost.Patch
-        def __init__(self, inactive: _Optional[bool] = ..., unofficial: _Optional[bool] = ..., active_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., active_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., add_groups: _Optional[_Iterable[str]] = ..., remove_groups: _Optional[_Iterable[str]] = ..., ungroup: _Optional[bool] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ..., user: _Optional[_Union[_member_user_pb2.User.Patch, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team.Patch, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost.Patch, _Mapping]] = ...) -> None: ...
+        def __init__(self, inactive: _Optional[bool] = ..., unofficial: _Optional[bool] = ..., active_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., active_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., unset_groups: _Optional[bool] = ..., remove_groups: _Optional[_Iterable[str]] = ..., add_groups: _Optional[_Iterable[str]] = ..., attributes: _Optional[_Iterable[_Union[_attribute_pb2.Attribute.Value, _Mapping]]] = ..., user: _Optional[_Union[_member_user_pb2.User.Patch, _Mapping]] = ..., team: _Optional[_Union[_member_team_pb2.Team.Patch, _Mapping]] = ..., ghost: _Optional[_Union[_member_ghost_pb2.Ghost.Patch, _Mapping]] = ...) -> None: ...
     class Stats(_message.Message):
         __slots__ = ("streak", "problems_solved", "submissions_accepted", "submissions_total")
         STREAK_FIELD_NUMBER: _ClassVar[int]

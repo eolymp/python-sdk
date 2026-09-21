@@ -20,16 +20,16 @@ class Preferences(_message.Message):
     HOURLY: Preferences.Digest
     DAILY: Preferences.Digest
     class Patch(_message.Message):
-        __slots__ = ("subscriptions", "add_subscriptions", "remove_subscriptions", "unsubscribe")
+        __slots__ = ("subscriptions", "unset_subscriptions", "remove_subscriptions", "add_subscriptions")
         SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
-        ADD_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
+        UNSET_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
         REMOVE_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
-        UNSUBSCRIBE_FIELD_NUMBER: _ClassVar[int]
+        ADD_SUBSCRIPTIONS_FIELD_NUMBER: _ClassVar[int]
         subscriptions: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
-        add_subscriptions: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
+        unset_subscriptions: bool
         remove_subscriptions: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
-        unsubscribe: bool
-        def __init__(self, subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ..., add_subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ..., remove_subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ..., unsubscribe: _Optional[bool] = ...) -> None: ...
+        add_subscriptions: _containers.RepeatedCompositeFieldContainer[Preferences.Subscription]
+        def __init__(self, subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ..., unset_subscriptions: _Optional[bool] = ..., remove_subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ..., add_subscriptions: _Optional[_Iterable[_Union[Preferences.Subscription, _Mapping]]] = ...) -> None: ...
     class Subscription(_message.Message):
         __slots__ = ("topic", "digest")
         TOPIC_FIELD_NUMBER: _ClassVar[int]

@@ -33,20 +33,20 @@ class Issue(_message.Message):
         DESCRIPTION_RENDER: Issue.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("status", "description", "title", "assignee", "tags", "untag")
+        __slots__ = ("status", "description", "title", "assignee", "tags", "unset_tags")
         STATUS_FIELD_NUMBER: _ClassVar[int]
         DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
         TITLE_FIELD_NUMBER: _ClassVar[int]
         ASSIGNEE_FIELD_NUMBER: _ClassVar[int]
         TAGS_FIELD_NUMBER: _ClassVar[int]
-        UNTAG_FIELD_NUMBER: _ClassVar[int]
+        UNSET_TAGS_FIELD_NUMBER: _ClassVar[int]
         status: Issue.Status
         description: _content_pb2.Content
         title: str
         assignee: str
         tags: _containers.RepeatedScalarFieldContainer[str]
-        untag: bool
-        def __init__(self, status: _Optional[_Union[Issue.Status, str]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., title: _Optional[str] = ..., assignee: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ..., untag: _Optional[bool] = ...) -> None: ...
+        unset_tags: bool
+        def __init__(self, status: _Optional[_Union[Issue.Status, str]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., title: _Optional[str] = ..., assignee: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ..., unset_tags: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
