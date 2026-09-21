@@ -50,6 +50,7 @@ class Submission(_message.Message):
         MEMORY_OVERFLOW: _ClassVar[Submission.Verdict]
         RUNTIME_ERROR: _ClassVar[Submission.Verdict]
         IDLENESS_LIMIT_EXCEEDED: _ClassVar[Submission.Verdict]
+        PARTIALLY_CORRECT: _ClassVar[Submission.Verdict]
     NO_VERDICT: Submission.Verdict
     ACCEPTED: Submission.Verdict
     WRONG_ANSWER: Submission.Verdict
@@ -58,6 +59,7 @@ class Submission(_message.Message):
     MEMORY_OVERFLOW: Submission.Verdict
     RUNTIME_ERROR: Submission.Verdict
     IDLENESS_LIMIT_EXCEEDED: Submission.Verdict
+    PARTIALLY_CORRECT: Submission.Verdict
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
