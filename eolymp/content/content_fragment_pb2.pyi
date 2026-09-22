@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Fragment(_message.Message):
-    __slots__ = ("id", "resource_link", "space_link", "console_link", "path", "parent_id", "slug", "position", "locale", "locales", "draft", "automatic", "visibility", "title", "content", "created_at", "updated_at", "labels")
+    __slots__ = ("id", "resource_link", "space_link", "console_link", "path", "parent_id", "slug", "position", "locale", "locales", "draft", "automatic", "visibility", "title", "content", "link", "created_at", "updated_at", "labels")
     class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         VISIBILITY_UNKNOWN: _ClassVar[Fragment.Visibility]
@@ -24,6 +24,11 @@ class Fragment(_message.Message):
     PUBLIC: Fragment.Visibility
     PRIVATE: Fragment.Visibility
     UNLISTED: Fragment.Visibility
+    class Link(_message.Message):
+        __slots__ = ("url",)
+        URL_FIELD_NUMBER: _ClassVar[int]
+        url: str
+        def __init__(self, url: _Optional[str] = ...) -> None: ...
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -36,7 +41,7 @@ class Fragment(_message.Message):
         CONTENT_VALUE: Fragment.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("path", "parent_id", "slug", "position", "draft", "automatic", "title", "visibility", "content", "labels", "unset_labels")
+        __slots__ = ("path", "parent_id", "slug", "position", "draft", "automatic", "title", "visibility", "content", "link", "labels", "unset_labels")
         PATH_FIELD_NUMBER: _ClassVar[int]
         PARENT_ID_FIELD_NUMBER: _ClassVar[int]
         SLUG_FIELD_NUMBER: _ClassVar[int]
@@ -46,6 +51,7 @@ class Fragment(_message.Message):
         TITLE_FIELD_NUMBER: _ClassVar[int]
         VISIBILITY_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
+        LINK_FIELD_NUMBER: _ClassVar[int]
         LABELS_FIELD_NUMBER: _ClassVar[int]
         UNSET_LABELS_FIELD_NUMBER: _ClassVar[int]
         path: str
@@ -57,9 +63,10 @@ class Fragment(_message.Message):
         title: str
         visibility: Fragment.Visibility
         content: _content_pb2.Content
+        link: Fragment.Link
         labels: _containers.RepeatedScalarFieldContainer[str]
         unset_labels: bool
-        def __init__(self, path: _Optional[str] = ..., parent_id: _Optional[str] = ..., slug: _Optional[str] = ..., position: _Optional[int] = ..., draft: _Optional[bool] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., visibility: _Optional[_Union[Fragment.Visibility, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., unset_labels: _Optional[bool] = ...) -> None: ...
+        def __init__(self, path: _Optional[str] = ..., parent_id: _Optional[str] = ..., slug: _Optional[str] = ..., position: _Optional[int] = ..., draft: _Optional[bool] = ..., automatic: _Optional[bool] = ..., title: _Optional[str] = ..., visibility: _Optional[_Union[Fragment.Visibility, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., link: _Optional[_Union[Fragment.Link, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., unset_labels: _Optional[bool] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_LINK_FIELD_NUMBER: _ClassVar[int]
     SPACE_LINK_FIELD_NUMBER: _ClassVar[int]
@@ -75,6 +82,7 @@ class Fragment(_message.Message):
     VISIBILITY_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
+    LINK_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     UPDATED_AT_FIELD_NUMBER: _ClassVar[int]
     LABELS_FIELD_NUMBER: _ClassVar[int]
@@ -93,7 +101,8 @@ class Fragment(_message.Message):
     visibility: Fragment.Visibility
     title: str
     content: _content_pb2.Content
+    link: Fragment.Link
     created_at: _timestamp_pb2.Timestamp
     updated_at: _timestamp_pb2.Timestamp
     labels: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, id: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., path: _Optional[str] = ..., parent_id: _Optional[str] = ..., slug: _Optional[str] = ..., position: _Optional[int] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., draft: _Optional[bool] = ..., automatic: _Optional[bool] = ..., visibility: _Optional[_Union[Fragment.Visibility, str]] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., path: _Optional[str] = ..., parent_id: _Optional[str] = ..., slug: _Optional[str] = ..., position: _Optional[int] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., draft: _Optional[bool] = ..., automatic: _Optional[bool] = ..., visibility: _Optional[_Union[Fragment.Visibility, str]] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., link: _Optional[_Union[Fragment.Link, _Mapping]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ...) -> None: ...
