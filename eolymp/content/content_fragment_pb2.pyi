@@ -19,9 +19,11 @@ class Fragment(_message.Message):
         VISIBILITY_UNKNOWN: _ClassVar[Fragment.Visibility]
         PUBLIC: _ClassVar[Fragment.Visibility]
         PRIVATE: _ClassVar[Fragment.Visibility]
+        UNLISTED: _ClassVar[Fragment.Visibility]
     VISIBILITY_UNKNOWN: Fragment.Visibility
     PUBLIC: Fragment.Visibility
     PRIVATE: Fragment.Visibility
+    UNLISTED: Fragment.Visibility
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
