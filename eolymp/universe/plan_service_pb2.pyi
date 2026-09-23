@@ -2,6 +2,7 @@ from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
+from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.universe import plan_pb2 as _plan_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -50,3 +51,23 @@ class ListPlansOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_plan_pb2.Plan]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_plan_pb2.Plan, _Mapping]]] = ...) -> None: ...
+
+class AssignPlanInput(_message.Message):
+    __slots__ = ("plan_id",)
+    PLAN_ID_FIELD_NUMBER: _ClassVar[int]
+    plan_id: str
+    def __init__(self, plan_id: _Optional[str] = ...) -> None: ...
+
+class AssignPlanOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class UnassignPlanInput(_message.Message):
+    __slots__ = ("plan_id",)
+    PLAN_ID_FIELD_NUMBER: _ClassVar[int]
+    plan_id: str
+    def __init__(self, plan_id: _Optional[str] = ...) -> None: ...
+
+class UnassignPlanOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

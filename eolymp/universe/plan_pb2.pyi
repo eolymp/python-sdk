@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Plan(_message.Message):
-    __slots__ = ("id", "name", "description", "quota", "labels", "requires_approval", "min_seats", "max_seats", "variants")
+    __slots__ = ("id", "name", "description", "quota", "labels", "requires_approval", "visibility", "assigned", "min_seats", "max_seats", "variants")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NO_EXTRA: _ClassVar[Plan.Extra]
@@ -19,6 +19,16 @@ class Plan(_message.Message):
     NO_EXTRA: Plan.Extra
     DESCRIPTION_RENDER: Plan.Extra
     DESCRIPTION_VALUE: Plan.Extra
+    class Visibility(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_VISIBILITY: _ClassVar[Plan.Visibility]
+        PUBLIC: _ClassVar[Plan.Visibility]
+        PRIVATE: _ClassVar[Plan.Visibility]
+        INTERNAL: _ClassVar[Plan.Visibility]
+    UNKNOWN_VISIBILITY: Plan.Visibility
+    PUBLIC: Plan.Visibility
+    PRIVATE: Plan.Visibility
+    INTERNAL: Plan.Visibility
     class Recurrence(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_RECURRENCE: _ClassVar[Plan.Recurrence]
@@ -48,6 +58,8 @@ class Plan(_message.Message):
     QUOTA_FIELD_NUMBER: _ClassVar[int]
     LABELS_FIELD_NUMBER: _ClassVar[int]
     REQUIRES_APPROVAL_FIELD_NUMBER: _ClassVar[int]
+    VISIBILITY_FIELD_NUMBER: _ClassVar[int]
+    ASSIGNED_FIELD_NUMBER: _ClassVar[int]
     MIN_SEATS_FIELD_NUMBER: _ClassVar[int]
     MAX_SEATS_FIELD_NUMBER: _ClassVar[int]
     VARIANTS_FIELD_NUMBER: _ClassVar[int]
@@ -57,7 +69,9 @@ class Plan(_message.Message):
     quota: _quota_pb2.Quota
     labels: _containers.RepeatedScalarFieldContainer[str]
     requires_approval: bool
+    visibility: Plan.Visibility
+    assigned: bool
     min_seats: int
     max_seats: int
     variants: _containers.RepeatedCompositeFieldContainer[Plan.Variant]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., requires_approval: _Optional[bool] = ..., min_seats: _Optional[int] = ..., max_seats: _Optional[int] = ..., variants: _Optional[_Iterable[_Union[Plan.Variant, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ..., labels: _Optional[_Iterable[str]] = ..., requires_approval: _Optional[bool] = ..., visibility: _Optional[_Union[Plan.Visibility, str]] = ..., assigned: _Optional[bool] = ..., min_seats: _Optional[int] = ..., max_seats: _Optional[int] = ..., variants: _Optional[_Iterable[_Union[Plan.Variant, _Mapping]]] = ...) -> None: ...

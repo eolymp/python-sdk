@@ -39,3 +39,31 @@ class PlanServiceClient:
             **kwargs,
         )
 
+    def AssignPlan(self, request, **kwargs):
+        path = "/plans/"+urllib.parse.quote(request.plan_id)+"/assignment"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.plan_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.AssignPlanOutput"),
+            **kwargs,
+        )
+
+    def UnassignPlan(self, request, **kwargs):
+        path = "/plans/"+urllib.parse.quote(request.plan_id)+"/assignment"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.plan_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.UnassignPlanOutput"),
+            **kwargs,
+        )
+

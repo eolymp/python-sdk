@@ -26,10 +26,11 @@ from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
+from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.universe import plan_pb2 as eolymp_dot_universe_dot_plan__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/universe/plan_service.proto\x12\x0f\x65olymp.universe\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1a\x65olymp/universe/plan.proto\"s\n\x11\x44\x65scribePlanInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x65 \x01(\t\x12\x10\n\x08\x63urrency\x18\x66 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.universe.Plan.Extra\"9\n\x12\x44\x65scribePlanOutput\x12#\n\x04plan\x18\x01 \x01(\x0b\x32\x15.eolymp.universe.Plan\"}\n\x0eListPlansInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x65 \x01(\t\x12\x10\n\x08\x63urrency\x18\x66 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.universe.Plan.Extra\"F\n\x0fListPlansOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.universe.Plan2\xac\x02\n\x0bPlanService\x12\x88\x01\n\x0c\x44\x65scribePlan\x12\".eolymp.universe.DescribePlanInput\x1a#.eolymp.universe.DescribePlanOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/plans/{plan_id}\x12u\n\tListPlans\x12\x1f.eolymp.universe.ListPlansInput\x1a .eolymp.universe.ListPlansOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x08\x12\x06/plans\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"eolymp/universe/plan_service.proto\x12\x0f\x65olymp.universe\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1a\x65olymp/universe/plan.proto\"s\n\x11\x44\x65scribePlanInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x65 \x01(\t\x12\x10\n\x08\x63urrency\x18\x66 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.universe.Plan.Extra\"9\n\x12\x44\x65scribePlanOutput\x12#\n\x04plan\x18\x01 \x01(\x0b\x32\x15.eolymp.universe.Plan\"}\n\x0eListPlansInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x65 \x01(\t\x12\x10\n\x08\x63urrency\x18\x66 \x01(\t\x12+\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1b.eolymp.universe.Plan.Extra\"F\n\x0fListPlansOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12$\n\x05items\x18\x02 \x03(\x0b\x32\x15.eolymp.universe.Plan\"\"\n\x0f\x41ssignPlanInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\"\x12\n\x10\x41ssignPlanOutput\"$\n\x11UnassignPlanInput\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\"\x14\n\x12UnassignPlanOutput2\x8a\x05\n\x0bPlanService\x12\x88\x01\n\x0c\x44\x65scribePlan\x12\".eolymp.universe.DescribePlanInput\x1a#.eolymp.universe.DescribePlanOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/plans/{plan_id}\x12u\n\tListPlans\x12\x1f.eolymp.universe.ListPlansInput\x1a .eolymp.universe.ListPlansOutput\"%\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x08\x12\x06/plans\x12\xa9\x01\n\nAssignPlan\x12 .eolymp.universe.AssignPlanInput\x1a!.eolymp.universe.AssignPlanOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/plans/{plan_id}/assignment\x12\xaf\x01\n\x0cUnassignPlan\x12\".eolymp.universe.UnassignPlanInput\x1a#.eolymp.universe.UnassignPlanOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1d*\x1b/plans/{plan_id}/assignment\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,14 +44,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PLANSERVICE'].methods_by_name['DescribePlan']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\242\343\n\004\250\343\n\001\202\323\344\223\002\022\022\020/plans/{plan_id}'
   _globals['_PLANSERVICE'].methods_by_name['ListPlans']._loaded_options = None
   _globals['_PLANSERVICE'].methods_by_name['ListPlans']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\242\343\n\004\250\343\n\001\202\323\344\223\002\010\022\006/plans'
-  _globals['_DESCRIBEPLANINPUT']._serialized_start=218
-  _globals['_DESCRIBEPLANINPUT']._serialized_end=333
-  _globals['_DESCRIBEPLANOUTPUT']._serialized_start=335
-  _globals['_DESCRIBEPLANOUTPUT']._serialized_end=392
-  _globals['_LISTPLANSINPUT']._serialized_start=394
-  _globals['_LISTPLANSINPUT']._serialized_end=519
-  _globals['_LISTPLANSOUTPUT']._serialized_start=521
-  _globals['_LISTPLANSOUTPUT']._serialized_end=591
-  _globals['_PLANSERVICE']._serialized_start=594
-  _globals['_PLANSERVICE']._serialized_end=894
+  _globals['_PLANSERVICE'].methods_by_name['AssignPlan']._loaded_options = None
+  _globals['_PLANSERVICE'].methods_by_name['AssignPlan']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024universe:space:write\242\343\n\004\250\343\n\002\202\323\344\223\002\035\032\033/plans/{plan_id}/assignment'
+  _globals['_PLANSERVICE'].methods_by_name['UnassignPlan']._loaded_options = None
+  _globals['_PLANSERVICE'].methods_by_name['UnassignPlan']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\202\343\n\030\212\343\n\024universe:space:write\242\343\n\004\250\343\n\003\202\323\344\223\002\035*\033/plans/{plan_id}/assignment'
+  _globals['_DESCRIBEPLANINPUT']._serialized_start=250
+  _globals['_DESCRIBEPLANINPUT']._serialized_end=365
+  _globals['_DESCRIBEPLANOUTPUT']._serialized_start=367
+  _globals['_DESCRIBEPLANOUTPUT']._serialized_end=424
+  _globals['_LISTPLANSINPUT']._serialized_start=426
+  _globals['_LISTPLANSINPUT']._serialized_end=551
+  _globals['_LISTPLANSOUTPUT']._serialized_start=553
+  _globals['_LISTPLANSOUTPUT']._serialized_end=623
+  _globals['_ASSIGNPLANINPUT']._serialized_start=625
+  _globals['_ASSIGNPLANINPUT']._serialized_end=659
+  _globals['_ASSIGNPLANOUTPUT']._serialized_start=661
+  _globals['_ASSIGNPLANOUTPUT']._serialized_end=679
+  _globals['_UNASSIGNPLANINPUT']._serialized_start=681
+  _globals['_UNASSIGNPLANINPUT']._serialized_end=717
+  _globals['_UNASSIGNPLANOUTPUT']._serialized_start=719
+  _globals['_UNASSIGNPLANOUTPUT']._serialized_end=739
+  _globals['_PLANSERVICE']._serialized_start=742
+  _globals['_PLANSERVICE']._serialized_end=1392
 # @@protoc_insertion_point(module_scope)
