@@ -172,6 +172,18 @@ class SyncProblemOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class ImportProblemInput(_message.Message):
+    __slots__ = ("problem_id", "archive_url")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    ARCHIVE_URL_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    archive_url: str
+    def __init__(self, problem_id: _Optional[str] = ..., archive_url: _Optional[str] = ...) -> None: ...
+
+class ImportProblemOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class ListVersionsInput(_message.Message):
     __slots__ = ("problem_id", "offset", "size", "after", "filters")
     class Filter(_message.Message):
