@@ -16,7 +16,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IssueTokenInput(_message.Message):
-    __slots__ = ("grant_type", "username", "password", "client_id", "client_secret", "code", "code_verifier", "scope", "refresh_token", "redirect_uri")
+    __slots__ = ("grant_type", "username", "password", "client_id", "client_secret", "code", "code_verifier", "scope", "refresh_token", "redirect_uri", "subject_token")
     class GrantType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[IssueTokenInput.GrantType]
@@ -24,11 +24,13 @@ class IssueTokenInput(_message.Message):
         AUTHORIZATION_CODE: _ClassVar[IssueTokenInput.GrantType]
         REFRESH_TOKEN: _ClassVar[IssueTokenInput.GrantType]
         LOGIN_TOKEN: _ClassVar[IssueTokenInput.GrantType]
+        TOKEN_EXCHANGE: _ClassVar[IssueTokenInput.GrantType]
     NONE: IssueTokenInput.GrantType
     PASSWORD: IssueTokenInput.GrantType
     AUTHORIZATION_CODE: IssueTokenInput.GrantType
     REFRESH_TOKEN: IssueTokenInput.GrantType
     LOGIN_TOKEN: IssueTokenInput.GrantType
+    TOKEN_EXCHANGE: IssueTokenInput.GrantType
     GRANT_TYPE_FIELD_NUMBER: _ClassVar[int]
     USERNAME_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -39,6 +41,7 @@ class IssueTokenInput(_message.Message):
     SCOPE_FIELD_NUMBER: _ClassVar[int]
     REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
     REDIRECT_URI_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_TOKEN_FIELD_NUMBER: _ClassVar[int]
     grant_type: IssueTokenInput.GrantType
     username: str
     password: str
@@ -49,7 +52,8 @@ class IssueTokenInput(_message.Message):
     scope: str
     refresh_token: str
     redirect_uri: str
-    def __init__(self, grant_type: _Optional[_Union[IssueTokenInput.GrantType, str]] = ..., username: _Optional[str] = ..., password: _Optional[str] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., code: _Optional[str] = ..., code_verifier: _Optional[str] = ..., scope: _Optional[str] = ..., refresh_token: _Optional[str] = ..., redirect_uri: _Optional[str] = ...) -> None: ...
+    subject_token: str
+    def __init__(self, grant_type: _Optional[_Union[IssueTokenInput.GrantType, str]] = ..., username: _Optional[str] = ..., password: _Optional[str] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., code: _Optional[str] = ..., code_verifier: _Optional[str] = ..., scope: _Optional[str] = ..., refresh_token: _Optional[str] = ..., redirect_uri: _Optional[str] = ..., subject_token: _Optional[str] = ...) -> None: ...
 
 class IssueTokenOutput(_message.Message):
     __slots__ = ("access_token", "token_type", "expires_in", "refresh_token", "scope", "claims", "id_token")
