@@ -53,20 +53,24 @@ class ListPlansOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_plan_pb2.Plan, _Mapping]]] = ...) -> None: ...
 
 class AssignPlanInput(_message.Message):
-    __slots__ = ("plan_id",)
+    __slots__ = ("plan_id", "space_id")
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     plan_id: str
-    def __init__(self, plan_id: _Optional[str] = ...) -> None: ...
+    space_id: str
+    def __init__(self, plan_id: _Optional[str] = ..., space_id: _Optional[str] = ...) -> None: ...
 
 class AssignPlanOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class UnassignPlanInput(_message.Message):
-    __slots__ = ("plan_id",)
+    __slots__ = ("plan_id", "space_id")
     PLAN_ID_FIELD_NUMBER: _ClassVar[int]
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     plan_id: str
-    def __init__(self, plan_id: _Optional[str] = ...) -> None: ...
+    space_id: str
+    def __init__(self, plan_id: _Optional[str] = ..., space_id: _Optional[str] = ...) -> None: ...
 
 class UnassignPlanOutput(_message.Message):
     __slots__ = ()
