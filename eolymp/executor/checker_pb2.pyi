@@ -16,13 +16,11 @@ class Checker(_message.Message):
         TOKENS: _ClassVar[Checker.Type]
         LINES: _ClassVar[Checker.Type]
         PROGRAM: _ClassVar[Checker.Type]
-        LEGACY_PROGRAM: _ClassVar[Checker.Type]
         QUERY_RESULTS: _ClassVar[Checker.Type]
     NONE: Checker.Type
     TOKENS: Checker.Type
     LINES: Checker.Type
     PROGRAM: Checker.Type
-    LEGACY_PROGRAM: Checker.Type
     QUERY_RESULTS: Checker.Type
     TYPE_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
