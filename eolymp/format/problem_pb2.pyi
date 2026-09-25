@@ -238,7 +238,7 @@ class Problem(_message.Message):
         FULLY_ACCEPTED: Problem.Testset.Dependency
         FIRST_POINT: Problem.Testset.Dependency
         class Test(_message.Message):
-            __slots__ = ("index", "example", "inactive", "score", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator", "example_input_url", "example_input_content", "example_answer_url", "example_answer_content", "generated_input_url", "generated_answer_url")
+            __slots__ = ("index", "example", "inactive", "score", "input_url", "input_content", "input_generator", "answer_url", "answer_content", "answer_generator", "example_input_url", "example_input_content", "example_answer_url", "example_answer_content")
             class Generator(_message.Message):
                 __slots__ = ("script", "arguments")
                 SCRIPT_FIELD_NUMBER: _ClassVar[int]
@@ -260,8 +260,6 @@ class Problem(_message.Message):
             EXAMPLE_INPUT_CONTENT_FIELD_NUMBER: _ClassVar[int]
             EXAMPLE_ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
             EXAMPLE_ANSWER_CONTENT_FIELD_NUMBER: _ClassVar[int]
-            GENERATED_INPUT_URL_FIELD_NUMBER: _ClassVar[int]
-            GENERATED_ANSWER_URL_FIELD_NUMBER: _ClassVar[int]
             index: int
             example: bool
             inactive: bool
@@ -276,9 +274,7 @@ class Problem(_message.Message):
             example_input_content: str
             example_answer_url: str
             example_answer_content: str
-            generated_input_url: str
-            generated_answer_url: str
-            def __init__(self, index: _Optional[int] = ..., example: _Optional[bool] = ..., inactive: _Optional[bool] = ..., score: _Optional[float] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[Problem.Testset.Test.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[Problem.Testset.Test.Generator, _Mapping]] = ..., example_input_url: _Optional[str] = ..., example_input_content: _Optional[str] = ..., example_answer_url: _Optional[str] = ..., example_answer_content: _Optional[str] = ..., generated_input_url: _Optional[str] = ..., generated_answer_url: _Optional[str] = ...) -> None: ...
+            def __init__(self, index: _Optional[int] = ..., example: _Optional[bool] = ..., inactive: _Optional[bool] = ..., score: _Optional[float] = ..., input_url: _Optional[str] = ..., input_content: _Optional[str] = ..., input_generator: _Optional[_Union[Problem.Testset.Test.Generator, _Mapping]] = ..., answer_url: _Optional[str] = ..., answer_content: _Optional[str] = ..., answer_generator: _Optional[_Union[Problem.Testset.Test.Generator, _Mapping]] = ..., example_input_url: _Optional[str] = ..., example_input_content: _Optional[str] = ..., example_answer_url: _Optional[str] = ..., example_answer_content: _Optional[str] = ...) -> None: ...
         INDEX_FIELD_NUMBER: _ClassVar[int]
         TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
         CPU_LIMIT_FIELD_NUMBER: _ClassVar[int]
