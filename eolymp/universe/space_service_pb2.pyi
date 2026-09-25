@@ -1,3 +1,5 @@
+import datetime
+
 from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
@@ -5,6 +7,7 @@ from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.universe import quota_pb2 as _quota_pb2
 from eolymp.universe import space_pb2 as _space_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -96,6 +99,24 @@ class UpdateQuotaInput(_message.Message):
     def __init__(self, space_id: _Optional[str] = ..., quota: _Optional[_Union[_quota_pb2.Quota, _Mapping]] = ...) -> None: ...
 
 class UpdateQuotaOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class UpdateBillingInput(_message.Message):
+    __slots__ = ("space_id", "plan_id", "seats", "billing_period_start", "billing_period_end")
+    SPACE_ID_FIELD_NUMBER: _ClassVar[int]
+    PLAN_ID_FIELD_NUMBER: _ClassVar[int]
+    SEATS_FIELD_NUMBER: _ClassVar[int]
+    BILLING_PERIOD_START_FIELD_NUMBER: _ClassVar[int]
+    BILLING_PERIOD_END_FIELD_NUMBER: _ClassVar[int]
+    space_id: str
+    plan_id: str
+    seats: int
+    billing_period_start: _timestamp_pb2.Timestamp
+    billing_period_end: _timestamp_pb2.Timestamp
+    def __init__(self, space_id: _Optional[str] = ..., plan_id: _Optional[str] = ..., seats: _Optional[int] = ..., billing_period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., billing_period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class UpdateBillingOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 

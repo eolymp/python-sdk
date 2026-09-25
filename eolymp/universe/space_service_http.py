@@ -92,3 +92,45 @@ class SpaceServiceClient:
             **kwargs,
         )
 
+    def DescribeQuota(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/quota"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.DescribeQuotaOutput"),
+            **kwargs,
+        )
+
+    def UpdateQuota(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/quota"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.UpdateQuotaOutput"),
+            **kwargs,
+        )
+
+    def UpdateBilling(self, request, **kwargs):
+        path = "/spaces/"+urllib.parse.quote(request.space_id)+"/billing"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.space_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.UpdateBillingOutput"),
+            **kwargs,
+        )
+
