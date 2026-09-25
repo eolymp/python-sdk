@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Translation(_message.Message):
-    __slots__ = ("id", "locale", "message", "status", "needs_review", "created_by", "created_at", "approved_at")
+    __slots__ = ("id", "locale", "message", "status", "needs_review", "machine_translated", "created_by", "created_at", "approved_at")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Translation.Status]
@@ -27,6 +27,7 @@ class Translation(_message.Message):
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     NEEDS_REVIEW_FIELD_NUMBER: _ClassVar[int]
+    MACHINE_TRANSLATED_FIELD_NUMBER: _ClassVar[int]
     CREATED_BY_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     APPROVED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -35,7 +36,8 @@ class Translation(_message.Message):
     message: str
     status: Translation.Status
     needs_review: bool
+    machine_translated: bool
     created_by: str
     created_at: _timestamp_pb2.Timestamp
     approved_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., message: _Optional[str] = ..., status: _Optional[_Union[Translation.Status, str]] = ..., needs_review: _Optional[bool] = ..., created_by: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., approved_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., locale: _Optional[str] = ..., message: _Optional[str] = ..., status: _Optional[_Union[Translation.Status, str]] = ..., needs_review: _Optional[bool] = ..., machine_translated: _Optional[bool] = ..., created_by: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., approved_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

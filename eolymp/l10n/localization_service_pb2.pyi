@@ -3,6 +3,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
+from eolymp.l10n import glossary_entry_pb2 as _glossary_entry_pb2
 from eolymp.l10n import term_pb2 as _term_pb2
 from eolymp.l10n import translation_pb2 as _translation_pb2
 from eolymp.l10n import translation_pair_pb2 as _translation_pair_pb2
@@ -446,3 +447,98 @@ class ListTranslationPairsOutput(_message.Message):
     has_more: bool
     items: _containers.RepeatedCompositeFieldContainer[_translation_pair_pb2.TranslationPair]
     def __init__(self, total: _Optional[int] = ..., has_more: _Optional[bool] = ..., items: _Optional[_Iterable[_Union[_translation_pair_pb2.TranslationPair, _Mapping]]] = ...) -> None: ...
+
+class CreateGlossaryEntryInput(_message.Message):
+    __slots__ = ("project_id", "entry")
+    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    ENTRY_FIELD_NUMBER: _ClassVar[int]
+    project_id: str
+    entry: _glossary_entry_pb2.GlossaryEntry
+    def __init__(self, project_id: _Optional[str] = ..., entry: _Optional[_Union[_glossary_entry_pb2.GlossaryEntry, _Mapping]] = ...) -> None: ...
+
+class CreateGlossaryEntryOutput(_message.Message):
+    __slots__ = ("entry_id",)
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    entry_id: str
+    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
+
+class UpdateGlossaryEntryInput(_message.Message):
+    __slots__ = ("project_id", "entry_id", "entry")
+    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    ENTRY_FIELD_NUMBER: _ClassVar[int]
+    project_id: str
+    entry_id: str
+    entry: _glossary_entry_pb2.GlossaryEntry.Patch
+    def __init__(self, project_id: _Optional[str] = ..., entry_id: _Optional[str] = ..., entry: _Optional[_Union[_glossary_entry_pb2.GlossaryEntry.Patch, _Mapping]] = ...) -> None: ...
+
+class UpdateGlossaryEntryOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DeleteGlossaryEntryInput(_message.Message):
+    __slots__ = ("project_id", "entry_id")
+    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    project_id: str
+    entry_id: str
+    def __init__(self, project_id: _Optional[str] = ..., entry_id: _Optional[str] = ...) -> None: ...
+
+class DeleteGlossaryEntryOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeGlossaryEntryInput(_message.Message):
+    __slots__ = ("project_id", "entry_id")
+    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
+    project_id: str
+    entry_id: str
+    def __init__(self, project_id: _Optional[str] = ..., entry_id: _Optional[str] = ...) -> None: ...
+
+class DescribeGlossaryEntryOutput(_message.Message):
+    __slots__ = ("entry",)
+    ENTRY_FIELD_NUMBER: _ClassVar[int]
+    entry: _glossary_entry_pb2.GlossaryEntry
+    def __init__(self, entry: _Optional[_Union[_glossary_entry_pb2.GlossaryEntry, _Mapping]] = ...) -> None: ...
+
+class ListGlossaryEntriesInput(_message.Message):
+    __slots__ = ("project_id", "offset", "size", "search", "filters")
+    class Filter(_message.Message):
+        __slots__ = ("id", "term", "locale")
+        ID_FIELD_NUMBER: _ClassVar[int]
+        TERM_FIELD_NUMBER: _ClassVar[int]
+        LOCALE_FIELD_NUMBER: _ClassVar[int]
+        id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        term: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
+        locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., term: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
+    FILTERS_FIELD_NUMBER: _ClassVar[int]
+    project_id: str
+    offset: int
+    size: int
+    search: str
+    filters: ListGlossaryEntriesInput.Filter
+    def __init__(self, project_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListGlossaryEntriesInput.Filter, _Mapping]] = ...) -> None: ...
+
+class ListGlossaryEntriesOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_glossary_entry_pb2.GlossaryEntry]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_glossary_entry_pb2.GlossaryEntry, _Mapping]]] = ...) -> None: ...
+
+class TermChangedEvent(_message.Message):
+    __slots__ = ("project_id", "before", "after")
+    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    project_id: str
+    before: _term_pb2.Term
+    after: _term_pb2.Term
+    def __init__(self, project_id: _Optional[str] = ..., before: _Optional[_Union[_term_pb2.Term, _Mapping]] = ..., after: _Optional[_Union[_term_pb2.Term, _Mapping]] = ...) -> None: ...

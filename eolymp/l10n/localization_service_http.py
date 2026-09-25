@@ -330,3 +330,76 @@ class LocalizationServiceClient:
             **kwargs,
         )
 
+    def CreateGlossaryEntry(self, request, **kwargs):
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.CreateGlossaryEntryOutput"),
+            **kwargs,
+        )
+
+    def UpdateGlossaryEntry(self, request, **kwargs):
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary/"+urllib.parse.quote(request.entry_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.UpdateGlossaryEntryOutput"),
+            **kwargs,
+        )
+
+    def DeleteGlossaryEntry(self, request, **kwargs):
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary/"+urllib.parse.quote(request.entry_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.DeleteGlossaryEntryOutput"),
+            **kwargs,
+        )
+
+    def DescribeGlossaryEntry(self, request, **kwargs):
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary/"+urllib.parse.quote(request.entry_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+        request.entry_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.DescribeGlossaryEntryOutput"),
+            **kwargs,
+        )
+
+    def ListGlossaryEntries(self, request, **kwargs):
+        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.project_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.l10n.ListGlossaryEntriesOutput"),
+            **kwargs,
+        )
+
