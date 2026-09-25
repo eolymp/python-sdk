@@ -111,36 +111,54 @@ class Problem(_message.Message):
         files: _containers.RepeatedCompositeFieldContainer[Problem.File]
         def __init__(self, runtime: _Optional[str] = ..., source: _Optional[str] = ..., header: _Optional[str] = ..., footer: _Optional[str] = ..., files: _Optional[_Iterable[_Union[Problem.File, _Mapping]]] = ...) -> None: ...
     class Checker(_message.Message):
-        __slots__ = ("type", "precision", "case_sensitive", "order_sensitive", "runtime", "source", "files")
-        class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ("tokens", "lines", "program", "query_results")
+        class Tokens(_message.Message):
+            __slots__ = ("precision", "case_sensitive")
+            PRECISION_FIELD_NUMBER: _ClassVar[int]
+            CASE_SENSITIVE_FIELD_NUMBER: _ClassVar[int]
+            precision: int
+            case_sensitive: bool
+            def __init__(self, precision: _Optional[int] = ..., case_sensitive: _Optional[bool] = ...) -> None: ...
+        class Lines(_message.Message):
             __slots__ = ()
-            UNKNOWN_TYPE: _ClassVar[Problem.Checker.Type]
-            TOKENS: _ClassVar[Problem.Checker.Type]
-            LINES: _ClassVar[Problem.Checker.Type]
-            PROGRAM: _ClassVar[Problem.Checker.Type]
-            LEGACY_PROGRAM: _ClassVar[Problem.Checker.Type]
-            QUERY_RESULTS: _ClassVar[Problem.Checker.Type]
-        UNKNOWN_TYPE: Problem.Checker.Type
-        TOKENS: Problem.Checker.Type
-        LINES: Problem.Checker.Type
-        PROGRAM: Problem.Checker.Type
-        LEGACY_PROGRAM: Problem.Checker.Type
-        QUERY_RESULTS: Problem.Checker.Type
-        TYPE_FIELD_NUMBER: _ClassVar[int]
-        PRECISION_FIELD_NUMBER: _ClassVar[int]
-        CASE_SENSITIVE_FIELD_NUMBER: _ClassVar[int]
-        ORDER_SENSITIVE_FIELD_NUMBER: _ClassVar[int]
-        RUNTIME_FIELD_NUMBER: _ClassVar[int]
-        SOURCE_FIELD_NUMBER: _ClassVar[int]
-        FILES_FIELD_NUMBER: _ClassVar[int]
-        type: Problem.Checker.Type
-        precision: int
-        case_sensitive: bool
-        order_sensitive: bool
-        runtime: str
-        source: str
-        files: _containers.RepeatedCompositeFieldContainer[Problem.File]
-        def __init__(self, type: _Optional[_Union[Problem.Checker.Type, str]] = ..., precision: _Optional[int] = ..., case_sensitive: _Optional[bool] = ..., order_sensitive: _Optional[bool] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., files: _Optional[_Iterable[_Union[Problem.File, _Mapping]]] = ...) -> None: ...
+            def __init__(self) -> None: ...
+        class Program(_message.Message):
+            __slots__ = ("mode", "runtime", "source", "files")
+            class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+                __slots__ = ()
+                UNKNOWN_MODE: _ClassVar[Problem.Checker.Program.Mode]
+                EOLYMP: _ClassVar[Problem.Checker.Program.Mode]
+                TESTLIB: _ClassVar[Problem.Checker.Program.Mode]
+                CMS: _ClassVar[Problem.Checker.Program.Mode]
+                KATTIS: _ClassVar[Problem.Checker.Program.Mode]
+            UNKNOWN_MODE: Problem.Checker.Program.Mode
+            EOLYMP: Problem.Checker.Program.Mode
+            TESTLIB: Problem.Checker.Program.Mode
+            CMS: Problem.Checker.Program.Mode
+            KATTIS: Problem.Checker.Program.Mode
+            MODE_FIELD_NUMBER: _ClassVar[int]
+            RUNTIME_FIELD_NUMBER: _ClassVar[int]
+            SOURCE_FIELD_NUMBER: _ClassVar[int]
+            FILES_FIELD_NUMBER: _ClassVar[int]
+            mode: Problem.Checker.Program.Mode
+            runtime: str
+            source: str
+            files: _containers.RepeatedCompositeFieldContainer[Problem.File]
+            def __init__(self, mode: _Optional[_Union[Problem.Checker.Program.Mode, str]] = ..., runtime: _Optional[str] = ..., source: _Optional[str] = ..., files: _Optional[_Iterable[_Union[Problem.File, _Mapping]]] = ...) -> None: ...
+        class QueryResults(_message.Message):
+            __slots__ = ("order_sensitive",)
+            ORDER_SENSITIVE_FIELD_NUMBER: _ClassVar[int]
+            order_sensitive: bool
+            def __init__(self, order_sensitive: _Optional[bool] = ...) -> None: ...
+        TOKENS_FIELD_NUMBER: _ClassVar[int]
+        LINES_FIELD_NUMBER: _ClassVar[int]
+        PROGRAM_FIELD_NUMBER: _ClassVar[int]
+        QUERY_RESULTS_FIELD_NUMBER: _ClassVar[int]
+        tokens: Problem.Checker.Tokens
+        lines: Problem.Checker.Lines
+        program: Problem.Checker.Program
+        query_results: Problem.Checker.QueryResults
+        def __init__(self, tokens: _Optional[_Union[Problem.Checker.Tokens, _Mapping]] = ..., lines: _Optional[_Union[Problem.Checker.Lines, _Mapping]] = ..., program: _Optional[_Union[Problem.Checker.Program, _Mapping]] = ..., query_results: _Optional[_Union[Problem.Checker.QueryResults, _Mapping]] = ...) -> None: ...
     class Interactor(_message.Message):
         __slots__ = ("runtime", "source", "files")
         RUNTIME_FIELD_NUMBER: _ClassVar[int]
