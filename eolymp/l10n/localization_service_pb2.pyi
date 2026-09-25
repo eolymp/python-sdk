@@ -449,12 +449,10 @@ class ListTranslationPairsOutput(_message.Message):
     def __init__(self, total: _Optional[int] = ..., has_more: _Optional[bool] = ..., items: _Optional[_Iterable[_Union[_translation_pair_pb2.TranslationPair, _Mapping]]] = ...) -> None: ...
 
 class CreateGlossaryEntryInput(_message.Message):
-    __slots__ = ("project_id", "entry")
-    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("entry",)
     ENTRY_FIELD_NUMBER: _ClassVar[int]
-    project_id: str
     entry: _glossary_entry_pb2.GlossaryEntry
-    def __init__(self, project_id: _Optional[str] = ..., entry: _Optional[_Union[_glossary_entry_pb2.GlossaryEntry, _Mapping]] = ...) -> None: ...
+    def __init__(self, entry: _Optional[_Union[_glossary_entry_pb2.GlossaryEntry, _Mapping]] = ...) -> None: ...
 
 class CreateGlossaryEntryOutput(_message.Message):
     __slots__ = ("entry_id",)
@@ -463,38 +461,32 @@ class CreateGlossaryEntryOutput(_message.Message):
     def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
 
 class UpdateGlossaryEntryInput(_message.Message):
-    __slots__ = ("project_id", "entry_id", "entry")
-    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("entry_id", "entry")
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
     ENTRY_FIELD_NUMBER: _ClassVar[int]
-    project_id: str
     entry_id: str
     entry: _glossary_entry_pb2.GlossaryEntry.Patch
-    def __init__(self, project_id: _Optional[str] = ..., entry_id: _Optional[str] = ..., entry: _Optional[_Union[_glossary_entry_pb2.GlossaryEntry.Patch, _Mapping]] = ...) -> None: ...
+    def __init__(self, entry_id: _Optional[str] = ..., entry: _Optional[_Union[_glossary_entry_pb2.GlossaryEntry.Patch, _Mapping]] = ...) -> None: ...
 
 class UpdateGlossaryEntryOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteGlossaryEntryInput(_message.Message):
-    __slots__ = ("project_id", "entry_id")
-    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("entry_id",)
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    project_id: str
     entry_id: str
-    def __init__(self, project_id: _Optional[str] = ..., entry_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
 
 class DeleteGlossaryEntryOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DescribeGlossaryEntryInput(_message.Message):
-    __slots__ = ("project_id", "entry_id")
-    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("entry_id",)
     ENTRY_ID_FIELD_NUMBER: _ClassVar[int]
-    project_id: str
     entry_id: str
-    def __init__(self, project_id: _Optional[str] = ..., entry_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, entry_id: _Optional[str] = ...) -> None: ...
 
 class DescribeGlossaryEntryOutput(_message.Message):
     __slots__ = ("entry",)
@@ -503,7 +495,7 @@ class DescribeGlossaryEntryOutput(_message.Message):
     def __init__(self, entry: _Optional[_Union[_glossary_entry_pb2.GlossaryEntry, _Mapping]] = ...) -> None: ...
 
 class ListGlossaryEntriesInput(_message.Message):
-    __slots__ = ("project_id", "offset", "size", "search", "filters")
+    __slots__ = ("offset", "size", "search", "filters")
     class Filter(_message.Message):
         __slots__ = ("id", "term", "locale")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -513,17 +505,15 @@ class ListGlossaryEntriesInput(_message.Message):
         term: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
         locale: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., term: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
-    PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
-    project_id: str
     offset: int
     size: int
     search: str
     filters: ListGlossaryEntriesInput.Filter
-    def __init__(self, project_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListGlossaryEntriesInput.Filter, _Mapping]] = ...) -> None: ...
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListGlossaryEntriesInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListGlossaryEntriesOutput(_message.Message):
     __slots__ = ("total", "items")

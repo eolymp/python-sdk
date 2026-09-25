@@ -331,10 +331,7 @@ class LocalizationServiceClient:
         )
 
     def CreateGlossaryEntry(self, request, **kwargs):
-        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.project_id = ""
+        path = "/glossary"
 
         return self.transport.request(
             method="POST",
@@ -345,10 +342,9 @@ class LocalizationServiceClient:
         )
 
     def UpdateGlossaryEntry(self, request, **kwargs):
-        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary/"+urllib.parse.quote(request.entry_id)
+        path = "/glossary/"+urllib.parse.quote(request.entry_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.project_id = ""
         request.entry_id = ""
 
         return self.transport.request(
@@ -360,10 +356,9 @@ class LocalizationServiceClient:
         )
 
     def DeleteGlossaryEntry(self, request, **kwargs):
-        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary/"+urllib.parse.quote(request.entry_id)
+        path = "/glossary/"+urllib.parse.quote(request.entry_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.project_id = ""
         request.entry_id = ""
 
         return self.transport.request(
@@ -375,10 +370,9 @@ class LocalizationServiceClient:
         )
 
     def DescribeGlossaryEntry(self, request, **kwargs):
-        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary/"+urllib.parse.quote(request.entry_id)
+        path = "/glossary/"+urllib.parse.quote(request.entry_id)
 
         # Cleanup URL parameters to avoid any ambiguity
-        request.project_id = ""
         request.entry_id = ""
 
         return self.transport.request(
@@ -390,10 +384,7 @@ class LocalizationServiceClient:
         )
 
     def ListGlossaryEntries(self, request, **kwargs):
-        path = "/projects/"+urllib.parse.quote(request.project_id)+"/glossary"
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.project_id = ""
+        path = "/glossary"
 
         return self.transport.request(
             method="GET",
