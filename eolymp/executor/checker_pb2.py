@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from eolymp.executor import file_pb2 as eolymp_dot_executor_dot_file__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/executor/checker.proto\x12\x0f\x65olymp.executor\x1a\x1a\x65olymp/executor/file.proto\"\xc0\x06\n\x07\x43hecker\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.eolymp.executor.Checker.Type\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x12\n\nsource_url\x18\x08 \x01(\t\x12\x11\n\tprecision\x18\x04 \x01(\x05\x12\x16\n\x0e\x63\x61se_sensitive\x18\x05 \x01(\x08\x12\x17\n\x0forder_sensitive\x18\x06 \x01(\x08\x12$\n\x05\x66iles\x18\n \x03(\x0b\x32\x15.eolymp.executor.File\x12\x31\n\x06tokens\x18\x14 \x01(\x0b\x32\x1f.eolymp.executor.Checker.TokensH\x00\x12/\n\x05lines\x18\x15 \x01(\x0b\x32\x1e.eolymp.executor.Checker.LinesH\x00\x12\x33\n\x07program\x18\x16 \x01(\x0b\x32 .eolymp.executor.Checker.ProgramH\x00\x12>\n\rquery_results\x18\x17 \x01(\x0b\x32%.eolymp.executor.Checker.QueryResultsH\x00\x1a\x33\n\x06Tokens\x12\x11\n\tprecision\x18\x01 \x01(\x05\x12\x16\n\x0e\x63\x61se_sensitive\x18\x02 \x01(\x08\x1a\x07\n\x05Lines\x1a\xd1\x01\n\x07Program\x12\x33\n\x04mode\x18\x01 \x01(\x0e\x32%.eolymp.executor.Checker.Program.Mode\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x12\n\nsource_url\x18\x03 \x01(\t\x12$\n\x05\x66iles\x18\x04 \x03(\x0b\x32\x15.eolymp.executor.File\"F\n\x04Mode\x12\x10\n\x0cUNKNOWN_MODE\x10\x00\x12\n\n\x06\x45OLYMP\x10\x01\x12\x0b\n\x07TESTLIB\x10\x02\x12\x07\n\x03\x43MS\x10\x03\x12\n\n\x06KATTIS\x10\x04\x1a\'\n\x0cQueryResults\x12\x17\n\x0forder_sensitive\x18\x01 \x01(\x08\"]\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\n\n\x06TOKENS\x10\x01\x12\t\n\x05LINES\x10\x02\x12\x0b\n\x07PROGRAM\x10\x03\x12\x11\n\rQUERY_RESULTS\x10\x05\"\x04\x08\x04\x10\x04*\x0eLEGACY_PROGRAMB\x06\n\x04kindB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/executor/checker.proto\x12\x0f\x65olymp.executor\x1a\x1a\x65olymp/executor/file.proto\"\x84\x05\n\x07\x43hecker\x12\x31\n\x06tokens\x18\x14 \x01(\x0b\x32\x1f.eolymp.executor.Checker.TokensH\x00\x12/\n\x05lines\x18\x15 \x01(\x0b\x32\x1e.eolymp.executor.Checker.LinesH\x00\x12\x33\n\x07program\x18\x16 \x01(\x0b\x32 .eolymp.executor.Checker.ProgramH\x00\x12>\n\rquery_results\x18\x17 \x01(\x0b\x32%.eolymp.executor.Checker.QueryResultsH\x00\x1a\x33\n\x06Tokens\x12\x11\n\tprecision\x18\x01 \x01(\x05\x12\x16\n\x0e\x63\x61se_sensitive\x18\x02 \x01(\x08\x1a\x07\n\x05Lines\x1a\xd1\x01\n\x07Program\x12\x33\n\x04mode\x18\x01 \x01(\x0e\x32%.eolymp.executor.Checker.Program.Mode\x12\x0f\n\x07runtime\x18\x02 \x01(\t\x12\x12\n\nsource_url\x18\x03 \x01(\t\x12$\n\x05\x66iles\x18\x04 \x03(\x0b\x32\x15.eolymp.executor.File\"F\n\x04Mode\x12\x10\n\x0cUNKNOWN_MODE\x10\x00\x12\n\n\x06\x45OLYMP\x10\x01\x12\x0b\n\x07TESTLIB\x10\x02\x12\x07\n\x03\x43MS\x10\x03\x12\n\n\x06KATTIS\x10\x04\x1a\'\n\x0cQueryResults\x12\x17\n\x0forder_sensitive\x18\x01 \x01(\x08\"]\n\x04Type\x12\x08\n\x04NONE\x10\x00\x12\n\n\x06TOKENS\x10\x01\x12\t\n\x05LINES\x10\x02\x12\x0b\n\x07PROGRAM\x10\x03\x12\x11\n\rQUERY_RESULTS\x10\x05\"\x04\x08\x04\x10\x04*\x0eLEGACY_PROGRAMB\x06\n\x04kindB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,17 +34,17 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
   _globals['_CHECKER']._serialized_start=79
-  _globals['_CHECKER']._serialized_end=911
-  _globals['_CHECKER_TOKENS']._serialized_start=495
-  _globals['_CHECKER_TOKENS']._serialized_end=546
-  _globals['_CHECKER_LINES']._serialized_start=548
-  _globals['_CHECKER_LINES']._serialized_end=555
-  _globals['_CHECKER_PROGRAM']._serialized_start=558
-  _globals['_CHECKER_PROGRAM']._serialized_end=767
-  _globals['_CHECKER_PROGRAM_MODE']._serialized_start=697
-  _globals['_CHECKER_PROGRAM_MODE']._serialized_end=767
-  _globals['_CHECKER_QUERYRESULTS']._serialized_start=769
-  _globals['_CHECKER_QUERYRESULTS']._serialized_end=808
-  _globals['_CHECKER_TYPE']._serialized_start=810
-  _globals['_CHECKER_TYPE']._serialized_end=903
+  _globals['_CHECKER']._serialized_end=723
+  _globals['_CHECKER_TOKENS']._serialized_start=307
+  _globals['_CHECKER_TOKENS']._serialized_end=358
+  _globals['_CHECKER_LINES']._serialized_start=360
+  _globals['_CHECKER_LINES']._serialized_end=367
+  _globals['_CHECKER_PROGRAM']._serialized_start=370
+  _globals['_CHECKER_PROGRAM']._serialized_end=579
+  _globals['_CHECKER_PROGRAM_MODE']._serialized_start=509
+  _globals['_CHECKER_PROGRAM_MODE']._serialized_end=579
+  _globals['_CHECKER_QUERYRESULTS']._serialized_start=581
+  _globals['_CHECKER_QUERYRESULTS']._serialized_end=620
+  _globals['_CHECKER_TYPE']._serialized_start=622
+  _globals['_CHECKER_TYPE']._serialized_end=715
 # @@protoc_insertion_point(module_scope)

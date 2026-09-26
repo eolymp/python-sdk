@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Checker(_message.Message):
-    __slots__ = ("type", "runtime", "source_url", "precision", "case_sensitive", "order_sensitive", "files", "tokens", "lines", "program", "query_results")
+    __slots__ = ("tokens", "lines", "program", "query_results")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NONE: _ClassVar[Checker.Type]
@@ -60,26 +60,12 @@ class Checker(_message.Message):
         ORDER_SENSITIVE_FIELD_NUMBER: _ClassVar[int]
         order_sensitive: bool
         def __init__(self, order_sensitive: _Optional[bool] = ...) -> None: ...
-    TYPE_FIELD_NUMBER: _ClassVar[int]
-    RUNTIME_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_URL_FIELD_NUMBER: _ClassVar[int]
-    PRECISION_FIELD_NUMBER: _ClassVar[int]
-    CASE_SENSITIVE_FIELD_NUMBER: _ClassVar[int]
-    ORDER_SENSITIVE_FIELD_NUMBER: _ClassVar[int]
-    FILES_FIELD_NUMBER: _ClassVar[int]
     TOKENS_FIELD_NUMBER: _ClassVar[int]
     LINES_FIELD_NUMBER: _ClassVar[int]
     PROGRAM_FIELD_NUMBER: _ClassVar[int]
     QUERY_RESULTS_FIELD_NUMBER: _ClassVar[int]
-    type: Checker.Type
-    runtime: str
-    source_url: str
-    precision: int
-    case_sensitive: bool
-    order_sensitive: bool
-    files: _containers.RepeatedCompositeFieldContainer[_file_pb2.File]
     tokens: Checker.Tokens
     lines: Checker.Lines
     program: Checker.Program
     query_results: Checker.QueryResults
-    def __init__(self, type: _Optional[_Union[Checker.Type, str]] = ..., runtime: _Optional[str] = ..., source_url: _Optional[str] = ..., precision: _Optional[int] = ..., case_sensitive: _Optional[bool] = ..., order_sensitive: _Optional[bool] = ..., files: _Optional[_Iterable[_Union[_file_pb2.File, _Mapping]]] = ..., tokens: _Optional[_Union[Checker.Tokens, _Mapping]] = ..., lines: _Optional[_Union[Checker.Lines, _Mapping]] = ..., program: _Optional[_Union[Checker.Program, _Mapping]] = ..., query_results: _Optional[_Union[Checker.QueryResults, _Mapping]] = ...) -> None: ...
+    def __init__(self, tokens: _Optional[_Union[Checker.Tokens, _Mapping]] = ..., lines: _Optional[_Union[Checker.Lines, _Mapping]] = ..., program: _Optional[_Union[Checker.Program, _Mapping]] = ..., query_results: _Optional[_Union[Checker.QueryResults, _Mapping]] = ...) -> None: ...
