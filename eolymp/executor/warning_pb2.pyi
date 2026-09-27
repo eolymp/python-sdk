@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Warning(_message.Message):
-    __slots__ = ("source", "file", "line", "column", "message", "severity")
+    __slots__ = ("source", "file", "line", "column", "message", "severity", "code", "count")
     class Severity(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_SEVERITY: _ClassVar[Warning.Severity]
@@ -21,10 +21,14 @@ class Warning(_message.Message):
     COLUMN_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     SEVERITY_FIELD_NUMBER: _ClassVar[int]
+    CODE_FIELD_NUMBER: _ClassVar[int]
+    COUNT_FIELD_NUMBER: _ClassVar[int]
     source: str
     file: str
     line: int
     column: int
     message: str
     severity: Warning.Severity
-    def __init__(self, source: _Optional[str] = ..., file: _Optional[str] = ..., line: _Optional[int] = ..., column: _Optional[int] = ..., message: _Optional[str] = ..., severity: _Optional[_Union[Warning.Severity, str]] = ...) -> None: ...
+    code: str
+    count: int
+    def __init__(self, source: _Optional[str] = ..., file: _Optional[str] = ..., line: _Optional[int] = ..., column: _Optional[int] = ..., message: _Optional[str] = ..., severity: _Optional[_Union[Warning.Severity, str]] = ..., code: _Optional[str] = ..., count: _Optional[int] = ...) -> None: ...

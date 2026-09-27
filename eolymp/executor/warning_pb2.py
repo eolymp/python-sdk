@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/executor/warning.proto\x12\x0f\x65olymp.executor\"\xc4\x01\n\x07Warning\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x0c\n\x04\x66ile\x18\x02 \x01(\t\x12\x0c\n\x04line\x18\x03 \x01(\r\x12\x0e\n\x06\x63olumn\x18\x04 \x01(\r\x12\x0f\n\x07message\x18\x05 \x01(\t\x12\x33\n\x08severity\x18\x06 \x01(\x0e\x32!.eolymp.executor.Warning.Severity\"7\n\x08Severity\x12\x14\n\x10UNKNOWN_SEVERITY\x10\x00\x12\x08\n\x04INFO\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x65olymp/executor/warning.proto\x12\x0f\x65olymp.executor\"\xe1\x01\n\x07Warning\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x0c\n\x04\x66ile\x18\x02 \x01(\t\x12\x0c\n\x04line\x18\x03 \x01(\r\x12\x0e\n\x06\x63olumn\x18\x04 \x01(\r\x12\x0f\n\x07message\x18\x05 \x01(\t\x12\x33\n\x08severity\x18\x06 \x01(\x0e\x32!.eolymp.executor.Warning.Severity\x12\x0c\n\x04\x63ode\x18\x07 \x01(\t\x12\r\n\x05\x63ount\x18\x08 \x01(\r\"7\n\x08Severity\x12\x14\n\x10UNKNOWN_SEVERITY\x10\x00\x12\x08\n\x04INFO\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x42\x33Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,7 +33,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/eolymp/go-sdk/eolymp/executor;executor'
   _globals['_WARNING']._serialized_start=51
-  _globals['_WARNING']._serialized_end=247
-  _globals['_WARNING_SEVERITY']._serialized_start=192
-  _globals['_WARNING_SEVERITY']._serialized_end=247
+  _globals['_WARNING']._serialized_end=276
+  _globals['_WARNING_SEVERITY']._serialized_start=221
+  _globals['_WARNING_SEVERITY']._serialized_end=276
 # @@protoc_insertion_point(module_scope)
