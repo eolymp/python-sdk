@@ -6,6 +6,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.judge import participant_pb2 as _participant_pb2
+from eolymp.judge import recording_pb2 as _recording_pb2
 from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import scoreboard_pb2 as _scoreboard_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
@@ -285,3 +286,17 @@ class FinishContestInput(_message.Message):
 class FinishContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class CreateRecordingInput(_message.Message):
+    __slots__ = ("contest_id", "recording")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    RECORDING_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    recording: _recording_pb2.Recording
+    def __init__(self, contest_id: _Optional[str] = ..., recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ...) -> None: ...
+
+class CreateRecordingOutput(_message.Message):
+    __slots__ = ("upload_url",)
+    UPLOAD_URL_FIELD_NUMBER: _ClassVar[int]
+    upload_url: str
+    def __init__(self, upload_url: _Optional[str] = ...) -> None: ...
