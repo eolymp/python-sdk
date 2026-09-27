@@ -216,3 +216,18 @@ class ParticipantServiceClient:
             **kwargs,
         )
 
+    def ListRecordings(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/participants/"+urllib.parse.quote(request.participant_id)+"/recordings"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.participant_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ListRecordingsOutput"),
+            **kwargs,
+        )
+

@@ -1,3 +1,4 @@
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from typing import ClassVar as _ClassVar
@@ -56,6 +57,7 @@ class Action(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     INTEGRATION_WRITE: _ClassVar[Action]
     NOTIFICATION_READ: _ClassVar[Action]
     NOTIFICATION_WRITE: _ClassVar[Action]
+    PROCTORING_READ: _ClassVar[Action]
 UNKNOWN_ACTION: Action
 SPACE_LIST: Action
 SPACE_READ: Action
@@ -106,3 +108,4 @@ INTEGRATION_READ: Action
 INTEGRATION_WRITE: Action
 NOTIFICATION_READ: Action
 NOTIFICATION_WRITE: Action
+PROCTORING_READ: Action
