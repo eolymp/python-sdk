@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Participant(_message.Message):
-    __slots__ = ("id", "member_id", "display_name", "role", "unofficial", "inactive", "disqualified", "ghost", "finalized", "medal", "status", "started_at", "end_at", "bonus_time", "violation_count", "passcode", "certificate_id", "proctoring_status", "submits")
+    __slots__ = ("id", "member_id", "display_name", "role", "unofficial", "inactive", "disqualified", "ghost", "finalized", "medal", "status", "started_at", "end_at", "bonus_time", "violation_count", "passcode", "certificate_id", "proctoring", "submits")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Participant.Status]
@@ -32,16 +32,6 @@ class Participant(_message.Message):
     UPSOLVE: Participant.Status
     BLOCKED: Participant.Status
     PAUSED: Participant.Status
-    class ProctoringStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        UNKNOWN_PROCTORING_STATUS: _ClassVar[Participant.ProctoringStatus]
-        OFF: _ClassVar[Participant.ProctoringStatus]
-        ON: _ClassVar[Participant.ProctoringStatus]
-        GAPS: _ClassVar[Participant.ProctoringStatus]
-    UNKNOWN_PROCTORING_STATUS: Participant.ProctoringStatus
-    OFF: Participant.ProctoringStatus
-    ON: Participant.ProctoringStatus
-    GAPS: Participant.ProctoringStatus
     class Role(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         PARTICIPANT: _ClassVar[Participant.Role]
@@ -71,6 +61,40 @@ class Participant(_message.Message):
         passcode: str
         role: Participant.Role
         def __init__(self, display_name: _Optional[str] = ..., bonus_time: _Optional[int] = ..., unofficial: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., inactive: _Optional[bool] = ..., passcode: _Optional[str] = ..., role: _Optional[_Union[Participant.Role, str]] = ...) -> None: ...
+    class Proctoring(_message.Message):
+        __slots__ = ("status", "streams")
+        class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_STATUS: _ClassVar[Participant.Proctoring.Status]
+            UNAVAILABLE: _ClassVar[Participant.Proctoring.Status]
+            COMPLETE: _ClassVar[Participant.Proctoring.Status]
+            INCOMPLETE: _ClassVar[Participant.Proctoring.Status]
+            EXPIRED: _ClassVar[Participant.Proctoring.Status]
+        UNKNOWN_STATUS: Participant.Proctoring.Status
+        UNAVAILABLE: Participant.Proctoring.Status
+        COMPLETE: Participant.Proctoring.Status
+        INCOMPLETE: Participant.Proctoring.Status
+        EXPIRED: Participant.Proctoring.Status
+        class Source(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_SOURCE: _ClassVar[Participant.Proctoring.Source]
+            SCREEN: _ClassVar[Participant.Proctoring.Source]
+            CAMERA: _ClassVar[Participant.Proctoring.Source]
+        UNKNOWN_SOURCE: Participant.Proctoring.Source
+        SCREEN: Participant.Proctoring.Source
+        CAMERA: Participant.Proctoring.Source
+        class Stream(_message.Message):
+            __slots__ = ("source", "playlist_url")
+            SOURCE_FIELD_NUMBER: _ClassVar[int]
+            PLAYLIST_URL_FIELD_NUMBER: _ClassVar[int]
+            source: Participant.Proctoring.Source
+            playlist_url: str
+            def __init__(self, source: _Optional[_Union[Participant.Proctoring.Source, str]] = ..., playlist_url: _Optional[str] = ...) -> None: ...
+        STATUS_FIELD_NUMBER: _ClassVar[int]
+        STREAMS_FIELD_NUMBER: _ClassVar[int]
+        status: Participant.Proctoring.Status
+        streams: _containers.RepeatedCompositeFieldContainer[Participant.Proctoring.Stream]
+        def __init__(self, status: _Optional[_Union[Participant.Proctoring.Status, str]] = ..., streams: _Optional[_Iterable[_Union[Participant.Proctoring.Stream, _Mapping]]] = ...) -> None: ...
     class Submit(_message.Message):
         __slots__ = ("problem_id", "counter")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -95,7 +119,7 @@ class Participant(_message.Message):
     VIOLATION_COUNT_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     CERTIFICATE_ID_FIELD_NUMBER: _ClassVar[int]
-    PROCTORING_STATUS_FIELD_NUMBER: _ClassVar[int]
+    PROCTORING_FIELD_NUMBER: _ClassVar[int]
     SUBMITS_FIELD_NUMBER: _ClassVar[int]
     id: str
     member_id: str
@@ -114,6 +138,6 @@ class Participant(_message.Message):
     violation_count: int
     passcode: str
     certificate_id: str
-    proctoring_status: Participant.ProctoringStatus
+    proctoring: Participant.Proctoring
     submits: _containers.RepeatedCompositeFieldContainer[Participant.Submit]
-    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., display_name: _Optional[str] = ..., role: _Optional[_Union[Participant.Role, str]] = ..., unofficial: _Optional[bool] = ..., inactive: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., ghost: _Optional[bool] = ..., finalized: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., bonus_time: _Optional[int] = ..., violation_count: _Optional[int] = ..., passcode: _Optional[str] = ..., certificate_id: _Optional[str] = ..., proctoring_status: _Optional[_Union[Participant.ProctoringStatus, str]] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., display_name: _Optional[str] = ..., role: _Optional[_Union[Participant.Role, str]] = ..., unofficial: _Optional[bool] = ..., inactive: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., ghost: _Optional[bool] = ..., finalized: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., bonus_time: _Optional[int] = ..., violation_count: _Optional[int] = ..., passcode: _Optional[str] = ..., certificate_id: _Optional[str] = ..., proctoring: _Optional[_Union[Participant.Proctoring, _Mapping]] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...
