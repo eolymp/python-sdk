@@ -43,20 +43,22 @@ class Validation(_message.Message):
     INVALID: Validation.Verdict
     BROKEN: Validation.Verdict
     class Run(_message.Message):
-        __slots__ = ("id", "index", "status", "verdict", "input_url", "output_url")
+        __slots__ = ("id", "index", "status", "verdict", "input_url", "output_url", "answer_accepted")
         ID_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         VERDICT_FIELD_NUMBER: _ClassVar[int]
         INPUT_URL_FIELD_NUMBER: _ClassVar[int]
         OUTPUT_URL_FIELD_NUMBER: _ClassVar[int]
+        ANSWER_ACCEPTED_FIELD_NUMBER: _ClassVar[int]
         id: str
         index: int
         status: Validation.Status
         verdict: Validation.Verdict
         input_url: str
         output_url: str
-        def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., status: _Optional[_Union[Validation.Status, str]] = ..., verdict: _Optional[_Union[Validation.Verdict, str]] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ...) -> None: ...
+        answer_accepted: bool
+        def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., status: _Optional[_Union[Validation.Status, str]] = ..., verdict: _Optional[_Union[Validation.Verdict, str]] = ..., input_url: _Optional[str] = ..., output_url: _Optional[str] = ..., answer_accepted: _Optional[bool] = ...) -> None: ...
     class Group(_message.Message):
         __slots__ = ("index", "testset_id", "runs")
         INDEX_FIELD_NUMBER: _ClassVar[int]

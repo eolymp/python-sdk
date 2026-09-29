@@ -29,6 +29,18 @@ class RunValidationOutput(_message.Message):
     validation: _validation_pb2.Validation
     def __init__(self, validation_id: _Optional[str] = ..., validation: _Optional[_Union[_validation_pb2.Validation, _Mapping]] = ...) -> None: ...
 
+class ValidateProblemInput(_message.Message):
+    __slots__ = ("problem_id",)
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+
+class ValidateProblemOutput(_message.Message):
+    __slots__ = ("validation_id",)
+    VALIDATION_ID_FIELD_NUMBER: _ClassVar[int]
+    validation_id: str
+    def __init__(self, validation_id: _Optional[str] = ...) -> None: ...
+
 class DescribeValidationInput(_message.Message):
     __slots__ = ("problem_id", "validation_id")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]

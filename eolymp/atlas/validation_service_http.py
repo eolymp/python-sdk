@@ -28,6 +28,20 @@ class ValidationServiceClient:
             **kwargs,
         )
 
+    def ValidateProblem(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/validate"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.ValidateProblemOutput"),
+            **kwargs,
+        )
+
     def DescribeValidation(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/validations/"+urllib.parse.quote(request.validation_id)
 
