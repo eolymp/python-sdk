@@ -266,6 +266,18 @@ class StartContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class RequestProctoringInput(_message.Message):
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class RequestProctoringOutput(_message.Message):
+    __slots__ = ("stream_url",)
+    STREAM_URL_FIELD_NUMBER: _ClassVar[int]
+    stream_url: str
+    def __init__(self, stream_url: _Optional[str] = ...) -> None: ...
+
 class PauseContestInput(_message.Message):
     __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
