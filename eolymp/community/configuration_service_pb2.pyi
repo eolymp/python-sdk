@@ -4,6 +4,7 @@ from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.community import configuration_identity_pb2 as _configuration_identity_pb2
+from eolymp.community import notebook_config_pb2 as _notebook_config_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Mapping as _Mapping
@@ -28,5 +29,25 @@ class ConfigureIdentityConfigInput(_message.Message):
     def __init__(self, config: _Optional[_Union[_configuration_identity_pb2.IdentityConfig, _Mapping]] = ...) -> None: ...
 
 class ConfigureIdentityConfigOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeNotebookConfigInput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DescribeNotebookConfigOutput(_message.Message):
+    __slots__ = ("config",)
+    CONFIG_FIELD_NUMBER: _ClassVar[int]
+    config: _notebook_config_pb2.NotebookConfig
+    def __init__(self, config: _Optional[_Union[_notebook_config_pb2.NotebookConfig, _Mapping]] = ...) -> None: ...
+
+class ConfigureNotebookConfigInput(_message.Message):
+    __slots__ = ("config",)
+    CONFIG_FIELD_NUMBER: _ClassVar[int]
+    config: _notebook_config_pb2.NotebookConfig
+    def __init__(self, config: _Optional[_Union[_notebook_config_pb2.NotebookConfig, _Mapping]] = ...) -> None: ...
+
+class ConfigureNotebookConfigOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...

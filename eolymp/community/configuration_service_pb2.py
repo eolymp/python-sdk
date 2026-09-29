@@ -28,9 +28,10 @@ from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_names
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.community import configuration_identity_pb2 as eolymp_dot_community_dot_configuration__identity__pb2
+from eolymp.community import notebook_config_pb2 as eolymp_dot_community_dot_notebook__config__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/community/configuration_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a-eolymp/community/configuration_identity.proto\"\x1d\n\x1b\x44\x65scribeIdentityConfigInput\"P\n\x1c\x44\x65scribeIdentityConfigOutput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.IdentityConfig\"P\n\x1c\x43onfigureIdentityConfigInput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.IdentityConfig\"\x1f\n\x1d\x43onfigureIdentityConfigOutput2\xac\x03\n\x14\x43onfigurationService\x12\xa9\x01\n\x16\x44\x65scribeIdentityConfig\x12-.eolymp.community.DescribeIdentityConfigInput\x1a..eolymp.community.DescribeIdentityConfigOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x13\x12\x11/configs/identity\x12\xca\x01\n\x17\x43onfigureIdentityConfig\x12..eolymp.community.ConfigureIdentityConfigInput\x1a/.eolymp.community.ConfigureIdentityConfigOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\x1a\x11/configs/identity\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,eolymp/community/configuration_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a-eolymp/community/configuration_identity.proto\x1a&eolymp/community/notebook_config.proto\"\x1d\n\x1b\x44\x65scribeIdentityConfigInput\"P\n\x1c\x44\x65scribeIdentityConfigOutput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.IdentityConfig\"P\n\x1c\x43onfigureIdentityConfigInput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.IdentityConfig\"\x1f\n\x1d\x43onfigureIdentityConfigOutput\"\x1d\n\x1b\x44\x65scribeNotebookConfigInput\"P\n\x1c\x44\x65scribeNotebookConfigOutput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.NotebookConfig\"P\n\x1c\x43onfigureNotebookConfigInput\x12\x30\n\x06\x63onfig\x18\x01 \x01(\x0b\x32 .eolymp.community.NotebookConfig\"\x1f\n\x1d\x43onfigureNotebookConfigOutput2\xa5\x06\n\x14\x43onfigurationService\x12\xa9\x01\n\x16\x44\x65scribeIdentityConfig\x12-.eolymp.community.DescribeIdentityConfigInput\x1a..eolymp.community.DescribeIdentityConfigOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x13\x12\x11/configs/identity\x12\xca\x01\n\x17\x43onfigureIdentityConfig\x12..eolymp.community.ConfigureIdentityConfigInput\x1a/.eolymp.community.ConfigureIdentityConfigOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\x1a\x11/configs/identity\x12\xa9\x01\n\x16\x44\x65scribeNotebookConfig\x12-.eolymp.community.DescribeNotebookConfigInput\x1a..eolymp.community.DescribeNotebookConfigOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00 A\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x13\x12\x11/configs/notebook\x12\xca\x01\n\x17\x43onfigureNotebookConfig\x12..eolymp.community.ConfigureNotebookConfigInput\x1a/.eolymp.community.ConfigureNotebookConfigOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\x1a\x11/configs/notebook\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,14 +45,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['DescribeIdentityConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\242\343\n\004\250\343\n\001\202\323\344\223\002\023\022\021/configs/identity'
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['ConfigureIdentityConfig']._loaded_options = None
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['ConfigureIdentityConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\032\212\343\n\026community:member:write\242\343\n\004\250\343\n\002\202\323\344\223\002\023\032\021/configs/identity'
-  _globals['_DESCRIBEIDENTITYCONFIGINPUT']._serialized_start=280
-  _globals['_DESCRIBEIDENTITYCONFIGINPUT']._serialized_end=309
-  _globals['_DESCRIBEIDENTITYCONFIGOUTPUT']._serialized_start=311
-  _globals['_DESCRIBEIDENTITYCONFIGOUTPUT']._serialized_end=391
-  _globals['_CONFIGUREIDENTITYCONFIGINPUT']._serialized_start=393
-  _globals['_CONFIGUREIDENTITYCONFIGINPUT']._serialized_end=473
-  _globals['_CONFIGUREIDENTITYCONFIGOUTPUT']._serialized_start=475
-  _globals['_CONFIGUREIDENTITYCONFIGOUTPUT']._serialized_end=506
-  _globals['_CONFIGURATIONSERVICE']._serialized_start=509
-  _globals['_CONFIGURATIONSERVICE']._serialized_end=937
+  _globals['_CONFIGURATIONSERVICE'].methods_by_name['DescribeNotebookConfig']._loaded_options = None
+  _globals['_CONFIGURATIONSERVICE'].methods_by_name['DescribeNotebookConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000 A\370\342\nd\242\343\n\004\250\343\n\001\202\323\344\223\002\023\022\021/configs/notebook'
+  _globals['_CONFIGURATIONSERVICE'].methods_by_name['ConfigureNotebookConfig']._loaded_options = None
+  _globals['_CONFIGURATIONSERVICE'].methods_by_name['ConfigureNotebookConfig']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\202\343\n\032\212\343\n\026community:member:write\242\343\n\004\250\343\n\002\202\323\344\223\002\023\032\021/configs/notebook'
+  _globals['_DESCRIBEIDENTITYCONFIGINPUT']._serialized_start=320
+  _globals['_DESCRIBEIDENTITYCONFIGINPUT']._serialized_end=349
+  _globals['_DESCRIBEIDENTITYCONFIGOUTPUT']._serialized_start=351
+  _globals['_DESCRIBEIDENTITYCONFIGOUTPUT']._serialized_end=431
+  _globals['_CONFIGUREIDENTITYCONFIGINPUT']._serialized_start=433
+  _globals['_CONFIGUREIDENTITYCONFIGINPUT']._serialized_end=513
+  _globals['_CONFIGUREIDENTITYCONFIGOUTPUT']._serialized_start=515
+  _globals['_CONFIGUREIDENTITYCONFIGOUTPUT']._serialized_end=546
+  _globals['_DESCRIBENOTEBOOKCONFIGINPUT']._serialized_start=548
+  _globals['_DESCRIBENOTEBOOKCONFIGINPUT']._serialized_end=577
+  _globals['_DESCRIBENOTEBOOKCONFIGOUTPUT']._serialized_start=579
+  _globals['_DESCRIBENOTEBOOKCONFIGOUTPUT']._serialized_end=659
+  _globals['_CONFIGURENOTEBOOKCONFIGINPUT']._serialized_start=661
+  _globals['_CONFIGURENOTEBOOKCONFIGINPUT']._serialized_end=741
+  _globals['_CONFIGURENOTEBOOKCONFIGOUTPUT']._serialized_start=743
+  _globals['_CONFIGURENOTEBOOKCONFIGOUTPUT']._serialized_end=774
+  _globals['_CONFIGURATIONSERVICE']._serialized_start=777
+  _globals['_CONFIGURATIONSERVICE']._serialized_end=1582
 # @@protoc_insertion_point(module_scope)

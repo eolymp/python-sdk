@@ -36,3 +36,25 @@ class ConfigurationServiceClient:
             **kwargs,
         )
 
+    def DescribeNotebookConfig(self, request, **kwargs):
+        path = "/configs/notebook"
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.DescribeNotebookConfigOutput"),
+            **kwargs,
+        )
+
+    def ConfigureNotebookConfig(self, request, **kwargs):
+        path = "/configs/notebook"
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ConfigureNotebookConfigOutput"),
+            **kwargs,
+        )
+
