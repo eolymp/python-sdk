@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/automation/action.proto\x12\x11\x65olymp.automation\"\xe4\x01\n\x06\x41\x63tion\x12:\n\x07\x61gentic\x18\n \x01(\x0b\x32\'.eolymp.automation.Action.AgenticActionH\x00\x12<\n\x08scripted\x18\x0b \x01(\x0b\x32(.eolymp.automation.Action.ScriptedActionH\x00\x1a\x34\n\rAgenticAction\x12\x14\n\x0cinstructions\x18\x01 \x01(\t\x12\r\n\x05tools\x18\x02 \x03(\t\x1a \n\x0eScriptedAction\x12\x0e\n\x06script\x18\x01 \x01(\tB\x08\n\x06\x61\x63tionB7Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x65olymp/automation/action.proto\x12\x11\x65olymp.automation\"\xd5\x01\n\x06\x41\x63tion\x12:\n\x07\x61gentic\x18\n \x01(\x0b\x32\'.eolymp.automation.Action.AgenticActionH\x00\x12<\n\x08scripted\x18\x0b \x01(\x0b\x32(.eolymp.automation.Action.ScriptedActionH\x00\x1a%\n\rAgenticAction\x12\x14\n\x0cinstructions\x18\x01 \x01(\t\x1a \n\x0eScriptedAction\x12\x0e\n\x06script\x18\x01 \x01(\tB\x08\n\x06\x61\x63tionB7Z5github.com/eolymp/go-sdk/eolymp/automation;automationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,9 +33,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/automation;automation'
   _globals['_ACTION']._serialized_start=54
-  _globals['_ACTION']._serialized_end=282
+  _globals['_ACTION']._serialized_end=267
   _globals['_ACTION_AGENTICACTION']._serialized_start=186
-  _globals['_ACTION_AGENTICACTION']._serialized_end=238
-  _globals['_ACTION_SCRIPTEDACTION']._serialized_start=240
-  _globals['_ACTION_SCRIPTEDACTION']._serialized_end=272
+  _globals['_ACTION_AGENTICACTION']._serialized_end=223
+  _globals['_ACTION_SCRIPTEDACTION']._serialized_start=225
+  _globals['_ACTION_SCRIPTEDACTION']._serialized_end=257
 # @@protoc_insertion_point(module_scope)
