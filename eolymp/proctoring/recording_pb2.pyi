@@ -11,30 +11,19 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Recording(_message.Message):
-    __slots__ = ("id", "member_id", "status", "starts_at", "ends_at", "stream_url", "streams", "created_at")
+    __slots__ = ("id", "member_id", "status", "started_at", "ended_at", "gap_duration", "streams", "created_at")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Recording.Status]
-        PENDING: _ClassVar[Recording.Status]
-        RECORDING: _ClassVar[Recording.Status]
+        EMPTY: _ClassVar[Recording.Status]
         COMPLETE: _ClassVar[Recording.Status]
         INCOMPLETE: _ClassVar[Recording.Status]
-        EMPTY: _ClassVar[Recording.Status]
         EXPIRED: _ClassVar[Recording.Status]
     UNKNOWN_STATUS: Recording.Status
-    PENDING: Recording.Status
-    RECORDING: Recording.Status
+    EMPTY: Recording.Status
     COMPLETE: Recording.Status
     INCOMPLETE: Recording.Status
-    EMPTY: Recording.Status
     EXPIRED: Recording.Status
-    class Patch(_message.Message):
-        __slots__ = ("starts_at", "ends_at")
-        STARTS_AT_FIELD_NUMBER: _ClassVar[int]
-        ENDS_AT_FIELD_NUMBER: _ClassVar[int]
-        starts_at: _timestamp_pb2.Timestamp
-        ends_at: _timestamp_pb2.Timestamp
-        def __init__(self, starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     class Stream(_message.Message):
         __slots__ = ("source", "playlist_url")
         class Source(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -53,17 +42,17 @@ class Recording(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
-    STARTS_AT_FIELD_NUMBER: _ClassVar[int]
-    ENDS_AT_FIELD_NUMBER: _ClassVar[int]
-    STREAM_URL_FIELD_NUMBER: _ClassVar[int]
+    STARTED_AT_FIELD_NUMBER: _ClassVar[int]
+    ENDED_AT_FIELD_NUMBER: _ClassVar[int]
+    GAP_DURATION_FIELD_NUMBER: _ClassVar[int]
     STREAMS_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
     id: str
     member_id: str
     status: Recording.Status
-    starts_at: _timestamp_pb2.Timestamp
-    ends_at: _timestamp_pb2.Timestamp
-    stream_url: str
+    started_at: _timestamp_pb2.Timestamp
+    ended_at: _timestamp_pb2.Timestamp
+    gap_duration: int
     streams: _containers.RepeatedCompositeFieldContainer[Recording.Stream]
     created_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Recording.Status, str]] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., stream_url: _Optional[str] = ..., streams: _Optional[_Iterable[_Union[Recording.Stream, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Recording.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., gap_duration: _Optional[int] = ..., streams: _Optional[_Iterable[_Union[Recording.Stream, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

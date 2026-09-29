@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/proctoring/recording.proto\x12\x11\x65olymp.proctoring\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc2\x05\n\tRecording\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x33\n\x06status\x18\x03 \x01(\x0e\x32#.eolymp.proctoring.Recording.Status\x12-\n\tstarts_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x65nds_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nstream_url\x18\x06 \x01(\t\x12\x34\n\x07streams\x18\x07 \x03(\x0b\x32#.eolymp.proctoring.Recording.Stream\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x87\x01\n\x05Patch\x12\x32\n\tstarts_at\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x88\x01\x01\x12\x30\n\x07\x65nds_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x01\x88\x01\x01\x42\x0c\n\n_starts_atB\n\n\x08_ends_at\x1a\x90\x01\n\x06Stream\x12:\n\x06source\x18\x01 \x01(\x0e\x32*.eolymp.proctoring.Recording.Stream.Source\x12\x14\n\x0cplaylist_url\x18\x02 \x01(\t\"4\n\x06Source\x12\x12\n\x0eUNKNOWN_SOURCE\x10\x00\x12\n\n\x06SCREEN\x10\x01\x12\n\n\x06\x43\x41MERA\x10\x02\"n\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tRECORDING\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\x12\x0e\n\nINCOMPLETE\x10\x04\x12\t\n\x05\x45MPTY\x10\x05\x12\x0b\n\x07\x45XPIRED\x10\x06\x42\x37Z5github.com/eolymp/go-sdk/eolymp/proctoring;proctoringb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/proctoring/recording.proto\x12\x11\x65olymp.proctoring\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa0\x04\n\tRecording\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x33\n\x06status\x18\x03 \x01(\x0e\x32#.eolymp.proctoring.Recording.Status\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nded_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x14\n\x0cgap_duration\x18\x06 \x01(\r\x12\x34\n\x07streams\x18\x07 \x03(\x0b\x32#.eolymp.proctoring.Recording.Stream\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x90\x01\n\x06Stream\x12:\n\x06source\x18\x01 \x01(\x0e\x32*.eolymp.proctoring.Recording.Stream.Source\x12\x14\n\x0cplaylist_url\x18\x02 \x01(\t\"4\n\x06Source\x12\x12\n\x0eUNKNOWN_SOURCE\x10\x00\x12\n\n\x06SCREEN\x10\x01\x12\n\n\x06\x43\x41MERA\x10\x02\"R\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\t\n\x05\x45MPTY\x10\x01\x12\x0c\n\x08\x43OMPLETE\x10\x02\x12\x0e\n\nINCOMPLETE\x10\x03\x12\x0b\n\x07\x45XPIRED\x10\x04\x42\x37Z5github.com/eolymp/go-sdk/eolymp/proctoring;proctoringb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,13 +34,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/proctoring;proctoring'
   _globals['_RECORDING']._serialized_start=90
-  _globals['_RECORDING']._serialized_end=796
-  _globals['_RECORDING_PATCH']._serialized_start=402
-  _globals['_RECORDING_PATCH']._serialized_end=537
-  _globals['_RECORDING_STREAM']._serialized_start=540
-  _globals['_RECORDING_STREAM']._serialized_end=684
-  _globals['_RECORDING_STREAM_SOURCE']._serialized_start=632
-  _globals['_RECORDING_STREAM_SOURCE']._serialized_end=684
-  _globals['_RECORDING_STATUS']._serialized_start=686
-  _globals['_RECORDING_STATUS']._serialized_end=796
+  _globals['_RECORDING']._serialized_end=634
+  _globals['_RECORDING_STREAM']._serialized_start=406
+  _globals['_RECORDING_STREAM']._serialized_end=550
+  _globals['_RECORDING_STREAM_SOURCE']._serialized_start=498
+  _globals['_RECORDING_STREAM_SOURCE']._serialized_end=550
+  _globals['_RECORDING_STATUS']._serialized_start=552
+  _globals['_RECORDING_STATUS']._serialized_end=634
 # @@protoc_insertion_point(module_scope)

@@ -1,9 +1,12 @@
+import datetime
+
 from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.proctoring import recording_pb2 as _recording_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -13,28 +16,34 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateRecordingInput(_message.Message):
-    __slots__ = ("recording",)
+    __slots__ = ("recording", "expires_at")
     RECORDING_FIELD_NUMBER: _ClassVar[int]
+    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
     recording: _recording_pb2.Recording
-    def __init__(self, recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ...) -> None: ...
+    expires_at: _timestamp_pb2.Timestamp
+    def __init__(self, recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateRecordingOutput(_message.Message):
-    __slots__ = ("recording_id",)
+    __slots__ = ("recording_id", "stream_url")
     RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
+    STREAM_URL_FIELD_NUMBER: _ClassVar[int]
     recording_id: str
-    def __init__(self, recording_id: _Optional[str] = ...) -> None: ...
+    stream_url: str
+    def __init__(self, recording_id: _Optional[str] = ..., stream_url: _Optional[str] = ...) -> None: ...
 
-class UpdateRecordingInput(_message.Message):
-    __slots__ = ("recording_id", "recording")
+class ResumeRecordingInput(_message.Message):
+    __slots__ = ("recording_id", "expires_at")
     RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
-    RECORDING_FIELD_NUMBER: _ClassVar[int]
+    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
     recording_id: str
-    recording: _recording_pb2.Recording.Patch
-    def __init__(self, recording_id: _Optional[str] = ..., recording: _Optional[_Union[_recording_pb2.Recording.Patch, _Mapping]] = ...) -> None: ...
+    expires_at: _timestamp_pb2.Timestamp
+    def __init__(self, recording_id: _Optional[str] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
-class UpdateRecordingOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+class ResumeRecordingOutput(_message.Message):
+    __slots__ = ("stream_url",)
+    STREAM_URL_FIELD_NUMBER: _ClassVar[int]
+    stream_url: str
+    def __init__(self, stream_url: _Optional[str] = ...) -> None: ...
 
 class DeleteRecordingInput(_message.Message):
     __slots__ = ("recording_id",)
