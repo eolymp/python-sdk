@@ -24,13 +24,14 @@ _sym_db = _symbol_database.Default()
 
 from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/render_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\":\n\x12RenderContentInput\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\"7\n\x13RenderContentOutput\x12 \n\x06render\x18\x01 \x01(\x0b\x32\x10.eolymp.ecm.Node2\xc4\x01\n\rRenderService\x12\x95\x01\n\rRenderContent\x12\".eolymp.content.RenderContentInput\x1a#.eolymp.content.RenderContentOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x0f/content:renderZ\x0b\"\t/renderer\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/render_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\":\n\x12RenderContentInput\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\"7\n\x13RenderContentOutput\x12 \n\x06render\x18\x01 \x01(\x0b\x32\x10.eolymp.ecm.Node\"\xc9\x01\n\x11RenderFigureInput\x12\xa9\x01\n\x05typst\x18\x01 \x01(\tB\x97\x01\xa2\xf0\xf0\xe4\x01\x90\x01Typst source of the figure; the page is sized to fit the drawing, and the figure must fit on one page. Packages cetz and fletcher are available.H\x00\x42\x08\n\x06source\"\xb6\x02\n\x12RenderFigureOutput\x12\x0b\n\x03svg\x18\x01 \x01(\t\x12\x42\n\x0b\x64iagnostics\x18\x02 \x03(\x0b\x32-.eolymp.content.RenderFigureOutput.Diagnostic\x1a\xce\x01\n\nDiagnostic\x12H\n\x08severity\x18\x01 \x01(\x0e\x32\x36.eolymp.content.RenderFigureOutput.Diagnostic.Severity\x12\x0c\n\x04line\x18\x02 \x01(\r\x12\x0e\n\x06\x63olumn\x18\x03 \x01(\r\x12\x0f\n\x07message\x18\x04 \x01(\t\x12\r\n\x05hints\x18\x05 \x03(\t\"8\n\x08Severity\x12\x14\n\x10UNKNOWN_SEVERITY\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x32\xcf\x03\n\rRenderService\x12\x95\x01\n\rRenderContent\x12\".eolymp.content.RenderContentInput\x1a#.eolymp.content.RenderContentOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x0f/content:renderZ\x0b\"\t/renderer\x12\x88\x02\n\x0cRenderFigure\x12!.eolymp.content.RenderFigureInput\x1a\".eolymp.content.RenderFigureOutput\"\xb0\x01\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x02\xa2\xf0\xf0\xe4\x01|Compile a figure written in Typst into an SVG image. Returns the SVG, or diagnostics saying why the figure does not compile.\x82\xd3\xe4\x93\x02\x11\"\x0f/figures:render\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,14 +39,26 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.content.render_servi
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
+  _globals['_RENDERFIGUREINPUT'].fields_by_name['typst']._loaded_options = None
+  _globals['_RENDERFIGUREINPUT'].fields_by_name['typst']._serialized_options = b'\242\360\360\344\001\220\001Typst source of the figure; the page is sized to fit the drawing, and the figure must fit on one page. Packages cetz and fletcher are available.'
   _globals['_RENDERSERVICE']._loaded_options = None
   _globals['_RENDERSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_RENDERSERVICE'].methods_by_name['RenderContent']._loaded_options = None
   _globals['_RENDERSERVICE'].methods_by_name['RenderContent']._serialized_options = b'\352\342\n\013\365\342\n\000\000\310A\370\342\nd\242\343\n\004\250\343\n\002\202\323\344\223\002\036\"\017/content:renderZ\013\"\t/renderer'
-  _globals['_RENDERCONTENTINPUT']._serialized_start=239
-  _globals['_RENDERCONTENTINPUT']._serialized_end=297
-  _globals['_RENDERCONTENTOUTPUT']._serialized_start=299
-  _globals['_RENDERCONTENTOUTPUT']._serialized_end=354
-  _globals['_RENDERSERVICE']._serialized_start=357
-  _globals['_RENDERSERVICE']._serialized_end=553
+  _globals['_RENDERSERVICE'].methods_by_name['RenderFigure']._loaded_options = None
+  _globals['_RENDERSERVICE'].methods_by_name['RenderFigure']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n\024\242\343\n\004\250\343\n\002\242\360\360\344\001|Compile a figure written in Typst into an SVG image. Returns the SVG, or diagnostics saying why the figure does not compile.\202\323\344\223\002\021\"\017/figures:render'
+  _globals['_RENDERCONTENTINPUT']._serialized_start=269
+  _globals['_RENDERCONTENTINPUT']._serialized_end=327
+  _globals['_RENDERCONTENTOUTPUT']._serialized_start=329
+  _globals['_RENDERCONTENTOUTPUT']._serialized_end=384
+  _globals['_RENDERFIGUREINPUT']._serialized_start=387
+  _globals['_RENDERFIGUREINPUT']._serialized_end=588
+  _globals['_RENDERFIGUREOUTPUT']._serialized_start=591
+  _globals['_RENDERFIGUREOUTPUT']._serialized_end=901
+  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC']._serialized_start=695
+  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC']._serialized_end=901
+  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC_SEVERITY']._serialized_start=845
+  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC_SEVERITY']._serialized_end=901
+  _globals['_RENDERSERVICE']._serialized_start=904
+  _globals['_RENDERSERVICE']._serialized_end=1367
 # @@protoc_insertion_point(module_scope)
