@@ -126,7 +126,7 @@ class ListMembersInput(_message.Message):
         string: _expression_pb2.ExpressionString
         def __init__(self, attribute_key: _Optional[str] = ..., number: _Optional[_Union[_expression_pb2.ExpressionInt, _Mapping]] = ..., string: _Optional[_Union[_expression_pb2.ExpressionString, _Mapping]] = ...) -> None: ...
     class Filter(_message.Message):
-        __slots__ = ("id", "external_ref", "type", "display_name", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "user_issuer", "user_subject", "user_email", "user_name", "user_nickname", "birthday", "country", "score", "attribute")
+        __slots__ = ("id", "external_ref", "type", "display_name", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "user_issuer", "user_subject", "user_email", "user_name", "user_nickname", "birthday", "country", "score", "active_at", "attribute")
         ID_FIELD_NUMBER: _ClassVar[int]
         EXTERNAL_REF_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -145,6 +145,7 @@ class ListMembersInput(_message.Message):
         BIRTHDAY_FIELD_NUMBER: _ClassVar[int]
         COUNTRY_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
+        ACTIVE_AT_FIELD_NUMBER: _ClassVar[int]
         ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         external_ref: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -164,8 +165,9 @@ class ListMembersInput(_message.Message):
         birthday: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
+        active_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         attribute: _containers.RepeatedCompositeFieldContainer[ListMembersInput.ExpressionAttribute]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., display_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_nickname: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[ListMembersInput.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., display_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_issuer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_subject: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_email: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_nickname: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., active_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[ListMembersInput.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
@@ -251,7 +253,7 @@ class DescribeMemberUsageOutput(_message.Message):
 class StreamMemberReferencesInput(_message.Message):
     __slots__ = ("filters",)
     class Filter(_message.Message):
-        __slots__ = ("id", "external_ref", "type", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "birthday", "country", "score", "created_at", "attribute")
+        __slots__ = ("id", "external_ref", "type", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "birthday", "country", "score", "created_at", "active_at", "attribute")
         class ExpressionAttribute(_message.Message):
             __slots__ = ("attribute_key", "number", "string")
             ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -274,6 +276,7 @@ class StreamMemberReferencesInput(_message.Message):
         COUNTRY_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+        ACTIVE_AT_FIELD_NUMBER: _ClassVar[int]
         ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         external_ref: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -288,8 +291,9 @@ class StreamMemberReferencesInput(_message.Message):
         country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         created_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        active_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         attribute: _containers.RepeatedCompositeFieldContainer[StreamMemberReferencesInput.Filter.ExpressionAttribute]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[StreamMemberReferencesInput.Filter.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., active_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[StreamMemberReferencesInput.Filter.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     filters: StreamMemberReferencesInput.Filter
     def __init__(self, filters: _Optional[_Union[StreamMemberReferencesInput.Filter, _Mapping]] = ...) -> None: ...

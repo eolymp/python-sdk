@@ -199,7 +199,7 @@ class ImportRecipientInput(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     class Filter(_message.Message):
-        __slots__ = ("id", "external_ref", "type", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "birthday", "country", "score", "created_at", "attribute")
+        __slots__ = ("id", "external_ref", "type", "inactive", "incomplete", "unofficial", "seated", "team_id", "group_id", "birthday", "country", "score", "created_at", "active_at", "attribute")
         class ExpressionAttribute(_message.Message):
             __slots__ = ("attribute_key", "number", "string")
             ATTRIBUTE_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -222,6 +222,7 @@ class ImportRecipientInput(_message.Message):
         COUNTRY_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+        ACTIVE_AT_FIELD_NUMBER: _ClassVar[int]
         ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         external_ref: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -236,8 +237,9 @@ class ImportRecipientInput(_message.Message):
         country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         score: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionInt]
         created_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
+        active_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         attribute: _containers.RepeatedCompositeFieldContainer[ImportRecipientInput.Filter.ExpressionAttribute]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[ImportRecipientInput.Filter.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., external_ref: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., incomplete: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., seated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., birthday: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., score: _Optional[_Iterable[_Union[_expression_pb2.ExpressionInt, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., active_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., attribute: _Optional[_Iterable[_Union[ImportRecipientInput.Filter.ExpressionAttribute, _Mapping]]] = ...) -> None: ...
     NEWSLETTER_ID_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     PARAMETERS_FIELD_NUMBER: _ClassVar[int]
