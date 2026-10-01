@@ -14,16 +14,14 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class UploadNotebookInput(_message.Message):
-    __slots__ = ("member_id", "name", "type", "content_url")
+    __slots__ = ("member_id", "name", "content_url")
     MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
     CONTENT_URL_FIELD_NUMBER: _ClassVar[int]
     member_id: str
     name: str
-    type: str
     content_url: str
-    def __init__(self, member_id: _Optional[str] = ..., name: _Optional[str] = ..., type: _Optional[str] = ..., content_url: _Optional[str] = ...) -> None: ...
+    def __init__(self, member_id: _Optional[str] = ..., name: _Optional[str] = ..., content_url: _Optional[str] = ...) -> None: ...
 
 class UploadNotebookOutput(_message.Message):
     __slots__ = ("notebook_id",)

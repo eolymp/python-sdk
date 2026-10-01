@@ -31,7 +31,7 @@ from eolymp.community import notebook_pb2 as eolymp_dot_community_dot_notebook__
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/community/notebook_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1f\x65olymp/community/notebook.proto\x1a!eolymp/wellknown/expression.proto\"Y\n\x13UploadNotebookInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x13\n\x0b\x63ontent_url\x18\x04 \x01(\t\"+\n\x14UploadNotebookOutput\x12\x13\n\x0bnotebook_id\x18\x01 \x01(\t\"]\n\x13ReviewNotebookInput\x12\x13\n\x0bnotebook_id\x18\x01 \x01(\t\x12\x31\n\x06status\x18\x02 \x01(\x0e\x32!.eolymp.community.Notebook.Status\"\x16\n\x14ReviewNotebookOutput\"*\n\x13\x44\x65leteNotebookInput\x12\x13\n\x0bnotebook_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65leteNotebookOutput\",\n\x15\x44\x65scribeNotebookInput\x12\x13\n\x0bnotebook_id\x18\x01 \x01(\t\"F\n\x16\x44\x65scribeNotebookOutput\x12,\n\x08notebook\x18\x01 \x01(\x0b\x32\x1a.eolymp.community.Notebook\"\x8c\x02\n\x12ListNotebooksInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.community.ListNotebooksInput.Filter\x1a\x99\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"O\n\x13ListNotebooksOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.community.Notebook2\xb7\x07\n\x0fNotebookService\x12\xa8\x01\n\x0eUploadNotebook\x12%.eolymp.community.UploadNotebookInput\x1a&.eolymp.community.UploadNotebookOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x0c\"\n/notebooks\x12\xbd\x01\n\x0eReviewNotebook\x12%.eolymp.community.ReviewNotebookInput\x1a&.eolymp.community.ReviewNotebookOutput\"\\\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02!\"\x1f/notebooks/{notebook_id}/review\x12\xb6\x01\n\x0e\x44\x65leteNotebook\x12%.eolymp.community.DeleteNotebookInput\x1a&.eolymp.community.DeleteNotebookOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1a*\x18/notebooks/{notebook_id}\x12\xbb\x01\n\x10\x44\x65scribeNotebook\x12\'.eolymp.community.DescribeNotebookInput\x1a(.eolymp.community.DescribeNotebookOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1a\x12\x18/notebooks/{notebook_id}\x12\xa4\x01\n\rListNotebooks\x12$.eolymp.community.ListNotebooksInput\x1a%.eolymp.community.ListNotebooksOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0c\x12\n/notebooks\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/community/notebook_service.proto\x12\x10\x65olymp.community\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1f\x65olymp/community/notebook.proto\x1a!eolymp/wellknown/expression.proto\"K\n\x13UploadNotebookInput\x12\x11\n\tmember_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x63ontent_url\x18\x04 \x01(\t\"+\n\x14UploadNotebookOutput\x12\x13\n\x0bnotebook_id\x18\x01 \x01(\t\"]\n\x13ReviewNotebookInput\x12\x13\n\x0bnotebook_id\x18\x01 \x01(\t\x12\x31\n\x06status\x18\x02 \x01(\x0e\x32!.eolymp.community.Notebook.Status\"\x16\n\x14ReviewNotebookOutput\"*\n\x13\x44\x65leteNotebookInput\x12\x13\n\x0bnotebook_id\x18\x01 \x01(\t\"\x16\n\x14\x44\x65leteNotebookOutput\",\n\x15\x44\x65scribeNotebookInput\x12\x13\n\x0bnotebook_id\x18\x01 \x01(\t\"F\n\x16\x44\x65scribeNotebookOutput\x12,\n\x08notebook\x18\x01 \x01(\x0b\x32\x1a.eolymp.community.Notebook\"\x8c\x02\n\x12ListNotebooksInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.community.ListNotebooksInput.Filter\x1a\x99\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"O\n\x13ListNotebooksOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.community.Notebook2\xb7\x07\n\x0fNotebookService\x12\xa8\x01\n\x0eUploadNotebook\x12%.eolymp.community.UploadNotebookInput\x1a&.eolymp.community.UploadNotebookOutput\"G\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x0c\"\n/notebooks\x12\xbd\x01\n\x0eReviewNotebook\x12%.eolymp.community.ReviewNotebookInput\x1a&.eolymp.community.ReviewNotebookOutput\"\\\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02!\"\x1f/notebooks/{notebook_id}/review\x12\xb6\x01\n\x0e\x44\x65leteNotebook\x12%.eolymp.community.DeleteNotebookInput\x1a&.eolymp.community.DeleteNotebookOutput\"U\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1a\x8a\xe3\n\x16\x63ommunity:member:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1a*\x18/notebooks/{notebook_id}\x12\xbb\x01\n\x10\x44\x65scribeNotebook\x12\'.eolymp.community.DescribeNotebookInput\x1a(.eolymp.community.DescribeNotebookOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1a\x12\x18/notebooks/{notebook_id}\x12\xa4\x01\n\rListNotebooks\x12$.eolymp.community.ListNotebooksInput\x1a%.eolymp.community.ListNotebooksOutput\"F\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x19\x8a\xe3\n\x15\x63ommunity:member:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x0c\x12\n/notebooks\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -52,27 +52,27 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_NOTEBOOKSERVICE'].methods_by_name['ListNotebooks']._loaded_options = None
   _globals['_NOTEBOOKSERVICE'].methods_by_name['ListNotebooks']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\031\212\343\n\025community:member:read\242\343\n\004\250\343\n\001\202\323\344\223\002\014\022\n/notebooks'
   _globals['_UPLOADNOTEBOOKINPUT']._serialized_start=296
-  _globals['_UPLOADNOTEBOOKINPUT']._serialized_end=385
-  _globals['_UPLOADNOTEBOOKOUTPUT']._serialized_start=387
-  _globals['_UPLOADNOTEBOOKOUTPUT']._serialized_end=430
-  _globals['_REVIEWNOTEBOOKINPUT']._serialized_start=432
-  _globals['_REVIEWNOTEBOOKINPUT']._serialized_end=525
-  _globals['_REVIEWNOTEBOOKOUTPUT']._serialized_start=527
-  _globals['_REVIEWNOTEBOOKOUTPUT']._serialized_end=549
-  _globals['_DELETENOTEBOOKINPUT']._serialized_start=551
-  _globals['_DELETENOTEBOOKINPUT']._serialized_end=593
-  _globals['_DELETENOTEBOOKOUTPUT']._serialized_start=595
-  _globals['_DELETENOTEBOOKOUTPUT']._serialized_end=617
-  _globals['_DESCRIBENOTEBOOKINPUT']._serialized_start=619
-  _globals['_DESCRIBENOTEBOOKINPUT']._serialized_end=663
-  _globals['_DESCRIBENOTEBOOKOUTPUT']._serialized_start=665
-  _globals['_DESCRIBENOTEBOOKOUTPUT']._serialized_end=735
-  _globals['_LISTNOTEBOOKSINPUT']._serialized_start=738
-  _globals['_LISTNOTEBOOKSINPUT']._serialized_end=1006
-  _globals['_LISTNOTEBOOKSINPUT_FILTER']._serialized_start=853
-  _globals['_LISTNOTEBOOKSINPUT_FILTER']._serialized_end=1006
-  _globals['_LISTNOTEBOOKSOUTPUT']._serialized_start=1008
-  _globals['_LISTNOTEBOOKSOUTPUT']._serialized_end=1087
-  _globals['_NOTEBOOKSERVICE']._serialized_start=1090
-  _globals['_NOTEBOOKSERVICE']._serialized_end=2041
+  _globals['_UPLOADNOTEBOOKINPUT']._serialized_end=371
+  _globals['_UPLOADNOTEBOOKOUTPUT']._serialized_start=373
+  _globals['_UPLOADNOTEBOOKOUTPUT']._serialized_end=416
+  _globals['_REVIEWNOTEBOOKINPUT']._serialized_start=418
+  _globals['_REVIEWNOTEBOOKINPUT']._serialized_end=511
+  _globals['_REVIEWNOTEBOOKOUTPUT']._serialized_start=513
+  _globals['_REVIEWNOTEBOOKOUTPUT']._serialized_end=535
+  _globals['_DELETENOTEBOOKINPUT']._serialized_start=537
+  _globals['_DELETENOTEBOOKINPUT']._serialized_end=579
+  _globals['_DELETENOTEBOOKOUTPUT']._serialized_start=581
+  _globals['_DELETENOTEBOOKOUTPUT']._serialized_end=603
+  _globals['_DESCRIBENOTEBOOKINPUT']._serialized_start=605
+  _globals['_DESCRIBENOTEBOOKINPUT']._serialized_end=649
+  _globals['_DESCRIBENOTEBOOKOUTPUT']._serialized_start=651
+  _globals['_DESCRIBENOTEBOOKOUTPUT']._serialized_end=721
+  _globals['_LISTNOTEBOOKSINPUT']._serialized_start=724
+  _globals['_LISTNOTEBOOKSINPUT']._serialized_end=992
+  _globals['_LISTNOTEBOOKSINPUT_FILTER']._serialized_start=839
+  _globals['_LISTNOTEBOOKSINPUT_FILTER']._serialized_end=992
+  _globals['_LISTNOTEBOOKSOUTPUT']._serialized_start=994
+  _globals['_LISTNOTEBOOKSOUTPUT']._serialized_end=1073
+  _globals['_NOTEBOOKSERVICE']._serialized_start=1076
+  _globals['_NOTEBOOKSERVICE']._serialized_end=2027
 # @@protoc_insertion_point(module_scope)
