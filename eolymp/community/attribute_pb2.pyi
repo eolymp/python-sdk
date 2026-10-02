@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Attribute(_message.Message):
-    __slots__ = ("id", "key", "label", "help", "type", "index", "required", "readonly", "hidden", "visibility", "regexp", "min", "max", "choices", "country", "constraints")
+    __slots__ = ("id", "key", "label", "help", "type", "index", "required", "readonly", "hidden", "visibility", "regexp", "min", "max", "choices", "constraints")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Attribute.Type]
@@ -48,7 +48,7 @@ class Attribute(_message.Message):
     PUBLIC: Attribute.Visibility
     INTERNAL: Attribute.Visibility
     class Patch(_message.Message):
-        __slots__ = ("label", "help", "type", "index", "required", "readonly", "visibility", "regexp", "min", "max", "choices", "unset_choices", "country", "constraints", "unset_constraints")
+        __slots__ = ("label", "help", "type", "index", "required", "readonly", "visibility", "regexp", "min", "max", "choices", "unset_choices", "constraints", "unset_constraints")
         LABEL_FIELD_NUMBER: _ClassVar[int]
         HELP_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -61,7 +61,6 @@ class Attribute(_message.Message):
         MAX_FIELD_NUMBER: _ClassVar[int]
         CHOICES_FIELD_NUMBER: _ClassVar[int]
         UNSET_CHOICES_FIELD_NUMBER: _ClassVar[int]
-        COUNTRY_FIELD_NUMBER: _ClassVar[int]
         CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
         UNSET_CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
         label: str
@@ -76,10 +75,9 @@ class Attribute(_message.Message):
         max: int
         choices: _containers.RepeatedScalarFieldContainer[str]
         unset_choices: bool
-        country: str
         constraints: _containers.RepeatedScalarFieldContainer[str]
         unset_constraints: bool
-        def __init__(self, label: _Optional[str] = ..., help: _Optional[str] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: _Optional[bool] = ..., readonly: _Optional[bool] = ..., visibility: _Optional[_Union[Attribute.Visibility, str]] = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., unset_choices: _Optional[bool] = ..., country: _Optional[str] = ..., constraints: _Optional[_Iterable[str]] = ..., unset_constraints: _Optional[bool] = ...) -> None: ...
+        def __init__(self, label: _Optional[str] = ..., help: _Optional[str] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: _Optional[bool] = ..., readonly: _Optional[bool] = ..., visibility: _Optional[_Union[Attribute.Visibility, str]] = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., unset_choices: _Optional[bool] = ..., constraints: _Optional[_Iterable[str]] = ..., unset_constraints: _Optional[bool] = ...) -> None: ...
     class Description(_message.Message):
         __slots__ = ("locale", "label", "help", "choices")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -116,7 +114,6 @@ class Attribute(_message.Message):
     MIN_FIELD_NUMBER: _ClassVar[int]
     MAX_FIELD_NUMBER: _ClassVar[int]
     CHOICES_FIELD_NUMBER: _ClassVar[int]
-    COUNTRY_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     key: str
@@ -132,6 +129,5 @@ class Attribute(_message.Message):
     min: int
     max: int
     choices: _containers.RepeatedScalarFieldContainer[str]
-    country: str
     constraints: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., label: _Optional[str] = ..., help: _Optional[str] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: _Optional[bool] = ..., readonly: _Optional[bool] = ..., hidden: _Optional[bool] = ..., visibility: _Optional[_Union[Attribute.Visibility, str]] = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., country: _Optional[str] = ..., constraints: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., label: _Optional[str] = ..., help: _Optional[str] = ..., type: _Optional[_Union[Attribute.Type, str]] = ..., index: _Optional[int] = ..., required: _Optional[bool] = ..., readonly: _Optional[bool] = ..., hidden: _Optional[bool] = ..., visibility: _Optional[_Union[Attribute.Visibility, str]] = ..., regexp: _Optional[str] = ..., min: _Optional[int] = ..., max: _Optional[int] = ..., choices: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[str]] = ...) -> None: ...
