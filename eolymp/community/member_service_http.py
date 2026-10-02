@@ -147,3 +147,25 @@ class MemberServiceClient:
             **kwargs,
         )
 
+    def ImportMembers(self, request, **kwargs):
+        path = "/members:import"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ImportMembersOutput"),
+            **kwargs,
+        )
+
+    def ExportMembers(self, request, **kwargs):
+        path = "/members:export"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.community.ExportMembersOutput"),
+            **kwargs,
+        )
+

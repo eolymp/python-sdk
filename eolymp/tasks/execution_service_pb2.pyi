@@ -20,7 +20,7 @@ class ExecuteTaskInput(_message.Message):
     def __init__(self, task_id: _Optional[str] = ..., task: _Optional[_Union[_any_pb2.Any, _Mapping]] = ..., checkpoint: _Optional[_Union[_any_pb2.Any, _Mapping]] = ..., attempt: _Optional[int] = ...) -> None: ...
 
 class ExecuteTaskOutput(_message.Message):
-    __slots__ = ("progress", "checkpoint", "record")
+    __slots__ = ("progress", "checkpoint", "record", "output")
     class Progress(_message.Message):
         __slots__ = ("progress", "total", "status_message")
         PROGRESS_FIELD_NUMBER: _ClassVar[int]
@@ -40,10 +40,17 @@ class ExecuteTaskOutput(_message.Message):
         LINE_FIELD_NUMBER: _ClassVar[int]
         line: str
         def __init__(self, line: _Optional[str] = ...) -> None: ...
+    class Output(_message.Message):
+        __slots__ = ("url",)
+        URL_FIELD_NUMBER: _ClassVar[int]
+        url: str
+        def __init__(self, url: _Optional[str] = ...) -> None: ...
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
     CHECKPOINT_FIELD_NUMBER: _ClassVar[int]
     RECORD_FIELD_NUMBER: _ClassVar[int]
+    OUTPUT_FIELD_NUMBER: _ClassVar[int]
     progress: ExecuteTaskOutput.Progress
     checkpoint: ExecuteTaskOutput.Checkpoint
     record: ExecuteTaskOutput.Record
-    def __init__(self, progress: _Optional[_Union[ExecuteTaskOutput.Progress, _Mapping]] = ..., checkpoint: _Optional[_Union[ExecuteTaskOutput.Checkpoint, _Mapping]] = ..., record: _Optional[_Union[ExecuteTaskOutput.Record, _Mapping]] = ...) -> None: ...
+    output: ExecuteTaskOutput.Output
+    def __init__(self, progress: _Optional[_Union[ExecuteTaskOutput.Progress, _Mapping]] = ..., checkpoint: _Optional[_Union[ExecuteTaskOutput.Checkpoint, _Mapping]] = ..., record: _Optional[_Union[ExecuteTaskOutput.Record, _Mapping]] = ..., output: _Optional[_Union[ExecuteTaskOutput.Output, _Mapping]] = ...) -> None: ...
