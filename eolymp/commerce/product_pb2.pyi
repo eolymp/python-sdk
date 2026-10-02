@@ -63,9 +63,9 @@ class Product(_message.Message):
         label: str
         def __init__(self, key: _Optional[str] = ..., label: _Optional[str] = ...) -> None: ...
     class Variant(_message.Message):
-        __slots__ = ("id", "product_id", "name", "values", "images", "out_of_stock", "max_quantity", "available_quantity")
+        __slots__ = ("id", "product_id", "name", "position", "values", "images", "out_of_stock", "max_quantity", "available_quantity")
         class Patch(_message.Message):
-            __slots__ = ("name", "values", "images", "unset_images", "available_quantity")
+            __slots__ = ("name", "position", "values", "images", "unset_images", "available_quantity")
             class ValuesEntry(_message.Message):
                 __slots__ = ("key", "value")
                 KEY_FIELD_NUMBER: _ClassVar[int]
@@ -74,16 +74,18 @@ class Product(_message.Message):
                 value: str
                 def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
             NAME_FIELD_NUMBER: _ClassVar[int]
+            POSITION_FIELD_NUMBER: _ClassVar[int]
             VALUES_FIELD_NUMBER: _ClassVar[int]
             IMAGES_FIELD_NUMBER: _ClassVar[int]
             UNSET_IMAGES_FIELD_NUMBER: _ClassVar[int]
             AVAILABLE_QUANTITY_FIELD_NUMBER: _ClassVar[int]
             name: str
+            position: int
             values: _containers.ScalarMap[str, str]
             images: _containers.RepeatedScalarFieldContainer[str]
             unset_images: bool
             available_quantity: int
-            def __init__(self, name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., unset_images: _Optional[bool] = ..., available_quantity: _Optional[int] = ...) -> None: ...
+            def __init__(self, name: _Optional[str] = ..., position: _Optional[int] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., unset_images: _Optional[bool] = ..., available_quantity: _Optional[int] = ...) -> None: ...
         class ValuesEntry(_message.Message):
             __slots__ = ("key", "value")
             KEY_FIELD_NUMBER: _ClassVar[int]
@@ -94,6 +96,7 @@ class Product(_message.Message):
         ID_FIELD_NUMBER: _ClassVar[int]
         PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
+        POSITION_FIELD_NUMBER: _ClassVar[int]
         VALUES_FIELD_NUMBER: _ClassVar[int]
         IMAGES_FIELD_NUMBER: _ClassVar[int]
         OUT_OF_STOCK_FIELD_NUMBER: _ClassVar[int]
@@ -102,12 +105,13 @@ class Product(_message.Message):
         id: str
         product_id: str
         name: str
+        position: int
         values: _containers.ScalarMap[str, str]
         images: _containers.RepeatedScalarFieldContainer[str]
         out_of_stock: bool
         max_quantity: int
         available_quantity: int
-        def __init__(self, id: _Optional[str] = ..., product_id: _Optional[str] = ..., name: _Optional[str] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: _Optional[bool] = ..., max_quantity: _Optional[int] = ..., available_quantity: _Optional[int] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., product_id: _Optional[str] = ..., name: _Optional[str] = ..., position: _Optional[int] = ..., values: _Optional[_Mapping[str, str]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: _Optional[bool] = ..., max_quantity: _Optional[int] = ..., available_quantity: _Optional[int] = ...) -> None: ...
     class Translation(_message.Message):
         __slots__ = ("id", "locale", "name", "summary", "description", "attributes")
         ID_FIELD_NUMBER: _ClassVar[int]
