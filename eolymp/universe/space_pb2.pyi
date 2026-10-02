@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Space(_message.Message):
-    __slots__ = ("id", "url", "home_url", "issuer_url", "graphql_url", "resource_link", "space_link", "console_link", "graphql_link", "key", "name", "image", "visibility", "status", "features", "subscription", "affiliation", "discord_guild_id", "locales")
+    __slots__ = ("id", "url", "home_url", "issuer_url", "graphql_url", "resource_link", "space_link", "console_link", "graphql_link", "key", "name", "image", "visibility", "status", "features", "subscription", "affiliation", "discord_guild_id", "locales", "primary_color")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Space.Status]
@@ -62,7 +62,7 @@ class Space(_message.Message):
         SUBSCRIPTION: Space.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("key", "name", "image", "visibility", "affiliation", "locales", "unset_locales")
+        __slots__ = ("key", "name", "image", "visibility", "affiliation", "locales", "unset_locales", "primary_color")
         KEY_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         IMAGE_FIELD_NUMBER: _ClassVar[int]
@@ -70,6 +70,7 @@ class Space(_message.Message):
         AFFILIATION_FIELD_NUMBER: _ClassVar[int]
         LOCALES_FIELD_NUMBER: _ClassVar[int]
         UNSET_LOCALES_FIELD_NUMBER: _ClassVar[int]
+        PRIMARY_COLOR_FIELD_NUMBER: _ClassVar[int]
         key: str
         name: str
         image: str
@@ -77,7 +78,8 @@ class Space(_message.Message):
         affiliation: str
         locales: _containers.RepeatedScalarFieldContainer[str]
         unset_locales: bool
-        def __init__(self, key: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., affiliation: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., unset_locales: _Optional[bool] = ...) -> None: ...
+        primary_color: str
+        def __init__(self, key: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., affiliation: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., unset_locales: _Optional[bool] = ..., primary_color: _Optional[str] = ...) -> None: ...
     class Subscription(_message.Message):
         __slots__ = ("plan", "seats", "usage", "usage_based_billing", "quota", "billing_period_start", "billing_period_end", "quota_period_start", "quota_period_end")
         PLAN_FIELD_NUMBER: _ClassVar[int]
@@ -118,6 +120,7 @@ class Space(_message.Message):
     AFFILIATION_FIELD_NUMBER: _ClassVar[int]
     DISCORD_GUILD_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALES_FIELD_NUMBER: _ClassVar[int]
+    PRIMARY_COLOR_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
     home_url: str
@@ -137,4 +140,5 @@ class Space(_message.Message):
     affiliation: str
     discord_guild_id: str
     locales: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., graphql_link: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., features: _Optional[_Iterable[_Union[Space.Feature, str]]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., affiliation: _Optional[str] = ..., discord_guild_id: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ...) -> None: ...
+    primary_color: str
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., home_url: _Optional[str] = ..., issuer_url: _Optional[str] = ..., graphql_url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., graphql_link: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., image: _Optional[str] = ..., visibility: _Optional[_Union[Space.Visibility, str]] = ..., status: _Optional[_Union[Space.Status, str]] = ..., features: _Optional[_Iterable[_Union[Space.Feature, str]]] = ..., subscription: _Optional[_Union[Space.Subscription, _Mapping]] = ..., affiliation: _Optional[str] = ..., discord_guild_id: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., primary_color: _Optional[str] = ...) -> None: ...
