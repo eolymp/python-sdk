@@ -267,3 +267,19 @@ class ExportProblemsOutput(_message.Message):
     DOWNLOAD_URL_FIELD_NUMBER: _ClassVar[int]
     download_url: str
     def __init__(self, download_url: _Optional[str] = ...) -> None: ...
+
+class ExportEditorialsInput(_message.Message):
+    __slots__ = ("contest_id", "problems", "locale")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PROBLEMS_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    problems: _containers.RepeatedScalarFieldContainer[str]
+    locale: str
+    def __init__(self, contest_id: _Optional[str] = ..., problems: _Optional[_Iterable[str]] = ..., locale: _Optional[str] = ...) -> None: ...
+
+class ExportEditorialsOutput(_message.Message):
+    __slots__ = ("download_url",)
+    DOWNLOAD_URL_FIELD_NUMBER: _ClassVar[int]
+    download_url: str
+    def __init__(self, download_url: _Optional[str] = ...) -> None: ...

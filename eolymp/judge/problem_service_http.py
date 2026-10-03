@@ -237,3 +237,17 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def ExportEditorials(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/editorials:export"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ExportEditorialsOutput"),
+            **kwargs,
+        )
+
