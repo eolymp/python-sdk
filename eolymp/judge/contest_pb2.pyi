@@ -224,10 +224,20 @@ class Contest(_message.Message):
         signers: _containers.RepeatedCompositeFieldContainer[Contest.CertificationConfig.Signer]
         def __init__(self, enabled: _Optional[bool] = ..., affiliation: _Optional[str] = ..., signers: _Optional[_Iterable[_Union[Contest.CertificationConfig.Signer, _Mapping]]] = ...) -> None: ...
     class ProctoringConfig(_message.Message):
-        __slots__ = ("enabled",)
-        ENABLED_FIELD_NUMBER: _ClassVar[int]
-        enabled: bool
-        def __init__(self, enabled: _Optional[bool] = ...) -> None: ...
+        __slots__ = ("mode",)
+        class Mode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            UNKNOWN_MODE: _ClassVar[Contest.ProctoringConfig.Mode]
+            NONE: _ClassVar[Contest.ProctoringConfig.Mode]
+            SCREEN: _ClassVar[Contest.ProctoringConfig.Mode]
+            SCREEN_AND_CAMERA: _ClassVar[Contest.ProctoringConfig.Mode]
+        UNKNOWN_MODE: Contest.ProctoringConfig.Mode
+        NONE: Contest.ProctoringConfig.Mode
+        SCREEN: Contest.ProctoringConfig.Mode
+        SCREEN_AND_CAMERA: Contest.ProctoringConfig.Mode
+        MODE_FIELD_NUMBER: _ClassVar[int]
+        mode: Contest.ProctoringConfig.Mode
+        def __init__(self, mode: _Optional[_Union[Contest.ProctoringConfig.Mode, str]] = ...) -> None: ...
     class EnvironmentConfig(_message.Message):
         __slots__ = ("runtimes",)
         RUNTIMES_FIELD_NUMBER: _ClassVar[int]
