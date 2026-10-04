@@ -104,8 +104,12 @@ class ListShippingMethodsOutput(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[_shipping_method_pb2.ShippingMethod, _Mapping]]] = ...) -> None: ...
 
 class PlaceOrderInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("shipping_address", "shipping_method_id")
+    SHIPPING_ADDRESS_FIELD_NUMBER: _ClassVar[int]
+    SHIPPING_METHOD_ID_FIELD_NUMBER: _ClassVar[int]
+    shipping_address: _address_pb2.Address
+    shipping_method_id: str
+    def __init__(self, shipping_address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., shipping_method_id: _Optional[str] = ...) -> None: ...
 
 class PlaceOrderOutput(_message.Message):
     __slots__ = ("order_id", "order_number", "checkout_url")
