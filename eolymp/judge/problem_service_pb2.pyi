@@ -279,7 +279,18 @@ class ExportEditorialsInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ..., problems: _Optional[_Iterable[str]] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class ExportEditorialsOutput(_message.Message):
-    __slots__ = ("download_url",)
+    __slots__ = ("download_url", "omitted_problems")
+    class OmittedProblem(_message.Message):
+        __slots__ = ("problem_id", "label", "title")
+        PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+        LABEL_FIELD_NUMBER: _ClassVar[int]
+        TITLE_FIELD_NUMBER: _ClassVar[int]
+        problem_id: str
+        label: str
+        title: str
+        def __init__(self, problem_id: _Optional[str] = ..., label: _Optional[str] = ..., title: _Optional[str] = ...) -> None: ...
     DOWNLOAD_URL_FIELD_NUMBER: _ClassVar[int]
+    OMITTED_PROBLEMS_FIELD_NUMBER: _ClassVar[int]
     download_url: str
-    def __init__(self, download_url: _Optional[str] = ...) -> None: ...
+    omitted_problems: _containers.RepeatedCompositeFieldContainer[ExportEditorialsOutput.OmittedProblem]
+    def __init__(self, download_url: _Optional[str] = ..., omitted_problems: _Optional[_Iterable[_Union[ExportEditorialsOutput.OmittedProblem, _Mapping]]] = ...) -> None: ...
