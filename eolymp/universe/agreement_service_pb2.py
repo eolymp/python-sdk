@@ -29,7 +29,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/universe/agreement_service.proto\x12\x0f\x65olymp.universe\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"\xa6\x01\n#RequestDataProcessingAgreementInput\x12\x19\n\x11organization_name\x18\x01 \x01(\t\x12\x1c\n\x14organization_address\x18\x02 \x01(\t\x12\x1b\n\x13organization_tax_id\x18\x03 \x01(\t\x12\x13\n\x0bsigner_name\x18\x04 \x01(\t\x12\x14\n\x0csigner_email\x18\x05 \x01(\t\"&\n$RequestDataProcessingAgreementOutput2\x8b\x02\n\x10\x41greementService\x12\xd9\x01\n\x1eRequestDataProcessingAgreement\x12\x34.eolymp.universe.RequestDataProcessingAgreementInput\x1a\x35.eolymp.universe.RequestDataProcessingAgreementOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x03\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x11\"\x0f/agreements/dpa\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'eolymp/universe/agreement_service.proto\x12\x0f\x65olymp.universe\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\"{\n#RequestDataProcessingAgreementInput\x12\x19\n\x11organization_name\x18\x01 \x01(\t\x12\x1c\n\x14organization_address\x18\x02 \x01(\t\x12\x1b\n\x13organization_tax_id\x18\x03 \x01(\t\"&\n$RequestDataProcessingAgreementOutput2\x8b\x02\n\x10\x41greementService\x12\xd9\x01\n\x1eRequestDataProcessingAgreement\x12\x34.eolymp.universe.RequestDataProcessingAgreementInput\x1a\x35.eolymp.universe.RequestDataProcessingAgreementOutput\"J\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x03\x82\xe3\n\x18\x8a\xe3\n\x14universe:space:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x11\"\x0f/agreements/dpa\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/universe;universeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,10 +41,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_AGREEMENTSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_AGREEMENTSERVICE'].methods_by_name['RequestDataProcessingAgreement']._loaded_options = None
   _globals['_AGREEMENTSERVICE'].methods_by_name['RequestDataProcessingAgreement']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\003\202\343\n\030\212\343\n\024universe:space:write\242\343\n\004\250\343\n\002\202\323\344\223\002\021\"\017/agreements/dpa'
-  _globals['_REQUESTDATAPROCESSINGAGREEMENTINPUT']._serialized_start=228
-  _globals['_REQUESTDATAPROCESSINGAGREEMENTINPUT']._serialized_end=394
-  _globals['_REQUESTDATAPROCESSINGAGREEMENTOUTPUT']._serialized_start=396
-  _globals['_REQUESTDATAPROCESSINGAGREEMENTOUTPUT']._serialized_end=434
-  _globals['_AGREEMENTSERVICE']._serialized_start=437
-  _globals['_AGREEMENTSERVICE']._serialized_end=704
+  _globals['_REQUESTDATAPROCESSINGAGREEMENTINPUT']._serialized_start=227
+  _globals['_REQUESTDATAPROCESSINGAGREEMENTINPUT']._serialized_end=350
+  _globals['_REQUESTDATAPROCESSINGAGREEMENTOUTPUT']._serialized_start=352
+  _globals['_REQUESTDATAPROCESSINGAGREEMENTOUTPUT']._serialized_end=390
+  _globals['_AGREEMENTSERVICE']._serialized_start=393
+  _globals['_AGREEMENTSERVICE']._serialized_end=660
 # @@protoc_insertion_point(module_scope)
