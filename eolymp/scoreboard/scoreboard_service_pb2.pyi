@@ -282,3 +282,11 @@ class RebuildScoreboardOutput(_message.Message):
     TASK_ID_FIELD_NUMBER: _ClassVar[int]
     task_id: str
     def __init__(self, task_id: _Optional[str] = ...) -> None: ...
+
+class ScoreboardChangedEvent(_message.Message):
+    __slots__ = ("before", "after")
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    before: _scoreboard_pb2.Scoreboard
+    after: _scoreboard_pb2.Scoreboard
+    def __init__(self, before: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ..., after: _Optional[_Union[_scoreboard_pb2.Scoreboard, _Mapping]] = ...) -> None: ...
