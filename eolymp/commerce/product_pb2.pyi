@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Product(_message.Message):
-    __slots__ = ("id", "name", "summary", "description", "images", "out_of_stock", "featured", "inactive", "backorder", "currency", "price", "regular_price", "attributes", "variants", "stripe_product_id", "stripe_price_id", "cursor")
+    __slots__ = ("id", "name", "summary", "description", "images", "out_of_stock", "featured", "inactive", "backorder", "currency", "price", "regular_price", "credit_price", "credit_regular_price", "attributes", "variants", "stripe_product_id", "stripe_price_id", "cursor")
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -139,6 +139,8 @@ class Product(_message.Message):
     CURRENCY_FIELD_NUMBER: _ClassVar[int]
     PRICE_FIELD_NUMBER: _ClassVar[int]
     REGULAR_PRICE_FIELD_NUMBER: _ClassVar[int]
+    CREDIT_PRICE_FIELD_NUMBER: _ClassVar[int]
+    CREDIT_REGULAR_PRICE_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
     VARIANTS_FIELD_NUMBER: _ClassVar[int]
     STRIPE_PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -156,9 +158,11 @@ class Product(_message.Message):
     currency: str
     price: int
     regular_price: int
+    credit_price: int
+    credit_regular_price: int
     attributes: _containers.RepeatedCompositeFieldContainer[Product.Attribute]
     variants: _containers.RepeatedCompositeFieldContainer[Product.Variant]
     stripe_product_id: str
     stripe_price_id: str
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: _Optional[bool] = ..., featured: _Optional[bool] = ..., inactive: _Optional[bool] = ..., backorder: _Optional[bool] = ..., currency: _Optional[str] = ..., price: _Optional[int] = ..., regular_price: _Optional[int] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ..., variants: _Optional[_Iterable[_Union[Product.Variant, _Mapping]]] = ..., stripe_product_id: _Optional[str] = ..., stripe_price_id: _Optional[str] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., images: _Optional[_Iterable[str]] = ..., out_of_stock: _Optional[bool] = ..., featured: _Optional[bool] = ..., inactive: _Optional[bool] = ..., backorder: _Optional[bool] = ..., currency: _Optional[str] = ..., price: _Optional[int] = ..., regular_price: _Optional[int] = ..., credit_price: _Optional[int] = ..., credit_regular_price: _Optional[int] = ..., attributes: _Optional[_Iterable[_Union[Product.Attribute, _Mapping]]] = ..., variants: _Optional[_Iterable[_Union[Product.Variant, _Mapping]]] = ..., stripe_product_id: _Optional[str] = ..., stripe_price_id: _Optional[str] = ..., cursor: _Optional[str] = ...) -> None: ...
