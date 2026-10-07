@@ -278,10 +278,8 @@ class RebuildScoreboardInput(_message.Message):
     def __init__(self, scoreboard_id: _Optional[str] = ...) -> None: ...
 
 class RebuildScoreboardOutput(_message.Message):
-    __slots__ = ("task_id",)
-    TASK_ID_FIELD_NUMBER: _ClassVar[int]
-    task_id: str
-    def __init__(self, task_id: _Optional[str] = ...) -> None: ...
+    __slots__ = ()
+    def __init__(self) -> None: ...
 
 class ScoreboardChangedEvent(_message.Message):
     __slots__ = ("before", "after")
