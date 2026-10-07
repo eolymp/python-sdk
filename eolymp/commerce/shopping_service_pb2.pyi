@@ -94,8 +94,10 @@ class UpdateShippingMethodOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ListShippingMethodsInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("country",)
+    COUNTRY_FIELD_NUMBER: _ClassVar[int]
+    country: str
+    def __init__(self, country: _Optional[str] = ...) -> None: ...
 
 class ListShippingMethodsOutput(_message.Message):
     __slots__ = ("items",)
