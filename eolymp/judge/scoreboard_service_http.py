@@ -42,6 +42,20 @@ class ScoreboardServiceClient:
             **kwargs,
         )
 
+    def DescribeScoreboardStats(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoreboard/stats"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.DescribeScoreboardStatsOutput"),
+            **kwargs,
+        )
+
     def DescribeScoreboardRow(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/scoreboard/rows/"+urllib.parse.quote(request.participant_id)
 

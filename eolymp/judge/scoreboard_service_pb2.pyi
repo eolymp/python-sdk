@@ -70,6 +70,20 @@ class ListScoreboardRowsOutput(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[_scoreboard_pb2.Scoreboard.Row]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_scoreboard_pb2.Scoreboard.Row, _Mapping]]] = ...) -> None: ...
 
+class DescribeScoreboardStatsInput(_message.Message):
+    __slots__ = ("contest_id", "mode")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    mode: _scoreboard_pb2.Scoreboard.Mode
+    def __init__(self, contest_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
+
+class DescribeScoreboardStatsOutput(_message.Message):
+    __slots__ = ("stats",)
+    STATS_FIELD_NUMBER: _ClassVar[int]
+    stats: _scoreboard_pb2.Scoreboard.Stats
+    def __init__(self, stats: _Optional[_Union[_scoreboard_pb2.Scoreboard.Stats, _Mapping]] = ...) -> None: ...
+
 class DescribeScoreboardRowInput(_message.Message):
     __slots__ = ("contest_id", "participant_id", "mode")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]

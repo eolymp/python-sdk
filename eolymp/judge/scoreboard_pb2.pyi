@@ -143,6 +143,36 @@ class Scoreboard(_message.Message):
         medal: _medal_pb2.Medal
         values: _containers.RepeatedCompositeFieldContainer[Scoreboard.Row.Value]
         def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., index: _Optional[int] = ..., rank: _Optional[int] = ..., rank_length: _Optional[int] = ..., rank_all: _Optional[int] = ..., rank_all_length: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
+    class Stats(_message.Message):
+        __slots__ = ("participants", "problems")
+        class Problem(_message.Message):
+            __slots__ = ("column_id", "tried", "scored", "solved", "attempts", "pending", "pending_participants", "score", "first_solved_in", "first_solver_id")
+            COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
+            TRIED_FIELD_NUMBER: _ClassVar[int]
+            SCORED_FIELD_NUMBER: _ClassVar[int]
+            SOLVED_FIELD_NUMBER: _ClassVar[int]
+            ATTEMPTS_FIELD_NUMBER: _ClassVar[int]
+            PENDING_FIELD_NUMBER: _ClassVar[int]
+            PENDING_PARTICIPANTS_FIELD_NUMBER: _ClassVar[int]
+            SCORE_FIELD_NUMBER: _ClassVar[int]
+            FIRST_SOLVED_IN_FIELD_NUMBER: _ClassVar[int]
+            FIRST_SOLVER_ID_FIELD_NUMBER: _ClassVar[int]
+            column_id: str
+            tried: int
+            scored: int
+            solved: int
+            attempts: int
+            pending: int
+            pending_participants: int
+            score: float
+            first_solved_in: int
+            first_solver_id: str
+            def __init__(self, column_id: _Optional[str] = ..., tried: _Optional[int] = ..., scored: _Optional[int] = ..., solved: _Optional[int] = ..., attempts: _Optional[int] = ..., pending: _Optional[int] = ..., pending_participants: _Optional[int] = ..., score: _Optional[float] = ..., first_solved_in: _Optional[int] = ..., first_solver_id: _Optional[str] = ...) -> None: ...
+        PARTICIPANTS_FIELD_NUMBER: _ClassVar[int]
+        PROBLEMS_FIELD_NUMBER: _ClassVar[int]
+        participants: int
+        problems: _containers.RepeatedCompositeFieldContainer[Scoreboard.Stats.Problem]
+        def __init__(self, participants: _Optional[int] = ..., problems: _Optional[_Iterable[_Union[Scoreboard.Stats.Problem, _Mapping]]] = ...) -> None: ...
     MODES_FIELD_NUMBER: _ClassVar[int]
     COLUMNS_FIELD_NUMBER: _ClassVar[int]
     modes: _containers.RepeatedScalarFieldContainer[Scoreboard.Mode]
