@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IdentityConfig(_message.Message):
-    __slots__ = ("local", "basecamp", "oidc", "google_workspace", "display_name_type", "display_name_attribute", "allow_sign_up", "require_email_verified")
+    __slots__ = ("local", "basecamp", "oidc", "google_workspace", "display_name_type", "display_name_attribute", "allow_sign_up", "require_email_verified", "single_session")
     class DisplayNameType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_DISPLAY_NAME: _ClassVar[IdentityConfig.DisplayNameType]
@@ -27,6 +27,7 @@ class IdentityConfig(_message.Message):
     DISPLAY_NAME_ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
     ALLOW_SIGN_UP_FIELD_NUMBER: _ClassVar[int]
     REQUIRE_EMAIL_VERIFIED_FIELD_NUMBER: _ClassVar[int]
+    SINGLE_SESSION_FIELD_NUMBER: _ClassVar[int]
     local: _configuration_idp_pb2.IdentityProvider.Local
     basecamp: _configuration_idp_pb2.IdentityProvider.Basecamp
     oidc: _configuration_idp_pb2.IdentityProvider.OIDC
@@ -35,4 +36,5 @@ class IdentityConfig(_message.Message):
     display_name_attribute: str
     allow_sign_up: bool
     require_email_verified: bool
-    def __init__(self, local: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.Local, _Mapping]] = ..., basecamp: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.Basecamp, _Mapping]] = ..., oidc: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ..., google_workspace: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.GoogleWorkspace, _Mapping]] = ..., display_name_type: _Optional[_Union[IdentityConfig.DisplayNameType, str]] = ..., display_name_attribute: _Optional[str] = ..., allow_sign_up: _Optional[bool] = ..., require_email_verified: _Optional[bool] = ...) -> None: ...
+    single_session: bool
+    def __init__(self, local: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.Local, _Mapping]] = ..., basecamp: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.Basecamp, _Mapping]] = ..., oidc: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.OIDC, _Mapping]] = ..., google_workspace: _Optional[_Union[_configuration_idp_pb2.IdentityProvider.GoogleWorkspace, _Mapping]] = ..., display_name_type: _Optional[_Union[IdentityConfig.DisplayNameType, str]] = ..., display_name_attribute: _Optional[str] = ..., allow_sign_up: _Optional[bool] = ..., require_email_verified: _Optional[bool] = ..., single_session: _Optional[bool] = ...) -> None: ...
