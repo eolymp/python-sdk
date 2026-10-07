@@ -14,8 +14,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DescribeShoppingCartInput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("country", "shipping_method_id")
+    COUNTRY_FIELD_NUMBER: _ClassVar[int]
+    SHIPPING_METHOD_ID_FIELD_NUMBER: _ClassVar[int]
+    country: str
+    shipping_method_id: str
+    def __init__(self, country: _Optional[str] = ..., shipping_method_id: _Optional[str] = ...) -> None: ...
 
 class DescribeShoppingCartOutput(_message.Message):
     __slots__ = ("cart",)

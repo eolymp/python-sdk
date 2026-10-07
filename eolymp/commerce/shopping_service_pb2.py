@@ -31,7 +31,7 @@ from eolymp.commerce import shipping_method_pb2 as eolymp_dot_commerce_dot_shipp
 from eolymp.commerce import shopping_cart_pb2 as eolymp_dot_commerce_dot_shopping__cart__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/commerce/shopping_service.proto\x12\x0f\x65olymp.commerce\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/commerce/address.proto\x1a%eolymp/commerce/shipping_method.proto\x1a#eolymp/commerce/shopping_cart.proto\"\x1b\n\x19\x44\x65scribeShoppingCartInput\"I\n\x1a\x44\x65scribeShoppingCartOutput\x12+\n\x04\x63\x61rt\x18\x01 \x01(\x0b\x32\x1d.eolymp.commerce.ShoppingCart\"W\n\x1b\x43reateShoppingCartItemInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\x05\"/\n\x1c\x43reateShoppingCartItemOutput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"@\n\x1bUpdateShoppingCartItemInput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\"\x1e\n\x1cUpdateShoppingCartItemOutput\".\n\x1b\x44\x65leteShoppingCartItemInput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"\x1e\n\x1c\x44\x65leteShoppingCartItemOutput\"G\n\x1aUpdateShippingAddressInput\x12)\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Address\"\x1d\n\x1bUpdateShippingAddressOutput\"`\n\x19UpdateBillingAddressInput\x12)\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x18\n\x10same_as_shipping\x18\x02 \x01(\x08\"\x1c\n\x1aUpdateBillingAddressOutput\"7\n\x19UpdateShippingMethodInput\x12\x1a\n\x12shipping_method_id\x18\x01 \x01(\t\"\x1c\n\x1aUpdateShippingMethodOutput\"<\n\x18ListShippingMethodsInput\x12\x14\n\x07\x63ountry\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_country\"K\n\x19ListShippingMethodsOutput\x12.\n\x05items\x18\x01 \x03(\x0b\x32\x1f.eolymp.commerce.ShippingMethod\"}\n\x0fPlaceOrderInput\x12\x32\n\x10shipping_address\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x1f\n\x12shipping_method_id\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x15\n\x13_shipping_method_id\"P\n\x10PlaceOrderOutput\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12\x14\n\x0corder_number\x18\x02 \x01(\t\x12\x14\n\x0c\x63heckout_url\x18\x03 \x01(\t2\x9e\x0c\n\x0fShoppingService\x12\x9b\x01\n\x14\x44\x65scribeShoppingCart\x12*.eolymp.commerce.DescribeShoppingCartInput\x1a+.eolymp.commerce.DescribeShoppingCartOutput\"*\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\r\x12\x0b/store/cart\x12\xa7\x01\n\x16\x43reateShoppingCartItem\x12,.eolymp.commerce.CreateShoppingCartItemInput\x1a-.eolymp.commerce.CreateShoppingCartItemOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\"\x11/store/cart/items\x12\xb1\x01\n\x16UpdateShoppingCartItem\x12,.eolymp.commerce.UpdateShoppingCartItemInput\x1a-.eolymp.commerce.UpdateShoppingCartItemOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/store/cart/items/{item_id}\x12\xb1\x01\n\x16\x44\x65leteShoppingCartItem\x12,.eolymp.commerce.DeleteShoppingCartItemInput\x1a-.eolymp.commerce.DeleteShoppingCartItemOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1d*\x1b/store/cart/items/{item_id}\x12\xaf\x01\n\x15UpdateShippingAddress\x12+.eolymp.commerce.UpdateShippingAddressInput\x1a,.eolymp.commerce.UpdateShippingAddressOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x1c/store/cart/shipping-address\x12\xab\x01\n\x14UpdateBillingAddress\x12*.eolymp.commerce.UpdateBillingAddressInput\x1a+.eolymp.commerce.UpdateBillingAddressOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/store/cart/billing-address\x12\xab\x01\n\x14UpdateShippingMethod\x12*.eolymp.commerce.UpdateShippingMethodInput\x1a+.eolymp.commerce.UpdateShippingMethodOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/store/cart/shipping-method\x12\xa9\x01\n\x13ListShippingMethods\x12).eolymp.commerce.ListShippingMethodsInput\x1a*.eolymp.commerce.ListShippingMethodsOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1e\x12\x1c/store/cart/shipping-methods\x12\x83\x01\n\nPlaceOrder\x12 .eolymp.commerce.PlaceOrderInput\x1a!.eolymp.commerce.PlaceOrderOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\"\x11/store/cart:order\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&eolymp/commerce/shopping_service.proto\x12\x0f\x65olymp.commerce\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1d\x65olymp/commerce/address.proto\x1a%eolymp/commerce/shipping_method.proto\x1a#eolymp/commerce/shopping_cart.proto\"u\n\x19\x44\x65scribeShoppingCartInput\x12\x14\n\x07\x63ountry\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x1f\n\x12shipping_method_id\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\n\n\x08_countryB\x15\n\x13_shipping_method_id\"I\n\x1a\x44\x65scribeShoppingCartOutput\x12+\n\x04\x63\x61rt\x18\x01 \x01(\x0b\x32\x1d.eolymp.commerce.ShoppingCart\"W\n\x1b\x43reateShoppingCartItemInput\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x12\n\nvariant_id\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\x05\"/\n\x1c\x43reateShoppingCartItemOutput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"@\n\x1bUpdateShoppingCartItemInput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\"\x1e\n\x1cUpdateShoppingCartItemOutput\".\n\x1b\x44\x65leteShoppingCartItemInput\x12\x0f\n\x07item_id\x18\x01 \x01(\t\"\x1e\n\x1c\x44\x65leteShoppingCartItemOutput\"G\n\x1aUpdateShippingAddressInput\x12)\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Address\"\x1d\n\x1bUpdateShippingAddressOutput\"`\n\x19UpdateBillingAddressInput\x12)\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x18\n\x10same_as_shipping\x18\x02 \x01(\x08\"\x1c\n\x1aUpdateBillingAddressOutput\"7\n\x19UpdateShippingMethodInput\x12\x1a\n\x12shipping_method_id\x18\x01 \x01(\t\"\x1c\n\x1aUpdateShippingMethodOutput\"<\n\x18ListShippingMethodsInput\x12\x14\n\x07\x63ountry\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_country\"K\n\x19ListShippingMethodsOutput\x12.\n\x05items\x18\x01 \x03(\x0b\x32\x1f.eolymp.commerce.ShippingMethod\"}\n\x0fPlaceOrderInput\x12\x32\n\x10shipping_address\x18\x01 \x01(\x0b\x32\x18.eolymp.commerce.Address\x12\x1f\n\x12shipping_method_id\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x15\n\x13_shipping_method_id\"P\n\x10PlaceOrderOutput\x12\x10\n\x08order_id\x18\x01 \x01(\t\x12\x14\n\x0corder_number\x18\x02 \x01(\t\x12\x14\n\x0c\x63heckout_url\x18\x03 \x01(\t2\x9e\x0c\n\x0fShoppingService\x12\x9b\x01\n\x14\x44\x65scribeShoppingCart\x12*.eolymp.commerce.DescribeShoppingCartInput\x1a+.eolymp.commerce.DescribeShoppingCartOutput\"*\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\r\x12\x0b/store/cart\x12\xa7\x01\n\x16\x43reateShoppingCartItem\x12,.eolymp.commerce.CreateShoppingCartItemInput\x1a-.eolymp.commerce.CreateShoppingCartItemOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\"\x11/store/cart/items\x12\xb1\x01\n\x16UpdateShoppingCartItem\x12,.eolymp.commerce.UpdateShoppingCartItemInput\x1a-.eolymp.commerce.UpdateShoppingCartItemOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/store/cart/items/{item_id}\x12\xb1\x01\n\x16\x44\x65leteShoppingCartItem\x12,.eolymp.commerce.DeleteShoppingCartItemInput\x1a-.eolymp.commerce.DeleteShoppingCartItemOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x1d*\x1b/store/cart/items/{item_id}\x12\xaf\x01\n\x15UpdateShippingAddress\x12+.eolymp.commerce.UpdateShippingAddressInput\x1a,.eolymp.commerce.UpdateShippingAddressOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x1c/store/cart/shipping-address\x12\xab\x01\n\x14UpdateBillingAddress\x12*.eolymp.commerce.UpdateBillingAddressInput\x1a+.eolymp.commerce.UpdateBillingAddressOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/store/cart/billing-address\x12\xab\x01\n\x14UpdateShippingMethod\x12*.eolymp.commerce.UpdateShippingMethodInput\x1a+.eolymp.commerce.UpdateShippingMethodOutput\":\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1d\"\x1b/store/cart/shipping-method\x12\xa9\x01\n\x13ListShippingMethods\x12).eolymp.commerce.ListShippingMethodsInput\x1a*.eolymp.commerce.ListShippingMethodsOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1e\x12\x1c/store/cart/shipping-methods\x12\x83\x01\n\nPlaceOrder\x12 .eolymp.commerce.PlaceOrderInput\x1a!.eolymp.commerce.PlaceOrderOutput\"0\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\n\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x13\"\x11/store/cart:order\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -60,41 +60,41 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SHOPPINGSERVICE'].methods_by_name['PlaceOrder']._loaded_options = None
   _globals['_SHOPPINGSERVICE'].methods_by_name['PlaceOrder']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\n\242\343\n\004\250\343\n\002\202\323\344\223\002\023\"\021/store/cart:order'
   _globals['_DESCRIBESHOPPINGCARTINPUT']._serialized_start=301
-  _globals['_DESCRIBESHOPPINGCARTINPUT']._serialized_end=328
-  _globals['_DESCRIBESHOPPINGCARTOUTPUT']._serialized_start=330
-  _globals['_DESCRIBESHOPPINGCARTOUTPUT']._serialized_end=403
-  _globals['_CREATESHOPPINGCARTITEMINPUT']._serialized_start=405
-  _globals['_CREATESHOPPINGCARTITEMINPUT']._serialized_end=492
-  _globals['_CREATESHOPPINGCARTITEMOUTPUT']._serialized_start=494
-  _globals['_CREATESHOPPINGCARTITEMOUTPUT']._serialized_end=541
-  _globals['_UPDATESHOPPINGCARTITEMINPUT']._serialized_start=543
-  _globals['_UPDATESHOPPINGCARTITEMINPUT']._serialized_end=607
-  _globals['_UPDATESHOPPINGCARTITEMOUTPUT']._serialized_start=609
-  _globals['_UPDATESHOPPINGCARTITEMOUTPUT']._serialized_end=639
-  _globals['_DELETESHOPPINGCARTITEMINPUT']._serialized_start=641
-  _globals['_DELETESHOPPINGCARTITEMINPUT']._serialized_end=687
-  _globals['_DELETESHOPPINGCARTITEMOUTPUT']._serialized_start=689
-  _globals['_DELETESHOPPINGCARTITEMOUTPUT']._serialized_end=719
-  _globals['_UPDATESHIPPINGADDRESSINPUT']._serialized_start=721
-  _globals['_UPDATESHIPPINGADDRESSINPUT']._serialized_end=792
-  _globals['_UPDATESHIPPINGADDRESSOUTPUT']._serialized_start=794
-  _globals['_UPDATESHIPPINGADDRESSOUTPUT']._serialized_end=823
-  _globals['_UPDATEBILLINGADDRESSINPUT']._serialized_start=825
-  _globals['_UPDATEBILLINGADDRESSINPUT']._serialized_end=921
-  _globals['_UPDATEBILLINGADDRESSOUTPUT']._serialized_start=923
-  _globals['_UPDATEBILLINGADDRESSOUTPUT']._serialized_end=951
-  _globals['_UPDATESHIPPINGMETHODINPUT']._serialized_start=953
-  _globals['_UPDATESHIPPINGMETHODINPUT']._serialized_end=1008
-  _globals['_UPDATESHIPPINGMETHODOUTPUT']._serialized_start=1010
-  _globals['_UPDATESHIPPINGMETHODOUTPUT']._serialized_end=1038
-  _globals['_LISTSHIPPINGMETHODSINPUT']._serialized_start=1040
-  _globals['_LISTSHIPPINGMETHODSINPUT']._serialized_end=1100
-  _globals['_LISTSHIPPINGMETHODSOUTPUT']._serialized_start=1102
-  _globals['_LISTSHIPPINGMETHODSOUTPUT']._serialized_end=1177
-  _globals['_PLACEORDERINPUT']._serialized_start=1179
-  _globals['_PLACEORDERINPUT']._serialized_end=1304
-  _globals['_PLACEORDEROUTPUT']._serialized_start=1306
-  _globals['_PLACEORDEROUTPUT']._serialized_end=1386
-  _globals['_SHOPPINGSERVICE']._serialized_start=1389
-  _globals['_SHOPPINGSERVICE']._serialized_end=2955
+  _globals['_DESCRIBESHOPPINGCARTINPUT']._serialized_end=418
+  _globals['_DESCRIBESHOPPINGCARTOUTPUT']._serialized_start=420
+  _globals['_DESCRIBESHOPPINGCARTOUTPUT']._serialized_end=493
+  _globals['_CREATESHOPPINGCARTITEMINPUT']._serialized_start=495
+  _globals['_CREATESHOPPINGCARTITEMINPUT']._serialized_end=582
+  _globals['_CREATESHOPPINGCARTITEMOUTPUT']._serialized_start=584
+  _globals['_CREATESHOPPINGCARTITEMOUTPUT']._serialized_end=631
+  _globals['_UPDATESHOPPINGCARTITEMINPUT']._serialized_start=633
+  _globals['_UPDATESHOPPINGCARTITEMINPUT']._serialized_end=697
+  _globals['_UPDATESHOPPINGCARTITEMOUTPUT']._serialized_start=699
+  _globals['_UPDATESHOPPINGCARTITEMOUTPUT']._serialized_end=729
+  _globals['_DELETESHOPPINGCARTITEMINPUT']._serialized_start=731
+  _globals['_DELETESHOPPINGCARTITEMINPUT']._serialized_end=777
+  _globals['_DELETESHOPPINGCARTITEMOUTPUT']._serialized_start=779
+  _globals['_DELETESHOPPINGCARTITEMOUTPUT']._serialized_end=809
+  _globals['_UPDATESHIPPINGADDRESSINPUT']._serialized_start=811
+  _globals['_UPDATESHIPPINGADDRESSINPUT']._serialized_end=882
+  _globals['_UPDATESHIPPINGADDRESSOUTPUT']._serialized_start=884
+  _globals['_UPDATESHIPPINGADDRESSOUTPUT']._serialized_end=913
+  _globals['_UPDATEBILLINGADDRESSINPUT']._serialized_start=915
+  _globals['_UPDATEBILLINGADDRESSINPUT']._serialized_end=1011
+  _globals['_UPDATEBILLINGADDRESSOUTPUT']._serialized_start=1013
+  _globals['_UPDATEBILLINGADDRESSOUTPUT']._serialized_end=1041
+  _globals['_UPDATESHIPPINGMETHODINPUT']._serialized_start=1043
+  _globals['_UPDATESHIPPINGMETHODINPUT']._serialized_end=1098
+  _globals['_UPDATESHIPPINGMETHODOUTPUT']._serialized_start=1100
+  _globals['_UPDATESHIPPINGMETHODOUTPUT']._serialized_end=1128
+  _globals['_LISTSHIPPINGMETHODSINPUT']._serialized_start=1130
+  _globals['_LISTSHIPPINGMETHODSINPUT']._serialized_end=1190
+  _globals['_LISTSHIPPINGMETHODSOUTPUT']._serialized_start=1192
+  _globals['_LISTSHIPPINGMETHODSOUTPUT']._serialized_end=1267
+  _globals['_PLACEORDERINPUT']._serialized_start=1269
+  _globals['_PLACEORDERINPUT']._serialized_end=1394
+  _globals['_PLACEORDEROUTPUT']._serialized_start=1396
+  _globals['_PLACEORDEROUTPUT']._serialized_end=1476
+  _globals['_SHOPPINGSERVICE']._serialized_start=1479
+  _globals['_SHOPPINGSERVICE']._serialized_end=3045
 # @@protoc_insertion_point(module_scope)
