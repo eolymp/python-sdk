@@ -9,15 +9,17 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Question(_message.Message):
-    __slots__ = ("id", "index", "type", "content", "score", "multiple", "options", "answers")
+    __slots__ = ("id", "index", "type", "content", "score", "multiple", "decimal_places", "options", "answers")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Question.Type]
         CHOICE: _ClassVar[Question.Type]
         TEXT: _ClassVar[Question.Type]
+        NUMBER: _ClassVar[Question.Type]
     UNKNOWN_TYPE: Question.Type
     CHOICE: Question.Type
     TEXT: Question.Type
+    NUMBER: Question.Type
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -30,12 +32,13 @@ class Question(_message.Message):
         CONTENT_VALUE: Question.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("index", "type", "content", "score", "multiple", "options", "answers")
+        __slots__ = ("index", "type", "content", "score", "multiple", "decimal_places", "options", "answers")
         INDEX_FIELD_NUMBER: _ClassVar[int]
         TYPE_FIELD_NUMBER: _ClassVar[int]
         CONTENT_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         MULTIPLE_FIELD_NUMBER: _ClassVar[int]
+        DECIMAL_PLACES_FIELD_NUMBER: _ClassVar[int]
         OPTIONS_FIELD_NUMBER: _ClassVar[int]
         ANSWERS_FIELD_NUMBER: _ClassVar[int]
         index: int
@@ -43,9 +46,10 @@ class Question(_message.Message):
         content: _content_pb2.Content
         score: float
         multiple: bool
+        decimal_places: int
         options: _containers.RepeatedCompositeFieldContainer[Question.Option]
         answers: _containers.RepeatedScalarFieldContainer[str]
-        def __init__(self, index: _Optional[int] = ..., type: _Optional[_Union[Question.Type, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., score: _Optional[float] = ..., multiple: _Optional[bool] = ..., options: _Optional[_Iterable[_Union[Question.Option, _Mapping]]] = ..., answers: _Optional[_Iterable[str]] = ...) -> None: ...
+        def __init__(self, index: _Optional[int] = ..., type: _Optional[_Union[Question.Type, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., score: _Optional[float] = ..., multiple: _Optional[bool] = ..., decimal_places: _Optional[int] = ..., options: _Optional[_Iterable[_Union[Question.Option, _Mapping]]] = ..., answers: _Optional[_Iterable[str]] = ...) -> None: ...
     class Option(_message.Message):
         __slots__ = ("id", "index", "content", "correct")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -63,6 +67,7 @@ class Question(_message.Message):
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     SCORE_FIELD_NUMBER: _ClassVar[int]
     MULTIPLE_FIELD_NUMBER: _ClassVar[int]
+    DECIMAL_PLACES_FIELD_NUMBER: _ClassVar[int]
     OPTIONS_FIELD_NUMBER: _ClassVar[int]
     ANSWERS_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -71,6 +76,7 @@ class Question(_message.Message):
     content: _content_pb2.Content
     score: float
     multiple: bool
+    decimal_places: int
     options: _containers.RepeatedCompositeFieldContainer[Question.Option]
     answers: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., type: _Optional[_Union[Question.Type, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., score: _Optional[float] = ..., multiple: _Optional[bool] = ..., options: _Optional[_Iterable[_Union[Question.Option, _Mapping]]] = ..., answers: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., index: _Optional[int] = ..., type: _Optional[_Union[Question.Type, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., score: _Optional[float] = ..., multiple: _Optional[bool] = ..., decimal_places: _Optional[int] = ..., options: _Optional[_Iterable[_Union[Question.Option, _Mapping]]] = ..., answers: _Optional[_Iterable[str]] = ...) -> None: ...

@@ -319,15 +319,17 @@ class Problem(_message.Message):
         tests: _containers.RepeatedCompositeFieldContainer[Problem.Testset.Test]
         def __init__(self, index: _Optional[int] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., scoring: _Optional[_Union[Problem.Testset.Scoring, str]] = ..., feedback: _Optional[_Union[Problem.Testset.Feedback, str]] = ..., dependencies: _Optional[_Iterable[int]] = ..., dependency: _Optional[_Union[Problem.Testset.Dependency, str]] = ..., tests: _Optional[_Iterable[_Union[Problem.Testset.Test, _Mapping]]] = ...) -> None: ...
     class Question(_message.Message):
-        __slots__ = ("index", "type", "content", "score", "multiple", "options", "answers")
+        __slots__ = ("index", "type", "content", "score", "multiple", "decimal_places", "options", "answers")
         class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
             __slots__ = ()
             UNKNOWN_TYPE: _ClassVar[Problem.Question.Type]
             CHOICE: _ClassVar[Problem.Question.Type]
             TEXT: _ClassVar[Problem.Question.Type]
+            NUMBER: _ClassVar[Problem.Question.Type]
         UNKNOWN_TYPE: Problem.Question.Type
         CHOICE: Problem.Question.Type
         TEXT: Problem.Question.Type
+        NUMBER: Problem.Question.Type
         class Option(_message.Message):
             __slots__ = ("index", "content", "correct")
             INDEX_FIELD_NUMBER: _ClassVar[int]
@@ -342,6 +344,7 @@ class Problem(_message.Message):
         CONTENT_FIELD_NUMBER: _ClassVar[int]
         SCORE_FIELD_NUMBER: _ClassVar[int]
         MULTIPLE_FIELD_NUMBER: _ClassVar[int]
+        DECIMAL_PLACES_FIELD_NUMBER: _ClassVar[int]
         OPTIONS_FIELD_NUMBER: _ClassVar[int]
         ANSWERS_FIELD_NUMBER: _ClassVar[int]
         index: int
@@ -349,9 +352,10 @@ class Problem(_message.Message):
         content: _content_pb2.Content
         score: float
         multiple: bool
+        decimal_places: int
         options: _containers.RepeatedCompositeFieldContainer[Problem.Question.Option]
         answers: _containers.RepeatedScalarFieldContainer[str]
-        def __init__(self, index: _Optional[int] = ..., type: _Optional[_Union[Problem.Question.Type, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., score: _Optional[float] = ..., multiple: _Optional[bool] = ..., options: _Optional[_Iterable[_Union[Problem.Question.Option, _Mapping]]] = ..., answers: _Optional[_Iterable[str]] = ...) -> None: ...
+        def __init__(self, index: _Optional[int] = ..., type: _Optional[_Union[Problem.Question.Type, str]] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., score: _Optional[float] = ..., multiple: _Optional[bool] = ..., decimal_places: _Optional[int] = ..., options: _Optional[_Iterable[_Union[Problem.Question.Option, _Mapping]]] = ..., answers: _Optional[_Iterable[str]] = ...) -> None: ...
     SCHEMA_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     TOPICS_FIELD_NUMBER: _ClassVar[int]
