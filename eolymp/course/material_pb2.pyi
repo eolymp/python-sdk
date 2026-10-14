@@ -1,3 +1,4 @@
+from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -50,10 +51,12 @@ class Material(_message.Message):
         content: _content_pb2.Content
         def __init__(self, content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
     class Task(_message.Message):
-        __slots__ = ("problem_id",)
+        __slots__ = ("problem_id", "type")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+        TYPE_FIELD_NUMBER: _ClassVar[int]
         problem_id: str
-        def __init__(self, problem_id: _Optional[str] = ...) -> None: ...
+        type: _problem_pb2.Problem.Type
+        def __init__(self, problem_id: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ...) -> None: ...
     class Grading(_message.Message):
         __slots__ = ("max_score", "weight")
         MAX_SCORE_FIELD_NUMBER: _ClassVar[int]
