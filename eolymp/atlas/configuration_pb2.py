@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/atlas/configuration.proto\x12\x0c\x65olymp.atlas\"\xb2\x02\n\x06\x43onfig\x12\"\n\x1ahourly_ip_submission_limit\x18\x01 \x01(\r\x12!\n\x19\x64\x61ily_ip_submission_limit\x18\x02 \x01(\r\x12\x17\n\x0ftracing_enabled\x18\x03 \x01(\x08\x1a\xc7\x01\n\x05Patch\x12\'\n\x1ahourly_ip_submission_limit\x18\x01 \x01(\rH\x00\x88\x01\x01\x12&\n\x19\x64\x61ily_ip_submission_limit\x18\x02 \x01(\rH\x01\x88\x01\x01\x12\x1c\n\x0ftracing_enabled\x18\x03 \x01(\x08H\x02\x88\x01\x01\x42\x1d\n\x1b_hourly_ip_submission_limitB\x1c\n\x1a_daily_ip_submission_limitB\x12\n\x10_tracing_enabledB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/atlas/configuration.proto\x12\x0c\x65olymp.atlas\"\xfa\x02\n\x06\x43onfig\x12\"\n\x1ahourly_ip_submission_limit\x18\x01 \x01(\r\x12!\n\x19\x64\x61ily_ip_submission_limit\x18\x02 \x01(\r\x12\x17\n\x0ftracing_enabled\x18\x03 \x01(\x08\x12\x16\n\x0erating_enabled\x18\x04 \x01(\x08\x1a\xf7\x01\n\x05Patch\x12\'\n\x1ahourly_ip_submission_limit\x18\x01 \x01(\rH\x00\x88\x01\x01\x12&\n\x19\x64\x61ily_ip_submission_limit\x18\x02 \x01(\rH\x01\x88\x01\x01\x12\x1c\n\x0ftracing_enabled\x18\x03 \x01(\x08H\x02\x88\x01\x01\x12\x1b\n\x0erating_enabled\x18\x04 \x01(\x08H\x03\x88\x01\x01\x42\x1d\n\x1b_hourly_ip_submission_limitB\x1c\n\x1a_daily_ip_submission_limitB\x12\n\x10_tracing_enabledB\x11\n\x0f_rating_enabledB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,7 +33,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
   _globals['_CONFIG']._serialized_start=51
-  _globals['_CONFIG']._serialized_end=357
-  _globals['_CONFIG_PATCH']._serialized_start=158
-  _globals['_CONFIG_PATCH']._serialized_end=357
+  _globals['_CONFIG']._serialized_end=429
+  _globals['_CONFIG_PATCH']._serialized_start=182
+  _globals['_CONFIG_PATCH']._serialized_end=429
 # @@protoc_insertion_point(module_scope)

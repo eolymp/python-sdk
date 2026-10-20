@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "type", "number", "visible", "origin", "language", "title", "content", "download_link", "author", "source", "languages", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "difficulty", "examples")
+    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "type", "number", "visible", "origin", "language", "title", "content", "download_link", "author", "source", "languages", "topics", "score", "constraints", "acceptance_rate", "submissions_count", "submissions_accepted", "rating", "difficulty", "examples")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_TYPE: _ClassVar[Problem.Type]
@@ -76,6 +76,24 @@ class Problem(_message.Message):
         memory_limit_min: int
         memory_limit_max: int
         def __init__(self, time_limit_min: _Optional[int] = ..., time_limit_max: _Optional[int] = ..., cpu_limit_min: _Optional[int] = ..., cpu_limit_max: _Optional[int] = ..., memory_limit_min: _Optional[int] = ..., memory_limit_max: _Optional[int] = ...) -> None: ...
+    class Rating(_message.Message):
+        __slots__ = ("average", "count", "distribution", "value")
+        class DistributionEntry(_message.Message):
+            __slots__ = ("key", "value")
+            KEY_FIELD_NUMBER: _ClassVar[int]
+            VALUE_FIELD_NUMBER: _ClassVar[int]
+            key: int
+            value: int
+            def __init__(self, key: _Optional[int] = ..., value: _Optional[int] = ...) -> None: ...
+        AVERAGE_FIELD_NUMBER: _ClassVar[int]
+        COUNT_FIELD_NUMBER: _ClassVar[int]
+        DISTRIBUTION_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        average: float
+        count: int
+        distribution: _containers.ScalarMap[int, int]
+        value: int
+        def __init__(self, average: _Optional[float] = ..., count: _Optional[int] = ..., distribution: _Optional[_Mapping[int, int]] = ..., value: _Optional[int] = ...) -> None: ...
     class Example(_message.Message):
         __slots__ = ("index", "input_url", "answer_url")
         INDEX_FIELD_NUMBER: _ClassVar[int]
@@ -107,6 +125,7 @@ class Problem(_message.Message):
     ACCEPTANCE_RATE_FIELD_NUMBER: _ClassVar[int]
     SUBMISSIONS_COUNT_FIELD_NUMBER: _ClassVar[int]
     SUBMISSIONS_ACCEPTED_FIELD_NUMBER: _ClassVar[int]
+    RATING_FIELD_NUMBER: _ClassVar[int]
     DIFFICULTY_FIELD_NUMBER: _ClassVar[int]
     EXAMPLES_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -131,6 +150,7 @@ class Problem(_message.Message):
     acceptance_rate: float
     submissions_count: int
     submissions_accepted: int
+    rating: Problem.Rating
     difficulty: int
     examples: _containers.RepeatedCompositeFieldContainer[Problem.Example]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., type: _Optional[_Union[Problem.Type, str]] = ..., number: _Optional[int] = ..., visible: _Optional[bool] = ..., origin: _Optional[str] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., author: _Optional[str] = ..., source: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., difficulty: _Optional[int] = ..., examples: _Optional[_Iterable[_Union[Problem.Example, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., type: _Optional[_Union[Problem.Type, str]] = ..., number: _Optional[int] = ..., visible: _Optional[bool] = ..., origin: _Optional[str] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., author: _Optional[str] = ..., source: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., topics: _Optional[_Iterable[str]] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[Problem.Constraints, _Mapping]] = ..., acceptance_rate: _Optional[float] = ..., submissions_count: _Optional[int] = ..., submissions_accepted: _Optional[int] = ..., rating: _Optional[_Union[Problem.Rating, _Mapping]] = ..., difficulty: _Optional[int] = ..., examples: _Optional[_Iterable[_Union[Problem.Example, _Mapping]]] = ...) -> None: ...

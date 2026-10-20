@@ -106,6 +106,20 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def RateProblem(self, request, **kwargs):
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/rating"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.atlas.RateProblemOutput"),
+            **kwargs,
+        )
+
     def ListVersions(self, request, **kwargs):
         path = "/problems/"+urllib.parse.quote(request.problem_id)+"/versions"
 

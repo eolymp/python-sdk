@@ -221,6 +221,22 @@ class ListVersionsOutput(_message.Message):
     next_page_cursor: str
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_version_pb2.Version, _Mapping]]] = ..., next_page_cursor: _Optional[str] = ...) -> None: ...
 
+class RateProblemInput(_message.Message):
+    __slots__ = ("problem_id", "stars", "comment")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    STARS_FIELD_NUMBER: _ClassVar[int]
+    COMMENT_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    stars: int
+    comment: str
+    def __init__(self, problem_id: _Optional[str] = ..., stars: _Optional[int] = ..., comment: _Optional[str] = ...) -> None: ...
+
+class RateProblemOutput(_message.Message):
+    __slots__ = ("rating",)
+    RATING_FIELD_NUMBER: _ClassVar[int]
+    rating: _problem_pb2.Problem.Rating
+    def __init__(self, rating: _Optional[_Union[_problem_pb2.Problem.Rating, _Mapping]] = ...) -> None: ...
+
 class ListRuntimesInput(_message.Message):
     __slots__ = ("problem_id",)
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
