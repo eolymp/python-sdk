@@ -40,9 +40,11 @@ class Problem(_message.Message):
             UNKNOWN_EXTRA: _ClassVar[Problem.Extra.Field]
             CONTENT_VALUE: _ClassVar[Problem.Extra.Field]
             CONTENT_RENDER: _ClassVar[Problem.Extra.Field]
+            RATING_VALUE: _ClassVar[Problem.Extra.Field]
         UNKNOWN_EXTRA: Problem.Extra.Field
         CONTENT_VALUE: Problem.Extra.Field
         CONTENT_RENDER: Problem.Extra.Field
+        RATING_VALUE: Problem.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
         __slots__ = ("number", "visible", "origin", "topics", "difficulty", "unset_topics", "type")
