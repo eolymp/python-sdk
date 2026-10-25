@@ -204,6 +204,22 @@ class DescribeEditorialOutput(_message.Message):
     editorial: _editorial_pb2.Editorial
     def __init__(self, editorial: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
 
+class RateProblemInput(_message.Message):
+    __slots__ = ("contest_id", "problem_id", "stars", "comment")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    STARS_FIELD_NUMBER: _ClassVar[int]
+    COMMENT_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    problem_id: str
+    stars: int
+    comment: str
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., stars: _Optional[int] = ..., comment: _Optional[str] = ...) -> None: ...
+
+class RateProblemOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class ListAttachmentsInput(_message.Message):
     __slots__ = ("contest_id", "problem_id")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
