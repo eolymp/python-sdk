@@ -107,7 +107,7 @@ class ProblemServiceClient:
         )
 
     def RateProblem(self, request, **kwargs):
-        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/rating"
+        path = "/problems/"+urllib.parse.quote(request.problem_id)+"/ratings"
 
         # Cleanup URL parameters to avoid any ambiguity
         request.problem_id = ""
