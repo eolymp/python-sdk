@@ -12,16 +12,18 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ("contest_id", "id", "url", "type", "index", "base_id", "feedback_policy", "score_by_best_testset", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score", "constraints", "language", "title", "content", "download_link", "languages", "examples")
+    __slots__ = ("contest_id", "id", "url", "type", "index", "base_id", "feedback_policy", "score_by_best_testset", "deferred_results", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score", "constraints", "language", "title", "content", "download_link", "languages", "examples")
     class Patch(_message.Message):
-        __slots__ = ("index", "submit_limit", "score_by_best_testset")
+        __slots__ = ("index", "submit_limit", "score_by_best_testset", "deferred_results")
         INDEX_FIELD_NUMBER: _ClassVar[int]
         SUBMIT_LIMIT_FIELD_NUMBER: _ClassVar[int]
         SCORE_BY_BEST_TESTSET_FIELD_NUMBER: _ClassVar[int]
+        DEFERRED_RESULTS_FIELD_NUMBER: _ClassVar[int]
         index: int
         submit_limit: int
         score_by_best_testset: bool
-        def __init__(self, index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ...) -> None: ...
+        deferred_results: bool
+        def __init__(self, index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ..., deferred_results: _Optional[bool] = ...) -> None: ...
     class Statement(_message.Message):
         __slots__ = ("locale", "title", "content", "download_link")
         LOCALE_FIELD_NUMBER: _ClassVar[int]
@@ -65,6 +67,7 @@ class Problem(_message.Message):
     BASE_ID_FIELD_NUMBER: _ClassVar[int]
     FEEDBACK_POLICY_FIELD_NUMBER: _ClassVar[int]
     SCORE_BY_BEST_TESTSET_FIELD_NUMBER: _ClassVar[int]
+    DEFERRED_RESULTS_FIELD_NUMBER: _ClassVar[int]
     TIME_LIMIT_FIELD_NUMBER: _ClassVar[int]
     CPU_LIMIT_FIELD_NUMBER: _ClassVar[int]
     MEMORY_LIMIT_FIELD_NUMBER: _ClassVar[int]
@@ -86,6 +89,7 @@ class Problem(_message.Message):
     base_id: str
     feedback_policy: _testing_feedback_pb2.FeedbackPolicy
     score_by_best_testset: bool
+    deferred_results: bool
     time_limit: int
     cpu_limit: int
     memory_limit: int
@@ -99,4 +103,4 @@ class Problem(_message.Message):
     download_link: str
     languages: _containers.RepeatedScalarFieldContainer[str]
     examples: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem.Example]
-    def __init__(self, contest_id: _Optional[str] = ..., id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., index: _Optional[int] = ..., base_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., score_by_best_testset: _Optional[bool] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[_problem_pb2.Problem.Constraints, _Mapping]] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., examples: _Optional[_Iterable[_Union[_problem_pb2.Problem.Example, _Mapping]]] = ...) -> None: ...
+    def __init__(self, contest_id: _Optional[str] = ..., id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., index: _Optional[int] = ..., base_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., score_by_best_testset: _Optional[bool] = ..., deferred_results: _Optional[bool] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[_problem_pb2.Problem.Constraints, _Mapping]] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., examples: _Optional[_Iterable[_Union[_problem_pb2.Problem.Example, _Mapping]]] = ...) -> None: ...

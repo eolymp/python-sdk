@@ -19,20 +19,22 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ImportProblemInput(_message.Message):
-    __slots__ = ("contest_id", "import_id", "import_ids", "index", "submit_limit", "score_by_best_testset")
+    __slots__ = ("contest_id", "import_id", "import_ids", "index", "submit_limit", "score_by_best_testset", "deferred_results")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     IMPORT_ID_FIELD_NUMBER: _ClassVar[int]
     IMPORT_IDS_FIELD_NUMBER: _ClassVar[int]
     INDEX_FIELD_NUMBER: _ClassVar[int]
     SUBMIT_LIMIT_FIELD_NUMBER: _ClassVar[int]
     SCORE_BY_BEST_TESTSET_FIELD_NUMBER: _ClassVar[int]
+    DEFERRED_RESULTS_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     import_id: str
     import_ids: _containers.RepeatedScalarFieldContainer[str]
     index: int
     submit_limit: int
     score_by_best_testset: bool
-    def __init__(self, contest_id: _Optional[str] = ..., import_id: _Optional[str] = ..., import_ids: _Optional[_Iterable[str]] = ..., index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ...) -> None: ...
+    deferred_results: bool
+    def __init__(self, contest_id: _Optional[str] = ..., import_id: _Optional[str] = ..., import_ids: _Optional[_Iterable[str]] = ..., index: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score_by_best_testset: _Optional[bool] = ..., deferred_results: _Optional[bool] = ...) -> None: ...
 
 class ImportProblemOutput(_message.Message):
     __slots__ = ("problem_id", "problem_ids")
