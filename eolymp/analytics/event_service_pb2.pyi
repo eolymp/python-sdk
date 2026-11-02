@@ -71,6 +71,7 @@ class AggregateEventsInput(_message.Message):
         BROWSER: _ClassVar[AggregateEventsInput.Dimension]
         OS: _ClassVar[AggregateEventsInput.Dimension]
         AUTHENTICATED: _ClassVar[AggregateEventsInput.Dimension]
+        COUNTRY: _ClassVar[AggregateEventsInput.Dimension]
     UNKNOWN_DIMENSION: AggregateEventsInput.Dimension
     OCCURRED_AT: AggregateEventsInput.Dimension
     NAME: AggregateEventsInput.Dimension
@@ -81,8 +82,9 @@ class AggregateEventsInput(_message.Message):
     BROWSER: AggregateEventsInput.Dimension
     OS: AggregateEventsInput.Dimension
     AUTHENTICATED: AggregateEventsInput.Dimension
+    COUNTRY: AggregateEventsInput.Dimension
     class Filter(_message.Message):
-        __slots__ = ("name", "route", "path", "user_id", "referrer", "locale", "device", "browser", "os", "authenticated")
+        __slots__ = ("name", "route", "path", "user_id", "referrer", "locale", "device", "browser", "os", "authenticated", "country")
         NAME_FIELD_NUMBER: _ClassVar[int]
         ROUTE_FIELD_NUMBER: _ClassVar[int]
         PATH_FIELD_NUMBER: _ClassVar[int]
@@ -93,6 +95,7 @@ class AggregateEventsInput(_message.Message):
         BROWSER_FIELD_NUMBER: _ClassVar[int]
         OS_FIELD_NUMBER: _ClassVar[int]
         AUTHENTICATED_FIELD_NUMBER: _ClassVar[int]
+        COUNTRY_FIELD_NUMBER: _ClassVar[int]
         name: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         route: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         path: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionString]
@@ -103,7 +106,8 @@ class AggregateEventsInput(_message.Message):
         browser: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         os: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         authenticated: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        def __init__(self, name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., route: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., referrer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., device: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., browser: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., os: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., authenticated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ...) -> None: ...
+        country: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
+        def __init__(self, name: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., route: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., path: _Optional[_Iterable[_Union[_expression_pb2.ExpressionString, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., referrer: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., locale: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., device: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., browser: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., os: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., authenticated: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., country: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     METRIC_FIELD_NUMBER: _ClassVar[int]
     GROUP_BY_FIELD_NUMBER: _ClassVar[int]
     RANGE_START_FIELD_NUMBER: _ClassVar[int]
