@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ("issuer", "subject", "nickname", "nickname_change_timeout", "aliases", "email", "email_verified", "email_restricted", "email_subscriptions", "password", "password_age", "name", "picture", "birthday", "country", "city", "pronoun", "team_id", "preferences")
+    __slots__ = ("issuer", "subject", "bot", "nickname", "nickname_change_timeout", "aliases", "email", "email_verified", "email_restricted", "email_subscriptions", "password", "password_age", "name", "picture", "birthday", "country", "city", "pronoun", "team_id", "preferences")
     class Preferences(_message.Message):
         __slots__ = ("locale", "timezone", "runtime")
         class Patch(_message.Message):
@@ -65,6 +65,7 @@ class User(_message.Message):
         def __init__(self, nickname: _Optional[str] = ..., changed_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     ISSUER_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_FIELD_NUMBER: _ClassVar[int]
+    BOT_FIELD_NUMBER: _ClassVar[int]
     NICKNAME_FIELD_NUMBER: _ClassVar[int]
     NICKNAME_CHANGE_TIMEOUT_FIELD_NUMBER: _ClassVar[int]
     ALIASES_FIELD_NUMBER: _ClassVar[int]
@@ -84,6 +85,7 @@ class User(_message.Message):
     PREFERENCES_FIELD_NUMBER: _ClassVar[int]
     issuer: str
     subject: str
+    bot: bool
     nickname: str
     nickname_change_timeout: int
     aliases: _containers.RepeatedCompositeFieldContainer[User.Alias]
@@ -101,4 +103,4 @@ class User(_message.Message):
     pronoun: str
     team_id: str
     preferences: User.Preferences
-    def __init__(self, issuer: _Optional[str] = ..., subject: _Optional[str] = ..., nickname: _Optional[str] = ..., nickname_change_timeout: _Optional[int] = ..., aliases: _Optional[_Iterable[_Union[User.Alias, _Mapping]]] = ..., email: _Optional[str] = ..., email_verified: _Optional[bool] = ..., email_restricted: _Optional[bool] = ..., email_subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., birthday: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., pronoun: _Optional[str] = ..., team_id: _Optional[str] = ..., preferences: _Optional[_Union[User.Preferences, _Mapping]] = ...) -> None: ...
+    def __init__(self, issuer: _Optional[str] = ..., subject: _Optional[str] = ..., bot: _Optional[bool] = ..., nickname: _Optional[str] = ..., nickname_change_timeout: _Optional[int] = ..., aliases: _Optional[_Iterable[_Union[User.Alias, _Mapping]]] = ..., email: _Optional[str] = ..., email_verified: _Optional[bool] = ..., email_restricted: _Optional[bool] = ..., email_subscriptions: _Optional[_Iterable[_Union[_email_type_pb2.EmailType, str]]] = ..., password: _Optional[str] = ..., password_age: _Optional[int] = ..., name: _Optional[str] = ..., picture: _Optional[str] = ..., birthday: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., country: _Optional[str] = ..., city: _Optional[str] = ..., pronoun: _Optional[str] = ..., team_id: _Optional[str] = ..., preferences: _Optional[_Union[User.Preferences, _Mapping]] = ...) -> None: ...
