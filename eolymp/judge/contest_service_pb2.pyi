@@ -29,6 +29,18 @@ class ContestChangedEvent(_message.Message):
     after: _contest_pb2.Contest
     def __init__(self, before: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ..., after: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
 
+class ContestStartedEvent(_message.Message):
+    __slots__ = ("contest",)
+    CONTEST_FIELD_NUMBER: _ClassVar[int]
+    contest: _contest_pb2.Contest
+    def __init__(self, contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
+
+class ContestEndedEvent(_message.Message):
+    __slots__ = ("contest",)
+    CONTEST_FIELD_NUMBER: _ClassVar[int]
+    contest: _contest_pb2.Contest
+    def __init__(self, contest: _Optional[_Union[_contest_pb2.Contest, _Mapping]] = ...) -> None: ...
+
 class CreateContestInput(_message.Message):
     __slots__ = ("contest",)
     CONTEST_FIELD_NUMBER: _ClassVar[int]
