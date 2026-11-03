@@ -36,6 +36,8 @@ class Rule(_message.Message):
         SCHEDULED: _ClassVar[Rule.Trigger]
         STATEMENT_CHANGED: _ClassVar[Rule.Trigger]
         PROBLEM_ACTION: _ClassVar[Rule.Trigger]
+        POST_CHANGED: _ClassVar[Rule.Trigger]
+        FRAGMENT_CHANGED: _ClassVar[Rule.Trigger]
     UNKNOWN_TRIGGER: Rule.Trigger
     SUBMISSION_COMPLETED: Rule.Trigger
     SCORE_CHANGED: Rule.Trigger
@@ -55,6 +57,8 @@ class Rule(_message.Message):
     SCHEDULED: Rule.Trigger
     STATEMENT_CHANGED: Rule.Trigger
     PROBLEM_ACTION: Rule.Trigger
+    POST_CHANGED: Rule.Trigger
+    FRAGMENT_CHANGED: Rule.Trigger
     class Schedule(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_SCHEDULE: _ClassVar[Rule.Schedule]
