@@ -146,6 +146,20 @@ class ParticipantServiceClient:
             **kwargs,
         )
 
+    def LeaveContest(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/leave"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.LeaveContestOutput"),
+            **kwargs,
+        )
+
     def DescribeViewer(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/introspect"
 

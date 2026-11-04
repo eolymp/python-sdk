@@ -15,7 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Submission(_message.Message):
-    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "contest_id", "problem_id", "participant_id", "submitted_at", "deleted", "lang", "source", "source_url", "output", "quiz", "widget", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "time_limit", "cpu_usage", "memory_usage", "resource_usage", "groups", "cursor")
+    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "contest_id", "problem_id", "participant_id", "member_id", "submitted_at", "deleted", "lang", "source", "source_url", "output", "quiz", "widget", "signature", "status", "verdict", "error", "error_url", "cost", "score", "percentage", "time_usage", "time_limit", "cpu_usage", "memory_usage", "resource_usage", "groups", "cursor")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NO_EXTRA: _ClassVar[Submission.Extra]
@@ -94,6 +94,7 @@ class Submission(_message.Message):
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     PARTICIPANT_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
     SUBMITTED_AT_FIELD_NUMBER: _ClassVar[int]
     DELETED_FIELD_NUMBER: _ClassVar[int]
     LANG_FIELD_NUMBER: _ClassVar[int]
@@ -125,6 +126,7 @@ class Submission(_message.Message):
     contest_id: str
     problem_id: str
     participant_id: str
+    member_id: str
     submitted_at: _timestamp_pb2.Timestamp
     deleted: bool
     lang: str
@@ -148,4 +150,4 @@ class Submission(_message.Message):
     resource_usage: float
     groups: _containers.RepeatedCompositeFieldContainer[Submission.Group]
     cursor: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: _Optional[bool] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ..., widget: _Optional[_Union[_submission_pb2.Submission.Widget, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., time_limit: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., participant_id: _Optional[str] = ..., member_id: _Optional[str] = ..., submitted_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., deleted: _Optional[bool] = ..., lang: _Optional[str] = ..., source: _Optional[str] = ..., source_url: _Optional[str] = ..., output: _Optional[_Union[_submission_pb2.Submission.Output, _Mapping]] = ..., quiz: _Optional[_Union[_submission_pb2.Submission.Quiz, _Mapping]] = ..., widget: _Optional[_Union[_submission_pb2.Submission.Widget, _Mapping]] = ..., signature: _Optional[str] = ..., status: _Optional[_Union[_submission_pb2.Submission.Status, str]] = ..., verdict: _Optional[_Union[_submission_pb2.Submission.Verdict, str]] = ..., error: _Optional[str] = ..., error_url: _Optional[str] = ..., cost: _Optional[float] = ..., score: _Optional[float] = ..., percentage: _Optional[float] = ..., time_usage: _Optional[int] = ..., time_limit: _Optional[int] = ..., cpu_usage: _Optional[int] = ..., memory_usage: _Optional[int] = ..., resource_usage: _Optional[float] = ..., groups: _Optional[_Iterable[_Union[Submission.Group, _Mapping]]] = ..., cursor: _Optional[str] = ...) -> None: ...

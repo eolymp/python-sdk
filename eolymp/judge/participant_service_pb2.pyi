@@ -170,7 +170,7 @@ class ListParticipantsInput(_message.Message):
     DISPLAY_NAME: ListParticipantsInput.Sortable
     STARTED_AT: ListParticipantsInput.Sortable
     class Filter(_message.Message):
-        __slots__ = ("id", "member_id", "group_id", "status", "started_at", "unofficial", "disqualified", "inactive", "role", "staff", "has_violations", "proctoring_status")
+        __slots__ = ("id", "member_id", "group_id", "status", "started_at", "unofficial", "disqualified", "inactive", "role", "staff", "has_violations", "proctoring_status", "team_id")
         ID_FIELD_NUMBER: _ClassVar[int]
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         GROUP_ID_FIELD_NUMBER: _ClassVar[int]
@@ -183,6 +183,7 @@ class ListParticipantsInput(_message.Message):
         STAFF_FIELD_NUMBER: _ClassVar[int]
         HAS_VIOLATIONS_FIELD_NUMBER: _ClassVar[int]
         PROCTORING_STATUS_FIELD_NUMBER: _ClassVar[int]
+        TEAM_ID_FIELD_NUMBER: _ClassVar[int]
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         group_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -195,7 +196,8 @@ class ListParticipantsInput(_message.Message):
         staff: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         has_violations: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         proctoring_status: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., started_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., role: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., staff: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., has_violations: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., proctoring_status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        team_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
+        def __init__(self, id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., group_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., started_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., unofficial: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., disqualified: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., inactive: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., role: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., staff: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., has_violations: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., proctoring_status: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., team_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ...) -> None: ...
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -249,12 +251,26 @@ class DescribeViewerOutput(_message.Message):
     def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class JoinContestInput(_message.Message):
+    __slots__ = ("contest_id", "team_id", "member_ids")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    TEAM_ID_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_IDS_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    team_id: str
+    member_ids: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, contest_id: _Optional[str] = ..., team_id: _Optional[str] = ..., member_ids: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class JoinContestOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class LeaveContestInput(_message.Message):
     __slots__ = ("contest_id",)
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
-class JoinContestOutput(_message.Message):
+class LeaveContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 

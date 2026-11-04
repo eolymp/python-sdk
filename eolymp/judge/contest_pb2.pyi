@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Contest(_message.Message):
-    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "name", "image_url", "created_at", "starts_at", "ends_at", "duration", "status", "visibility", "participation_mode", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "display_editorials", "slug", "hide_jury_identity", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "enable_reminder_notification", "reminder_notification_status", "enable_result_notification", "result_notification_status", "classification", "scoreboard_config", "environment_config", "certification_config", "rating_config", "proctoring_config", "staff")
+    __slots__ = ("id", "url", "resource_link", "space_link", "console_link", "name", "image_url", "created_at", "starts_at", "ends_at", "duration", "status", "visibility", "participation_mode", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "display_editorials", "slug", "hide_jury_identity", "participant_type", "min_team_size", "max_team_size", "format", "key", "problem_count", "problem_count_hidden", "participant_count", "participant_count_hidden", "featured_until", "printer_id", "enable_reminder_notification", "reminder_notification_status", "enable_result_notification", "result_notification_status", "classification", "scoreboard_config", "environment_config", "certification_config", "rating_config", "proctoring_config", "staff")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATUS_UNKNOWN: _ClassVar[Contest.Status]
@@ -58,6 +58,14 @@ class Contest(_message.Message):
     PENDING: Contest.NotificationStatus
     SENT: Contest.NotificationStatus
     DISABLED: Contest.NotificationStatus
+    class ParticipantType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_PARTICIPANT_TYPE: _ClassVar[Contest.ParticipantType]
+        INDIVIDUAL: _ClassVar[Contest.ParticipantType]
+        TEAM: _ClassVar[Contest.ParticipantType]
+    UNKNOWN_PARTICIPANT_TYPE: Contest.ParticipantType
+    INDIVIDUAL: Contest.ParticipantType
+    TEAM: Contest.ParticipantType
     class Format(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         FORMAT_UNKNOWN: _ClassVar[Contest.Format]
@@ -67,7 +75,7 @@ class Contest(_message.Message):
     IOI: Contest.Format
     ICPC: Contest.Format
     class Patch(_message.Message):
-        __slots__ = ("name", "image_url", "starts_at", "duration", "enable_reminder_notification", "ends_at", "enable_result_notification", "visibility", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "key", "display_editorials", "slug", "hide_jury_identity", "featured_until", "printer_id", "scoreboard_config", "classification", "environment_config", "certification_config", "rating_config", "proctoring_config")
+        __slots__ = ("name", "image_url", "starts_at", "duration", "enable_reminder_notification", "ends_at", "enable_result_notification", "visibility", "join_unofficially", "require_admission", "allow_pause", "allow_finish_early", "allow_upsolve", "allow_followup", "key", "display_editorials", "slug", "hide_jury_identity", "participant_type", "min_team_size", "max_team_size", "featured_until", "printer_id", "scoreboard_config", "classification", "environment_config", "certification_config", "rating_config", "proctoring_config")
         NAME_FIELD_NUMBER: _ClassVar[int]
         IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
         STARTS_AT_FIELD_NUMBER: _ClassVar[int]
@@ -86,6 +94,9 @@ class Contest(_message.Message):
         DISPLAY_EDITORIALS_FIELD_NUMBER: _ClassVar[int]
         SLUG_FIELD_NUMBER: _ClassVar[int]
         HIDE_JURY_IDENTITY_FIELD_NUMBER: _ClassVar[int]
+        PARTICIPANT_TYPE_FIELD_NUMBER: _ClassVar[int]
+        MIN_TEAM_SIZE_FIELD_NUMBER: _ClassVar[int]
+        MAX_TEAM_SIZE_FIELD_NUMBER: _ClassVar[int]
         FEATURED_UNTIL_FIELD_NUMBER: _ClassVar[int]
         PRINTER_ID_FIELD_NUMBER: _ClassVar[int]
         SCOREBOARD_CONFIG_FIELD_NUMBER: _ClassVar[int]
@@ -112,6 +123,9 @@ class Contest(_message.Message):
         display_editorials: bool
         slug: str
         hide_jury_identity: bool
+        participant_type: Contest.ParticipantType
+        min_team_size: int
+        max_team_size: int
         featured_until: _timestamp_pb2.Timestamp
         printer_id: str
         scoreboard_config: Contest.ScoreboardConfig
@@ -120,7 +134,7 @@ class Contest(_message.Message):
         certification_config: Contest.CertificationConfig
         rating_config: Contest.RatingConfig
         proctoring_config: Contest.ProctoringConfig
-        def __init__(self, name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., enable_reminder_notification: _Optional[bool] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., enable_result_notification: _Optional[bool] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: _Optional[bool] = ..., require_admission: _Optional[bool] = ..., allow_pause: _Optional[bool] = ..., allow_finish_early: _Optional[bool] = ..., allow_upsolve: _Optional[bool] = ..., allow_followup: _Optional[bool] = ..., key: _Optional[str] = ..., display_editorials: _Optional[bool] = ..., slug: _Optional[str] = ..., hide_jury_identity: _Optional[bool] = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ..., rating_config: _Optional[_Union[Contest.RatingConfig, _Mapping]] = ..., proctoring_config: _Optional[_Union[Contest.ProctoringConfig, _Mapping]] = ...) -> None: ...
+        def __init__(self, name: _Optional[str] = ..., image_url: _Optional[str] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., enable_reminder_notification: _Optional[bool] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., enable_result_notification: _Optional[bool] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., join_unofficially: _Optional[bool] = ..., require_admission: _Optional[bool] = ..., allow_pause: _Optional[bool] = ..., allow_finish_early: _Optional[bool] = ..., allow_upsolve: _Optional[bool] = ..., allow_followup: _Optional[bool] = ..., key: _Optional[str] = ..., display_editorials: _Optional[bool] = ..., slug: _Optional[str] = ..., hide_jury_identity: _Optional[bool] = ..., participant_type: _Optional[_Union[Contest.ParticipantType, str]] = ..., min_team_size: _Optional[int] = ..., max_team_size: _Optional[int] = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ..., rating_config: _Optional[_Union[Contest.RatingConfig, _Mapping]] = ..., proctoring_config: _Optional[_Union[Contest.ProctoringConfig, _Mapping]] = ...) -> None: ...
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -275,6 +289,9 @@ class Contest(_message.Message):
     DISPLAY_EDITORIALS_FIELD_NUMBER: _ClassVar[int]
     SLUG_FIELD_NUMBER: _ClassVar[int]
     HIDE_JURY_IDENTITY_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPANT_TYPE_FIELD_NUMBER: _ClassVar[int]
+    MIN_TEAM_SIZE_FIELD_NUMBER: _ClassVar[int]
+    MAX_TEAM_SIZE_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_COUNT_FIELD_NUMBER: _ClassVar[int]
@@ -317,6 +334,9 @@ class Contest(_message.Message):
     display_editorials: bool
     slug: str
     hide_jury_identity: bool
+    participant_type: Contest.ParticipantType
+    min_team_size: int
+    max_team_size: int
     format: Contest.Format
     key: str
     problem_count: int
@@ -336,4 +356,4 @@ class Contest(_message.Message):
     rating_config: Contest.RatingConfig
     proctoring_config: Contest.ProctoringConfig
     staff: _containers.RepeatedCompositeFieldContainer[Contest.Staff]
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., join_unofficially: _Optional[bool] = ..., require_admission: _Optional[bool] = ..., allow_pause: _Optional[bool] = ..., allow_finish_early: _Optional[bool] = ..., allow_upsolve: _Optional[bool] = ..., allow_followup: _Optional[bool] = ..., display_editorials: _Optional[bool] = ..., slug: _Optional[str] = ..., hide_jury_identity: _Optional[bool] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: _Optional[bool] = ..., participant_count: _Optional[int] = ..., participant_count_hidden: _Optional[bool] = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., enable_reminder_notification: _Optional[bool] = ..., reminder_notification_status: _Optional[_Union[Contest.NotificationStatus, str]] = ..., enable_result_notification: _Optional[bool] = ..., result_notification_status: _Optional[_Union[Contest.NotificationStatus, str]] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ..., rating_config: _Optional[_Union[Contest.RatingConfig, _Mapping]] = ..., proctoring_config: _Optional[_Union[Contest.ProctoringConfig, _Mapping]] = ..., staff: _Optional[_Iterable[_Union[Contest.Staff, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., resource_link: _Optional[str] = ..., space_link: _Optional[str] = ..., console_link: _Optional[str] = ..., name: _Optional[str] = ..., image_url: _Optional[str] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., starts_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ends_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., duration: _Optional[int] = ..., status: _Optional[_Union[Contest.Status, str]] = ..., visibility: _Optional[_Union[Contest.Visibility, str]] = ..., participation_mode: _Optional[_Union[Contest.ParticipationMode, str]] = ..., join_unofficially: _Optional[bool] = ..., require_admission: _Optional[bool] = ..., allow_pause: _Optional[bool] = ..., allow_finish_early: _Optional[bool] = ..., allow_upsolve: _Optional[bool] = ..., allow_followup: _Optional[bool] = ..., display_editorials: _Optional[bool] = ..., slug: _Optional[str] = ..., hide_jury_identity: _Optional[bool] = ..., participant_type: _Optional[_Union[Contest.ParticipantType, str]] = ..., min_team_size: _Optional[int] = ..., max_team_size: _Optional[int] = ..., format: _Optional[_Union[Contest.Format, str]] = ..., key: _Optional[str] = ..., problem_count: _Optional[int] = ..., problem_count_hidden: _Optional[bool] = ..., participant_count: _Optional[int] = ..., participant_count_hidden: _Optional[bool] = ..., featured_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., printer_id: _Optional[str] = ..., enable_reminder_notification: _Optional[bool] = ..., reminder_notification_status: _Optional[_Union[Contest.NotificationStatus, str]] = ..., enable_result_notification: _Optional[bool] = ..., result_notification_status: _Optional[_Union[Contest.NotificationStatus, str]] = ..., classification: _Optional[_Union[Contest.Classification, _Mapping]] = ..., scoreboard_config: _Optional[_Union[Contest.ScoreboardConfig, _Mapping]] = ..., environment_config: _Optional[_Union[Contest.EnvironmentConfig, _Mapping]] = ..., certification_config: _Optional[_Union[Contest.CertificationConfig, _Mapping]] = ..., rating_config: _Optional[_Union[Contest.RatingConfig, _Mapping]] = ..., proctoring_config: _Optional[_Union[Contest.ProctoringConfig, _Mapping]] = ..., staff: _Optional[_Iterable[_Union[Contest.Staff, _Mapping]]] = ...) -> None: ...
