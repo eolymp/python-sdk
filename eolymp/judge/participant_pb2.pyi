@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Participant(_message.Message):
-    __slots__ = ("id", "member_id", "team_id", "display_name", "role", "unofficial", "inactive", "disqualified", "ghost", "finalized", "medal", "status", "started_at", "end_at", "bonus_time", "violation_count", "passcode", "certificate_id", "proctoring", "submits", "roster")
+    __slots__ = ("id", "member_id", "team_id", "display_name", "role", "unofficial", "inactive", "disqualified", "ghost", "finalized", "medal", "status", "started_at", "end_at", "bonus_time", "violation_count", "passcode", "certificate_id", "rating", "rating_diff", "proctoring", "submits", "roster")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Participant.Status]
@@ -127,6 +127,8 @@ class Participant(_message.Message):
     VIOLATION_COUNT_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     CERTIFICATE_ID_FIELD_NUMBER: _ClassVar[int]
+    RATING_FIELD_NUMBER: _ClassVar[int]
+    RATING_DIFF_FIELD_NUMBER: _ClassVar[int]
     PROCTORING_FIELD_NUMBER: _ClassVar[int]
     SUBMITS_FIELD_NUMBER: _ClassVar[int]
     ROSTER_FIELD_NUMBER: _ClassVar[int]
@@ -148,7 +150,9 @@ class Participant(_message.Message):
     violation_count: int
     passcode: str
     certificate_id: str
+    rating: int
+    rating_diff: int
     proctoring: Participant.Proctoring
     submits: _containers.RepeatedCompositeFieldContainer[Participant.Submit]
     roster: _containers.RepeatedCompositeFieldContainer[Participant.Member]
-    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., team_id: _Optional[str] = ..., display_name: _Optional[str] = ..., role: _Optional[_Union[Participant.Role, str]] = ..., unofficial: _Optional[bool] = ..., inactive: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., ghost: _Optional[bool] = ..., finalized: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., bonus_time: _Optional[int] = ..., violation_count: _Optional[int] = ..., passcode: _Optional[str] = ..., certificate_id: _Optional[str] = ..., proctoring: _Optional[_Union[Participant.Proctoring, _Mapping]] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ..., roster: _Optional[_Iterable[_Union[Participant.Member, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., team_id: _Optional[str] = ..., display_name: _Optional[str] = ..., role: _Optional[_Union[Participant.Role, str]] = ..., unofficial: _Optional[bool] = ..., inactive: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., ghost: _Optional[bool] = ..., finalized: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., bonus_time: _Optional[int] = ..., violation_count: _Optional[int] = ..., passcode: _Optional[str] = ..., certificate_id: _Optional[str] = ..., rating: _Optional[int] = ..., rating_diff: _Optional[int] = ..., proctoring: _Optional[_Union[Participant.Proctoring, _Mapping]] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ..., roster: _Optional[_Iterable[_Union[Participant.Member, _Mapping]]] = ...) -> None: ...
