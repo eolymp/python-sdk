@@ -69,12 +69,11 @@ class ListPostsInput(_message.Message):
     REPLY_COUNT: ListPostsInput.Sort
     POPULARITY: ListPostsInput.Sort
     class Filter(_message.Message):
-        __slots__ = ("query", "id", "source_id", "user_id", "member_id", "type_id", "created_at", "published_at", "draft", "public", "featured", "moderation", "label")
+        __slots__ = ("query", "id", "source_id", "user_id", "type_id", "created_at", "published_at", "draft", "public", "featured", "moderation", "label")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         SOURCE_ID_FIELD_NUMBER: _ClassVar[int]
         USER_ID_FIELD_NUMBER: _ClassVar[int]
-        MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
         TYPE_ID_FIELD_NUMBER: _ClassVar[int]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
         PUBLISHED_AT_FIELD_NUMBER: _ClassVar[int]
@@ -87,7 +86,6 @@ class ListPostsInput(_message.Message):
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         source_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         user_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
-        member_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         type_id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
         created_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
         published_at: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionTimestamp]
@@ -96,7 +94,7 @@ class ListPostsInput(_message.Message):
         featured: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         moderation: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         label: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., source_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., member_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., published_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., featured: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., moderation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., source_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., published_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., featured: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., moderation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     AFTER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]

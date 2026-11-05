@@ -26,13 +26,11 @@ class UpdateDiscussionConfigInput(_message.Message):
     class Patch(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         ALL: _ClassVar[UpdateDiscussionConfigInput.Patch]
-        MEMBERS_CAN_CREATE_POSTS: _ClassVar[UpdateDiscussionConfigInput.Patch]
         MEMBERS_CAN_COMMENT_ON_POSTS: _ClassVar[UpdateDiscussionConfigInput.Patch]
         MEMBERS_CAN_COMMENT_ON_PROBLEMS: _ClassVar[UpdateDiscussionConfigInput.Patch]
         POST_MODERATION: _ClassVar[UpdateDiscussionConfigInput.Patch]
         COMMENT_MODERATION: _ClassVar[UpdateDiscussionConfigInput.Patch]
     ALL: UpdateDiscussionConfigInput.Patch
-    MEMBERS_CAN_CREATE_POSTS: UpdateDiscussionConfigInput.Patch
     MEMBERS_CAN_COMMENT_ON_POSTS: UpdateDiscussionConfigInput.Patch
     MEMBERS_CAN_COMMENT_ON_PROBLEMS: UpdateDiscussionConfigInput.Patch
     POST_MODERATION: UpdateDiscussionConfigInput.Patch
