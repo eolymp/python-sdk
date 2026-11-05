@@ -271,6 +271,20 @@ class DescribeScoreboardRowOutput(_message.Message):
     row: _scoreboard_pb2.Row
     def __init__(self, row: _Optional[_Union[_scoreboard_pb2.Row, _Mapping]] = ...) -> None: ...
 
+class DescribeScoreboardStatsInput(_message.Message):
+    __slots__ = ("scoreboard_id", "mode")
+    SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    scoreboard_id: str
+    mode: _scoreboard_pb2.Scoreboard.Mode
+    def __init__(self, scoreboard_id: _Optional[str] = ..., mode: _Optional[_Union[_scoreboard_pb2.Scoreboard.Mode, str]] = ...) -> None: ...
+
+class DescribeScoreboardStatsOutput(_message.Message):
+    __slots__ = ("stats",)
+    STATS_FIELD_NUMBER: _ClassVar[int]
+    stats: _scoreboard_pb2.Scoreboard.Stats
+    def __init__(self, stats: _Optional[_Union[_scoreboard_pb2.Scoreboard.Stats, _Mapping]] = ...) -> None: ...
+
 class RebuildScoreboardInput(_message.Message):
     __slots__ = ("scoreboard_id",)
     SCOREBOARD_ID_FIELD_NUMBER: _ClassVar[int]

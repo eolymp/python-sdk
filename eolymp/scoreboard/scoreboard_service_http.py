@@ -223,6 +223,20 @@ class ScoreboardServiceClient:
             **kwargs,
         )
 
+    def DescribeScoreboardStats(self, request, **kwargs):
+        path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/stats"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.scoreboard_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.scoreboard.DescribeScoreboardStatsOutput"),
+            **kwargs,
+        )
+
     def RebuildScoreboard(self, request, **kwargs):
         path = "/scoreboards/"+urllib.parse.quote(request.scoreboard_id)+"/rebuild"
 
