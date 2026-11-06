@@ -291,10 +291,12 @@ class RequestProctoringInput(_message.Message):
     def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
 
 class RequestProctoringOutput(_message.Message):
-    __slots__ = ("stream_url",)
+    __slots__ = ("stream_url", "additional_camera_url")
     STREAM_URL_FIELD_NUMBER: _ClassVar[int]
+    ADDITIONAL_CAMERA_URL_FIELD_NUMBER: _ClassVar[int]
     stream_url: str
-    def __init__(self, stream_url: _Optional[str] = ...) -> None: ...
+    additional_camera_url: str
+    def __init__(self, stream_url: _Optional[str] = ..., additional_camera_url: _Optional[str] = ...) -> None: ...
 
 class PauseContestInput(_message.Message):
     __slots__ = ("contest_id",)

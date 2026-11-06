@@ -80,9 +80,11 @@ class Participant(_message.Message):
             UNKNOWN_SOURCE: _ClassVar[Participant.Proctoring.Source]
             SCREEN: _ClassVar[Participant.Proctoring.Source]
             CAMERA: _ClassVar[Participant.Proctoring.Source]
+            ADDITIONAL_CAMERA: _ClassVar[Participant.Proctoring.Source]
         UNKNOWN_SOURCE: Participant.Proctoring.Source
         SCREEN: Participant.Proctoring.Source
         CAMERA: Participant.Proctoring.Source
+        ADDITIONAL_CAMERA: Participant.Proctoring.Source
         class Stream(_message.Message):
             __slots__ = ("source", "playlist_url")
             SOURCE_FIELD_NUMBER: _ClassVar[int]

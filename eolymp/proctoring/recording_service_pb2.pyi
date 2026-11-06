@@ -24,12 +24,14 @@ class CreateRecordingInput(_message.Message):
     def __init__(self, recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateRecordingOutput(_message.Message):
-    __slots__ = ("recording_id", "stream_url")
+    __slots__ = ("recording_id", "stream_url", "additional_camera_url")
     RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
     STREAM_URL_FIELD_NUMBER: _ClassVar[int]
+    ADDITIONAL_CAMERA_URL_FIELD_NUMBER: _ClassVar[int]
     recording_id: str
     stream_url: str
-    def __init__(self, recording_id: _Optional[str] = ..., stream_url: _Optional[str] = ...) -> None: ...
+    additional_camera_url: str
+    def __init__(self, recording_id: _Optional[str] = ..., stream_url: _Optional[str] = ..., additional_camera_url: _Optional[str] = ...) -> None: ...
 
 class ResumeRecordingInput(_message.Message):
     __slots__ = ("recording_id", "expires_at")
@@ -40,10 +42,12 @@ class ResumeRecordingInput(_message.Message):
     def __init__(self, recording_id: _Optional[str] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ResumeRecordingOutput(_message.Message):
-    __slots__ = ("stream_url",)
+    __slots__ = ("stream_url", "additional_camera_url")
     STREAM_URL_FIELD_NUMBER: _ClassVar[int]
+    ADDITIONAL_CAMERA_URL_FIELD_NUMBER: _ClassVar[int]
     stream_url: str
-    def __init__(self, stream_url: _Optional[str] = ...) -> None: ...
+    additional_camera_url: str
+    def __init__(self, stream_url: _Optional[str] = ..., additional_camera_url: _Optional[str] = ...) -> None: ...
 
 class DeleteRecordingInput(_message.Message):
     __slots__ = ("recording_id",)

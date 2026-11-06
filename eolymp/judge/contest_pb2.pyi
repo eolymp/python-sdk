@@ -245,10 +245,12 @@ class Contest(_message.Message):
             NONE: _ClassVar[Contest.ProctoringConfig.Mode]
             SCREEN: _ClassVar[Contest.ProctoringConfig.Mode]
             SCREEN_AND_CAMERA: _ClassVar[Contest.ProctoringConfig.Mode]
+            SCREEN_AND_TWO_CAMERAS: _ClassVar[Contest.ProctoringConfig.Mode]
         UNKNOWN_MODE: Contest.ProctoringConfig.Mode
         NONE: Contest.ProctoringConfig.Mode
         SCREEN: Contest.ProctoringConfig.Mode
         SCREEN_AND_CAMERA: Contest.ProctoringConfig.Mode
+        SCREEN_AND_TWO_CAMERAS: Contest.ProctoringConfig.Mode
         MODE_FIELD_NUMBER: _ClassVar[int]
         mode: Contest.ProctoringConfig.Mode
         def __init__(self, mode: _Optional[_Union[Contest.ProctoringConfig.Mode, str]] = ...) -> None: ...

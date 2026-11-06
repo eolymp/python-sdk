@@ -31,9 +31,11 @@ class Recording(_message.Message):
             UNKNOWN_SOURCE: _ClassVar[Recording.Stream.Source]
             SCREEN: _ClassVar[Recording.Stream.Source]
             CAMERA: _ClassVar[Recording.Stream.Source]
+            ADDITIONAL_CAMERA: _ClassVar[Recording.Stream.Source]
         UNKNOWN_SOURCE: Recording.Stream.Source
         SCREEN: Recording.Stream.Source
         CAMERA: Recording.Stream.Source
+        ADDITIONAL_CAMERA: Recording.Stream.Source
         SOURCE_FIELD_NUMBER: _ClassVar[int]
         PLAYLIST_URL_FIELD_NUMBER: _ClassVar[int]
         source: Recording.Stream.Source
