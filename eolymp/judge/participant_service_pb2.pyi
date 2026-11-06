@@ -251,26 +251,16 @@ class DescribeViewerOutput(_message.Message):
     def __init__(self, participant: _Optional[_Union[_participant_pb2.Participant, _Mapping]] = ...) -> None: ...
 
 class JoinContestInput(_message.Message):
-    __slots__ = ("contest_id", "team_id", "member_ids")
+    __slots__ = ("contest_id", "team_id", "roster")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     TEAM_ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_IDS_FIELD_NUMBER: _ClassVar[int]
+    ROSTER_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     team_id: str
-    member_ids: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, contest_id: _Optional[str] = ..., team_id: _Optional[str] = ..., member_ids: _Optional[_Iterable[str]] = ...) -> None: ...
+    roster: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, contest_id: _Optional[str] = ..., team_id: _Optional[str] = ..., roster: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class JoinContestOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
-class LeaveContestInput(_message.Message):
-    __slots__ = ("contest_id",)
-    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
-    contest_id: str
-    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
-
-class LeaveContestOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 

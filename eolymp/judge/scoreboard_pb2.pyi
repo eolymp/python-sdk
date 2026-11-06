@@ -82,7 +82,7 @@ class Scoreboard(_message.Message):
         type: _attribute_pb2.Attribute.Type
         def __init__(self, attribute_key: _Optional[str] = ..., index: _Optional[int] = ..., label: _Optional[str] = ..., type: _Optional[_Union[_attribute_pb2.Attribute.Type, str]] = ...) -> None: ...
     class Row(_message.Message):
-        __slots__ = ("id", "member_id", "team_id", "display_name", "index", "rank", "rank_length", "rank_all", "rank_all_length", "score", "penalty", "tie_breaker", "unofficial", "disqualified", "medal", "rating", "rating_diff", "values", "roster")
+        __slots__ = ("id", "display_name", "member", "team", "index", "rank", "rank_length", "rank_all", "rank_all_length", "score", "penalty", "tie_breaker", "unofficial", "disqualified", "medal", "rating", "rating_diff", "values")
         class Value(_message.Message):
             __slots__ = ("column_id", "type", "problem_score", "string", "number")
             COLUMN_ID_FIELD_NUMBER: _ClassVar[int]
@@ -116,9 +116,9 @@ class Scoreboard(_message.Message):
             first_to_solve: bool
             def __init__(self, score: _Optional[float] = ..., penalty: _Optional[float] = ..., attempts: _Optional[int] = ..., percentage: _Optional[float] = ..., time: _Optional[int] = ..., pending: _Optional[int] = ..., changed: _Optional[bool] = ..., first_to_solve: _Optional[bool] = ...) -> None: ...
         ID_FIELD_NUMBER: _ClassVar[int]
-        MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-        TEAM_ID_FIELD_NUMBER: _ClassVar[int]
         DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+        MEMBER_FIELD_NUMBER: _ClassVar[int]
+        TEAM_FIELD_NUMBER: _ClassVar[int]
         INDEX_FIELD_NUMBER: _ClassVar[int]
         RANK_FIELD_NUMBER: _ClassVar[int]
         RANK_LENGTH_FIELD_NUMBER: _ClassVar[int]
@@ -133,11 +133,10 @@ class Scoreboard(_message.Message):
         RATING_FIELD_NUMBER: _ClassVar[int]
         RATING_DIFF_FIELD_NUMBER: _ClassVar[int]
         VALUES_FIELD_NUMBER: _ClassVar[int]
-        ROSTER_FIELD_NUMBER: _ClassVar[int]
         id: str
-        member_id: str
-        team_id: str
         display_name: str
+        member: _participant_pb2.Participant.Member
+        team: _participant_pb2.Participant.Team
         index: int
         rank: int
         rank_length: int
@@ -152,8 +151,7 @@ class Scoreboard(_message.Message):
         rating: int
         rating_diff: int
         values: _containers.RepeatedCompositeFieldContainer[Scoreboard.Row.Value]
-        roster: _containers.RepeatedCompositeFieldContainer[_participant_pb2.Participant.Member]
-        def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., team_id: _Optional[str] = ..., display_name: _Optional[str] = ..., index: _Optional[int] = ..., rank: _Optional[int] = ..., rank_length: _Optional[int] = ..., rank_all: _Optional[int] = ..., rank_all_length: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., rating: _Optional[int] = ..., rating_diff: _Optional[int] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ..., roster: _Optional[_Iterable[_Union[_participant_pb2.Participant.Member, _Mapping]]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., display_name: _Optional[str] = ..., member: _Optional[_Union[_participant_pb2.Participant.Member, _Mapping]] = ..., team: _Optional[_Union[_participant_pb2.Participant.Team, _Mapping]] = ..., index: _Optional[int] = ..., rank: _Optional[int] = ..., rank_length: _Optional[int] = ..., rank_all: _Optional[int] = ..., rank_all_length: _Optional[int] = ..., score: _Optional[float] = ..., penalty: _Optional[float] = ..., tie_breaker: _Optional[int] = ..., unofficial: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., rating: _Optional[int] = ..., rating_diff: _Optional[int] = ..., values: _Optional[_Iterable[_Union[Scoreboard.Row.Value, _Mapping]]] = ...) -> None: ...
     class Stats(_message.Message):
         __slots__ = ("participants", "problems")
         class Problem(_message.Message):

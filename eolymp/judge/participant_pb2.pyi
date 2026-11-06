@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Participant(_message.Message):
-    __slots__ = ("id", "member_id", "team_id", "display_name", "role", "unofficial", "inactive", "disqualified", "ghost", "finalized", "medal", "status", "started_at", "end_at", "bonus_time", "violation_count", "passcode", "certificate_id", "rating", "rating_diff", "proctoring", "submits", "roster")
+    __slots__ = ("id", "display_name", "member", "team", "role", "unofficial", "inactive", "disqualified", "ghost", "finalized", "medal", "status", "started_at", "end_at", "bonus_time", "violation_count", "passcode", "certificate_id", "rating", "rating_diff", "proctoring", "submits")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Participant.Status]
@@ -98,12 +98,24 @@ class Participant(_message.Message):
         streams: _containers.RepeatedCompositeFieldContainer[Participant.Proctoring.Stream]
         def __init__(self, status: _Optional[_Union[Participant.Proctoring.Status, str]] = ..., streams: _Optional[_Iterable[_Union[Participant.Proctoring.Stream, _Mapping]]] = ...) -> None: ...
     class Member(_message.Message):
-        __slots__ = ("member_id", "display_name")
+        __slots__ = ("member_id",)
         MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-        DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
         member_id: str
-        display_name: str
-        def __init__(self, member_id: _Optional[str] = ..., display_name: _Optional[str] = ...) -> None: ...
+        def __init__(self, member_id: _Optional[str] = ...) -> None: ...
+    class Team(_message.Message):
+        __slots__ = ("team_id", "roster")
+        class Member(_message.Message):
+            __slots__ = ("member_id", "display_name")
+            MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
+            DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+            member_id: str
+            display_name: str
+            def __init__(self, member_id: _Optional[str] = ..., display_name: _Optional[str] = ...) -> None: ...
+        TEAM_ID_FIELD_NUMBER: _ClassVar[int]
+        ROSTER_FIELD_NUMBER: _ClassVar[int]
+        team_id: str
+        roster: _containers.RepeatedCompositeFieldContainer[Participant.Team.Member]
+        def __init__(self, team_id: _Optional[str] = ..., roster: _Optional[_Iterable[_Union[Participant.Team.Member, _Mapping]]] = ...) -> None: ...
     class Submit(_message.Message):
         __slots__ = ("problem_id", "counter")
         PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
@@ -112,9 +124,9 @@ class Participant(_message.Message):
         counter: int
         def __init__(self, problem_id: _Optional[str] = ..., counter: _Optional[int] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
-    MEMBER_ID_FIELD_NUMBER: _ClassVar[int]
-    TEAM_ID_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+    MEMBER_FIELD_NUMBER: _ClassVar[int]
+    TEAM_FIELD_NUMBER: _ClassVar[int]
     ROLE_FIELD_NUMBER: _ClassVar[int]
     UNOFFICIAL_FIELD_NUMBER: _ClassVar[int]
     INACTIVE_FIELD_NUMBER: _ClassVar[int]
@@ -133,11 +145,10 @@ class Participant(_message.Message):
     RATING_DIFF_FIELD_NUMBER: _ClassVar[int]
     PROCTORING_FIELD_NUMBER: _ClassVar[int]
     SUBMITS_FIELD_NUMBER: _ClassVar[int]
-    ROSTER_FIELD_NUMBER: _ClassVar[int]
     id: str
-    member_id: str
-    team_id: str
     display_name: str
+    member: Participant.Member
+    team: Participant.Team
     role: Participant.Role
     unofficial: bool
     inactive: bool
@@ -156,5 +167,4 @@ class Participant(_message.Message):
     rating_diff: int
     proctoring: Participant.Proctoring
     submits: _containers.RepeatedCompositeFieldContainer[Participant.Submit]
-    roster: _containers.RepeatedCompositeFieldContainer[Participant.Member]
-    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., team_id: _Optional[str] = ..., display_name: _Optional[str] = ..., role: _Optional[_Union[Participant.Role, str]] = ..., unofficial: _Optional[bool] = ..., inactive: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., ghost: _Optional[bool] = ..., finalized: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., bonus_time: _Optional[int] = ..., violation_count: _Optional[int] = ..., passcode: _Optional[str] = ..., certificate_id: _Optional[str] = ..., rating: _Optional[int] = ..., rating_diff: _Optional[int] = ..., proctoring: _Optional[_Union[Participant.Proctoring, _Mapping]] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ..., roster: _Optional[_Iterable[_Union[Participant.Member, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., display_name: _Optional[str] = ..., member: _Optional[_Union[Participant.Member, _Mapping]] = ..., team: _Optional[_Union[Participant.Team, _Mapping]] = ..., role: _Optional[_Union[Participant.Role, str]] = ..., unofficial: _Optional[bool] = ..., inactive: _Optional[bool] = ..., disqualified: _Optional[bool] = ..., ghost: _Optional[bool] = ..., finalized: _Optional[bool] = ..., medal: _Optional[_Union[_medal_pb2.Medal, str]] = ..., status: _Optional[_Union[Participant.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., bonus_time: _Optional[int] = ..., violation_count: _Optional[int] = ..., passcode: _Optional[str] = ..., certificate_id: _Optional[str] = ..., rating: _Optional[int] = ..., rating_diff: _Optional[int] = ..., proctoring: _Optional[_Union[Participant.Proctoring, _Mapping]] = ..., submits: _Optional[_Iterable[_Union[Participant.Submit, _Mapping]]] = ...) -> None: ...

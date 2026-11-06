@@ -122,3 +122,17 @@ class TeamServiceClient:
             **kwargs,
         )
 
+    def LeaveTeam(self, request, **kwargs):
+        path = "/teams/"+urllib.parse.quote(request.team_id)+"/leave"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.team_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.team.LeaveTeamOutput"),
+            **kwargs,
+        )
+

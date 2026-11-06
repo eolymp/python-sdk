@@ -139,3 +139,13 @@ class RemoveTeamMemberInput(_message.Message):
 class RemoveTeamMemberOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class LeaveTeamInput(_message.Message):
+    __slots__ = ("team_id",)
+    TEAM_ID_FIELD_NUMBER: _ClassVar[int]
+    team_id: str
+    def __init__(self, team_id: _Optional[str] = ...) -> None: ...
+
+class LeaveTeamOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
