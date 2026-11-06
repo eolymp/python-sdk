@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/discussion/configuration.proto\x12\x11\x65olymp.discussion\"\xd5\x02\n\rConfiguration\x12$\n\x1cmembers_can_comment_on_posts\x18\x02 \x01(\x08\x12\'\n\x1fmembers_can_comment_on_problems\x18\x03 \x01(\x08\x12\x44\n\x0fpost_moderation\x18\x04 \x01(\x0e\x32+.eolymp.discussion.Configuration.Moderation\x12G\n\x12\x63omment_moderation\x18\x05 \x01(\x0e\x32+.eolymp.discussion.Configuration.Moderation\"`\n\nModeration\x12\x16\n\x12UNKNOWN_MODERATION\x10\x00\x12\x11\n\rNO_MODERATION\x10\x01\x12\x12\n\x0ePRE_MODERATION\x10\x02\x12\x13\n\x0fPOST_MODERATION\x10\x03J\x04\x08\x01\x10\x02\x42\x37Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/discussion/configuration.proto\x12\x11\x65olymp.discussion\"\x95\x02\n\rConfiguration\x12$\n\x1cmembers_can_comment_on_posts\x18\x02 \x01(\x08\x12\'\n\x1fmembers_can_comment_on_problems\x18\x03 \x01(\x08\x12G\n\x12\x63omment_moderation\x18\x05 \x01(\x0e\x32+.eolymp.discussion.Configuration.Moderation\"`\n\nModeration\x12\x16\n\x12UNKNOWN_MODERATION\x10\x00\x12\x11\n\rNO_MODERATION\x10\x01\x12\x12\n\x0ePRE_MODERATION\x10\x02\x12\x13\n\x0fPOST_MODERATION\x10\x03J\x04\x08\x01\x10\x02J\x04\x08\x04\x10\x05\x42\x37Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,7 +33,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/discussion;discussion'
   _globals['_CONFIGURATION']._serialized_start=61
-  _globals['_CONFIGURATION']._serialized_end=402
-  _globals['_CONFIGURATION_MODERATION']._serialized_start=300
-  _globals['_CONFIGURATION_MODERATION']._serialized_end=396
+  _globals['_CONFIGURATION']._serialized_end=338
+  _globals['_CONFIGURATION_MODERATION']._serialized_start=230
+  _globals['_CONFIGURATION_MODERATION']._serialized_end=326
 # @@protoc_insertion_point(module_scope)

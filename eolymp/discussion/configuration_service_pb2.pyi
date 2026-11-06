@@ -28,12 +28,10 @@ class UpdateDiscussionConfigInput(_message.Message):
         ALL: _ClassVar[UpdateDiscussionConfigInput.Patch]
         MEMBERS_CAN_COMMENT_ON_POSTS: _ClassVar[UpdateDiscussionConfigInput.Patch]
         MEMBERS_CAN_COMMENT_ON_PROBLEMS: _ClassVar[UpdateDiscussionConfigInput.Patch]
-        POST_MODERATION: _ClassVar[UpdateDiscussionConfigInput.Patch]
         COMMENT_MODERATION: _ClassVar[UpdateDiscussionConfigInput.Patch]
     ALL: UpdateDiscussionConfigInput.Patch
     MEMBERS_CAN_COMMENT_ON_POSTS: UpdateDiscussionConfigInput.Patch
     MEMBERS_CAN_COMMENT_ON_PROBLEMS: UpdateDiscussionConfigInput.Patch
-    POST_MODERATION: UpdateDiscussionConfigInput.Patch
     COMMENT_MODERATION: UpdateDiscussionConfigInput.Patch
     CONFIG_FIELD_NUMBER: _ClassVar[int]
     config: _configuration_pb2.Configuration

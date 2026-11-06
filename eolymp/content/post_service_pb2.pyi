@@ -69,7 +69,7 @@ class ListPostsInput(_message.Message):
     REPLY_COUNT: ListPostsInput.Sort
     POPULARITY: ListPostsInput.Sort
     class Filter(_message.Message):
-        __slots__ = ("query", "id", "source_id", "user_id", "type_id", "created_at", "published_at", "draft", "public", "featured", "moderation", "label")
+        __slots__ = ("query", "id", "source_id", "user_id", "type_id", "created_at", "published_at", "draft", "public", "featured", "label")
         QUERY_FIELD_NUMBER: _ClassVar[int]
         ID_FIELD_NUMBER: _ClassVar[int]
         SOURCE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -80,7 +80,6 @@ class ListPostsInput(_message.Message):
         DRAFT_FIELD_NUMBER: _ClassVar[int]
         PUBLIC_FIELD_NUMBER: _ClassVar[int]
         FEATURED_FIELD_NUMBER: _ClassVar[int]
-        MODERATION_FIELD_NUMBER: _ClassVar[int]
         LABEL_FIELD_NUMBER: _ClassVar[int]
         query: str
         id: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionID]
@@ -92,9 +91,8 @@ class ListPostsInput(_message.Message):
         draft: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         public: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
         featured: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionBool]
-        moderation: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
         label: _containers.RepeatedCompositeFieldContainer[_expression_pb2.ExpressionEnum]
-        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., source_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., published_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., featured: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., moderation: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
+        def __init__(self, query: _Optional[str] = ..., id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., source_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., user_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., type_id: _Optional[_Iterable[_Union[_expression_pb2.ExpressionID, _Mapping]]] = ..., created_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., published_at: _Optional[_Iterable[_Union[_expression_pb2.ExpressionTimestamp, _Mapping]]] = ..., draft: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., public: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., featured: _Optional[_Iterable[_Union[_expression_pb2.ExpressionBool, _Mapping]]] = ..., label: _Optional[_Iterable[_Union[_expression_pb2.ExpressionEnum, _Mapping]]] = ...) -> None: ...
     AFTER_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
@@ -170,30 +168,6 @@ class UnpublishPostInput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
 
 class UnpublishPostOutput(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
-class ModeratePostInput(_message.Message):
-    __slots__ = ("post_id", "outcome", "reason")
-    class Outcome(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        UNKNOWN_OUTCOME: _ClassVar[ModeratePostInput.Outcome]
-        APPROVED: _ClassVar[ModeratePostInput.Outcome]
-        REJECTED: _ClassVar[ModeratePostInput.Outcome]
-        IN_REVIEW: _ClassVar[ModeratePostInput.Outcome]
-    UNKNOWN_OUTCOME: ModeratePostInput.Outcome
-    APPROVED: ModeratePostInput.Outcome
-    REJECTED: ModeratePostInput.Outcome
-    IN_REVIEW: ModeratePostInput.Outcome
-    POST_ID_FIELD_NUMBER: _ClassVar[int]
-    OUTCOME_FIELD_NUMBER: _ClassVar[int]
-    REASON_FIELD_NUMBER: _ClassVar[int]
-    post_id: str
-    outcome: ModeratePostInput.Outcome
-    reason: _content_pb2.Content
-    def __init__(self, post_id: _Optional[str] = ..., outcome: _Optional[_Union[ModeratePostInput.Outcome, str]] = ..., reason: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
-
-class ModeratePostOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
