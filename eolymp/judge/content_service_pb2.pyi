@@ -183,3 +183,13 @@ class ListParentsOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_content_fragment_pb2.Fragment]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_content_fragment_pb2.Fragment, _Mapping]]] = ...) -> None: ...
+
+class FragmentChangedEvent(_message.Message):
+    __slots__ = ("contest_id", "before", "after")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    before: _content_fragment_pb2.Fragment
+    after: _content_fragment_pb2.Fragment
+    def __init__(self, contest_id: _Optional[str] = ..., before: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ..., after: _Optional[_Union[_content_fragment_pb2.Fragment, _Mapping]] = ...) -> None: ...
