@@ -12,6 +12,16 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class EditorialChangedEvent(_message.Message):
+    __slots__ = ("problem_id", "before", "after")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    before: _editorial_pb2.Editorial
+    after: _editorial_pb2.Editorial
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ..., after: _Optional[_Union[_editorial_pb2.Editorial, _Mapping]] = ...) -> None: ...
+
 class ListEditorialsInput(_message.Message):
     __slots__ = ("problem_id", "offset", "size", "version", "extra")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
