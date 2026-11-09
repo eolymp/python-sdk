@@ -28,9 +28,10 @@ from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_names
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
 from eolymp.content import sitemap_pb2 as eolymp_dot_content_dot_sitemap__pb2
+from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/content/sitemap_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/content/sitemap.proto\"\x18\n\x16ListSitemapChunksInput\"G\n\x17ListSitemapChunksOutput\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.eolymp.content.Sitemap.Chunk\"-\n\x19\x44\x65scribeSitemapChunkInput\x12\x10\n\x08\x63hunk_id\x18\x01 \x01(\t\"z\n\x1a\x44\x65scribeSitemapChunkOutput\x12,\n\x05\x63hunk\x18\x01 \x01(\x0b\x32\x1d.eolymp.content.Sitemap.Chunk\x12.\n\x07\x65ntries\x18\x02 \x03(\x0b\x32\x1d.eolymp.content.Sitemap.Entry2\xad\x03\n\x0eSitemapService\x12\xb3\x01\n\x11ListSitemapChunks\x12&.eolymp.content.ListSitemapChunksInput\x1a\'.eolymp.content.ListSitemapChunksOutput\"M\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1b\x8a\xe3\n\x17typewriter:sitemap:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x11\x12\x0f/sitemap/chunks\x12\xc7\x01\n\x14\x44\x65scribeSitemapChunk\x12).eolymp.content.DescribeSitemapChunkInput\x1a*.eolymp.content.DescribeSitemapChunkOutput\"X\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1b\x8a\xe3\n\x17typewriter:sitemap:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x1c\x12\x1a/sitemap/chunks/{chunk_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$eolymp/content/sitemap_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x1c\x65olymp/content/sitemap.proto\x1a!eolymp/wellknown/expression.proto\"\xa9\x02\n\x17ListSitemapEntriesInput\x12\x0e\n\x06offset\x18\x01 \x01(\x05\x12\x0c\n\x04size\x18\x02 \x01(\x05\x12?\n\x07\x66ilters\x18( \x01(\x0b\x32..eolymp.content.ListSitemapEntriesInput.Filter\x1a\xae\x01\n\x06\x46ilter\x12.\n\x04type\x18\x01 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\x12\x39\n\ncreated_at\x18\x02 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12\x39\n\nupdated_at\x18\x03 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"V\n\x18ListSitemapEntriesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.eolymp.content.SitemapEntry2\xe7\x01\n\x0eSitemapService\x12\xb7\x01\n\x12ListSitemapEntries\x12\'.eolymp.content.ListSitemapEntriesInput\x1a(.eolymp.content.ListSitemapEntriesOutput\"N\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1b\x8a\xe3\n\x17typewriter:sitemap:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/sitemap/entries\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,18 +41,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
   _globals['_SITEMAPSERVICE']._loaded_options = None
   _globals['_SITEMAPSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
-  _globals['_SITEMAPSERVICE'].methods_by_name['ListSitemapChunks']._loaded_options = None
-  _globals['_SITEMAPSERVICE'].methods_by_name['ListSitemapChunks']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\033\212\343\n\027typewriter:sitemap:read\242\343\n\004\250\343\n\001\202\323\344\223\002\021\022\017/sitemap/chunks'
-  _globals['_SITEMAPSERVICE'].methods_by_name['DescribeSitemapChunk']._loaded_options = None
-  _globals['_SITEMAPSERVICE'].methods_by_name['DescribeSitemapChunk']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\033\212\343\n\027typewriter:sitemap:read\242\343\n\004\250\343\n\001\202\323\344\223\002\034\022\032/sitemap/chunks/{chunk_id}'
-  _globals['_LISTSITEMAPCHUNKSINPUT']._serialized_start=253
-  _globals['_LISTSITEMAPCHUNKSINPUT']._serialized_end=277
-  _globals['_LISTSITEMAPCHUNKSOUTPUT']._serialized_start=279
-  _globals['_LISTSITEMAPCHUNKSOUTPUT']._serialized_end=350
-  _globals['_DESCRIBESITEMAPCHUNKINPUT']._serialized_start=352
-  _globals['_DESCRIBESITEMAPCHUNKINPUT']._serialized_end=397
-  _globals['_DESCRIBESITEMAPCHUNKOUTPUT']._serialized_start=399
-  _globals['_DESCRIBESITEMAPCHUNKOUTPUT']._serialized_end=521
-  _globals['_SITEMAPSERVICE']._serialized_start=524
-  _globals['_SITEMAPSERVICE']._serialized_end=953
+  _globals['_SITEMAPSERVICE'].methods_by_name['ListSitemapEntries']._loaded_options = None
+  _globals['_SITEMAPSERVICE'].methods_by_name['ListSitemapEntries']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240A\370\342\nd\202\343\n\033\212\343\n\027typewriter:sitemap:read\242\343\n\004\250\343\n\001\202\323\344\223\002\022\022\020/sitemap/entries'
+  _globals['_LISTSITEMAPENTRIESINPUT']._serialized_start=289
+  _globals['_LISTSITEMAPENTRIESINPUT']._serialized_end=586
+  _globals['_LISTSITEMAPENTRIESINPUT_FILTER']._serialized_start=412
+  _globals['_LISTSITEMAPENTRIESINPUT_FILTER']._serialized_end=586
+  _globals['_LISTSITEMAPENTRIESOUTPUT']._serialized_start=588
+  _globals['_LISTSITEMAPENTRIESOUTPUT']._serialized_end=674
+  _globals['_SITEMAPSERVICE']._serialized_start=677
+  _globals['_SITEMAPSERVICE']._serialized_end=908
 # @@protoc_insertion_point(module_scope)

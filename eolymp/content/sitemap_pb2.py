@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/content/sitemap.proto\x12\x0e\x65olymp.content\x1a\x1fgoogle/protobuf/timestamp.proto\"\x92\x05\n\x07Sitemap\x1aQ\n\x05\x43hunk\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\r\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\xb3\x04\n\x05\x45ntry\x12\x30\n\x04type\x18\x04 \x01(\x0e\x32\".eolymp.content.Sitemap.Entry.Type\x12\x15\n\rresource_link\x18\x06 \x01(\t\x12\r\n\x05title\x18\x08 \x01(\t\x12\x11\n\tlanguages\x18\x02 \x03(\t\x12\x12\n\nimage_link\x18\t \x01(\t\x12\x41\n\nattributes\x18\x07 \x03(\x0b\x32-.eolymp.content.Sitemap.Entry.AttributesEntry\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd4\x01\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\x0b\n\x07PROBLEM\x10\x01\x12\x15\n\x11PROBLEM_EDITORIAL\x10\x02\x12\x0b\n\x07\x43ONTEST\x10\x03\x12\x10\n\x0c\x43ONTEST_PAGE\x10\x04\x12\x16\n\x12\x43ONTEST_SCOREBOARD\x10\x05\x12\n\n\x06\x43OURSE\x10\x06\x12\x11\n\rCOURSE_MODULE\x10\x07\x12\x13\n\x0f\x43OURSE_MATERIAL\x10\x08\x12\x08\n\x04POST\x10\t\x12\x08\n\x04PAGE\x10\n\x12\n\n\x06MEMBER\x10\x0b\x12\x0b\n\x07PRODUCT\x10\x0c\x42\x31Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x65olymp/content/sitemap.proto\x12\x0e\x65olymp.content\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb8\x04\n\x0cSitemapEntry\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.eolymp.content.SitemapEntry.Type\x12\x15\n\rresource_link\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x11\n\tlanguages\x18\x04 \x03(\t\x12\x12\n\nimage_link\x18\x05 \x01(\t\x12@\n\nattributes\x18\x06 \x03(\x0b\x32,.eolymp.content.SitemapEntry.AttributesEntry\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd4\x01\n\x04Type\x12\x10\n\x0cUNKNOWN_TYPE\x10\x00\x12\x0b\n\x07PROBLEM\x10\x01\x12\x15\n\x11PROBLEM_EDITORIAL\x10\x02\x12\x0b\n\x07\x43ONTEST\x10\x03\x12\x10\n\x0c\x43ONTEST_PAGE\x10\x04\x12\x16\n\x12\x43ONTEST_SCOREBOARD\x10\x05\x12\n\n\x06\x43OURSE\x10\x06\x12\x11\n\rCOURSE_MODULE\x10\x07\x12\x13\n\x0f\x43OURSE_MATERIAL\x10\x08\x12\x08\n\x04POST\x10\t\x12\x08\n\x04PAGE\x10\n\x12\n\n\x06MEMBER\x10\x0b\x12\x0b\n\x07PRODUCT\x10\x0c\x42\x31Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,16 +33,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.content.sitemap_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
-  _globals['_SITEMAP_ENTRY_ATTRIBUTESENTRY']._loaded_options = None
-  _globals['_SITEMAP_ENTRY_ATTRIBUTESENTRY']._serialized_options = b'8\001'
-  _globals['_SITEMAP']._serialized_start=82
-  _globals['_SITEMAP']._serialized_end=740
-  _globals['_SITEMAP_CHUNK']._serialized_start=93
-  _globals['_SITEMAP_CHUNK']._serialized_end=174
-  _globals['_SITEMAP_ENTRY']._serialized_start=177
-  _globals['_SITEMAP_ENTRY']._serialized_end=740
-  _globals['_SITEMAP_ENTRY_ATTRIBUTESENTRY']._serialized_start=476
-  _globals['_SITEMAP_ENTRY_ATTRIBUTESENTRY']._serialized_end=525
-  _globals['_SITEMAP_ENTRY_TYPE']._serialized_start=528
-  _globals['_SITEMAP_ENTRY_TYPE']._serialized_end=740
+  _globals['_SITEMAPENTRY_ATTRIBUTESENTRY']._loaded_options = None
+  _globals['_SITEMAPENTRY_ATTRIBUTESENTRY']._serialized_options = b'8\001'
+  _globals['_SITEMAPENTRY']._serialized_start=82
+  _globals['_SITEMAPENTRY']._serialized_end=650
+  _globals['_SITEMAPENTRY_ATTRIBUTESENTRY']._serialized_start=386
+  _globals['_SITEMAPENTRY_ATTRIBUTESENTRY']._serialized_end=435
+  _globals['_SITEMAPENTRY_TYPE']._serialized_start=438
+  _globals['_SITEMAPENTRY_TYPE']._serialized_end=650
 # @@protoc_insertion_point(module_scope)

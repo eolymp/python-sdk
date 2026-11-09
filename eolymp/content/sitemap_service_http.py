@@ -14,28 +14,14 @@ class SitemapServiceClient:
         self.transport = transport
         self.url = url
 
-    def ListSitemapChunks(self, request, **kwargs):
-        path = "/sitemap/chunks"
+    def ListSitemapEntries(self, request, **kwargs):
+        path = "/sitemap/entries"
 
         return self.transport.request(
             method="GET",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.ListSitemapChunksOutput"),
-            **kwargs,
-        )
-
-    def DescribeSitemapChunk(self, request, **kwargs):
-        path = "/sitemap/chunks/"+urllib.parse.quote(request.chunk_id)
-
-        # Cleanup URL parameters to avoid any ambiguity
-        request.chunk_id = ""
-
-        return self.transport.request(
-            method="GET",
-            url=self.url+path,
-            request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.DescribeSitemapChunkOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.ListSitemapEntriesOutput"),
             **kwargs,
         )
 
