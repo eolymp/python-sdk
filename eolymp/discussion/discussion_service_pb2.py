@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
+from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.discussion import message_pb2 as eolymp_dot_discussion_dot_message__pb2
 from eolymp.discussion import subscription_pb2 as eolymp_dot_discussion_dot_subscription__pb2
 from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
@@ -31,7 +32,7 @@ from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expressi
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*eolymp/discussion/discussion_service.proto\x12\x11\x65olymp.discussion\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1f\x65olymp/discussion/message.proto\x1a$eolymp/discussion/subscription.proto\x1a\x18\x65olymp/ecm/content.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8b\x01\n\x13MessageChangedEvent\x12\r\n\x05scope\x18\n \x01(\t\x12*\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x1a.eolymp.discussion.Message\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.eolymp.discussion.Message\x12\x0e\n\x06reason\x18\x03 \x01(\t\"\x7f\n\x14\x44\x65scribeMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12\x0e\n\x06render\x18\x02 \x01(\x08\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.discussion.Message.Extra\"D\n\x15\x44\x65scribeMessageOutput\x12+\n\x07message\x18\x01 \x01(\x0b\x32\x1a.eolymp.discussion.Message\"\x8c\x06\n\x11ListMessagesInput\x12\x11\n\tthread_id\x18\x02 \x01(\t\x12\x0e\n\x06render\x18\x01 \x01(\x08\x12\r\n\x05\x61\x66ter\x18\n \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12;\n\x04sort\x18\x32 \x01(\x0e\x32-.eolymp.discussion.ListMessagesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0e\n\x06search\x18\x14 \x01(\t\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.discussion.ListMessagesInput.Filter\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.discussion.Message.Extra\x1a\x84\x03\n\x06\x46ilter\x12\x11\n\x05query\x18\x01 \x01(\tB\x02\x18\x01\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x08reply_to\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x04 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tthread_id\x18\x05 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x33\n\nvote_count\x18\x06 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x34\n\x0breply_count\x18\x07 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x38\n\tposted_at\x18\x08 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"G\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\r\n\tPOSTED_AT\x10\x01\x12\x0e\n\nVOTE_COUNT\x10\x02\x12\x0f\n\x0bREPLY_COUNT\x10\x03\"N\n\x12ListMessagesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.discussion.Message\"d\n\x10PostMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12+\n\x07message\x18\x01 \x01(\x0b\x32\x1a.eolymp.discussion.Message\x12\x10\n\x08reply_to\x18\x02 \x01(\t\"\'\n\x11PostMessageOutput\x12\x12\n\nmessage_id\x18\x01 \x01(\t\"h\n\x12UpdateMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12+\n\x07message\x18\x02 \x01(\x0b\x32\x1a.eolymp.discussion.Message\"\x15\n\x13UpdateMessageOutput\"K\n\x12\x44\x65leteMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12\x0e\n\x06reason\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteMessageOutput\"G\n\x10VoteMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12\x0c\n\x04vote\x18\x02 \x01(\x05\"\'\n\x11VoteMessageOutput\x12\x12\n\nvote_count\x18\x01 \x01(\x05\"@\n\x17ListMessageChangesInput\x12\x11\n\tthread_id\x18\x02 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\"\xce\x01\n\x18ListMessageChangesOutput\x12\x41\n\x05items\x18\x01 \x03(\x0b\x32\x32.eolymp.discussion.ListMessageChangesOutput.Record\x1ao\n\x06Record\x12\x10\n\x08revision\x18\x01 \x01(\x05\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12$\n\x07message\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\".\n\x19\x44\x65scribeSubscriptionInput\x12\x11\n\tthread_id\x18\x01 \x01(\t\"S\n\x1a\x44\x65scribeSubscriptionOutput\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"c\n\x17UpdateSubscriptionInput\x12\x11\n\tthread_id\x18\x02 \x01(\t\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"\x1a\n\x18UpdateSubscriptionOutput2\xf7\x07\n\x11\x44iscussionService\x12n\n\x0f\x44\x65scribeMessage\x12\'.eolymp.discussion.DescribeMessageInput\x1a(.eolymp.discussion.DescribeMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x01\x12\x65\n\x0cListMessages\x12$.eolymp.discussion.ListMessagesInput\x1a%.eolymp.discussion.ListMessagesOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x01\x12\x62\n\x0bPostMessage\x12#.eolymp.discussion.PostMessageInput\x1a$.eolymp.discussion.PostMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x02\x12h\n\rUpdateMessage\x12%.eolymp.discussion.UpdateMessageInput\x1a&.eolymp.discussion.UpdateMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x02\x12h\n\rDeleteMessage\x12%.eolymp.discussion.DeleteMessageInput\x1a&.eolymp.discussion.DeleteMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x03\x12\x62\n\x0bVoteMessage\x12#.eolymp.discussion.VoteMessageInput\x1a$.eolymp.discussion.VoteMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x02\x12w\n\x12ListMessageChanges\x12*.eolymp.discussion.ListMessageChangesInput\x1a+.eolymp.discussion.ListMessageChangesOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x01\x12}\n\x14\x44\x65scribeSubscription\x12,.eolymp.discussion.DescribeSubscriptionInput\x1a-.eolymp.discussion.DescribeSubscriptionOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x01\x12w\n\x12UpdateSubscription\x12*.eolymp.discussion.UpdateSubscriptionInput\x1a+.eolymp.discussion.UpdateSubscriptionOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x02\x42\x37Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*eolymp/discussion/discussion_service.proto\x12\x11\x65olymp.discussion\x1a\x1e\x65olymp/annotations/audit.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1f\x65olymp/discussion/message.proto\x1a$eolymp/discussion/subscription.proto\x1a\x18\x65olymp/ecm/content.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8b\x01\n\x13MessageChangedEvent\x12\r\n\x05scope\x18\n \x01(\t\x12*\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x1a.eolymp.discussion.Message\x12)\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1a.eolymp.discussion.Message\x12\x0e\n\x06reason\x18\x03 \x01(\t\"\x7f\n\x14\x44\x65scribeMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12\x0e\n\x06render\x18\x02 \x01(\x08\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.discussion.Message.Extra\"D\n\x15\x44\x65scribeMessageOutput\x12+\n\x07message\x18\x01 \x01(\x0b\x32\x1a.eolymp.discussion.Message\"\x8c\x06\n\x11ListMessagesInput\x12\x11\n\tthread_id\x18\x02 \x01(\t\x12\x0e\n\x06render\x18\x01 \x01(\x08\x12\r\n\x05\x61\x66ter\x18\n \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12;\n\x04sort\x18\x32 \x01(\x0e\x32-.eolymp.discussion.ListMessagesInput.Sortable\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0e\n\x06search\x18\x14 \x01(\t\x12<\n\x07\x66ilters\x18( \x01(\x0b\x32+.eolymp.discussion.ListMessagesInput.Filter\x12\x30\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32 .eolymp.discussion.Message.Extra\x1a\x84\x03\n\x06\x46ilter\x12\x11\n\x05query\x18\x01 \x01(\tB\x02\x18\x01\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x08reply_to\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x04 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tthread_id\x18\x05 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x33\n\nvote_count\x18\x06 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x34\n\x0breply_count\x18\x07 \x03(\x0b\x32\x1f.eolymp.wellknown.ExpressionInt\x12\x38\n\tposted_at\x18\x08 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\"G\n\x08Sortable\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\r\n\tPOSTED_AT\x10\x01\x12\x0e\n\nVOTE_COUNT\x10\x02\x12\x0f\n\x0bREPLY_COUNT\x10\x03\"N\n\x12ListMessagesOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.eolymp.discussion.Message\"d\n\x10PostMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12+\n\x07message\x18\x01 \x01(\x0b\x32\x1a.eolymp.discussion.Message\x12\x10\n\x08reply_to\x18\x02 \x01(\t\"\'\n\x11PostMessageOutput\x12\x12\n\nmessage_id\x18\x01 \x01(\t\"h\n\x12UpdateMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12+\n\x07message\x18\x02 \x01(\x0b\x32\x1a.eolymp.discussion.Message\"\x15\n\x13UpdateMessageOutput\"K\n\x12\x44\x65leteMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12\x0e\n\x06reason\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteMessageOutput\"G\n\x10VoteMessageInput\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\x12\x0c\n\x04vote\x18\x02 \x01(\x05\"\'\n\x11VoteMessageOutput\x12\x12\n\nvote_count\x18\x01 \x01(\x05\"@\n\x17ListMessageChangesInput\x12\x11\n\tthread_id\x18\x02 \x01(\t\x12\x12\n\nmessage_id\x18\x01 \x01(\t\"\xce\x01\n\x18ListMessageChangesOutput\x12\x41\n\x05items\x18\x01 \x03(\x0b\x32\x32.eolymp.discussion.ListMessageChangesOutput.Record\x1ao\n\x06Record\x12\x10\n\x08revision\x18\x01 \x01(\x05\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12$\n\x07message\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\".\n\x19\x44\x65scribeSubscriptionInput\x12\x11\n\tthread_id\x18\x01 \x01(\t\"S\n\x1a\x44\x65scribeSubscriptionOutput\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"c\n\x17UpdateSubscriptionInput\x12\x11\n\tthread_id\x18\x02 \x01(\t\x12\x35\n\x0csubscription\x18\x01 \x01(\x0b\x32\x1f.eolymp.discussion.Subscription\"\x1a\n\x18UpdateSubscriptionOutput2\x87\x08\n\x11\x44iscussionService\x12n\n\x0f\x44\x65scribeMessage\x12\'.eolymp.discussion.DescribeMessageInput\x1a(.eolymp.discussion.DescribeMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x01\x12u\n\x0cListMessages\x12$.eolymp.discussion.ListMessagesInput\x1a%.eolymp.discussion.ListMessagesOutput\"\x18\xea\xe2\n\x0c\xf5\xe2\n\x00\x00HB\xf8\xe2\n\xfa\x01\xa2\xe3\n\x04\xa8\xe3\n\x01\x12\x62\n\x0bPostMessage\x12#.eolymp.discussion.PostMessageInput\x1a$.eolymp.discussion.PostMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x02\x12h\n\rUpdateMessage\x12%.eolymp.discussion.UpdateMessageInput\x1a&.eolymp.discussion.UpdateMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x02\x12h\n\rDeleteMessage\x12%.eolymp.discussion.DeleteMessageInput\x1a&.eolymp.discussion.DeleteMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x03\x12\x62\n\x0bVoteMessage\x12#.eolymp.discussion.VoteMessageInput\x1a$.eolymp.discussion.VoteMessageOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x02\x12w\n\x12ListMessageChanges\x12*.eolymp.discussion.ListMessageChangesInput\x1a+.eolymp.discussion.ListMessageChangesOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x01\x12}\n\x14\x44\x65scribeSubscription\x12,.eolymp.discussion.DescribeSubscriptionInput\x1a-.eolymp.discussion.DescribeSubscriptionOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x01\x12w\n\x12UpdateSubscription\x12*.eolymp.discussion.UpdateSubscriptionInput\x1a+.eolymp.discussion.UpdateSubscriptionOutput\"\x08\xa2\xe3\n\x04\xa8\xe3\n\x02\x42\x37Z5github.com/eolymp/go-sdk/eolymp/discussion;discussionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,7 +45,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DISCUSSIONSERVICE'].methods_by_name['DescribeMessage']._loaded_options = None
   _globals['_DISCUSSIONSERVICE'].methods_by_name['DescribeMessage']._serialized_options = b'\242\343\n\004\250\343\n\001'
   _globals['_DISCUSSIONSERVICE'].methods_by_name['ListMessages']._loaded_options = None
-  _globals['_DISCUSSIONSERVICE'].methods_by_name['ListMessages']._serialized_options = b'\242\343\n\004\250\343\n\001'
+  _globals['_DISCUSSIONSERVICE'].methods_by_name['ListMessages']._serialized_options = b'\352\342\n\014\365\342\n\000\000HB\370\342\n\372\001\242\343\n\004\250\343\n\001'
   _globals['_DISCUSSIONSERVICE'].methods_by_name['PostMessage']._loaded_options = None
   _globals['_DISCUSSIONSERVICE'].methods_by_name['PostMessage']._serialized_options = b'\242\343\n\004\250\343\n\002'
   _globals['_DISCUSSIONSERVICE'].methods_by_name['UpdateMessage']._loaded_options = None
@@ -59,50 +60,50 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DISCUSSIONSERVICE'].methods_by_name['DescribeSubscription']._serialized_options = b'\242\343\n\004\250\343\n\001'
   _globals['_DISCUSSIONSERVICE'].methods_by_name['UpdateSubscription']._loaded_options = None
   _globals['_DISCUSSIONSERVICE'].methods_by_name['UpdateSubscription']._serialized_options = b'\242\343\n\004\250\343\n\002'
-  _globals['_MESSAGECHANGEDEVENT']._serialized_start=297
-  _globals['_MESSAGECHANGEDEVENT']._serialized_end=436
-  _globals['_DESCRIBEMESSAGEINPUT']._serialized_start=438
-  _globals['_DESCRIBEMESSAGEINPUT']._serialized_end=565
-  _globals['_DESCRIBEMESSAGEOUTPUT']._serialized_start=567
-  _globals['_DESCRIBEMESSAGEOUTPUT']._serialized_end=635
-  _globals['_LISTMESSAGESINPUT']._serialized_start=638
-  _globals['_LISTMESSAGESINPUT']._serialized_end=1418
-  _globals['_LISTMESSAGESINPUT_FILTER']._serialized_start=957
-  _globals['_LISTMESSAGESINPUT_FILTER']._serialized_end=1345
-  _globals['_LISTMESSAGESINPUT_SORTABLE']._serialized_start=1347
-  _globals['_LISTMESSAGESINPUT_SORTABLE']._serialized_end=1418
-  _globals['_LISTMESSAGESOUTPUT']._serialized_start=1420
-  _globals['_LISTMESSAGESOUTPUT']._serialized_end=1498
-  _globals['_POSTMESSAGEINPUT']._serialized_start=1500
-  _globals['_POSTMESSAGEINPUT']._serialized_end=1600
-  _globals['_POSTMESSAGEOUTPUT']._serialized_start=1602
-  _globals['_POSTMESSAGEOUTPUT']._serialized_end=1641
-  _globals['_UPDATEMESSAGEINPUT']._serialized_start=1643
-  _globals['_UPDATEMESSAGEINPUT']._serialized_end=1747
-  _globals['_UPDATEMESSAGEOUTPUT']._serialized_start=1749
-  _globals['_UPDATEMESSAGEOUTPUT']._serialized_end=1770
-  _globals['_DELETEMESSAGEINPUT']._serialized_start=1772
-  _globals['_DELETEMESSAGEINPUT']._serialized_end=1847
-  _globals['_DELETEMESSAGEOUTPUT']._serialized_start=1849
-  _globals['_DELETEMESSAGEOUTPUT']._serialized_end=1870
-  _globals['_VOTEMESSAGEINPUT']._serialized_start=1872
-  _globals['_VOTEMESSAGEINPUT']._serialized_end=1943
-  _globals['_VOTEMESSAGEOUTPUT']._serialized_start=1945
-  _globals['_VOTEMESSAGEOUTPUT']._serialized_end=1984
-  _globals['_LISTMESSAGECHANGESINPUT']._serialized_start=1986
-  _globals['_LISTMESSAGECHANGESINPUT']._serialized_end=2050
-  _globals['_LISTMESSAGECHANGESOUTPUT']._serialized_start=2053
-  _globals['_LISTMESSAGECHANGESOUTPUT']._serialized_end=2259
-  _globals['_LISTMESSAGECHANGESOUTPUT_RECORD']._serialized_start=2148
-  _globals['_LISTMESSAGECHANGESOUTPUT_RECORD']._serialized_end=2259
-  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_start=2261
-  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_end=2307
-  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_start=2309
-  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_end=2392
-  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_start=2394
-  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_end=2493
-  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_start=2495
-  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_end=2521
-  _globals['_DISCUSSIONSERVICE']._serialized_start=2524
-  _globals['_DISCUSSIONSERVICE']._serialized_end=3539
+  _globals['_MESSAGECHANGEDEVENT']._serialized_start=333
+  _globals['_MESSAGECHANGEDEVENT']._serialized_end=472
+  _globals['_DESCRIBEMESSAGEINPUT']._serialized_start=474
+  _globals['_DESCRIBEMESSAGEINPUT']._serialized_end=601
+  _globals['_DESCRIBEMESSAGEOUTPUT']._serialized_start=603
+  _globals['_DESCRIBEMESSAGEOUTPUT']._serialized_end=671
+  _globals['_LISTMESSAGESINPUT']._serialized_start=674
+  _globals['_LISTMESSAGESINPUT']._serialized_end=1454
+  _globals['_LISTMESSAGESINPUT_FILTER']._serialized_start=993
+  _globals['_LISTMESSAGESINPUT_FILTER']._serialized_end=1381
+  _globals['_LISTMESSAGESINPUT_SORTABLE']._serialized_start=1383
+  _globals['_LISTMESSAGESINPUT_SORTABLE']._serialized_end=1454
+  _globals['_LISTMESSAGESOUTPUT']._serialized_start=1456
+  _globals['_LISTMESSAGESOUTPUT']._serialized_end=1534
+  _globals['_POSTMESSAGEINPUT']._serialized_start=1536
+  _globals['_POSTMESSAGEINPUT']._serialized_end=1636
+  _globals['_POSTMESSAGEOUTPUT']._serialized_start=1638
+  _globals['_POSTMESSAGEOUTPUT']._serialized_end=1677
+  _globals['_UPDATEMESSAGEINPUT']._serialized_start=1679
+  _globals['_UPDATEMESSAGEINPUT']._serialized_end=1783
+  _globals['_UPDATEMESSAGEOUTPUT']._serialized_start=1785
+  _globals['_UPDATEMESSAGEOUTPUT']._serialized_end=1806
+  _globals['_DELETEMESSAGEINPUT']._serialized_start=1808
+  _globals['_DELETEMESSAGEINPUT']._serialized_end=1883
+  _globals['_DELETEMESSAGEOUTPUT']._serialized_start=1885
+  _globals['_DELETEMESSAGEOUTPUT']._serialized_end=1906
+  _globals['_VOTEMESSAGEINPUT']._serialized_start=1908
+  _globals['_VOTEMESSAGEINPUT']._serialized_end=1979
+  _globals['_VOTEMESSAGEOUTPUT']._serialized_start=1981
+  _globals['_VOTEMESSAGEOUTPUT']._serialized_end=2020
+  _globals['_LISTMESSAGECHANGESINPUT']._serialized_start=2022
+  _globals['_LISTMESSAGECHANGESINPUT']._serialized_end=2086
+  _globals['_LISTMESSAGECHANGESOUTPUT']._serialized_start=2089
+  _globals['_LISTMESSAGECHANGESOUTPUT']._serialized_end=2295
+  _globals['_LISTMESSAGECHANGESOUTPUT_RECORD']._serialized_start=2184
+  _globals['_LISTMESSAGECHANGESOUTPUT_RECORD']._serialized_end=2295
+  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_start=2297
+  _globals['_DESCRIBESUBSCRIPTIONINPUT']._serialized_end=2343
+  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_start=2345
+  _globals['_DESCRIBESUBSCRIPTIONOUTPUT']._serialized_end=2428
+  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_start=2430
+  _globals['_UPDATESUBSCRIPTIONINPUT']._serialized_end=2529
+  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_start=2531
+  _globals['_UPDATESUBSCRIPTIONOUTPUT']._serialized_end=2557
+  _globals['_DISCUSSIONSERVICE']._serialized_start=2560
+  _globals['_DISCUSSIONSERVICE']._serialized_end=3591
 # @@protoc_insertion_point(module_scope)

@@ -1,6 +1,7 @@
 import datetime
 
 from eolymp.annotations import audit_pb2 as _audit_pb2
+from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.discussion import message_pb2 as _message_pb2
 from eolymp.discussion import subscription_pb2 as _subscription_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
