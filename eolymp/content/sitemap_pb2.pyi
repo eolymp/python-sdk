@@ -20,6 +20,7 @@ class SitemapEntry(_message.Message):
         CONTEST: _ClassVar[SitemapEntry.Type]
         CONTEST_PAGE: _ClassVar[SitemapEntry.Type]
         CONTEST_SCOREBOARD: _ClassVar[SitemapEntry.Type]
+        SCOREBOARD: _ClassVar[SitemapEntry.Type]
         COURSE: _ClassVar[SitemapEntry.Type]
         COURSE_MODULE: _ClassVar[SitemapEntry.Type]
         COURSE_MATERIAL: _ClassVar[SitemapEntry.Type]
@@ -33,6 +34,7 @@ class SitemapEntry(_message.Message):
     CONTEST: SitemapEntry.Type
     CONTEST_PAGE: SitemapEntry.Type
     CONTEST_SCOREBOARD: SitemapEntry.Type
+    SCOREBOARD: SitemapEntry.Type
     COURSE: SitemapEntry.Type
     COURSE_MODULE: SitemapEntry.Type
     COURSE_MATERIAL: SitemapEntry.Type

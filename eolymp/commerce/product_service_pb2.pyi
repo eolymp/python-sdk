@@ -49,6 +49,14 @@ class DeleteProductOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class ProductChangedEvent(_message.Message):
+    __slots__ = ("before", "after")
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    before: _product_pb2.Product
+    after: _product_pb2.Product
+    def __init__(self, before: _Optional[_Union[_product_pb2.Product, _Mapping]] = ..., after: _Optional[_Union[_product_pb2.Product, _Mapping]] = ...) -> None: ...
+
 class DescribeProductInput(_message.Message):
     __slots__ = ("product_id", "locale", "extra")
     PRODUCT_ID_FIELD_NUMBER: _ClassVar[int]
