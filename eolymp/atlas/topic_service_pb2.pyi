@@ -63,22 +63,26 @@ class CreateTopicOutput(_message.Message):
     def __init__(self, topic_id: _Optional[str] = ...) -> None: ...
 
 class UpdateTopicInput(_message.Message):
-    __slots__ = ("topic_id", "topic")
+    __slots__ = ("topic_id", "locale", "topic")
     TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     TOPIC_FIELD_NUMBER: _ClassVar[int]
     topic_id: str
+    locale: str
     topic: _topic_pb2.Topic
-    def __init__(self, topic_id: _Optional[str] = ..., topic: _Optional[_Union[_topic_pb2.Topic, _Mapping]] = ...) -> None: ...
+    def __init__(self, topic_id: _Optional[str] = ..., locale: _Optional[str] = ..., topic: _Optional[_Union[_topic_pb2.Topic, _Mapping]] = ...) -> None: ...
 
 class UpdateTopicOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteTopicInput(_message.Message):
-    __slots__ = ("topic_id",)
+    __slots__ = ("topic_id", "locale")
     TOPIC_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
     topic_id: str
-    def __init__(self, topic_id: _Optional[str] = ...) -> None: ...
+    locale: str
+    def __init__(self, topic_id: _Optional[str] = ..., locale: _Optional[str] = ...) -> None: ...
 
 class DeleteTopicOutput(_message.Message):
     __slots__ = ()

@@ -22,9 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
+from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/atlas/topic.proto\x12\x0c\x65olymp.atlas\"\xe9\x01\n\x05Topic\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\t\x12-\n\x08variants\x18\x64 \x03(\x0b\x32\x1b.eolymp.atlas.Topic.Variant\x1aJ\n\x07Variant\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\t\"(\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x0c\n\x08VARIANTS\x10\x01\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x65olymp/atlas/topic.proto\x12\x0c\x65olymp.atlas\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x18\x65olymp/ecm/content.proto\"\xff\x02\n\x05Topic\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\t\x12(\n\x0b\x64\x65scription\x18\x05 \x01(\x0b\x32\x13.eolymp.ecm.Content\x12\x16\n\x06locale\x18\x06 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x17\n\x07locales\x18\x07 \x03(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x31\n\x08variants\x18\x64 \x03(\x0b\x32\x1b.eolymp.atlas.Topic.VariantB\x02\x18\x01\x1aN\n\x07Variant\x12\x0e\n\x06locale\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x10\n\x08keywords\x18\x04 \x03(\t:\x02\x18\x01\"[\n\x05\x45xtra\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\x10\n\x08VARIANTS\x10\x01\x1a\x02\x08\x01\x12\x15\n\x11\x44\x45SCRIPTION_VALUE\x10\x02\x12\x16\n\x12\x44\x45SCRIPTION_RENDER\x10\x03\x42-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,10 +34,20 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.atlas.topic_pb2', _g
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z+github.com/eolymp/go-sdk/eolymp/atlas;atlas'
-  _globals['_TOPIC']._serialized_start=43
-  _globals['_TOPIC']._serialized_end=276
-  _globals['_TOPIC_VARIANT']._serialized_start=160
-  _globals['_TOPIC_VARIANT']._serialized_end=234
-  _globals['_TOPIC_EXTRA']._serialized_start=236
-  _globals['_TOPIC_EXTRA']._serialized_end=276
+  _globals['_TOPIC_VARIANT']._loaded_options = None
+  _globals['_TOPIC_VARIANT']._serialized_options = b'\030\001'
+  _globals['_TOPIC_EXTRA'].values_by_name["VARIANTS"]._loaded_options = None
+  _globals['_TOPIC_EXTRA'].values_by_name["VARIANTS"]._serialized_options = b'\010\001'
+  _globals['_TOPIC'].fields_by_name['locale']._loaded_options = None
+  _globals['_TOPIC'].fields_by_name['locale']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TOPIC'].fields_by_name['locales']._loaded_options = None
+  _globals['_TOPIC'].fields_by_name['locales']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_TOPIC'].fields_by_name['variants']._loaded_options = None
+  _globals['_TOPIC'].fields_by_name['variants']._serialized_options = b'\030\001'
+  _globals['_TOPIC']._serialized_start=99
+  _globals['_TOPIC']._serialized_end=482
+  _globals['_TOPIC_VARIANT']._serialized_start=311
+  _globals['_TOPIC_VARIANT']._serialized_end=389
+  _globals['_TOPIC_EXTRA']._serialized_start=391
+  _globals['_TOPIC_EXTRA']._serialized_end=482
 # @@protoc_insertion_point(module_scope)
