@@ -28,6 +28,7 @@ class SitemapEntry(_message.Message):
         PAGE: _ClassVar[SitemapEntry.Type]
         MEMBER: _ClassVar[SitemapEntry.Type]
         PRODUCT: _ClassVar[SitemapEntry.Type]
+        TOPIC: _ClassVar[SitemapEntry.Type]
     UNKNOWN_TYPE: SitemapEntry.Type
     PROBLEM: SitemapEntry.Type
     PROBLEM_EDITORIAL: SitemapEntry.Type
@@ -42,6 +43,7 @@ class SitemapEntry(_message.Message):
     PAGE: SitemapEntry.Type
     MEMBER: SitemapEntry.Type
     PRODUCT: SitemapEntry.Type
+    TOPIC: SitemapEntry.Type
     class AttributesEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]

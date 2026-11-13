@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Topic(_message.Message):
-    __slots__ = ("id", "name", "summary", "keywords", "description", "locale", "locales")
+    __slots__ = ("id", "name", "summary", "keywords", "description", "locale", "locales", "image_url", "problem_count")
     class Extra(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_EXTRA: _ClassVar[Topic.Extra]
@@ -26,6 +26,8 @@ class Topic(_message.Message):
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     LOCALES_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_URL_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_COUNT_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     summary: str
@@ -33,4 +35,6 @@ class Topic(_message.Message):
     description: _content_pb2.Content
     locale: str
     locales: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[str] = ..., keywords: _Optional[_Iterable[str]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ...) -> None: ...
+    image_url: str
+    problem_count: int
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., summary: _Optional[str] = ..., keywords: _Optional[_Iterable[str]] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., locale: _Optional[str] = ..., locales: _Optional[_Iterable[str]] = ..., image_url: _Optional[str] = ..., problem_count: _Optional[int] = ...) -> None: ...
