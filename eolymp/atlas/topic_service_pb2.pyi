@@ -12,6 +12,14 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class TopicChangedEvent(_message.Message):
+    __slots__ = ("before", "after")
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    before: _topic_pb2.Topic
+    after: _topic_pb2.Topic
+    def __init__(self, before: _Optional[_Union[_topic_pb2.Topic, _Mapping]] = ..., after: _Optional[_Union[_topic_pb2.Topic, _Mapping]] = ...) -> None: ...
+
 class DescribeTopicInput(_message.Message):
     __slots__ = ("topic_id", "locale", "extra")
     TOPIC_ID_FIELD_NUMBER: _ClassVar[int]

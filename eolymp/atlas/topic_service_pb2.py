@@ -30,7 +30,7 @@ from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb
 from eolymp.atlas import topic_pb2 as eolymp_dot_atlas_dot_topic__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/atlas/topic_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/atlas/topic.proto\"a\n\x12\x44\x65scribeTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12)\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x19.eolymp.atlas.Topic.Extra\"9\n\x13\x44\x65scribeTopicOutput\x12\"\n\x05topic\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Topic\"z\n\x0fListTopicsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x15 \x01(\t\x12\x0e\n\x06search\x18\x14 \x01(\t\x12)\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x19.eolymp.atlas.Topic.Extra\"E\n\x10ListTopicsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.eolymp.atlas.Topic\"6\n\x10\x43reateTopicInput\x12\"\n\x05topic\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Topic\"%\n\x11\x43reateTopicOutput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\"X\n\x10UpdateTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x03 \x01(\t\x12\"\n\x05topic\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.Topic\"\x13\n\x11UpdateTopicOutput\"4\n\x10\x44\x65leteTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteTopicOutput2\xb2\x06\n\x0cTopicService\x12\xa2\x01\n\rDescribeTopic\x12 .eolymp.atlas.DescribeTopicInput\x1a!.eolymp.atlas.DescribeTopicOutput\"L\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x14\x12\x12/topics/{topic_id}\x12\x8d\x01\n\nListTopics\x12\x1d.eolymp.atlas.ListTopicsInput\x1a\x1e.eolymp.atlas.ListTopicsOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\t\x12\x07/topics\x12\x91\x01\n\x0b\x43reateTopic\x12\x1e.eolymp.atlas.CreateTopicInput\x1a\x1f.eolymp.atlas.CreateTopicOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\t\"\x07/topics\x12\x9c\x01\n\x0bUpdateTopic\x12\x1e.eolymp.atlas.UpdateTopicInput\x1a\x1f.eolymp.atlas.UpdateTopicOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x14\x1a\x12/topics/{topic_id}\x12\x9c\x01\n\x0b\x44\x65leteTopic\x12\x1e.eolymp.atlas.DeleteTopicInput\x1a\x1f.eolymp.atlas.DeleteTopicOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x14*\x12/topics/{topic_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n eolymp/atlas/topic_service.proto\x12\x0c\x65olymp.atlas\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x18\x65olymp/atlas/topic.proto\"\\\n\x11TopicChangedEvent\x12#\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Topic\x12\"\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.Topic\"a\n\x12\x44\x65scribeTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\n \x01(\t\x12)\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x19.eolymp.atlas.Topic.Extra\"9\n\x13\x44\x65scribeTopicOutput\x12\"\n\x05topic\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Topic\"z\n\x0fListTopicsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06locale\x18\x15 \x01(\t\x12\x0e\n\x06search\x18\x14 \x01(\t\x12)\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x19.eolymp.atlas.Topic.Extra\"E\n\x10ListTopicsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12\"\n\x05items\x18\x02 \x03(\x0b\x32\x13.eolymp.atlas.Topic\"6\n\x10\x43reateTopicInput\x12\"\n\x05topic\x18\x01 \x01(\x0b\x32\x13.eolymp.atlas.Topic\"%\n\x11\x43reateTopicOutput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\"X\n\x10UpdateTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x03 \x01(\t\x12\"\n\x05topic\x18\x02 \x01(\x0b\x32\x13.eolymp.atlas.Topic\"\x13\n\x11UpdateTopicOutput\"4\n\x10\x44\x65leteTopicInput\x12\x10\n\x08topic_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteTopicOutput2\xb2\x06\n\x0cTopicService\x12\xa2\x01\n\rDescribeTopic\x12 .eolymp.atlas.DescribeTopicInput\x1a!.eolymp.atlas.DescribeTopicOutput\"L\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x14\x12\x12/topics/{topic_id}\x12\x8d\x01\n\nListTopics\x12\x1d.eolymp.atlas.ListTopicsInput\x1a\x1e.eolymp.atlas.ListTopicsOutput\"@\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x16\x8a\xe3\n\x12\x61tlas:problem:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\t\x12\x07/topics\x12\x91\x01\n\x0b\x43reateTopic\x12\x1e.eolymp.atlas.CreateTopicInput\x1a\x1f.eolymp.atlas.CreateTopicOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\t\"\x07/topics\x12\x9c\x01\n\x0bUpdateTopic\x12\x1e.eolymp.atlas.UpdateTopicInput\x1a\x1f.eolymp.atlas.UpdateTopicOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x14\x1a\x12/topics/{topic_id}\x12\x9c\x01\n\x0b\x44\x65leteTopic\x12\x1e.eolymp.atlas.DeleteTopicInput\x1a\x1f.eolymp.atlas.DeleteTopicOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x17\x8a\xe3\n\x13\x61tlas:problem:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x14*\x12/topics/{topic_id}\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -50,26 +50,28 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TOPICSERVICE'].methods_by_name['UpdateTopic']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\027\212\343\n\023atlas:problem:write\242\343\n\004\250\343\n\002\202\323\344\223\002\024\032\022/topics/{topic_id}'
   _globals['_TOPICSERVICE'].methods_by_name['DeleteTopic']._loaded_options = None
   _globals['_TOPICSERVICE'].methods_by_name['DeleteTopic']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\027\212\343\n\023atlas:problem:write\242\343\n\004\250\343\n\003\202\323\344\223\002\024*\022/topics/{topic_id}'
-  _globals['_DESCRIBETOPICINPUT']._serialized_start=243
-  _globals['_DESCRIBETOPICINPUT']._serialized_end=340
-  _globals['_DESCRIBETOPICOUTPUT']._serialized_start=342
-  _globals['_DESCRIBETOPICOUTPUT']._serialized_end=399
-  _globals['_LISTTOPICSINPUT']._serialized_start=401
-  _globals['_LISTTOPICSINPUT']._serialized_end=523
-  _globals['_LISTTOPICSOUTPUT']._serialized_start=525
-  _globals['_LISTTOPICSOUTPUT']._serialized_end=594
-  _globals['_CREATETOPICINPUT']._serialized_start=596
-  _globals['_CREATETOPICINPUT']._serialized_end=650
-  _globals['_CREATETOPICOUTPUT']._serialized_start=652
-  _globals['_CREATETOPICOUTPUT']._serialized_end=689
-  _globals['_UPDATETOPICINPUT']._serialized_start=691
-  _globals['_UPDATETOPICINPUT']._serialized_end=779
-  _globals['_UPDATETOPICOUTPUT']._serialized_start=781
-  _globals['_UPDATETOPICOUTPUT']._serialized_end=800
-  _globals['_DELETETOPICINPUT']._serialized_start=802
-  _globals['_DELETETOPICINPUT']._serialized_end=854
-  _globals['_DELETETOPICOUTPUT']._serialized_start=856
-  _globals['_DELETETOPICOUTPUT']._serialized_end=875
-  _globals['_TOPICSERVICE']._serialized_start=878
-  _globals['_TOPICSERVICE']._serialized_end=1696
+  _globals['_TOPICCHANGEDEVENT']._serialized_start=243
+  _globals['_TOPICCHANGEDEVENT']._serialized_end=335
+  _globals['_DESCRIBETOPICINPUT']._serialized_start=337
+  _globals['_DESCRIBETOPICINPUT']._serialized_end=434
+  _globals['_DESCRIBETOPICOUTPUT']._serialized_start=436
+  _globals['_DESCRIBETOPICOUTPUT']._serialized_end=493
+  _globals['_LISTTOPICSINPUT']._serialized_start=495
+  _globals['_LISTTOPICSINPUT']._serialized_end=617
+  _globals['_LISTTOPICSOUTPUT']._serialized_start=619
+  _globals['_LISTTOPICSOUTPUT']._serialized_end=688
+  _globals['_CREATETOPICINPUT']._serialized_start=690
+  _globals['_CREATETOPICINPUT']._serialized_end=744
+  _globals['_CREATETOPICOUTPUT']._serialized_start=746
+  _globals['_CREATETOPICOUTPUT']._serialized_end=783
+  _globals['_UPDATETOPICINPUT']._serialized_start=785
+  _globals['_UPDATETOPICINPUT']._serialized_end=873
+  _globals['_UPDATETOPICOUTPUT']._serialized_start=875
+  _globals['_UPDATETOPICOUTPUT']._serialized_end=894
+  _globals['_DELETETOPICINPUT']._serialized_start=896
+  _globals['_DELETETOPICINPUT']._serialized_end=948
+  _globals['_DELETETOPICOUTPUT']._serialized_start=950
+  _globals['_DELETETOPICOUTPUT']._serialized_end=969
+  _globals['_TOPICSERVICE']._serialized_start=972
+  _globals['_TOPICSERVICE']._serialized_end=1790
 # @@protoc_insertion_point(module_scope)
