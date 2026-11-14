@@ -16,11 +16,17 @@ class Issue(_message.Message):
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Issue.Status]
-        OPEN: _ClassVar[Issue.Status]
-        CLOSED: _ClassVar[Issue.Status]
+        TRIAGE: _ClassVar[Issue.Status]
+        TODO: _ClassVar[Issue.Status]
+        IN_PROGRESS: _ClassVar[Issue.Status]
+        DONE: _ClassVar[Issue.Status]
+        CANCELLED: _ClassVar[Issue.Status]
     UNKNOWN_STATUS: Issue.Status
-    OPEN: Issue.Status
-    CLOSED: Issue.Status
+    TRIAGE: Issue.Status
+    TODO: Issue.Status
+    IN_PROGRESS: Issue.Status
+    DONE: Issue.Status
+    CANCELLED: Issue.Status
     class Extra(_message.Message):
         __slots__ = ()
         class Field(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):

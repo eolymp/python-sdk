@@ -25,15 +25,19 @@ class IssueActivity(_message.Message):
         MESSAGE_RENDER: IssueActivity.Extra.Field
         def __init__(self) -> None: ...
     class Patch(_message.Message):
-        __slots__ = ("message",)
+        __slots__ = ("message", "public")
         MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        PUBLIC_FIELD_NUMBER: _ClassVar[int]
         message: _content_pb2.Content
-        def __init__(self, message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+        public: bool
+        def __init__(self, message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., public: _Optional[bool] = ...) -> None: ...
     class Comment(_message.Message):
-        __slots__ = ("message",)
+        __slots__ = ("message", "public")
         MESSAGE_FIELD_NUMBER: _ClassVar[int]
+        PUBLIC_FIELD_NUMBER: _ClassVar[int]
         message: _content_pb2.Content
-        def __init__(self, message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+        public: bool
+        def __init__(self, message: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., public: _Optional[bool] = ...) -> None: ...
     class Change(_message.Message):
         __slots__ = ("before", "after")
         BEFORE_FIELD_NUMBER: _ClassVar[int]

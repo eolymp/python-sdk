@@ -28,6 +28,16 @@ class IssueChangedEvent(_message.Message):
     actor_id: str
     def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_issue_pb2.Issue, _Mapping]] = ..., after: _Optional[_Union[_issue_pb2.Issue, _Mapping]] = ..., actor_id: _Optional[str] = ...) -> None: ...
 
+class IssueActivityChangedEvent(_message.Message):
+    __slots__ = ("problem_id", "before", "after")
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    BEFORE_FIELD_NUMBER: _ClassVar[int]
+    AFTER_FIELD_NUMBER: _ClassVar[int]
+    problem_id: str
+    before: _issue_activity_pb2.IssueActivity
+    after: _issue_activity_pb2.IssueActivity
+    def __init__(self, problem_id: _Optional[str] = ..., before: _Optional[_Union[_issue_activity_pb2.IssueActivity, _Mapping]] = ..., after: _Optional[_Union[_issue_activity_pb2.IssueActivity, _Mapping]] = ...) -> None: ...
+
 class ListIssuesInput(_message.Message):
     __slots__ = ("offset", "size", "filters", "sort", "order", "extra")
     class Sortable(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
