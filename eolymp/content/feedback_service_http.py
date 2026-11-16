@@ -42,6 +42,20 @@ class FeedbackServiceClient:
             **kwargs,
         )
 
+    def UpdateFeedback(self, request, **kwargs):
+        path = "/content/feedback/"+urllib.parse.quote(request.feedback_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.feedback_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.content.UpdateFeedbackOutput"),
+            **kwargs,
+        )
+
     def DeleteFeedback(self, request, **kwargs):
         path = "/content/feedback/"+urllib.parse.quote(request.feedback_id)
 

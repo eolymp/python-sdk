@@ -26,7 +26,7 @@ from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/content/content_feedback.proto\x12\x0e\x65olymp.content\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc1\x04\n\x08\x46\x65\x65\x64\x62\x61\x63k\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1b\n\x0b\x66ragment_id\x18\x02 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\\\n\x0f\x66ragment_locale\x18\x03 \x01(\tBC\xa2\xf0\xf0\xe4\x01=translation the reader was reading, empty for the page itself\x12\x0f\n\x07helpful\x18\n \x01(\x08\x12\x0f\n\x07\x63omment\x18\x0b \x01(\t\x12\x83\x01\n\x0b\x62lock_index\x18\x14 \x01(\x05\x42n\xa2\xf0\xf0\xe4\x01h1-based position of the top-level content block the feedback is about, 0 when it is about the whole page\x12t\n\nblock_text\x18\x15 \x01(\tB`\xa2\xf0\xf0\xe4\x01Tplain text of that block when the feedback was left, the page may have changed since\xa8\xf0\xf0\xe4\x01\x01\x12P\n\tmember_id\x18\x1e \x01(\tB=\xa2\xf0\xf0\xe4\x01\x31member who left it, empty for an anonymous reader\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x42\x31Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%eolymp/content/content_feedback.proto\x12\x0e\x65olymp.content\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc0\n\n\x08\x46\x65\x65\x64\x62\x61\x63k\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\x1b\n\x0b\x66ragment_id\x18\x02 \x01(\tB\x06\xa8\xf0\xf0\xe4\x01\x01\x12\\\n\x0f\x66ragment_locale\x18\x03 \x01(\tBC\xa2\xf0\xf0\xe4\x01=translation the reader was reading, empty for the page itself\x12\x0f\n\x07helpful\x18\n \x01(\x08\x12\x0f\n\x07\x63omment\x18\x0b \x01(\t\x12\x83\x01\n\x0b\x62lock_index\x18\x14 \x01(\x05\x42n\xa2\xf0\xf0\xe4\x01h1-based position of the top-level content block the feedback is about, 0 when it is about the whole page\x12t\n\nblock_text\x18\x15 \x01(\tB`\xa2\xf0\xf0\xe4\x01Tplain text of that block when the feedback was left, the page may have changed since\xa8\xf0\xf0\xe4\x01\x01\x12P\n\tmember_id\x18\x1e \x01(\tB=\xa2\xf0\xf0\xe4\x01\x31member who left it, empty for an anonymous reader\xa8\xf0\xf0\xe4\x01\x01\x12\x37\n\x06status\x18( \x01(\x0e\x32\x1f.eolymp.content.Feedback.StatusB\x06\xa8\xf0\xf0\xe4\x01\x01\x12H\n\nresolution\x18) \x01(\tB4\xa2\xf0\xf0\xe4\x01(what the editor did about it, plain text\xa8\xf0\xf0\xe4\x01\x01\x12^\n\x06labels\x18* \x03(\tBN\xa2\xf0\xf0\xe4\x01\x42labels the editor sorted it with, \"page\" or \"rule:S16\" for example\xa8\xf0\xf0\xe4\x01\x01\x12\x36\n\ncreated_at\x18< \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xa8\xf0\xf0\xe4\x01\x01\x12s\n\x0bresolved_at\x18= \x01(\x0b\x32\x1a.google.protobuf.TimestampBB\xa2\xf0\xf0\xe4\x01\x36when the status last left OPEN, empty while it is open\xa8\xf0\xf0\xe4\x01\x01\x1a\xac\x01\n\x05Patch\x12\x34\n\x06status\x18( \x01(\x0e\x32\x1f.eolymp.content.Feedback.StatusH\x00\x88\x01\x01\x12\x17\n\nresolution\x18) \x01(\tH\x01\x88\x01\x01\x12\x0e\n\x06labels\x18* \x03(\t\x12\x19\n\x0cunset_labels\x18+ \x01(\x08H\x02\x88\x01\x01\x42\t\n\x07_statusB\r\n\x0b_resolutionB\x0f\n\r_unset_labels\"\xf5\x01\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12K\n\x04OPEN\x10\x01\x1a\x41\x9a\xf0\xf0\xe4\x01;not dealt with yet, every new piece of feedback starts here\x12?\n\x08RESOLVED\x10\x02\x1a\x31\x9a\xf0\xf0\xe4\x01+acted on, the resolution says what was done\x12I\n\tDISMISSED\x10\x03\x1a:\x9a\xf0\xf0\xe4\x01\x34looked at and left as it is, the resolution says whyB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,6 +34,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.content.content_feed
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
+  _globals['_FEEDBACK_STATUS'].values_by_name["OPEN"]._loaded_options = None
+  _globals['_FEEDBACK_STATUS'].values_by_name["OPEN"]._serialized_options = b'\232\360\360\344\001;not dealt with yet, every new piece of feedback starts here'
+  _globals['_FEEDBACK_STATUS'].values_by_name["RESOLVED"]._loaded_options = None
+  _globals['_FEEDBACK_STATUS'].values_by_name["RESOLVED"]._serialized_options = b'\232\360\360\344\001+acted on, the resolution says what was done'
+  _globals['_FEEDBACK_STATUS'].values_by_name["DISMISSED"]._loaded_options = None
+  _globals['_FEEDBACK_STATUS'].values_by_name["DISMISSED"]._serialized_options = b'\232\360\360\344\0014looked at and left as it is, the resolution says why'
   _globals['_FEEDBACK'].fields_by_name['id']._loaded_options = None
   _globals['_FEEDBACK'].fields_by_name['id']._serialized_options = b'\250\360\360\344\001\001'
   _globals['_FEEDBACK'].fields_by_name['fragment_id']._loaded_options = None
@@ -46,8 +52,20 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FEEDBACK'].fields_by_name['block_text']._serialized_options = b'\242\360\360\344\001Tplain text of that block when the feedback was left, the page may have changed since\250\360\360\344\001\001'
   _globals['_FEEDBACK'].fields_by_name['member_id']._loaded_options = None
   _globals['_FEEDBACK'].fields_by_name['member_id']._serialized_options = b'\242\360\360\344\0011member who left it, empty for an anonymous reader\250\360\360\344\001\001'
+  _globals['_FEEDBACK'].fields_by_name['status']._loaded_options = None
+  _globals['_FEEDBACK'].fields_by_name['status']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_FEEDBACK'].fields_by_name['resolution']._loaded_options = None
+  _globals['_FEEDBACK'].fields_by_name['resolution']._serialized_options = b'\242\360\360\344\001(what the editor did about it, plain text\250\360\360\344\001\001'
+  _globals['_FEEDBACK'].fields_by_name['labels']._loaded_options = None
+  _globals['_FEEDBACK'].fields_by_name['labels']._serialized_options = b'\242\360\360\344\001Blabels the editor sorted it with, \"page\" or \"rule:S16\" for example\250\360\360\344\001\001'
   _globals['_FEEDBACK'].fields_by_name['created_at']._loaded_options = None
   _globals['_FEEDBACK'].fields_by_name['created_at']._serialized_options = b'\250\360\360\344\001\001'
+  _globals['_FEEDBACK'].fields_by_name['resolved_at']._loaded_options = None
+  _globals['_FEEDBACK'].fields_by_name['resolved_at']._serialized_options = b'\242\360\360\344\0016when the status last left OPEN, empty while it is open\250\360\360\344\001\001'
   _globals['_FEEDBACK']._serialized_start=121
-  _globals['_FEEDBACK']._serialized_end=698
+  _globals['_FEEDBACK']._serialized_end=1465
+  _globals['_FEEDBACK_PATCH']._serialized_start=1045
+  _globals['_FEEDBACK_PATCH']._serialized_end=1217
+  _globals['_FEEDBACK_STATUS']._serialized_start=1220
+  _globals['_FEEDBACK_STATUS']._serialized_end=1465
 # @@protoc_insertion_point(module_scope)
