@@ -33,7 +33,7 @@ class RenderFigureInput(_message.Message):
     def __init__(self, typst: _Optional[str] = ...) -> None: ...
 
 class RenderFigureOutput(_message.Message):
-    __slots__ = ("svg", "diagnostics")
+    __slots__ = ("pages", "diagnostics")
     class Diagnostic(_message.Message):
         __slots__ = ("severity", "line", "column", "message", "hints")
         class Severity(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -55,8 +55,8 @@ class RenderFigureOutput(_message.Message):
         message: str
         hints: _containers.RepeatedScalarFieldContainer[str]
         def __init__(self, severity: _Optional[_Union[RenderFigureOutput.Diagnostic.Severity, str]] = ..., line: _Optional[int] = ..., column: _Optional[int] = ..., message: _Optional[str] = ..., hints: _Optional[_Iterable[str]] = ...) -> None: ...
-    SVG_FIELD_NUMBER: _ClassVar[int]
+    PAGES_FIELD_NUMBER: _ClassVar[int]
     DIAGNOSTICS_FIELD_NUMBER: _ClassVar[int]
-    svg: str
+    pages: _containers.RepeatedScalarFieldContainer[str]
     diagnostics: _containers.RepeatedCompositeFieldContainer[RenderFigureOutput.Diagnostic]
-    def __init__(self, svg: _Optional[str] = ..., diagnostics: _Optional[_Iterable[_Union[RenderFigureOutput.Diagnostic, _Mapping]]] = ...) -> None: ...
+    def __init__(self, pages: _Optional[_Iterable[str]] = ..., diagnostics: _Optional[_Iterable[_Union[RenderFigureOutput.Diagnostic, _Mapping]]] = ...) -> None: ...
