@@ -224,16 +224,18 @@ class RateProblemOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class ReportIssueInput(_message.Message):
-    __slots__ = ("contest_id", "problem_id", "title", "description")
+    __slots__ = ("contest_id", "problem_id", "title", "description", "tags")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    TAGS_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     problem_id: str
     title: str
     description: _content_pb2.Content
-    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., title: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+    tags: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., title: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., tags: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ReportIssueOutput(_message.Message):
     __slots__ = ("issue_id",)
