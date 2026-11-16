@@ -12,19 +12,23 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RequestFiguresInput(_message.Message):
-    __slots__ = ("request", "context", "figures")
+    __slots__ = ("request", "context", "figures", "thread_id")
     REQUEST_FIELD_NUMBER: _ClassVar[int]
     CONTEXT_FIELD_NUMBER: _ClassVar[int]
     FIGURES_FIELD_NUMBER: _ClassVar[int]
+    THREAD_ID_FIELD_NUMBER: _ClassVar[int]
     request: str
     context: str
     figures: _containers.RepeatedCompositeFieldContainer[_figure_pb2.Figure]
-    def __init__(self, request: _Optional[str] = ..., context: _Optional[str] = ..., figures: _Optional[_Iterable[_Union[_figure_pb2.Figure, _Mapping]]] = ...) -> None: ...
+    thread_id: str
+    def __init__(self, request: _Optional[str] = ..., context: _Optional[str] = ..., figures: _Optional[_Iterable[_Union[_figure_pb2.Figure, _Mapping]]] = ..., thread_id: _Optional[str] = ...) -> None: ...
 
 class RequestFiguresOutput(_message.Message):
-    __slots__ = ("reply", "figures")
+    __slots__ = ("reply", "figures", "thread_id")
     REPLY_FIELD_NUMBER: _ClassVar[int]
     FIGURES_FIELD_NUMBER: _ClassVar[int]
+    THREAD_ID_FIELD_NUMBER: _ClassVar[int]
     reply: str
     figures: _containers.RepeatedCompositeFieldContainer[_figure_pb2.Figure]
-    def __init__(self, reply: _Optional[str] = ..., figures: _Optional[_Iterable[_Union[_figure_pb2.Figure, _Mapping]]] = ...) -> None: ...
+    thread_id: str
+    def __init__(self, reply: _Optional[str] = ..., figures: _Optional[_Iterable[_Union[_figure_pb2.Figure, _Mapping]]] = ..., thread_id: _Optional[str] = ...) -> None: ...
