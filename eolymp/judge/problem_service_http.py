@@ -193,6 +193,21 @@ class ProblemServiceClient:
             **kwargs,
         )
 
+    def ReportIssue(self, request, **kwargs):
+        path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/issues"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.contest_id = ""
+        request.problem_id = ""
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.judge.ReportIssueOutput"),
+            **kwargs,
+        )
+
     def ListAttachments(self, request, **kwargs):
         path = "/contests/"+urllib.parse.quote(request.contest_id)+"/problems/"+urllib.parse.quote(request.problem_id)+"/attachments"
 

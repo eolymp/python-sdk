@@ -7,6 +7,7 @@ from eolymp.atlas import editorial_pb2 as _editorial_pb2
 from eolymp.atlas import problem_pb2 as _problem_pb2
 from eolymp.atlas import question_pb2 as _question_pb2
 from eolymp.atlas import widget_pb2 as _widget_pb2
+from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.judge import problem_pb2 as _problem_pb2_1
 from eolymp.judge import template_pb2 as _template_pb2
 from eolymp.runtime import runtime_pb2 as _runtime_pb2
@@ -221,6 +222,24 @@ class RateProblemInput(_message.Message):
 class RateProblemOutput(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class ReportIssueInput(_message.Message):
+    __slots__ = ("contest_id", "problem_id", "title", "description")
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
+    TITLE_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    problem_id: str
+    title: str
+    description: _content_pb2.Content
+    def __init__(self, contest_id: _Optional[str] = ..., problem_id: _Optional[str] = ..., title: _Optional[str] = ..., description: _Optional[_Union[_content_pb2.Content, _Mapping]] = ...) -> None: ...
+
+class ReportIssueOutput(_message.Message):
+    __slots__ = ("issue_id",)
+    ISSUE_ID_FIELD_NUMBER: _ClassVar[int]
+    issue_id: str
+    def __init__(self, issue_id: _Optional[str] = ...) -> None: ...
 
 class ListAttachmentsInput(_message.Message):
     __slots__ = ("contest_id", "problem_id")
