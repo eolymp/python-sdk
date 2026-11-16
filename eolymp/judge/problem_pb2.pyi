@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Problem(_message.Message):
-    __slots__ = ("contest_id", "id", "url", "type", "index", "base_id", "feedback_policy", "score_by_best_testset", "deferred_results", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score", "constraints", "language", "title", "content", "download_link", "languages", "examples")
+    __slots__ = ("contest_id", "id", "url", "type", "index", "base_id", "feedback_policy", "score_by_best_testset", "deferred_results", "time_limit", "cpu_limit", "memory_limit", "file_size_limit", "submit_limit", "score", "constraints", "language", "title", "content", "download_link", "languages", "examples", "rating")
     class Patch(_message.Message):
         __slots__ = ("index", "submit_limit", "score_by_best_testset", "deferred_results")
         INDEX_FIELD_NUMBER: _ClassVar[int]
@@ -81,6 +81,7 @@ class Problem(_message.Message):
     DOWNLOAD_LINK_FIELD_NUMBER: _ClassVar[int]
     LANGUAGES_FIELD_NUMBER: _ClassVar[int]
     EXAMPLES_FIELD_NUMBER: _ClassVar[int]
+    RATING_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     id: str
     url: str
@@ -103,4 +104,5 @@ class Problem(_message.Message):
     download_link: str
     languages: _containers.RepeatedScalarFieldContainer[str]
     examples: _containers.RepeatedCompositeFieldContainer[_problem_pb2.Problem.Example]
-    def __init__(self, contest_id: _Optional[str] = ..., id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., index: _Optional[int] = ..., base_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., score_by_best_testset: _Optional[bool] = ..., deferred_results: _Optional[bool] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[_problem_pb2.Problem.Constraints, _Mapping]] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., examples: _Optional[_Iterable[_Union[_problem_pb2.Problem.Example, _Mapping]]] = ...) -> None: ...
+    rating: _problem_pb2.Problem.Rating
+    def __init__(self, contest_id: _Optional[str] = ..., id: _Optional[str] = ..., url: _Optional[str] = ..., type: _Optional[_Union[_problem_pb2.Problem.Type, str]] = ..., index: _Optional[int] = ..., base_id: _Optional[str] = ..., feedback_policy: _Optional[_Union[_testing_feedback_pb2.FeedbackPolicy, str]] = ..., score_by_best_testset: _Optional[bool] = ..., deferred_results: _Optional[bool] = ..., time_limit: _Optional[int] = ..., cpu_limit: _Optional[int] = ..., memory_limit: _Optional[int] = ..., file_size_limit: _Optional[int] = ..., submit_limit: _Optional[int] = ..., score: _Optional[float] = ..., constraints: _Optional[_Union[_problem_pb2.Problem.Constraints, _Mapping]] = ..., language: _Optional[str] = ..., title: _Optional[str] = ..., content: _Optional[_Union[_content_pb2.Content, _Mapping]] = ..., download_link: _Optional[str] = ..., languages: _Optional[_Iterable[str]] = ..., examples: _Optional[_Iterable[_Union[_problem_pb2.Problem.Example, _Mapping]]] = ..., rating: _Optional[_Union[_problem_pb2.Problem.Rating, _Mapping]] = ...) -> None: ...
