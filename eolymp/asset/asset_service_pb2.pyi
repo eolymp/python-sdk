@@ -88,10 +88,12 @@ class UploadAssetOutput(_message.Message):
     def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
 
 class LookupAssetInput(_message.Message):
-    __slots__ = ("key",)
+    __slots__ = ("key", "sha256")
     KEY_FIELD_NUMBER: _ClassVar[int]
+    SHA256_FIELD_NUMBER: _ClassVar[int]
     key: str
-    def __init__(self, key: _Optional[str] = ...) -> None: ...
+    sha256: str
+    def __init__(self, key: _Optional[str] = ..., sha256: _Optional[str] = ...) -> None: ...
 
 class LookupAssetOutput(_message.Message):
     __slots__ = ("asset_url",)
