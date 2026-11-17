@@ -14,14 +14,14 @@ class FigureServiceClient:
         self.transport = transport
         self.url = url
 
-    def RequestFigures(self, request, **kwargs):
-        path = "/figures:request"
+    def DrawFigures(self, request, **kwargs):
+        path = "/figures:draw"
 
         return self.transport.request(
             method="POST",
             url=self.url+path,
             request_data=request,
-            response_symbol=_sym_db.GetSymbol("eolymp.content.RequestFiguresOutput"),
+            response_symbol=_sym_db.GetSymbol("eolymp.content.DrawFiguresOutput"),
             **kwargs,
         )
 

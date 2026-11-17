@@ -29,7 +29,7 @@ from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratel
 from eolymp.content import figure_pb2 as eolymp_dot_content_dot_figure__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/figure_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1b\x65olymp/content/figure.proto\"s\n\x13RequestFiguresInput\x12\x0f\n\x07request\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontext\x18\x02 \x01(\t\x12\'\n\x07\x66igures\x18\x03 \x03(\x0b\x32\x16.eolymp.content.Figure\x12\x11\n\tthread_id\x18\x04 \x01(\t\"a\n\x14RequestFiguresOutput\x12\r\n\x05reply\x18\x01 \x01(\t\x12\'\n\x07\x66igures\x18\x02 \x03(\x0b\x32\x16.eolymp.content.Figure\x12\x11\n\tthread_id\x18\x03 \x01(\t2\xbb\x01\n\rFigureService\x12\x8c\x01\n\x0eRequestFigures\x12#.eolymp.content.RequestFiguresInput\x1a$.eolymp.content.RequestFiguresOutput\"/\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x12\"\x10/figures:request\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/figure_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1b\x65olymp/content/figure.proto\"p\n\x10\x44rawFiguresInput\x12\x0f\n\x07request\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontext\x18\x02 \x01(\t\x12\'\n\x07\x66igures\x18\x03 \x03(\x0b\x32\x16.eolymp.content.Figure\x12\x11\n\tthread_id\x18\x04 \x01(\t\"^\n\x11\x44rawFiguresOutput\x12\r\n\x05reply\x18\x01 \x01(\t\x12\'\n\x07\x66igures\x18\x02 \x03(\x0b\x32\x16.eolymp.content.Figure\x12\x11\n\tthread_id\x18\x03 \x01(\t2\xaf\x01\n\rFigureService\x12\x80\x01\n\x0b\x44rawFigures\x12 .eolymp.content.DrawFiguresInput\x1a!.eolymp.content.DrawFiguresOutput\",\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x80?\xf8\xe2\n\x05\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x0f\"\r/figures:draw\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,12 +39,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
   _globals['_FIGURESERVICE']._loaded_options = None
   _globals['_FIGURESERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
-  _globals['_FIGURESERVICE'].methods_by_name['RequestFigures']._loaded_options = None
-  _globals['_FIGURESERVICE'].methods_by_name['RequestFigures']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\242\343\n\004\250\343\n\002\202\323\344\223\002\022\"\020/figures:request'
-  _globals['_REQUESTFIGURESINPUT']._serialized_start=219
-  _globals['_REQUESTFIGURESINPUT']._serialized_end=334
-  _globals['_REQUESTFIGURESOUTPUT']._serialized_start=336
-  _globals['_REQUESTFIGURESOUTPUT']._serialized_end=433
-  _globals['_FIGURESERVICE']._serialized_start=436
-  _globals['_FIGURESERVICE']._serialized_end=623
+  _globals['_FIGURESERVICE'].methods_by_name['DrawFigures']._loaded_options = None
+  _globals['_FIGURESERVICE'].methods_by_name['DrawFigures']._serialized_options = b'\352\342\n\013\365\342\n\000\000\200?\370\342\n\005\242\343\n\004\250\343\n\002\202\323\344\223\002\017\"\r/figures:draw'
+  _globals['_DRAWFIGURESINPUT']._serialized_start=219
+  _globals['_DRAWFIGURESINPUT']._serialized_end=331
+  _globals['_DRAWFIGURESOUTPUT']._serialized_start=333
+  _globals['_DRAWFIGURESOUTPUT']._serialized_end=427
+  _globals['_FIGURESERVICE']._serialized_start=430
+  _globals['_FIGURESERVICE']._serialized_end=605
 # @@protoc_insertion_point(module_scope)
