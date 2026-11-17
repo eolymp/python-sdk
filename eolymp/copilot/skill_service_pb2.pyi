@@ -47,10 +47,12 @@ class DeleteSkillOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeSkillInput(_message.Message):
-    __slots__ = ("skill_id",)
+    __slots__ = ("skill_id", "version")
     SKILL_ID_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     skill_id: str
-    def __init__(self, skill_id: _Optional[str] = ...) -> None: ...
+    version: int
+    def __init__(self, skill_id: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class DescribeSkillOutput(_message.Message):
     __slots__ = ("skill",)
@@ -78,6 +80,24 @@ class ListSkillsInput(_message.Message):
     def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., search: _Optional[str] = ..., filters: _Optional[_Union[ListSkillsInput.Filter, _Mapping]] = ...) -> None: ...
 
 class ListSkillsOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_skill_pb2.Skill]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_skill_pb2.Skill, _Mapping]]] = ...) -> None: ...
+
+class ListSkillVersionsInput(_message.Message):
+    __slots__ = ("skill_id", "offset", "size")
+    SKILL_ID_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    skill_id: str
+    offset: int
+    size: int
+    def __init__(self, skill_id: _Optional[str] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
+
+class ListSkillVersionsOutput(_message.Message):
     __slots__ = ("total", "items")
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]

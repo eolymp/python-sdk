@@ -67,6 +67,20 @@ class SkillServiceClient:
             **kwargs,
         )
 
+    def ListSkillVersions(self, request, **kwargs):
+        path = "/copilot/skills/"+urllib.parse.quote(request.skill_id)+"/versions"
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.skill_id = ""
+
+        return self.transport.request(
+            method="GET",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.copilot.ListSkillVersionsOutput"),
+            **kwargs,
+        )
+
     def ListSkills(self, request, **kwargs):
         path = "/copilot/skills"
 

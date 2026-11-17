@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/copilot/skill.proto\x12\x0e\x65olymp.copilot\"\xa6\x01\n\x05Skill\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x04 \x01(\t\x1a\x63\n\x05Patch\x12\x11\n\x04path\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05title\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x14\n\x07\x63ontent\x18\x04 \x01(\tH\x02\x88\x01\x01\x42\x07\n\x05_pathB\x08\n\x06_titleB\n\n\x08_contentB1Z/github.com/eolymp/go-sdk/eolymp/copilot;copilotb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x65olymp/copilot/skill.proto\x12\x0e\x65olymp.copilot\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfb\x01\n\x05Skill\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\n \x01(\r\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nupdated_by\x18\x0c \x01(\t\x1a\x63\n\x05Patch\x12\x11\n\x04path\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05title\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x14\n\x07\x63ontent\x18\x04 \x01(\tH\x02\x88\x01\x01\x42\x07\n\x05_pathB\x08\n\x06_titleB\n\n\x08_contentB1Z/github.com/eolymp/go-sdk/eolymp/copilot;copilotb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +33,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'eolymp.copilot.skill_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/copilot;copilot'
-  _globals['_SKILL']._serialized_start=47
-  _globals['_SKILL']._serialized_end=213
-  _globals['_SKILL_PATCH']._serialized_start=114
-  _globals['_SKILL_PATCH']._serialized_end=213
+  _globals['_SKILL']._serialized_start=80
+  _globals['_SKILL']._serialized_end=331
+  _globals['_SKILL_PATCH']._serialized_start=232
+  _globals['_SKILL_PATCH']._serialized_end=331
 # @@protoc_insertion_point(module_scope)
