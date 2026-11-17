@@ -24,6 +24,7 @@ _sym_db = _symbol_database.Default()
 
 from eolymp.annotations import audit_pb2 as eolymp_dot_annotations_dot_audit__pb2
 from eolymp.annotations import http_pb2 as eolymp_dot_annotations_dot_http__pb2
+from eolymp.annotations import mcp_pb2 as eolymp_dot_annotations_dot_mcp__pb2
 from eolymp.annotations import namespace_pb2 as eolymp_dot_annotations_dot_namespace__pb2
 from eolymp.annotations import ratelimit_pb2 as eolymp_dot_annotations_dot_ratelimit__pb2
 from eolymp.annotations import scope_pb2 as eolymp_dot_annotations_dot_scope__pb2
@@ -33,7 +34,7 @@ from eolymp.wellknown import direction_pb2 as eolymp_dot_wellknown_dot_direction
 from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expression__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/content/post_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/content/post.proto\x1a\x18\x65olymp/ecm/content.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\x82\x01\n\x10PostChangedEvent\x12$\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x14.eolymp.content.Post\x12#\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x14.eolymp.content.Post\x12#\n\x06reason\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"p\n\x12PostPublishedEvent\x12\x11\n\tpublished\x18\x01 \x01(\x08\x12\"\n\x04post\x18\x02 \x01(\x0b\x32\x14.eolymp.content.Post\x12#\n\x06reason\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\"`\n\x11\x44\x65scribePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18< \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.content.Post.Extra\"8\n\x12\x44\x65scribePostOutput\x12\"\n\x04post\x18\x01 \x01(\x0b\x32\x14.eolymp.content.Post\"\xbe\x07\n\x0eListPostsInput\x12\r\n\x05\x61\x66ter\x18\n \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\x0c \x01(\x05\x12\x31\n\x04sort\x18\x32 \x01(\x0e\x32#.eolymp.content.ListPostsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.content.ListPostsInput.Filter\x12\x0e\n\x06locale\x18< \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.content.Post.Extra\x1a\xae\x04\n\x06\x46ilter\x12\x11\n\x05query\x18\x01 \x01(\tB\x02\x18\x01\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tsource_id\x18\r \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07type_id\x18\x08 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x39\n\ncreated_at\x18\x05 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12;\n\x0cpublished_at\x18\x06 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12/\n\x05\x64raft\x18\x0e \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x30\n\x06public\x18\x0c \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x32\n\x08\x66\x65\x61tured\x18\x0f \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x05label\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumJ\x04\x08\x04\x10\x05J\x04\x08\t\x10\nJ\x04\x08\x0b\x10\x0c\"k\n\x04Sort\x12\x10\n\x0cUNKNOWN_SORT\x10\x00\x12\x10\n\x0cPUBLISHED_AT\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\x12\x0e\n\nVOTE_COUNT\x10\x03\x12\x0f\n\x0bREPLY_COUNT\x10\x04\x12\x0e\n\nPOPULARITY\x10\x05\"_\n\x0fListPostsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.content.Post\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\"5\n\x0f\x43reatePostInput\x12\"\n\x04post\x18\x01 \x01(\x0b\x32\x14.eolymp.content.Post\"#\n\x10\x43reatePostOutput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\"h\n\x0fUpdatePostInput\x12\x0f\n\x07post_id\x18\x02 \x01(\t\x12\x0e\n\x06locale\x18\x04 \x01(\t\x12(\n\x04post\x18\x05 \x01(\x0b\x32\x1a.eolymp.content.Post.PatchJ\x04\x08\x01\x10\x02J\x04\x08\x03\x10\x04\"\x12\n\x10UpdatePostOutput\"#\n\x10PublishPostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\"\x13\n\x11PublishPostOutput\"J\n\x12UnpublishPostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12#\n\x06reason\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x15\n\x13UnpublishPostOutput\"2\n\x0f\x44\x65letePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\"7\n\x10\x44\x65letePostOutput\x12#\n\x06reason\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\".\n\rVotePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12\x0c\n\x04vote\x18\x02 \x01(\x05\"$\n\x0eVotePostOutput\x12\x12\n\nvote_count\x18\x01 \x01(\x05\"x\n\x12TranslatePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12\x0e\n\x06source\x18\x02 \x01(\t\x12\x0e\n\x06target\x18\x03 \x03(\t\x12\x18\n\x10target_automatic\x18\x04 \x01(\x08\x12\x17\n\x0foverride_manual\x18\x05 \x01(\x08\"&\n\x13TranslatePostOutput\x12\x0f\n\x07task_id\x18\x01 \x01(\t2\xe6\x0b\n\x0bPostService\x12\xa3\x01\n\x0c\x44\x65scribePost\x12!.eolymp.content.DescribePostInput\x1a\".eolymp.content.DescribePostOutput\"L\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x18\x8a\xe3\n\x14\x64iscussion:post:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/posts/{post_id}\x12\x8f\x01\n\tListPosts\x12\x1e.eolymp.content.ListPostsInput\x1a\x1f.eolymp.content.ListPostsOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x18\x8a\xe3\n\x14\x64iscussion:post:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x08\x12\x06/posts\x12\x93\x01\n\nCreatePost\x12\x1f.eolymp.content.CreatePostInput\x1a .eolymp.content.CreatePostOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x08\"\x06/posts\x12\x9d\x01\n\nUpdatePost\x12\x1f.eolymp.content.UpdatePostInput\x1a .eolymp.content.UpdatePostOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x12\x1a\x10/posts/{post_id}\x12\xa8\x01\n\x0bPublishPost\x12 .eolymp.content.PublishPostInput\x1a!.eolymp.content.PublishPostOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1a\"\x18/posts/{post_id}/publish\x12\xae\x01\n\rUnpublishPost\x12\".eolymp.content.UnpublishPostInput\x1a#.eolymp.content.UnpublishPostOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1a*\x18/posts/{post_id}/publish\x12\x9d\x01\n\nDeletePost\x12\x1f.eolymp.content.DeletePostInput\x1a .eolymp.content.DeletePostOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x12*\x10/posts/{post_id}\x12\x9c\x01\n\x08VotePost\x12\x1d.eolymp.content.VotePostInput\x1a\x1e.eolymp.content.VotePostOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x17\"\x15/posts/{post_id}/vote\x12\xb0\x01\n\rTranslatePost\x12\".eolymp.content.TranslatePostInput\x1a#.eolymp.content.TranslatePostOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1c\"\x1a/posts/{post_id}/translate\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/content/post_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\x1c\x65olymp/annotations/mcp.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a\x19\x65olymp/content/post.proto\x1a\x18\x65olymp/ecm/content.proto\x1a eolymp/wellknown/direction.proto\x1a!eolymp/wellknown/expression.proto\"\x82\x01\n\x10PostChangedEvent\x12$\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x14.eolymp.content.Post\x12#\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x14.eolymp.content.Post\x12#\n\x06reason\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"p\n\x12PostPublishedEvent\x12\x11\n\tpublished\x18\x01 \x01(\x08\x12\"\n\x04post\x18\x02 \x01(\x0b\x32\x14.eolymp.content.Post\x12#\n\x06reason\x18\x03 \x01(\x0b\x32\x13.eolymp.ecm.Content\"`\n\x11\x44\x65scribePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18< \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.content.Post.Extra\"8\n\x12\x44\x65scribePostOutput\x12\"\n\x04post\x18\x01 \x01(\x0b\x32\x14.eolymp.content.Post\"\xbe\x07\n\x0eListPostsInput\x12\r\n\x05\x61\x66ter\x18\n \x01(\t\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12\x0e\n\x06offset\x18\x0c \x01(\x05\x12\x31\n\x04sort\x18\x32 \x01(\x0e\x32#.eolymp.content.ListPostsInput.Sort\x12*\n\x05order\x18\x33 \x01(\x0e\x32\x1b.eolymp.wellknown.Direction\x12\x0e\n\x06search\x18\x14 \x01(\t\x12\x36\n\x07\x66ilters\x18( \x01(\x0b\x32%.eolymp.content.ListPostsInput.Filter\x12\x0e\n\x06locale\x18< \x01(\t\x12*\n\x05\x65xtra\x18\xe3\x08 \x03(\x0e\x32\x1a.eolymp.content.Post.Extra\x1a\xae\x04\n\x06\x46ilter\x12\x11\n\x05query\x18\x01 \x01(\tB\x02\x18\x01\x12*\n\x02id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tsource_id\x18\r \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07user_id\x18\x03 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12/\n\x07type_id\x18\x08 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x39\n\ncreated_at\x18\x05 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12;\n\x0cpublished_at\x18\x06 \x03(\x0b\x32%.eolymp.wellknown.ExpressionTimestamp\x12/\n\x05\x64raft\x18\x0e \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x30\n\x06public\x18\x0c \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12\x32\n\x08\x66\x65\x61tured\x18\x0f \x03(\x0b\x32 .eolymp.wellknown.ExpressionBool\x12/\n\x05label\x18\n \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnumJ\x04\x08\x04\x10\x05J\x04\x08\t\x10\nJ\x04\x08\x0b\x10\x0c\"k\n\x04Sort\x12\x10\n\x0cUNKNOWN_SORT\x10\x00\x12\x10\n\x0cPUBLISHED_AT\x10\x01\x12\x0e\n\nCREATED_AT\x10\x02\x12\x0e\n\nVOTE_COUNT\x10\x03\x12\x0f\n\x0bREPLY_COUNT\x10\x04\x12\x0e\n\nPOPULARITY\x10\x05\"_\n\x0fListPostsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12#\n\x05items\x18\x02 \x03(\x0b\x32\x14.eolymp.content.Post\x12\x18\n\x10next_page_cursor\x18\x03 \x01(\t\"5\n\x0f\x43reatePostInput\x12\"\n\x04post\x18\x01 \x01(\x0b\x32\x14.eolymp.content.Post\"#\n\x10\x43reatePostOutput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\"\xcf\x02\n\x0fUpdatePostInput\x12\x0f\n\x07post_id\x18\x02 \x01(\t\x12\x0e\n\x06locale\x18\x04 \x01(\t\x12(\n\x04post\x18\x05 \x01(\x0b\x32\x1a.eolymp.content.Post.Patch\x12\xe4\x01\n\x0fif_match_digest\x18\x14 \x01(\tB\xca\x01\xa2\xf0\xf0\xe4\x01\xc3\x01write only if the content stored now has this digest, the content.digest from an earlier read or write; when it differs, the content was changed in the meantime and the call fails without writingJ\x04\x08\x01\x10\x02J\x04\x08\x03\x10\x04\"\x12\n\x10UpdatePostOutput\"#\n\x10PublishPostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\"\x13\n\x11PublishPostOutput\"J\n\x12UnpublishPostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12#\n\x06reason\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\"\x15\n\x13UnpublishPostOutput\"2\n\x0f\x44\x65letePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\"7\n\x10\x44\x65letePostOutput\x12#\n\x06reason\x18\x0b \x01(\x0b\x32\x13.eolymp.ecm.Content\".\n\rVotePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12\x0c\n\x04vote\x18\x02 \x01(\x05\"$\n\x0eVotePostOutput\x12\x12\n\nvote_count\x18\x01 \x01(\x05\"x\n\x12TranslatePostInput\x12\x0f\n\x07post_id\x18\x01 \x01(\t\x12\x0e\n\x06source\x18\x02 \x01(\t\x12\x0e\n\x06target\x18\x03 \x03(\t\x12\x18\n\x10target_automatic\x18\x04 \x01(\x08\x12\x17\n\x0foverride_manual\x18\x05 \x01(\x08\"&\n\x13TranslatePostOutput\x12\x0f\n\x07task_id\x18\x01 \x01(\t2\xe6\x0b\n\x0bPostService\x12\xa3\x01\n\x0c\x44\x65scribePost\x12!.eolymp.content.DescribePostInput\x1a\".eolymp.content.DescribePostOutput\"L\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xf4\x03\x82\xe3\n\x18\x8a\xe3\n\x14\x64iscussion:post:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x12\x12\x10/posts/{post_id}\x12\x8f\x01\n\tListPosts\x12\x1e.eolymp.content.ListPostsInput\x1a\x1f.eolymp.content.ListPostsOutput\"A\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x18\x8a\xe3\n\x14\x64iscussion:post:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x82\xd3\xe4\x93\x02\x08\x12\x06/posts\x12\x93\x01\n\nCreatePost\x12\x1f.eolymp.content.CreatePostInput\x1a .eolymp.content.CreatePostOutput\"B\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x08\"\x06/posts\x12\x9d\x01\n\nUpdatePost\x12\x1f.eolymp.content.UpdatePostInput\x1a .eolymp.content.UpdatePostOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x12\x1a\x10/posts/{post_id}\x12\xa8\x01\n\x0bPublishPost\x12 .eolymp.content.PublishPostInput\x1a!.eolymp.content.PublishPostOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1a\"\x18/posts/{post_id}/publish\x12\xae\x01\n\rUnpublishPost\x12\".eolymp.content.UnpublishPostInput\x1a#.eolymp.content.UnpublishPostOutput\"T\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1a*\x18/posts/{post_id}/publish\x12\x9d\x01\n\nDeletePost\x12\x1f.eolymp.content.DeletePostInput\x1a .eolymp.content.DeletePostOutput\"L\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x03\x82\xd3\xe4\x93\x02\x12*\x10/posts/{post_id}\x12\x9c\x01\n\x08VotePost\x12\x1d.eolymp.content.VotePostInput\x1a\x1e.eolymp.content.VotePostOutput\"Q\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n2\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x17\"\x15/posts/{post_id}/vote\x12\xb0\x01\n\rTranslatePost\x12\".eolymp.content.TranslatePostInput\x1a#.eolymp.content.TranslatePostOutput\"V\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\x00@\xf8\xe2\n\n\x82\xe3\n\x19\x8a\xe3\n\x15\x64iscussion:post:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1c\"\x1a/posts/{post_id}/translate\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,6 +44,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/eolymp/go-sdk/eolymp/content;content'
   _globals['_LISTPOSTSINPUT_FILTER'].fields_by_name['query']._loaded_options = None
   _globals['_LISTPOSTSINPUT_FILTER'].fields_by_name['query']._serialized_options = b'\030\001'
+  _globals['_UPDATEPOSTINPUT'].fields_by_name['if_match_digest']._loaded_options = None
+  _globals['_UPDATEPOSTINPUT'].fields_by_name['if_match_digest']._serialized_options = b'\242\360\360\344\001\303\001write only if the content stored now has this digest, the content.digest from an earlier read or write; when it differs, the content was changed in the meantime and the call fails without writing'
   _globals['_POSTSERVICE']._loaded_options = None
   _globals['_POSTSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_POSTSERVICE'].methods_by_name['DescribePost']._loaded_options = None
@@ -63,50 +66,50 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_POSTSERVICE'].methods_by_name['VotePost']._serialized_options = b'\352\342\n\013\365\342\n\000\000\240@\370\342\n2\202\343\n\031\212\343\n\025discussion:post:write\242\343\n\004\250\343\n\002\202\323\344\223\002\027\"\025/posts/{post_id}/vote'
   _globals['_POSTSERVICE'].methods_by_name['TranslatePost']._loaded_options = None
   _globals['_POSTSERVICE'].methods_by_name['TranslatePost']._serialized_options = b'\352\342\n\013\365\342\n\000\000\000@\370\342\n\n\202\343\n\031\212\343\n\025discussion:post:write\242\343\n\004\250\343\n\002\202\323\344\223\002\034\"\032/posts/{post_id}/translate'
-  _globals['_POSTCHANGEDEVENT']._serialized_start=343
-  _globals['_POSTCHANGEDEVENT']._serialized_end=473
-  _globals['_POSTPUBLISHEDEVENT']._serialized_start=475
-  _globals['_POSTPUBLISHEDEVENT']._serialized_end=587
-  _globals['_DESCRIBEPOSTINPUT']._serialized_start=589
-  _globals['_DESCRIBEPOSTINPUT']._serialized_end=685
-  _globals['_DESCRIBEPOSTOUTPUT']._serialized_start=687
-  _globals['_DESCRIBEPOSTOUTPUT']._serialized_end=743
-  _globals['_LISTPOSTSINPUT']._serialized_start=746
-  _globals['_LISTPOSTSINPUT']._serialized_end=1704
-  _globals['_LISTPOSTSINPUT_FILTER']._serialized_start=1037
-  _globals['_LISTPOSTSINPUT_FILTER']._serialized_end=1595
-  _globals['_LISTPOSTSINPUT_SORT']._serialized_start=1597
-  _globals['_LISTPOSTSINPUT_SORT']._serialized_end=1704
-  _globals['_LISTPOSTSOUTPUT']._serialized_start=1706
-  _globals['_LISTPOSTSOUTPUT']._serialized_end=1801
-  _globals['_CREATEPOSTINPUT']._serialized_start=1803
-  _globals['_CREATEPOSTINPUT']._serialized_end=1856
-  _globals['_CREATEPOSTOUTPUT']._serialized_start=1858
-  _globals['_CREATEPOSTOUTPUT']._serialized_end=1893
-  _globals['_UPDATEPOSTINPUT']._serialized_start=1895
-  _globals['_UPDATEPOSTINPUT']._serialized_end=1999
-  _globals['_UPDATEPOSTOUTPUT']._serialized_start=2001
-  _globals['_UPDATEPOSTOUTPUT']._serialized_end=2019
-  _globals['_PUBLISHPOSTINPUT']._serialized_start=2021
-  _globals['_PUBLISHPOSTINPUT']._serialized_end=2056
-  _globals['_PUBLISHPOSTOUTPUT']._serialized_start=2058
-  _globals['_PUBLISHPOSTOUTPUT']._serialized_end=2077
-  _globals['_UNPUBLISHPOSTINPUT']._serialized_start=2079
-  _globals['_UNPUBLISHPOSTINPUT']._serialized_end=2153
-  _globals['_UNPUBLISHPOSTOUTPUT']._serialized_start=2155
-  _globals['_UNPUBLISHPOSTOUTPUT']._serialized_end=2176
-  _globals['_DELETEPOSTINPUT']._serialized_start=2178
-  _globals['_DELETEPOSTINPUT']._serialized_end=2228
-  _globals['_DELETEPOSTOUTPUT']._serialized_start=2230
-  _globals['_DELETEPOSTOUTPUT']._serialized_end=2285
-  _globals['_VOTEPOSTINPUT']._serialized_start=2287
-  _globals['_VOTEPOSTINPUT']._serialized_end=2333
-  _globals['_VOTEPOSTOUTPUT']._serialized_start=2335
-  _globals['_VOTEPOSTOUTPUT']._serialized_end=2371
-  _globals['_TRANSLATEPOSTINPUT']._serialized_start=2373
-  _globals['_TRANSLATEPOSTINPUT']._serialized_end=2493
-  _globals['_TRANSLATEPOSTOUTPUT']._serialized_start=2495
-  _globals['_TRANSLATEPOSTOUTPUT']._serialized_end=2533
-  _globals['_POSTSERVICE']._serialized_start=2536
-  _globals['_POSTSERVICE']._serialized_end=4046
+  _globals['_POSTCHANGEDEVENT']._serialized_start=373
+  _globals['_POSTCHANGEDEVENT']._serialized_end=503
+  _globals['_POSTPUBLISHEDEVENT']._serialized_start=505
+  _globals['_POSTPUBLISHEDEVENT']._serialized_end=617
+  _globals['_DESCRIBEPOSTINPUT']._serialized_start=619
+  _globals['_DESCRIBEPOSTINPUT']._serialized_end=715
+  _globals['_DESCRIBEPOSTOUTPUT']._serialized_start=717
+  _globals['_DESCRIBEPOSTOUTPUT']._serialized_end=773
+  _globals['_LISTPOSTSINPUT']._serialized_start=776
+  _globals['_LISTPOSTSINPUT']._serialized_end=1734
+  _globals['_LISTPOSTSINPUT_FILTER']._serialized_start=1067
+  _globals['_LISTPOSTSINPUT_FILTER']._serialized_end=1625
+  _globals['_LISTPOSTSINPUT_SORT']._serialized_start=1627
+  _globals['_LISTPOSTSINPUT_SORT']._serialized_end=1734
+  _globals['_LISTPOSTSOUTPUT']._serialized_start=1736
+  _globals['_LISTPOSTSOUTPUT']._serialized_end=1831
+  _globals['_CREATEPOSTINPUT']._serialized_start=1833
+  _globals['_CREATEPOSTINPUT']._serialized_end=1886
+  _globals['_CREATEPOSTOUTPUT']._serialized_start=1888
+  _globals['_CREATEPOSTOUTPUT']._serialized_end=1923
+  _globals['_UPDATEPOSTINPUT']._serialized_start=1926
+  _globals['_UPDATEPOSTINPUT']._serialized_end=2261
+  _globals['_UPDATEPOSTOUTPUT']._serialized_start=2263
+  _globals['_UPDATEPOSTOUTPUT']._serialized_end=2281
+  _globals['_PUBLISHPOSTINPUT']._serialized_start=2283
+  _globals['_PUBLISHPOSTINPUT']._serialized_end=2318
+  _globals['_PUBLISHPOSTOUTPUT']._serialized_start=2320
+  _globals['_PUBLISHPOSTOUTPUT']._serialized_end=2339
+  _globals['_UNPUBLISHPOSTINPUT']._serialized_start=2341
+  _globals['_UNPUBLISHPOSTINPUT']._serialized_end=2415
+  _globals['_UNPUBLISHPOSTOUTPUT']._serialized_start=2417
+  _globals['_UNPUBLISHPOSTOUTPUT']._serialized_end=2438
+  _globals['_DELETEPOSTINPUT']._serialized_start=2440
+  _globals['_DELETEPOSTINPUT']._serialized_end=2490
+  _globals['_DELETEPOSTOUTPUT']._serialized_start=2492
+  _globals['_DELETEPOSTOUTPUT']._serialized_end=2547
+  _globals['_VOTEPOSTINPUT']._serialized_start=2549
+  _globals['_VOTEPOSTINPUT']._serialized_end=2595
+  _globals['_VOTEPOSTOUTPUT']._serialized_start=2597
+  _globals['_VOTEPOSTOUTPUT']._serialized_end=2633
+  _globals['_TRANSLATEPOSTINPUT']._serialized_start=2635
+  _globals['_TRANSLATEPOSTINPUT']._serialized_end=2755
+  _globals['_TRANSLATEPOSTOUTPUT']._serialized_start=2757
+  _globals['_TRANSLATEPOSTOUTPUT']._serialized_end=2795
+  _globals['_POSTSERVICE']._serialized_start=2798
+  _globals['_POSTSERVICE']._serialized_end=4308
 # @@protoc_insertion_point(module_scope)

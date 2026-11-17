@@ -1,5 +1,6 @@
 from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
@@ -109,14 +110,16 @@ class CreateEditorialOutput(_message.Message):
     def __init__(self, editorial_id: _Optional[str] = ...) -> None: ...
 
 class UpdateEditorialInput(_message.Message):
-    __slots__ = ("problem_id", "editorial_id", "editorial")
+    __slots__ = ("problem_id", "editorial_id", "editorial", "if_match_digest")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     EDITORIAL_ID_FIELD_NUMBER: _ClassVar[int]
     EDITORIAL_FIELD_NUMBER: _ClassVar[int]
+    IF_MATCH_DIGEST_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     editorial_id: str
     editorial: _editorial_pb2.Editorial.Patch
-    def __init__(self, problem_id: _Optional[str] = ..., editorial_id: _Optional[str] = ..., editorial: _Optional[_Union[_editorial_pb2.Editorial.Patch, _Mapping]] = ...) -> None: ...
+    if_match_digest: str
+    def __init__(self, problem_id: _Optional[str] = ..., editorial_id: _Optional[str] = ..., editorial: _Optional[_Union[_editorial_pb2.Editorial.Patch, _Mapping]] = ..., if_match_digest: _Optional[str] = ...) -> None: ...
 
 class UpdateEditorialOutput(_message.Message):
     __slots__ = ()

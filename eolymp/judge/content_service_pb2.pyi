@@ -1,5 +1,6 @@
 from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
@@ -95,16 +96,18 @@ class CreateFragmentOutput(_message.Message):
     def __init__(self, fragment_id: _Optional[str] = ...) -> None: ...
 
 class UpdateFragmentInput(_message.Message):
-    __slots__ = ("contest_id", "fragment_id", "locale", "fragment")
+    __slots__ = ("contest_id", "fragment_id", "locale", "fragment", "if_match_digest")
     CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     FRAGMENT_FIELD_NUMBER: _ClassVar[int]
+    IF_MATCH_DIGEST_FIELD_NUMBER: _ClassVar[int]
     contest_id: str
     fragment_id: str
     locale: str
     fragment: _content_fragment_pb2.Fragment.Patch
-    def __init__(self, contest_id: _Optional[str] = ..., fragment_id: _Optional[str] = ..., locale: _Optional[str] = ..., fragment: _Optional[_Union[_content_fragment_pb2.Fragment.Patch, _Mapping]] = ...) -> None: ...
+    if_match_digest: str
+    def __init__(self, contest_id: _Optional[str] = ..., fragment_id: _Optional[str] = ..., locale: _Optional[str] = ..., fragment: _Optional[_Union[_content_fragment_pb2.Fragment.Patch, _Mapping]] = ..., if_match_digest: _Optional[str] = ...) -> None: ...
 
 class UpdateFragmentOutput(_message.Message):
     __slots__ = ()

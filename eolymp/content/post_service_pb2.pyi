@@ -1,5 +1,6 @@
 from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
@@ -136,14 +137,16 @@ class CreatePostOutput(_message.Message):
     def __init__(self, post_id: _Optional[str] = ...) -> None: ...
 
 class UpdatePostInput(_message.Message):
-    __slots__ = ("post_id", "locale", "post")
+    __slots__ = ("post_id", "locale", "post", "if_match_digest")
     POST_ID_FIELD_NUMBER: _ClassVar[int]
     LOCALE_FIELD_NUMBER: _ClassVar[int]
     POST_FIELD_NUMBER: _ClassVar[int]
+    IF_MATCH_DIGEST_FIELD_NUMBER: _ClassVar[int]
     post_id: str
     locale: str
     post: _post_pb2.Post.Patch
-    def __init__(self, post_id: _Optional[str] = ..., locale: _Optional[str] = ..., post: _Optional[_Union[_post_pb2.Post.Patch, _Mapping]] = ...) -> None: ...
+    if_match_digest: str
+    def __init__(self, post_id: _Optional[str] = ..., locale: _Optional[str] = ..., post: _Optional[_Union[_post_pb2.Post.Patch, _Mapping]] = ..., if_match_digest: _Optional[str] = ...) -> None: ...
 
 class UpdatePostOutput(_message.Message):
     __slots__ = ()

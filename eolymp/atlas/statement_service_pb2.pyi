@@ -1,5 +1,6 @@
 from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
+from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
@@ -135,14 +136,16 @@ class CreateStatementOutput(_message.Message):
     def __init__(self, statement_id: _Optional[str] = ...) -> None: ...
 
 class UpdateStatementInput(_message.Message):
-    __slots__ = ("problem_id", "statement_id", "statement")
+    __slots__ = ("problem_id", "statement_id", "statement", "if_match_digest")
     PROBLEM_ID_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_ID_FIELD_NUMBER: _ClassVar[int]
     STATEMENT_FIELD_NUMBER: _ClassVar[int]
+    IF_MATCH_DIGEST_FIELD_NUMBER: _ClassVar[int]
     problem_id: str
     statement_id: str
     statement: _statement_pb2.Statement.Patch
-    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement.Patch, _Mapping]] = ...) -> None: ...
+    if_match_digest: str
+    def __init__(self, problem_id: _Optional[str] = ..., statement_id: _Optional[str] = ..., statement: _Optional[_Union[_statement_pb2.Statement.Patch, _Mapping]] = ..., if_match_digest: _Optional[str] = ...) -> None: ...
 
 class UpdateStatementOutput(_message.Message):
     __slots__ = ()

@@ -8,15 +8,17 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Content(_message.Message):
-    __slots__ = ("html", "latex", "markdown", "ecm", "render")
+    __slots__ = ("html", "latex", "markdown", "ecm", "digest", "render")
     HTML_FIELD_NUMBER: _ClassVar[int]
     LATEX_FIELD_NUMBER: _ClassVar[int]
     MARKDOWN_FIELD_NUMBER: _ClassVar[int]
     ECM_FIELD_NUMBER: _ClassVar[int]
+    DIGEST_FIELD_NUMBER: _ClassVar[int]
     RENDER_FIELD_NUMBER: _ClassVar[int]
     html: str
     latex: str
     markdown: str
     ecm: _node_pb2.Node
+    digest: str
     render: _node_pb2.Node
-    def __init__(self, html: _Optional[str] = ..., latex: _Optional[str] = ..., markdown: _Optional[str] = ..., ecm: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., render: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
+    def __init__(self, html: _Optional[str] = ..., latex: _Optional[str] = ..., markdown: _Optional[str] = ..., ecm: _Optional[_Union[_node_pb2.Node, _Mapping]] = ..., digest: _Optional[str] = ..., render: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
