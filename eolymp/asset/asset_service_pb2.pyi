@@ -68,18 +68,16 @@ class UploadFileOutput(_message.Message):
     def __init__(self, file_url: _Optional[str] = ...) -> None: ...
 
 class UploadAssetInput(_message.Message):
-    __slots__ = ("name", "type", "keys", "ttl", "data")
+    __slots__ = ("name", "type", "ttl", "data")
     NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    KEYS_FIELD_NUMBER: _ClassVar[int]
     TTL_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
     name: str
     type: str
-    keys: _containers.RepeatedScalarFieldContainer[str]
     ttl: int
     data: bytes
-    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., keys: _Optional[_Iterable[str]] = ..., ttl: _Optional[int] = ..., data: _Optional[bytes] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., ttl: _Optional[int] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadAssetOutput(_message.Message):
     __slots__ = ("asset_url",)
@@ -88,12 +86,10 @@ class UploadAssetOutput(_message.Message):
     def __init__(self, asset_url: _Optional[str] = ...) -> None: ...
 
 class LookupAssetInput(_message.Message):
-    __slots__ = ("key", "sha256")
-    KEY_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("sha256",)
     SHA256_FIELD_NUMBER: _ClassVar[int]
-    key: str
     sha256: str
-    def __init__(self, key: _Optional[str] = ..., sha256: _Optional[str] = ...) -> None: ...
+    def __init__(self, sha256: _Optional[str] = ...) -> None: ...
 
 class LookupAssetOutput(_message.Message):
     __slots__ = ("asset_url",)
@@ -112,16 +108,14 @@ class DeleteAssetOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class StartMultipartUploadInput(_message.Message):
-    __slots__ = ("name", "type", "keys", "ttl")
+    __slots__ = ("name", "type", "ttl")
     NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    KEYS_FIELD_NUMBER: _ClassVar[int]
     TTL_FIELD_NUMBER: _ClassVar[int]
     name: str
     type: str
-    keys: _containers.RepeatedScalarFieldContainer[str]
     ttl: int
-    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., keys: _Optional[_Iterable[str]] = ..., ttl: _Optional[int] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., ttl: _Optional[int] = ...) -> None: ...
 
 class StartMultipartUploadOutput(_message.Message):
     __slots__ = ("upload_id",)
@@ -148,18 +142,12 @@ class UploadPartOutput(_message.Message):
 class CompleteMultipartUploadInput(_message.Message):
     __slots__ = ("upload_id", "parts")
     class Part(_message.Message):
-        __slots__ = ("number", "token", "checksum_md5", "checksum_sha1", "checksum_sha256")
+        __slots__ = ("number", "token")
         NUMBER_FIELD_NUMBER: _ClassVar[int]
         TOKEN_FIELD_NUMBER: _ClassVar[int]
-        CHECKSUM_MD5_FIELD_NUMBER: _ClassVar[int]
-        CHECKSUM_SHA1_FIELD_NUMBER: _ClassVar[int]
-        CHECKSUM_SHA256_FIELD_NUMBER: _ClassVar[int]
         number: int
         token: str
-        checksum_md5: str
-        checksum_sha1: str
-        checksum_sha256: str
-        def __init__(self, number: _Optional[int] = ..., token: _Optional[str] = ..., checksum_md5: _Optional[str] = ..., checksum_sha1: _Optional[str] = ..., checksum_sha256: _Optional[str] = ...) -> None: ...
+        def __init__(self, number: _Optional[int] = ..., token: _Optional[str] = ...) -> None: ...
     UPLOAD_ID_FIELD_NUMBER: _ClassVar[int]
     PARTS_FIELD_NUMBER: _ClassVar[int]
     upload_id: str
