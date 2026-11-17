@@ -48,10 +48,14 @@ class RenderFigureInput(_message.Message):
 class RenderFigureOutput(_message.Message):
     __slots__ = ("pages", "diagnostics", "total")
     class Page(_message.Message):
-        __slots__ = ("data",)
+        __slots__ = ("data", "width", "height")
         DATA_FIELD_NUMBER: _ClassVar[int]
+        WIDTH_FIELD_NUMBER: _ClassVar[int]
+        HEIGHT_FIELD_NUMBER: _ClassVar[int]
         data: bytes
-        def __init__(self, data: _Optional[bytes] = ...) -> None: ...
+        width: int
+        height: int
+        def __init__(self, data: _Optional[bytes] = ..., width: _Optional[int] = ..., height: _Optional[int] = ...) -> None: ...
     class Diagnostic(_message.Message):
         __slots__ = ("severity", "line", "column", "message", "hints")
         class Severity(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
