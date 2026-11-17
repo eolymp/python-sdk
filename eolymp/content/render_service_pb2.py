@@ -30,7 +30,7 @@ from eolymp.ecm import content_pb2 as eolymp_dot_ecm_dot_content__pb2
 from eolymp.ecm import node_pb2 as eolymp_dot_ecm_dot_node__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/render_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\":\n\x12RenderContentInput\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\"7\n\x13RenderContentOutput\x12 \n\x06render\x18\x01 \x01(\x0b\x32\x10.eolymp.ecm.Node\"\xbf\x01\n\x11RenderFigureInput\x12\x0f\n\x05typst\x18\x01 \x01(\tH\x00\x12\x38\n\x06\x66ormat\x18\x02 \x01(\x0e\x32(.eolymp.content.RenderFigureInput.Format\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\"7\n\x06\x46ormat\x12\x12\n\x0eUNKNOWN_FORMAT\x10\x00\x12\x07\n\x03SVG\x10\x01\x12\x07\n\x03PNG\x10\x02\x12\x07\n\x03GIF\x10\x03\x42\x08\n\x06source\"\x86\x03\n\x12RenderFigureOutput\x12\x36\n\x05pages\x18\x01 \x03(\x0b\x32\'.eolymp.content.RenderFigureOutput.Page\x12\x42\n\x0b\x64iagnostics\x18\x02 \x03(\x0b\x32-.eolymp.content.RenderFigureOutput.Diagnostic\x12\r\n\x05total\x18\x03 \x01(\x05\x1a\x14\n\x04Page\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x1a\xce\x01\n\nDiagnostic\x12H\n\x08severity\x18\x01 \x01(\x0e\x32\x36.eolymp.content.RenderFigureOutput.Diagnostic.Severity\x12\x0c\n\x04line\x18\x02 \x01(\r\x12\x0e\n\x06\x63olumn\x18\x03 \x01(\r\x12\x0f\n\x07message\x18\x04 \x01(\t\x12\r\n\x05hints\x18\x05 \x03(\t\"8\n\x08Severity\x12\x14\n\x10UNKNOWN_SEVERITY\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x32\xcc\x02\n\rRenderService\x12\x95\x01\n\rRenderContent\x12\".eolymp.content.RenderContentInput\x1a#.eolymp.content.RenderContentOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x0f/content:renderZ\x0b\"\t/renderer\x12\x85\x01\n\x0cRenderFigure\x12!.eolymp.content.RenderFigureInput\x1a\".eolymp.content.RenderFigureOutput\".\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x11\"\x0f/figures:render\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#eolymp/content/render_service.proto\x12\x0e\x65olymp.content\x1a\x1e\x65olymp/annotations/audit.proto\x1a\x1d\x65olymp/annotations/http.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x18\x65olymp/ecm/content.proto\x1a\x15\x65olymp/ecm/node.proto\":\n\x12RenderContentInput\x12$\n\x07\x63ontent\x18\x01 \x01(\x0b\x32\x13.eolymp.ecm.Content\"7\n\x13RenderContentOutput\x12 \n\x06render\x18\x01 \x01(\x0b\x32\x10.eolymp.ecm.Node\"\xb6\x01\n\x11RenderFigureInput\x12\x0f\n\x05typst\x18\x01 \x01(\tH\x00\x12\x38\n\x06\x66ormat\x18\x02 \x01(\x0e\x32(.eolymp.content.RenderFigureInput.Format\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\".\n\x06\x46ormat\x12\x12\n\x0eUNKNOWN_FORMAT\x10\x00\x12\x07\n\x03SVG\x10\x01\x12\x07\n\x03PNG\x10\x02\x42\x08\n\x06source\"\x86\x03\n\x12RenderFigureOutput\x12\x36\n\x05pages\x18\x01 \x03(\x0b\x32\'.eolymp.content.RenderFigureOutput.Page\x12\x42\n\x0b\x64iagnostics\x18\x02 \x03(\x0b\x32-.eolymp.content.RenderFigureOutput.Diagnostic\x12\r\n\x05total\x18\x03 \x01(\x05\x1a\x14\n\x04Page\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x1a\xce\x01\n\nDiagnostic\x12H\n\x08severity\x18\x01 \x01(\x0e\x32\x36.eolymp.content.RenderFigureOutput.Diagnostic.Severity\x12\x0c\n\x04line\x18\x02 \x01(\r\x12\x0e\n\x06\x63olumn\x18\x03 \x01(\r\x12\x0f\n\x07message\x18\x04 \x01(\t\x12\r\n\x05hints\x18\x05 \x03(\t\"8\n\x08Severity\x12\x14\n\x10UNKNOWN_SEVERITY\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x32\xcc\x02\n\rRenderService\x12\x95\x01\n\rRenderContent\x12\".eolymp.content.RenderContentInput\x1a#.eolymp.content.RenderContentOutput\";\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xc8\x41\xf8\xe2\nd\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x1e\"\x0f/content:renderZ\x0b\"\t/renderer\x12\x85\x01\n\x0cRenderFigure\x12!.eolymp.content.RenderFigureInput\x1a\".eolymp.content.RenderFigureOutput\".\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\xa2\xe3\n\x04\xa8\xe3\n\x02\x82\xd3\xe4\x93\x02\x11\"\x0f/figures:render\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -49,17 +49,17 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RENDERCONTENTOUTPUT']._serialized_start=299
   _globals['_RENDERCONTENTOUTPUT']._serialized_end=354
   _globals['_RENDERFIGUREINPUT']._serialized_start=357
-  _globals['_RENDERFIGUREINPUT']._serialized_end=548
+  _globals['_RENDERFIGUREINPUT']._serialized_end=539
   _globals['_RENDERFIGUREINPUT_FORMAT']._serialized_start=483
-  _globals['_RENDERFIGUREINPUT_FORMAT']._serialized_end=538
-  _globals['_RENDERFIGUREOUTPUT']._serialized_start=551
-  _globals['_RENDERFIGUREOUTPUT']._serialized_end=941
-  _globals['_RENDERFIGUREOUTPUT_PAGE']._serialized_start=712
-  _globals['_RENDERFIGUREOUTPUT_PAGE']._serialized_end=732
-  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC']._serialized_start=735
-  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC']._serialized_end=941
-  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC_SEVERITY']._serialized_start=885
-  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC_SEVERITY']._serialized_end=941
-  _globals['_RENDERSERVICE']._serialized_start=944
-  _globals['_RENDERSERVICE']._serialized_end=1276
+  _globals['_RENDERFIGUREINPUT_FORMAT']._serialized_end=529
+  _globals['_RENDERFIGUREOUTPUT']._serialized_start=542
+  _globals['_RENDERFIGUREOUTPUT']._serialized_end=932
+  _globals['_RENDERFIGUREOUTPUT_PAGE']._serialized_start=703
+  _globals['_RENDERFIGUREOUTPUT_PAGE']._serialized_end=723
+  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC']._serialized_start=726
+  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC']._serialized_end=932
+  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC_SEVERITY']._serialized_start=876
+  _globals['_RENDERFIGUREOUTPUT_DIAGNOSTIC_SEVERITY']._serialized_end=932
+  _globals['_RENDERSERVICE']._serialized_start=935
+  _globals['_RENDERSERVICE']._serialized_end=1267
 # @@protoc_insertion_point(module_scope)
