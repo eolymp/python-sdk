@@ -1,6 +1,5 @@
 from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import http_pb2 as _http_pb2
-from eolymp.annotations import mcp_pb2 as _mcp_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.ecm import content_pb2 as _content_pb2
@@ -27,13 +26,32 @@ class RenderContentOutput(_message.Message):
     def __init__(self, render: _Optional[_Union[_node_pb2.Node, _Mapping]] = ...) -> None: ...
 
 class RenderFigureInput(_message.Message):
-    __slots__ = ("typst",)
+    __slots__ = ("typst", "format", "offset", "size")
+    class Format(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        UNKNOWN_FORMAT: _ClassVar[RenderFigureInput.Format]
+        SVG: _ClassVar[RenderFigureInput.Format]
+        PNG: _ClassVar[RenderFigureInput.Format]
+    UNKNOWN_FORMAT: RenderFigureInput.Format
+    SVG: RenderFigureInput.Format
+    PNG: RenderFigureInput.Format
     TYPST_FIELD_NUMBER: _ClassVar[int]
+    FORMAT_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
     typst: str
-    def __init__(self, typst: _Optional[str] = ...) -> None: ...
+    format: RenderFigureInput.Format
+    offset: int
+    size: int
+    def __init__(self, typst: _Optional[str] = ..., format: _Optional[_Union[RenderFigureInput.Format, str]] = ..., offset: _Optional[int] = ..., size: _Optional[int] = ...) -> None: ...
 
 class RenderFigureOutput(_message.Message):
-    __slots__ = ("pages", "diagnostics")
+    __slots__ = ("pages", "diagnostics", "total")
+    class Page(_message.Message):
+        __slots__ = ("data",)
+        DATA_FIELD_NUMBER: _ClassVar[int]
+        data: bytes
+        def __init__(self, data: _Optional[bytes] = ...) -> None: ...
     class Diagnostic(_message.Message):
         __slots__ = ("severity", "line", "column", "message", "hints")
         class Severity(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -57,6 +75,8 @@ class RenderFigureOutput(_message.Message):
         def __init__(self, severity: _Optional[_Union[RenderFigureOutput.Diagnostic.Severity, str]] = ..., line: _Optional[int] = ..., column: _Optional[int] = ..., message: _Optional[str] = ..., hints: _Optional[_Iterable[str]] = ...) -> None: ...
     PAGES_FIELD_NUMBER: _ClassVar[int]
     DIAGNOSTICS_FIELD_NUMBER: _ClassVar[int]
-    pages: _containers.RepeatedScalarFieldContainer[str]
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    pages: _containers.RepeatedCompositeFieldContainer[RenderFigureOutput.Page]
     diagnostics: _containers.RepeatedCompositeFieldContainer[RenderFigureOutput.Diagnostic]
-    def __init__(self, pages: _Optional[_Iterable[str]] = ..., diagnostics: _Optional[_Iterable[_Union[RenderFigureOutput.Diagnostic, _Mapping]]] = ...) -> None: ...
+    total: int
+    def __init__(self, pages: _Optional[_Iterable[_Union[RenderFigureOutput.Page, _Mapping]]] = ..., diagnostics: _Optional[_Iterable[_Union[RenderFigureOutput.Diagnostic, _Mapping]]] = ..., total: _Optional[int] = ...) -> None: ...
