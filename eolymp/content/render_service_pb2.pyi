@@ -32,9 +32,11 @@ class RenderFigureInput(_message.Message):
         UNKNOWN_FORMAT: _ClassVar[RenderFigureInput.Format]
         SVG: _ClassVar[RenderFigureInput.Format]
         PNG: _ClassVar[RenderFigureInput.Format]
+        GIF: _ClassVar[RenderFigureInput.Format]
     UNKNOWN_FORMAT: RenderFigureInput.Format
     SVG: RenderFigureInput.Format
     PNG: RenderFigureInput.Format
+    GIF: RenderFigureInput.Format
     TYPST_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]
