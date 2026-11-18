@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Recording(_message.Message):
-    __slots__ = ("id", "member_id", "status", "started_at", "ended_at", "gap_duration", "streams", "created_at")
+    __slots__ = ("id", "member_id", "status", "started_at", "ended_at", "gap_duration", "streams", "created_at", "capture_from", "capture_to", "upload_until", "required_sources")
     class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         UNKNOWN_STATUS: _ClassVar[Recording.Status]
@@ -24,6 +24,17 @@ class Recording(_message.Message):
     COMPLETE: Recording.Status
     INCOMPLETE: Recording.Status
     EXPIRED: Recording.Status
+    class Patch(_message.Message):
+        __slots__ = ("capture_from", "capture_to", "upload_until", "required_sources")
+        CAPTURE_FROM_FIELD_NUMBER: _ClassVar[int]
+        CAPTURE_TO_FIELD_NUMBER: _ClassVar[int]
+        UPLOAD_UNTIL_FIELD_NUMBER: _ClassVar[int]
+        REQUIRED_SOURCES_FIELD_NUMBER: _ClassVar[int]
+        capture_from: _timestamp_pb2.Timestamp
+        capture_to: _timestamp_pb2.Timestamp
+        upload_until: _timestamp_pb2.Timestamp
+        required_sources: _containers.RepeatedScalarFieldContainer[Recording.Stream.Source]
+        def __init__(self, capture_from: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., capture_to: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., upload_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., required_sources: _Optional[_Iterable[_Union[Recording.Stream.Source, str]]] = ...) -> None: ...
     class Stream(_message.Message):
         __slots__ = ("source", "playlist_url")
         class Source(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -49,6 +60,10 @@ class Recording(_message.Message):
     GAP_DURATION_FIELD_NUMBER: _ClassVar[int]
     STREAMS_FIELD_NUMBER: _ClassVar[int]
     CREATED_AT_FIELD_NUMBER: _ClassVar[int]
+    CAPTURE_FROM_FIELD_NUMBER: _ClassVar[int]
+    CAPTURE_TO_FIELD_NUMBER: _ClassVar[int]
+    UPLOAD_UNTIL_FIELD_NUMBER: _ClassVar[int]
+    REQUIRED_SOURCES_FIELD_NUMBER: _ClassVar[int]
     id: str
     member_id: str
     status: Recording.Status
@@ -57,4 +72,8 @@ class Recording(_message.Message):
     gap_duration: int
     streams: _containers.RepeatedCompositeFieldContainer[Recording.Stream]
     created_at: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Recording.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., gap_duration: _Optional[int] = ..., streams: _Optional[_Iterable[_Union[Recording.Stream, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    capture_from: _timestamp_pb2.Timestamp
+    capture_to: _timestamp_pb2.Timestamp
+    upload_until: _timestamp_pb2.Timestamp
+    required_sources: _containers.RepeatedScalarFieldContainer[Recording.Stream.Source]
+    def __init__(self, id: _Optional[str] = ..., member_id: _Optional[str] = ..., status: _Optional[_Union[Recording.Status, str]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., gap_duration: _Optional[int] = ..., streams: _Optional[_Iterable[_Union[Recording.Stream, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., capture_from: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., capture_to: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., upload_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., required_sources: _Optional[_Iterable[_Union[Recording.Stream.Source, str]]] = ...) -> None: ...

@@ -31,7 +31,7 @@ from eolymp.wellknown import expression_pb2 as eolymp_dot_wellknown_dot_expressi
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/proctoring/recording_service.proto\x12\x11\x65olymp.proctoring\x1a\x1e\x65olymp/annotations/audit.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/proctoring/recording.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"w\n\x14\x43reateRecordingInput\x12/\n\trecording\x18\x01 \x01(\x0b\x32\x1c.eolymp.proctoring.Recording\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"`\n\x15\x43reateRecordingOutput\x12\x14\n\x0crecording_id\x18\x01 \x01(\t\x12\x12\n\nstream_url\x18\x02 \x01(\t\x12\x1d\n\x15\x61\x64\x64itional_camera_url\x18\x03 \x01(\t\"\\\n\x14ResumeRecordingInput\x12\x14\n\x0crecording_id\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x15ResumeRecordingOutput\x12\x12\n\nstream_url\x18\x01 \x01(\t\x12\x1d\n\x15\x61\x64\x64itional_camera_url\x18\x02 \x01(\t\",\n\x14\x44\x65leteRecordingInput\x12\x14\n\x0crecording_id\x18\x01 \x01(\t\"\x17\n\x15\x44\x65leteRecordingOutput\".\n\x16\x44\x65scribeRecordingInput\x12\x14\n\x0crecording_id\x18\x01 \x01(\t\"J\n\x17\x44\x65scribeRecordingOutput\x12/\n\trecording\x18\x01 \x01(\x0b\x32\x1c.eolymp.proctoring.Recording\"\x8f\x02\n\x13ListRecordingsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12>\n\x07\x66ilters\x18( \x01(\x0b\x32-.eolymp.proctoring.ListRecordingsInput.Filter\x1a\x99\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"R\n\x14ListRecordingsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.eolymp.proctoring.Recording\"r\n\x15RecordingChangedEvent\x12,\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x1c.eolymp.proctoring.Recording\x12+\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1c.eolymp.proctoring.Recording2\xdc\x06\n\x10RecordingService\x12\xa0\x01\n\x0f\x43reateRecording\x12\'.eolymp.proctoring.CreateRecordingInput\x1a(.eolymp.proctoring.CreateRecordingOutput\":\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xe3\n\x1e\x8a\xe3\n\x1aproctoring:recording:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x12\xa0\x01\n\x0fResumeRecording\x12\'.eolymp.proctoring.ResumeRecordingInput\x1a(.eolymp.proctoring.ResumeRecordingOutput\":\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xe3\n\x1e\x8a\xe3\n\x1aproctoring:recording:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x12\x9f\x01\n\x0f\x44\x65leteRecording\x12\'.eolymp.proctoring.DeleteRecordingInput\x1a(.eolymp.proctoring.DeleteRecordingOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1e\x8a\xe3\n\x1aproctoring:recording:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x12\xa4\x01\n\x11\x44\x65scribeRecording\x12).eolymp.proctoring.DescribeRecordingInput\x1a*.eolymp.proctoring.DescribeRecordingOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1d\x8a\xe3\n\x19proctoring:recording:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x12\x9b\x01\n\x0eListRecordings\x12&.eolymp.proctoring.ListRecordingsInput\x1a\'.eolymp.proctoring.ListRecordingsOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1d\x8a\xe3\n\x19proctoring:recording:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/proctoring;proctoringb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)eolymp/proctoring/recording_service.proto\x12\x11\x65olymp.proctoring\x1a\x1e\x65olymp/annotations/audit.proto\x1a\"eolymp/annotations/namespace.proto\x1a\"eolymp/annotations/ratelimit.proto\x1a\x1e\x65olymp/annotations/scope.proto\x1a!eolymp/proctoring/recording.proto\x1a!eolymp/wellknown/expression.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"w\n\x14\x43reateRecordingInput\x12/\n\trecording\x18\x01 \x01(\x0b\x32\x1c.eolymp.proctoring.Recording\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"o\n\x15\x43reateRecordingOutput\x12\x14\n\x0crecording_id\x18\x01 \x01(\t\x12\x12\n\nstream_url\x18\x02 \x01(\t\x12\x1d\n\x15\x61\x64\x64itional_camera_url\x18\x03 \x01(\t\x12\r\n\x05token\x18\x04 \x01(\t\"c\n\x14UpdateRecordingInput\x12\x14\n\x0crecording_id\x18\x01 \x01(\t\x12\x35\n\trecording\x18\x03 \x01(\x0b\x32\".eolymp.proctoring.Recording.Patch\"&\n\x15UpdateRecordingOutput\x12\r\n\x05token\x18\x01 \x01(\t\"\\\n\x14ResumeRecordingInput\x12\x14\n\x0crecording_id\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x15ResumeRecordingOutput\x12\x12\n\nstream_url\x18\x01 \x01(\t\x12\x1d\n\x15\x61\x64\x64itional_camera_url\x18\x02 \x01(\t\",\n\x14\x44\x65leteRecordingInput\x12\x14\n\x0crecording_id\x18\x01 \x01(\t\"\x17\n\x15\x44\x65leteRecordingOutput\".\n\x16\x44\x65scribeRecordingInput\x12\x14\n\x0crecording_id\x18\x01 \x01(\t\"J\n\x17\x44\x65scribeRecordingOutput\x12/\n\trecording\x18\x01 \x01(\x0b\x32\x1c.eolymp.proctoring.Recording\"\x8f\x02\n\x13ListRecordingsInput\x12\x0e\n\x06offset\x18\n \x01(\x05\x12\x0c\n\x04size\x18\x0b \x01(\x05\x12>\n\x07\x66ilters\x18( \x01(\x0b\x32-.eolymp.proctoring.ListRecordingsInput.Filter\x1a\x99\x01\n\x06\x46ilter\x12*\n\x02id\x18\x01 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x31\n\tmember_id\x18\x02 \x03(\x0b\x32\x1e.eolymp.wellknown.ExpressionID\x12\x30\n\x06status\x18\x03 \x03(\x0b\x32 .eolymp.wellknown.ExpressionEnum\"R\n\x14ListRecordingsOutput\x12\r\n\x05total\x18\x01 \x01(\x05\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.eolymp.proctoring.Recording\"r\n\x15RecordingChangedEvent\x12,\n\x06\x62\x65\x66ore\x18\x01 \x01(\x0b\x32\x1c.eolymp.proctoring.Recording\x12+\n\x05\x61\x66ter\x18\x02 \x01(\x0b\x32\x1c.eolymp.proctoring.Recording2\xff\x07\n\x10RecordingService\x12\xa0\x01\n\x0f\x43reateRecording\x12\'.eolymp.proctoring.CreateRecordingInput\x1a(.eolymp.proctoring.CreateRecordingOutput\":\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xe3\n\x1e\x8a\xe3\n\x1aproctoring:recording:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x12\xa0\x01\n\x0fUpdateRecording\x12\'.eolymp.proctoring.UpdateRecordingInput\x1a(.eolymp.proctoring.UpdateRecordingOutput\":\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xe3\n\x1e\x8a\xe3\n\x1aproctoring:recording:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x12\xa0\x01\n\x0fResumeRecording\x12\'.eolymp.proctoring.ResumeRecordingInput\x1a(.eolymp.proctoring.ResumeRecordingOutput\":\xea\xe2\n\x0c\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\n\xc8\x01\x82\xe3\n\x1e\x8a\xe3\n\x1aproctoring:recording:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x12\x9f\x01\n\x0f\x44\x65leteRecording\x12\'.eolymp.proctoring.DeleteRecordingInput\x1a(.eolymp.proctoring.DeleteRecordingOutput\"9\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0@\xf8\xe2\n\x14\x82\xe3\n\x1e\x8a\xe3\n\x1aproctoring:recording:write\xa2\xe3\n\x04\xa8\xe3\n\x02\x12\xa4\x01\n\x11\x44\x65scribeRecording\x12).eolymp.proctoring.DescribeRecordingInput\x1a*.eolymp.proctoring.DescribeRecordingOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1d\x8a\xe3\n\x19proctoring:recording:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x12\x9b\x01\n\x0eListRecordings\x12&.eolymp.proctoring.ListRecordingsInput\x1a\'.eolymp.proctoring.ListRecordingsOutput\"8\xea\xe2\n\x0b\xf5\xe2\n\x00\x00\xa0\x41\xf8\xe2\nd\x82\xe3\n\x1d\x8a\xe3\n\x19proctoring:recording:read\xa2\xe3\n\x04\xa8\xe3\n\x01\x1a\x1b\x82\xf0\xf0\xe4\x01\x15\x65olymp.universe.SpaceB7Z5github.com/eolymp/go-sdk/eolymp/proctoring;proctoringb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,6 +43,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RECORDINGSERVICE']._serialized_options = b'\202\360\360\344\001\025eolymp.universe.Space'
   _globals['_RECORDINGSERVICE'].methods_by_name['CreateRecording']._loaded_options = None
   _globals['_RECORDINGSERVICE'].methods_by_name['CreateRecording']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\310\001\202\343\n\036\212\343\n\032proctoring:recording:write\242\343\n\004\250\343\n\002'
+  _globals['_RECORDINGSERVICE'].methods_by_name['UpdateRecording']._loaded_options = None
+  _globals['_RECORDINGSERVICE'].methods_by_name['UpdateRecording']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\310\001\202\343\n\036\212\343\n\032proctoring:recording:write\242\343\n\004\250\343\n\002'
   _globals['_RECORDINGSERVICE'].methods_by_name['ResumeRecording']._loaded_options = None
   _globals['_RECORDINGSERVICE'].methods_by_name['ResumeRecording']._serialized_options = b'\352\342\n\014\365\342\n\000\000\240A\370\342\n\310\001\202\343\n\036\212\343\n\032proctoring:recording:write\242\343\n\004\250\343\n\002'
   _globals['_RECORDINGSERVICE'].methods_by_name['DeleteRecording']._loaded_options = None
@@ -54,27 +56,31 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATERECORDINGINPUT']._serialized_start=303
   _globals['_CREATERECORDINGINPUT']._serialized_end=422
   _globals['_CREATERECORDINGOUTPUT']._serialized_start=424
-  _globals['_CREATERECORDINGOUTPUT']._serialized_end=520
-  _globals['_RESUMERECORDINGINPUT']._serialized_start=522
-  _globals['_RESUMERECORDINGINPUT']._serialized_end=614
-  _globals['_RESUMERECORDINGOUTPUT']._serialized_start=616
-  _globals['_RESUMERECORDINGOUTPUT']._serialized_end=690
-  _globals['_DELETERECORDINGINPUT']._serialized_start=692
-  _globals['_DELETERECORDINGINPUT']._serialized_end=736
-  _globals['_DELETERECORDINGOUTPUT']._serialized_start=738
-  _globals['_DELETERECORDINGOUTPUT']._serialized_end=761
-  _globals['_DESCRIBERECORDINGINPUT']._serialized_start=763
-  _globals['_DESCRIBERECORDINGINPUT']._serialized_end=809
-  _globals['_DESCRIBERECORDINGOUTPUT']._serialized_start=811
-  _globals['_DESCRIBERECORDINGOUTPUT']._serialized_end=885
-  _globals['_LISTRECORDINGSINPUT']._serialized_start=888
-  _globals['_LISTRECORDINGSINPUT']._serialized_end=1159
-  _globals['_LISTRECORDINGSINPUT_FILTER']._serialized_start=1006
-  _globals['_LISTRECORDINGSINPUT_FILTER']._serialized_end=1159
-  _globals['_LISTRECORDINGSOUTPUT']._serialized_start=1161
-  _globals['_LISTRECORDINGSOUTPUT']._serialized_end=1243
-  _globals['_RECORDINGCHANGEDEVENT']._serialized_start=1245
-  _globals['_RECORDINGCHANGEDEVENT']._serialized_end=1359
-  _globals['_RECORDINGSERVICE']._serialized_start=1362
-  _globals['_RECORDINGSERVICE']._serialized_end=2222
+  _globals['_CREATERECORDINGOUTPUT']._serialized_end=535
+  _globals['_UPDATERECORDINGINPUT']._serialized_start=537
+  _globals['_UPDATERECORDINGINPUT']._serialized_end=636
+  _globals['_UPDATERECORDINGOUTPUT']._serialized_start=638
+  _globals['_UPDATERECORDINGOUTPUT']._serialized_end=676
+  _globals['_RESUMERECORDINGINPUT']._serialized_start=678
+  _globals['_RESUMERECORDINGINPUT']._serialized_end=770
+  _globals['_RESUMERECORDINGOUTPUT']._serialized_start=772
+  _globals['_RESUMERECORDINGOUTPUT']._serialized_end=846
+  _globals['_DELETERECORDINGINPUT']._serialized_start=848
+  _globals['_DELETERECORDINGINPUT']._serialized_end=892
+  _globals['_DELETERECORDINGOUTPUT']._serialized_start=894
+  _globals['_DELETERECORDINGOUTPUT']._serialized_end=917
+  _globals['_DESCRIBERECORDINGINPUT']._serialized_start=919
+  _globals['_DESCRIBERECORDINGINPUT']._serialized_end=965
+  _globals['_DESCRIBERECORDINGOUTPUT']._serialized_start=967
+  _globals['_DESCRIBERECORDINGOUTPUT']._serialized_end=1041
+  _globals['_LISTRECORDINGSINPUT']._serialized_start=1044
+  _globals['_LISTRECORDINGSINPUT']._serialized_end=1315
+  _globals['_LISTRECORDINGSINPUT_FILTER']._serialized_start=1162
+  _globals['_LISTRECORDINGSINPUT_FILTER']._serialized_end=1315
+  _globals['_LISTRECORDINGSOUTPUT']._serialized_start=1317
+  _globals['_LISTRECORDINGSOUTPUT']._serialized_end=1399
+  _globals['_RECORDINGCHANGEDEVENT']._serialized_start=1401
+  _globals['_RECORDINGCHANGEDEVENT']._serialized_end=1515
+  _globals['_RECORDINGSERVICE']._serialized_start=1518
+  _globals['_RECORDINGSERVICE']._serialized_end=2541
 # @@protoc_insertion_point(module_scope)

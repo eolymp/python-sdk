@@ -24,14 +24,30 @@ class CreateRecordingInput(_message.Message):
     def __init__(self, recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateRecordingOutput(_message.Message):
-    __slots__ = ("recording_id", "stream_url", "additional_camera_url")
+    __slots__ = ("recording_id", "stream_url", "additional_camera_url", "token")
     RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
     STREAM_URL_FIELD_NUMBER: _ClassVar[int]
     ADDITIONAL_CAMERA_URL_FIELD_NUMBER: _ClassVar[int]
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
     recording_id: str
     stream_url: str
     additional_camera_url: str
-    def __init__(self, recording_id: _Optional[str] = ..., stream_url: _Optional[str] = ..., additional_camera_url: _Optional[str] = ...) -> None: ...
+    token: str
+    def __init__(self, recording_id: _Optional[str] = ..., stream_url: _Optional[str] = ..., additional_camera_url: _Optional[str] = ..., token: _Optional[str] = ...) -> None: ...
+
+class UpdateRecordingInput(_message.Message):
+    __slots__ = ("recording_id", "recording")
+    RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
+    RECORDING_FIELD_NUMBER: _ClassVar[int]
+    recording_id: str
+    recording: _recording_pb2.Recording.Patch
+    def __init__(self, recording_id: _Optional[str] = ..., recording: _Optional[_Union[_recording_pb2.Recording.Patch, _Mapping]] = ...) -> None: ...
+
+class UpdateRecordingOutput(_message.Message):
+    __slots__ = ("token",)
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    token: str
+    def __init__(self, token: _Optional[str] = ...) -> None: ...
 
 class ResumeRecordingInput(_message.Message):
     __slots__ = ("recording_id", "expires_at")
