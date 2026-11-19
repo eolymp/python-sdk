@@ -8,6 +8,7 @@ from eolymp.ecm import content_pb2 as _content_pb2
 from eolymp.judge import participant_pb2 as _participant_pb2
 from eolymp.judge import score_pb2 as _score_pb2
 from eolymp.judge import scoreboard_pb2 as _scoreboard_pb2
+from eolymp.proctoring import recording_pb2 as _recording_pb2
 from eolymp.wellknown import direction_pb2 as _direction_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
 from eolymp.wellknown import watch_pb2 as _watch_pb2
@@ -285,6 +286,20 @@ class RequestProctoringOutput(_message.Message):
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     token: str
     def __init__(self, token: _Optional[str] = ...) -> None: ...
+
+class WatchProctoringInput(_message.Message):
+    __slots__ = ("contest_id",)
+    CONTEST_ID_FIELD_NUMBER: _ClassVar[int]
+    contest_id: str
+    def __init__(self, contest_id: _Optional[str] = ...) -> None: ...
+
+class WatchProctoringOutput(_message.Message):
+    __slots__ = ("event", "recording")
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    RECORDING_FIELD_NUMBER: _ClassVar[int]
+    event: _watch_pb2.WatchEventType
+    recording: _recording_pb2.Recording
+    def __init__(self, event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ..., recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ...) -> None: ...
 
 class PauseContestInput(_message.Message):
     __slots__ = ("contest_id",)

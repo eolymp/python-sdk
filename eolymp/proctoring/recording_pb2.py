@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/proctoring/recording.proto\x12\x11\x65olymp.proctoring\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf5\x07\n\tRecording\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x33\n\x06status\x18\x03 \x01(\x0e\x32#.eolymp.proctoring.Recording.Status\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nded_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x14\n\x0cgap_duration\x18\x06 \x01(\r\x12\x34\n\x07streams\x18\x07 \x03(\x0b\x32#.eolymp.proctoring.Recording.Stream\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x63\x61pture_from\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncapture_to\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cupload_until\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x10required_sources\x18\r \x03(\x0e\x32*.eolymp.proctoring.Recording.Stream.Source\x1a\xe1\x01\n\x05Patch\x12\x30\n\x0c\x63\x61pture_from\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncapture_to\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cupload_until\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x10required_sources\x18\r \x03(\x0e\x32*.eolymp.proctoring.Recording.Stream.Source\x1a\xa7\x01\n\x06Stream\x12:\n\x06source\x18\x01 \x01(\x0e\x32*.eolymp.proctoring.Recording.Stream.Source\x12\x14\n\x0cplaylist_url\x18\x02 \x01(\t\"K\n\x06Source\x12\x12\n\x0eUNKNOWN_SOURCE\x10\x00\x12\n\n\x06SCREEN\x10\x01\x12\n\n\x06\x43\x41MERA\x10\x02\x12\x15\n\x11\x41\x44\x44ITIONAL_CAMERA\x10\x03\"R\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\t\n\x05\x45MPTY\x10\x01\x12\x0c\n\x08\x43OMPLETE\x10\x02\x12\x0e\n\nINCOMPLETE\x10\x03\x12\x0b\n\x07\x45XPIRED\x10\x04\x42\x37Z5github.com/eolymp/go-sdk/eolymp/proctoring;proctoringb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!eolymp/proctoring/recording.proto\x12\x11\x65olymp.proctoring\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe7\x0c\n\tRecording\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tmember_id\x18\x02 \x01(\t\x12\x33\n\x06status\x18\x03 \x01(\x0e\x32#.eolymp.proctoring.Recording.Status\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nded_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x14\n\x0cgap_duration\x18\x06 \x01(\r\x12\x34\n\x07streams\x18\x07 \x03(\x0b\x32#.eolymp.proctoring.Recording.Stream\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x63\x61pture_from\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncapture_to\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cupload_until\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x10required_sources\x18\r \x03(\x0e\x32*.eolymp.proctoring.Recording.Stream.Source\x12\x31\n\x05state\x18\x0e \x01(\x0e\x32\".eolymp.proctoring.Recording.State\x12\x30\n\x05slots\x18\x0f \x03(\x0b\x32!.eolymp.proctoring.Recording.Slot\x1a\xe1\x01\n\x05Patch\x12\x30\n\x0c\x63\x61pture_from\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncapture_to\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cupload_until\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x10required_sources\x18\r \x03(\x0e\x32*.eolymp.proctoring.Recording.Stream.Source\x1a.\n\x05\x45xtra\"%\n\x05\x46ield\x12\x11\n\rUNKNOWN_EXTRA\x10\x00\x12\t\n\x05SLOTS\x10\x01\x1a\x88\x03\n\x04Slot\x12:\n\x06source\x18\x01 \x01(\x0e\x32*.eolymp.proctoring.Recording.Stream.Source\x12\x36\n\x05state\x18\x02 \x01(\x0e\x32\'.eolymp.proctoring.Recording.Slot.State\x12\x38\n\x06holder\x18\x03 \x01(\x0b\x32(.eolymp.proctoring.Recording.Slot.Holder\x1a\x91\x01\n\x06Holder\x12;\n\x04kind\x18\x01 \x01(\x0e\x32-.eolymp.proctoring.Recording.Slot.Holder.Kind\x12\x0f\n\x07version\x18\x02 \x01(\t\"9\n\x04Kind\x12\x10\n\x0cUNKNOWN_KIND\x10\x00\x12\x0b\n\x07\x42ROWSER\x10\x01\x12\x07\n\x03\x41PP\x10\x02\x12\t\n\x05PHONE\x10\x03\">\n\x05State\x12\x11\n\rUNKNOWN_STATE\x10\x00\x12\x0b\n\x07MISSING\x10\x01\x12\x08\n\x04LIVE\x10\x02\x12\x0b\n\x07STALLED\x10\x03\x1a\xa7\x01\n\x06Stream\x12:\n\x06source\x18\x01 \x01(\x0e\x32*.eolymp.proctoring.Recording.Stream.Source\x12\x14\n\x0cplaylist_url\x18\x02 \x01(\t\"K\n\x06Source\x12\x12\n\x0eUNKNOWN_SOURCE\x10\x00\x12\n\n\x06SCREEN\x10\x01\x12\n\n\x06\x43\x41MERA\x10\x02\x12\x15\n\x11\x41\x44\x44ITIONAL_CAMERA\x10\x03\"P\n\x05State\x12\x11\n\rUNKNOWN_STATE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0f\n\x0bUPLOAD_ONLY\x10\x03\x12\n\n\x06\x43LOSED\x10\x04\"R\n\x06Status\x12\x12\n\x0eUNKNOWN_STATUS\x10\x00\x12\t\n\x05\x45MPTY\x10\x01\x12\x0c\n\x08\x43OMPLETE\x10\x02\x12\x0e\n\nINCOMPLETE\x10\x03\x12\x0b\n\x07\x45XPIRED\x10\x04\x42\x37Z5github.com/eolymp/go-sdk/eolymp/proctoring;proctoringb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,13 +34,27 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z5github.com/eolymp/go-sdk/eolymp/proctoring;proctoring'
   _globals['_RECORDING']._serialized_start=90
-  _globals['_RECORDING']._serialized_end=1103
-  _globals['_RECORDING_PATCH']._serialized_start=624
-  _globals['_RECORDING_PATCH']._serialized_end=849
-  _globals['_RECORDING_STREAM']._serialized_start=852
-  _globals['_RECORDING_STREAM']._serialized_end=1019
-  _globals['_RECORDING_STREAM_SOURCE']._serialized_start=944
-  _globals['_RECORDING_STREAM_SOURCE']._serialized_end=1019
-  _globals['_RECORDING_STATUS']._serialized_start=1021
-  _globals['_RECORDING_STATUS']._serialized_end=1103
+  _globals['_RECORDING']._serialized_end=1729
+  _globals['_RECORDING_PATCH']._serialized_start=725
+  _globals['_RECORDING_PATCH']._serialized_end=950
+  _globals['_RECORDING_EXTRA']._serialized_start=952
+  _globals['_RECORDING_EXTRA']._serialized_end=998
+  _globals['_RECORDING_EXTRA_FIELD']._serialized_start=961
+  _globals['_RECORDING_EXTRA_FIELD']._serialized_end=998
+  _globals['_RECORDING_SLOT']._serialized_start=1001
+  _globals['_RECORDING_SLOT']._serialized_end=1393
+  _globals['_RECORDING_SLOT_HOLDER']._serialized_start=1184
+  _globals['_RECORDING_SLOT_HOLDER']._serialized_end=1329
+  _globals['_RECORDING_SLOT_HOLDER_KIND']._serialized_start=1272
+  _globals['_RECORDING_SLOT_HOLDER_KIND']._serialized_end=1329
+  _globals['_RECORDING_SLOT_STATE']._serialized_start=1331
+  _globals['_RECORDING_SLOT_STATE']._serialized_end=1393
+  _globals['_RECORDING_STREAM']._serialized_start=1396
+  _globals['_RECORDING_STREAM']._serialized_end=1563
+  _globals['_RECORDING_STREAM_SOURCE']._serialized_start=1488
+  _globals['_RECORDING_STREAM_SOURCE']._serialized_end=1563
+  _globals['_RECORDING_STATE']._serialized_start=1565
+  _globals['_RECORDING_STATE']._serialized_end=1645
+  _globals['_RECORDING_STATUS']._serialized_start=1647
+  _globals['_RECORDING_STATUS']._serialized_end=1729
 # @@protoc_insertion_point(module_scope)

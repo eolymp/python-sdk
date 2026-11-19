@@ -4,6 +4,7 @@ from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.proctoring import recording_pb2 as _recording_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
+from eolymp.wellknown import watch_pb2 as _watch_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -51,16 +52,34 @@ class DeleteRecordingOutput(_message.Message):
     def __init__(self) -> None: ...
 
 class DescribeRecordingInput(_message.Message):
-    __slots__ = ("recording_id",)
+    __slots__ = ("recording_id", "extra")
     RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
     recording_id: str
-    def __init__(self, recording_id: _Optional[str] = ...) -> None: ...
+    extra: _containers.RepeatedScalarFieldContainer[_recording_pb2.Recording.Extra.Field]
+    def __init__(self, recording_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_recording_pb2.Recording.Extra.Field, str]]] = ...) -> None: ...
 
 class DescribeRecordingOutput(_message.Message):
     __slots__ = ("recording",)
     RECORDING_FIELD_NUMBER: _ClassVar[int]
     recording: _recording_pb2.Recording
     def __init__(self, recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ...) -> None: ...
+
+class WatchRecordingInput(_message.Message):
+    __slots__ = ("recording_id", "extra")
+    RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    recording_id: str
+    extra: _containers.RepeatedScalarFieldContainer[_recording_pb2.Recording.Extra.Field]
+    def __init__(self, recording_id: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_recording_pb2.Recording.Extra.Field, str]]] = ...) -> None: ...
+
+class WatchRecordingOutput(_message.Message):
+    __slots__ = ("event", "recording")
+    EVENT_FIELD_NUMBER: _ClassVar[int]
+    RECORDING_FIELD_NUMBER: _ClassVar[int]
+    event: _watch_pb2.WatchEventType
+    recording: _recording_pb2.Recording
+    def __init__(self, event: _Optional[_Union[_watch_pb2.WatchEventType, str]] = ..., recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ...) -> None: ...
 
 class ListRecordingsInput(_message.Message):
     __slots__ = ("offset", "size", "filters")
