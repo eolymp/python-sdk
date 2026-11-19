@@ -1,12 +1,9 @@
-import datetime
-
 from eolymp.annotations import audit_pb2 as _audit_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.annotations import scope_pb2 as _scope_pb2
 from eolymp.proctoring import recording_pb2 as _recording_pb2
 from eolymp.wellknown import expression_pb2 as _expression_pb2
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -16,24 +13,18 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateRecordingInput(_message.Message):
-    __slots__ = ("recording", "expires_at")
+    __slots__ = ("recording",)
     RECORDING_FIELD_NUMBER: _ClassVar[int]
-    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
     recording: _recording_pb2.Recording
-    expires_at: _timestamp_pb2.Timestamp
-    def __init__(self, recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, recording: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ...) -> None: ...
 
 class CreateRecordingOutput(_message.Message):
-    __slots__ = ("recording_id", "stream_url", "additional_camera_url", "token")
+    __slots__ = ("recording_id", "token")
     RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
-    STREAM_URL_FIELD_NUMBER: _ClassVar[int]
-    ADDITIONAL_CAMERA_URL_FIELD_NUMBER: _ClassVar[int]
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     recording_id: str
-    stream_url: str
-    additional_camera_url: str
     token: str
-    def __init__(self, recording_id: _Optional[str] = ..., stream_url: _Optional[str] = ..., additional_camera_url: _Optional[str] = ..., token: _Optional[str] = ...) -> None: ...
+    def __init__(self, recording_id: _Optional[str] = ..., token: _Optional[str] = ...) -> None: ...
 
 class UpdateRecordingInput(_message.Message):
     __slots__ = ("recording_id", "recording")
@@ -48,22 +39,6 @@ class UpdateRecordingOutput(_message.Message):
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     token: str
     def __init__(self, token: _Optional[str] = ...) -> None: ...
-
-class ResumeRecordingInput(_message.Message):
-    __slots__ = ("recording_id", "expires_at")
-    RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
-    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
-    recording_id: str
-    expires_at: _timestamp_pb2.Timestamp
-    def __init__(self, recording_id: _Optional[str] = ..., expires_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
-
-class ResumeRecordingOutput(_message.Message):
-    __slots__ = ("stream_url", "additional_camera_url")
-    STREAM_URL_FIELD_NUMBER: _ClassVar[int]
-    ADDITIONAL_CAMERA_URL_FIELD_NUMBER: _ClassVar[int]
-    stream_url: str
-    additional_camera_url: str
-    def __init__(self, stream_url: _Optional[str] = ..., additional_camera_url: _Optional[str] = ...) -> None: ...
 
 class DeleteRecordingInput(_message.Message):
     __slots__ = ("recording_id",)
