@@ -115,3 +115,11 @@ class RecordingChangedEvent(_message.Message):
     before: _recording_pb2.Recording
     after: _recording_pb2.Recording
     def __init__(self, before: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ..., after: _Optional[_Union[_recording_pb2.Recording, _Mapping]] = ...) -> None: ...
+
+class ClipUploadedEvent(_message.Message):
+    __slots__ = ("recording_id", "clip_id")
+    RECORDING_ID_FIELD_NUMBER: _ClassVar[int]
+    CLIP_ID_FIELD_NUMBER: _ClassVar[int]
+    recording_id: str
+    clip_id: str
+    def __init__(self, recording_id: _Optional[str] = ..., clip_id: _Optional[str] = ...) -> None: ...
