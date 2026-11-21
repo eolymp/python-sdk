@@ -1,12 +1,14 @@
 import datetime
 
 from eolymp.commerce import address_pb2 as _address_pb2
+from eolymp.universe import addon_pb2 as _addon_pb2
 from eolymp.universe import plan_pb2 as _plan_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Mapping as _Mapping
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -51,7 +53,7 @@ class Billing(_message.Message):
         language: str
         def __init__(self, name: _Optional[str] = ..., email: _Optional[str] = ..., phone: _Optional[str] = ..., tax_id_type: _Optional[str] = ..., tax_id_value: _Optional[str] = ..., address: _Optional[_Union[_address_pb2.Address, _Mapping]] = ..., currency: _Optional[str] = ..., language: _Optional[str] = ...) -> None: ...
     class Subscription(_message.Message):
-        __slots__ = ("id", "status", "irregular", "has_payment_method", "plan", "variant", "seats", "created_at", "started_at", "cancel_at", "cancelled_at", "ended_at", "period_start", "period_end", "trial_start", "trial_end")
+        __slots__ = ("id", "status", "irregular", "has_payment_method", "plan", "variant", "seats", "addons", "created_at", "started_at", "cancel_at", "cancelled_at", "ended_at", "period_start", "period_end", "trial_start", "trial_end")
         ID_FIELD_NUMBER: _ClassVar[int]
         STATUS_FIELD_NUMBER: _ClassVar[int]
         IRREGULAR_FIELD_NUMBER: _ClassVar[int]
@@ -59,6 +61,7 @@ class Billing(_message.Message):
         PLAN_FIELD_NUMBER: _ClassVar[int]
         VARIANT_FIELD_NUMBER: _ClassVar[int]
         SEATS_FIELD_NUMBER: _ClassVar[int]
+        ADDONS_FIELD_NUMBER: _ClassVar[int]
         CREATED_AT_FIELD_NUMBER: _ClassVar[int]
         STARTED_AT_FIELD_NUMBER: _ClassVar[int]
         CANCEL_AT_FIELD_NUMBER: _ClassVar[int]
@@ -75,6 +78,7 @@ class Billing(_message.Message):
         plan: _plan_pb2.Plan
         variant: _plan_pb2.Plan.Variant
         seats: int
+        addons: _containers.RepeatedCompositeFieldContainer[_addon_pb2.Addon]
         created_at: _timestamp_pb2.Timestamp
         started_at: _timestamp_pb2.Timestamp
         cancel_at: _timestamp_pb2.Timestamp
@@ -84,5 +88,5 @@ class Billing(_message.Message):
         period_end: _timestamp_pb2.Timestamp
         trial_start: _timestamp_pb2.Timestamp
         trial_end: _timestamp_pb2.Timestamp
-        def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Billing.Status, str]] = ..., irregular: _Optional[bool] = ..., has_payment_method: _Optional[bool] = ..., plan: _Optional[_Union[_plan_pb2.Plan, _Mapping]] = ..., variant: _Optional[_Union[_plan_pb2.Plan.Variant, _Mapping]] = ..., seats: _Optional[int] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., cancel_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., cancelled_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., trial_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., trial_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+        def __init__(self, id: _Optional[str] = ..., status: _Optional[_Union[Billing.Status, str]] = ..., irregular: _Optional[bool] = ..., has_payment_method: _Optional[bool] = ..., plan: _Optional[_Union[_plan_pb2.Plan, _Mapping]] = ..., variant: _Optional[_Union[_plan_pb2.Plan.Variant, _Mapping]] = ..., seats: _Optional[int] = ..., addons: _Optional[_Iterable[_Union[_addon_pb2.Addon, _Mapping]]] = ..., created_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., cancel_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., cancelled_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., period_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., period_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., trial_start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., trial_end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     def __init__(self) -> None: ...

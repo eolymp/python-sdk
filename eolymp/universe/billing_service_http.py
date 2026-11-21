@@ -185,3 +185,42 @@ class BillingServiceClient:
             **kwargs,
         )
 
+    def ListAvailableAddons(self, request, **kwargs):
+        path = "/billing/addons"
+
+        return self.transport.request(
+            method="POST",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.ListAvailableAddonsOutput"),
+            **kwargs,
+        )
+
+    def AddAddon(self, request, **kwargs):
+        path = "/billing/addons/"+urllib.parse.quote(request.addon_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.addon_id = ""
+
+        return self.transport.request(
+            method="PUT",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.AddAddonOutput"),
+            **kwargs,
+        )
+
+    def RemoveAddon(self, request, **kwargs):
+        path = "/billing/addons/"+urllib.parse.quote(request.addon_id)
+
+        # Cleanup URL parameters to avoid any ambiguity
+        request.addon_id = ""
+
+        return self.transport.request(
+            method="DELETE",
+            url=self.url+path,
+            request_data=request,
+            response_symbol=_sym_db.GetSymbol("eolymp.universe.RemoveAddonOutput"),
+            **kwargs,
+        )
+

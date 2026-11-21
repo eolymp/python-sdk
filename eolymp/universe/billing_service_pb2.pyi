@@ -3,6 +3,7 @@ from eolymp.annotations import http_pb2 as _http_pb2
 from eolymp.annotations import namespace_pb2 as _namespace_pb2
 from eolymp.annotations import ratelimit_pb2 as _ratelimit_pb2
 from eolymp.commerce import invoice_pb2 as _invoice_pb2
+from eolymp.universe import addon_pb2 as _addon_pb2
 from eolymp.universe import billing_pb2 as _billing_pb2
 from eolymp.universe import plan_pb2 as _plan_pb2
 from google.protobuf.internal import containers as _containers
@@ -212,3 +213,43 @@ class ListAvailablePlansOutput(_message.Message):
     total: int
     items: _containers.RepeatedCompositeFieldContainer[_plan_pb2.Plan]
     def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_plan_pb2.Plan, _Mapping]]] = ...) -> None: ...
+
+class ListAvailableAddonsInput(_message.Message):
+    __slots__ = ("offset", "size", "locale", "extra")
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
+    LOCALE_FIELD_NUMBER: _ClassVar[int]
+    EXTRA_FIELD_NUMBER: _ClassVar[int]
+    offset: int
+    size: int
+    locale: str
+    extra: _containers.RepeatedScalarFieldContainer[_addon_pb2.Addon.Extra]
+    def __init__(self, offset: _Optional[int] = ..., size: _Optional[int] = ..., locale: _Optional[str] = ..., extra: _Optional[_Iterable[_Union[_addon_pb2.Addon.Extra, str]]] = ...) -> None: ...
+
+class ListAvailableAddonsOutput(_message.Message):
+    __slots__ = ("total", "items")
+    TOTAL_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    total: int
+    items: _containers.RepeatedCompositeFieldContainer[_addon_pb2.Addon]
+    def __init__(self, total: _Optional[int] = ..., items: _Optional[_Iterable[_Union[_addon_pb2.Addon, _Mapping]]] = ...) -> None: ...
+
+class AddAddonInput(_message.Message):
+    __slots__ = ("addon_id",)
+    ADDON_ID_FIELD_NUMBER: _ClassVar[int]
+    addon_id: str
+    def __init__(self, addon_id: _Optional[str] = ...) -> None: ...
+
+class AddAddonOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class RemoveAddonInput(_message.Message):
+    __slots__ = ("addon_id",)
+    ADDON_ID_FIELD_NUMBER: _ClassVar[int]
+    addon_id: str
+    def __init__(self, addon_id: _Optional[str] = ...) -> None: ...
+
+class RemoveAddonOutput(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
