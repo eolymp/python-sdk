@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x65olymp/ai/usage.proto\x12\teolymp.ai\"\x86\x01\n\x05Usage\x12\x15\n\rprompt_tokens\x18\x01 \x01(\x04\x12\x19\n\x11\x63ompletion_tokens\x18\x02 \x01(\x04\x12\x17\n\x0fthinking_tokens\x18\x03 \x01(\x04\x12\x14\n\x0ctotal_tokens\x18\x04 \x01(\x04\x12\x1c\n\x14\x63\x61\x63hed_prompt_tokens\x18\x05 \x01(\x04\x42\'Z%github.com/eolymp/go-sdk/eolymp/ai;aib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x65olymp/ai/usage.proto\x12\teolymp.ai\"\xa2\x01\n\x05Usage\x12\x15\n\rprompt_tokens\x18\x01 \x01(\x04\x12\x19\n\x11\x63ompletion_tokens\x18\x02 \x01(\x04\x12\x17\n\x0fthinking_tokens\x18\x03 \x01(\x04\x12\x14\n\x0ctotal_tokens\x18\x04 \x01(\x04\x12\x1c\n\x14\x63\x61\x63hed_prompt_tokens\x18\x05 \x01(\x04\x12\x1a\n\x12\x63\x61\x63he_write_tokens\x18\x06 \x01(\x04\x42\'Z%github.com/eolymp/go-sdk/eolymp/ai;aib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z%github.com/eolymp/go-sdk/eolymp/ai;ai'
   _globals['_USAGE']._serialized_start=37
-  _globals['_USAGE']._serialized_end=171
+  _globals['_USAGE']._serialized_end=199
 # @@protoc_insertion_point(module_scope)
